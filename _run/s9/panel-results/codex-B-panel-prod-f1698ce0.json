@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "b6462c581d95d2e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for District of Columbia v. Wesby with court U.S. Supreme Court, date_decided 2018-01-22, docket 15-1485, cluster_id 4460854, and lead_opinion_id 4238107.",
+          "Lake citations select 583 U.S. 48 as the official/display citation, with parallel citations 138 S. Ct. 577 and 199 L. Ed. 2d 453.",
+          "Currency angle does not disclose any final superseding, overruling, abrogating, or limiting event for the cited authority."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit-pending material, but no final disclosed negative treatment defeats existence/live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7758b0a614feb2f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no currency or treatment defect is tied to pin-op11a in the disclosed treatment fields.",
+          "The lake record contains the pin-op11a pinpoint, and no point-specific treatment override is disclosed."
+        ],
+        "residual_risks": [
+          "Lens A should decide the quote-fidelity mismatch noted in the pinpoint payload."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d8734bbfcd1f8caa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no currency or treatment defect is tied to pin-op11 in the disclosed treatment fields.",
+          "The lake record contains the pin-op11 pinpoint, and no point-specific treatment override is disclosed."
+        ],
+        "residual_risks": [
+          "Lens A should decide the quote-fidelity mismatch noted in the pinpoint payload."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9855256e4bdb8da",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.scope_note and treatment.derivation lanes",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS treatment call survives, but the page's categorical 'No negative treatment' wording is too strong for the disclosed record because treatment is migration-seeded and the derivation records audit-pending proposed negative events.",
+          "proposed_fix": "Keep good_law and Binding - SCOTUS, but replace 'No negative treatment' with 'No final negative treatment reflected in the current lake record; proposed negative-event edges remain audit-pending.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The authority weight is consistent with identity.court_level scotus and the page's Binding - SCOTUS label.",
+          "However, treatment provenance and derivation are not cleanly final: the scope_note says the as-of treatment is seeded and may downgrade, and derivation lanes include audit_needed/proposed_negative_events."
+        ],
+        "residual_risks": [
+          "No external audit was performed under the ground rules; resolving the proposed negative-event edges would require the underlying citing-case audit."
+        ],
+        "suggested_tightening": "Qualify the visible treatment sentence so it reports no final negative treatment in the lake record, rather than an unconditional absence of negative treatment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/District of Columbia v. Wesby.json\",\"reviewed\":[{\"assertion_id\":\"b6462c581d95d2e6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for District of Columbia v. Wesby with court U.S. Supreme Court, date_decided 2018-01-22, docket 15-1485, cluster_id 4460854, and lead_opinion_id 4238107.\",\"Lake citations select 583 U.S. 48 as the official/display citation, with parallel citations 138 S. Ct. 577 and 199 L. Ed. 2d 453.\",\"Currency angle does not disclose any final superseding, overruling, abrogating, or limiting event for the cited authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit-pending material, but no final disclosed negative treatment defeats existence/live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7758b0a614feb2f5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no currency or treatment defect is tied to pin-op11a in the disclosed treatment fields.\",\"The lake record contains the pin-op11a pinpoint, and no point-specific treatment override is disclosed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should decide the quote-fidelity mismatch noted in the pinpoint payload.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d8734bbfcd1f8caa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no currency or treatment defect is tied to pin-op11 in the disclosed treatment fields.\",\"The lake record contains the pin-op11 pinpoint, and no point-specific treatment override is disclosed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should decide the quote-fidelity mismatch noted in the pinpoint payload.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e9855256e4bdb8da\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment call survives, but the page's categorical 'No negative treatment' wording is too strong for the disclosed record because treatment is migration-seeded and the derivation records audit-pending proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law and Binding - SCOTUS, but replace 'No negative treatment' with 'No final negative treatment reflected in the current lake record; proposed negative-event edges remain audit-pending.'\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.scope_note and treatment.derivation lanes\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The authority weight is consistent with identity.court_level scotus and the page's Binding - SCOTUS label.\",\"However, treatment provenance and derivation are not cleanly final: the scope_note says the as-of treatment is seeded and may downgrade, and derivation lanes include audit_needed/proposed_negative_events.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external audit was performed under the ground rules; resolving the proposed negative-event edges would require the underlying citing-case audit.\"],\"suggested_tightening\":\"Qualify the visible treatment sentence so it reports no final negative treatment in the lake record, rather than an unconditional absence of negative treatment.\"}],\"notes\":\"Lens B only; support and quote fidelity were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:34:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-43aad85674"
+    ],
     "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f1698ce0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "District of Columbia v. Wesby"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 116764,
+      "output": 6898,
+      "source": "codex-events",
+      "total": 123662
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "7758b0a614feb2f5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6462c581d95d2e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d8734bbfcd1f8caa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9855256e4bdb8da": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-43aad85674",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 130.9
   }
 }

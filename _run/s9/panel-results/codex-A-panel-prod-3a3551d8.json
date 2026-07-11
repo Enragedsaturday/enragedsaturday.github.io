@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brendlin v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows from group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "45886aab36721de7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Brendlin v. California as a U.S. Supreme Court case decided 2007-06-18.",
+          "The lake official citation is 551 U.S. 249, and the parallel/vendor citations match the inventory payload.",
+          "The content page front matter displays 551 U.S. 249 (2007), U.S. Supreme Court, and the same date/docket metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab8526d1b1781ed6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "by a traffic stop, so that he has standing to challenge the constitutionality of the stop. ## Rule",
+          "locator_note": "lake pinpoints[pin-251]; visible content_page rule quote is marked ^pin-251.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-251 is not a faithful quotation from the opinion; it is harvested from the issue text and includes the markdown heading artifact '## Rule'.",
+          "proposed_fix": "Replace pin-251's stored quote with: \"When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-251 quote_fidelity as mismatch.",
+          "The stored quote includes '## Rule', which is not opinion text.",
+          "The content page's visible pin-251 quote is a different sentence: \"When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.\""
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-251 from the visible rule quote rather than adjacent Issue-section text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba9ac86d05d983b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote matches the lake pinpoint quote for pin-251b.",
+          "The cached opinion text contains the sentence, with only line wrapping between words.",
+          "The content page displays the same quote for ^pin-251b."
+        ],
+        "residual_risks": [
+          "The pinpoint is slip-only with no official page field, but that does not defeat quote fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "deb681f8ca1a45b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields and content page front matter.",
+          "No substantive treatment or currency finding is made under lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is outside lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Brendlin v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"45886aab36721de7\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Brendlin v. California as a U.S. Supreme Court case decided 2007-06-18.\",\n        \"The lake official citation is 551 U.S. 249, and the parallel/vendor citations match the inventory payload.\",\n        \"The content page front matter displays 551 U.S. 249 (2007), U.S. Supreme Court, and the same date/docket metadata.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ab8526d1b1781ed6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pinpoint quote for pin-251 is not a faithful quotation from the opinion; it is harvested from the issue text and includes the markdown heading artifact '## Rule'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-251's stored quote with: \\\"When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.\\\"\",\n        \"evidence_quote\": \"by a traffic stop, so that he has standing to challenge the constitutionality of the stop. ## Rule\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[pin-251]; visible content_page rule quote is marked ^pin-251.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-251 quote_fidelity as mismatch.\",\n        \"The stored quote includes '## Rule', which is not opinion text.\",\n        \"The content page's visible pin-251 quote is a different sentence: \\\"When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.\\\"\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate pin-251 from the visible rule quote rather than adjacent Issue-section text.\"\n    },\n    {\n      \"assertion_id\": \"ba9ac86d05d983b9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quote matches the lake pinpoint quote for pin-251b.\",\n        \"The cached opinion text contains the sentence, with only line wrapping between words.\",\n        \"The content page displays the same quote for ^pin-251b.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The pinpoint is slip-only with no official page field, but that does not defeat quote fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"deb681f8ca1a45b9\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields and content page front matter.\",\n        \"No substantive treatment or currency finding is made under lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review is outside lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 assertion rows from group_inventory.jsonl using only disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:22:47-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:15:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bef1d30412",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4299da42e4"
+    ],
     "group_id": "_overhaul2/lake/cases/Brendlin v. California.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3a3551d8",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3a3551d8.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:38.439558Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:39.125834Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:39.943771Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:41.295708Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:43.299933Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:46.723860Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brendlin v. California"
+    ],
+    "tokens": {
+      "input": 252841,
+      "output": 7594,
+      "source": "codex-events",
+      "total": 260435
+    },
+    "verdict_map": {
+      "45886aab36721de7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab8526d1b1781ed6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ba9ac86d05d983b9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "deb681f8ca1a45b9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4299da42e4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bef1d30412",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 149.5
   }
 }

@@ -1,22 +1,137 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not substantively reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "fadd5866bc60e216",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identity fields match Chambers v. Maroney with official citation 399 U.S. 42.",
+          "Currency angle survives: lake treatment lists field_i_validity as good_law as of 2026-06-30, and no disclosed edge confirms that Chambers itself was overruled or abrogated.",
+          "Weight label is consistent with disclosed court fields: U.S. Supreme Court, court_level scotus."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit flags, but the disclosed judgment field still marks the case good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f18bbfe5a5ea69e2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside Lens B's charter.",
+          "No independent treatment or currency defect is created by this quote-fidelity row; its embedded treatment header matches the lake good_law field."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not substantively reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf423a24c54fd5d7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Chambers v. Maroney__a7a1a2.json treatment.derivation and treatment.edges",
+          "needs_cl": false,
+          "problem": "The good_law call survives, but the page's categorical 'No negative treatment' wording is too strong because the lake derivation still flags proposed negative-event audit work even though the recorded edges are mention-only.",
+          "proposed_fix": "Keep status good_law as of 2026-06-30, but change the prose to 'No confirmed negative treatment in the disclosed lake record; proposed negative-event edges are audit-flagged and recorded as mention-only.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment judgment says field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "The disclosed treatment edges do not show a confirmed negative relationship to Chambers; the edge relationship field is field_iii mentioned with point null.",
+          "Derivation flags audit_needed and proposed_negative_events, so the safest disclosed-evidence wording is no confirmed negative treatment, not absolute no negative treatment."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include completed audit results for the proposed negative-event lanes."
+        ],
+        "suggested_tightening": "Use no confirmed negative treatment rather than no negative treatment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Chambers v. Maroney.json\",\"reviewed\":[{\"assertion_id\":\"fadd5866bc60e216\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identity fields match Chambers v. Maroney with official citation 399 U.S. 42.\",\"Currency angle survives: lake treatment lists field_i_validity as good_law as of 2026-06-30, and no disclosed edge confirms that Chambers itself was overruled or abrogated.\",\"Weight label is consistent with disclosed court fields: U.S. Supreme Court, court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit flags, but the disclosed judgment field still marks the case good_law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f18bbfe5a5ea69e2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside Lens B's charter.\",\"No independent treatment or currency defect is created by this quote-fidelity row; its embedded treatment header matches the lake good_law field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not substantively reviewed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cf423a24c54fd5d7\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call survives, but the page's categorical 'No negative treatment' wording is too strong because the lake derivation still flags proposed negative-event audit work even though the recorded edges are mention-only.\",\"severity\":\"low\",\"proposed_fix\":\"Keep status good_law as of 2026-06-30, but change the prose to 'No confirmed negative treatment in the disclosed lake record; proposed negative-event edges are audit-flagged and recorded as mention-only.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Chambers v. Maroney__a7a1a2.json treatment.derivation and treatment.edges\"},\"reasons\":[\"Lake treatment judgment says field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"The disclosed treatment edges do not show a confirmed negative relationship to Chambers; the edge relationship field is field_iii mentioned with point null.\",\"Derivation flags audit_needed and proposed_negative_events, so the safest disclosed-evidence wording is no confirmed negative treatment, not absolute no negative treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include completed audit results for the proposed negative-event lanes.\"],\"suggested_tightening\":\"Use no confirmed negative treatment rather than no negative treatment.\"}],\"notes\":\"Lens B only; support and quote fidelity were not substantively reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:23:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f918d43b8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7c1bbad77e"
+    ],
     "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-876b4d9f",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-876b4d9f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 8b615914-7c42-474c-8c9d-b27b2fa4c079\n2026-07-10T22:23:53.822679Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:54.391503Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:55.061964Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:55.872929Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.160513Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:59.230635Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chambers v. Maroney"
+    ],
+    "tokens": {
+      "input": 256417,
+      "output": 8198,
+      "source": "codex-events",
+      "total": 264615
+    },
+    "verdict_map": {
+      "cf423a24c54fd5d7": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f18bbfe5a5ea69e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fadd5866bc60e216": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f918d43b8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7c1bbad77e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 161.5
   }
 }

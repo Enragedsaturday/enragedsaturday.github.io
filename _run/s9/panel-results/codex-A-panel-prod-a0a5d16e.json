@@ -1,13 +1,81 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Delaware v. Prouse.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertion_ids in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "1e3cdfa0bca0dd67",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Delaware v. Prouse, U.S. Supreme Court, decided 1979-03-27, year 1979.",
+          "The official citation in the lake record is 440 U.S. 648, matching the content page display citation 440 U.S. 648 (1979).",
+          "The text file header also shows 440 U.S. 648 (1979), Supreme Court of United States, decided March 27, 1979."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c00227f191e56c39",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold that except in those situations in which there is at least articulable and reasonable suspicion",
+          "locator_note": "pin-663 in lake/Delaware v. Prouse__3aad92.json; rendered Rule quote in content_page.md; actual holding in text/Delaware v. Prouse__3aad92.txt at the *663/VII paragraph.",
+          "needs_cl": false,
+          "problem": "The lake pin-663 quote is not the opinion passage at 440 U.S. 648, 663; it is harvested built-page header/background text and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace the pin-663 quote with the actual page 663 holding from the opinion text, or regenerate the pinpoint from the rendered Rule quote. Preserve the 440 U.S. 648, 663 citation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint quote begins with the built page marker and page summary text, not with the opinion's page 663 holding.",
+          "The content page's displayed Rule quote tracks the opinion text after omitting the introductory word 'Accordingly,' with bracketed capitalization, but the lake pinpoint quote does not.",
+          "Because the assertion under review is the quote-pinpoint record, the mismatch is a real disclosed-evidence defect."
+        ],
+        "residual_risks": [
+          "Do not remove the rendered Rule quote solely because the lake pinpoint metadata is bad; the opinion text supports that displayed quote."
+        ],
+        "suggested_tightening": "Populate pin-663 with the actual source sentence and add the page/star marker so quote and pincite validation target the same passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d2c7b7194ee874b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment fields in the inventory match the disclosed lake record: field_i_validity good_law, as_of_content 1979-03-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Delaware v. Prouse.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1e3cdfa0bca0dd67\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Delaware v. Prouse, U.S. Supreme Court, decided 1979-03-27, year 1979.\",\n        \"The official citation in the lake record is 440 U.S. 648, matching the content page display citation 440 U.S. 648 (1979).\",\n        \"The text file header also shows 440 U.S. 648 (1979), Supreme Court of United States, decided March 27, 1979.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c00227f191e56c39\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pin-663 quote is not the opinion passage at 440 U.S. 648, 663; it is harvested built-page header/background text and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the pin-663 quote with the actual page 663 holding from the opinion text, or regenerate the pinpoint from the rendered Rule quote. Preserve the 440 U.S. 648, 663 citation.\",\n        \"evidence_quote\": \"Accordingly, we hold that except in those situations in which there is at least articulable and reasonable suspicion\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-663 in lake/Delaware v. Prouse__3aad92.json; rendered Rule quote in content_page.md; actual holding in text/Delaware v. Prouse__3aad92.txt at the *663/VII paragraph.\"\n      },\n      \"reasons\": [\n        \"The disclosed lake pinpoint quote begins with the built page marker and page summary text, not with the opinion's page 663 holding.\",\n        \"The content page's displayed Rule quote tracks the opinion text after omitting the introductory word 'Accordingly,' with bracketed capitalization, but the lake pinpoint quote does not.\",\n        \"Because the assertion under review is the quote-pinpoint record, the mismatch is a real disclosed-evidence defect.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"Do not remove the rendered Rule quote solely because the lake pinpoint metadata is bad; the opinion text supports that displayed quote.\"\n      ],\n      \"suggested_tightening\": \"Populate pin-663 with the actual source sentence and add the page/star marker so quote and pincite validation target the same passage.\"\n    },\n    {\n      \"assertion_id\": \"1d2c7b7194ee874b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\n        \"The treatment fields in the inventory match the disclosed lake record: field_i_validity good_law, as_of_content 1979-03-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency was not independently reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 assertion_ids in group_inventory.jsonl exactly once.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:33:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b426e724f7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6f82b553f1"
+    ],
     "group_id": "_overhaul2/lake/cases/Delaware v. Prouse.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +84,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a0a5d16e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Delaware v. Prouse"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 370995,
+      "output": 7368,
+      "source": "codex-events",
+      "total": 378363
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1d2c7b7194ee874b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e3cdfa0bca0dd67": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c00227f191e56c39": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f82b553f1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b426e724f7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 143.6
   }
 }

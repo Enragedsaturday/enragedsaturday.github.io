@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Beheler.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were inventoried but not substantively reviewed for quote accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "0f5d2e19ebf8e9cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies California v. Beheler as a U.S. Supreme Court case decided 1983-07-06 with cluster_id 111023 and lead_opinion_id 9429374.",
+          "The official citation field selects 463 U.S. 1121, matching the page citation, and the lake treatment field marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-pending proposed negative hits, addressed in the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "492b7f8ba976b028",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded under lens B only; quote-fidelity and support issues are outside this panel's charter.",
+          "No independent treatment/currency assertion in this row is contradicted beyond the treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "No quote-fidelity conclusion made under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bec1c727593fa794",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded under lens B only; quote-fidelity and support issues are outside this panel's charter.",
+          "No independent treatment/currency assertion in this row is contradicted beyond the treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "No quote-fidelity conclusion made under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "729c0c481a3b0388",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 6, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md treatment section; lake.treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS calls survive, but the page's categorical 'No negative treatment' language is too strong because the lake record contains audit-pending proposed negative-treatment hits and R15 audit markers.",
+          "proposed_fix": "Keep the good_law status, but revise the page to say no verified negative treatment is recorded here, while proposed negative-treatment hits remain audit-pending; or remove the categorical 'No negative treatment' sentence until the audit is complete.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "Authority weight is consistent with the lake identity fields court='U.S. Supreme Court' and court_level='scotus'.",
+          "The disclosed progeny treatment derivation is not clean: lane1_negative and lane2_top_cited both have audit_needed=true, and treatment.edges contains 31 proposed entries with negative-looking field_ii labels while field_iii is only mentioned."
+        ],
+        "residual_risks": [
+          "Without the flagged treatment audit, the disclosed evidence does not fully support a categorical no-negative-treatment statement."
+        ],
+        "suggested_tightening": "Use: 'No verified negative treatment in this record; treatment audit flags proposed negative hits for review.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/California v. Beheler.json\",\"reviewed\":[{\"assertion_id\":\"0f5d2e19ebf8e9cf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies California v. Beheler as a U.S. Supreme Court case decided 1983-07-06 with cluster_id 111023 and lead_opinion_id 9429374.\",\"The official citation field selects 463 U.S. 1121, matching the page citation, and the lake treatment field marks the authority good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-pending proposed negative hits, addressed in the treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"492b7f8ba976b028\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded under lens B only; quote-fidelity and support issues are outside this panel's charter.\",\"No independent treatment/currency assertion in this row is contradicted beyond the treatment issue reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No quote-fidelity conclusion made under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bec1c727593fa794\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded under lens B only; quote-fidelity and support issues are outside this panel's charter.\",\"No independent treatment/currency assertion in this row is contradicted beyond the treatment issue reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No quote-fidelity conclusion made under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"729c0c481a3b0388\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS calls survive, but the page's categorical 'No negative treatment' language is too strong because the lake record contains audit-pending proposed negative-treatment hits and R15 audit markers.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status, but revise the page to say no verified negative treatment is recorded here, while proposed negative-treatment hits remain audit-pending; or remove the categorical 'No negative treatment' sentence until the audit is complete.\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 6, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment section; lake.treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"Authority weight is consistent with the lake identity fields court='U.S. Supreme Court' and court_level='scotus'.\",\"The disclosed progeny treatment derivation is not clean: lane1_negative and lane2_top_cited both have audit_needed=true, and treatment.edges contains 31 proposed entries with negative-looking field_ii labels while field_iii is only mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Without the flagged treatment audit, the disclosed evidence does not fully support a categorical no-negative-treatment statement.\"],\"suggested_tightening\":\"Use: 'No verified negative treatment in this record; treatment audit flags proposed negative hits for review.'\"}],\"notes\":\"Lens B only; quote-fidelity rows were inventoried but not substantively reviewed for quote accuracy.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:19:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a5a8a266af"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Beheler.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e93d2a21.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Beheler"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 174335,
+      "output": 6947,
+      "source": "codex-events",
+      "total": 181282
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "0f5d2e19ebf8e9cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "492b7f8ba976b028": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "729c0c481a3b0388": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bec1c727593fa794": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a5a8a266af",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 145.5
   }
 }

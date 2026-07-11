@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Byrd v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "8ae26cdd7fb1ffd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name Byrd v. United States, court U.S. Supreme Court, date_decided 2018-05-14, year 2018, docket 16-1371.",
+          "The lake official citation is 584 U.S. 395 and the listed parallel/vendor citations match the content page: 138 S. Ct. 1518, 200 L. Ed. 2d 805, and 2018 U.S. LEXIS 2803."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5108d32aa7adcf0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"quote_fidelity\": \"mismatch\"",
+          "locator_note": "lake pinpoints[] id pin-op2; content page Rule cites slip op., at 2",
+          "needs_cl": false,
+          "problem": "The pin-op2 quote stored in the lake/inventory is not the cited opinion passage. It is generated page markdown/header/background text ending at '## Rule', and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-op2 so its quote is the actual slip-opinion rule passage beginning 'The Court now holds that, as a general rule...' and map it to slip op. page 2; do not store the built page markdown as the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint quote begins with built-page text: '--- # Byrd v. United States *584 U.S. 395 (2018)*' rather than opinion text.",
+          "The cached opinion text does contain the rule passage on slip page 2, but that is not the quote stored in pin-op2."
+        ],
+        "residual_risks": [
+          "The displayed Rule quote appears supported by the cached opinion after normalizing slip-op line wrapping, but the pin object cannot verify it until regenerated."
+        ],
+        "suggested_tightening": "Use the displayed Rule quote as the pinpoint quote and store a normalized match against slip op. page 2.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6d06fd48b6610ef8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I raise no treatment finding.",
+          "The content treatment fields match the disclosed lake judgment fields: field_i_validity good_law, as_of_content 2018-05-14, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment and negative-treatment review are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Byrd v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8ae26cdd7fb1ffd9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name Byrd v. United States, court U.S. Supreme Court, date_decided 2018-05-14, year 2018, docket 16-1371.\",\"The lake official citation is 584 U.S. 395 and the listed parallel/vendor citations match the content page: 138 S. Ct. 1518, 200 L. Ed. 2d 805, and 2018 U.S. LEXIS 2803.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b5108d32aa7adcf0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op2 quote stored in the lake/inventory is not the cited opinion passage. It is generated page markdown/header/background text ending at '## Rule', and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-op2 so its quote is the actual slip-opinion rule passage beginning 'The Court now holds that, as a general rule...' and map it to slip op. page 2; do not store the built page markdown as the pinpoint quote.\",\"evidence_quote\":\"\\\"quote_fidelity\\\": \\\"mismatch\\\"\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-op2; content page Rule cites slip op., at 2\"},\"reasons\":[\"The disclosed lake pinpoint quote begins with built-page text: '--- # Byrd v. United States *584 U.S. 395 (2018)*' rather than opinion text.\",\"The cached opinion text does contain the rule passage on slip page 2, but that is not the quote stored in pin-op2.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed Rule quote appears supported by the cached opinion after normalizing slip-op line wrapping, but the pin object cannot verify it until regenerated.\"],\"suggested_tightening\":\"Use the displayed Rule quote as the pinpoint quote and store a normalized match against slip op. page 2.\"},{\"assertion_id\":\"6d06fd48b6610ef8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so I raise no treatment finding.\",\"The content treatment fields match the disclosed lake judgment fields: field_i_validity good_law, as_of_content 2018-05-14, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and negative-treatment review are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:17:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b0342029f0"
+    ],
     "group_id": "_overhaul2/lake/cases/Byrd v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-33d5a6e3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Byrd v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 288232,
+      "output": 5943,
+      "source": "codex-events",
+      "total": 294175
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 8.0
+    "verdict_map": {
+      "6d06fd48b6610ef8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8ae26cdd7fb1ffd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5108d32aa7adcf0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b0342029f0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 126.2
   }
 }

@@ -1,22 +1,201 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Connally v. Georgia.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 assertion rows in group_inventory.jsonl. No black_letter or support-dimension rows were present for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "ca4d4d32e8ae1351",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is Connally v. Georgia, U.S. Supreme Court, decided 1977-01-10, docket 76-461.",
+          "Lake official citation is 429 U.S. 245 and the displayed citation in content_page.md is 429 U.S. 245 (1977).",
+          "Parallel and vendor citations in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28518b2fa00b62f0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We therefore hold that the issuance of the search warrant by the justice of the peace in Connally’s case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments of the United States Constitution.",
+          "locator_note": "text/Connally v. Georgia__8dd68a.txt, page marker *251",
+          "needs_cl": false,
+          "problem": "The quoted text is not character-faithful. The opinion says 'We therefore hold,' uses Connally’s curly apostrophe, and continues 'of the United States Constitution'; the page/lake quote changes the verb to 'h[e]ld,' uses a straight apostrophe, and omits the final constitutional phrase without ellipsis.",
+          "proposed_fix": "Replace the quote with the exact sentence: “We therefore hold that the issuance of the search warrant by the justice of the peace in Connally’s case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments of the United States Constitution.”",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin itself marks quote_fidelity as mismatch.",
+          "The exact string 'h[e]ld that the issuance' appears in content_page.md and lake JSON but not in the opinion text.",
+          "The correct holding sentence is available in the disclosed text at the *251 passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the sentence exactly or paraphrase it without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3de19a9537a5d47",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "where the defendant is subjected to what surely is judicial action by an officer of a court who has “a direct, personal, substantial, pecuniary interest” in his conclusion to issue or to deny the warrant.",
+          "locator_note": "text/Connally v. Georgia__8dd68a.txt, page marker *250",
+          "needs_cl": false,
+          "problem": "The quoted fragment is substantively on the right passage, but it is not character-faithful because it changes the opinion’s quoted phrase from curly double quotation marks to single quotation marks.",
+          "proposed_fix": "Use an exact excerpt, preferably as a block quote: “where the defendant is subjected to what surely is judicial action by an officer of a court who has “a direct, personal, substantial, pecuniary interest” in his conclusion to issue or to deny the warrant.”",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin itself marks quote_fidelity as mismatch.",
+          "The disclosed text uses double curly quotation marks around 'a direct, personal, substantial, pecuniary interest'; the page/lake quote uses single quotation marks.",
+          "The pin lands on the correct *250 passage, but the quote as framed is not exact."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Avoid nested inline quotation marks by using a block quote or by paraphrasing the sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e5671eb2e324286e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action. The situation, again, is one which offers “a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.”",
+          "locator_note": "text/Connally v. Georgia__8dd68a.txt, page marker *250; lake pin-250 quote begins with the content page header",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-250 is corrupted: it contains the built page header and background text, not the Connally opinion passage. The page’s quoted Ward/Tumey language also alters the opinion’s wording by changing 'or which might lead' into '[that] might lead.'",
+          "proposed_fix": "Replace the pin quote with the actual *250 passage and revise the page quote to match it exactly: “His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action. The situation, again, is one which offers “a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.””",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin itself marks quote_fidelity as mismatch.",
+          "The stored pin quote begins with page-material text rather than opinion text.",
+          "The disclosed opinion text at *250 supports the rule only if quoted accurately."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Separate the two quoted clauses and use exact ellipses only where the opinion’s words are omitted.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28d3835b9eb63650",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1977-01-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Connally v. Georgia.json\",\"reviewed\":[{\"assertion_id\":\"ca4d4d32e8ae1351\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is Connally v. Georgia, U.S. Supreme Court, decided 1977-01-10, docket 76-461.\",\"Lake official citation is 429 U.S. 245 and the displayed citation in content_page.md is 429 U.S. 245 (1977).\",\"Parallel and vendor citations in the payload match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"28518b2fa00b62f0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted text is not character-faithful. The opinion says 'We therefore hold,' uses Connally’s curly apostrophe, and continues 'of the United States Constitution'; the page/lake quote changes the verb to 'h[e]ld,' uses a straight apostrophe, and omits the final constitutional phrase without ellipsis.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the quote with the exact sentence: “We therefore hold that the issuance of the search warrant by the justice of the peace in Connally’s case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments of the United States Constitution.”\",\"evidence_quote\":\"We therefore hold that the issuance of the search warrant by the justice of the peace in Connally’s case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments of the United States Constitution.\",\"needs_cl\":false,\"locator_note\":\"text/Connally v. Georgia__8dd68a.txt, page marker *251\"},\"reasons\":[\"The lake pin itself marks quote_fidelity as mismatch.\",\"The exact string 'h[e]ld that the issuance' appears in content_page.md and lake JSON but not in the opinion text.\",\"The correct holding sentence is available in the disclosed text at the *251 passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the sentence exactly or paraphrase it without quotation marks.\"},{\"assertion_id\":\"a3de19a9537a5d47\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is substantively on the right passage, but it is not character-faithful because it changes the opinion’s quoted phrase from curly double quotation marks to single quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Use an exact excerpt, preferably as a block quote: “where the defendant is subjected to what surely is judicial action by an officer of a court who has “a direct, personal, substantial, pecuniary interest” in his conclusion to issue or to deny the warrant.”\",\"evidence_quote\":\"where the defendant is subjected to what surely is judicial action by an officer of a court who has “a direct, personal, substantial, pecuniary interest” in his conclusion to issue or to deny the warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Connally v. Georgia__8dd68a.txt, page marker *250\"},\"reasons\":[\"The lake pin itself marks quote_fidelity as mismatch.\",\"The disclosed text uses double curly quotation marks around 'a direct, personal, substantial, pecuniary interest'; the page/lake quote uses single quotation marks.\",\"The pin lands on the correct *250 passage, but the quote as framed is not exact.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Avoid nested inline quotation marks by using a block quote or by paraphrasing the sentence.\"},{\"assertion_id\":\"e5671eb2e324286e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-250 is corrupted: it contains the built page header and background text, not the Connally opinion passage. The page’s quoted Ward/Tumey language also alters the opinion’s wording by changing 'or which might lead' into '[that] might lead.'\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin quote with the actual *250 passage and revise the page quote to match it exactly: “His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action. The situation, again, is one which offers “a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.””\",\"evidence_quote\":\"His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action. The situation, again, is one which offers “a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.”\",\"needs_cl\":false,\"locator_note\":\"text/Connally v. Georgia__8dd68a.txt, page marker *250; lake pin-250 quote begins with the content page header\"},\"reasons\":[\"The lake pin itself marks quote_fidelity as mismatch.\",\"The stored pin quote begins with page-material text rather than opinion text.\",\"The disclosed opinion text at *250 supports the rule only if quoted accurately.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Separate the two quoted clauses and use exact ellipses only where the opinion’s words are omitted.\"},{\"assertion_id\":\"28d3835b9eb63650\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1977-01-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently assessed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 assertion rows in group_inventory.jsonl. No black_letter or support-dimension rows were present for this group.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:28:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3d7c149cba",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-fdeb6db837",
+      "F-S9-PR-71d16420d2",
+      "F-S9-PR-7d11eed64b"
+    ],
     "group_id": "_overhaul2/lake/cases/Connally v. Georgia.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-315be9ca",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-315be9ca.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:27.085526Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:27.897067Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.878920Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:30.162840Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:32.078322Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:35.775007Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connally v. Georgia"
+    ],
+    "tokens": {
+      "input": 327122,
+      "output": 8206,
+      "source": "codex-events",
+      "total": 335328
+    },
+    "verdict_map": {
+      "28518b2fa00b62f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "28d3835b9eb63650": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3de19a9537a5d47": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ca4d4d32e8ae1351": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5671eb2e324286e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fdeb6db837",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-71d16420d2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7d11eed64b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3d7c149cba",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 168.4
   }
 }

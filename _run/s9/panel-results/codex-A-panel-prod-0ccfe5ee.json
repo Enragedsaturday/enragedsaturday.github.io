@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chambers v. Florida.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No treatment finding is made beyond field-consistency under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "10df84d0bfdd0fe7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Chambers v. Florida, U.S. Supreme Court, decided 1940-02-12, with official citation 309 U.S. 227.",
+          "The content page citation, court, year, parallel citations, and neutral/vendor citation match the disclosed lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00c61ae0fb80b1c5",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "To permit human lives to be forfeited upon confessions thus obtained would make of the constitutional requirement of due process of law a meaningless symbol.",
+          "locator_note": "content_page.md cites this sentence to 309 U.S. 227, 240, and text/Chambers v. Florida__1979aa.txt contains it at the page-240 passage; lake pin-240 instead stores markdown beginning with '--- # Chambers v. Florida'.",
+          "needs_cl": false,
+          "problem": "The reviewed pin-240 payload quote is not the Chambers opinion passage; it is harvested page/frontmatter/prose text and the lake itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-240's quote with the actual page-240 opinion sentence and set the locator metadata to star page 240 after validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual displayed pin-240 quote in content_page.md is present in the opinion text at the star-page-240 passage.",
+          "The lake/group payload for pin-240 is a different string and therefore cannot stand as a faithful quote pinpoint."
+        ],
+        "residual_risks": [
+          "The page prose's displayed quotation appears faithful; the defect is the stored/reviewed pinpoint payload."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence as the pin payload and preserve the 309 U.S. 227, 240 citation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cc724812ba16c43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-241 quote in the payload matches the same sentence in the cached opinion text.",
+          "The lake record marks pin-241 as star-verified with star_marker 241 and quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "375a5f8426b5768f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency merits.",
+          "The treatment field values in the payload match the disclosed lake record and content page fields: good_law, as_of_content 1940-02-12, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Chambers v. Florida.json\",\"reviewed\":[{\"assertion_id\":\"10df84d0bfdd0fe7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Chambers v. Florida, U.S. Supreme Court, decided 1940-02-12, with official citation 309 U.S. 227.\",\"The content page citation, court, year, parallel citations, and neutral/vendor citation match the disclosed lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"00c61ae0fb80b1c5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-240 payload quote is not the Chambers opinion passage; it is harvested page/frontmatter/prose text and the lake itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-240's quote with the actual page-240 opinion sentence and set the locator metadata to star page 240 after validation.\",\"evidence_quote\":\"To permit human lives to be forfeited upon confessions thus obtained would make of the constitutional requirement of due process of law a meaningless symbol.\",\"needs_cl\":false,\"locator_note\":\"content_page.md cites this sentence to 309 U.S. 227, 240, and text/Chambers v. Florida__1979aa.txt contains it at the page-240 passage; lake pin-240 instead stores markdown beginning with '--- # Chambers v. Florida'.\"},\"reasons\":[\"The actual displayed pin-240 quote in content_page.md is present in the opinion text at the star-page-240 passage.\",\"The lake/group payload for pin-240 is a different string and therefore cannot stand as a faithful quote pinpoint.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page prose's displayed quotation appears faithful; the defect is the stored/reviewed pinpoint payload.\"],\"suggested_tightening\":\"Use the exact opinion sentence as the pin payload and preserve the 309 U.S. 227, 240 citation.\"},{\"assertion_id\":\"7cc724812ba16c43\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-241 quote in the payload matches the same sentence in the cached opinion text.\",\"The lake record marks pin-241 as star-verified with star_marker 241 and quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"375a5f8426b5768f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not assess treatment or currency merits.\",\"The treatment field values in the payload match the disclosed lake record and content page fields: good_law, as_of_content 1940-02-12, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No treatment finding is made beyond field-consistency under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:51-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:22:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-07b68254d5"
+    ],
     "group_id": "_overhaul2/lake/cases/Chambers v. Florida.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0ccfe5ee",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0ccfe5ee.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:42.260497Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:42.872733Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:43.768991Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:45.067651Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:47.104319Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:50.762118Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chambers v. Florida"
+    ],
+    "tokens": {
+      "input": 212690,
+      "output": 5617,
+      "source": "codex-events",
+      "total": 218307
+    },
+    "verdict_map": {
+      "00c61ae0fb80b1c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "10df84d0bfdd0fe7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "375a5f8426b5768f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cc724812ba16c43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-07b68254d5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 118.0
   }
 }

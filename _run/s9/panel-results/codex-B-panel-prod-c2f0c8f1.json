@@ -1,22 +1,104 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ex parte Jackson.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "960b1cc926e1cb00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Ex Parte Jackson as a U.S. Supreme Court case with cluster_id 89759 and date_decided 1878-05-13.",
+          "The lake citation record selects 96 U.S. 727 as the official citation and also lists 24 L. Ed. 877 and 1877 U.S. LEXIS 1718."
+        ],
+        "residual_risks": [
+          "This existence/citation assertion does not itself prove current good-law status; treatment remains separately unverified."
+        ],
+        "suggested_tightening": "Keep existence/citation separate from any live-law or good-law claim.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38d51c62e354a5db",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md treatment header and Treatment & subsequent history section; lake/Ex parte Jackson__0a20c2.json treatment and progeny fields",
+          "needs_cl": true,
+          "problem": "The built page makes positive treatment claims that Ex parte Jackson is still good law, not superseded, never overruled, and foundational, but the disclosed lake treatment record is only an unverified frontier stub with no treatment derivation or progeny support.",
+          "proposed_fix": "Downgrade the treatment display and body text to unverified only, or supply promoted treatment/progeny evidence before saying still good law, never overruled, or not superseded.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, composite_basis is unverified, as_of_content and as_of_treatment are null, and treatment.edges is empty.",
+          "Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges empty.",
+          "The page nevertheless says 'still good law' and 'never been overruled,' which cannot be verified from the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "The page may be substantively correct after external citator review, but the disclosed evidentiary record does not support the positive treatment call."
+        ],
+        "suggested_tightening": "Replace the treatment paragraph with a strictly unverified historical-origin note until S9/promotion supplies treatment and progeny evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Ex parte Jackson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"960b1cc926e1cb00\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Ex Parte Jackson as a U.S. Supreme Court case with cluster_id 89759 and date_decided 1878-05-13.\",\n        \"The lake citation record selects 96 U.S. 727 as the official citation and also lists 24 L. Ed. 877 and 1877 U.S. LEXIS 1718.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This existence/citation assertion does not itself prove current good-law status; treatment remains separately unverified.\"\n      ],\n      \"suggested_tightening\": \"Keep existence/citation separate from any live-law or good-law claim.\"\n    },\n    {\n      \"assertion_id\": \"38d51c62e354a5db\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The built page makes positive treatment claims that Ex parte Jackson is still good law, not superseded, never overruled, and foundational, but the disclosed lake treatment record is only an unverified frontier stub with no treatment derivation or progeny support.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Downgrade the treatment display and body text to unverified only, or supply promoted treatment/progeny evidence before saying still good law, never overruled, or not superseded.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment header and Treatment & subsequent history section; lake/Ex parte Jackson__0a20c2.json treatment and progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is unverified, composite_basis is unverified, as_of_content and as_of_treatment are null, and treatment.edges is empty.\",\n        \"Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges empty.\",\n        \"The page nevertheless says 'still good law' and 'never been overruled,' which cannot be verified from the disclosed treatment fields.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The page may be substantively correct after external citator review, but the disclosed evidentiary record does not support the positive treatment call.\"\n      ],\n      \"suggested_tightening\": \"Replace the treatment paragraph with a strictly unverified historical-origin note until S9/promotion supplies treatment and progeny evidence.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:35:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ee3c0ccd0c"
+    ],
     "group_id": "_overhaul2/lake/cases/Ex parte Jackson.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c2f0c8f1",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c2f0c8f1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:25.874061Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:26.645147Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:27.646138Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:29.038806Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:31.000196Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:34.845156Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ex parte Jackson"
+    ],
+    "tokens": {
+      "input": 118245,
+      "output": 3543,
+      "source": "codex-events",
+      "total": 121788
+    },
+    "verdict_map": {
+      "38d51c62e354a5db": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "960b1cc926e1cb00": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ee3c0ccd0c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 74.5
   }
 }

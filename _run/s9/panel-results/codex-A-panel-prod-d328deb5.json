@@ -1,22 +1,170 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Duckworth v. Eagan.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows exactly once under Lens A. Only pin-203 fails quote-fidelity review.",
+    "reviewed": [
+      {
+        "assertion_id": "2b8e1f2f107a8556",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id Duckworth v. Eagan and identifies the court as U.S. Supreme Court, decided 1989-06-26, year 1989.",
+          "The official citation in the lake record is 492 U.S. 195, matching the content page display citation 492 U.S. 195 (1989).",
+          "The listed parallel and vendor-neutral citations in the payload match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27fa2a5b2fc4c9fb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "are inadequate under *Miranda v. Arizona*. ## Rule No. Warnings are measured for whether they reasonably convey the *Miranda* rights, not for verbatim precision.",
+          "locator_note": "lake pinpoints[id=pin-203]; content_page.md Rule paragraph ^pin-203",
+          "needs_cl": false,
+          "problem": "pin-203's stored quote is not a verbatim opinion passage; it splices the content page's Issue/Rule text, and the lake record itself marks quote_fidelity as mismatch with no star marker or position.",
+          "proposed_fix": "Replace pin-203 with the actual page-203 opinion passage beginning with 'Reviewing courts therefore need not examine...' and verify a star/page position, or remove the pinpoint until it can be verified.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is marked quote_fidelity=mismatch in the disclosed lake record.",
+          "The text file's page-203 passage contains the reviewing-courts/reasonably-convey language, not the payload quote that starts in the content page Issue section.",
+          "Because this is a verbatim-quote assertion, the mismatch defeats the assertion as framed."
+        ],
+        "residual_risks": [
+          "The underlying rule paragraph appears supportable from the opinion text, so the repair should replace the bad pin text rather than delete the rule proposition."
+        ],
+        "suggested_tightening": "Use the page-203 opinion sentence as the pin quote and preserve the 492 U.S. at 203 cite only after star/page verification.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a525f83d89caa24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote 'before [the police] ask[ed] [him] questions' appears in the opinion text on the page-205 passage.",
+          "The lake record marks pin-205 as star-verified with star_marker 205 and quote_fidelity matched.",
+          "The content page uses the same quoted phrase in the Application section tied to pin-205."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78c00facd0094a84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote 'does not require that attorneys be producible on call,' appears in the opinion text at the page-204 passage.",
+          "The lake record marks pin-204 as star-verified with star_marker 204 and quote_fidelity matched.",
+          "The content page uses the same quoted phrase in the Rule section tied to pin-204."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8794bf352f51d777",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The payload's treatment values match the lake treatment judgment fields: good_law, as_of_content 1989-06-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Duckworth v. Eagan.json\",\"reviewed\":[{\"assertion_id\":\"2b8e1f2f107a8556\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id Duckworth v. Eagan and identifies the court as U.S. Supreme Court, decided 1989-06-26, year 1989.\",\"The official citation in the lake record is 492 U.S. 195, matching the content page display citation 492 U.S. 195 (1989).\",\"The listed parallel and vendor-neutral citations in the payload match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"27fa2a5b2fc4c9fb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-203's stored quote is not a verbatim opinion passage; it splices the content page's Issue/Rule text, and the lake record itself marks quote_fidelity as mismatch with no star marker or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-203 with the actual page-203 opinion passage beginning with 'Reviewing courts therefore need not examine...' and verify a star/page position, or remove the pinpoint until it can be verified.\",\"evidence_quote\":\"are inadequate under *Miranda v. Arizona*. ## Rule No. Warnings are measured for whether they reasonably convey the *Miranda* rights, not for verbatim precision.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-203]; content_page.md Rule paragraph ^pin-203\"},\"reasons\":[\"The payload quote is marked quote_fidelity=mismatch in the disclosed lake record.\",\"The text file's page-203 passage contains the reviewing-courts/reasonably-convey language, not the payload quote that starts in the content page Issue section.\",\"Because this is a verbatim-quote assertion, the mismatch defeats the assertion as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule paragraph appears supportable from the opinion text, so the repair should replace the bad pin text rather than delete the rule proposition.\"],\"suggested_tightening\":\"Use the page-203 opinion sentence as the pin quote and preserve the 492 U.S. at 203 cite only after star/page verification.\"},{\"assertion_id\":\"6a525f83d89caa24\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote 'before [the police] ask[ed] [him] questions' appears in the opinion text on the page-205 passage.\",\"The lake record marks pin-205 as star-verified with star_marker 205 and quote_fidelity matched.\",\"The content page uses the same quoted phrase in the Application section tied to pin-205.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"78c00facd0094a84\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote 'does not require that attorneys be producible on call,' appears in the opinion text at the page-204 passage.\",\"The lake record marks pin-204 as star-verified with star_marker 204 and quote_fidelity matched.\",\"The content page uses the same quoted phrase in the Rule section tied to pin-204.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8794bf352f51d777\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"The payload's treatment values match the lake treatment judgment fields: good_law, as_of_content 1989-06-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 group_inventory rows exactly once under Lens A. Only pin-203 fails quote-fidelity review.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:35:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-847809d607"
+    ],
     "group_id": "_overhaul2/lake/cases/Duckworth v. Eagan.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d328deb5",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d328deb5.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:28.237788Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:28.970842Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:30.196692Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:31.494283Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:33.517016Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:37.273717Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Duckworth v. Eagan"
+    ],
+    "tokens": {
+      "input": 168610,
+      "output": 6240,
+      "source": "codex-events",
+      "total": 174850
+    },
+    "verdict_map": {
+      "27fa2a5b2fc4c9fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2b8e1f2f107a8556": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a525f83d89caa24": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78c00facd0094a84": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8794bf352f51d777": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-847809d607",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 120.0
   }
 }

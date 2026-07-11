@@ -1,22 +1,146 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Davis v. Mississippi.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows under support/quote-fidelity lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "643aeca1ecd3ef3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record is verified for Davis v. Mississippi and identifies the court as U.S. Supreme Court with year 1969.",
+          "The official citation in the lake record is 394 U.S. 721, matching the content-page display citation."
+        ],
+        "residual_risks": [
+          "The cached opinion text says Decided April 22, 1969, while the lake/content date_decided field says 1969-04-23; that date field is outside this citation-existence assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90d4ee7c79c90c77",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text.",
+          "The lake pinpoint for pin-727 contains the same quote, has quote_fidelity marked matched, and the quoted sentence appears on the star-pagination page 727."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e09707cd1e97cac7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Nothing is more clear than that the Fourth Amendment was meant to prevent wholesale intrusions upon the personal security of our citizenry, whether these intrusions <span class=\"star-pagination\">*727</span> be termed \"arrests\" or \"investigatory detentions.\"",
+          "locator_note": "text/Davis v. Mississippi__cf368f.txt line 21; lake/Davis v. Mississippi__cf368f.json pinpoints[0]",
+          "needs_cl": false,
+          "problem": "The pin-726 stored quote is not a verbatim opinion passage; it is copied from the content page header/background/rule text and is marked mismatch/slip-only in the lake record. The actual opinion passage at 726-727 is the Fourth Amendment sentence beginning 'Nothing is more clear...'.",
+          "proposed_fix": "Replace pin-726.quote with the actual opinion sentence, preserving source quotation marks or explicitly normalizing HTML/page-break markup, and set a validated star/page locator for 726-727.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-726 quote begins with content-page markdown/front matter text, not with the cited opinion passage.",
+          "The lake record itself marks pin-726 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The content-page quote also changes the cached opinion's internal double quotation marks around arrests/investigatory detentions to single quotation marks."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a separate support-summary field for page prose; reserve pinpoints[].quote for source-text excerpts only.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ada5117ad37d467",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A, so no treatment attack is made.",
+          "The asserted treatment fields match the disclosed lake record and content-page treatment fields."
+        ],
+        "residual_risks": [
+          "Substantive good-law currency is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Davis v. Mississippi.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"643aeca1ecd3ef3b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The disclosed lake record is verified for Davis v. Mississippi and identifies the court as U.S. Supreme Court with year 1969.\",\n        \"The official citation in the lake record is 394 U.S. 721, matching the content-page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached opinion text says Decided April 22, 1969, while the lake/content date_decided field says 1969-04-23; that date field is outside this citation-existence assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"90d4ee7c79c90c77\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the cached opinion text.\",\n        \"The lake pinpoint for pin-727 contains the same quote, has quote_fidelity marked matched, and the quoted sentence appears on the star-pagination page 727.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e09707cd1e97cac7\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-726 stored quote is not a verbatim opinion passage; it is copied from the content page header/background/rule text and is marked mismatch/slip-only in the lake record. The actual opinion passage at 726-727 is the Fourth Amendment sentence beginning 'Nothing is more clear...'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-726.quote with the actual opinion sentence, preserving source quotation marks or explicitly normalizing HTML/page-break markup, and set a validated star/page locator for 726-727.\",\n        \"evidence_quote\": \"Nothing is more clear than that the Fourth Amendment was meant to prevent wholesale intrusions upon the personal security of our citizenry, whether these intrusions <span class=\\\"star-pagination\\\">*727</span> be termed \\\"arrests\\\" or \\\"investigatory detentions.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Davis v. Mississippi__cf368f.txt line 21; lake/Davis v. Mississippi__cf368f.json pinpoints[0]\"\n      },\n      \"reasons\": [\n        \"The lake pin-726 quote begins with content-page markdown/front matter text, not with the cited opinion passage.\",\n        \"The lake record itself marks pin-726 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\n        \"The content-page quote also changes the cached opinion's internal double quotation marks around arrests/investigatory detentions to single quotation marks.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use a separate support-summary field for page prose; reserve pinpoints[].quote for source-text excerpts only.\"\n    },\n    {\n      \"assertion_id\": \"8ada5117ad37d467\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency merits are outside lens A, so no treatment attack is made.\",\n        \"The asserted treatment fields match the disclosed lake record and content-page treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive good-law currency is reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows under support/quote-fidelity lens A only.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:31:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bd2880acde"
+    ],
     "group_id": "_overhaul2/lake/cases/Davis v. Mississippi.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-05fc5cab",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-05fc5cab.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 62cc3ba6-a1b1-4e78-93c8-9eac9644a125\n2026-07-10T22:24:53.938435Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.393070Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.032263Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.987343Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:57.356507Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:59.399000Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. Mississippi"
+    ],
+    "tokens": {
+      "input": 135622,
+      "output": 5632,
+      "source": "codex-events",
+      "total": 141254
+    },
+    "verdict_map": {
+      "643aeca1ecd3ef3b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8ada5117ad37d467": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90d4ee7c79c90c77": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e09707cd1e97cac7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bd2880acde",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 112.9
   }
 }

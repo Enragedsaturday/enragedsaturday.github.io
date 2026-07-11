@@ -1,22 +1,180 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Cupp v. Murphy.json",
+    "lens": "A",
+    "notes": "No treatment/currency finding raised under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "bcf48abfad68e44e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name Cupp v. Murphy, court U.S. Supreme Court, date_decided 1973-05-29, year 1973, and docket 72-212.",
+          "The lake official citation is 412 U.S. 291, with parallel citations 93 S. Ct. 2000 and 36 L. Ed. 2d 900, matching the content page citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "487d580dae3594f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Cupp v. Murphy__10fa23.txt immediately after the *296 star marker.",
+          "The lake pinpoint for pin-296a repeats the same quote, marks quote_fidelity as matched, and assigns star_marker 296."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4abda25886bef47c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the search of the respondent's fingernails went beyond mere \"physical characteristics. . . constantly exposed to the public,\"",
+          "locator_note": "The physical-characteristics passage appears before the *296 marker; the Chimel-rationale sentence appears after the *296 marker.",
+          "needs_cl": false,
+          "problem": "pin-296 is not a faithful opinion quote. The harvested lake quote is a collapsed excerpt from the built page, not the opinion, and the content pin also conflates a page *295 quote with a page *296 quote under a single 412 U.S. at 296 pincite. The first quoted phrase also drops source punctuation.",
+          "proposed_fix": "Split or repair the pin. Cite the physical-characteristics quote to 412 U.S. at 295 using the exact punctuation, and cite the Chimel-rationale sentence separately to 412 U.S. at 296.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-296 quote_fidelity as mismatch and gives no star_marker, position, or fragment.",
+          "The disclosed opinion text supports the underlying rule, but not the pin as framed or the exact first quotation as rendered in the content page."
+        ],
+        "residual_risks": [
+          "The underlying proposition is supported if the quotes and pincites are repaired."
+        ],
+        "suggested_tightening": "Use two pinpoints: 412 U.S. at 295 for the search-characterization quote and 412 U.S. at 296 for the narrow Chimel-rationale quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4c07c5b98842db72",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we do not hold that a full <i><span class=\"citation\" data-id=\"9841975\"><a href=\"/opinion/107979/chimel-v-california/\" aria-description=\"Citation for case: Chimel v. California\">Chimel</a></span></i> search would have been justified in this case without a formal arrest and without a warrant.",
+          "locator_note": "text/Cupp v. Murphy__10fa23.txt line containing the *296 marker.",
+          "needs_cl": false,
+          "problem": "The quoted words are supported at *296, but the pin is not verification-clean: the lake record marks it mismatch/slip-only and lacks a star_marker, position, or fragment. The stored quote also uses Markdown italics inside the quoted text rather than the opinion text's encoded citation/italic markup.",
+          "proposed_fix": "Set star_marker 296 and either normalize the stored quote to rendered text without Markdown asterisks or store a verifier-compatible exact source quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion states the same sentence at page *296 after the word Accordingly.",
+          "The content's proposition that the Court did not authorize a full Chimel search without arrest and warrant follows from that sentence."
+        ],
+        "residual_risks": [
+          "If the corpus treats Markdown italics as acceptable quote normalization, only the lake verification metadata needs repair."
+        ],
+        "suggested_tightening": "Use an explicit 412 U.S. at 296 pincite rather than bare Id. for this standalone pin.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4bc1e9b48361d12",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1973-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Lens A records this field match only; treatment currency is outside this lens."
+        ],
+        "residual_risks": [
+          "Treatment and currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Cupp v. Murphy.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"bcf48abfad68e44e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record gives case_name Cupp v. Murphy, court U.S. Supreme Court, date_decided 1973-05-29, year 1973, and docket 72-212.\",\n        \"The lake official citation is 412 U.S. 291, with parallel citations 93 S. Ct. 2000 and 36 L. Ed. 2d 900, matching the content page citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"487d580dae3594f2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in text/Cupp v. Murphy__10fa23.txt immediately after the *296 star marker.\",\n        \"The lake pinpoint for pin-296a repeats the same quote, marks quote_fidelity as matched, and assigns star_marker 296.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4abda25886bef47c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-296 is not a faithful opinion quote. The harvested lake quote is a collapsed excerpt from the built page, not the opinion, and the content pin also conflates a page *295 quote with a page *296 quote under a single 412 U.S. at 296 pincite. The first quoted phrase also drops source punctuation.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Split or repair the pin. Cite the physical-characteristics quote to 412 U.S. at 295 using the exact punctuation, and cite the Chimel-rationale sentence separately to 412 U.S. at 296.\",\n        \"evidence_quote\": \"the search of the respondent's fingernails went beyond mere \\\"physical characteristics. . . constantly exposed to the public,\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The physical-characteristics passage appears before the *296 marker; the Chimel-rationale sentence appears after the *296 marker.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-296 quote_fidelity as mismatch and gives no star_marker, position, or fragment.\",\n        \"The disclosed opinion text supports the underlying rule, but not the pin as framed or the exact first quotation as rendered in the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying proposition is supported if the quotes and pincites are repaired.\"\n      ],\n      \"suggested_tightening\": \"Use two pinpoints: 412 U.S. at 295 for the search-characterization quote and 412 U.S. at 296 for the narrow Chimel-rationale quote.\"\n    },\n    {\n      \"assertion_id\": \"4c07c5b98842db72\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words are supported at *296, but the pin is not verification-clean: the lake record marks it mismatch/slip-only and lacks a star_marker, position, or fragment. The stored quote also uses Markdown italics inside the quoted text rather than the opinion text's encoded citation/italic markup.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Set star_marker 296 and either normalize the stored quote to rendered text without Markdown asterisks or store a verifier-compatible exact source quote.\",\n        \"evidence_quote\": \"we do not hold that a full <i><span class=\\\"citation\\\" data-id=\\\"9841975\\\"><a href=\\\"/opinion/107979/chimel-v-california/\\\" aria-description=\\\"Citation for case: Chimel v. California\\\">Chimel</a></span></i> search would have been justified in this case without a formal arrest and without a warrant.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Cupp v. Murphy__10fa23.txt line containing the *296 marker.\"\n      },\n      \"reasons\": [\n        \"The opinion states the same sentence at page *296 after the word Accordingly.\",\n        \"The content's proposition that the Court did not authorize a full Chimel search without arrest and warrant follows from that sentence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus treats Markdown italics as acceptable quote normalization, only the lake verification metadata needs repair.\"\n      ],\n      \"suggested_tightening\": \"Use an explicit 412 U.S. at 296 pincite rather than bare Id. for this standalone pin.\"\n    },\n    {\n      \"assertion_id\": \"d4bc1e9b48361d12\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1973-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Lens A records this field match only; treatment currency is outside this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency remain for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No treatment/currency finding raised under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:32:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-fca1a0d449",
+      "F-S9-PR-3139f194b2"
+    ],
     "group_id": "_overhaul2/lake/cases/Cupp v. Murphy.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-2c8a086c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2c8a086c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 19bb8720-d3c2-43a0-a733-d04d82101cfe\n2026-07-10T22:24:53.598892Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.250503Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.115280Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:56.057116Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:57.464331Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:59.721581Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cupp v. Murphy"
+    ],
+    "tokens": {
+      "input": 219129,
+      "output": 11188,
+      "source": "codex-events",
+      "total": 230317
+    },
+    "verdict_map": {
+      "487d580dae3594f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4abda25886bef47c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4c07c5b98842db72": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bcf48abfad68e44e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d4bc1e9b48361d12": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fca1a0d449",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3139f194b2",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 241.7
   }
 }

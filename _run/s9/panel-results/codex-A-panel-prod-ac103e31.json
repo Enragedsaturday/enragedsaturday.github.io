@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Colorado v. Connelly.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "0acd0ab3195fb83d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Colorado v. Connelly as a verified U.S. Supreme Court case decided 1986-12-10.",
+          "The official citation 479 U.S. 157 and listed parallel/vendor citations match the lake citations payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ef146ff8f49cc58",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "coercive police activity is a necessary predicate to the finding that a confession is not “voluntary”",
+          "locator_note": "pin-167; text page marker *167 immediately precedes the paragraph containing the holding sentence.",
+          "needs_cl": false,
+          "problem": "pin-167's stored quote is not character-faithful to the opinion text; it captures issue/rule page text instead of the page-167 holding sentence, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-167 from the actual page-167 holding sentence beginning with 'We hold that coercive police activity...' and preserve the source quotation marks or apply a documented normalization policy.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the holding sentence on page 167, while the inventory/lake quote is a splice of the Issue and Rule prose from the built page.",
+          "The lake pinpoint payload explicitly records quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The substantive rule appears supported, but this assertion fails the requested character-fidelity review."
+        ],
+        "suggested_tightening": "Separate generated issue/rule prose from verbatim pin quotes so pinpoints store only opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b23b0137243b9fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The inventory treatment fields match the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point."
+        ],
+        "residual_risks": [
+          "Treatment currency was not assessed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Colorado v. Connelly.json\",\"reviewed\":[{\"assertion_id\":\"0acd0ab3195fb83d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Colorado v. Connelly as a verified U.S. Supreme Court case decided 1986-12-10.\",\"The official citation 479 U.S. 157 and listed parallel/vendor citations match the lake citations payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9ef146ff8f49cc58\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-167's stored quote is not character-faithful to the opinion text; it captures issue/rule page text instead of the page-167 holding sentence, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Regenerate pin-167 from the actual page-167 holding sentence beginning with 'We hold that coercive police activity...' and preserve the source quotation marks or apply a documented normalization policy.\",\"evidence_quote\":\"coercive police activity is a necessary predicate to the finding that a confession is not “voluntary”\",\"needs_cl\":false,\"locator_note\":\"pin-167; text page marker *167 immediately precedes the paragraph containing the holding sentence.\"},\"reasons\":[\"The disclosed text contains the holding sentence on page 167, while the inventory/lake quote is a splice of the Issue and Rule prose from the built page.\",\"The lake pinpoint payload explicitly records quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive rule appears supported, but this assertion fails the requested character-fidelity review.\"],\"suggested_tightening\":\"Separate generated issue/rule prose from verbatim pin quotes so pinpoints store only opinion text.\"},{\"assertion_id\":\"3b23b0137243b9fd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The inventory treatment fields match the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not assessed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:26:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-c3c880ea25"
+    ],
     "group_id": "_overhaul2/lake/cases/Colorado v. Connelly.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ac103e31.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Colorado v. Connelly"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 269189,
+      "output": 6599,
+      "source": "codex-events",
+      "total": 275788
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "0acd0ab3195fb83d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b23b0137243b9fd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9ef146ff8f49cc58": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c3c880ea25",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.1
   }
 }

@@ -1,13 +1,89 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Carney.json",
+    "lens": "A",
+    "notes": "Lens A reviewed citation existence and quote fidelity only; treatment currency was not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "02ad54d38db6cdd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for California v. Carney and lists court as U.S. Supreme Court, date_decided as 1985-05-13, and year as 1985.",
+          "The official citation in the lake record is 471 U.S. 386, matching the content page citation 471 U.S. 386 (1985); the parallel and vendor citations also match the lake citation lists."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fdc5e66ac7038ef",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # California v. Carney *471 U.S. 386 (1985)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[id=pin-392]; text file contains the relevant passage on page *392.",
+          "needs_cl": false,
+          "problem": "The pin-392 pinpoint record is not quote-faithful: its stored quote is generated content-page/header material, not the cited opinion passage at 471 U.S. 392, and the lake itself marks quote_fidelity as mismatch with no star_marker, fragment, or position.",
+          "proposed_fix": "Rebuild pin-392 from the opinion text at *392, using the actual rule sentence beginning after 'In short,' and set a verified page/star marker or remove the pinpoint until verified.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote for pin-392 begins with page metadata rather than opinion text.",
+          "The opinion text at *392 instead contains: In short, the pervasive schemes of regulation, which necessarily lead to reduced expectations of privacy, and the exigencies attendant to ready mobility justify searches without prior recourse to the authority of a magistrate so long as the overriding standard of probable cause is met.",
+          "Because the disclosed pinpoint record is marked slip-only/mismatch and lacks a validated locator, the quote_fidelity assertion as framed does not survive."
+        ],
+        "residual_risks": [
+          "The content page's displayed rule quote appears supportable from the full opinion text, but the disclosed pin-392 record itself is defective."
+        ],
+        "suggested_tightening": "Use the actual *392 opinion sentence as the stored pinpoint quote and preserve the page citation as 471 U.S. at 392.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "843f1d0f3bbb0eb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-393 quote in the lake record exactly matches the sentence pair in the opinion text immediately after the *393 page marker.",
+          "The lake record marks pin-393 as star-verified with star_marker 393 and a validated text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a2c620265b30090",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the inventory match the lake treatment block: field_i_validity good_law, as_of_content 1985-05-13, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment substance remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/California v. Carney.json\",\"reviewed\":[{\"assertion_id\":\"02ad54d38db6cdd2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record exists for California v. Carney and lists court as U.S. Supreme Court, date_decided as 1985-05-13, and year as 1985.\",\"The official citation in the lake record is 471 U.S. 386, matching the content page citation 471 U.S. 386 (1985); the parallel and vendor citations also match the lake citation lists.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7fdc5e66ac7038ef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-392 pinpoint record is not quote-faithful: its stored quote is generated content-page/header material, not the cited opinion passage at 471 U.S. 392, and the lake itself marks quote_fidelity as mismatch with no star_marker, fragment, or position.\",\"severity\":\"high\",\"proposed_fix\":\"Rebuild pin-392 from the opinion text at *392, using the actual rule sentence beginning after 'In short,' and set a verified page/star marker or remove the pinpoint until verified.\",\"evidence_quote\":\"--- # California v. Carney *471 U.S. 386 (1985)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-392]; text file contains the relevant passage on page *392.\"},\"reasons\":[\"The inventory/lake quote for pin-392 begins with page metadata rather than opinion text.\",\"The opinion text at *392 instead contains: In short, the pervasive schemes of regulation, which necessarily lead to reduced expectations of privacy, and the exigencies attendant to ready mobility justify searches without prior recourse to the authority of a magistrate so long as the overriding standard of probable cause is met.\",\"Because the disclosed pinpoint record is marked slip-only/mismatch and lacks a validated locator, the quote_fidelity assertion as framed does not survive.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed rule quote appears supportable from the full opinion text, but the disclosed pin-392 record itself is defective.\"],\"suggested_tightening\":\"Use the actual *392 opinion sentence as the stored pinpoint quote and preserve the page citation as 471 U.S. at 392.\"},{\"assertion_id\":\"843f1d0f3bbb0eb4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-393 quote in the lake record exactly matches the sentence pair in the opinion text immediately after the *393 page marker.\",\"The lake record marks pin-393 as star-verified with star_marker 393 and a validated text fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4a2c620265b30090\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in the inventory match the lake treatment block: field_i_validity good_law, as_of_content 1985-05-13, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment currency is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed citation existence and quote fidelity only; treatment currency was not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:19:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-78571f5750"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Carney.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +92,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-eb630a7a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Carney"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 227513,
+      "output": 7088,
+      "source": "codex-events",
+      "total": 234601
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "02ad54d38db6cdd2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a2c620265b30090": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fdc5e66ac7038ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "843f1d0f3bbb0eb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-78571f5750",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 139.0
   }
 }

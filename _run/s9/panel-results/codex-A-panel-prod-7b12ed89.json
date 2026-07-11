@@ -1,22 +1,223 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brosseau v. Haugen.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "0ff8fb3811222318",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Brosseau v. Haugen, U.S. Supreme Court, decided 2004-12-13.",
+          "The official citation 543 U.S. 194 and the parallel/vendor citations in the payload match the lake citation fields and the content page header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0375e2351727818a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "These three cases",
+          "locator_note": "pin-201; 543 U.S. at 201",
+          "needs_cl": false,
+          "problem": "The pin-201 payload is not a character-faithful opinion quote; it includes content-page prose and citation text rather than the actual page-201 passage. The lake also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-201 with the exact opinion substring at 543 U.S. 201, or retarget the pin to the partial quote actually used on the content page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at star page 201 begins the relevant passage with the three-case discussion, not with a dash, Id., or the page's narrative lead-in.",
+          "The lake pinpoint for pin-201 has page null, star_marker null, and quote_fidelity mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store only the exact opinion text in pinpoints[].quote; keep explanatory page prose outside the quote record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "29ddcd072ed3dc0f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The cases by no means",
+          "locator_note": "pin-201b; 543 U.S. at 201",
+          "needs_cl": false,
+          "problem": "The quote points to the correct sentence, but it is not raw character-faithful: the payload uses bracketed lowercase [t]he and single quotation marks where the cached opinion has initial uppercase text and double quotation marks.",
+          "proposed_fix": "Use exact source capitalization and quotation marks, or mark this as an altered legal quotation rather than a raw character-fidelity quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion at the same page-201 paragraph, so the substance and pin location are supportable.",
+          "Strict quote fidelity fails because the payload alters capitalization and quote punctuation, and the lake marks the pinpoint as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If bracketed alterations are allowed, separate legal-quotation fidelity from exact character-fidelity in the schema.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a60eff08d746b42f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Qualified immunity shields an officer",
+          "locator_note": "pin-198; 543 U.S. at 198",
+          "needs_cl": false,
+          "problem": "The pin-198 payload quote is a corrupted page excerpt containing issue/rule headings and page prose, not the opinion sentence quoted at 543 U.S. 198. The lake marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-198 with the exact qualified-immunity sentence from the opinion text, or regenerate the pinpoint from the content page's actual quoted sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content page's displayed quote is present in the cached opinion, but the inventory/lake payload for this assertion is not that quote.",
+          "The payload includes Markdown section headings and surrounding reference-page material that are not part of the opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Pinpoint extraction should capture the quoted source sentence, not the nearest preceding Markdown block.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e71dd9bc683ba3bc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "following the lead",
+          "locator_note": "pin-199; 543 U.S. at 199",
+          "needs_cl": false,
+          "problem": "The quoted phrase is supported at page 199, but the stored quote is not raw character-faithful because it uses Markdown italics while the cached opinion stores the case names with HTML italics. The lake marks the pinpoint as mismatch.",
+          "proposed_fix": "Normalize formatting before quote-fidelity checks, or store a clean rendered-text quote without Markdown asterisks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "After accounting for formatting markup, the words and punctuation of the quoted proposition are present in the cached opinion at star page 199.",
+          "The lake pinpoint has no page/star marker and carries quote_fidelity mismatch, so it should not be treated as strict raw-character fidelity."
+        ],
+        "residual_risks": [
+          "If the corpus requires exact raw HTML-text fidelity rather than rendered-text fidelity, this should be downgraded to refuted."
+        ],
+        "suggested_tightening": "Define whether quote_fidelity compares rendered legal text or raw cached HTML, then normalize italics consistently.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa792afe337dfb1e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I record the row without raising a treatment finding.",
+          "The content page treatment fields match the lake treatment judgment: field_i_validity good_law, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits require Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brosseau v. Haugen.json\",\"reviewed\":[{\"assertion_id\":\"0ff8fb3811222318\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Brosseau v. Haugen, U.S. Supreme Court, decided 2004-12-13.\",\"The official citation 543 U.S. 194 and the parallel/vendor citations in the payload match the lake citation fields and the content page header.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0375e2351727818a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-201 payload is not a character-faithful opinion quote; it includes content-page prose and citation text rather than the actual page-201 passage. The lake also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-201 with the exact opinion substring at 543 U.S. 201, or retarget the pin to the partial quote actually used on the content page.\",\"evidence_quote\":\"These three cases\",\"needs_cl\":false,\"locator_note\":\"pin-201; 543 U.S. at 201\"},\"reasons\":[\"The disclosed opinion text at star page 201 begins the relevant passage with the three-case discussion, not with a dash, Id., or the page's narrative lead-in.\",\"The lake pinpoint for pin-201 has page null, star_marker null, and quote_fidelity mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Store only the exact opinion text in pinpoints[].quote; keep explanatory page prose outside the quote record.\"},{\"assertion_id\":\"29ddcd072ed3dc0f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote points to the correct sentence, but it is not raw character-faithful: the payload uses bracketed lowercase [t]he and single quotation marks where the cached opinion has initial uppercase text and double quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use exact source capitalization and quotation marks, or mark this as an altered legal quotation rather than a raw character-fidelity quote.\",\"evidence_quote\":\"The cases by no means\",\"needs_cl\":false,\"locator_note\":\"pin-201b; 543 U.S. at 201\"},\"reasons\":[\"The sentence appears in the cached opinion at the same page-201 paragraph, so the substance and pin location are supportable.\",\"Strict quote fidelity fails because the payload alters capitalization and quote punctuation, and the lake marks the pinpoint as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"If bracketed alterations are allowed, separate legal-quotation fidelity from exact character-fidelity in the schema.\"},{\"assertion_id\":\"a60eff08d746b42f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-198 payload quote is a corrupted page excerpt containing issue/rule headings and page prose, not the opinion sentence quoted at 543 U.S. 198. The lake marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-198 with the exact qualified-immunity sentence from the opinion text, or regenerate the pinpoint from the content page's actual quoted sentence.\",\"evidence_quote\":\"Qualified immunity shields an officer\",\"needs_cl\":false,\"locator_note\":\"pin-198; 543 U.S. at 198\"},\"reasons\":[\"The content page's displayed quote is present in the cached opinion, but the inventory/lake payload for this assertion is not that quote.\",\"The payload includes Markdown section headings and surrounding reference-page material that are not part of the opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Pinpoint extraction should capture the quoted source sentence, not the nearest preceding Markdown block.\"},{\"assertion_id\":\"e71dd9bc683ba3bc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted phrase is supported at page 199, but the stored quote is not raw character-faithful because it uses Markdown italics while the cached opinion stores the case names with HTML italics. The lake marks the pinpoint as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize formatting before quote-fidelity checks, or store a clean rendered-text quote without Markdown asterisks.\",\"evidence_quote\":\"following the lead\",\"needs_cl\":false,\"locator_note\":\"pin-199; 543 U.S. at 199\"},\"reasons\":[\"After accounting for formatting markup, the words and punctuation of the quoted proposition are present in the cached opinion at star page 199.\",\"The lake pinpoint has no page/star marker and carries quote_fidelity mismatch, so it should not be treated as strict raw-character fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus requires exact raw HTML-text fidelity rather than rendered-text fidelity, this should be downgraded to refuted.\"],\"suggested_tightening\":\"Define whether quote_fidelity compares rendered legal text or raw cached HTML, then normalize italics consistently.\"},{\"assertion_id\":\"fa792afe337dfb1e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I record the row without raising a treatment finding.\",\"The content page treatment fields match the lake treatment judgment: field_i_validity good_law, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits require Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:51-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:17:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-fa4624008a",
+      "F-S9-PR-7fcf5dba0f",
+      "F-S9-PR-c7defcbf20",
+      "F-S9-PR-d9ef2f3637"
+    ],
     "group_id": "_overhaul2/lake/cases/Brosseau v. Haugen.json",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-7b12ed89",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7b12ed89.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:43.005276Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:43.611057Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:44.433406Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:45.633045Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:47.650181Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:51.284139Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brosseau v. Haugen"
+    ],
+    "tokens": {
+      "input": 360840,
+      "output": 11408,
+      "source": "codex-events",
+      "total": 372248
+    },
+    "verdict_map": {
+      "0375e2351727818a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "0ff8fb3811222318": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "29ddcd072ed3dc0f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a60eff08d746b42f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e71dd9bc683ba3bc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fa792afe337dfb1e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fa4624008a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7fcf5dba0f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-c7defcbf20",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d9ef2f3637",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 228.1
   }
 }

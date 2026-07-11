@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
+    "lens": "A",
+    "notes": "Lens A refutes both quote-fidelity assertions because the disclosed lake marks them as mismatches and the cached opinion text confirms the verbatim defects.",
+    "reviewed": [
+      {
+        "assertion_id": "b6462c581d95d2e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies District of Columbia v. Wesby, U.S. Supreme Court, decided 2018-01-22, docket 15-1485.",
+          "The official citation 583 U.S. 48 and parallel citations 138 S. Ct. 577, 199 L. Ed. 2d 453, and 2018 U.S. LEXIS 760 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7758b0a614feb2f5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "First, the panel majority viewed each fact “in isolation,\nrather than as a factor in the totality of the circumstances.”",
+          "locator_note": "text/District of Columbia v. Wesby__b523d8.txt lines 568-570; lake pin-op11a also marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted text is not character-faithful to the opinion text: the source says 'viewed each fact' and uses the full sentence framing, while the page/lake quote changes it to 'view[ing] each fact' and alters quotation punctuation.",
+          "proposed_fix": "Use the exact opinion wording or paraphrase outside quotation marks.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text does not contain 'view[ing] each fact'.",
+          "The lake pinpoint judgment for pin-op11a is quote_fidelity: mismatch."
+        ],
+        "residual_risks": [
+          "The proposition is supported, but the verbatim quotation is not strict-fidelity."
+        ],
+        "suggested_tightening": "Write: The panel majority viewed each fact “in isolation, rather than as a factor in the totality of the circumstances.”",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d8734bbfcd1f8caa",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In concluding otherwise, the panel majority engaged in\nan “excessively technical dissection” of the factors support-\ning probable cause.",
+          "locator_note": "text/District of Columbia v. Wesby__b523d8.txt lines 563-565; lake pin-op11 marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The harvested pinpoint quote is not an opinion quote; it is a corrupt run-on fragment from the built page, including Background, Issue, and Rule text.",
+          "proposed_fix": "Replace the pin-op11 quote with the actual slip-opinion passage supporting the citation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes Markdown section text from content_page.md, not a contiguous passage from the opinion.",
+          "The actual opinion passage at slip-opinion page 11 is the 'excessively technical dissection' sentence, not the harvested fragment."
+        ],
+        "residual_risks": [
+          "The page's proposition is supported, but the stored pinpoint quote is unusable as a verbatim authority quote."
+        ],
+        "suggested_tightening": "Store only the actual opinion sentence for pin-op11 and normalize PDF line wrapping consistently.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9855256e4bdb8da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A; no quote-fidelity or support defect is raised.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2018-01-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/District of Columbia v. Wesby.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b6462c581d95d2e6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies District of Columbia v. Wesby, U.S. Supreme Court, decided 2018-01-22, docket 15-1485.\",\n        \"The official citation 583 U.S. 48 and parallel citations 138 S. Ct. 577, 199 L. Ed. 2d 453, and 2018 U.S. LEXIS 760 match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7758b0a614feb2f5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted text is not character-faithful to the opinion text: the source says 'viewed each fact' and uses the full sentence framing, while the page/lake quote changes it to 'view[ing] each fact' and alters quotation punctuation.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use the exact opinion wording or paraphrase outside quotation marks.\",\n        \"evidence_quote\": \"First, the panel majority viewed each fact “in isolation,\\nrather than as a factor in the totality of the circumstances.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/District of Columbia v. Wesby__b523d8.txt lines 568-570; lake pin-op11a also marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The cached opinion text does not contain 'view[ing] each fact'.\",\n        \"The lake pinpoint judgment for pin-op11a is quote_fidelity: mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposition is supported, but the verbatim quotation is not strict-fidelity.\"\n      ],\n      \"suggested_tightening\": \"Write: The panel majority viewed each fact “in isolation, rather than as a factor in the totality of the circumstances.”\"\n    },\n    {\n      \"assertion_id\": \"d8734bbfcd1f8caa\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The harvested pinpoint quote is not an opinion quote; it is a corrupt run-on fragment from the built page, including Background, Issue, and Rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-op11 quote with the actual slip-opinion passage supporting the citation.\",\n        \"evidence_quote\": \"In concluding otherwise, the panel majority engaged in\\nan “excessively technical dissection” of the factors support-\\ning probable cause.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/District of Columbia v. Wesby__b523d8.txt lines 563-565; lake pin-op11 marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The payload quote includes Markdown section text from content_page.md, not a contiguous passage from the opinion.\",\n        \"The actual opinion passage at slip-opinion page 11 is the 'excessively technical dissection' sentence, not the harvested fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page's proposition is supported, but the stored pinpoint quote is unusable as a verbatim authority quote.\"\n      ],\n      \"suggested_tightening\": \"Store only the actual opinion sentence for pin-op11 and normalize PDF line wrapping consistently.\"\n    },\n    {\n      \"assertion_id\": \"e9855256e4bdb8da\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside Lens A; no quote-fidelity or support defect is raised.\",\n        \"The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2018-01-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency merits are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A refutes both quote-fidelity assertions because the disclosed lake marks them as mismatches and the cached opinion text confirms the verbatim defects.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:34:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-43aad85674",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-241d4e5b4d",
+      "F-S9-PR-130f219fc7"
+    ],
     "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f1698ce0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "District of Columbia v. Wesby"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 246995,
+      "output": 7375,
+      "source": "codex-events",
+      "total": 254370
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "7758b0a614feb2f5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b6462c581d95d2e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d8734bbfcd1f8caa": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e9855256e4bdb8da": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-241d4e5b4d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-130f219fc7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-43aad85674",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 147.5
   }
 }

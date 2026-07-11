@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Dalia v. United States.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support/quote-fidelity/existence only; treatment was recorded without raising a treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "520b7e94e6f20c6a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Dalia v. United States, U.S. Supreme Court, docket 77-1722, decided 1979-04-18, year 1979.",
+          "The lake official citation is 441 U.S. 238, with parallel citations 99 S. Ct. 1682 and 60 L. Ed. 2d 177 and vendor citation 1979 U.S. LEXIS 89; the content page uses the same citation set."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b7470b1229c729a5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text at the star-257 passage.",
+          "The lake pinpoint for pin-257 is marked quote_fidelity matched, pinpoint_status star-verified, and star_marker 257."
+        ],
+        "residual_risks": [
+          "The page quotes only the first part of a sentence and then separately paraphrases the Fourth Amendment qualifier; this is not a fidelity defect, but fuller quotation would reduce ambiguity."
+        ],
+        "suggested_tightening": "Consider including the immediate qualifier from the opinion: subject of course to the general Fourth Amendment protection against unreasonable searches and seizures.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f1edede47d131b4f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We make explicit, therefore, what has long been implicit in our decisions dealing with this subject: The Fourth Amendment does not prohibit <i>per se</i> a covert entry performed for the purpose of installing otherwise legal electronic bugging equipment.",
+          "locator_note": "lake pinpoint pin-248; cached opinion text contains the actual passage at star page 248.",
+          "needs_cl": false,
+          "problem": "The pin-248 lake pinpoint quote is not an opinion quote; it captures the built page header/background/issue/rule text and is marked mismatch with no star marker.",
+          "proposed_fix": "Replace the pin-248 lake pinpoint with the actual star-248 opinion passage supporting the page quote, and set star_marker to 248 after verification.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markup and prose rather than the Supreme Court opinion text.",
+          "The cached opinion text does contain the intended pin-248 sentence, so the defect is the pinpoint capture, not the underlying legal quotation."
+        ],
+        "residual_risks": [
+          "Do not delete the page's visible pin-248 proposition; correct the stored pinpoint quote."
+        ],
+        "suggested_tightening": "Use the actual sentence beginning 'We make explicit, therefore...' as the pin-248 quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e0f8a6559b57efc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter.",
+          "The treatment payload matches the lake and content-page treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent Lens A treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Dalia v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"520b7e94e6f20c6a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Dalia v. United States, U.S. Supreme Court, docket 77-1722, decided 1979-04-18, year 1979.\",\n        \"The lake official citation is 441 U.S. 238, with parallel citations 99 S. Ct. 1682 and 60 L. Ed. 2d 177 and vendor citation 1979 U.S. LEXIS 89; the content page uses the same citation set.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b7470b1229c729a5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the cached opinion text at the star-257 passage.\",\n        \"The lake pinpoint for pin-257 is marked quote_fidelity matched, pinpoint_status star-verified, and star_marker 257.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page quotes only the first part of a sentence and then separately paraphrases the Fourth Amendment qualifier; this is not a fidelity defect, but fuller quotation would reduce ambiguity.\"\n      ],\n      \"suggested_tightening\": \"Consider including the immediate qualifier from the opinion: subject of course to the general Fourth Amendment protection against unreasonable searches and seizures.\"\n    },\n    {\n      \"assertion_id\": \"f1edede47d131b4f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-248 lake pinpoint quote is not an opinion quote; it captures the built page header/background/issue/rule text and is marked mismatch with no star marker.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the pin-248 lake pinpoint with the actual star-248 opinion passage supporting the page quote, and set star_marker to 248 after verification.\",\n        \"evidence_quote\": \"We make explicit, therefore, what has long been implicit in our decisions dealing with this subject: The Fourth Amendment does not prohibit <i>per se</i> a covert entry performed for the purpose of installing otherwise legal electronic bugging equipment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoint pin-248; cached opinion text contains the actual passage at star page 248.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with page markup and prose rather than the Supreme Court opinion text.\",\n        \"The cached opinion text does contain the intended pin-248 sentence, so the defect is the pinpoint capture, not the underlying legal quotation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Do not delete the page's visible pin-248 proposition; correct the stored pinpoint quote.\"\n      ],\n      \"suggested_tightening\": \"Use the actual sentence beginning 'We make explicit, therefore...' as the pin-248 quote.\"\n    },\n    {\n      \"assertion_id\": \"1e0f8a6559b57efc\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's attack charter.\",\n        \"The treatment payload matches the lake and content-page treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent Lens A treatment audit performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed support/quote-fidelity/existence only; treatment was recorded without raising a treatment finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:31:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-82760155ea",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-9cf3c14f22"
+    ],
     "group_id": "_overhaul2/lake/cases/Dalia v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c940f3c6",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c940f3c6.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: b1197620-18ff-4940-a320-042198f2decb\n2026-07-10T22:24:54.096220Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.892102Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.612679Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:56.372038Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:57.659920Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:59.759998Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dalia v. United States"
+    ],
+    "tokens": {
+      "input": 443870,
+      "output": 8806,
+      "source": "codex-events",
+      "total": 452676
+    },
+    "verdict_map": {
+      "1e0f8a6559b57efc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "520b7e94e6f20c6a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b7470b1229c729a5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f1edede47d131b4f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9cf3c14f22",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-82760155ea",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 175.1
   }
 }

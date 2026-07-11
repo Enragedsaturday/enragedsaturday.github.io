@@ -1,22 +1,205 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows. No web or outside authority used.",
+    "reviewed": [
+      {
+        "assertion_id": "79b28256b835b066",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for County of Riverside v. McLaughlin, U.S. Supreme Court, year 1991.",
+          "The official citation 500 U.S. 44 and parallel/vendor citations in the assertion match the lake citations record."
+        ],
+        "residual_risks": [
+          "The opinion text announces Decided May 13, 1991 while lake/content use 1991-05-20, but the reviewed existence assertion is citation/court/year, not date_decided."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a1d8d62e52a4eef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we believe that a jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement",
+          "locator_note": "pin-56; source text page *56 paragraph beginning 'Our task in this case...'",
+          "needs_cl": false,
+          "problem": "pin-56's stored quote is not the page-56 rule passage; it appears to splice the content-page Issue/Rule text and heading rather than quote the opinion.",
+          "proposed_fix": "Replace pin-56 with the actual page-56 passage supporting the 48-hour rule, or regenerate the pin from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin itself flags quote_fidelity as mismatch.",
+          "The asserted quote contains markdown heading text ('## Rule A 48-hour window...') that is not in the opinion text."
+        ],
+        "residual_risks": [
+          "The content-page displayed rule quote is supportable, but the reviewed pin payload is not that quote."
+        ],
+        "suggested_tightening": "Regenerate pin-56 from the opinion text instead of adjacent content-page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "857b77e2f8649eff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours.",
+          "locator_note": "pin-56b; source text page *56 paragraph beginning 'This is not to say...'",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively in the opinion, but the raw stored/content quote uses literal Markdown italics around Gerstein, while the cached opinion text has citation/italic HTML markup rather than literal asterisks.",
+          "proposed_fix": "Normalize formatting before quote-fidelity comparison, or store the quote without literal Markdown markers inside the verbatim quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The non-formatting words match the opinion passage.",
+          "The lake pin flags quote_fidelity as mismatch, and strict character fidelity is not met by the literal '*Gerstein*' markup."
+        ],
+        "residual_risks": [
+          "If the corpus treats Markdown italics as non-verbatim presentation markup, this is only a normalization issue."
+        ],
+        "suggested_tightening": "Store citation-neutral rendered quote text or explicitly exempt markup from quote-fidelity checks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "905658eda859588a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Nor, for that matter, do intervening weekends.",
+          "locator_note": "pin-57; source text page *57 paragraph beginning 'Where an arrested individual...'",
+          "needs_cl": false,
+          "problem": "The proposition is supported, but the quote is not character-faithful: it uses ellipses, bracketed capitalization, and the inserted phrase '[qualify as such a circumstance]' instead of the opinion's exact sentences.",
+          "proposed_fix": "Use the exact page-57 sentences or make the final bracketed phrase a paraphrase outside the quotation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source text supports the burden shift and weekend point.",
+          "The final bracketed words are not present in the opinion text, so the string is not strictly character-faithful as a verbatim quote."
+        ],
+        "residual_risks": [
+          "Legal quotation conventions may tolerate bracketed insertions, but the stated review standard asks for strict character fidelity."
+        ],
+        "suggested_tightening": "Quote the exact sentences through 'Nor, for that matter, do intervening weekends.' and put explanatory wording outside the quotation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26006df0efce865c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A's charter.",
+          "The asserted field_i_validity, as_of_treatment, scope note, and varies_by_point fields match the disclosed lake treatment record."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/County of Riverside v. McLaughlin.json\",\"reviewed\":[{\"assertion_id\":\"79b28256b835b066\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for County of Riverside v. McLaughlin, U.S. Supreme Court, year 1991.\",\"The official citation 500 U.S. 44 and parallel/vendor citations in the assertion match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion text announces Decided May 13, 1991 while lake/content use 1991-05-20, but the reviewed existence assertion is citation/court/year, not date_decided.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1a1d8d62e52a4eef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-56's stored quote is not the page-56 rule passage; it appears to splice the content-page Issue/Rule text and heading rather than quote the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-56 with the actual page-56 passage supporting the 48-hour rule, or regenerate the pin from the opinion text.\",\"evidence_quote\":\"we believe that a jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement\",\"needs_cl\":false,\"locator_note\":\"pin-56; source text page *56 paragraph beginning 'Our task in this case...'\"},\"reasons\":[\"The lake pin itself flags quote_fidelity as mismatch.\",\"The asserted quote contains markdown heading text ('## Rule A 48-hour window...') that is not in the opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content-page displayed rule quote is supportable, but the reviewed pin payload is not that quote.\"],\"suggested_tightening\":\"Regenerate pin-56 from the opinion text instead of adjacent content-page markdown.\"},{\"assertion_id\":\"857b77e2f8649eff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are substantively in the opinion, but the raw stored/content quote uses literal Markdown italics around Gerstein, while the cached opinion text has citation/italic HTML markup rather than literal asterisks.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize formatting before quote-fidelity comparison, or store the quote without literal Markdown markers inside the verbatim quotation.\",\"evidence_quote\":\"This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours.\",\"needs_cl\":false,\"locator_note\":\"pin-56b; source text page *56 paragraph beginning 'This is not to say...'\"},\"reasons\":[\"The non-formatting words match the opinion passage.\",\"The lake pin flags quote_fidelity as mismatch, and strict character fidelity is not met by the literal '*Gerstein*' markup.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats Markdown italics as non-verbatim presentation markup, this is only a normalization issue.\"],\"suggested_tightening\":\"Store citation-neutral rendered quote text or explicitly exempt markup from quote-fidelity checks.\"},{\"assertion_id\":\"905658eda859588a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The proposition is supported, but the quote is not character-faithful: it uses ellipses, bracketed capitalization, and the inserted phrase '[qualify as such a circumstance]' instead of the opinion's exact sentences.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the exact page-57 sentences or make the final bracketed phrase a paraphrase outside the quotation.\",\"evidence_quote\":\"Nor, for that matter, do intervening weekends.\",\"needs_cl\":false,\"locator_note\":\"pin-57; source text page *57 paragraph beginning 'Where an arrested individual...'\"},\"reasons\":[\"The source text supports the burden shift and weekend point.\",\"The final bracketed words are not present in the opinion text, so the string is not strictly character-faithful as a verbatim quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Legal quotation conventions may tolerate bracketed insertions, but the stated review standard asks for strict character fidelity.\"],\"suggested_tightening\":\"Quote the exact sentences through 'Nor, for that matter, do intervening weekends.' and put explanatory wording outside the quotation.\"},{\"assertion_id\":\"26006df0efce865c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A's charter.\",\"The asserted field_i_validity, as_of_treatment, scope note, and varies_by_point fields match the disclosed lake treatment record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency review was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 group_inventory rows. No web or outside authority used.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:31:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b476f34c7e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-56723723bb",
+      "F-S9-PR-2678a19759",
+      "F-S9-PR-b004fe2d4c"
+    ],
     "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-84703758",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-84703758.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:52.402334Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:53.149182Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.130097Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.437420Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:57.478070Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:01.185664Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "County of Riverside v. McLaughlin"
+    ],
+    "tokens": {
+      "input": 271606,
+      "output": 10536,
+      "source": "codex-events",
+      "total": 282142
+    },
+    "verdict_map": {
+      "1a1d8d62e52a4eef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "26006df0efce865c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "79b28256b835b066": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "857b77e2f8649eff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "905658eda859588a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-56723723bb",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2678a19759",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b004fe2d4c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b476f34c7e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 202.4
   }
 }

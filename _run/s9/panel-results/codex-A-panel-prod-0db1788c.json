@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "db944fdab5eb8efd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Brown v. Illinois, U.S. Supreme Court, decided 1975-06-26, docket 73-6650.",
+          "The lake official citation is 422 U.S. 590, with matching parallel/vendor citations in the inventory payload; content_page.md uses 422 U.S. 590 (1975) with the same court and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "168045fad14316c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Brown v. Illinois *422 U.S. 590 (1975)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background",
+          "locator_note": "lake pinpoints[] id pin-603; content_page.md uses ^pin-603 for a different sentence.",
+          "needs_cl": false,
+          "problem": "pin-603's stored quote is not an opinion quote; it is a harvested content-page header/background/rule preface and does not appear as the Brown opinion text at page 603.",
+          "proposed_fix": "Replace pin-603 with the actual opinion passage supporting the page's rule quote: \"The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks quote_fidelity as mismatch and has page/star_marker null.",
+          "The disclosed opinion text around star page 603 contains the Miranda-factor passage, not the markdown header/background text stored for pin-603."
+        ],
+        "residual_risks": [
+          "The visible content_page.md quote for ^pin-603 appears substantively supported, but the lake pinpoint record under review is not quote-faithful."
+        ],
+        "suggested_tightening": "Store only the actual quoted sentence from the opinion text and attach the 603 page locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e06a79f6a6fae29",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The temporal proximity of the arrest and the confession,<sup>[8]</sup> the presence of intervening circumstances, <span class=\"star-pagination\">*604</span> see <i>Johnson</i> v. <i>Louisiana,</i>",
+          "locator_note": "lake pinpoints[] id pin-604; text line around star pagination 604 contains the relevant passage but not the stored quote as an exact string.",
+          "needs_cl": false,
+          "problem": "pin-604 is a cleaned ellipsis quote, not character-faithful to the disclosed opinion text; it omits footnote and citation material and the lake record marks the quote as mismatch.",
+          "proposed_fix": "Store an exact source-normalized quote or use a clearly verified ellipsis policy; preserve the 603-604 locator for the passage.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is not an exact substring of the disclosed opinion text.",
+          "The omitted material includes the footnote marker after \"confession,\" and the Johnson citation at the page break; lake fields also show quote_fidelity=mismatch and no page/star_marker."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported by the opinion; this refutation is limited to strict quote fidelity."
+        ],
+        "suggested_tightening": "Use a verified exact quote, or split the sentence into exact quoted fragments with ellipses governed by a documented normalization rule.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cefedacfdb71c68f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is made.",
+          "The row's treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "Treatment correctness remains for lens B, not this support/quote-fidelity review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"db944fdab5eb8efd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Brown v. Illinois, U.S. Supreme Court, decided 1975-06-26, docket 73-6650.\",\"The lake official citation is 422 U.S. 590, with matching parallel/vendor citations in the inventory payload; content_page.md uses 422 U.S. 590 (1975) with the same court and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"168045fad14316c5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-603's stored quote is not an opinion quote; it is a harvested content-page header/background/rule preface and does not appear as the Brown opinion text at page 603.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-603 with the actual opinion passage supporting the page's rule quote: \\\"The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered.\\\"\",\"evidence_quote\":\"--- # Brown v. Illinois *422 U.S. 590 (1975)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-603; content_page.md uses ^pin-603 for a different sentence.\"},\"reasons\":[\"The lake pinpoint itself marks quote_fidelity as mismatch and has page/star_marker null.\",\"The disclosed opinion text around star page 603 contains the Miranda-factor passage, not the markdown header/background text stored for pin-603.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page.md quote for ^pin-603 appears substantively supported, but the lake pinpoint record under review is not quote-faithful.\"],\"suggested_tightening\":\"Store only the actual quoted sentence from the opinion text and attach the 603 page locator.\"},{\"assertion_id\":\"5e06a79f6a6fae29\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-604 is a cleaned ellipsis quote, not character-faithful to the disclosed opinion text; it omits footnote and citation material and the lake record marks the quote as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Store an exact source-normalized quote or use a clearly verified ellipsis policy; preserve the 603-604 locator for the passage.\",\"evidence_quote\":\"The temporal proximity of the arrest and the confession,<sup>[8]</sup> the presence of intervening circumstances, <span class=\\\"star-pagination\\\">*604</span> see <i>Johnson</i> v. <i>Louisiana,</i>\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-604; text line around star pagination 604 contains the relevant passage but not the stored quote as an exact string.\"},\"reasons\":[\"The payload quote is not an exact substring of the disclosed opinion text.\",\"The omitted material includes the footnote marker after \\\"confession,\\\" and the Johnson citation at the page break; lake fields also show quote_fidelity=mismatch and no page/star_marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition is supported by the opinion; this refutation is limited to strict quote fidelity.\"],\"suggested_tightening\":\"Use a verified exact quote, or split the sentence into exact quoted fragments with ellipses governed by a documented normalization rule.\"},{\"assertion_id\":\"cefedacfdb71c68f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is made.\",\"The row's treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment correctness remains for lens B, not this support/quote-fidelity review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:17:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c41504bd30",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ac6625eda1",
+      "F-S9-PR-9d3f0ce8ce"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0db1788c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0db1788c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:22:58.951587Z ERROR codex_models_manager::manager: failed to refresh available models: exceeded retry limit, last status: 429 Too Many Requests, request id: 8ac2e469-93fe-4f29-aa75-8e9c1b1333e8\n2026-07-10T22:23:01.112599Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brown v. Illinois"
+    ],
+    "tokens": {
+      "input": 401950,
+      "output": 9630,
+      "source": "codex-events",
+      "total": 411580
+    },
+    "verdict_map": {
+      "168045fad14316c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5e06a79f6a6fae29": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cefedacfdb71c68f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db944fdab5eb8efd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ac6625eda1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9d3f0ce8ce",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c41504bd30",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 188.5
   }
 }

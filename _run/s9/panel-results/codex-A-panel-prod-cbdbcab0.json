@@ -1,22 +1,146 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/County of Sacramento v. Lewis.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No independent support or black_letter rows were supplied; treatment merits were not reviewed under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "45da7fa87a505e11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for County of Sacramento v. Lewis, U.S. Supreme Court, decided 1998-05-26, docket 96-1337.",
+          "The lake citation record supports the display citation 523 U.S. 833 and the listed parallel/vendor citations; content_page.md uses the same case citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ef0dabde186b141",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy",
+          "locator_note": "group_inventory pin-836; lake pinpoints[pin-836]; text/County of Sacramento v. Lewis__31e3ca.txt line 16 contains the real *836 passage.",
+          "needs_cl": false,
+          "problem": "The pin-836 quote payload is not a character-faithful opinion quote; it is a harvested block of built-page metadata/background/rule text. The lake itself marks this pinpoint as quote_fidelity=mismatch, slip-only, and without a star marker.",
+          "proposed_fix": "Replace pin-836's quote payload with the actual page-836 sentence quoted in content_page.md and verify it against the opinion text with star_marker 836.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with built-page text, including '--- # County of Sacramento v. Lewis', rather than with opinion text.",
+          "The disclosed lake record for pin-836 says quote_fidelity is mismatch, pinpoint_status is slip-only, and star_marker is null.",
+          "The actual opinion text at *836 contains the shorter 'We answer no...' holding sentence, not the payload block."
+        ],
+        "residual_risks": [
+          "The displayed content_page.md pin-836 quotation appears salvageable; the defect is the harvested pinpoint payload and validation status."
+        ],
+        "suggested_tightening": "Reharvest pin-836 from only the quoted sentence before ^pin-836 and require star-marker validation before publication.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9ef54e76b4f50da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the opinion text after the *854 star pagination.",
+          "The lake pinpoint for pin-854 marks quote_fidelity as matched, star_marker as 854, and pinpoint_status as star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "538accf0d35cddf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields and content_page.md frontmatter: good_law, as_of_content 1998-05-26, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment and currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/County of Sacramento v. Lewis.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"45da7fa87a505e11\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for County of Sacramento v. Lewis, U.S. Supreme Court, decided 1998-05-26, docket 96-1337.\",\n        \"The lake citation record supports the display citation 523 U.S. 833 and the listed parallel/vendor citations; content_page.md uses the same case citation and year.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3ef0dabde186b141\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-836 quote payload is not a character-faithful opinion quote; it is a harvested block of built-page metadata/background/rule text. The lake itself marks this pinpoint as quote_fidelity=mismatch, slip-only, and without a star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-836's quote payload with the actual page-836 sentence quoted in content_page.md and verify it against the opinion text with star_marker 836.\",\n        \"evidence_quote\": \"We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy\",\n        \"needs_cl\": false,\n        \"locator_note\": \"group_inventory pin-836; lake pinpoints[pin-836]; text/County of Sacramento v. Lewis__31e3ca.txt line 16 contains the real *836 passage.\"\n      },\n      \"reasons\": [\n        \"The payload begins with built-page text, including '--- # County of Sacramento v. Lewis', rather than with opinion text.\",\n        \"The disclosed lake record for pin-836 says quote_fidelity is mismatch, pinpoint_status is slip-only, and star_marker is null.\",\n        \"The actual opinion text at *836 contains the shorter 'We answer no...' holding sentence, not the payload block.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The displayed content_page.md pin-836 quotation appears salvageable; the defect is the harvested pinpoint payload and validation status.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-836 from only the quoted sentence before ^pin-836 and require star-marker validation before publication.\"\n    },\n    {\n      \"assertion_id\": \"e9ef54e76b4f50da\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the opinion text after the *854 star pagination.\",\n        \"The lake pinpoint for pin-854 marks quote_fidelity as matched, star_marker as 854, and pinpoint_status as star-verified.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"538accf0d35cddf2\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields and content_page.md frontmatter: good_law, as_of_content 1998-05-26, as_of_treatment 2026-06-30, and varies_by_point false.\",\n        \"Treatment and currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency merits are reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl. No independent support or black_letter rows were supplied; treatment merits were not reviewed under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:30:46-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b720590dbd"
+    ],
     "group_id": "_overhaul2/lake/cases/County of Sacramento v. Lewis.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cbdbcab0",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cbdbcab0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 8c6e69f2-28ef-4076-89b2-ca9231493e22\n2026-07-10T22:24:52.861378Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:53.319015Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.055282Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.999581Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:56.200018Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:58.278868Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "County of Sacramento v. Lewis"
+    ],
+    "tokens": {
+      "input": 220170,
+      "output": 8819,
+      "source": "codex-events",
+      "total": 228989
+    },
+    "verdict_map": {
+      "3ef0dabde186b141": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "45da7fa87a505e11": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "538accf0d35cddf2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9ef54e76b4f50da": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b720590dbd",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 167.9
   }
 }

@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Carpenter v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all three assertion_ids in group_inventory.jsonl exactly once using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "7e3bf97717823440",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Carpenter v. United States, U.S. Supreme Court, decided 2018-06-22, docket 16-402.",
+          "The displayed citation 585 U.S. 296 and parallels 138 S. Ct. 2206, 201 L. Ed. 2d 507, and 2018 U.S. LEXIS 3844 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b89405c7a6b03e2",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "## Issue Whether the Government's acquisition of historical cell-site records",
+          "locator_note": "pin-op11; lake page and position are null, pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "pin-op11's stored quote is not a character-faithful opinion quote for the slip-op-at-11 passage; it reproduces built-page Background/Issue/Rule text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op11's lake quote with the actual slip-op-at-11 Court passage used for the Rule quote, or remove the pinpoint until it can be re-extracted from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The row quote contains markdown/page-section text such as '## Issue' and '## Rule Yes.', which is not opinion text.",
+          "The opinion text at slip page 11 instead contains the Court's holding that an individual maintains a legitimate expectation of privacy in physical movements captured through CSLI."
+        ],
+        "residual_risks": [
+          "The content-page displayed Rule quote appears separately supported by the opinion text after normalizing line wrapping; this refutation is directed at the disclosed pin-op11 lake quote."
+        ],
+        "suggested_tightening": "Regenerate pin-op11 from text/Carpenter v. United States__67efdd.txt around slip page 11 and store the actual quoted holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a494181936d54fc5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, and no support or quote-fidelity defect is raised for this treatment row.",
+          "The payload mirrors the lake treatment judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Carpenter v. United States.json\",\"reviewed\":[{\"assertion_id\":\"7e3bf97717823440\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Carpenter v. United States, U.S. Supreme Court, decided 2018-06-22, docket 16-402.\",\"The displayed citation 585 U.S. 296 and parallels 138 S. Ct. 2206, 201 L. Ed. 2d 507, and 2018 U.S. LEXIS 3844 match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7b89405c7a6b03e2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-op11's stored quote is not a character-faithful opinion quote for the slip-op-at-11 passage; it reproduces built-page Background/Issue/Rule text, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op11's lake quote with the actual slip-op-at-11 Court passage used for the Rule quote, or remove the pinpoint until it can be re-extracted from the opinion text.\",\"evidence_quote\":\"## Issue Whether the Government's acquisition of historical cell-site records\",\"needs_cl\":false,\"locator_note\":\"pin-op11; lake page and position are null, pinpoint_status is slip-only.\"},\"reasons\":[\"The row quote contains markdown/page-section text such as '## Issue' and '## Rule Yes.', which is not opinion text.\",\"The opinion text at slip page 11 instead contains the Court's holding that an individual maintains a legitimate expectation of privacy in physical movements captured through CSLI.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page displayed Rule quote appears separately supported by the opinion text after normalizing line wrapping; this refutation is directed at the disclosed pin-op11 lake quote.\"],\"suggested_tightening\":\"Regenerate pin-op11 from text/Carpenter v. United States__67efdd.txt around slip page 11 and store the actual quoted holding.\"},{\"assertion_id\":\"a494181936d54fc5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, and no support or quote-fidelity defect is raised for this treatment row.\",\"The payload mirrors the lake treatment judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment review performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all three assertion_ids in group_inventory.jsonl exactly once using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:40-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:21:52-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-53aaa4f0cc"
+    ],
     "group_id": "_overhaul2/lake/cases/Carpenter v. United States.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4f82a9b5",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f82a9b5.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:31.178023Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:31.912343Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:32.870465Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:34.254371Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:36.402994Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:40.065774Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Carpenter v. United States"
+    ],
+    "tokens": {
+      "input": 189883,
+      "output": 7427,
+      "source": "codex-events",
+      "total": 197310
+    },
+    "verdict_map": {
+      "7b89405c7a6b03e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7e3bf97717823440": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a494181936d54fc5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53aaa4f0cc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.1
   }
 }

@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Hodari D..json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "612913d1698b7bc0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies California v. Hodari D. as a U.S. Supreme Court case decided 1991-04-23 with docket 89-1632 and official citation 499 U.S. 621.",
+          "The authority-weight claim is consistent with court_level scotus and court U.S. Supreme Court.",
+          "No final lake field says the authority has been overruled, abrogated, or superseded; treatment concerns are addressed under the treatment assertion."
+        ],
+        "residual_risks": [
+          "The live-law presentation should track the treatment qualifier noted for assertion def6a35ce5300a59."
+        ],
+        "suggested_tightening": "Tie any live-law wording to the qualified treatment note rather than treating existence alone as a treatment audit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "573ee065ee152818",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote support or quote fidelity.",
+          "This row does not add an independent treatment or currency assertion beyond the case-level treatment reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support remain outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe526808aa3bd8ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote support or quote fidelity.",
+          "This row does not add an independent treatment or currency assertion beyond the case-level treatment reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support remain outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "def6a35ce5300a59",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"scope_note\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\"",
+          "locator_note": "content_page.md treatment section; lake.treatment.scope_note, edges, derivation, and provenance",
+          "needs_cl": true,
+          "problem": "The good-law label is disclosed, but the page overstates treatment by saying there is no negative treatment without surfacing that the lake treatment is a legacy migration seed and the disclosed derivation has audit-needed proposed negative events.",
+          "proposed_fix": "Keep the good_law label only with a qualification: no finalized negative treatment or point override is disclosed, but proposed negative progeny and an R15 treatment audit remain open.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law as of 2026-06-30 and point_overrides is empty, so the core label is supported by a disclosed judgment field.",
+          "The disclosed treatment provenance says the field came from _treatment-migration.json plus page frontmatter, and the warnings include legacy treatment migrated: good -> good_law.",
+          "The disclosed derivation flags audit_needed true with proposed_negative_events, and the edges contain proposed negative labels including overruled, questioned, superseded_by_statute, and abrogated."
+        ],
+        "residual_risks": [
+          "A completed audit could confirm good_law, but the disclosed record does not justify the unqualified no-negative-treatment sentence."
+        ],
+        "suggested_tightening": "Say: Treatment good_law per migrated field; no finalized point-specific downgrade disclosed; R15 audit pending for proposed negative progeny.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/California v. Hodari D..json\",\"reviewed\":[{\"assertion_id\":\"612913d1698b7bc0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies California v. Hodari D. as a U.S. Supreme Court case decided 1991-04-23 with docket 89-1632 and official citation 499 U.S. 621.\",\"The authority-weight claim is consistent with court_level scotus and court U.S. Supreme Court.\",\"No final lake field says the authority has been overruled, abrogated, or superseded; treatment concerns are addressed under the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The live-law presentation should track the treatment qualifier noted for assertion def6a35ce5300a59.\"],\"suggested_tightening\":\"Tie any live-law wording to the qualified treatment note rather than treating existence alone as a treatment audit.\"},{\"assertion_id\":\"573ee065ee152818\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote support or quote fidelity.\",\"This row does not add an independent treatment or currency assertion beyond the case-level treatment reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support remain outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fe526808aa3bd8ba\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote support or quote fidelity.\",\"This row does not add an independent treatment or currency assertion beyond the case-level treatment reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support remain outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"def6a35ce5300a59\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law label is disclosed, but the page overstates treatment by saying there is no negative treatment without surfacing that the lake treatment is a legacy migration seed and the disclosed derivation has audit-needed proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law label only with a qualification: no finalized negative treatment or point override is disclosed, but proposed negative progeny and an R15 treatment audit remain open.\",\"evidence_quote\":\"\\\"scope_note\\\": \\\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment section; lake.treatment.scope_note, edges, derivation, and provenance\"},\"reasons\":[\"lake.treatment.field_i_validity is good_law as of 2026-06-30 and point_overrides is empty, so the core label is supported by a disclosed judgment field.\",\"The disclosed treatment provenance says the field came from _treatment-migration.json plus page frontmatter, and the warnings include legacy treatment migrated: good -> good_law.\",\"The disclosed derivation flags audit_needed true with proposed_negative_events, and the edges contain proposed negative labels including overruled, questioned, superseded_by_statute, and abrogated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed audit could confirm good_law, but the disclosed record does not justify the unqualified no-negative-treatment sentence.\"],\"suggested_tightening\":\"Say: Treatment good_law per migrated field; no finalized point-specific downgrade disclosed; R15 audit pending for proposed negative progeny.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:20:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-aa3dd95bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a4dd07938e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-49916e03cc"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Hodari D..json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-0b368bd1",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0b368bd1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:28.761080Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:29.455305Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:30.523264Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:31.851269Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:34.086874Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:37.700606Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Hodari D."
+    ],
+    "tokens": {
+      "input": 205968,
+      "output": 8647,
+      "source": "codex-events",
+      "total": 214615
+    },
+    "verdict_map": {
+      "573ee065ee152818": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "612913d1698b7bc0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "def6a35ce5300a59": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fe526808aa3bd8ba": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aa3dd95bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a4dd07938e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-49916e03cc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 167.4
   }
 }

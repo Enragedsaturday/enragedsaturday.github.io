@@ -1,22 +1,172 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "79b28256b835b066",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status \"verified\".",
+          "The lake identity matches County of Riverside v. McLaughlin, identifies the court as U.S. Supreme Court, and records the official citation 500 U.S. 44.",
+          "The lake treatment field marks the authority as \"good_law\" as of 2026-06-30, so no disclosed record shows the cited authority is no longer live law."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a1d8d62e52a4eef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews currency and treatment only.",
+          "This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment."
+        ],
+        "residual_risks": [
+          "Quote fidelity is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "857b77e2f8649eff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews currency and treatment only.",
+          "This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment."
+        ],
+        "residual_risks": [
+          "Quote fidelity is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "905658eda859588a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews currency and treatment only.",
+          "This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment."
+        ],
+        "residual_risks": [
+          "Quote fidelity is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26006df0efce865c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 6, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/County of Riverside v. McLaughlin__3768bc.json treatment.derivation; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good-law call itself is supported by the lake field_i_validity, but the built page's categorical \"No negative treatment\" wording is too strong because the disclosed lake record contains proposed negative-event edges and audit-needed treatment derivation flags.",
+          "proposed_fix": "Keep \"good law as of 2026-06-30\" and \"Binding — SCOTUS,\" but qualify the subsequent-history sentence to say no confirmed point-level overruling/abrogation appears in the lake record, with proposed negative-event audit flags pending.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field says \"field_i_validity\": \"good_law\", \"as_of_treatment\": \"2026-06-30\", and \"varies_by_point\": false.",
+          "No point_overrides are disclosed, so the core good-law assertion survives the currency attack.",
+          "However, the treatment edges include proposed entries labeled superseded_by_statute, questioned, overruled, abrogated, and criticized, and the derivation records audit_needed flags; that disclosed record does not support an unqualified \"No negative treatment\" sentence."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include the underlying citing-case text for the proposed negative edges, so a CourtListener/audit check would be needed to resolve whether any proposed event is a true negative treatment."
+        ],
+        "suggested_tightening": "Change \"No negative treatment\" to \"No confirmed overruling, abrogation, or point-level limitation is reflected in the lake treatment judgment; proposed negative-event edges remain audit-flagged.\"",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/County of Riverside v. McLaughlin.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"79b28256b835b066\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is not a stub and has status \\\"verified\\\".\",\n        \"The lake identity matches County of Riverside v. McLaughlin, identifies the court as U.S. Supreme Court, and records the official citation 500 U.S. 44.\",\n        \"The lake treatment field marks the authority as \\\"good_law\\\" as of 2026-06-30, so no disclosed record shows the cited authority is no longer live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1a1d8d62e52a4eef\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews currency and treatment only.\",\n        \"This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity is left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"857b77e2f8649eff\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews currency and treatment only.\",\n        \"This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity is left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"905658eda859588a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews currency and treatment only.\",\n        \"This row asserts quote fidelity/pinpoint status, not the authority's current legal status or treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity is left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"26006df0efce865c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law call itself is supported by the lake field_i_validity, but the built page's categorical \\\"No negative treatment\\\" wording is too strong because the disclosed lake record contains proposed negative-event edges and audit-needed treatment derivation flags.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep \\\"good law as of 2026-06-30\\\" and \\\"Binding — SCOTUS,\\\" but qualify the subsequent-history sentence to say no confirmed point-level overruling/abrogation appears in the lake record, with proposed negative-event audit flags pending.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 6, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/County of Riverside v. McLaughlin__3768bc.json treatment.derivation; content_page.md Treatment & subsequent history\"\n      },\n      \"reasons\": [\n        \"The lake treatment field says \\\"field_i_validity\\\": \\\"good_law\\\", \\\"as_of_treatment\\\": \\\"2026-06-30\\\", and \\\"varies_by_point\\\": false.\",\n        \"No point_overrides are disclosed, so the core good-law assertion survives the currency attack.\",\n        \"However, the treatment edges include proposed entries labeled superseded_by_statute, questioned, overruled, abrogated, and criticized, and the derivation records audit_needed flags; that disclosed record does not support an unqualified \\\"No negative treatment\\\" sentence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not include the underlying citing-case text for the proposed negative edges, so a CourtListener/audit check would be needed to resolve whether any proposed event is a true negative treatment.\"\n      ],\n      \"suggested_tightening\": \"Change \\\"No negative treatment\\\" to \\\"No confirmed overruling, abrogation, or point-level limitation is reflected in the lake treatment judgment; proposed negative-event edges remain audit-flagged.\\\"\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity findings made.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:29:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b476f34c7e"
+    ],
     "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-84703758",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-84703758.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:52.251493Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:53.019363Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.018821Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.316866Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:57.314482Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:00.637172Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "County of Riverside v. McLaughlin"
+    ],
+    "tokens": {
+      "input": 142270,
+      "output": 5955,
+      "source": "codex-events",
+      "total": 148225
+    },
+    "verdict_map": {
+      "1a1d8d62e52a4eef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "26006df0efce865c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "79b28256b835b066": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "857b77e2f8649eff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "905658eda859588a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b476f34c7e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 120.0
   }
 }

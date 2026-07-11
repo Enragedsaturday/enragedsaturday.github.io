@@ -1,13 +1,80 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Acevedo.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, holding, or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "fafcb4c9788cb0ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for California v. Acevedo and gives official citation 500 U.S. 565.",
+          "Lake treatment marks field_i_validity as good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72bfa5a1f3c1dc64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity and support are outside Lens B; no quote/support defect is raised here.",
+          "The embedded treatment header says good as of 2026-06-30 and Binding — SCOTUS, which matches lake treatment good_law/as_of_treatment and the SCOTUS court level."
+        ],
+        "residual_risks": [
+          "Lens A must address the recorded quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c3adf37fe590b9e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 5,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law call itself stands, but content_page.md overstates the treatment history by saying there is no negative treatment of Acevedo while the lake record contains proposed negative/query-hit progeny edges and audit_needed flags. The disclosed record supports good law and no point override, not an unqualified no-negative-treatment statement.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace the categorical no-negative-treatment sentence with: Lake marks Acevedo itself as good law; proposed negative progeny hits are audit-needed and only marked mentioned, with no point override recorded.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment directly supports field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the scope note that Acevedo itself is good law.",
+          "Authority weight is supported by court_level scotus and court U.S. Supreme Court.",
+          "However, the full treatment record includes 29 proposed edges with field_ii values overruled, abrogated, or questioned; all are field_iii mentioned and point null, so they do not refute good_law but do undercut the absolute no-negative-treatment wording."
+        ],
+        "residual_risks": [
+          "Because lane1_negative and lane2_top_cited are audit_needed, the disclosed files do not conclusively clear every proposed negative progeny hit."
+        ],
+        "suggested_tightening": "Say Acevedo is marked good law as of 2026-06-30 and has no recorded point override, rather than saying there is no negative treatment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/California v. Acevedo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fafcb4c9788cb0ba\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for California v. Acevedo and gives official citation 500 U.S. 565.\",\n        \"Lake treatment marks field_i_validity as good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"72bfa5a1f3c1dc64\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote-fidelity and support are outside Lens B; no quote/support defect is raised here.\",\n        \"The embedded treatment header says good as of 2026-06-30 and Binding — SCOTUS, which matches lake treatment good_law/as_of_treatment and the SCOTUS court level.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must address the recorded quote_fidelity mismatch.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2c3adf37fe590b9e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law call itself stands, but content_page.md overstates the treatment history by saying there is no negative treatment of Acevedo while the lake record contains proposed negative/query-hit progeny edges and audit_needed flags. The disclosed record supports good law and no point override, not an unqualified no-negative-treatment statement.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace the categorical no-negative-treatment sentence with: Lake marks Acevedo itself as good law; proposed negative progeny hits are audit-needed and only marked mentioned, with no point override recorded.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 5,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation\"\n      },\n      \"reasons\": [\n        \"Lake treatment directly supports field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the scope note that Acevedo itself is good law.\",\n        \"Authority weight is supported by court_level scotus and court U.S. Supreme Court.\",\n        \"However, the full treatment record includes 29 proposed edges with field_ii values overruled, abrogated, or questioned; all are field_iii mentioned and point null, so they do not refute good_law but do undercut the absolute no-negative-treatment wording.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because lane1_negative and lane2_top_cited are audit_needed, the disclosed files do not conclusively clear every proposed negative progeny hit.\"\n      ],\n      \"suggested_tightening\": \"Say Acevedo is marked good law as of 2026-06-30 and has no recorded point override, rather than saying there is no negative treatment.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support, holding, or quote-fidelity finding is made.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:23:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:19:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-16b822c1a4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-614031edd6"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Acevedo.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +83,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0a717774.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Acevedo"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 528610,
+      "output": 8402,
+      "source": "codex-events",
+      "total": 537012
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.4
+    "verdict_map": {
+      "2c3adf37fe590b9e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "72bfa5a1f3c1dc64": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fafcb4c9788cb0ba": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-16b822c1a4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-614031edd6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 171.0
   }
 }

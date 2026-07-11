@@ -1,22 +1,169 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chandler v. Miller.json",
+    "lens": "A",
+    "notes": "No external sources used. Treatment verdict is limited to consistency with disclosed fields under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "c9cb4e5bd3f1cac4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Chandler v. Miller, U.S. Supreme Court, decided 1997-04-15.",
+          "Official citation is 520 U.S. 305; parallel and vendor citations match the asserted list."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "04779f0e9d565702",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "However well meant, the candidate drug test Georgia has devised diminishes personal privacy for a symbol’s sake. The Fourth Amendment shields society against that state action.",
+          "locator_note": "Opinion text paragraph b414-8; page marker 322 appears immediately before this paragraph.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively the p.322 passage, but it is not character-faithful to the disclosed opinion text: the source has a typographic apostrophe in “symbol’s,” while the asserted quote uses ASCII “symbol's.”",
+          "proposed_fix": "Replace “symbol's” with “symbol’s” in the quote; keep the p.322 locator.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the disclosed opinion text at p.322.",
+          "The stored lake pinpoint itself flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "If formatting fidelity is required, the source also italicizes “for” in HTML markup."
+        ],
+        "suggested_tightening": "Carry source punctuation exactly for verbatim quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f84c3069665f03a6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But where, as in this case, public safety is not genuinely in jeopardy, the Fourth Amendment precludes the suspicionless search, no matter how conveniently arranged.",
+          "locator_note": "Opinion text paragraph b415-4, after the page marker 323.",
+          "needs_cl": false,
+          "problem": "The pin-323 stored quote is not the opinion passage it purports to quote; it is a content-page/header fragment ending before the actual p.323 quoted sentence.",
+          "proposed_fix": "Replace the pin-323 quote with the actual p.323 sentence beginning “But where, as in this case...” and set the locator to p.323 / paragraph b415-4.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake quote begins with “--- # Chandler v. Miller” and page metadata, which is not opinion text.",
+          "The actual p.323 passage is present in the disclosed opinion text and differs from the asserted stored quote.",
+          "The lake pinpoint flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The built page’s displayed legal proposition is supportable, but the reviewed pinpoint record is corrupted."
+        ],
+        "suggested_tightening": "Anchor pin-323 directly to the p.323 sentence, not to generated page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea9640ffbd0af8db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake fields: good_law, as_of_content 1997-04-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently evaluated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Chandler v. Miller.json\",\"reviewed\":[{\"assertion_id\":\"c9cb4e5bd3f1cac4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Chandler v. Miller, U.S. Supreme Court, decided 1997-04-15.\",\"Official citation is 520 U.S. 305; parallel and vendor citations match the asserted list.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"04779f0e9d565702\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively the p.322 passage, but it is not character-faithful to the disclosed opinion text: the source has a typographic apostrophe in “symbol’s,” while the asserted quote uses ASCII “symbol's.”\",\"severity\":\"low\",\"proposed_fix\":\"Replace “symbol's” with “symbol’s” in the quote; keep the p.322 locator.\",\"evidence_quote\":\"However well meant, the candidate drug test Georgia has devised diminishes personal privacy for a symbol’s sake. The Fourth Amendment shields society against that state action.\",\"needs_cl\":false,\"locator_note\":\"Opinion text paragraph b414-8; page marker 322 appears immediately before this paragraph.\"},\"reasons\":[\"The same sentence appears in the disclosed opinion text at p.322.\",\"The stored lake pinpoint itself flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If formatting fidelity is required, the source also italicizes “for” in HTML markup.\"],\"suggested_tightening\":\"Carry source punctuation exactly for verbatim quotes.\"},{\"assertion_id\":\"f84c3069665f03a6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-323 stored quote is not the opinion passage it purports to quote; it is a content-page/header fragment ending before the actual p.323 quoted sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-323 quote with the actual p.323 sentence beginning “But where, as in this case...” and set the locator to p.323 / paragraph b415-4.\",\"evidence_quote\":\"But where, as in this case, public safety is not genuinely in jeopardy, the Fourth Amendment precludes the suspicionless search, no matter how conveniently arranged.\",\"needs_cl\":false,\"locator_note\":\"Opinion text paragraph b415-4, after the page marker 323.\"},\"reasons\":[\"The disclosed lake quote begins with “--- # Chandler v. Miller” and page metadata, which is not opinion text.\",\"The actual p.323 passage is present in the disclosed opinion text and differs from the asserted stored quote.\",\"The lake pinpoint flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page’s displayed legal proposition is supportable, but the reviewed pinpoint record is corrupted.\"],\"suggested_tightening\":\"Anchor pin-323 directly to the p.323 sentence, not to generated page content.\"},{\"assertion_id\":\"ea9640ffbd0af8db\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake fields: good_law, as_of_content 1997-04-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently evaluated under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used. Treatment verdict is limited to consistency with disclosed fields under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:23:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5a89a594ab",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-15d52b9935",
+      "F-S9-PR-7a9f21c446"
+    ],
     "group_id": "_overhaul2/lake/cases/Chandler v. Miller.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1c696736",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1c696736.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: b4bf368e-2610-4962-b63a-ec76616c5482\n2026-07-10T22:23:54.197127Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:54.690298Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:55.442476Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.333956Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.547957Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:59.527773Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chandler v. Miller"
+    ],
+    "tokens": {
+      "input": 199459,
+      "output": 8051,
+      "source": "codex-events",
+      "total": 207510
+    },
+    "verdict_map": {
+      "04779f0e9d565702": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c9cb4e5bd3f1cac4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea9640ffbd0af8db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f84c3069665f03a6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-15d52b9935",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7a9f21c446",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5a89a594ab",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 157.8
   }
 }

@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Acevedo.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "fafcb4c9788cb0ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names California v. Acevedo, court U.S. Supreme Court, year 1991.",
+          "The lake official citation is 500 U.S. 565, and the content page displays 500 U.S. 565 (1991).",
+          "The parallel citations in the inventory match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72bfa5a1f3c1dc64",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The police may search an automobile and the containers within it where they have probable cause to believe contraband or evidence is contained.",
+          "locator_note": "lake pinpoints[0] / pin-580; content_page Rule line cites 500 U.S. at 580.",
+          "needs_cl": false,
+          "problem": "pin-580's stored quote is not the judicial passage; it is a harvested chunk of the built page header/background/issue text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-580.quote with the actual page-580 rule passage beginning with 'We therefore interpret Carroll...' and set the pinpoint metadata to page/star 580 as supported by the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin quote starts with the built-page text '--- # California v. Acevedo' rather than an opinion quotation.",
+          "The disclosed opinion text at star page *580 contains the actual rule passage used in the content page.",
+          "Because the stored quote is not character-faithful to text/California v. Acevedo__d5d68e.txt, the quote-fidelity assertion fails."
+        ],
+        "residual_risks": [
+          "The content-page Rule quote appears substantively correct, but the lake pinpoint record under review is corrupt."
+        ],
+        "suggested_tightening": "Keep the Rule quote narrowly tied to the page-580 sentence and avoid harvesting surrounding generated page prose into pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c3adf37fe590b9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The inventory treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point."
+        ],
+        "residual_risks": [
+          "Treatment correctness was not evaluated under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/California v. Acevedo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fafcb4c9788cb0ba\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names California v. Acevedo, court U.S. Supreme Court, year 1991.\",\n        \"The lake official citation is 500 U.S. 565, and the content page displays 500 U.S. 565 (1991).\",\n        \"The parallel citations in the inventory match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"72bfa5a1f3c1dc64\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-580's stored quote is not the judicial passage; it is a harvested chunk of the built page header/background/issue text, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-580.quote with the actual page-580 rule passage beginning with 'We therefore interpret Carroll...' and set the pinpoint metadata to page/star 580 as supported by the opinion text.\",\n        \"evidence_quote\": \"The police may search an automobile and the containers within it where they have probable cause to believe contraband or evidence is contained.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[0] / pin-580; content_page Rule line cites 500 U.S. at 580.\"\n      },\n      \"reasons\": [\n        \"The lake pin quote starts with the built-page text '--- # California v. Acevedo' rather than an opinion quotation.\",\n        \"The disclosed opinion text at star page *580 contains the actual rule passage used in the content page.\",\n        \"Because the stored quote is not character-faithful to text/California v. Acevedo__d5d68e.txt, the quote-fidelity assertion fails.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content-page Rule quote appears substantively correct, but the lake pinpoint record under review is corrupt.\"\n      ],\n      \"suggested_tightening\": \"Keep the Rule quote narrowly tied to the page-580 sentence and avoid harvesting surrounding generated page prose into pinpoints[].quote.\"\n    },\n    {\n      \"assertion_id\": \"2c3adf37fe590b9e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment defect is raised.\",\n        \"The inventory treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment correctness was not evaluated under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:23:28-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:19:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-16b822c1a4"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Acevedo.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0a717774",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0a717774.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:23:19.654020Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:20.276451Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:21.157506Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:22.297446Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:24.484167Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:27.834685Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Acevedo"
+    ],
+    "tokens": {
+      "input": 257058,
+      "output": 7645,
+      "source": "codex-events",
+      "total": 264703
+    },
+    "verdict_map": {
+      "2c3adf37fe590b9e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72bfa5a1f3c1dc64": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fafcb4c9788cb0ba": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-16b822c1a4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 161.5
   }
 }

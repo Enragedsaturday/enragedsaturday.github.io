@@ -1,13 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
+    "lens": "B",
+    "notes": "Lens B only; quote/support defects intentionally not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "5cfb803d18351bb0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is non-stub and status is verified.",
+          "Identity fields confirm a Supreme Court case decided 2015-06-22 with docket 13-1175, expected citation found, party-name text present, and canonical-name match.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so the authority is live from the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "Official citation selection is null and provenance warns that official cite selection failed closed, but that is not a live-law defect under lens B.",
+          "Treatment derivation has audit risk addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "370cd1bdd1669479",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised here.",
+          "No separate currency/treatment defect is attached to this pinpoint from the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Lake payload marks quote_fidelity as mismatch, but lens A owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d08149d570b741fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised here.",
+          "No separate currency/treatment defect is attached to this pinpoint from the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Lake payload marks quote_fidelity as mismatch, but lens A owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ec3c8ec8107144d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law label is present in the lake record, but the page's categorical treatment prose says no negative treatment while the disclosed lake treatment derivation carries proposed negative-treatment edges and an R15 audit marker. That makes the no-negative wording too strong unless the audit is cleared.",
+          "proposed_fix": "Keep the status as good_law only as the lake field_i judgment, but replace 'No negative treatment' with a qualified statement such as 'No confirmed adverse treatment in field_i; lake treatment derivation contains proposed negative-treatment flags pending audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity says good_law and varies_by_point is false, so the core good-law call survives as a disclosed judgment field.",
+          "The same disclosed record says treatment was migration-seeded and lane2_top_cited has audit_needed true with proposed_negative_events 23.",
+          "Treatment edges include proposed labels such as overruled, questioned, criticized, and abrogated, all marked proposed, so they do not prove Patel is bad law but they do defeat an unqualified 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "The proposed edges may be false positives because they are marked proposed and field_iii is only mentioned.",
+          "A final CourtListener/citing-case audit would be needed to remove the qualification."
+        ],
+        "suggested_tightening": "Surface the migration-seed/audit-needed caveat in the treatment section or suppress the 'No negative treatment' sentence until the audit is complete.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/City of Los Angeles v. Patel.json\",\"reviewed\":[{\"assertion_id\":\"5cfb803d18351bb0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is non-stub and status is verified.\",\"Identity fields confirm a Supreme Court case decided 2015-06-22 with docket 13-1175, expected citation found, party-name text present, and canonical-name match.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30, so the authority is live from the disclosed treatment record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is null and provenance warns that official cite selection failed closed, but that is not a live-law defect under lens B.\",\"Treatment derivation has audit risk addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"370cd1bdd1669479\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised here.\",\"No separate currency/treatment defect is attached to this pinpoint from the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake payload marks quote_fidelity as mismatch, but lens A owns that review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d08149d570b741fc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised here.\",\"No separate currency/treatment defect is attached to this pinpoint from the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake payload marks quote_fidelity as mismatch, but lens A owns that review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5ec3c8ec8107144d\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law label is present in the lake record, but the page's categorical treatment prose says no negative treatment while the disclosed lake treatment derivation carries proposed negative-treatment edges and an R15 audit marker. That makes the no-negative wording too strong unless the audit is cleared.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good_law only as the lake field_i judgment, but replace 'No negative treatment' with a qualified statement such as 'No confirmed adverse treatment in field_i; lake treatment derivation contains proposed negative-treatment flags pending audit.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges\"},\"reasons\":[\"Lake treatment.field_i_validity says good_law and varies_by_point is false, so the core good-law call survives as a disclosed judgment field.\",\"The same disclosed record says treatment was migration-seeded and lane2_top_cited has audit_needed true with proposed_negative_events 23.\",\"Treatment edges include proposed labels such as overruled, questioned, criticized, and abrogated, all marked proposed, so they do not prove Patel is bad law but they do defeat an unqualified 'No negative treatment' statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed edges may be false positives because they are marked proposed and field_iii is only mentioned.\",\"A final CourtListener/citing-case audit would be needed to remove the qualification.\"],\"suggested_tightening\":\"Surface the migration-seed/audit-needed caveat in the treatment section or suppress the 'No negative treatment' sentence until the audit is complete.\"}],\"notes\":\"Lens B only; quote/support defects intentionally not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:25:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7a9d15be01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fe6a4e3dc6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-68cf87dee7"
+    ],
     "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +108,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e42f4da4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "City of Los Angeles v. Patel"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 382392,
+      "output": 7068,
+      "source": "codex-events",
+      "total": 389460
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "370cd1bdd1669479": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5cfb803d18351bb0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5ec3c8ec8107144d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d08149d570b741fc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7a9d15be01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fe6a4e3dc6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-68cf87dee7",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 149.7
   }
 }

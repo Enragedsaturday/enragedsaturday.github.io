@@ -1,13 +1,83 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Davis v. United States.json",
+    "lens": "A",
+    "notes": "Treatment/currency not substantively reviewed under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "ae16c26336c5d383",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "citation: \"512 U.S. 452 (1994)\"",
+          "locator_note": "content_page.md frontmatter and lake/Davis v. United States__28cc66.json citations.official",
+          "needs_cl": false,
+          "problem": "The asserted official/display citation is 513 U.S. 1008, but the disclosed lake record and built page identify Davis v. United States as 512 U.S. 452 (1994).",
+          "proposed_fix": "Replace the official/display citation with 512 U.S. 452 and keep year 1994.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake official citation is 512 U.S. 452, not 513 U.S. 1008.",
+          "The built page also displays 512 U.S. 452 (1994)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the lake official citation as the source of truth for generated existence/citation assertions.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72fe4f48a1dc72d3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Rather, the suspect must unambiguously request counsel.",
+          "locator_note": "lake pinpoints[0] for pin-459 and text/Davis v. United States__28cc66.txt at official page 459",
+          "needs_cl": false,
+          "problem": "The pin-459 payload quote is not a verbatim opinion excerpt; it is built-page Markdown/summary text and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-459's lake quote with the actual opinion passage on official page 459 beginning with the unambiguous-request rule, or store the displayed edited quotation only if it is tied to that passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page Markdown ('--- # Davis v. United States') rather than opinion text.",
+          "The disclosed lake judgment field says quote_fidelity is mismatch.",
+          "The actual opinion text at page 459 contains the unambiguous-request rule, not the harvested page-summary block."
+        ],
+        "residual_risks": [
+          "The displayed content_page legal quotation appears supportable from page 459, but the stored lake pinpoint quote for this row is malformed."
+        ],
+        "suggested_tightening": "Add a guard that pinpoints may not contain frontmatter, page headers, or section headings harvested from the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "344b32bab94c7f8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the row match the disclosed lake record and built page: good_law/good as of 2026-06-30.",
+          "Lens A records the verdict but does not raise treatment or currency findings."
+        ],
+        "residual_risks": [
+          "Treatment currency and subsequent-history correctness are reserved to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Davis v. United States.json\",\"reviewed\":[{\"assertion_id\":\"ae16c26336c5d383\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted official/display citation is 513 U.S. 1008, but the disclosed lake record and built page identify Davis v. United States as 512 U.S. 452 (1994).\",\"severity\":\"high\",\"proposed_fix\":\"Replace the official/display citation with 512 U.S. 452 and keep year 1994.\",\"evidence_quote\":\"citation: \\\"512 U.S. 452 (1994)\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter and lake/Davis v. United States__28cc66.json citations.official\"},\"reasons\":[\"Lake official citation is 512 U.S. 452, not 513 U.S. 1008.\",\"The built page also displays 512 U.S. 452 (1994).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the lake official citation as the source of truth for generated existence/citation assertions.\"},{\"assertion_id\":\"72fe4f48a1dc72d3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-459 payload quote is not a verbatim opinion excerpt; it is built-page Markdown/summary text and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-459's lake quote with the actual opinion passage on official page 459 beginning with the unambiguous-request rule, or store the displayed edited quotation only if it is tied to that passage.\",\"evidence_quote\":\"Rather, the suspect must unambiguously request counsel.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] for pin-459 and text/Davis v. United States__28cc66.txt at official page 459\"},\"reasons\":[\"The payload quote begins with page Markdown ('--- # Davis v. United States') rather than opinion text.\",\"The disclosed lake judgment field says quote_fidelity is mismatch.\",\"The actual opinion text at page 459 contains the unambiguous-request rule, not the harvested page-summary block.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content_page legal quotation appears supportable from page 459, but the stored lake pinpoint quote for this row is malformed.\"],\"suggested_tightening\":\"Add a guard that pinpoints may not contain frontmatter, page headers, or section headings harvested from the built page.\"},{\"assertion_id\":\"344b32bab94c7f8d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in the row match the disclosed lake record and built page: good_law/good as of 2026-06-30.\",\"Lens A records the verdict but does not raise treatment or currency findings.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and subsequent-history correctness are reserved to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency not substantively reviewed under lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:32:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a92730deca",
+      "F-S9-PR-a3fd1ab506"
+    ],
     "group_id": "_overhaul2/lake/cases/Davis v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +86,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-25d6a156.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Davis v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 101847,
+      "output": 6133,
+      "source": "codex-events",
+      "total": 107980
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "344b32bab94c7f8d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72fe4f48a1dc72d3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ae16c26336c5d383": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a92730deca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a3fd1ab506",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 117.0
   }
 }

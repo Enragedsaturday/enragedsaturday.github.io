@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Beheler.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "0f5d2e19ebf8e9cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies California v. Beheler, U.S. Supreme Court, decided 1983-07-06, year 1983, docket 82-1666.",
+          "The official citation in the lake record is 463 U.S. 1121 and the cited parallel/vendor citations in the payload match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "492b7f8ba976b028",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is beyond doubt that Beheler was neither taken into custody nor significantly deprived of his freedom of action. Indeed, Beheler’s freedom was not restricted in any way whatsoever.",
+          "locator_note": "text/California v. Beheler__ff4530.txt, page marker 1123; lake pinpoints id pin-1123",
+          "needs_cl": false,
+          "problem": "pin-1123 is not a character-faithful opinion quote. The disclosed pinpoint quote is a corrupted excerpt from the built page beginning with the page title/front matter, and the lake record itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-1123 from the opinion text and anchor it to the actual 1123 passage, or remove the corrupt pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-1123 has page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "The actual opinion passage supporting the content-page quote is the 1123 paragraph beginning with the Miranda custody definition, not the built-page markdown excerpt stored in the pinpoint."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supportable after the quote/pin is regenerated; this refutation is limited to quote fidelity as framed."
+        ],
+        "suggested_tightening": "Use the exact 1123 text with the curly apostrophe in Beheler’s, or paraphrase without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bec1c727593fa794",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the ultimate inquiry is simply whether there is a “formal arrest or restraint on freedom of movement” of the degree associated with a formal arrest.",
+          "locator_note": "text/California v. Beheler__ff4530.txt, page marker 1125; lake pinpoints id pin-1125",
+          "needs_cl": false,
+          "problem": "pin-1125 is not character-faithful to the opinion text. The quoted sentence substitutes straight single quotation marks and an ellipsis for the opinion’s wording, while the lake record flags the pinpoint as quote_fidelity mismatch.",
+          "proposed_fix": "Replace the quote with the exact opinion text or convert it to a paraphrase without quotation marks.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text says the suspect is “in custody” and uses curly double quotation marks around the quoted terms, while the asserted quote uses straight single quotation marks.",
+          "The opinion text includes the phrase 'for purposes of receiving Miranda protection' before the ultimate-inquiry clause; the asserted quote replaces it with an ellipsis and the lake marks the quote as a mismatch."
+        ],
+        "residual_risks": [
+          "The rule is substantively supported by the opinion once quoted accurately; this verdict attacks only the verbatim quote form."
+        ],
+        "suggested_tightening": "Quote the full sentence exactly from the 1125 paragraph, preserving the opinion’s quotation marks and omitted-language choices.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "729c0c481a3b0388",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1983-07-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment and currency are outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be assessed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/California v. Beheler.json\",\"reviewed\":[{\"assertion_id\":\"0f5d2e19ebf8e9cf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies California v. Beheler, U.S. Supreme Court, decided 1983-07-06, year 1983, docket 82-1666.\",\"The official citation in the lake record is 463 U.S. 1121 and the cited parallel/vendor citations in the payload match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"492b7f8ba976b028\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1123 is not a character-faithful opinion quote. The disclosed pinpoint quote is a corrupted excerpt from the built page beginning with the page title/front matter, and the lake record itself flags quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-1123 from the opinion text and anchor it to the actual 1123 passage, or remove the corrupt pinpoint quote.\",\"evidence_quote\":\"It is beyond doubt that Beheler was neither taken into custody nor significantly deprived of his freedom of action. Indeed, Beheler’s freedom was not restricted in any way whatsoever.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Beheler__ff4530.txt, page marker 1123; lake pinpoints id pin-1123\"},\"reasons\":[\"The lake pinpoint for pin-1123 has page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch.\",\"The actual opinion passage supporting the content-page quote is the 1123 paragraph beginning with the Miranda custody definition, not the built-page markdown excerpt stored in the pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition appears supportable after the quote/pin is regenerated; this refutation is limited to quote fidelity as framed.\"],\"suggested_tightening\":\"Use the exact 1123 text with the curly apostrophe in Beheler’s, or paraphrase without quotation marks.\"},{\"assertion_id\":\"bec1c727593fa794\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1125 is not character-faithful to the opinion text. The quoted sentence substitutes straight single quotation marks and an ellipsis for the opinion’s wording, while the lake record flags the pinpoint as quote_fidelity mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with the exact opinion text or convert it to a paraphrase without quotation marks.\",\"evidence_quote\":\"the ultimate inquiry is simply whether there is a “formal arrest or restraint on freedom of movement” of the degree associated with a formal arrest.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Beheler__ff4530.txt, page marker 1125; lake pinpoints id pin-1125\"},\"reasons\":[\"The opinion text says the suspect is “in custody” and uses curly double quotation marks around the quoted terms, while the asserted quote uses straight single quotation marks.\",\"The opinion text includes the phrase 'for purposes of receiving Miranda protection' before the ultimate-inquiry clause; the asserted quote replaces it with an ellipsis and the lake marks the quote as a mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The rule is substantively supported by the opinion once quoted accurately; this verdict attacks only the verbatim quote form.\"],\"suggested_tightening\":\"Quote the full sentence exactly from the 1125 paragraph, preserving the opinion’s quotation marks and omitted-language choices.\"},{\"assertion_id\":\"729c0c481a3b0388\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1983-07-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment and currency are outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be assessed by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:19:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a5a8a266af",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4935114ae2",
+      "F-S9-PR-f88160b2d8"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Beheler.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e93d2a21.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Beheler"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 189240,
+      "output": 8687,
+      "source": "codex-events",
+      "total": 197927
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "0f5d2e19ebf8e9cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "492b7f8ba976b028": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "729c0c481a3b0388": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bec1c727593fa794": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4935114ae2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f88160b2d8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a5a8a266af",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 172.4
   }
 }

@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bond v. United States.json",
+    "lens": "A",
+    "notes": "Lens A reviewed all four inventory rows exactly once. No external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "c72cab765b58166d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Bond v. United States, U.S. Supreme Court, decided 2000-04-17.",
+          "Official citation in the lake record is 529 U.S. 334, with parallel citations 120 S. Ct. 1462 and 146 L. Ed. 2d 365, matching the payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aaa6413456cdc003",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Physically invasive inspection is simply more intrusive than purely visual inspection.",
+          "locator_note": "pin-337; opinion text paragraph b413-6, page label 337.",
+          "needs_cl": false,
+          "problem": "The pin-337 harvested quote is not a verbatim opinion passage; it splices content-page Issue/Rule text instead of the actual page-337 quotation.",
+          "proposed_fix": "Replace pin-337 with the actual opinion sentence quoted on the page: \"Physically invasive inspection is simply more intrusive than purely visual inspection.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-337 quote_fidelity as mismatch.",
+          "The disclosed opinion text supports the rule sentence, but not the payload quote beginning \"within the meaning of the Fourth Amendment. ## Rule Yes.\""
+        ],
+        "residual_risks": [
+          "The substantive rule survives if the pinpoint quote is corrected."
+        ],
+        "suggested_tightening": "Regenerate pin-337 from the actual quoted sentence, not from nearby Markdown context.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e50eaab0f322827e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We therefore hold that the agent’s physical manipulation of petitioner’s bag violated the Fourth Amendment.",
+          "locator_note": "pin-338; opinion text paragraph b414-5 spans page labels 338-339.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively present at pages 338-339, but it is not character-faithful because the payload normalizes curly apostrophes to straight apostrophes and omits the leading \"Thus,\" if treated as a full sentence.",
+          "proposed_fix": "Use the opinion typography for possessives, or explicitly mark the quotation as normalized; include \"Thus,\" if quoting the full sentence rather than a fragment.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the quoted rule about expected handling versus exploratory feeling of a bus passenger's bag.",
+          "The payload uses \"agent's\" and \"petitioner's\" while the opinion text uses \"agent’s\" and \"petitioner’s\"; strict character fidelity therefore needs correction."
+        ],
+        "residual_risks": [
+          "If the corpus permits typographic normalization, this is formatting-only; under the stated character-faithful lens it still needs modification."
+        ],
+        "suggested_tightening": "Store pin-338 as an exact text quote, preserving curly apostrophes and documenting any omitted lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85e6e9a15b84f46b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 2000-04-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B must assess treatment and currency independently."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bond v. United States.json\",\"reviewed\":[{\"assertion_id\":\"c72cab765b58166d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Bond v. United States, U.S. Supreme Court, decided 2000-04-17.\",\"Official citation in the lake record is 529 U.S. 334, with parallel citations 120 S. Ct. 1462 and 146 L. Ed. 2d 365, matching the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"aaa6413456cdc003\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-337 harvested quote is not a verbatim opinion passage; it splices content-page Issue/Rule text instead of the actual page-337 quotation.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-337 with the actual opinion sentence quoted on the page: \\\"Physically invasive inspection is simply more intrusive than purely visual inspection.\\\"\",\"evidence_quote\":\"Physically invasive inspection is simply more intrusive than purely visual inspection.\",\"needs_cl\":false,\"locator_note\":\"pin-337; opinion text paragraph b413-6, page label 337.\"},\"reasons\":[\"The lake record itself marks pin-337 quote_fidelity as mismatch.\",\"The disclosed opinion text supports the rule sentence, but not the payload quote beginning \\\"within the meaning of the Fourth Amendment. ## Rule Yes.\\\"\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive rule survives if the pinpoint quote is corrected.\"],\"suggested_tightening\":\"Regenerate pin-337 from the actual quoted sentence, not from nearby Markdown context.\"},{\"assertion_id\":\"e50eaab0f322827e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively present at pages 338-339, but it is not character-faithful because the payload normalizes curly apostrophes to straight apostrophes and omits the leading \\\"Thus,\\\" if treated as a full sentence.\",\"severity\":\"low\",\"proposed_fix\":\"Use the opinion typography for possessives, or explicitly mark the quotation as normalized; include \\\"Thus,\\\" if quoting the full sentence rather than a fragment.\",\"evidence_quote\":\"We therefore hold that the agent’s physical manipulation of petitioner’s bag violated the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"pin-338; opinion text paragraph b414-5 spans page labels 338-339.\"},\"reasons\":[\"The disclosed text contains the quoted rule about expected handling versus exploratory feeling of a bus passenger's bag.\",\"The payload uses \\\"agent's\\\" and \\\"petitioner's\\\" while the opinion text uses \\\"agent’s\\\" and \\\"petitioner’s\\\"; strict character fidelity therefore needs correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits typographic normalization, this is formatting-only; under the stated character-faithful lens it still needs modification.\"],\"suggested_tightening\":\"Store pin-338 as an exact text quote, preserving curly apostrophes and documenting any omitted lead-in.\"},{\"assertion_id\":\"85e6e9a15b84f46b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 2000-04-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess treatment and currency independently.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed all four inventory rows exactly once. No external sources were used.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:45-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:15:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e4e1a55219",
+      "F-S9-PR-e46dc59cbb"
+    ],
     "group_id": "_overhaul2/lake/cases/Bond v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-378c08e1",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-378c08e1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:36.770271Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:37.358466Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:38.125360Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:39.283454Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:41.264569Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:45.135180Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Bond v. United States"
+    ],
+    "tokens": {
+      "input": 161930,
+      "output": 8393,
+      "source": "codex-events",
+      "total": 170323
+    },
+    "verdict_map": {
+      "85e6e9a15b84f46b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aaa6413456cdc003": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c72cab765b58166d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e50eaab0f322827e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e4e1a55219",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e46dc59cbb",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 161.0
   }
 }

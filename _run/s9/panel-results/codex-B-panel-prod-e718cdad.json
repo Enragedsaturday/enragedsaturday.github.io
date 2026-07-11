@@ -1,13 +1,63 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Colonnade Catering Corp. v. United States.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "d901acbfbb806d7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as Colonnade Catering Corp. v. United States, U.S. Supreme Court, decided 1970-02-25, docket 108, cluster_id 108077.",
+          "The lake record marks expected_citation_found true and canonical_name_match true, and selects 397 U.S. 72 as the official citation.",
+          "The disclosed record supports citation existence and SCOTUS authority weight, but not any separate current-treatment conclusion."
+        ],
+        "residual_risks": [
+          "The lake treatment/progeny fields are unverified and empty, so this existence determination should not be read as a verified live-law treatment call."
+        ],
+        "suggested_tightening": "Keep the citation/identity assertion separate from any good-law statement unless treatment is later derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e3c97891d2be6f2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.field_i_validity, treatment.edges, and progeny rows_cached",
+          "needs_cl": true,
+          "problem": "The page makes a positive treatment claim, 'Good law — foundational,' but the disclosed lake treatment record is only unverified and contains no treatment edges or progeny enumeration supporting that status.",
+          "proposed_fix": "Remove or downgrade the positive 'Good law — foundational' language to 'Treatment unverified' unless and until treatment/progeny fields are populated and support the good-law/foundational label.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The group_inventory payload states field_i_validity is unverified and as_of_content/as_of_treatment are null.",
+          "The lake treatment object has field_i_validity unverified, composite_basis unverified, point_overrides empty, and edges empty.",
+          "The lake progeny object has complete_query null, citation_count null, rows_cached 0, and outbound_opinion_edges empty.",
+          "Under the default-to-refuted rule, the positive current-law/foundational treatment label cannot be verified from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The case may in fact remain good law, but that conclusion is outside the disclosed treatment record."
+        ],
+        "suggested_tightening": "Make the visible treatment section match the lake badge: identity verified, treatment unverified, no current-law conclusion yet.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Colonnade Catering Corp. v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d901acbfbb806d7d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as Colonnade Catering Corp. v. United States, U.S. Supreme Court, decided 1970-02-25, docket 108, cluster_id 108077.\",\"The lake record marks expected_citation_found true and canonical_name_match true, and selects 397 U.S. 72 as the official citation.\",\"The disclosed record supports citation existence and SCOTUS authority weight, but not any separate current-treatment conclusion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment/progeny fields are unverified and empty, so this existence determination should not be read as a verified live-law treatment call.\"],\"suggested_tightening\":\"Keep the citation/identity assertion separate from any good-law statement unless treatment is later derived.\"},{\"assertion_id\":\"7e3c97891d2be6f2\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page makes a positive treatment claim, 'Good law — foundational,' but the disclosed lake treatment record is only unverified and contains no treatment edges or progeny enumeration supporting that status.\",\"severity\":\"high\",\"proposed_fix\":\"Remove or downgrade the positive 'Good law — foundational' language to 'Treatment unverified' unless and until treatment/progeny fields are populated and support the good-law/foundational label.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.field_i_validity, treatment.edges, and progeny rows_cached\"},\"reasons\":[\"The group_inventory payload states field_i_validity is unverified and as_of_content/as_of_treatment are null.\",\"The lake treatment object has field_i_validity unverified, composite_basis unverified, point_overrides empty, and edges empty.\",\"The lake progeny object has complete_query null, citation_count null, rows_cached 0, and outbound_opinion_edges empty.\",\"Under the default-to-refuted rule, the positive current-law/foundational treatment label cannot be verified from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may in fact remain good law, but that conclusion is outside the disclosed treatment record.\"],\"suggested_tightening\":\"Make the visible treatment section match the lake badge: identity verified, treatment unverified, no current-law conclusion yet.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. No external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:25:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d8b7296602"
+    ],
     "group_id": "_overhaul2/lake/cases/Colonnade Catering Corp. v. United States.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,21 +66,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e718cdad.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Colonnade Catering Corp. v. United States"
     ],
     "tokens": {
-      "input": 760,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 760
+      "input": 99235,
+      "output": 4535,
+      "source": "codex-events",
+      "total": 103770
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "7e3c97891d2be6f2": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d901acbfbb806d7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d8b7296602",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 92.5
   }
 }

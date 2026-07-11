@@ -1,13 +1,108 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Davis v. United States (2011).json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl. No black_letter or support rows were present in this group.",
+    "reviewed": [
+      {
+        "assertion_id": "f4e0444b98230812",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"display\": \"564 U.S. 229\"",
+          "locator_note": "group_inventory existence payload vs lake.citations and content_page frontmatter",
+          "needs_cl": false,
+          "problem": "The assertion payload identifies the case by 565 U.S. 1100 and related 132 S. Ct./181 L. Ed. 2d/2011 U.S. LEXIS 8943/80 U.S.L.W. citations, but the disclosed lake record and built page identify this Davis decision as 564 U.S. 229 (2011).",
+          "proposed_fix": "Replace the citation set with the lake citations: official 564 U.S. 229; parallels 131 S. Ct. 2419 and 180 L. Ed. 2d 285; vendor neutral 2011 U.S. LEXIS 4560. Do not use 565 U.S. 1100 for this record.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is Davis v. United States, U.S. Supreme Court, decided 2011-06-16, docket 09-11328.",
+          "Lake official/display citation is 564 U.S. 229, and content_page citation is 564 U.S. 229 (2011).",
+          "The assertion payload's 565 U.S. 1100 official/display citation does not match the disclosed lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reject inventory citation payloads whose official/display citation diverges from lake.citations.official.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "278aedb92d2c6d10",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Because suppression would do nothing to deter police misconduct in these circumstances, and because it would come at a high cost to both the truth and the public safety, we hold that searches conducted in objectively reasonable reliance on binding appellate precedent are not subject to the exclusionary rule.",
+          "locator_note": "lake.pinpoints[id=pin-232]; content_page ^pin-232; text opinion page marker 232",
+          "needs_cl": false,
+          "problem": "pin-232's stored quote is page/header/background prose, not the quoted Davis passage at 564 U.S. 232. The lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-232 quote with the actual sentence quoted on the page and found in the opinion text at page 232.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text at the 232 page marker contains the quoted suppression sentence.",
+          "The content page quotes that sentence at ^pin-232.",
+          "The lake/inventory quote begins with markdown header material and omits the actual quoted sentence."
+        ],
+        "residual_risks": [
+          "The content-page quote itself is supported; the defect is the stored lake/inventory pinpoint quote."
+        ],
+        "suggested_tightening": "Reharvest pinpoints from the actual quoted text rather than surrounding markdown, and populate the page/pin as 232.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd1147ec9b65c9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We therefore hold that when the police conduct a search in objectively reasonable reliance on binding appellate <page-number citation-index=\"1\" label=\"250\">*250</page-number>precedent, the exclusionary rule does not apply.",
+          "locator_note": "lake.pinpoints[id=pin-249]; content_page ^pin-249; text opinion page markers 249-250",
+          "needs_cl": false,
+          "problem": "pin-249's stored quote is application prose plus a heading, not the conclusion quote cited at 249-250. It is not character-faithful to the opinion passage the page quotes.",
+          "proposed_fix": "Replace pin-249 quote with the conclusion holding sentence and preserve the 249-250 page span or equivalent page-break normalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content page's ^pin-249 quote begins: We therefore hold that when the police conduct a search...",
+          "The opinion text contains that holding sentence across the 249-250 page break.",
+          "The lake/inventory quote instead begins with Their conduct was not deliberate... and includes ## Conclusion, so it does not match the cited passage."
+        ],
+        "residual_risks": [
+          "The target quote spans a page break; the corrected quote should state whether page markers are stripped or encoded."
+        ],
+        "suggested_tightening": "Use a page_span of 249-250 if the schema supports it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d5e4ea5c727025c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency is outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currentness remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Davis v. United States (2011).json\",\"reviewed\":[{\"assertion_id\":\"f4e0444b98230812\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The assertion payload identifies the case by 565 U.S. 1100 and related 132 S. Ct./181 L. Ed. 2d/2011 U.S. LEXIS 8943/80 U.S.L.W. citations, but the disclosed lake record and built page identify this Davis decision as 564 U.S. 229 (2011).\",\"severity\":\"high\",\"proposed_fix\":\"Replace the citation set with the lake citations: official 564 U.S. 229; parallels 131 S. Ct. 2419 and 180 L. Ed. 2d 285; vendor neutral 2011 U.S. LEXIS 4560. Do not use 565 U.S. 1100 for this record.\",\"evidence_quote\":\"\\\"display\\\": \\\"564 U.S. 229\\\"\",\"needs_cl\":false,\"locator_note\":\"group_inventory existence payload vs lake.citations and content_page frontmatter\"},\"reasons\":[\"Lake identity is Davis v. United States, U.S. Supreme Court, decided 2011-06-16, docket 09-11328.\",\"Lake official/display citation is 564 U.S. 229, and content_page citation is 564 U.S. 229 (2011).\",\"The assertion payload's 565 U.S. 1100 official/display citation does not match the disclosed lake record.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Reject inventory citation payloads whose official/display citation diverges from lake.citations.official.\"},{\"assertion_id\":\"278aedb92d2c6d10\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-232's stored quote is page/header/background prose, not the quoted Davis passage at 564 U.S. 232. The lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-232 quote with the actual sentence quoted on the page and found in the opinion text at page 232.\",\"evidence_quote\":\"Because suppression would do nothing to deter police misconduct in these circumstances, and because it would come at a high cost to both the truth and the public safety, we hold that searches conducted in objectively reasonable reliance on binding appellate precedent are not subject to the exclusionary rule.\",\"needs_cl\":false,\"locator_note\":\"lake.pinpoints[id=pin-232]; content_page ^pin-232; text opinion page marker 232\"},\"reasons\":[\"The opinion text at the 232 page marker contains the quoted suppression sentence.\",\"The content page quotes that sentence at ^pin-232.\",\"The lake/inventory quote begins with markdown header material and omits the actual quoted sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page quote itself is supported; the defect is the stored lake/inventory pinpoint quote.\"],\"suggested_tightening\":\"Reharvest pinpoints from the actual quoted text rather than surrounding markdown, and populate the page/pin as 232.\"},{\"assertion_id\":\"bbbd1147ec9b65c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-249's stored quote is application prose plus a heading, not the conclusion quote cited at 249-250. It is not character-faithful to the opinion passage the page quotes.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-249 quote with the conclusion holding sentence and preserve the 249-250 page span or equivalent page-break normalization.\",\"evidence_quote\":\"We therefore hold that when the police conduct a search in objectively reasonable reliance on binding appellate <page-number citation-index=\\\"1\\\" label=\\\"250\\\">*250</page-number>precedent, the exclusionary rule does not apply.\",\"needs_cl\":false,\"locator_note\":\"lake.pinpoints[id=pin-249]; content_page ^pin-249; text opinion page markers 249-250\"},\"reasons\":[\"The content page's ^pin-249 quote begins: We therefore hold that when the police conduct a search...\",\"The opinion text contains that holding sentence across the 249-250 page break.\",\"The lake/inventory quote instead begins with Their conduct was not deliberate... and includes ## Conclusion, so it does not match the cited passage.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The target quote spans a page break; the corrected quote should state whether page markers are stripped or encoded.\"],\"suggested_tightening\":\"Use a page_span of 249-250 if the schema supports it.\"},{\"assertion_id\":\"2d5e4ea5c727025c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency is outside Lens A; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currentness remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl. No black_letter or support rows were present in this group.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:32:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-773223032a",
+      "F-S9-PR-ebc506d53b"
+    ],
     "group_id": "_overhaul2/lake/cases/Davis v. United States (2011).json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +111,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c3448723.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Davis v. United States (2011)"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 193275,
+      "output": 9468,
+      "source": "codex-events",
+      "total": 202743
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "278aedb92d2c6d10": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2d5e4ea5c727025c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbbd1147ec9b65c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f4e0444b98230812": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-221787ed46",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-773223032a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ebc506d53b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 178.3
   }
 }

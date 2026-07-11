@@ -1,12 +1,80 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Davis v. United States.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 group_inventory rows exactly once under Lens B only; no support or quote-fidelity defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ae16c26336c5d383",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "citation: \"512 U.S. 452 (1994)\"",
+          "locator_note": "group_inventory.jsonl row ae16c26336c5d383; content_page.md frontmatter; lake/Davis v. United States__28cc66.json citations.official/display",
+          "needs_cl": false,
+          "problem": "The case-cite assertion uses 513 U.S. 1008 as the official/display citation for Davis, but the disclosed lake record and built page identify this authority as 512 U.S. 452 (1994). No disclosed citation list for this record contains 513 U.S. 1008.",
+          "proposed_fix": "Replace the asserted official/display cite with 512 U.S. 452 (1994) and regenerate the inventory from the re-keyed Davis record.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "group_inventory asserts display/official citation 513 U.S. 1008.",
+          "content_page.md identifies Davis as 512 U.S. 452 (1994).",
+          "lake citations.official.cite and citations.display are 512 U.S. 452; the lake warning also describes re-keying to the merits record for Davis v. United States, 512 U.S. 452, 1994."
+        ],
+        "residual_risks": [
+          "This is a citation/identity defect, not a negative-treatment finding; the good-law status of the 512 U.S. 452 authority is assessed separately."
+        ],
+        "suggested_tightening": "Require case-cite assertions to match lake.citations.official.cite or lake.citations.display for the same record_id after re-keying.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72fe4f48a1dc72d3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate the quote-fidelity mismatch; no treatment or live-law assertion in this row is contradicted by the disclosed record.",
+          "The treatment/weight text embedded in the harvested quote matches the lake/content treatment fields: good as of 2026-06-30 and Binding — SCOTUS."
+        ],
+        "residual_risks": [
+          "The payload itself reports quote_fidelity: mismatch; that remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "344b32bab94c7f8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30, matching the payload and content page.",
+          "lake treatment.edges and point_overrides are empty, and progeny outbound_opinion_edges is empty; no disclosed superseding, overruling, abrogating, or limiting treatment appears.",
+          "lake identity lists court as U.S. Supreme Court and court_level as scotus, so the Binding — SCOTUS weight label is consistent."
+        ],
+        "residual_risks": [
+          "The treatment provenance is migration-seeded and derivation reviewed zero citing opinions, so this stands only because the disclosed lake judgment fields are allowed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Davis v. United States.json\",\"reviewed\":[{\"assertion_id\":\"ae16c26336c5d383\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case-cite assertion uses 513 U.S. 1008 as the official/display citation for Davis, but the disclosed lake record and built page identify this authority as 512 U.S. 452 (1994). No disclosed citation list for this record contains 513 U.S. 1008.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the asserted official/display cite with 512 U.S. 452 (1994) and regenerate the inventory from the re-keyed Davis record.\",\"evidence_quote\":\"citation: \\\"512 U.S. 452 (1994)\\\"\",\"needs_cl\":false,\"locator_note\":\"group_inventory.jsonl row ae16c26336c5d383; content_page.md frontmatter; lake/Davis v. United States__28cc66.json citations.official/display\"},\"reasons\":[\"group_inventory asserts display/official citation 513 U.S. 1008.\",\"content_page.md identifies Davis as 512 U.S. 452 (1994).\",\"lake citations.official.cite and citations.display are 512 U.S. 452; the lake warning also describes re-keying to the merits record for Davis v. United States, 512 U.S. 452, 1994.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is a citation/identity defect, not a negative-treatment finding; the good-law status of the 512 U.S. 452 authority is assessed separately.\"],\"suggested_tightening\":\"Require case-cite assertions to match lake.citations.official.cite or lake.citations.display for the same record_id after re-keying.\"},{\"assertion_id\":\"72fe4f48a1dc72d3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate the quote-fidelity mismatch; no treatment or live-law assertion in this row is contradicted by the disclosed record.\",\"The treatment/weight text embedded in the harvested quote matches the lake/content treatment fields: good as of 2026-06-30 and Binding — SCOTUS.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The payload itself reports quote_fidelity: mismatch; that remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"344b32bab94c7f8d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30, matching the payload and content page.\",\"lake treatment.edges and point_overrides are empty, and progeny outbound_opinion_edges is empty; no disclosed superseding, overruling, abrogating, or limiting treatment appears.\",\"lake identity lists court as U.S. Supreme Court and court_level as scotus, so the Binding — SCOTUS weight label is consistent.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment provenance is migration-seeded and derivation reviewed zero citing opinions, so this stands only because the disclosed lake judgment fields are allowed evidence.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 group_inventory rows exactly once under Lens B only; no support or quote-fidelity defect is raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:09-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T01:33:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a3fd1ab506",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Davis v. United States.json",
     "group_total_assertions": 3,
@@ -16,21 +84,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-25d6a156.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Davis v. United States"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 244573,
+      "output": 9065,
+      "source": "codex-events",
+      "total": 253638
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "344b32bab94c7f8d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72fe4f48a1dc72d3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae16c26336c5d383": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a92730deca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a3fd1ab506",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 179.1
   }
 }

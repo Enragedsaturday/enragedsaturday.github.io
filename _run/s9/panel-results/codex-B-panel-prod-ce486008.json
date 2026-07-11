@@ -1,22 +1,167 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json",
+    "lens": "B",
+    "notes": "Lens B only; quote fidelity was not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "d6f8fac61ffea312",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status \"verified\", is not a stub, and identifies the case as U.S. Supreme Court docket 13-1412 decided 2015-05-18.",
+          "The cited reporters in the assertion appear in citations.all, and the treatment field marks the authority \"good_law\" as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The lake record has official_selection.selected null, but that is a citation-display issue rather than a currency/existence defect under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e1a9097bcdfbe0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity row, and support/quote fidelity is outside Lens B.",
+          "No independent treatment or currency defect is disclosed for this pinpoint apart from the treatment row reviewed below."
+        ],
+        "residual_risks": [
+          "Lens A must adjudicate quote accuracy and pinpoint support."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f2cd00be0517190",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity row, and support/quote fidelity is outside Lens B.",
+          "No independent treatment or currency defect is disclosed for this pinpoint apart from the treatment row reviewed below."
+        ],
+        "residual_risks": [
+          "Lens A must adjudicate quote accuracy and pinpoint support."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9568641791d4b973",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 25,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law treatment status itself is supported by the lake field_i_validity, but the page's unqualified \"No negative treatment\" language is too strong because the disclosed treatment record contains proposed negative-treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but remove \"No negative treatment\" or qualify it to say that no audited negative treatment is reflected while proposed/mentioned negative-treatment edges remain flagged for audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is \"good_law\", the scope_note matches the asserted treatment payload, and point_overrides is empty with varies_by_point false.",
+          "However, treatment.edges includes proposed entries labelled questioned, overruled, and abrogated, and the derivation metadata flags audit_needed true; that undercuts the page's absolute \"No negative treatment\" sentence."
+        ],
+        "residual_risks": [
+          "The negative edge records are proposed and field_iii is \"mentioned\", so the disclosed evidence does not prove that Sheehan itself has actually been overruled or abrogated.",
+          "Resolving whether any proposed edge is real negative treatment would require the underlying citing-case treatment audit."
+        ],
+        "suggested_tightening": "Retain the good-law QI/ADA scope note, but replace the unqualified no-negative-treatment statement with a qualified audit-status statement.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d6f8fac61ffea312\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is status \\\"verified\\\", is not a stub, and identifies the case as U.S. Supreme Court docket 13-1412 decided 2015-05-18.\",\n        \"The cited reporters in the assertion appear in citations.all, and the treatment field marks the authority \\\"good_law\\\" as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record has official_selection.selected null, but that is a citation-display issue rather than a currency/existence defect under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4e1a9097bcdfbe0f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote-fidelity row, and support/quote fidelity is outside Lens B.\",\n        \"No independent treatment or currency defect is disclosed for this pinpoint apart from the treatment row reviewed below.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must adjudicate quote accuracy and pinpoint support.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8f2cd00be0517190\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote-fidelity row, and support/quote fidelity is outside Lens B.\",\n        \"No independent treatment or currency defect is disclosed for this pinpoint apart from the treatment row reviewed below.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must adjudicate quote accuracy and pinpoint support.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9568641791d4b973\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law treatment status itself is supported by the lake field_i_validity, but the page's unqualified \\\"No negative treatment\\\" language is too strong because the disclosed treatment record contains proposed negative-treatment edges and audit-needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law as of 2026-06-30, but remove \\\"No negative treatment\\\" or qualify it to say that no audited negative treatment is reflected while proposed/mentioned negative-treatment edges remain flagged for audit.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 25,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is \\\"good_law\\\", the scope_note matches the asserted treatment payload, and point_overrides is empty with varies_by_point false.\",\n        \"However, treatment.edges includes proposed entries labelled questioned, overruled, and abrogated, and the derivation metadata flags audit_needed true; that undercuts the page's absolute \\\"No negative treatment\\\" sentence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The negative edge records are proposed and field_iii is \\\"mentioned\\\", so the disclosed evidence does not prove that Sheehan itself has actually been overruled or abrogated.\",\n        \"Resolving whether any proposed edge is real negative treatment would require the underlying citing-case treatment audit.\"\n      ],\n      \"suggested_tightening\": \"Retain the good-law QI/ADA scope note, but replace the unqualified no-negative-treatment statement with a qualified audit-status statement.\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote fidelity was not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:24:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6070cca45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a8b2a0a190",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-295467cc4e"
+    ],
     "group_id": "_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ce486008",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ce486008.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 7df8ba46-703d-4fef-bff7-48c24581b21c\n2026-07-10T22:23:55.630608Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.437685Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.034103Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.852511Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:59.052123Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:00.980589Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City and County of San Francisco v. Sheehan"
+    ],
+    "tokens": {
+      "input": 300943,
+      "output": 8895,
+      "source": "codex-events",
+      "total": 309838
+    },
+    "verdict_map": {
+      "4e1a9097bcdfbe0f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f2cd00be0517190": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9568641791d4b973": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d6f8fac61ffea312": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6070cca45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a8b2a0a190",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-295467cc4e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 176.9
   }
 }

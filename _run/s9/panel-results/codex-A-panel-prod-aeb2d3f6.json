@@ -1,13 +1,73 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "f108a8eb5c5442e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Dickerson v. United States, U.S. Supreme Court, decided 2000-06-26, year 2000.",
+          "The lake official citation is 530 U.S. 428, matching the content page citation 530 U.S. 428 (2000); the listed parallel and vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb8cd52680639190",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively.",
+          "locator_note": "pin-444; lake pinpoints[].quote has page:null, star_marker:null, quote_fidelity:'mismatch', while text shows the quoted holding at star page *444.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-444 is not an opinion quote. It is harvested content-page prose/header material, and the lake record itself marks quote_fidelity as mismatch. The actual opinion passage at page 444 is different.",
+          "proposed_fix": "Replace pin-444's stored quote with the actual page-444 opinion passage beginning with 'In sum, we conclude...' and set accurate page/star metadata.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with content-page front matter/header text, not the Supreme Court opinion text.",
+          "The text file contains the relevant holding at page *444: 'In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively.'",
+          "The content page's displayed quote is supported by the text, but the assertion payload under review is the defective lake pinpoint quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep the page quote tied to the actual p. 444 passage rather than the harvested page summary.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e123130df8dc817",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment review is outside Lens A.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2000-06-26, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No treatment/currency merits review was performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Dickerson v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f108a8eb5c5442e5\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is Dickerson v. United States, U.S. Supreme Court, decided 2000-06-26, year 2000.\",\n        \"The lake official citation is 530 U.S. 428, matching the content page citation 530 U.S. 428 (2000); the listed parallel and vendor citations also match the lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fb8cd52680639190\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pinpoint quote for pin-444 is not an opinion quote. It is harvested content-page prose/header material, and the lake record itself marks quote_fidelity as mismatch. The actual opinion passage at page 444 is different.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-444's stored quote with the actual page-444 opinion passage beginning with 'In sum, we conclude...' and set accurate page/star metadata.\",\n        \"evidence_quote\": \"In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-444; lake pinpoints[].quote has page:null, star_marker:null, quote_fidelity:'mismatch', while text shows the quoted holding at star page *444.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote begins with content-page front matter/header text, not the Supreme Court opinion text.\",\n        \"The text file contains the relevant holding at page *444: 'In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively.'\",\n        \"The content page's displayed quote is supported by the text, but the assertion payload under review is the defective lake pinpoint quote.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Keep the page quote tied to the actual p. 444 passage rather than the harvested page summary.\"\n    },\n    {\n      \"assertion_id\": \"6e123130df8dc817\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment review is outside Lens A.\",\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2000-06-26, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency merits review was performed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:33:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b9c10bb6e1"
+    ],
     "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +76,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-aeb2d3f6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Dickerson v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 270891,
+      "output": 5040,
+      "source": "codex-events",
+      "total": 275931
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "6e123130df8dc817": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f108a8eb5c5442e5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb8cd52680639190": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9c10bb6e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 100.9
   }
 }

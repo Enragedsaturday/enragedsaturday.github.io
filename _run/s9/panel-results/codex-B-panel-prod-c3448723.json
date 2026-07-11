@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Davis v. United States (2011).json",
+    "lens": "B",
+    "notes": "Quote-fidelity rows were reviewed only for Lens B currency/treatment; no Lens A quote/support finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "f4e0444b98230812",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"cite\": \"564 U.S. 229\"",
+          "locator_note": "group_inventory payload uses 565 U.S. 1100 / 132 S. Ct. 864 / 181 L. Ed. 2d 563; lake.citations and content_page use 564 U.S. 229 / 131 S. Ct. 2419 / 180 L. Ed. 2d 285.",
+          "needs_cl": false,
+          "problem": "The existence/case-cite assertion identifies the Davis merits authority with the wrong official/display citation set. The lake record and built page identify the merits case as 564 U.S. 229, not 565 U.S. 1100.",
+          "proposed_fix": "Regenerate this assertion from the lake record: official/display citation 564 U.S. 229, parallels 131 S. Ct. 2419 and 180 L. Ed. 2d 285, neutral 2011 U.S. LEXIS 4560.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record for Davis v. United States (2011) selects 564 U.S. 229 as the official citation.",
+          "The content page also cites the merits decision as 564 U.S. 229 (2011).",
+          "Because the cited authority metadata points away from the disclosed merits record, the assertion as framed cannot stand."
+        ],
+        "residual_risks": [
+          "The disclosed files do not explain what 565 U.S. 1100 represents."
+        ],
+        "suggested_tightening": "Make the existence assertion consume lake.citations.display and lake.citations.official rather than stale cluster citation data.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "278aedb92d2c6d10",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "For currency/treatment only, the referenced Davis record is a U.S. Supreme Court decision with lake treatment field_i_validity set to good_law and no disclosed negative treatment edges."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd1147ec9b65c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "For currency/treatment only, the referenced Davis record is a U.S. Supreme Court decision with lake treatment field_i_validity set to good_law and no disclosed negative treatment edges."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d5e4ea5c727025c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, varies_by_point false.",
+          "The lake treatment record discloses no negative treatment edges and no point overrides.",
+          "The built page states the same status: good as of 2026-06-30 and Binding — SCOTUS."
+        ],
+        "residual_risks": [
+          "The disclosed derivation metadata reports zero reviewed citing opinions; no external check was permitted."
+        ],
+        "suggested_tightening": "For a stronger audit trail, rerun or refresh progeny/treatment derivation metadata against the current disclosed Davis identity before final publication.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Davis v. United States (2011).json\",\"reviewed\":[{\"assertion_id\":\"f4e0444b98230812\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The existence/case-cite assertion identifies the Davis merits authority with the wrong official/display citation set. The lake record and built page identify the merits case as 564 U.S. 229, not 565 U.S. 1100.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate this assertion from the lake record: official/display citation 564 U.S. 229, parallels 131 S. Ct. 2419 and 180 L. Ed. 2d 285, neutral 2011 U.S. LEXIS 4560.\",\"evidence_quote\":\"\\\"cite\\\": \\\"564 U.S. 229\\\"\",\"needs_cl\":false,\"locator_note\":\"group_inventory payload uses 565 U.S. 1100 / 132 S. Ct. 864 / 181 L. Ed. 2d 563; lake.citations and content_page use 564 U.S. 229 / 131 S. Ct. 2419 / 180 L. Ed. 2d 285.\"},\"reasons\":[\"The disclosed lake record for Davis v. United States (2011) selects 564 U.S. 229 as the official citation.\",\"The content page also cites the merits decision as 564 U.S. 229 (2011).\",\"Because the cited authority metadata points away from the disclosed merits record, the assertion as framed cannot stand.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not explain what 565 U.S. 1100 represents.\"],\"suggested_tightening\":\"Make the existence assertion consume lake.citations.display and lake.citations.official rather than stale cluster citation data.\"},{\"assertion_id\":\"278aedb92d2c6d10\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"For currency/treatment only, the referenced Davis record is a U.S. Supreme Court decision with lake treatment field_i_validity set to good_law and no disclosed negative treatment edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bbbd1147ec9b65c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"For currency/treatment only, the referenced Davis record is a U.S. Supreme Court decision with lake treatment field_i_validity set to good_law and no disclosed negative treatment edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2d5e4ea5c727025c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, varies_by_point false.\",\"The lake treatment record discloses no negative treatment edges and no point overrides.\",\"The built page states the same status: good as of 2026-06-30 and Binding — SCOTUS.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed derivation metadata reports zero reviewed citing opinions; no external check was permitted.\"],\"suggested_tightening\":\"For a stronger audit trail, rerun or refresh progeny/treatment derivation metadata against the current disclosed Davis identity before final publication.\"}],\"notes\":\"Quote-fidelity rows were reviewed only for Lens B currency/treatment; no Lens A quote/support finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:31:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-221787ed46"
+    ],
     "group_id": "_overhaul2/lake/cases/Davis v. United States (2011).json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c3448723.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Davis v. United States (2011)"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 196233,
+      "output": 5787,
+      "source": "codex-events",
+      "total": 202020
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "278aedb92d2c6d10": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2d5e4ea5c727025c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbbd1147ec9b65c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4e0444b98230812": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-221787ed46",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 115.1
   }
 }

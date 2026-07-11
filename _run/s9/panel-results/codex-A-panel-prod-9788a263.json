@@ -1,13 +1,101 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Greenwood.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. Treatment/currency was only checked for disclosed-field consistency because Lens B owns treatment review.",
+    "reviewed": [
+      {
+        "assertion_id": "b794342502bd849d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16, docket 86-684.",
+          "Lake citations list official citation 486 U.S. 35 and the payload's parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5490edf947711f23",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is common knowledge that plastic garbage bags left on or at the side of a public street are readily accessible to animals,<footnotemark>2</footnotemark> children, scavengers,<footnotemark>3</footnotemark> snoops,<footnotemark>4</footnotemark> and other members of the public.",
+          "locator_note": "text/California v. Greenwood__737090.txt, paragraph b98-5, page marker *40",
+          "needs_cl": false,
+          "problem": "The quoted words are supported, but the raw opinion text contains footnote markers after animals, scavengers, and snoops; the displayed verbatim quote silently omits those markers, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Either preserve the footnote markers in the pinpoint quote or mark the quote as normalized/footnote-stripped instead of strict verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the page-40 paragraph of the cached opinion text.",
+          "The lake pinpoint quote matches the page quote, but the disclosed raw text shows omitted footnote markers and the lake quote_fidelity field says mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus treats footnote-marker omission as acceptable normalization, this should be downgraded to a metadata tightening rather than a quote defect."
+        ],
+        "suggested_tightening": "Record whether quote fidelity checks are against raw HTML text or normalized opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b09bab66d8478845",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Here, we conclude that respondents exposed their garbage to the public sufficiently to defeat their claim to Fourth Amendment protection.",
+          "locator_note": "text/California v. Greenwood__737090.txt, paragraph b98-5, page marker *40",
+          "needs_cl": false,
+          "problem": "The pin-40 payload/lake quote is not the opinion passage; it is a corrupted harvest of the content page header, background, issue, and rule heading.",
+          "proposed_fix": "Replace the pin-40 quote with the actual page-40 opinion sentence: \"Here, we conclude that respondents exposed their garbage to the public sufficiently to defeat their claim to Fourth Amendment protection.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the page title/frontmatter-style text rather than language from the opinion.",
+          "The cached opinion text contains the actual quoted sentence at page 40, and content_page.md uses that correct sentence for ^pin-40."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-40 from the opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8fdf3ef77733e4c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields and content frontmatter: good_law, as_of_content 1988-05-16, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment substance was not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/California v. Greenwood.json\",\"reviewed\":[{\"assertion_id\":\"b794342502bd849d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16, docket 86-684.\",\"Lake citations list official citation 486 U.S. 35 and the payload's parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5490edf947711f23\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are supported, but the raw opinion text contains footnote markers after animals, scavengers, and snoops; the displayed verbatim quote silently omits those markers, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Either preserve the footnote markers in the pinpoint quote or mark the quote as normalized/footnote-stripped instead of strict verbatim.\",\"evidence_quote\":\"It is common knowledge that plastic garbage bags left on or at the side of a public street are readily accessible to animals,<footnotemark>2</footnotemark> children, scavengers,<footnotemark>3</footnotemark> snoops,<footnotemark>4</footnotemark> and other members of the public.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Greenwood__737090.txt, paragraph b98-5, page marker *40\"},\"reasons\":[\"The same sentence appears in the page-40 paragraph of the cached opinion text.\",\"The lake pinpoint quote matches the page quote, but the disclosed raw text shows omitted footnote markers and the lake quote_fidelity field says mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats footnote-marker omission as acceptable normalization, this should be downgraded to a metadata tightening rather than a quote defect.\"],\"suggested_tightening\":\"Record whether quote fidelity checks are against raw HTML text or normalized opinion text.\"},{\"assertion_id\":\"b09bab66d8478845\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-40 payload/lake quote is not the opinion passage; it is a corrupted harvest of the content page header, background, issue, and rule heading.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-40 quote with the actual page-40 opinion sentence: \\\"Here, we conclude that respondents exposed their garbage to the public sufficiently to defeat their claim to Fourth Amendment protection.\\\"\",\"evidence_quote\":\"Here, we conclude that respondents exposed their garbage to the public sufficiently to defeat their claim to Fourth Amendment protection.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Greenwood__737090.txt, paragraph b98-5, page marker *40\"},\"reasons\":[\"The payload quote begins with the page title/frontmatter-style text rather than language from the opinion.\",\"The cached opinion text contains the actual quoted sentence at page 40, and content_page.md uses that correct sentence for ^pin-40.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-40 from the opinion text rather than from the rendered content page.\"},{\"assertion_id\":\"8fdf3ef77733e4c1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload treatment fields match the disclosed lake treatment fields and content frontmatter: good_law, as_of_content 1988-05-16, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance was not reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. Treatment/currency was only checked for disclosed-field consistency because Lens B owns treatment review.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:13-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:20:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a4d05882df",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-33574a6aff",
+      "F-S9-PR-9459cf743b"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Greenwood.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +104,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9788a263.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Greenwood"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 180305,
+      "output": 8049,
+      "source": "codex-events",
+      "total": 188354
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "5490edf947711f23": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8fdf3ef77733e4c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b09bab66d8478845": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b794342502bd849d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-33574a6aff",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9459cf743b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a4d05882df",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 156.9
   }
 }

@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Ontario v. Quon.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in this group inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "5759fc97f62a974c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies City of Ontario v. Quon as a U.S. Supreme Court case decided on 2010-06-17, year 2010, docket 08-1332.",
+          "The asserted citations match lake.citations.all, including 560 U.S. 746, 130 S. Ct. 2619, 177 L. Ed. 2d 216, 2010 U.S. LEXIS 4972, and the listed parallel citations."
+        ],
+        "residual_risks": [
+          "Content_page sources use a CourtListener URL with cluster 148797 while the lake identity absolute_url uses cluster 6796843; lake lists 148797 as an alternate, so this is not a citation-existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b74e8c886d67b906",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-759 quote matches the lake pinpoints[].quote.",
+          "The cached opinion text at the 560 U.S. 759 marker contains the same passage; the only interruption in the raw HTML is a page-number tag splitting the word communications."
+        ],
+        "residual_risks": [
+          "The lake metadata still labels quote_fidelity as mismatch and page as null/slip-only even though the disclosed text verifies the quoted passage at 560 U.S. 759."
+        ],
+        "suggested_tightening": "Set pin-759 page to 759 and clear the mismatch metadata if normalized opinion text is the intended fidelity standard.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7acd4198ca71df5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the",
+          "locator_note": "text/City of Ontario v. Quon__f36cce.txt lines 72-75 place the passage after the 560 U.S. 764 marker; content_page.md line 53 cites it as 560 U.S. at 761; lake pinpoints[] stores a generated-page excerpt for pin-761.",
+          "needs_cl": false,
+          "problem": "The pin-761 payload/lake quote is not a judicial quotation at all; it is a harvested chunk of the generated content page. The real quoted sentence appears in the opinion text at 560 U.S. 764, not 560 U.S. 761, and the content-page rendering also changes O’Connor to straight-apostrophe markdown inside the quote.",
+          "proposed_fix": "Replace pin-761 with the actual opinion sentence beginning 'Because the search was motivated by a legitimate work-related purpose...' and update the content citation/pin from 560 U.S. at 761 to 560 U.S. at 764.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-761 begins with generated page material, not opinion text.",
+          "The cached opinion shows the relevant sentence after the 560 U.S. 764 page marker, so the asserted pin number does not land on the quoted passage.",
+          "Because the quote/pinpoint is wrong as framed, the assertion cannot stand under the quote-fidelity/pincite attack lens."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supported elsewhere in the opinion, so the defect is fixable by correcting the quote and pincite rather than deleting the rule."
+        ],
+        "suggested_tightening": "Use the normalized quotation with O’Connor rendered from the opinion text and cite 560 U.S. 764.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c767db79fb25690",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no support or quote-fidelity finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2010-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/City of Ontario v. Quon.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5759fc97f62a974c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies City of Ontario v. Quon as a U.S. Supreme Court case decided on 2010-06-17, year 2010, docket 08-1332.\",\n        \"The asserted citations match lake.citations.all, including 560 U.S. 746, 130 S. Ct. 2619, 177 L. Ed. 2d 216, 2010 U.S. LEXIS 4972, and the listed parallel citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Content_page sources use a CourtListener URL with cluster 148797 while the lake identity absolute_url uses cluster 6796843; lake lists 148797 as an alternate, so this is not a citation-existence defect.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b74e8c886d67b906\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pin-759 quote matches the lake pinpoints[].quote.\",\n        \"The cached opinion text at the 560 U.S. 759 marker contains the same passage; the only interruption in the raw HTML is a page-number tag splitting the word communications.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake metadata still labels quote_fidelity as mismatch and page as null/slip-only even though the disclosed text verifies the quoted passage at 560 U.S. 759.\"\n      ],\n      \"suggested_tightening\": \"Set pin-759 page to 759 and clear the mismatch metadata if normalized opinion text is the intended fidelity standard.\"\n    },\n    {\n      \"assertion_id\": \"d7acd4198ca71df5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-761 payload/lake quote is not a judicial quotation at all; it is a harvested chunk of the generated content page. The real quoted sentence appears in the opinion text at 560 U.S. 764, not 560 U.S. 761, and the content-page rendering also changes O’Connor to straight-apostrophe markdown inside the quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-761 with the actual opinion sentence beginning 'Because the search was motivated by a legitimate work-related purpose...' and update the content citation/pin from 560 U.S. at 761 to 560 U.S. at 764.\",\n        \"evidence_quote\": \"Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/City of Ontario v. Quon__f36cce.txt lines 72-75 place the passage after the 560 U.S. 764 marker; content_page.md line 53 cites it as 560 U.S. at 761; lake pinpoints[] stores a generated-page excerpt for pin-761.\"\n      },\n      \"reasons\": [\n        \"The disclosed lake pinpoint for pin-761 begins with generated page material, not opinion text.\",\n        \"The cached opinion shows the relevant sentence after the 560 U.S. 764 page marker, so the asserted pin number does not land on the quoted passage.\",\n        \"Because the quote/pinpoint is wrong as framed, the assertion cannot stand under the quote-fidelity/pincite attack lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying rule proposition is supported elsewhere in the opinion, so the defect is fixable by correcting the quote and pincite rather than deleting the rule.\"\n      ],\n      \"suggested_tightening\": \"Use the normalized quotation with O’Connor rendered from the opinion text and cite 560 U.S. 764.\"\n    },\n    {\n      \"assertion_id\": \"8c767db79fb25690\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no support or quote-fidelity finding is raised.\",\n        \"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2010-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in this group inventory.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:25:43-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-feddf80687"
+    ],
     "group_id": "_overhaul2/lake/cases/City of Ontario v. Quon.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-68959a5a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "City of Ontario v. Quon"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 238935,
+      "output": 8905,
+      "source": "codex-events",
+      "total": 247840
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "5759fc97f62a974c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c767db79fb25690": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b74e8c886d67b906": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7acd4198ca71df5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-feddf80687",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 171.1
   }
 }

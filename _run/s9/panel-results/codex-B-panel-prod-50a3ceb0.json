@@ -1,22 +1,92 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Carroll v. Carman.json",
+    "lens": "B",
+    "notes": "Reviewed every row in group_inventory.jsonl. Under lens B, the disclosed evidence supports existence and the explicit unverified treatment label, but not any stronger claim of verified current validity.",
+    "reviewed": [
+      {
+        "assertion_id": "64f4a2640be4ba0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as Carroll v. Carman, Supreme Court of the United States, decided 2014-11-10, docket 14-212.",
+          "The inventory citation matches the lake record's selected official citation: 574 U.S. 13.",
+          "No disclosed treatment edge or progeny field says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The lake treatment/progeny data is expressly unverified and not derived, so the disclosed record does not support any stronger current-good-law claim than the page's unverified status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "418622352ab1ebc1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page's Treatment: Unverified status matches the lake treatment field_i_validity: unverified.",
+          "The lake treatment scope_note matches the inventory payload: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The lake treatment edges array is empty and progeny rows_cached is 0, so there is no disclosed adverse-treatment record contradicting the unverified treatment call.",
+          "The page's Binding - SCOTUS weight is consistent with the lake identity fields court: U.S. and court_level: scotus."
+        ],
+        "residual_risks": [
+          "Because as_of_treatment is null and progeny was not derived, this record cannot be used to assert verified good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Carroll v. Carman.json\",\"reviewed\":[{\"assertion_id\":\"64f4a2640be4ba0f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as Carroll v. Carman, Supreme Court of the United States, decided 2014-11-10, docket 14-212.\",\"The inventory citation matches the lake record's selected official citation: 574 U.S. 13.\",\"No disclosed treatment edge or progeny field says the authority has been overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment/progeny data is expressly unverified and not derived, so the disclosed record does not support any stronger current-good-law claim than the page's unverified status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"418622352ab1ebc1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The page's Treatment: Unverified status matches the lake treatment field_i_validity: unverified.\",\"The lake treatment scope_note matches the inventory payload: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"The lake treatment edges array is empty and progeny rows_cached is 0, so there is no disclosed adverse-treatment record contradicting the unverified treatment call.\",\"The page's Binding - SCOTUS weight is consistent with the lake identity fields court: U.S. and court_level: scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because as_of_treatment is null and progeny was not derived, this record cannot be used to assert verified good-law status.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl. Under lens B, the disclosed evidence supports existence and the explicit unverified treatment label, but not any stronger claim of verified current validity.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:39-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:21:16-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Carroll v. Carman.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-50a3ceb0",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-50a3ceb0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:31.081073Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:31.770164Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:32.766322Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:34.039810Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:35.958261Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:39.295299Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Carroll v. Carman"
+    ],
+    "tokens": {
+      "input": 98756,
+      "output": 3578,
+      "source": "codex-events",
+      "total": 102334
+    },
+    "verdict_map": {
+      "418622352ab1ebc1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "64f4a2640be4ba0f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 73.0
   }
 }

@@ -1,12 +1,72 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not substantively reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "f108a8eb5c5442e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and non-stub, with identity matching Dickerson v. United States and official citation 530 U.S. 428.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is no longer live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit-needed proposed edges, but no final adverse validity judgment is recorded."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb8cd52680639190",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no treatment or currency defect is asserted from this row.",
+          "The row does not add a live-law, weight, supersession, overruling, abrogation, or limitation claim for Lens B to refute."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the disclosed quote_fidelity mismatch flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e123130df8dc817",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment status matches lake.treatment.field_i_validity: good_law and as_of_treatment: 2026-06-30.",
+          "The lake records varies_by_point=false and no point_overrides.",
+          "All listed treatment edges are proposed=true and field_iii=mentioned; the disclosed record does not contain a final edge overruling, abrogating, superseding, or limiting Dickerson."
+        ],
+        "residual_risks": [
+          "Derivation lanes include audit_needed=true and proposed_negative_events, so the prose claim 'No negative treatment' is safest if read as no confirmed negative treatment in the disclosed lake record."
+        ],
+        "suggested_tightening": "Consider changing 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake record as of 2026-06-30.'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Dickerson v. United States.json\",\"reviewed\":[{\"assertion_id\":\"f108a8eb5c5442e5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and non-stub, with identity matching Dickerson v. United States and official citation 530 U.S. 428.\",\"The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is no longer live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit-needed proposed edges, but no final adverse validity judgment is recorded.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fb8cd52680639190\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no treatment or currency defect is asserted from this row.\",\"The row does not add a live-law, weight, supersession, overruling, abrogation, or limitation claim for Lens B to refute.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate the disclosed quote_fidelity mismatch flag.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6e123130df8dc817\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment status matches lake.treatment.field_i_validity: good_law and as_of_treatment: 2026-06-30.\",\"The lake records varies_by_point=false and no point_overrides.\",\"All listed treatment edges are proposed=true and field_iii=mentioned; the disclosed record does not contain a final edge overruling, abrogating, superseding, or limiting Dickerson.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Derivation lanes include audit_needed=true and proposed_negative_events, so the prose claim 'No negative treatment' is safest if read as no confirmed negative treatment in the disclosed lake record.\"],\"suggested_tightening\":\"Consider changing 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake record as of 2026-06-30.'\"}],\"notes\":\"Lens B only; support and quote fidelity were not substantively reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:09-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T01:34:13-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b9c10bb6e1",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
     "group_total_assertions": 3,
@@ -16,21 +76,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-aeb2d3f6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Dickerson v. United States"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 361180,
+      "output": 7290,
+      "source": "codex-events",
+      "total": 368470
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "6e123130df8dc817": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f108a8eb5c5442e5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb8cd52680639190": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9c10bb6e1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 151.8
   }
 }

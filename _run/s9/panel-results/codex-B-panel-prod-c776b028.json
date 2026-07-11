@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Colorado v. Bertine.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity issues are intentionally deferred to lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "388788f288145e73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status=verified and identifies Colorado v. Bertine as a U.S. Supreme Court decision decided 1987-01-14.",
+          "The lake official citation is 479 U.S. 367, matching the assertion payload.",
+          "For the currency angle, lake treatment remains field_i_validity=good_law as of 2026-06-30, with no final point override making the authority non-live."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative events and audit markers, but those do not defeat case existence on this disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd26fba682535c3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B, so I make no support or quote-fidelity finding.",
+          "The quote row does not make an independent treatment/current-law assertion; its cited authority is covered by the lake good_law treatment field."
+        ],
+        "residual_risks": [
+          "Lens A must handle the disclosed quote_fidelity=mismatch and slip-only status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d1cde7f9568dd853",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B, so I make no support or quote-fidelity finding.",
+          "The embedded treatment language in this harvested fragment is reviewed under the separate treatment assertion."
+        ],
+        "residual_risks": [
+          "Lens A must handle the disclosed quote_fidelity=mismatch and slip-only status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "efb073216c7da891",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Colorado v. Bertine__f93dd8.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The core good_law status matches the lake judgment field, but the page's treatment presentation is too absolute if read with the subsequent-history statement 'No negative treatment.' The lake record contains proposed negative-treatment edges and audit-needed derivation lanes, so an audit-free/no-negative formulation is not supported by the disclosed record.",
+          "proposed_fix": "Keep field_i_validity=good_law as the current lake status, but qualify the treatment note: good_law as of 2026-06-30, with proposed negative-treatment edges pending R15 audit. Remove or qualify 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment fields match the assertion: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false.",
+          "The same lake record has 36 treatment.edges, all proposed=true and field_iii=mentioned, including overruled, abrogated, questioned, and criticized field_ii labels.",
+          "Derivation lanes lane1_negative and lane2_top_cited both report audit_needed=true and cap_hit=true, so the disclosed record does not support an unqualified no-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "Because the negative edges are proposed and only field_iii=mentioned, the disclosed files do not justify downgrading Bertine from good_law without the underlying citing-opinion audit."
+        ],
+        "suggested_tightening": "Render treatment as: good_law per lake field_i as of 2026-06-30; proposed negative-treatment edges pending audit.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Colorado v. Bertine.json\",\"reviewed\":[{\"assertion_id\":\"388788f288145e73\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is status=verified and identifies Colorado v. Bertine as a U.S. Supreme Court decision decided 1987-01-14.\",\"The lake official citation is 479 U.S. 367, matching the assertion payload.\",\"For the currency angle, lake treatment remains field_i_validity=good_law as of 2026-06-30, with no final point override making the authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative events and audit markers, but those do not defeat case existence on this disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bd26fba682535c3f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B, so I make no support or quote-fidelity finding.\",\"The quote row does not make an independent treatment/current-law assertion; its cited authority is covered by the lake good_law treatment field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must handle the disclosed quote_fidelity=mismatch and slip-only status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d1cde7f9568dd853\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B, so I make no support or quote-fidelity finding.\",\"The embedded treatment language in this harvested fragment is reviewed under the separate treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must handle the disclosed quote_fidelity=mismatch and slip-only status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"efb073216c7da891\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law status matches the lake judgment field, but the page's treatment presentation is too absolute if read with the subsequent-history statement 'No negative treatment.' The lake record contains proposed negative-treatment edges and audit-needed derivation lanes, so an audit-free/no-negative formulation is not supported by the disclosed record.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity=good_law as the current lake status, but qualify the treatment note: good_law as of 2026-06-30, with proposed negative-treatment edges pending R15 audit. Remove or qualify 'No negative treatment.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Colorado v. Bertine__f93dd8.json treatment.edges and treatment.derivation\"},\"reasons\":[\"The lake treatment fields match the assertion: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false.\",\"The same lake record has 36 treatment.edges, all proposed=true and field_iii=mentioned, including overruled, abrogated, questioned, and criticized field_ii labels.\",\"Derivation lanes lane1_negative and lane2_top_cited both report audit_needed=true and cap_hit=true, so the disclosed record does not support an unqualified no-negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the negative edges are proposed and only field_iii=mentioned, the disclosed files do not justify downgrading Bertine from good_law without the underlying citing-opinion audit.\"],\"suggested_tightening\":\"Render treatment as: good_law per lake field_i as of 2026-06-30; proposed negative-treatment edges pending audit.\"}],\"notes\":\"Lens B only; support and quote-fidelity issues are intentionally deferred to lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:27:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-20eff56c8c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8422cba529"
+    ],
     "group_id": "_overhaul2/lake/cases/Colorado v. Bertine.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c776b028.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Colorado v. Bertine"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 299400,
+      "output": 8508,
+      "source": "codex-events",
+      "total": 307908
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "388788f288145e73": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd26fba682535c3f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d1cde7f9568dd853": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "efb073216c7da891": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-20eff56c8c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8422cba529",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 171.3
   }
 }

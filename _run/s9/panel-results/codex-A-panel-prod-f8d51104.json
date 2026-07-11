@@ -1,22 +1,127 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Colorado v. Spring.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl using only disclosed working-directory files. Lens A raises no treatment-merits finding.",
+    "reviewed": [
+      {
+        "assertion_id": "0b9fd12fca06b2bc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Colorado v. Spring, U.S. Supreme Court, decided 1987-01-27, docket 85-1517.",
+          "The official citation in the lake record is 479 U.S. 564, and the content page displays 479 U.S. 564 (1987).",
+          "The parallel and vendor citations in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c9dc4abc72ea95f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold that a suspect’s awareness of all the possible subjects of questioning in advance of interrogation is not relevant",
+          "locator_note": "lake pinpoints[0] id=pin-577; content_page.md Rule paragraph",
+          "needs_cl": false,
+          "problem": "The disclosed pin-577 quote is not the opinion passage supporting the rendered quotation; it is a markdown excerpt from the built page, and the lake record itself marks quote_fidelity as mismatch. The actual opinion passage at page 577 begins with the Court's holding language.",
+          "proposed_fix": "Replace pin-577's stored quote with the actual page 577 opinion text beginning \"Accordingly, we hold that a suspect’s awareness...\" and set the pin/page metadata to the 577 passage. Also make the rendered quote source-faithful in punctuation unless bracketed capitalization is an accepted normalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin quote starts with page markdown rather than opinion text: \"--- # Colorado v. Spring *479 U.S. 564 (1987)*\".",
+          "The cached opinion text contains the relevant holding at the 577 marker, but the pin record has page null, position null, slip-only status, and quote_fidelity mismatch.",
+          "The visible quotation tracks the holding in substance, but the quote/pin assertion as disclosed is not character-faithful to the stored pin quote and needs repair."
+        ],
+        "residual_risks": [
+          "After the pin is repaired, a separate support review could confirm the surrounding rule text's breadth."
+        ],
+        "suggested_tightening": "Use the exact page 577 holding sentence as the pin quote and keep any editorial capitalization visibly bracketed.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6cb65302205f7f4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-01-27, as_of_treatment 2026-06-30, varies_by_point false, scope_note Good law.",
+          "The content page renders the same treatment status and as-of date.",
+          "No independent treatment/currency finding is made under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment currency is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Colorado v. Spring.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0b9fd12fca06b2bc\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Colorado v. Spring, U.S. Supreme Court, decided 1987-01-27, docket 85-1517.\",\n        \"The official citation in the lake record is 479 U.S. 564, and the content page displays 479 U.S. 564 (1987).\",\n        \"The parallel and vendor citations in the assertion match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c9dc4abc72ea95f9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The disclosed pin-577 quote is not the opinion passage supporting the rendered quotation; it is a markdown excerpt from the built page, and the lake record itself marks quote_fidelity as mismatch. The actual opinion passage at page 577 begins with the Court's holding language.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-577's stored quote with the actual page 577 opinion text beginning \\\"Accordingly, we hold that a suspect’s awareness...\\\" and set the pin/page metadata to the 577 passage. Also make the rendered quote source-faithful in punctuation unless bracketed capitalization is an accepted normalization.\",\n        \"evidence_quote\": \"Accordingly, we hold that a suspect’s awareness of all the possible subjects of questioning in advance of interrogation is not relevant\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[0] id=pin-577; content_page.md Rule paragraph\"\n      },\n      \"reasons\": [\n        \"The lake pin quote starts with page markdown rather than opinion text: \\\"--- # Colorado v. Spring *479 U.S. 564 (1987)*\\\".\",\n        \"The cached opinion text contains the relevant holding at the 577 marker, but the pin record has page null, position null, slip-only status, and quote_fidelity mismatch.\",\n        \"The visible quotation tracks the holding in substance, but the quote/pin assertion as disclosed is not character-faithful to the stored pin quote and needs repair.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"After the pin is repaired, a separate support review could confirm the surrounding rule text's breadth.\"\n      ],\n      \"suggested_tightening\": \"Use the exact page 577 holding sentence as the pin quote and keep any editorial capitalization visibly bracketed.\"\n    },\n    {\n      \"assertion_id\": \"6cb65302205f7f4f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-01-27, as_of_treatment 2026-06-30, varies_by_point false, scope_note Good law.\",\n        \"The content page renders the same treatment status and as-of date.\",\n        \"No independent treatment/currency finding is made under Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every row in group_inventory.jsonl using only disclosed working-directory files. Lens A raises no treatment-merits finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:27:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-61da105410"
+    ],
     "group_id": "_overhaul2/lake/cases/Colorado v. Spring.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-f8d51104",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f8d51104.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.055143Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:29.058045Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:30.285784Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:31.429042Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:33.468069Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:37.525225Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Colorado v. Spring"
+    ],
+    "tokens": {
+      "input": 145626,
+      "output": 5823,
+      "source": "codex-events",
+      "total": 151449
+    },
+    "verdict_map": {
+      "0b9fd12fca06b2bc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6cb65302205f7f4f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c9dc4abc72ea95f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-61da105410",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 128.6
   }
 }

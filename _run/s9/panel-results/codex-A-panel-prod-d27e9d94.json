@@ -1,22 +1,162 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chapman v. United States (1961).json",
+    "lens": "A",
+    "notes": "Reviewed all four assertion_ids in group_inventory.jsonl exactly once. Lens A refutes the two quote-fidelity pinpoints; existence stands. Treatment verdict is recorded only against the disclosed lake fields, with no Lens A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "f833b132e9622604",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Chapman v. United States, U.S. Supreme Court, decided 1961-04-03, docket 175.",
+          "The lake official citation is 365 U.S. 610, and the cached opinion header also shows 365 U.S. 610 (1961).",
+          "The parallel citations in the payload match the lake record: 81 S. Ct. 776, 5 L. Ed. 2d 828, and 1961 U.S. LEXIS 1396."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c000487eed1d161",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But it cites no Georgia or other case holding that a landlord, in the absence of an express covenant so permitting, has a right forcibly to enter the demised premises without the consent of the tenant \"to view waste.\"",
+          "locator_note": "text/Chapman v. United States (1961)__fab41e.txt lines 28-29; lake pinpoints[pin-617]",
+          "needs_cl": false,
+          "problem": "Pin pin-617 is not character-faithful. The lake quote field contains harvested content-page/frontmatter text rather than the opinion passage, and the lake itself flags quote_fidelity as mismatch. The built page's inline quote also inserts a comma after tenant that is not in the cached opinion text and paraphrases part of the Johnson-derived sentence outside the quotation.",
+          "proposed_fix": "Replace pin-617 with the actual opinion passage from pages 616-617. Make the inline quote character-faithful: remove the comma inside the tenant quote, and either quote the opinion's wording beginning with \"without a warrant would reduce...\" or treat the surrounding warrantless-entry language as paraphrase.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-617 lake quote begins with the built page header and background, not with opinion text.",
+          "The lake record marks pin-617 quote_fidelity as mismatch and page as null/slip-only.",
+          "The cached opinion supports the general proposition at star pages 616-617, but the harvested quote is not faithful to that source."
+        ],
+        "residual_risks": [
+          "The legal rule appears supportable from the cached opinion, but the quote record must be rebuilt before this pinpoint should be treated as verified."
+        ],
+        "suggested_tightening": "Use opinion-text quotations only; keep page prose outside quotation marks unless copied exactly.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "282349af5726244c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It follows that this search was unlawful, and since evidence obtained through that search was admitted at the trial, the judgment of the Court of Appeals must be",
+          "locator_note": "text/Chapman v. United States (1961)__fab41e.txt lines 31-32; lake pinpoints[pin-618]",
+          "needs_cl": false,
+          "problem": "Pin pin-618 is not character-faithful. The cached opinion says the judgment 'must be' and then separately states 'Reversed.' The payload folds that disposition into the quoted sentence as '[reversed]', which is an editorial alteration, not verbatim text.",
+          "proposed_fix": "Quote only the exact text ending with 'must be' and then state the disposition separately as Reversed, or avoid presenting the bracketed reconstruction as a verbatim quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record marks pin-618 quote_fidelity as mismatch.",
+          "The cached text has 'Reversed.' in a separate italicized paragraph, not '[reversed]' inside the quoted sentence.",
+          "The star-page location at 618 is supportable, but the quoted wording is not character-faithful."
+        ],
+        "residual_risks": [
+          "The disposition is substantively correct, but the quotation format should be corrected before relying on it as a verbatim quote."
+        ],
+        "suggested_tightening": "Do not merge separated disposition text into the quoted sentence unless the alteration is clearly outside the verbatim quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "450490c6b4bf4a9c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1961-04-03, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Under Lens A, treatment and currency are not independently audited; no Lens A treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment and currency substance remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Chapman v. United States (1961).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f833b132e9622604\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Chapman v. United States, U.S. Supreme Court, decided 1961-04-03, docket 175.\",\n        \"The lake official citation is 365 U.S. 610, and the cached opinion header also shows 365 U.S. 610 (1961).\",\n        \"The parallel citations in the payload match the lake record: 81 S. Ct. 776, 5 L. Ed. 2d 828, and 1961 U.S. LEXIS 1396.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0c000487eed1d161\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin pin-617 is not character-faithful. The lake quote field contains harvested content-page/frontmatter text rather than the opinion passage, and the lake itself flags quote_fidelity as mismatch. The built page's inline quote also inserts a comma after tenant that is not in the cached opinion text and paraphrases part of the Johnson-derived sentence outside the quotation.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-617 with the actual opinion passage from pages 616-617. Make the inline quote character-faithful: remove the comma inside the tenant quote, and either quote the opinion's wording beginning with \\\"without a warrant would reduce...\\\" or treat the surrounding warrantless-entry language as paraphrase.\",\n        \"evidence_quote\": \"But it cites no Georgia or other case holding that a landlord, in the absence of an express covenant so permitting, has a right forcibly to enter the demised premises without the consent of the tenant \\\"to view waste.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Chapman v. United States (1961)__fab41e.txt lines 28-29; lake pinpoints[pin-617]\"\n      },\n      \"reasons\": [\n        \"The pin-617 lake quote begins with the built page header and background, not with opinion text.\",\n        \"The lake record marks pin-617 quote_fidelity as mismatch and page as null/slip-only.\",\n        \"The cached opinion supports the general proposition at star pages 616-617, but the harvested quote is not faithful to that source.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal rule appears supportable from the cached opinion, but the quote record must be rebuilt before this pinpoint should be treated as verified.\"\n      ],\n      \"suggested_tightening\": \"Use opinion-text quotations only; keep page prose outside quotation marks unless copied exactly.\"\n    },\n    {\n      \"assertion_id\": \"282349af5726244c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin pin-618 is not character-faithful. The cached opinion says the judgment 'must be' and then separately states 'Reversed.' The payload folds that disposition into the quoted sentence as '[reversed]', which is an editorial alteration, not verbatim text.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Quote only the exact text ending with 'must be' and then state the disposition separately as Reversed, or avoid presenting the bracketed reconstruction as a verbatim quote.\",\n        \"evidence_quote\": \"It follows that this search was unlawful, and since evidence obtained through that search was admitted at the trial, the judgment of the Court of Appeals must be\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Chapman v. United States (1961)__fab41e.txt lines 31-32; lake pinpoints[pin-618]\"\n      },\n      \"reasons\": [\n        \"The lake record marks pin-618 quote_fidelity as mismatch.\",\n        \"The cached text has 'Reversed.' in a separate italicized paragraph, not '[reversed]' inside the quoted sentence.\",\n        \"The star-page location at 618 is supportable, but the quoted wording is not character-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disposition is substantively correct, but the quotation format should be corrected before relying on it as a verbatim quote.\"\n      ],\n      \"suggested_tightening\": \"Do not merge separated disposition text into the quoted sentence unless the alteration is clearly outside the verbatim quote.\"\n    },\n    {\n      \"assertion_id\": \"450490c6b4bf4a9c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1961-04-03, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Under Lens A, treatment and currency are not independently audited; no Lens A treatment defect is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency substance remains for Lens B review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four assertion_ids in group_inventory.jsonl exactly once. Lens A refutes the two quote-fidelity pinpoints; existence stands. Treatment verdict is recorded only against the disclosed lake fields, with no Lens A treatment finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:23:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-26c274d0fd",
+      "F-S9-PR-481ec1a9e1"
+    ],
     "group_id": "_overhaul2/lake/cases/Chapman v. United States (1961).json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d27e9d94",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d27e9d94.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 811914b1-67c6-481a-81d1-edd471dbd109\n2026-07-10T22:23:55.585070Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.116004Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.792564Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.593493Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:58.909027Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:01.009226Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chapman v. United States (1961)"
+    ],
+    "tokens": {
+      "input": 127575,
+      "output": 6847,
+      "source": "codex-events",
+      "total": 134422
+    },
+    "verdict_map": {
+      "0c000487eed1d161": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "282349af5726244c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "450490c6b4bf4a9c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f833b132e9622604": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-26c274d0fd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-481ec1a9e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.9
   }
 }

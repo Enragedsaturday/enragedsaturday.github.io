@@ -1,22 +1,205 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Donovan v. Dewey.json",
+    "lens": "A",
+    "notes": "Lens A found quote-fidelity defects in all three reviewed pinpoints; existence stands, and treatment was recorded without currency review.",
+    "reviewed": [
+      {
+        "assertion_id": "fd36d00ade780b13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Donovan v. Dewey as a U.S. Supreme Court case decided 1981-06-17 with official citation 452 U.S. 594.",
+          "The asserted official, parallel, and vendor-neutral citations match the lake citations: 452 U.S. 594, 101 S. Ct. 2534, 69 L. Ed. 2d 262, and 1980 U.S. LEXIS 58."
+        ],
+        "residual_risks": [
+          "Verified only against the disclosed lake identity and citation fields, as required."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b90fb2df9f6e0ff",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.",
+          "locator_note": "pin-598",
+          "needs_cl": false,
+          "problem": "pin-598's lake quote is not an opinion quote; it is corrupted page/content boilerplate and does not appear in the cached opinion text.",
+          "proposed_fix": "Replace pin-598 with the actual 598-599 opinion passage beginning 'The greater latitude to conduct warrantless inspections...' and set the pinpoint metadata to the real page range.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry itself marks pin-598 quote_fidelity as mismatch.",
+          "The asserted quote begins with markdown/frontmatter-style content ('--- # Donovan v. Dewey ... ## Background ...') rather than language from text/Donovan v. Dewey__e021ee.txt."
+        ],
+        "residual_risks": [
+          "The content page contains a plausible correct pin-598 quote, but the reviewed lake pinpoint quote is corrupted."
+        ],
+        "suggested_tightening": "Use only the actual opinion sentence at 452 U.S. 598-599 for this pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55cdc239d467aca5",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the only real issue before us is whether the statute’s inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does.",
+          "locator_note": "pin-603",
+          "needs_cl": false,
+          "problem": "pin-603 is not character-faithful to the cached opinion text: it changes the lowercase opening to '[T]he' and uses a straight apostrophe in 'statute's' where the text has 'statute’s'.",
+          "proposed_fix": "Replace the quote with the exact source text or mark it as an edited quotation under a policy that permits editorial brackets; preserve the curly apostrophe if exact fidelity is required.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry marks pin-603 quote_fidelity as mismatch.",
+          "The cached opinion text has 'the statute’s inspection program'; the reviewed quote has '[T]he' and 'statute's inspection program'."
+        ],
+        "residual_risks": [
+          "The proposition and page location appear substantively correct, but the strict quote-fidelity assertion does not stand."
+        ],
+        "suggested_tightening": "Quote the sentence exactly as it appears in the opinion, starting lowercase after the preceding clause.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8ce32c55496f0b7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Applying this analysis to the case before us, we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment.",
+          "locator_note": "pin-602",
+          "needs_cl": false,
+          "problem": "pin-602 uses an ellipsis inside a verbatim quote; the cached opinion text includes omitted words, so the quote is not character-faithful as framed.",
+          "proposed_fix": "Use the full sentence from the opinion or explicitly treat the excerpt as an edited quotation if the corpus allows ellipses in quoted pinpoints.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry marks pin-602 quote_fidelity as mismatch.",
+          "The reviewed quote says 'Applying this analysis … we conclude'; the cached opinion text says 'Applying this analysis to the case before us, we conclude'."
+        ],
+        "residual_risks": [
+          "The pin is in the right vicinity and the underlying holding is accurately conveyed, but the quote-fidelity assertion fails under a character-faithful standard."
+        ],
+        "suggested_tightening": "Replace the ellipsis version with the full sentence at page 602.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ff83d6600d46f650",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The asserted treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1981-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B should audit treatment/currency; this Lens A review only records that the asserted treatment matches disclosed lake fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Donovan v. Dewey.json\",\"reviewed\":[{\"assertion_id\":\"fd36d00ade780b13\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Donovan v. Dewey as a U.S. Supreme Court case decided 1981-06-17 with official citation 452 U.S. 594.\",\"The asserted official, parallel, and vendor-neutral citations match the lake citations: 452 U.S. 594, 101 S. Ct. 2534, 69 L. Ed. 2d 262, and 1980 U.S. LEXIS 58.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Verified only against the disclosed lake identity and citation fields, as required.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0b90fb2df9f6e0ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-598's lake quote is not an opinion quote; it is corrupted page/content boilerplate and does not appear in the cached opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-598 with the actual 598-599 opinion passage beginning 'The greater latitude to conduct warrantless inspections...' and set the pinpoint metadata to the real page range.\",\"evidence_quote\":\"The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.\",\"needs_cl\":false,\"locator_note\":\"pin-598\"},\"reasons\":[\"The lake pinpoints entry itself marks pin-598 quote_fidelity as mismatch.\",\"The asserted quote begins with markdown/frontmatter-style content ('--- # Donovan v. Dewey ... ## Background ...') rather than language from text/Donovan v. Dewey__e021ee.txt.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page contains a plausible correct pin-598 quote, but the reviewed lake pinpoint quote is corrupted.\"],\"suggested_tightening\":\"Use only the actual opinion sentence at 452 U.S. 598-599 for this pinpoint.\"},{\"assertion_id\":\"55cdc239d467aca5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-603 is not character-faithful to the cached opinion text: it changes the lowercase opening to '[T]he' and uses a straight apostrophe in 'statute's' where the text has 'statute’s'.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with the exact source text or mark it as an edited quotation under a policy that permits editorial brackets; preserve the curly apostrophe if exact fidelity is required.\",\"evidence_quote\":\"the only real issue before us is whether the statute’s inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does.\",\"needs_cl\":false,\"locator_note\":\"pin-603\"},\"reasons\":[\"The lake pinpoints entry marks pin-603 quote_fidelity as mismatch.\",\"The cached opinion text has 'the statute’s inspection program'; the reviewed quote has '[T]he' and 'statute's inspection program'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The proposition and page location appear substantively correct, but the strict quote-fidelity assertion does not stand.\"],\"suggested_tightening\":\"Quote the sentence exactly as it appears in the opinion, starting lowercase after the preceding clause.\"},{\"assertion_id\":\"b8ce32c55496f0b7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-602 uses an ellipsis inside a verbatim quote; the cached opinion text includes omitted words, so the quote is not character-faithful as framed.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the full sentence from the opinion or explicitly treat the excerpt as an edited quotation if the corpus allows ellipses in quoted pinpoints.\",\"evidence_quote\":\"Applying this analysis to the case before us, we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"pin-602\"},\"reasons\":[\"The lake pinpoints entry marks pin-602 quote_fidelity as mismatch.\",\"The reviewed quote says 'Applying this analysis … we conclude'; the cached opinion text says 'Applying this analysis to the case before us, we conclude'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The pin is in the right vicinity and the underlying holding is accurately conveyed, but the quote-fidelity assertion fails under a character-faithful standard.\"],\"suggested_tightening\":\"Replace the ellipsis version with the full sentence at page 602.\"},{\"assertion_id\":\"ff83d6600d46f650\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The asserted treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1981-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should audit treatment/currency; this Lens A review only records that the asserted treatment matches disclosed lake fields.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A found quote-fidelity defects in all three reviewed pinpoints; existence stands, and treatment was recorded without currency review.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:34:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5d0c342dbd",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6df0103333",
+      "F-S9-PR-051d0bcbce",
+      "F-S9-PR-28a00b4151"
+    ],
     "group_id": "_overhaul2/lake/cases/Donovan v. Dewey.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-87fabe7a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-87fabe7a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:27.847174Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:29.015056Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:30.248011Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:31.583927Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:33.711321Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:37.320109Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Donovan v. Dewey"
+    ],
+    "tokens": {
+      "input": 336083,
+      "output": 7126,
+      "source": "codex-events",
+      "total": 343209
+    },
+    "verdict_map": {
+      "0b90fb2df9f6e0ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "55cdc239d467aca5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b8ce32c55496f0b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd36d00ade780b13": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ff83d6600d46f650": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6df0103333",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-051d0bcbce",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-28a00b4151",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5d0c342dbd",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 158.0
   }
 }

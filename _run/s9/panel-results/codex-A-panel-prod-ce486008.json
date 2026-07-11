@@ -1,22 +1,162 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows exactly once. No support, pincite, or black-letter rows were separately present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "d6f8fac61ffea312",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies the case as City and County of San Francisco v. Sheehan, U.S. Supreme Court, decided 2015-05-18, docket 13-1412.",
+          "The payload citations match lake.citations.all: 575 U.S. 600; 135 S. Ct. 1765; 191 L. Ed. 2d 856; 2015 U.S. LEXIS 3200; 83 U.S.L.W. 4303; 25 Fla. L. Weekly Fed. S 254."
+        ],
+        "residual_risks": [
+          "Lake official_selection.selected is null despite the U.S. Reports citation; that is not an existence defect on the disclosed payload."
+        ],
+        "suggested_tightening": "Resolve display/official citation selection if the corpus expects 575 U.S. 600 to render as the primary cite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e1a9097bcdfbe0f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "no precedent clearly established that there was not\n“an objective need for immediate entry” here.",
+          "locator_note": "content_page.md pin-1778 / lake pin-1778; text lines 711-712.",
+          "needs_cl": false,
+          "problem": "The pin-1778 quote is not character-faithful: the source uses curly double quotation marks around the embedded phrase and ends after 'here' with a period, while the asserted quote uses single quotes and a comma.",
+          "proposed_fix": "Replace the fragment with the exact source wording and punctuation: no precedent clearly established that there was not “an objective need for immediate entry” here.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text has 'here.' not 'here,'.",
+          "Lake itself marks pin-1778 quote_fidelity as mismatch and page is null/slip-only."
+        ],
+        "residual_risks": [
+          "The legal support point appears in the opinion; this refutation is limited to verbatim fidelity.",
+          "The 135 S. Ct. page 1778 label is not independently verifiable from the disclosed slip-only pin metadata."
+        ],
+        "suggested_tightening": "Use exact source punctuation for verbatim quotations, or paraphrase the point without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f2cd00be0517190",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "After reviewing the parties’\nsubmissions, we dismiss the first question as improvidently\ngranted. We decide the second question and hold that\nthe officers are entitled to qualified immunity because\nthey did not violate any clearly established Fourth\nAmendment rights.",
+          "locator_note": "lake pin-600; content_page.md lines 47-53; text lines 142-147.",
+          "needs_cl": false,
+          "problem": "The pin-600 harvested quote is not an opinion quote; it reproduces content-page prose and Markdown headings from Background/Issue/Rule, beginning mid-parenthetical.",
+          "proposed_fix": "Replace pin-600 with the actual opening opinion quote supporting the Rule sentence, or remove the quote marker from the harvested page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload contains '## Issue' and '## Rule', which are page structure markers, not opinion text.",
+          "The actual opinion language supporting the visible Rule quote exists in the text file, but the lake pin-600 quote points to the wrong material."
+        ],
+        "residual_risks": [
+          "Because lake page is null/slip-only, the exact U.S. Reports page 600 pincite cannot be independently checked from disclosed text."
+        ],
+        "suggested_tightening": "Separate summary prose from verbatim quoted text and set pin-600 to the exact opinion passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9568641791d4b973",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment/currency; no treatment finding is raised.",
+          "The content-page treatment fields mirror the disclosed lake payload: good_law, as_of_content 2015-05-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency and negative-progeny implications remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json\",\"reviewed\":[{\"assertion_id\":\"d6f8fac61ffea312\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies the case as City and County of San Francisco v. Sheehan, U.S. Supreme Court, decided 2015-05-18, docket 13-1412.\",\"The payload citations match lake.citations.all: 575 U.S. 600; 135 S. Ct. 1765; 191 L. Ed. 2d 856; 2015 U.S. LEXIS 3200; 83 U.S.L.W. 4303; 25 Fla. L. Weekly Fed. S 254.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official_selection.selected is null despite the U.S. Reports citation; that is not an existence defect on the disclosed payload.\"],\"suggested_tightening\":\"Resolve display/official citation selection if the corpus expects 575 U.S. 600 to render as the primary cite.\"},{\"assertion_id\":\"4e1a9097bcdfbe0f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-1778 quote is not character-faithful: the source uses curly double quotation marks around the embedded phrase and ends after 'here' with a period, while the asserted quote uses single quotes and a comma.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the fragment with the exact source wording and punctuation: no precedent clearly established that there was not “an objective need for immediate entry” here.\",\"evidence_quote\":\"no precedent clearly established that there was not\\n“an objective need for immediate entry” here.\",\"needs_cl\":false,\"locator_note\":\"content_page.md pin-1778 / lake pin-1778; text lines 711-712.\"},\"reasons\":[\"The disclosed text has 'here.' not 'here,'.\",\"Lake itself marks pin-1778 quote_fidelity as mismatch and page is null/slip-only.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal support point appears in the opinion; this refutation is limited to verbatim fidelity.\",\"The 135 S. Ct. page 1778 label is not independently verifiable from the disclosed slip-only pin metadata.\"],\"suggested_tightening\":\"Use exact source punctuation for verbatim quotations, or paraphrase the point without quotation marks.\"},{\"assertion_id\":\"8f2cd00be0517190\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-600 harvested quote is not an opinion quote; it reproduces content-page prose and Markdown headings from Background/Issue/Rule, beginning mid-parenthetical.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-600 with the actual opening opinion quote supporting the Rule sentence, or remove the quote marker from the harvested page prose.\",\"evidence_quote\":\"After reviewing the parties’\\nsubmissions, we dismiss the first question as improvidently\\ngranted. We decide the second question and hold that\\nthe officers are entitled to qualified immunity because\\nthey did not violate any clearly established Fourth\\nAmendment rights.\",\"needs_cl\":false,\"locator_note\":\"lake pin-600; content_page.md lines 47-53; text lines 142-147.\"},\"reasons\":[\"The payload contains '## Issue' and '## Rule', which are page structure markers, not opinion text.\",\"The actual opinion language supporting the visible Rule quote exists in the text file, but the lake pin-600 quote points to the wrong material.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because lake page is null/slip-only, the exact U.S. Reports page 600 pincite cannot be independently checked from disclosed text.\"],\"suggested_tightening\":\"Separate summary prose from verbatim quoted text and set pin-600 to the exact opinion passage.\"},{\"assertion_id\":\"9568641791d4b973\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment/currency; no treatment finding is raised.\",\"The content-page treatment fields mirror the disclosed lake payload: good_law, as_of_content 2015-05-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency and negative-progeny implications remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows exactly once. No support, pincite, or black-letter rows were separately present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:24:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f6070cca45",
+      "F-S9-PR-a8b2a0a190"
+    ],
     "group_id": "_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ce486008",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ce486008.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 88c8dc31-0c45-4c9a-8113-e35cc18c0ccc\n2026-07-10T22:23:55.742126Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.552452Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.167714Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:57.958859Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:59.229615Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:01.158993Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City and County of San Francisco v. Sheehan"
+    ],
+    "tokens": {
+      "input": 246673,
+      "output": 9068,
+      "source": "codex-events",
+      "total": 255741
+    },
+    "verdict_map": {
+      "4e1a9097bcdfbe0f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8f2cd00be0517190": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9568641791d4b973": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6f8fac61ffea312": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6070cca45",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a8b2a0a190",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 176.0
   }
 }

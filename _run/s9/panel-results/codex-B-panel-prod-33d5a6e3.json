@@ -1,13 +1,83 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Byrd v. United States.json",
+    "lens": "B",
+    "notes": "Reviewed all three group_inventory rows under lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "8ae26cdd7fb1ffd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies Byrd v. United States as a U.S. Supreme Court decision with docket 16-1371 and lead opinion 4274911.",
+          "The official citation 584 U.S. 395 is selected in the lake record, and treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes an unresolved lane2_top_cited audit, but no disclosed finalized treatment field says Byrd is overruled, abrogated, superseded, or otherwise not live law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5108d32aa7adcf0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support defects.",
+          "No treatment/currency defect is created by this quote-fidelity row itself."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6d06fd48b6610ef8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 25,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/Byrd v. United States__5dd5b0.json treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The core good_law call matches the lake field, but the page's unqualified 'No negative treatment' wording is too strong because the lake also records an unresolved lane2_top_cited audit with proposed negative events.",
+          "proposed_fix": "Keep the good_law status only as the disclosed lake treatment field, but revise the prose to say no confirmed negative treatment in the disclosed lake record and disclose the pending lane2_top_cited/R15 audit, or complete that audit before saying no negative treatment.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The authority-weight label is consistent with identity.court_level=scotus and the content page's Binding - SCOTUS label.",
+          "The disclosed treatment edges are all proposed and marked field_iii=mentioned, so they do not by themselves overrule the lake's good_law field, but they do defeat an unqualified no-negative-treatment statement without the audit caveat."
+        ],
+        "residual_risks": [
+          "The lane2_top_cited derivation hit its cap and says audit_needed=true; a completed audit could require a further downgrade.",
+          "The treatment provenance says the good_law field came from migration/page frontmatter rather than a completed negative-treatment audit."
+        ],
+        "suggested_tightening": "Status: good_law as disclosed in the lake record as of 2026-06-30; no confirmed negative treatment in the disclosed lake record, with lane2_top_cited/R15 audit pending.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Byrd v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8ae26cdd7fb1ffd9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, non-stub, and identifies Byrd v. United States as a U.S. Supreme Court decision with docket 16-1371 and lead opinion 4274911.\",\"The official citation 584 U.S. 395 is selected in the lake record, and treatment.field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation includes an unresolved lane2_top_cited audit, but no disclosed finalized treatment field says Byrd is overruled, abrogated, superseded, or otherwise not live law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b5108d32aa7adcf0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support defects.\",\"No treatment/currency defect is created by this quote-fidelity row itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6d06fd48b6610ef8\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law call matches the lake field, but the page's unqualified 'No negative treatment' wording is too strong because the lake also records an unresolved lane2_top_cited audit with proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status only as the disclosed lake treatment field, but revise the prose to say no confirmed negative treatment in the disclosed lake record and disclose the pending lane2_top_cited/R15 audit, or complete that audit before saying no negative treatment.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 25,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Byrd v. United States__5dd5b0.json treatment.derivation.lane2_top_cited and treatment.edges\"},\"reasons\":[\"treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The authority-weight label is consistent with identity.court_level=scotus and the content page's Binding - SCOTUS label.\",\"The disclosed treatment edges are all proposed and marked field_iii=mentioned, so they do not by themselves overrule the lake's good_law field, but they do defeat an unqualified no-negative-treatment statement without the audit caveat.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lane2_top_cited derivation hit its cap and says audit_needed=true; a completed audit could require a further downgrade.\",\"The treatment provenance says the good_law field came from migration/page frontmatter rather than a completed negative-treatment audit.\"],\"suggested_tightening\":\"Status: good_law as disclosed in the lake record as of 2026-06-30; no confirmed negative treatment in the disclosed lake record, with lane2_top_cited/R15 audit pending.\"}],\"notes\":\"Reviewed all three group_inventory rows under lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:17:54-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b0342029f0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-966bf986b0"
+    ],
     "group_id": "_overhaul2/lake/cases/Byrd v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +86,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-33d5a6e3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Byrd v. United States"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 255613,
+      "output": 6620,
+      "source": "codex-events",
+      "total": 262233
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "6d06fd48b6610ef8": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8ae26cdd7fb1ffd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5108d32aa7adcf0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b0342029f0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-966bf986b0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 136.1
   }
 }

@@ -1,22 +1,194 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Cone v. Bell.json",
+    "lens": "A",
+    "notes": "Lens A review found one high quote-fidelity defect in the stored pin-469 quote and two minor quote-fidelity typography defects. Treatment was recorded only against disclosed lake fields, without a Lens A currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "3dcf3131d4291eca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Cone v. Bell, Warden, U.S. Supreme Court, decided 2009-04-28, docket 07-1114.",
+          "The lake citations list official cite 556 U.S. 449 and parallels 129 S. Ct. 1769, 173 L. Ed. 2d 701, and 2009 U.S. LEXIS 3298; the content page uses the same citation/court/year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cdd9d82332e2ddb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "when the State withholds from a crimi\nnal defendant evidence that is material to his guilt or\npunishment, it violates his right to due process of law in\nviolation of the Fourteenth Amendment.",
+          "locator_note": "text/Cone v. Bell__2943b4.txt, slip opinion page 20; lake pinpoints[] currently has page=null and quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The disclosed pin-469 quote is not a character-faithful opinion quote. It is page prose spanning Background/Issue/Rule headings, not text from Cone v. Bell.",
+          "proposed_fix": "Replace pin-469 with the actual opinion passage beginning \"when the State withholds...\" or otherwise align the lake pinpoint with the visible content-page quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains Markdown headings and content-page narrative, which do not appear in the opinion text as a quotation.",
+          "The underlying rule is supported, but this stored pinpoint quote is not faithful to the disclosed opinion text."
+        ],
+        "residual_risks": [
+          "Official U.S. page 469 cannot be independently checked from the slip-only cached text."
+        ],
+        "suggested_tightening": "Keep the rule but store the actual opinion sentence as the pin quote; keep slip-only status unless official pagination evidence is added.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afdd25e3634e254e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the obligation to disclose evidence favorable to the defense may\narise more broadly under a prosecutor’s ethical or statutory obligations.",
+          "locator_note": "text/Cone v. Bell__2943b4.txt, footnote 15, slip opinion page 21.",
+          "needs_cl": false,
+          "problem": "The quoted words are supported, but the quote is not character-faithful because the content/lake text uses straight \"prosecutor's\" while the opinion text uses curly \"prosecutor’s\".",
+          "proposed_fix": "Use the exact text: \"the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor’s ethical or statutory obligations.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance and location are supported by footnote 15.",
+          "Only the apostrophe typography prevents strict character fidelity."
+        ],
+        "residual_risks": [
+          "Official U.S. page 470 n.15 cannot be independently checked from the slip-only cached text."
+        ],
+        "suggested_tightening": "Normalize curly punctuation against the opinion text, or document that quote-fidelity allows typographic normalization.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eaea118567a41b4c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "evidence is “material” within the meaning of Brady when\nthere is a reasonable probability that, had the evidence\nbeen disclosed, the result of the proceeding would have\nbeen different.",
+          "locator_note": "text/Cone v. Bell__2943b4.txt, slip opinion page 20.",
+          "needs_cl": false,
+          "problem": "The quoted material is supported, but it is not character-faithful: the opinion uses curly quotation marks around “material” and plain Brady in the text cache, while the content/lake quote uses straight single quotes and Markdown *Brady*.",
+          "proposed_fix": "Use the disclosed text form: \"evidence is “material” within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The Bagley materiality sentence appears in the disclosed opinion text.",
+          "Strict quote fidelity fails only on typography/Markdown styling, not on the legal proposition."
+        ],
+        "residual_risks": [
+          "Official U.S. page 470 cannot be independently checked from the slip-only cached text."
+        ],
+        "suggested_tightening": "Use exact quotation marks from the source text, or expressly treat Markdown case-name italics and quote-style normalization as non-fidelity changes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bb73638b9bb1f13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2009-04-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency left to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Cone v. Bell.json\",\"reviewed\":[{\"assertion_id\":\"3dcf3131d4291eca\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Cone v. Bell, Warden, U.S. Supreme Court, decided 2009-04-28, docket 07-1114.\",\"The lake citations list official cite 556 U.S. 449 and parallels 129 S. Ct. 1769, 173 L. Ed. 2d 701, and 2009 U.S. LEXIS 3298; the content page uses the same citation/court/year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7cdd9d82332e2ddb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The disclosed pin-469 quote is not a character-faithful opinion quote. It is page prose spanning Background/Issue/Rule headings, not text from Cone v. Bell.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-469 with the actual opinion passage beginning \\\"when the State withholds...\\\" or otherwise align the lake pinpoint with the visible content-page quote.\",\"evidence_quote\":\"when the State withholds from a crimi\\nnal defendant evidence that is material to his guilt or\\npunishment, it violates his right to due process of law in\\nviolation of the Fourteenth Amendment.\",\"needs_cl\":false,\"locator_note\":\"text/Cone v. Bell__2943b4.txt, slip opinion page 20; lake pinpoints[] currently has page=null and quote_fidelity=mismatch.\"},\"reasons\":[\"The payload quote contains Markdown headings and content-page narrative, which do not appear in the opinion text as a quotation.\",\"The underlying rule is supported, but this stored pinpoint quote is not faithful to the disclosed opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 469 cannot be independently checked from the slip-only cached text.\"],\"suggested_tightening\":\"Keep the rule but store the actual opinion sentence as the pin quote; keep slip-only status unless official pagination evidence is added.\"},{\"assertion_id\":\"afdd25e3634e254e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are supported, but the quote is not character-faithful because the content/lake text uses straight \\\"prosecutor's\\\" while the opinion text uses curly \\\"prosecutor’s\\\".\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact text: \\\"the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor’s ethical or statutory obligations.\\\"\",\"evidence_quote\":\"the obligation to disclose evidence favorable to the defense may\\narise more broadly under a prosecutor’s ethical or statutory obligations.\",\"needs_cl\":false,\"locator_note\":\"text/Cone v. Bell__2943b4.txt, footnote 15, slip opinion page 21.\"},\"reasons\":[\"The substance and location are supported by footnote 15.\",\"Only the apostrophe typography prevents strict character fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 470 n.15 cannot be independently checked from the slip-only cached text.\"],\"suggested_tightening\":\"Normalize curly punctuation against the opinion text, or document that quote-fidelity allows typographic normalization.\"},{\"assertion_id\":\"eaea118567a41b4c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted material is supported, but it is not character-faithful: the opinion uses curly quotation marks around “material” and plain Brady in the text cache, while the content/lake quote uses straight single quotes and Markdown *Brady*.\",\"severity\":\"low\",\"proposed_fix\":\"Use the disclosed text form: \\\"evidence is “material” within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.\\\"\",\"evidence_quote\":\"evidence is “material” within the meaning of Brady when\\nthere is a reasonable probability that, had the evidence\\nbeen disclosed, the result of the proceeding would have\\nbeen different.\",\"needs_cl\":false,\"locator_note\":\"text/Cone v. Bell__2943b4.txt, slip opinion page 20.\"},\"reasons\":[\"The Bagley materiality sentence appears in the disclosed opinion text.\",\"Strict quote fidelity fails only on typography/Markdown styling, not on the legal proposition.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 470 cannot be independently checked from the slip-only cached text.\"],\"suggested_tightening\":\"Use exact quotation marks from the source text, or expressly treat Markdown case-name italics and quote-style normalization as non-fidelity changes.\"},{\"assertion_id\":\"1bb73638b9bb1f13\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2009-04-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\",\"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency left to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review found one high quote-fidelity defect in the stored pin-469 quote and two minor quote-fidelity typography defects. Treatment was recorded only against disclosed lake fields, without a Lens A currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:27:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-12b39a2c30",
+      "F-S9-PR-998ca3cc93",
+      "F-S9-PR-6020431e41"
+    ],
     "group_id": "_overhaul2/lake/cases/Cone v. Bell.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-dbad4bf1",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dbad4bf1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:29.034410Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:29.689292Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:30.441491Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:31.717555Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:33.769629Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:37.260008Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cone v. Bell"
+    ],
+    "tokens": {
+      "input": 200447,
+      "output": 8840,
+      "source": "codex-events",
+      "total": 209287
+    },
+    "verdict_map": {
+      "1bb73638b9bb1f13": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3dcf3131d4291eca": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cdd9d82332e2ddb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "afdd25e3634e254e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "eaea118567a41b4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-12b39a2c30",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-998ca3cc93",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6020431e41",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 172.9
   }
 }

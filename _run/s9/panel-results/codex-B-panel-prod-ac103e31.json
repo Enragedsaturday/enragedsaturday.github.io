@@ -1,13 +1,82 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Colorado v. Connelly.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "0acd0ab3195fb83d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub, has status verified, and identifies Colorado v. Connelly as a U.S. Supreme Court case decided 1986-12-10.",
+          "The official citation asserted in the inventory, 479 U.S. 157, matches the lake citations.official field and the content page display."
+        ],
+        "residual_risks": [
+          "The lake record lists alternate clusters with the same case name, but identity_checked/canonical_name_match/expected_citation_found all support the cited authority."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ef146ff8f49cc58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is created by this pinpoint row.",
+          "The lake pinpoint itself records quote_fidelity as mismatch, so Lens B does not add a support/quote finding."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the quote/pinpoint mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b23b0137243b9fd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.composite_basis/scope_note/derivation/edges",
+          "needs_cl": true,
+          "problem": "The good_law treatment call survives, but the page's unqualified 'No negative treatment' language should be caveated because the disclosed lake record shows migration-seeded treatment plus audit-needed/proposed negative treatment candidates, even though the listed edges are only field_iii='mentioned' and proposed=true.",
+          "proposed_fix": "Keep good_law/Binding-SCOTUS, but revise the treatment text to say no confirmed negative treatment in the disclosed lake record, with treatment migration-seeded and pending/flagged for audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is good_law as of 2026-06-30, and court_level is scotus, supporting the Binding-SCOTUS weight label.",
+          "No disclosed edge actually applies a confirmed negative treatment to Connelly: all listed treatment edges are proposed=true and field_iii='mentioned'.",
+          "The disclosed derivation still flags audit_needed with proposed negative events and a migration-seed basis, so an absolute 'No negative treatment' sentence overstates what can be verified from this packet."
+        ],
+        "residual_risks": [
+          "A completed external citator/CourtListener audit could confirm or downgrade the treatment call; the disclosed record itself says the S2 derivation may downgrade."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No confirmed negative treatment in this lake record; treatment is migration-seeded and flagged for S2 audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Colorado v. Connelly.json\",\"reviewed\":[{\"assertion_id\":\"0acd0ab3195fb83d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub, has status verified, and identifies Colorado v. Connelly as a U.S. Supreme Court case decided 1986-12-10.\",\"The official citation asserted in the inventory, 479 U.S. 157, matches the lake citations.official field and the content page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record lists alternate clusters with the same case name, but identity_checked/canonical_name_match/expected_citation_found all support the cited authority.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9ef146ff8f49cc58\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is created by this pinpoint row.\",\"The lake pinpoint itself records quote_fidelity as mismatch, so Lens B does not add a support/quote finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate the quote/pinpoint mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3b23b0137243b9fd\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call survives, but the page's unqualified 'No negative treatment' language should be caveated because the disclosed lake record shows migration-seeded treatment plus audit-needed/proposed negative treatment candidates, even though the listed edges are only field_iii='mentioned' and proposed=true.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law/Binding-SCOTUS, but revise the treatment text to say no confirmed negative treatment in the disclosed lake record, with treatment migration-seeded and pending/flagged for audit.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.composite_basis/scope_note/derivation/edges\"},\"reasons\":[\"The lake treatment field_i_validity is good_law as of 2026-06-30, and court_level is scotus, supporting the Binding-SCOTUS weight label.\",\"No disclosed edge actually applies a confirmed negative treatment to Connelly: all listed treatment edges are proposed=true and field_iii='mentioned'.\",\"The disclosed derivation still flags audit_needed with proposed negative events and a migration-seed basis, so an absolute 'No negative treatment' sentence overstates what can be verified from this packet.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed external citator/CourtListener audit could confirm or downgrade the treatment call; the disclosed record itself says the S2 derivation may downgrade.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'No confirmed negative treatment in this lake record; treatment is migration-seeded and flagged for S2 audit.'\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:24:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:27:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c3c880ea25",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c593a35cb3"
+    ],
     "group_id": "_overhaul2/lake/cases/Colorado v. Connelly.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +85,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ac103e31.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Colorado v. Connelly"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 197663,
+      "output": 7252,
+      "source": "codex-events",
+      "total": 204915
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "0acd0ab3195fb83d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b23b0137243b9fd": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ef146ff8f49cc58": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c3c880ea25",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c593a35cb3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 140.7
   }
 }

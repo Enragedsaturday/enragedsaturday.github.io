@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, or pincite findings are made.",
+    "reviewed": [
+      {
+        "assertion_id": "db944fdab5eb8efd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and identifies Brown v. Illinois as a U.S. Supreme Court case decided 1975-06-26.",
+          "The official citation is disclosed as 422 U.S. 590 with selected_official true, and the treatment judgment field says good_law."
+        ],
+        "residual_risks": [
+          "No external current-law check was performed because the review universe is limited to the disclosed files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "168045fad14316c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row, and Lens B does not evaluate support or quote fidelity.",
+          "No independent currency or treatment assertion in this row is refuted under Lens B."
+        ],
+        "residual_risks": [
+          "Quote fidelity, support, and pinpoint accuracy are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e06a79f6a6fae29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row, and Lens B does not evaluate support or quote fidelity.",
+          "No independent currency or treatment assertion in this row is refuted under Lens B."
+        ],
+        "residual_risks": [
+          "Quote fidelity, support, and pinpoint accuracy are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cefedacfdb71c68f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 8,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/Brown v. Illinois__23adda.json treatment.derivation.lane1_negative/lane2_top_cited and treatment.edges; content_page.md Treatment & subsequent history.",
+          "needs_cl": true,
+          "problem": "The good_law judgment survives from the lake treatment fields, but the page's unqualified treatment language is too strong because the disclosed treatment record contains proposed negative edges and audit-needed flags.",
+          "proposed_fix": "Keep good_law only as a final judgment-field call, but tighten the prose to say there is no confirmed negative treatment or point override in the lake judgment fields; disclose or resolve the proposed negative-treatment audit before saying 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "The same lake treatment section lists 33 proposed negative edges with labels including overruled, questioned, criticized, superseded_by_statute, and abrogated, all marked proposed and field_iii mentioned.",
+          "Because those negative edges are proposed rather than confirmed, they do not defeat the good_law field outright, but they do defeat an unqualified 'No negative treatment' phrasing."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives because they are marked proposed and only mentioned.",
+          "The Utah v. Strieff scope note is accepted only as a disclosed lake treatment judgment; no separate Utah v. Strieff authority record is present here."
+        ],
+        "suggested_tightening": "Use: 'Status: good_law as of 2026-06-30; no confirmed point override in the lake record. Proposed negative-treatment edges remain audit-pending.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"db944fdab5eb8efd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified and identifies Brown v. Illinois as a U.S. Supreme Court case decided 1975-06-26.\",\"The official citation is disclosed as 422 U.S. 590 with selected_official true, and the treatment judgment field says good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external current-law check was performed because the review universe is limited to the disclosed files.\"],\"suggested_tightening\":null},{\"assertion_id\":\"168045fad14316c5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row, and Lens B does not evaluate support or quote fidelity.\",\"No independent currency or treatment assertion in this row is refuted under Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity, support, and pinpoint accuracy are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5e06a79f6a6fae29\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row, and Lens B does not evaluate support or quote fidelity.\",\"No independent currency or treatment assertion in this row is refuted under Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity, support, and pinpoint accuracy are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cefedacfdb71c68f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law judgment survives from the lake treatment fields, but the page's unqualified treatment language is too strong because the disclosed treatment record contains proposed negative edges and audit-needed flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law only as a final judgment-field call, but tighten the prose to say there is no confirmed negative treatment or point override in the lake judgment fields; disclose or resolve the proposed negative-treatment audit before saying 'No negative treatment.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 8,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Brown v. Illinois__23adda.json treatment.derivation.lane1_negative/lane2_top_cited and treatment.edges; content_page.md Treatment & subsequent history.\"},\"reasons\":[\"The treatment payload matches the lake judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"The same lake treatment section lists 33 proposed negative edges with labels including overruled, questioned, criticized, superseded_by_statute, and abrogated, all marked proposed and field_iii mentioned.\",\"Because those negative edges are proposed rather than confirmed, they do not defeat the good_law field outright, but they do defeat an unqualified 'No negative treatment' phrasing.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges may be false positives because they are marked proposed and only mentioned.\",\"The Utah v. Strieff scope note is accepted only as a disclosed lake treatment judgment; no separate Utah v. Strieff authority record is present here.\"],\"suggested_tightening\":\"Use: 'Status: good_law as of 2026-06-30; no confirmed point override in the lake record. Proposed negative-treatment edges remain audit-pending.'\"}],\"notes\":\"Lens B only; no support, quote-fidelity, or pincite findings are made.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:06-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:16:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-c41504bd30"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0db1788c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Brown v. Illinois"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 414335,
+      "output": 7196,
+      "source": "codex-events",
+      "total": 421531
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "168045fad14316c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5e06a79f6a6fae29": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cefedacfdb71c68f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "db944fdab5eb8efd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c41504bd30",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.7
   }
 }

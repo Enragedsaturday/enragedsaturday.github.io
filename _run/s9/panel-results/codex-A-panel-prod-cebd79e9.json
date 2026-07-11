@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Collins v. Virginia.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "fb612d0b4dfc9c02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Collins v. Virginia, U.S. Supreme Court, decided 2018-05-29, docket 16-1027.",
+          "The lake official citation is 584 U.S. 586 and the content page uses 584 U.S. 586 (2018); parallel and vendor-neutral citations also match the lake record."
+        ],
+        "residual_risks": [
+          "The lake citations.all entry for 584 U.S. 586 has selected_official:false while citations.official has selected_official:true, but the official/display citation asserted here is still verifiable from the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72aa445bd21761b7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "For the foregoing reasons, we conclude that the automo-\nbile exception does not permit an officer without a warrant\nto enter a home or its curtilage in order to search a vehicle\ntherein.",
+          "locator_note": "lake pinpoints[0] id pin-op14; content_page.md rule quote at line 53; text/Collins v. Virginia__81a641.txt slip opinion Part IV, page 14.",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-op14 is not the opinion passage at slip op. 14; it is a harvested chunk of the built content page header/background/issue text ending at '## Rule No.'. That is not character-faithful to the cited opinion passage.",
+          "proposed_fix": "Replace pin-op14's lake pinpoints[].quote with the actual slip-opinion passage supporting the page quote, and mark fidelity only after checking against the disclosed opinion text or an explicitly normalized quote policy.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[].quote begins with '--- # Collins v. Virginia' and includes page prose, not the opinion text.",
+          "The disclosed opinion text contains the cited rule at slip op. 14, but the lake pinpoint quote does not reproduce it."
+        ],
+        "residual_risks": [
+          "The content page's displayed quotation is substantively supported, but its normalized 'automobile' spelling is not character-identical to the cached text's line-broken 'automo-\\nbile' unless normalization is allowed."
+        ],
+        "suggested_tightening": "Use the actual slip-opinion sentence for pin-op14 and avoid harvesting surrounding page markdown as a pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c353f017a0026bd3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; I make no treatment finding.",
+          "The content page treatment fields mirror the lake judgment fields: field_i_validity good_law, as_of_content 2018-05-29, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits and any effect of proposed progeny edges are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Collins v. Virginia.json\",\"reviewed\":[{\"assertion_id\":\"fb612d0b4dfc9c02\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Collins v. Virginia, U.S. Supreme Court, decided 2018-05-29, docket 16-1027.\",\"The lake official citation is 584 U.S. 586 and the content page uses 584 U.S. 586 (2018); parallel and vendor-neutral citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake citations.all entry for 584 U.S. 586 has selected_official:false while citations.official has selected_official:true, but the official/display citation asserted here is still verifiable from the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"72aa445bd21761b7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-op14 is not the opinion passage at slip op. 14; it is a harvested chunk of the built content page header/background/issue text ending at '## Rule No.'. That is not character-faithful to the cited opinion passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op14's lake pinpoints[].quote with the actual slip-opinion passage supporting the page quote, and mark fidelity only after checking against the disclosed opinion text or an explicitly normalized quote policy.\",\"evidence_quote\":\"For the foregoing reasons, we conclude that the automo-\\nbile exception does not permit an officer without a warrant\\nto enter a home or its curtilage in order to search a vehicle\\ntherein.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] id pin-op14; content_page.md rule quote at line 53; text/Collins v. Virginia__81a641.txt slip opinion Part IV, page 14.\"},\"reasons\":[\"The lake pinpoints[].quote begins with '--- # Collins v. Virginia' and includes page prose, not the opinion text.\",\"The disclosed opinion text contains the cited rule at slip op. 14, but the lake pinpoint quote does not reproduce it.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed quotation is substantively supported, but its normalized 'automobile' spelling is not character-identical to the cached text's line-broken 'automo-\\\\nbile' unless normalization is allowed.\"],\"suggested_tightening\":\"Use the actual slip-opinion sentence for pin-op14 and avoid harvesting surrounding page markdown as a pinpoint quote.\"},{\"assertion_id\":\"c353f017a0026bd3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; I make no treatment finding.\",\"The content page treatment fields mirror the lake judgment fields: field_i_validity good_law, as_of_content 2018-05-29, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and any effect of proposed progeny edges are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:25:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-775f3ed506"
+    ],
     "group_id": "_overhaul2/lake/cases/Collins v. Virginia.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cebd79e9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Collins v. Virginia"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 201456,
+      "output": 6533,
+      "source": "codex-events",
+      "total": 207989
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "72aa445bd21761b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c353f017a0026bd3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb612d0b4dfc9c02": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-775f3ed506",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 128.1
   }
 }

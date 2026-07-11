@@ -1,22 +1,158 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Connick v. Thompson.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory.jsonl assertions under Lens A using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "bb786bc4e1f01dfb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Connick v. Thompson, U.S. Supreme Court, decided 2011-03-29, year 2011, docket 09-571.",
+          "Each cited reporter string in the assertion payload appears in lake.citations.all: 179 L. Ed. 2d 417; 2011 U.S. LEXIS 2594; 131 S. Ct. 1350; 563 U.S. 51; 22 Fla. L. Weekly Fed. S 887; 79 U.S.L.W. 4195."
+        ],
+        "residual_risks": [
+          "The content page source line contains a CourtListener URL/opinion-id note that is not part of this existence payload and was not treated as this assertion's citation claim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4aec096475b165af",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A pattern of similar constitutional violations by untrained employees is “ordinarily necessary” to demonstrate deliberate indifference for purposes of failure to train.",
+          "locator_note": "text/Connick v. Thompson__a2f2d9.txt at the 563 U.S. 62 marker; lake pinpoints[] for pin-62 has quote_fidelity: mismatch and pinpoint_status: slip-only.",
+          "needs_cl": false,
+          "problem": "pin-62's stored pinpoint quote is not a verbatim opinion quote; it is a long excerpt of the built page/frontmatter and lake itself marks quote_fidelity as mismatch. The actual opinion sentence at the cited location is much narrower.",
+          "proposed_fix": "Replace pin-62 with the exact opinion sentence: A pattern of similar constitutional violations by untrained employees is “ordinarily necessary” to demonstrate deliberate indifference for purposes of failure to train. Preserve the opinion's quotation marks or make the page language non-verbatim.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record flags pin-62 as quote_fidelity mismatch.",
+          "The cached opinion text contains the quoted rule sentence at 563 U.S. 62, but not the long built-page excerpt stored as pin-62."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported; the defect is the corrupted/verbatim pinpoint record and typographic quote fidelity."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence for the quote and avoid attaching page summary text to the pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b1d880806251911",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted fragment \"narrow range\" appears verbatim in the cached opinion text in the sentence rejecting failure-to-train prosecutors as within Canton's single-incident liability.",
+          "The lake pinpoint for pin-64 records quote_fidelity as matched and pinpoint_status as star-verified."
+        ],
+        "residual_risks": [
+          "This assertion verifies only the stored fragment, not every typographic detail of the longer display quote on the page."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10614f3c04f1ff5f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake/page treatment fields: field_i_validity good_law, as_of_content 2011-03-29, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Connick v. Thompson.json\",\"reviewed\":[{\"assertion_id\":\"bb786bc4e1f01dfb\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Connick v. Thompson, U.S. Supreme Court, decided 2011-03-29, year 2011, docket 09-571.\",\"Each cited reporter string in the assertion payload appears in lake.citations.all: 179 L. Ed. 2d 417; 2011 U.S. LEXIS 2594; 131 S. Ct. 1350; 563 U.S. 51; 22 Fla. L. Weekly Fed. S 887; 79 U.S.L.W. 4195.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page source line contains a CourtListener URL/opinion-id note that is not part of this existence payload and was not treated as this assertion's citation claim.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4aec096475b165af\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-62's stored pinpoint quote is not a verbatim opinion quote; it is a long excerpt of the built page/frontmatter and lake itself marks quote_fidelity as mismatch. The actual opinion sentence at the cited location is much narrower.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-62 with the exact opinion sentence: A pattern of similar constitutional violations by untrained employees is “ordinarily necessary” to demonstrate deliberate indifference for purposes of failure to train. Preserve the opinion's quotation marks or make the page language non-verbatim.\",\"evidence_quote\":\"A pattern of similar constitutional violations by untrained employees is “ordinarily necessary” to demonstrate deliberate indifference for purposes of failure to train.\",\"needs_cl\":false,\"locator_note\":\"text/Connick v. Thompson__a2f2d9.txt at the 563 U.S. 62 marker; lake pinpoints[] for pin-62 has quote_fidelity: mismatch and pinpoint_status: slip-only.\"},\"reasons\":[\"The disclosed lake record flags pin-62 as quote_fidelity mismatch.\",\"The cached opinion text contains the quoted rule sentence at 563 U.S. 62, but not the long built-page excerpt stored as pin-62.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition appears supported; the defect is the corrupted/verbatim pinpoint record and typographic quote fidelity.\"],\"suggested_tightening\":\"Use the exact opinion sentence for the quote and avoid attaching page summary text to the pinpoint.\"},{\"assertion_id\":\"5b1d880806251911\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted fragment \\\"narrow range\\\" appears verbatim in the cached opinion text in the sentence rejecting failure-to-train prosecutors as within Canton's single-incident liability.\",\"The lake pinpoint for pin-64 records quote_fidelity as matched and pinpoint_status as star-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This assertion verifies only the stored fragment, not every typographic detail of the longer display quote on the page.\"],\"suggested_tightening\":null},{\"assertion_id\":\"10614f3c04f1ff5f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\"The treatment payload matches the disclosed lake/page treatment fields: field_i_validity good_law, as_of_content 2011-03-29, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory.jsonl assertions under Lens A using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:29:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f577523a91",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e38719ea34"
+    ],
     "group_id": "_overhaul2/lake/cases/Connick v. Thompson.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ffce6b47",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ffce6b47.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.024468Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.818023Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:29.958408Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:31.098876Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:32.926788Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:36.673610Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connick v. Thompson"
+    ],
+    "tokens": {
+      "input": 335257,
+      "output": 7589,
+      "source": "codex-events",
+      "total": 342846
+    },
+    "verdict_map": {
+      "10614f3c04f1ff5f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4aec096475b165af": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5b1d880806251911": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb786bc4e1f01dfb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e38719ea34",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f577523a91",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 152.3
   }
 }

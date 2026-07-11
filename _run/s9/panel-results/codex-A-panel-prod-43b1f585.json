@@ -1,22 +1,163 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brewer v. Williams.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No support or black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "e494bf740cea40fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Brewer v. Williams/Brewer, Warden v. Williams as a verified U.S. Supreme Court case, docket 74-1263, year 1977.",
+          "The official citation in the lake record is 430 U.S. 387, with parallels 97 S. Ct. 1232 and 51 L. Ed. 2d 424; the content page uses 430 U.S. 387 (1977) and U.S. Supreme Court."
+        ],
+        "residual_risks": [
+          "The cached opinion header says Decided March 23, 1977, while the page/lake date_decided fields say 1977-05-16; no separate date_decided assertion row was supplied."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4d4051735ee39605",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Whatever else it may mean, the right to counsel granted by the Sixth and Fourteenth Amendments means at least that a person is entitled to the help of a lawyer at or after the time that judicial proceedings have been initiated against him\"whether by way of formal charge, preliminary hearing, indictment, information, or arraignment.\"",
+          "locator_note": "text/Brewer v. Williams__aa921b.txt line 45 contains the actual passage; lake pinpoints[].quote for pin-398 contains content-page prose and Markdown headings instead.",
+          "needs_cl": false,
+          "problem": "pin-398's lake/payload quote is not the quoted rule passage from the opinion. It is a harvested slice of the content page/background/headings, ending before the actual rule quote. The displayed rule quote is substantively supported, but the pinpoint quote record is not character-faithful to the opinion text.",
+          "proposed_fix": "Replace pin-398's quote with the actual page-398 passage beginning with the Sixth/Fourteenth Amendment right-to-counsel language, and anchor it to page 398. If exact fidelity is required, preserve the source punctuation/encoding rather than the page's normalized punctuation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with 'suggesting the child deserved a Christian burial...' and includes '## Issue'/'## Rule' text, which is not an opinion quote.",
+          "The opinion text contains the actual right-attachment language at the 398 star page.",
+          "The content page's visible quote also normalizes punctuation around the embedded quotation, so it is not strictly character-faithful to the cached text."
+        ],
+        "residual_risks": [
+          "The text cache appears to preserve a mojibake dash character, so the corpus should define whether exact_quote is byte/character exact or normalized."
+        ],
+        "suggested_tightening": "Store a clean exact quote for pin-398 separately from any normalized display quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afd7efbdbf29e9ce",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely asand perhaps more effectively thanif he had formally interrogated him.",
+          "locator_note": "text/Brewer v. Williams__aa921b.txt line 47; the preceding star pagination places the passage on 430 U.S. 399.",
+          "needs_cl": false,
+          "problem": "The quote's words and page support are correct, but the punctuation is not character-faithful: the cached opinion has no-space dash characters around 'and perhaps more effectively than,' while the page/lake quote uses spaced em dashes.",
+          "proposed_fix": "Use the cached-text punctuation exactly, or mark the displayed quote as normalized rather than exact.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the opinion text at the claimed location.",
+          "The only fidelity defect found is punctuation/spacing around the dash characters.",
+          "The proposition of deliberate elicitation is supported by the quoted passage and surrounding text."
+        ],
+        "residual_risks": [
+          "Same normalization issue as pin-398: exact and display quotes should not be conflated."
+        ],
+        "suggested_tightening": "Maintain exact_quote and normalized_display_quote fields for dash and quotation-mark normalization.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a376e68a26dfa09e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no Lens A treatment finding is raised.",
+          "The disclosed lake/content treatment fields state field_i_validity=good_law, varies_by_point=false, and a scope note limiting Nix v. Williams to the exclusionary-remedy issue."
+        ],
+        "residual_risks": [
+          "No Lens B treatment audit was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brewer v. Williams.json\",\"reviewed\":[{\"assertion_id\":\"e494bf740cea40fc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Brewer v. Williams/Brewer, Warden v. Williams as a verified U.S. Supreme Court case, docket 74-1263, year 1977.\",\"The official citation in the lake record is 430 U.S. 387, with parallels 97 S. Ct. 1232 and 51 L. Ed. 2d 424; the content page uses 430 U.S. 387 (1977) and U.S. Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion header says Decided March 23, 1977, while the page/lake date_decided fields say 1977-05-16; no separate date_decided assertion row was supplied.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4d4051735ee39605\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-398's lake/payload quote is not the quoted rule passage from the opinion. It is a harvested slice of the content page/background/headings, ending before the actual rule quote. The displayed rule quote is substantively supported, but the pinpoint quote record is not character-faithful to the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-398's quote with the actual page-398 passage beginning with the Sixth/Fourteenth Amendment right-to-counsel language, and anchor it to page 398. If exact fidelity is required, preserve the source punctuation/encoding rather than the page's normalized punctuation.\",\"evidence_quote\":\"Whatever else it may mean, the right to counsel granted by the Sixth and Fourteenth Amendments means at least that a person is entitled to the help of a lawyer at or after the time that judicial proceedings have been initiated against him\\u0097\\\"whether by way of formal charge, preliminary hearing, indictment, information, or arraignment.\\\"\",\"needs_cl\":false,\"locator_note\":\"text/Brewer v. Williams__aa921b.txt line 45 contains the actual passage; lake pinpoints[].quote for pin-398 contains content-page prose and Markdown headings instead.\"},\"reasons\":[\"The payload quote begins with 'suggesting the child deserved a Christian burial...' and includes '## Issue'/'## Rule' text, which is not an opinion quote.\",\"The opinion text contains the actual right-attachment language at the 398 star page.\",\"The content page's visible quote also normalizes punctuation around the embedded quotation, so it is not strictly character-faithful to the cached text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The text cache appears to preserve a mojibake dash character, so the corpus should define whether exact_quote is byte/character exact or normalized.\"],\"suggested_tightening\":\"Store a clean exact quote for pin-398 separately from any normalized display quote.\"},{\"assertion_id\":\"afd7efbdbf29e9ce\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote's words and page support are correct, but the punctuation is not character-faithful: the cached opinion has no-space dash characters around 'and perhaps more effectively than,' while the page/lake quote uses spaced em dashes.\",\"severity\":\"low\",\"proposed_fix\":\"Use the cached-text punctuation exactly, or mark the displayed quote as normalized rather than exact.\",\"evidence_quote\":\"There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely as\\u0097and perhaps more effectively than\\u0097if he had formally interrogated him.\",\"needs_cl\":false,\"locator_note\":\"text/Brewer v. Williams__aa921b.txt line 47; the preceding star pagination places the passage on 430 U.S. 399.\"},\"reasons\":[\"The same sentence appears in the opinion text at the claimed location.\",\"The only fidelity defect found is punctuation/spacing around the dash characters.\",\"The proposition of deliberate elicitation is supported by the quoted passage and surrounding text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Same normalization issue as pin-398: exact and display quotes should not be conflated.\"],\"suggested_tightening\":\"Maintain exact_quote and normalized_display_quote fields for dash and quotation-mark normalization.\"},{\"assertion_id\":\"a376e68a26dfa09e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no Lens A treatment finding is raised.\",\"The disclosed lake/content treatment fields state field_i_validity=good_law, varies_by_point=false, and a scope note limiting Nix v. Williams to the exclusionary-remedy issue.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment audit was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No support or black_letter rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:47-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:16:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-5e21802e7b",
+      "F-S9-PR-0785050a06"
+    ],
     "group_id": "_overhaul2/lake/cases/Brewer v. Williams.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-43b1f585",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-43b1f585.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:38.861776Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:39.551502Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:40.363867Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:41.572899Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:43.589227Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:22:47.212035Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brewer v. Williams"
+    ],
+    "tokens": {
+      "input": 520969,
+      "output": 9608,
+      "source": "codex-events",
+      "total": 530577
+    },
+    "verdict_map": {
+      "4d4051735ee39605": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a376e68a26dfa09e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afd7efbdbf29e9ce": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e494bf740cea40fc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e21802e7b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0785050a06",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 190.0
   }
 }

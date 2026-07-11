@@ -1,13 +1,165 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Byars v. United States.json",
+    "lens": "A",
+    "notes": "No support or black_letter rows appeared in group_inventory.jsonl; treatment was recorded only, not substantively reviewed under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "b8b3eca3f74e50f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Byars v. United States, U.S. Supreme Court, decided 1927-01-03.",
+          "The official, parallel, and LEXIS citations in the content page match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "02fb25798364e52d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The warrant clearly is bad",
+          "locator_note": "pin-29; compare the Rule section in content_page.md with opinion paragraph b103-5.",
+          "needs_cl": false,
+          "problem": "The pin-29 payload is not an opinion quotation; it is harvested content-page prose spanning Background, Issue, and Rule, and it omits the actual warrant sentence cited on the page.",
+          "proposed_fix": "Replace pin-29's stored quote with the opinion sentence at star page 29, and keep the page citation to 273 U.S. at 29.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at the page-29 passage contains the warrant sentence, not the inventory payload's content-page narrative.",
+          "The lake pinpoint entry itself is marked quote_fidelity=mismatch, consistent with the disclosed failure."
+        ],
+        "residual_risks": [
+          "The content page's actual pin-29 quote uses bracketed lowercase; if strict character fidelity is required, remove that editorial alteration or paraphrase the lead-in."
+        ],
+        "suggested_tightening": "Store only the actual quoted warrant sentence for pin-29.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e07e6ccdcef3612",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears in the opinion's page-32 passage after an introductory clause.",
+          "The omission of the lead-in does not change the quoted proposition, and the page citation lands on the relevant federal-participation warning."
+        ],
+        "residual_risks": [
+          "The lake record still labels the pin as quote_fidelity=mismatch and has no page/star metadata, although the disclosed text verifies the quoted words."
+        ],
+        "suggested_tightening": "Populate page/star metadata for pin-32.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60d3a6c9b7bd7116",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "was a joint operation",
+          "locator_note": "pin-33; opinion paragraph b106-7, star page 33.",
+          "needs_cl": false,
+          "problem": "The content/lake quote changes the source tense from 'was' to bracketed 'is', so it is not character-faithful as a verbatim quote.",
+          "proposed_fix": "Quote the source in past tense or paraphrase the present-tense rule outside quotation marks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion supports the proposition that the search was a joint operation.",
+          "The bracketed verb alteration is transparent but still not strict quote fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use paraphrase for the present-tense rule and reserve quotation marks for exact words.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "db5a289382d39ce9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A search prosecuted",
+          "locator_note": "pin-29b; opinion paragraph b103-6, beginning on star page 29.",
+          "needs_cl": false,
+          "problem": "The quoted clause is substantively present, but the page/lake quote changes source capitalization and terminal punctuation.",
+          "proposed_fix": "Quote the clause with source capitalization and semicolon, or paraphrase it as a rule statement.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion contains the same clause and supports the rule.",
+          "The bracketed initial and final period are editorial alterations, not character-faithful transcription."
+        ],
+        "residual_risks": [
+          "The lake pin has no page value, although the disclosed opinion text locates the clause."
+        ],
+        "suggested_tightening": "Avoid using quotation marks when changing capitalization or sentence-ending punctuation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f87b446f9f1b855e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "own account.",
+          "locator_note": "pin-33b; opinion paragraph b107-6, star page 33.",
+          "needs_cl": false,
+          "problem": "The row's quote changes the source period after 'account' to a bracketed comma to fit the content-page sentence.",
+          "proposed_fix": "Do not put altered punctuation inside quotation marks; quote the source sentence ending at account or paraphrase the Government-may-use clause.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion supports the sovereign-participation contrast.",
+          "The row's quoted punctuation is editorially altered, so the quote should be tightened rather than treated as exact."
+        ],
+        "residual_risks": [
+          "The content page also ties a second quotation to pin-33b that is not separately represented in the inventory payload."
+        ],
+        "suggested_tightening": "Split the source sentence quotation from the explanatory sentence, or convert the whole point to paraphrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8d64363088e78fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields, including field_i_validity and the as-of date.",
+          "Lens A does not assess treatment currency; no treatment defect is raised here."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Byars v. United States.json\",\"reviewed\":[{\"assertion_id\":\"b8b3eca3f74e50f3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Byars v. United States, U.S. Supreme Court, decided 1927-01-03.\",\"The official, parallel, and LEXIS citations in the content page match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"02fb25798364e52d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-29 payload is not an opinion quotation; it is harvested content-page prose spanning Background, Issue, and Rule, and it omits the actual warrant sentence cited on the page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-29's stored quote with the opinion sentence at star page 29, and keep the page citation to 273 U.S. at 29.\",\"evidence_quote\":\"The warrant clearly is bad\",\"needs_cl\":false,\"locator_note\":\"pin-29; compare the Rule section in content_page.md with opinion paragraph b103-5.\"},\"reasons\":[\"The disclosed opinion text at the page-29 passage contains the warrant sentence, not the inventory payload's content-page narrative.\",\"The lake pinpoint entry itself is marked quote_fidelity=mismatch, consistent with the disclosed failure.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's actual pin-29 quote uses bracketed lowercase; if strict character fidelity is required, remove that editorial alteration or paraphrase the lead-in.\"],\"suggested_tightening\":\"Store only the actual quoted warrant sentence for pin-29.\"},{\"assertion_id\":\"1e07e6ccdcef3612\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted language appears in the opinion's page-32 passage after an introductory clause.\",\"The omission of the lead-in does not change the quoted proposition, and the page citation lands on the relevant federal-participation warning.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record still labels the pin as quote_fidelity=mismatch and has no page/star metadata, although the disclosed text verifies the quoted words.\"],\"suggested_tightening\":\"Populate page/star metadata for pin-32.\"},{\"assertion_id\":\"60d3a6c9b7bd7116\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The content/lake quote changes the source tense from 'was' to bracketed 'is', so it is not character-faithful as a verbatim quote.\",\"severity\":\"low\",\"proposed_fix\":\"Quote the source in past tense or paraphrase the present-tense rule outside quotation marks.\",\"evidence_quote\":\"was a joint operation\",\"needs_cl\":false,\"locator_note\":\"pin-33; opinion paragraph b106-7, star page 33.\"},\"reasons\":[\"The opinion supports the proposition that the search was a joint operation.\",\"The bracketed verb alteration is transparent but still not strict quote fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use paraphrase for the present-tense rule and reserve quotation marks for exact words.\"},{\"assertion_id\":\"db5a289382d39ce9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted clause is substantively present, but the page/lake quote changes source capitalization and terminal punctuation.\",\"severity\":\"low\",\"proposed_fix\":\"Quote the clause with source capitalization and semicolon, or paraphrase it as a rule statement.\",\"evidence_quote\":\"A search prosecuted\",\"needs_cl\":false,\"locator_note\":\"pin-29b; opinion paragraph b103-6, beginning on star page 29.\"},\"reasons\":[\"The opinion contains the same clause and supports the rule.\",\"The bracketed initial and final period are editorial alterations, not character-faithful transcription.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pin has no page value, although the disclosed opinion text locates the clause.\"],\"suggested_tightening\":\"Avoid using quotation marks when changing capitalization or sentence-ending punctuation.\"},{\"assertion_id\":\"f87b446f9f1b855e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The row's quote changes the source period after 'account' to a bracketed comma to fit the content-page sentence.\",\"severity\":\"low\",\"proposed_fix\":\"Do not put altered punctuation inside quotation marks; quote the source sentence ending at account or paraphrase the Government-may-use clause.\",\"evidence_quote\":\"own account.\",\"needs_cl\":false,\"locator_note\":\"pin-33b; opinion paragraph b107-6, star page 33.\"},\"reasons\":[\"The opinion supports the sovereign-participation contrast.\",\"The row's quoted punctuation is editorially altered, so the quote should be tightened rather than treated as exact.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page also ties a second quotation to pin-33b that is not separately represented in the inventory payload.\"],\"suggested_tightening\":\"Split the source sentence quotation from the explanatory sentence, or convert the whole point to paraphrase.\"},{\"assertion_id\":\"a8d64363088e78fc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields, including field_i_validity and the as-of date.\",\"Lens A does not assess treatment currency; no treatment defect is raised here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy and currency remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No support or black_letter rows appeared in group_inventory.jsonl; treatment was recorded only, not substantively reviewed under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:19:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b48f22bc62",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-59af9e80ee",
+      "F-S9-PR-7611d7836e",
+      "F-S9-PR-09bed9a76b",
+      "F-S9-PR-1a55c7a463"
+    ],
     "group_id": "_overhaul2/lake/cases/Byars v. United States.json",
     "group_total_assertions": 7,
     "lake_only_cases": [],
@@ -16,21 +168,92 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f89e9e84.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 7,
     "run": "prod",
     "text_disclosed_cases": [
       "Byars v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 223158,
+      "output": 13069,
+      "source": "codex-events",
+      "total": 236227
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "02fb25798364e52d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "1e07e6ccdcef3612": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "60d3a6c9b7bd7116": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a8d64363088e78fc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8b3eca3f74e50f3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db5a289382d39ce9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f87b446f9f1b855e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-59af9e80ee",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7611d7836e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-09bed9a76b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1a55c7a463",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b48f22bc62",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 253.3
   }
 }

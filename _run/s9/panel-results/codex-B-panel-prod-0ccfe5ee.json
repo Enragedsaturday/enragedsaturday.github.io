@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chambers v. Florida.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, pincite, or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "10df84d0bfdd0fe7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified, non-stub, and identifies Chambers v. Florida as a U.S. Supreme Court case decided 1940-02-12 with official citation 309 U.S. 227.",
+          "The disclosed treatment judgment field says field_i_validity is good_law as of 2026-06-30; no accepted non-proposed overrule/abrogate/supersede/limit edge is disclosed."
+        ],
+        "residual_risks": [
+          "The treatment derivation has audit_needed markers and proposed negative events, so the no-negative-treatment statement should remain qualified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00c61ae0fb80b1c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised here.",
+          "For currency purposes, the cited record is the same verified Chambers authority and its disclosed treatment judgment is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The payload itself marks quote_fidelity as mismatch, but that is for Lens A rather than this treatment review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cc724812ba16c43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised here.",
+          "For currency purposes, the cited record is the same verified Chambers authority and its disclosed treatment judgment is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation still flags proposed negative events requiring audit, but no accepted negative treatment edge is disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "375a5f8426b5768f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Chambers v. Florida__1979aa.json treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law and Binding-SCOTUS labels are supported by the disclosed judgment fields, but the page's unqualified 'No negative treatment' phrasing is too strong because the same disclosed treatment record contains proposed negative events and audit-needed markers. The safer statement is no confirmed negative treatment in the disclosed accepted fields.",
+          "proposed_fix": "Change the treatment prose to: 'Good law as of 2026-06-30; no confirmed negative treatment in the accepted treatment fields. Proposed negative-treatment signals remain pending audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The page's weight label matches the lake identity: court_id/court_level are scotus, supporting Binding-SCOTUS.",
+          "All disclosed treatment edges inspected are marked proposed:true, so they do not establish a confirmed downgrade; however, lane1 and lane2 derivation both flag audit_needed."
+        ],
+        "residual_risks": [
+          "The proposed overruled/questioned/criticized/superseded_by_statute edges cannot be finally resolved from the disclosed files alone without the cited progeny records/snippets behind the audit markers."
+        ],
+        "suggested_tightening": "Qualify 'No negative treatment' as 'no confirmed negative treatment in accepted fields' until the R15 treatment audit is complete.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Chambers v. Florida.json\",\"reviewed\":[{\"assertion_id\":\"10df84d0bfdd0fe7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified, non-stub, and identifies Chambers v. Florida as a U.S. Supreme Court case decided 1940-02-12 with official citation 309 U.S. 227.\",\"The disclosed treatment judgment field says field_i_validity is good_law as of 2026-06-30; no accepted non-proposed overrule/abrogate/supersede/limit edge is disclosed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation has audit_needed markers and proposed negative events, so the no-negative-treatment statement should remain qualified.\"],\"suggested_tightening\":null},{\"assertion_id\":\"00c61ae0fb80b1c5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised here.\",\"For currency purposes, the cited record is the same verified Chambers authority and its disclosed treatment judgment is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The payload itself marks quote_fidelity as mismatch, but that is for Lens A rather than this treatment review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7cc724812ba16c43\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised here.\",\"For currency purposes, the cited record is the same verified Chambers authority and its disclosed treatment judgment is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation still flags proposed negative events requiring audit, but no accepted negative treatment edge is disclosed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"375a5f8426b5768f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law and Binding-SCOTUS labels are supported by the disclosed judgment fields, but the page's unqualified 'No negative treatment' phrasing is too strong because the same disclosed treatment record contains proposed negative events and audit-needed markers. The safer statement is no confirmed negative treatment in the disclosed accepted fields.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the treatment prose to: 'Good law as of 2026-06-30; no confirmed negative treatment in the accepted treatment fields. Proposed negative-treatment signals remain pending audit.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Chambers v. Florida__1979aa.json treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The page's weight label matches the lake identity: court_id/court_level are scotus, supporting Binding-SCOTUS.\",\"All disclosed treatment edges inspected are marked proposed:true, so they do not establish a confirmed downgrade; however, lane1 and lane2 derivation both flag audit_needed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed overruled/questioned/criticized/superseded_by_statute edges cannot be finally resolved from the disclosed files alone without the cited progeny records/snippets behind the audit markers.\"],\"suggested_tightening\":\"Qualify 'No negative treatment' as 'no confirmed negative treatment in accepted fields' until the R15 treatment audit is complete.\"}],\"notes\":\"Lens B only; no support, pincite, or quote-fidelity findings were made.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:52-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:22:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-07b68254d5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-eb05edc042"
+    ],
     "group_id": "_overhaul2/lake/cases/Chambers v. Florida.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-0ccfe5ee",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0ccfe5ee.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:43.782507Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:44.391604Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:45.216821Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:46.503456Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:48.611028Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:52.062560Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chambers v. Florida"
+    ],
+    "tokens": {
+      "input": 229646,
+      "output": 7712,
+      "source": "codex-events",
+      "total": 237358
+    },
+    "verdict_map": {
+      "00c61ae0fb80b1c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "10df84d0bfdd0fe7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "375a5f8426b5768f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7cc724812ba16c43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-07b68254d5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb05edc042",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 151.4
   }
 }

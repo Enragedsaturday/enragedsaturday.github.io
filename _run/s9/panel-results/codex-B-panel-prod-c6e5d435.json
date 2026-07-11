@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bumper v. North Carolina.json",
+    "lens": "B",
+    "notes": "Lens B reviewed currency/treatment only; quote-fidelity rows were not evaluated for quote accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "d5fb3bdf58738c97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Bumper v. North Carolina as a U.S. Supreme Court decision dated 1968-06-03, docket 1016, cluster_id 107716.",
+          "The lake record selects 391 U.S. 543 as the official citation and lists the parallel/vendor citations reflected in the page.",
+          "The disclosed treatment judgment is good_law as of 2026-06-30 with point_overrides: []; nothing disclosed establishes that Bumper is no longer live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation is bounded and flags proposed negative events, but the disclosed treatment edges are proposed and classified as mentioned."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1192becc0c9a428e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion; Lens B reviews only currency, treatment, and authority weight.",
+          "No disclosed treatment/currency defect is tied to pin-548."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "145962791fe6d02f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion; Lens B reviews only currency, treatment, and authority weight.",
+          "No disclosed treatment/currency defect is tied to pin-550."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae21b84a1b20ef0e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "        \"audit_needed\": true,\n        \"proposed_negative_events\": 8,\n        \"audit_marker\": \"R15 treatment audit required\",",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited",
+          "needs_cl": false,
+          "problem": "The good-law and binding-SCOTUS treatment call is supported, but the page's categorical 'No negative treatment' wording is stronger than the disclosed treatment record. The lake derivation flags proposed negative events and audit_needed in treatment lanes, so the page should say no confirmed negative treatment or point-specific override in the disclosed lake record.",
+          "proposed_fix": "Retain field_i_validity: good_law and Binding-SCOTUS, but revise 'No negative treatment' to 'No confirmed negative treatment or point-specific override in the disclosed lake record as of 2026-06-30; proposed treatment edges remain audit flags only.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment judgment states field_i_validity: good_law, as_of_treatment: 2026-06-30, varies_by_point: false, and point_overrides: [].",
+          "The lake identity fields identify the court as U.S. Supreme Court/scotus, supporting the Binding-SCOTUS weight label.",
+          "Every disclosed treatment edge is proposed, has field_iii: mentioned, and has point: null, so the disclosed record does not establish a confirmed overruling, abrogation, supersession, or limitation of Bumper.",
+          "The same disclosed record flags audit_needed and proposed_negative_events, so an unqualified 'No negative treatment' sentence should be narrowed."
+        ],
+        "residual_risks": [
+          "The disclosed lake record does not include a completed audit resolving all proposed negative-event flags."
+        ],
+        "suggested_tightening": "Use 'no confirmed negative treatment or point-specific override in the disclosed lake record' rather than categorical 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Bumper v. North Carolina.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d5fb3bdf58738c97\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Bumper v. North Carolina as a U.S. Supreme Court decision dated 1968-06-03, docket 1016, cluster_id 107716.\",\n        \"The lake record selects 391 U.S. 543 as the official citation and lists the parallel/vendor citations reflected in the page.\",\n        \"The disclosed treatment judgment is good_law as of 2026-06-30 with point_overrides: []; nothing disclosed establishes that Bumper is no longer live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation is bounded and flags proposed negative events, but the disclosed treatment edges are proposed and classified as mentioned.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1192becc0c9a428e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity assertion; Lens B reviews only currency, treatment, and authority weight.\",\n        \"No disclosed treatment/currency defect is tied to pin-548.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and pinpoint accuracy remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"145962791fe6d02f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity assertion; Lens B reviews only currency, treatment, and authority weight.\",\n        \"No disclosed treatment/currency defect is tied to pin-550.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and pinpoint accuracy remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ae21b84a1b20ef0e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and binding-SCOTUS treatment call is supported, but the page's categorical 'No negative treatment' wording is stronger than the disclosed treatment record. The lake derivation flags proposed negative events and audit_needed in treatment lanes, so the page should say no confirmed negative treatment or point-specific override in the disclosed lake record.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Retain field_i_validity: good_law and Binding-SCOTUS, but revise 'No negative treatment' to 'No confirmed negative treatment or point-specific override in the disclosed lake record as of 2026-06-30; proposed treatment edges remain audit flags only.'\",\n        \"evidence_quote\": \"        \\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 8,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\",\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake treatment judgment states field_i_validity: good_law, as_of_treatment: 2026-06-30, varies_by_point: false, and point_overrides: [].\",\n        \"The lake identity fields identify the court as U.S. Supreme Court/scotus, supporting the Binding-SCOTUS weight label.\",\n        \"Every disclosed treatment edge is proposed, has field_iii: mentioned, and has point: null, so the disclosed record does not establish a confirmed overruling, abrogation, supersession, or limitation of Bumper.\",\n        \"The same disclosed record flags audit_needed and proposed_negative_events, so an unqualified 'No negative treatment' sentence should be narrowed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed lake record does not include a completed audit resolving all proposed negative-event flags.\"\n      ],\n      \"suggested_tightening\": \"Use 'no confirmed negative treatment or point-specific override in the disclosed lake record' rather than categorical 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Lens B reviewed currency/treatment only; quote-fidelity rows were not evaluated for quote accuracy.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:23:06-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:17:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0ddecd3c00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a5f972afa7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-13f1fe9b0a"
+    ],
     "group_id": "_overhaul2/lake/cases/Bumper v. North Carolina.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +107,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c6e5d435.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Bumper v. North Carolina"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 229158,
+      "output": 9842,
+      "source": "codex-events",
+      "total": 239000
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "1192becc0c9a428e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "145962791fe6d02f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae21b84a1b20ef0e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d5fb3bdf58738c97": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ddecd3c00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a5f972afa7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-13f1fe9b0a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 197.8
   }
 }

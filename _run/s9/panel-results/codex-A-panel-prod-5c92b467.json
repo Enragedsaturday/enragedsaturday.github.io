@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Doyle v. Ohio.json",
+    "lens": "A",
+    "notes": "No treatment/currency finding raised under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "c61e3b195b53987b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Doyle v. Ohio, U.S. Supreme Court, decided 1976-06-17.",
+          "The official citation in the lake record is 426 U.S. 610, with matching reporter, volume, and page; the listed parallel and vendor citations also match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "44b73c77ed456fac",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Silence in the wake of these warnings may be nothing more than the arrestee's exercise of these <i>Miranda</i> rights. Thus, every post-arrest silence is insolubly ambiguous because of what the State is required to advise the person arrested.",
+          "locator_note": "lake pinpoints[] id pin-617; content_page Rule marker ^pin-617",
+          "needs_cl": false,
+          "problem": "pin-617's stored quote is an over-harvest from the built page, not a character-faithful opinion quote; it begins with page markdown/frontmatter-like text and includes page prose rather than the U.S. Reports passage.",
+          "proposed_fix": "Replace pin-617 with the actual opinion passage supporting the insolubly ambiguous point.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-617 quote_fidelity as mismatch.",
+          "The disclosed opinion text at the 617 passage contains the quoted phrase, but not the stored page-header/page-summary text."
+        ],
+        "residual_risks": [
+          "The visible page's short phrase \"insolubly ambiguous\" is real; the defect is the stored pinpoint quote text."
+        ],
+        "suggested_tightening": "Use the exact sentence beginning \"Thus, every post-arrest silence is insolubly ambiguous...\" for pin-617.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bf9ae373ac5bc93",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Moreover, while it is true that the <i>Miranda</i> warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial.",
+          "locator_note": "lake pinpoints[] id pin-618; content_page Rule marker ^pin-618",
+          "needs_cl": false,
+          "problem": "The quote is substantively from the opinion but is not character-faithful as framed: it omits the opinion's opening \"Moreover,\" changes \"while\" to \"[W]hile,\" and uses markdown italics instead of the disclosed text's format.",
+          "proposed_fix": "Use the exact opinion text or mark it as a modified/cleaned quotation rather than character-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text starts the passage with \"Moreover, while,\" not \"[W]hile.\"",
+          "The lake record marks pin-618 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The legal proposition and page location appear supported; only strict quote fidelity is refuted."
+        ],
+        "suggested_tightening": "Quote the full sentence beginning \"Moreover, while...\" or avoid treating the bracketed version as character-faithful.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fa8ace7674df7f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1976-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment audit is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Doyle v. Ohio.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c61e3b195b53987b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record is verified for Doyle v. Ohio, U.S. Supreme Court, decided 1976-06-17.\",\n        \"The official citation in the lake record is 426 U.S. 610, with matching reporter, volume, and page; the listed parallel and vendor citations also match the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"44b73c77ed456fac\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-617's stored quote is an over-harvest from the built page, not a character-faithful opinion quote; it begins with page markdown/frontmatter-like text and includes page prose rather than the U.S. Reports passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-617 with the actual opinion passage supporting the insolubly ambiguous point.\",\n        \"evidence_quote\": \"Silence in the wake of these warnings may be nothing more than the arrestee's exercise of these <i>Miranda</i> rights. Thus, every post-arrest silence is insolubly ambiguous because of what the State is required to advise the person arrested.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[] id pin-617; content_page Rule marker ^pin-617\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-617 quote_fidelity as mismatch.\",\n        \"The disclosed opinion text at the 617 passage contains the quoted phrase, but not the stored page-header/page-summary text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible page's short phrase \\\"insolubly ambiguous\\\" is real; the defect is the stored pinpoint quote text.\"\n      ],\n      \"suggested_tightening\": \"Use the exact sentence beginning \\\"Thus, every post-arrest silence is insolubly ambiguous...\\\" for pin-617.\"\n    },\n    {\n      \"assertion_id\": \"9bf9ae373ac5bc93\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively from the opinion but is not character-faithful as framed: it omits the opinion's opening \\\"Moreover,\\\" changes \\\"while\\\" to \\\"[W]hile,\\\" and uses markdown italics instead of the disclosed text's format.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact opinion text or mark it as a modified/cleaned quotation rather than character-faithful.\",\n        \"evidence_quote\": \"Moreover, while it is true that the <i>Miranda</i> warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[] id pin-618; content_page Rule marker ^pin-618\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text starts the passage with \\\"Moreover, while,\\\" not \\\"[W]hile.\\\"\",\n        \"The lake record marks pin-618 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal proposition and page location appear supported; only strict quote fidelity is refuted.\"\n      ],\n      \"suggested_tightening\": \"Quote the full sentence beginning \\\"Moreover, while...\\\" or avoid treating the bracketed version as character-faithful.\"\n    },\n    {\n      \"assertion_id\": \"0fa8ace7674df7f3\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no treatment defect is raised.\",\n        \"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1976-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment audit is reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No treatment/currency finding raised under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:35:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2767214c3e",
+      "F-S9-PR-1a47da2864"
+    ],
     "group_id": "_overhaul2/lake/cases/Doyle v. Ohio.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5c92b467",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5c92b467.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:28.213173Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:29.083282Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:30.329051Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:31.621921Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:33.565024Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:37.414181Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Doyle v. Ohio"
+    ],
+    "tokens": {
+      "input": 405582,
+      "output": 8354,
+      "source": "codex-events",
+      "total": 413936
+    },
+    "verdict_map": {
+      "0fa8ace7674df7f3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44b73c77ed456fac": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9bf9ae373ac5bc93": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c61e3b195b53987b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2767214c3e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1a47da2864",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 165.5
   }
 }

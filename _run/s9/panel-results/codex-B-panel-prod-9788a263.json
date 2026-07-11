@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Greenwood.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "b794342502bd849d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16 with official citation 486 U.S. 35.",
+          "The disclosed treatment judgment marks the case field_i_validity as good_law as of 2026-06-30, so the authority is live under the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes audit_needed flags and proposed negative-event edges, but the disclosed final treatment field remains good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5490edf947711f23",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row presents a quote-fidelity/pinpoint issue, which is outside Lens B's currency/treatment charter.",
+          "No separate treatment or live-law assertion is made by this pinpoint row beyond the record-level treatment reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b09bab66d8478845",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row presents a quote-fidelity/pinpoint issue, which is outside Lens B's currency/treatment charter.",
+          "No separate treatment or live-law assertion is made by this pinpoint row beyond the record-level treatment reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8fdf3ef77733e4c1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/California v. Greenwood__737090.json treatment.edges and treatment.derivation.lane1_negative/lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law call stands, but the page's unqualified 'No negative treatment' overstates the disclosed treatment record because the lake contains proposed negative-event edges and audit_needed flags.",
+          "proposed_fix": "State: 'No confirmed negative treatment in the final disclosed treatment judgment; lake treatment remains good_law as of 2026-06-30, but proposed negative-event edges are present and flagged for audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed final treatment field is field_i_validity good_law, varies_by_point false, with no point_overrides.",
+          "All listed treatment edges are proposed and field_iii is mentioned, so they do not by themselves establish confirmed overruling of Greenwood.",
+          "The disclosed derivation nevertheless flags audit_needed and proposed_negative_events, making 'No negative treatment' too absolute."
+        ],
+        "residual_risks": [
+          "This review does not conclude Greenwood is bad law; it identifies overstatement in the negative-treatment phrasing.",
+          "Resolving the proposed edges would require the flagged treatment audit outside the disclosed final judgment fields."
+        ],
+        "suggested_tightening": "Keep Treatment: good, but qualify the subsequent-history sentence to say no confirmed negative treatment in the disclosed final treatment judgment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/California v. Greenwood.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b794342502bd849d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16 with official citation 486 U.S. 35.\",\n        \"The disclosed treatment judgment marks the case field_i_validity as good_law as of 2026-06-30, so the authority is live under the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation includes audit_needed flags and proposed negative-event edges, but the disclosed final treatment field remains good_law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5490edf947711f23\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row presents a quote-fidelity/pinpoint issue, which is outside Lens B's currency/treatment charter.\",\n        \"No separate treatment or live-law assertion is made by this pinpoint row beyond the record-level treatment reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity was not assessed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b09bab66d8478845\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row presents a quote-fidelity/pinpoint issue, which is outside Lens B's currency/treatment charter.\",\n        \"No separate treatment or live-law assertion is made by this pinpoint row beyond the record-level treatment reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity was not assessed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8fdf3ef77733e4c1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law call stands, but the page's unqualified 'No negative treatment' overstates the disclosed treatment record because the lake contains proposed negative-event edges and audit_needed flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"State: 'No confirmed negative treatment in the final disclosed treatment judgment; lake treatment remains good_law as of 2026-06-30, but proposed negative-event edges are present and flagged for audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/California v. Greenwood__737090.json treatment.edges and treatment.derivation.lane1_negative/lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The disclosed final treatment field is field_i_validity good_law, varies_by_point false, with no point_overrides.\",\n        \"All listed treatment edges are proposed and field_iii is mentioned, so they do not by themselves establish confirmed overruling of Greenwood.\",\n        \"The disclosed derivation nevertheless flags audit_needed and proposed_negative_events, making 'No negative treatment' too absolute.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This review does not conclude Greenwood is bad law; it identifies overstatement in the negative-treatment phrasing.\",\n        \"Resolving the proposed edges would require the flagged treatment audit outside the disclosed final judgment fields.\"\n      ],\n      \"suggested_tightening\": \"Keep Treatment: good, but qualify the subsequent-history sentence to say no confirmed negative treatment in the disclosed final treatment judgment.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:23:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:20:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a4d05882df"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Greenwood.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9788a263.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Greenwood"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 310398,
+      "output": 5534,
+      "source": "codex-events",
+      "total": 315932
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "5490edf947711f23": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8fdf3ef77733e4c1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b09bab66d8478845": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b794342502bd849d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a4d05882df",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 141.9
   }
 }

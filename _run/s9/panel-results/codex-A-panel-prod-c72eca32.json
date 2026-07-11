@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "a0f694382a865f9c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Devenpeck v. Alford, U.S. Supreme Court, decided 2004-12-13.",
+          "The official citation in the lake record is 543 U.S. 146, matching the content page display citation.",
+          "The parallel and vendor citations listed in the payload match the lake record: 125 S. Ct. 588, 160 L. Ed. 2d 537, and 2004 U.S. LEXIS 8272."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e03775a681cd49f0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Our cases make clear that an arresting officer’s state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.",
+          "locator_note": "text/Devenpeck v. Alford__30ebd3.txt contains the relevant passage at the *153 star-pagination; lake pinpoints[0] currently stores non-opinion page text and quote_fidelity: mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted text stored for pin-153 is not a verbatim opinion passage; it appears to concatenate content-page narrative and headings. The lake itself flags quote_fidelity as mismatch, with page and star_marker null.",
+          "proposed_fix": "Replace pin-153 with the actual opinion passage at star page 153, preserving the opinion text exactly or explicitly marking permissible editorial changes. Populate the page/star marker and do not claim quote_fidelity matched until the quote is character-checked.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins, \"to the one the officer invoked. The State sought review of that limitation. ## Issue...\", which is content-page prose/headings rather than a passage from the opinion.",
+          "The opinion text at page 153 contains the cited rule language beginning, \"Our cases make clear that an arresting officer’s state of mind...\", not the payload quote.",
+          "The disclosed lake record independently marks pin-153 as quote_fidelity: mismatch and pinpoint_status: slip-only."
+        ],
+        "residual_risks": [
+          "The content page's displayed rule quote may be supportable if repinned to the actual page-153 opinion text, but the disclosed pin record does not currently verify it."
+        ],
+        "suggested_tightening": "Use the actual page-153 quote: \"Our cases make clear that an arresting officer’s state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.\" Then separately quote or paraphrase the following sentence about subjective reason.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1504b1db3abfd7c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment merits finding is raised.",
+          "The content page treatment fields match the lake record fields: field_i_validity good_law, as_of_content 2004-12-13, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be audited by Lens B, not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Devenpeck v. Alford.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a0f694382a865f9c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as Devenpeck v. Alford, U.S. Supreme Court, decided 2004-12-13.\",\n        \"The official citation in the lake record is 543 U.S. 146, matching the content page display citation.\",\n        \"The parallel and vendor citations listed in the payload match the lake record: 125 S. Ct. 588, 160 L. Ed. 2d 537, and 2004 U.S. LEXIS 8272.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e03775a681cd49f0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted text stored for pin-153 is not a verbatim opinion passage; it appears to concatenate content-page narrative and headings. The lake itself flags quote_fidelity as mismatch, with page and star_marker null.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-153 with the actual opinion passage at star page 153, preserving the opinion text exactly or explicitly marking permissible editorial changes. Populate the page/star marker and do not claim quote_fidelity matched until the quote is character-checked.\",\n        \"evidence_quote\": \"Our cases make clear that an arresting officer’s state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Devenpeck v. Alford__30ebd3.txt contains the relevant passage at the *153 star-pagination; lake pinpoints[0] currently stores non-opinion page text and quote_fidelity: mismatch.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins, \\\"to the one the officer invoked. The State sought review of that limitation. ## Issue...\\\", which is content-page prose/headings rather than a passage from the opinion.\",\n        \"The opinion text at page 153 contains the cited rule language beginning, \\\"Our cases make clear that an arresting officer’s state of mind...\\\", not the payload quote.\",\n        \"The disclosed lake record independently marks pin-153 as quote_fidelity: mismatch and pinpoint_status: slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's displayed rule quote may be supportable if repinned to the actual page-153 opinion text, but the disclosed pin record does not currently verify it.\"\n      ],\n      \"suggested_tightening\": \"Use the actual page-153 quote: \\\"Our cases make clear that an arresting officer’s state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.\\\" Then separately quote or paraphrase the following sentence about subjective reason.\"\n    },\n    {\n      \"assertion_id\": \"1504b1db3abfd7c4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no treatment merits finding is raised.\",\n        \"The content page treatment fields match the lake record fields: field_i_validity good_law, as_of_content 2004-12-13, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency should be audited by Lens B, not resolved here.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A. No external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:32:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-771bb02009"
+    ],
     "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c72eca32.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Devenpeck v. Alford"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 163527,
+      "output": 4589,
+      "source": "codex-events",
+      "total": 168116
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "1504b1db3abfd7c4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a0f694382a865f9c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e03775a681cd49f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-771bb02009",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 95.2
   }
 }

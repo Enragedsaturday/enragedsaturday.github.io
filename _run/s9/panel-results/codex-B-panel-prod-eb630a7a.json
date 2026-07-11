@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Carney.json",
+    "lens": "B",
+    "notes": "Lens B did not adjudicate support or quote fidelity.",
+    "reviewed": [
+      {
+        "assertion_id": "02ad54d38db6cdd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified, non-stub, and matches California v. Carney, U.S. Supreme Court, decided 1985-05-13, docket 83-859.",
+          "The disclosed citation record selects 471 U.S. 386 as the official citation and lists the same parallel/vendor citations in the assertion payload.",
+          "The top-level lake treatment judgment is good_law as of 2026-06-30; disclosed treatment edges are proposed/mentioned and do not themselves establish that Carney is no longer live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes audit_needed/cap_hit signals, so confidence depends on the top-level judgment field rather than a completed disclosed audit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fdc5e66ac7038ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; this row presents no independent currency or treatment defect.",
+          "The cited Carney record remains verified with top-level good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote accuracy not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "843f1d0f3bbb0eb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; this row presents no independent currency or treatment defect.",
+          "The cited Carney record remains verified with top-level good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote accuracy not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a2c620265b30090",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited; lake provenance.field_provenance.treatment.field_i_validity",
+          "needs_cl": true,
+          "problem": "The good_law treatment call matches the top-level lake judgment, but the built page's unqualified no-negative-treatment phrasing is too strong against the disclosed treatment record, which shows audit-needed derivation lanes and proposed negative-event edges.",
+          "proposed_fix": "Keep Treatment: good_law as of 2026-06-30, but qualify the subsequent-history prose to say the top-level lake judgment is good_law while proposed negative-treatment edges are classified as mentioned/proposed and treatment audit remains open.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The payload fields field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false match the lake top-level treatment fields.",
+          "No accepted point override is disclosed, and the listed treatment edges are marked proposed=true with field_iii=mentioned.",
+          "The disclosed derivation also marks lane1_negative and lane2_top_cited as audit_needed, and provenance says treatment.field_i_validity came from legacy migration plus page frontmatter, so an absolute no-negative-treatment statement needs a caveat."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include completed audit results after the R15 audit marker.",
+          "Treatment after 2026-06-30 is not established by the disclosed files."
+        ],
+        "suggested_tightening": "Make the page distinguish the top-level good_law status from unresolved proposed/audit-needed treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/California v. Carney.json\",\"reviewed\":[{\"assertion_id\":\"02ad54d38db6cdd2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified, non-stub, and matches California v. Carney, U.S. Supreme Court, decided 1985-05-13, docket 83-859.\",\"The disclosed citation record selects 471 U.S. 386 as the official citation and lists the same parallel/vendor citations in the assertion payload.\",\"The top-level lake treatment judgment is good_law as of 2026-06-30; disclosed treatment edges are proposed/mentioned and do not themselves establish that Carney is no longer live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation includes audit_needed/cap_hit signals, so confidence depends on the top-level judgment field rather than a completed disclosed audit.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7fdc5e66ac7038ef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; this row presents no independent currency or treatment defect.\",\"The cited Carney record remains verified with top-level good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"843f1d0f3bbb0eb4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; this row presents no independent currency or treatment defect.\",\"The cited Carney record remains verified with top-level good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4a2c620265b30090\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call matches the top-level lake judgment, but the built page's unqualified no-negative-treatment phrasing is too strong against the disclosed treatment record, which shows audit-needed derivation lanes and proposed negative-event edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Treatment: good_law as of 2026-06-30, but qualify the subsequent-history prose to say the top-level lake judgment is good_law while proposed negative-treatment edges are classified as mentioned/proposed and treatment audit remains open.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited; lake provenance.field_provenance.treatment.field_i_validity\"},\"reasons\":[\"The payload fields field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false match the lake top-level treatment fields.\",\"No accepted point override is disclosed, and the listed treatment edges are marked proposed=true with field_iii=mentioned.\",\"The disclosed derivation also marks lane1_negative and lane2_top_cited as audit_needed, and provenance says treatment.field_i_validity came from legacy migration plus page frontmatter, so an absolute no-negative-treatment statement needs a caveat.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include completed audit results after the R15 audit marker.\",\"Treatment after 2026-06-30 is not established by the disclosed files.\"],\"suggested_tightening\":\"Make the page distinguish the top-level good_law status from unresolved proposed/audit-needed treatment signals.\"}],\"notes\":\"Lens B did not adjudicate support or quote fidelity.\"}",
   "summary": {
-    "at": "2026-07-10T18:23:13-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:20:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-78571f5750",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8cf03179f9"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Carney.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-eb630a7a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Carney"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 367449,
+      "output": 8898,
+      "source": "codex-events",
+      "total": 376347
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "02ad54d38db6cdd2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a2c620265b30090": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7fdc5e66ac7038ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "843f1d0f3bbb0eb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-78571f5750",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8cf03179f9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 178.6
   }
 }

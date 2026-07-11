@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Corley v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows using only content_page.md, lake/Corley v. United States__7317f4.json, and text/Corley v. United States__7317f4.txt.",
+    "reviewed": [
+      {
+        "assertion_id": "e659a6f441a1265b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id \"Corley v. United States,\" court \"U.S. Supreme Court,\" decided 2009-04-06, year 2009.",
+          "The official citation in the lake record is exactly \"556 U.S. 303\" and the parallel/vendor citations match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4c54a50a54360c7a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that §3501 modified McNabb-Mallory without",
+          "locator_note": "pin-322; cached text near the Court's Part IV holding.",
+          "needs_cl": false,
+          "problem": "The pin-322 quote is not character-faithful to the cached opinion text: it inserts Markdown emphasis around McNabb-Mallory, and the lake record itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Store the canonical quote without display markup, or separate display formatting from the verbatim quote field. If using an ellipsis, keep the unquoted omitted material clearly outside the canonical quote comparison.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text reads \"We hold that §3501 modified McNabb-Mallory without\"; the asserted quote reads \"§3501 modified *McNabb-Mallory* without.\"",
+          "The substantive proposition is supported, but the verbatim quote field is not character-faithful as framed."
+        ],
+        "residual_risks": [
+          "Official U.S. page 322 is not independently verifiable from the slip-only cached text."
+        ],
+        "suggested_tightening": "Keep a plain-text canonical quote field and render italics only at display time.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "54af65a12957cb41",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Corley v. United States *556 U.S. 303 (2009)* · U.S. Supreme Court",
+          "locator_note": "pin-309; lake pinpoints[0].quote.",
+          "needs_cl": false,
+          "problem": "The pin-309 quote field is corrupted: it contains page/frontmatter/background Markdown rather than the quoted opinion passage at the claimed rule location.",
+          "proposed_fix": "Replace pin-309 with the actual opinion passage beginning \"Thus, the rule known simply as McNabb-Mallory...\" and remove content-page prose from the quote field.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-309 quote begins with the page header and background text, not with opinion text from Corley.",
+          "The cached opinion text at the relevant passage instead says the rule known simply as McNabb-Mallory generally renders inadmissible confessions made during detention violating Rule 5(a)'s prompt-presentment requirement."
+        ],
+        "residual_risks": [
+          "Official U.S. page 309 is not independently verifiable from the slip-only cached text."
+        ],
+        "suggested_tightening": "Re-harvest pin-309 from the cached opinion text, not from the generated content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ea3278e5e49dc07",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's charter, but the payload matches the disclosed lake treatment judgment fields: field_i_validity \"good_law,\" as_of_content \"2009-04-06,\" as_of_treatment \"2026-06-30,\" varies_by_point false.",
+          "The scope note in the payload matches the lake record's scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Corley v. United States.json\",\"reviewed\":[{\"assertion_id\":\"e659a6f441a1265b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id \\\"Corley v. United States,\\\" court \\\"U.S. Supreme Court,\\\" decided 2009-04-06, year 2009.\",\"The official citation in the lake record is exactly \\\"556 U.S. 303\\\" and the parallel/vendor citations match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4c54a50a54360c7a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-322 quote is not character-faithful to the cached opinion text: it inserts Markdown emphasis around McNabb-Mallory, and the lake record itself flags quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Store the canonical quote without display markup, or separate display formatting from the verbatim quote field. If using an ellipsis, keep the unquoted omitted material clearly outside the canonical quote comparison.\",\"evidence_quote\":\"We hold that §3501 modified McNabb-Mallory without\",\"needs_cl\":false,\"locator_note\":\"pin-322; cached text near the Court's Part IV holding.\"},\"reasons\":[\"The cached opinion text reads \\\"We hold that §3501 modified McNabb-Mallory without\\\"; the asserted quote reads \\\"§3501 modified *McNabb-Mallory* without.\\\"\",\"The substantive proposition is supported, but the verbatim quote field is not character-faithful as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 322 is not independently verifiable from the slip-only cached text.\"],\"suggested_tightening\":\"Keep a plain-text canonical quote field and render italics only at display time.\"},{\"assertion_id\":\"54af65a12957cb41\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-309 quote field is corrupted: it contains page/frontmatter/background Markdown rather than the quoted opinion passage at the claimed rule location.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-309 with the actual opinion passage beginning \\\"Thus, the rule known simply as McNabb-Mallory...\\\" and remove content-page prose from the quote field.\",\"evidence_quote\":\"--- # Corley v. United States *556 U.S. 303 (2009)* · U.S. Supreme Court\",\"needs_cl\":false,\"locator_note\":\"pin-309; lake pinpoints[0].quote.\"},\"reasons\":[\"The asserted pin-309 quote begins with the page header and background text, not with opinion text from Corley.\",\"The cached opinion text at the relevant passage instead says the rule known simply as McNabb-Mallory generally renders inadmissible confessions made during detention violating Rule 5(a)'s prompt-presentment requirement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 309 is not independently verifiable from the slip-only cached text.\"],\"suggested_tightening\":\"Re-harvest pin-309 from the cached opinion text, not from the generated content page.\"},{\"assertion_id\":\"4ea3278e5e49dc07\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's charter, but the payload matches the disclosed lake treatment judgment fields: field_i_validity \\\"good_law,\\\" as_of_content \\\"2009-04-06,\\\" as_of_treatment \\\"2026-06-30,\\\" varies_by_point false.\",\"The scope note in the payload matches the lake record's scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not substantively audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four inventory rows using only content_page.md, lake/Corley v. United States__7317f4.json, and text/Corley v. United States__7317f4.txt.\"}",
   "summary": {
-    "at": "2026-07-10T18:25:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:30:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c392a14379",
+      "F-S9-PR-dcf47dd4ae"
+    ],
     "group_id": "_overhaul2/lake/cases/Corley v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-49078054",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-49078054.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:53.032860Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:53.715864Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:54.660444Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:55.915653Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:58.074986Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:01.372650Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Corley v. United States"
+    ],
+    "tokens": {
+      "input": 264660,
+      "output": 9898,
+      "source": "codex-events",
+      "total": 274558
+    },
+    "verdict_map": {
+      "4c54a50a54360c7a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4ea3278e5e49dc07": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "54af65a12957cb41": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e659a6f441a1265b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c392a14379",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dcf47dd4ae",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 191.5
   }
 }

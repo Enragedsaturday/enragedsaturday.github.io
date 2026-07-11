@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Hodari D..json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows using only disclosed workspace files. Treatment was recorded only for completeness under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "612913d1698b7bc0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies California v. Hodari D., U.S. Supreme Court, decided 1991-04-23, docket 89-1632.",
+          "The official citation 499 U.S. 621 and listed parallel/neutral citations in the inventory match the lake citation fields; the cached opinion header also shows 499 U.S. 621 (1991) and Supreme Court of the United States."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "573ee065ee152818",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An arrest requires <i>either</i> physical force (as described above) <i>or,</i> where that is absent, <i>submission</i> to the assertion of authority.",
+          "locator_note": "pin-626b; opinion text at star page *626",
+          "needs_cl": false,
+          "problem": "The quoted sentence is faithful, but the reviewed quote_fidelity metadata says mismatch even though the sentence appears in the disclosed opinion text with only HTML italics markup and also matches the lake pinpoint quote.",
+          "proposed_fix": "Keep the quote, but change the quote_fidelity status for pin-626b from mismatch to a passing/normalized-match status.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote exactly matches the reviewed quoted sentence.",
+          "The cached opinion text contains the same sentence; the only difference is HTML italics tags around either, or, and submission."
+        ],
+        "residual_risks": [
+          "Raw character matching against the cached HTML will falsely fail unless markup is normalized."
+        ],
+        "suggested_tightening": "Normalize inline HTML before quote-fidelity scoring.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe526808aa3bd8ba",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The narrow question before us is whether, with respect to a show of authority as with respect to application of physical force, a seizure occurs even though the subject does not yield. We hold that it does not.",
+          "locator_note": "pin-626; opinion text at star page *626",
+          "needs_cl": false,
+          "problem": "The reviewed pin-626 quote is not a verbatim opinion quote; it appears to splice the content page Issue sentence ending with the markdown heading '## Rule'.",
+          "proposed_fix": "Replace pin-626's lake quote with the actual page-626 rule quote: 'The narrow question before us is whether, with respect to a show of authority as with respect to application of physical force, a seizure occurs even though the subject does not yield. We hold that it does not.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote 'under the Fourth Amendment before any physical force is applied. ## Rule' is not a contiguous opinion passage.",
+          "The cached opinion text at page *626 contains the actual quoted rule used on the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Set page/star metadata for pin-626 to page 626 or star page *626 when replacing the quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "def6a35ce5300a59",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; the inventory treatment fields match the disclosed lake treatment fields.",
+          "No support or quote-fidelity defect is raised for this treatment row."
+        ],
+        "residual_risks": [
+          "No Lens A review was performed on whether the good_law treatment judgment is current or substantively correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/California v. Hodari D..json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"612913d1698b7bc0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies California v. Hodari D., U.S. Supreme Court, decided 1991-04-23, docket 89-1632.\",\n        \"The official citation 499 U.S. 621 and listed parallel/neutral citations in the inventory match the lake citation fields; the cached opinion header also shows 499 U.S. 621 (1991) and Supreme Court of the United States.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"573ee065ee152818\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is faithful, but the reviewed quote_fidelity metadata says mismatch even though the sentence appears in the disclosed opinion text with only HTML italics markup and also matches the lake pinpoint quote.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep the quote, but change the quote_fidelity status for pin-626b from mismatch to a passing/normalized-match status.\",\n        \"evidence_quote\": \"An arrest requires <i>either</i> physical force (as described above) <i>or,</i> where that is absent, <i>submission</i> to the assertion of authority.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-626b; opinion text at star page *626\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote exactly matches the reviewed quoted sentence.\",\n        \"The cached opinion text contains the same sentence; the only difference is HTML italics tags around either, or, and submission.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Raw character matching against the cached HTML will falsely fail unless markup is normalized.\"\n      ],\n      \"suggested_tightening\": \"Normalize inline HTML before quote-fidelity scoring.\"\n    },\n    {\n      \"assertion_id\": \"fe526808aa3bd8ba\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The reviewed pin-626 quote is not a verbatim opinion quote; it appears to splice the content page Issue sentence ending with the markdown heading '## Rule'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-626's lake quote with the actual page-626 rule quote: 'The narrow question before us is whether, with respect to a show of authority as with respect to application of physical force, a seizure occurs even though the subject does not yield. We hold that it does not.'\",\n        \"evidence_quote\": \"The narrow question before us is whether, with respect to a show of authority as with respect to application of physical force, a seizure occurs even though the subject does not yield. We hold that it does not.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-626; opinion text at star page *626\"\n      },\n      \"reasons\": [\n        \"The payload quote 'under the Fourth Amendment before any physical force is applied. ## Rule' is not a contiguous opinion passage.\",\n        \"The cached opinion text at page *626 contains the actual quoted rule used on the content page.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Set page/star metadata for pin-626 to page 626 or star page *626 when replacing the quote.\"\n    },\n    {\n      \"assertion_id\": \"def6a35ce5300a59\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; the inventory treatment fields match the disclosed lake treatment fields.\",\n        \"No support or quote-fidelity defect is raised for this treatment row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A review was performed on whether the good_law treatment judgment is current or substantively correct.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four inventory rows using only disclosed workspace files. Treatment was recorded only for completeness under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:23:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:20:37-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-aa3dd95bb9",
+      "F-S9-PR-a4dd07938e"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Hodari D..json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0b368bd1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Hodari D."
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 321543,
+      "output": 8831,
+      "source": "codex-events",
+      "total": 330374
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "573ee065ee152818": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "612913d1698b7bc0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "def6a35ce5300a59": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe526808aa3bd8ba": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aa3dd95bb9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a4dd07938e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 174.3
   }
 }

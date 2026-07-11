@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Draper v. United States.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/support fidelity from the disclosed files; treatment merits were not attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "918fed4028e84cd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Draper v. United States, U.S. Supreme Court, decided 1959-01-26.",
+          "The official citation in the lake record is 358 U.S. 307, matching the page display; the listed parallel and LEXIS citations also match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "20c9a67d4f168b72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted probable-cause sentence appears in the cached opinion text on star page 313.",
+          "The lake pinpoint for pin-313b records star_marker 313, quote_fidelity matched, and a validated fragment for the same passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f78d5c8dbfff3c24",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "And surely, with every other bit of Hereford's information being thus personally verified",
+          "locator_note": "pin-313; content_page.md Rule paragraph; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "The pin-313 quote stored in the lake is not the opinion passage at 358 U.S. 313; it is harvested page/frontmatter content beginning with the page title and background. The lake itself marks this pinpoint quote_fidelity mismatch and gives no star marker.",
+          "proposed_fix": "Replace pin-313 with the actual at-313 opinion sentence supporting the rule, set star_marker to 313, and ensure the page quote is either exact or clearly paraphrased.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the relevant at-313 sentence, but the lake pin-313 quote instead contains page metadata and narrative summary.",
+          "Because the pinpoint quote is not character-faithful to the opinion text or to a valid lake quote, the quote-fidelity assertion fails."
+        ],
+        "residual_risks": [
+          "The page's displayed quote also normalizes punctuation and quotation marks; after replacing the lake pin, re-check the rendered quote against the opinion text."
+        ],
+        "suggested_tightening": "Use the exact opinion wording for the at-313 sentence, or remove quotation marks and present the rule as a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e600c6c352be54d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A's charter.",
+          "The page treatment fields match the disclosed lake treatment fields for validity, as-of dates, varies_by_point, and scope note."
+        ],
+        "residual_risks": [
+          "No Lens A treatment or currency finding is made; that review belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Draper v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"918fed4028e84cd2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Draper v. United States, U.S. Supreme Court, decided 1959-01-26.\",\n        \"The official citation in the lake record is 358 U.S. 307, matching the page display; the listed parallel and LEXIS citations also match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"20c9a67d4f168b72\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted probable-cause sentence appears in the cached opinion text on star page 313.\",\n        \"The lake pinpoint for pin-313b records star_marker 313, quote_fidelity matched, and a validated fragment for the same passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f78d5c8dbfff3c24\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-313 quote stored in the lake is not the opinion passage at 358 U.S. 313; it is harvested page/frontmatter content beginning with the page title and background. The lake itself marks this pinpoint quote_fidelity mismatch and gives no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-313 with the actual at-313 opinion sentence supporting the rule, set star_marker to 313, and ensure the page quote is either exact or clearly paraphrased.\",\n        \"evidence_quote\": \"And surely, with every other bit of Hereford's information being thus personally verified\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-313; content_page.md Rule paragraph; lake pinpoints[0]\"\n      },\n      \"reasons\": [\n        \"The cached opinion text contains the relevant at-313 sentence, but the lake pin-313 quote instead contains page metadata and narrative summary.\",\n        \"Because the pinpoint quote is not character-faithful to the opinion text or to a valid lake quote, the quote-fidelity assertion fails.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page's displayed quote also normalizes punctuation and quotation marks; after replacing the lake pin, re-check the rendered quote against the opinion text.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion wording for the at-313 sentence, or remove quotation marks and present the rule as a paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"5e600c6c352be54d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment merits are outside Lens A's charter.\",\n        \"The page treatment fields match the disclosed lake treatment fields for validity, as-of dates, varies_by_point, and scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment or currency finding is made; that review belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed only existence and quote/support fidelity from the disclosed files; treatment merits were not attacked.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:34:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9bd4822ef5"
+    ],
     "group_id": "_overhaul2/lake/cases/Draper v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c6ed6f7c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c6ed6f7c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:27.741505Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:28.352041Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:29.171228Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:30.439054Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:32.480209Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:35.814432Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Draper v. United States"
+    ],
+    "tokens": {
+      "input": 131938,
+      "output": 5523,
+      "source": "codex-events",
+      "total": 137461
+    },
+    "verdict_map": {
+      "20c9a67d4f168b72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5e600c6c352be54d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "918fed4028e84cd2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f78d5c8dbfff3c24": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9bd4822ef5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 108.4
   }
 }

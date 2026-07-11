@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bobby v. Dixon.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows using only disclosed workspace files; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "c7976c29d7f85be1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Bobby v. Dixon / Bobby, Warden v. Dixon, U.S. Supreme Court, decided 2011-11-07, docket 10-1540.",
+          "The asserted official citation 565 U.S. 23 and parallel/vendor citations 132 S. Ct. 26, 181 L. Ed. 2d 328, and 2011 U.S. LEXIS 7926 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5387db804e2c3514",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As the Ohio Supreme Court reasonably concluded, there was simply “no nexus” between Dixon’s unwarned admission to forgery and his later, warned confession to murder. 101 Ohio St. 3d, at 333, 805 N. E. 2d, at 1051.",
+          "locator_note": "text/Bobby v. Dixon__e5a0c2.txt lines 325-329; lake pin-31a quote_fidelity is already 'mismatch'.",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful: the opinion has curly quotation marks only around “no nexus,” uses Dixon’s, and ends the murder clause with a period, not the asserted comma.",
+          "proposed_fix": "Replace with the exact opinion wording or paraphrase outside quotation: As the Ohio Supreme Court reasonably concluded, there was simply “no nexus” between Dixon’s unwarned admission to forgery and his later, warned confession to murder.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance appears in the cached opinion text.",
+          "The page/lake fragment changes quote punctuation and terminal punctuation, so it is not verbatim character-faithful."
+        ],
+        "residual_risks": [
+          "The lake pin has page null and slip-only status; official-page placement is not independently established by this row."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence, then state the four-hour-break point as separate paraphrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e0968ccab0873c3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, unlike in Seibert, there is no concern here that police gave Dixon Miranda warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat.",
+          "locator_note": "lake pinpoints[pin-31] versus text/Bobby v. Dixon__e5a0c2.txt lines 316-321.",
+          "needs_cl": false,
+          "problem": "The lake/payload quote for pin-31 is not opinion text; it is a harvested chunk of the content page around issue/rule headings.",
+          "proposed_fix": "Replace pin-31 with exact opinion wording: Thus, unlike in Seibert, there is no concern here that police gave Dixon Miranda warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins 'strategy under *Missouri v. Seibert*. ## Issue...' which is page prose, not a quote from the cached opinion.",
+          "The cached opinion contains the support sentence beginning 'Thus, unlike in Seibert...' instead."
+        ],
+        "residual_risks": [
+          "The content page's displayed quote is closer than the lake payload, but it inserts markdown styling and omits 'Thus,'; the pin should store exact source text or a clearly marked modified quote.",
+          "The official page 31 pincite cannot be confirmed from page-null, slip-only pinpoint metadata alone."
+        ],
+        "suggested_tightening": "Store the exact source sentence in the lake pinpoint and keep any editorial bracket/ellipsis only in rendered page text if the house style permits it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aca44c9b9580f2ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The row's field_i_validity, as-of dates, scope_note, and varies_by_point values match the lake treatment judgment fields.",
+          "Treatment/currency is outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Lake treatment derivation includes proposed edges and audit markers not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Bobby v. Dixon.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c7976c29d7f85be1\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Bobby v. Dixon / Bobby, Warden v. Dixon, U.S. Supreme Court, decided 2011-11-07, docket 10-1540.\",\n        \"The asserted official citation 565 U.S. 23 and parallel/vendor citations 132 S. Ct. 26, 181 L. Ed. 2d 328, and 2011 U.S. LEXIS 7926 match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5387db804e2c3514\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment is not character-faithful: the opinion has curly quotation marks only around “no nexus,” uses Dixon’s, and ends the murder clause with a period, not the asserted comma.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace with the exact opinion wording or paraphrase outside quotation: As the Ohio Supreme Court reasonably concluded, there was simply “no nexus” between Dixon’s unwarned admission to forgery and his later, warned confession to murder.\",\n        \"evidence_quote\": \"As the Ohio Supreme Court reasonably concluded, there was simply “no nexus” between Dixon’s unwarned admission to forgery and his later, warned confession to murder. 101 Ohio St. 3d, at 333, 805 N. E. 2d, at 1051.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Bobby v. Dixon__e5a0c2.txt lines 325-329; lake pin-31a quote_fidelity is already 'mismatch'.\"\n      },\n      \"reasons\": [\n        \"The substance appears in the cached opinion text.\",\n        \"The page/lake fragment changes quote punctuation and terminal punctuation, so it is not verbatim character-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pin has page null and slip-only status; official-page placement is not independently established by this row.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion sentence, then state the four-hour-break point as separate paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"7e0968ccab0873c3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake/payload quote for pin-31 is not opinion text; it is a harvested chunk of the content page around issue/rule headings.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-31 with exact opinion wording: Thus, unlike in Seibert, there is no concern here that police gave Dixon Miranda warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat.\",\n        \"evidence_quote\": \"Thus, unlike in Seibert, there is no concern here that police gave Dixon Miranda warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[pin-31] versus text/Bobby v. Dixon__e5a0c2.txt lines 316-321.\"\n      },\n      \"reasons\": [\n        \"The payload begins 'strategy under *Missouri v. Seibert*. ## Issue...' which is page prose, not a quote from the cached opinion.\",\n        \"The cached opinion contains the support sentence beginning 'Thus, unlike in Seibert...' instead.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's displayed quote is closer than the lake payload, but it inserts markdown styling and omits 'Thus,'; the pin should store exact source text or a clearly marked modified quote.\",\n        \"The official page 31 pincite cannot be confirmed from page-null, slip-only pinpoint metadata alone.\"\n      ],\n      \"suggested_tightening\": \"Store the exact source sentence in the lake pinpoint and keep any editorial bracket/ellipsis only in rendered page text if the house style permits it.\"\n    },\n    {\n      \"assertion_id\": \"aca44c9b9580f2ed\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The row's field_i_validity, as-of dates, scope_note, and varies_by_point values match the lake treatment judgment fields.\",\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake treatment derivation includes proposed edges and audit markers not reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows using only disclosed workspace files; no external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:22:21-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:15:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-697f875772",
+      "F-S9-PR-db19f6cfc1"
+    ],
     "group_id": "_overhaul2/lake/cases/Bobby v. Dixon.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cfa8be28.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Bobby v. Dixon"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 283218,
+      "output": 11536,
+      "source": "codex-events",
+      "total": 294754
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "5387db804e2c3514": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7e0968ccab0873c3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "aca44c9b9580f2ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c7976c29d7f85be1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-697f875772",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-db19f6cfc1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 223.1
   }
 }

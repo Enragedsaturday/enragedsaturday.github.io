@@ -1,13 +1,84 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
+    "lens": "B",
+    "notes": "Lens B review only; support and quote fidelity were not evaluated.",
+    "reviewed": [
+      {
+        "assertion_id": "a0f694382a865f9c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Devenpeck v. Alford, U.S. Supreme Court, decided 2004-12-13, with cluster_id and lead_opinion_id 137733.",
+          "Lake citations list 543 U.S. 146 as the official SCOTUS citation and include the same parallel citations shown on the page.",
+          "Currency check from the disclosed record does not show a finalized superseding, overruling, or abrogating event defeating the authority's existence."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit flags addressed in the treatment assertion, but no finalized disclosed event defeats the case citation itself."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e03775a681cd49f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; this row does not present a currency or treatment claim.",
+          "No pinpoint-specific disclosed treatment override changes the case's live-law status; treatment is assessed separately."
+        ],
+        "residual_risks": [
+          "Lens A must evaluate quote fidelity and support."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1504b1db3abfd7c4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"scope_note\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\"\n\"audit_needed\": true,\n        \"proposed_negative_events\": 24,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Devenpeck v. Alford__30ebd3.json treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law label is supported by the lake's top-level field_i_validity, but the page's unqualified 'No negative treatment' statement is too strong because the same disclosed treatment record contains proposed negative-treatment edges and audit-needed derivation flags.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but revise the subsequent-history text to say: 'No finalized negative treatment recorded in the lake; automated/proposed progeny flags remain queued for audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Top-level treatment.field_i_validity is good_law and varies_by_point is false, so the basic good-law badge stands.",
+          "The disclosed edges are marked proposed true and field_iii mentioned, so they do not establish a final downgrade on this record.",
+          "Because the derivation itself says audit_needed and proposed_negative_events exist, the page should not state 'No negative treatment' without a final/proposed qualifier."
+        ],
+        "residual_risks": [
+          "The proposed negative events may be false positives, but the disclosed record has not completed the audit.",
+          "Full treatment certainty would require review of the flagged citing cases outside the current disclosed file set."
+        ],
+        "suggested_tightening": "Surface the migration-seed scope note or suppress 'No negative treatment' unless final treatment edges have been audited.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Devenpeck v. Alford.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a0f694382a865f9c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for Devenpeck v. Alford, U.S. Supreme Court, decided 2004-12-13, with cluster_id and lead_opinion_id 137733.\",\n        \"Lake citations list 543 U.S. 146 as the official SCOTUS citation and include the same parallel citations shown on the page.\",\n        \"Currency check from the disclosed record does not show a finalized superseding, overruling, or abrogating event defeating the authority's existence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains audit flags addressed in the treatment assertion, but no finalized disclosed event defeats the case citation itself.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e03775a681cd49f0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B; this row does not present a currency or treatment claim.\",\n        \"No pinpoint-specific disclosed treatment override changes the case's live-law status; treatment is assessed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must evaluate quote fidelity and support.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1504b1db3abfd7c4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law label is supported by the lake's top-level field_i_validity, but the page's unqualified 'No negative treatment' statement is too strong because the same disclosed treatment record contains proposed negative-treatment edges and audit-needed derivation flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law as of 2026-06-30, but revise the subsequent-history text to say: 'No finalized negative treatment recorded in the lake; automated/proposed progeny flags remain queued for audit.'\",\n        \"evidence_quote\": \"\\\"scope_note\\\": \\\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\\\"\\n\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 24,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Devenpeck v. Alford__30ebd3.json treatment.derivation\"\n      },\n      \"reasons\": [\n        \"Top-level treatment.field_i_validity is good_law and varies_by_point is false, so the basic good-law badge stands.\",\n        \"The disclosed edges are marked proposed true and field_iii mentioned, so they do not establish a final downgrade on this record.\",\n        \"Because the derivation itself says audit_needed and proposed_negative_events exist, the page should not state 'No negative treatment' without a final/proposed qualifier.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed negative events may be false positives, but the disclosed record has not completed the audit.\",\n        \"Full treatment certainty would require review of the flagged citing cases outside the current disclosed file set.\"\n      ],\n      \"suggested_tightening\": \"Surface the migration-seed scope note or suppress 'No negative treatment' unless final treatment edges have been audited.\"\n    }\n  ],\n  \"notes\": \"Lens B review only; support and quote fidelity were not evaluated.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:25:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:33:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-771bb02009",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-71584c68e0"
+    ],
     "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +87,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c72eca32.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Devenpeck v. Alford"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 180305,
+      "output": 7518,
+      "source": "codex-events",
+      "total": 187823
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "1504b1db3abfd7c4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a0f694382a865f9c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e03775a681cd49f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-771bb02009",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-71584c68e0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.6
   }
 }

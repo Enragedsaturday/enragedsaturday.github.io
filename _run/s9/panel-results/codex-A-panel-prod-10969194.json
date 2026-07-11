@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Connecticut v. Barrett.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows exactly once under lens A. Main defects are quote-fidelity mismatches already reflected in the lake pinpoint judgment fields and confirmed against the disclosed text file.",
+    "reviewed": [
+      {
+        "assertion_id": "378656600947b445",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Connecticut v. Barrett, U.S. Supreme Court, decided 1987-01-27, docket 85-899.",
+          "The official citation in the lake record is 479 U.S. 523, and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "34cd0c34f91d7ec4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.",
+          "locator_note": "text/Connecticut v. Barrett__0ac5df.txt, page marker *529",
+          "needs_cl": false,
+          "problem": "The pin-529 quote is not character-faithful: it replaces source wording and punctuation with an ellipsis and ends with a comma where the source sentence ends with a period. The lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace with a character-faithful quote, e.g. \"Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text has \"Barrett's limited requests for counsel, however, were accompanied...authorities.\"",
+          "The inventory/lake quote reads \"limited requests for counsel ... were accompanied...authorities,\" and the lake pinpoint field says quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "The legal proposition remains supported; the defect is verbatim quote fidelity."
+        ],
+        "suggested_tightening": "Use exact source language or make all omissions and punctuation changes editorially explicit.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf626c61a5209b3c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "requires authorities to ignore the tenor or sense of a defendant's response to these warnings.",
+          "locator_note": "text/Connecticut v. Barrett__0ac5df.txt, page marker *528",
+          "needs_cl": false,
+          "problem": "The pin-528 payload quote is page/generated-content text, not the opinion passage at 479 U.S. 528. The lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace the pin quote with the actual 528 passage supporting the rule: \"Nothing in our decisions, however, or in the rationale of Miranda, requires authorities to ignore the tenor or sense of a defendant's response to these warnings.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with the built page header and background text, not an opinion quotation.",
+          "The disclosed opinion at the *528 marker contains the actual passage about not ignoring the tenor or sense of the defendant's response."
+        ],
+        "residual_risks": [
+          "The content page's displayed 528 quote appears supportable, but the inventory/lake pinpoint quote is defective as framed."
+        ],
+        "suggested_tightening": "Regenerate pin-528 from the opinion text rather than from the built markdown page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "730c7cc6972f0792",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I do not raise a treatment finding.",
+          "The payload fields match the disclosed lake treatment fields: good_law, as_of_content 1987-01-27, as_of_treatment 2026-06-30, varies_by_point false, scope_note Good law."
+        ],
+        "residual_risks": [
+          "No currency review performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Connecticut v. Barrett.json\",\"reviewed\":[{\"assertion_id\":\"378656600947b445\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Connecticut v. Barrett, U.S. Supreme Court, decided 1987-01-27, docket 85-899.\",\"The official citation in the lake record is 479 U.S. 523, and the listed parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"34cd0c34f91d7ec4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-529 quote is not character-faithful: it replaces source wording and punctuation with an ellipsis and ends with a comma where the source sentence ends with a period. The lake itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace with a character-faithful quote, e.g. \\\"Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.\\\"\",\"evidence_quote\":\"Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.\",\"needs_cl\":false,\"locator_note\":\"text/Connecticut v. Barrett__0ac5df.txt, page marker *529\"},\"reasons\":[\"The disclosed text has \\\"Barrett's limited requests for counsel, however, were accompanied...authorities.\\\"\",\"The inventory/lake quote reads \\\"limited requests for counsel ... were accompanied...authorities,\\\" and the lake pinpoint field says quote_fidelity=mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition remains supported; the defect is verbatim quote fidelity.\"],\"suggested_tightening\":\"Use exact source language or make all omissions and punctuation changes editorially explicit.\"},{\"assertion_id\":\"bf626c61a5209b3c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-528 payload quote is page/generated-content text, not the opinion passage at 479 U.S. 528. The lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin quote with the actual 528 passage supporting the rule: \\\"Nothing in our decisions, however, or in the rationale of Miranda, requires authorities to ignore the tenor or sense of a defendant's response to these warnings.\\\"\",\"evidence_quote\":\"requires authorities to ignore the tenor or sense of a defendant's response to these warnings.\",\"needs_cl\":false,\"locator_note\":\"text/Connecticut v. Barrett__0ac5df.txt, page marker *528\"},\"reasons\":[\"The payload begins with the built page header and background text, not an opinion quotation.\",\"The disclosed opinion at the *528 marker contains the actual passage about not ignoring the tenor or sense of the defendant's response.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed 528 quote appears supportable, but the inventory/lake pinpoint quote is defective as framed.\"],\"suggested_tightening\":\"Regenerate pin-528 from the opinion text rather than from the built markdown page.\"},{\"assertion_id\":\"730c7cc6972f0792\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so I do not raise a treatment finding.\",\"The payload fields match the disclosed lake treatment fields: good_law, as_of_content 1987-01-27, as_of_treatment 2026-06-30, varies_by_point false, scope_note Good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No currency review performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows exactly once under lens A. Main defects are quote-fidelity mismatches already reflected in the lake pinpoint judgment fields and confirmed against the disclosed text file.\"}",
   "summary": {
-    "at": "2026-07-10T18:24:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:28:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a561c2f340",
+      "F-S9-PR-fdaf0001a8"
+    ],
     "group_id": "_overhaul2/lake/cases/Connecticut v. Barrett.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-10969194",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-10969194.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:27.396187Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.034459Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:28.927233Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:30.300756Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:32.455471Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:36.008802Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connecticut v. Barrett"
+    ],
+    "tokens": {
+      "input": 282067,
+      "output": 6511,
+      "source": "codex-events",
+      "total": 288578
+    },
+    "verdict_map": {
+      "34cd0c34f91d7ec4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "378656600947b445": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "730c7cc6972f0792": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf626c61a5209b3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a561c2f340",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fdaf0001a8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 130.2
   }
 }

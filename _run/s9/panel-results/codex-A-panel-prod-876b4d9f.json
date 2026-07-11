@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "fadd5866bc60e216",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Chambers v. Maroney, decided by the U.S. Supreme Court in 1970.",
+          "The official citation in the lake record is 399 U.S. 42, matching the asserted display citation.",
+          "The asserted parallel and vendor citations match the lake record: 90 S. Ct. 1975, 26 L. Ed. 2d 419, and 1970 U.S. LEXIS 19."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f18bbfe5a5ea69e2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.",
+          "locator_note": "text/Chambers v. Maroney__a7a1a2.txt contains this passage at page-number label 52; lake pinpoints[].quote currently contains content-page Markdown and quote_fidelity: mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-52 quote stored in the assertion/lake pinpoint is not the opinion passage at page 52; it is harvested page Markdown beginning with the content-page header and background. The lake itself marks quote_fidelity as mismatch and page as null.",
+          "proposed_fix": "Replace the pin-52 quote with the actual page-52 opinion passage: \"For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin quote does not appear as an opinion quote in the disclosed text file.",
+          "The disclosed opinion text at page 52 supports the content page's visible quotation, but not the lake/payload quote harvested for pin-52.",
+          "The lake pinpoint has pinpoint_status slip-only, page null, and quote_fidelity mismatch."
+        ],
+        "residual_risks": [
+          "The visible Rule quote on content_page.md appears accurate, but the supporting pinpoint record is defective."
+        ],
+        "suggested_tightening": "Store the exact page-52 opinion quotation in pin-52 and set the page/pin metadata to 52.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf423a24c54fd5d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A's charter.",
+          "The asserted treatment fields match the lake record: field_i_validity good_law, as_of_content 1970-06-22, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No treatment merits finding is made under lens A; lens B should assess treatment and currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Chambers v. Maroney.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fadd5866bc60e216\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Chambers v. Maroney, decided by the U.S. Supreme Court in 1970.\",\n        \"The official citation in the lake record is 399 U.S. 42, matching the asserted display citation.\",\n        \"The asserted parallel and vendor citations match the lake record: 90 S. Ct. 1975, 26 L. Ed. 2d 419, and 1970 U.S. LEXIS 19.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f18bbfe5a5ea69e2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-52 quote stored in the assertion/lake pinpoint is not the opinion passage at page 52; it is harvested page Markdown beginning with the content-page header and background. The lake itself marks quote_fidelity as mismatch and page as null.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-52 quote with the actual page-52 opinion passage: \\\"For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.\\\"\",\n        \"evidence_quote\": \"For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Chambers v. Maroney__a7a1a2.txt contains this passage at page-number label 52; lake pinpoints[].quote currently contains content-page Markdown and quote_fidelity: mismatch.\"\n      },\n      \"reasons\": [\n        \"The asserted pin quote does not appear as an opinion quote in the disclosed text file.\",\n        \"The disclosed opinion text at page 52 supports the content page's visible quotation, but not the lake/payload quote harvested for pin-52.\",\n        \"The lake pinpoint has pinpoint_status slip-only, page null, and quote_fidelity mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible Rule quote on content_page.md appears accurate, but the supporting pinpoint record is defective.\"\n      ],\n      \"suggested_tightening\": \"Store the exact page-52 opinion quotation in pin-52 and set the page/pin metadata to 52.\"\n    },\n    {\n      \"assertion_id\": \"cf423a24c54fd5d7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A's charter.\",\n        \"The asserted treatment fields match the lake record: field_i_validity good_law, as_of_content 1970-06-22, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment merits finding is made under lens A; lens B should assess treatment and currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:21:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6f918d43b8"
+    ],
     "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-876b4d9f",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-876b4d9f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:52.146674Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:52.751715Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:53.807914Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:55.047570Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:23:56.987997Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:24:00.516275Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chambers v. Maroney"
+    ],
+    "tokens": {
+      "input": 74397,
+      "output": 3675,
+      "source": "codex-events",
+      "total": 78072
+    },
+    "verdict_map": {
+      "cf423a24c54fd5d7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f18bbfe5a5ea69e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fadd5866bc60e216": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f918d43b8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 74.6
   }
 }

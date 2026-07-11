@@ -1,13 +1,101 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
+    "lens": "A",
+    "notes": "Lens A reviewed all four assertion_ids in group_inventory.jsonl exactly once; no external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "5cfb803d18351bb0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as City of L. A. v. Patel, U.S. Supreme Court, decided 2015-06-22, docket 13-1175.",
+          "The asserted citations match the lake record's citations.all entries, including 576 U.S. 409, 135 S. Ct. 2443, 192 L. Ed. 2d 435, 2015 U.S. LEXIS 4065, 83 U.S.L.W. 4520, and 25 Fla. L. Weekly Fed. S 412."
+        ],
+        "residual_risks": [
+          "The lake record has official=null despite listing 576 U.S. 409, but the asserted existence/citation list itself matches the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "370cd1bdd1669479",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "To be clear, we hold only that a hotel owner must be\nafforded an opportunity to have a neutral decisionmaker\nreview an officer’s demand to search the registry before he\nor she faces penalties for failing to comply.",
+          "locator_note": "text/City of Los Angeles v. Patel__063190.txt, slip opinion page 11, lines 544-547",
+          "needs_cl": false,
+          "problem": "The quoted text is not character-faithful to the cached opinion text: it changes the opening from 'we' in the sentence after 'To be clear,' to '[W]e' and normalizes the curly apostrophe in 'officer’s' to a straight apostrophe.",
+          "proposed_fix": "Use the exact opinion text or mark the quotation as editorially altered rather than character-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself records quote_fidelity as mismatch.",
+          "The disclosed opinion text contains 'officer’s' with a curly apostrophe and does not contain the asserted '[W]e' opening as a character-faithful excerpt."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported by the passage; the defect is strict quote fidelity."
+        ],
+        "suggested_tightening": "Quote the full sentence beginning 'To be clear, we hold only...' or adopt an explicit normalization policy for bracketed capitalization and typographic apostrophes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d08149d570b741fc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Court has held that absent consent, exigent circum-\nstances, or the like, in order for an administrative search\nto be constitutional, the subject of the search must be\nafforded an opportunity to obtain precompliance review\nbefore a neutral decisionmaker.",
+          "locator_note": "text/City of Los Angeles v. Patel__063190.txt, slip opinion page 10, lines 500-504",
+          "needs_cl": false,
+          "problem": "The pinpoint quote is not from the Patel opinion at all; it is a captured chunk of the built content page/header/background/rule text.",
+          "proposed_fix": "Replace pin-op10 with the actual slip-opinion page 10 passage about administrative searches and precompliance review.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with markdown/front-matter content from the built page, not language from the cached Supreme Court opinion.",
+          "The lake pinpoint itself records quote_fidelity as mismatch.",
+          "The actual slip-opinion page 10 passage is present in the cached text and differs completely from the asserted pinpoint quote."
+        ],
+        "residual_risks": [
+          "The content page's visible rule quotation appears to track the opinion passage, but the lake pinpoint stored for pin-op10 is unusable as a character-faithful quote."
+        ],
+        "suggested_tightening": "Regenerate pin-op10 from the cached opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ec3c8ec8107144d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2015-06-22, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/City of Los Angeles v. Patel.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5cfb803d18351bb0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as City of L. A. v. Patel, U.S. Supreme Court, decided 2015-06-22, docket 13-1175.\",\n        \"The asserted citations match the lake record's citations.all entries, including 576 U.S. 409, 135 S. Ct. 2443, 192 L. Ed. 2d 435, 2015 U.S. LEXIS 4065, 83 U.S.L.W. 4520, and 25 Fla. L. Weekly Fed. S 412.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record has official=null despite listing 576 U.S. 409, but the asserted existence/citation list itself matches the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"370cd1bdd1669479\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted text is not character-faithful to the cached opinion text: it changes the opening from 'we' in the sentence after 'To be clear,' to '[W]e' and normalizes the curly apostrophe in 'officer’s' to a straight apostrophe.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact opinion text or mark the quotation as editorially altered rather than character-faithful.\",\n        \"evidence_quote\": \"To be clear, we hold only that a hotel owner must be\\nafforded an opportunity to have a neutral decisionmaker\\nreview an officer’s demand to search the registry before he\\nor she faces penalties for failing to comply.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/City of Los Angeles v. Patel__063190.txt, slip opinion page 11, lines 544-547\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself records quote_fidelity as mismatch.\",\n        \"The disclosed opinion text contains 'officer’s' with a curly apostrophe and does not contain the asserted '[W]e' opening as a character-faithful excerpt.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The substantive proposition is supported by the passage; the defect is strict quote fidelity.\"\n      ],\n      \"suggested_tightening\": \"Quote the full sentence beginning 'To be clear, we hold only...' or adopt an explicit normalization policy for bracketed capitalization and typographic apostrophes.\"\n    },\n    {\n      \"assertion_id\": \"d08149d570b741fc\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pinpoint quote is not from the Patel opinion at all; it is a captured chunk of the built content page/header/background/rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-op10 with the actual slip-opinion page 10 passage about administrative searches and precompliance review.\",\n        \"evidence_quote\": \"The Court has held that absent consent, exigent circum-\\nstances, or the like, in order for an administrative search\\nto be constitutional, the subject of the search must be\\nafforded an opportunity to obtain precompliance review\\nbefore a neutral decisionmaker.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/City of Los Angeles v. Patel__063190.txt, slip opinion page 10, lines 500-504\"\n      },\n      \"reasons\": [\n        \"The asserted quote begins with markdown/front-matter content from the built page, not language from the cached Supreme Court opinion.\",\n        \"The lake pinpoint itself records quote_fidelity as mismatch.\",\n        \"The actual slip-opinion page 10 passage is present in the cached text and differs completely from the asserted pinpoint quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's visible rule quotation appears to track the opinion passage, but the lake pinpoint stored for pin-op10 is unusable as a character-faithful quote.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-op10 from the cached opinion text rather than from content_page.md.\"\n    },\n    {\n      \"assertion_id\": \"5ec3c8ec8107144d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter.\",\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2015-06-22, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment or currency review was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed all four assertion_ids in group_inventory.jsonl exactly once; no external sources were used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:24:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:24:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-7a9d15be01",
+      "F-S9-PR-fe6a4e3dc6"
+    ],
     "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +104,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e42f4da4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "City of Los Angeles v. Patel"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 235598,
+      "output": 6750,
+      "source": "codex-events",
+      "total": 242348
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "370cd1bdd1669479": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5cfb803d18351bb0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5ec3c8ec8107144d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d08149d570b741fc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7a9d15be01",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fe6a4e3dc6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 133.1
   }
 }
