@@ -1,0 +1,212 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Chavez.json",
+      "reviewed": [
+        {
+          "assertion_id": "606624120a6672b8",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case identity: 10th Cir., Ebel, J., filed July 29, 2008, Victor Chavez, DEA collective-knowledge traffic stop — matches the record.",
+            "Official cite 534 F.3d 1338 is the rank-1 selected_official in cluster.citations[]; a 2008 F.3d citation is consistent with a July 2008 10th Cir. opinion.",
+            "Prior wrong-namesake identity issue was re-keyed and re-verified per the header comment; the cached text is the intended fellow-officer Chavez, not the illegal-reentry Chavez."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached-opinion caption reads 'No. 07-2008' while lake/frontmatter docket is '07-3389' — likely an OCR artifact of the 2008 filing year; does not affect citation existence.",
+            "The 534 F.3d 1338 reporter star page is absent from the slip-paginated cached text; identity is nonetheless unambiguous."
+          ],
+          "suggested_tightening": "Reconcile the docket field (07-3389 vs caption 'No. 07-2008')."
+        },
+        {
+          "assertion_id": "144950aba7e27044",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Frontier stub: status under_review, field_i_validity 'unverified', scope_note states treatment/progeny intentionally not derived until S6 promotion.",
+            "Page renders the treatment as Unverified (⚪ banner) consistently; the assertion makes no positive currency claim, so there is nothing to verify or refute.",
+            "Per task rule, a stub is marked not-verifiable-from-disclosed with an honest note rather than a fabricated defect or clean certification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law/progeny status remains undetermined pending S6/S9 promotion — by design."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus/Claude model-diversity lane; sighted review from inlined evidence only."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Classic.json",
+      "reviewed": [
+        {
+          "assertion_id": "16f60372750fc3ed",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion carries '313 U.S. 299' verbatim in its case_cite block, docket No. 618, United States v. Classic — matches the official rank-1 cite.",
+            "Parallel cites 61 S. Ct. 1031 and 85 L. Ed. 1368 are consistent with a 1941 SCOTUS opinion at 313 U.S. 299.",
+            "Cached opinion header (Argued April 7, 1941; Decided May 26, 1941) confirms the case and year."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter/lake date_decided '1941-10-13' is actually the Rehearing-Denied date; the cached opinion shows 'Decided May 26, 1941' (which matches the treatment as_of_content 1941-05-26)."
+          ],
+          "suggested_tightening": "Set date_decided to the 1941-05-26 decision date and record the rehearing-denied date separately."
+        },
+        {
+          "assertion_id": "26c71e20eb7ce2f4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-326 quote is a mis-extracted span that crosses the '## Issue' and '## Rule' markdown headings ('...constitutionally protected). ## Rule Officials who abuse power...'), so it cannot match opinion text and is flagged 'mismatch'. The reader-facing quote actually rendered on the page is verbatim-faithful to the opinion; only the stored quote field is wrong.",
+            "severity": "low",
+            "proposed_fix": "Normalize the pin-326 quote field to the true quoted passage: \"Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.\"",
+            "evidence_quote": "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.",
+            "needs_cl": false,
+            "locator_note": "pin-326; the page's ## Rule paragraph verbatim quote vs. the lake pinpoint.quote field."
+          },
+          "reasons": [
+            "The page's Rule quote matches the cached opinion verbatim (cached passage: 'Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken ‘under color of’ state law.').",
+            "The 'mismatch' reflects the mis-extracted stored quote (which contains literal '## Rule' markdown), not a reader-facing misquote.",
+            "Pincite 326 is slip-only: the Classic cached text carries zero star-page markers, so 326 cannot be verified from disclosed evidence; the page honestly discloses it is taken from the official U.S. Reports citation (not fabricated)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 326 is not machine-verifiable from the disclosed CL text (no star pagination) — honestly disclosed, not fabricated."
+          ],
+          "suggested_tightening": "Store the actual quoted string in the pinpoint.quote field instead of the surrounding page-navigation span."
+        },
+        {
+          "assertion_id": "39faf92c2c7ed9e5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "as_of_content 1941-05-26 matches the cached opinion's 'Decided May 26, 1941' (verified).",
+            "field_i_validity 'good_law' currency (as_of_treatment 2026-06-30) rests on citator/treatment data not present in the disclosed 1941 opinion, so it is not machine-verifiable from the pack.",
+            "No disclosed evidence contradicts good-law status; the scope_note is careful and correct on its face (color-of-law test governing, adopted for § 1983 in Monroe v. Pape, overruled Grovey v. Townsend only on the primary-voting point) — marked not-verifiable rather than a fabricated defect/clean."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency depends on citator data outside the disclosed pack."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus/Claude model-diversity lane; quote text verified verbatim against cached opinion; pincite 326 slip-only (no star pages in disclosed text)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Cole.json",
+      "reviewed": [
+        {
+          "assertion_id": "a830817d0b78c47b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: No. 20-2105, 7th Cir. en banc, Janhoi Cole, St. Eve, J., decided Dec. 17, 2021; travel-plan/Rodriguez-mission holding matches the record.",
+            "Official cite 21 F.4th 421 is the rank-1 selected_official in cluster.citations[].",
+            "Cached text is slip-paginated (No. 20-2105, pages 2–12) with no F.4th star page, but the caption and en-banc holding make identity unambiguous."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 21 F.4th 421 reporter star page is absent from the slip-paginated cached text; identity confirmed via caption/holding."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "10bae1835390a257",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Frontier stub: status under_review, field_i_validity 'unverified', scope_note states treatment/progeny intentionally not derived until S6 promotion.",
+            "Page renders Unverified (⚪ banner) consistently; no positive currency claim to verify or refute.",
+            "Marked not-verifiable-from-disclosed with an honest note rather than a fabricated defect/clean."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law/progeny status undetermined pending promotion — by design."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus/Claude model-diversity lane; identity confirmed from cached en-banc opinion."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Conner.json",
+      "reviewed": [
+        {
+          "assertion_id": "2df61cc37d46b573",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: United States v. Larry Duane Conner / John Charles Tilton, N.D. Iowa, 8th Cir., 1997; motel-room color-of-authority holding matches the record.",
+            "Official cite 127 F.3d 663 is the rank-1 selected_official; cached text carries '*665' and '*666' page-number markers consistent with a case beginning at page 663.",
+            "8th-Circuit posture is corroborated by the in-circuit citations in the disclosed text (Deanda (8th Cir. 1996), Peters (8th Cir. 1990))."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "33a308332580f377",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-666 quote is a mis-extracted span crossing the '## Issue' and '## Rule' markdown headings ('...their show of authority. ## Issue Whether police... ## Rule A door opened in submission to authority is not consent:'), so it cannot match opinion text and is flagged 'mismatch'. The reader-facing quote rendered on the page is verbatim-faithful and correctly pincited; only the stored quote field is wrong.",
+            "severity": "low",
+            "proposed_fix": "Normalize the pin-666 quote field to the true quoted passage: \"an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.\"",
+            "evidence_quote": "an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.",
+            "needs_cl": false,
+            "locator_note": "pin-666; the page's ## Rule paragraph verbatim quote vs. the lake pinpoint.quote field."
+          },
+          "reasons": [
+            "The page's Rule quote matches the cached opinion verbatim (cached text: 'an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.').",
+            "Pincite 666 is VERIFIED: the '*666' page-number marker in the cached text immediately precedes the quoted passage, so the reporter pincite is correct.",
+            "The 'mismatch' reflects the mis-extracted stored quote (which contains literal '## Issue'/'## Rule' markdown), not a reader-facing misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status 'slip-only' and the Sources note's 'without star pagination' are conservative/inaccurate here — the disclosed text actually carries '*665'/'*666' markers, so the pincite is verifiable."
+          ],
+          "suggested_tightening": "Store the actual quoted string in the pinpoint.quote field; pincite 666 is confirmed and may be upgraded from 'slip-only'."
+        },
+        {
+          "assertion_id": "b025057ae0d2d2e1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' currency (as_of_treatment 2026-06-30) rests on citator/treatment data not present in the disclosed 1997 opinion, so it is not machine-verifiable from the pack.",
+            "The underlying holding is supported by the disclosed opinion: the 8th Circuit affirmed the district court's determination that a door opened not voluntarily but in response to a demand under color of authority yields an unconstitutional search.",
+            "No disclosed evidence contradicts good-law status; the scope_note is accurate on its face — marked not-verifiable rather than a fabricated defect/clean."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency depends on citator data outside the disclosed pack.",
+            "as_of_content is null though the holding itself is present in the disclosed opinion."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus/Claude model-diversity lane; quote text verified verbatim and pincite 666 confirmed via the *666 marker in the disclosed text."
+    }
+  ]
+}
