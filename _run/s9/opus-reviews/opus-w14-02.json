@@ -1,0 +1,247 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Basher.json",
+      "reviewed": [
+        {
+          "assertion_id": "1913923944770331",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached 9th Cir. opinion confirms identity: 'UNITED STATES v. BASHER', filed January 20, 2011, No. 09-30311, Opinion by Judge Mills — matches record (cluster 183144, 2011-01-20).",
+            "The running head 'UNITED STATES v. BASHER 1161' appears in the cached text, so official cite 629 F.3d 1161 resolves to a real page of this opinion.",
+            "Vendor-neutral cites (2011 U.S. App. LEXIS 1064; 2011 WL 167045) are internally consistent with a 2011 9th Cir. slip."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached running-heads span 1152-1165 (plus an isolated '1149'); '1161' appears mid-opinion, so the reported first page may differ under a strict first-page reading — a pagination nuance, not an existence problem."
+          ],
+          "suggested_tightening": "Confirm the 629 F.3d first page against the 1152-1165 running-head range in the bound reporter."
+        },
+        {
+          "assertion_id": "2cba5d71a9b99d8c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote is verbatim in the opinion: cached text reads 'we hold that there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curti-lage.' (running head 1165) — exact match to the quoted string.",
+            "Recorded quote_fidelity='mismatch' is a false positive, explained by the line-break hyphenation 'curti-lage' in the source.",
+            "Quote is faithful; the assertion survives the fidelity attack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content page cites this holding at '1169' but the passage sits at running head 1165 in the cached text — a pincite question outside the quote_fidelity dimension."
+          ],
+          "suggested_tightening": "Reconcile the '1169' pincite with the 1165 running head."
+        },
+        {
+          "assertion_id": "bfe215199457baa3",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-1169's stored quote is the page's own rendered markdown (YAML frontmatter + Background + Issue + '## Rule A tent itself is a private space:'), not opinion text; it does not appear anywhere in the Basher opinion.",
+            "severity": "medium",
+            "proposed_fix": "Repopulate pin-1169's quote field with the passage the page actually uses at ^pin-1169: 'A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.' (verbatim in the cached opinion, running head 1164).",
+            "evidence_quote": "A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.",
+            "needs_cl": false,
+            "locator_note": "Basher lake pinpoints[] id 'pin-1169'; correct passage at cached running head 1164."
+          },
+          "reasons": [
+            "The pin-1169 quote field contains content-page chrome (frontmatter through the Rule lead-in), which is not present in the opinion — a genuine extraction defect; recorded 'mismatch' is correct.",
+            "The rendered page nonetheless uses the correct verbatim tent quote at ^pin-1169, so reader-facing text is unaffected."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "A downstream verifier trusting the pin quote field rather than the rendered page will fail to match the opinion."
+          ],
+          "suggested_tightening": "Re-extract pin quotes from the rule body, not the page header (systemic across first-quote pins)."
+        },
+        {
+          "assertion_id": "3b0979a17c30640b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The scope_note's legal characterization is opinion-supported: the cached text holds 'there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curtilage' while reaffirming tent-interior privacy ('A tent is comparable to a house...') — matching 'reaffirms tent privacy while holding the area outside a dispersed-campsite tent is not curtilage.'",
+            "No disclosed evidence contradicts good_law; the lake treatment.edges tagged 'overruled/questioned' are all proposed:true auto-signals from a lane2_top_cited list (e.g., Tekoh, Johnson v. BART) with no substantive negative treatment — non-credible noise.",
+            "field_i_validity currency (as of 2026-06-30) is not checkable from the 2011 opinion alone; no defect found and none fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency (good_law as of 2026-06-30) rests on a migration-seed and is not verifiable from the disclosed opinion; the proposed negative-treatment edges remain unadjudicated."
+          ],
+          "suggested_tightening": "Adjudicate or drop the proposed 'overruled/questioned' edges before promoting treatment currency."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Berkowitz.json",
+      "reviewed": [
+        {
+          "assertion_id": "eadb5738f60f6508",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'A jury convicted Marvin Berkowitz of two counts of obstruction of justice ... and one count of stealing government property ... We reject Berkowitz's assistance of counsel and sentencing claims, but remand for an evidentiary hearing on his motion to suppress.' — matches record and content page.",
+            "Internal star page '*1379' is consistent with the case reported in 927 F.2d beginning near 1376.",
+            "District-court opinion cite '712 F.Supp. 707' corroborates the case posture."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached author tag reads 'MANTON, Circuit Judge' — an apparent OCR variant of 'MANION' (panel Coffey, Ripple, Manion); does not affect existence.",
+            "Lake identity flags party_name_in_text=false though 'Marvin Berkowitz' is present in the cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "65e4c12ed549811c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record is an intentional frontier stub (status under_review, identity_method frontier-identity, empty pinpoints/edges); treatment.field_i_validity='unverified' with scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' honestly reflects the not-yet-derived state.",
+            "No affirmative currency claim is made, so there is nothing to refute; the stub is internally consistent and fully disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment remains genuinely unverified pending S9 promotion — accurate, not a defect."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Biswell.json",
+      "reviewed": [
+        {
+          "assertion_id": "9456372fb2504952",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '406 U.S. 311 (1972)', 'UNITED STATES v. BISWELL', 'No. 71-81', 'Argued March 28, 1972. Decided May 15, 1972.' — matches record (cluster 108533, docket 71-81, 1972-05-15).",
+            "Star pagination begins '*312' after page 311, consistent with 406 U.S. 311 as the first page.",
+            "MR. JUSTICE WHITE delivered the opinion; parallel cites (92 S. Ct. 1593; 32 L. Ed. 2d 87) are standard SCOTUS parallels."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0e46514a5002d070",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-316a's stored quote is page chrome (frontmatter + Background + Issue + '## Rule Yes. Effective enforcement requires unannounced inspection:'), not opinion text; it does not appear in the Biswell opinion.",
+            "severity": "medium",
+            "proposed_fix": "Repopulate pin-316a with the passage the page actually quotes at ^pin-316a: 'if inspection is to be effective and serve as a credible deterrent, unannounced, even frequent, inspections are essential. In this context, the prerequisite of a warrant could easily frustrate inspection.' (verbatim at 406 U.S. 316).",
+            "evidence_quote": "if inspection is to be effective and serve as a credible deterrent, unannounced, even frequent, inspections are essential. In this context, the prerequisite of a warrant could easily frustrate inspection",
+            "needs_cl": false,
+            "locator_note": "Biswell lake pinpoints[] id 'pin-316a'; correct passage at cached star pages *315-*316."
+          },
+          "reasons": [
+            "The pin-316a quote field holds content-page markdown, not opinion text — a genuine extraction defect; recorded 'mismatch' is correct.",
+            "The rendered page uses the correct verbatim 'unannounced ... inspections are essential' quote at 316, so reader-facing text is unaffected."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same header-capture extraction bug as Basher pin-1169; likely systemic across first-quote ('...a') pins."
+          ],
+          "suggested_tightening": "Re-extract first-quote pins from the rule body."
+        },
+        {
+          "assertion_id": "70d85c34e51c2776",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Both sides of the quote are verbatim at cached star page *316: 'When a dealer chooses to engage in this pervasively regulated business and to accept a federal license, he does so with the knowledge that his business records, firearms, and ammunition will be subject to effective inspection.' and 'The dealer is not left to wonder about the purposes of the inspector or the limits of his task.'",
+            "The '…' properly marks elision of the intervening sentence ('Each licensee is annually furnished with a revised compilation of ordinances ... 18 U. S. C. § 921 (a) (19).'), which does not distort meaning.",
+            "Recorded 'mismatch' is a false positive caused by the ellipsis gap; the quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e3355aeb8eb5cc29",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote is verbatim at star page *317: 'We have little difficulty in concluding that where, as here, regulatory inspections further urgent federal interest, and the possibilities of abuse and the threat to privacy are not of impressive dimensions, the inspection may proceed without a warrant where specifically authorized by statute.'",
+            "pinpoint_status 'star-verified' with star_marker '317' is corroborated by the cached '*317' marker immediately preceding the sentence; pincite 317 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1663fc5b954281c6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The core scope_note characterization is opinion-supported: the cached opinion repeatedly builds on 'Colonnade Catering Corp. v. United States' and frames firearms dealing as a 'pervasively regulated business' subject to warrantless inspection — matching 'foundational pervasively-regulated-industry case (with Colonnade).'",
+            "No disclosed evidence contradicts good_law; Biswell is a SCOTUS holding with no negative-treatment signal in the pack.",
+            "The Donovan v. Dewey / New York v. Burger (1987) progeny statements and the 2026 currency are not verifiable from the 1972 opinion alone; no defect found and none fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Subsequent-history claims (Donovan, Barlow's, Burger) and current good_law status are asserted beyond the disclosed opinion; not independently checkable here."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Black.json",
+      "reviewed": [
+        {
+          "assertion_id": "e3938a55b59905b2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'GREGORY, Circuit Judge', Appellant 'Nathaniel Black', felon-in-possession Terry-stop suppression appeal, 'REVERSED AND VACATED' — matches record (cluster 821235, 4th Cir., 2013-02-25) and content page (Gregory J., Davis J., Traxler C.J. concurring in result).",
+            "Star pages *535-*542 in the cached text are consistent with the case reported in 707 F.3d beginning at 531; docket 11-5084.",
+            "Vendor-neutral cites (2013 WL 657789; 2013 U.S. App. LEXIS 4251) are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content page pincites the patchwork holding as 'slip op. at 11', but the cached text star-paginates it (~*539, 707 F.3d 539) — a pincite-style question outside the existence dimension."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3ac2bd44938362ec",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Intentional frontier stub (status under_review, frontier-identity, empty pinpoints/edges); treatment.field_i_validity='unverified' with scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' accurately reflects the not-yet-derived state.",
+            "No affirmative currency claim to refute; the stub is internally consistent and fully disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

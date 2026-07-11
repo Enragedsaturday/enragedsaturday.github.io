@@ -1,0 +1,253 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. August.json",
+      "reviewed": [
+        {
+          "assertion_id": "92aabf18771c7b8d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case: 'United States ... versus Kirk August', No. 24-30457, U.S. Court of Appeals for the Fifth Circuit, Filed May 8, 2025, Edith H. Jones, Circuit Judge — matching record docket 24-30457, court ca5, date 2025-05-08, cluster 10574922.",
+            "Official cite '136 F.4th 595' is well-formed for a 2025 published 5th Cir. decision and is sourced from cluster.citations[]; the slip opinion carries no reporter pagination, so the '595' page is not independently confirmable from the slip text, but nothing in the disclosed evidence contradicts it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter start page '595' rests on cluster metadata, not the inlined slip text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "918704732f03eacf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-op5 stored quote is a mis-harvest: it captured the page's frontmatter/header/Background/Issue prose (from '--- # United States v. August' through '## Rule The court applied the circuit's four-part protective-sweep test, extending it by its terms to curtilage:') instead of the quotation actually anchored at ^pin-op5. quote_fidelity is self-flagged 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repoint the pin-op5 quote field to the four-part protective-sweep test as displayed on the content page and quoted verbatim in the opinion at slip op. 5.",
+            "evidence_quote": "A protective sweep is lawful if: (1) the government agents have a legitimate law enforcement purpose for being in the house [or curtilage]; (2) the sweep is supported by a reasonable, articulable suspicion that the area to be swept harbors an individual posing a danger to those on the scene; (3) the sweep is no more than a cursory inspection of those spaces where a person may be found; and (4) the sweep lasts no longer than is necessary to dispel the reasonable suspicion of danger and lasts no longer than the police are justified in remaining on the premises.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion, slip op. page 5 (Case 24-30457, Document 68-1, Page 5), section 'A. Protective Sweep Doctrine'."
+          },
+          "reasons": [
+            "The DISPLAYED quotation anchored at ^pin-op5 (the four-part test) is verbatim faithful to the opinion at slip op. 5, including the bracketed '[or curtilage]' insertion which the opinion itself contains, and is correctly attributed to United States v. Mendez, 431 F.3d 420, 428 (5th Cir. 2005).",
+            "Only the stored pinpoint.quote field is wrong (a header-region harvest artifact); the published legal content is accurate, so the assertion survives but the record needs a modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Harvest artifact is a record-hygiene issue in the lake metadata, not a rendered error on the page."
+          ],
+          "suggested_tightening": "Re-run the quote harvester to anchor on the ^pin marker's paragraph rather than the frontmatter region."
+        },
+        {
+          "assertion_id": "bfbae02e5183bfe8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is consistent with the disclosed derivation: all three lanes reviewed 0 citing opinions with 0 proposed negative events (cap not hit), progeny citation_count 0, and edges [] — no overruling/abrogation signal.",
+            "Recent (2025-05-08) published 5th Cir. decision; the cached opinion AFFIRMS and articulates the protective-sweep test with nothing self-undermining. as_of_treatment 2026-06-30 and varies_by_point=false are reasonable for a single-holding case."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Negative/progeny lanes reviewed 0 opinions (very recent case); good-law rests on the absence of indexed citing opinions as of 2026-06-30."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
+      "reviewed": [
+        {
+          "assertion_id": "09753ceebdc179f9",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is United States v. Bagley (cluster 111514); internal star-pagination markers (*682, plus pages 720 and 722) are consistent with the official cite 473 U.S. 667 (case begins at 667; the quoted materiality holding sits at 682).",
+            "Parallel/vendor cites (105 S. Ct. 3375; 87 L. Ed. 2d 481; 1985 U.S. LEXIS 130; 53 U.S.L.W. 5084) are from cluster.citations[]; not independently confirmable from the opinion text but well-formed and uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel reporter numbers rest on cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "22c4dd28c3716295",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-682 stored quote is a header-region mis-harvest (captured '--- # United States v. Bagley' through '## Rule The Court adopted one unified materiality standard for all Brady claims, including suppressed impeachment evidence:') rather than the quotation anchored at ^pin-682; self-flagged 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repoint the pin-682 quote field to the anchored materiality standard quoted on the page.",
+            "evidence_quote": "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A \"reasonable probability\" is a probability sufficient to undermine confidence in the outcome.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion, paragraph b720-5, on page 682 (the *682 star marker precedes this paragraph in b719-6)."
+          },
+          "reasons": [
+            "The DISPLAYED quotation anchored at ^pin-682 is verbatim faithful to Bagley at 473 U.S. 682 (cached opinion, paragraph b720-5).",
+            "Only the stored quote field is a harvest artifact; the published legal content is accurate, so the assertion survives with a needed record modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Metadata-only artifact; page render is correct."
+          ],
+          "suggested_tightening": "Anchor the harvester on the ^pin paragraph rather than the frontmatter region."
+        },
+        {
+          "assertion_id": "67faf8c4f8fda7c9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "'good_law' is correct: Bagley supplies the controlling Brady/Giglio materiality standard and is still applied (content lists Kyles, Strickler, and Turner as progeny; the cached opinion sets the reasonable-probability standard).",
+            "Every negative edge is proposed=true with field_iii='mentioned' — keyword false positives from citing cases, several of which are Bagley's own affirming progeny (Kyles v. Whitley, Strickler v. Greene) or unrelated (Murray v. Carrier, Pennsylvania v. Ritchie, Moran v. Burbine); none is a confirmed overruling/abrogation OF Bagley."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed edges (e.g., United States v. Jevric 'superseded_by_statute', State v. Hale 'overruled') are unadjudicated mention-level keyword hits, not opinion-read here; on their face they are not confirmed treatment of Bagley."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Bajakajian.json",
+      "reviewed": [
+        {
+          "assertion_id": "198243d64c228444",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms United States v. Bajakajian (cluster 118234): Excessive Fines Clause / 18 U.S.C. 982(a)(1) forfeiture case holding 'a punitive forfeiture violates the Excessive Fines Clause if it is grossly disproportional to the gravity of a defendant's offense'; star markers *327, *337, *340 are consistent with the official cite 524 U.S. 321 (case begins at 321).",
+            "Parallel/vendor cites (118 S. Ct. 2028; 141 L. Ed. 2d 314; 1998 U.S. LEXIS 4172) are from cluster.citations[]; well-formed and uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontier-identity record (party_name_in_text=false), but the cached opinion plainly names Bajakajian and states the holding, confirming identity. Cached HTML shows an OCR '$857,144' in the opening paragraph vs. the correct '$357,144' later in the same opinion — an OCR artifact, not part of this assertion."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b6dc8fb091b815ed",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' is an honest, accurate process-state for a frontier stub: status under_review, edges [], derivation {}, composite_basis 'unverified', as_of fields null — the page renders under the Unverified banner and asserts no good-law claim.",
+            "No legal-validity proposition is made that could be refuted; deferral of treatment/progeny derivation to S6/S9 promotion is disclosed in scope_note and the page banner (per 'not found != fabricated')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content prose still teaches Bajakajian as operative doctrine while treatment is unverified; this is the intended frontier-stub posture, not a treatment-field defect."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Banks.json",
+      "reviewed": [
+        {
+          "assertion_id": "413d24dd6aa3ef50",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms United States v. Banks (cluster 131146), the 2003 knock-and-announce wait-time case; internal star-pagination markers *38 through *41 are consistent with the official cite 540 U.S. 31 (case begins at 31).",
+            "Parallel/vendor cites (124 S. Ct. 521; 157 L. Ed. 2d 343; 2003 U.S. LEXIS 8966) are from cluster.citations[]; well-formed and uncontradicted; record docket 02-473, date 2003-12-02."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel reporter numbers rest on cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "149751ffdd71752b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-38 stored quote is a Background/header mis-harvest ('and knocked hard on the door. After waiting 15 to 20 seconds ... ## Rule Yes. Reasonableness depends on the totality of the circumstances ...') rather than the quotation anchored at ^pin-38; self-flagged 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repoint the pin-38 quote field to the anchored quotation displayed on the page.",
+            "evidence_quote": "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion, paragraph under star-pagination label 38 (before label 39)."
+          },
+          "reasons": [
+            "The DISPLAYED quotation anchored at ^pin-38 is verbatim faithful to Banks at 540 U.S. 38 (cached opinion, the star-38 paragraph).",
+            "Only the stored quote field is a harvest artifact; the published legal content is accurate, so the assertion survives with a needed record modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Metadata-only artifact; page render is correct."
+          ],
+          "suggested_tightening": "Anchor the harvester on the ^pin paragraph rather than the Background/frontmatter region."
+        },
+        {
+          "assertion_id": "634ff1058507b47e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote equals the displayed quote and is verbatim faithful to Banks at 540 U.S. 40: the cached opinion reads 'Once the exigency had matured, of course, the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building' (cached HTML shows OCR 'thé' for 'the'). The page's ' . . . ' properly elides 'of course,'.",
+            "The 'mismatch' self-flag is a string-matcher false positive caused by the legitimate ellipsis and the OCR 'thé'->'the' normalization; there is no fidelity defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bf53755c293b24f6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote equals the displayed quote and is verbatim faithful to Banks at 540 U.S. 40: the cached opinion reads 'That is, when circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter'. The page's '[W]hen' is a proper Bluebook capitalization bracket for the mid-sentence 'when'.",
+            "The 'mismatch' self-flag is a string-matcher false positive from the elided 'That is, ' prefix and the [W] bracket; there is no fidelity defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c9a5df3c2fa6aa26",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "'good_law' is correct: Banks remains the controlling SCOTUS knock-and-announce wait-time authority; the content's 'No negative treatment' is consistent with the disclosed record.",
+            "All negative edges are proposed=true / field_iii='mentioned' keyword false positives (e.g., Southerland, Singleton, Flores tagged 'overruled'; Najar, McCraven, Scroggins 'questioned') — citing cases that mention Banks and trip keywords about other cases; none is a confirmed overruling/abrogation OF Banks."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane2 cap_hit=true (reviewed 25, 24 proposed events); the proposed candidates were not exhaustively opinion-read here, but all are mention-level keyword FPs on their face."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

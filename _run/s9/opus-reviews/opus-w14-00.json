@@ -1,0 +1,262 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Amos.json",
+      "reviewed": [
+        {
+          "assertion_id": "4390887f1c059898",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations block carries official '88 F.4th 446' (vol 88 / F.4th / p.446 / type 1), selected_official=true, official_selection reason 'selected_rank_1'; official_selection_present=true.",
+            "Content-page header renders '88 F.4th 446 (3d Cir. 2023)', internally consistent with the lake.",
+            "Cached slip opinion confirms identity (No. 20-3298, filed Dec 14 2023, 3d Cir., United States v. Shiheem Amos) matching docket/date/court; slip carries no F.4th star pagination, so page 446 is attested via cluster.citations[] metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter page 446 not independently cross-checkable from the disclosed slip opinion (no star pagination); rests on cluster.citations[] metadata plus identity/docket/date consistency."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "906e2f3db102df70",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion honestly declares field_i_validity='unverified' with as_of_content/as_of_treatment=null and scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' — matches the lake treatment block and field_provenance ('frontier stub, no treatment') exactly.",
+            "Content page renders Treatment: Unverified under the under_review banner and makes no good-law/currency claim, so there is nothing to refute.",
+            "varies_by_point=false consistent across payload, lake, and content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontier stub still under_review; treatment must be derived and verified before any good-law claim at promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Anchondo.json",
+      "reviewed": [
+        {
+          "assertion_id": "32878e701b5a987c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake official '156 F.3d 1043' (vol 156 / F.3d / p.1043 / type 1) selected_rank_1, official_selection_present=true; parallels 1998 U.S. App. LEXIS 21392 and 1998 WL 559355, all from cluster.citations[].",
+            "Cached opinion carries star-pagination markers *1045 and *1046, confirming F.3d vol-156 pagination consistent with a start page of 1043; author TACHA, Circuit Judge (10th Cir.).",
+            "Content-page header '156 F.3d 1043 (10th Cir. 1998)' consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake identity is 'pending'/'two_key_not_satisfied' and status under_review, but the cached opinion facts (cocaine search-incident-to-arrest, checkpoint near Las Cruces NM, canine alert) and CL url /opinion/758111/united-states-v-erick-anchondo/ cohere with the cited case."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4a3d47f9fead8c04",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Lake pinpoints[].quote for pin-1045 is a malformed capture: it stores the page's own markdown lead-in (frontmatter + Background + Issue + '## Rule A search may validly precede the arrest it is incident to:') instead of the opinion quote, so the stored text cannot match the source (quote_fidelity flagged 'mismatch'). The reader-facing content-page pincite it backs is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-derive pin-1045's stored quote to the actual quoted sentence: 'A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.' (156 F.3d at 1045).",
+            "evidence_quote": "A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph b1123-8; quoted sentence sits between star markers *1045 and *1046, i.e., page 1045, matching content-page pincite '156 F.3d at 1045'."
+          },
+          "reasons": [
+            "Stored payload.quote is page markdown, not opinion text -> genuine data-hygiene defect (same 'garbled lead-in capture' pattern as pin-273 and pin-321).",
+            "The underlying content-page quote at ^pin-1045 matches the cached opinion verbatim and is correctly located on page 1045, so no true legal proposition is broken.",
+            "Sibling pin-1046 in the same record stores a clean quote, confirming pin-1045's capture is anomalous."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Malformed stored quote may trip a downstream auto-verifier into a false 'unsupported' flag until re-derived."
+          ],
+          "suggested_tightening": "Regenerate stored pinpoint.quote from the text immediately following the '## Rule' lead-in, not the lead-in itself."
+        },
+        {
+          "assertion_id": "fae1ea5c39bbb874",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest.' appears VERBATIM in the cached opinion (para b1124-5: 'Given the above analysis, the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest. We AFFIRM.').",
+            "Quote sits after star marker *1046, i.e., page 1046, matching the content-page pincite 'Id. at 1046'.",
+            "The upstream quote_fidelity='mismatch' flag is a FALSE POSITIVE, most likely tripped by the leading 'Given the above analysis,' clause and the star-pagination XML interleaving; the quoted span itself is exact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Upstream mismatch flag will likely recur in automated matching until the matcher normalizes leading context/markup."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c0caad6b5be80414",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' rests on composite_basis='migration-seed' (O1 seed), as_of_treatment 2026-06-30; scope_note accurately warns of frequent automobile-exception miscitation, and the cached opinion confirms the holding rests on search-incident-to-arrest, not the automobile exception.",
+            "The proposed treatment edges (McKissick, Rosborough, State v. Anderson, Sanchez, etc.) are all proposed=true, unadjudicated lane2_top_cited candidates with field_iii='mentioned'; their field_ii 'overruled'/'questioned' mirrors each citing case's OWN status (citing_case.field_ii == edge.field_ii), not a negative treatment OF Anchondo, so they do not refute good_law.",
+            "No disclosed evidence contradicts good_law; full treatment-currency verification as of 2026-06-30 would require CourtListener progeny (out of scope), hence verifiable_from_disclosed=false."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment currency (2026-06-30) not independently verifiable from the disclosed slip opinion; the proposed negative-status edges, if ever mis-read as negative treatment of Anchondo, could distort the composite - they remain unadjudicated."
+          ],
+          "suggested_tightening": "Adjudicate or prune the proposed lane2_top_cited edges so their citing-case-status field_ii is not confusable with treatment-of-Anchondo before promotion."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Arvizu.json",
+      "reviewed": [
+        {
+          "assertion_id": "4a1b73e258ed254d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake official '534 U.S. 266' selected_rank_1, official_selection_present=true; parallels 122 S. Ct. 744, 151 L. Ed. 2d 740, 2002 U.S. LEXIS 490 from cluster.citations[].",
+            "Cached opinion header renders '534 U.S. 266 (2002)' with star markers *268 through *278, consistent with a start page of 266; No. 00-1519, decided Jan 15 2002, Rehnquist, C.J.",
+            "Content-page header '534 U.S. 266 (2002)' consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "74e7174ebbe24c70",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote '*Terry*, however, precludes this sort of divide-and-conquer analysis.' matches the cached opinion VERBATIM ('Terry, however, precludes this sort of divide-and-conquer analysis.'); the asterisks are the content page's markdown rendering of the opinion's italicized 'Terry' (HTML <i>Terry</i>).",
+            "Quote sits between star markers *274 and *275, i.e., page 274, matching the content-page pincite 'Id. at 274'.",
+            "The upstream quote_fidelity='mismatch' flag is a FALSE POSITIVE, tripped by the markdown italic asterisks and the interleaved citation/italic markup around 'Terry'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Markdown-vs-HTML italic normalization gap will keep producing FP mismatch flags on quotes containing italicized case names until the matcher strips emphasis markers."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a45212117b83a79f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Lake pinpoints[].quote for pin-273 is a malformed capture storing the page's markdown lead-in (frontmatter + Background + Issue + '## Rule Reasonable suspicion is judged on the whole picture, not factor-by-factor: reviewing courts') instead of the opinion quote; quote_fidelity flagged 'mismatch'. The content-page pincite it backs is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-derive pin-273's stored quote to the actual quoted sentence: 'must look at the \"totality of the circumstances\" of each case to see whether the detaining officer has a \"particularized and objective basis\" for suspecting legal wrongdoing.' (534 U.S. at 273).",
+            "evidence_quote": "must look at the \"totality of the circumstances\" of each case to see whether the detaining officer has a \"particularized and objective basis\" for suspecting legal wrongdoing.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph beginning 'When discussing how reviewing courts should make reasonable-suspicion determinations...'; quoted sentence sits between star markers *273 and *274, i.e., page 273, matching content-page pincite '534 U.S. at 273'."
+          },
+          "reasons": [
+            "Same garbled lead-in capture pattern as pin-1045 and pin-321; stored quote is page markdown, not opinion text -> data-hygiene defect.",
+            "Underlying content-page quote at ^pin-273 matches the cached opinion verbatim and is correctly located on page 273, so no true legal proposition is broken.",
+            "Sibling pin-274 stores a clean quote, confirming pin-273's capture is anomalous."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Malformed stored quote may trigger a false 'unsupported' flag downstream until re-derived."
+          ],
+          "suggested_tightening": "Regenerate stored pinpoint.quote from the text following the '## Rule' lead-in."
+        },
+        {
+          "assertion_id": "ed33aea56a1dea13",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law', as_of_content 2002-01-15, as_of_treatment 2026-06-30, composite_basis='migration-seed'; scope_note ('reaffirms the totality-of-the-circumstances reasonable-suspicion standard') is corroborated by the cached opinion's holding.",
+            "Arvizu is a unanimous SCOTUS opinion (Rehnquist, C.J.); no disclosed evidence indicates negative treatment; lake status is 'verified'.",
+            "Full treatment-currency verification as of 2026-06-30 requires CourtListener progeny (out of scope), hence verifiable_from_disclosed=false; nothing disclosed refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment currency not independently verifiable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Ash.json",
+      "reviewed": [
+        {
+          "assertion_id": "78fdcce416d0c6fa",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake official '413 U.S. 300' selected_rank_1, official_selection_present=true; parallels 93 S. Ct. 2568, 37 L. Ed. 2d 619, 1973 U.S. LEXIS 45 from cluster.citations[].",
+            "Cached opinion header renders '413 U.S. 300 (1973)' with star pagination beginning *301; No. 71-1255, decided June 21 1973, Blackmun, J.",
+            "Content-page header '413 U.S. 300 (1973)' consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b59055b93519be46",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Lake pinpoints[].quote for pin-321 is a malformed capture storing the page's markdown lead-in (frontmatter + Background + Issue + '## Rule No. The Court held that') instead of the opinion quote; quote_fidelity flagged 'mismatch'. The content-page pincite it backs is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-derive pin-321's stored quote to the actual quoted holding: 'the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.' (413 U.S. at 321).",
+            "evidence_quote": "the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion (truncated) contains the holding: 'We hold, then, that the Sixth Amendment does not grant the right to counsel at photographic displays...'; the *321 star marker immediately precedes it, so page 321, matching content-page pincite '413 U.S. at 321'."
+          },
+          "reasons": [
+            "Same garbled lead-in capture pattern as pin-1045 and pin-273; stored quote is page markdown, not opinion text -> data-hygiene defect.",
+            "Underlying content-page holding quote at ^pin-321 matches the cached opinion verbatim (dropping only the 'We hold, then, that ' prefix) and is correctly located on page 321, so no true legal proposition is broken.",
+            "Cached opinion is truncated but does include page 321, so the pincite is fully verifiable from disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Malformed stored quote may trigger a false 'unsupported' flag downstream until re-derived."
+          ],
+          "suggested_tightening": "Regenerate stored pinpoint.quote from the holding sentence following the '## Rule' lead-in."
+        },
+        {
+          "assertion_id": "345422af364de3e8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law', as_of_content 1973-06-21, as_of_treatment 2026-06-30, composite_basis='migration-seed'; scope_note ('no Sixth Amendment right to counsel at a photographic display') matches the cached opinion's holding at 413 U.S. at 321.",
+            "Ash is a landmark SCOTUS holding (Blackmun, J.); no disclosed evidence indicates negative treatment; lake status is 'verified'.",
+            "Full treatment-currency verification as of 2026-06-30 requires CourtListener progeny (out of scope), hence verifiable_from_disclosed=false; nothing disclosed refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment currency not independently verifiable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
