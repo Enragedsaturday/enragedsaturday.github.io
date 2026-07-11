@@ -1,0 +1,280 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
+      "reviewed": [
+        {
+          "assertion_id": "868055f5797209ae",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 556 U.S. 332 (selected_rank_1) matches the lake citations.official and the content-page citation; parallels 129 S. Ct. 1710 / 173 L. Ed. 2d 485 / 2009 U.S. LEXIS 3120 are all present in cluster.citations[].",
+            "Cached majority opinion (Stevens, J., star pages *335-*351, cabining Belton/Chimel for vehicle SIA) is unmistakably Arizona v. Gant; case reports at 556 U.S. 332."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "77f0c665970ef8f1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' string is a page-preamble harvest artifact (captured the content-page header/Background/Issue blob), which is why the machine flagged quote_fidelity=mismatch; it is not the text actually pinned at ^pin-351.",
+            "The real quote pinned at ^pin-351 -- 'Police may search a vehicle incident to a recent occupant's arrest only if the arrestee is within reaching distance of the passenger compartment at the time of the search or it is reasonable to believe the vehicle contains evidence of the offense of arrest.' -- appears verbatim in Part VI of the cached opinion at star page *351.",
+            "Pincite 556 U.S. at 351 is confirmed against the star-paginated cached text (*351)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel pin '129 S. Ct. at 1723' cannot be checked against the U.S.-Reports-paginated cached text; only the U.S. page 351 is verifiable here."
+          ],
+          "suggested_tightening": "Re-run the pin harvester so payload.quote captures the sentence at the ^pin anchor rather than the page preamble, clearing the spurious mismatch flag."
+        },
+        {
+          "assertion_id": "330abd3fbfa388ad",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law is consistent with the disclosed record: composite_basis migration-seed (provenance warning 'legacy treatment migrated: good -> good_law'), and every negative edge is proposed:true (un-adopted).",
+            "The proposed negative edges are mutually-contradictory citator keyword noise (the same case tagged 'overruled' by Ramos v. Louisiana, Kisor v. Wilkie, Riley, Janus, etc. -- unrelated doctrines), none accepted; they do not flip validity.",
+            "The scope_note's substantive claim ('Gant itself cabins the broad reading of New York v. Belton') is directly and verbatim supported by the cached opinion, which rejects the broad reading of Belton."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The good_law currency rests on migration-seed plus proposed-only edges; a full citator re-derivation is not shown, but no accepted negative treatment is present in the disclosed record."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane (covers both A support/quote-fidelity and B currency/treatment). All 3 stand; the quote_fidelity 'mismatch' flag is a page-preamble harvest artifact, actual pinned quote is verbatim."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Johnson.json",
+      "reviewed": [
+        {
+          "assertion_id": "48342b44a7dac19a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 555 U.S. 323 (selected_rank_1) matches lake citations.official and the content-page citation; parallels 129 S. Ct. 781 / 172 L. Ed. 2d 694 / 2009 U.S. LEXIS 868 all present in cluster.citations[].",
+            "Cached opinion is Arizona v. Johnson, No. 07-1122, decided Jan. 26, 2009 (Ginsburg, J.); syllabus header and body confirm the party and holding; case reports at 555 U.S. 323."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "21380b1679d852e3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pinned quote at ^pin-327b -- '[f]or the duration of a traffic stop, . . . a police officer effectively seizes 'everyone in the vehicle,' the driver and all passengers.' -- matches the cached opinion body ('For the duration of a traffic stop, we recently confirmed, a police officer effectively seizes \"everyone in the vehicle,\" the driver and all passengers.').",
+            "The bracket [f] correctly signals the lowercased 'For', and the ellipsis '. . .' correctly elides 'we recently confirmed,'; the parenthetical '(quoting Brendlin v. California)' is accurate -- the opinion cites Brendlin v. California, 551 U.S. 249, 255 immediately after."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status is slip-only: the cached text is a slip opinion (slip pages 1-2), so the 'Id.'/555 U.S. 327 page precision is not verifiable to U.S. Reports pagination; the quoted sentence actually falls on slip page 1 (with the Brendlin cite spanning the page break)."
+          ],
+          "suggested_tightening": "Verify the U.S.-Reports page for the Brendlin-attributed sentence (likely 326 rather than 327) once star-paginated text is available."
+        },
+        {
+          "assertion_id": "2e8c572896556963",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a page-preamble harvest artifact (content-page header/Background/Issue/Rule-lead), hence the machine's mismatch flag; not the text pinned at ^pin-326.",
+            "The real pinned quote -- 'The Court upheld 'stop and frisk' as constitutionally permissible if two conditions are met. First, the investigatory stop must be lawful. . . . Second, to proceed from a stop to a frisk, the police officer must reasonably suspect that the person stopped is armed and dangerous.' -- matches the cached opinion body verbatim; the ellipsis correctly elides the intervening 'That requirement is met...criminal offense.' sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "slip-only: exact U.S. Reports pages 326-327 not verifiable against the slip-paginated cached text (quoted two-conditions passage sits on slip page 1)."
+          ],
+          "suggested_tightening": "Fix harvester to capture the anchored sentence rather than the page preamble."
+        },
+        {
+          "assertion_id": "e6bbfadcb4d5bf86",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pinned quote at ^pin-327 -- 'in a traffic-stop setting, the first Terry condition -- a lawful investigatory stop -- is met whenever it is lawful for police to detain an automobile and its occupants pending inquiry into a vehicular violation. The police need not have, in addition, cause to believe any occupant of the vehicle is involved in criminal activity. To justify a patdown of the driver or a passenger during a traffic stop, however, just as in the case of a pedestrian reasonably suspected of criminal activity, the police must harbor reasonable suspicion that the person subjected to the frisk is armed and dangerous.' -- matches the cached opinion body verbatim (quote begins mid-sentence with lowercase 'in', dropping 'Accordingly, we hold that,')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "slip-only: 'Id. at 327' page precision not verifiable against slip-paginated cached text; quote content is verified faithful."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "72acb5231045fae3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law consistent with disclosed record: composite_basis migration-seed; all negative edges proposed:true (un-adopted citator noise -- e.g. Rodriguez 'abrogated', Salcedo 'questioned', Arizona v. United States).",
+            "The scope_note (traffic stop seizes every occupant for its duration, satisfying Terry's first condition without separate passenger-crime suspicion; frisk requires reasonable suspicion the passenger is armed and dangerous) is verbatim-supported by the cached opinion body."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency rests on migration-seed plus proposed-only edges; no accepted negative treatment disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 5 stand. Two quote_fidelity 'mismatch' flags are page-preamble harvest artifacts; the pin-327b/327 quotes carry real opinion text and are verbatim-faithful. Pincite precision is slip-only (residual)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Mauro.json",
+      "reviewed": [
+        {
+          "assertion_id": "ea8a34da6045d6b4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 481 U.S. 520 (selected_rank_1) matches lake citations.official and the content-page citation; parallels 107 S. Ct. 1931 / 95 L. Ed. 2d 458 / 1987 U.S. LEXIS 1933 present in cluster.citations[].",
+            "Cached majority opinion (Powell, J., star pages *522-*530, Miranda/Innis functional-equivalent analysis) is unmistakably Arizona v. Mauro; case reports at 481 U.S. 520."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "22948f4647520838",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pinned quote at ^pin-529 -- 'Officers do not interrogate a suspect simply by hoping that he will incriminate himself.' -- is an exact verbatim match to the cached opinion at star page *529.",
+            "pinpoint_status star-verified / quote_fidelity matched is corroborated by my independent read; the #:~:text fragment points to the same sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5bcc36189a3d45df",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a page-preamble harvest artifact, hence the mismatch flag; not the text pinned at ^pin-528.",
+            "The real pinned quote -- 'We think it is clear under both Miranda and Innis that Mauro was not interrogated. . . . There is no evidence that the officers sent Mrs. Mauro in to see her husband for the purpose of eliciting incriminating statements.' -- matches the cached opinion verbatim; first sentence at star page *527, second at *528, so pincite 527-528 is confirmed and the ellipsis correctly elides the intervening 'The tape recording...functional equivalent of interrogation.' sentences."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload marks pin-528 slip-only, but the cached text is star-paginated and the 527-528 pincite is in fact verifiable and correct."
+          ],
+          "suggested_tightening": "Fix harvester to capture the anchored quote; promote pinpoint_status from slip-only to star-verified since the cached text carries star pages *527/*528."
+        },
+        {
+          "assertion_id": "a823daac3d82812e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law consistent with disclosed record: composite_basis migration-seed; all 30 negative edges proposed:true (un-adopted), none accepted.",
+            "The scope_note (allowing a Miranda-invoking suspect to speak with his spouse in an officer's recorded presence is not interrogation or its functional equivalent under Innis) is verbatim-supported by the cached opinion's holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency rests on migration-seed plus proposed-only edges; no accepted negative treatment disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 4 stand. pin-529 exact verbatim (star-verified); pin-528 mismatch flag is a harvest artifact but the actual quote and 527-528 pincite verify against the star-paginated text."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Roberson.json",
+      "reviewed": [
+        {
+          "assertion_id": "ae22d491e13a15c8",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 486 U.S. 675 (selected_rank_1) matches lake citations.official and the content-page citation; parallels 108 S. Ct. 2093 / 100 L. Ed. 2d 704 / 1988 U.S. LEXIS 2726 / 56 U.S.L.W. 4590 present in cluster.citations[].",
+            "Cached majority opinion (Stevens, J., star pages *678-*688, holding the Edwards bar is not offense-specific) is unmistakably Arizona v. Roberson; case reports at 486 U.S. 675."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "609fd7544cbb0ce5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pinned quote at ^pin-684 -- 'That a suspect's request for counsel should apply to any questions the police wish to pose follows, we think, not only from Edwards and Miranda . . . .' -- matches the cached opinion verbatim at star page *684; the trailing ellipsis correctly truncates '...but also from a case decided the same day as Barrett.'",
+            "Pincite 486 U.S. at 684 confirmed against star page *684."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "db790b9d975d673a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a page-preamble harvest artifact, hence the mismatch flag; not the text pinned at ^pin-683.",
+            "The real pinned quote -- '[T]he presumption raised by a suspect's request for counsel -- that he considers himself unable to deal with the pressures of custodial interrogation without legal assistance -- does not disappear simply because the police have approached the suspect, still in custody, still without counsel, about a separate investigation.' -- matches the cached opinion verbatim at star page *683 (bracket [T] correctly signals the capitalized 'the' from 'As a matter of law, the presumption...')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload marks pin-683 slip-only, but the cached text is star-paginated and the 683 pincite is in fact verifiable and correct."
+          ],
+          "suggested_tightening": "Fix harvester to capture the anchored quote; promote pinpoint_status since star page *683 is present."
+        },
+        {
+          "assertion_id": "4ee8a793e87ddb2f",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "treatment.scope_note carries a leaked build-process annotation ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') instead of a substantive statement of Roberson's treatment scope. field_i_validity good_law itself is correct and current (all negative edges proposed:true/un-adopted; Roberson's holding that the Edwards bar is not offense-specific remains good law, later refined -- not overruled -- by Maryland v. Shatzer, as the rendered Treatment section states), so only the scope_note is defective; unlike the pack's other three records it fails to describe the case's treatment.",
+            "severity": "low",
+            "proposed_fix": "Replace the scope_note with substantive text consistent with the rendered 'Treatment & subsequent history' section, e.g. 'Good law; the Edwards bar is not offense-specific -- a counsel invocation bars police-initiated interrogation about any offense; later refined (not overruled) by Maryland v. Shatzer.'",
+            "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+            "needs_cl": false,
+            "locator_note": "content_page front-matter treatment.scope_note and lake record treatment.scope_note; record_id Arizona v. Roberson"
+          },
+          "reasons": [
+            "The validity call (good_law) survives: composite_basis migration-seed, all 33 negative edges proposed:true (un-adopted), and Shatzer refines rather than overrules Roberson per the rendered subsequent-history note.",
+            "The scope_note field, however, contains an internal derivation/self-note rather than a reader-facing treatment scope -- an anomaly relative to the substantive scope_notes on Gant/Johnson/Mauro in this same pack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note's own hedge ('may downgrade') flags that a citator re-derivation was anticipated; disclosed record still resolves to good_law with no accepted negative treatment."
+          ],
+          "suggested_tightening": "Populate treatment.scope_note with a substantive statement and re-run the treatment derivation so the placeholder note is superseded."
+        }
+      ],
+      "notes": "3 stand; 1 stands-modified. Both quote pins verify verbatim against star-paginated text (683, 684). Roberson treatment validity (good_law) is sound, but its scope_note leaked a build-process annotation instead of a substantive scope note (low-severity)."
+    }
+  ]
+}

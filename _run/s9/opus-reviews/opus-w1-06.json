@@ -1,0 +1,228 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
+      "reviewed": [
+        {
+          "assertion_id": "3de55cb0f67466a4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Beecher v. Alabama, Per Curiam, with page markers *36/*37/*38 — case reported at 389 U.S. 35 (1967).",
+            "Official cite 389 U.S. 35 selected; parallels 88 S. Ct. 189 and 19 L. Ed. 2d 35 are the standard reporter set for this decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a62f5c2f98c34400",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-38 quote is not opinion text — it is a content-page scrape containing markdown section headers ('## Issue', '## Rule') and the page's own paraphrase ('re-obtained days later while he was drugged and in severe pain, were voluntary under the Due Process Clause'). A court opinion cannot contain markdown headers; the pinpoint quote field fails fidelity. The genuine passage the page renders at ^pin-38 IS verbatim in the cached opinion at 389 U.S. 38.",
+            "severity": "medium",
+            "proposed_fix": "Replace the garbled pin-38 quote field with the verbatim page-38 passage from the cached opinion (below); reader-facing page already renders it correctly, so this is a lake-metadata repair.",
+            "evidence_quote": "A realistic appraisal of the circumstances of this case compels the conclusion that this petitioner's confessions were the product of gross coercion. Under the Due Process Clause of the Fourteenth Amendment, no conviction tainted by a confession so obtained can stand.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p id=b148-5 (389 U.S. 38); garbled quote at inventory payload / lake pinpoints[id=pin-38]."
+          },
+          "reasons": [
+            "Stored quote contains '## Issue' and '## Rule' markdown plus page paraphrase — self-evidently a wiki-page scrape, not a verbatim quotation of the Per Curiam opinion.",
+            "The record itself flags quote_fidelity=mismatch; independent read of the cached opinion confirms the stored text appears nowhere in it, while the true page-38 holding sentence is verbatim at b148-5."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Defect is confined to the lake pinpoint quote field; the rendered content page shows the correct verbatim quote at ^pin-38."
+          ],
+          "suggested_tightening": "Re-derive pin-38 quote from opinion text rather than from the projected page markdown."
+        },
+        {
+          "assertion_id": "c85f88b833e50490",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'until he was directed five days later to tell Alabama investigators \\'what they wanted to know,\\' there was \\'no break in the stream of events,\\'' is a verbatim substring of the cached opinion at 389 U.S. 38 (p id=b148-4): 'From that time until he was directed five days later to tell Alabama investigators \"what they wanted to know,\" there was \"no break in the stream of events,\" Clewis v. Texas...'.",
+            "Internal quotation marks and wording match exactly; the quote merely begins mid-sentence at 'until' (leading 'From that time' elided), which is proper pinpoint quotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record carries quote_fidelity=mismatch, but that flag is a false positive against the disclosed opinion text."
+          ],
+          "suggested_tightening": "Clear the erroneous quote_fidelity=mismatch flag on pin-38a; the pinpoint verifies verbatim at 389 U.S. 38."
+        },
+        {
+          "assertion_id": "734858326c98c4a1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note accurately paraphrases the disclosed holding: the Per Curiam opinion holds the gunpoint confession and the later drugged/in-pain statement were 'the product of gross coercion' and involuntary, and reverses.",
+            "No disclosed evidence contradicts good_law; every negative treatment edge is proposed:true and facially spurious (e.g., Illinois v. Gates, Colorado v. Connelly, Mincey v. Arizona did not overrule Beecher)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity=good_law rests on composite_basis=migration-seed, not an independent S2 currency derivation; forward currency to 2026-06-30 is not derivable from the case's own text.",
+            "Record carries many un-adjudicated proposed:true 'overruled/criticized/questioned' edges that are extractor false positives."
+          ],
+          "suggested_tightening": "Prune or adjudicate the facially-false proposed negative edges before S6/S9 promotion."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Bell v. Wolfish.json",
+      "reviewed": [
+        {
+          "assertion_id": "1d5ba373c5344b19",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Bell v. Wolfish, Mr. Justice Rehnquist for the Court, MCC pretrial-detainee class action, page markers *523/*524, 'We now reverse.' — reported at 441 U.S. 520 (1979).",
+            "Official cite 441 U.S. 520 selected; parallels 99 S. Ct. 1861 and 60 L. Ed. 2d 447 are the standard set."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "af3437e58a5e97e7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion makes no substantive currency claim: field_i_validity=unverified with scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+            "Consistent with the disclosed record (empty edges, frontier-identity, s6_promotion born_status under_review) and the page's ⚪ Unverified banner; nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally not yet derived; currency remains unverified pending S6/S9 promotion (by design)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Benn v. Lambert.json",
+      "reviewed": [
+        {
+          "assertion_id": "070672164e172c0f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Benn v. Lambert, Reinhardt, Circuit Judge, 9th Cir. habeas granting Gary Michael Benn relief on Brady grounds, page markers *1045..*1056 — reported at 283 F.3d 1040 (9th Cir. 2002).",
+            "Official cite 283 F.3d 1040 selected; opinion body begins at page 1040 (p ids b1040-*)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1bf1b7ce2acf9093",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-p1 quote is not opinion text — it is a scrape of the content page's top matter, beginning with frontmatter/title ('--- # Benn v. Lambert *283 F.3d 1040 ...'), the header comment, and markdown sections '## Background', '## Issue', '## Rule', trailing off at 'Applying that standard, the court held:'. It contains no verbatim court language. The genuine holding sentence the page renders at ^pin-p1 IS verbatim in the cached opinion (paragraph 1).",
+            "severity": "medium",
+            "proposed_fix": "Replace the garbled pin-p1 quote field with the verbatim opinion sentence (below) from cached opinion p id=b1040-9 (paragraph 1); the rendered page already shows it correctly, so this is a lake-metadata repair.",
+            "evidence_quote": "Because we hold that the state court's decision that there was no Brady violation in Benn's case constitutes an unreasonable application of clearly established Supreme Court law, we affirm.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p id=b1040-9 (283 F.3d 1040, para. 1); garbled quote at inventory payload / lake pinpoints[id=pin-p1]."
+          },
+          "reasons": [
+            "Stored quote is markdown/frontmatter contamination ('## Background', '## Issue', '## Rule', 'the court held:') — self-evidently a page scrape, not opinion text.",
+            "Record flags quote_fidelity=mismatch; the cached opinion contains the true ¶1 holding verbatim at b1040-9, confirming the stored text is a mis-captured pinpoint."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Defect confined to the lake pinpoint quote field; the content page renders the correct verbatim quote at ^pin-p1."
+          ],
+          "suggested_tightening": "Re-derive pin-p1 quote from opinion text rather than the projected page markdown."
+        },
+        {
+          "assertion_id": "f0b583e3f108f876",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'Were there no other pieces of withheld evidence in this case, we would hold that the suppression of impeachment evidence about Patrick's criminal misconduct and repeated lies to the police, while acting as an informant, is, standing alone, sufficiently prejudicial to establish a Brady violation.' is verbatim in the cached opinion at p id=b1052-7 (¶ 58).",
+            "Only difference is markdown italics (*Brady*) corresponding to the opinion's <em>Brady</em> emphasis — no textual mismatch."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record carries quote_fidelity=mismatch, but that flag is a false positive against the disclosed opinion text."
+          ],
+          "suggested_tightening": "Clear the erroneous quote_fidelity=mismatch flag on pin-p58; the pinpoint verifies verbatim at ¶ 58 (b1052-7)."
+        },
+        {
+          "assertion_id": "51c124d035c09d89",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is an honest migration-seed caveat; the disclosed opinion confirms the underlying holding (9th Cir. affirmed habeas grant; Brady violation; unreasonable application of clearly established law).",
+            "No disclosed evidence contradicts good_law; every negative edge is proposed:true and facially spurious (e.g., United States v. Yepiz, Amado v. Gonzalez, State v. Gregory did not overrule Benn v. Lambert)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity=good_law rests on composite_basis=migration-seed; scope_note itself warns S2 re-derivation 'may downgrade'. Forward currency to 2026-06-30 is not derivable from the case's own text.",
+            "Un-adjudicated proposed:true 'overruled/questioned/superseded' edges are extractor false positives."
+          ],
+          "suggested_tightening": "Complete S2 treatment derivation and prune the facially-false proposed negative edges before promotion."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Bennis v. Michigan.json",
+      "reviewed": [
+        {
+          "assertion_id": "0b1adf60f9f43e50",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Bennis v. Michigan, Chief Justice Rehnquist for the Court, civil forfeiture / innocent-owner, page markers *444..*453, 'Affirmed.' — reported at 516 U.S. 442 (1996).",
+            "Official cite 516 U.S. 442 selected; parallels 116 S. Ct. 994 and 134 L. Ed. 2d 68 are the standard set."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "82e397d5aa0c212a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion makes no substantive currency claim: field_i_validity=unverified with scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+            "Consistent with the disclosed record and the page's ⚪ Unverified banner ('subsequent treatment not yet machine-verified'); nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally not yet derived; currency remains unverified pending S6/S9 promotion (by design)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

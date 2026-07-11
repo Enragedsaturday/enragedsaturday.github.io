@@ -1,0 +1,284 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Anderson v. Creighton.json",
+      "notes": "Opus model-diversity lane (spans A support/quote-fidelity + B currency/treatment). 2 assertions. Frontier stub, under_review; identity+quotes corroborated by cached slip op.",
+      "reviewed": [
+        {
+          "assertion_id": "98d45daaa3dfe8f8",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 483 U.S. 635 corroborated by cached opinion internal star-pagination (*637 through *647, citation-index 1 = U.S. reporter), Scalia authorship, year 1987, and Bivens/qualified-immunity facts.",
+            "Lake identity: cluster 111953, docket 85-1520 (W10 on-read re-verify against CL caption), canonical_name_match true; official_selection reason selected_rank_1."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 107 S. Ct. 3034 / 97 L. Ed. 2d 523 / 55 U.S.L.W. 5092 / 1987 U.S. LEXIS 2894 are not page-verifiable from the disclosed U.S.-reporter-only text, but the official cite anchors identity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0c60d71c69a662d0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record honestly declares field_i_validity=unverified (frontier stub, status under_review, as_of nulls); no positive currency claim is asserted, so there is nothing to refute.",
+            "Content page renders Treatment: Unverified (u26aa) and flags the body framing as 'authored orientation, not machine-certified' — self-consistent with the metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Body 'Treatment & subsequent history' calls it 'Good law — foundational,' a stronger orientation than the unverified badge; the tension is disclosed on-page but could mislead if the badge were stripped."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Andresen v. Maryland.json",
+      "notes": "5 assertions. Cached majority opinion covers pages 464-484 (full); all three 'mismatch'-flagged pin quotes verified verbatim on-page — extractor mismatches are false positives.",
+      "reviewed": [
+        {
+          "assertion_id": "59edb912afa15736",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header '427 U.S. 463 (1976)', Blackmun, No. 74-1646, Decided June 29 1976; star-pagination *464 through *484 (U.S. reporter) confirms the case begins at 463.",
+            "Official cite 427 U.S. 463 matches identity; display/official coherent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content-page frontmatter docket is empty while the opinion caption shows No. 74-1646 (metadata gap, not a citation defect)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1035ce1de370f3de",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' is an extraction-window overshoot spanning the Issue->'## Rule' markdown header (captures lead-in prose, not the quoted proposition) — which is why the automated compare flagged mismatch.",
+            "The ACTUAL page quote at ^pin-473 ('[P]etitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing.') is verbatim in the opinion at p.473: 'Similarly, in this case, petitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The extractor's captured span is unusable for downstream re-verification (grabbed preceding prose + section header rather than the quoted sentence)."
+          ],
+          "suggested_tightening": "Re-anchor the extraction window to the quoted span, not the preceding lead-in prose/header."
+        },
+        {
+          "assertion_id": "be9349f42212c1c3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-477 ('we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that \"[n]o person . . . shall be compelled in any criminal case to be a witness against himself.\"') matches the opinion verbatim ('Accordingly, we hold that the search of an individual's office for business records...').",
+            "Pincite 477 correct: the sentence sits between star markers *477 and *478. Mismatch flag is a false positive (curly-quote/apostrophe/ellipsis normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c3a74c101496e14b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-480 ('the challenged phrase must be read as authorizing only the search for and seizure of evidence relating to \"the crime of false pretenses with respect to Lot 13T.\"') matches the opinion verbatim.",
+            "Pincite 480 correct: the passage sits between *480 and *481. Mismatch flag is a false positive (internal quotation-mark normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "086341120640a967",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The currency claim (good_law as of 2026-06-30) can be neither confirmed nor refuted from the single disclosed 1976 opinion — no progeny/citing-references are inlined; the opinion text speaks only to the 1976 decision.",
+            "field self-discloses composite_basis=migration-seed with scope_note 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; no disclosed negative treatment, so no fabricated defect and no fabricated clean-bill."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency is unverified from disclosed evidence; S2 re-derivation may downgrade the seeded good_law status."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Evans.json",
+      "notes": "4 assertions. Cached Rehnquist majority covers pages 4-16. pin-14 mismatch is an extractor window overshoot (real quote verbatim on p.14). pin-16 quote verbatim but its 'not adjuncts' clause is at *15 while the sentence pincites 'at 16'.",
+      "reviewed": [
+        {
+          "assertion_id": "3d57f302e0c5522a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Rehnquist, C.J.; Isaac Evans / quashed-warrant facts) carries star-pagination *4 through *16 (U.S. reporter), confirming the case begins at 514 U.S. 1.",
+            "Official cite 514 U.S. 1 matches identity; year 1995 consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "94a7b86adf53d3cd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'are not adjuncts to the law enforcement team engaged in the often competitive enterprise of ferreting out crime,' matches the opinion verbatim (star-verified true positive).",
+            "Extractor star_marker '15' is corroborated: this clause sits in the *15 paragraph (majority); the companion page-16 clause ('Application of the Leon framework supports a categorical exception...') is the one on p.16 to which the sentence's terminal pincite attaches. Quote fidelity is clean; the anchor lands correctly in the same majority passage."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The content-page sentence quotes two clauses spanning pages 15-16 but pincites only 'Id. at 16'; the 'not adjuncts' clause reviewed here is at star-page *15."
+          ],
+          "suggested_tightening": "Pincite '15-16' (or split pincites) for the two-clause sentence, since the 'not adjuncts' clause is on p.15 and the 'categorical exception' clause on p.16."
+        },
+        {
+          "assertion_id": "ae41d4c3ed91c1d7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' is an extraction-window overshoot — it captured the frontmatter '---' delimiter, the page header, and the Background/Issue/Rule lead-in ending at the colon before the actual quote — which is why the automated compare flagged mismatch.",
+            "The ACTUAL page quote at ^pin-14 ('the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.') is verbatim in the opinion at p.14 (before *15): 'First, as we noted in Leon, the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Captured span unusable for downstream re-verification (grabbed page header + section intros rather than the quoted sentence)."
+          ],
+          "suggested_tightening": "Re-anchor the extraction window to the quoted span."
+        },
+        {
+          "assertion_id": "ec1cf964551d5076",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The currency claim (good_law as of 2026-06-30) is neither confirmable nor refutable from the single disclosed 1995 opinion — no progeny/citing-references inlined.",
+            "field self-discloses composite_basis=migration-seed ('...may downgrade'); no disclosed negative treatment; no fabricated defect or clean-bill."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency unverified from disclosed evidence; S2 re-derivation may downgrade."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Arizona v. Fulminante.json",
+      "notes": "5 assertions. Cached opinion covers pages 281-314 (White + Rehnquist). pin-287 and pin-303 quotes verified verbatim (mismatch flags are false positives); pin-309 quote verbatim on p.309 but its deep-link scroll anchor targets a page-291 'trial error,' occurrence in White's dissent. Disclosed date discrepancy: opinion says 'Decided March 26, 1991' vs frontmatter 1991-05-20.",
+      "reviewed": [
+        {
+          "assertion_id": "10f5b41e3ac0e033",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header '499 U.S. 279 (1991)', No. 89-839; star-pagination *281 through *314 (U.S. reporter) confirms the case begins at 279.",
+            "Official cite 499 U.S. 279 matches identity; year 1991 consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Disclosed date conflict: cached opinion caption states 'Decided March 26, 1991' but lake/frontmatter date_decided = 1991-05-20 (also the treatment as_of_content). Not a citation defect, but flag for metadata correction."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "062ff54bfbb437cb",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-303 ('The Court today properly concludes that the admission of an \"involuntary\" confession at trial is subject to harmless-error analysis.') matches the opinion verbatim (Rehnquist, C.J., opening his opinion).",
+            "Pincite 303 correct: the sentence follows the *303 marker and precedes *304. Mismatch flag is a false positive (curly-quote normalization of 'involuntary')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5ac63eb4bb84ed24",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' is an extraction-window overshoot (frontmatter '---' + header + Background + Issue + Rule lead-in ending at the colon) — hence the automated mismatch.",
+            "The ACTUAL page quote at ^pin-287 ('Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent; a credible threat is sufficient.') is verbatim in the opinion at p.287 (footnote marker [4] permissibly omitted): 'Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent;[4] a credible threat is sufficient.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Captured span unusable for downstream re-verification."
+          ],
+          "suggested_tightening": "Re-anchor the extraction window to the quoted span."
+        },
+        {
+          "assertion_id": "7afcc461879db5ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-309 source deep-link scroll anchor (#:~:text=though%20a%20%22-,trial%20error%2C) and the extractor star_marker '291' target a DIFFERENT occurrence of the generic sub-phrase 'trial error,' — White's Part-III DISSENT at star-page *291 ('...though a \"trial error,\" distorts the very structure of the trial...') — rather than the page-309 Rehnquist majority sentence that the citation actually quotes and pincites. A reader following 'Id. at 309' is scrolled into the dissent's contrary argument.",
+            "severity": "low",
+            "proposed_fix": "Rebuild the #:~:text anchor to target the page-309 phrase (e.g. prefix 'confession—a classic \\\"' target 'trial error') so the deep link scrolls to the quoted Rehnquist passage that matches the 'Id. at 309' pincite.",
+            "evidence_quote": "The admission of an involuntary confessiona classic \"trial error\"is markedly different from the other two constitutional violations referred to in the Chapman footnote as not being subject to harmless-error analysis.",
+            "needs_cl": false,
+            "locator_note": "Quoted sentence verbatim at p.309 (after *309, before *310); the anchor/star_marker point at p.291 in White's Part-III dissent."
+          },
+          "reasons": [
+            "Quote fidelity survives: the sub-phrase 'trial error,' is verbatim in the opinion, and the full page-309 quoted sentence is verbatim in Rehnquist's majority opinion (em-dashes dropped only in the HTML->text cache, correctly restored on-page).",
+            "The human-readable pincite 'Id. at 309' is correct; only the machine scroll-to-text anchor (and the extractor's star_marker 291) resolve to the wrong — dissenting — occurrence of the generic phrase."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'trial error,' is a high-frequency phrase in this opinion (both White's dissent and Rehnquist's majority); text-fragment anchors on it are fragile and can silently retarget."
+          ],
+          "suggested_tightening": "Anchor deep-links on a phrase unique to the pincited page, or include the page-309 disambiguating context."
+        },
+        {
+          "assertion_id": "99c6e71ab76d1438",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The currency claim (good_law as of 2026-06-30) is neither confirmable nor refutable from the single disclosed 1991 opinion — no progeny/citing-references inlined.",
+            "field self-discloses composite_basis=migration-seed ('...may downgrade'); no disclosed negative treatment; no fabricated defect or clean-bill."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency unverified from disclosed evidence; S2 re-derivation may downgrade.",
+            "as_of_content 1991-05-20 conflicts with the cached opinion's 'Decided March 26, 1991'."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

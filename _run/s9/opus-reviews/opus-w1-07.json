@@ -1,0 +1,294 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Berger v. New York.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "41cb84e01de71f09",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Justice Clark) is Berger v. New York on New York eavesdrop statute Section 813-a; embedded star markers *43 through *64 place the case at 388 U.S. 41.",
+            "Lake identity fields: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official 388 U.S. 41 selected (official_selection_present=true).",
+            "Parallel cites 87 S. Ct. 1873 and 18 L. Ed. 2d 1040 are the standard SCOTUS parallels for this volume/term."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1ebfc4296becd9ed",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-44 quote matches the cached opinion verbatim (para b79-5): 'We have concluded that the language of New York's statute is too broad in its sweep resulting in a trespassory intrusion into a constitutionally protected area and is, therefore, violative of the Fourth and Fourteenth Amendments.'",
+            "That sentence follows the *44 star marker within para b79-5, so the pincite 388 U.S. at 44 is correct.",
+            "The payload quote field captured Background/Issue/Rule page scaffolding and quote_fidelity=mismatch is a window-extraction artifact, not a defect in the rendered quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3bf270bdc7808ebe",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-56 quote matches the cached opinion verbatim (para b91-6): 'New York's statute lacks this particularization. It merely says that a warrant may issue on reasonable ground to believe that evidence of crime may be obtained by the eavesdrop. It lays down no requirement for particularity ... nor the place to be searched, or the persons or things to be seized as specifically required by the Fourth Amendment.'",
+            "The quote straddles the *55/*56 markers; the particularity holding sits on page 56, so pincite Id. at 56 is supported.",
+            "Straight- vs curly-quote glyphs are normalization only; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8e6742f88d2fbe6b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed 1967 majority (reverses the NY statute, sets electronic-surveillance warrant standards) for a foundational SCOTUS case not disclosed as overruled.",
+            "Every negative treatment.edge is proposed:true lane1_negative citator candidate whose field_ii describes the CITING case's own status (Vasquez-Algarin, Feliciano, Wheeler), none a confirmed overruling of Berger.",
+            "scope_note (constitutional baseline; with Katz prompted Title III of the 1968 Act) is a legal-history gloss consistent with the opinion's holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026-06-30 currency cannot be independently re-derived from a 1967 slip opinion; a citator pass would be required to confirm current treatment.",
+            "The proposed lane1_negative edges are unadjudicated."
+          ],
+          "suggested_tightening": "Adjudicate or prune the proposed lane1_negative edges before relying on the good_law derivation."
+        }
+      ],
+      "notes": "Opus model-diversity lane; both quotes verbatim in cached opinion, cite and treatment sound."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "40500be314ed75a7",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The case exists at 560 U.S. 370 (confirmed by cached opinion), but the citation record selects no official cite (official=null, official_selection_present=false) and the content-page frontmatter citation field is empty; the canonical U.S. cite is carried only in parallel_cite and the rendered header line.",
+            "severity": "low",
+            "proposed_fix": "Select 560 U.S. 370 as the official citation and populate the frontmatter citation field.",
+            "evidence_quote": "official: null, official_selection_present: false; frontmatter citation: \"\"",
+            "needs_cl": false,
+            "locator_note": "group_inventory payload for 40500be314ed75a7 plus content_page frontmatter"
+          },
+          "reasons": [
+            "Cached opinion (Justice Kennedy, Thompkins Miranda waiver case) carries [560 U.S. 373] through [560 U.S. 389] markers, confirming the case at 560 U.S. 370.",
+            "Parallel cites 130 S. Ct. 2250 and 176 L. Ed. 2d 1098 are correct; the existence of the cite is not in doubt.",
+            "The defect is metadata completeness (no official selection; empty frontmatter citation), not cite existence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Provenance inconsistency: the Sources line cites CL /opinion/147529/ while frontmatter courtlistener.cluster_id=6796082 (/opinion/6796082/) — two different CL cluster ids for the same case."
+          ],
+          "suggested_tightening": "Reconcile the two CL cluster ids (147529 vs 6796082) and select an official citation."
+        },
+        {
+          "assertion_id": "307e61508e82a569",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-382 quote matches the cached opinion (para b1199-8): '... he would have invoked his right to cut off questioning. ... Here he did neither, so he did not invoke his right to remain silent.'",
+            "The bracket [that he wanted to remain silent or did not want to talk] accurately glosses the immediately preceding opinion sentence, and the ellipsis elides only the Mosley/Miranda citation string — proper editorial conventions.",
+            "Para b1199-8 sits between the [560 U.S. 382] and [560 U.S. 383] markers, so pincite 560 U.S. at 382 is correct; quote_fidelity=mismatch is a window artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ed0a2a907afffe28",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-388 quote matches the cached opinion verbatim (section D, paras b1203-11/-13): 'In sum, a suspect who has received and understood the Miranda warnings, and has not invoked his Miranda rights, waives the right to remain silent by making an uncoerced statement to the police.'",
+            "The 'In sum' sentence begins before the [560 U.S. 389] marker (i.e., on 388), so pincite Id. at 388 and the slip op., at 17 parenthetical are consistent with slip-only status.",
+            "The payload carries the correct quote text; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0629d630debe1d4d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is consistent with the disclosed 2010 majority (SCOTUS reverses the Sixth Circuit's habeas grant and upholds the conviction) for a landmark Miranda case not disclosed as overruled.",
+            "All treatment.edges are proposed:true lane1_negative candidates (field_ii on the citing case), none a confirmed overruling of Berghuis.",
+            "Content page states 'No negative treatment.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note is build-process boilerplate ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a substantive treatment description.",
+            "2026 currency not independently re-derivable from the 2010 opinion; proposed negatives unadjudicated."
+          ],
+          "suggested_tightening": "Replace the boilerplate scope_note with a substantive treatment description and adjudicate the proposed negatives."
+        }
+      ],
+      "notes": "Opus model-diversity lane; both quotes verbatim; existence stands-modified for missing official selection / empty citation field; cluster-id provenance mismatch flagged."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Berkemer v. McCarty.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "92636f2eeaf5e0c2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Berkemer v. McCarty (Miranda / traffic-stop custody), with *434 and *440 star markers in the 468 U.S. range.",
+            "official 468 U.S. 420 selected (official_selection_present=true); frontmatter citation '468 U.S. 420 (1984)' populated; parallel 104 S. Ct. 3138 and 82 L. Ed. 2d 317 are standard."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake record status is 'under_review' (not 'verified')."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "01d3667402c2cae3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-434 quote matches the cached opinion verbatim (para b476-5): 'We hold therefore that a person subjected to custodial interrogation is entitled to the benefit of the procedural safeguards enunciated in Miranda, regardless of the nature or severity of the offense of which he is suspected or for which he was arrested.'",
+            "Para b476-5 immediately follows the *434 marker (para b476-4), so pincite 468 U.S. at 434 is correct.",
+            "Content page drops only footnote marker 21 (standard practice); the payload window captured Rule scaffolding, so quote_fidelity=mismatch is an artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fc73369500344fc4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-440 quote matches the cached opinion verbatim (para b481-5): 'The similarly noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not in custody for the purposes of Miranda.'",
+            "The sentence follows the *440 star marker, so pincite Id. at 440 is correct.",
+            "The payload carries the correct quote text; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "721c443b01003189",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is consistent with the disclosed 1984 majority establishing two Miranda-custody rules for a foundational case not disclosed as overruled; the content page notes only later refinement by Howes v. Fields and J.D.B. v. North Carolina.",
+            "No confirmed negative treatment is disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake status is 'under_review'; scope_note is build-process boilerplate; 2026 currency not independently re-derivable from the 1984 opinion."
+          ],
+          "suggested_tightening": "Complete the record review (status under_review) and replace the boilerplate scope_note."
+        }
+      ],
+      "notes": "Opus model-diversity lane; both quotes verbatim on cited pages; record still under_review."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "06b0bd0f4c416bd8",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Birchfield v. North Dakota (DUI breath/blood tests as searches incident to arrest; discusses McNeely, Schmerber, and Justice Thomas's partial dissent), confirming the case.",
+            "official 579 U.S. 438 selected (official_selection_present=true); frontmatter citation '579 U.S. 438 (2016)' populated; parallel 136 S. Ct. 2160 and 195 L. Ed. 2d 560 are standard.",
+            "Frontmatter opinion_url and Sources line share CL cluster 3216497 (consistent)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "95634e80873e19ea",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-2185a quote matches the cached slip opinion verbatim (soft-hyphen line-wraps aside): 'It is another matter, however, for a State not only to insist upon an intrusive blood test, but also to impose criminal penalties on the refusal to submit to such a test. There must be a limit to the consequences to which motorists may be deemed to have consented by virtue of a decision to drive on public roads.'",
+            "The payload carries the correct quote text; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached copy is slip-opinion format with no S. Ct. star pagination, so the 136 S. Ct. at 2185-2186 page cannot be verified from disclosed text (consistent with pinpoint_status slip-only).",
+            "The Sources note claims the CourtListener copy carries S. Ct. pagination, but the disclosed cached text shows none."
+          ],
+          "suggested_tightening": "Confirm the 136 S. Ct. 2185-2186 star pages against a reporter copy that carries S. Ct. pagination."
+        },
+        {
+          "assertion_id": "fbc6d37a54783b5c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Pin-2185 quote matches the cached slip opinion verbatim (soft-hyphen wraps aside): 'Because breath tests are significantly less intrusive than blood tests and in most cases amply serve law enforcement interests, we conclude that a breath test, but not a blood test, may be administered as a search incident to a lawful arrest for drunk driving.'",
+            "The payload window captured the content-page header/Background/Issue/Rule scaffolding, so quote_fidelity=mismatch is an extraction artifact, not a defect in the rendered quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip-format cached copy has no S. Ct. star pagination; the 136 S. Ct. at 2185 page is not verifiable from disclosed text (slip-only).",
+            "The cached opinion text is truncated at the tail (last 19424 chars), but both Birchfield pin quotes fall before the truncation and are fully verified."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b343af200808f394",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law with an accurate scope_note: the disclosed opinion holds breath tests valid as a search incident to arrest, blood tests not, and no criminal penalty for refusing a warrantless blood test — matching the scope_note.",
+            "All treatment.edges are proposed:true lane1_negative candidates, none a confirmed overruling; record status is verified and stub=false."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026 currency not independently re-derivable from the 2016 opinion; proposed negatives unadjudicated."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane; both pin quotes verbatim in cached slip text (before tail truncation); slip copy lacks S. Ct. star pagination so page numbers unverifiable from disclosed text."
+    }
+  ]
+}
