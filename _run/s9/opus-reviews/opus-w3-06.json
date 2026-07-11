@@ -1,0 +1,303 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "79b28256b835b066",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header shows '500 U.S. 44 (1991)' and caption 'COUNTY OF RIVERSIDE ET AL. v. McLAUGHLIN ET AL.' (No. 89-1817), confirming the case exists at the official cite.",
+            "Official selection present and correct (500 U.S. 44, type 1); lake cluster_id 112585 matches the opinion record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (111 S. Ct. 1661; 114 L. Ed. 2d 49; 1991 U.S. LEXIS 2528) not independently reporter-checked, but are internally consistent and uncontradicted by disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1a1d8d62e52a4eef",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (end of Issue paragraph + '## Rule' heading + 'A 48-hour window is presumptively prompt') instead of the sentence actually quoted at ^pin-56; that harvested string does not appear in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest the ^pin-56 payload to the actual quoted sentence: \"[A] jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement of Gerstein.\"",
+            "evidence_quote": "within 48 hours of arrest will, as a general matter, comply with the promptness requirement of",
+            "needs_cl": false,
+            "locator_note": "content page ## Rule, ^pin-56; opinion 112585 at 500 U.S. 56"
+          },
+          "reasons": [
+            "The actual ^pin-56 content-page quotation is verbatim in the cached opinion ('within 48 hours of arrest will, as a general matter, comply with the promptness requirement of Gerstein').",
+            "The payload `quote` string ('...weekend- and holiday-excluding schedule met it. ## Rule A 48-hour window...') is page structural text absent from the opinion (grep count 0) — an extraction-offset artifact, not a content-page quote defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Verdict rests on the page's real ^pin-56 sentence being faithful; the corrupt payload should be regenerated so downstream tallies do not treat this as a genuine miss."
+          ],
+          "suggested_tightening": "Re-run the quote harvester so the ^pin-56 payload captures the sentence between the quotation marks, not the preceding heading text."
+        },
+        {
+          "assertion_id": "857b77e2f8649eff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Both sentences verbatim in cached opinion: 'This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours' and 'Such a hearing may nonetheless violate Gerstein if the arrested individual can prove that his or her probable cause determination was delayed unreasonably.'",
+            "Pre-computed 'mismatch' flag is a false positive: in the source HTML 'Gerstein' is a citation-span link, which breaks naive contiguous string matching but not the quotation's fidelity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "905658eda859588a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Every fragment verbatim in cached opinion: '...does not receive a probable cause determination within 48 hours, the calculus changes' and 'the burden shifts to the government to demonstrate the existence of a bona fide emergency or other extraordinary circumstance' and 'Nor, for that matter, do intervening weekends.'",
+            "Ellipses ('. . .') correctly elide 'In such a case ... Rather,'; '[T]he' and '[qualify as such a circumstance]' are proper bracketed editorial completions — faithful compressed quotation.",
+            "Pre-computed 'mismatch' is a false positive driven by the multi-sentence ellipsis compression not existing as one contiguous substring."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'[qualify as such a circumstance]' is an editorial completion of the elided predicate; supported by immediate context (weekends do not qualify as an extraordinary circumstance)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "26006df0efce865c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Scope-note doctrine (48-hour presumption; burden shift beyond 48 hours; weekends/holidays do not excuse) is fully supported by the verified opinion quotations.",
+            "No negative-treatment signal is disclosed; field_i_validity=good_law is a migration-seed carried from page frontmatter (provenance: 'legacy treatment migrated: good -> good_law')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency of 'good_law' cannot be independently confirmed from disclosed evidence: only raw outbound citation edges / citation_count (1552) are inlined, with no citator classification of the citing cases.",
+            "date_decided parenthetical (CL dateFiled 1991-05-20 vs announced May 13, 1991) is a metadata caveat, not a doctrinal defect."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/County of Sacramento v. Lewis.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "45da7fa87a505e11",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion contains '523 U.S. 833' and 'SACRAMENTO' caption, confirming the case at the official cite; lake cluster_id 118214 consistent.",
+            "Official selection present and correct (523 U.S. 833, type 1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallels (118 S. Ct. 1708; 140 L. Ed. 2d 1043; 1998 U.S. LEXIS 3404) not independently reporter-checked but uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3ef0dabde186b141",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (the whole page header block: front matter + Background + Issue + '## Rule' heading + 'only a purpose to harm shocks the conscience') instead of the sentence actually quoted at ^pin-836; that harvested string does not appear in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest the ^pin-836 payload to the actual quoted sentence: \"We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation.\"",
+            "evidence_quote": "We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation",
+            "needs_cl": false,
+            "locator_note": "content page ## Rule, ^pin-836; opinion 118214 at 523 U.S. 836"
+          },
+          "reasons": [
+            "The actual ^pin-836 content-page quotation is verbatim in the cached opinion ('We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation').",
+            "The payload `quote` is a mass mis-harvest of page structure (its paraphrase 'only a purpose to harm shocks the conscience' has grep count 0 in the opinion) — an extraction artifact, not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Verdict rests on the page's real ^pin-836 sentence being faithful; the corrupt payload should be regenerated."
+          ],
+          "suggested_tightening": "Re-harvest the ^pin-836 payload to the quoted 'We answer no...' sentence rather than the page front matter."
+        },
+        {
+          "assertion_id": "e9ef54e76b4f50da",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Verbatim in cached opinion: 'Accordingly, we hold that high-speed chases with no intent to harm suspects physically or to worsen their legal plight do not give rise to liability under the Fourteenth Amendment, redressible by an action under § 1983.' (opinion carries a trailing footnote marker [13] after the quoted text, outside the quote).",
+            "Consistent with the payload's own 'matched' / star-verified status and the #:~:text fragment on ^pin-854."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "538accf0d35cddf2",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Scope-note doctrine (pursuit deaths without a seizure judged under Fourteenth Amendment substantive due process / 'shocks the conscience', requiring purpose to cause harm) is supported by the verified holding quotations (pin-836, pin-854).",
+            "No negative-treatment signal disclosed; field_i_validity=good_law (migration-seed)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'good_law' currency not independently derivable from disclosed evidence (no citator classification inlined)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Culley v. Marshall.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "2bf7baf240adf627",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion contains '601 U. S. 377', caption terms 'Culley' and 'Marshall', and docket 'No. 22'(-585) — confirming the case at the official cite; lake cluster_id 10600097 / lead opinion 11066685 consistent.",
+            "Single official citation (601 U.S. 377, type 1, selected_official) present and correct; no parallels claimed to over-verify."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record is born under_review (frontier); identity is CL-verified but the page itself has not completed two-key promotion — existence claim nonetheless holds on the disclosed opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "de4417a1b2520f20",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Assertion makes no substantive treatment claim: field_i_validity='unverified', as_of_content/as_of_treatment null, scope_note explicitly declares a 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+            "Lake status 'under_review' and the page's ⚪ Unverified banner are internally consistent with the deferred-treatment declaration — nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Intentional non-derivation: no citator/progeny evidence exists in the pack to verify or refute, per the stub's own terms."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Cupp v. Murphy.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "bcf48abfad68e44e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion contains '412 U.S. 291' and caption terms 'Cupp' and 'Murphy', confirming the case at the official cite; lake cluster_id 108801 consistent.",
+            "Official selection present and correct (412 U.S. 291, type 1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallels (93 S. Ct. 2000; 36 L. Ed. 2d 900; 1973 U.S. LEXIS 63) not independently reporter-checked but uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "487d580dae3594f2",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Verbatim in cached opinion: 'On the facts of this case, considering the existence of probable cause, the very limited intrusion undertaken incident to the station house detention, and the ready destructibility of the evidence, we cannot say that this search violated the Fourth and Fourteenth Amendments.'",
+            "Consistent with payload 'matched' / star-verified status and the #:~:text fragment on ^pin-296a."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4abda25886bef47c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (front matter + Background + Issue + '## Rule' heading + 'Yes, on a narrowed Chimel rationale. The taking of the scrapings') instead of the sentence actually quoted at ^pin-296; that harvested string does not appear in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest the ^pin-296 payload to the actual quoted sentence: \"The rationale of Chimel, in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails.\"",
+            "evidence_quote": "in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails",
+            "needs_cl": false,
+            "locator_note": "content page ## Rule, ^pin-296; opinion 108801 at 412 U.S. 296"
+          },
+          "reasons": [
+            "The actual ^pin-296 content-page quotations are verbatim in the cached opinion: 'in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails' and the 'physical characteristics . . . constantly exposed to the public' fragment.",
+            "The payload `quote` is a mass mis-harvest of page structure (front matter through the '## Rule' heading) — an extraction artifact, not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Verdict rests on the page's real ^pin-296 sentences being faithful; the corrupt payload should be regenerated."
+          ],
+          "suggested_tightening": "Re-harvest the ^pin-296 payload to the quoted 'The rationale of Chimel...' sentence rather than the page front matter."
+        },
+        {
+          "assertion_id": "4c07c5b98842db72",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Verbatim in cached opinion: 'we do not hold that a full Chimel search would have been justified in this case without a formal arrest and without a warrant.' (in the source HTML 'Chimel' is a citation-span link between 'full' and 'search').",
+            "Pre-computed 'mismatch' flag is a false positive: the embedded Chimel citation-link markup breaks naive contiguous string matching, not the quotation's fidelity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d4bc1e9b48361d12",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Scope-note (good law; narrow holding confined to a very limited intrusion on probable cause, readily destructible evidence, no formal arrest) is supported by the verified pin-296/pin-296b quotations, including the express non-extension to a full Chimel search.",
+            "No negative-treatment signal disclosed; field_i_validity=good_law (migration-seed)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'good_law' currency not independently derivable from disclosed evidence (no citator classification inlined)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

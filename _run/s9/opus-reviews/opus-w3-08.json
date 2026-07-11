@@ -1,0 +1,191 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Delaware v. Prouse.json",
+      "reviewed": [
+        {
+          "assertion_id": "1e3cdfa0bca0dd67",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header verbatim-confirms the official cite: '440 U.S. 648' (1979), caption 'DELAWARE v. PROUSE.', No. 77-1571, decided March 27, 1979 — matches the record's display/official citation.",
+            "SCOTUS case, cluster 110045; identity is unambiguous and the case demonstrably exists."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (99 S. Ct. 1391; 59 L. Ed. 2d 660) and vendor-neutral (1979 U.S. LEXIS 80) are not independently reproduced in the cached text, but the controlling official U.S. cite is verbatim-verified."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c00227f191e56c39",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' field is a garbled extractor artifact — it captured the page frontmatter/header up to '## Rule No.' rather than the pin-663 quote; its 'mismatch' flag therefore compares the wrong span and is not ground truth.",
+            "The actual content_page pin-663 quote matches the cached opinion (section VII) verbatim: cached 'Accordingly, we hold that except in those situations in which there is at least articulable and reasonable suspicion that a motorist is unlicensed ... are unreasonable under the Fourth Amendment.' The only alteration is '[W]e' for 'Accordingly, we' — a proper Bluebook capitalization/omission.",
+            "Pincite 663 is correct: the holding sits on page *663 (section VII), and Rehnquist's dissent cites 'Ante, at 663' for the same passage."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload pinpoint_status:'slip-only' and star_marker:null are extractor artifacts; the source is a 1979 U.S. Reports opinion with proper star-pagination at *663."
+          ],
+          "suggested_tightening": "Re-run the quote extractor so the payload captures the true pin-663 span instead of the page header, and resolve the star marker to *663."
+        },
+        {
+          "assertion_id": "1d2c7b7194ee874b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The only inlined evidence is the 1979 opinion text, which cannot confirm forward-looking 2026 treatment currency; no citator/Shepards data is disclosed.",
+            "No disclosed negative treatment; the record frames Prouse as a landmark holding refined (not overruled) by Edmond and complemented by Heien.",
+            "Refuting 'good_law' absent any disclosed negative-treatment evidence would fabricate a defect, which is barred; 'not found is not fabricated'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity:'good_law' is a migration-seed default; the record's own scope_note concedes S2 re-derivation may downgrade; 2026 currency is not machine-verified from the disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
+      "reviewed": [
+        {
+          "assertion_id": "a0f694382a865f9c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached Scalia majority for 'Devenpeck v. Alford' carries star-pages *148 through *154, corroborating volume 543 U.S. with the opinion beginning at 146.",
+            "Lake record cluster 137733; official cite 543 U.S. 146 is selected and the case identity is unambiguous."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "First page '146' is not shown verbatim (cached text begins at *148) and parallel cites are not independently reproduced, but the page range and case identity are consistent with 543 U.S. 146."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e03775a681cd49f0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' field is a garbled extractor artifact (a page-header span), not the pin-153 quote; its 'mismatch' flag compares the wrong span and is not ground truth.",
+            "The actual pin-153 quote matches the cached opinion verbatim: first sentence 'Our cases make clear that an arresting officer's state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.' exact; a properly formed four-dot ellipsis elides the intervening 'See Whren ... ; Arkansas v. Sullivan ... (per curiam).' citation string; 'That is to say, his subjective reason for making the arrest need not be the criminal offense as to which the known facts provide probable cause.' exact.",
+            "Pincite 153 is correct: star *153 immediately precedes the quoted passage."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'[T]hat' is bracketed although the original 'That' was already a sentence-initial capital in the source — a de minimis over-bracket, not a fidelity break; no words are altered."
+          ],
+          "suggested_tightening": "Render 'That is to say' unbracketed (the source letter was already capitalized), and re-run the extractor to capture the true pin-153 span."
+        },
+        {
+          "assertion_id": "1504b1db3abfd7c4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The only inlined evidence is the 2004 opinion text, which cannot confirm 2026 treatment currency; no citator data is disclosed.",
+            "No disclosed negative treatment; the record frames Devenpeck's objective-probable-cause holding as reaffirmed (not overruled) by Wesby.",
+            "Refuting 'good_law' absent disclosed negative-treatment evidence would fabricate a defect, which is barred."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity:'good_law' is a migration-seed default; scope_note flags possible S2 downgrade; currency is not machine-verified from the disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "f108a8eb5c5442e5",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms 'Dickerson v. United States', Rehnquist C.J. for the Court with Scalia dissent 'post, p. 444', and star-pages *430 through *449 — consistent with 530 U.S. 428.",
+            "Lake record cluster 118380, docket 99-5525, decided 2000-06-26; official cite 530 U.S. 428 matches."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "First page 428 is not shown verbatim (opinion-body star-pagination begins at *430/*431) and parallel cites are not independently reproduced, but the page range and identity are consistent with 530 U.S. 428."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fb8cd52680639190",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' field is a garbled extractor artifact (frontmatter/header span up to '## Rule'), not the pin-444 quote; its 'mismatch' flag compares the wrong span and is not ground truth.",
+            "The actual pin-444 quote matches the cached opinion verbatim: cached 'In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively. Following the rule of stare decisis, we decline to overrule Miranda ourselves.' — the content elides 'In sum,' via '[W]e' (proper Bluebook) and drops the footnote [8] marker; italics on 'Miranda' and 'stare decisis' preserved.",
+            "Pincite 444 is correct: star *444 precedes the concluding sentence, which sits at the end of the majority opinion before Scalia's dissent (*445 follows)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload pinpoint_status:'slip-only' and star_marker:null are extractor artifacts; the source is a 2000 U.S. Reports opinion with star-pagination at *444."
+          ],
+          "suggested_tightening": "Re-run the quote extractor so the payload captures the true pin-444 span instead of the page header."
+        },
+        {
+          "assertion_id": "6e123130df8dc817",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The only inlined evidence is the 2000 opinion text, which cannot confirm 2026 treatment currency; no citator data is disclosed.",
+            "No disclosed negative treatment; the record frames Dickerson (Miranda is a constitutional rule Congress cannot supersede) as a framework applied (not overruled) by Berghuis.",
+            "Refuting 'good_law' absent disclosed negative-treatment evidence would fabricate a defect, which is barred."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity:'good_law' is a migration-seed default; scope_note flags possible S2 downgrade; currency is not machine-verified from the disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/District of Columbia v. R.W..json",
+      "reviewed": [
+        {
+          "assertion_id": "758e848d5e9c11f8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The assertion honestly reports field_i_validity:'unverified' for a frontier stub whose treatment/progeny is intentionally not derived until S6/S9 promotion — an accurate, self-consistent meta-claim, not a substantive good/bad-law assertion.",
+            "Consistent with the disclosed lake record status:'under_review' and the content page's rendered '⚪ Treatment: Unverified' banner and null as_of dates.",
+            "Cached per curiam (608 U.S. ___ (2026), No. 25-248, decided Apr. 20, 2026, Officer Vanterpool / pre-dawn suspicious-vehicle dispatch facts) confirms the case is real, so the stub is legitimate, not fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Null as_of_content/as_of_treatment are correct for an unverified stub; the substantive currency/progeny remains to be machine-derived at promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

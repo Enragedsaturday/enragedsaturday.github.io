@@ -1,0 +1,359 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Commonwealth v. Herlth.json",
+      "reviewed": [
+        {
+          "assertion_id": "098bb984e6562c6e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official/display cite '2026 Pa. Super. 114' confirmed verbatim in cached opinion header (line 641: '2026 PA Super 114').",
+            "Identity corroborated in cached text: COMMONWEALTH v. JAMES LEE HERLTH, No. 183 MDA 2024, en banc, OPINION BY STABILE, J., FILED JUNE 5, 2026 — matches docket/date/court fields."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Selected official is the PA vendor-neutral cite (type 8); no A.3d regional parallel is present yet, consistent with a June-2026 decision. Not independently confirmable beyond the neutral cite from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "03ebe5b4231422c5",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-26 'quote' is a content-page scrape, not opinion language: it contains literal Markdown section headers and the wiki's own Background/Issue/Rule narrative, so it cannot be a verbatim quotation from the source. Payload self-classifies quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-26.quote with the slip-op-26 language actually rendered at ^pin-26 in the content page — the three-part plain-view test 'The plain view doctrine authorizes a warrantless seizure of evidence when (1) the police must observe the object from a lawful vantage point; (2) the incriminating character of the object must be immediately apparent; and (3) the police must have a lawful right of access to the object.' (verified verbatim in cached text, line 1898, quoting Graham citing Horton).",
+            "evidence_quote": "## Issue Whether the plain-view doctrine permitted the trooper to illuminate and view the interior of a closed, opaque container through a small hole ... ## Rule No. The en banc court restated the three-part plain-view test:",
+            "needs_cl": false,
+            "locator_note": "Defect confined to lake pinpoints[].id=pin-26 quote field; the reader-facing content page renders a different, verbatim-correct quote at ^pin-26."
+          },
+          "reasons": [
+            "The stored quote embeds '## Issue' and '## Rule' Markdown headers — proof it was scraped from the content page, not the opinion.",
+            "Grep of cached opinion text (lines 636-2218) yields no such contiguous string; the genuine slip-op-26 quote (three-part test) is present at line 1898 and is faithfully rendered at ^pin-26."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pinpoint scrape pattern recurs across all four records in this pack (Cone pin-469, Connally pin-250, Barrett pin-528) — likely a systematic first-pin extraction bug; reader-facing quotes are unaffected."
+          ],
+          "suggested_tightening": "Have the extractor reject any stored pinpoint 'quote' containing YAML/Markdown delimiters ('---', '#', '##', HTML comments) as a scrape."
+        },
+        {
+          "assertion_id": "6ec9274bff8198df",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-29 quote reproduced verbatim in cached opinion text, lines 2067-2077: 'Trooper Adams failed to satisfy the second prong of the plain view test, because the object of the search, the closed shoebox, was not immediately incriminating in appearance. To the contrary, this container, a mere shoebox, appeared completely innocuous, so there was no reason to search inside it. In other words, Trooper Adams lacked probable cause to search the shoebox.'",
+            "Payload quote_fidelity='matched' independently confirmed; text-anchor fragment validated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ace93a5b86b3964a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-31 short quote 'tiniest crack' appears verbatim in cached text (line 2166); the broader rendered ^pin-31 quote ('would allow police officers to search the interior of any object from a lawful vantage point, so long as the object had even the tiniest crack or perforation. Precedent does not allow for such an unlawful intrusion.') matches cached lines 2162-2168 verbatim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d2252320a280cf94",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law with no disclosed contradicting evidence: all three derivation lanes reviewed=0, proposed_negative_events=0, cap_hit=false, audit_needed=false; progeny indexed_citing_opinions=0.",
+            "Brand-new June-2026 decision with zero citing opinions — no negative treatment possible on the disclosed record; varies_by_point=false is consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is migration-seed-based (composite_basis='migration-seed'); scope_note itself flags that S2 derivation may re-derive/downgrade."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "First-pinpoint (pin-26) stored quote is a content-page scrape (quote_fidelity mismatch) -> refuted, defect confined to lake field; rendered quote is verbatim-correct. All other assertions stand."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Cone v. Bell.json",
+      "reviewed": [
+        {
+          "assertion_id": "3dcf3131d4291eca",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case identity and reporter/year confirmed in cached text: 'Cite as: 556 U. S. ____ (2009)' (lines 3409+), Opinion of the Court — consistent with official cite '556 U.S. 449' (2009), Cone v. Bell.",
+            "Official selection present; display '556 U.S. 449' matches the U.S. reporter volume/year in the slip."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page 449 and the parallel cites (129 S. Ct. 1769; 173 L. Ed. 2d 701; 2009 U.S. LEXIS 3298) are not derivable from the unpaginated disclosed slip; volume/reporter/year and case identity are confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7cdd9d82332e2ddb",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-469 'quote' is a content-page scrape (contains '## Issue' and '## Rule' Markdown headers plus the wiki's own Issue/Rule narrative), not a verbatim opinion quotation. Payload self-classifies quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-469.quote with the language actually rendered at ^pin-469: '[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment.' (verified verbatim in cached text, lines 4227-4230).",
+            "evidence_quote": "## Issue Whether Cone's *Brady* claim was procedurally barred from federal habeas review ... ## Rule *Brady* reaches evidence material to punishment.",
+            "needs_cl": false,
+            "locator_note": "Defect confined to lake pinpoints[].id=pin-469 quote field; the content page renders a verbatim-correct Brady quote at ^pin-469."
+          },
+          "reasons": [
+            "Embedded '## Issue'/'## Rule' Markdown proves a content-page scrape, not source text.",
+            "The genuine rendered quote at ^pin-469 IS present verbatim in cached text (lines 4227-4230, citing Brady, 373 U.S. at 87)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pinpoint scrape pattern as Herlth pin-26 / Connally pin-250 / Barrett pin-528."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "afdd25e3634e254e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-470b quote 'the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor's ethical or statutory obligations.' appears verbatim in cached text at footnote 15 (lines 4271-4273).",
+            "Pincite '470 n.15' corroborated: the quote sits inside footnote 15 (footnote marker '.15' at line 4258), so the 'n.15' designation is correct.",
+            "Payload quote_fidelity='mismatch' reflects failed page/fragment anchoring on the unpaginated slip, not a quote-text discrepancy."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page 470 is reporter-supplied (Sources note discloses this) and not derivable from the unpaginated slip; the quote text and footnote-15 placement are confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "eaea118567a41b4c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-470 quote 'evidence is \"material\" within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.' appears verbatim in cached text (lines 4232-4236), attributed to United States v. Bagley.",
+            "Payload quote_fidelity='mismatch' reflects page/fragment-anchoring failure on the unpaginated slip, not a quote-text mismatch."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page 470 is reporter-supplied and not derivable from the unpaginated disclosed slip; quote text is confirmed verbatim."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1bb73638b9bb1f13",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law: no CONFIRMED negative event on the disclosed record — the lane1 (3) and lane2 (25) proposed_negative_events are all 'proposed':true, audit_needed:true, and none is applied to field_i.",
+            "Proposed edges are the recognizable citing-case-status false-positive class: e.g., United States v. Ulbricht (overruled), State v. WARRIOR (overruled), Nicole Harris v. Sheryl Thompson / Jackson v. Danberg (abrogated) — each is describing its OWN treatment (field_iii='mentioned'), not overruling Cone.",
+            "Cone v. Bell (2009 Brady/materiality) is not shown by any disclosed evidence to be overruled or abrogated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "R15 treatment audit is unresolved (audit_needed=true, cap_hit=true on lanes 1-2) while field_i rests on a migration-seed; the content page's 'No negative treatment' is definitive ahead of that audit."
+          ],
+          "suggested_tightening": "Close the R15 audit (confirm the proposed edges as FP) so good_law is derivation-backed rather than seed-only with candidates pending."
+        }
+      ],
+      "notes": "First-pinpoint pin-469 stored quote is a content-page scrape (refuted, lake-field-only). pin-470/pin-470b real quotes are verbatim in source (their 'mismatch' flag is page-anchoring). Treatment good_law stands; proposed negatives are unaudited citing-case-status FPs."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Connally v. Georgia.json",
+      "reviewed": [
+        {
+          "assertion_id": "ca4d4d32e8ae1351",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached per curiam opinion confirms identity: 'Appellant John Connally was indicted, tried, and convicted in the Superior Court of Walker County, Ga. ... fee system governing the issuance of search warrants by justices of the peace' (lines 6500-6516) — Connally v. Georgia.",
+            "Star-pagination label '*246' (line 6510-6511) places the opinion in the 429 U.S. 24x range, consistent with official cite '429 U.S. 245'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact opening page 245 and the parallel cites (97 S. Ct. 546; 50 L. Ed. 2d 444; 1977 U.S. LEXIS 27) are not independently shown; identity, per curiam status, and page range are confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "28518b2fa00b62f0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-251 quote appears verbatim in cached text (line 6684): 'We therefore hold that the issuance of the search warrant by the justice of the peace in Connally's case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments...'.",
+            "The rendered 'h[e]ld' is a proper bracket alteration of source 'hold'; the quoted span matches the source through 'Amendments' (truncating '...of the United States Constitution').",
+            "Payload quote_fidelity='mismatch' reflects anchoring failure, not a quote-text discrepancy."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page 251 is reporter-supplied and not line-verified against a numbered slip page; quote text is confirmed verbatim."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a3de19a9537a5d47",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-250b quote appears verbatim in cached text (line 6629): '...subjected to what surely is judicial action by an officer of a court who has \"a direct, personal, substantial, pecuniary interest\" in his conclusion to issue or to deny the warrant.'",
+            "Payload quote_fidelity='mismatch' reflects page/fragment-anchoring failure, not a quote-text mismatch."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page 250 reporter-supplied; quote text confirmed verbatim."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e5671eb2e324286e",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-250 'quote' is a content-page scrape: it begins with the YAML delimiter '---', the H1 '# Connally v. Georgia', the header/TreatmentBadge line, an HTML comment, and '## Background'/'## Issue'/'## Rule' Markdown — not any opinion language. Payload self-classifies quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-250.quote with the language actually rendered at ^pin-250: the Tumey/Ward passage 'His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action... \"a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.\"' (verified verbatim in cached text, line 6629).",
+            "evidence_quote": "--- # Connally v. Georgia *429 U.S. 245 (1977)* ... ## Background A Georgia justice of the peace issued a search warrant ... ## Issue ... ## Rule No. Applying the principle of *Tumey* and *Ward*, the justice's",
+            "needs_cl": false,
+            "locator_note": "Defect confined to lake pinpoints[].id=pin-250 quote field; the content page renders a verbatim-correct Tumey/Ward quote at ^pin-250."
+          },
+          "reasons": [
+            "YAML '---', H1 '#', HTML comment, and '##' headers in the stored quote prove a content-page scrape, not source text.",
+            "The genuine rendered ^pin-250 quote IS present verbatim in cached text (line 6629)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pinpoint scrape pattern as Herlth pin-26 / Cone pin-469 / Barrett pin-528."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "28d3835b9eb63650",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law: lane1_negative reviewed=93, audit_needed=false, its 2 candidates not confirmed; lane2_top_cited's 25 proposed_negative_events are 'proposed':true, audit_needed:true, none applied to field_i.",
+            "Proposed edges are the citing-case-status FP class (field_ii overruled/questioned describing the citing cases' own status; field_iii='mentioned' as to Connally).",
+            "Connally v. Georgia (1977 neutral-and-detached-magistrate) is not shown overruled by any disclosed evidence; varies_by_point=false consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane2 R15 audit unresolved (cap_hit=true, audit_needed=true) while good_law rests on a migration-seed."
+          ],
+          "suggested_tightening": "Close the R15 lane2 audit to convert good_law from seed-only to derivation-backed."
+        }
+      ],
+      "notes": "First-pinpoint pin-250 stored quote is a content-page scrape (refuted, lake-field-only). pin-250b/pin-251 real quotes are verbatim in source. Existence and treatment stand; proposed negatives are unaudited citing-case-status FPs."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Connecticut v. Barrett.json",
+      "reviewed": [
+        {
+          "assertion_id": "378656600947b445",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header confirms cite and identity verbatim (line 7937): '479 U.S. 523 (1987)', CONNECTICUT v. BARRETT, No. 85-899, Argued December 9 1986, Decided January 27 1987, CHIEF JUSTICE REHNQUIST — matches docket/date/court fields.",
+            "Star-pagination *524..*537 confirms the page range opening at 523."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (107 S. Ct. 828; 93 L. Ed. 2d 920; 1987 U.S. LEXIS 419; 55 U.S.L.W. 4151) are standard but not independently shown; the official U.S. cite and identity are confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "34cd0c34f91d7ec4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-529 quote appears verbatim in cached text at star-page *529 (line 7961): 'Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.' — the rendered '...' properly elides ', however,'.",
+            "Pincite 529 is independently corroborated by the '*529' star-pagination marker immediately preceding the passage.",
+            "Payload quote_fidelity='mismatch' reflects a missing stored text-fragment/anchor, not a quote-text or pincite discrepancy."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bf626c61a5209b3c",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-528 'quote' is a content-page scrape: it begins with YAML '---', H1 '# Connecticut v. Barrett', the header/TreatmentBadge line, an HTML comment, and '## Background'/'## Issue'/'## Rule' Markdown — not opinion language. Payload self-classifies quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-528.quote with the language actually rendered at ^pin-528: 'Nothing in our decisions, however, or in the rationale of Miranda, requires authorities to ignore the tenor or sense of a defendant's response to these warnings.' (verified verbatim in cached text at star-page *528, line 7959).",
+            "evidence_quote": "--- # Connecticut v. Barrett *479 U.S. 523 (1987)* ... ## Background After Miranda warnings, Barrett told police ... ## Rule No. The right to counsel may be invoked in a limited way, and authorities may honor the limits the suspect himself sets.",
+            "needs_cl": false,
+            "locator_note": "Defect confined to lake pinpoints[].id=pin-528 quote field; the content page renders a verbatim-correct quote at ^pin-528 (pincite 528 confirmed by star-pagination)."
+          },
+          "reasons": [
+            "YAML '---', H1 '#', HTML comment, and '##' headers in the stored quote prove a content-page scrape, not source text.",
+            "The genuine rendered ^pin-528 quote IS present verbatim in cached text at star-page *528 (line 7959)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pinpoint scrape pattern as Herlth pin-26 / Cone pin-469 / Connally pin-250."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "730c7cc6972f0792",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law: lane1 (9) and lane2 (25) proposed_negative_events are all 'proposed':true, audit_needed:true, and none is applied to field_i; lane3 recency=0.",
+            "Proposed edges are the citing-case-status FP class: e.g., United States v. Plugh ('questioned'), State v. Tellez-Suarez ('questioned'), State v. DeJong ('abrogated') — each describing its OWN status (field_iii='mentioned'), not questioning/overruling Barrett.",
+            "Connecticut v. Barrett (1987 limited Miranda invocation) is not shown overruled/abrogated by any disclosed evidence; varies_by_point=false consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "R15 treatment audit unresolved (lanes 1-2 cap_hit=true, audit_needed=true) while good_law rests on a migration-seed."
+          ],
+          "suggested_tightening": "Close the R15 audit so good_law is derivation-backed rather than seed-only with candidates pending."
+        }
+      ],
+      "notes": "First-pinpoint pin-528 stored quote is a content-page scrape (refuted, lake-field-only); rendered quote is verbatim-correct at star-page *528. pin-529 real quote verbatim at *529. Existence and treatment stand; proposed negatives are unaudited citing-case-status FPs."
+    }
+  ]
+}

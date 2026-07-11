@@ -1,0 +1,329 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
+      "reviewed": [
+        {
+          "assertion_id": "b6462c581d95d2e6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion + lake citations block confirm the case: 'Cite as: 583 U. S. ____ (2018)', No. 15-1485, decided Jan 22 2018, SCOTUS; official 583 U.S. 48 selected_rank_1.",
+            "Parallel 138 S. Ct. 577 / 199 L. Ed. 2d 453 and vendor-neutral 2018 U.S. LEXIS 760 all sourced from cluster.citations[]; identity_method citation+party-text, expected_citation_found and canonical_name_match true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip opinion shows blank page ('583 U. S. ____'), so bound-volume page 48 comes from cluster data, not the slip text.",
+            "Two same-named alternate clusters (4460853, 4460811, score 120) pose a minor identity-disambiguation risk; selected cluster 4460854 matches the opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7758b0a614feb2f5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (page 11): 'the panel majority viewed each fact “in isolation, rather than as a factor in the totality of the circumstances.”' The page's 'view[ing] each fact ...' uses a proper alteration bracket (viewed->view[ing]); the bracketed inner quotation is verbatim.",
+            "Pincite slip op., at 11 is correct — the passage precedes the page-12 break."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' is a naive-matcher false positive from the alteration bracket + slip-only (no-star) pagination; sighted verification against the inlined opinion confirms faithful."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d8734bbfcd1f8caa",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Disclosed pinpoints[pin-op11].quote is a mis-scoped harvest window of the content page's own authored prose (Background tail + '## Issue' + '## Rule' lead-in ending '...may not divide and conquer the facts.'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-scope the harvest so pin-op11.quote captures the real quoted passage — 'In concluding otherwise, the panel majority engaged in an “excessively technical dissection” of the factors supporting probable cause.' — which matches the cached opinion at page 11; the published content page needs no edit.",
+            "evidence_quote": "In concluding otherwise, the panel majority engaged in an “excessively technical dissection” of the factors supporting probable cause.",
+            "needs_cl": false,
+            "locator_note": "pin-op11"
+          },
+          "reasons": [
+            "The disclosed quote is verbatim content-page Markdown (contains '## Issue'/'## Rule'), i.e., an S8 harvest artifact, not a fabricated opinion quotation.",
+            "The page's actual pin-op11 quotation ('excessively technical dissection') is verbatim in the cached opinion at page 11; pincite correct — no reader-facing misquotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+          ],
+          "suggested_tightening": "Anchor the harvest span to the quoted material between quotation marks, not the paragraph lead-in."
+        },
+        {
+          "assertion_id": "e9855256e4bdb8da",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Composite field_i_validity=good_law; cached opinion is an intact SCOTUS majority reversing the D.C. Circuit and reaffirming the Gates/Pringle totality standard — nothing self-limiting.",
+            "Every treatment.edge is proposed:true derivation-lane seed (journal_ref lane1_negative / lane2_top_cited); provenance labels point_overrides 'proposed only'. No accepted (proposed:false) negative edge exists."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Edges carry non-credible synthetic field_ii labels — circuit/state courts (e.g., Kee v. City of New York 12 F.4th 150; State v. Mickel 321 Ga. 751) tagged 'overruled'/'questioned' against a SCOTUS holding, which is legally impossible; these are seeds, not treatment.",
+            "field_i_validity is a migration seed ('legacy treatment migrated: good -> good_law'); as_of_treatment 2026-06-30 is not backed by an adjudicated citing report, so currency is asserted, not independently proven from disclosed evidence.",
+            "scope_note itself flags that S2 re-derivation may downgrade."
+          ],
+          "suggested_tightening": "Adjudicate/clear the proposed:true edge seeds before certifying as_of_treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Donovan v. Dewey.json",
+      "reviewed": [
+        {
+          "assertion_id": "fd36d00ade780b13",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Marshall, J.) confirms Donovan v. Dewey reversing E.D. Wis.; internal page markers run *596-*606, and lake official cite is 452 U.S. 594 (selected_rank_1).",
+            "Parallel 101 S. Ct. 2534 / 69 L. Ed. 2d 262 present; cluster 110530; docket 80-901; decided 1981-06-17."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Vendor-neutral '1980 U.S. LEXIS 58' bears a 1980 year for a case decided June 17 1981 — a low-severity anomaly in a non-official cite; the official U.S. cite is unaffected."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0b90fb2df9f6e0ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Disclosed pinpoints[pin-598].quote is a mis-scoped harvest window of the content page's own authored prose (frontmatter '---' + '# Donovan v. Dewey' header + Background + Issue + '## Rule' lead-in ending 'reduced privacy.'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-scope the harvest so pin-598.quote captures the real quoted passage — 'The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.' — which matches the cached opinion at pages 598-599; the published content page needs no edit.",
+            "evidence_quote": "The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.",
+            "needs_cl": false,
+            "locator_note": "pin-598"
+          },
+          "reasons": [
+            "The disclosed quote is verbatim content-page Markdown (title/header + '## Rule'), an S8 harvest artifact, not an opinion quotation.",
+            "The page's actual pin-598 quotation is verbatim in the cached opinion spanning pages 598-599 (the *599 marker falls at 'individual's home'); pincite 598-599 correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+          ],
+          "suggested_tightening": "Anchor the harvest span to the quoted material, not the section lead-in."
+        },
+        {
+          "assertion_id": "55cdc239d467aca5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (page 603): '...the only real issue before us is whether the statute's inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does.' Page's '[T]he' is a proper capitalization bracket; remainder verbatim.",
+            "Pincite 603 correct — the passage sits between the *603 and *604 markers."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' is a naive-matcher false positive (capitalization bracket + slip-only pagination); sighted check confirms faithful."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b8ce32c55496f0b7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (page 602): 'Applying this analysis to the case before us, we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment.' The page's ellipsis '…' properly elides 'to the case before us,'; remainder verbatim.",
+            "Pincite 602 correct — the sentence opens the paragraph immediately after the *602 marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' is a naive-matcher false positive (ellipsis omission + slip-only pagination)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ff83d6600d46f650",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law; cached opinion is an intact SCOTUS majority (Colonnade-Biswell pervasively-regulated line) reversing the District Court — not self-limiting.",
+            "All 30 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Synthetic 'overruled'/'abrogated' labels on citing cases against a 1981 SCOTUS holding are non-credible seeds.",
+            "scope_note (refined into New York v. Burger's three-part test) is consistent with continued good law but is not backed by an adjudicated citing report; currency asserted, not independently proven from disclosed evidence.",
+            "Content-page frontmatter marks lake.status 'under_review'."
+          ],
+          "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Dow Chemical Co. v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "0ff1637a5f96b873",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Burger, C.J.) confirms Dow Chemical Co. v. United States affirming CA6; internal page markers *229-*239; lake official cite 476 U.S. 227 (selected_rank_1).",
+            "Full parallel set (106 S. Ct. 1819; 90 L. Ed. 2d 226; 16 Envtl. L. Rep. 20679; 54 U.S.L.W. 4464; 24 ERC (BNA) 1385) from cluster.citations[]; decided 1986-05-19."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content-page frontmatter docket is empty — a metadata gap that does not affect the citation/existence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "036baa06d872068f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Disclosed pinpoints[pin-239].quote is a mis-scoped harvest window of the content page's own authored prose (Issue tail 'under the Fourth Amendment.' + '## Rule' + authored Rule lead-in ending '...curtilage of a home;'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-scope the harvest so pin-239.quote captures the real quoted passage — 'such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras.' — which matches the cached opinion at page 239; the published content page needs no edit.",
+            "evidence_quote": "such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras.",
+            "needs_cl": false,
+            "locator_note": "pin-239"
+          },
+          "reasons": [
+            "The disclosed quote contains '## Rule' Markdown, so it is an S8 harvest artifact of authored page prose, not an opinion quotation.",
+            "The page's actual pin-239 quotation is verbatim in the cached opinion at page 239 (the paragraph following the *239 marker); pincite correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+          ],
+          "suggested_tightening": "Anchor the harvest span to the quoted material, not the Rule lead-in."
+        },
+        {
+          "assertion_id": "d47be934a0ec2c72",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (page 239): 'We hold that the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment.' The page quote 'the taking of aerial photographs ... Fourth Amendment.' is verbatim (drops the 'We hold that' lead-in).",
+            "Payload is already star-verified/matched (star_marker 239, text-fragment anchor); sighted check confirms."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8deb0e7149b31271",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law; cached opinion is an intact SCOTUS majority affirming on the constitutional question (open-areas/navigable-airspace overflight is not a search) — not self-limiting.",
+            "All 29 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Synthetic 'superseded_by_statute'/'abrogated' labels against a 1986 Fourth Amendment holding are non-credible seeds.",
+            "scope_note (Kyllo cabined home-interior sense-enhancing tech, distinguishing the commercial/open-area setting) is consistent with good law but is not backed by an adjudicated citing report; currency asserted, not independently proven."
+          ],
+          "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Doyle v. Ohio.json",
+      "reviewed": [
+        {
+          "assertion_id": "c61e3b195b53987b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '426 U.S. 610 (1976)', DOYLE v. OHIO, No. 75-5014, argued Feb 23 1976, decided June 17 1976, Powell, J.; lake official cite 426 U.S. 610 (selected_rank_1).",
+            "Parallel 96 S. Ct. 2240 / 49 L. Ed. 2d 91 present; star-paginated opinion runs *611-*629."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake courtlistener block lists opinion_id equal to cluster_id (109491) — an identity-plumbing oddity; the opinion text confirms the citation, so existence is unaffected."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "44b73c77ed456fac",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Disclosed pinpoints[pin-617].quote is a mis-scoped harvest window of the content page's own authored prose (frontmatter/title + '# Doyle v. Ohio' header + Background + Issue + '## Rule' lead-in ending '...Post-arrest silence following Miranda warnings is'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-scope the harvest so pin-617.quote captures the real quoted passage — the quoted phrase 'insolubly ambiguous' (opinion: 'every post-arrest silence is insolubly ambiguous') — which matches the cached opinion at page 617; the published content page needs no edit.",
+            "evidence_quote": "Thus, every post-arrest silence is insolubly ambiguous because of what the State is required to advise the person arrested.",
+            "needs_cl": false,
+            "locator_note": "pin-617"
+          },
+          "reasons": [
+            "The disclosed quote contains '## Rule' Markdown and the case header, so it is an S8 harvest artifact, not an opinion quotation.",
+            "The page's only verbatim quoted phrase at pin-617 ('insolubly ambiguous') is in the cached opinion at page 617; pincite 617 correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page also attributes an unquoted paraphrase ('may be nothing more than the arrestee's exercise of his Miranda rights') to 617; the opinion supports it in substance ('Silence in the wake of these warnings may be nothing more than the arrestee's exercise of these Miranda rights'), so it is faithful though not in quotation marks."
+          ],
+          "suggested_tightening": "Anchor the harvest span to the quoted phrase, not the Rule lead-in."
+        },
+        {
+          "assertion_id": "9bf9ae373ac5bc93",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (page 618): 'Moreover, while it is true that the Miranda warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial.' Page's '[W]hile' is a proper capitalization bracket; remainder verbatim.",
+            "Pincite 618 correct — the *618 marker precedes 'Moreover, while it is true...'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' is a naive-matcher false positive (capitalization bracket + slip/star handling); sighted check confirms faithful."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0fa8ace7674df7f3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law; cached opinion is an intact SCOTUS majority reversing on due-process grounds — not self-limiting.",
+            "All 32 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Synthetic 'overruled' labels against a 1976 SCOTUS holding are non-credible seeds.",
+            "scope_note (cabined by Jenkins v. Anderson / Fletcher v. Weir / Salinas; core Doyle rule intact) is consistent with good law but is not backed by an adjudicated citing report; currency asserted, not independently proven from disclosed evidence."
+          ],
+          "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment."
+        }
+      ]
+    }
+  ]
+}

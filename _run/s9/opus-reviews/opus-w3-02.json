@@ -1,0 +1,307 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
+      "notes": "SCOTUS Patel (2015). Two quote pinpoints verified verbatim against cached slip op.; pin-op10 stored payload quote garbled (harvest artifact) but content quote+pincite (slip op. 10) correct; pin-op11 stored quote correct, S8 'mismatch' is a false positive. Treatment good_law; only proposed (never confirmed) negative candidate edges, all field_iii=mentioned.",
+      "reviewed": [
+        {
+          "assertion_id": "5cfb803d18351bb0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion header 'Cite as: 576 U. S. ____ (2015)' and caption 'CITY OF LOS ANGELES, CALIFORNIA v. PATEL ET AL.' confirm the case and lead cite 576 U.S. 409 (2015).",
+            "Docket 13-1175 and 'Decided June 22, 2015' in the cache match the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter CL cluster (2811846) differs from the Sources-line cluster (2810524); lake 'alternates' confirm 2810524='Los Angeles v. Patel' is the same case (dual CL cluster), so the cite still resolves.",
+            "Parallel S.Ct./L.Ed.2d page numbers not independently star-verifiable from the disclosed cache."
+          ],
+          "suggested_tightening": "Reconcile the frontmatter and Sources CL cluster URLs to one canonical cluster."
+        },
+        {
+          "assertion_id": "370cd1bdd1669479",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content ^pin-op11 quote matches the cached Opinion of the Court verbatim: 'To be clear, we hold only that a hotel owner must be afforded an opportunity to have a neutral decisionmaker review an officer's demand to search the registry before he or she faces penalties for failing to comply.' (bracketed [W]e legitimately drops 'To be clear, we').",
+            "Pincite 'slip op., at 11' is correct: the passage falls immediately after 'Cite as: 576 U. S. ____ (2015) 11'.",
+            "Stored payload quote equals the source; the S8 'quote_fidelity: mismatch' flag is a false positive (slip-only/normalization artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status 'slip-only' gives no reporter star cross-check, but slip pagination is confirmed from the cache."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d08149d570b741fc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The lake pinpoints[] stored quote for pin-op10 is corrupt: it captured the page's front-matter/lead-in prose (ending at the ':' that introduces the quote) instead of the quoted sentence. The content-page ^pin-op10 quote itself is verbatim-correct and correctly pincited, so the legal proposition survives.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op10.quote from the content page; the intended quote 'absent consent, exigent circumstances, or the like, in order for an administrative search to be constitutional, the subject of the search must be afforded an opportunity to obtain precompliance review before a neutral decisionmaker.' matches the cached opinion verbatim at slip op. 10.",
+            "evidence_quote": "The Court has held that absent consent, exigent circumstances, or the like, in order for an administrative search to be constitutional, the subject of the search must be afforded an opportunity to obtain precompliance review before a neutral decisionmaker.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[0] id=pin-op10; content_page ^pin-op10 (line 90); cached opinion passage precedes 'Cite as: 576 U. S. ____ (2015) 11' => slip op. 10"
+          },
+          "reasons": [
+            "Content-page ^pin-op10 quote matches the cached opinion verbatim (dropping the 'The Court has held that' lead-in) and its pincite slip op. 10 is correct.",
+            "The stored payload quote is garbled front-matter (harvest boundary bug), not the wiki quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The S8 'mismatch' flag is a true positive at the stored-payload layer but harmless at the content layer."
+          ],
+          "suggested_tightening": "Fix the pinpoint-harvest boundary so section-leading quotes capture the quoted sentence, not the preceding block."
+        },
+        {
+          "assertion_id": "5ec3c8ec8107144d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law is consistent with all disclosed data: every field_i_validity in the record is good_law and there is no confirmed (proposed:false) negative edge.",
+            "All negative edges are proposed:true with field_iii='mentioned' (lane1_negative / lane2_top_cited candidate signals); none establishes that Patel (2015 SCOTUS) is bad law.",
+            "No disclosed overruling/abrogation of Patel."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Basis is migration-seed (not freshly S2-re-derived); scope_note concedes derivation 'may downgrade'.",
+            "Unadjudicated proposed-negative candidate edges remain (currency caveat)."
+          ],
+          "suggested_tightening": "Run S2 re-derivation to replace the migration seed with a derived treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/City of Ontario v. Quon.json",
+      "notes": "SCOTUS Quon (2010). pin-759 verified verbatim & correctly pincited (759); pin-761 has a REAL pincite error - the quoted sentence is on 560 U.S. 764, not 761 (verified via CL star markers). pin-761 stored payload also garbled. Treatment good_law, no confirmed negative.",
+      "reviewed": [
+        {
+          "assertion_id": "5759fc97f62a974c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion caption 'CITY OF ONTARIO, CALIFORNIA v. JEFF QUON' and star markers ([560 U.S. 750] ... [560 U.S. 765]) confirm the case and lead cite 560 U.S. 746 (2010).",
+            "Docket 08-1332 / decided 2010-06-17 consistent with the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter cluster 6796843 vs Sources cluster 148797 (dual CL cluster; lake alternates confirm 148797 is the same case).",
+            "Parallel reporter page numbers not independently star-verifiable beyond the U.S. cite."
+          ],
+          "suggested_tightening": "Reconcile the two CL cluster URLs."
+        },
+        {
+          "assertion_id": "b74e8c886d67b906",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content ^pin-759 quote matches the cached opinion verbatim: 'The Court must proceed with care when considering the whole concept of privacy expectations in communications made on electronic equipment owned by a government employer. The judiciary risks error by elaborating too fully on the Fourth Amendment implications of emerging technology before its role in society has become clear.'",
+            "Pincite 'Id. at 759' is correct: the passage begins immediately after the '[560 U.S. 759]' star marker.",
+            "Stored payload quote equals the source; the S8 'mismatch' flag is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status 'slip-only' is mislabeled - the content uses the U.S. Reports page 759, which the cache's star pagination confirms."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d7acd4198ca71df5",
+          "dimension": "pincite",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Content ^pin-761 pincites the quote 'Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the O'Connor plurality.' to '560 U.S. at 761', but the cached opinion places that sentence on page 764: it sits between the '[560 U.S. 764]' and '[560 U.S. 765]' star markers. Page 761 carries different text (the O'Connor-plurality framework statement).",
+            "severity": "medium",
+            "proposed_fix": "Change the pincite from '560 U.S. at 761' to '560 U.S. at 764'.",
+            "evidence_quote": "Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the O'Connor plurality.",
+            "needs_cl": false,
+            "locator_note": "content_page ^pin-761 (line 2649); cached opinion para b276-7 is immediately after '[560 U.S. 764]' and before '[560 U.S. 765]'."
+          },
+          "reasons": [
+            "The quote WORDS are verbatim-faithful, but the page pincite is wrong by three pages (quoted sentence is on 764, cited as 761).",
+            "Verified via CL star markers: [560 U.S. 761] (framework text) ... [560 U.S. 764] -> quoted sentence -> [560 U.S. 765].",
+            "Separately, the stored payload quote for this pinpoint is garbled front-matter (harvest artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status labeled 'slip-only' though the content uses a reporter pincite."
+          ],
+          "suggested_tightening": "After correcting to 764, re-harvest the stored pinpoint.quote for pin-761 from the content page."
+        },
+        {
+          "assertion_id": "8c767db79fb25690",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; all negative edges proposed:true with field_iii='mentioned'.",
+            "Quon (2010 SCOTUS) applying O'Connor v. Ortega to electronic communications; no disclosed overruling.",
+            "Per the disclosed scope_note, Riley/Carpenter later 'echoed' Quon's caution rather than overruling it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Basis is migration-seed (not freshly S2-re-derived); currency caveat from unadjudicated proposed-negative candidate edges."
+          ],
+          "suggested_tightening": "Run S2 re-derivation to replace the migration seed."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/City of Tahlequah v. Bond.json",
+      "notes": "SCOTUS Tahlequah v. Bond (2021, per curiam). Both quotes verbatim on slip op. 3; pin-op3 stored payload garbled (content correct); pin-op3a stored quote correct & Wesby attribution accurate. Treatment good_law, no confirmed negative.",
+      "reviewed": [
+        {
+          "assertion_id": "995a3707d2c53783",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion 'Cite as: 595 U. S. ____ (2021)' and caption 'CITY OF TAHLEQUAH v. BOND' confirm the case and cite 595 U.S. 9 (2021).",
+            "Per curiam, decided 2021-10-18, docket 20-1668 consistent with the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter cluster 5292018 vs Sources cluster 5290448 (dual CL cluster).",
+            "Reporter page '9' not shown in the cache's blank '____' slip cite but is the standard reporter cite."
+          ],
+          "suggested_tightening": "Reconcile the two CL cluster URLs."
+        },
+        {
+          "assertion_id": "1884711c7ad5cae9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The lake pinpoints[] stored quote for pin-op3 is corrupt: it captured Background/Issue/Rule lead-in prose (ending at the ':' introducing the quote) instead of the quoted sentence. The content-page ^pin-op3 quote is verbatim-correct and correctly pincited, so the proposition survives.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op3.quote from the content page; the intended quote 'We have repeatedly told courts not to define clearly established law at too high a level of generality.' matches the cached per curiam verbatim at slip op. 3.",
+            "evidence_quote": "We have repeatedly told courts not to define clearly established law at too high a level of generality.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints id=pin-op3; content_page ^pin-op3 (line 3548); cached opinion after 'Cite as: 595 U. S. ____ (2021) 3', before '4 CITY OF TAHLEQUAH v. BOND'"
+          },
+          "reasons": [
+            "Content ^pin-op3 quote matches the cached per curiam verbatim and is on slip op. page 3; pincite correct.",
+            "Stored payload quote is garbled lead-in prose (harvest boundary bug)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 'mismatch' flag is a true positive at the stored-payload layer, harmless at the content layer."
+          ],
+          "suggested_tightening": "Fix the pinpoint-harvest boundary for section-leading quotes."
+        },
+        {
+          "assertion_id": "529cf268b39f5c0d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content ^pin-op3a quote 'all but the plainly incompetent or those who knowingly violate the law.' matches the cached opinion verbatim ('qualified immunity protects ' 'all but the plainly incompetent or those who knowingly violate the law.' ').",
+            "Attribution '(quoting District of Columbia v. Wesby)' is accurate - the opinion cites 'District of Columbia v. Wesby, 583 U. S. ___ (2018)' as the source (Wesby in turn quoting Malley v. Briggs).",
+            "On slip op. page 3; pincite correct. Stored payload quote equals source; S8 'mismatch' is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Nested quotation ultimately traces to Malley v. Briggs via Wesby; the content's attribution to Wesby matches the quoting page and is accurate."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "81de6225172ff474",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; negative edges proposed:true with field_iii='mentioned'.",
+            "Tahlequah (2021 SCOTUS per curiam) qualified-immunity holding; no disclosed overruling."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Basis is migration-seed (scope_note concedes 'may downgrade'); currency caveat from unadjudicated proposed-negative candidate edges."
+          ],
+          "suggested_tightening": "Run S2 re-derivation to replace the migration seed."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Collins v. Virginia.json",
+      "notes": "SCOTUS Collins v. Virginia (2018). pin-op14 quote verbatim on slip op. 14; stored payload garbled (content correct). Frontmatter and Sources share cluster 4501697 (no dual-cluster divergence). Treatment good_law, no confirmed negative.",
+      "reviewed": [
+        {
+          "assertion_id": "fb612d0b4dfc9c02",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion 'Cite as: 584 U. S. ____ (2018)' and caption 'COLLINS v. VIRGINIA' confirm the case and cite 584 U.S. 586 (2018).",
+            "Syllabus text ('...of a home or its curtilage in order to search a vehicle therein. Pp. 3-...') matches the holding.",
+            "Frontmatter and Sources both cite cluster 4501697 - internally consistent (no dual-cluster divergence)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 138 S. Ct. 1663 / 201 L. Ed. 2d 9 not independently star-verifiable from the cache but consistent with the U.S. cite."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "72aa445bd21761b7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The lake pinpoints[] stored quote for pin-op14 is corrupt: it captured Background/Issue/Rule lead-in prose (ending '## Rule No.') instead of the quoted sentence. The content-page ^pin-op14 quote is verbatim-correct and correctly pincited, so the proposition survives.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op14.quote from the content page; the intended quote 'For the foregoing reasons, we conclude that the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein.' matches the cached opinion verbatim at slip op. 14.",
+            "evidence_quote": "For the foregoing reasons, we conclude that the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints id=pin-op14; content_page ^pin-op14 (line 4061); cached opinion Part IV, after '14 COLLINS v. VIRGINIA' header, before concurrence 'Cite as: 584 U. S. ____ (2018) 1' => slip op. 14"
+          },
+          "reasons": [
+            "Content ^pin-op14 quote matches the cached Opinion of the Court verbatim (Part IV) and is on slip op. page 14; pincite correct.",
+            "Stored payload quote is garbled lead-in prose (harvest boundary bug)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 'mismatch' flag is a true positive at the stored-payload layer, harmless at the content layer."
+          ],
+          "suggested_tightening": "Fix the pinpoint-harvest boundary for section-leading quotes."
+        },
+        {
+          "assertion_id": "c353f017a0026bd3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; negative edges proposed:true with field_iii='mentioned'.",
+            "Collins (2018 SCOTUS) automobile-exception/curtilage holding; no disclosed overruling."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Basis is migration-seed (scope_note concedes 'may downgrade'); currency caveat from unadjudicated proposed-negative candidate edges."
+          ],
+          "suggested_tightening": "Run S2 re-derivation to replace the migration seed."
+        }
+      ]
+    }
+  ]
+}
