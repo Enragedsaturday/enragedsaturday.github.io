@@ -1,0 +1,232 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Gutierrez v. Saenz.json",
+      "reviewed": [
+        {
+          "assertion_id": "5b3185b500bd8ad8",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached preliminary-print text confirms 'Cite as: 606 U. S. 305 (2025)' and the syllabus caption 'GUTIERREZ v. SAENZ' at p. 305.",
+            "official_selection_present=true; display '606 U.S. 305' equals the sole official U.S. cite in the lake record (selected_rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Source is a 'Page Proof Pending Publication' preliminary print; volume/first-page 606 U.S. 305 is fixed, but final pagination could theoretically be revised."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "02da7e4a1ddb08f1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' and scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' match the lake record treatment block exactly; status under_review, edges=[].",
+            "Page renders under the Unverified banner consistent with the declaration; an honest not-yet-verified stub with no treatment over-claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Citator/progeny intentionally not derived; no currency check possible from disclosed evidence (by design for a frontier stub)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hafer v. Melo.json",
+      "reviewed": [
+        {
+          "assertion_id": "616b14e029366811",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the O'Connor majority in Hafer v. Melo with internal star-pagination *23/*24, consistent with a case reported beginning at 502 U.S. 21.",
+            "Official cite '502 U.S. 21' matches the lake record; parallels (112 S. Ct. 358; 116 L. Ed. 2d 301; 1991 U.S. LEXIS 6502; 57 Empl. Prac. Dec. (CCH) 41,059) are well-formed for a Nov. 5, 1991 SCOTUS decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached excerpt begins at *23 and does not itself display the *21 first-page marker, but volume/reporter and page range are corroborated."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9ba08273ba7d3fdc",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' and the frontier-stub scope_note match the lake record; status under_review, no edges.",
+            "Page carries the Unverified banner; honest not-yet-verified declaration with no over-claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "By design no citator derivation; not independently verifiable and not claimed to be."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hampton v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "4a02aa420259d056",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached Rehnquist plurality carries internal star-pagination *486 through *491, consistent with a case reported at 425 U.S. 484.",
+            "Official cite '425 U.S. 484' matches the lake record; parallels 96 S. Ct. 1646, 48 L. Ed. 2d 113, 1976 U.S. LEXIS 49 are well-formed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "First page 484 not directly shown in the cached excerpt (body starts at *486), but the volume and page range are corroborated."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3440d13e556535c9",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-490 quote field is corrupted: it captured the wiki page's own front-matter/prose (header + Background + Issue + Rule intro), which does not appear anywhere in the opinion text. This confirms the ledger's quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-490's quote with the actual quotation the page's ^pin-490 anchor carries: 'The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.' It appears verbatim at 425 U.S. 490 (cached para b559-7, immediately after the *490 marker).",
+            "evidence_quote": "The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph b559-7; the *490 star-pagination precedes the sentence."
+          },
+          "reasons": [
+            "Payload/stored quote is page markdown ('--- # Hampton v. United States ... due process does not bar his conviction ...'), which is nowhere in the opinion — a genuine corrupted-quote-field defect, and the mismatch flag is correct.",
+            "The rendered page ^pin-490 quotation is itself verbatim-faithful at p. 490, so reader-facing risk is nil; the defect is confined to the pinpoint record's quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Fix is mechanical; the intended quote and its 425 U.S. 490 locus are both verifiable from the disclosed cached text."
+          ],
+          "suggested_tightening": "Bound pinpoint-quote extraction to the anchored block so page front-matter cannot leak into quote fields."
+        },
+        {
+          "assertion_id": "4ad67e73da0a7df0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'If the police engage in illegal activity in concert with a defendant ... prosecuting the police under the applicable provisions of state or federal law.' appears verbatim in cached para b560-6, located on p. 490 (before the *491 marker); page cite 'Id.' (=490) is correct.",
+            "Cached OCR reads 'under'' (stray apostrophe) — a transparent scan artifact (same excerpt has 'Kehnquist', 'Bussell', 'wo Id'); the page's clean 'under the' is the correct reading, so the ledger's 'mismatch' flag is a false positive here."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite is 'slip-only'/'Id.'; page-490 placement inferred from the *490/*491 star markers, consistent with the citation."
+          ],
+          "suggested_tightening": "Normalize OCR punctuation artifacts before computing quote_fidelity to avoid false mismatches."
+        },
+        {
+          "assertion_id": "9ab1d216f3ee74aa",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text confirms Rehnquist 'announced the judgment of the Court' joined by the Chief Justice and White — a three-Justice plurality — matching scope_note 'Plurality opinion (Rehnquist, J.); Powell & Blackmun concurred in the judgment on narrower grounds.'",
+            "good_law is defensible: no overruling of Hampton is shown; disclosed negative edges are all proposed=true, field_iii 'mentioned' (low salience) and largely describe citing-case status, not a controlling reversal; as_of_treatment 2026-06-30 is current."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full citator currency (that Hampton remains good law as of 2026) is not independently re-derivable from disclosed evidence; composite_basis is 'migration-seed'."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
+      "reviewed": [
+        {
+          "assertion_id": "3738cb1e95f5a4f6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '526 U.S. 808 (1999)', caption 'HANLON et al. v. BERGER et ux.', No. 97-1927, decided May 24, 1999.",
+            "Official cite '526 U.S. 808' matches the lake record; parallels 119 S. Ct. 1706, 143 L. Ed. 2d 978 are well-formed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7953f6e6c34cd729",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-810 quote field is corrupted with the wiki page's front-matter/prose (header + Background + Issue + Rule intro), which is absent from the opinion. Confirms the ledger's quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repopulate pin-810 with the anchored page quotation 'respondents alleged a Fourth Amendment violation under our decision today in Wilson v. Layne.', which appears verbatim at 526 U.S. 809-810 (cached text, paragraph carrying the *810 marker).",
+            "evidence_quote": "respondents alleged a Fourth Amendment violation under our decision today in Wilson v. Layne",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph containing the *810 star-pagination."
+          },
+          "reasons": [
+            "Payload/stored quote is page markdown ending '... a Fourth Amendment violation under *Wilson* --', which is nowhere in the opinion — a genuine corrupted-quote-field defect; the mismatch flag is correct.",
+            "The rendered page ^pin-810 quotation is itself verbatim-faithful at p. 810, so reader-facing risk is nil; the defect is confined to the pinpoint record's quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Fix is mechanical; the intended quote and its 526 U.S. 810 locus are both verifiable from the disclosed cached text."
+          ],
+          "suggested_tightening": "Bound pinpoint-quote extraction to the anchored block so page front-matter cannot leak into quote fields."
+        },
+        {
+          "assertion_id": "a2795e0b7f6bb696",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'Petitioners maintain that even though they may have violated the Fourth Amendment rights of respondents, they are entitled to the defense of qualified immunity. We agree. Our holding in *Wilson* makes clear that this right was not clearly established in 1992.' matches the cached text verbatim (only difference is *Wilson* markdown vs <i>Wilson</i> markup).",
+            "Quote sits in the paragraph after the *810 star marker; page cite 'Id.' (=810) is correct; the ledger's 'mismatch' flag is a false positive here."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'1992' in the quote refers (per the opinion's next sentence) to the Wilson search year; Hanlon's own 1993 search is 'a year later', which the page's Application section states correctly, so no black-letter distortion."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "41aca81b96bd966b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text confirms 'Per Curiam' and that the case is governed by same-day companion Wilson v. Layne (ante, p. 603), matching scope_note 'Per curiam companion to Wilson v. Layne; good law.'",
+            "good_law is defensible: no negative treatment shown; Stevens concurring in part/dissenting in part is an internal split, not adverse subsequent treatment; as_of_treatment 2026-06-30 is current."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Citator currency as of 2026 not independently re-derivable from disclosed evidence; composite_basis is 'migration-seed'."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

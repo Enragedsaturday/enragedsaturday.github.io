@@ -1,0 +1,334 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Hiibel v. Sixth Judicial Dist. Court.json",
+      "reviewed": [
+        {
+          "assertion_id": "5700d94dfa3f4061",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '542 U.S. 177 (2004)' and caption 'HIIBEL v. SIXTH JUDICIAL DISTRICT COURT OF NEVADA, HUMBOLDT COUNTY, ET AL.'; selected lead cite 542 U.S. 177 matches.",
+            "Parallel reporters (S. Ct., L. Ed. 2d, U.S. LEXIS, U.S.L.W., Fla. L. Weekly) are standard SCOTUS parallels; no fabrication indicators."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-cite page numbers are not independently confirmable from the disclosed slip (only the U.S. reporter lead cite appears in the cached header)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "078ef690290d2162",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.188 (after the '*188' star marker) reads verbatim: 'A state law requiring a suspect to disclose his name in the course of a valid Terry stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures.'",
+            "Content-page quote is faithful; the bracket '[a]' is a proper Bluebook capitalization alteration; page 188 confirmed by star-pagination."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake payload flags pinpoint_status 'slip-only'/quote_fidelity 'mismatch', but the disclosed slip carries star-pagination confirming p.188 — that flag is overly conservative, not a content defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1819278ce4fb0e36",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.187 reads verbatim: 'The principles of Terry permit a State to require a suspect to disclose his name in the course of a Terry stop.'",
+            "Content-page '[t]he principles...' is faithful; '[t]' is a proper Bluebook alteration; the sentence sits between the '*187' and '*188' star markers."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same conservative 'slip-only'/'mismatch' flag as pin-188; disclosed star-pagination confirms the page."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "897c364ec6c648ca",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-186 quote is a harvest artifact: it captured content-page markdown ('...disclose his name. ## Issue ... ## Rule Yes.') rather than opinion text — no opinion contains '## Issue'/'## Rule'. Build already self-flags quote_fidelity='mismatch'. The content page's ACTUAL rendered pin-186 quote is faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-186 quote string with the real faithful quote from p.186.",
+            "evidence_quote": "Obtaining a suspect's name in the course of a Terry stop serves important government interests.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.186 (paragraph immediately after the '*186' star marker); content page ^pin-186 renders this exact sentence cited to '542 U.S. at 186'."
+          },
+          "reasons": [
+            "Pin survives: a genuine faithful quote exists at p.186 ('Obtaining a suspect's name in the course of a Terry stop serves important government interests.'), verified verbatim in cached text.",
+            "But the stored quote STRING is corrupted content-page markdown, not opinion text — a real quote_fidelity defect in the assertion as framed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "First-pin-on-page harvest corruption recurs across this batch (Hill pin-802, Hoffa pin-310, Hope pin-741) — systemic harvester bug worth a sweep."
+          ],
+          "suggested_tightening": "Harvester should strip markdown/section-header lines when extracting the pinpoint quote for the first pin on a page."
+        },
+        {
+          "assertion_id": "76d3a9daaa40bd70",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Hiibel is a 2004 SCOTUS decision affirming the conviction ('the judgment... is Affirmed') — facially valid binding precedent.",
+            "No disclosed authority credibly refutes good_law: the lake treatment.edges are all 'proposed'/unadjudicated and are structurally incapable of overruling SCOTUS (state/intermediate/district-court citing cases)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026-06-30 citator currency ('good_law' as-of-treatment) is a migration-seed and is NOT independently re-derivable from the disclosed 2004 slip text alone; S2 re-derivation pending per scope_note."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hill v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "43ecc7fb9f8d0828",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '401 U.S. 797 (1971)' and caption 'HILL v. CALIFORNIA'; selected official cite 401 U.S. 797 matches.",
+            "Opinion content (mistaken-identity arrest of Miller for Hill; search incident) matches Hill v. California."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cite '27 A.F.T.R.2d (RIA) 1006' (a federal tax reporter) is anomalous for a Fourth Amendment criminal case and is not confirmable from the disclosed slip; likely a CL cluster data artifact, but it does not affect the case's existence/identity."
+          ],
+          "suggested_tightening": "Sanity-check the A.F.T.R.2d parallel cite against the CL cluster before publishing the parallel_cite list."
+        },
+        {
+          "assertion_id": "38ea6b2791f22c97",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-802 quote is a harvest artifact capturing the content page's leading markdown ('--- # Hill v. California ... ## Rule Yes. The Court adopted the rule that') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-802 quote is faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-802 quote string with the real faithful quote at p.802.",
+            "evidence_quote": "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.802 (Part II, before the '*803' star marker) — SCOTUS quotes/adopts the California Supreme Court conclusion; content page ^pin-802 renders this cited to '401 U.S. at 802'."
+          },
+          "reasons": [
+            "Pin survives: the faithful quote exists at p.802, verified in cached text before the '*803' star marker.",
+            "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pin harvest corruption pattern as the rest of the batch."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "41dd552e076989ad",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.804 (after the '*804' star marker) reads verbatim: 'But sufficient probability, not certainty, is the touchstone of reasonableness under the Fourth Amendment and on the record before us the officers' mistake was understandable and the arrest a reasonable response to the situation facing them at the time.'",
+            "Content-page fragment (dropping leading 'But') is a faithful partial quote; star_marker 804 confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9c21a818115624bf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.804 reads verbatim: 'In these circumstances the police were entitled to do what the law would have allowed them to do if Miller had in fact been Hill, that is, to search incident to arrest and to seize evidence of the crime the police had probable cause to believe Hill had committed.'",
+            "Content-page fragment (dropping 'In these circumstances') is faithful; the sentence is on p.804 and the cited '804–805' range covers the paragraph that runs to the '*805' marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cited range '804–805' is slightly over-inclusive (the quoted sentence is wholly on 804), but the discussion paragraph spans to 805 — an acceptable pincite range, not a fidelity defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "982a918fa9dd53fe",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Hill is a 1971 SCOTUS decision affirming the California Supreme Court ('affirm the judgment of the Supreme Court of California') — facially valid binding precedent.",
+            "Content page reports no negative treatment; no disclosed authority refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 1971 slip alone."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "d164fbc0dea99e0a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is unambiguously Hoffa v. United States (Test Fleet trial, informant Edward Partin, jury tampering; Justice Stewart), with star pages '*295'–'*312' consistent with a case beginning at 385 U.S. 293.",
+            "Selected official cite 385 U.S. 293 matches."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached slip lacks an explicit reporter header; the '293' start page is inferred from the star-pagination sequence ('*295' onward), not printed directly."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "099b0819c5e54600",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.310 (after the '*310' star marker) reads verbatim: 'The police are not required to guess at their peril the precise moment at which they have probable cause to arrest a suspect, risking a violation of the Fourth Amendment if they act too soon, and a violation of the Sixth Amendment if they wait too long.'",
+            "Content-page quote is exact; star_marker 310 confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1354caa3c8a1cad5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-310 quote is a harvest artifact capturing content-page markdown (Background prose + '## Issue ... ## Rule No. The Court rejected the contention...') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-310 quote is faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-310 quote string with the real faithful quote at p.310.",
+            "evidence_quote": "There is no constitutional right to be arrested.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.310 (after the '*310' star marker, the sentence immediately preceding the pin-310a quote); content page ^pin-310 renders 'There is no constitutional right to be arrested.' cited to '385 U.S. at 310'."
+          },
+          "reasons": [
+            "Pin survives: 'There is no constitutional right to be arrested.' is verbatim in the cached opinion at p.310.",
+            "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pin harvest corruption pattern as the batch."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "aff37993a7328bad",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Hoffa is a 1966 SCOTUS decision affirming the convictions ('Affirmed.') — facially valid binding precedent.",
+            "Content page reports no negative treatment; no disclosed authority refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 1966 slip alone."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hope v. Pelzer.json",
+      "reviewed": [
+        {
+          "assertion_id": "6a36a85bd13279f4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is unambiguously Hope v. Pelzer (hitching-post qualified-immunity; Justice Stevens, 2002), with star pages '*734'–'*748' consistent with a case beginning at 536 U.S. 730.",
+            "Selected official cite 536 U.S. 730 matches."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached slip lacks an explicit reporter header; the '730' start page is inferred from the star-pagination sequence ('*734' onward)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "98848fcc626429aa",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion p.741 reads verbatim: '...the salient question that the Court of Appeals ought to have asked is whether the state of the law in 1995 gave respondents fair warning that their alleged treatment of Hope was unconstitutional.'",
+            "Content-page quote is exact; star_marker 741 confirmed (paragraph following the '*741' blockquote marker)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c2bb0ff3b96b700a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-741 quote is a harvest artifact capturing content-page markdown ('facts, or whether a right can be clearly established without such a factually identical precedent. ## Rule A right may be clearly established without a factually identical case.') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-741 quote is faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-741 quote string with the real faithful quote at p.741.",
+            "evidence_quote": "officials can still be on notice that their conduct violates established law even in novel factual circumstances.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.741 ('Our opinion in Lanier thus makes clear that officials can still be on notice...'); content page ^pin-741 renders '[O]fficials can still be on notice that their conduct violates established law even in novel factual circumstances.' cited to '536 U.S. at 741'."
+          },
+          "reasons": [
+            "Pin survives: the faithful quote exists at p.741 ('officials can still be on notice that their conduct violates established law even in novel factual circumstances'); the content page's '[O]fficials...' is a proper Bluebook capitalization.",
+            "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same first-pin harvest corruption pattern as the batch."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bf611fb2b4a1a327",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Hope is a 2002 SCOTUS decision reversing the Eleventh Circuit and denying qualified immunity ('The judgment of the Court of Appeals is reversed.') — facially valid binding precedent.",
+            "Content page reports no negative treatment; no disclosed authority refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 2002 slip alone."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

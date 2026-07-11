@@ -1,0 +1,244 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Gilbert v. California.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "7693463cdddd3ec6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached CL reporter text confirms official cite: header 'Gilbert v. California, 388 U.S. 263 (1967)', caption 'GILBERT v. CALIFORNIA', 'Decided June 12, 1967'.",
+            "official_selection_present=true; display '388 U.S. 263' matches lake citations.official."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallels 87 S. Ct. 1951 / 18 L. Ed. 2d 1178 / 1967 U.S. LEXIS 1086 are not independently printed in the disclosed opinion text, but the official U.S. cite is confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "abb55e50a191274d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is an extraction artifact (a dump of the page YAML/header + Background, not the pin-273 blockquote); its 'mismatch' flag is a false positive.",
+            "The actual pin-273 quotation on the page ('Only a per se exclusionary rule as to such testimony can be an effective sanction to assure that law enforcement authorities will respect the accused's constitutional right to the presence of his counsel at the critical lineup.') matches the cached opinion verbatim.",
+            "Pincite 388 U.S. at 273 correct: the quoted sentence falls after the '*273' star-pagination marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Extractor mismatch flag will recur on re-run until the quote-span capture is fixed; the rendered page text is clean."
+          ],
+          "suggested_tightening": "Fix the quote extractor to capture the ^pin-273 blockquote span rather than the page header."
+        },
+        {
+          "assertion_id": "e589497514fd23b7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is consistent with the disclosed 1967 final SCOTUS judgment; every negative-sweep edge is proposed:true, field_iii:'mentioned', from non-SCOTUS courts (Minn. App., Conn., Colo., Tex.) which cannot overrule SCOTUS -- keyword false positives, no confirmed negative event.",
+            "scope_note (Wade-Gilbert right to counsel attaches only at/after initiation of adversary judicial proceedings, per Kirby v. Illinois) is a correct limitation, not an overruling; consistent with the post-indictment lineup shown in the opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Derivation reports audit_needed:true with proposed_negative_events (lane1=7, lane2=24) still un-triaged; none is a confirmed negative event but the audit is not machine-complete.",
+            "Kirby v. Illinois is not inlined, so the scope note's holding is not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Glossip v. Oklahoma.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "283b829d7583a3c3",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached preliminary print confirms official cite: 'Volume 604 U. S. ... Pages 226-304', 'GLOSSIP v. OKLAHOMA', 'Cite as: 604 U. S. 226 (2025)', 'No. 22-7466. Argued October 9, 2024-Decided February 25, 2025' -- cite 604 U.S. 226, docket 22-7466, date 2025-02-25 all confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Sources-line URL uses cluster 10339023 while frontmatter/lake use cluster 10776870 (opinion 11243457); this URL/id inconsistency is outside the existence-cite payload but should be reconciled."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bcd2af82e521c981",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is an extraction artifact (header/Background dump); 'mismatch' flag is a false positive.",
+            "Actual pin-226 quotation ('[t]o establish a Napue violation, a defendant must show that the prosecution knowingly solicited false testimony or knowingly allowed it \"to go uncorrected when it appear[ed].\"') matches the cached opinion verbatim (bracketed lead cap per Bluebook).",
+            "Internal Napue pincite 360 U.S. at 269 for the 'obtained through use of false evidence' clause matches the cached text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip-op pagination (16-17) is not directly checkable against the preliminary-print cached text (paginated from 226); the page discloses pins are keyed to case-start page 226."
+          ],
+          "suggested_tightening": "Fix quote-span capture; page quote is clean."
+        },
+        {
+          "assertion_id": "e03b94ed7a1ec698",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual pin-226b quotation ('a new trial is warranted so long as the false testimony \"may have had an effect on the outcome of the trial,\" ... that is, if it \"'in any reasonable likelihood [could] have affected the judgment of the jury,'\"') matches the cached opinion verbatim; the '...' correctly elides the internal 'id., at 272--' citation.",
+            "The parenthetical (quoting Giglio v. United States, 405 U.S. 150, 154 (1972), in turn quoting Napue, 360 U.S. at 271) matches the cached text exactly.",
+            "payload.quote is a truncated fragment; the 'mismatch' flag is an extraction false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip-op page 17 not directly checkable against preliminary-print pagination."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "636666aed1ba86c4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is consistent with the disclosed 2025 final SCOTUS judgment; derivation lanes disclose reviewed:0 / proposed_negative_events:0 and progeny citation_count:0 (a fresh Feb-2025 decision) -- no negative treatment.",
+            "scope_note accurately states the Napue holding and correctly disambiguates from Glossip v. Gross, 576 U.S. 863 (2015)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "As a 2025 slip opinion ('Page Proof Pending Publication'), citator maturity is inherently limited; currency is early by nature."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Go-Bart Importing Co. v. United States.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "09a126fa30699b95",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached CL opinion (Mr. Justice Butler; 'GO-BART IMPORTING COMPANY ... v. UNITED STATES'; Prohibition/Gowen-Bartels facts) carries star-pagination labels 348-358, and the pincited pages 357/358 are present -- consistent with official cite 282 U.S. 344 (case-start page 344)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Volume '282 U.S.' and parallels (51 S. Ct. 153 / 75 L. Ed. 374 / 1931 U.S. LEXIS 842) are not literally printed in the disclosed XML (star-pagination labels only); volume inferred from the page sequence and case identity.",
+            "Lake status under_review; identity_method name+docket with party_name_in_text:false (weaker resolution), though expected_citation_found:true."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "40dc549b795e452f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual pin-358 quotation matches the cached opinion verbatim ('...pretension of right and threat of force he compelled Gowen to open the desk and the safe and with the others made a general and apparently unlimited search, ransacking the desk, safe, filing cases and other parts of the office. It was a lawless invasion of the premises and a general exploratory search in the hope that evidence of crime might be found.'); the cached scan's 'desk ,and' is OCR noise and the page correctly renders 'desk and the safe'.",
+            "Quote falls after the '*358' star-pagination marker -- pincite 282 U.S. at 358 correct.",
+            "Here payload.quote actually equals the page text, so the 'mismatch' flag is itself a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached text carries OCR artifacts (stray commas/apostrophes) that do not affect the quotation's fidelity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f1db8d6e64c82ff1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual pin-357 quotation ('There is no formula for the determination of reasonableness. Each case is to be decided on its own facts and circumstances.') matches the cached opinion verbatim.",
+            "Quote falls between the '*357' and '*358' star-pagination markers -- pincite 282 U.S. at 357 correct.",
+            "payload.quote is a page header/Background dump; the 'mismatch' flag is an extraction false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix quote-span capture for pin-357."
+        },
+        {
+          "assertion_id": "92a6efbf7a608f4e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is consistent with the disclosed 1931 final SCOTUS judgment; every negative-sweep edge is proposed:true, field_iii:'mentioned', from non-SCOTUS courts (9th Cir., Tex. Crim. App., Cal. App., N.Y. Misc.) with keyword-triggered field_ii labels -- none can overrule SCOTUS; no confirmed negative event.",
+            "scope_note (SITA may not become a general exploratory search; survives/structured in Chimel v. California) matches the opinion's holding; the page's own treatment section correctly notes the Gouled 'mere evidence' shift by Warden v. Hayden does not disturb the SITA holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake status under_review and dozens of un-triaged proposed lane1_negative edges remain; all are structurally keyword FPs (mentioned / non-SCOTUS) so good_law is undisturbed, but the audit is not machine-complete.",
+            "Chimel reaffirmation is not independently confirmable from the single inlined opinion."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Goldey v. Fields.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "e527409dcd517603",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached preliminary print confirms official cite: 'Volume 606 U. S. Part 2 ... Pages 942-945', 'GOLDEY, ASSOCIATE WARDEN, et al. v. FIELDS et al.', 'No. 24-809. Decided June 30, 2025', 'Cite as: 606 U. S. 942 (2025)' -- cite 606 U.S. 942 and docket 24-809 confirmed.",
+            "Per curiam; Fourth Circuit (109 F.4th 264) reversed and remanded -- case identity confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter/lake date_decided is empty/null though the cached text shows 'Decided June 30, 2025' -- a population gap, outside the existence-cite payload."
+          ],
+          "suggested_tightening": "Populate date_decided (2025-06-30) at S6/S9 promotion."
+        },
+        {
+          "assertion_id": "26ad16707969afed",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' is an honest frontier-stub non-claim; the disclosed lake confirms edges:[], derivation:{}, composite_basis 'unverified', and field_provenance 'frontier stub, no treatment'.",
+            "The page renders 'Treatment: Unverified' under the under_review banner and states subsequent treatment is not yet machine-verified -- internally consistent; no good-law representation is made that could be refuted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally deferred to S6/S9 promotion; currency is genuinely not established, by design."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

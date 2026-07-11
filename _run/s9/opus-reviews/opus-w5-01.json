@@ -1,0 +1,262 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Gonzalez v. Trevino.json",
+      "reviewed": [
+        {
+          "assertion_id": "5e99cfd864858537",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms 'Cite as: 602 U. S. 653 (2024)' and 'Volume 602 U. S. Part 1, Pages 653-679'.",
+            "Case name GONZALEZ v. TREVINO, No. 22-1025, decided June 20, 2024 matches the record; official cite 602 U.S. 653 is correct.",
+            "official_selection_present=true and cluster 10600071 matches the sourced opinion URL."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "00f1ea4aa4b6cd5c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record status is under_review; field_i_validity honestly declares 'unverified' (frontier stub, treatment/progeny not yet derived).",
+            "Content page renders the white/Unverified banner and makes no currency claim, so there is no overstated treatment to refute.",
+            "varies_by_point=false is consistent with a not-yet-derived stub."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency is undetermined by design; this is an honest 'not verified' state, not an assertion of good law, so there is nothing to break."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Gooding v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "492fbf2b9211538d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '416 U.S. 430 (1974)', GOODING v. UNITED STATES, No. 72-6902, decided April 29, 1974.",
+            "Official cite 416 U.S. 430 with parallels 94 S. Ct. 1780 and 40 L. Ed. 2d 250 is consistent with the cluster; official selection present.",
+            "Cluster 109017 matches the sourced opinion URL."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ca90f61624b04ef6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page quote matches the cached opinion verbatim: 'We therefore conclude that 21 U.S.C. § 879(a) requires no special showing for a nighttime search, other than a showing that the contraband is likely to be on the property or person to be searched at that time.'",
+            "The sentence sits after the '*458' star in the cached text, so pin-458 is correct.",
+            "The payload's quote_fidelity='mismatch' is a false positive attributable only to statutory-cite whitespace ('U. S. C.' / '§ 879 (a)'); the substantive quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Sole difference from cached text is internal citation spacing, a standard normalization, not a quote variance."
+          ],
+          "suggested_tightening": "Normalize statutory-cite whitespace before the fidelity comparison to suppress this false-positive class."
+        },
+        {
+          "assertion_id": "eafd75ab788c9142",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The harvested `quote` for pin-439 is not an opinion quote — it is a run of the content page's own editorial prose (Background/Issue/Rule section text) captured up to the ^pin-439 anchor, ending mid-sentence at 'Section 879(a) permits service'. That blob appears nowhere in the Gooding opinion; the harvester grabbed the pre-quote context instead of the pinned quotation.",
+            "severity": "medium",
+            "proposed_fix": "Re-harvest the pin-439 quote to the actual quoted phrases the content page pins ('at any time of the day or night'; 'is satisfied that there is probable cause to believe that grounds exist for the warrant and for its service at such time'), which are verbatim-faithful to 416 U.S. 439.",
+            "evidence_quote": "That section provides that a warrant may be served \"at any time of the day or night\" so long as the issuing authority \"is satisfied that there is probable cause to believe that grounds exist for the warrant and for its service at such time.\"",
+            "needs_cl": false,
+            "locator_note": "Cached Gooding opinion, page-439 star (*439) paragraph; content page Rule section, ^pin-439."
+          },
+          "reasons": [
+            "Payload quote is content-page prose ('## Issue ... ## Rule ...'), not text from the opinion — a harvester boundary artifact.",
+            "The real pin-439 phrases appear verbatim at 416 U.S. 439 in the cached opinion, so the underlying page cite is sound.",
+            "Pincite 439 is correct: the '*439' star precedes the quoted § 879(a) language in the cached text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The published page quote is clean and faithful; the defect is confined to the assertion record's captured quote string."
+          ],
+          "suggested_tightening": "Fix the quote-harvester's span boundary so it captures the quoted string, not the preceding context up to the pin anchor."
+        },
+        {
+          "assertion_id": "f3286635ee48b127",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page quote 'suggested that there was a continuing traffic of drugs from petitioner's apartment, and a prior purchase through an informer had confirmed that drugs were available.' matches the cached opinion verbatim.",
+            "The text appears after the '*458' star, confirming star_marker 458.",
+            "Payload self-classifies 'matched' / star-verified, consistent with my independent read."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "996884fe7c94f645",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No negative treatment is present in or derivable from the inlined evidence; the disclosed opinion is a live majority SCOTUS holding (Affirmed) construing 21 U.S.C. § 879(a).",
+            "The good_law scope_note (statutory holding, statute in force) is internally coherent and uncontradicted by anything disclosed.",
+            "Refuting 'good_law' would require fabricating negative treatment, which the disclosed record does not support."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 'good law as of 2026-06-30' currency rests on citator/progeny data that is NOT inlined; the as_of_treatment date cannot be independently confirmed from disclosed evidence — hence verifiable_from_disclosed=false for the currency component."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Gouled v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "837daabd230545e6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is unmistakably Gouled v. United States (Mr. Justice Clarke; conspiracy to defraud under § 37 Federal Criminal Code; 'Gouled' named throughout), with star-pagination 303-310 consistent with a case beginning at 255 U.S. 298.",
+            "Official cite 255 U.S. 298 (1921) and date 1921-02-28 match the record; official selection present.",
+            "Cluster 99745 matches the sourced opinion URL."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "First page '298' is the cluster's official pagination; the cached excerpt opens at the opinion body (*303), so page 298 is inferred from consistent pagination rather than shown directly — but nothing contradicts it."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "73a08eb46a15b767",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page quote tracks the cached opinion at 255 U.S. 309 verbatim with proper quotation practice: leading 'they' dropped ('Warrants' supplied outside the quote), a marked ellipsis 'but . . . they' standing in for 'but that they', and truncation at 'possession of it.'",
+            "The quote sits after the '*309' star, confirming pin-309.",
+            "Cached text reads 'gaming access' — an obvious OCR corruption in a heavily-garbled 1921 scan; the content page's 'gaining access' is the correct reading, so the page is faithful to the true opinion.",
+            "Payload quote_fidelity='mismatch' is a false positive driven by the dropped leading word, the ellipsis, the truncation, and the OCR 'gaming/gaining' artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Single-word cached-text OCR variance ('gaming' vs 'gaining') noted; not a genuine quote defect."
+          ],
+          "suggested_tightening": "Account for marked ellipses/truncation and OCR noise in the fidelity comparator."
+        },
+        {
+          "assertion_id": "e004d7cc524a811d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The harvested `quote` for pin-306 is not an opinion quote — it is the content page's frontmatter plus Background/Issue/Rule prose captured up to '## Rule ... The Court held that'. None of that appears in the Gouled opinion; the harvester grabbed the pre-quote context instead of the pinned quotation.",
+            "severity": "medium",
+            "proposed_fix": "Re-harvest the pin-306 quote to the actual pinned sentence ('whether entrance to the home or office of a person suspected of crime be obtained ... by stealth, or through social acquaintance, or in the guise of a business call ... any search and seizure subsequently and secretly made in his absence, falls within the scope of the prohibition of the Fourth Amendment'), which is verbatim-faithful to 255 U.S. 306.",
+            "evidence_quote": "whether entrance to the home or office of a person suspected of crime be obtained by a representative of any branch or subdivision of the Government of the United States by stealth, or through social acquaintance, or in the guise of a business call, and whether the owner be present or not when he enters, any search and seizure subsequently and secretly made in his absence, falls within the scope of the prohibition of the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "Cached Gouled opinion, page-306 star (*306) paragraph (id b344-4); content page Rule section, ^pin-306."
+          },
+          "reasons": [
+            "Payload quote is content-page frontmatter+prose ('--- # Gouled v. United States ... ## Rule ... The Court held that'), not opinion text — a harvester boundary artifact identical in shape to the Gooding pin-439 defect.",
+            "The actual pin-306 sentence is verbatim-faithful to the cached opinion at 255 U.S. 306.",
+            "Pincite 306 is correct: the '*306' star precedes the quoted stealth/ruse holding in the cached text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same class as Gooding pin-439 — the garbled quote is a record artifact; the published page quote is clean and faithful."
+          ],
+          "suggested_tightening": "Same harvester span-boundary fix applies."
+        },
+        {
+          "assertion_id": "e493537c43edc2f8",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "varies_by_point is set to false, but the record's own scope_note describes treatment that varies by point: the mere-evidence rule is overruled/abandoned (Warden v. Hayden, 1967) while the separate stealth/ruse-entry holding 'retains vitality'. A single case with one holding overruled and another surviving is point-varying treatment.",
+            "severity": "low",
+            "proposed_fix": "Set varies_by_point=true and populate point_overrides distinguishing the overruled mere-evidence holding (255 U.S. 309) from the surviving stealth/ruse-entry holding (255 U.S. 306).",
+            "evidence_quote": "The mere-evidence rule was overruled/abandoned by Warden v. Hayden (1967), which held the Fourth Amendment does not bar the seizure of items of solely evidentiary value. The separate Gouled holding — that entry obtained by stealth, ruse, or social pretext can render a subsequent search unreasonable — retains vitality.",
+            "needs_cl": false,
+            "locator_note": "treatment.scope_note vs treatment.varies_by_point in the Gouled lake record / assertion payload."
+          },
+          "reasons": [
+            "The scope_note itself splits treatment across two holdings (one overruled, one surviving), which contradicts varies_by_point=false.",
+            "The disclosed Gouled opinion confirms both holdings exist as distinct points: stealth/ruse entry (255 U.S. 306) and mere-evidence rule (255 U.S. 309).",
+            "Substantively the 'overruled (in part)' status is coherent; only the structured varies_by_point flag is inconsistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The overruling itself (Warden v. Hayden, 1967) is not independently verifiable from the inlined evidence — no citator/Warden text is disclosed; only the internal scope_note/varies_by_point inconsistency is disclosed-verifiable.",
+            "field_i_validity code 'superseded' renders as 'overruled' on the page; the code-to-display mapping is not inlined, so it is not flagged."
+          ],
+          "suggested_tightening": "Reconcile varies_by_point with point-split scope_notes at build time (force varies_by_point=true whenever the scope_note enumerates divergent per-holding treatment)."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Grady v. North Carolina.json",
+      "reviewed": [
+        {
+          "assertion_id": "1f5a0da0ebf52a69",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'Cite as: 575 U. S. ____ (2015)', TORREY DALE GRADY v. NORTH CAROLINA, No. 14-593, decided March 30, 2015 — matching the record's volume, year, docket, and date.",
+            "575 U.S. and 2015 are confirmed; page 306 is the cluster's assigned U.S. Reports pagination (the slip carries blank page labels '575 U. S. ____').",
+            "official_selection_present=true; parallels (135 S. Ct. 1368, etc.) are standard, and cluster 2789928 matches the sourced opinion URL."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The exact starting page '306' is not shown in the slip text (page labels blank); it derives from the cluster citation, uncontradicted by disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "79cd5a71f2509a6c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record status under_review; field_i_validity honestly declares 'unverified' (frontier stub, treatment/progeny not yet derived).",
+            "Content page renders the white/Unverified banner and asserts no currency, so there is no overstated treatment to refute.",
+            "Handled identically to the Gonzalez v. Trevino frontier stub; varies_by_point=false is consistent with a not-yet-derived stub."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Honest 'not verified' stub — currency undetermined by design, nothing to break."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

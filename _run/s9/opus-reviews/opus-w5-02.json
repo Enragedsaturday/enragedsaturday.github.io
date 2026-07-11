@@ -1,0 +1,343 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Graham v. Barnette.json",
+      "reviewed": [
+        {
+          "assertion_id": "07fab6a12b3c69e0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text confirms the case exists: 8th Cir. No. 19-2512, Teresa M. Graham v. Sgt. Shannon L. Barnette, filed July 16, 2021, Gruender, C.J.",
+            "Official cite '5 F.4th 872' derives from cluster.citations[] (cluster 4900401) with official_selection present; identity_checked=true, party names/year/court all match; no conflicting evidence.",
+            "Opinion in-text references only the prior 2020 opinion (970 F.3d 1075); a court does not self-cite its own new reporter page, so absence of '5 F.4th 872' in the body is expected."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page (872) not independently confirmable from opinion text; relies on disclosed cluster.citations metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "09b25fdf76a96e7a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote matches cached slip opinion verbatim: 'At least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable.'",
+            "The wiki's leading '[a]t' is a proper bracketed-capital quotation adjustment; the remainder is identical.",
+            "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' reflects the absence of a validated star-text deep-link, not a text-fidelity failure."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip-only pincite 'slip op., at 10-11' not star-validated; in cached text the passage sits just after the '-10-' footer, so the exact slip page may be off by one, but that is a pincite (not quote_fidelity) concern and the pagination inference is uncertain."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "507a92ccda1e39a9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-op10 quote is a corrupted extraction of content-page markdown scaffolding ('...governs such a seizure. ## Rule After *Caniglia*, the'), spanning the Issue section into the Rule header; it is not a verbatim opinion quote and appears nowhere in the source.",
+            "severity": "low",
+            "proposed_fix": "Repair the pin-op10 quote field to the material actually rendered at ^pin-op10: 'Now that Caniglia has made clear that \"there is no overarching community caretaking doctrine,\" . . . our use of that label seems to be a category error.'",
+            "evidence_quote": "Now that Caniglia has made clear that “there is no overarching ‘community caretaking’ doctrine,” 141 S. Ct. at 1600 (Alito, J., concurring), our use of that label seems to be a category error.",
+            "needs_cl": false,
+            "locator_note": "cached opinion text, section II.B; the reader-facing quote rendered at content-page ^pin-op10 is faithful and its pincite 'slip op., at 10' is defensible. Defect is metadata-only."
+          },
+          "reasons": [
+            "Reader-facing quote at ^pin-op10 ('...category error') IS faithful to cached text (elides the parenthetical Alito cite with '. . .') and the pincite is defensible.",
+            "Defect is confined to the stored pinpoint metadata quote, which is garbled markdown scaffolding (builder self-flagged quote_fidelity='mismatch').",
+            "No reader harm; the fix is a metadata repair."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same slip-page pagination caveat as sibling pins."
+          ],
+          "suggested_tightening": "Regenerate pinpoint quote fields from the rendered anchor text rather than surrounding markdown to prevent scaffolding capture."
+        },
+        {
+          "assertion_id": "7923c7806c5f0eb7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote matches cached slip opinion verbatim (opinion: 'First, we again conclude that probable cause of dangerousness is the standard that must be met for a warrantless mental-health seizure to be reasonable under the Fourth Amendment.'); the wiki drops the introductory 'First,' and picks up mid-sentence, which is faithful.",
+            "pinpoint_status='star-verified'; fragment '#:~:text=we%20again%20conclude%20that%20probable' is consistent with the cached text.",
+            "Pincite 'slip op., at 10' defensible."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "85bfd2b34453da7d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' supported: lane1_negative (targeted overrul*/abrogat*/supersed*/vacat*/reversed search over scotus OR ca8 citing cases) reviewed 10, proposed_negative_events=0, audit_needed=false.",
+            "The 13 lane2_top_cited edges labeled overruled/abrogated/questioned/criticized are all proposed:true snippet classifications; an 8th-Cir. panel cannot overrule Graham (only en banc/SCOTUS can), and 'State v. Teulilo' is a state court, so these are structurally false positives.",
+            "scope_note accurately states the post-Caniglia category-error / probable-cause-of-dangerousness holding, consistent with the cached opinion; varies_by_point=false is appropriate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The proposed lane2 negative edges (incl. Ledbetter 'overruled', Cameron 'abrogated') were not read against citing-opinion text within the pack; classified as artifacts by court-hierarchy structure, not by reading.",
+            "as_of_treatment 2026-06-30 currency not independently reconfirmable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Graham v. Connor.json",
+      "reviewed": [
+        {
+          "assertion_id": "34e289300c134906",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms case + cite: '490 U.S. 386 (1989)', 'GRAHAM v. CONNOR ET AL.', No. 87-6571, argued Feb. 21 1989, decided May 15 1989, Rehnquist, C.J.",
+            "Official cite 490 U.S. 386 from cluster.citations[]; parallels (109 S. Ct. 1865; 104 L. Ed. 2d 443; 1989 U.S. LEXIS 2467; 57 U.S.L.W. 4513) are the standard Graham v. Connor parallel set.",
+            "No conflicting evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-cite page numbers not independently confirmable from opinion text; rely on disclosed cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8d33102d2ee42bbb",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote matches cached text verbatim: 'The \"reasonableness\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.'",
+            "Passage sits on U.S. Reports p.396 (immediately after the *396 star-pagination), so pincite 'Id. at 396' is correct.",
+            "Payload 'mismatch'/'slip-only' = no validated star fragment, not a text error."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d82c528653841427",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote matches cached text verbatim: '...including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight.'",
+            "pinpoint_status='star-verified'; fragment '#:~:text=including%20the%20severity%20of%20the' consistent; passage on p.396.",
+            "Pincite 'Id.' (396) correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dcda0beea11e9882",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-395 quote is corrupted content-page markdown scaffolding ('...test drawn from *Johnson v. Glick*. ## Issue ... ## Rule Such claims are governed by the Fourth Amendment's objective-reasonableness standard, not substantive due process.'), not a verbatim opinion quote; appears nowhere in the source.",
+            "severity": "low",
+            "proposed_fix": "Repair pin-395 quote to the material actually rendered at ^pin-395: '[A]ll claims that law enforcement officers have used excessive force  deadly or not  in the course of an arrest, investigatory stop, or other \"seizure\" of a free citizen should be analyzed under the Fourth Amendment and its \"reasonableness\" standard, rather than under a \"substantive due process\" approach.'",
+            "evidence_quote": "all claims that law enforcement officers have used excessive force  deadly or not  in the course of an arrest, investigatory stop, or other “seizure” of a free citizen should be analyzed under the Fourth Amendment and its “reasonableness” standard, rather than under a “substantive due process” approach.",
+            "needs_cl": false,
+            "locator_note": "cached text, para beginning 'Today we make explicit what was implicit in Garner...'; reader-facing quote at ^pin-395 is faithful and pincite '490 U.S. at 395' is correct. Defect is metadata-only."
+          },
+          "reasons": [
+            "Reader-facing quote at ^pin-395 is faithful to cached text and the pincite (395) is correct; defect is confined to the corrupted stored metadata quote (builder self-flagged 'mismatch').",
+            "No reader harm; metadata repair only."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Regenerate pinpoint quotes from anchor text, not surrounding markdown."
+        },
+        {
+          "assertion_id": "8fc0f62aa84d4c5f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Graham v. Connor is bedrock excessive-force precedent; lane1_negative reviewed 200 targeted overrul*/abrogat*/vacat* citing hits with proposed_negative_events=0.",
+            "The 25 lane2_top_cited overruled/abrogated/questioned edges are all proposed:true snippet artifacts (Scott v. Harris, Kingsley, Mullenix, White v. Pauly, Tolan, etc. cite and APPLY Graham; none overrule it, and only SCOTUS could).",
+            "varies_by_point=false consistent with the uniform objective-reasonableness holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane1_negative cap_hit=true / audit_needed=true: the negative search hit its 200 cap and did not exhaust all citing cases  a theoretical residual, very low real risk for a still-cited 1989 landmark.",
+            "Content 'No negative treatment' line asserts a clean status the pack cannot exhaustively prove."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Griffin v. Wisconsin.json",
+      "reviewed": [
+        {
+          "assertion_id": "e4151cb2cea4946b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case: Justice Scalia, warrantless probation search in Wisconsin, cert granted 479 U.S. 1005; header cite '483 U.S. 868 (1987)' matches the official cluster cite.",
+            "Opinion body begins at star-page *870 (syllabus occupies 868-869), consistent with the U.S. Reports first-page cite 868.",
+            "Parallels (107 S. Ct. 3164; 97 L. Ed. 2d 709; 1987 U.S. LEXIS 2897; 55 U.S.L.W. 5156) are the standard set."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-cite pages rely on disclosed cluster metadata, not opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1f1cbea61a8ffa43",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-873 quote is corrupted content-page markdown scaffolding ('satisfies the Fourth Amendment. ## Rule Yes. Supervising probationers is a special need beyond ordinary law enforcement...'), not a verbatim opinion quote.",
+            "severity": "low",
+            "proposed_fix": "Repair pin-873 quote to the rendered anchor quote: 'A State's operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents \"special needs\" beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.'",
+            "evidence_quote": "A State’s operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents “special needs” beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.",
+            "needs_cl": false,
+            "locator_note": "cached text para b923-7; the '*874' star falls mid-quote so pincite '483 U.S. at 873-874' is correct; reader-facing quote at ^pin-873 is faithful. Defect is metadata-only."
+          },
+          "reasons": [
+            "Reader-facing quote at ^pin-873 is faithful and its pincite (873-874) is correct; defect is confined to the corrupted stored metadata quote (self-flagged 'mismatch').",
+            "Metadata repair only; no reader harm."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Regenerate pinpoint quotes from anchor text."
+        },
+        {
+          "assertion_id": "b5b5b9fcd9e565dd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote matches cached text verbatim: 'We think it clear that the special needs of Wisconsin's probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by \"reasonable grounds,\" as defined by the Wisconsin Supreme Court.'",
+            "The '*876' star-pagination falls between 'We' and 'think' in the cached text, so pincite 'Id. at 876' is correct.",
+            "Payload 'mismatch'/'slip-only' = no validated star fragment, not a text error (this stored quote, unlike pin-873, is itself a faithful verbatim quote)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3f380cb734f6ebbf",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Griffin v. Wisconsin is the foundational special-needs probation-search precedent, carried forward (not overruled) by United States v. Knights and Samson v. California per the content page.",
+            "lane1_negative surfaced 7 proposed_negative_events, but all are proposed:true snippet artifacts from courts that cannot overrule SCOTUS Griffin: State v. Hilton (state, 'overruled'), United States v. Robert Hill (776 F.3d, circuit, 'overruled'), Chandler / Commonwealth v. Moore ('superseded_by_statute'), Grady / Stenhoff (state, 'questioned').",
+            "lane3_recency reviewed 40 with 0 proposed negatives; varies_by_point=false is appropriate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane1_negative cap_hit=true / audit_needed=true with 7 unresolved proposed negatives  not read against citing-opinion text in-pack; classified as false positives by court-hierarchy structure, not by reading.",
+            "scope_note flags derivation 'may downgrade'; a downgrade did not occur and no SCOTUS-level negative appears in the disclosed edges."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Groh v. Ramirez.json",
+      "reviewed": [
+        {
+          "assertion_id": "b26aeb0afa43ed72",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms case + cite: '540 U.S. 551 (2004)', 'GROH v. RAMIREZ ET AL.', No. 02-811, argued Nov. 4 2003, decided Feb. 24 2004, Stevens, J.",
+            "Official cite 540 U.S. 551 from cluster.citations[]; parallels (124 S. Ct. 1284; 157 L. Ed. 2d 1068; 2004 U.S. LEXIS 1624; 2004 WL 330057) are the standard set.",
+            "No conflicting evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-cite pages rely on disclosed cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "38ee66f7f3f998f9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-557 quote is corrupted content-page markdown scaffolding ('), not the weapons. The supporting application listed the items ... ## Issue ... ## Rule No. Particularity is a requirement of the warrant itself...'), not a verbatim opinion quote.",
+            "severity": "low",
+            "proposed_fix": "Repair pin-557 quote to the rendered anchor quote: 'The fact that the application adequately described the \"things to be seized\" does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents.'",
+            "evidence_quote": "The fact that the application adequately described the “things to be seized” does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents.",
+            "needs_cl": false,
+            "locator_note": "cached text, Part II; reader-facing quote at ^pin-557 is faithful and pincite '540 U.S. at 557' is correct. Defect is metadata-only."
+          },
+          "reasons": [
+            "Reader-facing quote at ^pin-557 is faithful and its pincite (557) is correct; defect is confined to the corrupted stored metadata quote (self-flagged 'mismatch').",
+            "Metadata repair only; no reader harm."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Regenerate pinpoint quotes from anchor text."
+        },
+        {
+          "assertion_id": "65765c5f88ae0f8c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored fragment 'did not describe the items to be seized at all,' matches cached text verbatim ('...the warrant did not describe the items to be seized at all.').",
+            "The companion fragment rendered at ^pin-558, 'was so obviously deficient that we must regard the search as \"warrantless\"', also matches cached text; the passage sits on p.558 (before the *559 star), so pincite 'Id. at 558' is correct.",
+            "Payload 'mismatch'/'slip-only' = fragment-validation status, not a text error."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d5b3499a280500dc",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Groh v. Ramirez is a leading particularity-clause decision; substantively good law and not overruled by any disclosed authority.",
+            "lane1_negative surfaced 10 proposed_negative_events, but all are proposed:true snippet artifacts from courts that cannot overrule SCOTUS Groh (state: Foreman, Angel/McDowell, Wheeler, Yee; circuit/district: Toussaint, Chandler, Wright, Covey). Notably the 'Pearson v. Callahan' edge tagged 'overruled' is a misattribution: Pearson (555 U.S. 223) overruled Saucier v. Katz's mandatory QI sequencing, NOT Groh's particularity holding.",
+            "lane3_recency reviewed 50 with 0 proposed negatives; varies_by_point=false is appropriate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "OPEN PROCESS FLAG: lane1_negative and lane2_top_cited both carry audit_marker 'R15 treatment audit required' with audit_needed=true and cap_hit=true (10 unresolved proposed negatives); a machine-flagged treatment audit is outstanding. This verdict rests on structural false-positive analysis, not a read of each citing opinion.",
+            "scope_note flags derivation 'may downgrade'; a downgrade did not occur."
+          ],
+          "suggested_tightening": "Resolve the 'R15 treatment audit required' marker by reading the 10 lane1 proposed negatives (especially the Pearson v. Callahan snippet) to confirm none downgrades Groh's particularity holding before finalizing good_law."
+        }
+      ]
+    }
+  ]
+}

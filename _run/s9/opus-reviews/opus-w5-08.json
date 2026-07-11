@@ -1,0 +1,306 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Horton v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "c5acee3ac1d7d160",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 496 U.S. 128 (1990) matches the well-formed U.S. Reports citation in cluster.citations[] and the content-page frontmatter/header; official_selection_present=true and the parallel S. Ct./L. Ed. 2d/LEXIS cites are internally consistent.",
+            "Cached majority opinion (Justice Stevens) confirms the record is Horton v. California decided 1990; internal star-pages begin at *131, consistent with a case opening at 128."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8624ca714e2acd09",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The assertion payload's `quote` field is a corrupted extraction: it captured the content page's frontmatter/Background/Issue preamble ending at '## Rule No. The Court rejected inadvertence as a requirement:' instead of the opinion quotation anchored at ^pin-130. The actual content-page quote at ^pin-130 is verbatim-faithful to the opinion and correctly pincited to 130.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-130 quote span from the content page; do NOT alter the content page. The pincite (496 U.S. at 130) and the real quote are correct.",
+            "evidence_quote": "We conclude that even though inadvertence is a characteristic of most legitimate \"plain-view\" seizures, it is not a necessary condition.",
+            "needs_cl": false,
+            "locator_note": "Opinion para b172-6 (opening paragraph, page 130, before the first *131 marker)."
+          },
+          "reasons": [
+            "Content-page quote at ^pin-130 ('even though inadvertence is a characteristic of most legitimate \"plain-view\" seizures, it is not a necessary condition.') matches the opinion verbatim (curly vs straight quotes only).",
+            "The payload `quote` field is garbled harvest metadata (document preamble), not a content-page defect; the pin anchor trails the quoted sentence, so the extractor grabbed everything before it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Guard the quote-harvest against capturing document preamble when the ^pin anchor trails (rather than precedes) the quoted sentence."
+        },
+        {
+          "assertion_id": "1f3c7aec20092b6b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page and payload quote at ^pin-136a ('First, not only must the item be in plain view; its incriminating character must also be \"immediately apparent.\"') matches the opinion verbatim (para b178-7).",
+            "Located on page 136 (before the *137 marker); content cites *Id.* chaining to 136 — correct. The payload 'quote_fidelity: mismatch' is a slip-only / fragment-null verification artifact, not an actual misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "87d86fd5bc53da4d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page and payload quote at ^pin-137 ('Second, not only must the officer be lawfully located in a place from which the object can be plainly seen, but he or she must also have a lawful right of access to the object itself.') matches the opinion verbatim (para b178-7).",
+            "Sentence falls after the *137 star marker; content cites *Id.* at 137 — correct. pinpoint_status star-verified with matching URL text fragment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d0721f4c986a551b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page and payload quote at ^pin-136 ('It is, of course, an essential predicate to any valid warrantless seizure of incriminating evidence that the officer did not violate the Fourth Amendment in arriving at the place from which the evidence could be plainly viewed.') matches the opinion verbatim (para b178-7).",
+            "Sentence opens on page 136; content cites *Id.* at 136 — correct. pinpoint_status star-verified with matching URL text fragment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4480f9a9fb4feb16",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence contradicts good_law: the cached 1990 opinion is the Horton opinion itself and carries no subsequent-treatment signal; content page and lake both assert good_law with an honest composite_basis of 'migration-seed'.",
+            "Refute-framed search of the disclosed record finds no overruling/negative treatment; the assertion is modest and self-consistent (as_of_content=decision date seeding as_of_treatment, with scope_note disclosing that S2 may re-derive/downgrade)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency as of 2026-06-30 cannot be independently verified from the disclosed opinion text; it would require a citator (CourtListener) check not inlined in the pack."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "6/6 reviewed. Existence and both star-verified quotes clean; two 'mismatch'-flagged quotes are slip-only/fragment-null verification artifacts — one (pin-136a) has a clean faithful payload quote (stands), the other (pin-130) has a garbled payload quote-field despite a verbatim-faithful content quote (stands-modified, harvest re-extraction only). Treatment stands with currency-not-verifiable-from-disclosed noted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
+      "reviewed": [
+        {
+          "assertion_id": "a1f335c89ee7ff37",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 565 U.S. 499 (2012) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 132 S. Ct. 1181 / 182 L. Ed. 2d 17 / LEXIS / WL cites are internally consistent.",
+            "Cached opinion confirms the record is Howes v. Fields (Miranda-custody-of-prisoner holding)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4be947150f1df0b6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The payload `quote` is a corrupted extraction capturing the content-page Issue/Rule preamble ('...for *Miranda* purposes — requiring warnings... ## Rule No; there is no categorical rule, and imprisonment by itself is not *Miranda* custody.') rather than the opinion quotation at ^pin-op9. The actual content-page quote at ^pin-op9 is verbatim-faithful and correctly pincited to slip op. 9.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-op9 quote span; the content page and the slip-op-9 pincite are correct.",
+            "evidence_quote": "Not all restraints on freedom of movement amount to custody for purposes of Miranda.",
+            "needs_cl": false,
+            "locator_note": "Slip op. p.9 — opinion text appears before the 'HOWES v. FIELDS / 10' running header that opens slip page 10."
+          },
+          "reasons": [
+            "Content-page quote at ^pin-op9 ('Not all restraints on freedom of movement amount to custody for purposes of Miranda.') matches the opinion verbatim.",
+            "Quote sits on slip page 9 (before the page-10 running header); content cites '(slip op., at 9)' — correct. Only the payload quote-field is garbled, not the content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Same preamble-capture guard as Horton pin-130 (anchor trails the quoted sentence)."
+        },
+        {
+          "assertion_id": "7651d1a14fe69181",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page and payload quote at ^pin-op10 ('If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda.') matches the opinion verbatim.",
+            "Quote sits on slip page 10 (after the page-10 running header); content cites '(slip op., at 10)' — correct. quote_fidelity=matched with a valid URL text fragment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3ac6d5f77d68d136",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence contradicts good_law; the cached 2012 opinion is Howes v. Fields itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+            "Refute-framed review of the disclosed record finds no overruling/negative treatment; assertion is self-consistent with an honest 'migration-seed' composite_basis and re-derivation scope_note."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "4/4 reviewed. Existence and pin-op10 clean; pin-op9 has a garbled payload quote-field despite a verbatim-faithful content quote (stands-modified, harvest re-extraction only). Treatment stands with currency-not-verifiable-from-disclosed noted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hudson v. Michigan.json",
+      "reviewed": [
+        {
+          "assertion_id": "8c2eb1e7a9241197",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 547 U.S. 586 (2006) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 126 S. Ct. 2159 / 165 L. Ed. 2d 56 / LEXIS cites are internally consistent.",
+            "Cached opinion confirms the record is Hudson v. Michigan (knock-and-announce / exclusionary-rule holding)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3b368ebef1a6b3b8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page and payload quote at ^pin-594a ('Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable.') matches the opinion verbatim.",
+            "Cited *Id.* (=594), same paragraph as the ^pin-594 sentence. The payload 'quote_fidelity: mismatch' is a slip-only / fragment-null verification artifact, not an actual misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 594 is a U.S. Reports star-page, but the cached opinion text is slip-paginated (running header 'HUDSON v. MICHIGAN / 8'), so page 594 cannot be independently confirmed from disclosed text; the quote is verbatim and 594 is uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f45fba80f5288721",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The payload `quote` is a corrupted extraction capturing the content-page frontmatter/Background/Issue/Rule preamble instead of the opinion quotation at ^pin-594. The actual content-page quote at ^pin-594 is verbatim-faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-594 quote span; the content quote is correct.",
+            "evidence_quote": "What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant.",
+            "needs_cl": false,
+            "locator_note": "Opinion body near slip p.7-8 (before the 'HUDSON v. MICHIGAN / 8' running header); content cites this as U.S. 594."
+          },
+          "reasons": [
+            "Content-page quote at ^pin-594 ('What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant.') matches the opinion verbatim.",
+            "Only the payload quote-field is garbled harvest metadata; the content page and its cite are not defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 594 (U.S. Reports star-page) is not independently confirmable from the slip-paginated cached text; the quote is verbatim and 594 is uncontradicted."
+          ],
+          "suggested_tightening": "Same preamble-capture guard as Horton pin-130."
+        },
+        {
+          "assertion_id": "192383edae71525a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence contradicts good_law; the cached 2006 opinion is Hudson v. Michigan itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+            "Refute-framed review finds no overruling/negative treatment in the disclosed record; assertion is self-consistent with an honest 'migration-seed' composite_basis and re-derivation scope_note."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "4/4 reviewed. Existence and pin-594a clean; pin-594 has a garbled payload quote-field despite a verbatim-faithful content quote (stands-modified, harvest re-extraction only). U.S.-Reports pincite 594 is not confirmable from the slip-paginated cached text (noted as residual risk on both 594 pins). Treatment stands with currency-not-verifiable-from-disclosed noted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Hudson v. Palmer.json",
+      "reviewed": [
+        {
+          "assertion_id": "09b6951890d25156",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 468 U.S. 517 (1984) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 104 S. Ct. 3194 / 82 L. Ed. 2d 393 / 52 U.S.L.W. 5052 / LEXIS cites are internally consistent.",
+            "Cached opinion (Chief Justice Burger) confirms the record is Hudson v. Palmer (no REP in prison cell)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5d336012368db30e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The payload `quote` is a corrupted extraction capturing the content-page Background/Issue/Rule preamble instead of the opinion quotation at ^pin-526. The actual content-page quote at ^pin-526 is verbatim-faithful, with proper '[W]e' bracket-capitalization of the original mid-sentence 'we', and is correctly pincited to 526.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-526 quote span; the content quote and pincite are correct.",
+            "evidence_quote": "we hold that society is not prepared to recognize as legitimate any subjective expectation of privacy that a prisoner might have in his prison cell and that, accordingly, the Fourth Amendment proscription against unreasonable searches does not apply within the confines of the prison cell. The recognition of privacy rights for prisoners in their individual cells simply cannot be reconciled with the concept of incarceration and the needs and objectives of penal institutions.",
+            "needs_cl": false,
+            "locator_note": "Opinion para b567-5; star marker *526 falls immediately before 'hold', so the quoted passage is on page 526."
+          },
+          "reasons": [
+            "Content-page quote at ^pin-526 matches the opinion verbatim; the leading '[W]e' correctly brackets the opinion's original lowercase 'we' (mid-sentence after 'Notwithstanding our caution...').",
+            "Pincite 468 U.S. at 526 is confirmed by the *526 star marker immediately preceding 'hold'. Only the payload quote-field is garbled harvest metadata; the content page is not defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Same preamble-capture guard as Horton pin-130 (anchor trails the quoted sentence)."
+        },
+        {
+          "assertion_id": "04b9b316da378422",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence contradicts good_law; the cached 1984 opinion is Hudson v. Palmer itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+            "The scope_note accurately cabins the in-scope Fourth Amendment holding (no REP in a prison cell) from the companion Parratt-Hudson Fourteenth Amendment due-process holding; the cached opinion (Parts II-A vs II-B and Part III) confirms both holdings and the scope split. Refute-framed review finds no overruling/negative treatment in the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "3/3 reviewed. Existence clean; pin-526 has a garbled payload quote-field despite a verbatim-faithful, properly bracket-capitalized content quote correctly pincited to 526 (stands-modified, harvest re-extraction only). Treatment stands; scope_note correctly separates the 14A companion holding from this 4A home. Currency-not-verifiable-from-disclosed noted."
+    }
+  ]
+}
