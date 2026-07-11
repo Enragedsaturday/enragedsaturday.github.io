@@ -1,0 +1,206 @@
+{"packs":[
+{
+  "lens":"diversity",
+  "group_id":"_overhaul2/lake/cases/Utah v. Strieff.json",
+  "reviewed":[
+    {
+      "assertion_id":"c82cf54728c4c8ce",
+      "dimension":"existence",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["All six cites in payload.all match cluster.citations[] verbatim in the disclosed lake record (579 U.S. 232; 136 S. Ct. 2056; 195 L. Ed. 2d 400; 84 U.S.L.W. 4430; 26 Fla. L. Weekly Fed. S 288; 2016 U.S. LEXIS 3926).","Cached opinion star-paginates by 136 S. Ct. (*2060-*2063), corroborating the S. Ct. 2056 first page; content header leads with 579 U.S. 232 (2016)."],
+      "breaks_true_positives":false,
+      "residual_risks":["official_selection.selected is null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S') so no official was auto-picked, but the U.S.-reporter cite 579 U.S. 232 is present and rendered — metadata quirk, not an existence defect."],
+      "suggested_tightening":"Consider seeding official=579 U.S. 232 despite the unlisted Fla. reporter so official_selection is non-null."
+    },
+    {
+      "assertion_id":"393c69040634bfb7",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Stored pin-2062 quote is a page-markdown capture ('--- # Utah v. Strieff ...') — an extraction artifact (pinpoint_status slip-only), not a reader-facing quotation.","The reader-facing Rule-paragraph quotations verify verbatim against cached opinion p-26 (star *2062): 'temporal proximity', 'the presence of intervening circumstances', ''particularly' significant', 'the purpose and flagrancy of the official misconduct'.","Pincite '136 S. Ct. at 2061-2062' brackets the Rule section: general framing at *2061 (p-21) through the three-factor recitation at *2062 (p-26)."],
+      "breaks_true_positives":false,
+      "residual_risks":["The stored pin.quote does not match the opinion; only the rendered content-page quotations do — literal-string checkers will keep flagging this pin."],
+      "suggested_tightening":"Re-anchor pin-2062.quote to a discrete opinion span (e.g. 'the purpose and flagrancy of the official misconduct') so the stored quote is star-verifiable."
+    },
+    {
+      "assertion_id":"fdb6d89c30755ae2",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Quote 'the second factor, the presence of intervening circumstances, strongly favors the State' matches cached opinion p-29 verbatim.","p-29 sits between the *2062 label (p-26) and the *2063 label (p-31), confirming star_marker 2062 and the '136 S. Ct. at 2062' pincite; text-fragment fidelity is star-verified/matched."],
+      "breaks_true_positives":false,
+      "residual_risks":[],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"af21fa831df93cc7",
+      "dimension":"treatment",
+      "verdict":"stands",
+      "verifiable_from_disclosed":false,
+      "defect":null,
+      "reasons":["field_i_validity good_law rests on composite_basis 'migration-seed' (scope_note concedes S2 re-derivation may downgrade); currency is not derivable from the opinion text alone.","No disclosed adjudicated negative treatment: the two field_ii='overruled' edges (People v. Silveria; Dancy v. McGinley) are marked proposed:true / journal_ref lane2_top_cited — unadjudicated candidate signals attached to the citing cases, and a lower court cannot overrule a controlling SCOTUS attenuation holding.","No disclosed basis to affirmatively refute good_law."],
+      "breaks_true_positives":false,
+      "residual_risks":["good_law is a seed, not citator-derived; 2 proposed 'overruled' edges await adjudication.","Treatment currency (as-of 2026-06-30) cannot be independently confirmed from the disclosed evidence — needs CL citator."],
+      "suggested_tightening":"S2 re-derivation / CL citator should confirm good_law and dispose of the two proposed 'overruled' edges before the migration-seed is ratified."
+    }
+  ],
+  "notes":"All 4 stand. quote_fidelity 'mismatch' on pin-2062 is a page-markdown stored-quote artifact; rendered quotations verify verbatim at 136 S. Ct. 2062. Treatment good_law is a migration-seed, not disclosed-verifiable."
+},
+{
+  "lens":"diversity",
+  "group_id":"_overhaul2/lake/cases/Uzuegbunam v. Preczewski.json",
+  "reviewed":[
+    {
+      "assertion_id":"a4e374ea543c1cb3",
+      "dimension":"existence",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["payload cites (official 592 U.S. 279; parallel 141 S. Ct. 792; 209 L. Ed. 2d 94) match the disclosed lake record citations block; official_selection selected 592 U.S. 279 (selected_rank_1).","Cached slip opinion confirms identity (No. 19-968, October Term 2020, Vega... no — Uzuegbunam v. Preczewski, Held on nominal-damages redressability), consistent with the cited case; docket 19-968 matches identity.cluster 4861817."],
+      "breaks_true_positives":false,
+      "residual_risks":["CL carries the slip opinion ('592 U. S. ____'), so the U.S.-reporter page 279 is not independently confirmable from the cached text; the page's Sources note honestly discloses this (page equality not asserted). Cite existence is attested by cluster.citations[]."],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"b90a65fbab54d011",
+      "dimension":"treatment",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["field_i_validity 'unverified' is an honest non-claim: record and content page both render Treatment: Unverified under the frontier-stub scope_note ('treatment/progeny intentionally not derived until S6 promotion').","No treatment is asserted to readers, so there is nothing to refute; the page displays the ⚪ under_review banner and disclaims machine-verified currency."],
+      "breaks_true_positives":false,
+      "residual_risks":["Progeny/citator history is intentionally empty (edges[]=[]); status remains under_review pending S9 promotion — by design, not a defect."],
+      "suggested_tightening":null
+    }
+  ],
+  "notes":"Both stand. Frontier stub honestly labels treatment Unverified; existence cites match cluster.citations[]. (pin-op holding quote is not in this group's inventory and was not voted.)"
+},
+{
+  "lens":"diversity",
+  "group_id":"_overhaul2/lake/cases/Vale v. Louisiana.json",
+  "reviewed":[
+    {
+      "assertion_id":"c33347c8a1ee10c5",
+      "dimension":"existence",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["payload cites (official 399 U.S. 30; 90 S. Ct. 1969; 26 L. Ed. 2d 409; 1970 U.S. LEXIS 18) match the disclosed lake record; cached opinion caption confirms '399 U.S. 30 (1970)', 'No. 727', decided June 22, 1970."],
+      "breaks_true_positives":false,
+      "residual_risks":[],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"10b1c7a10a308c18",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Quote 'a few specifically established and well-delineated' matches cached opinion verbatim ('only in \"a few specifically established and well-delineated\" situations, Katz v. United States, 389 U. S. 347, 357').","The phrase sits after the *34 label and before the *35 label, confirming star_marker 34 and the 'Id. at 34' pincite; pinpoint_status star-verified/matched."],
+      "breaks_true_positives":false,
+      "residual_risks":[],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"9ccbdd4de51452ad",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["pin-34 reader-facing quote is a faithful quotation-with-elisions of cached opinion: 'If a search of a house is to be upheld [*34] as incident to an arrest, that arrest must take place inside the house [...] not somewhere outside—whether two blocks away [...] twenty feet away [...] or on the sidewalk near the front steps.' Ellipses replace only the elided internal citations (Agnello 269 U.S. 20,32; James 382 U.S. 36; Shipley supra).","The content page's em-dash ('outside — whether') matches the true opinion; the cached text merely lost the dash char ('outsidewhether'), so the content is faithful, not divergent.","Spans *33→*34, supporting the 'Id. at 34' pincite. The 'mismatch' flag is a literal-string artifact of the elisions/dash, not an infidelity."],
+      "breaks_true_positives":false,
+      "residual_risks":["Elision-bearing quote will keep tripping literal-string fidelity checks (slip-only)."],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"e2fccdf62bc0b3f1",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["pin-35 quote 'decline[d] to hold that an arrest on the street can provide its own \"exigent circumstance\" so as to justify a warrantless search of the arrestee's house' is faithful to cached opinion 'We decline to hold that an arrest on the street can provide its own \"exigent circumstance\" so as to justify a warrantless search of the arrestee's house.' — only a standard bracketed alteration (We decline -> decline[d]).","The sentence follows the *35 label and precedes the *36 label, confirming the 'Id. at 35' pincite."],
+      "breaks_true_positives":false,
+      "residual_risks":["'mismatch' flag reflects the bracket alteration and smart-vs-straight quotes, not an infidelity."],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"fd10d273b8fa2551",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Stored pin-33 quote is a page-markdown capture ('--- # Vale v. Louisiana ... ## Rule No. A search') — an extraction artifact (slip-only), not a reader-facing quotation.","The reader-facing Rule quote verifies against cached opinion (p at *33): 'A search may be incident to an arrest \" `only if it is substantially contemporaneous with the arrest and is confined to the immediate vicinity of the arrest.' \"' with 'immediate' italicized, attributed to Shipley — verbatim.","The sentence sits after the *33 label and before *34, supporting the '399 U.S. at 33' pincite."],
+      "breaks_true_positives":false,
+      "residual_risks":["Stored pin.quote does not match the opinion; only the rendered content-page quotation does."],
+      "suggested_tightening":"Re-anchor pin-33.quote to the actual Shipley-quoting sentence so the stored span is star-verifiable."
+    },
+    {
+      "assertion_id":"895d3dfd9d93fbe5",
+      "dimension":"treatment",
+      "verdict":"stands",
+      "verifiable_from_disclosed":false,
+      "defect":null,
+      "reasons":["field_i_validity good_law rests on composite_basis 'migration-seed'; currency is not derivable from the 1970 opinion text.","No disclosed adjudicated negative treatment: the field_ii questioned/overruled edges (Sivertson; Pair; Vela; Baird) are all proposed:true / journal_ref lane1_negative — unadjudicated candidate signals from lower state courts that cannot overrule a controlling SCOTUS SIA holding; scope_note affirms Vale is still the controlling spatial-limit rule.","No disclosed basis to affirmatively refute good_law."],
+      "breaks_true_positives":false,
+      "residual_risks":["good_law is a seed, not citator-derived; several proposed lane1_negative edges (questioned/overruled) await adjudication.","Content page states 'No negative treatment' while the record carries proposed negative edges — reconcilable (proposed != confirmed) but worth a citator pass."],
+      "suggested_tightening":"S2 re-derivation / CL citator should confirm good_law and dispose of the proposed lane1_negative edges before the migration-seed is ratified."
+    }
+  ],
+  "notes":"All 6 stand. pin-33 mismatch is a page-markdown stored-quote artifact; pin-34/pin-35 mismatches are legitimate elision/bracket-alteration quotations that verify against the cached opinion. Treatment good_law is a migration-seed with unadjudicated proposed negatives."
+},
+{
+  "lens":"diversity",
+  "group_id":"_overhaul2/lake/cases/Vega v. Tekoh.json",
+  "reviewed":[
+    {
+      "assertion_id":"ef52ec9b11d9bd71",
+      "dimension":"existence",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["payload cites (official 597 U.S. 134; 213 L. Ed. 2d 479; 142 S. Ct. 2095) match the disclosed lake record; official_selection selected 597 U.S. 134.","Cached slip opinion confirms identity: 'VEGA v. TEKOH', No. 21-499, argued April 20, 2022, decided June 23, 2022 — consistent with the cited case and docket 21-499."],
+      "breaks_true_positives":false,
+      "residual_risks":["CL copy is the slip opinion ('597 U. S. ____'), so U.S.-reporter page 134 is not independently confirmable from cached text; cite existence attested by cluster.citations[] and page's Sources note discloses this."],
+      "suggested_tightening":null
+    },
+    {
+      "assertion_id":"cd69ed6c5d178785",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Stored pin-134a quote 'Concluding:' is a page-markdown capture (slip-only artifact), not a reader-facing quotation.","The reader-facing concluding quote verifies verbatim against cached opinion (post-*** conclusion): 'Because a violation of Miranda is not itself a violation of the Fifth Amendment, and because we see no justification for expanding Miranda to confer a right to sue under §1983, the judgment of the Court of Appeals is reversed[.]' — content legitimately truncates the sentence at 'reversed.'","Attribution 'Id. (Alito, J., for the Court) (concluding paragraph)' is accurate; it is the Court's closing paragraph."],
+      "breaks_true_positives":false,
+      "residual_risks":["Stored pin.quote ('Concluding:') does not match the opinion; only the rendered quotation does."],
+      "suggested_tightening":"Re-anchor pin-134a.quote to the 'Because a violation of Miranda...' span so the stored quote is verifiable."
+    },
+    {
+      "assertion_id":"fd27d738408b41c9",
+      "dimension":"quote_fidelity",
+      "verdict":"stands",
+      "verifiable_from_disclosed":true,
+      "defect":null,
+      "reasons":["Stored pin-134 quote 'for § 1983 purposes. ## Rule No.' is a page-markdown capture (slip-only artifact), not a reader-facing quotation.","The reader-facing Held quote 'A violation of the Miranda rules does not provide a basis for a § 1983 claim.' matches the cached syllabus verbatim ('Held: A violation of the Miranda rules does not provide a basis for a §1983 claim.'); the '(Held)' attribution is correct.","Pincite '597 U.S. at 134' is the case first page; page-anchoring the Held to 134 is proper."],
+      "breaks_true_positives":false,
+      "residual_risks":["Held is a syllabus statement (Reporter of Decisions), not the opinion body — the '(Held)' tag correctly signals this."],
+      "suggested_tightening":"Re-anchor pin-134.quote to the syllabus Held sentence so the stored quote is verifiable."
+    },
+    {
+      "assertion_id":"733126260a2eada7",
+      "dimension":"treatment",
+      "verdict":"stands",
+      "verifiable_from_disclosed":false,
+      "defect":null,
+      "reasons":["field_i_validity good_law rests on composite_basis 'migration-seed' (scope_note 'Recent controlling decision; good law'); currency of a 2022 SCOTUS holding is not derivable from the opinion text.","No disclosed adjudicated negative treatment: all field_ii edges (questioned/overruled/abrogated/superseded_by_statute) are proposed:true candidate signals — nothing can overrule a 2022 controlling SCOTUS decision from within the disclosed record.","No disclosed basis to affirmatively refute good_law."],
+      "breaks_true_positives":false,
+      "residual_risks":["good_law is a seed, not citator-derived; multiple proposed negative edges await adjudication.","Treatment currency (as-of 2026-06-30) not independently confirmable from disclosed evidence — needs CL citator."],
+      "suggested_tightening":"S2 re-derivation / CL citator should confirm good_law and dispose of the proposed negative edges before ratifying the migration-seed."
+    }
+  ],
+  "notes":"All 4 stand. pin-134/pin-134a mismatches are page-markdown stored-quote artifacts; the Held and concluding quotations verify verbatim against the cached slip opinion. OUT-OF-SCOPE observation (not in this group's inventory, no vote): the Rule-prose quotation '\"Miranda and its progeny provide sufficient protection for the Fifth Amendment right against compelled self-incrimination\"' encloses the paraphrased subject 'Miranda and its progeny' in quotation marks, whereas the opinion reads 'Miranda, Dickerson, and the other cases in that line provide sufficient protection...' — the trailing clause is verbatim but the quoted subject is not; flag for the orchestrator/A-lens if that unanchored quote is paneled elsewhere."
+}
+]}

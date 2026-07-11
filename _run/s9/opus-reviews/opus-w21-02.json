@@ -1,0 +1,326 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Vernonia School District 47J v. Acton.json",
+      "lens": "opus-model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "458ede4658705d29",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip header shows '515 U.S. 646 (1995)' and a Scalia majority opinion; star pages *649-*666 consistent with a case beginning at 646.",
+            "Lake record: official 515 U.S. 646 selected_official true, identity_checked, expected_citation_found true, party_name_in_text true, official_selection_present true.",
+            "Citation real and correctly reportered; official selection present."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "opinion_id 9433198 vs cluster_id 117964 not independently verifiable from disclosed text, but consistent."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2d57045aea3b13da",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'special needs' verbatim in cached text: 'when special needs, beyond the normal need for law enforcement, make the warrant and probable-cause requirement impracticable' (transition to *653) and 'We have found such \"special needs\" to exist in the public school context.'",
+            "star_marker 653 correct; fragment (prefix 'when-', textStart 'special needs') resolves; star-verified/matched confirmed.",
+            "Reader-facing pull-quote at pin-657, 'Legitimate privacy expectations are even less with regard to student athletes.', is also verbatim at *657 (para b703-5); pincite 657 correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "814e345a347d0512",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote verbatim at *664-*665 (para b710-3): 'the decreased expectation of privacy, the relative unobtrusiveness of the search, and the severity of the need met by the search'; completing clause 'we conclude Vernonia's Policy is reasonable and hence constitutional' at *665.",
+            "Pincite 664-665 accurate (phrase straddles the *665 page break).",
+            "Record's quote_fidelity 'mismatch'/slip-only is a FALSE POSITIVE: the embedded *665 page-number span splits the contiguous string for the matcher; the quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Make star-matching tolerant of embedded page-number markers so cross-page verbatim quotes are not mis-flagged as mismatch."
+        },
+        {
+          "assertion_id": "89c4804b23ef4b00",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-652 'quote' is the page YAML/header front-matter plus Background/Issue/Rule-intro prose, not a quotation from 515 U.S. at 652; broken extraction (quote_fidelity 'mismatch', star_marker null), so no valid quote backs the 652 pincite.",
+            "severity": "medium",
+            "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'the ultimate measure of the constitutionality of a governmental search is \"reasonableness\"' / 'balancing its intrusion on the individual's Fourth Amendment interests against its promotion of legitimate governmental interests.'",
+            "evidence_quote": "--- # Vernonia School District 47J v. Acton *515 U.S. 646 (1995)*",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-652"
+          },
+          "reasons": [
+            "Stored quote is front-matter, not opinion text -> the quote_pinpoint as framed is invalid.",
+            "The quotes the content page actually cites at pin-652 ('the ultimate measure...reasonableness' and 'balancing its intrusion...governmental interests.') are verbatim-faithful per cached *652-*653 (paras b698-6/b698-7), so no reader is misled."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8877da5ead42ddbe",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law for a SCOTUS decision; every disclosed edge is 'proposed: true' and sourced to state courts (Moore v. Portland Public Schools abrogated; State v. Strudwick superseded_by_statute; State v. Hilton overruled; State v. Grady/Thompson/Keller questioned) that cannot overrule a SCOTUS Fourth Amendment holding.",
+            "No confirmed negative federal treatment disclosed; varies_by_point false defensible for the federal proposition; as_of_treatment 2026-06-30 current (~10 days)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note's extension by Board of Education v. Earls (2002) not inlined; uncontradicted and consistent with related[]."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Cached slip opinion inlined; all 5 items verified against source text. pin-652 front-matter extraction broken (refuted) though the reader-facing quotes are faithful."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Virginia v. Moore.json",
+      "lens": "opus-model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "395b14108f9bce9e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip: 'Cite as: 553 U. S. ____ (2008)', caption 'VIRGINIA v. MOORE', 'No. 06-1082 ... Decided April 23, 2008' -> docket 06-1082 and date match.",
+            "Official 553 U.S. 164 selected_official true, official_selection_present true, identity_checked.",
+            "Citation real and correctly reportered."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "opinion_id == cluster_id (145814) is a provenance quirk not independently checkable; official cite nonetheless correct."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3aeabe33a5f369e8",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-1607 'quote' is the page front-matter plus Background/Issue/Rule-intro prose, not a quotation; broken extraction (quote_fidelity 'mismatch', star_marker null).",
+            "severity": "medium",
+            "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'warrantless arrests for crimes committed in the presence of an arresting officer are reasonable under the Constitution, and that while States are free to regulate such arrests however they desire, state restrictions do not alter the Fourth Amendment's protections.'",
+            "evidence_quote": "--- # Virginia v. Moore *553 U.S. 164 (2008)*",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-1607"
+          },
+          "reasons": [
+            "Stored quote is front-matter, not opinion text -> quote_pinpoint invalid as framed.",
+            "The quote the content actually cites at pin-1607 is verbatim-faithful per cached body: 'We conclude that warrantless arrests for crimes committed in the presence of an arresting officer are reasonable under the Constitution, and that while States are free to regulate such arrests however they desire, state restrictions do not alter the Fourth Amendment's protections.' (bracketed '[W]' and elided 'that' are proper) -> reader not misled."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "71d7026c673ea1ec",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'officers may perform searches incident to constitutionally permissible arrests in order to ensure their safety and safeguard evidence' verbatim in cached text (syllabus (d): 'Officers may perform searches incident to constitutionally permissible arrests in order to ensure their safety and safeguard evidence.'; echoed in Part IV of the body).",
+            "Record's quote_fidelity 'mismatch'/slip-only is a FALSE POSITIVE: the cached copy is the SLIP opinion (no S. Ct. reporter star pages), so the S.Ct.-1608 pincite cannot be auto-mapped; the quote text is faithful.",
+            "Companion reader-facing quote at pin-1608 ('When officers have probable cause to believe that a person has committed a crime in their presence, the Fourth Amendment permits them to make an arrest, and to search the suspect in order to safeguard evidence and ensure their own safety.') is verbatim in the cached body."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Attach the S. Ct. reporter copy (or a page-map) so 1607/1608 pincites can be star-verified rather than left slip-only."
+        },
+        {
+          "assertion_id": "22acbb76118ba14a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law for a SCOTUS decision; all disclosed edges are 'proposed: true' automated-citator candidates (Arizona v. Gant, Rodriguez v. United States, Bruen, Missouri v. McNeely, Birchfield, Safford/Redding flagged overruled/abrogated/questioned) - none actually overrules Moore.",
+            "No confirmed negative treatment; varies_by_point false defensible; as_of_treatment 2026-06-30 current."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Cached copy is the SLIP opinion (no S. Ct. star pages), explaining slip-only/mismatch flags on 1607/1608; quotes verify verbatim. pin-1607 front-matter extraction broken (refuted)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Walder v. United States.json",
+      "lens": "opus-model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "bb1c5c6f0bdff8c7",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The parallel-citation set carries a facially impossible 'L. Ed. 2d' reference for a 1954 decision: '98 L. Ed. 2d 503'. Lawyers' Edition Second Series began in 1956, so a 1954 case cannot appear in L. Ed. 2d; the correct first-series '98 L. Ed. 503' is also present, so the '2d' entry is a spurious/duplicated mis-reportered parallel. It also surfaces reader-facing in the page parallel_cite ('98 L. Ed. 2d 503; 98 L. Ed. 503').",
+            "severity": "low",
+            "proposed_fix": "Drop '98 L. Ed. 2d 503'; retain '98 L. Ed. 503'.",
+            "evidence_quote": "98 L. Ed. 2d 503",
+            "needs_cl": false,
+            "locator_note": "citations.all[]/parallel[] and content front-matter parallel_cite; year 1954 / date_decided 1954-02-01"
+          },
+          "reasons": [
+            "Existence core stands: official 347 U.S. 62 (1954) confirmed - cached Frankfurter majority, star pages *63-*66 (case begins 62), facts (1950 indictment/suppression, 1952 retrial) match.",
+            "Minor citation-hygiene defect only (spurious L. Ed. 2d parallel); does not break the true positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "15418bf0c618a725",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote verbatim at page 65 (between *65 and *66): 'He must be free to deny all the elements of the case against him without thereby giving leave to the Government to introduce by way of rebuttal evidence illegally secured by it, and therefore not available for its case in chief.'",
+            "star_marker 65 correct; fragment 'must be free to deny' resolves; star-verified/matched confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "de12792edb1d1f53",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-65 'quote' is the page front-matter plus Background/Issue/Rule-intro prose, not a quotation; broken extraction (quote_fidelity 'mismatch', star_marker null).",
+            "severity": "medium",
+            "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained... Such an extension of the Weeks doctrine would be a perversion of the Fourth Amendment.'",
+            "evidence_quote": "--- # Walder v. United States *347 U.S. 62 (1954)*",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-65"
+          },
+          "reasons": [
+            "Stored quote is front-matter, not opinion text -> quote_pinpoint invalid as framed.",
+            "The quote the content actually cites at pin-65 is verbatim-faithful per cached *65: 'It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained. It is quite another to say that the defendant can turn the illegal method by which evidence in the Government's possession was obtained to his own advantage, and provide himself with a shield against contradiction of his untruths. Such an extension of the [Weeks] doctrine would be a perversion of the Fourth Amendment.' -> reader not misled."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "40a7f55f7d984c52",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law; all disclosed edges are 'proposed: true' automated-citator noise (Illinois v. Gates, United States v. Leon, Schneckloth v. Bustamonte, Kansas v. Ventris flagged overruled/questioned) - none overrules Walder, the origin of the impeachment exception.",
+            "No confirmed negative treatment; varies_by_point false; as_of_treatment 2026-06-30 current."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note forward-history (Harris v. New York, Havens, James v. Illinois) not inlined; uncontradicted."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Existence stands-modified for a spurious '98 L. Ed. 2d 503' parallel on a 1954 case (L. Ed. 2d postdates 1956). pin-65 front-matter extraction broken (refuted); pin-65b star-verified quote confirmed."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Walter v. United States.json",
+      "lens": "opus-model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "0b8460077a1da25d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text: Stevens 'announced the judgment of the Court and delivered an opinion, in which Mr. Justice Stewart joined'; facts (12 sealed packages, L'Eggs Products, 8mm films, warrantless FBI projection) match; star pages *652-*660 (case begins 649).",
+            "Docket 79-67 matches cached footnotes ('No. 79-67'); parallel 100 S. Ct. 2395 / 65 L. Ed. 2d 410 era-correct for a 1980 decision.",
+            "Official 447 U.S. 649 selected_official true, official_selection_present true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "opinion_id 9428007 vs cluster_id 110314 not independently checkable; official cite correct."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4e957c991aec8af8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote verbatim in cached text (para b699-5, page 657): 'The projection of the films was a significant expansion of the search that had been conducted previously by a private party and therefore must be characterized as a separate search.'",
+            "star_marker 657 correct (para b699-5 sits between *657 and *658); fragment 'The projection of the films' resolves; star-verified/matched confirmed.",
+            "Content correctly pincites this quote to 'Id.' (=447 U.S. 657); the sibling 654 quote ('the unauthorized exhibition...no exigent circumstances') is genuinely at *654 (para b696-5), so both prose pincites are accurate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pin id 'pin-654' vs verified star 657 is an internal labeling mismatch; quote fidelity itself unaffected."
+          ],
+          "suggested_tightening": "Content-page link labeled '[Id. at 654]' (on the 'unauthorized exhibition' quote at 654) carries THIS pin's fragment '#:~:text=The projection of the films', so that deep link scrolls to the 657 sentence; re-anchor the 654 link's fragment to its own quote. Does not affect this stored quote's fidelity."
+        },
+        {
+          "assertion_id": "70747561b8153f9e",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-657 'quote' is the page front-matter plus Background/Issue/Rule-intro prose, not a quotation; broken extraction (quote_fidelity 'mismatch', star_marker null).",
+            "severity": "medium",
+            "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'the Government may not exceed the scope of the private search unless it has the right to make an independent search.'",
+            "evidence_quote": "--- # Walter v. United States *447 U.S. 649 (1980)*",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-657"
+          },
+          "reasons": [
+            "Stored quote is front-matter, not opinion text -> quote_pinpoint invalid as framed.",
+            "The quote the content actually cites at pin-657 is verbatim-faithful per cached *657 (para b699-5: 'surely the Government may not exceed the scope of the private search unless it has the right to make an independent search.'; content drops leading 'surely') -> reader not misled."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0f2e8db1e57132dc",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law; cached text confirms the plurality posture (Stevens announced the judgment, joined only by Stewart; Marshall concurs in judgment), so scope_note 'Plurality (Stevens, J., announcing the judgment)' is accurate.",
+            "All disclosed edges are 'proposed: true' automated-citator noise (including 'United States v. Jacobsen overruled' - Jacobsen adopted/refined, did not overrule, the private-search principle); no confirmed negative treatment; varies_by_point false; as_of_treatment 2026-06-30 current."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note's refinement by United States v. Jacobsen (1984) not inlined; uncontradicted and consistent with the cached private-search reasoning."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "pin-654 stored quote verifies verbatim at page 657 (stands); flagged a cross-wired deep-link fragment on the '654' pincite. pin-657 front-matter extraction broken (refuted)."
+    }
+  ]
+}
