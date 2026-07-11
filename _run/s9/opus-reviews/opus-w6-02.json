@@ -1,0 +1,292 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/J.D.B. v. North Carolina.json",
+      "reviewed": [
+        {
+          "assertion_id": "26a674d14ed20c0a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion is J. D. B. v. North Carolina (Sotomayor, J.); internal reporter markers 564 U.S. 264-270 and L.Ed.2d star pages *319-*325 confirm the case reports at 564 U.S. 261 (2011).",
+            "Official cite 564 U.S. 261 is selected; parallels 131 S. Ct. 2394 / 180 L. Ed. 2d 310 are the standard J.D.B. cites and the opinion itself cross-references '180 L. Ed. 2d, at 324'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "86444b8eb6b122f2",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-op11 quote is verbatim in the cached opinion: 'So long as the child's age was known to the officer at the time of the interview, or would have been objectively apparent to any reasonable officer, including age as part of the custody analysis requires officers neither to consider circumstances [unknowable] to them ... nor to [anticipat(e) the frailties or idiosyncrasies] of the particular suspect whom they question'.",
+            "The content page's ' . . . ' properly elides the intervening Berkemer citation; only difference is curly-vs-straight quotes, so the payload quote_fidelity='mismatch' is a scanner false positive, not a real defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status slip-only; the exact slip page (at 11) was not independently cross-checked, but the dimension under review is quote_fidelity, not pincite."
+          ],
+          "suggested_tightening": "Teach the quote matcher to tolerate ellipsis-elided citations and curly/straight-quote normalization so faithful quotes are not falsely flagged as mismatch."
+        },
+        {
+          "assertion_id": "a22ce7cb6f053746",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-op1 quote is not an opinion quotation at all: it captured the content page's own front-matter/preamble markdown (title, header line, HTML comment, Background, Issue, and the 'Rule Yes.' lead-in), none of which appears anywhere in the source opinion. quote_fidelity is a genuine mismatch.",
+            "severity": "medium",
+            "proposed_fix": "Restore pin-op1's quote field to the passage the content page actually renders at ^pin-op1 ('It is beyond dispute that children will often feel bound to submit to police questioning ... we hold that a child's age properly informs the Miranda custody analysis'), which is verbatim in the opinion at 564 U.S. 264-265 (slip op. 1).",
+            "evidence_quote": "--- # J.D.B. v. North Carolina *564 U.S. 261 (2011)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)* ... ## Rule Yes.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[id=pin-op1].quote / group_inventory payload.quote"
+          },
+          "reasons": [
+            "The stored/asserted quote is page preamble markdown that does not occur in the cached opinion text; refute-framed, this is a real quote-fidelity defect in the pinpoint record.",
+            "The rendered content-page quotation at ^pin-op1 is itself faithful (verbatim at 564 U.S. 264-265), so the defect is confined to the corrupted stored quote field, not to the reader-facing text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same 'lead pinpoint captured the page preamble' corruption recurs at Jacobson pin-548 and James pin-313 in this pack."
+          ],
+          "suggested_tightening": "Re-extract pinpoint quote fields; the extractor overwrote each page's first pinpoint with front-matter/preamble text."
+        },
+        {
+          "assertion_id": "ceecb06b253cc050",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed lake: there is no confirmed (proposed:false) negative edge anywhere in the pack; every negative edge is a proposed candidate.",
+            "The proposed 'overruled'/'questioned' edges are internally implausible as refutations (a state court, and Vega v. Tekoh, cannot overrule this SCOTUS holding), so they do not establish a real defect; the content page states 'No negative treatment'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed: the treatment is seeded, not S2-re-derived, so as_of_treatment=2026-06-30 overstates how recently the determination was actually made.",
+            "Forward currency cannot be affirmatively confirmed from the opinion text alone; numerous proposed negative edges still await adjudication."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation to promote the migration-seed to a derived determination before relying on the as_of_treatment date."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Jacobson v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "8cccdaf9b84351ff",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached SCOTUS opinion is the Jacobson entrapment case (petitioner Jacobson; Eighth Circuit below at 916 F.2d 467; cert granted 499 U.S. 974 (1991)); internal reporter markers *548-*551 confirm the case reports at 503 U.S. 540.",
+            "Official 503 U.S. 540 is selected; parallels 112 S. Ct. 1535 / 118 L. Ed. 2d 174 are the standard Jacobson cites."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "00b7c34b3f358b75",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-548a quote is verbatim across the *548->*549 page break in the cached opinion: 'Where the Government has induced an [*549] individual to break the law and the defense of entrapment is at issue, as it was in this case, the prosecution must prove beyond reasonable doubt that the defendant was disposed to commit the criminal act prior to first being approached by Government agents'.",
+            "pincite 'at 548-549' is correct; payload quote_fidelity='mismatch' is a scanner false positive (an embedded *549 star-page marker sits mid-quote)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status slip-only."
+          ],
+          "suggested_tightening": "Strip embedded star-page/page-number markers before quote matching to avoid false mismatch flags on quotes that span a page break."
+        },
+        {
+          "assertion_id": "8aab813053ba6274",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-548 quote is the content page's own preamble markdown (title, header line, HTML comment, Background, Issue, and the 'Rule ... predates its own conduct.' lead-in), which does not appear in the source opinion. quote_fidelity is a genuine mismatch.",
+            "severity": "medium",
+            "proposed_fix": "Restore pin-548's quote field to the passage the content page renders at ^pin-548 ('Government agents may not originate a criminal design, implant in an innocent person's mind the disposition to commit a criminal act, and then induce commission of the crime so that the Government may prosecute'), which is verbatim at 503 U.S. 548.",
+            "evidence_quote": "--- # Jacobson v. United States *503 U.S. 540 (1992)* · U.S. Supreme Court · **Binding — SCOTUS** ... ## Rule Where the government induces the crime, it must prove predisposition that predates its own conduct.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[id=pin-548].quote / group_inventory payload.quote"
+          },
+          "reasons": [
+            "The stored/asserted quote is page preamble markdown absent from the cached opinion; a real quote-fidelity defect in the pinpoint record.",
+            "The rendered content-page quotation at ^pin-548 is itself verbatim at 503 U.S. 548, so the defect is confined to the corrupted stored quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Recurring lead-pinpoint preamble-capture corruption (also J.D.B. pin-op1, James pin-313)."
+          ],
+          "suggested_tightening": "Re-extract pinpoint quote fields for lead pinpoints."
+        },
+        {
+          "assertion_id": "451ab310ab8d8656",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed lake: no confirmed (proposed:false) negative edge exists; all negative edges are proposed candidates.",
+            "Jacobson's predisposition-must-predate-inducement rule is treated as good law with 'No negative treatment' on the content page, and the proposed negative edges are unadjudicated citator noise."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed; as_of_treatment=2026-06-30 overstates recency of the determination.",
+            "Forward currency is not confirmable from the opinion text alone; proposed negative edges await adjudication."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation before relying on as_of_treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/James v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "cf3dc345a59a9fce",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is James v. Illinois (impeachment-exception limit; Walder line; defense witness Henderson; Stevens, J., concurring); star pages *314-*321 confirm the case reports at 493 U.S. 307.",
+            "Official 493 U.S. 307 is selected; parallels 110 S. Ct. 648 / 107 L. Ed. 2d 676 / 1990 U.S. LEXIS 335 / 58 U.S.L.W. 4115 are the standard James cites."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake identity has opinion_id == cluster_id (112350), an oddity worth noting, but it does not affect the existence of the cite."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4724b8f3494e2bf5",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-320 quote is a fragment of the content page's own Application prose plus the '## Conclusion' section header ('so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion'); it is not an opinion quotation. quote_fidelity is a genuine mismatch.",
+            "severity": "medium",
+            "proposed_fix": "Restore pin-320's quote field to the passage the content page renders at ^pin-320 ('...we adhere to the line drawn in our previous cases. Accordingly, we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony'), which is verbatim at 493 U.S. 320.",
+            "evidence_quote": "so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[id=pin-320].quote / group_inventory payload.quote"
+          },
+          "reasons": [
+            "The stored/asserted quote captured content-page Application text plus a markdown header rather than opinion text; a real quote-fidelity defect in the pinpoint record.",
+            "The rendered content-page quotation at ^pin-320 is itself verbatim at 493 U.S. 320, so the defect is confined to the corrupted stored quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "A second corruption pattern (Application-tail + section-header capture) distinct from the lead-pinpoint preamble capture."
+          ],
+          "suggested_tightening": "Re-extract pinpoint quote fields; the extractor grabbed surrounding page markdown for this pin."
+        },
+        {
+          "assertion_id": "ad1bba4400211a3b",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-313 quote is the content page's own preamble markdown (title, header line, HTML comment, Background, Issue, and the 'Rule No.' lead-in), which does not appear in the source opinion. quote_fidelity is a genuine mismatch.",
+            "severity": "medium",
+            "proposed_fix": "Restore pin-313's quote field to the passage the content page renders at ^pin-313 ('[E]xpanding the class of impeachable witnesses from the defendant alone to all defense witnesses would create different incentives ... and yet it would significantly undermine the deterrent effect of the general exclusionary rule'), which is verbatim at 493 U.S. 313-*314.",
+            "evidence_quote": "--- # James v. Illinois *493 U.S. 307 (1990)* · U.S. Supreme Court · **Binding — SCOTUS** ... ## Rule No.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[id=pin-313].quote / group_inventory payload.quote"
+          },
+          "reasons": [
+            "The stored/asserted quote is page preamble markdown absent from the cached opinion; a real quote-fidelity defect in the pinpoint record.",
+            "The rendered content-page quotation at ^pin-313 is itself verbatim at 493 U.S. 313-*314, so the defect is confined to the corrupted stored quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Recurring lead-pinpoint preamble-capture corruption (also J.D.B. pin-op1, Jacobson pin-548)."
+          ],
+          "suggested_tightening": "Re-extract lead-pinpoint quote fields."
+        },
+        {
+          "assertion_id": "c2d916e4b07d5884",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-317 quote is verbatim at *317 in the cached opinion: 'defendants ought not be able to [pervert] the exclusion of illegally obtained evidence into a shield for perjury, but it seems no more appropriate for the State to brandish such evidence as a sword with which to dissuade defendants from presenting a meaningful defense through other witnesses'; the content page attributes 'Defendants' outside the quotation marks and quotes from 'ought not be able to'.",
+            "pincite 'at 317' is correct; payload quote_fidelity='mismatch' is a scanner false positive (curly-vs-straight quotes)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status slip-only."
+          ],
+          "suggested_tightening": "Normalize quote characters before matching."
+        },
+        {
+          "assertion_id": "84690db2c6e10a89",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed lake: no confirmed (proposed:false) negative edge exists; all negative edges are proposed candidates.",
+            "James's holding (impeachment exception confined to the defendant's own testimony) is presented as good law with 'No negative treatment'; proposed negative edges are unadjudicated citator noise."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed; as_of_treatment=2026-06-30 overstates recency of the determination.",
+            "Forward currency is not confirmable from the opinion text alone; proposed negative edges await adjudication."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation before relying on as_of_treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Jimerson v. Lewis.json",
+      "reviewed": [
+        {
+          "assertion_id": "93ccfc4a4ad900e7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case: No. 22-10441, U.S. Court of Appeals for the Fifth Circuit, Karen Jimerson v. Mike Lewis (Lt.), Southwick, Circuit Judge, filed/revised Feb. 15, 2024, Section 1983 wrong-address warrant execution - matching docket, court, date, parties, and authoring judge.",
+            "The reporter cite 94 F.4th 423 (source web-dual-leg) is uncontradicted by any disclosed evidence and is consistent with a real published 2024 Fifth Circuit opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached text is slip-paginated (no F.4th star pagination), so the exact reporter page '423' is not directly cross-checkable from disclosed text; the case identity, however, is fully confirmed.",
+            "Lake record is a frontier stub (status under_review, opinion_id null, identity_checked false)."
+          ],
+          "suggested_tightening": "On S9 promotion, resolve the lead opinion id (header note: 9941201) and confirm the 94 F.4th 423 star page against a reporter-paginated source."
+        },
+        {
+          "assertion_id": "765296912f68f1c4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest non-claim; it matches the lake status under_review, the content page's white-circle 'Unverified' banner, and the scope_note ('Frontier stub: treatment/progeny intentionally not derived until S6 promotion').",
+            "No currency proposition is asserted, so there is nothing to refute; the record is internally consistent with the disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment is intentionally not derived; the case's actual currency is genuinely unknown pending S6/S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

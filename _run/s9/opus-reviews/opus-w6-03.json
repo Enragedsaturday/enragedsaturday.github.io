@@ -1,0 +1,263 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Johnson v. Glick.json",
+      "reviewed": [
+        {
+          "assertion_id": "900459dee5ad9524",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion confirms Johnson v. Glick, Friendly, C.J., 2d Cir. 1973, reporter 481 F.2d with star pages *1030-*1034 and 'Reversed with respect to Officer Fuller' disposition.",
+            "Official cite 481 F.2d 1028 (rank-3 selection) matches content page, frontmatter, and lake citations[] exactly; the case demonstrably exists."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection.court_class is mislabeled 'state' for a federal COA case (cosmetic; does not affect the cite)."
+          ],
+          "suggested_tightening": "correct official_selection.court_class from 'state' to the federal/COA class"
+        },
+        {
+          "assertion_id": "e157700f76d450e4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake record confirms field_i_validity 'unverified', frontier stub, edges=[], progeny empty, treatment intentionally not derived until S6 promotion; content page renders the U+26AA Unverified banner consistently.",
+            "No affirmative treatment claim is made that could be over- or under-stated; the 'unverified' status is the honest, self-consistent state."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "As an under_review frontier stub, the page-body subsequent-history prose (Graham/Kingsley recalibration) is asserted but not machine-verified; it is honestly flagged unverified pending S6/S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "0e54b48b86982a9a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Johnson v. United States, Mr. Justice Jackson, SCOTUS 1948, U.S. star pages *12-*17, disposition 'Reversed'.",
+            "Official cite 333 U.S. 10 is real and rank-1 selected; parallel S.Ct./L.Ed. cites are consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "927d4ccc56e2effe",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-13's stored quote is a page-markdown dump (YAML '---', '# Johnson v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **good** *(as of 2026-06-30)*'), not any text from the 1948 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+            "severity": "low",
+            "proposed_fix": "replace pin-13.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+            "evidence_quote": "The point of the Fourth Amendment, which often is not grasped by zealous officers, is not that it denies law enforcement the support of the usual inferences which reasonable men draw from evidence. Its protection consists in requiring that those inferences be drawn by a neutral and detached magistrate instead of being judged by the officer engaged in the often competitive enterprise of ferreting out crime.",
+            "needs_cl": false,
+            "locator_note": "cached opinion para b91-10, spanning star pages *13-*14; content page pin-13 already carries the correct quote pincited '333 U.S. at 13-14'."
+          },
+          "reasons": [
+            "Stored quote text is impossible in a 1948 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+            "The intended quotation is verbatim in cached text at *13-14, so the pincite is sound; the corruption is confined to the lake pinpoint.quote provenance field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered content page is correct; downstream consumers relying on pinpoint.quote for verification would break on the corrupted field."
+          ],
+          "suggested_tightening": "re-harvest pin-13 from the opinion text rather than the page markdown"
+        },
+        {
+          "assertion_id": "d7d8c3a4066f9d7b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-14 quote matches cached opinion verbatim (para b91-10, star page *14): 'Any assumption that evidence sufficient to support a magistrate's disinterested determination to issue a search warrant will justify the officers in making a search without a warrant would reduce the Amendment to a nullity and leave the people's homes secure only in the discretion of police officers.'",
+            "Pincite 'Id. at 14' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' / pinpoint_status='slip-only' is a FALSE alarm: the quote is faithful; the auto-matcher likely missed it on star-page indexing."
+          ],
+          "suggested_tightening": "flip pin-14 quote_fidelity to 'matched' (verified against *14)"
+        },
+        {
+          "assertion_id": "0c6280240a37cee0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' (legacy migration good->good_law); every one of the ~41 negative treatment edges is proposed=true (unaccepted) and is a name-collision FP: state courts (State v. Hilton, Commonwealth v. Sorenson) cannot overrule SCOTUS, and the 'overruled' top-cited cases (Illinois v. Gates, United States v. Leon, Aguilar) target Aguilar-Spinelli / other doctrines, not the 1948 neutral-magistrate holding.",
+            "lane1_negative proposed 16 and lane2_top_cited 25 events are all unaccepted; no accepted negative event; case is heavily cited (citation_count 3856)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency as of 2026-06-30 rests on none of the proposed negatives being accepted; the FP volume (collision with the 2015 ACCA 'Johnson v. United States' void-for-vagueness line) should be swept before promotion."
+          ],
+          "suggested_tightening": "prune/close the name-collision negative-edge proposals before promotion"
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "1ae9995d3fa05ccd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Jones v. United States, Mr. Justice Frankfurter, SCOTUS 1960, U.S. star pages *259-*269, standing / Rule 41(e) subject matter.",
+            "Official cite 362 U.S. 257 is real and rank-1 selected; parallel S.Ct./L.Ed./A.L.R. cites are consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1687c708552524c7",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-264's stored quote is a page-markdown dump (YAML '---', '# Jones v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **overruled** *(as of 2026-06-30)*'), not any text from the 1960 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+            "severity": "low",
+            "proposed_fix": "replace pin-264.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+            "evidence_quote": "In cases where the indictment itself charges possession, the defendant in a very real sense is revealed as a \"person aggrieved by an unlawful search and seizure\" upon a motion to suppress evidence prior to trial.",
+            "needs_cl": false,
+            "locator_note": "cached opinion para b322-5, star page *264 (immediately before the *265 marker); content page pin-264 already carries the correct quote pincited '362 U.S. at 264'."
+          },
+          "reasons": [
+            "Stored quote text is impossible in a 1960 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+            "The intended quotation is verbatim in cached text at *264, so the pincite is sound; the corruption is confined to the lake pinpoint.quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered content page is correct; defect is confined to the lake pinpoint.quote provenance field."
+          ],
+          "suggested_tightening": "re-harvest pin-264 from the opinion text rather than the page markdown"
+        },
+        {
+          "assertion_id": "98d065211961c525",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-267 quote matches cached opinion verbatim (para b324-6, star page *267): 'anyone legitimately on premises where a search occurs may challenge its legality by way of a motion to suppress, when its fruits are proposed to be used against him.'",
+            "star_marker '267' correct; quote_fidelity 'matched' / pinpoint_status 'star-verified' confirmed; the #:~:text fragment anchor is a valid substring."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2b60daf32b09a23f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'superseded' is accurate: automatic standing overruled by United States v. Salvucci (448 U.S. 83, disclosed migration edge) and the 'legitimately on premises' test disavowed by Rakas v. Illinois (439 U.S. 128, disclosed migration edge).",
+            "scope_note tracks the cached opinion's two independent standing grounds and states the subsequent history precisely."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The content-page one-line header labels the case 'overruled ... by Rakas and Salvucci'; Rakas technically disavowed/abandoned rather than formally overruled Jones, so 'superseded' (field) and 'disavowed by Rakas' (prose Treatment section) are the more precise formulations than the header."
+          ],
+          "suggested_tightening": "reconcile the header badge label ('overruled') with field_i_validity ('superseded') and the prose 'disavowed by Rakas'"
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Kalkines v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "dd17f13bc906aac4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Kalkines v. United States, Davis, Judge, U.S. Court of Claims 1973, Ct. Cl. star pages *573-*582, Fifth Amendment / duty-to-answer subject matter.",
+            "Cites 473 F.2d 1391 and 200 Ct. Cl. 570 are real; official=null is a documented limitation (provenance warning 'official cite selection failed closed: unlisted_reporter:Ct. Cl.'), not an existence failure."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No official cite is selected and display=null / frontmatter citation field is empty; the page relies on parallel_cite and the header line for the display cite."
+          ],
+          "suggested_tightening": "add 'Ct. Cl.' to the official-selection reporter table, or promote 473 F.2d 1391 as the display cite"
+        },
+        {
+          "assertion_id": "478cd6921306a489",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-1393 quote matches cached opinion verbatim at Ct. Cl. star page *574 (= 473 F.2d 1393) with a proper bracketed capitalization: opinion (para b606-4) reads 'But a governmental employer is not wholly barred ...'; the quote renders '[A] governmental employer is not wholly barred ... cannot be employed against him in a criminal case.'",
+            "Pincite '473 F.2d at 1393 (200 Ct. Cl. at 574)' is sound; Sources note discloses that the CL copy carries Ct. Cl. star-pagination."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote_fidelity='mismatch' / pinpoint_status='slip-only' is a FALSE alarm caused by the CL copy carrying Ct. Cl. (not F.2d) star-pagination, so an F.2d-page auto-match failed; the quote is faithful."
+          ],
+          "suggested_tightening": "flip pin-1393 quote_fidelity to 'matched' verified against Ct. Cl. *574"
+        },
+        {
+          "assertion_id": "4fa6f06e50394bd7",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-1393a's stored quote is a page-markdown dump (YAML '---', '# Kalkines v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **good** *(as of 2026-06-30)*'), not any text from the 1973 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+            "severity": "low",
+            "proposed_fix": "replace pin-1393a.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+            "evidence_quote": "It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.",
+            "needs_cl": false,
+            "locator_note": "cached opinion para b606-4, Ct. Cl. star page *574 (= 473 F.2d 1393); content page pin-1393a already carries the correct quote pincited '473 F.2d at 1393 (200 Ct. Cl. at 574)'."
+          },
+          "reasons": [
+            "Stored quote text is impossible in a 1973 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+            "The intended quotation is verbatim in cached text at Ct. Cl. *574, so the pincite is sound; the corruption is confined to the lake pinpoint.quote field."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered content page is correct; defect is confined to the lake pinpoint.quote provenance field."
+          ],
+          "suggested_tightening": "re-harvest pin-1393a from the opinion text rather than the page markdown"
+        },
+        {
+          "assertion_id": "5326af6f217a7926",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' (legacy migration good->good_law); lane1_negative reviewed 0 accepted negatives; the 6 lane2_top_cited 'questioned'/'criticized' edges are all proposed=true FPs (later Fed. Cir. / MSPB decisions that apply the Kalkines warning rather than undermine it).",
+            "Cached opinion states the Kalkines-warning rule intact (dual-advisement standard implementing Garrity/Gardner); no disclosed accepted negative treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note's claim that Kalkines binds in the Federal Circuit via South Corp. v. United States is not verifiable from disclosed evidence (no South Corp. text inlined) — plausible but unverified in this pack."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

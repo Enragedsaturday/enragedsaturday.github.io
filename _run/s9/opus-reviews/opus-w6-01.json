@@ -1,0 +1,313 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
+      "reviewed": [
+        {
+          "assertion_id": "240f75f4a62bfe89",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page citation 497 U.S. 177 (1990) equals lake official cite (cluster.citations[], selected_official=true).",
+            "All parallels match content-page parallel_cite/neutral_cite: 110 S. Ct. 2793; 111 L. Ed. 2d 148; 58 U.S.L.W. 4892; 1990 U.S. LEXIS 3295.",
+            "Identity corroborated: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster_id 112475."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection reason 'selected_rank_1' is a heuristic rank, not a source-page check; cite existence nonetheless corroborated by the cluster citation set."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "724cc0119ca8bd1b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Pincite ^pin-188a (quoted as Id. at 188-189) is slip-only and extractor flags quote_fidelity=mismatch; no source opinion text is inlined in the pack, so the quotation cannot be confirmed against the reporter.",
+            "severity": "low",
+            "proposed_fix": "Star-verify the quote against 497 U.S. 188-189 via CourtListener; retain if matched, correct pincite/quote otherwise.",
+            "evidence_quote": "\"pinpoint_status\": \"slip-only\", \"quote_fidelity\": \"mismatch\"",
+            "needs_cl": true,
+            "locator_note": "Rodriguez Rule section, ^pin-188a; quote 'If not, then warrantless entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid.'"
+          },
+          "reasons": [
+            "Quote text reads as a clean, plausible opinion quotation, but with no source text disclosed I cannot affirm fidelity.",
+            "Extractor status slip-only means the pincite was not star-verified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Quote may well be accurate; the defect is an unverified pincite, not a demonstrated misquote."
+          ],
+          "suggested_tightening": "Attach a star-pagination text-fragment anchor as done for Wardlow pin-124a."
+        },
+        {
+          "assertion_id": "c10810dcf5e25480",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Extractor's captured 'quote' for pin-188 is a page-prose blob spanning Background/Issue/Rule (it contains markdown headers '## Issue' and '## Rule'), not a verbatim opinion quotation, so quote_fidelity=mismatch is a scoping artifact; the actual embedded quotation (Terry 'reasonable caution' standard attributed to 497 U.S. at 188) remains slip-only/unverified with no source text disclosed.",
+            "severity": "low",
+            "proposed_fix": "Re-scope the extractor to the embedded quotation only, then star-verify against 497 U.S. 188.",
+            "evidence_quote": "\"## Issue Whether a warrantless entry ... ## Rule The validity of an entry on apparent authority is measured by objective reasonableness\"",
+            "needs_cl": true,
+            "locator_note": "Rodriguez ^pin-188 anchors the Rule paragraph; page quotes the objective-standard / 'warrant a man of reasonable caution in the belief' language at 497 U.S. at 188."
+          },
+          "reasons": [
+            "Payload 'quote' is page prose incl markdown headers, confirming a mis-scoped span; the 'mismatch' is not evidence the page's actual quotation is unfaithful.",
+            "No source opinion text inlined; pincite unverified (slip-only)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Underlying pincite 497 U.S. 188 unverified from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5c8ce41b80f59b8a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed treatment.edges are all proposed:true candidate signals (field_ii questioned/overruled) produced by a keyword-triggered scan; none is a confirmed overruling of Rodriguez itself.",
+            "field_i_validity=good_law seed is not contradicted by any confirmed adverse treatment in the disclosed record.",
+            "Content-page 'No negative treatment' is consistent with the absence of confirmed adverse edges."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation flags audit_needed=true with proposed_negative_events (lane1=4, lane2=25) and 'R15 treatment audit required'; good_law is an unaudited migration-seed.",
+            "The 'overruled' field_ii on the Schriro v. Landrigan edge is an edge-level CL signal on a citing case, not confirmation the target was overruled.",
+            "Badge 'good (as of 2026-06-30)' derives from composite_basis=migration-seed, not an independently derived 2026 currency check."
+          ],
+          "suggested_tightening": "Complete the R15 audit before treating the 2026-06-30 as_of as a derived currency date."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Illinois v. Wardlow.json",
+      "reviewed": [
+        {
+          "assertion_id": "b5b96b492f971b4c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page 528 U.S. 119 (2000) equals lake official cite; parallels match: 120 S. Ct. 673; 145 L. Ed. 2d 570; 2000 U.S. LEXIS 504.",
+            "Identity corroborated: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster_id 118326."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter date_decided=2000-01-19 conflicts with treatment as_of_content=2000-01-12 (the recognized decision date); this is a date-field discrepancy, not a citation defect, so cite existence is unaffected."
+          ],
+          "suggested_tightening": "Reconcile date_decided to 2000-01-12."
+        },
+        {
+          "assertion_id": "4036ab833e871c80",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Extractor 'quote' for pin-124 is a page-top blob (title, header line, HTML comment, Background/Issue, ending at '## Rule Yes.') that stops exactly where the real quotation begins, so quote_fidelity=mismatch is a scoping artifact; the actual pin-124 quotation ('Our cases have also recognized that nervous, evasive behavior is a pertinent factor...') is slip-only/unverified with no source text disclosed.",
+            "severity": "low",
+            "proposed_fix": "Re-scope to the quoted sentence and star-verify against 528 U.S. 124.",
+            "evidence_quote": "\"## Rule Yes.\"",
+            "needs_cl": true,
+            "locator_note": "Wardlow ^pin-124, Rule section; sentence attributed to 528 U.S. at 124."
+          },
+          "reasons": [
+            "Blob composition (markdown headers; ends at 'Rule Yes.') shows a mis-scoped span, not a genuine quote comparison.",
+            "No source text disclosed; pincite slip-only."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 528 U.S. 124 unverified from disclosed evidence, though pin-124a on the same page 124 was star-verified."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "965c3de5f94b9152",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Pincite ^pin-124b (Id. = 528 U.S. 124) is slip-only with quote_fidelity=mismatch and no source text inlined; the quotation 'An individual's presence in an area of expected criminal activity, standing alone, is not enough...' cannot be confirmed.",
+            "severity": "low",
+            "proposed_fix": "Star-verify against 528 U.S. 124 (same page as the star-verified pin-124a).",
+            "evidence_quote": "\"pinpoint_status\": \"slip-only\", \"quote_fidelity\": \"mismatch\"",
+            "needs_cl": true,
+            "locator_note": "Wardlow ^pin-124b, Rule section, attributed to Id. (528 U.S. 124)."
+          },
+          "reasons": [
+            "Quote reads as genuine Wardlow language but is unverified from disclosed evidence.",
+            "Sits on the same page (124) as star-verified pin-124a, raising confidence but not confirming."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Fidelity unconfirmed; extractor star-verified pin-124a but not pin-124b on the same page."
+          ],
+          "suggested_tightening": "Add a text-fragment anchor as with pin-124a."
+        },
+        {
+          "assertion_id": "a29d80fb7444499f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed extractor status is affirmative: pinpoint_status=star-verified, quote_fidelity=matched, star_marker=124.",
+            "Content page carries a matching text-fragment deep link (#:~:text=Headlong%20flight...) for the same 'Headlong flight...' quotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Clearance relies on the extractor's star-match; raw source opinion text is not inlined in the pack for independent re-derivation."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dcb47c34c2c3a5bd",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed treatment.edges are proposed:true candidate signals (questioned/overruled/criticized/abrogated) from a keyword scan; none is a confirmed overruling of Wardlow.",
+            "field_i_validity=good_law seed is uncontradicted by any confirmed adverse treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation audit_needed=true, proposed_negative_events lane1=3/lane2=24, 'R15 treatment audit required'; unaudited migration-seed.",
+            "Edge-level 'overruled'/'abrogated' field_ii tags are noisy CL signals on citing cases, not confirmation the target was overruled.",
+            "Badge 'good (as of 2026-06-30)' is a migration-seed date, not a derived 2026 currency check."
+          ],
+          "suggested_tightening": "Complete the R15 audit before relying on the 2026-06-30 as_of."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Imbler v. Pachtman.json",
+      "reviewed": [
+        {
+          "assertion_id": "e4c763c59cb9c00a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page 424 U.S. 409 (1976) equals lake official cite; parallels match: 96 S. Ct. 984; 47 L. Ed. 2d 128; 1976 U.S. LEXIS 25.",
+            "Citation corroborated: expected_citation_found=true, canonical_name_match=true, cluster_id 109387."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontier stub (status under_review, identity_method=frontier-identity) with party_name_in_text=false; identity not fully party-text verified, though the expected citation was found in the cluster.",
+            "lead_opinion_id (9426281) differs from cluster_id (109387); does not affect citation existence."
+          ],
+          "suggested_tightening": "Confirm party-text at S6 promotion."
+        },
+        {
+          "assertion_id": "41aec0c15bfa3612",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion honestly declares field_i_validity=unverified (frontier stub; treatment/progeny intentionally not derived until promotion).",
+            "Consistent with lake status under_review and the content-page white-circle 'Treatment: Unverified' banner; the assertion makes no good-law claim to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment genuinely undetermined; the page's subsequent-history prose (Buckley/Briscoe framing) is outside this treatment field and is not verified here."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Immigration & Naturalization Service v. Lopez-Mendoza.json",
+      "reviewed": [
+        {
+          "assertion_id": "efadeaacd6ae4350",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page 468 U.S. 1032 (1984) equals lake official cite; parallels match: 104 S. Ct. 3479; 82 L. Ed. 2d 778; 52 U.S.L.W. 5190; 1984 U.S. LEXIS 156.",
+            "Identity corroborated: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster_id 111265."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d08eb481b4618d84",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Pincite ^pin-1050 (Id. at 1050) is slip-only with quote_fidelity=mismatch and no source text inlined; the quotation 'In these circumstances we are persuaded that the Janis balance between costs and benefits comes out against applying the exclusionary rule...' cannot be confirmed.",
+            "severity": "low",
+            "proposed_fix": "Star-verify against 468 U.S. 1050.",
+            "evidence_quote": "\"pinpoint_status\": \"slip-only\", \"quote_fidelity\": \"mismatch\"",
+            "needs_cl": true,
+            "locator_note": "Lopez-Mendoza ^pin-1050, Rule section, attributed to Id. at 1050."
+          },
+          "reasons": [
+            "Quote reads as genuine Lopez-Mendoza language but is unverified from disclosed evidence.",
+            "Extractor status slip-only means not star-verified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Fidelity unconfirmed; pincite unverified."
+          ],
+          "suggested_tightening": "Add a text-fragment anchor."
+        },
+        {
+          "assertion_id": "f1ce0f926f56c062",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Extractor 'quote' for pin-1039 is a page-top blob (title/header/Background/Issue and '## Rule ... As to identity:'), not a verbatim quotation, so quote_fidelity=mismatch is a scoping artifact; the actual pin-1039 quotation (the 'body'/identity-is-never-suppressible passage attributed to 468 U.S. at 1039) is slip-only/unverified with no source text disclosed.",
+            "severity": "low",
+            "proposed_fix": "Re-scope to the embedded quotation and star-verify against 468 U.S. 1039.",
+            "evidence_quote": "\"## Rule The exclusionary rule generally does not apply in civil deportation hearings. As to identity:\"",
+            "needs_cl": true,
+            "locator_note": "Lopez-Mendoza ^pin-1039, Rule section, attributed to 468 U.S. at 1039."
+          },
+          "reasons": [
+            "Blob is page prose incl markdown headers; the 'mismatch' is a mis-scope artifact, not a demonstrated misquote.",
+            "No source text disclosed; pincite slip-only."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 468 U.S. 1039 unverified from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "de63481ec684172d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed treatment.edges are proposed:true candidate signals (questioned/abrogated/criticized/overruled) from a keyword scan; none is a confirmed overruling of Lopez-Mendoza.",
+            "field_i_validity=good_law seed is uncontradicted by any confirmed adverse treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation audit_needed=true, proposed_negative_events lane1=2/lane2=25, 'R15 treatment audit required'; unaudited migration-seed.",
+            "Badge 'good (as of 2026-06-30)' is a migration-seed date, not a derived 2026 currency check.",
+            "Page frontmatter homes=[[The Good-Faith Exception]] vs 'Appears on' [[The Exclusionary Rule]] is an internal inconsistency, outside the treatment field, noted for authors."
+          ],
+          "suggested_tightening": "Complete the R15 audit; reconcile homes vs Appears-on."
+        }
+      ]
+    }
+  ]
+}

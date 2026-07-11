@@ -1,0 +1,274 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
+      "reviewed": [
+        {
+          "assertion_id": "20ede11b27831daf",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 442 U.S. 319 (1979) matches the cached SCOTUS opinion (Burger, C.J.; star-pagination *321-*329) for Lo-Ji Sales, Inc. v. New York.",
+            "Parallel/neutral cites (99 S. Ct. 2319; 60 L. Ed. 2d 920; 1979 U.S. LEXIS 107; 5 Media L. Rep. 1177) are all volume/year-consistent with a June 1979 SCOTUS decision.",
+            "official_selection present, rank-1 selects 442 U.S. 319; no fabricated or inconsistent reporter in the array."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Case first page 319 is not literally printed in the opinion body (star-pagination begins at *321); volume and *321-*329 range corroborate it."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "834d6d64d14a519c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'He allowed himself to become a member, if not the leader, of the search party which was essentially a police operation. . . . he was not acting as a judicial officer but as an adjunct law enforcement officer.' matches the opinion verbatim, with a proper ellipsis replacing 'Once in the store, he conducted a generalized search under authority of an invalid warrant;'.",
+            "The passage sits on page 327 (immediately after the *327 star-marker), matching the ^pin-327 anchor.",
+            "The record's quote_fidelity:'mismatch' flag is a string-match false positive caused by the ellipsis; the substance is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record self-flags quote_fidelity:'mismatch' (ellipsis false positive)."
+          ],
+          "suggested_tightening": "Relabel/clear the false-positive mismatch flag for ellipsis-bearing but faithful quotes."
+        },
+        {
+          "assertion_id": "c271ee9d35980e76",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pinpoint's stored quote field is a content-page markdown-harvest artifact ('items. ## Issue ... ## Rule A warrant-issuing magistrate must remain neutral and detached and may not become part of the search.') and is not verbatim text from the Lo-Ji opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest the pin-326 quote from the opinion. The actual quotation rendered at ^pin-326 on the content page is verbatim in the source: 'The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure.' (442 U.S. at 326).",
+            "evidence_quote": "The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure.",
+            "needs_cl": false,
+            "locator_note": "pin-326; content-page Rule section; opinion para b372-7, page 326 (between *326 and *327 markers)."
+          },
+          "reasons": [
+            "Stored pinpoint quote is content-page markdown ('## Issue', '## Rule', a page paraphrase) - none of it is verbatim opinion text.",
+            "The quotation actually rendered at ^pin-326 on the content page IS verbatim in the opinion and correctly falls on page 326, so the reader-facing pincite is sound; the defect is confined to the internal stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Harvest pinpoint quote fields from opinion text rather than content-page markdown."
+        },
+        {
+          "assertion_id": "e573f77b27b6d0c1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Lo-Ji Sales (1979) is a leading, still-cited neutral-magistrate SCOTUS holding; no disclosed evidence reliably shows it overruled or abrogated.",
+            "The proposed negative edges (e.g., 'United States v. Leon ... overruled') are unaudited snippet-classified citator artifacts - Leon (1984) postdates and cites Lo-Ji and does not overrule it; a classic 'cites:(X) AND overrul*' false positive.",
+            "Derivation self-flags audit_needed / R15 for the 8 proposed negative events; field_i_validity good_law is unrefuted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity is migration-seeded (composite_basis: migration-seed), not freshly S2-derived; as_of_treatment 2026-06-30 seeded from the old as_of.",
+            "8 proposed negative edges remain unaudited (R15); full currency confirmation requires a CourtListener citator pass."
+          ],
+          "suggested_tightening": "Run the R15 treatment audit to clear the false-positive negative edges."
+        }
+      ],
+      "notes": "3 stands, 1 stands-modified (pin-326 stored quote is markdown-harvest garbage; page reference itself faithful)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Lombardo v. City of St. Louis.json",
+      "reviewed": [
+        {
+          "assertion_id": "c59c9ef0a930fedd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms Lombardo v. City of St. Louis, 594 U. S. ___ (2021), per curiam, No. 20-391, decided June 28, 2021 - volume 594 U.S. and 2021 term match the asserted 594 U.S. 464.",
+            "Parallel cites 141 S. Ct. 2239 and 210 L. Ed. 2d 609 are volume/year-consistent with 2021.",
+            "Party names (JODY LOMBARDO ... v. CITY OF ST. LOUIS) match the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact U.S. Reports page 464 is not printed in the slip text (594 U.S. ___); volume/year/parties/docket corroborate the citation's identity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "acc09be79dcd6404",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record honestly declares field_i_validity: unverified as a deliberate frontier stub ('treatment/progeny intentionally not derived until S6 promotion'); no validity claim is asserted, so there is nothing to refute.",
+            "Content page renders 'Treatment: Unverified' under the white banner, consistent with the stub; treatment edges/derivation intentionally empty; status under_review."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment remains unverified pending S9 promotion / CL citator derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "2 stands; treatment is an honest unverified frontier stub."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Los Angeles County v. Rettele.json",
+      "reviewed": [
+        {
+          "assertion_id": "6265762ea702064f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms Los Angeles County, California v. Rettele, 550 U. S. ___ (2007), per curiam, No. 06-605, decided May 21, 2007 - matches 550 U.S. 609 (2007), present in the citation array and rendered on the page.",
+            "All listed cites (127 S. Ct. 1989; 167 L. Ed. 2d 974; 2007 U.S. LEXIS 5900; 75 U.S.L.W. 3619; 20 Fla. L. Weekly Fed. S 281) are volume/year-consistent with 2007; none fabricated. 127 S. Ct. 1989 corroborates the S.Ct. pin labels (1993/1994).",
+            "official/display null is a disclosed 'failed closed' selection artifact (unlisted_reporter: Fla. L. Weekly Fed. S), not a citation-existence defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact page 609 not printed in slip text (550 U.S. ___).",
+            "Official-cite selection failed closed, so official/display are null even though 550 U.S. 609 is the correct official cite and is what the content page renders."
+          ],
+          "suggested_tightening": "Harden the official-cite selector to skip unlisted vendor reporters (Fla. L. Weekly Fed. S) and select 550 U.S. 609."
+        },
+        {
+          "assertion_id": "5a93193f9093648c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pinpoint's stored quote field is a content-page front-matter/markdown harvest artifact (begins '--- # Los Angeles County v. Rettele *550 U.S. 609 (2007)* ... ## Rule No.') and is not verbatim opinion text.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest the pin-1993 quote from the opinion. The quotation actually rendered at ^pin-1993 is verbatim (quoting Summers): 'The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.' ... '[t]he risk of harm to both the police and the occupants is minimized if the officers routinely exercise unquestioned command of the situation.'",
+            "evidence_quote": "The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.",
+            "needs_cl": false,
+            "locator_note": "pin-1993; content-page Rule section; per curiam (slip-format text; S. Ct. reporter page 1993 per CL copy)."
+          },
+          "reasons": [
+            "Stored pinpoint quote is harvested page front-matter/markdown, not source text.",
+            "The quotation actually rendered at ^pin-1993 is verbatim in the per curiam (quoting Michigan v. Summers), so the published reference is sound; defect confined to the internal stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page 1993 not verifiable from the slip-format cached text (pinpoint_status: slip-only)."
+          ],
+          "suggested_tightening": "Re-harvest pinpoint quote from opinion text."
+        },
+        {
+          "assertion_id": "92bcf225da79b543",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'no accusation that the detention . . . was prolonged[;] [t]he deputies left the home less than 15 minutes after arriving.' matches the opinion ('There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.') with a proper ellipsis for 'here' and standard bracketed alterations ([;], [t]).",
+            "Substance is faithful; the quote_fidelity:'mismatch' flag is a bracket/ellipsis false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page 1993 not confirmable from slip-format text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "96da889f210676d6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote \"respondents' constitutional rights were not violated, 'there is no necessity for further inquiries concerning qualified immunity.'\" matches the opinion ('As respondents' constitutional rights were not violated, \"there is no necessity for further inquiries concerning qualified immunity.\" Saucier v. Katz ...'), dropping only the leading 'As'.",
+            "Inner quotation attributed to Saucier is preserved faithfully."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page 1994 not confirmable from slip-format text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ab2d1f7202e9be14",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm . . . , the Fourth Amendment is not violated.' matches the opinion verbatim with a proper ellipsis for 'however'.",
+            "Substance faithful; the mismatch flag is an ellipsis false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page 1994 not confirmable from slip-format text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1bd1b2db01bae463",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Rettele (2007 per curiam) is unrefuted good law; no disclosed evidence reliably shows overruling.",
+            "Proposed negative edges (e.g., Chaney-Snell / Kennedy / Weigel / Norris / Siciliano 'overruled') are unaudited snippet-classified citator artifacts from the 'cites:(...) AND overrul*' query; none actually overrule Rettele. Bailey v. United States (2013) cabined Summers geographically but did not overrule Rettele.",
+            "Derivation self-flags audit_needed / R15."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity migration-seeded, not freshly derived; as_of_treatment 2026-06-30 seeded from old as_of.",
+            "Proposed negative edges unaudited (R15); full currency confirmation requires a CourtListener citator pass."
+          ],
+          "suggested_tightening": "Run the R15 audit to clear the false-positive negative edges."
+        }
+      ],
+      "notes": "5 stands, 1 stands-modified (pin-1993 stored quote is markdown-harvest garbage; page reference itself faithful). Slip-format text limits S.Ct. page verification but quote fidelity confirmed."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Lozman v. City of Riviera Beach.json",
+      "reviewed": [
+        {
+          "assertion_id": "7f69d00c9bf1ecf3",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms Lozman v. City of Riviera Beach, Florida, 585 U. S. ___ (2018), No. 17-21, argued Feb 27 2018, decided June 18 2018, Kennedy, J. - volume 585 U.S. and 2018 term match the asserted 585 U.S. 87.",
+            "Parallel cites 138 S. Ct. 1945 and 201 L. Ed. 2d 342 are volume/year-consistent with 2018; 2018 U.S. LEXIS 3691 plausible.",
+            "Party names match the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact U.S. Reports page 87 not printed in the slip text (585 U.S. ___); volume/year/parties/docket corroborate the citation's identity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "424d9b3dc8fe9d09",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record honestly declares field_i_validity: unverified as a deliberate frontier stub; no validity claim is asserted.",
+            "Content page renders 'Treatment: Unverified' under the white banner; treatment edges/derivation intentionally empty; status under_review - the honest 'not yet derived' posture, nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment remains unverified pending S9 promotion / CL citator derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "2 stands; treatment is an honest unverified frontier stub."
+    }
+  ]
+}
