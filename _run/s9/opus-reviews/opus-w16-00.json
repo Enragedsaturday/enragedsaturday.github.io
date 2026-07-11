@@ -1,0 +1,358 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Dunn.json",
+      "reviewed": [
+        {
+          "assertion_id": "c43dd2a08925918e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed opinion (Justice White, page markers *297 through *305) plus the lake citations block confirm United States v. Dunn, 480 U.S. 294 (1987); official 480 U.S. 294 selected and displayed.",
+            "Parallel cites 107 S. Ct. 1134 / 94 L. Ed. 2d 326 are the standard Dunn parallels; no existence defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2c999415eaee70ae",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-301 quote is a harvest artifact: it captured the content-page front-matter/prose from the page header through the '## Rule ... Curtilage is determined by reference to four factors:' lead-in, not opinion text. The quote actually rendered at ^pin-301 on the content page is verbatim-faithful to the opinion at *301.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-301's stored quote to the actual quoted span (the four-factor sentence), which matches the opinion verbatim.",
+            "evidence_quote": "we believe that curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by.",
+            "needs_cl": false,
+            "locator_note": "pin-301; opinion at *301"
+          },
+          "reasons": [
+            "Rendered quote at ^pin-301 ('curtilage questions should be resolved with particular reference to four factors...') is verbatim in the opinion at *301; pincite 301 correct.",
+            "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful, so no substantive quote-fidelity defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "quote_fidelity=mismatch/slip-only reflects the bad harvest span, not the faithful page quote"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9a208099453f56dd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote matches the opinion at *301 verbatim: 'these factors are useful analytical tools only to the degree that, in any given case, they bear upon the centrally relevant consideration -- whether the area in question is so intimately tied to the home itself that it should be placed under the home's umbrella of Fourth Amendment protection.'",
+            "Page drops only the lead-in 'Rather,'; quote_fidelity=mismatch is a false positive (slip-only verification-status artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "53029dbf7bcaf542",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct: Dunn's four-factor curtilage test is established black-letter law and the disclosed record shows no verified negative treatment.",
+            "All negative edges are proposed keyword-triage hits (field_iii=mentioned, proposed=true) flagged 'R15 treatment audit required'; none is a verified overruling of Dunn.",
+            "scope_note (governing curtilage framework, applied in Jardines and Collins) is consistent with the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_content 1987-03-03 predates the 1987-04-20 decision date (migration-seed metadata quirk)",
+            "proposed negative edges remain unaudited (R15)"
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Edwards.json",
+      "reviewed": [
+        {
+          "assertion_id": "f69f7eea540dd980",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed opinion header confirms 415 U.S. 800 (1974), UNITED STATES v. EDWARDS ET AL., No. 73-88, decided March 26, 1974; official 415 U.S. 800 selected and displayed.",
+            "Parallel cites 94 S. Ct. 1234 / 39 L. Ed. 2d 771 are standard; no existence defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7ae747bda1af71d1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-808 is verbatim from the DeLeo passage the Edwards Court quotes at *808-09: 'it does -- for at least a reasonable time and to a reasonable extent -- take his own privacy out of the realm of protection from police interest in weapons, means of escape, and evidence.'",
+            "Page brackets 'his' -> '[the arrestee's]', drops leading 'it', and correctly attributes the words to United States v. DeLeo; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "823a0dd55db502da",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-803 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule No. Searches and seizures' lead-in, not opinion text. The quote actually rendered at ^pin-803 is verbatim-faithful to the opinion at *802-803.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-803's stored quote to the actual quoted span, which matches the opinion verbatim.",
+            "evidence_quote": "It is also plain that searches and seizures that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention.",
+            "needs_cl": false,
+            "locator_note": "pin-803; opinion at *802-803"
+          },
+          "reasons": [
+            "Rendered quote at ^pin-803 ('that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention') is verbatim at *802-803; pincite 803 correct.",
+            "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b1a84bccf2a82774",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-807 is verbatim from the opinion at *807 with a properly marked ellipsis: 'once the accused is lawfully arrested and is in custody, the effects in his possession at the place of detention that were subject to search at the time and place of his arrest may lawfully be searched and seized without a warrant even though a substantial period of time has elapsed between the arrest and subsequent administrative processing . . . and the taking of the property for use as evidence.'",
+            "Original reads '...processing, on the one hand, and the taking of the property ... , on the other.'; the ellipsis and terminal truncation are faithful; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cac1bb8ef545e490",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct: Edwards remains controlling on the timing of a search incident to arrest; the disclosed record shows no verified negative treatment.",
+            "Negative edges (e.g. New York v. Belton, Mincey v. Arizona labeled 'overruled') are proposed keyword-triage hits -- those citing cases contained 'overrul*' etc.; none overrules Edwards; lane markers say 'R15 treatment audit required'.",
+            "scope_note is accurate to the holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "page body line 'No negative treatment' is stronger than the unaudited edge set warrants (R15)"
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Evans.json",
+      "reviewed": [
+        {
+          "assertion_id": "17cff1521c403f45",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed opinion (Brorby, Circuit Judge; star pages *1536-*1539) confirms United States v. Daryl Lee Evans, 10th Cir. 1991; 937 F.2d 1534 selected and displayed.",
+            "Neutral cites 1991 U.S. App. LEXIS 14383 / 1991 WL 118519 are consistent; no existence defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "94ffeb5da05ff030",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote is verbatim in the opinion at *1538-1539: 'Section 239.29 of the Oklahoma City Police Department policy does not require officers to conduct their inventory at a particular place.' (page ends before ', but specifically envisions otherwise').",
+            "The companion Wells characterizations on the page ('against inventory searches being used as a ruse for investigatory purposes'; 'dealt with the specific problem of the absence of a department policy or standardized criteria governing such searches') are also verbatim; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c756e1fc80813ce5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-1539 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule ... The Tenth Circuit held:' lead-in, not opinion text. The quote actually rendered at ^pin-1539 is verbatim-faithful to the opinion at *1539.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-1539's stored quote to the actual quoted span, which matches the opinion verbatim.",
+            "evidence_quote": "Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.",
+            "needs_cl": false,
+            "locator_note": "pin-1539; opinion at *1539"
+          },
+          "reasons": [
+            "Rendered quote at ^pin-1539 ('we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search... was lawfully obtained') is verbatim at *1539 (page drops leading 'Accordingly,'); pincite 1539 correct.",
+            "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2c65fc6bb1661eb9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct: the negative lane restricted to binding courts (scotus OR ca10) reviewed 1 and found 0 negative events; no verified negative treatment is disclosed.",
+            "lane2 proposed negatives are out-of-circuit state/district keyword hits (proposed=true, mentioned), non-binding on this 10th Cir. holding.",
+            "The generic migration scope_note carries no substantive legal claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane2 proposed negatives unaudited but non-binding"
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Flores-Montano.json",
+      "reviewed": [
+        {
+          "assertion_id": "64d101589f335b4f",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Official-citation selection failed (official=null, display=null, official_selection_present=false; reason 'unlisted_reporter:Fla. L. Weekly Fed. S'), so 541 U.S. 149 is demoted to parallel_cite and the content-page frontmatter 'citation' field is empty. The case indisputably exists at 541 U.S. 149 (2004) (confirmed by the disclosed opinion header) and the page header still displays it via fallback, so this is a metadata/selection defect, not an existence failure.",
+            "severity": "low",
+            "proposed_fix": "Repair official_selection to pick 541 U.S. 149 as the SCOTUS official cite (ignore the unlisted 'Fla. L. Weekly Fed. S' reporter) and populate the frontmatter citation field.",
+            "evidence_quote": "541 U.S. 149 (2004)",
+            "needs_cl": false,
+            "locator_note": "citations.official_selection.reason=unlisted_reporter:Fla. L. Weekly Fed. S"
+          },
+          "reasons": [
+            "Disclosed opinion header confirms 541 U.S. 149 (2004), UNITED STATES v. FLORES-MONTANO, No. 02-1794, decided March 30, 2004 -- the case and cite exist.",
+            "The only defect is the null official selection / empty frontmatter citation; the displayed cite is nonetheless correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1b421a2f96cc636a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'the search of a gas tank, which should be solely a repository for fuel,' is verbatim in the opinion at *154; already matched/star-verified via text fragment.",
+            "The visible pin-155 quote on the page ('conclude[d] that the Government's authority to conduct suspicionless inspections at the border includes the authority to remove, disassemble, and reassemble a vehicle's fuel tank') is also verbatim at *155; no defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "453786718913ea8f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-150 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule ... The Court held at the outset:' lead-in, not opinion text. The quote actually rendered at ^pin-150 is verbatim-faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-150's stored quote to the actual quoted span, which matches the opinion verbatim.",
+            "evidence_quote": "We hold that the search in question did not require reasonable suspicion.",
+            "needs_cl": false,
+            "locator_note": "pin-150; opinion opening (*149-150)"
+          },
+          "reasons": [
+            "Rendered quote at ^pin-150 ('We hold that the search in question did not require reasonable suspicion.') is verbatim in the opinion's opening paragraph; pincite 150 defensible.",
+            "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "83d7d10a5d7cfe7d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote is verbatim at *152: 'Complex balancing tests to determine what is a routine search of a vehicle, as opposed to a more intrusive search of a person, have no place in border searches of vehicles.'",
+            "Pincite 152 correct; quote_fidelity=mismatch is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9350115e438f4f1c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote is verbatim at the top of *152: 'The Government's interest in preventing the entry of unwanted persons and effects is at its zenith at the international border,'.",
+            "The companion sub-quote 'are reasonable simply by virtue of the fact that they occur at the border' spans *152-153; page cites 152-53 correctly; mismatch flag is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "mismatch flag should reconcile to matched"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4f4fa5ed83e4aa76",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct: Flores-Montano remains a canonical border-search authority; no verified negative treatment is disclosed.",
+            "Negative edges (e.g. Cotterman labeled 'abrogated', Levy 'superseded_by_statute') are proposed keyword-triage hits on citing cases, not overrulings of Flores-Montano.",
+            "The generic migration scope_note carries no substantive legal claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "proposed negative edges unaudited (R15)"
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

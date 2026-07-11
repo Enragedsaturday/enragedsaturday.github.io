@@ -1,0 +1,263 @@
+{"packs": [
+  {
+    "group_id": "_overhaul2/lake/cases/United States v. Hensley.json",
+    "reviewed": [
+      {
+        "assertion_id": "8a37ae1cea2f1000",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Cached majority opinion confirms United States v. Hensley, O'Connor, J., carrying official U.S. Reports page labels *223 through *236 — consistent with a case reported at 469 U.S. 221 (1985).",
+          "Opinion text confirms the Terry-stop / wanted-flyer holding and cert grant (467 U.S. 1203 (1984)); official cite 469 U.S. 221 selected_rank_1.",
+          "Parallel and vendor-neutral cites are standard 1985 SCOTUS reporter forms."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Parallel cites (105 S. Ct. 675; 83 L. Ed. 2d 604; 53 U.S.L.W. 4053; 1985 U.S. LEXIS 34) come from cluster.citations[] metadata, not independently paged in the cached text."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "07138dd159967981",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Stored pinpoint.quote is a harvest artifact (content-page lead-in prose '## Rule Yes to both. First, *Terry* stops are not confined...'), not the published quotation.",
+          "The actual ^pin-229 quotation ('if police have a reasonable suspicion, grounded in specific and articulable facts, that a person they encounter was involved in or is wanted in connection with a completed felony, then a Terry stop may be made to investigate that suspicion') is verbatim in cached opinion para b371-6, on page 229 (after the *229 marker).",
+          "'mismatch' flag is a false positive: the automated matcher compared the harvested prose, not the block quote."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Lake pinpoint.quote field holds surrounding markdown rather than the quoted sentence; should be repaired for future automated re-verification."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the published quotation string."
+      },
+      {
+        "assertion_id": "5968e7fc1d62ed96",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Published ^pin-233 quotation is verbatim in cached opinion para b374-5 on page 233 ('Assuming the police make a Terry stop in objective reliance on a flyer or bulletin, we hold that the evidence uncovered ... not significantly more intrusive than would have been permitted the issuing department.').",
+          "Content page omits the embedded internal citation 'United States v. Robinson, supra,' without an ellipsis — accepted convention for embedded citations; substantive text unchanged.",
+          "'mismatch' flag is a false positive, most likely triggered by the omitted embedded cite."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "The embedded-citation omission is unmarked; strict Bluebook 5.1 would flag it."
+        ],
+        "suggested_tightening": "Add a '(citation omitted)' parenthetical after the block quote to flag the dropped 'United States v. Robinson, supra' embedded cite."
+      },
+      {
+        "assertion_id": "71f0f1890dac5154",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Published ^pin-232 quotation ('It is the objective reading of the flyer or bulletin that determines whether other police officers can defensibly act in reliance on it.') is verbatim in cached opinion para b374-4.",
+          "The sentence begins on page 232 (after the *232 marker) and straddles into 233; the 232 pincite correctly points to the sentence's starting page.",
+          "'mismatch' flag is a false positive attributable to the page-break straddle."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Quote spans the 232->233 boundary; pincite convention (start page) is correct but a reader may look on page 233 for the tail."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "f3020968dfbf790a",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Every disclosed treatment edge carries field_iii='mentioned' (neutral citation of Hensley); no disclosed edge asserts negative treatment OF Hensley.",
+          "The field_ii negative labels (overruled/questioned/abrogated/superseded) attach to the CITING cases' own status (e.g., United States v. Sharpe, Minnesota v. Dickerson, Brendlin v. California, Illinois v. Caballes) — transparent snippet-triage artifacts, all 'proposed': true.",
+          "good_law is uncontradicted by any disclosed evidence."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "composite_basis='migration-seed' (not a fresh S2 re-derivation); scope_note concedes derivation may downgrade.",
+          "lane1_negative cap_hit=true (200 reviewed), audit_needed=true / 'R15 treatment audit required', 6 proposed negative events unaudited — a genuine negative beyond the cap cannot be fully excluded from disclosed evidence alone."
+        ],
+        "suggested_tightening": "Run the pending R15 audit to convert the migration-seed good_law into a fresh derivation."
+      }
+    ],
+    "notes": "Opus model-diversity lane, both lenses. All 5 stand: case existence confirmed against cached opinion with official pagination; three 'mismatch' pinpoints are false positives (two garbled harvest artifacts, one embedded-cite omission) with the published quotes verbatim-faithful; good_law uncontradicted (all edges field_iii=mentioned)."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/United States v. Howard Davis.json",
+    "reviewed": [
+      {
+        "assertion_id": "82aef7dfa247a353",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Cached published slip opinion confirms United States v. Howard Davis, 4th Cir. No. 20-4035, Wynn, J., decided May 7, 2021 — matching record identity (court, date, docket, reversed-and-remanded SIA/backpack holding).",
+          "The Gant-first-holding-applies-to-non-vehicular-containers holding matches; case exists."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Cached copy is the court slip PDF without F.3d star-pagination, so the '997 F.3d 191' locus is taken from cluster.citations[] metadata, not reproducible from the disclosed text (Sources row discloses this)."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "a38251a404a649c4",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Stored pinpoint.quote is a harvest artifact (content-page '## Issue / ## Rule' lead-in prose), not the published quotation.",
+          "The actual ^pin-196 quotation ('Accordingly, we conclude that the first Gant holding applies to searches of non-vehicular containers ... only when the arrestee is unsecured and within reaching distance of the [container] at the time of the search.') is verbatim in the cached slip opinion (Part II.B), with the internal quote correctly attributed to Gant, 556 U.S. at 343.",
+          "'mismatch' flag is a false positive of the automated matcher."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "pinpoint_status='slip-only': cached slip has no F.3d pagination, so the '997 F.3d at 196' locus is not confirmable from disclosed text (quote text is verbatim).",
+          "Lake pinpoint.quote field should be repaired to the published quotation."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the published quotation string."
+      },
+      {
+        "assertion_id": "8666353843cba68e",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "All disclosed edges carry field_iii='mentioned' (neutral); the field_ii negative labels attach to the citing cases' own status, not their treatment of Davis — 'proposed': true artifacts.",
+          "lane1_negative reviewed 5, cap_hit=false, proposed_negative_events 0, audit_needed=false — negative sweep complete with zero negative events.",
+          "good_law uncontradicted by disclosed evidence."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "composite_basis='migration-seed'; small progeny (10 indexed citing opinions) keeps currency exposure low."
+        ],
+        "suggested_tightening": null
+      }
+    ],
+    "notes": "All 3 stand: 4th Cir. identity confirmed against cached slip; the pin-196 'mismatch' is a garbled harvest artifact with the published holding quote verbatim and correctly attributed to Gant, 556 U.S. at 343; good_law uncontradicted with a complete, no-hit negative sweep."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/United States v. Hunt.json",
+    "reviewed": [
+      {
+        "assertion_id": "1ee35eab991cb24a",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Record is an intentional frontier stub (status under_review; s6_promotion born_status='under_review'); field_i_validity='unverified' with null as_of dates and composite_basis='unverified' is an honest non-claim, not a false currency assertion.",
+          "Content page renders under the white/Unverified banner and discloses treatment 'not yet machine-verified' pending S9 promotion — consistent with the record.",
+          "Cached 9th Cir. slip (No. 23-2342, filed 2025-08-27, Lee, J., abandonment/digital-device holding) confirms case identity; there is no positive treatment proposition to refute."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Treatment/progeny intentionally not derived; promotion and derivation remain pending by design."
+        ],
+        "suggested_tightening": null
+      }
+    ],
+    "notes": "Single treatment assertion stands: 'unverified' is the correct, honest state for a frontier stub, with the content page's white banner and Sources note aligned to the record."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/United States v. Jackson.json",
+    "reviewed": [
+      {
+        "assertion_id": "5788bf01ae9acf74",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Cached opinion confirms United States v. A.C. Jackson, 8th Cir. No. 14-1957, Harpool, D.J., filed May 5, 2015 — Leon good-faith / felon-in-possession — matching record identity.",
+          "Case exists; official cite 784 F.3d 1227 selected_rank_1, with vendor-neutral 2015 U.S. App. LEXIS 7397 and 2015 WL 2048440."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Cached copy uses internal court pagination (-2- to -8-), not F.3d reporter pages, so the '784 F.3d 1227' locus is cluster.citations[] metadata, not reproducible from disclosed text."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "c2ad63e6ac1a9f32",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Published ^pin-1232 quotation ('We find the actions of the deputy in executing the search warrant were taken in objectively reasonable good faith considering the deputy's knowledge and actions, the review and approval of the warrant application by the prosecutor, and the issuance of the warrant by Judge Shuller after the deputy responded to his specific questions.') is verbatim in the cached opinion (Part II, page markers -6-/-7-).",
+          "'mismatch' flag is a false positive; the stored quote text itself matches the opinion exactly."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "pinpoint_status='slip-only': cached copy has no reporter pagination, so the '1232' locus is not confirmable from disclosed text (quote text is)."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "d69b6317e061f7bf",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Stored pinpoint.quote is a large harvest artifact (entire content-page header + Background + Issue + '## Rule Yes. The exclusionary rule' lead-in), not the published quotation.",
+          "The actual ^pin-1231 quotation ('does not apply \"when an officer acting with objective good faith has obtained a search warrant from a judge or magistrate and acted within its scope.\"') is verbatim in the cached opinion (page -5-), correctly attributed to United States v. Leon, 468 U.S. at 921.",
+          "'mismatch' flag is a false positive of the automated matcher."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "pinpoint_status='slip-only': the '1231' reporter locus is not confirmable from disclosed text.",
+          "Lake pinpoint.quote field should be repaired to the published quotation."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the published quotation string."
+      },
+      {
+        "assertion_id": "d98e65696e8b9ccf",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Quote 'lacking in indicia of probable cause as to render official belief in its existence unreasonable' appears verbatim in the cached opinion (Part II, page -5-, quoting the defendant's argument).",
+          "quote_fidelity='matched' with a validated text-fragment (position 6617, fragment_validated_at 2026-07-09) is correct; the published Application-section usage matches."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "The opinion also contains a near-duplicate in its four-situations list with the extra word 'entirely' ('...entirely unreasonable'); the record correctly matched the non-'entirely' argument-passage variant."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "9133cd5b42a994d1",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Only one disclosed edge (United States v. Martece Saddler), field_iii='mentioned' (neutral); its field_ii='overruled' is Saddler's own status, not treatment of Jackson — a 'proposed': true artifact.",
+          "lane1_negative reviewed 1, cap_hit=false, proposed_negative_events 0, audit_needed=false — no negative treatment.",
+          "good_law uncontradicted by disclosed evidence."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "composite_basis='migration-seed'; minimal progeny (1 indexed citing opinion) keeps currency exposure minimal."
+        ],
+        "suggested_tightening": null
+      }
+    ],
+    "notes": "All 5 stand: 8th Cir. identity confirmed against cached opinion; pin-1232a already correctly 'matched'; pin-1232 and pin-1231 'mismatch' flags are false positives (one verbatim stored quote, one garbled harvest artifact) with published quotes verbatim and correctly attributed to Leon; good_law uncontradicted."
+  }
+]}

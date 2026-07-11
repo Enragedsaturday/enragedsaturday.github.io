@@ -1,0 +1,290 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Harris (1971).json",
+      "reviewed": [
+        {
+          "assertion_id": "c9a2c479526ca83b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header prints '403 U.S. 573 (1971)' verbatim (caption 'UNITED STATES v. HARRIS.', 'No. 30.', 'Decided June 28, 1971') — official cite, docket 30 and year all confirmed.",
+            "No disclosed basis to refute; parallel S.Ct./L.Ed.2d/LEXIS cites not printed in the cached text but are uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6e24a38839854716",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'practical consideration of everyday life.' is verbatim in the cached opinion at 403 U.S. 583 ('is not a \"practical consideration of everyday life\" upon which an officer (or a magistrate) may properly rely').",
+            "Page's affirmative framing ('a magistrate may likewise rely ... as a ...') faithfully carries the source's double-negative holding ('We cannot conclude that ... is not ...'); pincite 583 correct.",
+            "Ledger payload 'quote_fidelity: mismatch' is a false positive — not reproduced against disclosed text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8dc4e536331a7103",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The assertion's recorded `quote` field is a mis-extraction: it captured a span of content-page front-matter and Background/Issue/Rule markdown ('--- # United States v. Harris (1971) ... ## Rule Yes. The informant's statements') instead of the opinion text anchored at ^pin-583. The page's ACTUAL ^pin-583 quotations are each verbatim to the source and correctly pincited to 583, so the built page is faithful; only the extraction/fidelity record is corrupt.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the ^pin-583 quote span to the actual quoted sentences ('were against the informant's penal interest, for he thereby admitted major elements of an offense'; '[p]eople do not lightly admit a crime and place critical evidence in the hands of the police in the form of their own admissions'; '[a]dmissions of crime, like admissions against proprietary interests, carry their own indicia of credibility — sufficient at least to support a finding of probable cause to search'), all at 403 U.S. 583.",
+            "evidence_quote": "Admissions of crime, like admissions against proprietary interests, carry their own indicia of credibility—sufficient at least to support a finding of probable cause to search.",
+            "needs_cl": false,
+            "locator_note": "Content page Rule paragraph at ^pin-583; source = cached opinion Part III, page 583 (before the *584 star marker)."
+          },
+          "reasons": [
+            "Recorded quote is page markdown, not opinion text -> genuine extraction artifact, NOT a page misquote.",
+            "Independently verified all three actual ^pin-583 quotations verbatim against cached opinion Part III at page 583."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If the corrupt fidelity record auto-suppresses the pin, a faithful quote could be wrongly dropped."
+          ],
+          "suggested_tightening": "Guard the quote extractor against capturing spans that cross '##' section headers or the front-matter '---' delimiter."
+        },
+        {
+          "assertion_id": "9ffd56142be0f1e7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'That the informant may be paid or promised a ‘break’ does not eliminate the residual risk and opprobrium of having admitted criminal conduct.' is verbatim in the cached opinion (Part III), the *584 star marker falling mid-sentence ('does *584 not eliminate ...'); only single-vs-double quote normalization on ‘break’.",
+            "Pincite 584 correct (sentence completes on 584). Ledger payload 'mismatch' is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e7985ddb49af353d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'itself and without more, implicated that property and furnished probable cause to search.' is verbatim at 403 U.S. 584 (Part III, after the *584 marker).",
+            "Star-verified (star_marker 584) and payload 'matched' — confirmed against disclosed text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d83e4ca7d33163c2",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Currency claim (field_i_validity good_law as of 2026-06-30) cannot be verified from the disclosed 1971 opinion alone; requires a post-1971 citator/CL check not inlined.",
+            "Doctrinal setup in the scope_note IS consistent with the disclosed text: the cached opinion shows a fractured plurality (Burger for a plurality; Black & Blackmun would overrule Aguilar/Spinelli; White concurs only in Part III) eroding Aguilar-Spinelli.",
+            "No disclosed basis to refute; not fabricating a negative-treatment defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency and the 'replaced by Illinois v. Gates (1983)' assertion need a citator/CL verification (needs_cl)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
+      "reviewed": [
+        {
+          "assertion_id": "5ed64834fbf117cd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is 'United States v. Havens' (Mr. Justice White, 1980); internal star-pagination labels 622-629 corroborate a first page of 620 -> 446 U.S. 620.",
+            "COA history '592 F. 2d 848 (CA5 1979)' consistent. Reporter volume string '446 U.S.' not printed in the excerpt but uncontradicted; case existence confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter date_decided 1980-08-11 vs as_of_content 1980-05-27 is an internal date discrepancy, but not part of this (case_cite) assertion and the cached excerpt shows no decision date to arbitrate it."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8e522041dff4002e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'We reaffirm this assessment of the competing interests, and hold that a defendant's statements made in response to proper cross-examination reasonably suggested by the defendant's direct examination are subject to otherwise proper impeachment by the government, albeit by evidence that has been illegally obtained and that is inadmissible on the government's direct case, or otherwise, as substantive evidence of guilt.' is verbatim, spanning 627-628 (the *628 marker splits 'impeach-ment').",
+            "Pincite 627-628 correct. Ledger payload 'mismatch' is a false positive (only curly-vs-straight apostrophe normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b6f0b4e62da87b4c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The assertion's recorded `quote` field is a mis-extraction: it captured content-page Background/Issue/Rule markdown ('; on cross, the Government asked ... ## Issue ... ## Rule Yes. For impeachment,') instead of the opinion text anchored at ^pin-627. The page's ACTUAL ^pin-627 quote is verbatim and correctly pincited to 627, so the built page is faithful; only the fidelity record is corrupt.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the ^pin-627 quote span to the actual quoted sentence 'we see no difference of constitutional magnitude between the defendant's statements on direct examination and his answers to questions put to him on cross-examination that are plainly within the scope of the defendant's direct examination.' at 446 U.S. 627.",
+            "evidence_quote": "we see no difference of constitutional magnitude between the defendant’s statements on direct examination and his answers to questions put to him on cross-examination that are plainly within the scope of the defendant’s direct examination.",
+            "needs_cl": false,
+            "locator_note": "Content page Rule paragraph at ^pin-627; source = cached opinion para b684-4, page 627 (the *627 marker precedes it at 'It is essential, *627 therefore ...')."
+          },
+          "reasons": [
+            "Recorded quote is page markdown, not opinion text -> extraction artifact, NOT a page misquote.",
+            "Independently verified the actual ^pin-627 quote verbatim against the cached opinion at page 627."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If the corrupt fidelity record auto-suppresses the pin, a faithful quote could be wrongly dropped."
+          ],
+          "suggested_tightening": "Guard the extractor against spans crossing '##' section headers / front-matter."
+        },
+        {
+          "assertion_id": "bf17805fc109438a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Doctrinal scope_note ('extends Walder's impeachment exception to cross-examination reasonably suggested by direct') IS directly supported by the disclosed holding (para b685-5) and the opinion's Walder/Harris/Hass/Agnello discussion.",
+            "The currency claim ('remains good law' / good_law as of 2026-06-30) is NOT checkable from the 1980 opinion; requires a citator/CL check. No disclosed basis to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency and the 'James v. Illinois declined to extend' note require a citator/CL verification (needs_cl)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Hay.json",
+      "reviewed": [
+        {
+          "assertion_id": "ee8e0fe8ef4ea2b4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'UNITED STATES OF AMERICA v. BRUCE L. HAY', U.S. Court of Appeals for the Tenth Circuit, No. 22-3276, Filed 03/19/2024 (PUBLISH) — matches docket 22-3276, court ca10, date_decided 2024-03-19.",
+            "Reporter cite '95 F.4th 1304' is not printed in the slip (slip/PACER format carries no F.4th pagination), so the exact page 1304 is not confirmable from disclosed text, but it is uncontradicted and the case's existence/identity is confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The specific F.4th reporter volume/page cannot be star-corroborated from a slip; a reporter/citator check would confirm '95 F.4th 1304' exactly."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "19ac3dd5d765c910",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Treatment is an intentional frontier stub: field_i_validity 'unverified', scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' It asserts NO currency/good_law claim, so there is nothing to refute.",
+            "Record honestly self-declares unverified (lake status under_review, ⚪ banner on the page); consistent, not fabricated. Nothing to verify from the disclosed opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny deferred by design; currency to be derived at S6/S9 promotion — needs later citator work, not an S9 R1 refutation."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Henry.json",
+      "reviewed": [
+        {
+          "assertion_id": "b19ba619192b3827",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is 'United States v. Henry' (Chief Justice Burger, 1980); internal star-pagination labels 266-275 corroborate a first page of 264 -> 447 U.S. 264.",
+            "Cert grant '444 U. S. 824 (1979)' and COA history '590 F. 2d 544 (1978)' consistent. Reporter volume string '447 U.S.' not printed in the excerpt but uncontradicted; case existence confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "23fdc7c1cf58aa41",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The assertion's recorded `quote` field is a mis-extraction: it captured content-page Issue/Rule markdown ('incriminating statements from an indicted, incarcerated defendant ... *Massiah*, when it used a paid jailhouse informant ... ## Rule Yes. The Sixth Amendment ... bars the government from') instead of the opinion text anchored at ^pin-270. The page's ACTUAL ^pin-270 quote is verbatim and correctly pincited to 270, so the built page is faithful; only the fidelity record is corrupt.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the ^pin-270 quote span to the actual quoted sentence 'Three factors are important. First, Nichols was acting under instructions as a paid informant for the Government; second, Nichols was ostensibly no more than a fellow inmate of Henry; and third, Henry was in custody and under indictment at the time he was engaged in conversation by Nichols.' at 447 U.S. 270.",
+            "evidence_quote": "Three factors are important. First, Nichols was acting under instructions as a paid informant for the Government; second, Nichols was ostensibly no more than a fellow inmate of Henry; and third, Henry was in custody and under indictment at the time he was engaged in conversation by Nichols.",
+            "needs_cl": false,
+            "locator_note": "Content page Rule paragraph at ^pin-270; source = cached opinion para b312-5, page 270 (after the *270 marker, before *271)."
+          },
+          "reasons": [
+            "Recorded quote is page markdown, not opinion text -> extraction artifact, NOT a page misquote.",
+            "Independently verified the actual ^pin-270 quote verbatim against the cached opinion at page 270."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If the corrupt fidelity record auto-suppresses the pin, a faithful quote could be wrongly dropped."
+          ],
+          "suggested_tightening": "Guard the extractor against spans crossing '##' section headers / front-matter."
+        },
+        {
+          "assertion_id": "3d72e2cdc2726341",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry's Sixth Amendment right to counsel.' is verbatim at 447 U.S. 274 (para b316-5, before the *275 marker).",
+            "Pincite 274 correct. Ledger payload 'mismatch' is a false positive — not reproduced against disclosed text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4997322bea08be19",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Currency claim (good_law as of 2026-06-30) and the 'Cabined by Kuhlmann v. Wilson (1986)' characterization cannot be verified from the disclosed 1980 opinion; requires a citator/CL check.",
+            "The scope_note framing is consistent with the disclosed text: Henry footnote 9 expressly reserves the passive listening-post scenario ('nor are we called upon to pass on the situation where an informant is placed in close proximity but makes no effort to stimulate conversations about the crime charged') — the exact line Kuhlmann later occupies.",
+            "No disclosed basis to refute; not fabricating a defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency and the Kuhlmann-cabining note need a citator/CL verification (needs_cl)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
