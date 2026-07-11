@@ -1,0 +1,330 @@
+{
+  "packs": [
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Kaupp v. Texas.json",
+      "reviewed": [
+        {
+          "assertion_id": "ba712695a3d20ea5",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion is the Kaupp v. Texas per curiam (2003), citing Brown v. Illinois 422 U.S. 590 and Hayes v. Florida; U.S.-Reports star-pagination labels 627-633 place the opinion body at 538 U.S. 626 et seq., consistent with the selected official cite 538 U.S. 626.",
+            "Parallel cites 123 S. Ct. 1843 / 155 L. Ed. 2d 814 and neutral 2003 U.S. LEXIS 3670 are internally consistent 2003-term reporters; official-selection present and set to the U.S. Reports cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Specific parallel page numbers and the U.S. page 626 itself are not independently confirmable from the slip text (which carries only U.S. star-pagination 627-633); identity is fully confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "059931dd8c3f426e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (star p. 631): 'This evidence points to arrest even more starkly than the facts in Dunaway v. New York...' \u2014 the quoted fragment 'even more starkly than the facts in Dunaway' is verbatim; the page truncates at the case name and closes with a period (proper partial quote).",
+            "Pincite 631 correct: the phrase falls after the *631 star marker.",
+            "The lake's quote_fidelity='mismatch'/'slip-only' flag is a false positive here (slip-only pagination + italic/truncation normalization); the quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Clear the pin-631 'mismatch' flag to 'match'; the fragment is verbatim to the slip opinion at star p. 631."
+        },
+        {
+          "assertion_id": "2fd2ed9908bf1b7a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (star p. 632, before the *633 marker): 'well-established precedent requires suppression of the confession unless that confession was \u201can act of free will [sufficient] to purge the primary taint of the unlawful invasion.\u201d' \u2014 verbatim match including the bracketed '[sufficient]'.",
+            "Pincite 632-633 correct: the quote sits on 632; the Wong Sun cite it introduces (371 U.S. 471, 486) is at 633.",
+            "Build's 'mismatch'/'slip-only' flag is a false positive; the quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Clear the pin-632 'mismatch' flag; quote is verbatim to slip opinion at star p. 632."
+        },
+        {
+          "assertion_id": "9c00575b27f2a401",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored quote for pin-630 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-630 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[pin-630].quote to the page's real quote 'Such involuntary transport to a police station for questioning is \u201csufficiently like arres[t] to invoke the traditional rule that arrests may constitutionally be made only on probable cause.\u201d' (quoting Hayes v. Florida, 470 U.S. at 816) which is verbatim in the slip opinion at star p. 630 (para b724-5).",
+            "evidence_quote": "'Such involuntary transport to a police station for questioning is \u201csufficiently like arres[t] to invoke the traditional rule that arrests may constitutionally be made only on probable cause.\u201d' (quoting Hayes v. Florida, 470 U.S. at 816)",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-630; cached slip opinion para b724-5 (star p. 630). Stored quote instead contains content-page Background prose + literal '## Issue'/'## Rule' Markdown headers."
+          },
+          "reasons": [
+            "Stored quote contains Markdown headers '## Issue'/'## Rule' plus content-page narrative ('handcuffed him, and took him \u2014 shoeless and in his underwear in January...'), which cannot be opinion text; the opinion actually reads 'The two officers then handcuffed Kaupp and led him, shoeless and dressed only in boxer shorts and a T-shirt...'.",
+            "Independent check: the page's real pin-630 quote (Hayes 'sufficiently like arres[t]') is verbatim at star p. 630, so reader-facing content is correct; only the harvested quote field is corrupt.",
+            "Same corruption pattern (first pinpoint in the Rule section captures a content-page span) recurs across records in this pack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systemic: the same harvest-offset bug corrupts the first-Rule-section pinpoint quote in Kingsley (pin-397), Kisela (pin-1152/pin-1153), and Mathis (pin-4)."
+          ],
+          "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span."
+        },
+        {
+          "assertion_id": "0e35d7b79613477b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' consistent with disclosed evidence: Kaupp is a 2003 SCOTUS per curiam and the disclosed treatment.edges are all lane1_negative candidates whose field_ii ('overruled'/'questioned'/'superseded_by_statute') describes the CITING case's own status with field_iii='mentioned' \u2014 none is a genuine negative-treatment edge against Kaupp.",
+            "scope_note accurately states the holding (per curiam application of Dunaway/Brown; 3 a.m. station-house removal without PC is an arrest; confession is fruit absent attenuation)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency rests on the disclosed curated edges (no independent Shepardizing in-pack); no contrary evidence disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Systemic pinpoint-quote harvest corruption affects pin-630 (refuted); pin-631/pin-632 verified verbatim against cached slip text despite the build's mismatch flags."
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Kingsley v. Hendrickson.json",
+      "reviewed": [
+        {
+          "assertion_id": "de1aafd715692218",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "official and display are null (official_selection_present=false) even though 576 U.S. 389 is plainly the U.S. Reports official cite; the auto-selector bailed with reason 'unlisted_reporter:Fla. L. Weekly Fed. S'. All six listed citations exist and correctly identify the case, so this is a metadata-selection gap, not an existence failure.",
+            "severity": "low",
+            "proposed_fix": "Select 576 U.S. 389 as official/display; an unlisted vendor reporter (Fla. L. Weekly Fed. S) in the citation list should not block choosing the canonical U.S. Reports cite.",
+            "evidence_quote": null,
+            "needs_cl": false,
+            "locator_note": "lake citations.official=null; official_selection.selected=null, reason 'unlisted_reporter:Fla. L. Weekly Fed. S'."
+          },
+          "reasons": [
+            "Cached opinion is Justice Breyer's Kingsley v. Hendrickson majority; S. Ct. page-labels *2471-*2474 confirm the 135 S. Ct. 2466 volume; parties (Kingsley, Hendrickson, Degner) and the section 1983 pretrial-detainee facts confirm identity at 576 U.S. 389 (2015).",
+            "All six listed citations exist and are internally consistent; only the official-selection is unpopulated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The content page header nonetheless renders '576 U.S. 389 (2015)', so the reader-facing citation is present despite the null official field."
+          ],
+          "suggested_tightening": "Harden official-selection to fall back to the U.S. Reports cite when an unlisted reporter is present."
+        },
+        {
+          "assertion_id": "8e1cff498ee25f3b",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored quote for pin-397 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-397 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[pin-397].quote to the page's real quote 'we agree with the dissenting appeals court judge, the Seventh Circuit's jury instruction committee, and Kingsley, that a pretrial detainee must show only that the force purposely or knowingly used against him was objectively unreasonable' which is verbatim in the slip opinion at 135 S. Ct. 2473 (page-label *2473, para p-41).",
+            "evidence_quote": "'we agree with the dissenting appeals court judge, the Seventh Circuit's jury instruction committee, and Kingsley, that a pretrial detainee must show only that the force purposely or knowingly used against him was objectively unreasonable'",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-397; cached opinion para p-41 (page-label *2473). Stored quote instead contains content-page prose '...disregarded his safety (a subjective element)...' + '## Issue'/'## Rule' Markdown headers."
+          },
+          "reasons": [
+            "Stored quote contains Markdown '## Issue'/'## Rule' headers and content-page narrative ('disregarded his safety (a subjective element)...'), impossible in an opinion.",
+            "Independent check: the page's rendered pin-397 quote is verbatim at page-label *2473; reader-facing content correct.",
+            "Same harvest-offset bug as Kaupp pin-630 / Kisela pin-1152 / Mathis pin-4."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systemic harvest-offset bug across the pack's first-Rule-section pinpoints."
+          ],
+          "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span."
+        },
+        {
+          "assertion_id": "80638b34f4597d06",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' consistent with disclosed evidence: 2015 SCOTUS majority; disclosed edges are lane1_negative/lane2_top_cited candidates whose field_ii describes the citing case's own status (field_iii='mentioned'), not negative treatment of Kingsley.",
+            "scope_note ('pretrial-detainee excessive-force claims use a purely objective-reasonableness standard under the Fourteenth Amendment') matches the holding (opinion p-13, p-41)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency rests on disclosed curated edges; no contrary evidence disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Existence stands-modified (null official-selection despite obvious 576 U.S. 389); pin-397 quote-harvest corrupted (rendered page quote verbatim at S. Ct. 2473)."
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Kisela v. Hughes.json",
+      "reviewed": [
+        {
+          "assertion_id": "dd973219048e2426",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion is the Kisela v. Hughes PER CURIAM (2018), quoting White v. Pauly and Mullenix v. Luna, with a Sotomayor (joined by Ginsburg) dissent \u2014 confirming identity; 'Cite as: 584 U. S. ____ (2018)' is consistent with the selected official 584 U.S. 100.",
+            "S. Ct. pincites 1152-1153 fall within the 138 S. Ct. 1148 volume; official-selection present = 584 U.S. 100."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip op shows the U.S. page as '____' (unassigned at slip time), so the specific page '100' is not independently confirmable from disclosed text; identity and the S. Ct. volume are confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6da11853ebb8e38f",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored quote for pin-1152 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-1152 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[pin-1152].quote to the page's real quote 'Qualified immunity attaches when an official\u2019s conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known' (quoting White v. Pauly) which is verbatim in the slip opinion at 138 S. Ct. 1152 (slip op. at 4-5).",
+            "evidence_quote": "'Qualified immunity attaches when an official\u2019s conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known' (quoting White v. Pauly)",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-1152; cached slip opinion (slip op. at 4-5, quoting White v. Pauly). Stored quote instead captures the content-page frontmatter '---', H1 title, header/HTML-comment line, and '## Background/## Issue/## Rule' sections."
+          },
+          "reasons": [
+            "Stored quote contains frontmatter '---', Markdown '#'/'##' headers and an HTML comment \u2014 impossible in an opinion.",
+            "Independent check: cached slip opinion carries the rendered pin-1152 quote verbatim ('Qualified immunity attaches when an official's conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known'); reader-facing content correct.",
+            "Same harvest bug as Kaupp pin-630 / Kingsley pin-397 / Mathis pin-4."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systemic harvest-offset bug."
+          ],
+          "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span."
+        },
+        {
+          "assertion_id": "d3e03edb14038732",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored quote for pin-1153 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-1153 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[pin-1153].quote to the page's real quote 'Use of excessive force is an area of the law \u201cin which the result depends very much on the facts of each case,\u201d and thus police officers are entitled to qualified immunity unless existing precedent \u201csquarely governs\u201d the specific facts at issue' (quoting Mullenix v. Luna) which is verbatim in the slip opinion at 138 S. Ct. 1153 (slip op. at 5-6).",
+            "evidence_quote": "'Use of excessive force is an area of the law \u201cin which the result depends very much on the facts of each case,\u201d and thus police officers are entitled to qualified immunity unless existing precedent \u201csquarely governs\u201d the specific facts at issue' (quoting Mullenix v. Luna)",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-1153; cached slip opinion (slip op. at 5-6, quoting Mullenix). Stored quote is instead the content-page section-lead '\u2014 *Id.* Force law demands particularity.'"
+          },
+          "reasons": [
+            "Stored quote '\u2014 *Id.* Force law demands particularity.' is content-page section-lead prose plus a stray '\u2014 *Id.*' citation artifact, not opinion text; the opinion contains no such sentence.",
+            "Independent check: cached slip opinion carries the rendered pin-1153 quote verbatim at the Mullenix passage ('Use of excessive force is an area of the law \u201cin which the result depends very much on the facts of each case,\u201d ... unless existing precedent \u201csquarely governs\u201d the specific facts at issue'); reader-facing content correct.",
+            "Corruption variant of the same harvest bug."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span."
+        },
+        {
+          "assertion_id": "21fd04de194bb898",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' consistent with disclosed evidence: 2018 SCOTUS per curiam; disclosed edges are lane1_negative/lane2_top_cited candidates (field_iii='mentioned') whose field_ii is the citing case's own status, not negative treatment of Kisela.",
+            "scope_note correctly notes per curiam, the Brosseau/Mullenix specificity rule ('squarely governs'), and the Sotomayor (joined by Ginsburg) dissent \u2014 all confirmed in the cached opinion (which contains repeated SOTOMAYOR dissent text)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Good-law currency rests on disclosed curated edges."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Both quote_pinpoints (pin-1152 blob, pin-1153 section-lead) are harvest-corrupted; both rendered page quotes verified verbatim in the cached per-curiam slip op."
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Mathis v. United States (1968).json",
+      "reviewed": [
+        {
+          "assertion_id": "18401ecac52bf97d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion is Mathis v. United States, Justice Black (1968), relying on Miranda v. Arizona 384 U.S. 436; star-pagination *3/*4/*5 places the opinion body at 391 U.S. 3-5, consistent with the selected official 391 U.S. 1.",
+            "IRS/prison/false-tax-claim facts confirm identity; parallel cites (88 S. Ct. 1503; 20 L. Ed. 2d 381; tax reporters 2 C.B. 903, 21 A.F.T.R.2d 1251) are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record correctly disambiguated as the 1968 case (vs. the 2016 Mathis) via title and 391 U.S. 1; specific parallel page numbers not independently confirmable from the slip text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8a23edce7294bd3c",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored quote for pin-4 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-4 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[pin-4].quote to the page's real quote 'The Government here seeks to escape application of the Miranda warnings on two arguments: (1) that these questions were asked as a part of a routine tax investigation . . . and (2) that the petitioner had not been put in jail by the officers questioning him, but was there for an entirely separate offense. These differences are too minor and shadowy to justify a departure from the well-considered conclusions of Miranda with reference to warnings to be given to a person held in custody' which is verbatim in the slip opinion at 391 U.S. 4 (star p. 4, para b49-5).",
+            "evidence_quote": "'The Government here seeks to escape application of the Miranda warnings on two arguments: (1) that these questions were asked as a part of a routine tax investigation . . . and (2) that the petitioner had not been put in jail by the officers questioning him, but was there for an entirely separate offense. These differences are too minor and shadowy to justify a departure from the well-considered conclusions of Miranda with reference to warnings to be given to a person held in custody'",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-4; cached slip opinion para b49-5 (star p. 4). Stored quote instead contains content-page frontmatter '---', H1 title, header line, and '## Background/## Issue/## Rule' Markdown."
+          },
+          "reasons": [
+            "Stored quote contains frontmatter '---' and Markdown '#'/'##' headers plus content-page narrative, impossible in an opinion.",
+            "Independent check: the page's rendered pin-4 quote is verbatim (with a properly marked ellipsis for 'where no criminal proceedings might even be brought,') at star p. 4; reader-facing content correct.",
+            "Same harvest bug as the other groups' first-Rule-section pinpoints."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systemic harvest-offset bug."
+          ],
+          "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span."
+        },
+        {
+          "assertion_id": "8a324f1c08d7b225",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (para b50-7, spanning star p. 4-5): 'There is no substance to such a distinction, and in effect it goes against the whole purpose of the Miranda decision... We find nothing in the Miranda opinion which calls for a curtailment of the warnings to be given persons [*5] under interrogation by officers based on the reason why the person is in custody.' The stored quote reproduces this verbatim, using a properly marked four-dot elision ' . . . . ' for the omitted clause.",
+            "Pincite 4-5 correct: the quote straddles the *5 star marker.",
+            "Build's 'mismatch'/'slip-only' flag is a false positive (the marked elision defeats the automated matcher); the quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Clear the pin-5 'mismatch' flag; quote is verbatim (with a Bluebook four-dot elision) to slip opinion at star p. 4-5."
+        },
+        {
+          "assertion_id": "a3344e5096a3d4f8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='caution' with varies_by_point=true coheres with disclosed evidence: the lake carries a curated negative edge Howes v. Fields (565 U.S. 499), field_ii='limited', journal_ref='migration:limited' (a seeded treatment relationship, distinct from the lane1/lane2 citing-case noise), plus a matching point_override (by Howes v. Fields, field_ii='limited', s3_binding_status='provisional').",
+            "scope_note accurately splits the holding: the separate-offense-custody rule stands (verbatim support in the inlined 1968 opinion, paras b49-5/b50-7), while the broad 'incarceration = custody' reading is limited by Howes; header badge 'limited \u2014 by Howes v. Fields' is consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The Howes v. Fields (2012) opinion is NOT inlined in the pack, so the substantive limiting holding rests on the disclosed curated migration edge rather than independently verified primary text; record status is 'under_review' and the point-override binding is 'provisional'."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "pin-4 quote-harvest corrupted (rendered quote verbatim at 391 U.S. 4); pin-5 verified verbatim (marked elision) despite mismatch flag; treatment 'caution/limited by Howes' coheres with the curated migration:limited edge (Howes opinion not inlined)."
+    }
+  ]
+}

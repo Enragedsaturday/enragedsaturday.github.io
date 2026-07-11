@@ -1,0 +1,297 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Saucier v. Katz.json",
+      "reviewed": [
+        {
+          "assertion_id": "83631ee1cc631d73",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'DONALD SAUCIER, PETITIONER v. ELLIOT M. KATZ', No. 99-1977, decided June 18, 2001, SUPREME COURT OF THE UNITED STATES, reversing 194 F.3d 962.",
+            "Official cite 533 U.S. 194 present in disclosed cluster.citations[]; parallels 121 S. Ct. 2151 / 150 L. Ed. 2d 272 standard; nothing disclosed contradicts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip text (pre-U.S.-Reports) does not itself print '533 U.S. 194'; the page-194 locator derives from cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "66c014958782c29b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page ^pin-201a quote is a faithful bracketed/elided quotation of opinion para 10: 'On the other hand, if a violation could be made out on a favorable view of the parties' submissions, the next, sequential step is to ask whether the right was clearly established. This inquiry, it is vital to note, must be undertaken in light of the specific context of the case, not as a broad general proposition.'",
+            "'[I]f' and '[in]' brackets and the '. . . .' ellipsis are proper editorial marks; the substance is verbatim. Lake quote_fidelity='mismatch' reads as an exact-substring false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite '201' not confirmable from slip-only cached text (no star pagination)."
+          ],
+          "suggested_tightening": "Reconcile lake quote_fidelity flag from 'mismatch' to 'matched (editorialized)'."
+        },
+        {
+          "assertion_id": "f07e33e8de730fb3",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pinpoint pin-201 'quote' field stores content-page boilerplate (front-matter title/TreatmentBadge line + Background + Issue + 'Rule A court analyzes qualified immunity in a fixed sequence'), not an opinion quotation; this text appears nowhere in the Saucier opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-201's quote to the anchored Rule quotation, which is verbatim-faithful to opinion para 9.",
+            "evidence_quote": "A court required to rule upon the qualified immunity issue must consider, then, this threshold question: Taken in the light most favorable to the party asserting the injury, do the facts alleged show the officer's conduct violated a constitutional right? This must be the initial inquiry.",
+            "needs_cl": false,
+            "locator_note": "opinion para 9 (div id=p9); lake pinpoints[].id=pin-201"
+          },
+          "reasons": [
+            "Stored quote is verifiably page markdown, not source text (quote-harvest artifact); lake self-flags quote_fidelity='mismatch'.",
+            "The page's actual ^pin-201 anchored quote IS verbatim-faithful to para 9, so no false published proposition ships; the defect is confined to the pinpoint record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite '201' not confirmable from slip-only cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c352bf6a25283c15",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Saucier's own two-step sequence is confirmed by the disclosed body (paras 8-10: qualified-immunity 'requisites ... must be considered in proper sequence'; threshold constitutional-violation inquiry then clearly-established).",
+            "The subsequent-limitation claim (Pearson v. Callahan, 555 U.S. 223, sequence 'no longer mandatory') is NOT inlined, but nothing disclosed contradicts it; field_i_validity caution / varies_by_point=true is internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pearson v. Callahan holding is not inlined; the 'limited/no-longer-mandatory' treatment cannot be independently verified from disclosed evidence.",
+            "field_i_validity 'caution' vs header narrative 'limited' reflects a documented legacy migration (provenance warning 'limited -> caution')."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Schmerber v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "6740d5acbd2935d7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '384 U.S. 757 (1966)', 'SCHMERBER v. CALIFORNIA', No. 658, Decided June 20, 1966, Supreme Court of United States.",
+            "Official/parallel cites match disclosed cluster.citations[]; nothing disclosed contradicts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "abaf2e6bd2afe4eb",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pinpoint pin-761 'quote' field stores content-page boilerplate (front-matter + Background + Issue + 'Rule **Fifth Amendment** - blood-alcohol evidence is physical, not testimonial:'), not an opinion quotation.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-761's quote to the anchored Fifth-Amendment holding, verbatim-faithful to the opinion at *761.",
+            "evidence_quote": "the privilege protects an accused only from being compelled to testify against himself, or otherwise provide the State with evidence of a testimonial or communicative nature, and that the withdrawal of blood and use of the analysis in question in this case did not involve compulsion to these ends.",
+            "needs_cl": false,
+            "locator_note": "opinion at star-page *761 (Brennan, J.); lake pinpoints[].id=pin-761"
+          },
+          "reasons": [
+            "Stored quote is page markdown, not source text; lake self-flags quote_fidelity='mismatch'.",
+            "Page's actual ^pin-761 quote is verbatim-faithful to the opinion at *761 (footnote marker [5] dropped, standard); defect confined to the pinpoint record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b026715f949f054a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'there was no time to seek out a magistrate and secure a warrant. Given these special facts, we conclude that the attempt to secure evidence of blood-alcohol content in this case was an appropriate incident to petitioner's arrest.' is verbatim in the opinion spanning *770-*771.",
+            "Lake quote_fidelity='matched'; star_marker '771' corroborated by disclosed star pagination (*771 falls mid-sentence in the passage)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bface561efa1a3f9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law core supported by the disclosed opinion's expressly fact-bound holding ('we reach this judgment only on the facts of the present record').",
+            "McNeely (2013) 'no per se exigency' and Birchfield (2016) 'blood not SITA' subsequent-treatment characterizations are NOT inlined; nothing disclosed contradicts them."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "McNeely and Birchfield opinions are not inlined; those subsequent-treatment characterizations cannot be independently verified from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+      "reviewed": [
+        {
+          "assertion_id": "24eae06c73ec711c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header confirms '412 U.S. 218 (1973)', 'SCHNECKLOTH, CONSERVATION CENTER SUPERINTENDENT v. BUSTAMONTE', No. 71-732, Decided May 29, 1973.",
+            "Cites match disclosed cluster.citations[]; nothing disclosed contradicts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6c24b7ed5f9a238b",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pinpoint pin-227 'quote' field stores content-page boilerplate (Background tail + Issue + 'Rule Voluntariness is judged on the totality of the circumstances, and knowledge of the right to refuse is not required'), not an opinion quotation.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-227's quote to the anchored totality-of-circumstances holding, verbatim-faithful to the opinion at *227.",
+            "evidence_quote": "the question whether a consent to a search was in fact \"voluntary\" or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances.",
+            "needs_cl": false,
+            "locator_note": "opinion at *227 (Stewart, J.); lake pinpoints[].id=pin-227"
+          },
+          "reasons": [
+            "Stored quote is page markdown, not source text; lake self-flags quote_fidelity='mismatch'.",
+            "Page's actual ^pin-227 quote is verbatim-faithful to the opinion at *227 (between disclosed *227 and *230 markers); defect confined to the pinpoint record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d6738626789a267a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the sine qua non of an effective consent.' is verbatim in the opinion, the sentence immediately following the pin-227 totality holding.",
+            "It falls between disclosed *227 and *230 star markers, confirming page 227; lake 'mismatch'/'slip-only' flags are false positives (cached text carries star pagination)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile lake quote_fidelity to 'matched' and revisit pinpoint_status 'slip-only' (disclosed cached text is the star-paginated reporter version)."
+        },
+        {
+          "assertion_id": "f7d781fe8541abf4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is supported: Schneckloth is the controlling consent-voluntariness holding in the disclosed opinion; nothing disclosed shows negative treatment.",
+            "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is an internal build-process note, not a substantive legal claim; it does not render the assertion false."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 2026-06-30 subsequent-history sweep behind as_of_treatment is not itself inlined."
+          ],
+          "suggested_tightening": "Replace the build-process scope_note with a substantive currency scope_note."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Scott v. Harris.json",
+      "reviewed": [
+        {
+          "assertion_id": "f52e917d4be7f446",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'SCOTT v. HARRIS', No. 05-1631, Argued February 26, 2007 - Decided April 30, 2007, SUPREME COURT OF THE UNITED STATES, CA11; 42 U.S.C. 1983 excessive force, respondent rendered quadriplegic.",
+            "Official cite 550 U.S. 372 present in disclosed cluster.citations[]; parallel 127 S. Ct. 1769 standard; nothing disclosed contradicts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip text does not print '550 U.S. 372'; the page-372 locator derives from cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e43c5029a74d513b",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pinpoint pin-1777 'quote' field stores content-page boilerplate (front-matter + Background + Issue + 'Rule The reasonableness of force is judged under the Fourth Amendment's objective-reasonableness standard, and *Garner* does not impose rigid preconditions'), not an opinion quotation.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-1777's quote to the anchored 'magical on/off switch' quotation, verbatim-faithful to the majority opinion.",
+            "evidence_quote": "Garner did not establish a magical on/off switch that triggers rigid preconditions whenever an officer's actions constitute \"deadly force.\"",
+            "needs_cl": false,
+            "locator_note": "majority Opinion of the Court ('Respondent's argument falters at its first step'); lake pinpoints[].id=pin-1777"
+          },
+          "reasons": [
+            "Stored quote is page markdown, not source text; lake self-flags quote_fidelity='mismatch'.",
+            "Page's actual ^pin-1777 quote is verbatim-faithful to the majority body; defect confined to the pinpoint record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page '1777' not confirmable from slip cached text (no S. Ct. pagination)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fd4843498e826c8d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'was simply an application of the Fourth Amendment's 'reasonableness' test ... to the use of a particular type of force in a particular situation.' is verbatim in the majority body: 'Garner was simply an application of the Fourth Amendment's \"reasonableness\" test, Graham, supra, at 388, to the use of a particular type of force in a particular situation.'",
+            "The '...' properly elides the internal 'Graham, supra, at 388,' citation; lake quote_fidelity='mismatch' reads as an exact-substring false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. reporter page '1779' not confirmable from slip cached text (no S. Ct. pagination)."
+          ],
+          "suggested_tightening": "Reconcile lake quote_fidelity flag to 'matched (editorialized)'."
+        },
+        {
+          "assertion_id": "edd8f66cbfa7468f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note 'Reads Tennessee v. Garner as an application of Graham reasonableness, not a rigid test' is faithful to the majority holding ('Garner was simply an application of the Fourth Amendment's reasonableness test, Graham, supra, at 388, to the use of a particular type of force in a particular situation').",
+            "good_law / no-negative-treatment is consistent with the disclosed controlling SCOTUS opinion; nothing disclosed contradicts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Post-2007 subsequent-history sweep behind as_of_treatment is not itself inlined."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

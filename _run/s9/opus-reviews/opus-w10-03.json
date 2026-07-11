@@ -1,0 +1,280 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Neil v. Biggers.json",
+      "reviewed": [
+        {
+          "assertion_id": "3d196a8974244098",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms the case: '409 U.S. 188 (1972)', 'NEIL, WARDEN v. BIGGERS', No. 71-586, decided December 6, 1972 (MR. JUSTICE POWELL). Official/display cite 409 U.S. 188 matches.",
+            "Parallel cites (93 S. Ct. 375; 34 L. Ed. 2d 401; 1972 U.S. LEXIS 6) come from cluster.citations[] and are not contradicted by any disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "420938a1eb57e618",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-199 `quote` field is a content-page-chrome mis-harvest (it captured the page title/Background/Issue/Rule header text, not the opinion sentence); the automated quote_fidelity flag correctly reads 'mismatch'. The legal content is unaffected: the quote actually rendered at content-page anchor ^pin-199 is faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-199.quote to the intended opinion sentence and keep pincite 199.",
+            "evidence_quote": "We turn, then, to the central question, whether under the \"totality of the circumstances\" the identification was reliable even though the confrontation procedure was suggestive.",
+            "needs_cl": false,
+            "locator_note": "pin-199; content page ^pin-199 displays '[T]he central question [is] whether under the \\'totality of the circumstances\\'...' which matches the opinion at star page *199 (bracket-adapted); only the stored quote metadata is corrupt."
+          },
+          "reasons": [
+            "Displayed content quote at ^pin-199 matches the opinion verbatim at *199 (bracketed cap/insertion only); pincite '409 U.S. at 199' correct.",
+            "Stored pinpoint quote is page chrome, not opinion text -> a real but low-severity data defect in the record's quote field, not a content-accuracy error."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If a downstream consumer reads the stored pinpoint.quote (rather than the rendered page), it would surface header chrome instead of the holding."
+          ],
+          "suggested_tightening": "Add a harvest guard so slip-only pinpoints do not fall back to capturing page front-matter as the quote."
+        },
+        {
+          "assertion_id": "94d03bb06c78b82e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-199b quote is verbatim in the opinion: 'the factors to be considered in evaluating the likelihood of misidentification include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of the witness' prior description of the criminal, the level of certainty demonstrated by the witness at the confrontation, and the length of time between the crime and the confrontation.'",
+            "The text spans star pages *199 into *200, so pincite '199-200' is correct.",
+            "The automated quote_fidelity='mismatch' flag here is a false positive (slip-only page-match artifact); the quote is faithful and only bracket-capitalizes the leading 'the' -> '[T]he'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "07b42e8f333e5474",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Neil v. Biggers (1972 SCOTUS) is the source of the five reliability factors; the disclosed opinion sets out the totality-of-the-circumstances reliability test. field_i_validity=good_law is well supported.",
+            "Every treatment.edges entry is proposed:true (unadjudicated), and several are facially unreliable (state intermediate-court 'overruled'/'criticized' cannot overrule SCOTUS; 'Manson v. Brathwaite criticized' is contradicted by Manson's adoption of the Biggers factors, per the scope_note). No confirmed negative treatment is disclosed.",
+            "good_law survives the refute attempt."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The many proposed negative edges (overruled/questioned/criticized) remain unadjudicated; they should be triaged, but none is confirmed and none undermines good_law on the disclosed record."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Nix v. Williams.json",
+      "reviewed": [
+        {
+          "assertion_id": "e9bbe273752141d6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is unmistakably Nix v. Williams (Chief Justice Burger; victim Pamela Powers; adoption of the ultimate/inevitable-discovery exception; Brewer v. Williams antecedent right-to-counsel violation; judgment reversed).",
+            "Opinion star pages run *434 through *450, consistent with a case beginning at 467 U.S. 431; official/display cite 467 U.S. 431 matches.",
+            "Parallel cites (104 S. Ct. 2501; 81 L. Ed. 2d 377; 52 U.S.L.W. 4732; 1984 U.S. LEXIS 101) from cluster.citations[] are uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "54c196006984037e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-444 `quote` field is a content-page-chrome mis-harvest (Background tail + Issue + '## Rule Yes.'), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-444 is faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-444.quote to the intended opinion sentence and keep pincite 444.",
+            "evidence_quote": "If the prosecution can establish by a preponderance of the evidence that the information ultimately or inevitably would have been discovered by lawful means — here the volunteers' search— then the deterrence rationale has so little basis that the evidence should be received.",
+            "needs_cl": false,
+            "locator_note": "pin-444; content page ^pin-444 displays the sentence with ' . . . ' eliding '— here the volunteers' search—'; text is on star page *444; only the stored quote metadata is corrupt."
+          },
+          "reasons": [
+            "Displayed content quote at ^pin-444 matches the opinion at *444 (a fair mid-quote ellipsis replaces 'here the volunteers' search'); pincite '467 U.S. at 444' correct.",
+            "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Consumers reading pinpoint.quote directly would get page chrome, not the inevitable-discovery holding."
+          ],
+          "suggested_tightening": "Same slip-only harvest guard as Neil pin-199."
+        },
+        {
+          "assertion_id": "95896b78e1501a68",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The disclosed opinion adopts the ultimate/inevitable-discovery exception to the exclusionary rule (1984 SCOTUS); scope_note is accurate. field_i_validity=good_law supported.",
+            "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+            "good_law survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges unadjudicated but non-dispositive."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
+      "reviewed": [
+        {
+          "assertion_id": "34c035d0a0f0ad87",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case: Justice Thomas majority; parolee Keith M. Scott; holding that the Fourth Amendment exclusionary rule does not apply in parole revocation hearings; judgment of the Pennsylvania Supreme Court reversed.",
+            "Opinion star pages run *360 through *369, consistent with a case beginning at 524 U.S. 357; official/display cite 524 U.S. 357 matches.",
+            "Parallel cites (118 S. Ct. 2014; 141 L. Ed. 2d 344; 1998 U.S. LEXIS 4037) from cluster.citations[] are uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "acef632e09f32ce9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-364 `quote` field is a content-page-chrome mis-harvest (Application-paragraph tail + '## Conclusion' header), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-364 is faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-364.quote to the intended opinion sentence and keep pincite 364.",
+            "evidence_quote": "We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights.",
+            "needs_cl": false,
+            "locator_note": "pin-364; content page ^pin-364 displays this sentence verbatim; it appears immediately after star page *364 in the opinion; only the stored quote metadata is corrupt."
+          },
+          "reasons": [
+            "Displayed content quote at ^pin-364 matches the opinion verbatim on star page *364; pincite '524 U.S. at 364' correct.",
+            "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Consumers reading pinpoint.quote directly would get page chrome, not the holding."
+          ],
+          "suggested_tightening": "Same slip-only harvest guard as above."
+        },
+        {
+          "assertion_id": "bb1368ac11271a0b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The disclosed opinion holds the federal exclusionary rule does not bar evidence at parole-revocation hearings (1998 SCOTUS, Thomas, J.); scope_note accurate. field_i_validity=good_law supported.",
+            "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+            "good_law survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges unadjudicated but non-dispositive."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Samson v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "3b3fc4fac6346011",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'SAMSON v. CALIFORNIA', No. 04-9728, Argued February 22, 2006—Decided June 19, 2006, 'Cite as: 547 U. S. ___ (2006)'. Volume 547 U.S., year 2006, and docket 04-9728 match the record.",
+            "The slip prints the starting page as ___; page 843 comes from cluster.citations[] and is consistent (uncontradicted). Case existence at 547 U.S. 843 (2006) confirmed.",
+            "Parallel cites (126 S. Ct. 2193; 165 L. Ed. 2d 250; 2006 U.S. LEXIS 4885) uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact first-page (843) is not printed in the slip-only cached text, but is consistent with all disclosed identity fields."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1a44672c5965a13e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-857 quote 'we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.' is verbatim in Part IV of the opinion: 'Thus, we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.'",
+            "Only the leading 'Thus,' is dropped; quote_fidelity='matched' is correct. The deep-link fragment ':~:text=we%20conclude%20that%20the%20Fourth' matches.",
+            "The sentence sits in the closing Part IV of the majority (final page of the opinion), consistent with pincite 857."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter page 857 is not directly confirmable from slip-only cached text (which paginates as slip pages 1-12, 'Cite as: 547 U. S. ___'); the quote itself is verbatim-verified and its Part IV location is consistent with 857."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5fcffdb51e2b4925",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-852 `quote` field is a content-page-chrome mis-harvest (Background tail + Issue + '## Rule No. Parolees have sharply reduced privacy expectations:'), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-852 is faithful to the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-852.quote to the intended opinion sentence and keep pincite 852.",
+            "evidence_quote": "The extent and reach of these conditions clearly demonstrate that parolees like petitioner have severely diminished expectations of privacy by virtue of their status alone.",
+            "needs_cl": false,
+            "locator_note": "pin-852; content page ^pin-852 displays this sentence verbatim; it appears in the diminished-privacy discussion of the slip opinion (slip page 7); only the stored quote metadata is corrupt."
+          },
+          "reasons": [
+            "Displayed content quote at ^pin-852 matches the opinion verbatim ('...severely diminished expectations of privacy by virtue of their status alone.'); the assigned holding text is faithful.",
+            "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter page 852 is not directly confirmable from slip-only cached text; the quote is verbatim-verified but its exact U.S. Reports page is a residual risk.",
+            "Consumers reading pinpoint.quote directly would get page chrome, not the diminished-privacy holding."
+          ],
+          "suggested_tightening": "Same slip-only harvest guard; and confirm 852 against reporter pagination when available."
+        },
+        {
+          "assertion_id": "5b5becc88d4f0c29",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The disclosed opinion holds the Fourth Amendment does not prohibit a suspicionless search of a parolee (2006 SCOTUS), extending United States v. Knights; field_i_validity=good_law supported.",
+            "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+            "good_law survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a process placeholder rather than a substantive scope note, and self-flags a possible future downgrade on S2 re-derivation; validity is nonetheless good_law on the disclosed record.",
+            "Proposed negative edges unadjudicated but non-dispositive."
+          ],
+          "suggested_tightening": "Replace the placeholder scope_note with a substantive one stating the holding (suspicionless parolee search reasonable; diminished privacy)."
+        }
+      ]
+    }
+  ],
+  "notes": "Opus model-diversity lane, refute-framed, sighted (full lake records + cached opinion text inlined). All 14 assertions reviewed once. Cross-cutting finding: four slip-only pinpoints (Neil pin-199, Nix pin-444, Scott pin-364, Samson pin-852) share a systematic mis-harvest where the stored pinpoint.quote captured content-page front-matter instead of the opinion sentence (each self-flagged quote_fidelity='mismatch'); in every case the quote actually rendered on the content page is faithful and correctly pincited, so these are low-severity metadata defects (stands-modified), not content-accuracy errors. Neil pin-199b carries a false-positive 'mismatch' flag but its stored quote is verbatim (stands). Samson pin-857 (quote_fidelity='matched') is verbatim-verified (stands). All four existence cites and all four good_law treatments stand; every treatment.edges negative signal in the pack is proposed:true (unadjudicated) and several are facially impossible (state-court 'overruled' of SCOTUS), so none refutes good_law from disclosed evidence. Samson pins are verified against a slip-only opinion, so exact reporter pages 852/857 are not reporter-confirmable (quotes are verbatim-present; pages consistent)."
+}
