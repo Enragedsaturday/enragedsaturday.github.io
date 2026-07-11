@@ -576,7 +576,13 @@ def finding_id_for(obj, assertion_id, dimension):
     return "F-S9-PR-%s" % h
 
 
-def build_finding_row(resolved, item_verdict, lens, run_id, manifest_ref):
+def build_finding_row(resolved, item_verdict, lens, run_id, manifest_ref,
+                      lane=None, model=None):
+    # lane/model default to the Codex lens identity so the existing Codex callers
+    # are unchanged; the Opus emission path passes lane="claude-opus-panel",
+    # model=OPUS_MODEL so a defect it raises is attributed to the Opus lane.
+    lane = lane or "codex-%s" % lens
+    model = model or CODEX_MODEL
     aid = item_verdict["assertion_id"]
     dim = item_verdict["dimension"]
     defect = item_verdict.get("defect") or {}
@@ -601,7 +607,7 @@ def build_finding_row(resolved, item_verdict, lens, run_id, manifest_ref):
         "severity": (defect.get("severity") or "medium").lower(),
         "proposed_fix": defect.get("proposed_fix"),
         "needs_cl": bool(defect.get("needs_cl")),
-        "found_by": {"lane": "codex-%s" % lens, "model": CODEX_MODEL,
+        "found_by": {"lane": lane, "model": model,
                      "note": "S9 R1 panel-review lens %s; refute-framed; "
                              "sighted (full lake disclosed)" % lens,
                      "register": "panel-review.jsonl"},
@@ -707,15 +713,29 @@ def _persist_result(ledger_dir, lane_id, payload):
 
 
 def emit_lens_result(resolved, lens, model, run_id, lane_id, obj_json,
-                     result, manifest_ref, ledger_dir):
+                     result, manifest_ref, ledger_dir, lane=None):
     """Turn a parsed lens reply into ledger rows per the R1 output contract.
     Returns a summary dict. Fail-closed: an unparseable reply -> no rows, a
-    no_review result persisted (never a fabricated finding)."""
-    lane = "codex-%s" % lens
+    no_review result persisted (never a fabricated finding).
+
+    `lane` overrides the emitting lane string (finding.found_by / vote.lane /
+    attestation.lane). Defaults to the Codex lens identity ("codex-A"/"codex-B")
+    so the frozen Codex callers are byte-identical; the Opus emission module
+    (scripts/s9/emit_opus_pack.py) passes lane="claude-opus-panel" so its rows
+    merge onto the SAME deterministic finding ids as the Codex lanes and count as
+    the distinct 3rd panel lane in the >=2-of-3 tally (check_ledger inv-2)."""
+    lane = lane or "codex-%s" % lens
     reviewed = (obj_json or {}).get("reviewed") or []
     existing = _existing_finding_ids(ledger_dir)
     verdict_map = {}     # assertion_id -> {dimension, verdict, has_defect}
     findings_emitted, votes_emitted, defense_votes = [], [], []
+    in_charter_defect = False   # this lane found (or agreed to) an IN-CHARTER
+    # defect. Tracked separately from findings_emitted because the deterministic
+    # finding-id dedup ZEROES findings_emitted when a sibling lane already raised
+    # the same finding — for the all-dimension Opus lane that is the NORMAL merge
+    # case (Opus agrees with a Codex finding), so keying "clean" off
+    # findings_emitted alone would fail-OPEN (a clean attestation on a group the
+    # lane itself refuted). Clean is keyed off this flag instead.
     charter = LENS_CHARTER.get(lens, frozenset(PANEL_DIMS))
 
     for iv in reviewed:
@@ -733,9 +753,11 @@ def emit_lens_result(resolved, lens, model, run_id, lane_id, obj_json,
         fid = finding_id_for(resolved["object"], aid, dim)
 
         if has_defect and dim in charter:
+            in_charter_defect = True
             # emit the finding (deduped by deterministic id) + this lens's vote
             if fid not in existing:
-                frow = build_finding_row(resolved, iv, lens, run_id, manifest_ref)
+                frow = build_finding_row(resolved, iv, lens, run_id, manifest_ref,
+                                         lane=lane, model=model)
                 lr.emit_row(frow, ledger_dir)
                 existing.add(fid)
                 findings_emitted.append(fid)
@@ -759,12 +781,13 @@ def emit_lens_result(resolved, lens, model, run_id, lane_id, obj_json,
     # emitting an attestation there would be fail-OPEN (falsely certifying the
     # group). Fail-closed: no attestation unless parse_status is parsed/repaired.
     parsed_ok = result.get("parse_status") in ("parsed", "repaired")
-    clean = parsed_ok and (len(findings_emitted) == 0)
+    clean = parsed_ok and (not in_charter_defect)
     attestation_ref = None
     if clean:
         att = build_attestation_row(resolved, lens, model, run_id, manifest_ref,
                                     reviewed_ids, defense_votes,
-                                    result.get("wall_clock_s"), result.get("tokens"))
+                                    result.get("wall_clock_s"), result.get("tokens"),
+                                    lane=lane)
         attestation_ref = _emit_attestation(att, ledger_dir)
 
     summary = {
