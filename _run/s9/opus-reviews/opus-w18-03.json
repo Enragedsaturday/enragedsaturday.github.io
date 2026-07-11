@@ -1,0 +1,275 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
+      "reviewed": [
+        {
+          "assertion_id": "aa87aa240b8fb8b1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real published 11th Cir. 2024 decision: 'In the United States Court of Appeals For the Eleventh Circuit ... No. 22-12988 ... DERRICK ALFONDSO MORLEY ... Date Filed: 04/30/2024', LAGOA, Circuit Judge.",
+            "Cite '99 F.4th 1328' is the record's cluster.citations official (selected_rank_1); existence of the cited case is not in doubt."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact F.4th reporter page (1328) is taken from cluster metadata and is not independently confirmable from the slip-only cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9318dcb065a4425a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'All that is necessary to satisfy the first element is that the automobile is operational.' appears verbatim in the cached slip opinion on page 15 (USCA11 Page: 15 of 30): 'All that is necessary to satisfy the first element is that the automobile is operational. United States v. Watts, 329 F.3d 1282, 1286 (11th Cir. 2003).'",
+            "quote_fidelity=matched is correct; pincite context (slip op. 15) is confirmed by the 'Page: 15 of 30' marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ac24822611ac43db",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pinpoint pin-op15's stored quote is the content page's own frontmatter/header block ('--- # United States v. Morley ... The court restated the circuit's formulation:'), not opinion text; it is a quote-harvest artifact, correctly self-flagged quote_fidelity=mismatch. The actual rule quote rendered at the ^pin-op15 anchor IS verbatim in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op15's stored quote to the rendered rule sentence, which is verbatim on slip op. 15.",
+            "evidence_quote": "The automobile exception allows law enforcement to con-duct a warrantless search of a vehicle if (1) the vehicle is readily mobile and (2) law enforcement has probable cause to search it.",
+            "needs_cl": false,
+            "locator_note": "Content-page Rule section renders the rule quote at ^pin-op15 with pincite (slip op., at 15); cached slip op. p.15 contains the sentence verbatim (hyphenation 'con-duct' is a line-break artifact)."
+          },
+          "reasons": [
+            "The rendered rule quote at ^pin-op15 is verbatim at slip op. 15 and correctly pincited, so the legal proposition stands.",
+            "Only the pinpoint's stored quote string is defective (it captured the page header/frontmatter), a systemic first-pin harvest artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same header-artifact pattern recurs on the first pinpoint of the sibling records (Morton pin-op13, Neugin pin-op15)."
+          ],
+          "suggested_tightening": "Re-harvest first-pin stored quotes across the affected records."
+        },
+        {
+          "assertion_id": "8f6d822572288570",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence of negative treatment: lane1_negative (targeted overrul*/abrogat*/vacat*/reversed query, court_id scotus OR ca11) reviewed 1 with 0 proposed_negative_events.",
+            "The sole treatment edge (United States v. Lawrence Alexander, cluster 10814315, field_ii 'overruled') is proposed:true and internally inconsistent (field_iii 'mentioned' contradicts a controlling 'overruled'), a snippet-first triage classification not read/adjudicated; cannot fabricate a negative holding from it.",
+            "Cached opinion shows Morley (2024) restating settled circuit law (Lindsey 2007, Watts 2003, Nixon 1990); nothing suggests it is bad law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is composite_basis=migration-seed, not a fresh derivation.",
+            "Only 1 of a claimed citation_count 10 citing opinions was reviewed (indexed_citing_opinions 1).",
+            "Proposed 'overruled' edge (cluster 10814315) is unadjudicated; currency not independently confirmable from disclosed evidence (citing-opinion text not inlined)."
+          ],
+          "suggested_tightening": "Read/adjudicate the cluster 10814315 proposed 'overruled' edge before finalizing good_law."
+        }
+      ],
+      "notes": "Existence + one matched quote clean; first-pin (pin-op15) stored quote is a header-block harvest artifact (rendered rule quote is faithful at slip op. 15); treatment good_law is an un-refuted migration-seed with one unadjudicated snippet-FP edge."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Morton.json",
+      "reviewed": [
+        {
+          "assertion_id": "540ddeae83c244ee",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pinpoint pin-op13's stored quote is the content page's frontmatter/header block ('--- # United States v. Morton ... The en banc court resolved the case on good faith and expressly declined to reach the underlying Fourth Amendment question:'), not opinion text; harvest artifact, correctly self-flagged quote_fidelity=mismatch. The rule quote rendered at ^pin-op13 IS verbatim in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op13's stored quote to the rendered rule sentences, which are verbatim on slip op. 13.",
+            "evidence_quote": "We do not decide if the state judge should have authorized full searches of the phones based on these affidavits. We decide only that the officers acted in good faith when relying on the judge's decision to issue the warrants.",
+            "needs_cl": false,
+            "locator_note": "Cached slip op. Page: 13 contains the two sentences verbatim; content page renders them at ^pin-op13 with pincite (slip op., at 13)."
+          },
+          "reasons": [
+            "Rendered rule quote at ^pin-op13 is verbatim at slip op. 13 and correctly pincited, so the legal proposition stands.",
+            "Only the pinpoint's stored quote string is defective (page header/frontmatter), same first-pin harvest artifact class as the siblings."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-harvest pin-op13 stored quote."
+        },
+        {
+          "assertion_id": "ff5d39c2f5186445",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote is verbatim in the cached slip opinion on page 16 within the opinion concurring in the judgment: 'it would be unsurprising if the Court, again acknowledging the need to adapt rules constructed for the physical world to the reality of the digital world, recognized an exception to another longstanding Fourth Amendment doctrine, this time plain view.'",
+            "The quote begins mid-sentence at 'would be' (properly dropping leading 'it'); rest matches exactly.",
+            "Pincite (slip op., at 16) confirmed by the 'Page: 16' marker; concurrence attribution confirmed by the 'concurring in the judgment' opinion beginning on page 14."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "35221def06364d07",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence of negative treatment (edges: [], all derivation lanes proposed_negative_events 0).",
+            "Cannot fabricate a negative holding; Morton is a 2022 en banc 5th Cir. decision and the disclosed record shows no contrary treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law here rests on zero derivation: lane1_negative/lane2_top_cited/lane3_recency all reviewed 0; progeny indexed_citing_opinions 0, citation_count 0; composite_basis migration-seed; lake status under_review.",
+            "Record identity is thin (identity_checked false, expected_citation_found false, citations.official null) while the content page renders '46 F.4th 331' (citation not paneled here)."
+          ],
+          "suggested_tightening": "Run the S2 treatment derivation (all lanes reviewed 0) and resolve identity/official-citation before promoting good_law out of under_review."
+        }
+      ],
+      "notes": "Concurrence quote (pin-op16) fully clean and correctly attributed/pincited; first-pin (pin-op13) is the header-block harvest artifact with a faithful rendered quote at slip op. 13; good_law is an un-refuted but wholly underived migration-seed on an under_review, citation-less record."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Neugin.json",
+      "reviewed": [
+        {
+          "assertion_id": "e03503dce5417d03",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real published 10th Cir. 2020 decision: 'UNITED STATES COURT OF APPEALS FOR THE TENTH CIRCUIT ... JACK DEWAYNE NEUGIN ... No. 19-7043 ... Filed May 1, 2020'.",
+            "Cite '958 F.3d 924' is the record's cluster.citations official (selected_rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact F.3d reporter page (924) is from cluster metadata, not confirmable from the slip-only cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "36046261a528e45f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote is verbatim in the cached slip opinion on page 15: 'Without the violation, therefore, Mr. Neugin would not inevitably have been arrested. And without the arrest, the truck would not inevitably have been impounded and searched.'",
+            "quote_fidelity=matched is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8f1e9090fe42bf2e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pincite off-by-one: the quoted majority-conclusion sentence sits under the slip-opinion page-16 header (page 17 begins the HARTZ dissent), but the content page cites it '(slip op., at 17)'. Separately, quote_fidelity is flagged 'mismatch' although the ellipsis-stitched quote is verbatim-faithful (a false positive of contiguous-substring matching).",
+            "severity": "medium",
+            "proposed_fix": "Change the pincite to 'slip op., at 16' and reclassify pin-op17 quote_fidelity from mismatch to matched.",
+            "evidence_quote": "and the police would not have inevitably discovered the evidence absent the Fourth Amendment violation. Because the violation caused the discovery of the ammunition and firearm, that evidence is fruit of the poisonous tree and should have been suppressed. We therefore reverse.",
+            "needs_cl": false,
+            "locator_note": "Cached page-16 header precedes 'III. CONCLUSION' and the quote; the page-17 header immediately precedes 'HARTZ, Circuit Judge, dissenting'. Both ellipsis fragments ('the police would not have inevitably discovered the evidence absent the Fourth Amendment violation' and 'that evidence is fruit of the poisonous tree and should have been suppressed') are verbatim; the ellipsis fairly omits 'Because the violation caused the discovery of the ammunition and firearm,'."
+          },
+          "reasons": [
+            "The quote is faithful (both ellipsis fragments verbatim), so the legal proposition holds and the 'mismatch' flag is over-conservative.",
+            "The quote is entirely on slip op. page 16, not 17; the author's own pin-op15 pincite (slip op. 15) matches the same page-header numbering, so pin-op17 is a genuine off-by-one against that scheme."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Correct pincite to 16 and fidelity to matched."
+        },
+        {
+          "assertion_id": "c5eb508c160b2a86",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pinpoint pin-op15's stored quote is the content page's frontmatter/header block ('--- # United States v. Neugin ... The court reiterated that'), not opinion text; harvest artifact, correctly self-flagged quote_fidelity=mismatch. The rule quote rendered at ^pin-op15 IS verbatim in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op15's stored quote to the rendered Owens quotation, which is verbatim on slip op. 15.",
+            "evidence_quote": "the inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'",
+            "needs_cl": false,
+            "locator_note": "Cached slip op. p.15 quotes Owens verbatim ('See Owens, 782 F.2d at 153 (\"[T]he inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'\")'); content page renders it at ^pin-op15 attributed to United States v. Owens, 782 F.2d 146, 153 (10th Cir. 1986)."
+          },
+          "reasons": [
+            "Rendered rule quote at ^pin-op15 is verbatim at slip op. 15 with correct Owens attribution and pincite; only the pinpoint's stored quote string is the header-block harvest artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-harvest pin-op15 stored quote."
+        },
+        {
+          "assertion_id": "1dc6eecf90642907",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The disciplined lane1_negative (targeted overrul*/abrogat*/vacat*/reversed query, court_id scotus OR ca10) reviewed 4 with 0 proposed_negative_events.",
+            "The 5 lane2_top_cited proposed edges (Chavez, Braxton, O'Neil, Elmore 'questioned'; Tolbert 'superseded_by_statute') are all field_iii 'mentioned' and proposed:true snippet classifications, not read/adjudicated; a Fourth Amendment inevitable-discovery holding is not plausibly 'superseded by statute', indicating a snippet false positive.",
+            "No confirmed negative treatment on the disclosed evidence; cannot fabricate one."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "5 unadjudicated proposed lane2 edges (esp. the Tolbert 'superseded_by_statute' flag).",
+            "good_law is composite_basis=migration-seed; citing-opinion texts are not inlined, so absence of negative treatment cannot be fully confirmed from disclosed evidence."
+          ],
+          "suggested_tightening": "Read/adjudicate the 5 lane2 citing opinions before finalizing good_law."
+        }
+      ],
+      "notes": "Existence and pin-op15a matched-quote clean; pin-op17 is verbatim-faithful but pincited to slip op. 17 when it is on page 16 (page 17 is the dissent) and its 'mismatch' flag is an ellipsis false positive; pin-op15 is the header-block harvest artifact with a faithful rendered Owens quote; treatment good_law is an un-refuted migration-seed with 5 unadjudicated snippet-FP edges."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Nora.json",
+      "reviewed": [
+        {
+          "assertion_id": "715fa8a46445a3dd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real published 9th Cir. 2014 decision: 'UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT ... JOHNNY CASEL NORA ... No. 12-50485 ... Filed August 28, 2014 ... Opinion by Judge Watford'.",
+            "Official cite '765 F.3d 1049' plus parallels '2014 U.S. App. LEXIS 16677' and '2014 WL 4235955' are in the record's cluster.citations."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "opinion_id is unresolved (frontmatter opinion_id null; lake lead_opinion_id 2722177 equals cluster_id 2722177) - a frontier-stub artifact, not an existence problem.",
+            "Exact F.3d reporter page (1049) is from cluster metadata, not confirmable from the slip-only cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0c82e38eb66c1490",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The record honestly declares field_i_validity 'unverified' with as_of_content/as_of_treatment null and composite_basis 'unverified' (frontier stub; treatment/progeny intentionally not derived until promotion).",
+            "No good_law/currency claim is asserted, so there is nothing to refute; the state is consistent with lake status under_review and the content page's explicit unverified banner."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Internal inconsistency in the deferral target: scope_note says treatment is deferred until 'S6 promotion' while the content page status note says 'S9 promotion' - cosmetic, not a treatment-validity defect."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Existence confirmed from cached slip op. (Watford, J., 9th Cir. 2014, No. 12-50485); treatment is an honest 'unverified' frontier-stub non-claim with nothing to refute."
+    }
+  ]
+}

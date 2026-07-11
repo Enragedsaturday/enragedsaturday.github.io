@@ -1,0 +1,213 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Meyer.json",
+      "reviewed": [
+        {
+          "assertion_id": "d966cf794c66a047",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Full 8th Cir. slip opinion is inlined and confirms identity: caption 'United States v. William Meyer', No. 20-2958, filed Dec. 2, 2021, Stras, J. — matches lake cluster 5302394 / lead opinion 5130956.",
+            "Official cite '19 F.4th 1028' is attested by cluster.citations[] and content page; nothing in the disclosed evidence contradicts volume/reporter/page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter cite '19 F.4th 1028' is not self-attested inside the slip-paginated opinion body; it rests on cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a07ba7952fb20fc3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest frontier-stub non-claim (record status under_review); lake treatment block and content-page 'Unverified' (⚪) banner are internally consistent.",
+            "No treatment proposition is asserted, so there is nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Both Meyer assertions clean against inlined evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Miller.json",
+      "reviewed": [
+        {
+          "assertion_id": "cebe4181b0310c17",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached SCOTUS opinion is unmistakably United States v. Miller (bank-records / third-party doctrine; cites California Bankers Assn. v. Shultz and United States v. White) — 425 U.S. 435 (1976).",
+            "Official cite '425 U.S. 435' is consistent with the content page, lake cluster 109433, and cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "575533c3c66c09d4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-442 quote 'All of the documents obtained, including financial statements and deposit slips, contain only information voluntarily conveyed to the banks and exposed to their employees in the ordinary course of business.' appears VERBATIM in the cached opinion (para b512-6).",
+            "The sentence sits between the *442 and *443 star markers, so the pincite '425 U.S. at 442' is correct.",
+            "Payload quote_fidelity='mismatch'/'slip-only' reflects a corrupted stored quote span (it captured the page front-matter/markdown, not the pincite sentence) — an extraction artifact, not a page misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pin-442 'quote' field is a page-markdown blob, so automated star-verify could not match it even though the rendered page quote is faithful."
+          ],
+          "suggested_tightening": "Repair the pin-442 stored quote to the actual pincite sentence so it star-verifies at 442."
+        },
+        {
+          "assertion_id": "abb3fa3c4f84b539",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-443 quote 'The depositor takes the risk, in revealing his affairs to another, that the information will be conveyed by that person to the Government.' matches the cached opinion VERBATIM (para b513-5), immediately after the *443 star marker.",
+            "Payload correctly reports quote_fidelity='matched', star-verified at 443; pincite 'Id. at 443' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9802e5b1273d202e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Composite field_i_validity='good_law' matches lake and content; Miller is foundational third-party-doctrine precedent.",
+            "Disclosed treatment edges labeled 'overruled'/'abrogated'/'questioned' (including the Carpenter edge) are ALL proposed:true, unadjudicated auto-candidates (journal_ref lane1_negative / lane2_top_cited) — not adjudicated negative treatment; the scope_note correctly states Carpenter declined to overrule Miller.",
+            "Current good-law CURRENCY cannot be independently confirmed from the inlined evidence (no Carpenter opinion or authoritative citator inlined); no disclosed evidence contradicts good_law, so no defect is substantiated (refusing to fabricate one)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency rests on non-inlined S2 derivation; the proposed negative edges remain unreconciled in the disclosed record."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Miller: both rendered pincite quotes verbatim-verify at correct star pages; the pin-442 'mismatch' is a stored-span extraction artifact. good_law currency not fully verifiable from disclosed evidence but uncontradicted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Montoya de Hernandez.json",
+      "reviewed": [
+        {
+          "assertion_id": "0b0a9b0d83474895",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached SCOTUS opinion (Rehnquist, J.) is unmistakably Montoya de Hernandez — 88 cocaine-filled balloons, alimentary-canal border detention, reversing 9th Cir. 731 F.2d 1369 — 473 U.S. 531 (1985).",
+            "Official cite '473 U.S. 531' is consistent with content, lake cluster 111509, and cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2f16801c6fce78a6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-544 quote 'in the presence of articulable suspicion of smuggling in her alimentary canal, the customs officers were not required by the Fourth Amendment to pass respondent and her 88 cocaine-filled balloons into the interior. Her detention for the period of time necessary to either verify or dispel the suspicion was not unreasonable.' appears VERBATIM in the cached opinion (para b582-5).",
+            "The quote falls after the *544 star marker (para b582-4) and before 'Reversed.', so the pincite 'Id. at 544' is correct.",
+            "Payload 'mismatch'/'slip-only' reflects the stored quote capturing the page's editorial lead-in ('The detention may last as long as is reasonably necessary...'), which is authorial framing, not opinion text — an extraction artifact, not a page misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pin-544 'quote' is the page lead-in sentence, not the quoted opinion text."
+          ],
+          "suggested_tightening": "Repair the pin-544 stored quote to the actual quoted opinion sentence."
+        },
+        {
+          "assertion_id": "b38591e79540d046",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-541 quote 'We hold that the detention of a traveler at the border, beyond the scope of a routine customs search and inspection, is justified at its inception if customs agents, considering all the facts surrounding the traveler and her trip, reasonably suspect that the traveler is smuggling contraband in her alimentary canal.' appears VERBATIM in the cached opinion (para b579-5).",
+            "The holding sits between the *541 marker (para b578-5) and the *542 marker (para b579-6), so the pincite '473 U.S. at 541' is correct.",
+            "Payload 'mismatch'/'slip-only' reflects a corrupted stored quote span (page markdown blob), not a page misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pin-541 'quote' is a page-markdown blob."
+          ],
+          "suggested_tightening": "Repair the pin-541 stored quote to the actual holding sentence."
+        },
+        {
+          "assertion_id": "73d1b7201664af05",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Composite field_i_validity='good_law' matches lake and content; Montoya de Hernandez is the foundational reasonable-suspicion border-detention precedent.",
+            "All disclosed treatment edges are proposed:true auto-candidates (derivation src 'S2 treatment derivation proposed only'); no adjudicated negative treatment, consistent with the content's 'No negative subsequent treatment identified.'",
+            "good-law currency is not independently confirmable from inlined evidence; no disclosed contradiction, so no defect is substantiated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency rests on non-inlined S2 derivation; the scope_note itself flags a possible re-derivation downgrade."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Montoya: both rendered pincite quotes verbatim-verify at correct star pages (541, 544); mismatches are stored-span artifacts. good_law currency uncontradicted but not fully verifiable from disclosed evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Moore-Bush.json",
+      "reviewed": [
+        {
+          "assertion_id": "0c4ca09320798530",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 1st Cir. en banc (Barron, C.J., Lynch, Howard, Thompson, Kayatta, Gelpi), Nos. 19-1582 et al., United States v. Nia Moore-Bush / Daphne Moore, per curiam, amended opinion June 9, 2022 — matches lake cluster 6476395 / lead opinion 6348506.",
+            "Per curiam disposition ('...unanimously reversed by the en banc court. We remand with instructions to deny the motions to suppress.') verbatim at slip p.3, matching the content page. Official cite '36 F.4th 320' consistent with content, lake, cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "918889bd819d8e5a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest frontier-stub non-claim (record status under_review); lake treatment block, empty edges, and content-page 'Unverified' (⚪) banner are internally consistent.",
+            "No treatment proposition is asserted, so there is nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Moore-Bush: existence confirmed by cached en banc opinion; treatment is an honest unverified stub."
+    }
+  ]
+}

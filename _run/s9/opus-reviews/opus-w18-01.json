@@ -1,0 +1,182 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Mayville.json",
+      "reviewed": [
+        {
+          "assertion_id": "642a56aa23924b8c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case exists and matches identity: 10th Cir., No. 19-4008 (D. Utah 2:16-CR-00266-JNP-1), decided April 7, 2020, Baldock, Circuit Judge, before Bacharach/Baldock/Murphy — all consistent with the record.",
+            "Reporter cite '955 F.3d 825' is temporally consistent with an April 2020 10th Cir. decision and is the sole citation in cluster.citations[]; nothing in the disclosed evidence contradicts it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact F.3d volume/page (955/825) is not printed in the disclosed slip text (internal slip pagination only); it derives from CL cluster metadata and is not independently confirmable here.",
+            "official_selection.court_class is 'state' with reason 'selected_rank_3' for a federal COA case — metadata anomaly, but harmless because only one citation exists so the selected official is correct regardless."
+          ],
+          "suggested_tightening": "Cross-check the official-citation selector: court_class should be 'coa' for a 10th Cir. case (cf. the Mendez record's 'coa')."
+        },
+        {
+          "assertion_id": "2e683c02fc051802",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion claims field_i_validity='unverified' (frontier stub, no treatment derived) — the weakest, most conservative claim; lake record confirms status=under_review, empty treatment.edges, empty derivation, and scope_note matches verbatim.",
+            "Content page renders 'Treatment: Unverified' under the ⚪ banner and explicitly disclaims machine-verified subsequent treatment — no currency overclaim to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "None material; status is honestly 'unverified' pending S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Mendenhall.json",
+      "reviewed": [
+        {
+          "assertion_id": "e40818204df5c7f4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the Mendenhall majority (Stewart, J., 'announced the judgment of the Court'), with internal page markers *547 through *560 within volume 446 U.S., consistent with a case beginning at 446 U.S. 544.",
+            "Parallel cites (100 S. Ct. 1870; 64 L. Ed. 2d 497) and vendor-neutral (1980 U.S. LEXIS 102) are standard and uncontradicted by the disclosed text; official '446 U.S. 544' is correctly selected (scotus, rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S. Ct. and L. Ed. 2d page numbers are not printed in the disclosed U.S.-Reports text; only the U.S. cite is directly confirmable from the page markers."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7d2e5755888dac3e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Lake pinpoint pin-554 records a garbled, non-verbatim quote string '? ## Rule A person is seized only when a reasonable person would not feel free to leave.' — a harvest artifact that captured the content page's markdown header and plain-language topic-sentence gloss, not opinion language. The opinion at 446 U.S. 554 reads that a reasonable person 'would have believed that he was not free to leave', not 'would not feel free to leave'. The record itself self-flags quote_fidelity='mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repair pin-554.quote to the verbatim opinion text the content page already blockquotes: 'We conclude that a person has been \"seized\" within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.' (446 U.S. at 554); then set quote_fidelity=match.",
+            "evidence_quote": "We conclude that a person has been “seized” within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.",
+            "needs_cl": false,
+            "locator_note": "pin-554; the content page Rule-section blockquote is correct and verbatim and correctly pinned to 446 U.S. at 554 — only the lake pinpoint.quote metadata string is garbled."
+          },
+          "reasons": [
+            "Recorded pin-554 quote '? ## Rule A person is seized only when a reasonable person would not feel free to leave.' is a markdown/gloss harvest artifact, not opinion language; the opinion (p. b612-6, *554) reads '...a reasonable person would have believed that he was not free to leave.'",
+            "The pincite (446 U.S. at 554) and the content page's displayed blockquote are verbatim-correct, so the reader-facing text and cite stand; only the lake pinpoint.quote metadata is corrupted (record already flags quote_fidelity='mismatch')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If the garbled quote string were ever surfaced downstream it would misrepresent the holding language."
+          ],
+          "suggested_tightening": "Re-harvest pin-554.quote from the content-page blockquote (already correct) rather than the topic-sentence line."
+        },
+        {
+          "assertion_id": "c4e1e2cb60211526",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Recorded quote matches the opinion verbatim at 446 U.S. 554 ('Examples of circumstances that might indicate a seizure, even where the person did not attempt to leave, would be the threatening presence of several officers, the display of a weapon by an officer, some physical touching of the person of the citizen, or the use of language or tone of voice indicating that compliance with the officer's request might be compelled.') — word-for-word except a straight-vs-curly apostrophe normalization.",
+            "Correctly pinned to 446 U.S. at 554 (the sentence sits on the page opened by the *554 marker); tried to break fidelity and could not."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The lake flags this pinpoint quote_fidelity='mismatch', which is a false positive for a verbatim quote (likely an apostrophe-normalization or slip-only page-resolution artifact)."
+          ],
+          "suggested_tightening": "Correct pin-554a.quote_fidelity from 'mismatch' to 'match'."
+        },
+        {
+          "assertion_id": "162e23c078f8c327",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The scope_note is fully corroborated by the disclosed opinion: Stewart, J. 'announced the judgment of the Court and delivered an opinion, in which Mr. Justice Rehnquist joined,' and the † footnote shows Burger/Blackmun/Powell joined 'all but Part II-A' (the seizure holding) — so the free-to-leave test was a plurality on the seizure point, later adopted by the full Court.",
+            "No disclosed evidence of genuine negative treatment: the 'overruled/abrogated/superseded' edges are all 'proposed:true' keyword-triage from lanes flagged 'audit_needed:true' / 'R15 treatment audit required' (e.g., Gates, Bostick, Sharpe 'overruling' Mendenhall are facially false positives). good_law rests on composite_basis='migration-seed'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Forward-looking currency ('good_law' as of 2026-06-30) cannot be fully confirmed from static disclosed evidence; it is merely uncontradicted here.",
+            "Unaudited negative edges (overruled/abrogated/superseded proposals) must not be promoted into treatment without the flagged R15 audit.",
+            "treatment.as_of_content is 1980-05-27 while identity.date_decided is 1980-06-30; Mendenhall was in fact decided May 27, 1980, so date_decided may carry an identity error (out of scope for this treatment assertion)."
+          ],
+          "suggested_tightening": "Run the flagged R15 treatment audit to clear the proposed keyword false-positive negative edges before any treatment promotion."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Mendez.json",
+      "reviewed": [
+        {
+          "assertion_id": "ac2b41327de9de75",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms existence/identity: 7th Cir., No. 23-1460, argued Dec. 5, 2023, decided June 10, 2024, St. Eve, Circuit Judge, before Hamilton/Brennan/St. Eve — consistent with the record.",
+            "Reporter cite '103 F.4th 1303' is temporally consistent with a June 2024 7th Cir. decision and is the sole cluster citation; nothing disclosed contradicts it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact F.4th volume/page (103/1303) is not printed in the disclosed slip text; it derives from CL cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2f853958c5c5c389",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Claims field_i_validity='unverified' (frontier stub) — a conservative non-treatment claim; lake confirms status=under_review, empty edges/derivation, and scope_note matches.",
+            "Content page renders 'Treatment: Unverified' ⚪ and disclaims machine-verified subsequent history; no currency overclaim to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "None material; honestly unverified pending S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Mendoza.json",
+      "reviewed": [
+        {
+          "assertion_id": "4556e8ba912d9985",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Claims field_i_validity='unverified' (frontier stub) — a conservative non-treatment claim; lake confirms status=under_review, empty edges/derivation, scope_note matches, and citations are slip-only.",
+            "Content page renders 'Treatment: Unverified' ⚪ and disclaims machine-verified subsequent history; the doctrinal teaching asserts no currency, so nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record is slip-only with identity_checked=false and expected_citation_found=false, but those are identity/citation attributes, not the treatment claim under review."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

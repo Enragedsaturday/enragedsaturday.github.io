@@ -1,0 +1,262 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Massenburg.json",
+      "lens": "A+B (Opus model-diversity, dual-lens)",
+      "reviewed": [
+        {
+          "assertion_id": "f032b25cb2ae8055",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached 4th Cir. published slip opinion corroborates a real, correctly identified case: caption 'UNITED STATES v. MASSENBURG', No. 10-4209, 'Decided: August 15, 2011', 'DAVIS, Circuit Judge' writing for Motz/Davis/Keenan — matches lake identity (ca4, docket 10-4209, date 2011-08-15, cluster 223188).",
+            "Official cite '654 F.3d 480' (type 1, F.3d) is well-formed and selected_official is present."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The F.3d volume/page string is sourced from cluster.citations[] and does not appear verbatim in the slip text (slips omit the reporter cite); identity is otherwise fully corroborated."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a2f3ca6e69802ce6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion self-declares treatment as 'unverified' frontier stub; lake treatment block matches exactly (field_i_validity 'unverified', composite_basis 'unverified', edges [], derivation {}, frontier-stub scope_note).",
+            "Content page renders under the white/Unverified banner consistent with the stub; there is no positive currency claim to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally not derived until S6/S9 promotion; currency is undetermined — an honest 'not verified', not a good-law claim."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane; both assertions survive. Existence corroborated by cached 4th Cir. slip; treatment is a self-consistent unverified frontier stub."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Mathis.json",
+      "lens": "A+B (Opus model-diversity, dual-lens)",
+      "reviewed": [
+        {
+          "assertion_id": "523b7ba125089681",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached 11th Cir. opinion corroborates identity: 'Case: 13-13109  Date Filed: 09/24/2014', party 'Mathis' present in text — matches lake (ca11, date 2014-09-24, cluster 2736649, identity_method citation+party-text, expected_citation_found true).",
+            "Official cite '767 F.3d 1264' (type 1, F.3d) is well-formed; selected_official present."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter volume/page is from cluster.citations[] and not verbatim in the slip text; case identity is fully corroborated."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8f1d86043a35c3a3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote matches the cached opinion verbatim: the main-text sentence 'Because the officers engaged in \"objectively reasonable law enforcement activity and . . . acted in good faith when obtaining [the] search warrant . . . the Leon good faith exception applies.\"' spans slip pp.22-23 (footnote 5 interrupts between 'obtaining' and '[the]'; the main text is continuous).",
+            "Only differences are curly-quote and *Leon* italic markdown; the pre-computed quote_fidelity 'mismatch' is a FALSE POSITIVE (likely triggered by the footnote-5 interruption, the '[the]' bracket, and the p.22->23 break)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status 'slip-only' — the 1277 pincite is slip-style, verified against slip text rather than a star-paginated reporter."
+          ],
+          "suggested_tightening": "Make the quote matcher tolerant of mid-quote footnote interruptions to clear this false-positive class."
+        },
+        {
+          "assertion_id": "eaaa4bfde80d9e7b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The lake pinpoint pin-1276.quote (and the derived assertion payload quote) is a corrupted page-scrape — rendered page front-matter through the '## Rule' intro — not the opinion quote; as a verbatim quote it matches nothing in the source.",
+            "severity": "low",
+            "proposed_fix": "Re-extract pin-1276.quote to the actual opinion sentence, which the rendered content page already carries verbatim: 'Alternatively, even if the search warrant was not supported by probable cause, evidence obtained from the search of Mathis's phone was not subject to suppression under the good faith exception to the exclusionary rule.'",
+            "evidence_quote": "Alternatively, even if the search warrant was not supported by probable cause, evidence obtained from the search of Mathis's phone was not subject to suppression under the good faith exception to the exclusionary rule.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-1276; content_page ## Rule ^pin-1276"
+          },
+          "reasons": [
+            "The RENDERED content-page pin-1276 quote is verbatim-faithful to the cached opinion (slip op. p.22 = 767 F.3d at 1276), so the fidelity claim itself survives.",
+            "But the structured pinpoint record's quote field holds corrupted scrape text (an extraction artifact) — a genuine low-severity data-hygiene defect distinct from the page content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same corrupted-scrape artifact recurs across records (cf. Matlock pin-170); a systemic re-extraction pass is warranted."
+          ],
+          "suggested_tightening": "Guard the pinpoint extractor against capturing rendered page front-matter as a 'quote'."
+        },
+        {
+          "assertion_id": "fec20d67e0d0c461",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed treatment.derivation.lane1_negative (targeted overrul*/abrogat*/supersed*/vacat*/reversed in scotus OR ca11) returned proposed_negative_events 0, audit_needed false, cap_hit false — no negative binding treatment found; lane3_recency also 0.",
+            "All lane2_top_cited edges carry field_iii 'mentioned' (neutral toward Mathis); edge field_ii values mirror each citing case's own status, and the citing courts are out-of-circuit state courts / an FTC case that cannot abrogate an 11th Cir. decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is composite_basis 'migration-seed' (scope_note warns S2 re-derivation may downgrade); the 6 lane2 edges are 'proposed: true' and not yet adjudicated.",
+            "Currency ultimately depends on progeny not inlined; the disclosed derivation summary is the builder's own report."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane. Both quotes verify verbatim against the cached opinion; the two 'mismatch' pre-flags are (pin-1277) a false positive and (pin-1276) a corrupted-payload extraction artifact with a faithful underlying page quote. Treatment good_law supported by a clean binding-court negative lane."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Matlock.json",
+      "lens": "A+B (Opus model-diversity, dual-lens)",
+      "reviewed": [
+        {
+          "assertion_id": "8bcc9efbff4169c0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached SCOTUS majority opinion by 'MR. Justice White' with U.S. Reports star pagination *166 through *178 corroborates a real, correctly identified United States v. Matlock; the opinion begins at 164 (consistent with 415 U.S. 164).",
+            "Internal cites match the record: CoA below '476 F. 2d 1083', cert granted '412 U. S. 917', reversed and remanded (docket 72-1355, decided 1974-02-20)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection.court_class is mislabeled 'state' (reason 'selected_rank_3') for a SCOTUS case — a metadata quirk not affecting the cite string '415 U.S. 164' (type 1) or existence."
+          ],
+          "suggested_tightening": "Correct official_selection.court_class from 'state' to 'scotus'."
+        },
+        {
+          "assertion_id": "7437f773d186f8b3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The lake pinpoint pin-170.quote (and derived payload quote) is a corrupted page-scrape (rendered page front-matter through '## Background'/'## Rule'), not the opinion quote; it matches nothing in the source verbatim.",
+            "severity": "low",
+            "proposed_fix": "Re-extract pin-170.quote to the actual opinion sentence, already carried verbatim in the content page: 'The consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared.'",
+            "evidence_quote": "the consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[] id=pin-170; content_page ## Rule ^pin-170"
+          },
+          "reasons": [
+            "The rendered content-page pin-170 quote is verbatim-faithful to the cached opinion (text at the *170->*171 boundary), so the fidelity claim survives.",
+            "The structured pin-170.quote field holds corrupted scrape text — a low-severity extraction artifact of the same class as Mathis pin-1276."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systemic corrupted-scrape artifact; a re-extraction pass across affected slip-only pinpoints is warranted."
+          ],
+          "suggested_tightening": "Same extractor guard as Mathis pin-1276 (do not capture page front-matter as a quote)."
+        },
+        {
+          "assertion_id": "a025d7b426c942f9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote matches cached footnote 7 verbatim: '...but rests rather on mutual use of the property by persons generally having joint access or control for most purposes, so that it is reasonable to recognize that any of the co-inhabitants has the right to permit the inspection in his own right and that the others have assumed the risk that one of their number might permit the common area to be searched.'",
+            "Content pincite 'Id. at 171 n.7' is correct — footnote 7 is anchored on the page-171 paragraph; pinpoint_status 'star-verified' via text-fragment #:~:text=rests%20rather%20on%20mutual%20use."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload star_marker is '170' while the quote is footnote 7 (page 171); immaterial to fidelity or the 171 n.7 pincite, but the star_marker metadata is imprecise."
+          ],
+          "suggested_tightening": "Reconcile pin-171a.star_marker (170) with the 171 n.7 pincite."
+        },
+        {
+          "assertion_id": "e87e3d04275f3c2a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote matches the cached opinion verbatim (at the *171 region): '...but may show that permission to search was obtained from a third party who possessed common authority over or other sufficient relationship to the premises or effects sought to be inspected.'",
+            "Content pincite 'Id. at 171' is correct; pinpoint_status 'star-verified' (star_marker 171) via text-fragment #:~:text=may%20show%20that%20permission%20to."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "94995bfa15e8a0f4",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "good_law is presented as settled ('No negative subsequent treatment identified') but is composite_basis 'migration-seed' and NOT machine-confirmed: treatment.derivation.lane1_negative hit its 200-result cap (cap_hit true) with proposed_negative_events 7 and carries audit_marker 'R15 treatment audit required'; no progeny opinions are inlined to confirm currency.",
+            "severity": "low",
+            "proposed_fix": "Complete the R15 treatment audit / S2 re-derivation and resolve the 7 capped negative-lane hits before presenting good_law as verified; keep the framing hedged until then.",
+            "evidence_quote": "R15 treatment audit required",
+            "needs_cl": true,
+            "locator_note": "treatment.derivation.lane1_negative (cap_hit true, proposed_negative_events 7, audit_marker)"
+          },
+          "reasons": [
+            "No basis to refute good_law: all 32 disclosed treatment edges classify Matlock's own treatment as field_iii 'mentioned' (neutral); edge field_ii values (overruled/questioned/abrogated/superseded/criticized) mirror the citing cases' OWN statuses, not treatment of Matlock.",
+            "But currency cannot be confirmed from disclosed evidence — the negative lane is capped and explicitly audit-flagged, so 'No negative subsequent treatment identified' overstates the machine-verified basis."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 7 proposed_negative_events are unaudited keyword hits; I cannot confirm from disclosed evidence that none is a genuine negative treatment.",
+            "Migration-seed as_of 2026-06-30; scope_note concedes re-derivation may downgrade."
+          ],
+          "suggested_tightening": "Gate the 'good' TreatmentBadge behind R15-audit completion for this record."
+        }
+      ],
+      "notes": "Opus model-diversity lane. Two star-verified quotes (pin-171, pin-171a incl. footnote 7) match verbatim; pin-170 has a corrupted-payload artifact over a faithful page quote. Existence strongly corroborated by U.S. Reports star pagination. Treatment good_law is unaudited (R15 flag, capped negative lane) though no disclosed edge shows negative treatment of Matlock."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. May-Shaw.json",
+      "lens": "A+B (Opus model-diversity, dual-lens)",
+      "reviewed": [
+        {
+          "assertion_id": "df308f019703607e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached 6th Cir. published slip (File Name 20a0109p.06) corroborates identity: caption 'CHRISTOPHER PAYTON MAY-SHAW', No. 18-1821, 'Decided and Filed: April 8, 2020', 'JOHN K. BUSH, Circuit Judge', panel Merritt/Clay/Bush — matches lake (ca6, docket 18-1821, date 2020-04-08, cluster 4743325).",
+            "Official cite '955 F.3d 563' (type 1, F.3d) is well-formed; selected_official present."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter volume/page is from cluster.citations[] and not verbatim in the slip (slips omit the F.3d cite); identity is fully corroborated.",
+            "official_selection.court_class is mislabeled 'state' (reason 'selected_rank_3') for a 6th Cir. case — metadata quirk not affecting existence."
+          ],
+          "suggested_tightening": "Correct official_selection.court_class from 'state' to 'coa'."
+        },
+        {
+          "assertion_id": "8350ede997259178",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion self-declares treatment 'unverified' frontier stub; lake treatment block matches exactly (field_i_validity 'unverified', composite_basis 'unverified', edges [], derivation {}, frontier-stub scope_note).",
+            "Content page renders the white/Unverified banner; no positive currency claim to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally not derived until S6 promotion; currency undetermined — an honest 'not verified'."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane; both assertions survive. Existence corroborated by cached 6th Cir. slip; treatment is a self-consistent unverified frontier stub."
+    }
+  ]
+}
