@@ -1,0 +1,206 @@
+{"packs": [
+  {
+    "group_id": "_overhaul2/lake/cases/Brigham City v. Stuart.json",
+    "lens": "diversity",
+    "reviewed": [
+      {
+        "assertion_id": "b2011975b1fc0656",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Cached slip opinion header confirms the case: 'BRIGHAM CITY, UTAH v. STUART ET AL.', SCOTUS, No. 05-502, decided May 22, 2006, Roberts C.J. for a unanimous Court.", "Official/display cite 547 U.S. 398 is the standard first-page citation and matches cluster.citations[] official_selection (selected_rank_1); lake identity_checked=true, cluster/lead-opinion 145654."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Slip prints 'Cite as: 547 U. S. ____ (2006)' with no official pagination, so the exact first page 398 and the parallel cites (126 S. Ct. 1943; 164 L. Ed. 2d 650; 2006 U.S. LEXIS 4155) are corroborated only by cluster metadata, not by the disclosed slip text."],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "9f814fda7fa33a44",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-400 quote 'may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury' is verbatim in the slip: Held syllabus ('Held: Police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury') and the opening statement of the opinion.", "The payload 'quote' field captured content-page markdown boilerplate up to the anchor (a span-capture artifact), so the pre-computed 'quote_fidelity: mismatch' flag is a false positive; the actual quoted language is faithful."],
+        "breaks_true_positives": false,
+        "residual_risks": ["pinpoint_status is slip-only; page assignment 400 cannot be confirmed against official reporter pagination from the disclosed slip, though it is consistent with a case beginning at 398."],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "a608fc0595312b27",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-404 quote matches the slip verbatim (opinion: 'An action is \"reasonable\" under the Fourth Amendment, regardless of the individual officer's state of mind, \"as long as the circumstances, viewed objectively, justify [the] action.\" Scott v. United States... The officer's subjective motivation is irrelevant.').", "The content-page ellipsis (' . . . ') legitimately elides the intervening 'Scott v. United States, 436 U. S. 128, 138 (1978) (emphasis added).' citation; single vs. curly quote glyphs are typographic normalization. The 'mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Slip-only pincite: page 404 not confirmable against official pagination (quote sits on slip page 5, consistent with U.S. page ~404)."],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "2c4be1373a3ace6d",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false,
+        "defect": null,
+        "reasons": ["field_i_validity=good_law is facially correct for a landmark emergency-aid holding; the content-page progeny narrative (followed by Michigan v. Fisher; undisturbed by Caniglia v. Strom) shows no adverse treatment.", "Every negative edge in the lake record is marked 'proposed: true' from automated lanes (lane1_negative / lane2_top_cited) and is a transparent keyword-scan false positive (e.g. District of Columbia v. Heller, McDonald v. City of Chicago, Jardines 'overruling/questioning' an emergency-aid holding is doctrinally impossible)."],
+        "breaks_true_positives": false,
+        "residual_risks": ["True citator currency as of 2026-06-30 is not independently derivable from the inlined case text; composite_basis is 'migration-seed' and scope_note concedes S2 re-derivation may adjust. No genuine adverse treatment is disclosed, so no defect found."],
+        "suggested_tightening": "S2 should adjudicate/prune the proposed lane1/lane2 negative edges so the spurious 'overruled/questioned' candidates do not leak into any composite."
+      }
+    ],
+    "notes": "Opus model-diversity lane covering both A (support/quote-fidelity) and B (currency/treatment) concerns. Group clean: all 4 stand."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Brinegar v. United States.json",
+    "lens": "diversity",
+    "reviewed": [
+      {
+        "assertion_id": "1fb740f5ee67c842",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Cached opinion header confirms the case at the official cite: '338 U.S. 160 (1949)', 'BRINEGAR v. UNITED STATES.', Supreme Court, argued Oct 18-19 1948, decided June 27 1949, Rutledge J.; official_selection 338 U.S. 160 (selected_rank_1)."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Parallel cite '93 L. Ed. 2d 1879' (reporter tagged 'L. Ed. 2d') is likely a reporter-series error for a 1949 decision (should be 93 L. Ed. 1879, first series); this depends on reporter-chronology knowledge outside the inlined evidence, so it is flagged not refuted, and the official cite carrying legal weight is correct.", "Content-page front-matter docket '23' conflicts with the cached opinion's 'No. 12', and front-matter date_decided '1949-10-10' conflicts with 'Decided June 27, 1949'; both are front-matter fields outside this existence payload (treatment.as_of_content 1949-06-27 is correct)."],
+        "suggested_tightening": "Verify the L. Ed. reporter series (probable fix 93 L. Ed. 1879) and reconcile front-matter docket/date_decided (No. 12 / 1949-06-27) against the CL cluster."
+      },
+      {
+        "assertion_id": "381eb55746dfeba4",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-175 quote 'In dealing with probable cause, however, as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act.' is verbatim in the cached opinion immediately after the '*175' star-pagination marker, so pincite '338 U.S. at 175' is affirmatively confirmed.", "The payload 'quote' field captured content-page prose preceding the anchor (span-capture artifact); the 'quote_fidelity: mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "c886a2db17a729ed",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-176 quote 'the facts and circumstances within their [the officers'] knowledge and of which they had reasonably trustworthy information [are] sufficient in themselves to warrant a man of reasonable caution in the belief that' an offense has been or is being committed' is verbatim in the cached opinion; the '*176' star marker falls immediately before 'belief that', confirming pincite '175-176'.", "Bracketed insertions [the officers'] and [are] match the source; the content page only re-nests the quotation marks. 'mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "777d03c1c6fd167f",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false,
+        "defect": null,
+        "reasons": ["field_i_validity=good_law is correct for the bedrock probable-cause standard; as_of_content 1949-06-27 matches the cached opinion's decision date.", "Lake-record negative edges are all 'proposed: true' keyword-scan FPs (e.g. a 2023 Ohio case 'overruling' a 1949 SCOTUS decision is impossible); content-page treatment section reports no negative treatment and carries the standard forward through Illinois v. Gates."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Citator currency as of 2026-06-30 is not derivable from the inlined case text; migration-seed basis. No adverse treatment disclosed, so no defect found."],
+        "suggested_tightening": null
+      }
+    ],
+    "notes": "Both pincites (175, 175-176) affirmatively verified via star-pagination in the cached CL opinion. Group clean: all 4 stand; one data-quality flag on the L. Ed. parallel series."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Briscoe v. LaHue.json",
+    "lens": "diversity",
+    "reviewed": [
+      {
+        "assertion_id": "40c1b8c9a5edb6a9",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Cached combined opinion is unmistakably Briscoe v. LaHue: Justice Stevens for the Court, § 1983 absolute witness immunity for police testimony, petitioner Briscoe / respondent LaHue (Bloomington, Indiana police), affirming the Seventh Circuit (663 F. 2d 713).", "Star-pagination labels run 327 through 346, consistent with a case opening at page 325 of the reporter volume; content page and cluster 110885 give official cite 460 U.S. 325 (1983), No. 81-1407, decided Mar. 7 1983."],
+        "breaks_true_positives": false,
+        "residual_risks": ["The reporter volume '460' is not literally present in the cached opinion text (star markers are page-only); it is inferred from the page range 325-346 plus cluster metadata. Parallel cites (103 S. Ct. 1108; 75 L. Ed. 2d 96; 51 U.S.L.W. 4247) not verifiable from the disclosed text."],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "99024949c9ce43fe",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["This is an honestly-labeled frontier stub: field_i_validity='unverified', as_of_content/as_of_treatment=null, composite_basis='unverified', opinion_id=null, record status 'under_review'. The assertion makes no positive treatment claim, so there is no false proposition to refute.", "The 'unverified / not yet machine-verified' status is corroborated by the disclosed record (no derived treatment edges); the content page renders the ⚪ banner accordingly, pending S6/S9 promotion."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Progeny/citator history is intentionally not derived; nothing to certify as good or bad law here. Per pack rule, verifiable-but-null stub — no fabricated defect or clean-of-treatment claim asserted."],
+        "suggested_tightening": null
+      }
+    ],
+    "notes": "Existence confirmed from opinion body + star-pagination; treatment is an intentional under_review stub asserting nothing. Group clean: both stand."
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Brosseau v. Haugen.json",
+    "lens": "diversity",
+    "reviewed": [
+      {
+        "assertion_id": "0ff8fb3811222318",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Cached opinion header confirms the case at the official cite: '543 U.S. 194 (2004)', 'BROSSEAU v. HAUGEN', Supreme Court, decided December 13, 2004, PER CURIAM, on cert to the Ninth Circuit.", "docket 03-1261 and date_decided 2004-12-13 match the cached header; official_selection 543 U.S. 194 (selected_rank_1); cluster/opinion 137736."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Parallel cites (125 S. Ct. 596; 160 L. Ed. 2d 583; 2004 U.S. LEXIS 8275) corroborated only by cluster metadata, not the disclosed opinion text."],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "0375e2351727818a",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-201 quote 'taken together undoubtedly show that this area is one in which the result depends very much on the facts of each case. None of them squarely governs the case here; they do suggest that Brosseau's actions fell in the '\"hazy border between excessive and acceptable force.\"'' is verbatim in the cached opinion ('These three cases taken together undoubtedly show...'); 'The relevant cases' is the content page's own framing, outside the quotation marks.", "Quote sits between star markers '*201' and '*202', confirming pincite '543 U.S. at 201'. The payload 'quote' field captured connective prose before the anchor (span-capture artifact); 'mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "29ddcd072ed3dc0f",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-201b quote '[t]he cases by no means 'clearly establish' that Brosseau's conduct violated the Fourth Amendment.' is verbatim in the cached opinion ('The cases by no means \"clearly establish\" that Brosseau's conduct violated the Fourth Amendment.'); the '[t]he' bracket is a standard lowercase adaptation of the sentence-initial 'The'.", "Same paragraph as pin-201, between '*201'/'*202'; the 'Id.' pincite (543 U.S. at 201) is correct."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "a60eff08d746b42f",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-198 quote 'Qualified immunity shields an officer from suit when she makes a decision that, even if constitutionally deficient, reasonably misapprehends the law governing the circumstances she confronted.' is verbatim in the cached opinion.", "Quote sits between star markers '*198' and '*199', confirming pincite '543 U.S. at 198'. Payload 'quote' captured content-page prose before the anchor (span-capture artifact); 'mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "e71dd9bc683ba3bc",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": ["Content-page pin-199 quote 'Graham and Garner, following the lead of the Fourth Amendment's text, are cast at a high level of generality.' is verbatim in the cached opinion.", "Quote follows the '*199' star marker (before '*200'), confirming pincite '543 U.S. at 199'. 'mismatch' flag is a false positive."],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "fa792afe337dfb1e",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false,
+        "defect": null,
+        "reasons": ["field_i_validity=good_law is correct for this foundational per-curiam qualified-immunity specificity case; content-page treatment narrative (relied on by Mullenix v. Luna, Kisela v. Hughes, Plumhoff v. Rickard) shows no adverse treatment.", "Lake-record negative edges are all 'proposed: true' keyword-scan FPs (e.g. Pearson v. Callahan, Scott v. Harris tagged 'overruled', Tolan v. Cotton 'questioned'); none is a genuine overruling of Brosseau."],
+        "breaks_true_positives": false,
+        "residual_risks": ["Citator currency as of 2026-06-30 not derivable from inlined case text; migration-seed basis. No adverse treatment disclosed, so no defect found."],
+        "suggested_tightening": "Prune the spurious proposed lane2_top_cited 'overruled/questioned' edges during S2 derivation."
+      }
+    ],
+    "notes": "All four pin quotes verbatim with pincites affirmatively confirmed by star-pagination in the cached per-curiam opinion. Group clean: all 6 stand."
+  }
+]}

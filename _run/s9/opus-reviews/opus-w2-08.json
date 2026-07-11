@@ -1,0 +1,186 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Carpenter v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "7e3bf97717823440",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'CARPENTER v. UNITED STATES', 'No. 16-402', 'Argued November 29, 2017-Decided June 22, 2018' - matches record docket/date.",
+            "Official 585 U.S. 296 plus parallels 138 S. Ct. 2206 / 201 L. Ed. 2d 507 / 2018 U.S. LEXIS 3844 are internally consistent across official/parallel/all arrays (cluster.citations[]); identity_checked=true, expected_citation_found=true, party_name_in_text=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Final U.S. Reports page (296) is carried by CL cluster metadata, not visible on the inlined slip opinion; not independently re-derivable from opinion text alone."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7b89405c7a6b03e2",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-op11 'quote' is not opinion text - it is a harvested span of the CONTENT PAGE (Background->Issue->Rule prose) that includes markdown headers '## Issue' and '## Rule Yes.'; it appears nowhere in the Carpenter opinion. The machine self-flag quote_fidelity='mismatch' is confirmed.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op11 to the sentence the content page actually anchors (Rule line): 'Whether the Government employs its own surveillance technology as in Jones or leverages the technology of a wireless carrier, we hold that an individual maintains a legitimate expectation of privacy in the record of his physical movements as captured through CSLI.' - which matches the cached opinion verbatim at slip op. p.11.",
+            "evidence_quote": "Whether the Government employs its own surveillance technology as in Jones or leverages the technology of a wireless carrier, we hold that an individual maintains a legitimate expectation of privacy in the record of his physical movements as captured through CSLI.",
+            "needs_cl": false,
+            "locator_note": "payload quote vs cached opinion lines ~1910-1915 (slip op. p.11; the page break to '12 CARPENTER v. UNITED STATES' immediately follows); the real anchored quote sits on the content-page Rule line."
+          },
+          "reasons": [
+            "Payload 'quote' contains '## Issue' and '## Rule Yes.' markdown section headers - a content-page artifact impossible in opinion prose.",
+            "The actual content-page ^pin-op11 quote matches the cached opinion verbatim at slip op. p.11, so the harvest boundary is wrong but the underlying published page citation and pincite are sound."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Data-hygiene defect in the stored pinpoint only; the published page citation and pincite (slip op., at 11) are correct and verbatim-faithful."
+          ],
+          "suggested_tightening": "Fix the pinpoint harvester's span boundary so it captures the quoted sentence, not surrounding page prose/markdown."
+        },
+        {
+          "assertion_id": "a494181936d54fc5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law for a 2018 SCOTUS decision that itself narrows the third-party doctrine for digital-age location data; scope_note is accurate to the cached syllabus/opinion holding.",
+            "The mined negative edges (lane1_negative / lane2_top_cited) are all proposed:true keyword-mined false positives - state-court citing cases whose own 'overruled/questioned/abrogated/superseded' signals cannot overrule a SCOTUS decision; none is a genuine negative treatment OF Carpenter."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency as-of 2026-06-30 rests on migration-seed basis (legacy 'good' -> 'good_law'); the proposed negative edges are N-blind keyword FPs and must not be promoted as real negative treatment."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Group clean except the pin-op11 pinpoint harvest artifact; existence and good_law treatment stand."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Carroll v. Carman.json",
+      "reviewed": [
+        {
+          "assertion_id": "64f4a2640be4ba0f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'JEREMY CARROLL v. ANDREW CARMAN, ET UX.', 'PER CURIAM', 'Cite as: 574 U. S. ____ (2014)' - a 2014 SCOTUS per curiam matching record docket 14-212.",
+            "Official cite 574 U.S. 13 is corroborated by two disclosed web legs (Google Scholar and Oyez, both checked 2026-07-07)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip opinion shows blank U.S. Reports page ('574 U. S. ____'); page 13 rests on the web-dual-leg sources, not the slip text; the S. Ct. parallel (135 S. Ct. 348) appears in page prose but is absent from the citations[] array."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "418622352ab1ebc1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Frontier stub (status under_review): field_i_validity='unverified' with empty edges and unverified composite_basis - the record makes no currency claim to refute; the label is honest and internally consistent.",
+            "No progeny/treatment evidence is disclosed, so subsequent-treatment currency cannot be independently verified - but nothing is over-claimed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment intentionally not derived until S6/S9 promotion; currency remains unverified pending progeny enumeration."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Existence corroborated by cached per curiam + dual web legs; treatment is an honest unverified frontier stub (not verifiable from disclosed evidence)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "b66f974dd047317c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion carries the exact citations in case_cite spans: '267 U.S. 132', '45 S.Ct. 280', '69 L.Ed. 543', parties 'CARROLL et al. v. UNITED STATES' - fully corroborating the existence payload.",
+            "Official 267 U.S. 132 with parallels 45 S. Ct. 280 / 69 L. Ed. 543 / 1925 U.S. LEXIS 361 are internally consistent; identity_checked=true, party_name_in_text=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Out-of-scope but disclosed inconsistency: lake identity.date_decided='1925-11-26' contradicts the cached opinion ('Decided March 2, 1925') and the record's own treatment.as_of_content ('1925-03-02'); the date field, not the cite, is wrong."
+          ],
+          "suggested_tightening": "Correct identity.date_decided to 1925-03-02 to match the cached opinion (outside this existence/cite assertion's payload, but flagged)."
+        },
+        {
+          "assertion_id": "75c911a1883ff6d4",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-p37 'quote' is a harvested CONTENT-PAGE span (frontmatter delimiter '---', H1 '# Carroll v. United States', header-comment, Background->Issue->Rule fragment ending 'there is'), not opinion text; it appears nowhere in the opinion. The machine self-flag quote_fidelity='mismatch' is confirmed.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-p37 to the sentence the content page actually anchors: the 'necessary difference between a search of a store, dwelling house, ... the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought.' passage, which matches the cached opinion verbatim.",
+            "evidence_quote": "a necessary difference between a search of a store, dwelling house, or other structure in respect of which a proper official warrant readily may be obtained and a search of a ship, motor boat, wagon, or automobile for contraband goods, where it is not practicable to secure a warrant, because the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought.",
+            "needs_cl": false,
+            "locator_note": "payload quote vs cached opinion (the indented paragraph beginning 'We have made a somewhat extended reference to these statutes ...'); the real anchored quote sits on the content-page Rule line, pincited to CL paragraph 37."
+          },
+          "reasons": [
+            "Payload 'quote' opens with '---' and '# Carroll v. United States' and includes '## Background/## Issue/## Rule' - content-page markdown, not opinion prose.",
+            "The actual content-page ^pin-p37 quote matches the cached opinion verbatim, so only the harvest span is wrong; the published page citation is sound (CL paragraph-number pincite paragraph 37, disclosed as such in Sources)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored-pinpoint data-hygiene defect only; paragraph 37 is a CL paragraph-number pincite (no U.S. Reports star pagination in the CL text at the quoted passage), disclosed on the page."
+          ],
+          "suggested_tightening": "Fix the pinpoint harvester's span boundary to capture the quoted sentence rather than page frontmatter/prose."
+        },
+        {
+          "assertion_id": "8c8befd131e4418c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law for the 1925 SCOTUS origin of the automobile exception; the cached opinion is that source decision and the scope_note (reaffirmed/refined by Chambers, Ross, Carney, Acevedo) is doctrinally accurate.",
+            "edges are empty; no disclosed negative treatment; treatment.as_of_content 1925-03-02 matches the cached opinion's stated decision date ('Decided March 2, 1925')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency as-of 2026-06-30 rests on migration-seed basis with no progeny enumeration inlined; no negative treatment is present or plausible for this foundational rule."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Existence and good_law treatment stand; pin-p37 pinpoint is a harvest artifact (real anchored quote is verbatim-faithful). Collateral date_decided error (1925-11-26) flagged out of scope."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Carter v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "fe3d14adef664984",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Frontier stub (status under_review): field_i_validity='unverified' with empty edges and unverified composite_basis - an honest, internally consistent no-claim state, nothing to refute.",
+            "No progeny/treatment evidence disclosed (2025 D.C. Ct. App. slip, no A.3d cite yet), so currency cannot be independently verified; nothing is over-claimed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment intentionally not derived until S6/S9 promotion; a search-floated '341 A.3d 1067' is expressly treated as unconfirmed in the record."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Single treatment assertion is an honest unverified frontier stub; not verifiable from disclosed evidence, no defect."
+    }
+  ]
+}

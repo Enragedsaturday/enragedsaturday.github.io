@@ -183,3 +183,19 @@ input, $25.00 / 1M output** (`claude-opus-4-8`, 1M context).
 5. **Lane-name divergence.** If any component emits under `opus-panel` instead of `claude-opus-panel`,
    the pilot's already-adjudicated findings would fork into two opus lanes and inv-2 would miscount.
    The single `OPUS_LANE` constant is the guard — never inline the string elsewhere.
+
+---
+
+## PROVEN RESUME PROCEDURE (as run 2026-07-11, waves 1-2 = 72 groups + 6 val = 83/1357 opus-done)
+
+The Opus 3rd-lens lane is a RESUMABLE MULTI-SESSION GRIND. Checkpoint = `opus_done_objects()` (any object with a claude-opus-panel attestation OR vote). To continue, repeat this wave loop:
+
+1. **Pick next batch** (LIGHT groups first — case pages + lake records; doctrine pages are HEAVY, do them last at 1-2/pack): select codex-complete (both codex-A + codex-B lanes present) AND not-yet-opus-done groups, 40 at a time.
+2. **Generate 10 packs of 4** via `panel_review.py --panel-review-opus "<comma-ids>" --batch-id opus-wN-KK --out-dir _run/s9/opus-packs`. Verify max pack size < ~600KB (light groups are safe; if a pack >800KB, it slipped in a heavy group — reduce that pack).
+3. **Dispatch 10 fresh o2-opus-xhigh reviewer agents** (the orchestrator does this via the Agent tool — a shell driver CANNOT spawn them). Each: read its pack .md, review using ONLY inlined evidence (HARD independence — no other file/search/memory/ledger), write `{"packs":[...]}` JSON to `_run/s9/opus-reviews/opus-wN-KK.json`, return ≤4-line summary. No emit/commit by the reviewer.
+4. **Wait** via a background bash `until [ $(ls opus-wN-*.json|wc -l) -ge 10 ]` (or the agent notifications).
+5. **Batch-emit:** `emit_opus_pack.py --reviews _run/s9/opus-reviews/opus-wN-*.json --manifests _run/s9/opus-packs/opus-wN-*.manifest.json`. Expect 0 no_review/unroutable/bad; votes merge onto codex finding-ids; clean groups → opus attestations; idempotent.
+6. **Commit** the wave (findings/votes/attestations + packs/reviews) as a checkpoint.
+7. Repeat until light groups exhausted (~24 more waves), then doctrine pages (1-2/pack), then the ~251 groups that finish codex on the next window.
+
+RECURRING DEFECT CLASSES the opus lens surfaces (for P3 fix, mostly mechanical/class-wide): (a) corrupt harvested `pinpoint.quote` fields = content-page `## Issue`/`## Rule` markdown instead of opinion text (rendered quotes are verbatim-faithful → low-severity, class-wide re-harvest fix); (b) leaked build placeholders in `treatment.scope_note` (Roberson, Brendlin); (c) `date_decided` contradictions vs opinion text (Acevedo, Fulminante, Carroll, Brewer); (d) many extractor `quote_fidelity=mismatch` flags are FALSE POSITIVES the opus lens overturns.

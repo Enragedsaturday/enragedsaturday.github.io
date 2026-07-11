@@ -1,0 +1,341 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Brower v. County of Inyo.json",
+      "reviewed": [
+        {
+          "assertion_id": "f80b62f06469f3b0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '489 U.S. 593 (1989)' captioned BROWER ... v. COUNTY OF INYO ET AL., No. 87-248, decided March 21, 1989 — official cite exists and resolves to cluster 112218.",
+            "official_selection_present=true with 489 U.S. 593 selected_official; parallel/vendor cites (109 S. Ct. 1378, 103 L. Ed. 2d 628, 57 U.S.L.W. 4321, 1989 U.S. LEXIS 1569) are internally consistent SCOTUS-style reporters.",
+            "Lake identity: identity_method citation+party-text, expected_citation_found=true, canonical_name_match=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2a4c5773509fd9e0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote is the real content quote at pin-596b; cached text at *596 reads 'the Fourth Amendment addresses \"misuse of power,\" Byars v. United States, 273 U. S. 28, 33 (1927), not the accidental effects of otherwise lawful government conduct.'",
+            "Content elides only the Byars citation with ' . . . '; both quoted fragments ('addresses \"misuse of power\"' and 'not the accidental effects of otherwise lawful government conduct.') are verbatim; pincite 596 is correct (sentence sits before the *597 marker).",
+            "The ledger's quote_fidelity=mismatch is an automated false positive from substring-matching across the elided citation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a77d22616b1c3136",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text at *599 reads 'We think it enough for a seizure that a person be stopped by the very instrumentality set in motion or put in place in order to achieve that result.' — content quote 'enough for a seizure ... to achieve that result.' is verbatim.",
+            "Pincite 599 confirmed by the *599 star marker immediately preceding the sentence; star-verified fragment matched."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d533a3614fab6194",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The ledger quote field for pin-596 is a mis-extraction: it captured the page's own Issue/Rule framing prose ('occurs when police stop a fleeing motorist ... ## Rule A seizure requires that the government stop the person by the means it intended.'), which is NOT a quotation from the opinion. The actual block quotation anchored at ^pin-596 in the content is a different, faithful passage.",
+            "severity": "low",
+            "proposed_fix": "Re-point the pin-596 quote span to the true anchored quotation; content requires no change.",
+            "evidence_quote": "It is clear, in other words, that a Fourth Amendment seizure does not occur whenever there is a governmentally caused termination of an individual's freedom of movement (the innocent passerby), nor even whenever there is a governmentally caused and governmentally desired termination of an individual's freedom of movement (the fleeing felon), but only when there is a governmental termination of freedom of movement through means intentionally applied.",
+            "needs_cl": false,
+            "locator_note": "pin-596; cached opinion *596-*597 span; content 'Rule' block '[A] Fourth Amendment seizure does not occur ... through means intentionally applied' cited 489 U.S. at 596-597."
+          },
+          "reasons": [
+            "The real anchored quote is verbatim-faithful (bracketed '[A]' for 'a' at the start of the mid-sentence quotation is a proper capitalization substitution) and crosses the *597 marker, so the content pincite 596-597 is correct.",
+            "Defect is confined to the ledger's captured quote text, not the published content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If a downstream verifier compares the ledger quote field verbatim against the opinion it will always mismatch until re-pointed."
+          ],
+          "suggested_tightening": "Extractor should anchor pin quotes to the nearest enclosing blockquote/quotation, not to preceding heading/framing prose."
+        },
+        {
+          "assertion_id": "acd0e1619f5b3f7a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with all disclosed evidence: the cached 1989 opinion shows no reversal, and Brower's 'means intentionally applied' seizure definition is canonical.",
+            "Every negative treatment edge in the lake record is proposed:true and facially non-credible co-citation noise (e.g., Scott v. Harris/Albright v. Oliver/County of Sacramento v. Lewis tagged 'overruled', Twombly 'criticized') — none actually overrules Brower.",
+            "scope_note accurately restates the holding shown in the cached opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Negative edges are unadjudicated; a definitive citator confirmation of good-law-as-of-2026 would require CourtListener, but nothing disclosed contradicts good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 5 stand except pin-596, whose ledger quote field is a mis-extraction (content clean, pincite correct)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "db944fdab5eb8efd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '422 U.S. 590 (1975)' captioned BROWN v. ILLINOIS, No. 73-6650, decided June 26, 1975 — official cite exists.",
+            "official_selection_present=true, 422 U.S. 590 selected_official; parallel cites (95 S. Ct. 2254, 45 L. Ed. 2d 416, 1975 U.S. LEXIS 82) internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "168045fad14316c5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The ledger quote field for pin-603 is a mis-extraction: it captured the page's front-matter/Background/Issue text ending at the 'Rule' heading ('--- # Brown v. Illinois ... ## Rule Miranda warnings do not automatically purge the taint:'), not a quotation from the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-point the pin-603 quote span to the true anchored quotation; content requires no change.",
+            "evidence_quote": "The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered.",
+            "needs_cl": false,
+            "locator_note": "pin-603; cached opinion page 603 (after *603 marker, before *604); content 'Rule' block cited 422 U.S. at 603."
+          },
+          "reasons": [
+            "The real anchored quote is verbatim-faithful and sits on page 603 (between the *603 and *604 markers), so content pincite 603 is correct.",
+            "Defect is confined to the ledger quote field, not the published content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Ledger quote field will mismatch the opinion until re-pointed."
+          ],
+          "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/front-matter prose."
+        },
+        {
+          "assertion_id": "5e06a79f6a6fae29",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote is the real content quote at pin-604; cached text reads 'The temporal proximity of the arrest and the confession, the presence of intervening circumstances, see Johnson v. Louisiana, 406 U. S. 356, 365 (1972), and, particularly, the purpose and flagrancy of the official misconduct are all relevant.'",
+            "Content's two ' . . . ' ellipses elide only the interior 'see Johnson v. Louisiana' citation and a footnote call-number; every quoted word is verbatim; pincite 603-604 correct (sentence spans the *604 marker).",
+            "Ledger quote_fidelity=mismatch is an automated false positive from matching across the elided citation/footnote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cefedacfdb71c68f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with disclosed evidence; the Brown attenuation factors (temporal proximity, intervening circumstances, purpose/flagrancy) are canonical and remain governing.",
+            "All negative edges are proposed:true co-citation false positives (e.g., Illinois v. Gates, United States v. Leon, Rakas v. Illinois, Stone v. Powell tagged 'overruled') — none overrules Brown v. Illinois.",
+            "scope_note ('applied in Utah v. Strieff') is a well-known accurate statement of the framework's continued use."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Negative edges unadjudicated; definitive currency confirmation would need CourtListener, but nothing disclosed contradicts good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 4 stand except pin-603, whose ledger quote field is a mis-extraction (content clean, pincite correct)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
+      "reviewed": [
+        {
+          "assertion_id": "a35626a0646ba530",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Brown v. Mississippi (Hughes, C.J.), murder of Raymond Stewart (1934), with star pages *280/*281/*285/*286/*287 consistent with an opinion beginning at 278.",
+            "official_selection_present=true, 297 U.S. 278 selected_official; parallel cites (56 S. Ct. 461, 80 L. Ed. 682, 1936 U.S. LEXIS 527) internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1e7df5ad23edb301",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text on page 286 reads 'It would be difficult to conceive of methods more revolting to the sense of justice than those taken to procure the confessions of these petitioners, and the use of the confessions thus obtained as the basis for conviction and sentence was a clear denial of due process.' — content quote is verbatim.",
+            "Quote sits between the *286 and *287 markers; content 'Id.' resolves to 297 U.S. at 286; star-verified fragment matched."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a05549d3353a8136",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The ledger quote field for pin-286 is a mis-extraction: it captured the page's front-matter/Background/Issue prose ending at the 'Rule' heading, not a quotation from the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-point the pin-286 quote span to the true anchored quotation; content requires no change.",
+            "evidence_quote": "And the trial equally is a mere pretense where the state authorities have contrived a conviction resting solely upon confessions obtained by violence.",
+            "needs_cl": false,
+            "locator_note": "pin-286; cached opinion page 286 (after *286 marker, before *287); content 'Rule' block cited 297 U.S. at 286."
+          },
+          "reasons": [
+            "The real anchored quote is verbatim-faithful and sits on page 286 (between *286 and *287), so content pincite 286 is correct.",
+            "Defect is confined to the ledger quote field, not the published content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Ledger quote field will mismatch the opinion until re-pointed."
+          ],
+          "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/front-matter prose."
+        },
+        {
+          "assertion_id": "1d820cab93c550ec",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with disclosed evidence; Brown v. Mississippi (1936) is the foundational coerced-confession due-process case shown in the cached opinion.",
+            "All negative edges are proposed:true co-citation false positives (e.g., United States v. Dickerson, People v. Cahill tagged 'overruled') — none overrules Brown v. Mississippi.",
+            "scope_note ('Foundational due-process voluntariness case; good law') matches the cached holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake record status is 'under_review' (a processing flag, not a treatment invalidity); negative edges unadjudicated; definitive currency confirmation would need CourtListener, but nothing disclosed contradicts good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 4 stand except pin-286, whose ledger quote field is a mis-extraction (content clean, pincite correct)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Brown v. Texas.json",
+      "reviewed": [
+        {
+          "assertion_id": "97a1cd3fc3bad89e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Brown v. Texas (Burger, C.J.), El Paso officers, Dec. 9 1977, Tex. Penal Code § 38.02, with star pages *49/*50/*51/*52/*53/*54 consistent with an opinion beginning at 47.",
+            "official_selection_present=true, 443 U.S. 47 selected_official; parallel cites (99 S. Ct. 2637, 61 L. Ed. 2d 357, 1979 U.S. LEXIS 136) internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "39902fdf9ea56d1b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote is the real content quote at pin-51b; cached text (page 51) reads 'the Fourth Amendment requires that a seizure must be based on specific, objective facts indicating that society's legitimate interests require the seizure of the particular individual, or that the seizure must be carried out pursuant to a plan embodying explicit, neutral limitations on the conduct of individual officers.' — verbatim.",
+            "Sentence sits after the *51 marker; content 'Id.' resolves to 443 U.S. at 51, correct.",
+            "Ledger quote_fidelity=mismatch is an automated false positive (curly-apostrophe/smart-quote normalization in 'society's')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5d71cfe3c27c8812",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The ledger quote field for pin-53 is a mis-extraction: it captured the page's own Application prose and heading ('## Application The officers had no such basis. One could say only that the alley'), not a quotation from the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-point the pin-53 quote span to the true anchored quotation; content requires no change.",
+            "evidence_quote": "The application of Tex. Penal Code Ann., Tit. 8, § 38.02 (1974), to detain appellant and require him to identify himself violated the Fourth Amendment because the officers lacked any reasonable suspicion to believe appellant was engaged or had engaged in criminal conduct.",
+            "needs_cl": false,
+            "locator_note": "pin-53; cached opinion page 53 (immediately after *53 marker); content Application block cited Id. at 53."
+          },
+          "reasons": [
+            "The real anchored quote is verbatim-faithful and sits immediately after the *53 marker, so content pincite 53 is correct.",
+            "Defect is confined to the ledger quote field, not the published content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Ledger quote field will mismatch the opinion until re-pointed."
+          ],
+          "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/framing prose."
+        },
+        {
+          "assertion_id": "fbcce3d5aaae9344",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The ledger quote field for pin-51 is a mis-extraction: it captured the page's Background/Issue prose ending at the 'Rule' heading and its lead-in ('... to an officer who has lawfully stopped him. ## Issue ... ## Rule No. The constitutionality of a seizure short of arrest is judged by a balancing test:'), not a quotation from the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-point the pin-51 quote span to the true anchored quotation; content requires no change.",
+            "evidence_quote": "Consideration of the constitutionality of such seizures involves a weighing of the gravity of the public concerns served by the seizure, the degree to which the seizure advances the public interest, and the severity of the interference with individual liberty.",
+            "needs_cl": false,
+            "locator_note": "pin-51; cached opinion spans the *51 marker (after 'involves a'); content 'Rule' balancing-test block cited 443 U.S. at 51."
+          },
+          "reasons": [
+            "The real anchored quote is verbatim-faithful; the *51 marker falls mid-sentence (after 'involves a') so the operative balancing language is on page 51 and the content pincite 51 is correct.",
+            "Defect is confined to the ledger quote field, not the published content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Ledger quote field will mismatch the opinion until re-pointed."
+          ],
+          "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/framing prose."
+        },
+        {
+          "assertion_id": "f190db6d91c4fb4b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with disclosed evidence; Brown v. Texas supplies the three-factor balancing test for suspicionless seizures shown in the cached opinion.",
+            "All negative edges are proposed:true co-citation false positives (e.g., State v. Sievers, State v. Baskins, State v. Hairston tagged 'overruled'; Mocek 'abrogated') — none overrules Brown v. Texas.",
+            "scope_note correctly frames Hiibel v. Sixth Judicial Dist. Court (2004) as answering the identify-yourself question Brown expressly reserved and distinguishing, not disturbing, Brown."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake record status is 'under_review' (a processing flag, not a treatment invalidity); negative edges unadjudicated; definitive currency confirmation would need CourtListener, but nothing disclosed contradicts good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 5 stand except pin-53 and pin-51, whose ledger quote fields are mis-extractions (content clean, pincites correct)."
+    }
+  ]
+}

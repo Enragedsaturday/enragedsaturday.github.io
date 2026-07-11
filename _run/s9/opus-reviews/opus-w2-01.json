@@ -1,0 +1,322 @@
+{
+  "packs": [
+    {
+      "lens": "model-diversity",
+      "group_id": "_overhaul2/lake/cases/Boyd v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "05f85601f0b05d3f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms the case and official cite: '116 U.S. 616 (1886)', 'BOYD v. UNITED STATES', 'Decided February 1, 1886', cluster/opinion link /opinion/91573/.",
+            "official=116 U.S. 616 (selected_official) is consistent with the lake record citations block and the content-page citation; display cite matches."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (6 S. Ct. 524; 29 L. Ed. 746; 1886 U.S. LEXIS 1806; 3 A.F.T.R. (P-H) 2488) are not independently confirmable from the cached opinion header, which shows only the U.S. cite."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3ee5e0e6ae73f8f3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pinpoint.quote for pin-626 is a corrupt harvest artifact: it is a fragment of the content page's own prose/markdown ('...states the foundational principle the Amendment embodies. ## Rule The Court adopted Lord Camden's judgment...Every American statesman of the founding era'), not text from the Boyd opinion. It does not appear anywhere in the disclosed opinion.",
+            "severity": "low",
+            "proposed_fix": "Regenerate pinpoint.quote from the opinion. The content page's actual displayed quotation at ^pin-626 ('considered it as the true and ultimate expression of constitutional law') is verbatim in the opinion on p.626 and correctly pincited; only the harvested metadata is broken. No reader-facing change needed.",
+            "evidence_quote": "considered it as the true and ultimate expression of constitutional law",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.626 (star *626 precedes, *627 follows): 'As every American statesmen...and considered it as the true and ultimate expression of constitutional law, it may be confidently asserted...'"
+          },
+          "reasons": [
+            "The displayed content-page quote at ^pin-626 is verbatim-faithful to the opinion and correctly located on p.626, so no unsupported legal proposition is published.",
+            "The stored quote string, however, is content-page markdown (contains '## Rule'), a mis-harvest; builder flag quote_fidelity='mismatch' is correct as to the stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only' — exact reporter page not machine-confirmable, but the phrase demonstrably sits before the *627 marker, so p.626 is correct."
+          ],
+          "suggested_tightening": "Harvest pinpoint.quote from the quoted span delimited by the quotation marks immediately preceding the ^pin anchor, not the surrounding page prose."
+        },
+        {
+          "assertion_id": "7148a86dca275da1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'propositions were in the minds of those who framed the Fourth Amendment to the Constitution, and were considered as sufficiently explanatory of what was meant by unreasonable searches and seizures.' is verbatim in the opinion (drops only the leading 'its' and the interior *627 page-break token).",
+            "Pincite '626-627' is correct: the phrase begins on p.626 ('its propositions were in the minds') and continues after the *627 marker.",
+            "The builder's quote_fidelity='mismatch' flag appears to be a spurious exact-match artifact (elided 'its' + embedded star-pagination token); the quotation itself is faithful, so the assertion survives the attack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only'."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "83dcccbd91c75b2d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='caution' with varies_by_point=true is appropriate: the cached opinion confirms Boyd's holding equates compelled production of private papers with an unreasonable search/self-incrimination (heavily curtailed line of doctrine), while the Entick/historical proposition for which the page cites Boyd is the surviving part.",
+            "The scope_note (papers-production/mere-evidence holding abandoned by Warden v. Hayden and limited by Fisher v. United States; Entick historical proposition remains good law) is internally consistent and non-contradicted; the Warden v. Hayden limiting edge (field_ii='limited', 387 U.S. 294) is disclosed in the lake record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The lake record's many 'proposed' negative edges (e.g., Miranda/Roe/Griswold/Mapp tagged 'overruled'/'superseded_by_statute' vs Boyd) are automated lane1/lane2 extraction artifacts with audit_needed=true ('R15 treatment audit required') and must NOT leak into the badge.",
+            "Fisher v. United States limiting treatment is asserted in the scope_note but is not present in the disclosed edges, so it is not independently confirmable from disclosed evidence.",
+            "Rendering mismatch: content page displays Treatment 'limited' while field_i_validity='caution' (provenance warns 'legacy treatment migrated: limited -> caution')."
+          ],
+          "suggested_tightening": "Reconcile the displayed 'limited' badge with field_i_validity='caution', and clear the R15 audit on the proposed negative edges before any of them are surfaced."
+        }
+      ],
+      "notes": "Sighted review against inlined cached opinion. All four assertions verifiable from disclosed evidence."
+    },
+    {
+      "lens": "model-diversity",
+      "group_id": "_overhaul2/lake/cases/Brady v. Maryland.json",
+      "reviewed": [
+        {
+          "assertion_id": "665339bf5dadebd9",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '373 U.S. 83 (1963)', 'BRADY v. MARYLAND', 'No. 490.', 'Decided May 13, 1963' — matching official cite, docket 490, and date_decided 1963-05-13.",
+            "official=373 U.S. 83 consistent with citations block and content page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (83 S. Ct. 1194; 10 L. Ed. 2d 215; 1963 U.S. LEXIS 1615) not independently confirmable from the cached header."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7cc164fcef6de80e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pinpoint.quote for pin-87 is a corrupt harvest artifact: it captured the content page's frontmatter/markdown and Background/Issue prose ('--- # Brady v. Maryland ... ## Background ... ## Issue ... ## Rule'), not opinion text. It does not appear in the disclosed opinion.",
+            "severity": "low",
+            "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-87 is verbatim in the opinion on p.87 and correctly pincited; only the harvested metadata is broken.",
+            "evidence_quote": "We now hold that the suppression by the prosecution of evidence favorable to an accused upon request violates due process where the evidence is material either to guilt or to punishment, irrespective of the good faith or bad faith of the prosecution.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.87 (paragraph following the *87 star marker)."
+          },
+          "reasons": [
+            "Displayed content-page quote at ^pin-87 matches the opinion verbatim and sits on p.87, so no unsupported proposition is published.",
+            "Stored quote string is page markdown/prose (a mis-harvest); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only'."
+          ],
+          "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor, not surrounding prose."
+        },
+        {
+          "assertion_id": "feacb14c9eb05127",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' with varies_by_point=false is correct for Brady: the cached opinion supplies the intact foundational disclosure holding ('We now hold that the suppression by the prosecution of evidence favorable to an accused...violates due process...'), which remains authoritative.",
+            "scope_note (foundational rule later refined, not undermined, by Giglio and United States v. Bagley) is a standard, non-contradicted characterization; the content page also lists Kyles v. Whitley as elaboration and reports 'No negative treatment.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The refinement/extension characterization relies on Giglio/Bagley/Kyles, none of whose treatment is disclosed here, so it is not independently confirmable from disclosed evidence (though non-contradicted)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Sighted review against inlined cached opinion. Brady is foundational good law; only defect is a corrupt harvested pin-87 quote (page renders correctly)."
+    },
+    {
+      "lens": "model-diversity",
+      "group_id": "_overhaul2/lake/cases/Brendlin v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "45886aab36721de7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'BRENDLIN v. CALIFORNIA', 'No. 06-8120', 'Decided June 18, 2007', 'Cite as: 551 U. S. ____ (2007)', link /opinion/145712/ — matching official cite 551 U.S. 249, docket 06-8120, date 2007-06-18.",
+            "official=551 U.S. 249 consistent with citations block and content page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip opinion carries '551 U. S. ____'; the page-249 official pagination is not printed in the disclosed slip, though the reporter cite is standard.",
+            "Parallel cites (127 S. Ct. 2400; 168 L. Ed. 2d 132; 2007 U.S. LEXIS 7897) not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ab8526d1b1781ed6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pinpoint.quote for pin-251 is a corrupt harvest artifact: 'by a traffic stop, so that he has standing to challenge the constitutionality of the stop. ## Rule' is the content page's own Issue-section prose/markdown, not opinion text.",
+            "severity": "low",
+            "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-251 is the verbatim opening sentence of the Souter opinion; only the harvested metadata is broken.",
+            "evidence_quote": "When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "Cached slip opinion, first sentence of 'JUSTICE SOUTER delivered the opinion of the Court.'"
+          },
+          "reasons": [
+            "Displayed content-page quote at ^pin-251 matches the opinion's opening sentence verbatim, so no unsupported proposition is published.",
+            "Stored quote string is content-page markdown (contains '## Rule'); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only': the reporter page 251 for this opening sentence cannot be confirmed from the slip pagination in the disclosed text; the quote is the opinion's first sentence and 251 is a plausible reporter page (official cite 249)."
+          ],
+          "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor."
+        },
+        {
+          "assertion_id": "ba9ac86d05d983b9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'We hold that a passenger is seized as well and so may challenge the constitutionality of the stop.' is verbatim in the opinion's opening paragraph; quote_fidelity='matched' is corroborated.",
+            "The text-fragment link (#:~:text=We%20hold%20that%20a%20passenger) correctly targets the quoted sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only'; reporter page 251 inferential as above."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "deb681f8ca1a45b9",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "scope_note is a process/migration placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a substantive legal scope note describing Brendlin's treatment. It leaked an internal build caveat into a reader-facing field.",
+            "severity": "low",
+            "proposed_fix": "Replace scope_note with a substantive statement (e.g., no negative treatment; Brendlin applies the Hodari D./Rakas seizure-and-standing framework to passengers) or remove the migration caveat once the S2 derivation is finalized.",
+            "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+            "needs_cl": false,
+            "locator_note": "lake record treatment.scope_note (Brendlin)."
+          },
+          "reasons": [
+            "field_i_validity='good_law' is correct/uncontradicted: Brendlin (2007) is a solid, oft-cited SCOTUS holding; the content page reports 'No negative treatment.'",
+            "All negative edges in the disclosed lake record (Zamudio/Manuel/Heien/etc. tagged 'overruled'/'questioned'/'abrogated') are 'proposed':true lane1_negative/lane2_top_cited extraction artifacts, i.e. audit-pending noise, not ratified negative treatment of Brendlin.",
+            "The scope_note field itself is defective (a build placeholder), warranting a modification while the validity determination survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note's own caveat ('may downgrade') signals the as_of_treatment=2026-06-30 derivation may not be fully re-run; the proposed negative edges await R15-style audit."
+          ],
+          "suggested_tightening": "Do not project internal migration/derivation caveats into treatment.scope_note; gate scope_note on a substantive-note check."
+        }
+      ],
+      "notes": "Sighted review against inlined cached slip opinion. good_law survives; scope_note is a leaked build placeholder (stands-modified). pin-251 harvested quote corrupt but page renders the verbatim opening sentence."
+    },
+    {
+      "lens": "model-diversity",
+      "group_id": "_overhaul2/lake/cases/Brewer v. Williams.json",
+      "reviewed": [
+        {
+          "assertion_id": "e494bf740cea40fc",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '430 U.S. 387 (1977)', 'BREWER, WARDEN v. WILLIAMS.', 'No. 74-1263.', link /opinion/109624/ — matching official cite 430 U.S. 387 and docket 74-1263.",
+            "official=430 U.S. 387 consistent with citations block and content page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Date mismatch: cached opinion header states 'Argued October 4, 1976. Decided March 23, 1977.', but the record/frontmatter carry date_decided=1977-05-16 (flagged as a defect on the treatment assertion via as_of_content).",
+            "Parallel cites (97 S. Ct. 1232; 51 L. Ed. 2d 424; 1977 U.S. LEXIS 64) not independently confirmable from the cached header."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4d4051735ee39605",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pinpoint.quote for pin-398 is a corrupt harvest artifact: it captured content-page Background/Issue prose and markdown ('suggesting the child deserved a Christian burial before snow hid the body. Williams then directed the officers to the body. ## Issue ... ## Rule The right had attached:'), not opinion text.",
+            "severity": "low",
+            "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-398 is verbatim on p.398 and correctly pincited; only the harvested metadata is broken.",
+            "evidence_quote": "the right to counsel granted by the Sixth and Fourteenth Amendments means at least that a person is entitled to the help of a lawyer at or after the time that judicial proceedings have been initiated against him—\"whether by way of formal charge, preliminary hearing, indictment, information, or arraignment.\"",
+            "needs_cl": false,
+            "locator_note": "Cached opinion p.398 (Part II-B; sentence beginning 'Whatever else it may mean, the right to counsel...', before the *399 marker)."
+          },
+          "reasons": [
+            "Displayed content-page quote at ^pin-398 matches the opinion verbatim (page legitimately starts the quotation at 'the right to counsel', dropping the introductory 'Whatever else it may mean,') and sits on p.398.",
+            "Stored quote string is page prose/markdown (a mis-harvest); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only'; cached text is truncated but includes pp.388-410, covering p.398."
+          ],
+          "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor."
+        },
+        {
+          "assertion_id": "afd7efbdbf29e9ce",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely as — and perhaps more effectively than — if he had formally interrogated him.' matches the opinion word-for-word on p.399 (the only difference is em-dash spacing: page renders ' — ' vs opinion '—').",
+            "Pincite 'Id. at 399' is correct (sentence sits after the *399 marker, before *400).",
+            "The builder's quote_fidelity='mismatch' flag is a spurious em-dash/whitespace-normalization artifact; the quotation is faithful, so the assertion survives the attack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only'."
+          ],
+          "suggested_tightening": "Normalize em-dash spacing before the exact-match fidelity check to avoid spurious 'mismatch' flags on faithful quotes."
+        },
+        {
+          "assertion_id": "a376e68a26dfa09e",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "as_of_content='1977-05-16' is contradicted by the disclosed cached opinion header, which states the case was decided March 23, 1977. The seeded content date (and the record/frontmatter date_decided=1977-05-16) is the wrong decision date.",
+            "severity": "low",
+            "proposed_fix": "Correct as_of_content and date_decided to 1977-03-23 to match the opinion's own 'Decided March 23, 1977.' The good_law validity and scope_note are unaffected.",
+            "evidence_quote": "Decided March 23, 1977.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion header line ('Argued October 4, 1976.' / 'Decided March 23, 1977.')."
+          },
+          "reasons": [
+            "field_i_validity='good_law' with varies_by_point=false is correct: the cached opinion supplies the intact Sixth Amendment right-to-counsel/deliberate-elicitation holding, which remains authoritative.",
+            "scope_note ('Sixth Amendment holding intact; the sequel Nix v. Williams concerned the exclusionary remedy (inevitable discovery), not Brewer's right-to-counsel holding') is an accurate, standard characterization and is non-contradicted.",
+            "The validity/scope determination survives, but one framed field (as_of_content) is factually wrong per disclosed evidence, warranting the modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Nix v. Williams treatment is asserted in the scope_note but not disclosed here, so it is not independently confirmable (though non-contradicted)."
+          ],
+          "suggested_tightening": "Validate seeded as_of_content/date_decided against the opinion's own 'Decided' header during S2 build."
+        }
+      ],
+      "notes": "Sighted review against inlined (truncated) cached opinion covering pp.388-410. good_law survives; pin-398 harvested quote corrupt (page renders verbatim p.398 quote); pin-399 faithful (spurious mismatch flag); decision date 1977-05-16 is wrong vs opinion's 'Decided March 23, 1977' (stands-modified on treatment)."
+    }
+  ]
+}

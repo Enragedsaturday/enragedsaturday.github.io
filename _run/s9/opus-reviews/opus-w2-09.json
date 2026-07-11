@@ -1,0 +1,322 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Case v. Montana.json",
+      "reviewed": [
+        {
+          "assertion_id": "57c5c88515c7f56c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-slip10 quote reproduced verbatim from the majority opinion (spans slip pp. 10-11): 'We repeat today what we have held before: An officer may enter a home without a warrant if he has \"an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.\" ... The officers' entry satisfied that test.'",
+            "the '. . .' ellipsis correctly elides only the citation 'Brigham City, 547 U.S., at 400.'",
+            "passage straddles the *10/*11 page break exactly as pincited (slip op. 10-11)"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lake record carries a stale quote_fidelity:'mismatch' flag on a quote that is in fact faithful (ellipsis-insensitive matcher artifact)"
+          ],
+          "suggested_tightening": "re-run the matcher with citation-elision tolerance so pin-slip10 flips to 'matched'"
+        },
+        {
+          "assertion_id": "8689873972a646ef",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-slip7 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('doctrine. ## Issue Whether the warrantless home entry ... ## Rule Brigham City's standard governs ... The Court declined to lower it to reasonable suspicion:'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-slip7 to the actual page-7 passage that the content page already renders and cites.",
+            "evidence_quote": "But Brigham City did not adopt Terry's reasonable-suspicion standard for home entries, as both the State of Montana and the United States as amicus curiae acknowledge. ... Rather, Brigham City formulated its own standard for dealing with household emergencies-again, whether an officer has \"an objectively reasonable basis for believing\" that an occupant is seriously injured or imminently threatened with such harm.",
+            "needs_cl": false,
+            "locator_note": "cached opinion at page/star label 7; content page ^pin-slip7 renders the correct quote, so the defect is confined to the lake pinpoint record"
+          },
+          "reasons": [
+            "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+            "no such text exists in the disclosed cached opinion",
+            "the genuine page-7 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+          ],
+          "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line"
+        },
+        {
+          "assertion_id": "e457a56f153a9c2e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-slip8 quote reproduced verbatim from slip op. 8: 'We decline Case's invitation to put a new probable-cause spin onto Brigham City. ... So Brigham City adopted a different approach. Rather than strain to relate probable-cause decisions to emergency-aid situations, we asked simply whether an officer had \"an objectively reasonable basis for believing\" that his entry was direly needed to prevent or deal with serious harm.'",
+            "'. . .' ellipsis fairly elides the intervening Von Raab/O'Connor/Gates string discussion; both retained segments are exact and both sit on slip op. page 8"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "record's quote_fidelity:'mismatch' flag is a false positive (multi-sentence ellipsis)"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "eb26c3420a1d930e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-slip9 quote reproduced verbatim from slip op. 9: 'an emergency-aid entry provides no basis to search the premises beyond what is reasonably needed to deal with the emergency while maintaining the officers' safety. But we assess the reasonableness of that limited entry on its own terms, rather than through the lens generally used to consider investigative activity.'",
+            "partial quote merely drops the lead-in 'we note that'; retained text exact and on page 9 as pincited"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "record's quote_fidelity:'mismatch' flag is a false positive"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "56af28724b6898d4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note facts all confirmed by the cached syllabus/opinion: decided January 14, 2026; Kagan, J. for a unanimous Court; Sotomayor, J. and Gorsuch, J. filed concurring opinions",
+            "good_law consistent with the disclosed derivation/progeny: 0 indexed citing opinions and 0 proposed negative events across all three lanes for this Jan-2026 decision",
+            "varies_by_point:false matches the single emergency-aid holding"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 currency for a slip opinion still 'subject to formal revision' -- normal recency caveat already noted in scope_note"
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "1 refuted (pin-slip7 corrupted harvest), 4 stands. All four content-page-rendered quotes are faithful and correctly pincited against the cached slip opinion; slip8/9/10 mismatch flags are ellipsis false positives; treatment facts fully corroborated."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Chambers v. Florida.json",
+      "reviewed": [
+        {
+          "assertion_id": "10df84d0bfdd0fe7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "official cite 309 U.S. 227 corroborated by the cached opinion's U.S. Reports star-pagination running *228 through *242, implying the opinion opens at 227",
+            "caption 'CHAMBERS Et Al. v. FLORIDA', Mr. Justice Black delivering, and the 1940 setting are all consistent with the record; official_selection reason selected_rank_1"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "parallel cites 60 S. Ct. 472 / 84 L. Ed. 716 / 1940 U.S. LEXIS 911 are not independently page-verifiable from the U.S. Reports text, but the controlling official cite is confirmed"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "00c61ae0fb80b1c5",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-240 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('--- # Chambers v. Florida *309 U.S. 227 (1940)* ... ## Rule No. The confessions were the product of compulsion, not free will, and their use violates due process:'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-240 to the actual page-240 passage that the content page already renders and cites.",
+            "evidence_quote": "To permit human lives to be forfeited upon confessions thus obtained would make of the constitutional requirement of due process of law a meaningless symbol.",
+            "needs_cl": false,
+            "locator_note": "cached opinion at page/star label 240; content page ^pin-240 renders the correct quote, so the defect is confined to the lake pinpoint record"
+          },
+          "reasons": [
+            "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+            "no such text exists in the disclosed cached opinion",
+            "the genuine page-240 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+          ],
+          "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line"
+        },
+        {
+          "assertion_id": "7cc724812ba16c43",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-241 quote reproduced verbatim at star-page *241: 'Under our constitutional system, courts stand against any winds that blow as havens of refuge for those who might otherwise suffer because they are helpless, weak, outnumbered, or because they are non-conforming victims of prejudice and public excitement.'",
+            "record's quote_fidelity:'matched' and star-verified fragment are corroborated by the cached text at label 241"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "375a5f8426b5768f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law is the expected status for this bedrock 1940 due-process/coerced-confession decision; the cached opinion establishes the holding but subsequent validity cannot be positively confirmed from a 1940 text",
+            "every negative edge in the record is proposed:true, field_iii:'mentioned' keyword-triage candidate (State v. Singleton, State v. Phipps, United States v. Dickerson, Harris v. Wright, ...); none is SCOTUS overruling Chambers, and state/lower courts cannot overrule a SCOTUS due-process holding",
+            "no verified overruling pincite is disclosed, so per 'not found != fabricated' the unadjudicated hits do not establish negative treatment"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "content page states flatly 'No negative treatment' while the record carries 6+ unadjudicated proposed overruled/questioned edges -- reconcile via S2 derivation",
+            "true currency requires a CL treatment check beyond the disclosed 1940 opinion"
+          ],
+          "suggested_tightening": "have S2 derivation adjudicate the lane1_negative proposals (expected to clear as FPs) before the page asserts 'No negative treatment'"
+        }
+      ],
+      "notes": "1 refuted (pin-240 corrupted harvest), 3 stands. pin-241 verbatim/star-verified at page 241; official cite corroborated by star-pagination; treatment good_law upheld -- proposed 'overruled' edges are unadjudicated keyword FPs against a landmark SCOTUS decision."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
+      "reviewed": [
+        {
+          "assertion_id": "fadd5866bc60e216",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "official cite 399 U.S. 42 corroborated by the cached opinion's page-number labels *44 through *54, implying the opinion opens at 42",
+            "Mr. Justice White delivering, Mr. Justice Blackmun taking no part, affirmance of 3d Cir. 408 F.2d 1186 and cert. 396 U.S. 900 (1969) are all internally consistent with Chambers v. Maroney (1970)"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "parallel S.Ct./L.Ed./LEXIS page numbers are not page-verifiable from the U.S. Reports text"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f18bbfe5a5ea69e2",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-52 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('--- # Chambers v. Maroney *399 U.S. 42 (1970)* ... ## Rule Yes. Given probable cause to search a vehicle that was mobile when stopped, a warrantless search at the station house is reasonable:'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-52 to the actual page-52 passage that the content page already renders and cites.",
+            "evidence_quote": "For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "cached opinion at page/star label 52; content page ^pin-52 renders the correct quote, so the defect is confined to the lake pinpoint record"
+          },
+          "reasons": [
+            "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+            "no such text exists in the disclosed cached opinion",
+            "the genuine page-52 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+          ],
+          "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line"
+        },
+        {
+          "assertion_id": "cf423a24c54fd5d7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law is the expected status for this 1970 automobile-exception landmark (Carroll line); the cached opinion establishes the holding but subsequent validity is not positively confirmable from a 1970 text",
+            "every negative edge is proposed:true keyword candidate (State v. McCarthy, State v. Podrazo, Williams v. State, Illinois v. Gates, Schneckloth v. Bustamonte, Coolidge v. New Hampshire, Franks v. Delaware, Rakas v. Illinois, ...) that cites but does not overrule Chambers v. Maroney; no verified overruling pincite is disclosed"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "content page 'No negative treatment' vs. the record's many unadjudicated proposed overruled/questioned edges -- reconcile via S2 derivation",
+            "internal inconsistency between two disclosed fields: frontmatter date_decided 1970-10-12 vs. treatment.as_of_content 1970-06-22",
+            "true currency needs a CL treatment check beyond the 1970 opinion"
+          ],
+          "suggested_tightening": "reconcile the two disclosed decision-date fields and adjudicate the lane1_negative proposals"
+        }
+      ],
+      "notes": "1 refuted (pin-52 corrupted harvest), 2 stands. Content-page pin-52 quote is faithful and correctly pincited to page 52; official cite corroborated by page labels; treatment good_law upheld (proposed 'overruled' edges are keyword FPs). Flagged: date_decided vs as_of_content mismatch."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Chandler v. Miller.json",
+      "reviewed": [
+        {
+          "assertion_id": "c9cb4e5bd3f1cac4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "official cite 520 U.S. 305 corroborated by the cached opinion's page-number labels *309 through *323, implying the opinion opens at 305",
+            "Justice Ginsburg delivering, reversal of 11th Cir. 73 F.3d 1543, and cert. 518 U.S. 1057 (1996) are all internally consistent with Chandler v. Miller (1997)"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "parallel S.Ct./L.Ed./LEXIS page numbers are not page-verifiable from the U.S. Reports text"
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "04779f0e9d565702",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-322 quote reproduced verbatim at page-label *322: 'However well meant, the candidate drug test Georgia has devised diminishes personal privacy for a symbol's sake. The Fourth Amendment shields society against that state action.' (opinion italicizes 'for'; immaterial formatting)",
+            "quote sits in paragraph b414-8, after the *322 marker and before *323, so the content-page pincite (Id. at 322) is correct",
+            "record's quote_fidelity:'mismatch' flag is a false positive -- the stored quote matches the source exactly"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "stale/false quote_fidelity:'mismatch' flag on a verbatim-correct quote (unlike the sibling first-pinpoints, this stored quote is the genuine opinion text)"
+          ],
+          "suggested_tightening": "flip pin-322 to 'matched'"
+        },
+        {
+          "assertion_id": "f84c3069665f03a6",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-323 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('--- # Chandler v. Miller *520 U.S. 305 (1997)* ... ## Rule No, absent a genuine, concrete danger the testing is designed to meet. Where public safety is substantial and real, suspicionless searches calibrated to the risk may be reasonable;'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-323 to the actual page-323 passage that the content page already renders and cites.",
+            "evidence_quote": "But where, as in this case, public safety is not genuinely in jeopardy, the Fourth Amendment precludes the suspicionless search, no matter how conveniently arranged.",
+            "needs_cl": false,
+            "locator_note": "cached opinion at page/star label 323; content page ^pin-323 renders the correct quote, so the defect is confined to the lake pinpoint record"
+          },
+          "reasons": [
+            "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+            "no such text exists in the disclosed cached opinion",
+            "the genuine page-323 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+          ],
+          "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line"
+        },
+        {
+          "assertion_id": "ea9640ffbd0af8db",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law is the expected status for this 1997 special-needs / suspicionless-search landmark; the cached opinion establishes the holding but subsequent validity is not positively confirmable from a 1997 text",
+            "every negative edge is proposed:true, field_iii:'mentioned' keyword candidate (State v. Grady, United States v. King, Ferguson v. City of Charleston, Ashcroft v. al-Kidd, City of Indianapolis v. Edmond, Wyoming v. Houghton, ...) that cites but does not overrule Chandler; no verified overruling pincite is disclosed"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "content page 'No negative treatment' vs. the record's unadjudicated proposed overruled/questioned edges -- reconcile via S2 derivation",
+            "true currency needs a CL treatment check beyond the 1997 opinion"
+          ],
+          "suggested_tightening": "adjudicate the lane1_negative proposals (expected to clear as FPs) before the page asserts 'No negative treatment'"
+        }
+      ],
+      "notes": "1 refuted (pin-323 corrupted harvest), 3 stands. pin-322 stored quote is genuinely faithful at page 322 (its mismatch flag is a false positive); official cite corroborated by page labels; treatment good_law upheld (proposed edges are keyword FPs)."
+    }
+  ]
+}
