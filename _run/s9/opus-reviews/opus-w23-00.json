@@ -1,0 +1,161 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/carman-v-carroll--8693292.json",
+      "reviewed": [
+        {
+          "assertion_id": "d547aec67277806f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload official/all/display '588 F. App'x 183' matches lake citations block exactly (official selected_official:true, all[0] selected_official:false, display '588 F. App'x 183')",
+            "official_selection_present:true is consistent with lake official_selection.selected '588 F. App'x 183' (reason selected_rank_3)"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake official_selection.court_class is 'state' though this is a 3d Cir. federal F. App'x cite (court '3d Cir. 2014') — metadata mislabel, not part of the reviewed payload",
+            "Record status is 'folded-alias' (subsumed into carroll-v-carman--2750102 per warnings); the existence cite itself remains internally coherent"
+          ],
+          "suggested_tightening": "Correct official_selection.court_class to a federal class for the 3d Cir. record so the selection metadata matches the reporter"
+        },
+        {
+          "assertion_id": "0adca4b436165483",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontier stub faithfully echoes lake treatment block: field_i_validity 'unverified', as_of_content/as_of_treatment null, varies_by_point false, edges [], point_overrides [] — no substantive treatment or currency claim to refute",
+            "scope_note verbatim matches lake ('Frontier stub: treatment/progeny intentionally not derived until S6 promotion.')"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Folded-alias record; treatment should ultimately be derived on the canonical carroll-v-carman--2750102 at S6 promotion"
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/chapman-v-california--8428427.json",
+      "reviewed": [
+        {
+          "assertion_id": "5eefb05fe2468830",
+          "dimension": "existence",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Payload attributes 2016-vintage citations (137 S. Ct. 389; 196 L. Ed. 2d 306; 85 U.S.L.W. 3209; 2016 WL 4733855; 2016 U.S. LEXIS 6528) to Chapman v. California, but the lake record was panel-cluster-rekeyed to cluster 107359 and now carries 386 U.S. 18 / 87 S. Ct. 824 / 17 L. Ed. 2d 705 / 1967 U.S. LEXIS 2198 (decided 1967-03-27). None of the five payload cites appears in the record's citations.all; the payload is a stale pre-rekey snapshot of a mis-identified 2016 cluster (record_id suffix 8428427).",
+            "severity": "high",
+            "proposed_fix": "Re-derive the assertion payload from the current lake record: display/official '386 U.S. 18' (court_class scotus, reason selected_rank_1), parallels '87 S. Ct. 824' and '17 L. Ed. 2d 705', vendor-neutral '1967 U.S. LEXIS 2198'; discard the 2016 citation set and set official_selection_present:true.",
+            "evidence_quote": "panel cluster re-key -> cluster 107359 (evidence: _run/s9/adjudications.jsonl F-S9-P2-CHAPMANCAL (UPHELD); 6 lake treatment-edges cluster 107359; cached merits text 107359.txt; prime GET clusters/107359 confirmed 386 U.S. 18/87 S. Ct. 824/1967)",
+            "needs_cl": false,
+            "locator_note": "chapman-v-california--8428427: assertion payload all[] (five 2016 cites) vs lake citations.all/official/display (386 U.S. 18, 1967)"
+          },
+          "reasons": [
+            "Payload all[] = five 2016-era citations; lake citations.all = [386 U.S. 18, 87 S. Ct. 824, 17 L. Ed. 2d 705, 1967 U.S. LEXIS 2198] — zero overlap",
+            "Lake identity.identity_method 'panel-cluster-rekey', cluster_id 107359, date_decided 1967-03-27; warnings document F-S9-P2-CHAPMANCAL UPHELD confirming 386 U.S. 18",
+            "Payload display null / official null / official_selection_present false contradicts lake display '386 U.S. 18', official '386 U.S. 18', official_selection.selected '386 U.S. 18'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "record_id suffix '8428427' still preserves the old (wrong) cluster id though identity.cluster_id is now 107359 — downstream keys may still resolve the stale cluster"
+          ],
+          "suggested_tightening": "Refresh downstream assertion payloads whenever an identity/cluster rekey lands so ledger cites track the corrected record rather than a pre-rekey snapshot"
+        },
+        {
+          "assertion_id": "7e05e8113804bda4",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontier stub faithfully echoes lake treatment block (field_i_validity 'unverified', as_of_* null, varies_by_point false, edges []); it asserts only 'not yet derived', so the identity rekey does not falsify the treatment claim",
+            "scope_note verbatim matches lake"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "After the rekey to cluster 107359, S6 treatment derivation must target the corrected cluster; the stub remains valid only as a 'not yet derived' placeholder"
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/coleman-v-alabama--108182.json",
+      "reviewed": [
+        {
+          "assertion_id": "7261085a64b01003",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload all[] = [399 U.S. 1, 90 S. Ct. 1999, 26 L. Ed. 2d 387, 1970 U.S. LEXIS 17] matches lake citations.all exactly; display null / official null / official_selection_present false all consistent with lake (official null, official_selection.selected null)",
+            "Cached opinion text corroborates identity: Brennan opinion, Coleman v. Alabama, 1970 SCOTUS, preliminary-hearing critical-stage holding (cites Chapman v. California 386 U.S. 18) — consistent with the attributed 1970 SCOTUS citations"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection.court_class 'other' with reason 'unlisted_reporter:U.S.' yields a null official for a court_id/court_level 'scotus' case that should select '399 U.S. 1' — selection-logic quirk, faithfully reported in the payload, not a payload-fidelity defect"
+          ],
+          "suggested_tightening": "Fix official-selection to recognize the 'U.S.' reporter under scotus court_class so 399 U.S. 1 is chosen as the official cite"
+        },
+        {
+          "assertion_id": "d40340418c73d01e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontier stub faithfully echoes lake treatment block (field_i_validity 'unverified', as_of_* null, varies_by_point false, edges []); no substantive treatment or currency claim to refute",
+            "scope_note verbatim matches lake"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/commonwealth-v-serge--2074658.json",
+      "reviewed": [
+        {
+          "assertion_id": "ee7d03293581de70",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload all[] = [896 A.2d 1170, 586 Pa. 671, 2006 Pa. LEXIS 561] matches lake citations.all exactly; display null / official null / official_selection_present false consistent with lake (official null, official_selection.selected null, reason 'same_rank_tie')",
+            "Cached opinion (Justice Newman, Commonwealth v. Serge, Pa. 2006, CGA-admissibility) internally cross-references '896 A.2d at 1188', '896 A.2d at 1189', '896 A.2d at 1190' and star-pages *677 through *700, corroborating the 896 A.2d and 586 Pa. citations for this record"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection 'same_rank_tie' leaves official null though 586 Pa. 671 (type 2, state official reporter) would normally be the official cite — faithfully reported selection quirk"
+          ],
+          "suggested_tightening": "Break the same_rank_tie in favor of the state official reporter (586 Pa. 671) so an official cite is selected"
+        },
+        {
+          "assertion_id": "51b669280d4742e8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontier stub faithfully echoes lake treatment block (field_i_validity 'unverified', as_of_* null, varies_by_point false, edges []); no substantive treatment or currency claim to refute",
+            "scope_note verbatim matches lake"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

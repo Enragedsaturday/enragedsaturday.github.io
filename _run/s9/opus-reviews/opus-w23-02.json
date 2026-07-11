@@ -1,0 +1,146 @@
+{"packs":[
+ {
+  "group_id": "_overhaul2/lake/cases/hunter-v-bryant--112671.json",
+  "reviewed": [
+   {
+    "assertion_id": "660de908f943db08",
+    "dimension": "existence",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Cached opinion is the Hunter v. Bryant per curiam (SCOTUS, 1991): text runs *225-*229 and arises from the Secret Service arrest of James Bryant for threats against President Reagan, consistent with a case reported at 502 U.S. 224.",
+     "Payload.all lead cite 502 U.S. 224 aligns with the opinion's *224-anchored pagination; parallels 112 S. Ct. 534, 116 L. Ed. 2d 589, 1991 U.S. LEXIS 7262 match lake citations.all exactly."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Parallel reporter cites (S. Ct. / L. Ed. 2d / U.S. LEXIS) are corroborated only against lake citations.all, not the opinion text (which prints no parallel reporter); their pincites are not independently checkable from disclosed evidence."],
+    "suggested_tightening": null
+   },
+   {
+    "assertion_id": "ea9c3dc19cc4bebf",
+    "dimension": "treatment",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Assertion mirrors lake treatment exactly: field_i_validity 'unverified', varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+     "Record is stub=true with empty edges/derivation; the assertion makes no affirmative currency claim, so there is no treatment proposition to refute."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Treatment/progeny genuinely not derived; downstream content must not imply Hunter v. Bryant is good/current law until S6 promotion."],
+    "suggested_tightening": null
+   }
+  ],
+  "notes": "Both assertions clean; existence lead cite corroborated by opinion text, treatment is honest frontier stub."
+ },
+ {
+  "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
+  "reviewed": [
+   {
+    "assertion_id": "47002802696d3238",
+    "dimension": "existence",
+    "verdict": "refuted",
+    "verifiable_from_disclosed": true,
+    "defect": {
+     "problem": "Assertion attaches citations 860 A.2d 363 and 2004 WL 2445390 to record illinois-v-fisher--5141053, but the disclosed lake record and cached opinion identify this record as Illinois v. Fisher, 540 U.S. 544 (per curiam, 2004). The A.2d/WL cites are stale residue of the pre-rekey mis-keyed cluster 5141053 (In re Mirsky) and do not belong to Illinois v. Fisher.",
+     "severity": "high",
+     "proposed_fix": "Regenerate the case_cite existence assertion from the re-keyed lake record: citations.all = 540 U.S. 544; 124 S. Ct. 1200; 157 L. Ed. 2d 1060; 2004 U.S. LEXIS 1412 (official 540 U.S. 544).",
+     "evidence_quote": "In re Mirsky mis-key cluster 5141053 -> Illinois v. Fisher 131160 (540 U.S. 544, per curiam, docket 03-374)",
+     "needs_cl": false,
+     "locator_note": "Compare assertion payload.all (860 A.2d 363; 2004 WL 2445390) against lake citations.all/official (540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, 2004 U.S. LEXIS 1412) and provenance.warnings re-key note; opinion header '*545 Per Curiam' + 'Arizona v. Youngblood, 488 U. S. 51 (1988)' confirms the record is Illinois v. Fisher."
+    },
+    "reasons": [
+     "Payload.all lists 860 A.2d 363 and 2004 WL 2445390; lake citations.all and official list 540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, 2004 U.S. LEXIS 1412 — zero overlap.",
+     "Cached opinion is unmistakably Illinois v. Fisher (Per Curiam, *545-*549, holding the Arizona v. Youngblood bad-faith rule governs the good-faith destruction of the cocaine evidence), a SCOTUS per curiam at 540 U.S. 544 — not an Atlantic Reporter / Westlaw case.",
+     "provenance.warnings documents the re-key from mis-keyed In re Mirsky cluster 5141053; the A.2d/WL cites are that stale cluster's citations, so the assertion's citation set is wrong for this record."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["The live lake record already carries the correct 540 U.S. 544 citation set; the defect is a stale group_inventory snapshot rather than a live wrong-cite in the record — adjudicator should confirm the inventory is regenerated from the post-rekey record."],
+    "suggested_tightening": "Rebuild group_inventory case_cite payloads from post-rekey lake records so F-S9-IDS-001 re-key targets never carry pre-rekey citations."
+   },
+   {
+    "assertion_id": "56eacd28d974f9ba",
+    "dimension": "treatment",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Assertion mirrors lake treatment exactly: field_i_validity 'unverified', varies_by_point false, frontier-stub scope_note; no affirmative currency claim is made, so there is no treatment proposition to refute.",
+     "The re-key affected identity/citations, not treatment — treatment remains an undived stub regardless of cluster, and the assertion's 'unverified' is accurate."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Record underwent an identity re-key (In re Mirsky cluster 5141053 -> Illinois v. Fisher 131160); when treatment is derived at S6 it must be computed for Illinois v. Fisher, not the stale cluster."],
+    "suggested_tightening": null
+   }
+  ],
+  "notes": "Existence assertion REFUTED: stale pre-rekey A.2d/WL cites mis-attributed to Illinois v. Fisher (540 U.S. 544); treatment stub stands (accurate, but flag re-key for S6 derivation)."
+ },
+ {
+  "group_id": "_overhaul2/lake/cases/in-re-winship--108111.json",
+  "reviewed": [
+   {
+    "assertion_id": "1c58617e7be2a530",
+    "dimension": "existence",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Cached opinion is In re Winship (Brennan, J., 1970): holds the Due Process Clause requires proof beyond a reasonable doubt in juvenile delinquency adjudications; text runs *359-*368, consistent with a case reported at 397 U.S. 358.",
+     "Payload.all cites (397 U.S. 358; 90 S. Ct. 1068; 25 L. Ed. 2d 368; 1970 U.S. LEXIS 56) match lake citations.all exactly."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Parallel reporter cites (S. Ct. / L. Ed. 2d / U.S. LEXIS) are corroborated only against lake citations.all, not the opinion text."],
+    "suggested_tightening": null
+   },
+   {
+    "assertion_id": "361615e87ebc2fc5",
+    "dimension": "treatment",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Assertion mirrors lake treatment exactly: field_i_validity 'unverified', varies_by_point false, frontier-stub scope_note; no affirmative currency claim to refute.",
+     "Record is stub=true with empty edges/derivation."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Treatment/progeny not derived; downstream content must not imply current-law status until S6 promotion."],
+    "suggested_tightening": null
+   }
+  ],
+  "notes": "Both assertions clean; existence lead cite corroborated by opinion text, treatment is honest frontier stub."
+ },
+ {
+  "group_id": "_overhaul2/lake/cases/kalina-v-fletcher--118156.json",
+  "reviewed": [
+   {
+    "assertion_id": "6c7771f3c7a01519",
+    "dimension": "existence",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Cached opinion is Kalina v. Fletcher (Stevens, J., 1997): whether a prosecutor who personally attests under penalty of perjury to a probable-cause certification acts as a complaining witness rather than an advocate; text runs *121-*131, consistent with a case reported at 522 U.S. 118.",
+     "Payload.all cites (522 U.S. 118; 118 S. Ct. 502; 139 L. Ed. 2d 471; 1997 U.S. LEXIS 7498) match lake citations.all exactly."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Parallel reporter cites (S. Ct. / L. Ed. 2d / U.S. LEXIS) are corroborated only against lake citations.all, not the opinion text."],
+    "suggested_tightening": null
+   },
+   {
+    "assertion_id": "fd5309152110cabb",
+    "dimension": "treatment",
+    "verdict": "stands",
+    "verifiable_from_disclosed": true,
+    "defect": null,
+    "reasons": [
+     "Assertion mirrors lake treatment exactly: field_i_validity 'unverified', varies_by_point false, frontier-stub scope_note; no affirmative currency claim to refute.",
+     "Record is stub=true with empty edges/derivation."
+    ],
+    "breaks_true_positives": false,
+    "residual_risks": ["Treatment/progeny not derived; downstream content must not imply current-law status until S6 promotion."],
+    "suggested_tightening": null
+   }
+  ],
+  "notes": "Both assertions clean; existence lead cite corroborated by opinion text, treatment is honest frontier stub."
+ }
+]}
