@@ -1,0 +1,212 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. United States District Court (Keith).json",
+      "reviewed": [
+        {
+          "assertion_id": "9872375a26ca03f4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: Mr. Justice Powell delivered the opinion of the Court; domestic-security electronic surveillance and 18 U.S.C. Sec. 2511(3); decided June 19, 1972.",
+            "Star-pagination *300 through *324 is consistent with the official cite 407 U.S. 297, and the *324 holding ('prior judicial approval is required for the type of domestic security surveillance involved in this case') is present, corroborating display cite 407 U.S. 297."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites (92 S. Ct. 2125; 32 L. Ed. 2d 752; 1972 U.S. LEXIS 38) are not independently shown in the disclosed opinion text, but they are standard SCOTUS parallels and are uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6ad9bb7ae0a6080e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Record is an intentional frontier stub (status under_review; treatment.edges [] and derivation {}); the assertion accurately self-describes field_i as 'unverified', so there is no affirmative treatment/currency claim to refute.",
+            "Current legal-currency and progeny cannot be verified from the disclosed evidence because none is derived or inlined -- honest not-verifiable, neither a fabricated clean nor a fabricated defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 'unverified' label correctly withholds any good/bad-law representation; S9 promotion must derive treatment before any currency claim is made."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Van Leeuwen.json",
+      "reviewed": [
+        {
+          "assertion_id": "2c0d6be7ebf4038e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: Mr. Justice Douglas delivered the opinion; first-class mail package detention on suspicion while a warrant was sought; Court of Appeals judgment 'Reversed'.",
+            "Star-pagination *250-*253 is consistent with the official cite 397 U.S. 249."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites (90 S. Ct. 1029; 25 L. Ed. 2d 282; 1970 U.S. LEXIS 57) are not independently in the opinion text but are standard and uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1abaccb0633aa740",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-252 quote is a content-page harvest artifact -- the entire front-matter/Background/Issue/Rule preamble ending at 'the suspicious circumstances' -- not a passage from the opinion; it appears nowhere in the cached opinion text.",
+            "severity": "medium",
+            "proposed_fix": "Replace the pin-252 quote with the proposition the content page actually cites at ^pin-252, 'certainly justified detention, without a warrant, while an investigation was made', which is verbatim in the opinion (para b354-6) and sits on 397 U.S. at 252 (between the *252 and *253 star markers); it can then be promoted from slip-only to star-verified.",
+            "evidence_quote": "The nature and weight of the packages, the fictitious return address, and the British Columbia license plates of respondent who made the mailings in this border town certainly justified detention, without a warrant, while an investigation was made.",
+            "needs_cl": false,
+            "locator_note": "pin-252; content-page Rule section; opinion para id b354-6, page 252."
+          },
+          "reasons": [
+            "The record's own 'mismatch/slip-only' flag is correct: the stored blob does not occur in the opinion, so the pin is not asserting a false verified quote.",
+            "The proposition the content page renders at ^pin-252 is verbatim in the opinion at 252, so the defect is a repairable corrupt quote field rather than a fabricated or wrong legal quote -- hence survives-with-modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If downstream tooling consumes pin.quote directly, the harvest blob is garbage data until repaired."
+          ],
+          "suggested_tightening": "Repair the quote field to the verbatim proposition and promote from slip-only to star-verified at 252."
+        },
+        {
+          "assertion_id": "85aa8d25041c1983",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote reproduces the opinion verbatim (para b355-4): 'No interest protected by the Fourth Amendment was invaded by forwarding the packages the following day rather than the day when they were deposited. The significant Fourth Amendment interest was in the privacy of this first-class mail; and that privacy was not disturbed or invaded until the approval of the magistrate was obtained.'",
+            "Passage sits on page 253 (after the *253 star marker), matching star_marker '253'; the 'matched/star-verified' classification is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "928c00a68ddd064f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The quoted fragments are verbatim in the opinion (para b355-5): 'is not that first-class mail can be detained 29 hours' and 'to obtain the search warrant', with the ellipsis honestly eliding 'after mailing in order' -- a faithful ellipsized quotation, not an infidelity.",
+            "The passage is on page 253; the 'mismatch/slip-only' flag reflects a string-match break caused by the ellipsis, not a fabricated or altered quote, so nothing is refutable on fidelity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The conservative slip-only flag under-states the actual fidelity, but that is harmless to reader-facing accuracy."
+          ],
+          "suggested_tightening": "The pin is verifiable at 253 with the ellipsis marked; it could be promoted from slip-only to star-verified."
+        },
+        {
+          "assertion_id": "f7915ce3b63e2fe0",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "Treatment asserts good_law with as_of_treatment 2026-06-30, but the record's own derivation carries 'audit_needed: true' and 'audit_marker: R15 treatment audit required' with 23 unaudited lane2 proposed negative edges (plus 9 in lane1), several labeled field_ii 'overruled' on cases that in fact cite but do not overrule Van Leeuwen (California v. Acevedo, United States v. Ross, California v. Greenwood, United States v. Jacobsen, Robbins v. California) -- facially snippet-first false positives; the good_law status rests on composite_basis 'migration-seed', not a completed fresh audit.",
+            "severity": "low",
+            "proposed_fix": "Complete the R15 reconciliation of the proposed edges (they read as snippet-first FPs from container/inventory-doctrine cases that cite the mail-detention rule without overruling it) before presenting 2026-06-30 good-law as machine-verified, and align the content page's flat 'No negative treatment' with the record's pending-audit state.",
+            "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 23, \"audit_marker\": \"R15 treatment audit required\"",
+            "needs_cl": true,
+            "locator_note": "treatment.derivation.lane2_top_cited and treatment.edges[] (proposed:true); content page 'Treatment & subsequent history'."
+          },
+          "reasons": [
+            "The doctrinal scope_note (brief detention of mailed packages on reasonable suspicion while a warrant is diligently sought; mere detention invades no privacy interest until opened under a warrant; precursor to United States v. Place) is accurate and supported by the disclosed opinion.",
+            "The good-law currency (as_of_treatment 2026-06-30) is not independently verifiable from the disclosed opinion alone, and the record itself flags an unresolved R15 treatment audit with unaudited proposed 'overruled' edges -- so the currency is a migration-seed assertion, not a completed verification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No AUDITED negative treatment is shown; the proposed 'overruled' edges are transparent snippet-first false positives, so the case is very likely still good law -- this finding is about unverified/overstated currency, not a demonstrated bad-law status."
+          ],
+          "suggested_tightening": "Soften 'No negative treatment' to reflect the pending R15 audit, or complete the audit and re-date as_of_treatment accordingly."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Vaneaton.json",
+      "reviewed": [
+        {
+          "assertion_id": "6fc84c7a910012d5",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'Opinion by Judge TROTT. Dissent by Judge TASHIMA'; Payton doorway-arrest at a Bend, Oregon motel; judgment AFFIRMED.",
+            "Star-pagination *1425-*1427 is consistent with the official cite 49 F.3d 1423 (9th Cir. 1995), No. 93-30387."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites (95 Daily Journal DAR 3223; 95 Cal. Daily Op. Serv. 1884; 1995 U.S. App. LEXIS 4793; 1995 WL 101835) are not independently in the opinion text but are standard and uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6a68aecbe3a557d0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Record is an intentional frontier stub (status under_review; treatment.edges [] and derivation {}); the assertion accurately self-labels field_i as 'unverified', so there is no affirmative treatment claim to refute.",
+            "Current treatment/currency is not derivable from the disclosed evidence -- honest not-verifiable, neither fabricated clean nor fabricated defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No good/bad-law representation is made; treatment must be derived at S9 promotion before any currency claim."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Vasquez-Algarin.json",
+      "reviewed": [
+        {
+          "assertion_id": "0b5444ecdc7224fe",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'UNITED STATES COURT OF APPEALS FOR THE THIRD CIRCUIT', No. 15-1941, 'Filed: May 2, 2016', 'KRAUSE, Circuit Judge'; Payton 'reason to believe' = probable cause; conviction vacated and remanded.",
+            "Case identity is unambiguous and 821 F.3d 467 is the cluster's official cite; the display cite is uncontradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached text is a plain-text slip opinion without F.3d star-pagination, so reporter page 467 is not star-confirmed from the disclosed evidence; however the case identity is unambiguous and the cite is uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c01b420b304f6964",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Record is an intentional frontier stub (status under_review; treatment.edges [] and derivation {}); the assertion accurately self-labels field_i as 'unverified', so there is no affirmative treatment claim to refute.",
+            "Current treatment/currency is not derivable from the disclosed evidence -- honest not-verifiable, neither fabricated clean nor fabricated defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No good/bad-law representation is made; treatment must be derived at S9 promotion before any currency claim."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

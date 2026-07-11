@@ -1,0 +1,249 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Wade.json",
+      "reviewed": [
+        {
+          "assertion_id": "3f2fb5d19fb2847f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Brennan, J.) carries reporter page-labels *220 through *243 and internal cite '358 F. 2d 557, 560', consistent with a U.S. Reports opinion beginning at 388 U.S. 218.",
+            "Lake record cluster_id 107486 / lead_opinion 9423472 and official_selection 'selected_rank_1' -> 388 U.S. 218 match the payload; official_selection_present=true is confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0b6b4ca01d560acf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-242 quote 'pending a hearing to determine whether the in-court identifications had an independent source.' appears verbatim on page 242 of the cached opinion ('...to vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether... harmless error').",
+            "The *242 star-page (label 242) opens that paragraph, so the 388 U.S. at 242 pincite is correct; the payload 'quote_fidelity: mismatch' flag is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a098d7c8725bed3f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The actual content-page pin-237 quote ('there can be little doubt that for Wade the post-indictment lineup was a critical stage of the prosecution at which he was as much entitled to such aid [of counsel] ... as at the trial itself') is verbatim on page 237 of the cached opinion (line beginning at *237, citing Powell v. Alabama, 287 U.S. 45, 57).",
+            "The payload 'quote' string is not that quote: it is a mis-extracted front-matter/Background window ending at the ## Rule colon; the real pincited holding is faithful, so the on-page quotation survives attack."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote field for pin-237 is an extractor window artifact, not the pincited text; any downstream check keyed off the raw payload string would mis-signal a mismatch."
+          ],
+          "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window."
+        },
+        {
+          "assertion_id": "3a38e10b60bb143f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law is the correct null for a 1967 SCOTUS majority; nothing in the disclosed opinion or lake record genuinely refutes continuing validity.",
+            "Disclosed treatment edges are all 'proposed: true' candidate signals and facially noisy (e.g., Bivens/Schneckloth/Teague tagged 'overruled' of Wade is impossible), so they do not support a downgrade.",
+            "scope_note (Kirby limits to post-charge; Ash no counsel at photo arrays) is accurate subsequent-history but the limiting cases are not in the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Kirby/Ash limitation and 'still good law today' currency are not machine-verifiable from the disclosed evidence (only the 1967 opinion and proposed-edge noise are inlined)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Walker.json",
+      "reviewed": [
+        {
+          "assertion_id": "763e3b67b70d058d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'UNITED STATES OF AMERICA v. WAYNE WALKER', 11th Cir., No. 15-10710, PER CURIAM, decided September 3, 2015 -- matching the record and aliases.",
+            "official_selection_present=true and official 799 F.3d 1361 match the payload; pin pages 1363/1364 used on the page are consistent with a case opening at 1361."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached copy is the court slip op (Page 1 of 7 ... 7 of 7), so the exact F.3d start page 1361 is not independently paginated in the disclosed text; nothing contradicts it and identity is confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4db17fb5d6a91248",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote is verbatim in the cached opinion: 'approaching Walker's vehicle parked inside of his open-sided carport, instead of going to his front door, did not exceed the geographic limit on the knock and talk exception. A small departure from the front door . . . when seeking to contact the occupants is permissible.'",
+            "The cached text attributes the small-departure phrase to 'Taylor, 458 F.3d 1205', confirming the page's parenthetical '(quoting United States v. Taylor, 458 F.3d 1201, 1205 (11th Cir. 2006))'; payload 'mismatch' flag is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7aff2fc25e90dd30",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The phrase 'is not considered a search,' is verbatim in footnote 1 of the cached opinion ('...a warrantless early morning knock and talk, which is not considered a search').",
+            "The content-page framing (no exigent circumstances required; cite 'Id. (& n.1)') matches footnote 1, which distinguishes Brigham City; payload 'mismatch' flag is a false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b84f2557dee0e416",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The actual content-page pin-1363 quote ('The scope of the knock and talk exception is limited in two respects. First, it ceases where an officer's behavior objectively reveals a purpose to conduct a search. ... Second, the exception is geographically limited to the front door or a minor departure from it.') is verbatim in the cached opinion, with the ellipsis eliding the Jardines dog-sniff parenthetical.",
+            "The payload 'quote' string is a mis-extracted front-matter/Background+Issue window ending at the ## Rule text, not the pincited holding; the real pincited quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote field for pin-1363 is an extractor window artifact, not the anchored quote text."
+          ],
+          "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window."
+        },
+        {
+          "assertion_id": "06f891d089718947",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note is directly corroborated by the disclosed opinion: it is 'PER CURIAM' and expressly applies Florida v. Jardines and United States v. Taylor to the geographic scope of the knock-and-talk implied license.",
+            "Disclosed derivation shows lane1_negative reviewed the targeted overrule/abrogate query and returned proposed_negative_events: 0; the lane2 'overruled/questioned' edges are 'proposed: true' generic citing-tag noise; good_law is not downgraded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Warshak.json",
+      "reviewed": [
+        {
+          "assertion_id": "59898af87e41b027",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: Boggs, Circuit Judge, delivered the opinion (McKeague, J., joined; Keith, J., concurring in result) for the 6th Cir., holding a subscriber has a reasonable expectation of privacy in ISP-held emails.",
+            "Reporter star-pages *275 through *280 in the cached text are consistent with 631 F.3d 266 (case opens at 266); official_selection_present=true and official 631 F.3d 266 match the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "abac611150140ad5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "This is an honest frontier stub: field_i_validity 'unverified' matches the disclosed lake record (status 'under_review', lead_opinion 9438755 but courtlistener.opinion_id null, treatment/progeny intentionally not derived until S6 promotion).",
+            "The page renders under the explicit 'Unverified' / white-circle banner and makes no over-claimed currency assertion to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "By design, no citator/progeny verification is present; the 'unverified' label is correct rather than a defect."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+      "reviewed": [
+        {
+          "assertion_id": "39a71084251bcf5a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header states '423 U.S. 411 (1976)', 'UNITED STATES v. WATSON', 'No. 74-538', 'Supreme Court of United States', 'Decided January 26, 1976', opinion by MR. JUSTICE WHITE -- matching the record.",
+            "Star pagination *412 through *432 confirms reporter pagination from 411; official_selection_present=true and official 423 U.S. 411 match the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "247761c91e0b5a81",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The actual content-page pin-424 quote ('He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search.') is verbatim in Part III of the cached opinion, sitting between the *424 and *425 star-pages, so 423 U.S. at 424 is correct.",
+            "The payload 'quote' string is a mis-extracted front-matter/Background+Issue+Rule window, not the pincited holding; the real pincited quote is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote field for pin-424 is an extractor window artifact, not the anchored quote text."
+          ],
+          "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window."
+        },
+        {
+          "assertion_id": "c00db297c5db9ec8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "'may be a factor in the overall judgment,' is verbatim in the cached opinion at page 424 ('the absence of proof that Watson knew he could withhold his consent, though it may be a factor in the overall judgment, is not to be given controlling significance').",
+            "The content page's paired phrase 'is not to be given controlling significance.' is also verbatim; payload is already star-verified / quote_fidelity 'matched' with star_marker 424, which I confirm."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b1504a4c9757045d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for this 1976 SCOTUS landmark (warrantless public felony arrest on probable cause is reasonable; Schneckloth totality-of-circumstances consent, custody one factor) -- the disclosed opinion so holds.",
+            "Disclosed lane1_negative edges are all 'proposed: true' and facially noisy (state cases tagged 'overruled' cannot overrule SCOTUS; Payton 'questioned' / Atwater 'criticized' are doctrinal tensions, not accepted negative treatment); field_i_validity was not downgraded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full citator currency is not machine-verifiable from disclosed evidence; scope_note is a generic migration-seed placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') rather than a substantive treatment note."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

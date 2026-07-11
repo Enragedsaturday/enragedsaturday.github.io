@@ -1,0 +1,202 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
+      "reviewed": [
+        {
+          "assertion_id": "3302cf806da29b7d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real 1st Cir. decision: 'UNITED STATES ... v. ORISTEL SOTO-PEGUERO', No. 18-1897, decided October 19, 2020, BARRON, Circuit Judge — matching record identity (cluster 4798028 / opinion 4578375, ca1, 2020-10-19).",
+            "Cite '978 F.3d 13' is well-formed and volume-consistent with a late-2020 F.3d 1st Cir. opinion; recorded selected_official from CL cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter pagination (978 F.3d p.13) is not printed in the disclosed slip text; it derives from CL cluster metadata and is not independently confirmable from the pack alone."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4b8fadde3c54d7db",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The displayed on-page quote at ^pin-op21 — 'Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.' — is verbatim in the disclosed opinion (slip pp. 20-21).",
+            "Pincite 'slip op., at 21' is accurate: the holding sentence concludes on the page bearing the '- 21 -' marker.",
+            "The payload's recorded 'quote' (page front-matter/preamble) is a harvest-span artifact, not the displayed quote; builder self-flagged quote_fidelity=mismatch / pinpoint_status=slip-only. No fabricated or unfaithful proposition reaches users."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint.quote field stores the page preamble rather than the quoted sentence — non-user-facing data-hygiene artifact.",
+            "Slip-only pincite although the case is published (978 F.3d 13); a reporter pincite would be sturdier."
+          ],
+          "suggested_tightening": "Repair pinpoint.quote to the actual quoted sentence and, where feasible, add the F.3d reporter pincite alongside the slip page."
+        },
+        {
+          "assertion_id": "9cbe66133e39c82f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is defensible: the dedicated negative lane (lane1_negative, cites:(4578375) AND overrul*/abrogat*/... AND court_id:(scotus OR ca1)) reviewed 3 and returned proposed_negative_events=0.",
+            "as_of_content 2020-10-19 equals the decision date; no disclosed opinion evidence shows Soto-Peguero overruled or abrogated.",
+            "The 'overruled'/'criticized'/'questioned' entries in treatment.edges are proposed:true lane2 heuristics (citing-case field_ii labels), not verified negative treatment of this case."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges (e.g., Griffin 'overruled', Gonzalez 16 F.4th 37 'overruled') are unadjudicated; if any were a genuine in-circuit overruling good_law would flip — but lane1 found none.",
+            "Live citator currency to as_of_treatment 2026-06-30 cannot be fully re-confirmed from the pack (needs CL)."
+          ],
+          "suggested_tightening": "Adjudicate/prune the proposed:true lane2 field_ii labels so the record does not carry misleading 'overruled' edges."
+        }
+      ],
+      "notes": "Group wholly clean on disclosed evidence: real 1st Cir. case, verbatim on-page quote correctly pincited to slip p.21, good_law with lane1 negative=0."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
+      "reviewed": [
+        {
+          "assertion_id": "e6eb46712b1234d6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real 11th Cir. decision: 'UNITED STATES ... v. KARL TOUSET', No. 17-11561, (May 23, 2018), WILLIAM PRYOR, Circuit Judge — matching record identity (cluster 4500452 / opinion 4277705, ca11, 2018-05-23).",
+            "Cite '890 F.3d 1227' is volume-consistent with a mid-2018 F.3d opinion (the opinion itself cites Vergara, 884 F.3d 1309 (11th Cir. 2018)); recorded selected_official from CL cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page (890 F.3d 1227) not printed in the disclosed slip text; sourced from CL cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "674157793084967d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Displayed on-page quote at ^pin-IIIa — 'the Fourth Amendment does not require any suspicion for forensic searches of electronic devices at the border.' — is verbatim in the disclosed opinion (Part III opening: 'First, we explain that the Fourth Amendment does not require any suspicion for forensic searches of electronic devices at the border.').",
+            "Pincite 'Part III.A' is accurate: section III.A is captioned 'The Fourth Amendment Permits Forensic Searches of Electronic Devices at the Border Without Suspicion.'",
+            "Payload 'quote' is the page preamble (harvest artifact); mismatch/slip-only are builder self-flags, not a user-facing defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint.quote holds the page preamble rather than the quoted sentence.",
+            "Paragraph-structured CL text supports a section-style (III.A) rather than reporter-page pincite."
+          ],
+          "suggested_tightening": "Repair pinpoint.quote to the quoted sentence."
+        },
+        {
+          "assertion_id": "6821522a5b530ed0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is defensible: lane1_negative (cites:(4277705) AND negative-terms AND court_id:(scotus OR ca11)) reviewed 5, proposed_negative_events=0.",
+            "The scope_note's circuit split is corroborated by the opinion itself (declining to follow the 9th Cir.'s Cotterman, 709 F.3d 952, 968, which requires reasonable suspicion) — a split, not a negation of Touset's binding force in the 11th Cir.",
+            "as_of_content 2018-05-23 equals the decision date; the 'overruled'/'questioned' edges are proposed:true lane2 heuristics."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed edges (e.g., Pulido 133 F.4th 1256 'overruled', Gilmore 'abrogated') are unadjudicated; the in-circuit/SCOTUS negative lane found no event.",
+            "snippet-first triage read 0 full opinions (triage_read=0); deep-read currency to 2026-06-30 needs CL."
+          ],
+          "suggested_tightening": "Adjudicate the proposed:true field_ii labels, especially the in-circuit Pulido 'overruled' edge."
+        }
+      ],
+      "notes": "Group wholly clean on disclosed evidence: real 11th Cir. case, verbatim quote at III.A, good_law; circuit split with Cotterman confirmed in-opinion and does not negate binding status."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Trent.json",
+      "reviewed": [
+        {
+          "assertion_id": "48d4907cb3ffc036",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The assertion honestly states treatment is 'unverified' with null as_of dates — consistent with the lake record (status under_review, field_i_validity unverified, edges [], derivation {}) and the content page's white-circle 'Unverified' banner.",
+            "scope_note ('Frontier stub: treatment/progeny intentionally not derived until S6 promotion') accurately reflects a deliberately-deferred derivation; no good/bad-law claim is asserted, so there is nothing to refute.",
+            "Cached opinion corroborates identity (No. 25-5770, 26a0207n.06, 6th Cir., FILED May 07 2026, MARK ANTHONY TRENT, per curiam McKeague/Readler/Bloomekatz), resolving the record's docket-reconstruction concern for identity purposes."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record carries an explicit S9-REVERIFY flag (docket hand-reconstructed; treatment/progeny not derived) — by design, treatment must be derived before certification; the 'unverified' label is the correct interim state.",
+            "Non-precedential unpublished per curiam disposition; projected in-circuit authority weight is persuasive-only, notwithstanding the header weight text."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Single assertion; 'unverified' treatment is the honest and correct state for an under_review frontier stub. Identity independently corroborated by the cached slip opinion."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Tuggle.json",
+      "reviewed": [
+        {
+          "assertion_id": "6c7c1f863b93ac79",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms a real 7th Cir. decision: 'UNITED STATES ... v. TRAVIS TUGGLE', No. 20-2352, DECIDED JULY 14, 2021, FLAUM, Circuit Judge — matching record identity (cluster 4899735 / opinion 4703514, ca7, 2021-07-14).",
+            "Cite '4 F.4th 505' is volume-consistent with a mid-2021 F.4th opinion; recorded selected_official from CL cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact reporter page (4 F.4th 505) not printed in disclosed slip text; sourced from CL cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b75a39b737a3122f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Displayed on-page quote at ^pin-op5 — 'we hold that the extensive pole camera surveillance in this case did not constitute a search under the current understanding of the Fourth Amendment.' — is verbatim in the disclosed opinion (slip p.5).",
+            "Pincite 'slip op., at 5' is accurate (quote sits on the page bearing marker 5).",
+            "Payload 'quote' ('under the Fourth Amendment. ## Rule No, under current doctrine:') is a content-page fragment (harvest artifact), self-flagged mismatch/slip-only, not the displayed quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint.quote holds a page fragment rather than the quoted holding sentence.",
+            "Slip-only pincite although the case is published (4 F.4th 505)."
+          ],
+          "suggested_tightening": "Repair pinpoint.quote to the actual holding sentence; consider adding the F.4th reporter pincite."
+        },
+        {
+          "assertion_id": "7c3482dbac0646a9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is defensible: lane1_negative (cites:(4703514) AND negative-terms AND court_id:(scotus OR ca7)) reviewed 1, proposed_negative_events=0.",
+            "scope_note ('issue of first impression; courts split on long-term pole-camera surveillance') is corroborated in-substance by the opinion (first impression for the 7th Cir.; courts 'splintered'); a split does not negate binding in-circuit status.",
+            "as_of_content 2021-07-14 equals the decision date; the 'overruled'/'abrogated'/'questioned' edges are proposed:true lane2 heuristics (e.g., Moore-Bush is a 1st Cir. case; its 'overruled' label is unrelated to Tuggle)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges are unadjudicated; the in-circuit/SCOTUS negative lane found none.",
+            "Live currency to as_of_treatment 2026-06-30 not fully confirmable from the pack (needs CL)."
+          ],
+          "suggested_tightening": "Adjudicate/prune the proposed:true lane2 field_ii labels."
+        }
+      ],
+      "notes": "Group wholly clean on disclosed evidence: real 7th Cir. case, verbatim holding quote at slip p.5, good_law with lane1 negative=0."
+    }
+  ]
+}
