@@ -1,0 +1,165 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8705c244fbcb60e6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "United States Court of Appeals For the Eighth Circuit",
+          "locator_note": "payload.court '8th Cir. 2023'; frontmatter court: '8th Cir. 2023'; lake identity.court '8th Cir. 2023'",
+          "needs_cl": false,
+          "problem": "The court field value is ' 8th Cir. 2023' — it redundantly appends the decision year to the court. The court should be '8th Cir.' (the year is already carried in year:2023 and in the citation). Case existence and citation (67 F.4th 895, 8th Cir., 2023) are otherwise fully verified against the inlined opinion.",
+          "proposed_fix": "Normalize the court field to '8th Cir.' (drop the duplicated year); it propagates from the lake identity.court and frontmatter.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Opinion header confirms 'United States Court of Appeals For the Eighth Circuit, No. 22-1801, Haitao Xiang, Filed: May 5, 2023, LOKEN, Circuit Judge'; lake citations.official '67 F.4th 895' — citation, court, and year all verified.",
+          "The only defect is the malformed court-field string (year duplicated); it does not affect the validity of the citation or the case's existence."
+        ],
+        "residual_risks": [
+          "Separately, lake official_selection.court_class is mislabeled 'state' for this federal COA case (reason 'selected_rank_3'); not part of this assertion's payload but worth an adjudication note."
+        ],
+        "suggested_tightening": "Set court to '8th Cir.' so the year is not duplicated in the court field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "82c8819ea20a2df9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Xiang is squarely a border-search-exception case (outbound seizure and forensic device search); the opinion opens with Flores-Montano and Udofot on the border-search exception. 'Key' on a Border Searches page is fully supported."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97b99d0553394fe8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we need not decide today whether reasonable suspicion is required for an advanced or forensic border search of electronic devices because we agree with the district court that CBP officers had reasonable suspicion for the forensic search they conducted",
+          "locator_note": "frontmatter holding clause 'the court adopted the consensus that a non-routine forensic device search requires reasonable, individualized suspicion'",
+          "needs_cl": false,
+          "problem": "The holding states the court 'adopted the consensus that a non-routine forensic device search requires reasonable, individualized suspicion.' The opinion expressly declined to decide whether reasonable suspicion is required, calling the standard merely 'an appropriate standard' and resolving on the ground that the officers had reasonable suspicion (aligning with Kolsuz/Wanjiku). 'Adopted ... requires' overstates the holding — a teaching-relevant point the case is notable for reserving.",
+          "proposed_fix": "Soften to: the court found the reasonable-suspicion standard 'an appropriate standard' but expressly did not decide whether reasonable suspicion is required for a forensic device search, affirming because CBP officers had reasonable suspicion.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Dispositive core is supported: border-search exception applies with equal force to persons/objects leaving the country (Udofot); Riley (search-incident-to-arrest) does not require a warrant to open devices at the border; officers had reasonable suspicion; affirmed.",
+          "The overstatement is 'adopted the consensus that ... requires reasonable suspicion' — the opinion, and the page's own Application/Treatment sections, state the court reserved whether reasonable suspicion is required."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace 'adopted the consensus that a non-routine forensic device search requires reasonable, individualized suspicion' with language that the court deemed the standard 'appropriate' but did not decide it was required, resolving on RS-present.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f74ef5c6a2f0881",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Xiang is a published Eighth Circuit panel opinion (Loken, J.; 67 F.4th 895), precedential, so 'Binding in-circuit — 8th Cir.' is the correct authority weight.",
+          "The lake official_selection.court_class 'state' mislabel does not change the case's actual federal-COA status; the weight label is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad9fb2765232031d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment asserts an honest 'unverified' frontier stub matching the lake record field-for-field; no affirmative currency claim to refute."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T06:32:02-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cb328b8681"
+    ],
+    "group_id": "content/cases/United States v. Xiang.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w36-00-841bbee5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w36-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Xiang"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6f74ef5c6a2f0881": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "82c8819ea20a2df9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8705c244fbcb60e6": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "97b99d0553394fe8": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ad9fb2765232031d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cb328b8681",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4b24bc61ef",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
