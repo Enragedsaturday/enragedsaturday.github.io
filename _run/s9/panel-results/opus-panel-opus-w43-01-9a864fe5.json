@@ -1,0 +1,163 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "87ebdbb0a6ecfaf4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official '359 U.S. 360' with parallel '79 S. Ct. 804' / '3 L. Ed. 2d 877' and vendor_neutral '1959 U.S. LEXIS 1085' match the payload; date_decided 1959-05-04, year 1959.",
+          "Cached opinion (Frankfurter, J.; star pages *361-*373; Baltimore health inspection, $20 fine under §120) confirms the identity despite party_name_in_text false on the frontier stub."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2245c0b7f23fadbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Core proposition fully supported by the opinion: inspector demanded warrantless entry to inspect for nuisance conditions, refusal punished by a $20 fine, and the Court held 'we cannot say that the carefully circumscribed demand which Maryland here makes on appellant's freedom has deprived him of due process of law' — Affirmed."
+        ],
+        "residual_risks": [
+          "The '...overruled eight years later by Camara v. Municipal Court (1967)...' clause is not verifiable from disclosed evidence (frontier stub has empty edges/derivation; Camara opinion not in pack). Accurate as settled law but uncorroborated by the disclosed record, which the page itself flags as unverified/authored orientation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f86eb746638e4fd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes lists '[[Special Needs and Administrative Searches]]' with role 'Historical / origin', matching the payload and the 'Appears on' prose; Frank as the pre-Camara origin of the administrative-search line fits a Historical/origin role."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27b8e7ce767cd27d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload treatment (field_i_validity unverified, as_of_content/treatment null, composite_basis unverified, composite_basis_ref null, varies_by_point false, scope_note 'Frontier stub...') matches the lake treatment block (edges [], derivation {}) exactly — an honest frontier stub, treatment intentionally not derived."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd15bf732759280d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Structurally Frank is a SCOTUS decision, so a court-tier weight of 'Binding — SCOTUS' is defensible and matches the frontmatter authority_weight field.",
+          "But the case is presented throughout as overruled/historical (tags 'overruled'/'historical'; treatment field_i 'unverified'; Treatment section 'Overruled by Camara'), and the rendered header degrades the weight to '**Historical**' — not 'Binding — SCOTUS' — even though its own comment says weight renders from frontmatter. An overruled decision is not binding live law, so the unqualified 'Binding — SCOTUS' frontmatter value is in tension with the page's own presentation."
+        ],
+        "residual_risks": [
+          "If the weight badge renders literally from frontmatter it would display 'Binding — SCOTUS' on an overruled case, contradicting the 'Historical' header and risking a reader treating Frank as live binding authority (partly mitigated by the heavy unverified/not-live-law qualifiers elsewhere on the page)."
+        ],
+        "suggested_tightening": "Reconcile the authority_weight frontmatter field with the Historical/overruled presentation — e.g., render the weight as 'Historical (formerly Binding — SCOTUS)' or otherwise qualify the binding label so an overruled case is not surfaced as unqualified binding authority.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T16:57:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ec10c683c3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-47fd0379e4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Frank v. Maryland.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w43-01-9a864fe5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w43-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Frank v. Maryland"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2245c0b7f23fadbe": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "27b8e7ce767cd27d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87ebdbb0a6ecfaf4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd15bf732759280d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f86eb746638e4fd2": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ec10c683c3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-47fd0379e4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3d5b88ff01",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

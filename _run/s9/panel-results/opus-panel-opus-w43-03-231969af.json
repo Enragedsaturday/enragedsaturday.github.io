@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3c4aef5b65e82a6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite '526 U.S. 808' matches lake citations.official/display and opinion caption '526 U.S. 808 (1999)'; year 1999, court scotus, docket 97-1927 match lake identity and opinion 'No. 97-1927', 'Decided May 24, 1999.'",
+          "parallel_cite '119 S. Ct. 1706; 143 L. Ed. 2d 978' each in lake citations.parallel[]; neutral_cite '1999 U.S. LEXIS 3634' in lake citations.vendor_neutral[]."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "08c2ac50f857bf50",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*",
+          "locator_note": "frontmatter homes[0].page = [[Qualified Immunity]] vs body '## Appears on' = [[Section 1983 Liability and Qualified Immunity]]; roles match ('Key — Progeny / Refinement')",
+          "needs_cl": false,
+          "problem": "The home_role asserts the home page is [[Qualified Immunity]] (matching frontmatter homes[0].page), but the page's own '## Appears on' section names a different page, [[Section 1983 Liability and Qualified Immunity]], with the identical role. The disclosed content page is internally inconsistent about which page Hanlon is homed on, so the asserted home identifier is contradicted by the same page's rendered link.",
+          "proposed_fix": "Reconcile the two locations to a single home page. The 'section-1983' tag and the Wilson v. Layne / Bivens relations point to [[Section 1983 Liability and Qualified Immunity]] as the intended home; update frontmatter homes[0].page to match the 'Appears on' line (or correct 'Appears on' if [[Qualified Immunity]] is intended).",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter home page ([[Qualified Immunity]]) does not match the body 'Appears on' page ([[Section 1983 Liability and Qualified Immunity]]); the other three groups in this pack have matching frontmatter/Appears-on, so this is a genuine authoring inconsistency, not a rendering convention.",
+          "The asserted home identifier cannot both be correct and consistent with the disclosed page; refute-framed, the assertion's page name is contradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "Cannot determine from disclosed evidence which of the two page names is the intended home; the machine must adjudicate which side is authoritative."
+        ],
+        "suggested_tightening": "Make frontmatter homes[0].page and the 'Appears on' entry cite the same page title.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38713ac50198069a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Holding (media ride-along during warrant execution violated the Fourth Amendment under Wilson v. Layne, but officers entitled to qualified immunity) is directly supported: 'respondents alleged a Fourth Amendment violation under our decision today in Wilson v. Layne' and 'they are entitled to the defense of qualified immunity. We agree. Our holding in Wilson makes clear that this right was not clearly established in 1992.'",
+          "Per curiam vacates and remands consistent with the qualified-immunity disposition, matching the asserted holding."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78a787168290b284",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "authority_weight 'Binding — SCOTUS' is correct: lake court_id/court_level scotus; opinion caption 'United States Supreme Court' / 'Per Curiam.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "df4e3f0b8fe94910",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload (field_i_validity good_law, as_of_content 1999-05-24, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note) matches lake.treatment exactly.",
+          "scope_note claims (per curiam companion to Wilson v. Layne; good law) are confirmed by disclosed opinion: 'Per Curiam.' and 'our decision today in Wilson v. Layne, ante, p. 603'; no accepted negative treatment / not overruled."
+        ],
+        "residual_risks": [
+          "Any proposed unaudited negative edges (not fully inlined for this group) would remain unadjudicated; validity claim rests on the migration-seed and absence of accepted negatives in disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T16:57:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6c6cf7cc14",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Hanlon v. Berger.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w43-03-231969af",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w43-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hanlon v. Berger"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "08c2ac50f857bf50": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "38713ac50198069a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3c4aef5b65e82a6c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78a787168290b284": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "df4e3f0b8fe94910": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ffb3e6d01",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6c6cf7cc14",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
