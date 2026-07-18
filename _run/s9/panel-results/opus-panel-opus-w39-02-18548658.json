@@ -1,0 +1,181 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e8f8e751ff53fa54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The asserted citation '134 S. Ct. 2473 (2014)' is a correct (parallel/unofficial S. Ct. reporter) cite for Riley and matches lake citations.official; parallel '189 L. Ed. 2d 430; 82 U.S.L.W. 4558' and neutral '2014 U.S. LEXIS 4497' also match — so the case/cite exist and are valid.",
+          "But the frontmatter leads with the S. Ct. reporter while the page body H1, 'Sources', and the Rule pincite all use the official U.S. Reports cite '573 U.S. 373 (2014)'; lake reason_code 'recent_or_no_official_cite' and official_selection reason 'selected_rank_2' show the U.S. cite was absent at build. payload flag official_citation_present=true overstates given the lead cite is a parallel reporter."
+        ],
+        "residual_risks": [
+          "Internal inconsistency: frontmatter citation (134 S. Ct. 2473) vs. body/Sources (573 U.S. 373) — a reader-facing citation mismatch."
+        ],
+        "suggested_tightening": "Set frontmatter citation to the official U.S. Reports cite '573 U.S. 373 (2014)' (which the page body already uses) and demote '134 S. Ct. 2473' to parallel_cite; re-evaluate official_citation_present accordingly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae4edffcf1638f97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes and 'Appears on' both list '[[SIA Cell Phones]]' as 'Key — Anchor' — consistent.",
+          "Riley is the controlling case for search-incident-to-arrest of cell-phone data ('get a warrant'); anchor role is squarely supported by the opinion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e0c06cddaa6562c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes and 'Appears on' both list '[[Plain View Doctrine]]' as 'Related (cross-doctrine)' — internally consistent; the role is the weakest ('Related') tier and asserts only a cross-reference, not doctrinal centrality."
+        ],
+        "residual_risks": [
+          "The Riley/Plain-View link is a thin editorial cross-reference — the opinion does not discuss plain view — but 'Related (cross-doctrine)' does not claim otherwise, so it is not refutable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e7e392c1e5239101",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Syllabus 'Held: The police generally may not, without a warrant, search digital [contents of a cell phone seized incident to arrest]' and '(b) The Court declines to extend Robinson's categorical rule to' cell-phone data — directly supports the holding.",
+          "Opinion of the Court (p. 28): 'Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple—get a warrant' — confirms the Rule quote (matched) on the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0694f7bafddf004e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "SCOTUS decision (court_id scotus); 'Binding — SCOTUS' weight label is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "866abc725d40b128",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Asserted treatment (field_i_validity good_law, composite_basis migration-seed, varies_by_point false, scope_note) matches the lake treatment block verbatim; edges []; Riley remains good law.",
+          "field_i_validity is migration-seeded, not derived from the (empty) progeny enumeration, so the empty derivation does not undercut good_law."
+        ],
+        "residual_risks": [
+          "Lake progeny/derivation query is 'cites:(8386852)' returning 0, but identity cluster is 2680439 (panel cluster re-key noted in provenance warnings) — the progeny enumeration appears keyed to a stale opinion id; treatment relies on migration-seed, not this enumeration, but S6 promotion should re-run progeny against 2680439."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T12:01:46-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ab6c74b3a7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ebd5a103cd"
+    ],
+    "group_id": "content/cases/Riley v. California.md",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w39-02-18548658",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w39-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Riley v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0694f7bafddf004e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "866abc725d40b128": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae4edffcf1638f97": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e0c06cddaa6562c1": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e7e392c1e5239101": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e8f8e751ff53fa54": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ebd5a103cd",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ab6c74b3a7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
