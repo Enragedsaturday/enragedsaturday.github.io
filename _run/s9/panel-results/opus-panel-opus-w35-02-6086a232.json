@@ -1,0 +1,160 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7b954e5146033080",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official is '99 F.4th 1328', court 'U.S. Court of Appeals, Eleventh Circuit', year 2024 — matches the citation payload.",
+          "Cached opinion header confirms 'United States Court of Appeals For the Eleventh Circuit', No. 22-12988, 'Date Filed: 04/30/2024'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42b65ea5c8ca15d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion slip op. page 15: 'The automobile exception allows law enforcement to conduct a warrantless search of a vehicle if (1) the vehicle is readily mobile and (2) law enforcement has probable cause to search it' — verbatim match to the Rule quote and supports the truncated holding's two-element formulation.",
+          "'All that is necessary to satisfy the first element is that the automobile is operational' also matches the opinion at page 15."
+        ],
+        "residual_risks": [
+          "Lake pinpoint pin-op15 has quote_fidelity 'mismatch' because its harvested quote field captured the content-page header text, not the opinion sentence; the on-page Rule quote nonetheless matches the opinion verbatim, and no quote_fidelity assertion is in this group's inventory."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dca00d9164caf39b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Content-page frontmatter homes lists '[[Automobile Exception]]' with role 'Recent development (role-based)' — matches payload; a 2024 decision restating the circuit's two-element test fits the 'recent development' role."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74c4f72160884aa7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_id 'ca11', court_level 'coa', [PUBLISH]-marked opinion — a published Eleventh Circuit decision, so 'Binding in-circuit — 11th Cir.' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "930be2e5797450cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment block matches the payload exactly: field_i_validity 'good_law', as_of_content 2024-04-30, as_of_treatment 2026-06-30, composite_basis 'migration-seed', varies_by_point false, migration-seed scope_note.",
+          "lane1_negative (overrul*/abrogat* restricted to scotus/ca11) returned proposed_negative_events 0, so the good_law derivation is internally consistent with the disclosed derivation."
+        ],
+        "residual_risks": [
+          "Lake treatment.edges carries an UNADJUDICATED proposed edge (proposed:true, journal_ref lane2_top_cited) tagging citing case 'United States v. Lawrence Alexander' (cluster_id 10814315) with field_ii 'overruled'; if that edge were confirmed it could flip field_i_validity. It cannot be settled from disclosed evidence (no Alexander opinion text inlined) and needs CL verification before promotion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T06:22:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-967d7ea842",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-896fb6cae6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Morley.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w35-02-6086a232",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w35-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Morley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "42b65ea5c8ca15d0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74c4f72160884aa7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7b954e5146033080": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "930be2e5797450cd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dca00d9164caf39b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-967d7ea842",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-896fb6cae6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
