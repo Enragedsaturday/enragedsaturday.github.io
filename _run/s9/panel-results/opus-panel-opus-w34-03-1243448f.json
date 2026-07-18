@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "935d2f34c364c069",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption confirms Tenth Circuit, No. 21-1149, decided March 7, 2023 (MORITZ, Circuit Judge).",
+          "Lake citations.official = '61 F.4th 830', selected_official true, expected_citation_found true; court_id ca10, year 2023 — all match payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f9a79a08a5ce4fe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the inevitable-discovery exception to the exclusionary rule does not apply, and the gun discovered during the illegal search of the backpack must be suppressed.",
+          "locator_note": "frontmatter holding field (page line 71)",
+          "needs_cl": false,
+          "problem": "The holding field trails off mid-sentence ('...then relied on…') and never states the court's actual holding/disposition — that inevitable discovery did NOT apply and the gun was suppressed. As stored it recites only the concession and setup, not the outcome.",
+          "proposed_fix": "Complete the holding sentence to state the disposition, e.g. '...then relied on inevitable discovery; the court held the government failed to prove lawful impoundment, so inevitable discovery did not apply and the gun was suppressed (reversed).'",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The asserted content is supported: opinion states 'The government conceded that the warrantless search was not a valid search incident to arrest' and later 'the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.'",
+          "But the holding value is truncated with an em-ellipsis and omits the outcome; correct in substance yet incomplete, unlike the other three groups' full holdings."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Finish the holding sentence to include the disposition (inevitable discovery rejected; gun suppressed; district court reversed).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5370903dc6d055cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Braxton turns on whether an inventory search would have inevitably discovered the gun after impoundment, so placement on the Inventory Searches page as a recent (2023) development is substantively apt.",
+          "Frontmatter homes entry (page '[[Inventory Searches]]', role 'Recent development (role-based)') matches the assertion payload exactly."
+        ],
+        "residual_risks": [
+          "Internal page inconsistency: the rendered '## Appears on' section lists '[[Special Needs and Administrative Searches]] — Recent development (role-based)', not '[[Inventory Searches]]' — the frontmatter home and the prose home disagree."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87c5b0fa654e7f02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is supported by the disclosed derivation: lane1_negative (cites(9377330) AND overrul*/abrogat*/vacat*/reversed restricted to scotus OR ca10) reviewed 4, proposed_negative_events 0, audit_needed false.",
+          "scope_note ('Good law in-circuit; backpack search conceded invalid as SITA, and inevitable discovery did not save it') accurately tracks the opinion; composite_basis migration-seed; as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "treatment.edges carries proposed:true 'questioned'/'overruled' edges (Serini, Elmore, Ramos, Montgomery v. Cruz, United States v. Campbell) from the generic lane2_top_cited cites query; these are unadjudicated snippet classifications, not confirmed negative treatment, but warrant later citator confirmation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea3cb2a68bbc05b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Published Tenth Circuit court-of-appeals opinion (court_level coa, circuit 10th); 'Binding in-circuit — 10th Cir.' is the correct weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T06:11:29-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8b192f1c17",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Braxton.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w34-03-1243448f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w34-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Braxton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0f9a79a08a5ce4fe": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5370903dc6d055cc": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87c5b0fa654e7f02": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "935d2f34c364c069": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea3cb2a68bbc05b7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-14732632d4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8b192f1c17",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

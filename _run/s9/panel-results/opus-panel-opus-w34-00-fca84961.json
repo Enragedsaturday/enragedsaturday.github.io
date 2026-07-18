@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6d9776dbf1b55cdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Opinion confirms the case: 'SUPREME COURT OF THE STATE OF ARIZONA, STATE OF ARIZONA v. IAN MITCHAM ... Filed December 17, 2024, REVERSED AND REMANDED' — court and year (2024) match.",
+          "Reporter cite '559 P.3d 1099' is confirmed by lake citations.official (cluster.citations[]); parallel_cite empty is consistent with lake."
+        ],
+        "residual_risks": [
+          "Docket discrepancy: cached opinion caption reads 'No. CR-23-0236-PR' while frontmatter and lake docket are 'CR-23-0238-PR' (0236 vs 0238) — a data-quality typo in one source; not part of this assertion's payload but flagged.",
+          "The P.3d page number is not independently visible in the slip text (confirmed only via lake cluster.citations[])."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a44969083794ad62",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "homes[] entry (page '[[Inevitable Discovery & Independent Source]]', role 'Recent development (role-based)') matches the asserted home/role; the opinion is squarely about the inevitable-discovery/independent-source exceptions.",
+          "Dec 2024 decision; 'Recent development' role apt."
+        ],
+        "residual_risks": [
+          "Rendered 'Appears on' lists '[[The Exclusionary Rule]]' rather than the homes[] page 'Inevitable Discovery & Independent Source' — page-consistency mismatch outside this assertion's payload."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f4a9cbdac825c2b4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because the inevitable discovery exception to the exclusionary rule applies, however, we hold that the trial court erred by suppressing the DNA evidence.",
+          "locator_note": "frontmatter 'holding' field; contradicted by opinion ¶2 (ground of decision) and ¶47 ('In light of this conclusion, we do not address whether other exceptions to the exclusionary rule apply here'); the page body (Rule/Application/Conclusion) correctly says inevitable discovery, so the error is isolated to the holding string.",
+          "needs_cl": false,
+          "problem": "The frontmatter holding states the 'Arizona Supreme Court applies the independent-source exception,' but the court actually applied the INEVITABLE DISCOVERY exception and expressly declined to reach any other exception. The definition given ('evidence discovered during/because of an unlawful search is admissible ...') is the independent-source rule (¶34), not the ground of decision. This misidentifies the case's holding and the exclusionary-rule doctrine it stands for.",
+          "proposed_fix": "Rewrite the holding to state that the Arizona Supreme Court held the DNA evidence admissible under the INEVITABLE DISCOVERY exception — the State would inevitably have obtained Mitcham's DNA profile via A.R.S. §13-610 upon his unrelated 2022 felony convictions, despite the unlawful 2018 search of the second blood vial — and note the court did not reach the independent-source exception.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "¶2: court holds admissibility 'Because the inevitable discovery exception ... applies'; ¶37 and ¶47 confirm inevitable discovery is the sole ground.",
+          "¶47: 'we do not address whether other exceptions to the exclusionary rule apply here' — the court did NOT apply the independent-source exception the holding names.",
+          "¶34 vs ¶35/¶36: the definition quoted in the holding is the independent-source rule ('discovered during or because of'), whereas inevitable discovery turns on whether evidence 'would have been discovered' — the holding conflates the two and labels the wrong one."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6001c8e90b1c39b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Arizona Supreme Court decision applying federal Fourth Amendment exclusionary-rule doctrine is persuasive, illustrative for a federal-search wiki — not binding federal authority.",
+          "lake court_level 'state' confirms; label appropriate."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d19e31ec17d449ac",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All asserted treatment fields (good_law, as_of_content 2024-12-17, as_of_treatment 2026-06-30, migration-seed, varies_by_point false, scope_note) match the lake treatment block verbatim; warnings record 'legacy treatment migrated: good -> good_law'.",
+          "good_law is defensible: a Dec-2024 state high-court opinion with indexed_citing_opinions 0 and no negative-treatment events across all derivation lanes."
+        ],
+        "residual_risks": [
+          "Derivation lanes each reviewed 0 opinions (citation_count 2, indexed_citing_opinions 0); good_law rests on the migration seed plus an empty negative-lane, not a robust progeny review — low-evidence but not contradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T06:11:29-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/State v. Mitcham.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w34-00-fca84961",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w34-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Mitcham"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6001c8e90b1c39b4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6d9776dbf1b55cdc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a44969083794ad62": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d19e31ec17d449ac": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4a9cbdac825c2b4": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff064fe4af",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
