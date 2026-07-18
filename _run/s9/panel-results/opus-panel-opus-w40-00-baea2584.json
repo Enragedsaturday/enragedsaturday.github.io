@@ -1,0 +1,222 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "715404f38868d24c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null,",
+          "locator_note": "content_page frontmatter citation=\"\" / parallel_cite; lake citations.official=null with '506 U.S. 56' in parallel[]",
+          "needs_cl": false,
+          "problem": "Frontmatter `citation` field is empty and the official U.S. Reports cite (506 U.S. 56) is filed only under parallel_cite; the payload asserts official_citation_present=false even though the type-1 U.S. Reports (official reporter) cite is present in the record. Lake citations.official is null. Unlike the other three cases in this pack, Soldal's citation field is blank.",
+          "proposed_fix": "Populate the `citation` field with '506 U.S. 56 (1992)' and select it as the official citation (lake citations.official should be 506 U.S. 56, type 1).",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The case indisputably exists at 506 U.S. 56 (1992): lake identity expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster 112795; the header and Sources both render '506 U.S. 56 (1992)'.",
+          "Defect is metadata-only and faithfully propagated from S2 (official selection = null); it does not affect the rendered citation, hence stands-modified rather than refuted."
+        ],
+        "residual_risks": [
+          "Empty machine-readable citation field could break downstream consumers that read frontmatter `citation` rather than the rendered header."
+        ],
+        "suggested_tightening": "Set frontmatter citation to '506 U.S. 56 (1992)' and mark 506 U.S. 56 as the official cite; drop it from parallel_cite.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ae4c56dc58e29a4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion states the Jacobsen seizure definition ('A \"seizure\" of property ... occurs when \"there is some meaningful interference with an individual's possessory interests in that property\"') and holds 'our cases unmistakably hold that the Amendment protects property as well as privacy.'",
+          "Disposition confirms the holding ('The judgment of the Court of Appeals is, accordingly, reversed, and the case is remanded'); holding paraphrase is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bafc61cc36a307e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Trespass]] — *Key — Anchor (seizure of property)*",
+          "locator_note": "content_page '## Appears on' line vs frontmatter homes[] entry for [[Trespass]]",
+          "needs_cl": false,
+          "problem": "The rendered '## Appears on' section labels [[Trespass]] as 'Key — Anchor (seizure of property)', contradicting the frontmatter homes[] role 'Related (cross-doctrine)' for Trespass. The anchor label belongs to [[Seizure of Property]], not Trespass.",
+          "proposed_fix": "Correct the 'Appears on' entry so [[Trespass]] shows role 'Related (cross-doctrine)' (matching frontmatter).",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter role for Trespass ('Related (cross-doctrine)') is doctrinally correct and is the value the assertion mirrors; the '## Appears on' section is the inconsistent artifact (it misapplied the Seizure-of-Property anchor label to Trespass)."
+        ],
+        "residual_risks": [
+          "Target home page [[Trespass]] is not inlined; reciprocal listing not independently confirmable."
+        ],
+        "suggested_tightening": "Fix the 'Appears on' section so Trespass reads 'Related (cross-doctrine)'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5ad74d939e8553d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] and the '## Appears on' section both declare [[Seizure of the Person]] with role 'Related (cross-doctrine)', internally consistent."
+        ],
+        "residual_risks": [
+          "Target home page [[Seizure of the Person]] is not inlined; reciprocal listing not independently confirmable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fceab006d65c8d72",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Appears on\n- [[Trespass]] — *Key — Anchor (seizure of property)*\n- [[Seizure of the Person]] — *Related (cross-doctrine)*",
+          "locator_note": "content_page '## Appears on' omits the frontmatter Key-Anchor home [[Seizure of Property]]",
+          "needs_cl": false,
+          "problem": "Frontmatter declares [[Seizure of Property]] as the 'Key — Anchor (seizure of property)' home, but the rendered '## Appears on' section omits [[Seizure of Property]] entirely (its anchor label was instead misapplied to [[Trespass]]).",
+          "proposed_fix": "Add '- [[Seizure of Property]] — *Key — Anchor (seizure of property)*' to the 'Appears on' section.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The home/role claim is substantively correct (Soldal is the seizure-of-property anchor: holding protects possessory interests independent of privacy/liberty), and matches frontmatter; the defect is the Appears-on omission, an internal page inconsistency."
+        ],
+        "residual_risks": [
+          "Target home page [[Seizure of Property]] is not inlined; reciprocal listing not independently confirmable."
+        ],
+        "suggested_tightening": "List [[Seizure of Property]] as Key — Anchor in the 'Appears on' section.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a258bf9a4734bec2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity = good_law; negative-treatment scan (cites:112795 AND overrul*/abrogat*/supersed*) resolved good_law with no direct overruling of Soldal disclosed.",
+          "Scope note (possessory-interest holding remains controlling) is consistent with the treatment block."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf823f51f976659d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "court_level=scotus; SCOTUS decision correctly labeled 'Binding — SCOTUS'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T12:12:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-60effff54a"
+    ],
+    "group_id": "content/cases/Soldal v. Cook County.md",
+    "group_total_assertions": 7,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w40-00-baea2584",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w40-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 7,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Soldal v. Cook County"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "715404f38868d24c": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7ae4c56dc58e29a4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bafc61cc36a307e": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a258bf9a4734bec2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf823f51f976659d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5ad74d939e8553d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fceab006d65c8d72": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-60effff54a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9dca3712ae",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ad3d40b44e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
