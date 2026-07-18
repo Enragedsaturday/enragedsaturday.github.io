@@ -1,0 +1,173 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ee22b8330ee40de4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "68 S. Ct. 367; 92 L. Ed. 2d 436; 92 L. Ed. 436",
+          "locator_note": "frontmatter parallel_cite / lake citations.parallel[] lists both \"92 L. Ed. 2d 436\" and \"92 L. Ed. 436\" (identical vol/page across two series).",
+          "needs_cl": false,
+          "problem": "The parallel_cite includes a facially-impossible reporter entry: \"92 L. Ed. 2d 436\". Johnson was decided in 1948, but Lawyers' Edition Second Series (L. Ed. 2d) did not begin until 1956; volume 92 of L. Ed. 2d is a 1980s case. The correct first-series parallel \"92 L. Ed. 436\" is already listed, so the same volume/page (92 ... 436) is redundantly presented under two different reporter series — a data-parsing artifact carried from the lake cluster.citations[].",
+          "proposed_fix": "Drop \"92 L. Ed. 2d 436\" from parallel_cite, leaving \"68 S. Ct. 367; 92 L. Ed. 436\".",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 333 U.S. 10 (1948), SCOTUS, year 1948 all match lake citations.official and identity; case identity is correct.",
+          "Internal redundancy in the disclosed lake (same 92...436 under both L. Ed. and L. Ed. 2d) shows one parallel entry is a mis-parse; a 1948 decision cannot appear in L. Ed. 2d."
+        ],
+        "residual_risks": [
+          "Artifact originates upstream in the CL cluster citations; fix is cosmetic to the cite list, not to case identity."
+        ],
+        "suggested_tightening": "Remove the spurious \"92 L. Ed. 2d 436\" parallel; retain \"92 L. Ed. 436\".",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3236643db48a28c7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion (Jackson, J.) states the Fourth Amendment's protection 'consists in requiring that those inferences be drawn by a neutral and detached magistrate instead of being judged by the officer engaged in the often competitive enterprise of ferreting out crime' — directly supports the holding proposition."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "af716069610c6913",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home/role matches frontmatter homes and the 'Appears on' block (Key — Anchor).",
+          "Johnson is the origin of the neutral-and-detached-magistrate principle, so anchor placement is doctrinally apt."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6cd0e9d17e96e783",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court_level 'scotus'; a U.S. Supreme Court decision is Binding — SCOTUS."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fda4a69fad4a3a52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "composite_basis is 'migration-seed'; field_i_validity 'good_law' is a seed value the assertion reproduces faithfully from the lake.",
+          "Disclosed lake treatment.edges are all 'proposed':true, field_iii 'mentioned', and citing-case flags on state-court cases — none can overrule/downgrade a SCOTUS holding, so good_law is not contradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "Full treatment currency as-of-2026 not derivable from a 1948 opinion; scope_note flags S2 re-derivation may downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:53:03-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-187eb96267",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ffdfbade31",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-22a0e11184"
+    ],
+    "group_id": "content/cases/Johnson v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w38-00-1fb15439",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w38-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Johnson v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3236643db48a28c7": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6cd0e9d17e96e783": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "af716069610c6913": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee22b8330ee40de4": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fda4a69fad4a3a52": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-22a0e11184",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-187eb96267",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ffdfbade31",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

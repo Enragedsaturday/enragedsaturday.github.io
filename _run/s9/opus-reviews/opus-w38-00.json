@@ -1,0 +1,398 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/Johnson v. United States.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "ee22b8330ee40de4",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The parallel_cite includes a facially-impossible reporter entry: \"92 L. Ed. 2d 436\". Johnson was decided in 1948, but Lawyers' Edition Second Series (L. Ed. 2d) did not begin until 1956; volume 92 of L. Ed. 2d is a 1980s case. The correct first-series parallel \"92 L. Ed. 436\" is already listed, so the same volume/page (92 ... 436) is redundantly presented under two different reporter series — a data-parsing artifact carried from the lake cluster.citations[].",
+            "severity": "low",
+            "proposed_fix": "Drop \"92 L. Ed. 2d 436\" from parallel_cite, leaving \"68 S. Ct. 367; 92 L. Ed. 436\".",
+            "evidence_quote": "68 S. Ct. 367; 92 L. Ed. 2d 436; 92 L. Ed. 436",
+            "needs_cl": false,
+            "locator_note": "frontmatter parallel_cite / lake citations.parallel[] lists both \"92 L. Ed. 2d 436\" and \"92 L. Ed. 436\" (identical vol/page across two series)."
+          },
+          "reasons": [
+            "Official cite 333 U.S. 10 (1948), SCOTUS, year 1948 all match lake citations.official and identity; case identity is correct.",
+            "Internal redundancy in the disclosed lake (same 92...436 under both L. Ed. and L. Ed. 2d) shows one parallel entry is a mis-parse; a 1948 decision cannot appear in L. Ed. 2d."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Artifact originates upstream in the CL cluster citations; fix is cosmetic to the cite list, not to case identity."],
+          "suggested_tightening": "Remove the spurious \"92 L. Ed. 2d 436\" parallel; retain \"92 L. Ed. 436\"."
+        },
+        {
+          "assertion_id": "3236643db48a28c7",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (Jackson, J.) states the Fourth Amendment's protection 'consists in requiring that those inferences be drawn by a neutral and detached magistrate instead of being judged by the officer engaged in the often competitive enterprise of ferreting out crime' — directly supports the holding proposition."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "af716069610c6913",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role matches frontmatter homes and the 'Appears on' block (Key — Anchor).",
+            "Johnson is the origin of the neutral-and-detached-magistrate principle, so anchor placement is doctrinally apt."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6cd0e9d17e96e783",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity court_level 'scotus'; a U.S. Supreme Court decision is Binding — SCOTUS."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fda4a69fad4a3a52",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "composite_basis is 'migration-seed'; field_i_validity 'good_law' is a seed value the assertion reproduces faithfully from the lake.",
+            "Disclosed lake treatment.edges are all 'proposed':true, field_iii 'mentioned', and citing-case flags on state-court cases — none can overrule/downgrade a SCOTUS holding, so good_law is not contradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Full treatment currency as-of-2026 not derivable from a 1948 opinion; scope_note flags S2 re-derivation may downgrade."],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Kansas v. Ventris.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "48bb6e36a36b14dc",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 556 U.S. 586 (2009), SCOTUS, docket No. 07-1356 all match lake citations/identity and the opinion syllabus ('No. 07-1356. Argued January 21, 2009—Decided April 29, 2009').",
+            "Parallel 129 S. Ct. 1841; 173 L. Ed. 2d 801 and neutral 2009 U.S. LEXIS 3299 match lake citations arrays; 173 L. Ed. 2d (2009) is a valid second-series volume."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7e1ac528cbb4f8e7",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion Held/text: statement 'was taken in violation of Massiah's dictates and was therefore not admissible in the prosecution's case in chief' but 'We hold that the informant's testimony ... was admissible to challenge Ventris's inconsistent testimony at trial' — supports the case-in-chief-barred/impeachment-permitted holding, including the jailhouse-informant fact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b7cc18a1e75ca39d",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Sixth Amendment Right to Counsel — Anchor) matches frontmatter and Appears-on; Ventris is a Sixth Amendment right-to-counsel / Massiah case."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a7a7b7a6c9010d25",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment mirrors the assertion exactly: field_i_validity 'unverified', composite_basis 'unverified', edges [], frontier-stub scope_note; provenance field_provenance confirms 'frontier stub, no treatment'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c7a73ca510b894ed",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity court_level 'scotus'; U.S. Supreme Court decision is Binding — SCOTUS regardless of the unverified treatment status."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Katz v. United States.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "0305e93c4887584d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official 389 U.S. 347 (1967), SCOTUS, year 1967 match lake citations/identity; opinion (Stewart, J.) is the telephone-booth wiretap case.",
+            "Parallel 88 S. Ct. 507; 19 L. Ed. 2d 576 and neutral 1967 U.S. LEXIS 2 match lake; 19 L. Ed. 2d (1967) is a valid second-series volume."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "327ca137487941a0",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion: government's electronic listening 'violated the privacy upon which he justifiably relied ... and thus constituted a \"search and seizure\"'; 'the electronic device ... did not happen to penetrate the wall of the booth can have no constitutional significance' — supports search-without-trespass proposition.",
+            "Opinion: 'the underpinnings of Olmstead and Goldman have been so eroded ... that the \"trespass\" doctrine there enunciated can no longer be regarded as controlling' — supports the truncated 'overruled…' (Olmstead) clause."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Frontmatter holding string is truncated ('overruled…'); truncation is a display artifact, not a support defect."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "57027ff0271c5aff",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Electronic Surveillance and Title III — Key — cross-ref (overruled Olmstead; wiretap is a search)) matches frontmatter and Appears-on; opinion supports both the Olmstead displacement and 'wiretap is a search'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "729679e1e7688593",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Standing to Challenge a Search — Related (cross-doctrine)) matches frontmatter and Appears-on; Katz's reasonable-expectation framework is the conceptual base for modern standing analysis — a defensible cross-doctrine relation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ad5f3fb4fabf8363",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Reasonable Expectation of Privacy — Key — Anchor) matches frontmatter and Appears-on; Katz is the anchor authority for the reasonable-expectation-of-privacy test."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6d527a8a4e314861",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity court_level 'scotus'; U.S. Supreme Court decision is Binding — SCOTUS."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d34c2c05728b86cf",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "composite_basis 'migration-seed'; field_i_validity 'good_law' reproduced faithfully from lake.",
+            "Disclosed lake treatment.edges are all 'proposed':true, field_iii 'mentioned' citing-case flags (questioned/overruled/abrogated/superseded_by_statute on the CITING cases) — none is a SCOTUS overruling of Katz, so good_law is not contradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["scope_note's Jones/Carpenter revival narrative is outside-knowledge; it does not affect Katz's good_law status and is consistent with disclosed materials."],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Kentucky v. King.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "a3196bacc67503cf",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official 563 U.S. 452 (2011), SCOTUS, docket 09-1272, date 2011-05-16 match lake citations/identity; opinion (Alito, J.) is the Lexington apartment police-created-exigency case.",
+            "Parallel 131 S. Ct. 1849; 179 L. Ed. 2d 865 and neutral 2011 U.S. LEXIS 3541 match lake; 179 L. Ed. 2d (2011) is a valid second-series volume."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "010f34ad6984dd67",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The page contradicts itself about this home's role. Frontmatter homes assigns 'Exigent Circumstances and Hot Pursuit' the role 'Related (no-police-created-exigency outer limit)', but the rendered '## Appears on' block lists the same home as 'Key — Anchor'. The two role labels are inconsistent within the disclosed content page.",
+            "severity": "low",
+            "proposed_fix": "Reconcile the 'Appears on' block with frontmatter homes: keep 'Exigent Circumstances and Hot Pursuit' as 'Related (no-police-created-exigency outer limit)'.",
+            "evidence_quote": "- [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*",
+            "needs_cl": false,
+            "locator_note": "frontmatter homes[1] role vs. '## Appears on' first bullet — conflicting role for the same wikilink."
+          },
+          "reasons": [
+            "Assertion's role matches the frontmatter homes field and is doctrinally apt (King fixes the outer limit of police-created exigency within the exigent-circumstances doctrine).",
+            "But the same page's 'Appears on' block relabels this home 'Key — Anchor', an internal contradiction detectable from disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["The 'Appears on' block in this page is out of sync with frontmatter homes (unlike Johnson/Katz/Ventris in this pack, where they match)."],
+          "suggested_tightening": "Sync '## Appears on' with frontmatter homes so the roles agree."
+        },
+        {
+          "assertion_id": "03672bb0ec7ff7ea",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion: 'Where ... the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment, warrantless entry to prevent the destruction of evidence is reasonable and thus allowed' and 'the exigent circumstances rule applies when the police do not gain entry ... by means of an actual or threatened violation of the Fourth Amendment' — directly supports the holding proposition (truncation is a display artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "56cf13878d59c45a",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Arrest in the Home — Related (cross-doctrine)) matches BOTH frontmatter homes and the 'Appears on' block; King is a home-entry / warrant-requirement case, so cross-doctrine relation is apt."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "57c72db70f1b4c19",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Knock and Talk — Related (cross-doctrine)) matches BOTH frontmatter homes and the 'Appears on' block; the opinion's knock-and-announce analysis ('they do no more than any private citizen might do') directly implicates knock-and-talk doctrine."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "67e62ea4b0bed52e",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Frontmatter homes designates 'Destruction of Evidence' as the 'Key — Anchor' home, but the rendered '## Appears on' block omits this home entirely and instead labels a different home ('Exigent Circumstances and Hot Pursuit') as 'Key — Anchor'. The Key-Anchor designation is inconsistent within the page and the anchor home is dropped from the display list.",
+            "severity": "low",
+            "proposed_fix": "Restore 'Destruction of Evidence — Key — Anchor' to the '## Appears on' block and remove the conflicting 'Key — Anchor' label from the Exigent Circumstances entry.",
+            "evidence_quote": "- [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*",
+            "needs_cl": false,
+            "locator_note": "frontmatter homes[0] ('Destruction of Evidence' / 'Key — Anchor') is absent from '## Appears on', which instead Key-Anchors homes[1]."
+          },
+          "reasons": [
+            "Assertion's home/role matches frontmatter homes and is the doctrinally best-fit anchor (King's holding is specifically about the police-created-exigency limit on the destruction-of-evidence exigency).",
+            "But '## Appears on' drops this home and reassigns 'Key — Anchor' to a different home — an internal contradiction detectable from disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Only one home can be the Key-Anchor; the page currently presents two competing Key-Anchor designations across its own sections."],
+          "suggested_tightening": "Reconcile '## Appears on' with frontmatter so 'Destruction of Evidence' is the sole Key — Anchor."
+        },
+        {
+          "assertion_id": "c337fbc5052c2d19",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home/role (Curtilage — Related (cross-doctrine)) matches the frontmatter homes field; King's breezeway/apartment-door approach implicates curtilage as a defensible cross-doctrine relation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["This home is present in frontmatter homes but omitted from the '## Appears on' block (same page-sync defect noted on the Destruction-of-Evidence assertion); the curtilage nexus is a relatively thin cross-doctrine link."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "62a9edd921d890df",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity court_level 'scotus'; U.S. Supreme Court decision is Binding — SCOTUS."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a5e078853a5970a7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "composite_basis 'migration-seed'; field_i_validity 'good_law' reproduced faithfully from lake.",
+            "Disclosed lake treatment.edges are all 'proposed':true, field_iii 'mentioned' citing-case flags — none is a SCOTUS overruling of King; the opinion's own footnote 5 merely distinguishes Johnson. good_law not contradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Treatment currency as-of-2026 not fully derivable from the disclosed opinion; scope_note flags S2 re-derivation may downgrade."],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

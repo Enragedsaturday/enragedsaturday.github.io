@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "44fee0072543f66f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations block confirms official 367 U.S. 643, parallels 81 S. Ct. 1684 and 6 L. Ed. 2d 1081, vendor-neutral 1961 U.S. LEXIS 812.",
+          "Opinion header shows '367 U.S. 643 (1961)', 'Supreme Court of United States' — year 1961 and court match."
+        ],
+        "residual_risks": [
+          "Frontmatter and lake identity carry date_decided 1961-10-09, but the disclosed opinion states 'Decided June 19, 1961'; the assertion payload excludes date_decided (year 1961 is correct), and the treatment as_of_content correctly uses 1961-06-19, so existence stands, but the date_decided field is a page/lake defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f0a6ca2b7f4294f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Anchor*",
+          "locator_note": "content page frontmatter homes[0].page = '[[Fruits & Attenuation]]' vs. 'Appears on' section line '- [[The Exclusionary Rule]] — *Key — Anchor*'",
+          "needs_cl": false,
+          "problem": "The home_role assertion places Mapp as 'Key — Anchor' of 'Fruits & Attenuation', but the page's own rendered 'Appears on' section names 'The Exclusionary Rule' as the Key — Anchor home, and the doctrinal substance (holding 'the exclusionary rule applies to the States through the Fourteenth Amendment'; tags exclusionary-rule/incorporation; related cases Weeks, Wolf, Leon, Herring — all exclusionary-rule cases) points to 'The Exclusionary Rule', not the distinct fruit-of-the-poisonous-tree/attenuation doctrine.",
+          "proposed_fix": "Reconcile the frontmatter homes field with the 'Appears on' render and the case's doctrine — set the home to 'The Exclusionary Rule' (Key — Anchor), the doctrinally correct anchor page for Mapp.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Internal contradiction: frontmatter homes says 'Fruits & Attenuation' while the 'Appears on' section says 'The Exclusionary Rule' — same role, different home.",
+          "Mapp is the incorporation/exclusionary-rule anchor, not the anchor of the fruits/attenuation doctrine; the disclosed page substance supports 'The Exclusionary Rule'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96883f9e532c81ac",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion at *655 holds 'all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court' — supports 'the exclusionary rule applies to the States through the Fourteenth Amendment'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b84b779e899715b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity=good_law; as_of_content 1961-06-19 matches the opinion's decided date; as_of_treatment 2026-06-30; composite_basis migration-seed; scope_note matches verbatim.",
+          "Negative edges are all proposed:true (auto-proposed, audit-pending) — nothing adjudicated overrules Mapp's exclusionary-rule holding in the disclosed evidence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec0eb9565b24ef88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court_id=scotus; opinion 'Supreme Court of United States' (Clark, J.) — 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:53:03-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/Mapp v. Ohio.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w38-02-a30c998c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w38-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mapp v. Ohio"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "44fee0072543f66f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f0a6ca2b7f4294f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "96883f9e532c81ac": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b84b779e899715b8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec0eb9565b24ef88": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8c586049e8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
