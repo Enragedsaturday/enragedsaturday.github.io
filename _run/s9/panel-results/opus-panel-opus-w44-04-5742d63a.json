@@ -1,0 +1,171 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a15802202c4860a2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official = '468 U.S. 1032'; parallel '104 S. Ct. 3479', '82 L. Ed. 2d 778', '52 U.S.L.W. 5190'; vendor_neutral '1984 U.S. LEXIS 156' — all match payload.",
+          "Opinion carries star-page labels *1032 through *1051, court scotus, decided 1984-07-05; case name confirmed in-text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a30160bcbb4be64",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*",
+          "locator_note": "Frontmatter homes[0].page ('The Good-Faith Exception') vs body '## Appears on' line ('The Exclusionary Rule'); corroborated by treatment note applying Janis and citing Mapp's exclusionary rule.",
+          "needs_cl": false,
+          "problem": "The paneled home_role places Lopez-Mendoza on '[[The Good-Faith Exception]]' as a 'Key — Progeny / Refinement', but the case has nothing to do with the good-faith exception. It holds the exclusionary rule generally does not reach civil INS deportation proceedings, resolved via the Janis cost-benefit/deterrence framework. The frontmatter home directly contradicts the page's own '## Appears on' section, which lists '[[The Exclusionary Rule]]', and the related cases (Janis, Calandra, Mapp) are all exclusionary-rule-scope cases, none good-faith-exception cases.",
+          "proposed_fix": "Change frontmatter homes[0].page from '[[The Good-Faith Exception]]' to '[[The Exclusionary Rule]]' to match the body 'Appears on' section and the case's actual doctrine (exclusionary-rule scope in civil proceedings / Janis balancing).",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Internal contradiction: frontmatter homes = 'The Good-Faith Exception' but body 'Appears on' = 'The Exclusionary Rule'.",
+          "Opinion b1076-5 holds 'the exclusionary rule need not be applied in such a proceeding' via Janis balancing — an exclusionary-rule-scope holding, not a good-faith-exception refinement.",
+          "Related cases (Janis, Calandra, Mapp) confirm the exclusionary-rule topic, not the good-faith exception."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "810e7f289bcb3949",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion b1076-5: 'We hold that the exclusionary rule need not be applied in such a proceeding' (civil deportation) — supports the holding as framed.",
+          "Opinion b1092-5: 'the Janis balance between costs and benefits comes out against applying the exclusionary rule in civil deportation hearings held by the INS'; body's identity quote ('body/identity ... never itself suppressible') matches opinion b1081-6."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbf6332e6a203c07",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court_id/court_level 'scotus' — U.S. Supreme Court decision; 'Binding — SCOTUS' correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3832ec8cd8a6bee",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law', composite_basis 'migration-seed', as_of_content 1984-07-05 (= date_decided) match the lake treatment block.",
+          "Disclosed negative-lane edges (Gonzaga-Ortega, Conteh, Padilla) are all field_ii 'questioned' and 'proposed: true' — a currency caution, not an overruling; core holding remains good law, so field_i good_law / varies_by_point=false stands."
+        ],
+        "residual_risks": [
+          "Body prose 'No negative treatment' sits in tension with the proposed 'questioned' edges; the structured treatment field under review remains good_law, but a later S2 re-derivation may downgrade currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T17:05:19-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-91e58e7ba8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7c1710ea7e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Immigration & Naturalization Service v. Lopez-Mendoza.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w44-04-5742d63a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w44-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Immigration & Naturalization Service v. Lopez-Mendoza"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a30160bcbb4be64": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "810e7f289bcb3949": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a15802202c4860a2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbf6332e6a203c07": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d3832ec8cd8a6bee": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f67423aacf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-91e58e7ba8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7c1710ea7e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
