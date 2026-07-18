@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e871d088db9d3bb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations confirm official 232 U.S. 383, parallel 34 S. Ct. 341 and 58 L. Ed. 652, vendor-neutral 1914 U.S. LEXIS 1368 — matching the payload.",
+          "Cached opinion is Weeks v. United States, Day, J., star pages 387-399 in the 383 volume; year 1914 and SCOTUS confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "082841937c9432bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion holds that letters seized by a U.S. Marshal without a warrant, after a timely pretrial motion for return, should have been restored and that admitting them was 'prejudicial error' (star 398) — the origin of the federal exclusionary rule, matching the truncated holding.",
+          "The star-393 passage ('might as well be stricken from the Constitution') supplies the exclusionary rationale."
+        ],
+        "residual_risks": [
+          "Holding payload is truncated ('...against a defendant in…'); only the disclosed portion is assessed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "15a24ccc64e6a189",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Anchor*",
+          "locator_note": "content/cases/Weeks v. United States.md — frontmatter 'homes[0].page' = [[Fruits & Attenuation]] vs body '## Appears on' line = [[The Exclusionary Rule]]",
+          "needs_cl": false,
+          "problem": "The home_role payload (and frontmatter homes) declare Weeks's home as '[[Fruits & Attenuation]]' with role 'Key — Anchor', but the page body's 'Appears on' section names a DIFFERENT page: '[[The Exclusionary Rule]] — *Key — Anchor*'. The two disclosed home declarations for this case contradict each other (unlike the pack's other three cases, where frontmatter homes and 'Appears on' agree exactly).",
+          "proposed_fix": "Reconcile the two: either correct frontmatter homes to '[[The Exclusionary Rule]]' or correct the 'Appears on' render to '[[Fruits & Attenuation]]', so the anchor home is single-valued and self-consistent.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Substance holds — Weeks is the exclusionary-rule origin and a legitimate Key/Anchor for either exclusionary-rule or fruits/attenuation material (related list includes Wong Sun and Leon).",
+          "But the disclosed page is internally inconsistent about which page is the home, so the specific asserted home ('Fruits & Attenuation') is not corroborated by the page's own 'Appears on' render."
+        ],
+        "residual_risks": [
+          "Neither home page's content is disclosed, so the canonically-correct home cannot be adjudicated from the pack alone."
+        ],
+        "suggested_tightening": "Make frontmatter homes and the 'Appears on' section name the same single anchor page for Weeks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "015cb06bcdf5a4d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload matches the lake treatment block: field_i_validity 'good_law', composite_basis 'migration-seed', ref 'Weeks v. United States', varies_by_point false, as_of_content 1914-02-24, as_of_treatment 2026-06-30, scope_note as written.",
+          "The many negative 'edges' in the lake are all 'proposed': true, unaudited (derivation flags 'R15 treatment audit required'), and are transparent citator false positives (e.g., Mapp/Terry/Katz labeled 'overruled'/'questioned' — Mapp extended, not overruled, Weeks); the good_law call is correct and the page states 'No negative treatment of its core holding.'"
+        ],
+        "residual_risks": [
+          "Lake carries a large batch of unaudited proposed negative edges (lane1_negative/lane2_top_cited, audit_needed true); the asserted field_i_validity resolves them to good_law but the R15 audit is still pending.",
+          "Provenance warning 'legacy treatment migrated: good -> good_law'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "986eb1cf264ff4c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "SCOTUS decision (court_id scotus per lake, opinion by Justice Day); 'Binding — SCOTUS' is the correct weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T16:49:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-421e384a76",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Weeks v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w42-02-99202e75",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w42-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Weeks v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "015cb06bcdf5a4d0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "082841937c9432bf": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "15a24ccc64e6a189": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "986eb1cf264ff4c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e871d088db9d3bb9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-421e384a76",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fd78335ed7",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
