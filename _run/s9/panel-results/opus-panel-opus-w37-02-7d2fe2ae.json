@@ -1,0 +1,168 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "09934ff653b52dc0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations: official '457 U.S. 800'; parallels '102 S. Ct. 2727', '73 L. Ed. 2d 396'; vendor-neutral '1982 U.S. LEXIS 139' — all match the payload.",
+          "Cached opinion (Powell, J.) shows star-pagination *803 through *820, consistent with the case beginning at 457 U.S. 800; year 1982 confirmed by decision date 1982-06-24 in the lake."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8d89fb83efd805d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*",
+          "locator_note": "content_page frontmatter homes[0].page ([[Qualified Immunity]]) vs '## Appears on' list ([[Section 1983 Liability and Qualified Immunity]])",
+          "needs_cl": false,
+          "problem": "Frontmatter `homes` declares the anchor home as [[Qualified Immunity]] (Key — Anchor) and the assertion payload echoes it, but the page's own '## Appears on' section names a different home: '[[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*'. The two disclosed home statements disagree on the page name (the role matches).",
+          "proposed_fix": "Reconcile the `homes` frontmatter and the 'Appears on' section so both name the same anchor page.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[0] = Qualified Immunity / Key — Anchor matches the payload, so the assertion is supported by its own source field.",
+          "The rendered 'Appears on' section names Section 1983 Liability and Qualified Immunity instead — a page-internal inconsistency between the two home statements.",
+          "Harlow as a Key-Anchor qualified-immunity case is doctrinally sound; only the home name is internally inconsistent, so the assertion survives with a minor fix."
+        ],
+        "residual_risks": [
+          "Disclosed evidence cannot establish which of the two home names is authoritative; the two may be a parent/child page pair rather than a true error."
+        ],
+        "suggested_tightening": "Make the `homes` frontmatter and the 'Appears on' section name the same anchor page (role Key — Anchor already agrees).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dff595ef247367cb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion: 'We therefore hold that government officials performing discretionary functions, generally are shielded from liability for civil damages insofar as their conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known' supports the objective-test reformulation in the holding field.",
+          "Opinion abandons the subjective prong ('bare allegations of malice should not suffice'; 'By defining the limits of qualified immunity essentially in objective terms'), supporting 'purely OBJECTIVE test'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78d4c79912093d24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Opinion: 'Justice Powell delivered the opinion of the Court' confirms a majority SCOTUS decision; 'Binding — SCOTUS' is correct.",
+          "Lake court_id/court_level 'scotus' corroborate."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a97a5c74d0f8afdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment block matches the payload field-for-field: field_i_validity 'good_law', as_of_content '1982-06-24', as_of_treatment '2026-06-30', composite_basis 'migration-seed', composite_basis_ref 'Harlow v. Fitzgerald', varies_by_point false, scope_note 'Objective standard refined (not displaced) by later cases governing the clearly-established inquiry.'",
+          "Record status 'verified'; the treatment.edges carry proposed lane2_top_cited field_ii values on citing cases, not a negative treatment of Harlow, so 'good_law' is not contradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "Currency is a migration seed re-dated to 2026-06-30, not a fully re-derived citator result."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:44:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-91544fb6c9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-f3abd2861e"
+    ],
+    "group_id": "content/cases/Harlow v. Fitzgerald.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w37-02-7d2fe2ae",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w37-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harlow v. Fitzgerald"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "09934ff653b52dc0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78d4c79912093d24": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8d89fb83efd805d": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a97a5c74d0f8afdc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dff595ef247367cb": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f3abd2861e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-91544fb6c9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

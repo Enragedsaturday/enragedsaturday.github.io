@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4de19d357ca500d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations: official '490 U.S. 386'; parallels '109 S. Ct. 1865', '104 L. Ed. 2d 443', '57 U.S.L.W. 4513'; vendor-neutral '1989 U.S. LEXIS 2467' — all match the payload.",
+          "Cached opinion '490 U.S. 386 (1989)' and 'Decided May 15, 1989' confirm court=SCOTUS and year=1989."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a3c1b9b1e9dfc18",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion: 'all claims that law enforcement officers have used excessive force  deadly or not  in the course of an arrest, investigatory stop, or other \"seizure\" of a free citizen should be analyzed under the Fourth Amendment and its \"reasonableness\" standard, rather than under a \"substantive due process\" approach' directly supports the truncated holding field."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f933ad0970f9019",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*",
+          "locator_note": "content_page frontmatter homes[0].page ([[Use of Force]]) vs '## Appears on' list ([[Section 1983 Liability and Qualified Immunity]])",
+          "needs_cl": false,
+          "problem": "Frontmatter `homes` declares the anchor home as [[Use of Force]] (Key — Anchor) and the assertion payload echoes it, but the page's own '## Appears on' section names a different home: '[[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*'. The two disclosed home statements disagree on the page name (the role matches).",
+          "proposed_fix": "Reconcile the `homes` frontmatter and the 'Appears on' section so both name the same anchor page.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[0] = Use of Force / Key — Anchor matches the payload, so the assertion is supported by its own source field.",
+          "The rendered 'Appears on' section names Section 1983 Liability and Qualified Immunity instead — a page-internal inconsistency between the two home statements.",
+          "Graham as a Key-Anchor case is doctrinally sound regardless of which page hosts it; only the home name is internally inconsistent, so the assertion survives with a minor fix."
+        ],
+        "residual_risks": [
+          "Disclosed evidence cannot establish which of the two home names is authoritative."
+        ],
+        "suggested_tightening": "Make the `homes` frontmatter and the 'Appears on' section name the same anchor page (role Key — Anchor already agrees).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b12ce029f4d1e8b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment block matches the payload field-for-field: field_i_validity 'good_law', as_of_content '1989-05-15', as_of_treatment '2026-06-30', composite_basis 'migration-seed', composite_basis_ref 'Graham v. Connor', varies_by_point false, scope_note verbatim.",
+          "Record status 'verified'; the treatment.edges carry proposed lane2_top_cited field_ii values describing the citing cases, not a negative treatment of Graham itself, so 'good_law' is not contradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "scope_note itself flags that S2 derivation may re-derive/downgrade; currency is a migration seed, not a fully re-derived citator result."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5ff6e5db2bfd407",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion: 'CHIEF JUSTICE REHNQUIST delivered the opinion of the Court' confirms a majority SCOTUS decision; 'Binding — SCOTUS' is correct.",
+          "Lake court_id/court_level 'scotus' corroborate."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:44:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b16a1c7d67",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-df0111b054"
+    ],
+    "group_id": "content/cases/Graham v. Connor.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w37-02-f0ae05fd",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w37-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Graham v. Connor"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4de19d357ca500d7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a3c1b9b1e9dfc18": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f933ad0970f9019": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b12ce029f4d1e8b4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c5ff6e5db2bfd407": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b16a1c7d67",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-df0111b054",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "15fb128b6d39b31c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake selects official '265 U.S. 57' (selected_official true), parallel '44 S. Ct. 445' and '68 L. Ed. 898', vendor_neutral '1924 U.S. LEXIS 2577' — all match the payload.",
+          "Cached opinion is the Holmes opinion in Hester v. United States with *58/*59 star pagination consistent with a page-57 start; cluster 100413, canonical_name_match true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27cd21266e6d5829",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] declares '[[Open Fields]]' role 'Key — Anchor', matching payload; 'Appears on' reciprocally lists 'Open Fields — Key — Anchor'.",
+          "Hester is the origin of the open-fields doctrine, so Open-Fields anchor is doctrinally correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a3b4b4e2e86e242",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Open-fields clause verified: opinion states 'the special protection accorded by the Fourth Amendment to the people in their persons, houses, papers, and effects, is not extended to the open fields. The distinction between the latter and the house is as old as the common law.'",
+          "Abandonment clause verified: 'The defendant's own acts, and those of his associates, disclosed the jug, the jar and the bottle — and there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a70f80e2ccd8bba9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] declares '[[Curtilage]]' role 'Key', matching payload; 'Appears on' reciprocally lists 'Curtilage — Key'.",
+          "Hester's house/open-fields distinction is foundational to the curtilage line, so the role fits."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2b05a4c94a3dcb5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] declares '[[Abandonment]]' role 'Key — Progeny / Refinement', matching payload; the abandonment holding ('no seizure ... after it had been abandoned') supports the role.",
+          "'Appears on' lists Abandonment once with this same role, confirming the relationship."
+        ],
+        "residual_risks": [
+          "The homes[] block lists '[[Abandonment]]' twice with identical role; this is the first of the duplicate pair (see f7697824aea707d1)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7697824aea707d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Substantively correct — Hester is a Key — Progeny / Refinement case for Abandonment — but this homes[] entry is a byte-identical duplicate of e2b05a4c94a3dcb5.",
+          "'Appears on' lists Abandonment only once, confirming a single relationship is intended; the second homes[] entry is redundant."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Remove the duplicate '[[Abandonment]]' (role 'Key — Progeny / Refinement') entry from homes[]; keep a single Abandonment home so the frontmatter matches the 'Appears on' rendering.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3207a9c1be2ff00b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law; all negative edges are proposed:true and are auto-tag noise (e.g., Oliver, Olmstead, Jones, Dunn labeled 'overruled/abrogated' as top-citing cases). Hester's open-fields doctrine was reaffirmed, not overruled, by Oliver/Dunn.",
+          "No disclosed accepted negative treatment contradicts good_law."
+        ],
+        "residual_risks": [
+          "lane1_negative/lane2_top_cited flagged audit_needed:true / 'R15 treatment audit required' with proposed_negative_events (8/25); scope_note itself warns S2 derivation may re-derive and downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a5c8debc67647985",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "court_level scotus, cluster 100413, 1924 U.S. Supreme Court decision; 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:44:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f9c30e67df",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb320d1ec5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a237e0c31f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c0c7f97c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Hester v. United States.md",
+    "group_total_assertions": 8,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w37-03-8c21dac1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w37-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 8,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hester v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "15fb128b6d39b31c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "27cd21266e6d5829": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3207a9c1be2ff00b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a3b4b4e2e86e242": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a5c8debc67647985": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a70f80e2ccd8bba9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2b05a4c94a3dcb5": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7697824aea707d1": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f9c30e67df",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb320d1ec5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a237e0c31f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2a6af26eef",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c0c7f97c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

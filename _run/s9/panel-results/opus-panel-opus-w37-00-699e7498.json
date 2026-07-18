@@ -1,0 +1,185 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d26d6adc9e81c67a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "parallel_cite: \"69 S. Ct. 1359; 93 L. Ed. 2d 1782; 93 L. Ed. 1782\"",
+          "locator_note": "frontmatter parallel_cite; lake citations.parallel[] lists both '93 L. Ed. 2d 1782' and '93 L. Ed. 1782'",
+          "needs_cl": false,
+          "problem": "parallel_cite carries a spurious/anachronistic Lawyers' Edition entry: it lists both '93 L. Ed. 2d 1782' and '93 L. Ed. 1782' — the same volume 93 and page 1782 duplicated across two different reporter series. A 1949 decision cannot appear in L. Ed. 2d (a later series); the correct parallel is '93 L. Ed. 1782'.",
+          "proposed_fix": "Drop the erroneous '93 L. Ed. 2d 1782' and keep '69 S. Ct. 1359; 93 L. Ed. 1782'.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 338 U.S. 25 (1949), SCOTUS, and neutral 1949 U.S. LEXIS 2079 all verify against the lake and the cached opinion header '338 U.S. 25 (1949)'; existence itself is sound.",
+          "The duplicated vol/page across L. Ed. and L. Ed. 2d is a self-evident data anomaly visible in the disclosed lake."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Remove '93 L. Ed. 2d 1782' from parallel_cite.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0645b50885266746",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Historical (overruled by Mapp on remedy)*",
+          "locator_note": "frontmatter homes[0].page vs body '## Appears on'",
+          "needs_cl": false,
+          "problem": "The frontmatter home page 'Fruits & Attenuation' is a doctrinal mis-home and is contradicted by the page's own '## Appears on' block, which places Wolf on 'The Exclusionary Rule'. Wolf concerns incorporation of the Fourth Amendment against the States and whether the exclusionary rule is required of the States — not the fruit-of-the-poisonous-tree / attenuation doctrine.",
+          "proposed_fix": "Change the home from '[[Fruits & Attenuation]]' to '[[The Exclusionary Rule]]' to match the body '## Appears on', the tags (exclusionary-rule, incorporation), and the related list (Mapp, Weeks, Elkins).",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Body '## Appears on' names 'The Exclusionary Rule', not 'Fruits & Attenuation' — a direct internal contradiction of the asserted home.",
+          "Wolf's subject matter (incorporation + state exclusion) and its related/tags all point to the exclusionary rule, not attenuation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec7609e28ec74cdd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Holding is supported by the opinion: incorporation clause 'The security of one's privacy against arbitrary intrusion by the police—which is at the core of the Fourth Amendment—is basic to a free society... enforceable against the States through the Due Process Clause' (*27-28), and the remedy holding 'in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure' (*33).",
+          "The 'later overruled by Mapp v. Ohio' clause is corroborated by the lake treatment edge (Mapp v. Ohio, field_ii overruled)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8628b4591158c951",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment block matches the lake exactly (field_i_validity superseded, as_of_content 1949-06-27, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, matching scope_note).",
+          "Scope note is doctrinally accurate: Mapp overruled Wolf on the remedy point while the incorporation holding survived."
+        ],
+        "residual_risks": [
+          "'superseded' is a coarse validity bucket for what is specifically an 'overruled' treatment; this is a schema mapping choice, not an error."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee6d891113d62f65",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "authority_weight 'Binding — SCOTUS' correctly records the deciding court; Wolf was a SCOTUS decision. The Chadwick comparison shows authority_weight tracks the source court (a merely-limited SCOTUS case also keeps 'Binding — SCOTUS'), so the field value is defensible as the raw institutional weight."
+        ],
+        "residual_risks": [
+          "The page header and treatment section render the weight as 'Historical' (tier 6) for this overruled case, not 'Binding — SCOTUS'; unlike Chadwick, the display does not echo authority_weight. The machine may want to reconcile whether authority_weight should be downgraded to 'Historical' for overruled cases or remain the raw source-court weight."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T11:44:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-373fde4bd9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0548acd375",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c15ee5ad88"
+    ],
+    "group_id": "content/cases/Wolf v. Colorado.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w37-00-699e7498",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w37-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wolf v. Colorado"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0645b50885266746": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8628b4591158c951": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d26d6adc9e81c67a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ec7609e28ec74cdd": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee6d891113d62f65": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c15ee5ad88",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2d34c9d36f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-373fde4bd9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0548acd375",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
