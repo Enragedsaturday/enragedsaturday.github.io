@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ae16c26336c5d383",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": { \"cite\": \"512 U.S. 452\", \"volume\": \"512\", \"reporter\": \"U.S.\", \"page\": \"452\", \"type\": 1, \"selected_official\": true }",
+          "locator_note": "existence payload.official '513 U.S. 1008' vs lake record citations.official '512 U.S. 452'; identity.identity_method 'panel-cluster-rekey', reason_code 'two_key_not_satisfied'.",
+          "needs_cl": false,
+          "problem": "The existence assertion's citation payload gives official/display '513 U.S. 1008' as the sole citation — a later-volume orders/cert-denial citation, not the merits decision. The merits Davis v. United States (1994, Miranda ambiguous-invocation) opinion is 512 U.S. 452 (1994), 114 S. Ct. 2350, 129 L. Ed. 2d 362.",
+          "proposed_fix": "Re-derive the existence assertion's citations from the merits cluster 117863 so official/display = 512 U.S. 452, matching the content page, the lake record citations block, and the cached opinion pagination (*454-*462).",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Payload official/display '513 U.S. 1008' (the only citation carried) is a later-volume orders/cert-denial citation, not the merits opinion.",
+          "The lake record's citations block, the content page, and the cached opinion pagination (*454-*462 within 512 U.S.) all identify the merits Davis (1994 Miranda ambiguous-invocation) decision as 512 U.S. 452 (1994), directly contradicting the assertion's official cite.",
+          "identity.identity_method 'panel-cluster-rekey' (reason_code 'two_key_not_satisfied'): the existence-assertion payload retained a stale/wrong citation after the re-key to cluster 117863."
+        ],
+        "residual_risks": [
+          "The published content page and lake citations block already carry 512 U.S. 452; the defect is confined to the existence-assertion payload."
+        ],
+        "suggested_tightening": "Regenerate existence-assertion citation payloads from the current lead cluster after any panel cluster re-key.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72fe4f48a1dc72d3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-frontmatter/Background/Issue/Rule artifact (mismatch / slip-only), not a quotation.",
+          "Genuine pin-459 quotation — '[T]he suspect must unambiguously request counsel. . . . [H]e must articulate his desire to have counsel present sufficiently clearly that a reasonable police officer in the circumstances would understand the statement to be a request for an attorney. If the statement fails to meet the requisite level of clarity, Edwards does not require that the officers stop questioning the suspect.' — matches the cached text verbatim, with proper bracketed capitalization ('[T]he' from 'Rather, the'; '[H]e' from 'he') and an accurate ellipsis eliding the intervening Smith / Oxford-don material; the sentence sits on page 459 (after '*459'). Pincite 459 correct."
+        ],
+        "residual_risks": [
+          "Extractor 'mismatch' flag is a false alarm from a wrong-span capture."
+        ],
+        "suggested_tightening": "Re-harvest the pin-459 quote payload from the pincited quotation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "344b32bab94c7f8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is a migration-seed; the scope_note itself flags 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.' The disclosed 1994 SCOTUS opinion shows no self-contradiction and no disclosed negative treatment.",
+          "Record status is 'under_review'; currency is citator-dependent and not independently verifiable from the inlined opinion; no fabricated defect or certification."
+        ],
+        "residual_risks": [
+          "scope_note explicitly anticipates a possible downgrade on re-derivation; currency confirmation is CL-dependent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a3fd1ab506",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Davis v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-07-25d6a156",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "344b32bab94c7f8d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "72fe4f48a1dc72d3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae16c26336c5d383": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a92730deca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a3fd1ab506",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

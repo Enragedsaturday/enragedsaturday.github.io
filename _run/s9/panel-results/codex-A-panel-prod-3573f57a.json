@@ -1,22 +1,149 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote fidelity only; treatment was recorded without a treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "7ea80cd310fa0880",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as a U.S. Supreme Court decision decided 1985-06-17, with year 1985.",
+          "The official citation 472 U.S. 463 and the listed parallel/vendor citations match the lake citations fields and the content page citation."
+        ],
+        "residual_risks": [
+          "The lake canonical case-name styling is MacOn while the content page title uses Macon, but the lake input name and aliases disclose that variant."
+        ],
+        "suggested_tightening": "Consider standardizing the displayed case-name capitalization to the lake canonical form or preserving both as title plus alias.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "828315d2a9c70211",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The two quoted non-ellipsis segments appear in the cached opinion text in the page 469 seizure paragraph.",
+          "The ellipsis omits intervening seizure-definition text and citation, so the quotation does not overstate continuity."
+        ],
+        "residual_risks": [
+          "The lake metadata labels this quote_fidelity as mismatch and has page null, even though the quote text is verifiable from the disclosed opinion text."
+        ],
+        "suggested_tightening": "Set the pinpoint page to 469 and clear or reclassify the mismatch metadata if normalized ellipsis quotations are accepted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f15a6f2ebc1c9128",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The officer’s action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate, expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.",
+          "locator_note": "lake pinpoints[].id pin-469; content_page.md Rule cites ^pin-469.",
+          "needs_cl": false,
+          "problem": "The recorded pin-469 quote is not a court quote; it is harvested content-page/frontmatter text ending at the Rule heading, so it is not character-faithful to the Macon opinion.",
+          "proposed_fix": "Replace pin-469 with the actual page 469 no-search sentence from the cached opinion text, and set the page/pin status accordingly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[].quote for pin-469 begins with page markup/frontmatter text, not the opinion text.",
+          "The cached opinion text contains the no-search passage at page 469, but the lake pin quote does not contain that passage."
+        ],
+        "residual_risks": [
+          "The visible content-page no-search proposition is substantively supported, but the pin record itself is defective."
+        ],
+        "suggested_tightening": "Reharvest pin-469 from the opinion text and add a guard against harvesting built-page headers as pinpoint quotes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d735060468023a6f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised here.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, and the same scope note."
+        ],
+        "residual_risks": [
+          "Any negative-treatment analysis belongs to lens B and was not evaluated under this attack lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Maryland v. Macon.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7ea80cd310fa0880\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as a U.S. Supreme Court decision decided 1985-06-17, with year 1985.\",\n        \"The official citation 472 U.S. 463 and the listed parallel/vendor citations match the lake citations fields and the content page citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake canonical case-name styling is MacOn while the content page title uses Macon, but the lake input name and aliases disclose that variant.\"\n      ],\n      \"suggested_tightening\": \"Consider standardizing the displayed case-name capitalization to the lake canonical form or preserving both as title plus alias.\"\n    },\n    {\n      \"assertion_id\": \"828315d2a9c70211\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The two quoted non-ellipsis segments appear in the cached opinion text in the page 469 seizure paragraph.\",\n        \"The ellipsis omits intervening seizure-definition text and citation, so the quotation does not overstate continuity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake metadata labels this quote_fidelity as mismatch and has page null, even though the quote text is verifiable from the disclosed opinion text.\"\n      ],\n      \"suggested_tightening\": \"Set the pinpoint page to 469 and clear or reclassify the mismatch metadata if normalized ellipsis quotations are accepted.\"\n    },\n    {\n      \"assertion_id\": \"f15a6f2ebc1c9128\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The recorded pin-469 quote is not a court quote; it is harvested content-page/frontmatter text ending at the Rule heading, so it is not character-faithful to the Macon opinion.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-469 with the actual page 469 no-search sentence from the cached opinion text, and set the page/pin status accordingly.\",\n        \"evidence_quote\": \"The officer’s action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate, expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id pin-469; content_page.md Rule cites ^pin-469.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoints[].quote for pin-469 begins with page markup/frontmatter text, not the opinion text.\",\n        \"The cached opinion text contains the no-search passage at page 469, but the lake pin quote does not contain that passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page no-search proposition is substantively supported, but the pin record itself is defective.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-469 from the opinion text and add a guard against harvesting built-page headers as pinpoint quotes.\"\n    },\n    {\n      \"assertion_id\": \"d735060468023a6f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment defect is raised here.\",\n        \"The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Any negative-treatment analysis belongs to lens B and was not evaluated under this attack lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed existence and quote fidelity only; treatment was recorded without a treatment/currency finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:06:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bcad44f39b"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3573f57a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3573f57a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:33.909194Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.545147Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:35.479328Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.778313Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:38.744044Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:42.877469Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Macon"
+    ],
+    "tokens": {
+      "input": 118310,
+      "output": 6853,
+      "source": "codex-events",
+      "total": 125163
+    },
+    "verdict_map": {
+      "7ea80cd310fa0880": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "828315d2a9c70211": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d735060468023a6f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f15a6f2ebc1c9128": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcad44f39b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.3
   }
 }

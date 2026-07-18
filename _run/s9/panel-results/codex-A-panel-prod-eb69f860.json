@@ -1,22 +1,125 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all three assertion_ids in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "1c6f589b83eea359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Mathews v. United States, U.S. Supreme Court, decided 1988-02-24.",
+          "The official citation in the lake record is 485 U.S. 58, with parallel citations 108 S. Ct. 883 and 99 L. Ed. 2d 54, and vendor citation 1988 U.S. LEXIS 943."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a0ca345ad126335",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that even if the defendant denies one or more elements of the crime",
+          "locator_note": "text/Mathews v. United States__c5132b.txt contains the actual holding sentence at the *62 page marker; lake pinpoints[0].quote contains generated page content instead.",
+          "needs_cl": false,
+          "problem": "The pin-62 payload/lake quote is not an opinion quote; it is page markdown text beginning with the generated case page header and ending at '## Rule Yes.'. The lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-62's lake quote with the actual opinion sentence at star page *62 beginning 'We hold that even if the defendant denies one or more elements of the crime...' and update the pinpoint metadata so quote_fidelity is no longer mismatch.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text file contains the Mathews opinion and the actual holding sentence at page *62.",
+          "The quote stored for pin-62 in the lake record is generated page content, not the opinion passage.",
+          "The lake pinpoint status also says quote_fidelity='mismatch', confirming the defect from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The displayed content_page Rule quote is faithful to the opinion text; the defect is in the lake/payload pinpoint quote metadata."
+        ],
+        "suggested_tightening": "Store only the exact opinion sentence for pin-62 and include page/star-marker metadata tying it to 485 U.S. at 62.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9c6b5fc08793648",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A.",
+          "The payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1988-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens A treatment finding is made; Lens B owns treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Mathews v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1c6f589b83eea359\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for Mathews v. United States, U.S. Supreme Court, decided 1988-02-24.\",\n        \"The official citation in the lake record is 485 U.S. 58, with parallel citations 108 S. Ct. 883 and 99 L. Ed. 2d 54, and vendor citation 1988 U.S. LEXIS 943.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7a0ca345ad126335\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-62 payload/lake quote is not an opinion quote; it is page markdown text beginning with the generated case page header and ending at '## Rule Yes.'. The lake record itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-62's lake quote with the actual opinion sentence at star page *62 beginning 'We hold that even if the defendant denies one or more elements of the crime...' and update the pinpoint metadata so quote_fidelity is no longer mismatch.\",\n        \"evidence_quote\": \"We hold that even if the defendant denies one or more elements of the crime\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Mathews v. United States__c5132b.txt contains the actual holding sentence at the *62 page marker; lake pinpoints[0].quote contains generated page content instead.\"\n      },\n      \"reasons\": [\n        \"The disclosed text file contains the Mathews opinion and the actual holding sentence at page *62.\",\n        \"The quote stored for pin-62 in the lake record is generated page content, not the opinion passage.\",\n        \"The lake pinpoint status also says quote_fidelity='mismatch', confirming the defect from disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The displayed content_page Rule quote is faithful to the opinion text; the defect is in the lake/payload pinpoint quote metadata.\"\n      ],\n      \"suggested_tightening\": \"Store only the exact opinion sentence for pin-62 and include page/star-marker metadata tying it to 485 U.S. at 62.\"\n    },\n    {\n      \"assertion_id\": \"a9c6b5fc08793648\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency merits are outside Lens A.\",\n        \"The payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1988-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment finding is made; Lens B owns treatment/currency review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all three assertion_ids in group_inventory.jsonl exactly once under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:07:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-51caddabbd"
+    ],
     "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-eb69f860",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-eb69f860.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: fc7950b7-c023-4fe4-9e2e-821d94de22e7\n2026-07-10T22:29:54.900706Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:55.402941Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:56.162058Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:57.098419Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:58.448766Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:00.851751Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathews v. United States"
+    ],
+    "tokens": {
+      "input": 189362,
+      "output": 4395,
+      "source": "codex-events",
+      "total": 193757
+    },
+    "verdict_map": {
+      "1c6f589b83eea359": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a0ca345ad126335": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a9c6b5fc08793648": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51caddabbd",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 90.9
   }
 }

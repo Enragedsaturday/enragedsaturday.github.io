@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Burgess.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "8343c0f7378c6e0b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms the case as United States v. Burgess, docket 08-3072, decided 2009-08-11 by the 10th Cir., with cluster_id and lead_opinion_id 172511.",
+          "The lake citations record confirms the displayed citation 576 F.3d 1078 and the listed parallel/vendor citations.",
+          "No disclosed treatment edge or progeny entry affirmatively shows that the cited authority has been overruled, abrogated, superseded, or limited; the separate treatment record is expressly unverified."
+        ],
+        "residual_risks": [
+          "The disclosed record does not affirmatively verify current good-law status because treatment and progeny are stubbed/unverified."
+        ],
+        "suggested_tightening": "Do not treat this existence/citation assertion as a live-law certification; pair it with the unverified treatment banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b3b021a1bb94e14",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion reports field_i_validity as unverified with null as_of dates, matching the lake treatment fields.",
+          "The lake scope note says treatment/progeny were intentionally not derived at this stage, and the content page likewise states that subsequent treatment is not yet machine-verified.",
+          "The disclosed progeny fields contain no completed query, indexed citing opinions, cached rows, or outbound opinion edges, so the unverified treatment call is consistent with the disclosed record."
+        ],
+        "residual_risks": [
+          "No good-law conclusion can be drawn until citator/progeny verification is completed."
+        ],
+        "suggested_tightening": "Keep the Treatment: Unverified label prominent and add an as_of_treatment date only after citator/progeny derivation is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Burgess.json\",\"reviewed\":[{\"assertion_id\":\"8343c0f7378c6e0b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms the case as United States v. Burgess, docket 08-3072, decided 2009-08-11 by the 10th Cir., with cluster_id and lead_opinion_id 172511.\",\"The lake citations record confirms the displayed citation 576 F.3d 1078 and the listed parallel/vendor citations.\",\"No disclosed treatment edge or progeny entry affirmatively shows that the cited authority has been overruled, abrogated, superseded, or limited; the separate treatment record is expressly unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not affirmatively verify current good-law status because treatment and progeny are stubbed/unverified.\"],\"suggested_tightening\":\"Do not treat this existence/citation assertion as a live-law certification; pair it with the unverified treatment banner.\"},{\"assertion_id\":\"2b3b021a1bb94e14\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion reports field_i_validity as unverified with null as_of dates, matching the lake treatment fields.\",\"The lake scope note says treatment/progeny were intentionally not derived at this stage, and the content page likewise states that subsequent treatment is not yet machine-verified.\",\"The disclosed progeny fields contain no completed query, indexed citing opinions, cached rows, or outbound opinion edges, so the unverified treatment call is consistent with the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law conclusion can be drawn until citator/progeny verification is completed.\"],\"suggested_tightening\":\"Keep the Treatment: Unverified label prominent and add an as_of_treatment date only after citator/progeny derivation is completed.\"}],\"notes\":\"Lens B only; support and quote fidelity were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:21-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:47:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Burgess.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Burgess"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-960e52b0",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-960e52b0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Burgess' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Burgess"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 121305,
+      "output": 5787,
+      "source": "codex-events",
+      "total": 127092
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "2b3b021a1bb94e14": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8343c0f7378c6e0b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "wall_clock_s": 117.2
   }
 }

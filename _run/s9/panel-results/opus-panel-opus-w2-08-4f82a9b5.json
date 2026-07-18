@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7e3bf97717823440",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms identity: 'CARPENTER v. UNITED STATES', 'No. 16-402', 'Argued November 29, 2017-Decided June 22, 2018' - matches record docket/date.",
+          "Official 585 U.S. 296 plus parallels 138 S. Ct. 2206 / 201 L. Ed. 2d 507 / 2018 U.S. LEXIS 3844 are internally consistent across official/parallel/all arrays (cluster.citations[]); identity_checked=true, expected_citation_found=true, party_name_in_text=true."
+        ],
+        "residual_risks": [
+          "Final U.S. Reports page (296) is carried by CL cluster metadata, not visible on the inlined slip opinion; not independently re-derivable from opinion text alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b89405c7a6b03e2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Whether the Government employs its own surveillance technology as in Jones or leverages the technology of a wireless carrier, we hold that an individual maintains a legitimate expectation of privacy in the record of his physical movements as captured through CSLI.",
+          "locator_note": "payload quote vs cached opinion lines ~1910-1915 (slip op. p.11; the page break to '12 CARPENTER v. UNITED STATES' immediately follows); the real anchored quote sits on the content-page Rule line.",
+          "needs_cl": false,
+          "problem": "The pin-op11 'quote' is not opinion text - it is a harvested span of the CONTENT PAGE (Background->Issue->Rule prose) that includes markdown headers '## Issue' and '## Rule Yes.'; it appears nowhere in the Carpenter opinion. The machine self-flag quote_fidelity='mismatch' is confirmed.",
+          "proposed_fix": "Re-harvest pin-op11 to the sentence the content page actually anchors (Rule line): 'Whether the Government employs its own surveillance technology as in Jones or leverages the technology of a wireless carrier, we hold that an individual maintains a legitimate expectation of privacy in the record of his physical movements as captured through CSLI.' - which matches the cached opinion verbatim at slip op. p.11.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' contains '## Issue' and '## Rule Yes.' markdown section headers - a content-page artifact impossible in opinion prose.",
+          "The actual content-page ^pin-op11 quote matches the cached opinion verbatim at slip op. p.11, so the harvest boundary is wrong but the underlying published page citation and pincite are sound."
+        ],
+        "residual_risks": [
+          "Data-hygiene defect in the stored pinpoint only; the published page citation and pincite (slip op., at 11) are correct and verbatim-faithful."
+        ],
+        "suggested_tightening": "Fix the pinpoint harvester's span boundary so it captures the quoted sentence, not surrounding page prose/markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a494181936d54fc5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law for a 2018 SCOTUS decision that itself narrows the third-party doctrine for digital-age location data; scope_note is accurate to the cached syllabus/opinion holding.",
+          "The mined negative edges (lane1_negative / lane2_top_cited) are all proposed:true keyword-mined false positives - state-court citing cases whose own 'overruled/questioned/abrogated/superseded' signals cannot overrule a SCOTUS decision; none is a genuine negative treatment OF Carpenter."
+        ],
+        "residual_risks": [
+          "Currency as-of 2026-06-30 rests on migration-seed basis (legacy 'good' -> 'good_law'); the proposed negative edges are N-blind keyword FPs and must not be promoted as real negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f735951cd3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Carpenter v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-08-4f82a9b5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Carpenter v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7b89405c7a6b03e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7e3bf97717823440": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a494181936d54fc5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53aaa4f0cc",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f735951cd3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

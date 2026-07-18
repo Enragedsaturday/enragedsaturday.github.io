@@ -1,0 +1,116 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f108a8eb5c5442e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms 'Dickerson v. United States', Rehnquist C.J. for the Court with Scalia dissent 'post, p. 444', and star-pages *430 through *449 — consistent with 530 U.S. 428.",
+          "Lake record cluster 118380, docket 99-5525, decided 2000-06-26; official cite 530 U.S. 428 matches."
+        ],
+        "residual_risks": [
+          "First page 428 is not shown verbatim (opinion-body star-pagination begins at *430/*431) and parallel cites are not independently reproduced, but the page range and identity are consistent with 530 U.S. 428."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb8cd52680639190",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' field is a garbled extractor artifact (frontmatter/header span up to '## Rule'), not the pin-444 quote; its 'mismatch' flag compares the wrong span and is not ground truth.",
+          "The actual pin-444 quote matches the cached opinion verbatim: cached 'In sum, we conclude that Miranda announced a constitutional rule that Congress may not supersede legislatively. Following the rule of stare decisis, we decline to overrule Miranda ourselves.' — the content elides 'In sum,' via '[W]e' (proper Bluebook) and drops the footnote [8] marker; italics on 'Miranda' and 'stare decisis' preserved.",
+          "Pincite 444 is correct: star *444 precedes the concluding sentence, which sits at the end of the majority opinion before Scalia's dissent (*445 follows)."
+        ],
+        "residual_risks": [
+          "Payload pinpoint_status:'slip-only' and star_marker:null are extractor artifacts; the source is a 2000 U.S. Reports opinion with star-pagination at *444."
+        ],
+        "suggested_tightening": "Re-run the quote extractor so the payload captures the true pin-444 span instead of the page header.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e123130df8dc817",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The only inlined evidence is the 2000 opinion text, which cannot confirm 2026 treatment currency; no citator data is disclosed.",
+          "No disclosed negative treatment; the record frames Dickerson (Miranda is a constitutional rule Congress cannot supersede) as a framework applied (not overruled) by Berghuis.",
+          "Refuting 'good_law' absent disclosed negative-treatment evidence would fabricate a defect, which is barred."
+        ],
+        "residual_risks": [
+          "field_i_validity:'good_law' is a migration-seed default; scope_note flags possible S2 downgrade; currency is not machine-verified from the disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b9c10bb6e1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Dickerson v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-08-aeb2d3f6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dickerson v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6e123130df8dc817": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f108a8eb5c5442e5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb8cd52680639190": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9c10bb6e1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7d22dd06da1235bc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official '592 U.S. 306' (selected_official=true) matches the content-page header and frontmatter '592 U.S. 306 (2021)'.",
+          "Cached syllabus caption 'TORRES v. MADRID' and the 2021-03-25 decision date confirm identity; 592 U.S. 306 is the correct U.S. Reports cite."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c6e52e95614a243",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content-page pin-op1 quotation reproduces the Court's opinion opening verbatim: cached text reads 'The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person.' (Roberts, C.J.).",
+          "Pincite 'slip op., at 1' is correct: this is the opening statement of the opinion of the Court on page 1.",
+          "Payload quote_fidelity='mismatch' is an extractor artifact -- the captured 'quote' is the front-matter/Background block preceding the ^pin-op1 anchor, not the rendered quotation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-anchor the quote harvester to the quotation span; it captured the text preceding ^pin-op1 rather than the quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e3928120c590f54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope note 'Recent SCOTUS holding; good law' is consistent with the disclosed 2021 SCOTUS majority opinion; nothing disclosed indicates reversal or abrogation.",
+          "field_i_validity=good_law with coherent dates (as_of_content=decision date 2021-03-25; as_of_treatment=2026-06-30)."
+        ],
+        "residual_risks": [
+          "Currency (good law as of 2026-06-30) rests on absence of contradicting evidence; no citator/subsequent-history is inlined to independently confirm."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:12:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7df63e77ee",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Torres v. Madrid.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w13-03-13fd95ba",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w13-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Torres v. Madrid"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3c6e52e95614a243": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e3928120c590f54": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d22dd06da1235bc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7df63e77ee",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,39 +1,107 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/kastigar-v-united-states--108541.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, lake JSON, task.md, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "6611f86a4e2e16b4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/kastigar-v-united-states--108541__283720.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity and citations, but does not verify the currency/live-law status required by the B-lens existence review. The treatment/progeny record is an intentional frontier stub with unverified treatment and no derived progeny edges.",
+          "proposed_fix": "Limit this assertion to verified case identity/citation only, or add a complete treatment/progeny record before implying that the authority is still live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields support existence: status is verified_identity and expected_citation_found is true.",
+          "Lake citations.all contains the cited reporters, including 406 U.S. 441, 92 S. Ct. 1653, 32 L. Ed. 2d 212, and 1972 U.S. LEXIS 57.",
+          "Currency cannot be verified because treatment.field_i_validity is unverified, as_of_treatment is null, and progeny/outbound edges are empty by stub design."
+        ],
+        "residual_risks": [
+          "The case may in fact remain live law, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Separate verified identity/citation status from live-law status.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "05d8cf7d83921762",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload's treatment call is unverified, matching lake treatment.field_i_validity.",
+          "The null as_of_content and as_of_treatment values match the lake treatment fields.",
+          "The scope note matches the disclosed lake record's statement that treatment/progeny were intentionally not derived."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment label; it does not establish that Kastigar is good law."
+        ],
+        "suggested_tightening": "Display this as treatment unverified, not as a positive good-law signal.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/kastigar-v-united-states--108541.json\",\"reviewed\":[{\"assertion_id\":\"6611f86a4e2e16b4\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity and citations, but does not verify the currency/live-law status required by the B-lens existence review. The treatment/progeny record is an intentional frontier stub with unverified treatment and no derived progeny edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to verified case identity/citation only, or add a complete treatment/progeny record before implying that the authority is still live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/kastigar-v-united-states--108541__283720.json treatment/progeny fields\"},\"reasons\":[\"Lake identity fields support existence: status is verified_identity and expected_citation_found is true.\",\"Lake citations.all contains the cited reporters, including 406 U.S. 441, 92 S. Ct. 1653, 32 L. Ed. 2d 212, and 1972 U.S. LEXIS 57.\",\"Currency cannot be verified because treatment.field_i_validity is unverified, as_of_treatment is null, and progeny/outbound edges are empty by stub design.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The case may in fact remain live law, but that cannot be confirmed from the disclosed files.\"],\"suggested_tightening\":\"Separate verified identity/citation status from live-law status.\"},{\"assertion_id\":\"05d8cf7d83921762\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory payload's treatment call is unverified, matching lake treatment.field_i_validity.\",\"The null as_of_content and as_of_treatment values match the lake treatment fields.\",\"The scope note matches the disclosed lake record's statement that treatment/progeny were intentionally not derived.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stands only as an unverified-treatment label; it does not establish that Kastigar is good law.\"],\"suggested_tightening\":\"Display this as treatment unverified, not as a positive good-law signal.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, lake JSON, task.md, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:18:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ad39306102"
+    ],
     "group_id": "_overhaul2/lake/cases/kastigar-v-united-states--108541.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "kastigar-v-united-states--108541"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d45bbe65",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d45bbe65.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'kastigar-v-united-states--108541' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record kastigar-v-united-states--108541"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "kastigar-v-united-states--108541"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 68561,
+      "output": 3377,
+      "source": "codex-events",
+      "total": 71938
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "05d8cf7d83921762": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6611f86a4e2e16b4": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ad39306102",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 66.3
   }
 }

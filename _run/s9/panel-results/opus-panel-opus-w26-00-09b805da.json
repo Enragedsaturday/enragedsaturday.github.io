@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "52d5b66983324d7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake: official '427 U.S. 463'; parallels '96 S. Ct. 2737','49 L. Ed. 2d 627'; vendor-neutral '1976 U.S. LEXIS 78' - match payload.",
+          "Cached opinion is Andresen v. Maryland, star pages 464-494 (opinion begins 463), 1976 - corroborates."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "349ee891891d7c41",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Andresen refines the particularity requirement (contextual reading of a catch-all 'other fruits' clause); 'Key - Progeny / Refinement' on '[[Particularity]]' is well-founded.",
+          "Frontmatter homes and 'Appears on' agree exactly ('[[Particularity]] - Key - Progeny / Refinement')."
+        ],
+        "residual_risks": [
+          "Target Particularity page not inlined; role-fit verified, listing not independently confirmable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e691755f4be2edde",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "holding: \"A particularized warrant to search for and seize a person's business records, and their introduction in evidence, does not violate the...\"",
+          "locator_note": "content_page frontmatter holding field",
+          "needs_cl": false,
+          "problem": "The holding field is truncated mid-sentence - 'A particularized warrant to search for and seize a person's business records, and their introduction in evidence, does not violate the...' - it never names WHAT is not violated (Fifth Amendment / particularity) and ends with an ellipsis.",
+          "proposed_fix": "Complete the holding, e.g. '...does not violate the Fifth Amendment privilege against self-incrimination, and a contextually limited catch-all clause does not render an otherwise particular warrant a forbidden general warrant.'",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "As far as it goes the proposition is supported - op.: 'we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription...' - but the field is grammatically and semantically incomplete."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store the full holding sentence rather than a character-limited truncation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a336166f565ffa6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Record status verified, field_i_validity 'good_law' by migration-seed; scope_note honestly flags that S2 re-derivation may downgrade.",
+          "The 40+ 'edges' are proposed=true, uncertified negative candidates (e.g. state cases and later SCOTUS cases 'overruled'/'questioned' Andresen via lane1_negative/lane2_top_cited) - facially spurious, not credible evidence that Andresen is bad law."
+        ],
+        "residual_risks": [
+          "Currency ('still good law') cannot be independently re-derived under hard independence / no CL; rests on the record self-report plus transparently spurious proposed edges.",
+          "composite_basis is migration-seed, not a fresh S2 derivation."
+        ],
+        "suggested_tightening": "Prune or adjudicate the spurious proposed negative edges before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "6a8a2e80c2243016",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "SCOTUS decision; 'Binding - SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:42:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-87fc3b09b4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Andresen v. Maryland.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w26-00-09b805da",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w26-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Andresen v. Maryland"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "349ee891891d7c41": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a336166f565ffa6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "52d5b66983324d7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a8a2e80c2243016": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e691755f4be2edde": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4782779307",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-87fc3b09b4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

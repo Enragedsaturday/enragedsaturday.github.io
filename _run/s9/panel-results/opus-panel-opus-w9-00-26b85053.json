@@ -1,0 +1,174 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "256b0fc9b80152a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms Ornelas et al. v. United States, 517 U.S. 690 (1996), No. 95-5257, Chief Justice Rehnquist delivering the opinion of the Court; internal reporter markers *692 through *705 are consistent with a case opening at 690.",
+          "Official cite 517 U.S. 690 matches caption and cluster metadata; the assertion is the case_cite existence, which is confirmed."
+        ],
+        "residual_risks": [
+          "METADATA DISCREPANCY for orchestrator: cached opinion states 'Decided May 28, 1996' but page front-matter date_decided=1996-06-10 — outside this citation assertion's payload but a real conflict from disclosed evidence.",
+          "Parallels (116 S. Ct. 1657, 134 L. Ed. 2d 911, 1996 U.S. LEXIS 3391) are metadata not verifiable from the opinion text."
+        ],
+        "suggested_tightening": "Reconcile date_decided (1996-06-10) against the reporter's 'Decided May 28, 1996'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "16d59ad234cb8aa6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quotation 'a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers.' is verbatim in the opinion; the sentence lies between reporter markers *699 and *700 (page 699). Extractor concurs (quote_fidelity='matched', star-verified 699).",
+          "Pincite range '699-700' is slightly over-inclusive for this one-sentence quote (which is on 699) but defensible: the clear-error / due-weight point is elaborated through page 700."
+        ],
+        "residual_risks": [
+          "The quoted sentence is on 699; the '699-700' range covers the following due-weight discussion (Milwaukee example) that continues to 700."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e563bfc8d18a3ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quotation 'We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed de novo on appeal.' is verbatim in the opinion on page 699 (between *699 and *700); pincite 517 U.S. at 699 is correct.",
+          "Extractor 'mismatch' flag is a false positive from the *de novo* italic markup."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6e02f67d196cfb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Disclosed 'quote' is an extractor context-capture ('## Issue ... ## Rule The ultimate determinations are reviewed de novo.'), not the page's quotation.",
+          "The page's actual ^pin-691 quotation ('We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed de novo.') is verbatim in the opening paragraph of Rehnquist's opinion, before the opinion-body forward marker *692, i.e. on page 691; pincite 517 U.S. at 691 is correct.",
+          "A duplicated *692 marker appears in the attorney block above the opinion (a cached-HTML pagination glitch); the reliable opinion-body forward marker places the sentence on 691."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "311521b7461527d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' as of 2026-06-30; the opinion is a Rehnquist majority (8-1, Scalia dissenting) establishing de novo review of reasonable suspicion and probable cause, consistent with the page's 'remains controlling' treatment note.",
+          "Currency is not citator-verifiable from the 1996 opinion; the scope_note itself flags this as a migration-seed that 'may downgrade' on S2 re-derivation. No disclosed negative treatment, so not refutable."
+        ],
+        "residual_risks": [
+          "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a pipeline seed note, not a legal scope statement; currency not re-derived in this pack."
+        ],
+        "suggested_tightening": "Replace the pipeline seed note in scope_note with a legal scope statement, or re-derive currency via S2.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-264b4096a4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d7ed35da6e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-593d987a82",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Ornelas v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-00-26b85053",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ornelas v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "16d59ad234cb8aa6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "256b0fc9b80152a9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2e563bfc8d18a3ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "311521b7461527d6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e6e02f67d196cfb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-264b4096a4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d7ed35da6e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-593d987a82",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

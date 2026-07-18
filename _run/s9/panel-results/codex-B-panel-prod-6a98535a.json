@@ -1,22 +1,173 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Maryland v. Dyson.md",
+    "lens": "B",
+    "notes": "Support assertions were recorded but not substantively assessed for support or quote fidelity under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "e672049554f752c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified, names Maryland v. Dyson, court U.S. Supreme Court, date_decided 1999-06-21, and docket 98-1062.",
+          "Lake citations include official 527 U.S. 465, parallel 119 S. Ct. 2013 and 144 L. Ed. 2d 442, and vendor-neutral 1999 U.S. LEXIS 4200.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No disclosed treatment evidence after 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39c2791d5e873bf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/home-role merits are outside lens B.",
+          "No B-lens currency defect was established against the home placement from the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Role importance was not substantively reviewed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a726fe13e412133",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/holding merits are outside lens B.",
+          "The disclosed treatment field marks Dyson good_law with no point_overrides, so no confirmed treatment defect makes the holding obsolete on this record."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity were not reviewed under lens B.",
+          "Proposed negative-treatment edges remain a treatment-audit risk addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cbfa1e0fd11d2ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court and court_level as scotus.",
+          "A Supreme Court decision is properly weighted as Binding — SCOTUS in this corpus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80e75b5af77f6b32",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\",\n        \"field_iii\": \"mentioned\",\n        \"point\": null,\n        \"proposed\": true",
+          "locator_note": "treatment.scope_note and Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law call itself matches the lake final treatment fields, but the flat 'no negative treatment' scope note is overconfident because the disclosed treatment/progeny data includes proposed negative-treatment candidates and audit_needed flags.",
+          "proposed_fix": "Keep field_i_validity as good_law as of 2026-06-30, but change the scope note to say there is no confirmed negative treatment in the final lake treatment record and that proposed negative progeny candidates remain audit items.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake final treatment fields say field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "The same disclosed treatment record has 27 proposed edges with negative field_ii labels such as overruled, questioned, abrogated, criticized, and superseded_by_statute, while derivation lanes show audit_needed true.",
+          "Because those edges are proposed and field_iii is only mentioned, they do not disprove good_law on this record, but they do require caveating the unqualified 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "A complete treatment audit of the proposed edges would be needed to restore an uncaveated no-negative-treatment statement."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative treatment in the final lake treatment record; proposed negative-treatment candidates remain audit items.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Maryland v. Dyson.md\",\"reviewed\":[{\"assertion_id\":\"e672049554f752c0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified, names Maryland v. Dyson, court U.S. Supreme Court, date_decided 1999-06-21, and docket 98-1062.\",\"Lake citations include official 527 U.S. 465, parallel 119 S. Ct. 2013 and 144 L. Ed. 2d 442, and vendor-neutral 1999 U.S. LEXIS 4200.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed treatment evidence after 2026-06-30.\"],\"suggested_tightening\":null},{\"assertion_id\":\"39c2791d5e873bf2\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/home-role merits are outside lens B.\",\"No B-lens currency defect was established against the home placement from the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Role importance was not substantively reviewed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5a726fe13e412133\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/holding merits are outside lens B.\",\"The disclosed treatment field marks Dyson good_law with no point_overrides, so no confirmed treatment defect makes the holding obsolete on this record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity were not reviewed under lens B.\",\"Proposed negative-treatment edges remain a treatment-audit risk addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7cbfa1e0fd11d2ca\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court as U.S. Supreme Court and court_level as scotus.\",\"A Supreme Court decision is properly weighted as Binding — SCOTUS in this corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"80e75b5af77f6b32\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call itself matches the lake final treatment fields, but the flat 'no negative treatment' scope note is overconfident because the disclosed treatment/progeny data includes proposed negative-treatment candidates and audit_needed flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity as good_law as of 2026-06-30, but change the scope note to say there is no confirmed negative treatment in the final lake treatment record and that proposed negative progeny candidates remain audit items.\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\",\\n        \\\"field_iii\\\": \\\"mentioned\\\",\\n        \\\"point\\\": null,\\n        \\\"proposed\\\": true\",\"needs_cl\":true,\"locator_note\":\"treatment.scope_note and Treatment & subsequent history\"},\"reasons\":[\"Lake final treatment fields say field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"The same disclosed treatment record has 27 proposed edges with negative field_ii labels such as overruled, questioned, abrogated, criticized, and superseded_by_statute, while derivation lanes show audit_needed true.\",\"Because those edges are proposed and field_iii is only mentioned, they do not disprove good_law on this record, but they do require caveating the unqualified 'No negative treatment' statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A complete treatment audit of the proposed edges would be needed to restore an uncaveated no-negative-treatment statement.\"],\"suggested_tightening\":\"Use 'No confirmed negative treatment in the final lake treatment record; proposed negative-treatment candidates remain audit items.'\"}],\"notes\":\"Support assertions were recorded but not substantively assessed for support or quote fidelity under lens B.\"}",
   "summary": {
-    "at": "2026-07-10T02:47:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:27:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1c2885adff"
+    ],
     "group_id": "content/cases/Maryland v. Dyson.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-6a98535a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6a98535a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:05.399816Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:06.253056Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:07.369219Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:09.438828Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:13.071972Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Dyson"
+    ],
+    "tokens": {
+      "input": 208782,
+      "output": 8859,
+      "source": "codex-events",
+      "total": 217641
+    },
+    "verdict_map": {
+      "39c2791d5e873bf2": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a726fe13e412133": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cbfa1e0fd11d2ca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "80e75b5af77f6b32": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e672049554f752c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1c2885adff",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 172.0
   }
 }

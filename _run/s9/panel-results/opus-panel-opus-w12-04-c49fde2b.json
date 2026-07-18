@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5f219475b8dfa030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header confirms '388 U.S. 293 (1967)' STOVALL v. DENNO, WARDEN at /opinion/107488/ — official cite and identity match.",
+          "Parallels (87 S.Ct. 1967; 18 L.Ed.2d 1199; 1967 U.S. LEXIS 1087) are cluster metadata, not present in the disclosed U.S.-reporter text."
+        ],
+        "residual_risks": [
+          "Parallel/neutral cites not confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2250b524addfdeb3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the confrontation conducted in this *302 case was so unnecessarily suggestive and conductive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim.",
+          "locator_note": "Cached opinion *302 star (Part II); content page ^pin-302.",
+          "needs_cl": false,
+          "problem": "Inventory payload 'quote' for pin-302 is an extraction artifact: it captured the page front-matter/Background/Issue/Rule prose up to 'The claim asks whether', not the opinion passage anchored at ^pin-302.",
+          "proposed_fix": "Re-anchor to the genuine pin-302 quote ('...the confrontation conducted in this case was so unnecessarily suggestive and conducive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim.'), which is faithful to 388 U.S. at 302.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Genuine page quote at ^pin-302 is faithful to 388 U.S. at 302 and correctly pincited; the defect is confined to the inventory payload string, not the page."
+        ],
+        "residual_risks": [
+          "Cached CL source reads 'conductive' where the page (correctly) reads 'conducive' — an obvious source-side OCR variant; the page's 'conducive' is the canonical reporter word, so this is not a page defect but should be whitelisted before any strict char-level fidelity gate."
+        ],
+        "suggested_tightening": "Fix the extractor anchor window; when char-diffing, whitelist obvious source-side OCR variants such as conductive/conducive.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf5a6f26a87aa6bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it.' appears verbatim at 388 U.S. 302 (source: 'However, a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it, and the record in the present case reveals...').",
+          "Passage is on page 302 (before the *303 star) — 'Id.' pincite to 302 correct.",
+          "Payload 'mismatch' is a false positive (fragment ends with a period where the source continues with a comma)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bbaf957a35860b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed 1967 opinion confirms the due-process suggestiveness holding exists (388 U.S. 302) but carries no citator/subsequent-treatment data, so 2026 good-law currency cannot be affirmatively certified from disclosed evidence.",
+          "Nothing disclosed contradicts good-law; the scope-note's Biggers/Manson reliability development is forward-looking and not verifiable here. Not refuted, not certified."
+        ],
+        "residual_risks": [
+          "Currency (2026) rests on citator data not inlined; the page notes the Wade/Gilbert non-retroactivity holding was superseded while the DP identification holding remains — coherent but uncheckable here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6db7016a4e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d168c68de",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-04-c49fde2b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stovall v. Denno"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2250b524addfdeb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5f219475b8dfa030": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bbaf957a35860b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "bf5a6f26a87aa6bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f90161a47",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6db7016a4e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d168c68de",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

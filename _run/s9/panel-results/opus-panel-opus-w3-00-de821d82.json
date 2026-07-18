@@ -1,0 +1,91 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "81f9b6abe369c0df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a boundary-span harvest artifact ending at 'In the Court's words:' (Issue->Rule seam), which is why it pre-labels 'mismatch'; it is not the authored quote.",
+          "Authored pin-op quote verifies VERBATIM in the cached slip op (dehyphenated line breaks): 'An individual has a reasonable expectation of privacy in records about his cell phone's location, and police intrude on that constitutionally protected interest when they demand the information—even though for only a limited time, and from a third-party tech company.'",
+          "Slip-only pincite (no reporter page) is appropriate for a 2026 slip opinion; 'In the Court's words' attribution matches the Opinion of the Court."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Same harvest-span fix as the other pins to prevent false 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66af6b12105f0489",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached slip op confirms the holding VERBATIM: 'concluding that the police conducted a search when they gained access to Location History data' — geofence/Location-History acquisition IS a Fourth Amendment search.",
+          "Cached slip op confirms the remand VERBATIM: 'We leave to the Court of Appeals the further question whether... the search here was reasonable, meaning that each of its steps was properly described with particularity and found to be supported by probable cause' — PC/particularity left open, matching scope_note.",
+          "good_law as of 2026-06-30 is inherent: decided 2026-06-29 (one day prior); nothing could supersede a same-week SCOTUS anchor."
+        ],
+        "residual_risks": [
+          "CL cluster->opinion id verification (10881683 -> 11349205) is asserted in the record but not independently checkable within the pack; immaterial to the good_law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3dbe7a686e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Chatrie v. United States.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-00-de821d82",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chatrie v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "66af6b12105f0489": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81f9b6abe369c0df": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3dbe7a686e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

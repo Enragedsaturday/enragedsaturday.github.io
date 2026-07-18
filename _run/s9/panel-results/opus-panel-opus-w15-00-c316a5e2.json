@@ -1,0 +1,219 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3d02183683fb49a0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inlined majority opinion confirms the cited authority: EBEL, Circuit Judge, defendant-appellant Ralph Carloss, 10th Cir. knock-and-talk / 'No Trespassing' implied-license holding (matches content page).",
+          "Official cite 818 F.3d 988 consistent across content page, frontmatter, and lake (selected_rank_1); no disclosed contradiction."
+        ],
+        "residual_risks": [
+          "Exact 818 F.3d 988 reporter pagination not printed in the CL HTML block IDs; carried by cluster 3184928 (normal)."
+        ],
+        "suggested_tightening": "As with Capers, the two commercial cites (2016 WL 929663; 2016 U.S. App. LEXIS 4547) are labeled 'vendor_neutral' but are parallel commercial cites — minor taxonomy note, not an existence defect.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b0c1622b082ff30",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion reads 'Carloss has not cited, nor can we find, any post-Jardines authority holding that a resident can revoke the implied license to approach his home and knock on the front door simply by posting' a 'No Trespassing' sign — the quoted tail is verbatim.",
+          "The content-page bracket '[no]' legitimately compresses the original 'has not cited, nor can we find, any' → '[no]' (a proper bracketed editorial alteration preserving meaning); build's payload 'mismatch' flag is a false-negative, the quote is faithful."
+        ],
+        "residual_risks": [
+          "Slip-op page 11 not independently confirmable from CL HTML (block IDs, not slip pagination); quote text verified verbatim regardless."
+        ],
+        "suggested_tightening": "Correct the build quote_fidelity flag from 'mismatch' to matched-with-bracket for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b2deadf01dbe4e0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "implied license to approach a home, knock on the front door, and ask to speak with the occupants",
+          "locator_note": "Content-page anchor ^pin-op1 renders the correct quotes ('Ordinarily a police officer, like any citizen, has an implied license to approach a home, knock on the front door, and ask to speak with the occupants.' and 'those No Trespassing signs would not have conveyed to an objective officer that he could not approach the house and knock on the front door seeking to have a consensual conversation with the occupants.'), both verbatim in the cached majority opinion; defect confined to lake metadata.",
+          "needs_cl": false,
+          "problem": "The stored lake quote for pin-op1 is a content-page Issue-section dump terminating in the markdown heading '## Rule' ('signs posted around a home and on its front door revoke the implied license ... ## Rule'), not an opinion quotation; it does not appear in the opinion and fails quote_fidelity (build self-flagged 'mismatch').",
+          "proposed_fix": "Repopulate pin-op1.quote with the real p.1-2 rule statements the content page already renders verbatim (see evidence_quote).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-op1 stored quote is a garbled page-dump (Issue prose + '## Rule' heading), a genuine quote_fidelity failure.",
+          "The pinpoint anchors to real p.1-2 rule statements that ARE verbatim in the opinion and ARE rendered correctly on the content page, so it survives with a metadata repair only."
+        ],
+        "residual_risks": [
+          "Same page-dump extractor artifact class as Cano pin-op5."
+        ],
+        "suggested_tightening": "Replace the pin-op1 lake quote string with the verbatim p.1-2 passage.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aac97d7c654ed87b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote verbatim in cached opinion: 'just the presence of a “No Trespassing” sign is not alone sufficient to convey to an objective officer, or member of the public, that he cannot go to the front door and knock' and 'Such signs, by themselves, do not have the talismanic quality Carloss attributes to them' (curly/straight quote normalization only).",
+          "Build payload 'mismatch' flag is a false-negative; quote is faithful."
+        ],
+        "residual_risks": [
+          "Slip-op page 11 not independently confirmable from CL HTML; quote text verified verbatim."
+        ],
+        "suggested_tightening": "Correct the build quote_fidelity flag from 'mismatch' to matched for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b700ff9ebe30d733",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'has to be measured, not by what the resident subjectively intended, but instead by what an objective officer would have perceived' is verbatim in the cached opinion.",
+          "The content-page ' . . . ' ellipsis legitimately elides the original middle clause (cached text reads 'the relevant inquiry here, in determining whether the signs revok...'); build 'mismatch' flag is a false-negative, quote is faithful."
+        ],
+        "residual_risks": [
+          "Slip-op page 10 not independently confirmable from CL HTML; quote text verified verbatim."
+        ],
+        "suggested_tightening": "Correct the build quote_fidelity flag from 'mismatch' to matched-with-ellipsis for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65d4c855c4bfeb2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The doctrinal core of the scope note (the divide over whether 'No Trespassing' signage revokes the implied knock-and-talk license) is squarely the subject of the inlined majority opinion, and no disclosed evidence contradicts good_law.",
+          "The inlined text is the EBEL majority only; it does not name a Gorsuch dissent (the sole 'dissenting' token is '(Alito, J., dissenting)' in a Jardines citation), so the scope-note claim 'Then-Judge Gorsuch dissented' is not confirmable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "'Then-Judge Gorsuch dissented' is not verifiable from the inlined majority-only opinion (dissent block not included); not refuted, since nothing disclosed contradicts it.",
+          "good_law currency 'as of 2026-06-30' depends on a citator not in the pack (CL barred); not independently verifiable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bcde96d758",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-12f533860a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2ae1fc81bf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-05f8f8e536",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Carloss.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-00-c316a5e2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Carloss"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3d02183683fb49a0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b0c1622b082ff30": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "65d4c855c4bfeb2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "7b2deadf01dbe4e0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "aac97d7c654ed87b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b700ff9ebe30d733": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcde96d758",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-93b0e95853",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-12f533860a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2ae1fc81bf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-05f8f8e536",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

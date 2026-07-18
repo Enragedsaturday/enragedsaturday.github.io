@@ -1,22 +1,190 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Edwards.json",
+    "lens": "A",
+    "notes": "Treatment row recorded without a Lens B treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "f69f7eea540dd980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies United States v. Edwards, U.S. Supreme Court, decided 1974-03-26, docket 73-88.",
+          "The official citation in the lake record is 415 U.S. 800, matching the content page display and citation metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ae747bda1af71d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "his own privacy",
+          "locator_note": "pin-808; opinion text line containing the DeLeo block quote across star pages 808-809.",
+          "needs_cl": false,
+          "problem": "The DeLeo quotation is materially supported but not character-faithful as presented: the displayed quote normalizes/recasts the source wording and substitutes bracketed language for the source pronoun.",
+          "proposed_fix": "Either quote the DeLeo sentence exactly from the opinion text, preserving the source wording and dash treatment, or convert this sentence to a paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text supports the privacy proposition, but the quoted string is not an exact character match to the cached text.",
+          "The source passage also contains raw pagination/encoding artifacts around the dash, so exact quotation needs careful normalization or should be paraphrased."
+        ],
+        "residual_risks": [
+          "The cached HTML has mojibaked dash encoding at this point; a renderer-normalized source may display differently, but the disclosed text still does not match the page quote exactly."
+        ],
+        "suggested_tightening": "Use a paraphrase unless the build pipeline can preserve a clean, exact DeLeo quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "823a0dd55db502da",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "searches and seizures that could be made",
+          "locator_note": "pin-803; opinion text line 18, immediately after star page 803.",
+          "needs_cl": false,
+          "problem": "The stored pin-803 quote is corrupted: it contains built-page markdown/header/background text and stops before the actual opinion passage used for the 803 rule quote.",
+          "proposed_fix": "Replace pin-803's stored quote with the actual opinion passage at page 803, or with the visible page quote that is supported by the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page content rather than the Supreme Court opinion text.",
+          "The cached opinion text does contain the 803 rule passage, but the lake pinpoint quote does not faithfully capture it."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-803 from text/United States v. Edwards__f54a1a.txt rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1a84bccf2a82774",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "processing, on the one hand, and the taking",
+          "locator_note": "pin-807; opinion text line 25 across star pages 807-808.",
+          "needs_cl": false,
+          "problem": "The quote tracks the source proposition, but the ellipsis segment is not character-faithful because the source contains an omitted phrase and punctuation after administrative processing.",
+          "proposed_fix": "Use the full source wording around the omitted phrase, or preserve the source comma when using an ellipsis.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion supports the broader rule stated on the page.",
+          "The displayed quote changes the source punctuation around the omission, so it needs a minor quote-fidelity correction."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Prefer the full sentence at 807-808 to avoid an avoidable ellipsis-fidelity issue.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cac1bb8ef545e490",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; this row is recorded only for completeness.",
+          "The treatment fields in the content page mirror the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1974-03-26, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Edwards.json\",\"reviewed\":[{\"assertion_id\":\"f69f7eea540dd980\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies United States v. Edwards, U.S. Supreme Court, decided 1974-03-26, docket 73-88.\",\"The official citation in the lake record is 415 U.S. 800, matching the content page display and citation metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7ae747bda1af71d1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The DeLeo quotation is materially supported but not character-faithful as presented: the displayed quote normalizes/recasts the source wording and substitutes bracketed language for the source pronoun.\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the DeLeo sentence exactly from the opinion text, preserving the source wording and dash treatment, or convert this sentence to a paraphrase.\",\"evidence_quote\":\"his own privacy\",\"needs_cl\":false,\"locator_note\":\"pin-808; opinion text line containing the DeLeo block quote across star pages 808-809.\"},\"reasons\":[\"The opinion text supports the privacy proposition, but the quoted string is not an exact character match to the cached text.\",\"The source passage also contains raw pagination/encoding artifacts around the dash, so exact quotation needs careful normalization or should be paraphrased.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached HTML has mojibaked dash encoding at this point; a renderer-normalized source may display differently, but the disclosed text still does not match the page quote exactly.\"],\"suggested_tightening\":\"Use a paraphrase unless the build pipeline can preserve a clean, exact DeLeo quote.\"},{\"assertion_id\":\"823a0dd55db502da\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-803 quote is corrupted: it contains built-page markdown/header/background text and stops before the actual opinion passage used for the 803 rule quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-803's stored quote with the actual opinion passage at page 803, or with the visible page quote that is supported by the opinion text.\",\"evidence_quote\":\"searches and seizures that could be made\",\"needs_cl\":false,\"locator_note\":\"pin-803; opinion text line 18, immediately after star page 803.\"},\"reasons\":[\"The payload quote begins with page content rather than the Supreme Court opinion text.\",\"The cached opinion text does contain the 803 rule passage, but the lake pinpoint quote does not faithfully capture it.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-803 from text/United States v. Edwards__f54a1a.txt rather than from the rendered content page.\"},{\"assertion_id\":\"b1a84bccf2a82774\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote tracks the source proposition, but the ellipsis segment is not character-faithful because the source contains an omitted phrase and punctuation after administrative processing.\",\"severity\":\"low\",\"proposed_fix\":\"Use the full source wording around the omitted phrase, or preserve the source comma when using an ellipsis.\",\"evidence_quote\":\"processing, on the one hand, and the taking\",\"needs_cl\":false,\"locator_note\":\"pin-807; opinion text line 25 across star pages 807-808.\"},\"reasons\":[\"The opinion supports the broader rule stated on the page.\",\"The displayed quote changes the source punctuation around the omission, so it needs a minor quote-fidelity correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Prefer the full sentence at 807-808 to avoid an avoidable ellipsis-fidelity issue.\"},{\"assertion_id\":\"cac1bb8ef545e490\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; this row is recorded only for completeness.\",\"The treatment fields in the content page mirror the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1974-03-26, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency review was performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded without a Lens B treatment finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:26-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:53:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ee0308e82f",
+      "F-S9-PR-ed63cc25f7",
+      "F-S9-PR-db375ce77a"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Edwards.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3643855f",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3643855f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:18.326872Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:19.193043Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:20.458312Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:22.445550Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:26.295150Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Edwards"
+    ],
+    "tokens": {
+      "input": 254584,
+      "output": 10656,
+      "source": "codex-events",
+      "total": 265240
+    },
+    "verdict_map": {
+      "7ae747bda1af71d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "823a0dd55db502da": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b1a84bccf2a82774": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "cac1bb8ef545e490": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f69f7eea540dd980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ee0308e82f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ed63cc25f7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-db375ce77a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 202.9
   }
 }

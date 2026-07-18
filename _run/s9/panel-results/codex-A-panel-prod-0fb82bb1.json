@@ -1,13 +1,81 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "34c035d0a0f0ad87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for Pennsylvania Board of Probation and Parole v. Scott and identifies the case as Pennsylvania Bd. of Probation and Parole v. Scott.",
+          "The official citation in the lake record is 524 U.S. 357, with parallel citations 118 S. Ct. 2014 and 141 L. Ed. 2d 344, matching the inventory payload.",
+          "The lake identity fields show U.S. Supreme Court, decided 1998-06-25, year 1998, docket 97-581."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acef632e09f32ce9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees’ Fourth Amendment rights.",
+          "locator_note": "content_page.md places ^pin-364 after the Conclusion quote, but lake pinpoints[].quote instead contains paraphrase-like Application text plus '## Conclusion' and is itself marked quote_fidelity='mismatch'.",
+          "needs_cl": false,
+          "problem": "The harvested pin-364 quote is not character-faithful to the disclosed opinion text and includes page-content spillover rather than the pinned holding sentence.",
+          "proposed_fix": "Replace pin-364 with the exact page-364 holding sentence and remove the harvested markdown heading spillover.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote reads: 'because the criminal-trial exclusionary rule already deters unconstitutional searches. The social costs of excluding reliable evidence — letting violators escape revocation — outweighed those marginal benefits. ## Conclusion'.",
+          "That text is not the exact opinion text at page 364; the disclosed opinion says the criminal-trial rule 'already provides significant deterrence of unconstitutional searches' and then states the holding.",
+          "The inclusion of '## Conclusion' shows the pin harvest crossed into the built page heading, not a court-authored passage."
+        ],
+        "residual_risks": [
+          "The content page's displayed holding quote is substantively supported, but strict quote fidelity requires matching punctuation and apostrophe style to the disclosed text."
+        ],
+        "suggested_tightening": "Use the exact disclosed sentence: \"We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees’ Fourth Amendment rights.\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bb1368ac11271a0b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity='good_law', as_of_treatment='2026-06-30', varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"34c035d0a0f0ad87\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record exists for Pennsylvania Board of Probation and Parole v. Scott and identifies the case as Pennsylvania Bd. of Probation and Parole v. Scott.\",\n        \"The official citation in the lake record is 524 U.S. 357, with parallel citations 118 S. Ct. 2014 and 141 L. Ed. 2d 344, matching the inventory payload.\",\n        \"The lake identity fields show U.S. Supreme Court, decided 1998-06-25, year 1998, docket 97-581.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"acef632e09f32ce9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The harvested pin-364 quote is not character-faithful to the disclosed opinion text and includes page-content spillover rather than the pinned holding sentence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-364 with the exact page-364 holding sentence and remove the harvested markdown heading spillover.\",\n        \"evidence_quote\": \"We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees’ Fourth Amendment rights.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md places ^pin-364 after the Conclusion quote, but lake pinpoints[].quote instead contains paraphrase-like Application text plus '## Conclusion' and is itself marked quote_fidelity='mismatch'.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote reads: 'because the criminal-trial exclusionary rule already deters unconstitutional searches. The social costs of excluding reliable evidence — letting violators escape revocation — outweighed those marginal benefits. ## Conclusion'.\",\n        \"That text is not the exact opinion text at page 364; the disclosed opinion says the criminal-trial rule 'already provides significant deterrence of unconstitutional searches' and then states the holding.\",\n        \"The inclusion of '## Conclusion' shows the pin harvest crossed into the built page heading, not a court-authored passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's displayed holding quote is substantively supported, but strict quote fidelity requires matching punctuation and apostrophe style to the disclosed text.\"\n      ],\n      \"suggested_tightening\": \"Use the exact disclosed sentence: \\\"We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees’ Fourth Amendment rights.\\\"\"\n    },\n    {\n      \"assertion_id\": \"bb1368ac11271a0b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity='good_law', as_of_treatment='2026-06-30', varies_by_point=false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment audit performed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:15:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-77c058a66f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b3f7dbab2e"
+    ],
     "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +84,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0fb82bb1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania Board of Probation and Parole v. Scott"
     ],
     "tokens": {
-      "input": 834,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 834
+      "input": 75115,
+      "output": 4174,
+      "source": "codex-events",
+      "total": 79289
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "34c035d0a0f0ad87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acef632e09f32ce9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bb1368ac11271a0b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b3f7dbab2e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-77c058a66f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 81.2
   }
 }

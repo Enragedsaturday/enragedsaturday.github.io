@@ -1,12 +1,74 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defect asserted.",
+    "reviewed": [
+      {
+        "assertion_id": "657eb07434761de1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Michigan v. Fisher as a U.S. Supreme Court case decided 2009-12-07.",
+          "The disclosed citations include the official cite 558 U.S. 45, with official_selection selecting 558 U.S. 45.",
+          "The lake treatment judgment states field_i_validity=good_law as of 2026-06-30, so the authority remains live on the disclosed record."
+        ],
+        "residual_risks": [
+          "The treatment derivation notes lane2_top_cited cap_hit=true and audit_needed=true, but no disclosed final adverse treatment supersedes the lake good-law judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35fa5d5fb3ac8831",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; I raise no support or quote-fidelity defect.",
+          "No additional live-law or treatment defect appears in this quote-fidelity row beyond the treatment assertion reviewed separately."
+        ],
+        "residual_risks": [
+          "Lens A must resolve any quote-fidelity issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd0de3de441fa860",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page treatment fields match the lake judgment: field_i_validity=good_law, as_of_content=2009-12-07, as_of_treatment=2026-06-30, varies_by_point=false, and scope_note='Per curiam; applies Brigham City v. Stuart.'",
+          "The lake record has no point_overrides, so the no-variation treatment call is consistent with the disclosed treatment fields.",
+          "Although the progeny edges include negative field_ii labels, every listed edge is proposed=true, point=null, and field_iii=mentioned; none is a final disclosed overrule, abrogation, supersession, or limitation of Michigan v. Fisher.",
+          "The Caniglia v. Strom edge is likewise proposed=true and field_iii=mentioned, so the disclosed record does not contradict the page's statement that Caniglia does not disturb Fisher."
+        ],
+        "residual_risks": [
+          "Treatment provenance says legacy treatment migrated from good to good_law and lane2_top_cited has audit_needed=true; that is an audit-risk note, not a disclosed adverse treatment event."
+        ],
+        "suggested_tightening": "If the corpus distinguishes audited treatment from migration-seed treatment, expose the migration/audit provenance separately from the good-law label.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Fisher.json\",\"reviewed\":[{\"assertion_id\":\"657eb07434761de1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Michigan v. Fisher as a U.S. Supreme Court case decided 2009-12-07.\",\"The disclosed citations include the official cite 558 U.S. 45, with official_selection selecting 558 U.S. 45.\",\"The lake treatment judgment states field_i_validity=good_law as of 2026-06-30, so the authority remains live on the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation notes lane2_top_cited cap_hit=true and audit_needed=true, but no disclosed final adverse treatment supersedes the lake good-law judgment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"35fa5d5fb3ac8831\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; I raise no support or quote-fidelity defect.\",\"No additional live-law or treatment defect appears in this quote-fidelity row beyond the treatment assertion reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve any quote-fidelity issue.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bd0de3de441fa860\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The page treatment fields match the lake judgment: field_i_validity=good_law, as_of_content=2009-12-07, as_of_treatment=2026-06-30, varies_by_point=false, and scope_note='Per curiam; applies Brigham City v. Stuart.'\",\"The lake record has no point_overrides, so the no-variation treatment call is consistent with the disclosed treatment fields.\",\"Although the progeny edges include negative field_ii labels, every listed edge is proposed=true, point=null, and field_iii=mentioned; none is a final disclosed overrule, abrogation, supersession, or limitation of Michigan v. Fisher.\",\"The Caniglia v. Strom edge is likewise proposed=true and field_iii=mentioned, so the disclosed record does not contradict the page's statement that Caniglia does not disturb Fisher.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment provenance says legacy treatment migrated from good to good_law and lane2_top_cited has audit_needed=true; that is an audit-risk note, not a disclosed adverse treatment event.\"],\"suggested_tightening\":\"If the corpus distinguishes audited treatment from migration-seed treatment, expose the migration/audit provenance separately from the good-law label.\"}],\"notes\":\"Lens B only; no support or quote-fidelity defect asserted.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:11-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:11:31-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cf25f48669",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
     "group_total_assertions": 3,
@@ -16,21 +78,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-8aeb3a2f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Fisher"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 245125,
+      "output": 7273,
+      "source": "codex-events",
+      "total": 252398
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "35fa5d5fb3ac8831": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "657eb07434761de1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd0de3de441fa860": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cf25f48669",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 150.3
   }
 }

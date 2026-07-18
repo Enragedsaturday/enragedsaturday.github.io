@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/NASA v. FLRA.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No support or black_letter inventory rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "8965e1994a8db32a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id NASA v. FLRA, court U.S. Supreme Court, decided 1999-06-17, docket 98-369.",
+          "The lake official citation is 527 U.S. 229, and the parallel/vendor citations in the payload match lake.citations.",
+          "The cached opinion header shows 527 U.S. 229 (1999), United States Supreme Court, decided June 17, 1999."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03b392c16cb9be09",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "representative of the agency",
+          "locator_note": "lake pinpoints[id=pin-231] has star_marker 233 and fragment #:~:text=by%20a-,representative%20of%20the%20agency; the cached text places the 'by a representative of the agency' phrase in the statutory block after the *233 marker.",
+          "needs_cl": false,
+          "problem": "The quoted fragment is character-faithful, but the pinpoint is mislabeled as pin-231/527 U.S. at 231 while the disclosed fragment and star_marker target the statutory text at *233.",
+          "proposed_fix": "Either retarget pin-231 to the page-231 passage quoted on the content page or relabel this pinpoint/citation as 527 U.S. at 233.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase itself exactly matches the lake pinpoint quote and appears in the cached opinion text.",
+          "The disclosed star marker is 233, not 231, so the locator should not be used as a 527 U.S. at 231 pin without retargeting."
+        ],
+        "residual_risks": [
+          "The larger page-231 quotation on the content page is not represented in this inventory row's payload."
+        ],
+        "suggested_tightening": "Use one pin for the *231 Court-language quote and a separate pin for the *233 statutory-language quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b81dbcbbd82a4f7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "within the meaning of 5 U.S.C. § 7114(a)(2)(B), so that a NASA employee's statutory right to union representation at an investigatory examination may be invoked. ## Rule The statute grants the representation right at",
+          "locator_note": "lake pinpoints[id=pin-233] has quote_fidelity mismatch, pinpoint_status slip-only, and no star_marker, fragment, or position.",
+          "needs_cl": false,
+          "problem": "The pin-233 quote is not a character-faithful opinion excerpt; it is a stitched content-page artifact spanning the Issue text and the Rule heading, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-233 from the actual statutory block at 527 U.S. at 233, or convert the rule statement to a paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains '## Rule', which is content_page markdown, not opinion text.",
+          "The cached opinion at *233 contains the statutory block for § 7114(a), not the payload sentence.",
+          "The disclosed lake judgment for this pin says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Anchor the rule quote to the exact statutory block beginning with '(B) any examination of an employee in the unit...'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e92a2c4501748b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake.treatment fields: field_i_validity good_law, as_of_content 1999-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/NASA v. FLRA.json\",\"reviewed\":[{\"assertion_id\":\"8965e1994a8db32a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id NASA v. FLRA, court U.S. Supreme Court, decided 1999-06-17, docket 98-369.\",\"The lake official citation is 527 U.S. 229, and the parallel/vendor citations in the payload match lake.citations.\",\"The cached opinion header shows 527 U.S. 229 (1999), United States Supreme Court, decided June 17, 1999.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"03b392c16cb9be09\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is character-faithful, but the pinpoint is mislabeled as pin-231/527 U.S. at 231 while the disclosed fragment and star_marker target the statutory text at *233.\",\"severity\":\"medium\",\"proposed_fix\":\"Either retarget pin-231 to the page-231 passage quoted on the content page or relabel this pinpoint/citation as 527 U.S. at 233.\",\"evidence_quote\":\"representative of the agency\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-231] has star_marker 233 and fragment #:~:text=by%20a-,representative%20of%20the%20agency; the cached text places the 'by a representative of the agency' phrase in the statutory block after the *233 marker.\"},\"reasons\":[\"The phrase itself exactly matches the lake pinpoint quote and appears in the cached opinion text.\",\"The disclosed star marker is 233, not 231, so the locator should not be used as a 527 U.S. at 231 pin without retargeting.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The larger page-231 quotation on the content page is not represented in this inventory row's payload.\"],\"suggested_tightening\":\"Use one pin for the *231 Court-language quote and a separate pin for the *233 statutory-language quote.\"},{\"assertion_id\":\"1b81dbcbbd82a4f7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-233 quote is not a character-faithful opinion excerpt; it is a stitched content-page artifact spanning the Issue text and the Rule heading, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-233 from the actual statutory block at 527 U.S. at 233, or convert the rule statement to a paraphrase without quotation marks.\",\"evidence_quote\":\"within the meaning of 5 U.S.C. § 7114(a)(2)(B), so that a NASA employee's statutory right to union representation at an investigatory examination may be invoked. ## Rule The statute grants the representation right at\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-233] has quote_fidelity mismatch, pinpoint_status slip-only, and no star_marker, fragment, or position.\"},\"reasons\":[\"The payload quote contains '## Rule', which is content_page markdown, not opinion text.\",\"The cached opinion at *233 contains the statutory block for § 7114(a), not the payload sentence.\",\"The disclosed lake judgment for this pin says quote_fidelity is mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Anchor the rule quote to the exact statutory block beginning with '(B) any examination of an employee in the unit...'.\"},{\"assertion_id\":\"5e92a2c4501748b3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The treatment payload matches the disclosed lake.treatment fields: field_i_validity good_law, as_of_content 1999-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not independently audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No support or black_letter inventory rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:03-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:20:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6de521634d",
+      "F-S9-PR-8e7b116988"
+    ],
     "group_id": "_overhaul2/lake/cases/NASA v. FLRA.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-88c6a3b3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "NASA v. FLRA"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 364357,
+      "output": 10896,
+      "source": "codex-events",
+      "total": 375253
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "03b392c16cb9be09": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1b81dbcbbd82a4f7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5e92a2c4501748b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8965e1994a8db32a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6de521634d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8e7b116988",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 242.4
   }
 }

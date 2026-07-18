@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "44dbf6340da7e16d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header 'Cite as: 565 U. S. ____ (2012)' and caption 'DARIN RYBURN, ET AL. v. GEORGE R. HUFF, ET AL.', No. 11-208, Decided January 23, 2012 confirm case identity, volume (565 U.S.) and year of the official cite 565 U.S. 469 (2012).",
+          "Official selection present (565 U.S. 469); parallel cites 132 S. Ct. 987 / 181 L. Ed. 2d 966 / 2012 U.S. LEXIS 910 are the standard reporters and internally consistent."
+        ],
+        "residual_risks": [
+          "Parallel-reporter page numbers and the exact U.S. page 469 are not independently confirmable from the disclosed single-reporter slip (which shows '565 U. S. ____')."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05c3bec1d0a06341",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches the cached per curiam verbatim ('In sum, reasonable police officers in petitioners' position could have come to the conclusion that the Fourth Amendment permitted them to enter the Huff residence if there was an objectively reasonable basis for fearing that violence was imminent. And a reasonable officer could have come to such a conclusion based on the facts as found by the District Court.').",
+          "The lake 'mismatch' flag reflects only slip-only pagination (slip shows '565 U. S. ____', not reporter page 477), not a text discrepancy."
+        ],
+        "residual_risks": [
+          "Pincite 'Id. at 477' is slip-only; reporter page unconfirmable from the slip, though the paragraph's position (slip pp. 8-9) is consistent with U.S. p. 477."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dad6a037cbb3048d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A reasonable police officer could read these decisions to mean that the Fourth Amendment permits an officer to enter a residence if the officer has a reasonable basis for concluding that there is an imminent threat of violence.",
+          "locator_note": "Cached opinion per curiam para beginning 'A reasonable police officer could read these decisions...'; corrupt stored quote reproduced in group_inventory payload and lake pinpoints[id=pin-476].",
+          "needs_cl": false,
+          "problem": "The pin-476 pinpoint stores a misextracted CONTENT-PAGE fragment (it literally contains the wiki markdown headers '## Issue' and '## Rule' and paraphrased Background prose such as 'The mother eventually stepped outside') rather than an opinion quote; this text does not appear anywhere in the cached opinion, so it fails quote fidelity as a quote_pinpoint.",
+          "proposed_fix": "Replace the stored pin-476 quote with the opinion sentence the content page actually renders at ^pin-476: 'A reasonable police officer could read these decisions to mean that the Fourth Amendment permits an officer to enter a residence if the officer has a reasonable basis for concluding that there is an imminent threat of violence.' (565 U.S. at 476).",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-476 quote contains literal wiki markdown ('## Issue', '## Rule') and does not occur in the cached opinion — a content-page misextraction, not a verbatim quote.",
+          "The genuine 565 U.S. at 476 quote ('A reasonable police officer could read these decisions to mean...') is present verbatim in the cached text and is what the content page renders at ^pin-476."
+        ],
+        "residual_risks": [
+          "Reader-facing risk is low: the visible page at ^pin-476 shows the correct verbatim quote; the defect is confined to the pinpoint provenance record, which re-verification/flashcard tooling would surface as garbage."
+        ],
+        "suggested_tightening": "Regenerate pinpoint.quote fields from opinion text rather than from rendered content-page slices; the content-fragment capture pattern recurs (Ryburn pin-476, Sabbath pin-590, Salinas pin-2179).",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b56ee6d014e867d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is appropriate for a 2012 SCOTUS per curiam not overruled by the Court; the cached opinion is a SCOTUS reversal in the officers' favor.",
+          "All disclosed treatment edges are 'proposed': true citator-harvest signals; none is a ratified ('proposed': false) or binding SCOTUS overrule, and the field_ii tags largely describe the citing cases' own status.",
+          "scope_note accurately situates Ryburn in the emergency-aid line (Brigham City, Fisher) and the Graham on-scene qualified-immunity standard."
+        ],
+        "residual_risks": [
+          "Full currency depends on citator data beyond the disclosed proposed edges; unreconciled negatives (e.g., McNeely 'questioned', Cole 'overruled') should be human-confirmed as non-negative to Ryburn, though none is disclosed as controlling."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-73e90d333d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fd29a93360",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Ryburn v. Huff.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-09-06848950",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ryburn v. Huff"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "05c3bec1d0a06341": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44dbf6340da7e16d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b56ee6d014e867d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dad6a037cbb3048d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-73e90d333d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4ec60615bd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fd29a93360",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6265762ea702064f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms Los Angeles County, California v. Rettele, 550 U. S. ___ (2007), per curiam, No. 06-605, decided May 21, 2007 - matches 550 U.S. 609 (2007), present in the citation array and rendered on the page.",
+          "All listed cites (127 S. Ct. 1989; 167 L. Ed. 2d 974; 2007 U.S. LEXIS 5900; 75 U.S.L.W. 3619; 20 Fla. L. Weekly Fed. S 281) are volume/year-consistent with 2007; none fabricated. 127 S. Ct. 1989 corroborates the S.Ct. pin labels (1993/1994).",
+          "official/display null is a disclosed 'failed closed' selection artifact (unlisted_reporter: Fla. L. Weekly Fed. S), not a citation-existence defect."
+        ],
+        "residual_risks": [
+          "Exact page 609 not printed in slip text (550 U.S. ___).",
+          "Official-cite selection failed closed, so official/display are null even though 550 U.S. 609 is the correct official cite and is what the content page renders."
+        ],
+        "suggested_tightening": "Harden the official-cite selector to skip unlisted vendor reporters (Fla. L. Weekly Fed. S) and select 550 U.S. 609.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a93193f9093648c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.",
+          "locator_note": "pin-1993; content-page Rule section; per curiam (slip-format text; S. Ct. reporter page 1993 per CL copy).",
+          "needs_cl": false,
+          "problem": "The pinpoint's stored quote field is a content-page front-matter/markdown harvest artifact (begins '--- # Los Angeles County v. Rettele *550 U.S. 609 (2007)* ... ## Rule No.') and is not verbatim opinion text.",
+          "proposed_fix": "Re-harvest the pin-1993 quote from the opinion. The quotation actually rendered at ^pin-1993 is verbatim (quoting Summers): 'The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.' ... '[t]he risk of harm to both the police and the occupants is minimized if the officers routinely exercise unquestioned command of the situation.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pinpoint quote is harvested page front-matter/markdown, not source text.",
+          "The quotation actually rendered at ^pin-1993 is verbatim in the per curiam (quoting Michigan v. Summers), so the published reference is sound; defect confined to the internal stored string."
+        ],
+        "residual_risks": [
+          "S. Ct. reporter page 1993 not verifiable from the slip-format cached text (pinpoint_status: slip-only)."
+        ],
+        "suggested_tightening": "Re-harvest pinpoint quote from opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92bcf225da79b543",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'no accusation that the detention . . . was prolonged[;] [t]he deputies left the home less than 15 minutes after arriving.' matches the opinion ('There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.') with a proper ellipsis for 'here' and standard bracketed alterations ([;], [t]).",
+          "Substance is faithful; the quote_fidelity:'mismatch' flag is a bracket/ellipsis false positive."
+        ],
+        "residual_risks": [
+          "S. Ct. reporter page 1993 not confirmable from slip-format text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96da889f210676d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote \"respondents' constitutional rights were not violated, 'there is no necessity for further inquiries concerning qualified immunity.'\" matches the opinion ('As respondents' constitutional rights were not violated, \"there is no necessity for further inquiries concerning qualified immunity.\" Saucier v. Katz ...'), dropping only the leading 'As'.",
+          "Inner quotation attributed to Saucier is preserved faithfully."
+        ],
+        "residual_risks": [
+          "S. Ct. reporter page 1994 not confirmable from slip-format text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab2d1f7202e9be14",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm . . . , the Fourth Amendment is not violated.' matches the opinion verbatim with a proper ellipsis for 'however'.",
+          "Substance faithful; the mismatch flag is an ellipsis false positive."
+        ],
+        "residual_risks": [
+          "S. Ct. reporter page 1994 not confirmable from slip-format text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bd1b2db01bae463",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Rettele (2007 per curiam) is unrefuted good law; no disclosed evidence reliably shows overruling.",
+          "Proposed negative edges (e.g., Chaney-Snell / Kennedy / Weigel / Norris / Siciliano 'overruled') are unaudited snippet-classified citator artifacts from the 'cites:(...) AND overrul*' query; none actually overrule Rettele. Bailey v. United States (2013) cabined Summers geographically but did not overrule Rettele.",
+          "Derivation self-flags audit_needed / R15."
+        ],
+        "residual_risks": [
+          "field_i_validity migration-seeded, not freshly derived; as_of_treatment 2026-06-30 seeded from old as_of.",
+          "Proposed negative edges unaudited (R15); full currency confirmation requires a CourtListener citator pass."
+        ],
+        "suggested_tightening": "Run the R15 audit to clear the false-positive negative edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-84b2e405d5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bea6b3169d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-32bf5cff64",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3822e5e430",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Los Angeles County v. Rettele.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-09-2a058a2d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Los Angeles County v. Rettele"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1bd1b2db01bae463": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "5a93193f9093648c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6265762ea702064f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92bcf225da79b543": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "96da889f210676d6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab2d1f7202e9be14": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a5551b93e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-84b2e405d5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bea6b3169d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-32bf5cff64",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3822e5e430",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

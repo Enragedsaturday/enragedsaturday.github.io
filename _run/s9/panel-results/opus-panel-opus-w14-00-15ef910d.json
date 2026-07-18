@@ -1,0 +1,117 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "78fdcce416d0c6fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official '413 U.S. 300' selected_rank_1, official_selection_present=true; parallels 93 S. Ct. 2568, 37 L. Ed. 2d 619, 1973 U.S. LEXIS 45 from cluster.citations[].",
+          "Cached opinion header renders '413 U.S. 300 (1973)' with star pagination beginning *301; No. 71-1255, decided June 21 1973, Blackmun, J.",
+          "Content-page header '413 U.S. 300 (1973)' consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b59055b93519be46",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.",
+          "locator_note": "Cached opinion (truncated) contains the holding: 'We hold, then, that the Sixth Amendment does not grant the right to counsel at photographic displays...'; the *321 star marker immediately precedes it, so page 321, matching content-page pincite '413 U.S. at 321'.",
+          "needs_cl": false,
+          "problem": "Lake pinpoints[].quote for pin-321 is a malformed capture storing the page's markdown lead-in (frontmatter + Background + Issue + '## Rule No. The Court held that') instead of the opinion quote; quote_fidelity flagged 'mismatch'. The content-page pincite it backs is verbatim-faithful.",
+          "proposed_fix": "Re-derive pin-321's stored quote to the actual quoted holding: 'the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.' (413 U.S. at 321).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Same garbled lead-in capture pattern as pin-1045 and pin-273; stored quote is page markdown, not opinion text -> data-hygiene defect.",
+          "Underlying content-page holding quote at ^pin-321 matches the cached opinion verbatim (dropping only the 'We hold, then, that ' prefix) and is correctly located on page 321, so no true legal proposition is broken.",
+          "Cached opinion is truncated but does include page 321, so the pincite is fully verifiable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "Malformed stored quote may trigger a false 'unsupported' flag downstream until re-derived."
+        ],
+        "suggested_tightening": "Regenerate stored pinpoint.quote from the holding sentence following the '## Rule' lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "345422af364de3e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law', as_of_content 1973-06-21, as_of_treatment 2026-06-30, composite_basis='migration-seed'; scope_note ('no Sixth Amendment right to counsel at a photographic display') matches the cached opinion's holding at 413 U.S. at 321.",
+          "Ash is a landmark SCOTUS holding (Blackmun, J.); no disclosed evidence indicates negative treatment; lake status is 'verified'.",
+          "Full treatment-currency verification as of 2026-06-30 requires CourtListener progeny (out of scope), hence verifiable_from_disclosed=false; nothing disclosed refutes good_law."
+        ],
+        "residual_risks": [
+          "Treatment currency not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Ash.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-00-15ef910d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ash"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "345422af364de3e8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "78fdcce416d0c6fa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b59055b93519be46": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-243ada4636",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

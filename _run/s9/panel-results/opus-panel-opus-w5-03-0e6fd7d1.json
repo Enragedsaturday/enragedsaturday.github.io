@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4a02aa420259d056",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached Rehnquist plurality carries internal star-pagination *486 through *491, consistent with a case reported at 425 U.S. 484.",
+          "Official cite '425 U.S. 484' matches the lake record; parallels 96 S. Ct. 1646, 48 L. Ed. 2d 113, 1976 U.S. LEXIS 49 are well-formed."
+        ],
+        "residual_risks": [
+          "First page 484 not directly shown in the cached excerpt (body starts at *486), but the volume and page range are corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3440d13e556535c9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.",
+          "locator_note": "Cached opinion paragraph b559-7; the *490 star-pagination precedes the sentence.",
+          "needs_cl": false,
+          "problem": "Stored pin-490 quote field is corrupted: it captured the wiki page's own front-matter/prose (header + Background + Issue + Rule intro), which does not appear anywhere in the opinion text. This confirms the ledger's quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-490's quote with the actual quotation the page's ^pin-490 anchor carries: 'The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.' It appears verbatim at 425 U.S. 490 (cached para b559-7, immediately after the *490 marker).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload/stored quote is page markdown ('--- # Hampton v. United States ... due process does not bar his conviction ...'), which is nowhere in the opinion — a genuine corrupted-quote-field defect, and the mismatch flag is correct.",
+          "The rendered page ^pin-490 quotation is itself verbatim-faithful at p. 490, so reader-facing risk is nil; the defect is confined to the pinpoint record's quote field."
+        ],
+        "residual_risks": [
+          "Fix is mechanical; the intended quote and its 425 U.S. 490 locus are both verifiable from the disclosed cached text."
+        ],
+        "suggested_tightening": "Bound pinpoint-quote extraction to the anchored block so page front-matter cannot leak into quote fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ad67e73da0a7df0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'If the police engage in illegal activity in concert with a defendant ... prosecuting the police under the applicable provisions of state or federal law.' appears verbatim in cached para b560-6, located on p. 490 (before the *491 marker); page cite 'Id.' (=490) is correct.",
+          "Cached OCR reads 'under'' (stray apostrophe) — a transparent scan artifact (same excerpt has 'Kehnquist', 'Bussell', 'wo Id'); the page's clean 'under the' is the correct reading, so the ledger's 'mismatch' flag is a false positive here."
+        ],
+        "residual_risks": [
+          "Pincite is 'slip-only'/'Id.'; page-490 placement inferred from the *490/*491 star markers, consistent with the citation."
+        ],
+        "suggested_tightening": "Normalize OCR punctuation artifacts before computing quote_fidelity to avoid false mismatches.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ab1d216f3ee74aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached text confirms Rehnquist 'announced the judgment of the Court' joined by the Chief Justice and White — a three-Justice plurality — matching scope_note 'Plurality opinion (Rehnquist, J.); Powell & Blackmun concurred in the judgment on narrower grounds.'",
+          "good_law is defensible: no overruling of Hampton is shown; disclosed negative edges are all proposed=true, field_iii 'mentioned' (low salience) and largely describe citing-case status, not a controlling reversal; as_of_treatment 2026-06-30 is current."
+        ],
+        "residual_risks": [
+          "Full citator currency (that Hampton remains good law as of 2026) is not independently re-derivable from disclosed evidence; composite_basis is 'migration-seed'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a81a427156",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hampton v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-03-0e6fd7d1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hampton v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3440d13e556535c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4a02aa420259d056": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4ad67e73da0a7df0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9ab1d216f3ee74aa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-270eed35f3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a81a427156",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

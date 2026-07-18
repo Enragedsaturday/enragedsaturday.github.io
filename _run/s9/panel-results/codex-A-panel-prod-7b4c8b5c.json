@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Massachusetts v. Sheppard.json",
+    "lens": "A",
+    "notes": "Reviewed all three assertion rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "31a803ac25ea472c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Massachusetts v. Sheppard, U.S. Supreme Court, decided 1984-07-05.",
+          "The official citation in the lake record is 468 U.S. 981, matching the content page citation 468 U.S. 981 (1984).",
+          "The parallel and vendor citations in the payload are present in the lake citations list."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "81e0fb6dc19df0e3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested.",
+          "locator_note": "lake pinpoints[].id=pin-989; content page marker ^pin-989 in the Rule section; opinion text spans star pages 989-990.",
+          "needs_cl": false,
+          "problem": "The stored pin-989 quote is not an opinion quote. It reproduces content-page material beginning with the page header and background/rule prose, while the lake itself flags quote_fidelity as mismatch and the opinion text at 989-990 contains a different passage.",
+          "proposed_fix": "Replace pin-989 with the actual opinion passage supporting the inline quote, or remove the pinpoint quote until it can be regenerated from text/Massachusetts v. Sheppard__10a09d.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The reviewed payload quote begins with '--- # Massachusetts v. Sheppard' and includes content-page headings, not the Supreme Court opinion text.",
+          "The lake pinpoint field expressly reports quote_fidelity: mismatch.",
+          "The actual opinion passage at pages 989-990 supports the short inline quote, but not the oversized stored pin quote under review."
+        ],
+        "residual_risks": [
+          "This refutation targets the stored pinpoint quote, not the substantive good-faith rule, which appears supportable from the disclosed opinion text if the pin is corrected."
+        ],
+        "suggested_tightening": "Pin only the quoted 989-990 sentence or the adjacent paragraph explaining objective reasonableness, rather than generated page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ee3fbbd5af86582",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A.",
+          "For recordkeeping only, the content page and lake treatment fields match: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Massachusetts v. Sheppard.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"31a803ac25ea472c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Massachusetts v. Sheppard, U.S. Supreme Court, decided 1984-07-05.\",\n        \"The official citation in the lake record is 468 U.S. 981, matching the content page citation 468 U.S. 981 (1984).\",\n        \"The parallel and vendor citations in the payload are present in the lake citations list.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"81e0fb6dc19df0e3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-989 quote is not an opinion quote. It reproduces content-page material beginning with the page header and background/rule prose, while the lake itself flags quote_fidelity as mismatch and the opinion text at 989-990 contains a different passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-989 with the actual opinion passage supporting the inline quote, or remove the pinpoint quote until it can be regenerated from text/Massachusetts v. Sheppard__10a09d.txt.\",\n        \"evidence_quote\": \"to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id=pin-989; content page marker ^pin-989 in the Rule section; opinion text spans star pages 989-990.\"\n      },\n      \"reasons\": [\n        \"The reviewed payload quote begins with '--- # Massachusetts v. Sheppard' and includes content-page headings, not the Supreme Court opinion text.\",\n        \"The lake pinpoint field expressly reports quote_fidelity: mismatch.\",\n        \"The actual opinion passage at pages 989-990 supports the short inline quote, but not the oversized stored pin quote under review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutation targets the stored pinpoint quote, not the substantive good-faith rule, which appears supportable from the disclosed opinion text if the pin is corrected.\"\n      ],\n      \"suggested_tightening\": \"Pin only the quoted 989-990 sentence or the adjacent paragraph explaining objective reasonableness, rather than generated page prose.\"\n    },\n    {\n      \"assertion_id\": \"3ee3fbbd5af86582\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment merits are outside Lens A.\",\n        \"For recordkeeping only, the content page and lake treatment fields match: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment or currency review was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all three assertion rows in group_inventory.jsonl under Lens A only.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:07:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e50cf79fe6"
+    ],
     "group_id": "_overhaul2/lake/cases/Massachusetts v. Sheppard.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-7b4c8b5c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7b4c8b5c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:33.396726Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.211383Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:35.343347Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.914630Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:39.125180Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:42.923736Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Massachusetts v. Sheppard"
+    ],
+    "tokens": {
+      "input": 162337,
+      "output": 5296,
+      "source": "codex-events",
+      "total": 167633
+    },
+    "verdict_map": {
+      "31a803ac25ea472c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ee3fbbd5af86582": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81e0fb6dc19df0e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e50cf79fe6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 106.4
   }
 }

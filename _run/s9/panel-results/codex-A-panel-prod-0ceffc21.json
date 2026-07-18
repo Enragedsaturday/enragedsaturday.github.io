@@ -1,13 +1,89 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Labron.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows appeared in group_inventory.jsonl for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "dd32baa0925ff42b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Pennsylvania v. Labron, U.S. Supreme Court, decided 1996-07-01.",
+          "The official citation 518 U.S. 938 and listed parallel/vendor citations match the lake citation fields and the built page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "125eeea03eb63509",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"quote_fidelity\": \"mismatch\"",
+          "locator_note": "pin-940 has pinpoint_status slip-only, page null, fragment null, and star_marker null.",
+          "needs_cl": false,
+          "problem": "pin-940 is not a verified opinion quote. The harvested quote is page/header/background/issue/rule material, and the lake record marks the pinpoint as a mismatch with no star marker.",
+          "proposed_fix": "Replace pin-940 with a verified quote from the opinion text at star page 940, or remove the quote pinpoint from this prose block.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-940 expressly reports quote_fidelity as mismatch.",
+          "The payload quote starts with built-page material rather than a passage from the opinion text.",
+          "No disclosed star marker or text fragment ties this harvested quote to 518 U.S. at 940."
+        ],
+        "residual_risks": [
+          "The underlying rule may be supportable elsewhere in the opinion, but this pinpoint assertion is not quote-faithful as framed."
+        ],
+        "suggested_tightening": "Keep narrative prose separate from verbatim opinion quotes; attach ^pin-940 only to a validated opinion-text quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "59064c97d843e010",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-940a lists quote_fidelity as matched and pinpoint_status as star-verified.",
+          "The quoted phrase \"ready mobility\" appears in the disclosed opinion text at star page 940."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1780adf8335d54ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment review is outside lens A, so no treatment/currency finding is raised.",
+          "As a field-consistency matter only, the inventory treatment values match the lake treatment fields and built-page treatment metadata."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency validation belongs to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Pennsylvania v. Labron.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"dd32baa0925ff42b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Pennsylvania v. Labron, U.S. Supreme Court, decided 1996-07-01.\",\n        \"The official citation 518 U.S. 938 and listed parallel/vendor citations match the lake citation fields and the built page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"125eeea03eb63509\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-940 is not a verified opinion quote. The harvested quote is page/header/background/issue/rule material, and the lake record marks the pinpoint as a mismatch with no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-940 with a verified quote from the opinion text at star page 940, or remove the quote pinpoint from this prose block.\",\n        \"evidence_quote\": \"\\\"quote_fidelity\\\": \\\"mismatch\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-940 has pinpoint_status slip-only, page null, fragment null, and star_marker null.\"\n      },\n      \"reasons\": [\n        \"The disclosed lake pinpoint for pin-940 expressly reports quote_fidelity as mismatch.\",\n        \"The payload quote starts with built-page material rather than a passage from the opinion text.\",\n        \"No disclosed star marker or text fragment ties this harvested quote to 518 U.S. at 940.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The underlying rule may be supportable elsewhere in the opinion, but this pinpoint assertion is not quote-faithful as framed.\"\n      ],\n      \"suggested_tightening\": \"Keep narrative prose separate from verbatim opinion quotes; attach ^pin-940 only to a validated opinion-text quotation.\"\n    },\n    {\n      \"assertion_id\": \"59064c97d843e010\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake pinpoint for pin-940a lists quote_fidelity as matched and pinpoint_status as star-verified.\",\n        \"The quoted phrase \\\"ready mobility\\\" appears in the disclosed opinion text at star page 940.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1780adf8335d54ae\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment review is outside lens A, so no treatment/currency finding is raised.\",\n        \"As a field-consistency matter only, the inventory treatment values match the lake treatment fields and built-page treatment metadata.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment/currency validation belongs to lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support, pincite, or black_letter rows appeared in group_inventory.jsonl for this group.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:26:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-168315ae1a"
+    ],
     "group_id": "_overhaul2/lake/cases/Pennsylvania v. Labron.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +92,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0ceffc21.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania v. Labron"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 330020,
+      "output": 6934,
+      "source": "codex-events",
+      "total": 336954
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.7
+    "verdict_map": {
+      "125eeea03eb63509": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "1780adf8335d54ae": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59064c97d843e010": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd32baa0925ff42b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-168315ae1a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 141.6
   }
 }

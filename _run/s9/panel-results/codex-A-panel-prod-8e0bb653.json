@@ -1,13 +1,137 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Leary.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "5908f017c89cb709",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as United States v. Richard J. Leary, and F.L. Kleinberg & Co.",
+          "The official citation in the lake record is 846 F.2d 592, with court U.S. Court of Appeals, Tenth Circuit and year 1988, matching the built page's displayed case citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2914c83409640b97",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold that the “good faith” exception is inapplicable in these circumstances and affirm the district court’s decision to suppress all of the evidence from the Kleinberg warrant.",
+          "locator_note": "content_page.md:59; text/United States v. Leary__67da5e.txt:1104; lake pin-610 reports quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present, but the built quote is not character-faithful: it changes the opinion's curly quotation marks around good faith and the curly apostrophe in court’s to straight ASCII characters.",
+          "proposed_fix": "Use the exact cached opinion text for pin-610.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion at page 610.",
+          "The lake record itself flags pin-610 as quote_fidelity=mismatch and slip-only."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Preserve the opinion's curly quotation marks and apostrophe, or remove quotation marks if the corpus normalizes typography.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ba308a3cb38de4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears verbatim in the cached opinion: We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it.",
+          "Lake pin-609a is star-verified with star_marker 609 and quote_fidelity=matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a16c86c4b1d51c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The particularity requirement [also] ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause.",
+          "locator_note": "content_page.md:53; text/United States v. Leary__67da5e.txt:374; lake pin-600 reports quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "Pin-600's stored quote is garbled page prose from the Issue/Rule sections, not a character-faithful opinion quotation. The visible rule quote also omits the opinion's bracketed word [also].",
+          "proposed_fix": "Regenerate pin-600 from the opinion text and quote the exact sentence including [also], or paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with issue text and includes markdown heading text, so it cannot be verified as an opinion quotation.",
+          "The actual opinion sentence at the cited passage contains [also], which the built page's quoted language omits."
+        ],
+        "residual_risks": [
+          "After repair, the pin should be revalidated against page 600."
+        ],
+        "suggested_tightening": "Use the exact Voss quotation as reproduced by Leary at 846 F.2d 600, including [also].",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a90b29935ae806ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A warrant that directs an officer to seize records “relating to” violations of the federal export laws offers no such guidelines. The officers were left to their own discretion.",
+          "locator_note": "content_page.md:55; text/United States v. Leary__67da5e.txt:1089; lake pin-609 reports quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present, but the built quote changes the opinion's curly quotation marks around relating to into straight single quotes.",
+          "proposed_fix": "Use the exact cached opinion text for pin-609.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion on page 609.",
+          "The lake record itself flags pin-609 as quote_fidelity=mismatch and slip-only."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Preserve the opinion's curly quotation marks, or make the typography-normalization policy explicit.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a59b2d7cf5e3c503",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Under Lens A, treatment and currency are not attacked.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment correctness was not evaluated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Leary.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5908f017c89cb709\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as United States v. Richard J. Leary, and F.L. Kleinberg & Co.\",\n        \"The official citation in the lake record is 846 F.2d 592, with court U.S. Court of Appeals, Tenth Circuit and year 1988, matching the built page's displayed case citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2914c83409640b97\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively present, but the built quote is not character-faithful: it changes the opinion's curly quotation marks around good faith and the curly apostrophe in court’s to straight ASCII characters.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact cached opinion text for pin-610.\",\n        \"evidence_quote\": \"Accordingly, we hold that the “good faith” exception is inapplicable in these circumstances and affirm the district court’s decision to suppress all of the evidence from the Kleinberg warrant.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md:59; text/United States v. Leary__67da5e.txt:1104; lake pin-610 reports quote_fidelity=mismatch.\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the cached opinion at page 610.\",\n        \"The lake record itself flags pin-610 as quote_fidelity=mismatch and slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Preserve the opinion's curly quotation marks and apostrophe, or remove quotation marks if the corpus normalizes typography.\"\n    },\n    {\n      \"assertion_id\": \"3ba308a3cb38de4c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The sentence appears verbatim in the cached opinion: We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it.\",\n        \"Lake pin-609a is star-verified with star_marker 609 and quote_fidelity=matched.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4a16c86c4b1d51c5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin-600's stored quote is garbled page prose from the Issue/Rule sections, not a character-faithful opinion quotation. The visible rule quote also omits the opinion's bracketed word [also].\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Regenerate pin-600 from the opinion text and quote the exact sentence including [also], or paraphrase without quotation marks.\",\n        \"evidence_quote\": \"The particularity requirement [also] ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md:53; text/United States v. Leary__67da5e.txt:374; lake pin-600 reports quote_fidelity=mismatch and pinpoint_status=slip-only.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with issue text and includes markdown heading text, so it cannot be verified as an opinion quotation.\",\n        \"The actual opinion sentence at the cited passage contains [also], which the built page's quoted language omits.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"After repair, the pin should be revalidated against page 600.\"\n      ],\n      \"suggested_tightening\": \"Use the exact Voss quotation as reproduced by Leary at 846 F.2d 600, including [also].\"\n    },\n    {\n      \"assertion_id\": \"a90b29935ae806ff\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively present, but the built quote changes the opinion's curly quotation marks around relating to into straight single quotes.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact cached opinion text for pin-609.\",\n        \"evidence_quote\": \"A warrant that directs an officer to seize records “relating to” violations of the federal export laws offers no such guidelines. The officers were left to their own discretion.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md:55; text/United States v. Leary__67da5e.txt:1089; lake pin-609 reports quote_fidelity=mismatch.\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the cached opinion on page 609.\",\n        \"The lake record itself flags pin-609 as quote_fidelity=mismatch and slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Preserve the opinion's curly quotation marks, or make the typography-normalization policy explicit.\"\n    },\n    {\n      \"assertion_id\": \"a59b2d7cf5e3c503\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Under Lens A, treatment and currency are not attacked.\",\n        \"The payload treatment fields match the disclosed lake treatment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment correctness was not evaluated under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:52-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:59:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9efd9b09c3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c8e64911d0",
+      "F-S9-PR-5ec0792ee2",
+      "F-S9-PR-5bc1074b36"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Leary.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +140,81 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8e0bb653.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Leary"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 318450,
+      "output": 9752,
+      "source": "codex-events",
+      "total": 328202
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "2914c83409640b97": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3ba308a3cb38de4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a16c86c4b1d51c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5908f017c89cb709": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a59b2d7cf5e3c503": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a90b29935ae806ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c8e64911d0",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5ec0792ee2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5bc1074b36",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9efd9b09c3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 196.2
   }
 }

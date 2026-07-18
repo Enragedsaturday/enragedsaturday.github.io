@@ -1,0 +1,145 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2d9d4f6fd5d0f3e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the genuine Hayes v. Florida, 470 U.S. 811 (1985), White, J. ('delivered the opinion of the Court'; 'we now reverse'); internal page labels *813-*818 are consistent with a report beginning at 470 U.S. 811.",
+          "Official cite 470 U.S. 811 is selected; parallel 105 S. Ct. 1643 / 84 L. Ed. 2d 705, 53 U.S.L.W. 4382 and 1985 U.S. LEXIS 1523 come from cluster.citations[].",
+          "Lake identity (cluster 111382, opinion 9429967, identity_checked=true) corroborates the cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4a3e32184f7da69",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the genuine pin-817 quotation and matches the disclosed opinion verbatim: 'There is thus support in our cases for the view that the Fourth Amendment would permit seizures for the purpose of fingerprinting, if there is reasonable suspicion that the suspect has committed a criminal act, if there is a reasonable basis for believing that fingerprinting will establish or negate the suspect's connection with that crime, and if the procedure is carried out with dispatch.'",
+          "The sentence sits after the *817 label, so the 'Id. at 817' pincite is correct.",
+          "quote_fidelity='mismatch' is a normalization/slip-only false positive; the content quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c707e64724e797d9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the page front-matter + Background + Issue + Rule-lead header block (a harvest artifact), not the ^pin-816 sentence.",
+          "The genuine pin-816 quotation ('the line is crossed when the police, without probable cause or a warrant, forcibly remove a person from his home or other place in which he is entitled to be and transport him to the police station, where he is detained, although briefly, for investigative purposes. We adhere to the view that such seizures, at least where not under judicial supervision, are sufficiently like arrests to invoke the traditional rule that arrests may constitutionally be made only on probable cause.') matches the disclosed opinion verbatim; the content starts the quote mid-sentence at the lowercase 'the line', matching the source, and the passage sits after the *816 label, so pincite 816 is correct.",
+          "The 'mismatch' flag is a header-harvest false positive, not a content defect."
+        ],
+        "residual_risks": [
+          "Payload 'quote' should be re-harvested to the anchored pin-816 sentence rather than the front-matter block."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e99712aef1e65026",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed opinion: Hayes holds that warrantless, non-consensual station-house transport-and-detention for fingerprinting without probable cause is a seizure tantamount to arrest, and the scope_note's 'left open (dicta) brief field fingerprinting on reasonable suspicion carried out with dispatch' is directly supported by the p.817 dicta in the cached text.",
+          "Nothing disclosed signals negative treatment; the case is a canonical still-cited SCOTUS holding.",
+          "Live 2026-06-30 currency is not confirmable from the pack (no citator inlined); no defect asserted."
+        ],
+        "residual_risks": [
+          "field_i_validity=good_law currency rests on citator data not inlined; verified here only as uncontradicted and directly supported by the disclosed opinion (including the reserved field-fingerprinting dicta)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0347a76564",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-366283f91e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hayes v. Florida.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-04-7f7b76c8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hayes v. Florida"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2d9d4f6fd5d0f3e3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4a3e32184f7da69": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c707e64724e797d9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e99712aef1e65026": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0347a76564",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-366283f91e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

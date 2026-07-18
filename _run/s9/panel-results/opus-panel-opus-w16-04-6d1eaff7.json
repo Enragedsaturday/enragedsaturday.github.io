@@ -1,0 +1,125 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "82aef7dfa247a353",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached published slip opinion confirms United States v. Howard Davis, 4th Cir. No. 20-4035, Wynn, J., decided May 7, 2021 — matching record identity (court, date, docket, reversed-and-remanded SIA/backpack holding).",
+          "The Gant-first-holding-applies-to-non-vehicular-containers holding matches; case exists."
+        ],
+        "residual_risks": [
+          "Cached copy is the court slip PDF without F.3d star-pagination, so the '997 F.3d 191' locus is taken from cluster.citations[] metadata, not reproducible from the disclosed text (Sources row discloses this)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a38251a404a649c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pinpoint.quote is a harvest artifact (content-page '## Issue / ## Rule' lead-in prose), not the published quotation.",
+          "The actual ^pin-196 quotation ('Accordingly, we conclude that the first Gant holding applies to searches of non-vehicular containers ... only when the arrestee is unsecured and within reaching distance of the [container] at the time of the search.') is verbatim in the cached slip opinion (Part II.B), with the internal quote correctly attributed to Gant, 556 U.S. at 343.",
+          "'mismatch' flag is a false positive of the automated matcher."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only': cached slip has no F.3d pagination, so the '997 F.3d at 196' locus is not confirmable from disclosed text (quote text is verbatim).",
+          "Lake pinpoint.quote field should be repaired to the published quotation."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the published quotation string.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8666353843cba68e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All disclosed edges carry field_iii='mentioned' (neutral); the field_ii negative labels attach to the citing cases' own status, not their treatment of Davis — 'proposed': true artifacts.",
+          "lane1_negative reviewed 5, cap_hit=false, proposed_negative_events 0, audit_needed=false — negative sweep complete with zero negative events.",
+          "good_law uncontradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "composite_basis='migration-seed'; small progeny (10 indexed citing opinions) keeps currency exposure low."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6302f062f4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b775b68f74",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Howard Davis.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-04-6d1eaff7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Howard Davis"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "82aef7dfa247a353": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8666353843cba68e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a38251a404a649c4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6302f062f4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b775b68f74",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

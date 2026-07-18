@@ -1,22 +1,169 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Grubbs.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. Lens A found one quote-fidelity defect: pin-96 is harvested page text, not a faithful opinion quote.",
+    "reviewed": [
+      {
+        "assertion_id": "907448942ca83e22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for United States v. Grubbs, U.S. Supreme Court, decided 2006-03-21, docket 04-1414.",
+          "The lake citation fields list official citation 547 U.S. 90 and the same parallel/vendor citations shown in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9932e75d5d8fb320",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "## Issue (1) Whether anticipatory search warrants are categorically unconstitutional under the Fourth Amendment's probable-cause requirement",
+          "locator_note": "pin-96; lake pinpoints[].quote has quote_fidelity=\"mismatch\", page=null, position=null.",
+          "needs_cl": false,
+          "problem": "pin-96 is not a faithful opinion quote. It is harvested content-page prose spanning Background, Issue, and Rule material, not text from the opinion; the lake record itself marks quote_fidelity as mismatch and gives no validated position.",
+          "proposed_fix": "Replace pin-96 with exact opinion text for the rule passage, or split it into separate exact pinpoints for the LaFave definition and the ordinary-warrant probable-cause passage; remove content-page prose and headings from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with page-summary wording and includes Markdown section heading text, which is not the Court's opinion text.",
+          "A normalized search of the disclosed opinion text did not find the opening factual-summary sentence used in the pin-96 quote.",
+          "The lake pinpoint metadata confirms the defect: quote_fidelity is mismatch and there is no validated fragment or position."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Require pin records to carry a validated fragment or position from text/<case>.txt before using them as quote support.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b996aa2cccba52f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment \"two prerequisites of probability must be satisfied\" appears in the disclosed opinion text in the conditioned-anticipatory-warrant probable-cause paragraph.",
+          "The same quote appears in lake pinpoints[].quote for pin-96a with quote_fidelity marked matched and a validated text fragment."
+        ],
+        "residual_risks": [
+          "The official U.S. page number is not independently visible in the slip-only text, but the payload page is null and the quote location is otherwise validated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c001c71f4c70f375",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence beginning \"Because the Fourth Amendment does not require\" appears in the disclosed opinion text at the end of the Court's opinion.",
+          "The lake pinpoints[].quote for pin-99 matches the payload and is marked matched with a validated fragment."
+        ],
+        "residual_risks": [
+          "The official U.S. page number is not independently visible in the slip-only text, but the payload page is null and the quote location is otherwise validated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65eb60efb060c8c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2006-03-21, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency merits are outside lens A, so no substantive treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency review remains for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Grubbs.json\",\"reviewed\":[{\"assertion_id\":\"907448942ca83e22\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for United States v. Grubbs, U.S. Supreme Court, decided 2006-03-21, docket 04-1414.\",\"The lake citation fields list official citation 547 U.S. 90 and the same parallel/vendor citations shown in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9932e75d5d8fb320\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-96 is not a faithful opinion quote. It is harvested content-page prose spanning Background, Issue, and Rule material, not text from the opinion; the lake record itself marks quote_fidelity as mismatch and gives no validated position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-96 with exact opinion text for the rule passage, or split it into separate exact pinpoints for the LaFave definition and the ordinary-warrant probable-cause passage; remove content-page prose and headings from the pinpoint quote.\",\"evidence_quote\":\"## Issue (1) Whether anticipatory search warrants are categorically unconstitutional under the Fourth Amendment's probable-cause requirement\",\"needs_cl\":false,\"locator_note\":\"pin-96; lake pinpoints[].quote has quote_fidelity=\\\"mismatch\\\", page=null, position=null.\"},\"reasons\":[\"The payload begins with page-summary wording and includes Markdown section heading text, which is not the Court's opinion text.\",\"A normalized search of the disclosed opinion text did not find the opening factual-summary sentence used in the pin-96 quote.\",\"The lake pinpoint metadata confirms the defect: quote_fidelity is mismatch and there is no validated fragment or position.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Require pin records to carry a validated fragment or position from text/<case>.txt before using them as quote support.\"},{\"assertion_id\":\"b996aa2cccba52f6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment \\\"two prerequisites of probability must be satisfied\\\" appears in the disclosed opinion text in the conditioned-anticipatory-warrant probable-cause paragraph.\",\"The same quote appears in lake pinpoints[].quote for pin-96a with quote_fidelity marked matched and a validated text fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official U.S. page number is not independently visible in the slip-only text, but the payload page is null and the quote location is otherwise validated.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c001c71f4c70f375\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence beginning \\\"Because the Fourth Amendment does not require\\\" appears in the disclosed opinion text at the end of the Court's opinion.\",\"The lake pinpoints[].quote for pin-99 matches the payload and is marked matched with a validated fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official U.S. page number is not independently visible in the slip-only text, but the payload page is null and the quote location is otherwise validated.\"],\"suggested_tightening\":null},{\"assertion_id\":\"65eb60efb060c8c8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2006-03-21, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency merits are outside lens A, so no substantive treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment and currency review remains for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl. Lens A found one quote-fidelity defect: pin-96 is harvested page text, not a faithful opinion quote.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:31-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:55:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-81fd03c285"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Grubbs.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3e47f548",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3e47f548.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:31:29.654001Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:30.105531Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Grubbs"
+    ],
+    "tokens": {
+      "input": 383555,
+      "output": 9692,
+      "source": "codex-events",
+      "total": 393247
+    },
+    "verdict_map": {
+      "65eb60efb060c8c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "907448942ca83e22": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9932e75d5d8fb320": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b996aa2cccba52f6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c001c71f4c70f375": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-81fd03c285",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 191.5
   }
 }

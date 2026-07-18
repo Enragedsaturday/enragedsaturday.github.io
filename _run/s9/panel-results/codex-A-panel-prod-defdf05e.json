@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Mathis.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows exactly once. Lens A defects are limited to quote fidelity; no independent treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "523b7ba125089681",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Arnold Maurice Mathis, U.S. Court of Appeals for the Eleventh Circuit, decided 2014-09-24.",
+          "The lake citations match the asserted official/display cite 767 F.3d 1264 and vendor-neutral cites 2014 U.S. App. LEXIS 18297 and 2014 WL 4724697."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f1d86043a35c3a3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "[the] search warrant . . . the Leon good faith exception applies.” Id. (internal\n\nquotation marks omitted).",
+          "locator_note": "content_page.md Rule paragraph with ^pin-1277; lake pinpoints id pin-1277; text slip pages 22-23.",
+          "needs_cl": false,
+          "problem": "The pin-1277 quotation is not character-faithful to the opinion text: it changes the source quotation marks and inserts markdown italics around Leon.",
+          "proposed_fix": "Use an exact quote without markdown emphasis and with the source quotation marks, or paraphrase instead of quoting.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains '*Leon*' inside the quoted material, but the opinion text has plain 'Leon'.",
+          "The lake record itself marks pin-1277 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "This refutes quote fidelity only; the underlying good-faith proposition appears supported by the disclosed opinion text."
+        ],
+        "suggested_tightening": "Do not put markdown formatting inside verbatim legal quotations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eaaa4bfde80d9e7b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Alternatively, even if the search warrant was not supported by probable\n\ncause, evidence obtained from the search of Mathis’s phone was not subject to\n\nsuppression under the good faith exception to the exclusionary rule.",
+          "locator_note": "lake pinpoints id pin-1276 and group_inventory row eaaa4bfde80d9e7b; source text at slip page 22.",
+          "needs_cl": false,
+          "problem": "The pin-1276 harvested quote is not an opinion quote at all; it is a large chunk of the built content page/frontmatter rather than the passage from the Mathis opinion.",
+          "proposed_fix": "Replace pin-1276.quote with the actual opinion sentence beginning 'Alternatively, even if the search warrant was not supported by probable cause...'.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with markdown page material ('--- # United States v. Mathis') that does not appear as opinion text.",
+          "The disclosed text contains the actual good-faith sentence at the claimed passage, not the harvested page block."
+        ],
+        "residual_risks": [
+          "The cached opinion text is slip-only and the lake pin has page null, so reporter-page pincite verification would need separate pagination evidence if reviewed under a pincite lens."
+        ],
+        "suggested_tightening": "Regenerate the pinpoint harvest from opinion text, then re-check the content page quote for character fidelity, including Mathis’s curly apostrophe.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fec20d67e0d0c461",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, as_of_content null, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside Lens A, so this is only a disclosed-field match, not an independent treatment finding."
+        ],
+        "residual_risks": [
+          "Lens B should assess treatment/currency and the page's subsequent-history narrative."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Mathis.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"523b7ba125089681\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies United States v. Arnold Maurice Mathis, U.S. Court of Appeals for the Eleventh Circuit, decided 2014-09-24.\",\n        \"The lake citations match the asserted official/display cite 767 F.3d 1264 and vendor-neutral cites 2014 U.S. App. LEXIS 18297 and 2014 WL 4724697.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8f1d86043a35c3a3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-1277 quotation is not character-faithful to the opinion text: it changes the source quotation marks and inserts markdown italics around Leon.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use an exact quote without markdown emphasis and with the source quotation marks, or paraphrase instead of quoting.\",\n        \"evidence_quote\": \"[the] search warrant . . . the Leon good faith exception applies.” Id. (internal\\n\\nquotation marks omitted).\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Rule paragraph with ^pin-1277; lake pinpoints id pin-1277; text slip pages 22-23.\"\n      },\n      \"reasons\": [\n        \"The payload quote contains '*Leon*' inside the quoted material, but the opinion text has plain 'Leon'.\",\n        \"The lake record itself marks pin-1277 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"This refutes quote fidelity only; the underlying good-faith proposition appears supported by the disclosed opinion text.\"\n      ],\n      \"suggested_tightening\": \"Do not put markdown formatting inside verbatim legal quotations.\"\n    },\n    {\n      \"assertion_id\": \"eaaa4bfde80d9e7b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-1276 harvested quote is not an opinion quote at all; it is a large chunk of the built content page/frontmatter rather than the passage from the Mathis opinion.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1276.quote with the actual opinion sentence beginning 'Alternatively, even if the search warrant was not supported by probable cause...'.\",\n        \"evidence_quote\": \"Alternatively, even if the search warrant was not supported by probable\\n\\ncause, evidence obtained from the search of Mathis’s phone was not subject to\\n\\nsuppression under the good faith exception to the exclusionary rule.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints id pin-1276 and group_inventory row eaaa4bfde80d9e7b; source text at slip page 22.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with markdown page material ('--- # United States v. Mathis') that does not appear as opinion text.\",\n        \"The disclosed text contains the actual good-faith sentence at the claimed passage, not the harvested page block.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The cached opinion text is slip-only and the lake pin has page null, so reporter-page pincite verification would need separate pagination evidence if reviewed under a pincite lens.\"\n      ],\n      \"suggested_tightening\": \"Regenerate the pinpoint harvest from opinion text, then re-check the content page quote for character fidelity, including Mathis’s curly apostrophe.\"\n    },\n    {\n      \"assertion_id\": \"fec20d67e0d0c461\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, as_of_content null, varies_by_point false, and the same scope note.\",\n        \"Treatment/currency merits are outside Lens A, so this is only a disclosed-field match, not an independent treatment finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B should assess treatment/currency and the page's subsequent-history narrative.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows exactly once. Lens A defects are limited to quote fidelity; no independent treatment/currency finding is made.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:32:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:02:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b6880d22c6",
+      "F-S9-PR-d25d57422e"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Mathis.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-defdf05e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Mathis"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 307920,
+      "output": 10383,
+      "source": "codex-events",
+      "total": 318303
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.5
+    "verdict_map": {
+      "523b7ba125089681": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f1d86043a35c3a3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "eaaa4bfde80d9e7b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fec20d67e0d0c461": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b6880d22c6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d25d57422e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 209.1
   }
 }

@@ -1,22 +1,201 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Thornton v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fb4016cf5296c0a9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for Thornton v. United States, U.S. Supreme Court, decided 2004-05-24, year 2004.\",\n        \"Lake citations list official 541 U.S. 615 and parallel/vendor cites 124 S. Ct. 2127, 158 L. Ed. 2d 905, and 2004 U.S. LEXIS 3681, matching the payload and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"083ba4d930bb82e9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment 'recent occupant' exists, but the pin-622 record star-verifies page 620 and captures only an isolated phrase, while the content page's pin-622 quote is the longer page-622 recent-occupant sentence.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Reharvest pin-622 against the page-622 sentence and set the star marker/pin to 622, or make clear this assertion verifies only the short phrase rather than the full content-page quote.\",\n        \"evidence_quote\": \"while an arrestee’s status as a “recent occupant” may turn on his temporal or spatial relationship to the car at the time of the arrest and search\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-622; lake star_marker=620, content cites Id. at 622\"\n      },\n      \"reasons\": [\n        \"The fragment 'recent occupant' is present in the disclosed opinion text and in lake pinpoints[].quote.\",\n        \"As a verifier for the content-page pin, the lake record is underinclusive and points to a page-620 occurrence rather than the full page-622 quote used in the page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The full content-page quote also normalizes curly quotation marks and omits a footnote marker from the raw HTML text.\"\n      ],\n      \"suggested_tightening\": \"Use the full page-622 sentence as the pinpoint quote instead of the ambiguous two-word fragment.\"\n    },\n    {\n      \"assertion_id\": \"c61a5c5253e3b215\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The proposition and pincite are supported, but the purported verbatim quote is not character-faithful to the raw opinion text: the opinion has curly quotation marks and a page-number tag splitting 'recent occupant'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Either mark this as a normalized quote or store a character-faithful quote from the text, preserving the page break/typography or documenting normalization.\",\n        \"evidence_quote\": \"So long as an arrestee is the sort of “re<page-number citation-index=\\\"1\\\" label=\\\"624\\\">*624</page-number>cent occupant” of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-623; content cites Id. at 623–624 and the passage straddles that page break\"\n      },\n      \"reasons\": [\n        \"The opinion text contains the cited sentence across pages 623-624 and it supports the page's rule statement.\",\n        \"The lake record itself flags this quote_fidelity as mismatch, and the raw text differs from the content/lake quote at least in quotation marks and embedded page-number markup.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Classify as normalized rather than matched, or preserve the raw-text form.\"\n    },\n    {\n      \"assertion_id\": \"d2bba71a82b64004\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-617 quote in the lake/payload is a junk page-harvest string and is not a verbatim opinion quotation supporting the rule.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-617 quote with the actual page-617 opinion language, or rerun the quote harvester for this pin.\",\n        \"evidence_quote\": \"We now reach that question and conclude that <em>Bel-ton </em>governs even when an officer does not make contact until the person arrested has left the vehicle.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-617; payload quote is '). ## Rule Yes.'\"\n      },\n      \"reasons\": [\n        \"The disclosed text at page 617 contains the Belton-governs sentence, not '). ## Rule Yes.'.\",\n        \"The lake record marks pin-617 quote_fidelity as mismatch and pinpoint_status as slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the actual 617 sentence quoted on the content page as the pinpoint quote.\"\n    },\n    {\n      \"assertion_id\": \"d4b09487edf00ce0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake.treatment fields: field_i_validity caution, as_of_content 2004-05-24, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\",\n        \"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A review of treatment currency or Gant's subsequent effect.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment row recorded only; substantive treatment/currency review reserved for Lens B.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Thornton v. United States.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/pin support issues; no treatment/currency defect is asserted.",
+    "reviewed": [
+      {
+        "assertion_id": "fb4016cf5296c0a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Thornton v. United States, U.S. Supreme Court, decided 2004-05-24, year 2004.",
+          "The cited official reporter, parallel citations, and vendor citation match the lake citations: 541 U.S. 615; 124 S. Ct. 2127; 158 L. Ed. 2d 905; 2004 U.S. LEXIS 3681."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "083ba4d930bb82e9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In any event, while an arrestee’s status as a “recent occupant” may turn on his temporal or spatial relationship to the car at the time of the arrest and search,",
+          "locator_note": "content_page.md uses ^pin-622 for an Id. at 622 quotation; lake pin-622 reports star_marker 620.",
+          "needs_cl": false,
+          "problem": "The quoted phrase 'recent occupant' exists, but the lake verifier matched only a generic occurrence at star marker 620 while the content-page pin-622 passage is cited to page 622. This is underinclusive and does not by itself verify the page-622 sentence the pin is attached to.",
+          "proposed_fix": "Reharvest pin-622 against the full page-622 sentence, or update the pinpoint record so the quote and star marker uniquely identify the intended page-622 passage rather than an earlier generic occurrence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase 'recent occupant' is present in the disclosed text and lake pinpoints.",
+          "The pin survives only with tightening because the matched star marker does not land on the page-622 passage used by the built page."
+        ],
+        "residual_risks": [
+          "A short phrase match can falsely validate the wrong occurrence."
+        ],
+        "suggested_tightening": "Use the full sentence from page 622 for pin-622 instead of the two-word phrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c61a5c5253e3b215",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "So long as an arrestee is the sort of “re<page-number citation-index=\"1\" label=\"624\">*624</page-number>cent occupant” of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest.<footnotemark>4</footnotemark>",
+          "locator_note": "pin-623; content cites 623-624, which matches the page break, but exact quotation characters do not match the cached text.",
+          "needs_cl": false,
+          "problem": "The substance and 623-624 location are supported, but the asserted verbatim quote is not character-faithful to the cached text: the cached text uses curly quotation marks and contains a page-number break inside 'recent occupant'. The lake itself marks this pinpoint as quote_fidelity mismatch and slip-only.",
+          "proposed_fix": "Either store a rendered-text-normalized quote policy for page breaks and typographic quotes, or revise the displayed quote/pinpoint record so it does not claim strict character fidelity for the straight-quote version.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal sentence is present in the disclosed opinion text across pages 623-624.",
+          "Strict quote fidelity fails against the cached text, and the lake pinpoint judgment also reports mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus permits rendered-text normalization, this should be treated as a normalization repair rather than a substantive quote error."
+        ],
+        "suggested_tightening": "Keep the proposition, but normalize or reharvest the quote with an explicit rendered-text policy.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2bba71a82b64004",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We now reach that question and conclude that <em>Bel-ton </em>governs even when an officer does not make contact until the person arrested has left the vehicle.",
+          "locator_note": "lake pin-617 quote is '). ## Rule Yes.' and quote_fidelity is marked mismatch.",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-617 is garbage text, not a character-faithful quotation from the opinion or the displayed page quote.",
+          "proposed_fix": "Replace pin-617's quote field with the actual page-617 sentence from the opinion and rerun quote-fidelity validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote '). ## Rule Yes.' does not appear in the disclosed opinion text.",
+          "The disclosed text supplies the actual page-617 language supporting the page's rule quotation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Rebuild pin-617 from the opinion text rather than the markdown heading boundary.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4b09487edf00ce0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The payload fields match disclosed lake/content treatment fields: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment validity remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Thornton v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fb4016cf5296c0a9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms Thornton v. United States, U.S. Supreme Court, decided 2004-05-24, year 2004.\",\n        \"The cited official reporter, parallel citations, and vendor citation match the lake citations: 541 U.S. 615; 124 S. Ct. 2127; 158 L. Ed. 2d 905; 2004 U.S. LEXIS 3681.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"083ba4d930bb82e9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted phrase 'recent occupant' exists, but the lake verifier matched only a generic occurrence at star marker 620 while the content-page pin-622 passage is cited to page 622. This is underinclusive and does not by itself verify the page-622 sentence the pin is attached to.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Reharvest pin-622 against the full page-622 sentence, or update the pinpoint record so the quote and star marker uniquely identify the intended page-622 passage rather than an earlier generic occurrence.\",\n        \"evidence_quote\": \"In any event, while an arrestee’s status as a “recent occupant” may turn on his temporal or spatial relationship to the car at the time of the arrest and search,\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md uses ^pin-622 for an Id. at 622 quotation; lake pin-622 reports star_marker 620.\"\n      },\n      \"reasons\": [\n        \"The phrase 'recent occupant' is present in the disclosed text and lake pinpoints.\",\n        \"The pin survives only with tightening because the matched star marker does not land on the page-622 passage used by the built page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A short phrase match can falsely validate the wrong occurrence.\"\n      ],\n      \"suggested_tightening\": \"Use the full sentence from page 622 for pin-622 instead of the two-word phrase.\"\n    },\n    {\n      \"assertion_id\": \"c61a5c5253e3b215\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The substance and 623-624 location are supported, but the asserted verbatim quote is not character-faithful to the cached text: the cached text uses curly quotation marks and contains a page-number break inside 'recent occupant'. The lake itself marks this pinpoint as quote_fidelity mismatch and slip-only.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Either store a rendered-text-normalized quote policy for page breaks and typographic quotes, or revise the displayed quote/pinpoint record so it does not claim strict character fidelity for the straight-quote version.\",\n        \"evidence_quote\": \"So long as an arrestee is the sort of “re<page-number citation-index=\\\"1\\\" label=\\\"624\\\">*624</page-number>cent occupant” of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest.<footnotemark>4</footnotemark>\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-623; content cites 623-624, which matches the page break, but exact quotation characters do not match the cached text.\"\n      },\n      \"reasons\": [\n        \"The legal sentence is present in the disclosed opinion text across pages 623-624.\",\n        \"Strict quote fidelity fails against the cached text, and the lake pinpoint judgment also reports mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus permits rendered-text normalization, this should be treated as a normalization repair rather than a substantive quote error.\"\n      ],\n      \"suggested_tightening\": \"Keep the proposition, but normalize or reharvest the quote with an explicit rendered-text policy.\"\n    },\n    {\n      \"assertion_id\": \"d2bba71a82b64004\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pinpoint quote for pin-617 is garbage text, not a character-faithful quotation from the opinion or the displayed page quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-617's quote field with the actual page-617 sentence from the opinion and rerun quote-fidelity validation.\",\n        \"evidence_quote\": \"We now reach that question and conclude that <em>Bel-ton </em>governs even when an officer does not make contact until the person arrested has left the vehicle.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pin-617 quote is '). ## Rule Yes.' and quote_fidelity is marked mismatch.\"\n      },\n      \"reasons\": [\n        \"The asserted quote '). ## Rule Yes.' does not appear in the disclosed opinion text.\",\n        \"The disclosed text supplies the actual page-617 language supporting the page's rule quotation.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Rebuild pin-617 from the opinion text rather than the markdown heading boundary.\"\n    },\n    {\n      \"assertion_id\": \"d4b09487edf00ce0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\n        \"The payload fields match disclosed lake/content treatment fields: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment validity remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed only existence and quote/pin support issues; no treatment/currency defect is asserted.\"\n}",
   "summary": {
-    "at": "2026-07-11T01:02:57-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:08:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b4742afadc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-477697ff33",
+      "F-S9-PR-6d6459d349",
+      "F-S9-PR-2fbbe3af8d"
+    ],
     "group_id": "_overhaul2/lake/cases/Thornton v. United States.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-18907723",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-18907723.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Thornton v. United States"
+    ],
+    "tokens": {
+      "input": 257356,
+      "output": 11983,
+      "source": "codex-events",
+      "total": 269339
+    },
+    "verdict_map": {
+      "083ba4d930bb82e9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c61a5c5253e3b215": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d2bba71a82b64004": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d4b09487edf00ce0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb4016cf5296c0a9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-477697ff33",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6d6459d349",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2fbbe3af8d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b4742afadc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 230.5
   }
 }

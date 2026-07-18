@@ -1,39 +1,104 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/state-v-andrews--4335207.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed in the working directory; review is limited to group_inventory.jsonl, lake/state-v-andrews--4335207__27329c.json, and text/state-v-andrews--4335207__27329c.txt.",
+    "reviewed": [
+      {
+        "assertion_id": "bf38bfbe2235d92d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/state-v-andrews--4335207__27329c.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies citation/identity, but does not verify the Lens B currency proposition that the cited authority is still live law. The lake record is a stub with treatment/progeny intentionally not derived.",
+          "proposed_fix": "Do not present this citation as currency-verified or live law. Label it treatment-unverified, or supply a completed treatment/progeny record with an as-of date.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The opinion/citation exists in disclosed evidence: the cached text begins with the cite as State v. Andrews, 2016-Ohio-8517, and lake citations.all includes 2016 Ohio 8517.",
+          "Live-law currency is not verified: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration/citation_count are null."
+        ],
+        "residual_risks": [
+          "A completed treatment source could show the authority remains good law, but that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Separate citation existence from live-law currency; mark this row as identity/citation verified only, with no treatment representation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "418d9f862c6e3eaa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload says field_i_validity is unverified and carries the frontier-stub scope note.",
+          "That matches the lake treatment record: field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, point_overrides and edges are empty, and progeny contains no completed citation enumeration.",
+          "No disclosed edge or treatment field states that the authority has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "This standing verdict approves only the unverified treatment label, not the case's good-law status."
+        ],
+        "suggested_tightening": "Keep the visible treatment label as unverified and avoid any affirmative good-law or weight label until completed treatment/progeny review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/state-v-andrews--4335207.json\",\"reviewed\":[{\"assertion_id\":\"bf38bfbe2235d92d\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies citation/identity, but does not verify the Lens B currency proposition that the cited authority is still live law. The lake record is a stub with treatment/progeny intentionally not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not present this citation as currency-verified or live law. Label it treatment-unverified, or supply a completed treatment/progeny record with an as-of date.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/state-v-andrews--4335207__27329c.json treatment/progeny fields\"},\"reasons\":[\"The opinion/citation exists in disclosed evidence: the cached text begins with the cite as State v. Andrews, 2016-Ohio-8517, and lake citations.all includes 2016 Ohio 8517.\",\"Live-law currency is not verified: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration/citation_count are null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment source could show the authority remains good law, but that evidence is not disclosed here.\"],\"suggested_tightening\":\"Separate citation existence from live-law currency; mark this row as identity/citation verified only, with no treatment representation.\"},{\"assertion_id\":\"418d9f862c6e3eaa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment payload says field_i_validity is unverified and carries the frontier-stub scope note.\",\"That matches the lake treatment record: field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, point_overrides and edges are empty, and progeny contains no completed citation enumeration.\",\"No disclosed edge or treatment field states that the authority has been overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This standing verdict approves only the unverified treatment label, not the case's good-law status.\"],\"suggested_tightening\":\"Keep the visible treatment label as unverified and avoid any affirmative good-law or weight label until completed treatment/progeny review.\"}],\"notes\":\"No content_page.* file was disclosed in the working directory; review is limited to group_inventory.jsonl, lake/state-v-andrews--4335207__27329c.json, and text/state-v-andrews--4335207__27329c.txt.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:42-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:22:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/state-v-andrews--4335207.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "state-v-andrews--4335207"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-4364496e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4364496e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'state-v-andrews--4335207' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record state-v-andrews--4335207"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "state-v-andrews--4335207"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 135239,
+      "output": 5602,
+      "source": "codex-events",
+      "total": 140841
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 7.5
+    "verdict_map": {
+      "418d9f862c6e3eaa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf38bfbe2235d92d": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-02faa91074",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 118.7
   }
 }

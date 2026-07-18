@@ -1,0 +1,131 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e5a02d9a9fa32bcc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header states '360 U.S. 315 (1959)', 'SPANO v. NEW YORK', decided June 22 1959 — the official cite 360 U.S. 315 (selected_official) is confirmed verbatim.",
+          "The case_cite payload carries only citations; the asserted citation itself is correct."
+        ],
+        "residual_risks": [
+          "Out-of-scope metadata defect: content/lake docket '326' conflicts with the source header 'No. 582.' ('326' appears in the opinion only as reporter star page *326) — not part of the case_cite payload, but should be corrected."
+        ],
+        "suggested_tightening": "Correct the docket field from '326' (a reporter page-number contamination) to No. 582.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3d3d52177cb5ff6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Actual ^pin-323 quote ('We conclude that petitioner's will was overborne by official pressure, fatigue and sympathy falsely aroused, after considering all the facts in their post-indictment setting.') matches the cached opinion verbatim.",
+          "Quote falls after the *323 star marker and before the *324 marker (which appears later in the same paragraph), so pincite 360 U.S. at 323 is correct.",
+          "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'mismatch' flag is an extractor artifact."
+        ],
+        "residual_risks": [
+          "Same wrong-span extraction pattern; re-derive from the ^pin-323 block."
+        ],
+        "suggested_tightening": "Isolate the ^pin-N inline quote span before computing quote_fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aec2c90af9fd6210",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (not a clean attestation).",
+          "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+        ],
+        "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b9677b95ed",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0d9773528e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e9bcaa6d03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Spano v. New York.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-04-bb3b89ea",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Spano v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "aec2c90af9fd6210": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "d3d3d52177cb5ff6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5a02d9a9fa32bcc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9677b95ed",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0d9773528e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e9bcaa6d03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

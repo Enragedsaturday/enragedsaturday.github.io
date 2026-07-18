@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "098bb984e6562c6e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official/display cite '2026 Pa. Super. 114' confirmed verbatim in cached opinion header (line 641: '2026 PA Super 114').",
+          "Identity corroborated in cached text: COMMONWEALTH v. JAMES LEE HERLTH, No. 183 MDA 2024, en banc, OPINION BY STABILE, J., FILED JUNE 5, 2026 — matches docket/date/court fields."
+        ],
+        "residual_risks": [
+          "Selected official is the PA vendor-neutral cite (type 8); no A.3d regional parallel is present yet, consistent with a June-2026 decision. Not independently confirmable beyond the neutral cite from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03ebe5b4231422c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Issue Whether the plain-view doctrine permitted the trooper to illuminate and view the interior of a closed, opaque container through a small hole ... ## Rule No. The en banc court restated the three-part plain-view test:",
+          "locator_note": "Defect confined to lake pinpoints[].id=pin-26 quote field; the reader-facing content page renders a different, verbatim-correct quote at ^pin-26.",
+          "needs_cl": false,
+          "problem": "Stored pin-26 'quote' is a content-page scrape, not opinion language: it contains literal Markdown section headers and the wiki's own Background/Issue/Rule narrative, so it cannot be a verbatim quotation from the source. Payload self-classifies quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-26.quote with the slip-op-26 language actually rendered at ^pin-26 in the content page — the three-part plain-view test 'The plain view doctrine authorizes a warrantless seizure of evidence when (1) the police must observe the object from a lawful vantage point; (2) the incriminating character of the object must be immediately apparent; and (3) the police must have a lawful right of access to the object.' (verified verbatim in cached text, line 1898, quoting Graham citing Horton).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored quote embeds '## Issue' and '## Rule' Markdown headers — proof it was scraped from the content page, not the opinion.",
+          "Grep of cached opinion text (lines 636-2218) yields no such contiguous string; the genuine slip-op-26 quote (three-part test) is present at line 1898 and is faithfully rendered at ^pin-26."
+        ],
+        "residual_risks": [
+          "Same first-pinpoint scrape pattern recurs across all four records in this pack (Cone pin-469, Connally pin-250, Barrett pin-528) — likely a systematic first-pin extraction bug; reader-facing quotes are unaffected."
+        ],
+        "suggested_tightening": "Have the extractor reject any stored pinpoint 'quote' containing YAML/Markdown delimiters ('---', '#', '##', HTML comments) as a scrape.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6ec9274bff8198df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-29 quote reproduced verbatim in cached opinion text, lines 2067-2077: 'Trooper Adams failed to satisfy the second prong of the plain view test, because the object of the search, the closed shoebox, was not immediately incriminating in appearance. To the contrary, this container, a mere shoebox, appeared completely innocuous, so there was no reason to search inside it. In other words, Trooper Adams lacked probable cause to search the shoebox.'",
+          "Payload quote_fidelity='matched' independently confirmed; text-anchor fragment validated."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ace93a5b86b3964a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-31 short quote 'tiniest crack' appears verbatim in cached text (line 2166); the broader rendered ^pin-31 quote ('would allow police officers to search the interior of any object from a lawful vantage point, so long as the object had even the tiniest crack or perforation. Precedent does not allow for such an unlawful intrusion.') matches cached lines 2162-2168 verbatim."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2252320a280cf94",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with no disclosed contradicting evidence: all three derivation lanes reviewed=0, proposed_negative_events=0, cap_hit=false, audit_needed=false; progeny indexed_citing_opinions=0.",
+          "Brand-new June-2026 decision with zero citing opinions — no negative treatment possible on the disclosed record; varies_by_point=false is consistent."
+        ],
+        "residual_risks": [
+          "good_law is migration-seed-based (composite_basis='migration-seed'); scope_note itself flags that S2 derivation may re-derive/downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Commonwealth v. Herlth.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-04-9415edec",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Commonwealth v. Herlth"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "03ebe5b4231422c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "098bb984e6562c6e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6ec9274bff8198df": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ace93a5b86b3964a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2252320a280cf94": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4e9c45a6c8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

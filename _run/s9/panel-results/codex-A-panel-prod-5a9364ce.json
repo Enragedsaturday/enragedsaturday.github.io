@@ -1,39 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/michigan-v-harvey--112385.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "d57037b71d326d93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record has status \"verified_identity\" for record_id \"michigan-v-harvey--112385\" and identifies the case as Michigan v. Harvey, U.S. Supreme Court, decided 1990-04-30.",
+          "The payload citations exactly match lake.citations.all: 494 U.S. 344, 110 S. Ct. 1176, 108 L. Ed. 2d 293, and 1990 U.S. LEXIS 1229.",
+          "The payload's null display/official fields and absence of official selection are consistent with the disclosed lake citation fields."
+        ],
+        "residual_risks": [
+          "The lake record is a stub and has no external corroboration within the disclosed files, but existence review is verifiable against the disclosed authority record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "88eb61caa299f732",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload exactly mirrors the disclosed lake treatment fields: field_i_validity \"unverified\", null as_of fields, varies_by_point false, and the frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "Good-law status is not assessed under Lens A and the lake record expressly says treatment/progeny were not derived until S6 promotion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/michigan-v-harvey--112385.json\",\"reviewed\":[{\"assertion_id\":\"d57037b71d326d93\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record has status \\\"verified_identity\\\" for record_id \\\"michigan-v-harvey--112385\\\" and identifies the case as Michigan v. Harvey, U.S. Supreme Court, decided 1990-04-30.\",\"The payload citations exactly match lake.citations.all: 494 U.S. 344, 110 S. Ct. 1176, 108 L. Ed. 2d 293, and 1990 U.S. LEXIS 1229.\",\"The payload's null display/official fields and absence of official selection are consistent with the disclosed lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record is a stub and has no external corroboration within the disclosed files, but existence review is verifiable against the disclosed authority record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"88eb61caa299f732\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload exactly mirrors the disclosed lake treatment fields: field_i_validity \\\"unverified\\\", null as_of fields, varies_by_point false, and the frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law status is not assessed under Lens A and the lake record expressly says treatment/progeny were not derived until S6 promotion.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:54-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:19:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/michigan-v-harvey--112385.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "michigan-v-harvey--112385"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5a9364ce",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5a9364ce.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'michigan-v-harvey--112385' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record michigan-v-harvey--112385"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "michigan-v-harvey--112385"
+    ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 106834,
+      "output": 1727,
+      "source": "codex-events",
+      "total": 108561
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "88eb61caa299f732": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d57037b71d326d93": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "wall_clock_s": 40.6
   }
 }

@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c2eba011975f1476",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inlined opinion identifies Agnello v. United States, Butler, J., Harrison Act cocaine conspiracy; star-pages *28-*32 with the pin quotes at *30-*31 matching; consistent with official cite 269 U.S. 20 (case begins at 20; syllabus/opening precede *28).",
+          "Lake identity: cluster 100711, opinion 100711, identity_checked=true."
+        ],
+        "residual_risks": [
+          "Parallels 46 S. Ct. 4 / 70 L. Ed. 145 / 51 A.L.R. 409 and neutral 1925 U.S. LEXIS 2 not independently verifiable from the inlined opinion; decision date 1925-10-12 not shown in the inlined text (case identity is otherwise unambiguous)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42ed07ef6d07ad81",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "But the right does not extend to other places. Frank Agnello's house was several blocks distant from Alba's house, where the arrest was made. When it was entered and searched, the conspiracy was ended and the defendants were under arrest and in custody elsewhere. That search cannot be sustained as an incident of the arrests.",
+          "locator_note": "pin-30a; cached Agnello opinion, paragraph b82-5 spanning the *31 marker.",
+          "needs_cl": false,
+          "problem": "Assertion flags quote_fidelity='mismatch'/slip-only, but the page's pin-30a quote is verbatim-faithful to the cached opinion; the mismatch is an automated false alarm.",
+          "proposed_fix": "Reclassify quote_fidelity=matched; no page change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Every sentence of the page quote appears verbatim in the cached opinion; the *31 marker falls inside 'Frank Agnello's *31 house', so pincite 30-31 is correct.",
+          "Only a trivial curly-vs-straight apostrophe differs."
+        ],
+        "residual_risks": [
+          "Striking on the S8 'mismatch' would remove a faithful quotation."
+        ],
+        "suggested_tightening": "Correct S8 fidelity metadata to 'matched'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d09ac545bd23db24",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted.",
+          "locator_note": "pin-30; cached Agnello opinion paragraph b82-5 (after *30). Cached text has an OCR stray period 'as. its fruits'; the page correctly reads 'as its fruits'.",
+          "needs_cl": false,
+          "problem": "Assertion flags quote_fidelity='mismatch'/slip-only and its captured 'quote' field is page chrome (front matter through '## Rule ... bounded to the arrest scene:'), not the quoted proposition. The page's actual pin-30 quotation is verbatim-faithful.",
+          "proposed_fix": "Re-scope the extraction to the actual pin-30 quote and reclassify quote_fidelity=matched (verbatim at 269 U.S. 30).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-30 quote matches the cached opinion verbatim (modulo the cached OCR stray period); pincite 30 correct.",
+          "S8 'mismatch' is an artifact of the mis-scoped quote capture, not a fidelity failure."
+        ],
+        "residual_risks": [
+          "If struck on the S8 label, a faithful, correctly-pincited quotation would be lost."
+        ],
+        "suggested_tightening": "Correct the S8 quote-fidelity metadata; the page text needs no change.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e386f188c75b5f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Black-letter is confirmed by the inlined opinion: search incident to arrest reaches the arrestee's person and the place of arrest but 'the right does not extend to other places'; a separate home blocks away 'cannot be sustained as an incident of the arrests'.",
+          "No disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "The currency claim (survives; 'consistent with Chimel v. California') is not verifiable from disclosed evidence; Chimel and citator data are not inlined. Full confirmation would need a citator (CL)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-175682beda",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Agnello v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-00-238b3f7e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Agnello v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2e386f188c75b5f6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "42ed07ef6d07ad81": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c2eba011975f1476": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d09ac545bd23db24": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-31a08a8516",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d794664111",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-175682beda",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

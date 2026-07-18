@@ -1,0 +1,228 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "64d101589f335b4f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "541 U.S. 149 (2004)",
+          "locator_note": "citations.official_selection.reason=unlisted_reporter:Fla. L. Weekly Fed. S",
+          "needs_cl": false,
+          "problem": "Official-citation selection failed (official=null, display=null, official_selection_present=false; reason 'unlisted_reporter:Fla. L. Weekly Fed. S'), so 541 U.S. 149 is demoted to parallel_cite and the content-page frontmatter 'citation' field is empty. The case indisputably exists at 541 U.S. 149 (2004) (confirmed by the disclosed opinion header) and the page header still displays it via fallback, so this is a metadata/selection defect, not an existence failure.",
+          "proposed_fix": "Repair official_selection to pick 541 U.S. 149 as the SCOTUS official cite (ignore the unlisted 'Fla. L. Weekly Fed. S' reporter) and populate the frontmatter citation field.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Disclosed opinion header confirms 541 U.S. 149 (2004), UNITED STATES v. FLORES-MONTANO, No. 02-1794, decided March 30, 2004 -- the case and cite exist.",
+          "The only defect is the null official selection / empty frontmatter citation; the displayed cite is nonetheless correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b421a2f96cc636a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'the search of a gas tank, which should be solely a repository for fuel,' is verbatim in the opinion at *154; already matched/star-verified via text fragment.",
+          "The visible pin-155 quote on the page ('conclude[d] that the Government's authority to conduct suspicionless inspections at the border includes the authority to remove, disassemble, and reassemble a vehicle's fuel tank') is also verbatim at *155; no defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "453786718913ea8f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the search in question did not require reasonable suspicion.",
+          "locator_note": "pin-150; opinion opening (*149-150)",
+          "needs_cl": false,
+          "problem": "Stored pin-150 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule ... The Court held at the outset:' lead-in, not opinion text. The quote actually rendered at ^pin-150 is verbatim-faithful to the opinion.",
+          "proposed_fix": "Re-harvest pin-150's stored quote to the actual quoted span, which matches the opinion verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered quote at ^pin-150 ('We hold that the search in question did not require reasonable suspicion.') is verbatim in the opinion's opening paragraph; pincite 150 defensible.",
+          "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+        ],
+        "residual_risks": [
+          "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83d7d10a5d7cfe7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim at *152: 'Complex balancing tests to determine what is a routine search of a vehicle, as opposed to a more intrusive search of a person, have no place in border searches of vehicles.'",
+          "Pincite 152 correct; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9350115e438f4f1c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim at the top of *152: 'The Government's interest in preventing the entry of unwanted persons and effects is at its zenith at the international border,'.",
+          "The companion sub-quote 'are reasonable simply by virtue of the fact that they occur at the border' spans *152-153; page cites 152-53 correctly; mismatch flag is a false positive."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f4fa5ed83e4aa76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct: Flores-Montano remains a canonical border-search authority; no verified negative treatment is disclosed.",
+          "Negative edges (e.g. Cotterman labeled 'abrogated', Levy 'superseded_by_statute') are proposed keyword-triage hits on citing cases, not overrulings of Flores-Montano.",
+          "The generic migration scope_note carries no substantive legal claim."
+        ],
+        "residual_risks": [
+          "proposed negative edges unaudited (R15)"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2ee0a59de9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-65f88093e8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2fb62c0314",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5819078830",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-5a49025263"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Flores-Montano.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-00-90edb04c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Flores-Montano"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1b421a2f96cc636a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "453786718913ea8f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4f4fa5ed83e4aa76": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "64d101589f335b4f": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "83d7d10a5d7cfe7d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9350115e438f4f1c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5a49025263",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2ee0a59de9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b6f7ba318b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-65f88093e8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2fb62c0314",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5819078830",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

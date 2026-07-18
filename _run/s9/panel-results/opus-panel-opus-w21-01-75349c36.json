@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c82cf54728c4c8ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All six cites in payload.all match cluster.citations[] verbatim in the disclosed lake record (579 U.S. 232; 136 S. Ct. 2056; 195 L. Ed. 2d 400; 84 U.S.L.W. 4430; 26 Fla. L. Weekly Fed. S 288; 2016 U.S. LEXIS 3926).",
+          "Cached opinion star-paginates by 136 S. Ct. (*2060-*2063), corroborating the S. Ct. 2056 first page; content header leads with 579 U.S. 232 (2016)."
+        ],
+        "residual_risks": [
+          "official_selection.selected is null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S') so no official was auto-picked, but the U.S.-reporter cite 579 U.S. 232 is present and rendered — metadata quirk, not an existence defect."
+        ],
+        "suggested_tightening": "Consider seeding official=579 U.S. 232 despite the unlisted Fla. reporter so official_selection is non-null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "393c69040634bfb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-2062 quote is a page-markdown capture ('--- # Utah v. Strieff ...') — an extraction artifact (pinpoint_status slip-only), not a reader-facing quotation.",
+          "The reader-facing Rule-paragraph quotations verify verbatim against cached opinion p-26 (star *2062): 'temporal proximity', 'the presence of intervening circumstances', ''particularly' significant', 'the purpose and flagrancy of the official misconduct'.",
+          "Pincite '136 S. Ct. at 2061-2062' brackets the Rule section: general framing at *2061 (p-21) through the three-factor recitation at *2062 (p-26)."
+        ],
+        "residual_risks": [
+          "The stored pin.quote does not match the opinion; only the rendered content-page quotations do — literal-string checkers will keep flagging this pin."
+        ],
+        "suggested_tightening": "Re-anchor pin-2062.quote to a discrete opinion span (e.g. 'the purpose and flagrancy of the official misconduct') so the stored quote is star-verifiable.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb6d89c30755ae2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'the second factor, the presence of intervening circumstances, strongly favors the State' matches cached opinion p-29 verbatim.",
+          "p-29 sits between the *2062 label (p-26) and the *2063 label (p-31), confirming star_marker 2062 and the '136 S. Ct. at 2062' pincite; text-fragment fidelity is star-verified/matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "af21fa831df93cc7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law rests on composite_basis 'migration-seed' (scope_note concedes S2 re-derivation may downgrade); currency is not derivable from the opinion text alone.",
+          "No disclosed adjudicated negative treatment: the two field_ii='overruled' edges (People v. Silveria; Dancy v. McGinley) are marked proposed:true / journal_ref lane2_top_cited — unadjudicated candidate signals attached to the citing cases, and a lower court cannot overrule a controlling SCOTUS attenuation holding.",
+          "No disclosed basis to affirmatively refute good_law."
+        ],
+        "residual_risks": [
+          "good_law is a seed, not citator-derived; 2 proposed 'overruled' edges await adjudication.",
+          "Treatment currency (as-of 2026-06-30) cannot be independently confirmed from the disclosed evidence — needs CL citator."
+        ],
+        "suggested_tightening": "S2 re-derivation / CL citator should confirm good_law and dispose of the two proposed 'overruled' edges before the migration-seed is ratified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f8f59e6541",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fff0077e6b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Utah v. Strieff.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-01-75349c36",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Utah v. Strieff"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "393c69040634bfb7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "af21fa831df93cc7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "c82cf54728c4c8ce": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb6d89c30755ae2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f8f59e6541",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fff0077e6b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

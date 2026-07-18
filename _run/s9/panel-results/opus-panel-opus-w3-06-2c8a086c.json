@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "bcf48abfad68e44e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion contains '412 U.S. 291' and caption terms 'Cupp' and 'Murphy', confirming the case at the official cite; lake cluster_id 108801 consistent.",
+          "Official selection present and correct (412 U.S. 291, type 1)."
+        ],
+        "residual_risks": [
+          "Parallels (93 S. Ct. 2000; 36 L. Ed. 2d 900; 1973 U.S. LEXIS 63) not independently reporter-checked but uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "487d580dae3594f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Verbatim in cached opinion: 'On the facts of this case, considering the existence of probable cause, the very limited intrusion undertaken incident to the station house detention, and the ready destructibility of the evidence, we cannot say that this search violated the Fourth and Fourteenth Amendments.'",
+          "Consistent with payload 'matched' / star-verified status and the #:~:text fragment on ^pin-296a."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4abda25886bef47c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails",
+          "locator_note": "content page ## Rule, ^pin-296; opinion 108801 at 412 U.S. 296",
+          "needs_cl": false,
+          "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (front matter + Background + Issue + '## Rule' heading + 'Yes, on a narrowed Chimel rationale. The taking of the scrapings') instead of the sentence actually quoted at ^pin-296; that harvested string does not appear in the opinion.",
+          "proposed_fix": "Re-harvest the ^pin-296 payload to the actual quoted sentence: \"The rationale of Chimel, in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-296 content-page quotations are verbatim in the cached opinion: 'in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails' and the 'physical characteristics . . . constantly exposed to the public' fragment.",
+          "The payload `quote` is a mass mis-harvest of page structure (front matter through the '## Rule' heading) — an extraction artifact, not a page defect."
+        ],
+        "residual_risks": [
+          "Verdict rests on the page's real ^pin-296 sentences being faithful; the corrupt payload should be regenerated."
+        ],
+        "suggested_tightening": "Re-harvest the ^pin-296 payload to the quoted 'The rationale of Chimel...' sentence rather than the page front matter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4c07c5b98842db72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Verbatim in cached opinion: 'we do not hold that a full Chimel search would have been justified in this case without a formal arrest and without a warrant.' (in the source HTML 'Chimel' is a citation-span link between 'full' and 'search').",
+          "Pre-computed 'mismatch' flag is a false positive: the embedded Chimel citation-link markup breaks naive contiguous string matching, not the quotation's fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4bc1e9b48361d12",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note (good law; narrow holding confined to a very limited intrusion on probable cause, readily destructible evidence, no formal arrest) is supported by the verified pin-296/pin-296b quotations, including the express non-extension to a full Chimel search.",
+          "No negative-treatment signal disclosed; field_i_validity=good_law (migration-seed)."
+        ],
+        "residual_risks": [
+          "'good_law' currency not independently derivable from disclosed evidence (no citator classification inlined)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3139f194b2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Cupp v. Murphy.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-06-2c8a086c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cupp v. Murphy"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "487d580dae3594f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4abda25886bef47c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4c07c5b98842db72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bcf48abfad68e44e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d4bc1e9b48361d12": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fca1a0d449",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3139f194b2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

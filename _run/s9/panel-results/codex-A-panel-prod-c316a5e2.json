@@ -1,13 +1,152 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Carloss.json",
+    "lens": "A",
+    "notes": "Reviewed all 6 inventory rows exactly once. Four quote-pinpoint rows are refuted on strict quote-fidelity grounds; no independent treatment finding is raised under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "3d02183683fb49a0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Carloss, U.S. Court of Appeals, 10th Circuit, decided 2016-03-11, docket 13-7082.",
+          "Lake citations match the payload: official/display 818 F.3d 988, plus 2016 WL 929663 and 2016 U.S. App. LEXIS 4547."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b0c1622b082ff30",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Carloss has not cited, nor can we find, any <em>post-Jardines </em>authority holding",
+          "locator_note": "pin-op11a; text line 33/reporter page *995; lake page is null and pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "The asserted string is not character-faithful: it replaces the source lead-in with bracketed '[no]', uses Markdown italics for Jardines, and converts the opinion's quotation punctuation. The lake record also marks this pin's quote_fidelity as mismatch.",
+          "proposed_fix": "Do not present this as a verbatim quote; either quote the opinion's full sentence beginning with 'Carloss has not cited...' or paraphrase the point without quotation marks.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text starts with 'Carloss has not cited...' rather than '[no]'.",
+          "Lake pinpoints[] for pin-op11a expressly reports quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "The substantive no-post-Jardines-authority point appears supported, but the verbatim form fails."
+        ],
+        "suggested_tightening": "Use paraphrase text: the court found no post-Jardines authority for revocation by a No Trespassing sign alone.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b2deadf01dbe4e0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Carloss, however, claims that “No Trespassing” signs posted around the house",
+          "locator_note": "pin-op1; text line 3; no disclosed text passage contains the payload sentence ending with '## Rule'.",
+          "needs_cl": false,
+          "problem": "The asserted quote is not a character-faithful opinion quote and includes the Markdown heading '## Rule'; it appears to splice page Issue text with a heading. Lake pinpoints[] marks the quote as mismatch.",
+          "proposed_fix": "Remove the contaminated pin text, and if pin-op1 is retained, replace it with the actual quoted sentences from paragraph b1034-6.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload contains '## Rule', which is page markup rather than opinion text.",
+          "The opinion text separately describes Carloss's claim and the implied-license rule; it does not contain the payload sentence as framed.",
+          "Lake pinpoints[] for pin-op1 expressly reports quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "Slip-op page 1-2 cannot be independently validated from the cached text because there are no slip-page markers."
+        ],
+        "suggested_tightening": "Keep the Issue sentence unquoted, and attach pin-op1 only to exact text that appears in the opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aac97d7c654ed87b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "just the presence of a “No Trespassing” sign is not alone sufficient",
+          "locator_note": "pin-op11; text line 33/reporter page *995; lake page is null and pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "The passage exists and supports the point, but the asserted quotation is not character-faithful because it substitutes straight apostrophes around No Trespassing for the source's curly double quotation marks. Lake pinpoints[] marks mismatch.",
+          "proposed_fix": "Use the exact source punctuation or make the sentence a paraphrase instead of a verbatim quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The text has “No Trespassing”; the payload has 'No Trespassing'.",
+          "Lake pinpoints[] for pin-op11 expressly reports quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "Substantive support appears present; the defect is strict verbatim fidelity."
+        ],
+        "suggested_tightening": "Use exact typography from the cached text for any quoted legal rule.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b700ff9ebe30d733",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the relevant inquiry here, in determining whether the signs revoked",
+          "locator_note": "pin-op10; text line 59; lake page is null and pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "The asserted quote inserts an ellipsis and omits source words, so it is not character-faithful as a verbatim quote. Lake pinpoints[] marks mismatch.",
+          "proposed_fix": "Quote the full sentence from the opinion, or recast the point as a paraphrase rather than a faithful quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text contains a comma and intervening phrase after 'here'; the payload compresses that phrase into '. . .'.",
+          "Lake pinpoints[] for pin-op10 expressly reports quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "If corpus policy allows editorial ellipses, this could be downgraded, but under the stated character-fidelity rule it does not stand."
+        ],
+        "suggested_tightening": "Avoid treating ellipsis-compressed text as a character-faithful quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65d4c855c4bfeb2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; only consistency with the disclosed lake treatment fields was checked.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2016-03-11, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No Lens A treatment/currency audit performed; Lens B owns any substantive treatment finding."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Carloss.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"3d02183683fb49a0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for United States v. Carloss, U.S. Court of Appeals, 10th Circuit, decided 2016-03-11, docket 13-7082.\",\n        \"Lake citations match the payload: official/display 818 F.3d 988, plus 2016 WL 929663 and 2016 U.S. App. LEXIS 4547.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5b0c1622b082ff30\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted string is not character-faithful: it replaces the source lead-in with bracketed '[no]', uses Markdown italics for Jardines, and converts the opinion's quotation punctuation. The lake record also marks this pin's quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not present this as a verbatim quote; either quote the opinion's full sentence beginning with 'Carloss has not cited...' or paraphrase the point without quotation marks.\",\n        \"evidence_quote\": \"Carloss has not cited, nor can we find, any <em>post-Jardines </em>authority holding\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op11a; text line 33/reporter page *995; lake page is null and pinpoint_status is slip-only.\"\n      },\n      \"reasons\": [\n        \"The disclosed text starts with 'Carloss has not cited...' rather than '[no]'.\",\n        \"Lake pinpoints[] for pin-op11a expressly reports quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The substantive no-post-Jardines-authority point appears supported, but the verbatim form fails.\"\n      ],\n      \"suggested_tightening\": \"Use paraphrase text: the court found no post-Jardines authority for revocation by a No Trespassing sign alone.\"\n    },\n    {\n      \"assertion_id\": \"7b2deadf01dbe4e0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted quote is not a character-faithful opinion quote and includes the Markdown heading '## Rule'; it appears to splice page Issue text with a heading. Lake pinpoints[] marks the quote as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Remove the contaminated pin text, and if pin-op1 is retained, replace it with the actual quoted sentences from paragraph b1034-6.\",\n        \"evidence_quote\": \"Carloss, however, claims that “No Trespassing” signs posted around the house\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op1; text line 3; no disclosed text passage contains the payload sentence ending with '## Rule'.\"\n      },\n      \"reasons\": [\n        \"The payload contains '## Rule', which is page markup rather than opinion text.\",\n        \"The opinion text separately describes Carloss's claim and the implied-license rule; it does not contain the payload sentence as framed.\",\n        \"Lake pinpoints[] for pin-op1 expressly reports quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Slip-op page 1-2 cannot be independently validated from the cached text because there are no slip-page markers.\"\n      ],\n      \"suggested_tightening\": \"Keep the Issue sentence unquoted, and attach pin-op1 only to exact text that appears in the opinion.\"\n    },\n    {\n      \"assertion_id\": \"aac97d7c654ed87b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The passage exists and supports the point, but the asserted quotation is not character-faithful because it substitutes straight apostrophes around No Trespassing for the source's curly double quotation marks. Lake pinpoints[] marks mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact source punctuation or make the sentence a paraphrase instead of a verbatim quote.\",\n        \"evidence_quote\": \"just the presence of a “No Trespassing” sign is not alone sufficient\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op11; text line 33/reporter page *995; lake page is null and pinpoint_status is slip-only.\"\n      },\n      \"reasons\": [\n        \"The text has “No Trespassing”; the payload has 'No Trespassing'.\",\n        \"Lake pinpoints[] for pin-op11 expressly reports quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive support appears present; the defect is strict verbatim fidelity.\"\n      ],\n      \"suggested_tightening\": \"Use exact typography from the cached text for any quoted legal rule.\"\n    },\n    {\n      \"assertion_id\": \"b700ff9ebe30d733\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted quote inserts an ellipsis and omits source words, so it is not character-faithful as a verbatim quote. Lake pinpoints[] marks mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Quote the full sentence from the opinion, or recast the point as a paraphrase rather than a faithful quote.\",\n        \"evidence_quote\": \"the relevant inquiry here, in determining whether the signs revoked\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op10; text line 59; lake page is null and pinpoint_status is slip-only.\"\n      },\n      \"reasons\": [\n        \"The cached text contains a comma and intervening phrase after 'here'; the payload compresses that phrase into '. . .'.\",\n        \"Lake pinpoints[] for pin-op10 expressly reports quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If corpus policy allows editorial ellipses, this could be downgraded, but under the stated character-fidelity rule it does not stand.\"\n      ],\n      \"suggested_tightening\": \"Avoid treating ellipsis-compressed text as a character-faithful quote.\"\n    },\n    {\n      \"assertion_id\": \"65d4c855c4bfeb2f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; only consistency with the disclosed lake treatment fields was checked.\",\n        \"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2016-03-11, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment/currency audit performed; Lens B owns any substantive treatment finding.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 6 inventory rows exactly once. Four quote-pinpoint rows are refuted on strict quote-fidelity grounds; no independent treatment finding is raised under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:30:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:51:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-05f8f8e536",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-bcde96d758",
+      "F-S9-PR-93b0e95853",
+      "F-S9-PR-12f533860a",
+      "F-S9-PR-2ae1fc81bf"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Carloss.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +155,85 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c316a5e2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Carloss"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 255238,
+      "output": 12116,
+      "source": "codex-events",
+      "total": 267354
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "3d02183683fb49a0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b0c1622b082ff30": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "65d4c855c4bfeb2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7b2deadf01dbe4e0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "aac97d7c654ed87b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b700ff9ebe30d733": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcde96d758",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-93b0e95853",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-12f533860a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2ae1fc81bf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-05f8f8e536",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 230.0
   }
 }

@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sabbath v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "5f814040e3bd6de1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Sabbath v. United States, U.S. Supreme Court, decided 1968-06-03, with official citation 391 U.S. 585.",
+          "The disclosed treatment field marks the authority good_law as of 2026-06-30; the disclosed limitation goes to remedy scope, not the case's existence as live authority."
+        ],
+        "residual_risks": [
+          "The suppression-remedy aspect is limited by the treatment note, but that is a treatment-scope issue rather than an existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5cf909d20dd14506",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.",
+          "The row contains no independent good-law, treatment, or authority-weight assertion to attack under the currency/treatment lens."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5f39bf28a58b1417",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.",
+          "Any current-law concern about Sabbath's suppression remedy is addressed in the separate treatment assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd4a800bf55991ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.",
+          "The row contains no independent good-law, treatment, or authority-weight assertion to attack under the currency/treatment lens."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d9632ad60903e311",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The suppression remedy Sabbath applied for knock-and-announce violations was later sharply limited (for Fourth Amendment violations) by Hudson v. Michigan (2006)",
+          "locator_note": "lake/Sabbath v. United States__652d6f.json treatment.scope_note and treatment.varies_by_point; same treatment text appears in content_page.md front matter.",
+          "needs_cl": false,
+          "problem": "The good_law call is adequately narrowed by the scope note, but the payload says varies_by_point=false even though the disclosed treatment note itself identifies a later limitation to Sabbath's suppression-remedy point. That should be represented as point variation or an explicit remedy limitation, not a flat no-variation treatment flag.",
+          "proposed_fix": "Keep good_law for Sabbath's substantive definition of an unannounced breaking, but set varies_by_point=true or add a point override noting that the suppression remedy for Fourth Amendment knock-and-announce violations was sharply limited by Hudson v. Michigan.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field says field_i_validity=good_law as of 2026-06-30, and the scope note preserves the substantive entry-definition holding.",
+          "The same scope note discloses that Sabbath's suppression remedy was later sharply limited, which is inconsistent with the unqualified varies_by_point=false metadata.",
+          "The disclosed progeny includes Hudson v. Michigan among negative/proposed treatment edges, reinforcing that the remedy limitation should be surfaced as point-specific treatment."
+        ],
+        "residual_risks": [
+          "No disclosed record requires treating Sabbath's substantive closed-but-unlocked-door holding as overruled or abrogated."
+        ],
+        "suggested_tightening": "Change the treatment display from a flat good/no-variation presentation to: good as to the § 3109 breaking definition; limited as to the suppression remedy after Hudson for Fourth Amendment knock-and-announce violations.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Sabbath v. United States.json\",\"reviewed\":[{\"assertion_id\":\"5f814040e3bd6de1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Sabbath v. United States, U.S. Supreme Court, decided 1968-06-03, with official citation 391 U.S. 585.\",\"The disclosed treatment field marks the authority good_law as of 2026-06-30; the disclosed limitation goes to remedy scope, not the case's existence as live authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The suppression-remedy aspect is limited by the treatment note, but that is a treatment-scope issue rather than an existence defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5cf909d20dd14506\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.\",\"The row contains no independent good-law, treatment, or authority-weight assertion to attack under the currency/treatment lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5f39bf28a58b1417\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.\",\"Any current-law concern about Sabbath's suppression remedy is addressed in the separate treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bd4a800bf55991ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; Lens B does not adjudicate quote accuracy or support defects.\",\"The row contains no independent good-law, treatment, or authority-weight assertion to attack under the currency/treatment lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d9632ad60903e311\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call is adequately narrowed by the scope note, but the payload says varies_by_point=false even though the disclosed treatment note itself identifies a later limitation to Sabbath's suppression-remedy point. That should be represented as point variation or an explicit remedy limitation, not a flat no-variation treatment flag.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law for Sabbath's substantive definition of an unannounced breaking, but set varies_by_point=true or add a point override noting that the suppression remedy for Fourth Amendment knock-and-announce violations was sharply limited by Hudson v. Michigan.\",\"evidence_quote\":\"The suppression remedy Sabbath applied for knock-and-announce violations was later sharply limited (for Fourth Amendment violations) by Hudson v. Michigan (2006)\",\"needs_cl\":false,\"locator_note\":\"lake/Sabbath v. United States__652d6f.json treatment.scope_note and treatment.varies_by_point; same treatment text appears in content_page.md front matter.\"},\"reasons\":[\"The lake treatment field says field_i_validity=good_law as of 2026-06-30, and the scope note preserves the substantive entry-definition holding.\",\"The same scope note discloses that Sabbath's suppression remedy was later sharply limited, which is inconsistent with the unqualified varies_by_point=false metadata.\",\"The disclosed progeny includes Hudson v. Michigan among negative/proposed treatment edges, reinforcing that the remedy limitation should be surfaced as point-specific treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed record requires treating Sabbath's substantive closed-but-unlocked-door holding as overruled or abrogated.\"],\"suggested_tightening\":\"Change the treatment display from a flat good/no-variation presentation to: good as to the § 3109 breaking definition; limited as to the suppression remedy after Hudson for Fourth Amendment knock-and-announce violations.\"}],\"notes\":\"Lens B only; no support or quote-fidelity defects were raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:31:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-73511ad75f"
+    ],
     "group_id": "_overhaul2/lake/cases/Sabbath v. United States.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-eeee26ae.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Sabbath v. United States"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 73223,
+      "output": 5518,
+      "source": "codex-events",
+      "total": 78741
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "5cf909d20dd14506": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5f39bf28a58b1417": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5f814040e3bd6de1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd4a800bf55991ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d9632ad60903e311": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-73511ad75f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 106.2
   }
 }

@@ -1,13 +1,119 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Rideau.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl exactly once. One Lens A defect found: pin-1574's quote field is overbroad/non-opinion text, although the page's shorter public-welfare quote is supported.",
+    "reviewed": [
+      {
+        "assertion_id": "df68d26f7416959c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies United States v. Izeal Rideau, Jr., decided by the U.S. Court of Appeals for the Fifth Circuit on 1992-08-14.",
+          "The official citation in the lake record is 969 F.2d 1572, matching the content page's displayed case citation and the cached opinion header."
+        ],
+        "residual_risks": [
+          "The lake identity_method is marked pending, but the disclosed text and citation fields align on name, court, year, and reporter citation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f257266d9fe8e5f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim in text/United States v. Rideau__a091c4.txt: \"A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger.\"",
+          "The same quote appears in lake pinpoints[] for pin-1574b with quote_fidelity marked matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a93ef5b99f8ac3c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted substring appears verbatim in the opinion sentence: \"We do not depart from the rule that police officers must have specific and articulable facts indicating that their safety is in danger to justify a patdown.\"",
+          "The same substring appears in lake pinpoints[] for pin-1576 with quote_fidelity marked matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a6030212e6c9543",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim in text/United States v. Rideau__a091c4.txt: \"Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition.\"",
+          "The same quote appears in lake pinpoints[] for pin-1574a with quote_fidelity marked matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6d3b3bfd9172305e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Police have long served the public welfare by removing intoxicated people from the public streets, where they pose a hazard to themselves and others.",
+          "locator_note": "pin-1574",
+          "needs_cl": false,
+          "problem": "The pin-1574 quote field is not a character-faithful opinion quote; it is a stitched excerpt of the built content page beginning with frontmatter/page prose, while the opinion passage at this pin is the public-welfare sentence about removing intoxicated people from public streets.",
+          "proposed_fix": "Replace pin-1574's quote with the actual opinion quote used on the page, or split the page's surrounding rule prose from the verbatim quote field.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[] entry for pin-1574 itself marks quote_fidelity as mismatch.",
+          "The submitted quote starts with built-page material, not with language from the cached opinion text.",
+          "The actual opinion text supports the narrower quoted sentence used on the content page, but not the oversized quote stored for this pin."
+        ],
+        "residual_risks": [
+          "A blunt deletion would remove a substantively valid and faithful page quote; the defect is the pin record's captured quote scope."
+        ],
+        "suggested_tightening": "Keep the public-welfare rule sentence, but make pin-1574's quote only the exact Rideau sentence beginning \"Police have long served...\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d062fd7ec8ca842e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment or currency defects.",
+          "The treatment fields in the assertion match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1992-08-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Rideau.json\",\"reviewed\":[{\"assertion_id\":\"df68d26f7416959c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies United States v. Izeal Rideau, Jr., decided by the U.S. Court of Appeals for the Fifth Circuit on 1992-08-14.\",\"The official citation in the lake record is 969 F.2d 1572, matching the content page's displayed case citation and the cached opinion header.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake identity_method is marked pending, but the disclosed text and citation fields align on name, court, year, and reporter citation.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1f257266d9fe8e5f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears verbatim in text/United States v. Rideau__a091c4.txt: \\\"A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger.\\\"\",\"The same quote appears in lake pinpoints[] for pin-1574b with quote_fidelity marked matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5a93ef5b99f8ac3c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted substring appears verbatim in the opinion sentence: \\\"We do not depart from the rule that police officers must have specific and articulable facts indicating that their safety is in danger to justify a patdown.\\\"\",\"The same substring appears in lake pinpoints[] for pin-1576 with quote_fidelity marked matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6a6030212e6c9543\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears verbatim in text/United States v. Rideau__a091c4.txt: \\\"Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition.\\\"\",\"The same quote appears in lake pinpoints[] for pin-1574a with quote_fidelity marked matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6d3b3bfd9172305e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-1574 quote field is not a character-faithful opinion quote; it is a stitched excerpt of the built content page beginning with frontmatter/page prose, while the opinion passage at this pin is the public-welfare sentence about removing intoxicated people from public streets.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1574's quote with the actual opinion quote used on the page, or split the page's surrounding rule prose from the verbatim quote field.\",\"evidence_quote\":\"Police have long served the public welfare by removing intoxicated people from the public streets, where they pose a hazard to themselves and others.\",\"needs_cl\":false,\"locator_note\":\"pin-1574\"},\"reasons\":[\"The lake pinpoints[] entry for pin-1574 itself marks quote_fidelity as mismatch.\",\"The submitted quote starts with built-page material, not with language from the cached opinion text.\",\"The actual opinion text supports the narrower quoted sentence used on the content page, but not the oversized quote stored for this pin.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A blunt deletion would remove a substantively valid and faithful page quote; the defect is the pin record's captured quote scope.\"],\"suggested_tightening\":\"Keep the public-welfare rule sentence, but make pin-1574's quote only the exact Rideau sentence beginning \\\"Police have long served...\\\"\"},{\"assertion_id\":\"d062fd7ec8ca842e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not adjudicate treatment or currency defects.\",\"The treatment fields in the assertion match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1992-08-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl exactly once. One Lens A defect found: pin-1574's quote field is overbroad/non-opinion text, although the page's shorter public-welfare quote is supported.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f60b479520"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Rideau.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +122,69 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-51167f0b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Rideau"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 261729,
+      "output": 6827,
+      "source": "codex-events",
+      "total": 268556
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "1f257266d9fe8e5f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a93ef5b99f8ac3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a6030212e6c9543": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6d3b3bfd9172305e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d062fd7ec8ca842e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "df68d26f7416959c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f60b479520",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 195.0
   }
 }

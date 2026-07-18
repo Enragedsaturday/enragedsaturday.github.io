@@ -1,13 +1,85 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
+    "lens": "B",
+    "notes": "Support and quote-fidelity findings were not adjudicated under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "8bc9812a32fc6616",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified and identifies Mullenix v. Luna as a U.S. Supreme Court case decided 2015-11-09.",
+          "The cited authority is marked good_law as of 2026-06-30, with no point_overrides.",
+          "The Binding - SCOTUS weight label is consistent with court_level scotus."
+        ],
+        "residual_risks": [
+          "Official citation selection is unresolved in the record, but that is not a B-lens live-law defect.",
+          "Treatment audit caveats are addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "69f7f923d4c33fb8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B is limited to currency and treatment; this quote_fidelity row does not create an independent treatment defect.",
+          "The header treatment text in the quoted fragment says good as of 2026-06-30, matching the lake treatment fields."
+        ],
+        "residual_risks": [
+          "Quote and support accuracy are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0940d26c4b3e244a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law status survives on the disclosed judgment fields, but the page's absolute 'No negative treatment' wording is too strong because the disclosed derivation contains audit-needed proposed negative events and proposed negative-labeled edges that are only classified as mentions.",
+          "proposed_fix": "Keep the status as good_law, but revise the treatment note to say no confirmed negative treatment appears in the disclosed lake record, while proposed/audit-needed citing-case signals remain unresolved.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, with scope_note stating good law on the specificity of clearly established law for qualified immunity.",
+          "Lake treatment.point_overrides is empty and varies_by_point is false, so no confirmed point-specific limitation appears in the judgment fields.",
+          "However, lane1_negative and lane2_top_cited both report audit_needed true, and the edges include proposed overruled, abrogated, questioned, and criticized labels with field_iii set to mentioned."
+        ],
+        "residual_risks": [
+          "lane1_negative and lane2_top_cited both hit caps, so the disclosed record itself does not fully close the treatment audit.",
+          "A later confirmed negative edge could require changing varies_by_point or the good_law scope note."
+        ],
+        "suggested_tightening": "Distinguish confirmed treatment from proposed/audit-needed treatment signals in the treatment section.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Mullenix v. Luna.json\",\"reviewed\":[{\"assertion_id\":\"8bc9812a32fc6616\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record status is verified and identifies Mullenix v. Luna as a U.S. Supreme Court case decided 2015-11-09.\",\"The cited authority is marked good_law as of 2026-06-30, with no point_overrides.\",\"The Binding - SCOTUS weight label is consistent with court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is unresolved in the record, but that is not a B-lens live-law defect.\",\"Treatment audit caveats are addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"69f7f923d4c33fb8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B is limited to currency and treatment; this quote_fidelity row does not create an independent treatment defect.\",\"The header treatment text in the quoted fragment says good as of 2026-06-30, matching the lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote and support accuracy are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0940d26c4b3e244a\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status survives on the disclosed judgment fields, but the page's absolute 'No negative treatment' wording is too strong because the disclosed derivation contains audit-needed proposed negative events and proposed negative-labeled edges that are only classified as mentions.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good_law, but revise the treatment note to say no confirmed negative treatment appears in the disclosed lake record, while proposed/audit-needed citing-case signals remain unresolved.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, with scope_note stating good law on the specificity of clearly established law for qualified immunity.\",\"Lake treatment.point_overrides is empty and varies_by_point is false, so no confirmed point-specific limitation appears in the judgment fields.\",\"However, lane1_negative and lane2_top_cited both report audit_needed true, and the edges include proposed overruled, abrogated, questioned, and criticized labels with field_iii set to mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"lane1_negative and lane2_top_cited both hit caps, so the disclosed record itself does not fully close the treatment audit.\",\"A later confirmed negative edge could require changing varies_by_point or the good_law scope note.\"],\"suggested_tightening\":\"Distinguish confirmed treatment from proposed/audit-needed treatment signals in the treatment section.\"}],\"notes\":\"Support and quote-fidelity findings were not adjudicated under Lens B.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a44214977c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c813ccb145"
+    ],
     "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +88,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-26a2f0f2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Mullenix v. Luna"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 213606,
+      "output": 8391,
+      "source": "codex-events",
+      "total": 221997
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.3
+    "verdict_map": {
+      "0940d26c4b3e244a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "69f7f923d4c33fb8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8bc9812a32fc6616": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a44214977c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c813ccb145",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 193.9
   }
 }

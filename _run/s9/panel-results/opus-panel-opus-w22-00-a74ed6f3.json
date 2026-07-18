@@ -1,0 +1,183 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "734ea3dd24002b33",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Justice Thomas) confirms 'Wilson v. Arkansas', star-paginated *929 through *934, consistent with official cite 514 U.S. 927 (case first page 927).",
+          "Cluster 117936, lead opinion 117936; citation set well-formed (official 514 U.S. 927; parallels 115 S. Ct. 1914, 131 L. Ed. 2d 976; vendor-neutral 1995 U.S. LEXIS 3464).",
+          "Docket 94-5707, 1995 decision, party name in text confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b15fccab2d64a5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote '[W]e hold that this common-law knock and announce principle forms a part of the reasonableness inquiry under the Fourth Amendment' matches cached opinion paragraph b1003-5 verbatim ('In this case, we hold that this common-law \"knock and announce\" principle forms a part of the reasonableness inquiry under the Fourth Amendment.'); the '[W]e' bracket correctly signals the capitalization change from mid-sentence 'we'.",
+          "Pincite 514 U.S. at 929 is correct: the sentence sits in the opening paragraph under the *929 star marker, before *930.",
+          "The lake's quote_fidelity='mismatch'/pinpoint_status='slip-only' is an auto-match FALSE POSITIVE driven by the garbled STORED pin-929 quote ('principle - that officers ordinarily must announce ... ## Rule Yes.'), which fuses Issue-section paraphrase with the markdown '## Rule' heading - it is not the quote actually rendered on the page."
+        ],
+        "residual_risks": [
+          "The stored pinpoint.quote for pin-929 is a garbled extractor artifact; the rendered wiki quote is faithful, so the flag is spurious, not a content defect."
+        ],
+        "suggested_tightening": "Repair the stored pin-929 quote to the verbatim opinion sentence and clear/promote the slip-only+mismatch auto-flag.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8320b3977d99f2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote 'in some circumstances an officer's unannounced entry into a home might be unreasonable under the Fourth Amendment' matches cached paragraph b1008-5 verbatim ('Contrary to the decision below, we hold that in some circumstances an officer's unannounced entry into a home might be unreasonable under the Fourth Amendment.').",
+          "Pincite 934 is correct: b1008-5 follows the *934 star marker that appears in b1007-5.",
+          "The stored pin-934 quote in fact matches the rendered quote; the 'mismatch'/'slip-only' label is a stale/incorrect auto-match flag, not a real infidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the slip-only/mismatch flag for pin-934 (quote is verbatim-faithful and correctly pincited to 934).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2fb2c2eb53522595",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote 'This is not to say, of course, that every entry must be preceded by an announcement. The Fourth Amendment's flexible requirement of reasonableness should not be read to mandate a rigid rule of announcement that ignores countervailing law enforcement interests.' matches cached paragraph b1008-6 verbatim.",
+          "Pincite 'Id.' (=934) is correct: b1008-6 immediately follows b1008-5 on page 934.",
+          "The stored pin-934a quote matches the rendered quote; the 'mismatch'/'slip-only' label is an auto-match artifact, not an infidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the slip-only/mismatch flag for pin-934a (verbatim-faithful).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5bf45e4911b0f385",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is doctrinally sound: Wilson v. Arkansas's holding (knock-and-announce is part of Fourth Amendment reasonableness) remains authoritative; the scope_note accurately notes Richards v. Wisconsin (1997) refinement and Hudson v. Michigan (2006) limiting only the exclusionary REMEDY, not the underlying requirement.",
+          "The lake treatment.edges carry multiple proposed 'lane1_negative' flags (Southerland/Singleton/Flores 'overruled', Rizzi 'abrogated', Callaghan 'criticized', Burton/Scroggins/Hatfield 'questioned'), but all are proposed:true first-pass negative-screen hits and most plausibly attach to the Hudson remedy-limitation lineage, not to any direct overruling of Wilson; they cannot be cleared from disclosed evidence (no citing-opinion text inlined).",
+          "The Richards/Hudson currency claims are not independently verifiable from the disclosed pack (no cached text for those cases)."
+        ],
+        "residual_risks": [
+          "Unconfirmed proposed negative edges should be confirmed as Hudson-remedy-lineage (benign to Wilson's core reasonableness holding) before good_law is treated as fully currency-verified."
+        ],
+        "suggested_tightening": "Confirm the proposed lane1_negative edges resolve to Hudson's remedy limitation rather than any overruling of Wilson's reasonableness holding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-21d0163fdb",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2f5346d0ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b943e7155",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-aec9f9393b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Wilson v. Arkansas.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-00-a74ed6f3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wilson v. Arkansas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2fb2c2eb53522595": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5bf45e4911b0f385": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "734ea3dd24002b33": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b15fccab2d64a5e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8320b3977d99f2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-21d0163fdb",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2f5346d0ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b943e7155",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-aec9f9393b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Garrison.json",
+    "lens": "A",
+    "notes": "Treatment merits were not evaluated because Lens A is limited to support and quote fidelity.",
+    "reviewed": [
+      {
+        "assertion_id": "7f2c7c09670a78fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists case_name as Maryland v. Garrison, court as U.S. Supreme Court, date_decided as 1987-02-24, and year as 1987.",
+          "The lake citations record selects 480 U.S. 79 as the official citation and also contains the asserted parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8112497b9fd6270c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the validity of the search of respondent’s apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers’ failure to realize the overbreadth of the warrant was objectively understandable and reasonable.",
+          "locator_note": "text/Maryland v. Garrison__f63307.txt, page marker *88",
+          "needs_cl": false,
+          "problem": "The quoted sentence is supported by the opinion at page 88, but the content/lake quote is not character-faithful because it converts curly possessive apostrophes to straight apostrophes.",
+          "proposed_fix": "Use the opinion-text characters: \"the validity of the search of respondent’s apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers’ failure to realize the overbreadth of the warrant was objectively understandable and reasonable.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the cached opinion text on the page-88 passage.",
+          "The page pin is substantively correct, but character fidelity fails on respondent’s/officers’."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace straight apostrophes in the quoted sentence with the opinion text’s curly possessives.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bb94a110a81cdf0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.",
+          "locator_note": "text/Maryland v. Garrison__f63307.txt, page marker *85",
+          "needs_cl": false,
+          "problem": "The lake/inventory quote for pin-85 is a mis-harvested chunk of the built page, including Background/Issue/Rule prose and markdown headings, not a character-faithful quotation from the opinion text.",
+          "proposed_fix": "Replace the pin-85 quote with the actual opinion sentence quoted on the content page: \"The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote contains page prose such as \"## Issue\" and \"## Rule\", which does not appear as an opinion quotation.",
+          "The actual page-85 sentence in the cached opinion text matches the content page’s displayed rule quote, not the lake/inventory quote payload."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote at pin-85 is supportable, but the lake pinpoint record is wrong as framed."
+        ],
+        "suggested_tightening": "Regenerate pin-85 from the quoted sentence rather than from surrounding rendered page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc9cbf389d51b0eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-02-24, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Under Lens A, this is only a disclosed-field consistency check; treatment currency is reserved for Lens B."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency audit performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Garrison.json\",\"reviewed\":[{\"assertion_id\":\"7f2c7c09670a78fe\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record lists case_name as Maryland v. Garrison, court as U.S. Supreme Court, date_decided as 1987-02-24, and year as 1987.\",\"The lake citations record selects 480 U.S. 79 as the official citation and also contains the asserted parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8112497b9fd6270c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is supported by the opinion at page 88, but the content/lake quote is not character-faithful because it converts curly possessive apostrophes to straight apostrophes.\",\"severity\":\"low\",\"proposed_fix\":\"Use the opinion-text characters: \\\"the validity of the search of respondent’s apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers’ failure to realize the overbreadth of the warrant was objectively understandable and reasonable.\\\"\",\"evidence_quote\":\"the validity of the search of respondent’s apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers’ failure to realize the overbreadth of the warrant was objectively understandable and reasonable.\",\"needs_cl\":false,\"locator_note\":\"text/Maryland v. Garrison__f63307.txt, page marker *88\"},\"reasons\":[\"The same sentence appears in the cached opinion text on the page-88 passage.\",\"The page pin is substantively correct, but character fidelity fails on respondent’s/officers’.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Replace straight apostrophes in the quoted sentence with the opinion text’s curly possessives.\"},{\"assertion_id\":\"9bb94a110a81cdf0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake/inventory quote for pin-85 is a mis-harvested chunk of the built page, including Background/Issue/Rule prose and markdown headings, not a character-faithful quotation from the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-85 quote with the actual opinion sentence quoted on the content page: \\\"The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.\\\"\",\"evidence_quote\":\"The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.\",\"needs_cl\":false,\"locator_note\":\"text/Maryland v. Garrison__f63307.txt, page marker *85\"},\"reasons\":[\"The asserted quote contains page prose such as \\\"## Issue\\\" and \\\"## Rule\\\", which does not appear as an opinion quotation.\",\"The actual page-85 sentence in the cached opinion text matches the content page’s displayed rule quote, not the lake/inventory quote payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content-page quote at pin-85 is supportable, but the lake pinpoint record is wrong as framed.\"],\"suggested_tightening\":\"Regenerate pin-85 from the quoted sentence rather than from surrounding rendered page text.\"},{\"assertion_id\":\"fc9cbf389d51b0eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-02-24, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Under Lens A, this is only a disclosed-field consistency check; treatment currency is reserved for Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency audit performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment merits were not evaluated because Lens A is limited to support and quote fidelity.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:40-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:05:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-023f2fc9a5",
+      "F-S9-PR-e55783f817"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Garrison.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-777bcc0b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-777bcc0b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:31.135340Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:31.889099Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:32.902526Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.215919Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.098266Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:40.030691Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Garrison"
+    ],
+    "tokens": {
+      "input": 248648,
+      "output": 6799,
+      "source": "codex-events",
+      "total": 255447
+    },
+    "verdict_map": {
+      "7f2c7c09670a78fe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8112497b9fd6270c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9bb94a110a81cdf0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fc9cbf389d51b0eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-023f2fc9a5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e55783f817",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 139.8
   }
 }

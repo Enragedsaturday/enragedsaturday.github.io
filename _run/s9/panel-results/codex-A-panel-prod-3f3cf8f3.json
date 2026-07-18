@@ -1,22 +1,182 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Stoner v. California.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Separate caution: the disclosed lake pinpoints for this case are flagged quote_fidelity=\"mismatch\", so those pinned quotes should be inventoried and reviewed in a quote/pincite pass.",
+    "reviewed": [
+      {
+        "assertion_id": "d435c1dbcccf1235",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Stoner v. California and identifies the court as U.S. Supreme Court with year 1964.",
+          "The lake citations match the payload: official 376 U.S. 483, parallels 84 S. Ct. 889 and 11 L. Ed. 2d 856, and vendor-neutral 1964 U.S. LEXIS 1579."
+        ],
+        "residual_risks": [
+          "Unreviewed decision-date metadata is internally inconsistent: lake/content frontmatter list 1964-05-18, while the opinion text says Decided March 23, 1964."
+        ],
+        "suggested_tightening": "If a decision date is displayed, reconcile it to the opinion text; the citation/court/year assertion itself stands.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0e0fbc19b50a9521",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The holding is substantively supported, but the phrase 'only the guest may waive' is slightly too absolute unless it preserves the opinion's authorized-agent qualifier.",
+          "proposed_fix": "A hotel desk clerk cannot give valid third-party consent to a police search of a current guest's room; the guest's Fourth Amendment protection may be waived only by the guest, directly or through an authorized agent, and strained agency/apparent-authority theories did not validate this search.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion rejects the argument that the warrantless search was lawful because it was conducted with the hotel clerk's consent.",
+          "The opinion rejects strained agency and apparent-authority theories and concludes that this search without a warrant was unlawful.",
+          "The necessary narrowing is the opinion's express allowance that the guest could waive through an agent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Add 'directly or through an authorized agent' to the waiver sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cabdde6ecf1222dd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Instead, the argument is made that the search of the hotel room, although conducted without the petitioner's consent, was lawful because it was conducted with the consent of the hotel clerk. We find this argument unpersuasive.",
+          "locator_note": "home role for Consent Searches",
+          "needs_cl": false,
+          "problem": "The disclosed opinion supports the Consent Searches topic and the third-party consent/apparent-authority parenthetical, but it does not verify the specific home-role label 'Progeny'. The page under review is the only disclosed source for that label.",
+          "proposed_fix": "Change the role to 'Third-party consent / apparent-authority limit' or provide disclosed home-page/taxonomy evidence that defines and supports 'Progeny'.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion plainly concerns consent searches because it addresses claimed hotel-clerk consent.",
+          "The opinion expressly addresses apparent authority.",
+          "No disclosed source establishes why this case is specifically classified as 'Progeny' rather than as a core consent-search limit."
+        ],
+        "residual_risks": [
+          "An undisclosed Consent Searches taxonomy might define 'Progeny' broadly enough to support this label, but that evidence is not in the disclosed corpus."
+        ],
+        "suggested_tightening": "Use a role label grounded in the opinion text, such as 'Third-party consent / apparent-authority limit'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "68ccd25f85f3c687",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload reproduces the disclosed lake treatment fields: good_law, as_of_content 1964-03-23, as_of_treatment 2026-06-30, migration-seed basis, Stoner v. California reference, varies_by_point false, and the same scope note.",
+          "Under lens A, treatment/currency is recorded from disclosed lake judgment fields and not independently audited."
+        ],
+        "residual_risks": [
+          "Treatment/currency is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73e3016711c919cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity lists court U.S. Supreme Court and court_level scotus.",
+          "The disclosed record therefore supports the corpus weight label Binding — SCOTUS."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Stoner v. California.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d435c1dbcccf1235\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified for Stoner v. California and identifies the court as U.S. Supreme Court with year 1964.\",\n        \"The lake citations match the payload: official 376 U.S. 483, parallels 84 S. Ct. 889 and 11 L. Ed. 2d 856, and vendor-neutral 1964 U.S. LEXIS 1579.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Unreviewed decision-date metadata is internally inconsistent: lake/content frontmatter list 1964-05-18, while the opinion text says Decided March 23, 1964.\"\n      ],\n      \"suggested_tightening\": \"If a decision date is displayed, reconcile it to the opinion text; the citation/court/year assertion itself stands.\"\n    },\n    {\n      \"assertion_id\": \"0e0fbc19b50a9521\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding is substantively supported, but the phrase 'only the guest may waive' is slightly too absolute unless it preserves the opinion's authorized-agent qualifier.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"A hotel desk clerk cannot give valid third-party consent to a police search of a current guest's room; the guest's Fourth Amendment protection may be waived only by the guest, directly or through an authorized agent, and strained agency/apparent-authority theories did not validate this search.\",\n        \"evidence_quote\": \"It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"holding field\"\n      },\n      \"reasons\": [\n        \"The opinion rejects the argument that the warrantless search was lawful because it was conducted with the hotel clerk's consent.\",\n        \"The opinion rejects strained agency and apparent-authority theories and concludes that this search without a warrant was unlawful.\",\n        \"The necessary narrowing is the opinion's express allowance that the guest could waive through an agent.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Add 'directly or through an authorized agent' to the waiver sentence.\"\n    },\n    {\n      \"assertion_id\": \"cabdde6ecf1222dd\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed opinion supports the Consent Searches topic and the third-party consent/apparent-authority parenthetical, but it does not verify the specific home-role label 'Progeny'. The page under review is the only disclosed source for that label.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the role to 'Third-party consent / apparent-authority limit' or provide disclosed home-page/taxonomy evidence that defines and supports 'Progeny'.\",\n        \"evidence_quote\": \"Instead, the argument is made that the search of the hotel room, although conducted without the petitioner's consent, was lawful because it was conducted with the consent of the hotel clerk. We find this argument unpersuasive.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"home role for Consent Searches\"\n      },\n      \"reasons\": [\n        \"The opinion plainly concerns consent searches because it addresses claimed hotel-clerk consent.\",\n        \"The opinion expressly addresses apparent authority.\",\n        \"No disclosed source establishes why this case is specifically classified as 'Progeny' rather than as a core consent-search limit.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"An undisclosed Consent Searches taxonomy might define 'Progeny' broadly enough to support this label, but that evidence is not in the disclosed corpus.\"\n      ],\n      \"suggested_tightening\": \"Use a role label grounded in the opinion text, such as 'Third-party consent / apparent-authority limit'.\"\n    },\n    {\n      \"assertion_id\": \"68ccd25f85f3c687\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload reproduces the disclosed lake treatment fields: good_law, as_of_content 1964-03-23, as_of_treatment 2026-06-30, migration-seed basis, Stoner v. California reference, varies_by_point false, and the same scope note.\",\n        \"Under lens A, treatment/currency is recorded from disclosed lake judgment fields and not independently audited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency is reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"73e3016711c919cf\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity lists court U.S. Supreme Court and court_level scotus.\",\n        \"The disclosed record therefore supports the corpus weight label Binding — SCOTUS.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Separate caution: the disclosed lake pinpoints for this case are flagged quote_fidelity=\\\"mismatch\\\", so those pinned quotes should be inventoried and reviewed in a quote/pincite pass.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:52:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:07:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-434f302659",
+      "F-S9-PR-58a13c3976"
+    ],
     "group_id": "content/cases/Stoner v. California.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3f3cf8f3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3f3cf8f3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:07.528012Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:08.388920Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:09.629084Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:11.627992Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:15.313574Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stoner v. California"
+    ],
+    "tokens": {
+      "input": 178572,
+      "output": 13800,
+      "source": "codex-events",
+      "total": 192372
+    },
+    "verdict_map": {
+      "0e0fbc19b50a9521": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "68ccd25f85f3c687": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "73e3016711c919cf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cabdde6ecf1222dd": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d435c1dbcccf1235": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-434f302659",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-58a13c3976",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 262.8
   }
 }

@@ -1,22 +1,181 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Florida v. Meyers.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "6e52f2ed67fa42bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Florida v. Meyers, U.S. Supreme Court, decided 1984-04-23, with expected citation found.",
+          "Lake citations list official 466 U.S. 380 plus the same parallel and LEXIS citations in the assertion.",
+          "Lake treatment classifies the authority as good_law as of 2026-06-30; no disclosed finalized edge overrules, abrogates, or supersedes Meyers itself."
+        ],
+        "residual_risks": [
+          "The treatment derivation flags a pending top-cited audit, but the disclosed record contains no finalized adverse treatment changing live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05adba55e0a507b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate the support merits of the Automobile Exception home role.",
+          "No disclosed finalized adverse treatment undermines the case's currency for inclusion; lake treatment remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Home-role support classification is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "812c06daad2aa15c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate holding support or quote fidelity.",
+          "For currency only, lake treatment says good_law, varies_by_point is false, and there are no point overrides or finalized negative edges against the stated point."
+        ],
+        "residual_risks": [
+          "Holding-support merits are left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0103bb389d1d6a2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity records court_id and court_level as scotus, matching the page's U.S. Supreme Court classification.",
+          "The authority_weight label Binding - SCOTUS is consistent with a Supreme Court case; no disclosed treatment field changes that weight."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed01f7a1610fa087",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "treatment.scope_note and Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The core good_law treatment call is supported, but the unqualified scope note 'no negative treatment' is too strong because the disclosed lake record also flags an unresolved top-cited treatment audit and proposed negative-treatment events.",
+          "proposed_fix": "Keep field_i_validity: good_law as of 2026-06-30, but replace 'No negative treatment' with 'No finalized negative treatment in the disclosed lake record; top-cited treatment audit flagged/pending' unless the R15 audit is completed.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides, so the main status survives.",
+          "All listed treatment edges have field_iii: mentioned and proposed: true, so they do not themselves prove actual overruling of Meyers.",
+          "However, lane2_top_cited reports cap_hit true, audit_needed true, and proposed_negative_events 24, making the absolute 'No negative treatment' statement not safely stated without qualification."
+        ],
+        "residual_risks": [
+          "The disclosed progeny record shows 101 indexed citing opinions and citation_count 166, while the cached/top-cited treatment review is bounded and flagged for audit."
+        ],
+        "suggested_tightening": "State only that no finalized negative treatment appears in the disclosed lake record, or complete the flagged audit before saying 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Florida v. Meyers.md\",\"reviewed\":[{\"assertion_id\":\"6e52f2ed67fa42bd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Florida v. Meyers, U.S. Supreme Court, decided 1984-04-23, with expected citation found.\",\"Lake citations list official 466 U.S. 380 plus the same parallel and LEXIS citations in the assertion.\",\"Lake treatment classifies the authority as good_law as of 2026-06-30; no disclosed finalized edge overrules, abrogates, or supersedes Meyers itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation flags a pending top-cited audit, but the disclosed record contains no finalized adverse treatment changing live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"05adba55e0a507b6\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate the support merits of the Automobile Exception home role.\",\"No disclosed finalized adverse treatment undermines the case's currency for inclusion; lake treatment remains good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role support classification is left to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"812c06daad2aa15c\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate holding support or quote fidelity.\",\"For currency only, lake treatment says good_law, varies_by_point is false, and there are no point overrides or finalized negative edges against the stated point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding-support merits are left to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0103bb389d1d6a2f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity records court_id and court_level as scotus, matching the page's U.S. Supreme Court classification.\",\"The authority_weight label Binding - SCOTUS is consistent with a Supreme Court case; no disclosed treatment field changes that weight.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"ed01f7a1610fa087\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment call is supported, but the unqualified scope note 'no negative treatment' is too strong because the disclosed lake record also flags an unresolved top-cited treatment audit and proposed negative-treatment events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law as of 2026-06-30, but replace 'No negative treatment' with 'No finalized negative treatment in the disclosed lake record; top-cited treatment audit flagged/pending' unless the R15 audit is completed.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"treatment.scope_note and Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides, so the main status survives.\",\"All listed treatment edges have field_iii: mentioned and proposed: true, so they do not themselves prove actual overruling of Meyers.\",\"However, lane2_top_cited reports cap_hit true, audit_needed true, and proposed_negative_events 24, making the absolute 'No negative treatment' statement not safely stated without qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed progeny record shows 101 indexed citing opinions and citation_count 166, while the cached/top-cited treatment review is bounded and flagged for audit.\"],\"suggested_tightening\":\"State only that no finalized negative treatment appears in the disclosed lake record, or complete the flagged audit before saying 'No negative treatment.'\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:43:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:02:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cc91ac64fc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-46bac43d4c"
+    ],
     "group_id": "content/cases/Florida v. Meyers.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-02c2705b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-02c2705b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:28.662536Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:29.296880Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:30.031398Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:31.295955Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:33.283153Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Meyers"
+    ],
+    "tokens": {
+      "input": 307637,
+      "output": 8749,
+      "source": "codex-events",
+      "total": 316386
+    },
+    "verdict_map": {
+      "0103bb389d1d6a2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "05adba55e0a507b6": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e52f2ed67fa42bd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "812c06daad2aa15c": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed01f7a1610fa087": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cc91ac64fc",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-46bac43d4c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 177.0
   }
 }

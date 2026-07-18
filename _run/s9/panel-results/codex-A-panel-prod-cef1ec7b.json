@@ -1,22 +1,156 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Abel v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f7463c9501c4014e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms record_id 'Abel v. United States,' U.S. Supreme Court, decided 1960-03-28.\",\n        \"Lake citations list official citation 362 U.S. 217 and parallel/vendor citations 80 S. Ct. 683, 4 L. Ed. 2d 668, and 1960 U.S. LEXIS 1412.\",\n        \"Cached opinion header independently shows 362 U.S. 217 (1960), Supreme Court of United States, decided March 28, 1960.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4df9b49082fb96d1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-241 quote is not a verbatim opinion quote. It contains content-page narrative and section headings rather than the cached opinion passage at 362 U.S. 241; the lake record itself flags quote_fidelity as 'mismatch'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-241 with the exact opinion language at star page *241, and avoid changing quoted punctuation. For example, quote the opinion's sentence beginning 'As such, however, it was entirely lawful...' and the following possession/consent sentence exactly.\",\n        \"evidence_quote\": \"As such, however, it was entirely lawful, although undertaken without a warrant. This is so for the reason that at the time of the search petitioner had vacated the room.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Abel v. United States__fc3d9c.txt line 90, star pagination *241\"\n      },\n      \"reasons\": [\n        \"The asserted quote begins 'These and other items were introduced...' and includes '## Issue' and '## Rule,' which are content-page artifacts not found in the opinion passage.\",\n        \"The actual *241 opinion passage says the two items were found after petitioner paid his bill and vacated the room, and then explains the warrantless search was lawful.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal proposition is supported by the opinion, but this quote record cannot stand as a verbatim quotation.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-241 from the opinion text rather than from rendered page prose.\"\n    },\n    {\n      \"assertion_id\": \"5155b514086db91d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words match the opinion passage, but the cached text uses HTML italics while the assertion uses Markdown italics; under strict character-fidelity, that is not character-identical to text/<case>.txt. The lake record also flags quote_fidelity as 'mismatch'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Either store the quote in the same normalized form used by lake pinpoints or make the raw-text quote preserve the cached HTML italics around bona vacantia.\",\n        \"evidence_quote\": \"So far as he was concerned, they were <i>bona vacantia.</i> There can be nothing unlawful in the Government's appropriation of such abandoned property.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Abel v. United States__fc3d9c.txt line 90, star pagination *241\"\n      },\n      \"reasons\": [\n        \"The substantive wording appears at *241: petitioner abandoned the articles, threw them away, and they were bona vacantia.\",\n        \"The only disclosed mismatch found is formatting normalization: '<i>bona vacantia.</i>' in cached text versus '*bona vacantia.*' in the assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus requires raw character identity to text/<case>.txt, this should be treated as a quote-format defect until normalization policy is explicit.\"\n      ],\n      \"suggested_tightening\": \"Document whether Markdown italics are an accepted normalization for opinion HTML in verbatim quote fields.\"\n    },\n    {\n      \"assertion_id\": \"161d1db4b3af38d7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1960-03-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B should evaluate treatment and currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion in group_inventory.jsonl exactly once using only disclosed local files. Lens A raised no treatment/currency defect.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Abel v. United States.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows appeared in group_inventory.jsonl for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "f7463c9501c4014e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Abel v. United States, court U.S. Supreme Court, date_decided 1960-03-28, and year 1960.",
+          "The lake citation fields list official 362 U.S. 217, parallels 80 S. Ct. 683 and 4 L. Ed. 2d 668, and vendor citation 1960 U.S. LEXIS 1412, matching the inventory/content citation data."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4df9b49082fb96d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As such, however, it was entirely lawful, although undertaken without a warrant. This is so for the reason that at the time of the search petitioner had vacated the room.",
+          "locator_note": "Cached opinion text contains the supporting passage at star page *241; the lake pin-241 record itself marks quote_fidelity as mismatch and has null page/star_marker.",
+          "needs_cl": false,
+          "problem": "The pin-241 payload/lake quote is not a faithful opinion quote. It splices content-page prose and headings such as ## Issue and ## Rule, ending at 'The search', rather than the page-241 opinion passage.",
+          "proposed_fix": "Replace the pin-241 harvested quote with the actual page-241 opinion language supporting the displayed quotation, beginning with the FBI search discussion and the lawful-search sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text at *241 contains the lawful-search passage, but it does not contain the inventory quote's content-page headings and synthesized issue/rule prose.",
+          "The lake pinpoint judgment for pin-241 also says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [
+          "The legal proposition on the page appears supportable from the actual *241 passage; the defect is the harvested/stored pinpoint quote as framed."
+        ],
+        "suggested_tightening": "Reharvest only the quoted opinion text for pin-241 and avoid crossing markdown section headings when building pinpoint quotes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5155b514086db91d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted words appear in the cached opinion at star page *241.",
+          "The same quotation appears in the lake pinpoints[].quote for pin-241a; the only source-format difference is HTML italics in the cached text versus Markdown italics in the page/lake quote."
+        ],
+        "residual_risks": [
+          "The lake judgment field still labels pin-241a quote_fidelity as mismatch, so automated comparison should define HTML-to-Markdown normalization."
+        ],
+        "suggested_tightening": "Normalize italic markup before quote comparison, or update the stale mismatch flag after normalization.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "161d1db4b3af38d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1960-03-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside Lens A, so no substantive treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Substantive treatment currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Abel v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f7463c9501c4014e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Abel v. United States, court U.S. Supreme Court, date_decided 1960-03-28, and year 1960.\",\n        \"The lake citation fields list official 362 U.S. 217, parallels 80 S. Ct. 683 and 4 L. Ed. 2d 668, and vendor citation 1960 U.S. LEXIS 1412, matching the inventory/content citation data.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4df9b49082fb96d1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-241 payload/lake quote is not a faithful opinion quote. It splices content-page prose and headings such as ## Issue and ## Rule, ending at 'The search', rather than the page-241 opinion passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-241 harvested quote with the actual page-241 opinion language supporting the displayed quotation, beginning with the FBI search discussion and the lawful-search sentence.\",\n        \"evidence_quote\": \"As such, however, it was entirely lawful, although undertaken without a warrant. This is so for the reason that at the time of the search petitioner had vacated the room.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"Cached opinion text contains the supporting passage at star page *241; the lake pin-241 record itself marks quote_fidelity as mismatch and has null page/star_marker.\"\n      },\n      \"reasons\": [\n        \"The disclosed text at *241 contains the lawful-search passage, but it does not contain the inventory quote's content-page headings and synthesized issue/rule prose.\",\n        \"The lake pinpoint judgment for pin-241 also says quote_fidelity is mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal proposition on the page appears supportable from the actual *241 passage; the defect is the harvested/stored pinpoint quote as framed.\"\n      ],\n      \"suggested_tightening\": \"Reharvest only the quoted opinion text for pin-241 and avoid crossing markdown section headings when building pinpoint quotes.\"\n    },\n    {\n      \"assertion_id\": \"5155b514086db91d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted words appear in the cached opinion at star page *241.\",\n        \"The same quotation appears in the lake pinpoints[].quote for pin-241a; the only source-format difference is HTML italics in the cached text versus Markdown italics in the page/lake quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake judgment field still labels pin-241a quote_fidelity as mismatch, so automated comparison should define HTML-to-Markdown normalization.\"\n      ],\n      \"suggested_tightening\": \"Normalize italic markup before quote comparison, or update the stale mismatch flag after normalization.\"\n    },\n    {\n      \"assertion_id\": \"161d1db4b3af38d7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1960-03-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\n        \"Treatment/currency is outside Lens A, so no substantive treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment currency remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support, pincite, or black_letter rows appeared in group_inventory.jsonl for this group.\"\n}",
   "summary": {
-    "at": "2026-07-11T01:02:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:07:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d954da1d45",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ce0522b168"
+    ],
     "group_id": "_overhaul2/lake/cases/Abel v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cef1ec7b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cef1ec7b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Abel v. United States"
+    ],
+    "tokens": {
+      "input": 203907,
+      "output": 9452,
+      "source": "codex-events",
+      "total": 213359
+    },
+    "verdict_map": {
+      "161d1db4b3af38d7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4df9b49082fb96d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5155b514086db91d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7463c9501c4014e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ce0522b168",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d954da1d45",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 184.3
   }
 }

@@ -1,0 +1,143 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6493a0f000596759",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip caption confirms '488 U.S. 445 (1989)', 'FLORIDA v. RILEY', No. 87-764, Supreme Court of the United States — the official cite exists and matches display '488 U.S. 445'.",
+          "Parallel/vendor cites (109 S. Ct. 693; 102 L. Ed. 2d 835; 1989 U.S. LEXIS 580) are not individually confirmable from the U.S.-only cached text, but the official cite and case identity are positively verified, so the case_cite existence holds."
+        ],
+        "residual_risks": [
+          "Frontmatter/lake date_decided '1989-04-03' conflicts with the cached slip header 'Decided January 23, 1989' — a genuine adjacent data error, but outside this assertion's citation-only payload."
+        ],
+        "suggested_tightening": "Correct date_decided to 1989-01-23 per the cached header (out-of-scope of this citation assertion but disclosed).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b986ff999357939",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'As far as this record reveals, no intimate details connected with the use of the home or curtilage were observed, and there was no undue noise, and no wind, dust, or threat of injury. In these circumstances, there was no violation of the Fourth Amendment.' matches the cached plurality text verbatim.",
+          "It sits after the *452 star marker (and is re-quoted in the Brennan dissent as 'Ante, at 452'), so the star-verified pincite '452' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c1124d7d57b6c69b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' captured page scaffolding (## Background/## Issue/## Rule prose ending in a colon) — an extraction artifact, not the actual pin-451 quotation.",
+          "The actual content-page quote at ^pin-451 — 'Any member of the public could legally have been flying over Riley's property in a helicopter at the altitude of 400 feet and could have observed Riley's greenhouse.' — matches the cached plurality text verbatim and falls between *451 and *452, so pincite '451 (plurality opinion)' is correct (O'Connor's concurrence also cites it 'Ante, at 451')."
+        ],
+        "residual_risks": [
+          "The 'mismatch'/'slip-only' payload flag is a disclosure/extraction false-positive, not a page defect."
+        ],
+        "suggested_tightening": "Have the extractor isolate the span inside quotation marks rather than the surrounding prose, to avoid spurious mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46f8181040551a54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms the scope note's structure: White, J. announced the judgment and delivered the plurality (CJ, Scalia, Kennedy joining), and O'Connor, J. is 'concurring in the judgment' on a public-travel-routineness rationale — matching 'Controlling plurality (White, J.), with O'Connor, J., concurring in the judgment on a public-use rationale.'",
+          "No disclosed adverse treatment; the naked-eye-from-lawful-public-airspace holding is stated in the plurality, supporting field_i_validity good_law."
+        ],
+        "residual_risks": [
+          "good_law currency 'as of 2026-06-30' is a treatment derivation not independently contained in the 1989 slip; nothing disclosed contradicts it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-11b6e8a033",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6b2ece9463",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Florida v. Riley.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-06-5d6b64b8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Riley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3b986ff999357939": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46f8181040551a54": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6493a0f000596759": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c1124d7d57b6c69b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-11b6e8a033",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6b2ece9463",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

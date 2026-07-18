@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8cccdaf9b84351ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS opinion is the Jacobson entrapment case (petitioner Jacobson; Eighth Circuit below at 916 F.2d 467; cert granted 499 U.S. 974 (1991)); internal reporter markers *548-*551 confirm the case reports at 503 U.S. 540.",
+          "Official 503 U.S. 540 is selected; parallels 112 S. Ct. 1535 / 118 L. Ed. 2d 174 are the standard Jacobson cites."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00b7c34b3f358b75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-548a quote is verbatim across the *548->*549 page break in the cached opinion: 'Where the Government has induced an [*549] individual to break the law and the defense of entrapment is at issue, as it was in this case, the prosecution must prove beyond reasonable doubt that the defendant was disposed to commit the criminal act prior to first being approached by Government agents'.",
+          "pincite 'at 548-549' is correct; payload quote_fidelity='mismatch' is a scanner false positive (an embedded *549 star-page marker sits mid-quote)."
+        ],
+        "residual_risks": [
+          "pinpoint_status slip-only."
+        ],
+        "suggested_tightening": "Strip embedded star-page/page-number markers before quote matching to avoid false mismatch flags on quotes that span a page break.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8aab813053ba6274",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Jacobson v. United States *503 U.S. 540 (1992)* · U.S. Supreme Court · **Binding — SCOTUS** ... ## Rule Where the government induces the crime, it must prove predisposition that predates its own conduct.",
+          "locator_note": "lake pinpoints[id=pin-548].quote / group_inventory payload.quote",
+          "needs_cl": false,
+          "problem": "The stored pin-548 quote is the content page's own preamble markdown (title, header line, HTML comment, Background, Issue, and the 'Rule ... predates its own conduct.' lead-in), which does not appear in the source opinion. quote_fidelity is a genuine mismatch.",
+          "proposed_fix": "Restore pin-548's quote field to the passage the content page renders at ^pin-548 ('Government agents may not originate a criminal design, implant in an innocent person's mind the disposition to commit a criminal act, and then induce commission of the crime so that the Government may prosecute'), which is verbatim at 503 U.S. 548.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored/asserted quote is page preamble markdown absent from the cached opinion; a real quote-fidelity defect in the pinpoint record.",
+          "The rendered content-page quotation at ^pin-548 is itself verbatim at 503 U.S. 548, so the defect is confined to the corrupted stored quote field."
+        ],
+        "residual_risks": [
+          "Recurring lead-pinpoint preamble-capture corruption (also J.D.B. pin-op1, James pin-313)."
+        ],
+        "suggested_tightening": "Re-extract pinpoint quote fields for lead pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "451ab310ab8d8656",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with the disclosed lake: no confirmed (proposed:false) negative edge exists; all negative edges are proposed candidates.",
+          "Jacobson's predisposition-must-predate-inducement rule is treated as good law with 'No negative treatment' on the content page, and the proposed negative edges are unadjudicated citator noise."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed; as_of_treatment=2026-06-30 overstates recency of the determination.",
+          "Forward currency is not confirmable from the opinion text alone; proposed negative edges await adjudication."
+        ],
+        "suggested_tightening": "Run S2 treatment re-derivation before relying on as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1c2fc2e007",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-785c7c812d"
+    ],
+    "group_id": "_overhaul2/lake/cases/Jacobson v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-02-b504bf20",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Jacobson v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "00b7c34b3f358b75": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "451ab310ab8d8656": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8aab813053ba6274": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8cccdaf9b84351ff": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-785c7c812d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1c2fc2e007",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

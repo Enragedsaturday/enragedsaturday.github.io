@@ -1,13 +1,134 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Harris (1971).json",
+    "lens": "A",
+    "notes": "Unscored support risk: content_page.md says 'a majority agreed with Part III's penal-interest rationale,' but the cached opinion states Burger's opinion was joined by Black and Blackmun, and Part III by White; that disclosed headcount verifies four Justices for Part III, not a majority. No separate group_inventory assertion_id covered that sentence.",
+    "reviewed": [
+      {
+        "assertion_id": "c9a2c479526ca83b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms United States v. Harris, U.S. Supreme Court, decided 1971-06-28, year 1971, docket 30.",
+          "The lake citation record selects 403 U.S. 573 as the official citation and lists the same parallel/vendor citations: 91 S. Ct. 2075, 29 L. Ed. 2d 723, and 1971 U.S. LEXIS 18."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e24a38839854716",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "is not a \"practical consideration of everyday life\" upon which an officer (or a magistrate) may properly rely",
+          "locator_note": "pin-583b; cached text places the passage on star page 583, but the lake pinpoint has quote_fidelity=mismatch and no star_marker.",
+          "needs_cl": false,
+          "problem": "The quoted phrase adds a period inside the quotation and omits the surrounding opinion wording; the cached opinion has the phrase without that terminal period inside the quote.",
+          "proposed_fix": "Use \"practical consideration of everyday life\" without the period inside the quotation, or quote the fuller passage about an officer or magistrate relying on reputation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The underlying support exists: the cached opinion says a policeman's knowledge of a suspect's reputation may be a practical consideration on which an officer or magistrate may rely.",
+          "The verbatim quote as framed is not character-faithful because the source text does not include the period inside the quoted phrase."
+        ],
+        "residual_risks": [
+          "The reputation rationale is from Burger's Part II, not the Part III concurrence by Justice White."
+        ],
+        "suggested_tightening": "Label the reputation point as the Burger plurality/Part II rationale, not as part of the Part III penal-interest rationale.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8dc4e536331a7103",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "These statements were against the informant's penal interest, for he thereby admitted major elements of an offense under the Internal Revenue Code.",
+          "locator_note": "pin-583; lake pinpoints[].quote begins with built-page markdown ('--- # United States v. Harris...') rather than cached opinion text.",
+          "needs_cl": false,
+          "problem": "The pin-583 quote stored in the lake/inventory is not an opinion quote; it is a long scrape of the built page header/background/rule text and is marked mismatch with no star marker.",
+          "proposed_fix": "Replace pin-583 with the actual opinion passage on star page 583 supporting penal-interest reliability, and regenerate the pinpoint from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-583 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The cached opinion has the intended penal-interest passage, but the inventory quote is not character-faithful to that passage."
+        ],
+        "residual_risks": [
+          "The visible content-page paragraph under this pin contains multiple quotations; each should be separately harvested or checked."
+        ],
+        "suggested_tightening": "Split pin-583 into separate verified quotes for the penal-interest sentence and the admissions-of-crime sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ffd56142be0f1e7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That the informant may be paid or promised a \"break\" does <span class=\"star-pagination\">*584</span> not eliminate the residual risk and opprobrium of having admitted criminal conduct.",
+          "locator_note": "pin-584; lake pinpoints[].quote is marked mismatch and has no star_marker.",
+          "needs_cl": false,
+          "problem": "The quote uses single quotation marks around 'break' and collapses a star-page break; the cached opinion uses double quotation marks and places the *584 marker between 'does' and 'not'.",
+          "proposed_fix": "Use the source quotation marks around \"break\" and cite the passage as spanning 403 U.S. 583-84 if retaining a page-specific citation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance of the quote appears in the cached opinion.",
+          "The text is not character-faithful as framed because the quotation marks differ and the source passage crosses the star-page marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Prefer 403 U.S. at 583-84 for this sentence because it begins before the *584 marker.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e7985ddb49af353d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the exact phrase: \"itself and without more, implicated that property and furnished probable cause to search.\"",
+          "The lake pinpoint for pin-584b is marked quote_fidelity=matched, star_marker=584, and star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d83e4ca7d33163c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment/currency merits.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1971-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Harris (1971).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c9a2c479526ca83b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms United States v. Harris, U.S. Supreme Court, decided 1971-06-28, year 1971, docket 30.\",\n        \"The lake citation record selects 403 U.S. 573 as the official citation and lists the same parallel/vendor citations: 91 S. Ct. 2075, 29 L. Ed. 2d 723, and 1971 U.S. LEXIS 18.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6e24a38839854716\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted phrase adds a period inside the quotation and omits the surrounding opinion wording; the cached opinion has the phrase without that terminal period inside the quote.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use \\\"practical consideration of everyday life\\\" without the period inside the quotation, or quote the fuller passage about an officer or magistrate relying on reputation.\",\n        \"evidence_quote\": \"is not a \\\"practical consideration of everyday life\\\" upon which an officer (or a magistrate) may properly rely\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-583b; cached text places the passage on star page 583, but the lake pinpoint has quote_fidelity=mismatch and no star_marker.\"\n      },\n      \"reasons\": [\n        \"The underlying support exists: the cached opinion says a policeman's knowledge of a suspect's reputation may be a practical consideration on which an officer or magistrate may rely.\",\n        \"The verbatim quote as framed is not character-faithful because the source text does not include the period inside the quoted phrase.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The reputation rationale is from Burger's Part II, not the Part III concurrence by Justice White.\"\n      ],\n      \"suggested_tightening\": \"Label the reputation point as the Burger plurality/Part II rationale, not as part of the Part III penal-interest rationale.\"\n    },\n    {\n      \"assertion_id\": \"8dc4e536331a7103\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-583 quote stored in the lake/inventory is not an opinion quote; it is a long scrape of the built page header/background/rule text and is marked mismatch with no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-583 with the actual opinion passage on star page 583 supporting penal-interest reliability, and regenerate the pinpoint from the cached opinion text.\",\n        \"evidence_quote\": \"These statements were against the informant's penal interest, for he thereby admitted major elements of an offense under the Internal Revenue Code.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-583; lake pinpoints[].quote begins with built-page markdown ('--- # United States v. Harris...') rather than cached opinion text.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-583 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\n        \"The cached opinion has the intended penal-interest passage, but the inventory quote is not character-faithful to that passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page paragraph under this pin contains multiple quotations; each should be separately harvested or checked.\"\n      ],\n      \"suggested_tightening\": \"Split pin-583 into separate verified quotes for the penal-interest sentence and the admissions-of-crime sentence.\"\n    },\n    {\n      \"assertion_id\": \"9ffd56142be0f1e7\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote uses single quotation marks around 'break' and collapses a star-page break; the cached opinion uses double quotation marks and places the *584 marker between 'does' and 'not'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the source quotation marks around \\\"break\\\" and cite the passage as spanning 403 U.S. 583-84 if retaining a page-specific citation.\",\n        \"evidence_quote\": \"That the informant may be paid or promised a \\\"break\\\" does <span class=\\\"star-pagination\\\">*584</span> not eliminate the residual risk and opprobrium of having admitted criminal conduct.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-584; lake pinpoints[].quote is marked mismatch and has no star_marker.\"\n      },\n      \"reasons\": [\n        \"The substance of the quote appears in the cached opinion.\",\n        \"The text is not character-faithful as framed because the quotation marks differ and the source passage crosses the star-page marker.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Prefer 403 U.S. at 583-84 for this sentence because it begins before the *584 marker.\"\n    },\n    {\n      \"assertion_id\": \"e7985ddb49af353d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The cached opinion contains the exact phrase: \\\"itself and without more, implicated that property and furnished probable cause to search.\\\"\",\n        \"The lake pinpoint for pin-584b is marked quote_fidelity=matched, star_marker=584, and star-verified.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d83e4ca7d33163c2\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment/currency merits.\",\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1971-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment/currency review is reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Unscored support risk: content_page.md says 'a majority agreed with Part III's penal-interest rationale,' but the cached opinion states Burger's opinion was joined by Black and Blackmun, and Part III by White; that disclosed headcount verifies four Justices for Part III, not a majority. No separate group_inventory assertion_id covered that sentence.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:18:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-1afc99a813",
+      "F-S9-PR-7cbcafb75b",
+      "F-S9-PR-fef4967424"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Harris (1971).json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +137,77 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-215af3d4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Harris (1971)"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 276178,
+      "output": 9184,
+      "source": "codex-events",
+      "total": 285362
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "6e24a38839854716": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8dc4e536331a7103": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ffd56142be0f1e7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c9a2c479526ca83b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d83e4ca7d33163c2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e7985ddb49af353d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1afc99a813",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7cbcafb75b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fef4967424",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 197.3
   }
 }

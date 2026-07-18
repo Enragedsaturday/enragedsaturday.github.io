@@ -1,22 +1,171 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Florida v. Meyers.md",
+    "lens": "A",
+    "notes": "group_inventory.jsonl contained no standalone quote_fidelity, pincite, or black_letter assertions. I did not add unlisted reviewed rows. Separately, lake pin-382 is marked quote_fidelity=mismatch and pinpoint_status=slip-only; any future assertion relying on that pin should be separately reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "6e52f2ed67fa42bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Florida v. Meyers, with case_name \"Florida v. Meyers\" and full caption \"FLORIDA v. MEYERS, AKA WEYERS\".",
+          "The lake official citation is \"466 U.S. 380\", court is \"U.S. Supreme Court\", date_decided is 1984-04-23, year is 1984, and the neutral and parallel citations match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05adba55e0a507b6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The District Court of Appeal either misunderstood or ignored our prior rulings with respect to the constitutionality of the warrantless search of an impounded automobile.",
+          "locator_note": "homes[0].role / Appears on role",
+          "needs_cl": false,
+          "problem": "The Automobile Exception placement is supported, but the exact role label \"Related (cross-doctrine)\" is not independently verified by any disclosed role taxonomy or lake home field.",
+          "proposed_fix": "Keep the Automobile Exception home, but use a neutral verified role such as \"Related\" or disclose the taxonomy evidence supporting \"Related (cross-doctrine)\".",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly concerns a warrantless automobile search after impoundment.",
+          "The opinion relies on Thomas and Chambers and states that the justification for such a warrantless search does not vanish once the car has been immobilized, which supports the Automobile Exception home."
+        ],
+        "residual_risks": [
+          "No disclosed file defines the role labels or explains when a case is \"cross-doctrine\" rather than primary/application."
+        ],
+        "suggested_tightening": "Define role taxonomy in the disclosed corpus or use a role label that follows directly from the opinion.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "812c06daad2aa15c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The text states that officers searched the automobile at arrest, impounded it, and approximately eight hours later conducted a second warrantless search.",
+          "At page 382, the Court says Thomas controls even though the automobile was in police custody and a prior inventory search had been made.",
+          "The Court states that the justification for such a warrantless search does not vanish once the car has been immobilized and reverses the contrary state-court ruling."
+        ],
+        "residual_risks": [
+          "The holding should not be read to dispense with the usual automobile-exception predicate; the opinion's Chambers discussion supplies probable-cause context."
+        ],
+        "suggested_tightening": "Add \"where the automobile exception otherwise applies\" or \"where probable cause supports the automobile search\" to foreclose overreading.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0103bb389d1d6a2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; recorded only.",
+          "The lake identity fields list court \"U.S. Supreme Court\" and court_level \"scotus\", supporting the authority-weight label \"Binding — SCOTUS\"."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed01f7a1610fa087",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; recorded only.",
+          "The lake treatment fields match the payload: field_i_validity good_law, as_of_content 1984-04-23, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Florida v. Meyers, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Florida v. Meyers.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6e52f2ed67fa42bd\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified for Florida v. Meyers, with case_name \\\"Florida v. Meyers\\\" and full caption \\\"FLORIDA v. MEYERS, AKA WEYERS\\\".\",\n        \"The lake official citation is \\\"466 U.S. 380\\\", court is \\\"U.S. Supreme Court\\\", date_decided is 1984-04-23, year is 1984, and the neutral and parallel citations match the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"05adba55e0a507b6\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Automobile Exception placement is supported, but the exact role label \\\"Related (cross-doctrine)\\\" is not independently verified by any disclosed role taxonomy or lake home field.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep the Automobile Exception home, but use a neutral verified role such as \\\"Related\\\" or disclose the taxonomy evidence supporting \\\"Related (cross-doctrine)\\\".\",\n        \"evidence_quote\": \"The District Court of Appeal either misunderstood or ignored our prior rulings with respect to the constitutionality of the warrantless search of an impounded automobile.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"homes[0].role / Appears on role\"\n      },\n      \"reasons\": [\n        \"The opinion directly concerns a warrantless automobile search after impoundment.\",\n        \"The opinion relies on Thomas and Chambers and states that the justification for such a warrantless search does not vanish once the car has been immobilized, which supports the Automobile Exception home.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No disclosed file defines the role labels or explains when a case is \\\"cross-doctrine\\\" rather than primary/application.\"\n      ],\n      \"suggested_tightening\": \"Define role taxonomy in the disclosed corpus or use a role label that follows directly from the opinion.\"\n    },\n    {\n      \"assertion_id\": \"812c06daad2aa15c\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The text states that officers searched the automobile at arrest, impounded it, and approximately eight hours later conducted a second warrantless search.\",\n        \"At page 382, the Court says Thomas controls even though the automobile was in police custody and a prior inventory search had been made.\",\n        \"The Court states that the justification for such a warrantless search does not vanish once the car has been immobilized and reverses the contrary state-court ruling.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The holding should not be read to dispense with the usual automobile-exception predicate; the opinion's Chambers discussion supplies probable-cause context.\"\n      ],\n      \"suggested_tightening\": \"Add \\\"where the automobile exception otherwise applies\\\" or \\\"where probable cause supports the automobile search\\\" to foreclose overreading.\"\n    },\n    {\n      \"assertion_id\": \"0103bb389d1d6a2f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; recorded only.\",\n        \"The lake identity fields list court \\\"U.S. Supreme Court\\\" and court_level \\\"scotus\\\", supporting the authority-weight label \\\"Binding — SCOTUS\\\".\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B treatment/currency audit performed.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ed01f7a1610fa087\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; recorded only.\",\n        \"The lake treatment fields match the payload: field_i_validity good_law, as_of_content 1984-04-23, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Florida v. Meyers, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B treatment/currency audit performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"group_inventory.jsonl contained no standalone quote_fidelity, pincite, or black_letter assertions. I did not add unlisted reviewed rows. Separately, lake pin-382 is marked quote_fidelity=mismatch and pinpoint_status=slip-only; any future assertion relying on that pin should be separately reviewed.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:43:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:02:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cc91ac64fc"
+    ],
     "group_id": "content/cases/Florida v. Meyers.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-02c2705b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-02c2705b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:28.744509Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:29.352024Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:30.191021Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:31.507931Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:33.424723Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Meyers"
+    ],
+    "tokens": {
+      "input": 216564,
+      "output": 11356,
+      "source": "codex-events",
+      "total": 227920
+    },
+    "verdict_map": {
+      "0103bb389d1d6a2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "05adba55e0a507b6": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "6e52f2ed67fa42bd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "812c06daad2aa15c": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed01f7a1610fa087": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cc91ac64fc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 218.1
   }
 }

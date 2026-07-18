@@ -1,0 +1,151 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "679cc0e644127402",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip op. header reads 'Cite as: 565 U. S. ____ (2012)' and 'No. 10-8145 ... Decided January 10, 2012', matching official cite 565 U.S. 73 (2012) and docket 10-8145.",
+          "citations.official = 565 U.S. 73 (type 1, U.S., selected_official true; official_selection_present true); parallels 132 S. Ct. 627 / 181 L. Ed. 2d 571 and vendor-neutral 2012 U.S. LEXIS 576 match content-page frontmatter.",
+          "cluster_id 620666 / lead_opinion_id 620666; identity expected_citation_found true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8388aa7999bded64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-3 quote 'Boatner's undisclosed statements were plainly material.' is verbatim in the cached Opinion of the Court (p.3): 'Boatner's undisclosed statements / were plainly material.'",
+          "Pincite 'slip op., at 3' is correct: the sentence sits between the p.3 running header ('Cite as: 565 U. S. ____ (2012) 3') and the p.4 header ('4  SMITH v. CAIN').",
+          "Lake pinpoints[] flags quote_fidelity 'mismatch', but that is a false positive - the quoted string matches the source exactly."
+        ],
+        "residual_risks": [
+          "Lake pin-3 fidelity flag 'mismatch' contradicts the verbatim match; the fidelity checker is unreliable here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99e2e7be55a96859",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have observed that evidence impeaching an eyewit-\nness may not be material if the State's other evidence is\nstrong enough to sustain confidence in the verdict.",
+          "locator_note": "Cain slip op. p.3 (cached text): sentence begins under the 'Cite as: 565 U. S. ____ (2012) 3' header; page pin-2 at content_page '## Rule'.",
+          "needs_cl": false,
+          "problem": "Pincite off by one: pin-2 is cited 'slip op., at 2' but the quoted sentence is printed on slip op. page 3 (below the p.3 header, above the '4  SMITH v. CAIN' header). Separately, the lake pinpoints[] 'quote' stored for pin-2 is a garbled harvest artifact - it captured the content page's Background/Issue/Rule prose, not the actual quotation, which is what triggered quote_fidelity 'mismatch'.",
+          "proposed_fix": "Change pin-2 pincite to 'slip op., at 3' (or 'at 2-3' to span the materiality standard); re-harvest the lake pin-2 quote so it stores the actual quoted sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ACTUAL pin-2 quotation '[E]vidence impeaching an eyewitness may not be material if the State's other evidence is strong enough to sustain confidence in the verdict.' is verbatim-faithful to the opinion body (bracketed '[E]' is a proper mid-sentence capitalization; the page quotes the opinion body, not the syllabus's 'an eyewitness's testimony' variant).",
+          "But the quoted sentence is on slip op. p.3, while the page cites 'at 2' - an off-by-one pincite (sibling pin-3, also on p.3, is correctly cited 'at 3').",
+          "The lake's stored pin-2 quote is page-prose garble, not the real quotation; the 'mismatch' flag reflects that extraction artifact, not a page defect."
+        ],
+        "residual_risks": [
+          "'at 2' is arguably defensible if read as citing where the Brady materiality standard begins (p.2), which spans pp.2-3."
+        ],
+        "suggested_tightening": "Cite 'slip op., at 2-3' or 'at 3' and repair the lake pin-2 harvested quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fc3b3114e37f241",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Content-page/frontmatter treatment (field_i_validity good_law; as_of_content 2012-01-10; as_of_treatment 2026-06-30; varies_by_point false) matches the lake treatment block exactly.",
+          "composite_basis 'migration-seed' with provenance warning 'legacy treatment migrated: good -> good_law'; all treatment edges are proposed:true (lane1_negative / lane2_top_cited), i.e., unratified - none downgrades field_i_validity.",
+          "No ratified negative treatment in the disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "good_law is seed-based, not freshly re-derived (scope_note: 'S2 derivation re-derives and may downgrade'); the proposed 'overruled'/'questioned' edges on citing cases (e.g., Wearry v. Cain, Turner v. United States) are facially implausible as overrulings of a SCOTUS case and remain unratified.",
+          "as_of_content 2012-01-10 is the stale decision date seeding as_of_treatment 2026-06-30."
+        ],
+        "suggested_tightening": "Run S2 derivation to confirm/replace the migration-seed good_law and clear the proposed edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b52cc57db4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Smith v. Cain.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-03-3bd49bf2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Smith v. Cain"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0fc3b3114e37f241": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "679cc0e644127402": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8388aa7999bded64": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "99e2e7be55a96859": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b52cc57db4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b0031d894a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

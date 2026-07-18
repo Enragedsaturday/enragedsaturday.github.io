@@ -1,0 +1,135 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5db1d719fad36874",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '526 U.S. 295 (1999)', WYOMING v. HOUGHTON, No. 98-184, Decided April 5, 1999 - matches frontmatter (docket 98-184, 1999-04-05).",
+          "Star pagination *297-*313 consistent with official start at 526 U.S. 295 (syllabus pp. 295-296)."
+        ],
+        "residual_risks": [
+          "Parallel/LEXIS cites not independently confirmable from the inlined opinion but consistent and uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "319c0489045d3a2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-300 quote 'evaluate the search or seizure under traditional standards of reasonableness by assessing, on the one hand, the degree to which it intrudes upon an individual's privacy and, on the other, the degree to which it is needed for the promotion of legitimate governmental interests' matches the cached opinion verbatim, immediately after star page *300 - so both the quote and the '526 U.S. at 300' pincite are faithful.",
+          "The ledger payload 'quote' field captured a garbled content-page header window (not the pinned span) and its 'slip-only'/'mismatch' labels are a harvest false positive; the actual page quote is a clean star-verifiable match."
+        ],
+        "residual_risks": [
+          "S8 harvest mislabeled a clean quote as fidelity 'mismatch' (no #:~:text= fragment captured); acting on that flag would wrongly disturb a faithful quote."
+        ],
+        "suggested_tightening": "Re-harvest pin-300 against the actual quoted span and promote to star-verified at *300.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c169d3025fbf874",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-307 holding quote matches the cached opinion verbatim: 'We hold that police officers with probable cause to search a car may inspect passengers' belongings found in the car that are capable of concealing the object of the search.'",
+          "Sentence sits on page 307 (between *307 and *308) - 'Id. at 307' pincite correct; payload star_marker '307'/'matched' confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a68f9b357d69033",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Substance verified from cached opinion: the holding extends the Ross container rule to a passenger's belongings and expressly does not reach a search of the person (majority n.1 distinguishing Di Re/Ybarra; Breyer concurrence: 'it does not extend to the search of a person found in that automobile').",
+          "good_law consistent with the disclosed lake record: every negative-treatment edge is proposed:true / field_iii 'mentioned' keyword-triage (e.g., Atwater, Riley, Collins, Maryland v. King, Safford) - zero confirmed negatives; R15 audit pending."
+        ],
+        "residual_risks": [
+          "2026-06-30 currency depends on the S8 citator sweep; the proposed negative edges are unaudited (R15) but facially false positives - famous citing cases that did not overrule Houghton."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-03c2cb5b61",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Wyoming v. Houghton.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-02-1f53dc23",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wyoming v. Houghton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a68f9b357d69033": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "319c0489045d3a2f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5db1d719fad36874": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c169d3025fbf874": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-03c2cb5b61",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

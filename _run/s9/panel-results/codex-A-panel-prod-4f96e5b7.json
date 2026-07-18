@@ -1,13 +1,129 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Marshall v. Barlow's Inc.json",
+    "lens": "A",
+    "notes": "Reviewed all six inventory rows under Lens A only; no support or black-letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "1c1444b7a934b593",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Marshall v. Barlow's, Inc., U.S. Supreme Court, decided 1978-05-23, docket 76-1143.",
+          "The official citation and listed parallel/vendor citations in the payload match the lake citations record, including 436 U.S. 307."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a2daae3f23410ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment appears in the cached opinion text at the paragraph carrying star pagination *324.",
+          "The lake record marks pin-324 as star-verified and quote_fidelity matched, with a validated fragment for the same phrase."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a912a916f966e59b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent and to an injunction enjoining the Act's enforcement to that extent.",
+          "locator_note": "text/Marshall v. Barlow's Inc__c3d9c3.txt at the *325 section; lake pin-325 is slip-only and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful: it stops at \"equivalent.\" but the opinion continues without a period, adding the injunction language.",
+          "proposed_fix": "Replace the quote with the full source sentence through \"to that extent\" or mark the truncation with a proper ellipsis/bracketed alteration.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text supplies a longer holding sentence than the payload quote.",
+          "The lake record itself flags pin-325 as quote_fidelity mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Refresh pin-325 with the full sentence and validate it against star pagination *325.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eacd55f28fd00635",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes.",
+          "locator_note": "text/Marshall v. Barlow's Inc__c3d9c3.txt line containing star pagination *311; lake pin-311 has null star_marker and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-311 payload quote is built-page markdown/background text, not the opinion passage at 436 U.S. 311.",
+          "proposed_fix": "Replace pin-311's stored quote with the actual Warrant Clause sentence and validate it at star pagination *311.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the page title and page background, which are not part of the opinion text.",
+          "The actual *311 opinion passage supports the visible rule quote, but not the payload quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-311 from the cached opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbc7160e4b560bed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears in the cached opinion text in the paragraph where star pagination *313 begins.",
+          "The wording is faithful to the rendered opinion passage; the raw cached HTML contains citation and italic markup around See v. Seattle."
+        ],
+        "residual_risks": [
+          "The lake validator marks this pin slip-only/mismatch, apparently because the cached HTML interposes markup inside the case name."
+        ],
+        "suggested_tightening": "Add a validated fragment and star_marker 313 for pin-313 to avoid raw-HTML matching ambiguity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "866d4da94dd2c463",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment payload values match the lake treatment fields and the content page frontmatter."
+        ],
+        "residual_risks": [
+          "No Lens B treatment analysis was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Marshall v. Barlow's Inc.json\",\"reviewed\":[{\"assertion_id\":\"1c1444b7a934b593\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Marshall v. Barlow's, Inc., U.S. Supreme Court, decided 1978-05-23, docket 76-1143.\",\"The official citation and listed parallel/vendor citations in the payload match the lake citations record, including 436 U.S. 307.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8a2daae3f23410ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment appears in the cached opinion text at the paragraph carrying star pagination *324.\",\"The lake record marks pin-324 as star-verified and quote_fidelity matched, with a validated fragment for the same phrase.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a912a916f966e59b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is not character-faithful: it stops at \\\"equivalent.\\\" but the opinion continues without a period, adding the injunction language.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with the full source sentence through \\\"to that extent\\\" or mark the truncation with a proper ellipsis/bracketed alteration.\",\"evidence_quote\":\"We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent and to an injunction enjoining the Act's enforcement to that extent.\",\"needs_cl\":false,\"locator_note\":\"text/Marshall v. Barlow's Inc__c3d9c3.txt at the *325 section; lake pin-325 is slip-only and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text supplies a longer holding sentence than the payload quote.\",\"The lake record itself flags pin-325 as quote_fidelity mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Refresh pin-325 with the full sentence and validate it against star pagination *325.\"},{\"assertion_id\":\"eacd55f28fd00635\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-311 payload quote is built-page markdown/background text, not the opinion passage at 436 U.S. 311.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-311's stored quote with the actual Warrant Clause sentence and validate it at star pagination *311.\",\"evidence_quote\":\"The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes.\",\"needs_cl\":false,\"locator_note\":\"text/Marshall v. Barlow's Inc__c3d9c3.txt line containing star pagination *311; lake pin-311 has null star_marker and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote begins with the page title and page background, which are not part of the opinion text.\",\"The actual *311 opinion passage supports the visible rule quote, but not the payload quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-311 from the cached opinion text rather than from content_page.md.\"},{\"assertion_id\":\"fbc7160e4b560bed\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted language appears in the cached opinion text in the paragraph where star pagination *313 begins.\",\"The wording is faithful to the rendered opinion passage; the raw cached HTML contains citation and italic markup around See v. Seattle.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake validator marks this pin slip-only/mismatch, apparently because the cached HTML interposes markup inside the case name.\"],\"suggested_tightening\":\"Add a validated fragment and star_marker 313 for pin-313 to avoid raw-HTML matching ambiguity.\"},{\"assertion_id\":\"866d4da94dd2c463\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment payload values match the lake treatment fields and the content page frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment analysis was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all six inventory rows under Lens A only; no support or black-letter rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:06:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0bad0b15f2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e2a4ef4d36",
+      "F-S9-PR-8611b7584d"
+    ],
     "group_id": "_overhaul2/lake/cases/Marshall v. Barlow's Inc.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +132,77 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f96e5b7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Marshall v. Barlow's Inc"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 213728,
+      "output": 10897,
+      "source": "codex-events",
+      "total": 224625
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "1c1444b7a934b593": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "866d4da94dd2c463": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a2daae3f23410ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a912a916f966e59b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "eacd55f28fd00635": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fbc7160e4b560bed": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e2a4ef4d36",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8611b7584d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0bad0b15f2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 208.4
   }
 }

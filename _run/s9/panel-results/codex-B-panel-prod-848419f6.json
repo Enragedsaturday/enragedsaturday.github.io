@@ -1,22 +1,200 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "content/cases/United States v. Basher.md",
+    "lens": "B",
+    "notes": "Lens B only. Support and quote-fidelity issues were not evaluated except where a support-row payload contained an internal treatment/weight label.",
+    "reviewed": [
+      {
+        "assertion_id": "818663b1eca338a6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies United States v. Basher as a Ninth Circuit Court of Appeals case decided 2011-01-20.",
+          "The disclosed citation fields list 629 F.3d 1161 plus the same LEXIS and WL cites used on the page.",
+          "The lake treatment field states good_law as of 2026-06-30 with no point overrides."
+        ],
+        "residual_risks": [
+          "The disclosed treatment currency only runs through the stated as-of date, 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6df6f83eeed8d8cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack the support fit of the Curtilage home role.",
+          "No disclosed treatment field or progeny edge shows Basher overruled, abrogated, superseded, or limited on the curtilage point.",
+          "The lake scope note expressly treats Basher as good law in-circuit while holding the area outside a dispersed-campsite tent is not curtilage."
+        ],
+        "residual_risks": [
+          "Support/taxonomy fit is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c7c1bf78325a6b52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack the support fit of the Tents home role.",
+          "The lake treatment field states good_law, varies_by_point false, and point_overrides is empty.",
+          "No disclosed negative treatment displaces the page's use of Basher as live law for tent privacy/campsite-curtilage treatment."
+        ],
+        "residual_risks": [
+          "Support/taxonomy fit is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f45b11ee0d9cbb21",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "authority_weight: \"Binding in-circuit — 9th Cir.\"",
+          "locator_note": "content_page.md frontmatter authority_weight; lake identity court/circuit; lake treatment good_law",
+          "needs_cl": false,
+          "problem": "The holding embeds a treatment/weight parenthetical saying 'Persuasive (outside circuit) — 9th Cir.', which conflicts with the disclosed authority_weight for this Ninth Circuit case.",
+          "proposed_fix": "Replace the opening parenthetical with '(Binding in-circuit — 9th Cir.)' or remove the weight parenthetical from the holding field.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The content page and lake-backed metadata identify the court as the U.S. Court of Appeals, 9th Circuit.",
+          "The page's own authority_weight is Binding in-circuit — 9th Cir.",
+          "The substantive treatment survives: the lake scope note says Basher is good law in-circuit and reaffirms tent privacy while holding the surrounding dispersed campsite area is not curtilage."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity of the holding text are outside Lens B."
+        ],
+        "suggested_tightening": "Keep weight labels out of narrative holding fields unless they exactly match authority_weight.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87218c1e6c7ea707",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page authority_weight is exactly Binding in-circuit — 9th Cir.",
+          "The lake identity fields disclose court_id ca9, court_level coa, and circuit 9th.",
+          "The treatment judgment is good_law with no point overrides, so no disclosed negative treatment undermines the binding-in-circuit weight label."
+        ],
+        "residual_risks": [
+          "The disclosed treatment record is only as current as 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97333510732e8e73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields: good_law, as_of_treatment 2026-06-30, migration-seed, varies_by_point false, and no point overrides.",
+          "The lake derivation reports lane1_negative proposed_negative_events 0 and lane3_recency proposed_negative_events 0.",
+          "The disclosed progeny treatment edges are proposed and marked field_iii mentioned; they do not disclose an actual overruling, abrogation, supersession, or limitation of Basher."
+        ],
+        "residual_risks": [
+          "The record contains proposed top-cited negative signals, but the disclosed judgment fields classify them as mentions and keep Basher as good_law.",
+          "No disclosed evidence updates treatment after 2026-06-30."
+        ],
+        "suggested_tightening": "If the corpus renders treatment history, distinguish proposed mentioned-only progeny signals from actual negative treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/United States v. Basher.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"818663b1eca338a6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies United States v. Basher as a Ninth Circuit Court of Appeals case decided 2011-01-20.\",\n        \"The disclosed citation fields list 629 F.3d 1161 plus the same LEXIS and WL cites used on the page.\",\n        \"The lake treatment field states good_law as of 2026-06-30 with no point overrides.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment currency only runs through the stated as-of date, 2026-06-30.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6df6f83eeed8d8cf\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack the support fit of the Curtilage home role.\",\n        \"No disclosed treatment field or progeny edge shows Basher overruled, abrogated, superseded, or limited on the curtilage point.\",\n        \"The lake scope note expressly treats Basher as good law in-circuit while holding the area outside a dispersed-campsite tent is not curtilage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support/taxonomy fit is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c7c1bf78325a6b52\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack the support fit of the Tents home role.\",\n        \"The lake treatment field states good_law, varies_by_point false, and point_overrides is empty.\",\n        \"No disclosed negative treatment displaces the page's use of Basher as live law for tent privacy/campsite-curtilage treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support/taxonomy fit is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f45b11ee0d9cbb21\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding embeds a treatment/weight parenthetical saying 'Persuasive (outside circuit) — 9th Cir.', which conflicts with the disclosed authority_weight for this Ninth Circuit case.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the opening parenthetical with '(Binding in-circuit — 9th Cir.)' or remove the weight parenthetical from the holding field.\",\n        \"evidence_quote\": \"authority_weight: \\\"Binding in-circuit — 9th Cir.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md frontmatter authority_weight; lake identity court/circuit; lake treatment good_law\"\n      },\n      \"reasons\": [\n        \"The content page and lake-backed metadata identify the court as the U.S. Court of Appeals, 9th Circuit.\",\n        \"The page's own authority_weight is Binding in-circuit — 9th Cir.\",\n        \"The substantive treatment survives: the lake scope note says Basher is good law in-circuit and reaffirms tent privacy while holding the surrounding dispersed campsite area is not curtilage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support and quote fidelity of the holding text are outside Lens B.\"\n      ],\n      \"suggested_tightening\": \"Keep weight labels out of narrative holding fields unless they exactly match authority_weight.\"\n    },\n    {\n      \"assertion_id\": \"87218c1e6c7ea707\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page authority_weight is exactly Binding in-circuit — 9th Cir.\",\n        \"The lake identity fields disclose court_id ca9, court_level coa, and circuit 9th.\",\n        \"The treatment judgment is good_law with no point overrides, so no disclosed negative treatment undermines the binding-in-circuit weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment record is only as current as 2026-06-30.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"97333510732e8e73\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload treatment fields match the lake treatment fields: good_law, as_of_treatment 2026-06-30, migration-seed, varies_by_point false, and no point overrides.\",\n        \"The lake derivation reports lane1_negative proposed_negative_events 0 and lane3_recency proposed_negative_events 0.\",\n        \"The disclosed progeny treatment edges are proposed and marked field_iii mentioned; they do not disclose an actual overruling, abrogation, supersession, or limitation of Basher.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The record contains proposed top-cited negative signals, but the disclosed judgment fields classify them as mentions and keep Basher as good_law.\",\n        \"No disclosed evidence updates treatment after 2026-06-30.\"\n      ],\n      \"suggested_tightening\": \"If the corpus renders treatment history, distinguish proposed mentioned-only progeny signals from actual negative treatment.\"\n    }\n  ],\n  \"notes\": \"Lens B only. Support and quote-fidelity issues were not evaluated except where a support-row payload contained an internal treatment/weight label.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:53:38-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T08:12:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "content/cases/United States v. Basher.md",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-848419f6",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-848419f6.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:29.979360Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:30.677507Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:31.515664Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:32.654669Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:34.844354Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Basher"
+    ],
+    "tokens": {
+      "input": 207947,
+      "output": 7272,
+      "source": "codex-events",
+      "total": 215219
+    },
+    "verdict_map": {
+      "6df6f83eeed8d8cf": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "818663b1eca338a6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87218c1e6c7ea707": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97333510732e8e73": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c7c1bf78325a6b52": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f45b11ee0d9cbb21": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a82a50a3fc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 142.8
   }
 }

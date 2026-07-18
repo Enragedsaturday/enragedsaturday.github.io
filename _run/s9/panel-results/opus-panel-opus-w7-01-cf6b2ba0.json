@@ -1,0 +1,158 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e9b1871ad8108be7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached caption confirms '392 U.S. 364 (1968)', 'MANCUSI, WARDEN v. DeFORTE', 'No. 844', Supreme Court, decided June 17, 1968 — matches official cite, docket, date.",
+          "official_selection_present=true, official=392 U.S. 364; parallels 88 S. Ct. 2120 / 20 L. Ed. 2d 1154 / 68 L.R.R.M. (BNA) 2449 are the standard DeForte parallels."
+        ],
+        "residual_risks": [
+          "Parallel-reporter page numbers not independently verifiable from the U.S.-Reports caption."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "23aa56a1faa4574a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "capacity to claim the protection of the Amendment depends not upon a property right in the invaded place but upon whether the area was one in which there was a reasonable expectation of freedom from governmental intrusion",
+          "locator_note": "Opinion page *368 (Katz sentence, Part II); rendered page cites '392 U.S. at 368' at ^pin-368 and correctly parentheticals '(citing Katz v. United States, 389 U.S. 347, 352)'.",
+          "needs_cl": false,
+          "problem": "pin-368.quote is corrupted with the content page's preamble markdown (title/Background/Issue/Rule) instead of an opinion sentence; that text is absent from the DeForte opinion, so the quote payload fails fidelity (the 'mismatch' flag is a true positive).",
+          "proposed_fix": "Repopulate pin-368.quote with the sentence anchored at ^pin-368 — 'capacity to claim the protection of the Amendment depends not upon a property right in the invaded place but upon whether the area was one in which there was a reasonable expectation of freedom from governmental intrusion' — verbatim in the opinion at page 368.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is the page preamble ('--- # Mancusi v. DeForte ... ## Rule Standing turns on a reasonable expectation of privacy in the area, not on ownership.'), not opinion text.",
+          "The sentence the ^pin-368 marker renders ('[C]apacity to claim the protection...') is verbatim in the opinion at p.368 and the Katz 389 U.S. 347, 352 parenthetical matches the opinion's 'See 389 U. S., at 352.' — so the defect is a lake-field corruption, not a reader-facing misquote."
+        ],
+        "residual_risks": [
+          "Rendered quote correct and supported at p.368; defect confined to lake pinpoints[].quote."
+        ],
+        "suggested_tightening": "Rebuild slip-only pinpoint quote fields from the anchored page sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e76d8b8421a8838",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion (page *369): 'DeForte still could reasonably have expected that only those persons and their personal or business guests would enter the office, and that records would not be touched except with their permission or that of union higher-ups.' — verbatim match to the payload quote.",
+          "payload marks it matched / star-verified (star_marker 369); confirmed against inlined text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5eff08cfa22c2d66",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion (page *369): 'We hold that in these circumstances DeForte had Fourth Amendment standing to object to the admission of the papers at his trial.' — verbatim match.",
+          "payload marks it matched / star-verified (star_marker 369); sentence sits immediately after the *369 star-marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c9b771e53b96344f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law unrefuted: all lake edges are proposed:true (31 proposed, 0 accepted); 'abrogated'/'overruled' labels are unadjudicated candidates, not accepted treatment.",
+          "scope_note accurately captures the doctrinal history: Rakas v. Illinois (1978) recast 'standing' as a substantive expectation-of-privacy merits question but did not disturb Mancusi's result (an employee can have a REP in a shared workplace)."
+        ],
+        "residual_risks": [
+          "'good law as of 2026-06-30' currency not fully verifiable from a 1968 opinion; some citators tag Mancusi 'abrogated in part' by Rakas on the standing framing, but the scope_note already accounts for that recasting."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mancusi v. DeForte.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-01-cf6b2ba0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mancusi v. DeForte"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "23aa56a1faa4574a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5e76d8b8421a8838": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5eff08cfa22c2d66": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c9b771e53b96344f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9b1871ad8108be7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3546b45382",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

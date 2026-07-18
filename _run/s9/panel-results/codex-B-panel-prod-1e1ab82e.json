@@ -1,13 +1,97 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Janis.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects are raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7703e675fe5d5b25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, non-stub, and identifies United States v. Janis as a U.S. Supreme Court case with official citation 428 U.S. 433.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment currency is only verified to the disclosed as_of_treatment date, 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ca479293ca34f28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B finds no currency or treatment defect in the embedded header: lake identity is SCOTUS and lake treatment is good_law as of 2026-06-30.",
+          "Support and quote-fidelity merits are reserved to Lens A."
+        ],
+        "residual_risks": [
+          "No Lens B determination is made on textual fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b000885633b228c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pinpoint is attached to the same Janis authority, and the lake treatment judgment keeps that authority at good_law as of 2026-06-30.",
+          "Support and quote-fidelity merits are reserved to Lens A."
+        ],
+        "residual_risks": [
+          "No Lens B determination is made on textual fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0be1e29849880bfe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law call itself survives, but the built page's unqualified 'No negative treatment' language is too strong because the disclosed lake treatment derivation flags proposed negative-event audits.",
+          "proposed_fix": "Keep 'good' / good_law as of 2026-06-30, but revise the subsequent-history sentence to 'No confirmed negative treatment in the lake judgment fields; proposed negative-event edges are mentioned-only/unaudited and do not change the good_law status.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "The treatment edges include proposed negative labels, but they are not resolved final point overrides in the disclosed judgment fields."
+        ],
+        "residual_risks": [
+          "The disclosed treatment derivation is migration-seed/audit-marked, so an external citator audit would be needed to defend an unqualified no-negative-treatment statement."
+        ],
+        "suggested_tightening": "Use 'no confirmed negative treatment in the disclosed lake judgment fields' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Janis.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7703e675fe5d5b25\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified, non-stub, and identifies United States v. Janis as a U.S. Supreme Court case with official citation 428 U.S. 433.\",\n        \"Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency is only verified to the disclosed as_of_treatment date, 2026-06-30.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0ca479293ca34f28\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B finds no currency or treatment defect in the embedded header: lake identity is SCOTUS and lake treatment is good_law as of 2026-06-30.\",\n        \"Support and quote-fidelity merits are reserved to Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B determination is made on textual fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b000885633b228c9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pinpoint is attached to the same Janis authority, and the lake treatment judgment keeps that authority at good_law as of 2026-06-30.\",\n        \"Support and quote-fidelity merits are reserved to Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B determination is made on textual fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0be1e29849880bfe\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law call itself survives, but the built page's unqualified 'No negative treatment' language is too strong because the disclosed lake treatment derivation flags proposed negative-event audits.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep 'good' / good_law as of 2026-06-30, but revise the subsequent-history sentence to 'No confirmed negative treatment in the lake judgment fields; proposed negative-event edges are mentioned-only/unaudited and do not change the good_law status.'\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\n        \"The treatment edges include proposed negative labels, but they are not resolved final point overrides in the disclosed judgment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment derivation is migration-seed/audit-marked, so an external citator audit would be needed to defend an unqualified no-negative-treatment statement.\"\n      ],\n      \"suggested_tightening\": \"Use 'no confirmed negative treatment in the disclosed lake judgment fields' rather than 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity defects are raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:45-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:58:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-47517cd876",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-58b626f077"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Janis.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +100,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1e1ab82e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Janis"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 272792,
+      "output": 9517,
+      "source": "codex-events",
+      "total": 282309
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "0be1e29849880bfe": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "0ca479293ca34f28": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7703e675fe5d5b25": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b000885633b228c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-47517cd876",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-58b626f077",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 188.0
   }
 }

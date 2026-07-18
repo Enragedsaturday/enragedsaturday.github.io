@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Utah v. Strieff.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No separate support, pincite, or black_letter inventory rows were disclosed for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "c82cf54728c4c8ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Utah v. Strieff, U.S. Supreme Court, decided 2016-06-20, year 2016.",
+          "The citation list in the assertion matches lake.citations.all, including 579 U.S. 232, 136 S. Ct. 2056, 195 L. Ed. 2d 400, 84 U.S.L.W. 4430, 26 Fla. L. Weekly Fed. S 288, and 2016 U.S. LEXIS 3926."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "393c69040634bfb7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Utah v. Strieff *579 U.S. 232 (2016)*",
+          "locator_note": "lake pinpoints[id=pin-2062]; content_page Rule paragraph ending with ^pin-2062.",
+          "needs_cl": false,
+          "problem": "pin-2062 is not a character-faithful opinion quotation. The lake pinpoint text is generated page markdown/background material rather than the cited opinion passage, and the lake itself marks the pinpoint as mismatch/slip-only with no star marker.",
+          "proposed_fix": "Replace pin-2062 with a verified quote from the opinion text at the Brown-factors passage on S. Ct. page 2062, or remove the pinpoint until it can be validated.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pinpoint quote begins with built-page markdown, not the opinion text.",
+          "The disclosed lake record marks pin-2062 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The actual opinion text contains the Brown-factor passage at the star-2062 area, but pin-2062 does not store that passage."
+        ],
+        "residual_risks": [
+          "The page's visible rule may be supportable after repinning, but this specific quote-fidelity assertion fails."
+        ],
+        "suggested_tightening": "Use the actual text beginning with the Brown-factors discussion and preserve the S. Ct. 2062 star marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb6d89c30755ae2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact quoted phrase appears in the opinion text: \"the second factor, the presence of intervening circumstances, strongly favors the State\".",
+          "The lake record marks pin-2062a as quote_fidelity matched and star-verified with star_marker 2062.",
+          "The quoted sentence appears after the 2062 star page marker and before the 2063 marker, so the pinpoint placement is supported by the disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "af21fa831df93cc7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I do not raise an independent treatment finding.",
+          "The assertion's treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 2016-06-20, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment was not independently audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Utah v. Strieff.json\",\"reviewed\":[{\"assertion_id\":\"c82cf54728c4c8ce\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Utah v. Strieff, U.S. Supreme Court, decided 2016-06-20, year 2016.\",\"The citation list in the assertion matches lake.citations.all, including 579 U.S. 232, 136 S. Ct. 2056, 195 L. Ed. 2d 400, 84 U.S.L.W. 4430, 26 Fla. L. Weekly Fed. S 288, and 2016 U.S. LEXIS 3926.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"393c69040634bfb7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-2062 is not a character-faithful opinion quotation. The lake pinpoint text is generated page markdown/background material rather than the cited opinion passage, and the lake itself marks the pinpoint as mismatch/slip-only with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-2062 with a verified quote from the opinion text at the Brown-factors passage on S. Ct. page 2062, or remove the pinpoint until it can be validated.\",\"evidence_quote\":\"--- # Utah v. Strieff *579 U.S. 232 (2016)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-2062]; content_page Rule paragraph ending with ^pin-2062.\"},\"reasons\":[\"The asserted pinpoint quote begins with built-page markdown, not the opinion text.\",\"The disclosed lake record marks pin-2062 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The actual opinion text contains the Brown-factor passage at the star-2062 area, but pin-2062 does not store that passage.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page's visible rule may be supportable after repinning, but this specific quote-fidelity assertion fails.\"],\"suggested_tightening\":\"Use the actual text beginning with the Brown-factors discussion and preserve the S. Ct. 2062 star marker.\"},{\"assertion_id\":\"fdb6d89c30755ae2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The exact quoted phrase appears in the opinion text: \\\"the second factor, the presence of intervening circumstances, strongly favors the State\\\".\",\"The lake record marks pin-2062a as quote_fidelity matched and star-verified with star_marker 2062.\",\"The quoted sentence appears after the 2062 star page marker and before the 2063 marker, so the pinpoint placement is supported by the disclosed text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"af21fa831df93cc7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I do not raise an independent treatment finding.\",\"The assertion's treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 2016-06-20, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment was not independently audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No separate support, pincite, or black_letter inventory rows were disclosed for this group.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:50-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:10:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f8f59e6541"
+    ],
     "group_id": "_overhaul2/lake/cases/Utah v. Strieff.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-75349c36.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Utah v. Strieff"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 248461,
+      "output": 5013,
+      "source": "codex-events",
+      "total": 253474
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "393c69040634bfb7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "af21fa831df93cc7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c82cf54728c4c8ce": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb6d89c30755ae2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f8f59e6541",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 105.9
   }
 }

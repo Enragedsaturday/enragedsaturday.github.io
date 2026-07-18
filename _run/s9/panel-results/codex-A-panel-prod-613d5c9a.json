@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Drayton.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "60e1c89d1348359e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies record_id United States v. Drayton, U.S. Supreme Court, decided 2002-06-17.",
+          "Lake citations list official citation 536 U.S. 194 and parallels 122 S. Ct. 2105, 153 L. Ed. 2d 242, and 2002 U.S. LEXIS 4420; content page matches these fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32093e8e1150bd4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Drayton__31e6a6.txt.",
+          "Lake pin-206 records quote_fidelity matched, pinpoint_status star-verified, and star_marker 206."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6d2d1645ce340422",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted words appear as a verbatim substring of the opinion passage stating the Bostick inquiry.",
+          "Lake pin-202 records quote_fidelity matched, pinpoint_status star-verified, and star_marker 202."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f8028332dc55bb6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"quote_fidelity\": \"mismatch\", \"pinpoint_status\": \"slip-only\", \"position\": null",
+          "locator_note": "lake pinpoints[] id pin-203; content page cites ^pin-203 at 536 U.S. at 203.",
+          "needs_cl": false,
+          "problem": "pin-203's harvested quote is not a character-faithful opinion quote; it is a long fragment of the built content page/frontmatter and rule lead-in. The lake record itself marks this pinpoint quote_fidelity as mismatch, pinpoint_status as slip-only, and star_marker as null.",
+          "proposed_fix": "Reharvest pin-203 from the opinion text and replace the bad quote with the actual sentence beginning at the page-203 passage: Applying the Bostick framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with the content page marker '--- # United States v. Drayton' rather than opinion text.",
+          "The opinion text contains the relevant 203 passage, but the inventory payload does not quote it."
+        ],
+        "residual_risks": [
+          "The legal proposition at the content-page Rule line appears supportable, but this quote-fidelity assertion for pin-203 is defective as framed."
+        ],
+        "suggested_tightening": "Use the actual 536 U.S. at 203 sentence and mark the pinpoint star-verified only after matching it against the cached opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b9e5c739e28b1504",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The payload's field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Currency and good-law treatment are for lens B, not independently audited here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Drayton.json\",\"reviewed\":[{\"assertion_id\":\"60e1c89d1348359e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies record_id United States v. Drayton, U.S. Supreme Court, decided 2002-06-17.\",\"Lake citations list official citation 536 U.S. 194 and parallels 122 S. Ct. 2105, 153 L. Ed. 2d 242, and 2002 U.S. LEXIS 4420; content page matches these fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"32093e8e1150bd4c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/United States v. Drayton__31e6a6.txt.\",\"Lake pin-206 records quote_fidelity matched, pinpoint_status star-verified, and star_marker 206.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6d2d1645ce340422\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted words appear as a verbatim substring of the opinion passage stating the Bostick inquiry.\",\"Lake pin-202 records quote_fidelity matched, pinpoint_status star-verified, and star_marker 202.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9f8028332dc55bb6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-203's harvested quote is not a character-faithful opinion quote; it is a long fragment of the built content page/frontmatter and rule lead-in. The lake record itself marks this pinpoint quote_fidelity as mismatch, pinpoint_status as slip-only, and star_marker as null.\",\"severity\":\"high\",\"proposed_fix\":\"Reharvest pin-203 from the opinion text and replace the bad quote with the actual sentence beginning at the page-203 passage: Applying the Bostick framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers.\",\"evidence_quote\":\"\\\"quote_fidelity\\\": \\\"mismatch\\\", \\\"pinpoint_status\\\": \\\"slip-only\\\", \\\"position\\\": null\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-203; content page cites ^pin-203 at 536 U.S. at 203.\"},\"reasons\":[\"The asserted quote begins with the content page marker '--- # United States v. Drayton' rather than opinion text.\",\"The opinion text contains the relevant 203 passage, but the inventory payload does not quote it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition at the content-page Rule line appears supportable, but this quote-fidelity assertion for pin-203 is defective as framed.\"],\"suggested_tightening\":\"Use the actual 536 U.S. at 203 sentence and mark the pinpoint star-verified only after matching it against the cached opinion text.\"},{\"assertion_id\":\"b9e5c739e28b1504\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The payload's field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency and good-law treatment are for lens B, not independently audited here.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:06-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:52:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-8eec5b9ca8"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Drayton.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +105,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-613d5c9a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Drayton"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 160962,
+      "output": 6130,
+      "source": "codex-events",
+      "total": 167092
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.3
+    "verdict_map": {
+      "32093e8e1150bd4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "60e1c89d1348359e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6d2d1645ce340422": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f8028332dc55bb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b9e5c739e28b1504": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8eec5b9ca8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 146.7
   }
 }

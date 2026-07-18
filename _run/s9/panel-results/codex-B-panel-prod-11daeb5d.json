@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-landeros--4580892.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed in the working directory; review is based on group_inventory.jsonl plus the lake and text records.",
+    "reviewed": [
+      {
+        "assertion_id": "bd0f9326adfe60ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-landeros--4580892__2b7b32.json treatment.field_i_validity and progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the citation/identity, but Lens B requires currency/live-law verification for this existence assertion. The lake record is only a frontier stub with treatment expressly unverified and no completed progeny enumeration.",
+          "proposed_fix": "Do not present 913 F.3d 862 as current/live law from this record. Label currency as unverified, or promote the record and derive treatment/progeny before making a live-law assertion.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record supports identity/citation existence: status is verified_identity and the official citation is 913 F.3d 862.",
+          "Currency cannot be verified from disclosed evidence because treatment.field_i_validity is unverified and progeny enumeration is null with rows_cached 0."
+        ],
+        "residual_risks": [
+          "The authority may in fact still be live law, but that is not established by the disclosed record."
+        ],
+        "suggested_tightening": "Separate citation-existence verification from live-law verification; display this authority as treatment unverified until promoted.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "440c3478f6acbe7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The disclosed lake treatment and progeny fields contain no superseding, overruling, abrogating, or limiting edge; instead they expressly state treatment/progeny were intentionally not derived."
+        ],
+        "residual_risks": [
+          "This treatment assertion establishes only an unverified status, not positive good-law currency."
+        ],
+        "suggested_tightening": "Keep the unverified/frontier-stub label and avoid any valid-law or good-law presentation until treatment/progeny are derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/united-states-v-landeros--4580892.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"bd0f9326adfe60ff\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the citation/identity, but Lens B requires currency/live-law verification for this existence assertion. The lake record is only a frontier stub with treatment expressly unverified and no completed progeny enumeration.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not present 913 F.3d 862 as current/live law from this record. Label currency as unverified, or promote the record and derive treatment/progeny before making a live-law assertion.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/united-states-v-landeros--4580892__2b7b32.json treatment.field_i_validity and progeny fields\"\n      },\n      \"reasons\": [\n        \"The lake record supports identity/citation existence: status is verified_identity and the official citation is 913 F.3d 862.\",\n        \"Currency cannot be verified from disclosed evidence because treatment.field_i_validity is unverified and progeny enumeration is null with rows_cached 0.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The authority may in fact still be live law, but that is not established by the disclosed record.\"\n      ],\n      \"suggested_tightening\": \"Separate citation-existence verification from live-law verification; display this authority as treatment unverified until promoted.\"\n    },\n    {\n      \"assertion_id\": \"440c3478f6acbe7b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\n        \"The disclosed lake treatment and progeny fields contain no superseding, overruling, abrogating, or limiting edge; instead they expressly state treatment/progeny were intentionally not derived.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This treatment assertion establishes only an unverified status, not positive good-law currency.\"\n      ],\n      \"suggested_tightening\": \"Keep the unverified/frontier-stub label and avoid any valid-law or good-law presentation until treatment/progeny are derived.\"\n    }\n  ],\n  \"notes\": \"No content_page.* file was disclosed in the working directory; review is based on group_inventory.jsonl plus the lake and text records.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:38:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:25:07-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3a8865d8d6"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-landeros--4580892.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-11daeb5d",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-11daeb5d.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:04.514000Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:05.342079Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:06.712222Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:08.980969Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:12.598172Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-landeros--4580892"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-landeros--4580892"
+    ],
+    "tokens": {
+      "input": 86620,
+      "output": 6248,
+      "source": "codex-events",
+      "total": 92868
+    },
+    "verdict_map": {
+      "440c3478f6acbe7b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd0f9326adfe60ff": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a8865d8d6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 118.9
   }
 }

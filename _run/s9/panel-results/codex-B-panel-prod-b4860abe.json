@@ -1,13 +1,101 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Texas v. Cobb.json",
+    "lens": "B",
+    "notes": "Reviewed all four group_inventory assertions under lens B only; no support or quote-fidelity finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "d31544984e9e01e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and non-stub, with identity for Texas v. Cobb, U.S. Supreme Court, cluster_id 118417.",
+          "The official citation is present as 532 U.S. 162, and the lake treatment field marks the case good_law as of 2026-06-30.",
+          "No disclosed confirmed progeny edge establishes that Cobb itself has been overruled, abrogated, or superseded."
+        ],
+        "residual_risks": [
+          "Treatment derivation lists audit_needed/cap_hit and proposed negative events, but the judgment field still marks the authority good_law."
+        ],
+        "suggested_tightening": "Clarify in downstream displays that proposed/mentioned treatment edges are not confirmed negative treatment of the cited case.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4ccc337de484991",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside lens B.",
+          "This row presents no independent currency or treatment assertion to refute under the B lens."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8c581809b82fad4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside lens B.",
+          "The embedded header's treatment and weight text matches the lake judgment fields: SCOTUS authority and good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Same treatment-audit residual risk as the treatment row: proposed negative edges exist, but they are not confirmed negative treatment in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "693f47b49ffac9c1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"date_decided\": \"2001-04-17\"",
+          "locator_note": "lake identity.date_decided is 2001-04-17, while treatment.as_of_content is 2001-04-02.",
+          "needs_cl": false,
+          "problem": "The good-law status and SCOTUS weight survive the disclosed treatment fields, but the treatment payload's as_of_content date is internally inconsistent with the disclosed decision date.",
+          "proposed_fix": "Reconcile or explain as_of_content; if it is meant to track the authority content or decision date, align it with the disclosed date_decided or remove it from the treatment display.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment states field_i_validity=good_law and as_of_treatment=2026-06-30; content_page repeats that status.",
+          "The disclosed progeny edges are marked proposed=true and field_iii=mentioned, so they do not themselves establish confirmed overruling, abrogation, supersession, or limitation of Cobb.",
+          "The as_of_content date precedes the disclosed date_decided by 15 days."
+        ],
+        "residual_risks": [
+          "lane1_negative and lane2_top_cited both show audit_needed=true and cap_hit=true; this is a treatment-audit risk, not a disclosed confirmed negative treatment event."
+        ],
+        "suggested_tightening": "Keep the good-law label, but resolve the as_of_content/date_decided inconsistency and consider surfacing an audit-pending note until proposed negative edges are reviewed.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Texas v. Cobb.json\",\"reviewed\":[{\"assertion_id\":\"d31544984e9e01e8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and non-stub, with identity for Texas v. Cobb, U.S. Supreme Court, cluster_id 118417.\",\"The official citation is present as 532 U.S. 162, and the lake treatment field marks the case good_law as of 2026-06-30.\",\"No disclosed confirmed progeny edge establishes that Cobb itself has been overruled, abrogated, or superseded.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation lists audit_needed/cap_hit and proposed negative events, but the judgment field still marks the authority good_law.\"],\"suggested_tightening\":\"Clarify in downstream displays that proposed/mentioned treatment edges are not confirmed negative treatment of the cited case.\"},{\"assertion_id\":\"a4ccc337de484991\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside lens B.\",\"This row presents no independent currency or treatment assertion to refute under the B lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b8c581809b82fad4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside lens B.\",\"The embedded header's treatment and weight text matches the lake judgment fields: SCOTUS authority and good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Same treatment-audit residual risk as the treatment row: proposed negative edges exist, but they are not confirmed negative treatment in the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"693f47b49ffac9c1\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law status and SCOTUS weight survive the disclosed treatment fields, but the treatment payload's as_of_content date is internally inconsistent with the disclosed decision date.\",\"severity\":\"low\",\"proposed_fix\":\"Reconcile or explain as_of_content; if it is meant to track the authority content or decision date, align it with the disclosed date_decided or remove it from the treatment display.\",\"evidence_quote\":\"\\\"date_decided\\\": \\\"2001-04-17\\\"\",\"needs_cl\":false,\"locator_note\":\"lake identity.date_decided is 2001-04-17, while treatment.as_of_content is 2001-04-02.\"},\"reasons\":[\"Lake treatment states field_i_validity=good_law and as_of_treatment=2026-06-30; content_page repeats that status.\",\"The disclosed progeny edges are marked proposed=true and field_iii=mentioned, so they do not themselves establish confirmed overruling, abrogation, supersession, or limitation of Cobb.\",\"The as_of_content date precedes the disclosed date_decided by 15 days.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"lane1_negative and lane2_top_cited both show audit_needed=true and cap_hit=true; this is a treatment-audit risk, not a disclosed confirmed negative treatment event.\"],\"suggested_tightening\":\"Keep the good-law label, but resolve the as_of_content/date_decided inconsistency and consider surfacing an audit-pending note until proposed negative edges are reviewed.\"}],\"notes\":\"Reviewed all four group_inventory assertions under lens B only; no support or quote-fidelity finding is raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:42:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6298ea4f49",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cd4ec8417d",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-acf2c89427"
+    ],
     "group_id": "_overhaul2/lake/cases/Texas v. Cobb.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +104,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-b4860abe.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Texas v. Cobb"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 158531,
+      "output": 8104,
+      "source": "codex-events",
+      "total": 166635
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "693f47b49ffac9c1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a4ccc337de484991": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8c581809b82fad4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d31544984e9e01e8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6298ea4f49",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cd4ec8417d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-acf2c89427",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.6
   }
 }

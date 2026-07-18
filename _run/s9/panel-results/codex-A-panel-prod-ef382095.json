@@ -1,13 +1,89 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Sharpe.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "3196e434725f9455",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Sharpe, U.S. Supreme Court, decided 1985-03-20.",
+          "The official citation in the lake record is 470 U.S. 675, and the asserted parallel/vendor citations match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8f635007c674d92",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Sharpe__72046d.txt.",
+          "The lake record marks pin-686 as quote_fidelity matched, pinpoint_status star-verified, and star_marker 686."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7bdf0972e9ace86",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # United States v. Sharpe *470 U.S. 675 (1985)*",
+          "locator_note": "lake pinpoints id pin-685; text paragraph b741-6 contains the intended 685 passage.",
+          "needs_cl": false,
+          "problem": "The pin-685 quote stored in the lake/inventory is not an opinion quote; it is built-page/frontmatter content and the lake itself marks it as quote_fidelity mismatch with no star marker.",
+          "proposed_fix": "Replace pin-685 with the actual 470 U.S. at 685 passage, e.g. \"But our cases impose no rigid time limitation on Terry stops.\", and mark it only after verifying the pinpoint against the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-685 payload begins with the generated page header rather than the opinion text.",
+          "The actual opinion text at the 685 passage contains the no-rigid-time-limit sentence, not the long built-page Background/Issue/Rule block.",
+          "The lake record's own judgment fields for pin-685 say quote_fidelity mismatch, pinpoint_status slip-only, and star_marker null."
+        ],
+        "residual_risks": [
+          "The content_page display quote for pin-685 appears accurate, but the lake/inventory pinpoint record is defective."
+        ],
+        "suggested_tightening": "Regenerate pin-685 from the opinion text rather than from the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "adad7bc13ce2a42e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A.",
+          "The asserted treatment fields match the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "No treatment/currency merits review was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Sharpe.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"3196e434725f9455\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as United States v. Sharpe, U.S. Supreme Court, decided 1985-03-20.\",\n        \"The official citation in the lake record is 470 U.S. 675, and the asserted parallel/vendor citations match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a8f635007c674d92\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in text/United States v. Sharpe__72046d.txt.\",\n        \"The lake record marks pin-686 as quote_fidelity matched, pinpoint_status star-verified, and star_marker 686.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d7bdf0972e9ace86\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-685 quote stored in the lake/inventory is not an opinion quote; it is built-page/frontmatter content and the lake itself marks it as quote_fidelity mismatch with no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-685 with the actual 470 U.S. at 685 passage, e.g. \\\"But our cases impose no rigid time limitation on Terry stops.\\\", and mark it only after verifying the pinpoint against the opinion text.\",\n        \"evidence_quote\": \"--- # United States v. Sharpe *470 U.S. 675 (1985)*\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints id pin-685; text paragraph b741-6 contains the intended 685 passage.\"\n      },\n      \"reasons\": [\n        \"The asserted pin-685 payload begins with the generated page header rather than the opinion text.\",\n        \"The actual opinion text at the 685 passage contains the no-rigid-time-limit sentence, not the long built-page Background/Issue/Rule block.\",\n        \"The lake record's own judgment fields for pin-685 say quote_fidelity mismatch, pinpoint_status slip-only, and star_marker null.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content_page display quote for pin-685 appears accurate, but the lake/inventory pinpoint record is defective.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-685 from the opinion text rather than from the built page.\"\n    },\n    {\n      \"assertion_id\": \"adad7bc13ce2a42e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A.\",\n        \"The asserted treatment fields match the disclosed lake treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency merits review was performed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:05-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:07:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0046c2b746"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Sharpe.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +92,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ef382095.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Sharpe"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 160240,
+      "output": 5544,
+      "source": "codex-events",
+      "total": 165784
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "3196e434725f9455": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8f635007c674d92": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "adad7bc13ce2a42e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7bdf0972e9ace86": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0046c2b746",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 134.2
   }
 }

@@ -1,22 +1,185 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Brendlin v. California.md",
+    "lens": "B",
+    "notes": "Reviewed only under currency/treatment lens B; support and quote-fidelity merits were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "97681f6424bd3a7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Brendlin v. California as a U.S. Supreme Court case decided 2007-06-18, docket 06-8120, cluster 145712.",
+          "The lake citations include official citation 551 U.S. 249, parallels 127 S. Ct. 2400 and 168 L. Ed. 2d 132, and vendor citation 2007 U.S. LEXIS 7897.",
+          "The disclosed treatment judgment is field_i_validity good_law as of 2026-06-30, with no point_overrides listed."
+        ],
+        "residual_risks": [
+          "The treatment derivation flags audit_needed for proposed negative hits, so later audit could affect currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba770e288f6c4127",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support and holding fidelity are outside lens B; on currency, the lake treatment judgment is good_law as of 2026-06-30.",
+          "No disclosed final point-specific override limits the passenger-seizure point."
+        ],
+        "residual_risks": [
+          "Holding support and quote fidelity are reserved to lens A.",
+          "All treatment edges are proposed and mentioned, while derivation still flags audit_needed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c403dff53cec012a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home-role taxonomy is outside lens B; the disclosed currency records do not contradict the role.",
+          "Brendlin is a verified SCOTUS record with treatment good_law as of 2026-06-30 and 780 indexed citing opinions."
+        ],
+        "residual_risks": [
+          "Home-role support is reserved to lens A.",
+          "Treatment derivation has proposed negative hits requiring audit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d984f74d61a00a3d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"proposed_negative_events\": 25",
+          "locator_note": "content_page.md treatment section; lake treatment.derivation and treatment.edges.",
+          "needs_cl": true,
+          "problem": "The good_law call matches the lake judgment, but the page's unqualified 'No negative treatment' wording is too strong for the disclosed treatment record: the lake has audit-needed proposed negative events and 28 treatment edges, all proposed=true and field_iii=mentioned.",
+          "proposed_fix": "Retain field_i_validity: good_law as of 2026-06-30, but qualify the narrative as no final negative treatment in the disclosed lake record, with proposed treatment hits still audit-needed.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The frontmatter treatment fields match the lake: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides [].",
+          "The lake derivation flags audit_needed in lane1_negative and lane2_top_cited and reports proposed negative events; because every edge is proposed=true and field_iii=mentioned, this does not establish a final downgrade but does require wording precision."
+        ],
+        "residual_risks": [
+          "Resolving the proposed negative edges would require auditing the underlying citing opinions or CourtListener data not disclosed here.",
+          "If corpus convention treats proposed/mentioned edges as non-treatment noise, this is only a wording issue."
+        ],
+        "suggested_tightening": "Change 'No negative treatment' to 'No final negative treatment in the disclosed lake record; proposed treatment hits remain audit-needed.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dbbc8f37fffbc7bb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court U.S. Supreme Court, court_id scotus, and court_level scotus.",
+          "A SCOTUS authority supports the weight label Binding — SCOTUS; no disclosed treatment field changes that court weight."
+        ],
+        "residual_risks": [
+          "None from lens B beyond the case-level treatment audit residual."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Brendlin v. California.md\",\"reviewed\":[{\"assertion_id\":\"97681f6424bd3a7d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Brendlin v. California as a U.S. Supreme Court case decided 2007-06-18, docket 06-8120, cluster 145712.\",\"The lake citations include official citation 551 U.S. 249, parallels 127 S. Ct. 2400 and 168 L. Ed. 2d 132, and vendor citation 2007 U.S. LEXIS 7897.\",\"The disclosed treatment judgment is field_i_validity good_law as of 2026-06-30, with no point_overrides listed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation flags audit_needed for proposed negative hits, so later audit could affect currency.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ba770e288f6c4127\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support and holding fidelity are outside lens B; on currency, the lake treatment judgment is good_law as of 2026-06-30.\",\"No disclosed final point-specific override limits the passenger-seizure point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding support and quote fidelity are reserved to lens A.\",\"All treatment edges are proposed and mentioned, while derivation still flags audit_needed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c403dff53cec012a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Home-role taxonomy is outside lens B; the disclosed currency records do not contradict the role.\",\"Brendlin is a verified SCOTUS record with treatment good_law as of 2026-06-30 and 780 indexed citing opinions.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role support is reserved to lens A.\",\"Treatment derivation has proposed negative hits requiring audit.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d984f74d61a00a3d\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call matches the lake judgment, but the page's unqualified 'No negative treatment' wording is too strong for the disclosed treatment record: the lake has audit-needed proposed negative events and 28 treatment edges, all proposed=true and field_iii=mentioned.\",\"severity\":\"low\",\"proposed_fix\":\"Retain field_i_validity: good_law as of 2026-06-30, but qualify the narrative as no final negative treatment in the disclosed lake record, with proposed treatment hits still audit-needed.\",\"evidence_quote\":\"\\\"proposed_negative_events\\\": 25\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment section; lake treatment.derivation and treatment.edges.\"},\"reasons\":[\"The frontmatter treatment fields match the lake: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides [].\",\"The lake derivation flags audit_needed in lane1_negative and lane2_top_cited and reports proposed negative events; because every edge is proposed=true and field_iii=mentioned, this does not establish a final downgrade but does require wording precision.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Resolving the proposed negative edges would require auditing the underlying citing opinions or CourtListener data not disclosed here.\",\"If corpus convention treats proposed/mentioned edges as non-treatment noise, this is only a wording issue.\"],\"suggested_tightening\":\"Change 'No negative treatment' to 'No final negative treatment in the disclosed lake record; proposed treatment hits remain audit-needed.'\"},{\"assertion_id\":\"dbbc8f37fffbc7bb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields list court U.S. Supreme Court, court_id scotus, and court_level scotus.\",\"A SCOTUS authority supports the weight label Binding — SCOTUS; no disclosed treatment field changes that court weight.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"None from lens B beyond the case-level treatment audit residual.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only under currency/treatment lens B; support and quote-fidelity merits were not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T02:40:12-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:37:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-740bf05660",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b6a2ee35c3"
+    ],
     "group_id": "content/cases/Brendlin v. California.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-e29b9434",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e29b9434.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:40:03.808995Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:40:04.640619Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:40:05.842961Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:40:07.912392Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:40:11.887673Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brendlin v. California"
+    ],
+    "tokens": {
+      "input": 264742,
+      "output": 8813,
+      "source": "codex-events",
+      "total": 273555
+    },
+    "verdict_map": {
+      "97681f6424bd3a7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ba770e288f6c4127": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c403dff53cec012a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d984f74d61a00a3d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "dbbc8f37fffbc7bb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-740bf05660",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b6a2ee35c3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 176.5
   }
 }

@@ -1,0 +1,96 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6611f86a4e2e16b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is the actual Kastigar v. United States (Powell, J., delivering the opinion; Fifth Amendment use-and-derivative-use immunity under 18 U.S.C. 6002-6003), confirming the case exists as identified.",
+          "Star-pagination labels 442-462 are consistent with official cite 406 U.S. 441 (opinion body opens at *442 after the syllabus page 441).",
+          "Payload all[] (406 U.S. 441; 92 S. Ct. 1653; 32 L. Ed. 2d 212; 1972 U.S. LEXIS 57) matches the lake record citations.all[] exactly; no invented reporter/volume/page."
+        ],
+        "residual_risks": [
+          "Parallel S. Ct., L. Ed. 2d, and LEXIS pincites are carried from cluster.citations[] and are not independently verifiable from the inlined opinion text.",
+          "official_selection is null (reason 'unlisted_reporter:U.S.'), so the canonical U.S. cite sits in all[] but is not promoted to citations.official — a selection-logic gap, not an existence defect, and honestly reported by the payload (official:null, official_selection_present:false)."
+        ],
+        "suggested_tightening": "Fix the 'unlisted_reporter:U.S.' rule so 406 U.S. 441 is promoted to citations.official rather than left null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05d8cf7d83921762",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload is a frontier stub: field_i_validity 'unverified', as_of_content/as_of_treatment null, varies_by_point false, scope_note declares treatment/progeny intentionally not derived until S6 promotion — it asserts no substantive legal proposition to refute.",
+          "Stub matches the lake record treatment block exactly (unverified composite_basis, empty edges/point_overrides)."
+        ],
+        "residual_risks": [
+          "Actual treatment/currency (good-law status, overrulings, subsequent history) cannot be checked from disclosed evidence — only the case's own opinion text is inlined; no citing opinions or treatment feed provided.",
+          "The 'unverified' state must be resolved at S6 promotion before any good-law reliance."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:14:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ad39306102",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/kastigar-v-united-states--108541.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w23-03-d45bbe65",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w23-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record kastigar-v-united-states--108541"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "kastigar-v-united-states--108541"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "05d8cf7d83921762": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "6611f86a4e2e16b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ad39306102",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

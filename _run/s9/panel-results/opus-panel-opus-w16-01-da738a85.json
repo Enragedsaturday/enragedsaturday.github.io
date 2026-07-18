@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "348d89f6bec5f786",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Case exists: cached opinion is the 4th Cir. decision, MURNAGHAN, Circuit Judge, United States v. Gastiaburo, affirming denial of suppression of an impounded-car search — matches record identity.",
+          "Official cite 16 F.3d 582 confirmed by the opinion's star pagination *585/*586/*587/*588/*589/*590 (reporter vol. 16 F.3d, opinion begins at 582).",
+          "1994 WL 32623 is standard-form and uncontradicted; the Sources SR-5 note (cluster-URL integer 7027957 vs lead opinion id 6929715) is a disclosed CL id-provenance quirk, not a reporter-cite defect."
+        ],
+        "residual_risks": [
+          "1994 WL cite sourced from cluster metadata; cluster/opinion-id divergence flagged in-page (SR-5)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "44711a28c8afe6ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is VERBATIM in the opinion (p. 587, para b686-13): 'Not a single published federal case speaks of a \"temporal limit\" to the automobile exception. The Supreme Court has repeatedly stated that a warrantless search of a car (1) need not occur contemporaneously with the car's lawful seizure and (2) need not be justified by the existence of exigent circumstances that might have made it impractical to secure a warrant prior to the search.'",
+          "Payload S8 quote_fidelity='mismatch' is a false positive: opinion uses curly quotes around 'temporal limit'; substance is identical.",
+          "Quote follows the *587 star marker within the same paragraph, so slip/star pincite 587 is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "674ca5d5126ac2c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is VERBATIM in the opinion (p. 586, para b686-12): 'the justification to conduct a warrantless search under the automobile exception does not disappear merely because the car has been immobilized and impounded.' (preceded by 'However,').",
+          "Payload already labels quote_fidelity='matched' with pinpoint_status='star-verified', star_marker='586'; the passage indeed sits between the *586 and *587 markers."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b45a1ff1a1a85cde",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The third argument, based on the \"automobile exception\" to the warrant requirement, is clearly correct.",
+          "locator_note": "pin-585; Gastiaburo opinion p. 585 (para b685-11), disposing of the government's four alternative grounds.",
+          "needs_cl": false,
+          "problem": "The extracted quote_pinpoint span is malformed: it captured the page front-matter/Background/Issue/Rule-intro preamble ending at 'The Fourth Circuit held the government's automobile-exception argument' instead of the quotation anchored at ^pin-585. That blob is not a verbatim opinion passage. The actual pin-585 quotation ('is clearly correct') is verbatim-faithful to the opinion.",
+          "proposed_fix": "Re-extract the ^pin-585 span to the phrase actually attributed there ('is clearly correct'); drop the captured preamble. No page edit needed — the rendered quote is faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is page-structural text (front-matter through Rule intro), not a quotation, so it cannot be verified as a faithful quote as-framed.",
+          "The underlying page quotation at ^pin-585 IS present verbatim in the opinion at 16 F.3d 585, so this is an extractor span artifact, not a page/quote defect."
+        ],
+        "residual_risks": [
+          "Machine should treat this as an extraction-span defect, not a fabricated/misquoted-quote defect, to avoid condemning a faithful page quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03c8d8c7e4aa98ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "as_of_content=1994-02-08 matches the opinion's decision date; the disclosed opinion is a clean automobile-exception affirmance with no self-limiting or negative signal.",
+          "good_law currency as of 2026-06-30 requires citator data that is NOT inlined (composite_basis='migration-seed'); the scope_note itself flags 'S2 derivation re-derives and may downgrade'. Cannot confirm or refute currency from disclosed evidence.",
+          "Per the stub rule I record verifiable_from_disclosed=false and decline to fabricate a defect or a clean bill."
+        ],
+        "residual_risks": [
+          "Currency (good_law as of 2026-06-30) unverified from disclosed evidence; migration-seed basis flagged as re-derivable/downgradeable; needs CL citator (Lens-B)."
+        ],
+        "suggested_tightening": "Complete S2 treatment re-derivation / attach a citator reference to replace the migration-seed as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-caf33e318f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-de4afbe207",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Gastiaburo.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-01-da738a85",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Gastiaburo"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "03c8d8c7e4aa98ca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "348d89f6bec5f786": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44711a28c8afe6ec": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "674ca5d5126ac2c8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b45a1ff1a1a85cde": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-caf33e318f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-24292273c6",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-de4afbe207",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

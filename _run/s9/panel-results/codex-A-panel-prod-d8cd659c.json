@@ -1,22 +1,186 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Hicks.json\",\"reviewed\":[{\"assertion_id\":\"f8a0011db7060c13\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Arizona v. Hicks as a U.S. Supreme Court case decided 1987-03-03.\",\"The official citation in the lake record is 480 U.S. 321, matching the page display citation and the inventory payload.\",\"The parallel and vendor citations in the payload match the disclosed lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"224263403f07c6b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Arizona v. Hicks__cd7afa.txt: \\\"A search is a search, even if it happens to disclose nothing but the bottom of a turntable.\\\"\",\"The disclosed lake pinpoint marks pin-325 as star-verified with star_marker 325 and quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4ba306d61dd8a8bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The pin-324 payload quote is not an opinion quote. It splices page prose and headings from the built page, and the lake itself marks the pinpoint as quote_fidelity mismatch and slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-324 with the actual opinion passage and correct the pincite to account for the 324-325 page break, e.g. quote the source text beginning \\\"Officer Nelson’s moving of the equipment, however, did constitute a “search”...\\\" and cite 480 U.S. at 324-25.\",\"evidence_quote\":\"Officer Nelson’s moving of the equipment, however, did constitute a “search” separate and apart from the search for\",\"needs_cl\":false,\"locator_note\":\"pin-324 has no fragment, no star_marker, no position, and is marked mismatch/slip-only in the disclosed lake record.\"},\"reasons\":[\"The payload quote begins \\\"and if so whether... ## Rule...\\\", which is built-page text, not the Hicks opinion text.\",\"The actual opinion passage supports the general rule, but the assertion as framed is not character-faithful and cannot stand as a verbatim quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The corrected quote spans the page boundary from 324 to 325.\"],\"suggested_tightening\":\"Use the exact opinion text and cite 480 U.S. at 324-25 rather than 324 alone.\"},{\"assertion_id\":\"f75b038d4cf08541\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The substance and pin are supported, but the quote is not character-faithful: the disclosed opinion uses curly double quotation marks around “plain view,” while the payload uses single ASCII quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote to: \\\"We now hold that probable cause is required. To say otherwise would be to cut the “plain view” doctrine loose from its theoretical and practical moorings.\\\"\",\"evidence_quote\":\"We now hold that probable cause is required. To say otherwise would be to cut the “plain view” doctrine loose from its theoretical and practical moorings.\",\"needs_cl\":false,\"locator_note\":\"The quoted sentence appears on the page marked 326 in the disclosed opinion text; the lake marks this pinpoint mismatch/slip-only because the stored quote is not character-exact.\"},\"reasons\":[\"The holding that probable cause is required is directly stated in the opinion.\",\"The quoted sentence is at the claimed 326 location, but the verbatim text needs quotation-mark correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pinpoint lacks a fragment/star marker even though the disclosed text supports the corrected quote.\"],\"suggested_tightening\":\"Regenerate pin-326 after correcting the quotation marks so the quote_fidelity field can become matched.\"},{\"assertion_id\":\"121d321aa5594e2b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment finding is raised.\",\"The payload treatment fields match the disclosed lake treatment fields and the built page metadata: field_i_validity good_law, as_of_content 1987-03-03, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy remains for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No separate support, pincite, or black_letter assertion rows appeared in group_inventory.jsonl for this group.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Hicks.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A, using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "f8a0011db7060c13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Arizona v. Hicks, U.S. Supreme Court, decided 1987-03-03.",
+          "The official citation in the lake record is exactly 480 U.S. 321, and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "224263403f07c6b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text.",
+          "The lake pinpoint marks pin-325 as quote_fidelity matched, pinpoint_status star-verified, with star_marker 325."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ba306d61dd8a8bf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Officer Nelson’s moving of the equipment, however, did constitute a “search” separate and apart from the search for <page-number citation-index=\"1\" label=\"325\">*325</page-number>the shooter, victims, and weapons that was the lawful objective of his entry into the apartment.",
+          "locator_note": "pin-324 is disclosed as quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null.",
+          "needs_cl": false,
+          "problem": "The pin-324 harvested quote is not character-faithful to the opinion text and appears to splice surrounding page text/markdown rather than the actual quoted passage. The content quote also inserts an ellipsis at a page break and uses different quotation marks.",
+          "proposed_fix": "Replace pin-324 with the actual opinion language and cite 480 U.S. at 324-25 if quoting across the page break.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks this quote as a mismatch.",
+          "The payload quote does not appear as a contiguous verbatim passage in the cached opinion text.",
+          "The page's cited quotation crosses from page 324 to page 325, so a bare 324 pincite is too narrow for the full quoted text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact opinion punctuation and either quote only the page-324 portion or cite 324-25.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f75b038d4cf08541",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We now hold that probable cause is required. To say otherwise would be to cut the “plain view” doctrine loose from its theoretical and practical moorings.",
+          "locator_note": "The sentence appears on page 326; the lake marks the pinpoint quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present at page 326, but the page/payload use straight single quotes around 'plain view' where the opinion text uses curly double quotation marks.",
+          "proposed_fix": "Change 'plain view' inside the quote to “plain view” or normalize the quote under an explicit typography-normalization rule.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cited proposition and page location are supported by the cached opinion text.",
+          "Strict character-fidelity fails only on the quotation-mark characters around plain view."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Make the quote character-exact to the cached opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "121d321aa5594e2b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's charter; no treatment/currency finding is raised.",
+          "The inventory treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1987-03-03, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Hicks.json\",\"reviewed\":[{\"assertion_id\":\"f8a0011db7060c13\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Arizona v. Hicks, U.S. Supreme Court, decided 1987-03-03.\",\"The official citation in the lake record is exactly 480 U.S. 321, and the listed parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"224263403f07c6b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text.\",\"The lake pinpoint marks pin-325 as quote_fidelity matched, pinpoint_status star-verified, with star_marker 325.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4ba306d61dd8a8bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-324 harvested quote is not character-faithful to the opinion text and appears to splice surrounding page text/markdown rather than the actual quoted passage. The content quote also inserts an ellipsis at a page break and uses different quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-324 with the actual opinion language and cite 480 U.S. at 324-25 if quoting across the page break.\",\"evidence_quote\":\"Officer Nelson’s moving of the equipment, however, did constitute a “search” separate and apart from the search for <page-number citation-index=\\\"1\\\" label=\\\"325\\\">*325</page-number>the shooter, victims, and weapons that was the lawful objective of his entry into the apartment.\",\"needs_cl\":false,\"locator_note\":\"pin-324 is disclosed as quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null.\"},\"reasons\":[\"The lake pinpoint itself marks this quote as a mismatch.\",\"The payload quote does not appear as a contiguous verbatim passage in the cached opinion text.\",\"The page's cited quotation crosses from page 324 to page 325, so a bare 324 pincite is too narrow for the full quoted text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact opinion punctuation and either quote only the page-324 portion or cite 324-25.\"},{\"assertion_id\":\"f75b038d4cf08541\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively present at page 326, but the page/payload use straight single quotes around 'plain view' where the opinion text uses curly double quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Change 'plain view' inside the quote to “plain view” or normalize the quote under an explicit typography-normalization rule.\",\"evidence_quote\":\"We now hold that probable cause is required. To say otherwise would be to cut the “plain view” doctrine loose from its theoretical and practical moorings.\",\"needs_cl\":false,\"locator_note\":\"The sentence appears on page 326; the lake marks the pinpoint quote_fidelity=mismatch and pinpoint_status=slip-only.\"},\"reasons\":[\"The cited proposition and page location are supported by the cached opinion text.\",\"Strict character-fidelity fails only on the quotation-mark characters around plain view.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Make the quote character-exact to the cached opinion text.\"},{\"assertion_id\":\"121d321aa5594e2b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's charter; no treatment/currency finding is raised.\",\"The inventory treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1987-03-03, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A, using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-11T01:03:27-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:06:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0cc0737e3f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d5f95169f5",
+      "F-S9-PR-57fdb73acc"
+    ],
     "group_id": "_overhaul2/lake/cases/Arizona v. Hicks.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d8cd659c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d8cd659c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Hicks"
+    ],
+    "tokens": {
+      "input": 116589,
+      "output": 5223,
+      "source": "codex-events",
+      "total": 121812
+    },
+    "verdict_map": {
+      "121d321aa5594e2b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "224263403f07c6b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4ba306d61dd8a8bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f75b038d4cf08541": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f8a0011db7060c13": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d5f95169f5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-57fdb73acc",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0cc0737e3f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 108.0
   }
 }

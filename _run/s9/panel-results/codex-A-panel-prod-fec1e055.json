@@ -1,13 +1,124 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ventresca.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote fidelity only; treatment was recorded without a currency/treatment attack.",
+    "reviewed": [
+      {
+        "assertion_id": "de4a12fd3ef06ad3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Ventresca, U.S. Supreme Court, decided 1965-03-01, docket 28.",
+          "Lake citations confirm official citation 380 U.S. 102 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "11fe534661b13333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase \"purely conclusory,\" appears verbatim in the cached opinion text at the page 108 passage.",
+          "Lake pinpoints mark pin-109a as quote_fidelity matched with star_marker 108."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "479ba5f7d20e5437",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "underscores the preference accorded police action taken under a warrant as against searches and seizures without one.",
+          "locator_note": "text/United States v. Ventresca__53fc02.txt at star page *107",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful. The opinion says \"underscores,\" not \"underscore[],\" and the stored quote also truncates the sentence without indicating the omitted ending.",
+          "proposed_fix": "Replace the quote with the exact opinion text or use a properly marked ellipsis: \"underscores the preference accorded police action taken under a warrant as against searches and seizures without one.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake itself marks pin-106 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The cached opinion text contains the exact sentence with \"underscores\" and additional trailing words omitted from the asserted quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the full sentence exactly, or rewrite the surrounding prose so the original verb form does not need alteration.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c544bcdf805ed69f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "affidavits for search warrants, such as the one involved here, must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion.",
+          "locator_note": "text/United States v. Ventresca__53fc02.txt at star page *108",
+          "needs_cl": false,
+          "problem": "Pin-108's stored quote is not an opinion quote; it is a harvested block from the built content page/frontmatter through the Rule heading. It does not appear as quoted opinion text.",
+          "proposed_fix": "Replace pin-108 with the actual page 108 opinion passage beginning \"affidavits for search warrants, such as the one involved here, must be tested and interpreted...\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake marks pin-108 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The payload quote begins with markdown/page metadata rather than the Supreme Court opinion text."
+        ],
+        "residual_risks": [
+          "The visible content-page quote for this pin appears separately supportable; this refutation targets the disclosed pin payload."
+        ],
+        "suggested_tightening": "Regenerate the pin from the opinion text and retain the content-page quote only if the pin payload matches the opinion passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc52a61b97e75dcb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text at star page *109 contains the asserted sentence verbatim.",
+          "Lake pinpoints mark pin-109b as quote_fidelity matched with star_marker 109."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46034e99d3fd1ea0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The payload fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1965-03-01, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ventresca.json\",\"reviewed\":[{\"assertion_id\":\"de4a12fd3ef06ad3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms United States v. Ventresca, U.S. Supreme Court, decided 1965-03-01, docket 28.\",\"Lake citations confirm official citation 380 U.S. 102 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"11fe534661b13333\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The phrase \\\"purely conclusory,\\\" appears verbatim in the cached opinion text at the page 108 passage.\",\"Lake pinpoints mark pin-109a as quote_fidelity matched with star_marker 108.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"479ba5f7d20e5437\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is not character-faithful. The opinion says \\\"underscores,\\\" not \\\"underscore[],\\\" and the stored quote also truncates the sentence without indicating the omitted ending.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with the exact opinion text or use a properly marked ellipsis: \\\"underscores the preference accorded police action taken under a warrant as against searches and seizures without one.\\\"\",\"evidence_quote\":\"underscores the preference accorded police action taken under a warrant as against searches and seizures without one.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Ventresca__53fc02.txt at star page *107\"},\"reasons\":[\"Lake itself marks pin-106 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The cached opinion text contains the exact sentence with \\\"underscores\\\" and additional trailing words omitted from the asserted quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the full sentence exactly, or rewrite the surrounding prose so the original verb form does not need alteration.\"},{\"assertion_id\":\"c544bcdf805ed69f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-108's stored quote is not an opinion quote; it is a harvested block from the built content page/frontmatter through the Rule heading. It does not appear as quoted opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-108 with the actual page 108 opinion passage beginning \\\"affidavits for search warrants, such as the one involved here, must be tested and interpreted...\\\"\",\"evidence_quote\":\"affidavits for search warrants, such as the one involved here, must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Ventresca__53fc02.txt at star page *108\"},\"reasons\":[\"Lake marks pin-108 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The payload quote begins with markdown/page metadata rather than the Supreme Court opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote for this pin appears separately supportable; this refutation targets the disclosed pin payload.\"],\"suggested_tightening\":\"Regenerate the pin from the opinion text and retain the content-page quote only if the pin payload matches the opinion passage.\"},{\"assertion_id\":\"cc52a61b97e75dcb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The cached opinion text at star page *109 contains the asserted sentence verbatim.\",\"Lake pinpoints mark pin-109b as quote_fidelity matched with star_marker 109.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"46034e99d3fd1ea0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\"The payload fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1965-03-01, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment not independently reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed existence and quote fidelity only; treatment was recorded without a currency/treatment attack.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:08:49-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-cd77576fc8",
+      "F-S9-PR-88e97a5f90"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Ventresca.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +127,73 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fec1e055.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Ventresca"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 209005,
+      "output": 6035,
+      "source": "codex-events",
+      "total": 215040
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "11fe534661b13333": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46034e99d3fd1ea0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "479ba5f7d20e5437": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c544bcdf805ed69f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cc52a61b97e75dcb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de4a12fd3ef06ad3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd77576fc8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-88e97a5f90",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 122.5
   }
 }

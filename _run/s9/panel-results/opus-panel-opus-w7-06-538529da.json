@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3427a77c06ed5bb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip-opinion caption 'MESSERSCHMIDT ET AL. v. MILLENDER, EXECUTOR OF...' (Supreme Court of the United States, October Term 2011) confirms identity; the record's lake identity (cluster 623242, docket 10-704, date_decided 2012-02-22, expected_citation_found=true, canonical_name_match=true, reason_code=null) is consistent.",
+          "Official 565 U.S. 535 with parallels 132 S. Ct. 1235 / 182 L. Ed. 2d 47 supported; case and citations exist."
+        ],
+        "residual_risks": [
+          "Cached text is the slip opinion (slip pagination, e.g., '10  MESSERSCHMIDT v. MILLENDER'); U.S. Reports page 535 is not present in disclosed text.",
+          "'2012 U.S. LEXIS 1687' not verifiable from disclosed text.",
+          "Minor internal inconsistency: frontmatter opinion_id=623242 while the Sources line cites 'lead opinion id 9485385' (not part of the case_cite assertion)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834dd05db0a40ade",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.",
+          "locator_note": "pin-547; content page line 2917 vs cached slip opinion 'Nonetheless, under our precedents, the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.'",
+          "needs_cl": false,
+          "problem": "payload.quote captured page chrome (Background/Issue prose and the 'Rule' lead-in ending 'it does not end the inquiry:') instead of the pin-547 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-547 quotation on the page IS verbatim-faithful to the cached opinion.",
+          "proposed_fix": "Repoint payload.quote to the actual pin-547 quotation and re-run the fidelity check.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual pin-547 page quote is verbatim-faithful to the cached slip opinion (dehyphenated lines 'the fact that / a neutral magistrate has issued a warrant authorizing the / allegedly unconstitutional search or seizure does not end / the inquiry into objective reasonableness.').",
+          "The reviewed proposition (page faithfully quotes Messerschmidt at 547) survives; only the serialized payload.quote (chrome) needs modification."
+        ],
+        "residual_risks": [
+          "Pincite 565 U.S. at 547 not verifiable from the disclosed slip text (slip pagination only; pinpoint_status=slip-only accurate)."
+        ],
+        "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4fd95e2545900f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote 'so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable.' is verbatim-present in the cached slip opinion (dehyphenated 'so lacking in indi-/cia of probable cause as to render official belief in its exist-/ence entirely unreasonable.'), correctly attributed as quoting Leon, 468 U. S., at 923.",
+          "The companion page quote 'the threshold for establishing this exception is a high one, and it should be.' also matches verbatim ('the threshold / for establishing this exception is a high one, and it should / be.'). quote_fidelity flag 'matched' is correct."
+        ],
+        "residual_risks": [
+          "Pincite is slip-only (no U.S. Reports pagination in disclosed text).",
+          "The text-fragment locator (#:~:text=so lacking in indicia of) targets the correct phrase; nested attribution 'Id. (quoting Leon, 468 U.S. at 923)' is accurate."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ef42894b2b66197",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' for Messerschmidt's qualified-immunity / overbroad-warrant holding is consistent with the cached slip opinion (Malley/Leon objective-reasonableness standard for warrant immunity).",
+          "The disclosed treatment record contains NO adjudicated negative treatment: all 28 negative edges are proposed=true; derivation lane1_negative audit_needed=false (3 events) and lane3 audit_needed=false (0 events); only lane2_top_cited has 25 proposed events pending 'R15 treatment audit required'.",
+          "scope_note ('Good law on qualified immunity for executing a magistrate-approved warrant later claimed to be overbroad') is accurate; no disclosed evidence of overruling."
+        ],
+        "residual_risks": [
+          "Currency is composite_basis=migration-seed; 'as of 2026-06-30' is seeded, not independently confirmed.",
+          "The page body asserts 'No negative treatment' more definitively than the pending lane2 R15 audit of 25 proposed negatives supports (proposed edges are raw keyword hits, unadjudicated)."
+        ],
+        "suggested_tightening": "Soften the page-body 'No negative treatment' pending completion of the lane2 R15 audit, or complete the audit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Messerschmidt v. Millender.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-06-538529da",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Messerschmidt v. Millender"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3427a77c06ed5bb7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834dd05db0a40ade": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8ef42894b2b66197": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4fd95e2545900f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1d9bd62d12",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

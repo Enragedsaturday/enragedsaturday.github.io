@@ -1,0 +1,152 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a1d1270eee1f5a37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '516 U.S. 99 (1995)' with caption 'THOMPSON v. KEOHANE, WARDEN, et al.', No. 94-6615, decided Nov. 29, 1995 - official cite matches selected_official.",
+          "Cluster/opinion id 117982 matches opinion_url; star pagination *100-*115 consistent with a case beginning at 516 U.S. 99."
+        ],
+        "residual_risks": [
+          "Parallel/neutral cites (116 S. Ct. 457; 133 L. Ed. 2d 383; LEXIS; Cal. Daily) not independently shown in the U.S.-Reports cached text, but are standard SCOTUS parallels and uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a743e99066a6150",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page's actual pin-112 block quote ('Two discrete inquiries are essential... of the degree associated with a formal arrest.') is verbatim faithful to the cached opinion at 516 U.S. 112 (only footnote marker [11] and quote-style elided; Beheler 463 U.S. 1121, 1125 parenthetical matches).",
+          "payload.quote is an extractor segmentation artifact (it captured the pre-quote framing sentence from Issue + the '## Rule' heading, not the quoted material), which explains the 'mismatch' flag; the rendered wiki quote is sound.",
+          "*112 marker precedes the passage and *113 falls at 'This ultimate *113 determination', confirming the quoted matter sits on page 112."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Extractor should anchor the quote span to the block-ref's quoted material rather than preceding prose to avoid spurious mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e34e6a05e1b2a564",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote 'This ultimate determination, we hold, presents a \"mixed question of law and fact\" qualifying for independent review.' matches the cached opinion verbatim once the embedded star marker is removed (source reads 'This ultimate *113 determination').",
+          "Sentence spans pages 112-113 (star *113 falls mid-phrase), so the 'Id. at 112-113' pincite is correct.",
+          "The 'mismatch' flag is a star-pagination artifact, not a wiki defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b67302ad094a323d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed evidence is only the 1995 opinion; it confirms the holding (objective custody test; mixed question of law/fact for independent review) but cannot establish forward-looking good-law currency as of 2026.",
+          "Scope note is internally accurate and appropriately hedged (AEDPA (1996) changed the section 2254(d) framework; Yarborough v. Alvarado addresses custody under AEDPA deference); nothing disclosed refutes good_law.",
+          "Decline to fabricate negative treatment (not found does not equal fabricated)."
+        ],
+        "residual_risks": [
+          "Currency verification requires a citator not inlined; varies_by_point=false despite the AEDPA statutory change to the section 2254(d) holding is handled via the scope-note caveat rather than a point override."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:12:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-93225c081b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a06acf96ef",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-da8f86a3e0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Thompson v. Keohane.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w13-02-65fd4c7c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w13-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Thompson v. Keohane"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1a743e99066a6150": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1d1270eee1f5a37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b67302ad094a323d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e34e6a05e1b2a564": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-93225c081b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a06acf96ef",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-da8f86a3e0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

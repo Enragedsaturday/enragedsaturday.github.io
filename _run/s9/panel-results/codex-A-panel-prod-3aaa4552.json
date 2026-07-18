@@ -1,22 +1,195 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kolender v. Lawson.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory.jsonl rows. Lens A findings are limited to existence/support/quote-fidelity/pin issues; no treatment/currency defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "f542edbba9d9a676",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for Kolender v. Lawson and identifies the court as U.S. Supreme Court with date_decided 1983-05-02.",
+          "The lake official citation is 461 U.S. 352, matching the content page display citation 461 U.S. 352 (1983).",
+          "The parallel citations in the content page match the disclosed lake citations."
+        ],
+        "residual_risks": [
+          "The lake provenance warns that the two-key identity check was not fully satisfied, but the citation, court, and year match the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28a075c35af58896",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "requirement to provide a “credible and reliable” identification. As such, the statute vests virtually complete discretion",
+          "locator_note": "pin-358; content_page.md Rule section; text/Kolender v. Lawson__f0c020.txt contains the passage after the *358 page marker.",
+          "needs_cl": false,
+          "problem": "Pin-358 is not character-faithful as framed: the source passage uses source quotation marks around “credible and reliable,” while the payload/content quote substitutes single quotes; the lake also marks this pin quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "proposed_fix": "Replace the pin text with the exact source wording and punctuation from the page-358 passage, or remove verbatim quotation formatting if the page intends a normalized paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition is substantively supported by the opinion text on page 358.",
+          "The verbatim quote is not character-faithful because the internal quotation marks do not match the disclosed opinion text.",
+          "The disclosed lake record independently flags pin-358 as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "This defect is quote-fidelity/pin cleanup, not a substantive holding defect."
+        ],
+        "suggested_tightening": "Preserve exact source punctuation for the internal quoted phrase and populate the pin metadata with the verified page marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4672f7acd08fa81a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that the statute as it has been construed is unconstitutionally vague within the meaning of the Due Process Clause",
+          "locator_note": "pin-353; the disclosed text contains the actual holding sentence at the opening paragraph, while the lake pin quote is marked mismatch/slip-only.",
+          "needs_cl": false,
+          "problem": "Pin-353's payload quote is a malformed harvest artifact, not a character-faithful opinion quote; it splices text with the Markdown heading artifact '## Rule Yes.'",
+          "proposed_fix": "Replace pin-353 with the actual opening holding sentence from the opinion, spanning 461 U.S. 353-354, and remove the stray heading text from the pin quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote 'identification is unconstitutionally vague under the Due Process Clause. ## Rule Yes.' is not the quoted passage in the opinion.",
+          "No disclosed opinion text supports the Markdown heading artifact as part of a court quote.",
+          "The lake record itself marks pin-353 quote_fidelity=mismatch and pinpoint_status=slip-only."
+        ],
+        "residual_risks": [
+          "The content page's legal proposition is supported, but this pin record is not a valid verbatim quote."
+        ],
+        "suggested_tightening": "Use the actual Court sentence beginning 'We conclude that the statute as it has been construed...' and preserve the source quotation marks around the identification phrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61befa875c17d21f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted void-for-vagueness standard appears in the disclosed opinion text.",
+          "The lake pinpoint quote matches the payload and is marked quote_fidelity=matched with star_marker 357.",
+          "The content page pin link targets the same text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28d8a1cc8df02731",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no adverse treatment finding is made.",
+          "The disclosed lake treatment field records field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false, and the content page mirrors those fields."
+        ],
+        "residual_risks": [
+          "No Lens A review was performed on treatment/currency beyond confirming the disclosed fields exist and match the content page."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Kolender v. Lawson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f542edbba9d9a676\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record exists for Kolender v. Lawson and identifies the court as U.S. Supreme Court with date_decided 1983-05-02.\",\n        \"The lake official citation is 461 U.S. 352, matching the content page display citation 461 U.S. 352 (1983).\",\n        \"The parallel citations in the content page match the disclosed lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake provenance warns that the two-key identity check was not fully satisfied, but the citation, court, and year match the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"28a075c35af58896\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin-358 is not character-faithful as framed: the source passage uses source quotation marks around “credible and reliable,” while the payload/content quote substitutes single quotes; the lake also marks this pin quote_fidelity=mismatch and pinpoint_status=slip-only.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the pin text with the exact source wording and punctuation from the page-358 passage, or remove verbatim quotation formatting if the page intends a normalized paraphrase.\",\n        \"evidence_quote\": \"requirement to provide a “credible and reliable” identification. As such, the statute vests virtually complete discretion\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-358; content_page.md Rule section; text/Kolender v. Lawson__f0c020.txt contains the passage after the *358 page marker.\"\n      },\n      \"reasons\": [\n        \"The quoted proposition is substantively supported by the opinion text on page 358.\",\n        \"The verbatim quote is not character-faithful because the internal quotation marks do not match the disclosed opinion text.\",\n        \"The disclosed lake record independently flags pin-358 as quote_fidelity=mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This defect is quote-fidelity/pin cleanup, not a substantive holding defect.\"\n      ],\n      \"suggested_tightening\": \"Preserve exact source punctuation for the internal quoted phrase and populate the pin metadata with the verified page marker.\"\n    },\n    {\n      \"assertion_id\": \"4672f7acd08fa81a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin-353's payload quote is a malformed harvest artifact, not a character-faithful opinion quote; it splices text with the Markdown heading artifact '## Rule Yes.'\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-353 with the actual opening holding sentence from the opinion, spanning 461 U.S. 353-354, and remove the stray heading text from the pin quote.\",\n        \"evidence_quote\": \"We conclude that the statute as it has been construed is unconstitutionally vague within the meaning of the Due Process Clause\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-353; the disclosed text contains the actual holding sentence at the opening paragraph, while the lake pin quote is marked mismatch/slip-only.\"\n      },\n      \"reasons\": [\n        \"The payload quote 'identification is unconstitutionally vague under the Due Process Clause. ## Rule Yes.' is not the quoted passage in the opinion.\",\n        \"No disclosed opinion text supports the Markdown heading artifact as part of a court quote.\",\n        \"The lake record itself marks pin-353 quote_fidelity=mismatch and pinpoint_status=slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's legal proposition is supported, but this pin record is not a valid verbatim quote.\"\n      ],\n      \"suggested_tightening\": \"Use the actual Court sentence beginning 'We conclude that the statute as it has been construed...' and preserve the source quotation marks around the identification phrase.\"\n    },\n    {\n      \"assertion_id\": \"61befa875c17d21f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted void-for-vagueness standard appears in the disclosed opinion text.\",\n        \"The lake pinpoint quote matches the payload and is marked quote_fidelity=matched with star_marker 357.\",\n        \"The content page pin link targets the same text fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"28d8a1cc8df02731\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no adverse treatment finding is made.\",\n        \"The disclosed lake treatment field records field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false, and the content page mirrors those fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A review was performed on treatment/currency beyond confirming the disclosed fields exist and match the content page.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory.jsonl rows. Lens A findings are limited to existence/support/quote-fidelity/pin issues; no treatment/currency defect is raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:59:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1ea3f22ce3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-257890978f",
+      "F-S9-PR-5e29581c29"
+    ],
     "group_id": "_overhaul2/lake/cases/Kolender v. Lawson.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3aaa4552",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3aaa4552.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:52.423679Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:53.040191Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:53.988804Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:55.220594Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:57.292269Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:00.947290Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kolender v. Lawson"
+    ],
+    "tokens": {
+      "input": 173946,
+      "output": 7415,
+      "source": "codex-events",
+      "total": 181361
+    },
+    "verdict_map": {
+      "28a075c35af58896": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "28d8a1cc8df02731": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4672f7acd08fa81a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "61befa875c17d21f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f542edbba9d9a676": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-257890978f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5e29581c29",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1ea3f22ce3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 142.7
   }
 }

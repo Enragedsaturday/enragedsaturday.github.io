@@ -1,0 +1,136 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5a07a5ee4209c02f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached preliminary-print opinion states 'Volume 605 U. S. ... Pages 73-90' and repeatedly 'Cite as: 605 U. S. 73 (2025)', directly confirming official cite 605 U.S. 73.",
+          "Docket 23-1239 and decision date May 15, 2025 match the record; unanimous Kagan opinion confirms identity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96c441ba7a83030c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pin-73 quote string is a harvest artifact that mixes content-page markdown ('## Rule', 'No -') and paraphrase; it is genuinely not a verbatim opinion quote, so the record's quote_fidelity='mismatch'/'slip-only' self-flag is correct and cannot be refuted as a false 'match'.",
+          "The reader-facing block quote the content page actually attributes to pin-73 -- 'Today, we reject that approach as improperly narrowing the requisite Fourth Amendment analysis. To assess whether an officer acted reasonably in using force, a court must consider all the relevant circumstances, including facts and events leading up to the climactic moment.' -- is verbatim in the disclosed opinion (Kagan, J., opening, slip op. at 1). No fabricated or misquoted text reaches the reader."
+        ],
+        "residual_risks": [
+          "The stored pin quote string is corrupt scaffolding; if a downstream consumer treated it as opinion text it would be non-verbatim (but it is already flagged mismatch and thus not promotable as a verified pincite)."
+        ],
+        "suggested_tightening": "On promotion, replace the pin-73 stored string with the verbatim 'Today, we reject that approach ... climactic moment.' text and re-key the pincite to 605 U.S. 73 (slip op., at 1).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b00833b82290e9b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-73b quote 'A court deciding a use-of-force case cannot review the totality of the circumstances if it has put on chronological blinders.' is verbatim in the disclosed opinion, appearing identically in both the syllabus and the Opinion of the Court (end of the totality/no-time-limit discussion). No fabrication or misquote.",
+          "The stored quote_fidelity='mismatch'/'slip-only' flag is over-conservative (a slip-pagination string-match artifact), not a real fidelity failure; the quote is faithful and correctly attributed to slip op. at 7 (preliminary-print p. 82 maps to slip p. 7)."
+        ],
+        "residual_risks": [
+          "Fidelity flag understates reality (marked mismatch though the quote is verbatim); no reader-facing harm."
+        ],
+        "suggested_tightening": "Upgrade the pin-73b fidelity flag from 'mismatch' to verified on promotion; the quote string-matches the opinion exactly.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3e5ae8df7456f9db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed opinion confirms a May 15, 2025 unanimous SCOTUS decision (Kagan, J., for a unanimous Court; Kavanaugh concurrence joined by Thomas, Alito, Barrett); 'good_law' is the correct default for a ~1-year-old unanimous SCOTUS holding.",
+          "Lake treatment derivation shows the negative-treatment lane (overrul*/abrogat*/supersed*/vacat*/reversed) with 0 proposed negative events and progeny citation_count 0; nothing in the disclosed evidence indicates adverse treatment.",
+          "scope_note accurately states the holding (totality of the circumstances, no 'moment of threat' time limit) and notes the slip opinion is subject to formal revision -- the cached preliminary print says exactly that."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 currency window cannot be independently re-confirmed from disclosed evidence alone; a full progeny sweep would need CL, though the record's own negative lane returned 0."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T04:58:41-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3f4f619f28",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Barnes v. Felix.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-val-B-c478ae06",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-val-B.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Barnes v. Felix"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3e5ae8df7456f9db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a07a5ee4209c02f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "96c441ba7a83030c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b00833b82290e9b4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3f4f619f28",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

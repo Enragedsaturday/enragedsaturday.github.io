@@ -1,22 +1,107 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/hartman-v-moore--145662.json",
+    "lens": "B",
+    "notes": "No support or quote-fidelity findings were made under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "30705bde4def5d3d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/hartman-v-moore--145662__eaaefc.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The case identity and citations are disclosed, but Lens B asks whether the cited authority is still live law. The disclosed record is a frontier stub with treatment unverified, no as-of treatment date, and no derived progeny, so live-law currency cannot be verified from the disclosed evidence.",
+          "proposed_fix": "Do not present this authority as live/current law. Mark it as identity/citation verified but treatment unverified until treatment and progeny are derived.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields verify Hartman v. Moore as a U.S. Supreme Court case decided 2006-04-26 with the listed citations.",
+          "Lake treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration is null/rows_cached 0.",
+          "Under the review rule to default to refuted on uncertainty, the live-law/currency aspect is not verifiable from the disclosed files."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain good law, but that cannot be concluded from this disclosed record."
+        ],
+        "suggested_tightening": "Separate citation existence from current-law status: display identity verified, treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "63d73d48f8aed058",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload's field_i_validity of unverified matches the lake treatment.field_i_validity.",
+          "The payload's null as_of_content and as_of_treatment match the lake treatment fields.",
+          "The payload's scope note matches the lake scope_note and accurately flags that treatment/progeny were intentionally not derived."
+        ],
+        "residual_risks": [
+          "This standing treatment assertion is only an unknown-status label; it does not verify that Hartman remains live law."
+        ],
+        "suggested_tightening": "Keep the unverified treatment label prominent and do not convert it to a good-law signal without derived treatment/progeny evidence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/hartman-v-moore--145662.json\",\"reviewed\":[{\"assertion_id\":\"30705bde4def5d3d\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The case identity and citations are disclosed, but Lens B asks whether the cited authority is still live law. The disclosed record is a frontier stub with treatment unverified, no as-of treatment date, and no derived progeny, so live-law currency cannot be verified from the disclosed evidence.\",\"severity\":\"high\",\"proposed_fix\":\"Do not present this authority as live/current law. Mark it as identity/citation verified but treatment unverified until treatment and progeny are derived.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/hartman-v-moore--145662__eaaefc.json treatment/progeny fields\"},\"reasons\":[\"Lake identity fields verify Hartman v. Moore as a U.S. Supreme Court case decided 2006-04-26 with the listed citations.\",\"Lake treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration is null/rows_cached 0.\",\"Under the review rule to default to refuted on uncertainty, the live-law/currency aspect is not verifiable from the disclosed files.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority may in fact remain good law, but that cannot be concluded from this disclosed record.\"],\"suggested_tightening\":\"Separate citation existence from current-law status: display identity verified, treatment unverified.\"},{\"assertion_id\":\"63d73d48f8aed058\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload's field_i_validity of unverified matches the lake treatment.field_i_validity.\",\"The payload's null as_of_content and as_of_treatment match the lake treatment fields.\",\"The payload's scope note matches the lake scope_note and accurately flags that treatment/progeny were intentionally not derived.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This standing treatment assertion is only an unknown-status label; it does not verify that Hartman remains live law.\"],\"suggested_tightening\":\"Keep the unverified treatment label prominent and do not convert it to a good-law signal without derived treatment/progeny evidence.\"}],\"notes\":\"No support or quote-fidelity findings were made under Lens B.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:34-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:18:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9b942f5c70"
+    ],
     "group_id": "_overhaul2/lake/cases/hartman-v-moore--145662.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d259bca0",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d259bca0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:25.407523Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:26.067594Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:26.912381Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:28.177580Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:30.219655Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record hartman-v-moore--145662"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "hartman-v-moore--145662"
+    ],
+    "tokens": {
+      "input": 111831,
+      "output": 6070,
+      "source": "codex-events",
+      "total": 117901
+    },
+    "verdict_map": {
+      "30705bde4def5d3d": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "63d73d48f8aed058": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9b942f5c70",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 117.7
   }
 }

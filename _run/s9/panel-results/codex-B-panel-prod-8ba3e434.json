@@ -1,13 +1,82 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Mosley.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "7c5db0aa8c4acf96",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, not a stub, and identifies Michigan v. Mosley with official citation 423 U.S. 96.",
+          "The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit_needed/cap_hit signals, but the lake judgment field remains good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b6cdbfef32335e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside Lens B.",
+          "No independent currency defect appears in the treatment/weight text embedded in this row: it matches good_law as of 2026-06-30 and SCOTUS status in the lake record."
+        ],
+        "residual_risks": [
+          "Quote accuracy itself is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "017aa9bc00b26538",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Michigan v. Mosley__751847.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law label itself is supported, but the page's unqualified 'No negative treatment' wording overstates the disclosed record. The lake contains proposed negative-treatment candidate edges and derivation lanes marked for audit, so the safer treatment statement needs a caveat.",
+          "proposed_fix": "Keep 'Status: good (as of 2026-06-30) — Binding — SCOTUS,' but replace 'No negative treatment' with a caveated statement that the lake record marks Mosley good law while proposed/mentioned negative-treatment candidates remain audit flagged.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The same lake treatment record lists proposed edges with negative-looking field_ii labels, including overruled, abrogated, superseded_by_statute, questioned, and criticized, all with field_iii mentioned and proposed true.",
+          "Derivation lanes lane1_negative and lane2_top_cited are marked audit_needed true, so an absolute no-negative-treatment sentence is not fully supported by the disclosed record."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full citing opinions for the proposed edges, so this review cannot determine whether any candidate actually limits Mosley."
+        ],
+        "suggested_tightening": "Do not render 'No negative treatment' when treatment.derivation has audit_needed true or proposed negative edges exist; render a good-law status with an audit caveat instead.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Mosley.json\",\"reviewed\":[{\"assertion_id\":\"7c5db0aa8c4acf96\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, not a stub, and identifies Michigan v. Mosley with official citation 423 U.S. 96.\",\"The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit_needed/cap_hit signals, but the lake judgment field remains good_law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4b6cdbfef32335e1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside Lens B.\",\"No independent currency defect appears in the treatment/weight text embedded in this row: it matches good_law as of 2026-06-30 and SCOTUS status in the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy itself is reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"017aa9bc00b26538\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law label itself is supported, but the page's unqualified 'No negative treatment' wording overstates the disclosed record. The lake contains proposed negative-treatment candidate edges and derivation lanes marked for audit, so the safer treatment statement needs a caveat.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep 'Status: good (as of 2026-06-30) — Binding — SCOTUS,' but replace 'No negative treatment' with a caveated statement that the lake record marks Mosley good law while proposed/mentioned negative-treatment candidates remain audit flagged.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Michigan v. Mosley__751847.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The same lake treatment record lists proposed edges with negative-looking field_ii labels, including overruled, abrogated, superseded_by_statute, questioned, and criticized, all with field_iii mentioned and proposed true.\",\"Derivation lanes lane1_negative and lane2_top_cited are marked audit_needed true, so an absolute no-negative-treatment sentence is not fully supported by the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the full citing opinions for the proposed edges, so this review cannot determine whether any candidate actually limits Mosley.\"],\"suggested_tightening\":\"Do not render 'No negative treatment' when treatment.derivation has audit_needed true or proposed negative edges exist; render a good-law status with an audit caveat instead.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:12:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b100a16058",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c148e068e0"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Mosley.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +85,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-8ba3e434.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Mosley"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 228185,
+      "output": 6658,
+      "source": "codex-events",
+      "total": 234843
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.1
+    "verdict_map": {
+      "017aa9bc00b26538": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4b6cdbfef32335e1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c5db0aa8c4acf96": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b100a16058",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c148e068e0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 141.5
   }
 }

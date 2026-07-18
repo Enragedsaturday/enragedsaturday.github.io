@@ -1,0 +1,118 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2df61cc37d46b573",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: United States v. Larry Duane Conner / John Charles Tilton, N.D. Iowa, 8th Cir., 1997; motel-room color-of-authority holding matches the record.",
+          "Official cite 127 F.3d 663 is the rank-1 selected_official; cached text carries '*665' and '*666' page-number markers consistent with a case beginning at page 663.",
+          "8th-Circuit posture is corroborated by the in-circuit citations in the disclosed text (Deanda (8th Cir. 1996), Peters (8th Cir. 1990))."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "33a308332580f377",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.",
+          "locator_note": "pin-666; the page's ## Rule paragraph verbatim quote vs. the lake pinpoint.quote field.",
+          "needs_cl": false,
+          "problem": "The stored pin-666 quote is a mis-extracted span crossing the '## Issue' and '## Rule' markdown headings ('...their show of authority. ## Issue Whether police... ## Rule A door opened in submission to authority is not consent:'), so it cannot match opinion text and is flagged 'mismatch'. The reader-facing quote rendered on the page is verbatim-faithful and correctly pincited; only the stored quote field is wrong.",
+          "proposed_fix": "Normalize the pin-666 quote field to the true quoted passage: \"an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's Rule quote matches the cached opinion verbatim (cached text: 'an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority.').",
+          "Pincite 666 is VERIFIED: the '*666' page-number marker in the cached text immediately precedes the quoted passage, so the reporter pincite is correct.",
+          "The 'mismatch' reflects the mis-extracted stored quote (which contains literal '## Issue'/'## Rule' markdown), not a reader-facing misquote."
+        ],
+        "residual_risks": [
+          "pinpoint_status 'slip-only' and the Sources note's 'without star pagination' are conservative/inaccurate here — the disclosed text actually carries '*665'/'*666' markers, so the pincite is verifiable."
+        ],
+        "suggested_tightening": "Store the actual quoted string in the pinpoint.quote field; pincite 666 is confirmed and may be upgraded from 'slip-only'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b025057ae0d2d2e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' currency (as_of_treatment 2026-06-30) rests on citator/treatment data not present in the disclosed 1997 opinion, so it is not machine-verifiable from the pack.",
+          "The underlying holding is supported by the disclosed opinion: the 8th Circuit affirmed the district court's determination that a door opened not voluntarily but in response to a demand under color of authority yields an unconstitutional search.",
+          "No disclosed evidence contradicts good-law status; the scope_note is accurate on its face — marked not-verifiable rather than a fabricated defect/clean."
+        ],
+        "residual_risks": [
+          "Good-law currency depends on citator data outside the disclosed pack.",
+          "as_of_content is null though the holding itself is present in the disclosed opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Conner.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-02-29f3df88",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Conner"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2df61cc37d46b573": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "33a308332580f377": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b025057ae0d2d2e1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-228c5f6a78",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

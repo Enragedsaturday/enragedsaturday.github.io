@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-valenzuela-bernal--110797.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is based on group_inventory.jsonl, the lake record, and the cached opinion text only.",
+    "reviewed": [
+      {
+        "assertion_id": "b769cbb341cc1586",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-valenzuela-bernal--110797__62a72c.json treatment/progeny fields; group_inventory existence row",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity/citation existence, but it does not verify the currency/live-law status required by Lens B. Treatment is explicitly unverified and progeny was not derived, so the absence of adverse treatment cannot be treated as proof that the authority remains live law.",
+          "proposed_fix": "Limit the assertion to verified identity/citation existence, or promote the record to a treatment/progeny-derived status before presenting it as currently live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields support that the case record exists: status is verified_identity, court is U.S. Supreme Court, date_decided is 1982-07-02, and expected_citation_found is true.",
+          "But treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0; under the disclosed evidence this cannot establish current live-law status."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain good law, but that cannot be confirmed from this stub record alone."
+        ],
+        "suggested_tightening": "Add an explicit currency caveat: identity verified, treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "47c1dec10475872f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.",
+          "No good-law, bad-law, weight, overruling, abrogation, or limitation label is asserted, so the disclosed treatment assertion is consistent with the record."
+        ],
+        "residual_risks": [
+          "This standing verdict only approves the unverified-treatment label; it does not establish that the case is currently good law."
+        ],
+        "suggested_tightening": "Keep the unverified treatment label visible until a promoted record supplies treatment and progeny evidence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-valenzuela-bernal--110797.json\",\"reviewed\":[{\"assertion_id\":\"b769cbb341cc1586\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity/citation existence, but it does not verify the currency/live-law status required by Lens B. Treatment is explicitly unverified and progeny was not derived, so the absence of adverse treatment cannot be treated as proof that the authority remains live law.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit the assertion to verified identity/citation existence, or promote the record to a treatment/progeny-derived status before presenting it as currently live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-valenzuela-bernal--110797__62a72c.json treatment/progeny fields; group_inventory existence row\"},\"reasons\":[\"Lake identity fields support that the case record exists: status is verified_identity, court is U.S. Supreme Court, date_decided is 1982-07-02, and expected_citation_found is true.\",\"But treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0; under the disclosed evidence this cannot establish current live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority may in fact remain good law, but that cannot be confirmed from this stub record alone.\"],\"suggested_tightening\":\"Add an explicit currency caveat: identity verified, treatment unverified.\"},{\"assertion_id\":\"47c1dec10475872f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.\",\"No good-law, bad-law, weight, overruling, abrogation, or limitation label is asserted, so the disclosed treatment assertion is consistent with the record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This standing verdict only approves the unverified-treatment label; it does not establish that the case is currently good law.\"],\"suggested_tightening\":\"Keep the unverified treatment label visible until a promoted record supplies treatment and progeny evidence.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is based on group_inventory.jsonl, the lake record, and the cached opinion text only.\"}",
   "summary": {
-    "at": "2026-07-10T02:38:34-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:26:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c58c69639b"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-valenzuela-bernal--110797.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-644196cc",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-644196cc.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:38:28.350211Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:29.130204Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:29.794703Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:30.737227Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:31.975385Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-valenzuela-bernal--110797"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-valenzuela-bernal--110797"
+    ],
+    "tokens": {
+      "input": 100342,
+      "output": 4733,
+      "source": "codex-events",
+      "total": 105075
+    },
+    "verdict_map": {
+      "47c1dec10475872f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b769cbb341cc1586": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c58c69639b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.5
   }
 }

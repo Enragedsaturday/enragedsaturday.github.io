@@ -1,22 +1,91 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/reid-v-georgia--110336.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "928e4c56e39660ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Reid v. Georgia, U.S. Supreme Court, decided 1980-06-30, with status verified_identity and expected_citation_found true.",
+          "The asserted citations exactly match lake.citations.all: 448 U.S. 438, 100 S. Ct. 2752, 65 L. Ed. 2d 890, and 1980 U.S. LEXIS 148."
+        ],
+        "residual_risks": [
+          "Official citation selection is null in the lake record, so this review only verifies the asserted citation list against the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f416f7420f9d7cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment review is outside Lens A, and no treatment defect is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity is unverified, as_of fields are null, varies_by_point is false, and the scope note states treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No good-law or currency conclusion is tested under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/reid-v-georgia--110336.json\",\"reviewed\":[{\"assertion_id\":\"928e4c56e39660ed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Reid v. Georgia, U.S. Supreme Court, decided 1980-06-30, with status verified_identity and expected_citation_found true.\",\"The asserted citations exactly match lake.citations.all: 448 U.S. 438, 100 S. Ct. 2752, 65 L. Ed. 2d 890, and 1980 U.S. LEXIS 148.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is null in the lake record, so this review only verifies the asserted citation list against the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6f416f7420f9d7cd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment review is outside Lens A, and no treatment defect is raised.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity is unverified, as_of fields are null, varies_by_point is false, and the scope note states treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law or currency conclusion is tested under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl under Lens A using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:33-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:21:11-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/reid-v-georgia--110336.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-9b579559",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9b579559.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:37:30.845053Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.324210Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.960409Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record reid-v-georgia--110336"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "reid-v-georgia--110336"
+    ],
+    "tokens": {
+      "input": 60134,
+      "output": 1621,
+      "source": "codex-events",
+      "total": 61755
+    },
+    "verdict_map": {
+      "6f416f7420f9d7cd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "928e4c56e39660ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 46.4
   }
 }

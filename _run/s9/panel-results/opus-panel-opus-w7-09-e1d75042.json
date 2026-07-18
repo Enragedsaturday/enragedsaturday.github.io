@@ -1,0 +1,116 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "13c10ddf9fea65b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 452 U.S. 692 confirmed by cached opinion: 'Michigan v. Summers' (Stevens, J.) with star pages *694 through *706, consistent with a case beginning at 692.",
+          "Lake citations.official selected_official=true, official_selection reason 'selected_rank_1'; well-formed U.S. Reports SCOTUS citation."
+        ],
+        "residual_risks": [
+          "Parallel/vendor cites (S. Ct., L. Ed. 2d, U.S. LEXIS, U.S.L.W.) are not independently checkable against the U.S.-Reports-only cached text, but all are facially well-formed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32736b8a3c83f224",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page ^pin-705 quotes 'Thus, for Fourth Amendment purposes, we hold that a warrant to search for contraband founded on probable cause implicitly carries with it the limited authority to detain the occupants of the premises while a proper search is conducted.' — verbatim match to cached opinion at star page *705 (footnote markers 20/21 omitted).",
+          "Pincite 705 is correct: the quoted holding sits between the *705 and *706 star markers.",
+          "The payload 'quote' field is a mis-captured span (frontmatter + Background + Issue ending at '## Rule Yes.'); its quote_fidelity='mismatch'/pinpoint_status='slip-only' are S8 pinpoint-capture artifacts, not a defect in the rendered wiki quote."
+        ],
+        "residual_risks": [
+          "Lake pinpoints[].quote for pin-705 stores the corrupted capture span (metadata-hygiene only; the rendered wiki quote and pincite are correct)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1009526a72751bd3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is facially correct for a landmark SCOTUS holding; no disclosed edge shows the subject case overruled by a higher or equal court on point.",
+          "Disclosed negative edges (State v. Tripp 'abrogated'; Riley v. California / Muldrow / Harte 'overruled') are proposed lane1_negative citator candidates with implausible or off-point/lower-court sources that cannot overrule Summers — explained noise.",
+          "composite_basis='migration-seed' — validity was independently seeded, not derived from the noisy edges."
+        ],
+        "residual_risks": [
+          "scope_note (Bailey v. United States spatial limit) post-dates the 1981 opinion and is absent from the cached text; corroborated only by the wiki's own Treatment section — uncontradicted but not independently confirmable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-429eb2bf61",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan v. Summers.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-09-e1d75042",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Summers"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1009526a72751bd3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "13c10ddf9fea65b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "32736b8a3c83f224": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-429eb2bf61",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

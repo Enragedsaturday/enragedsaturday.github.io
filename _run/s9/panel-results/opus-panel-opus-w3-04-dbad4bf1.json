@@ -1,0 +1,181 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3dcf3131d4291eca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Case identity and reporter/year confirmed in cached text: 'Cite as: 556 U. S. ____ (2009)' (lines 3409+), Opinion of the Court — consistent with official cite '556 U.S. 449' (2009), Cone v. Bell.",
+          "Official selection present; display '556 U.S. 449' matches the U.S. reporter volume/year in the slip."
+        ],
+        "residual_risks": [
+          "Exact reporter page 449 and the parallel cites (129 S. Ct. 1769; 173 L. Ed. 2d 701; 2009 U.S. LEXIS 3298) are not derivable from the unpaginated disclosed slip; volume/reporter/year and case identity are confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cdd9d82332e2ddb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Issue Whether Cone's *Brady* claim was procedurally barred from federal habeas review ... ## Rule *Brady* reaches evidence material to punishment.",
+          "locator_note": "Defect confined to lake pinpoints[].id=pin-469 quote field; the content page renders a verbatim-correct Brady quote at ^pin-469.",
+          "needs_cl": false,
+          "problem": "Stored pin-469 'quote' is a content-page scrape (contains '## Issue' and '## Rule' Markdown headers plus the wiki's own Issue/Rule narrative), not a verbatim opinion quotation. Payload self-classifies quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-469.quote with the language actually rendered at ^pin-469: '[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment.' (verified verbatim in cached text, lines 4227-4230).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Embedded '## Issue'/'## Rule' Markdown proves a content-page scrape, not source text.",
+          "The genuine rendered quote at ^pin-469 IS present verbatim in cached text (lines 4227-4230, citing Brady, 373 U.S. at 87)."
+        ],
+        "residual_risks": [
+          "Same first-pinpoint scrape pattern as Herlth pin-26 / Connally pin-250 / Barrett pin-528."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afdd25e3634e254e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-470b quote 'the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor's ethical or statutory obligations.' appears verbatim in cached text at footnote 15 (lines 4271-4273).",
+          "Pincite '470 n.15' corroborated: the quote sits inside footnote 15 (footnote marker '.15' at line 4258), so the 'n.15' designation is correct.",
+          "Payload quote_fidelity='mismatch' reflects failed page/fragment anchoring on the unpaginated slip, not a quote-text discrepancy."
+        ],
+        "residual_risks": [
+          "Exact reporter page 470 is reporter-supplied (Sources note discloses this) and not derivable from the unpaginated slip; the quote text and footnote-15 placement are confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eaea118567a41b4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-470 quote 'evidence is \"material\" within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.' appears verbatim in cached text (lines 4232-4236), attributed to United States v. Bagley.",
+          "Payload quote_fidelity='mismatch' reflects page/fragment-anchoring failure on the unpaginated slip, not a quote-text mismatch."
+        ],
+        "residual_risks": [
+          "Exact reporter page 470 is reporter-supplied and not derivable from the unpaginated disclosed slip; quote text is confirmed verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bb73638b9bb1f13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law: no CONFIRMED negative event on the disclosed record — the lane1 (3) and lane2 (25) proposed_negative_events are all 'proposed':true, audit_needed:true, and none is applied to field_i.",
+          "Proposed edges are the recognizable citing-case-status false-positive class: e.g., United States v. Ulbricht (overruled), State v. WARRIOR (overruled), Nicole Harris v. Sheryl Thompson / Jackson v. Danberg (abrogated) — each is describing its OWN treatment (field_iii='mentioned'), not overruling Cone.",
+          "Cone v. Bell (2009 Brady/materiality) is not shown by any disclosed evidence to be overruled or abrogated."
+        ],
+        "residual_risks": [
+          "R15 treatment audit is unresolved (audit_needed=true, cap_hit=true on lanes 1-2) while field_i rests on a migration-seed; the content page's 'No negative treatment' is definitive ahead of that audit."
+        ],
+        "suggested_tightening": "Close the R15 audit (confirm the proposed edges as FP) so good_law is derivation-backed rather than seed-only with candidates pending.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-998ca3cc93",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6020431e41",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Cone v. Bell.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-04-dbad4bf1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cone v. Bell"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1bb73638b9bb1f13": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3dcf3131d4291eca": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cdd9d82332e2ddb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "afdd25e3634e254e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eaea118567a41b4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-12b39a2c30",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-998ca3cc93",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6020431e41",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

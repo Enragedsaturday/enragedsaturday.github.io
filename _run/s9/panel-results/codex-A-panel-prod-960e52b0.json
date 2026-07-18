@@ -1,22 +1,89 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Burgess.json",
+    "lens": "A",
+    "notes": "No support, quote_fidelity, pincite, or black_letter assertion rows appeared in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "8343c0f7378c6e0b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id United States v. Burgess.",
+          "The payload's display and official citation, 576 F.3d 1078, match lake.citations.official and lake.citations.display.",
+          "The payload's parallel and vendor-neutral citations match lake.citations.parallel, lake.citations.vendor_neutral, and lake.citations.all.",
+          "The court/year shown on the built page, 10th Cir. and 2009, match lake.identity.court and lake.identity.year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b3b021a1bb94e14",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not evaluate treatment currency or good-law status.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical."
+        ],
+        "residual_risks": [
+          "Treatment accuracy is reserved for Lens B and was not substantively reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Burgess.json\",\"reviewed\":[{\"assertion_id\":\"8343c0f7378c6e0b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for record_id United States v. Burgess.\",\"The payload's display and official citation, 576 F.3d 1078, match lake.citations.official and lake.citations.display.\",\"The payload's parallel and vendor-neutral citations match lake.citations.parallel, lake.citations.vendor_neutral, and lake.citations.all.\",\"The court/year shown on the built page, 10th Cir. and 2009, match lake.identity.court and lake.identity.year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2b3b021a1bb94e14\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not evaluate treatment currency or good-law status.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy is reserved for Lens B and was not substantively reviewed here.\"],\"suggested_tightening\":null}],\"notes\":\"No support, quote_fidelity, pincite, or black_letter assertion rows appeared in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:31-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:46:50-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/United States v. Burgess.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-960e52b0",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-960e52b0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:30:26.439442Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:26.919106Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:27.523737Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:28.328053Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:29.615470Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Burgess"
+    ],
+    "tokens": {
+      "input": 119777,
+      "output": 3444,
+      "source": "codex-events",
+      "total": 123221
+    },
+    "verdict_map": {
+      "2b3b021a1bb94e14": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8343c0f7378c6e0b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 71.8
   }
 }

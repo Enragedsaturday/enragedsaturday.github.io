@@ -1,11 +1,58 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "47002802696d3238",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "locator record_id=illinois-v-fisher--5141053; lake record is a stub with verified identity only",
+          "needs_cl": true,
+          "problem": "The disclosed lake record verifies an Illinois v. Fisher identity, but it does not verify that the authority is currently live law; treatment is explicitly unverified and progeny are not derived. The assertion payload also carries citations not present in the lake record for this re-keyed SCOTUS authority.",
+          "proposed_fix": "Do not present this as a live/current authority until treatment and progeny are derived. Align the citation metadata with the lake record's SCOTUS citation set, led by 540 U.S. 544, or obtain the missing cited-authority record if 860 A.2d 363 / 2004 WL 2445390 is intended.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, with as_of_content and as_of_treatment null.",
+          "Lake progeny has rows_cached 0 and outbound_opinion_edges empty, so no disclosed treatment/progeny basis establishes live-law status.",
+          "Lake citations for this re-keyed authority are 540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, and 2004 U.S. LEXIS 1412; the payload cites 860 A.2d 363 and 2004 WL 2445390."
+        ],
+        "residual_risks": [
+          "A later promoted treatment record could validate the authority, but that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Separate verified identity from live-law status, and block current-law use for records whose treatment field is unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "56eacd28d974f9ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The assertion reports field_i_validity as unverified, matching the lake treatment field.",
+          "The assertion's null as_of fields and varies_by_point=false match the lake treatment fields.",
+          "The scope note matches the lake record: treatment and progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "This is not an affirmative good-law determination; it only verifies that treatment is unverified in the disclosed record."
+        ],
+        "suggested_tightening": "Keep the unverified treatment label prominent wherever this authority appears.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/illinois-v-fisher--5141053.json\",\"reviewed\":[{\"assertion_id\":\"47002802696d3238\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed lake record verifies an Illinois v. Fisher identity, but it does not verify that the authority is currently live law; treatment is explicitly unverified and progeny are not derived. The assertion payload also carries citations not present in the lake record for this re-keyed SCOTUS authority.\",\"severity\":\"high\",\"proposed_fix\":\"Do not present this as a live/current authority until treatment and progeny are derived. Align the citation metadata with the lake record's SCOTUS citation set, led by 540 U.S. 544, or obtain the missing cited-authority record if 860 A.2d 363 / 2004 WL 2445390 is intended.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"locator record_id=illinois-v-fisher--5141053; lake record is a stub with verified identity only\"},\"reasons\":[\"Lake treatment.field_i_validity is unverified, with as_of_content and as_of_treatment null.\",\"Lake progeny has rows_cached 0 and outbound_opinion_edges empty, so no disclosed treatment/progeny basis establishes live-law status.\",\"Lake citations for this re-keyed authority are 540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, and 2004 U.S. LEXIS 1412; the payload cites 860 A.2d 363 and 2004 WL 2445390.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A later promoted treatment record could validate the authority, but that evidence is not disclosed here.\"],\"suggested_tightening\":\"Separate verified identity from live-law status, and block current-law use for records whose treatment field is unverified.\"},{\"assertion_id\":\"56eacd28d974f9ba\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion reports field_i_validity as unverified, matching the lake treatment field.\",\"The assertion's null as_of fields and varies_by_point=false match the lake treatment fields.\",\"The scope note matches the lake record: treatment and progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not an affirmative good-law determination; it only verifies that treatment is unverified in the disclosed record.\"],\"suggested_tightening\":\"Keep the unverified treatment label prominent wherever this authority appears.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:36:38-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:18:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
@@ -16,23 +63,43 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-add5b3fc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "no content page for lake record illinois-v-fisher--5141053"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "illinois-v-fisher--5141053"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 98867,
+      "output": 4103,
+      "source": "codex-events",
+      "total": 102970
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "47002802696d3238": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "56eacd28d974f9ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8233ea44e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 91.4
   }
 }

@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Murray v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, or pincite findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "ed30276eea9bbc7f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified for Murray v. United States, with SCOTUS identity and date_decided 1988-06-27.",
+          "The official citation selected in the lake record is 487 U.S. 533, matching the asserted display citation.",
+          "Currency angle survives because the lake treatment field marks the case good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation lanes are capped and marked audit_needed, so the disclosed record is not an exhaustive independent citator audit beyond the lake judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8305e99c6875d81b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity defect is raised here.",
+          "The only treatment/currency content embedded in this harvested text, Binding — SCOTUS and Treatment: good as of 2026-06-30, matches the lake identity and treatment fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b21b13e1d073f02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity defect is raised here.",
+          "This assertion does not itself make a treatment or currency claim that the disclosed treatment record contradicts."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad2ca900a3322c31",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Murray v. United States__6a8b5f.json treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law call itself matches the lake treatment judgment, but the page's unqualified 'No negative treatment' wording overstates the disclosed record because treatment derivation lanes are marked audit_needed with proposed negative events and cap hits.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but replace any unqualified 'No negative treatment' wording with a narrower statement that the lake treatment field marks Murray good law and no accepted point override is recorded, while proposed negative-lane audit items remain unresolved.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed treatment derivation also reports cap_hit true and audit_needed true in negative/top-cited lanes, with proposed_negative_events, so an absolute no-negative-treatment statement is not fully verified from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The disclosed record does not contain completed audit results for the flagged proposed negative events."
+        ],
+        "suggested_tightening": "State the treatment as: 'Lake treatment marks Murray good law as of 2026-06-30; no accepted point-specific negative override is recorded in this lake record.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Murray v. United States.json\",\"reviewed\":[{\"assertion_id\":\"ed30276eea9bbc7f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record status is verified for Murray v. United States, with SCOTUS identity and date_decided 1988-06-27.\",\"The official citation selected in the lake record is 487 U.S. 533, matching the asserted display citation.\",\"Currency angle survives because the lake treatment field marks the case good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation lanes are capped and marked audit_needed, so the disclosed record is not an exhaustive independent citator audit beyond the lake judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8305e99c6875d81b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity defect is raised here.\",\"The only treatment/currency content embedded in this harvested text, Binding — SCOTUS and Treatment: good as of 2026-06-30, matches the lake identity and treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy remain for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9b21b13e1d073f02\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity defect is raised here.\",\"This assertion does not itself make a treatment or currency claim that the disclosed treatment record contradicts.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy remain for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ad2ca900a3322c31\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call itself matches the lake treatment judgment, but the page's unqualified 'No negative treatment' wording overstates the disclosed record because treatment derivation lanes are marked audit_needed with proposed negative events and cap hits.\",\"severity\":\"low\",\"proposed_fix\":\"Keep good_law as of 2026-06-30, but replace any unqualified 'No negative treatment' wording with a narrower statement that the lake treatment field marks Murray good law and no accepted point override is recorded, while proposed negative-lane audit items remain unresolved.\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Murray v. United States__6a8b5f.json treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The disclosed treatment derivation also reports cap_hit true and audit_needed true in negative/top-cited lanes, with proposed_negative_events, so an absolute no-negative-treatment statement is not fully verified from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not contain completed audit results for the flagged proposed negative events.\"],\"suggested_tightening\":\"State the treatment as: 'Lake treatment marks Murray good law as of 2026-06-30; no accepted point-specific negative override is recorded in this lake record.'\"}],\"notes\":\"Lens B only; no support, quote-fidelity, or pincite findings made.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:18:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-323a27ac1e"
+    ],
     "group_id": "_overhaul2/lake/cases/Murray v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d322de11.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Murray v. United States"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 314160,
+      "output": 6128,
+      "source": "codex-events",
+      "total": 320288
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.3
+    "verdict_map": {
+      "8305e99c6875d81b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b21b13e1d073f02": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad2ca900a3322c31": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ed30276eea9bbc7f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-323a27ac1e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 172.5
   }
 }

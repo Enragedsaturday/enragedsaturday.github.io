@@ -1,0 +1,125 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "cebe4181b0310c17",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS opinion is unmistakably United States v. Miller (bank-records / third-party doctrine; cites California Bankers Assn. v. Shultz and United States v. White) — 425 U.S. 435 (1976).",
+          "Official cite '425 U.S. 435' is consistent with the content page, lake cluster 109433, and cluster.citations[]."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "575533c3c66c09d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-442 quote 'All of the documents obtained, including financial statements and deposit slips, contain only information voluntarily conveyed to the banks and exposed to their employees in the ordinary course of business.' appears VERBATIM in the cached opinion (para b512-6).",
+          "The sentence sits between the *442 and *443 star markers, so the pincite '425 U.S. at 442' is correct.",
+          "Payload quote_fidelity='mismatch'/'slip-only' reflects a corrupted stored quote span (it captured the page front-matter/markdown, not the pincite sentence) — an extraction artifact, not a page misquote."
+        ],
+        "residual_risks": [
+          "Stored pin-442 'quote' field is a page-markdown blob, so automated star-verify could not match it even though the rendered page quote is faithful."
+        ],
+        "suggested_tightening": "Repair the pin-442 stored quote to the actual pincite sentence so it star-verifies at 442.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abb3fa3c4f84b539",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-443 quote 'The depositor takes the risk, in revealing his affairs to another, that the information will be conveyed by that person to the Government.' matches the cached opinion VERBATIM (para b513-5), immediately after the *443 star marker.",
+          "Payload correctly reports quote_fidelity='matched', star-verified at 443; pincite 'Id. at 443' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9802e5b1273d202e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Composite field_i_validity='good_law' matches lake and content; Miller is foundational third-party-doctrine precedent.",
+          "Disclosed treatment edges labeled 'overruled'/'abrogated'/'questioned' (including the Carpenter edge) are ALL proposed:true, unadjudicated auto-candidates (journal_ref lane1_negative / lane2_top_cited) — not adjudicated negative treatment; the scope_note correctly states Carpenter declined to overrule Miller.",
+          "Current good-law CURRENCY cannot be independently confirmed from the inlined evidence (no Carpenter opinion or authoritative citator inlined); no disclosed evidence contradicts good_law, so no defect is substantiated (refusing to fabricate one)."
+        ],
+        "residual_risks": [
+          "good_law currency rests on non-inlined S2 derivation; the proposed negative edges remain unreconciled in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Miller.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-02-bf3ad59e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Miller"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "575533c3c66c09d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9802e5b1273d202e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "abb3fa3c4f84b539": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cebe4181b0310c17": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

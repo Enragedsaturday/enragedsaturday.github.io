@@ -1,13 +1,120 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Johns.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity findings are reserved to lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "0c1938dc84e98c24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified and identity confirms United States v. Johns, U.S. Supreme Court, decided 1985-01-21, docket 83-1625.",
+          "The lake official citation is 469 U.S. 478 and matches the inventory display/official citation.",
+          "No disclosed final treatment field says the authority has been overruled or superseded; treatment-audit risk is addressed under assertion 1e20de2cfc71d5c6."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative/audit-needed data, so live-law confidence depends on resolving the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76393ddf294107f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; support and quote matching are outside lens B.",
+          "The row makes no independent treatment, good-law, or authority-weight assertion beyond the cited Johns record."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a796c1ad338609c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; support and quote matching are outside lens B.",
+          "Any treatment language embedded in the harvested quote text is addressed only through the dedicated treatment assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba3fdad4af5d7dda",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; support and quote matching are outside lens B.",
+          "The row does not add a separate currency or treatment claim for Johns."
+        ],
+        "residual_risks": [
+          "Quote fidelity was not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e20de2cfc71d5c6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake treatment.derivation.lane1_negative and lane2_top_cited; content_page Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The page asserts a clean good-law treatment call as of 2026-06-30, but the disclosed treatment record does not verify that call to adversarial certainty: the treatment is migration-seeded, the scope note says S2 may downgrade it, and the derivation records audit-needed proposed negative events with cap hits.",
+          "proposed_fix": "Do not state an unqualified good/no-negative treatment call as of 2026-06-30. Use an audit-pending treatment label, or qualify it as no confirmed negative treatment in the disclosed lake record pending R15 treatment audit.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake field_i_validity is good_law, but provenance shows treatment.field_i_validity came from migration/frontmatter rather than a completed current-treatment audit.",
+          "The disclosed derivation records audit_needed true in lane1_negative and lane2_top_cited, cap_hit true in both, and proposed_negative_events of 13 and 25.",
+          "The disclosed edges are all proposed and field_iii is mentioned, so they do not prove an overruling from the disclosed record; they do prevent verifying the page's categorical no-negative/current-good-law statement."
+        ],
+        "residual_risks": [
+          "Full text or completed audit of the proposed progeny edges is needed to determine whether any edge actually limits Johns.",
+          "Because the negative-search lanes hit caps, the disclosed treatment search is bounded rather than exhaustive."
+        ],
+        "suggested_tightening": "Replace categorical good/no-negative wording with an audit-pending treatment statement until the R15 audit resolves the proposed negative events.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Johns.json\",\"reviewed\":[{\"assertion_id\":\"0c1938dc84e98c24\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record status is verified and identity confirms United States v. Johns, U.S. Supreme Court, decided 1985-01-21, docket 83-1625.\",\"The lake official citation is 469 U.S. 478 and matches the inventory display/official citation.\",\"No disclosed final treatment field says the authority has been overruled or superseded; treatment-audit risk is addressed under assertion 1e20de2cfc71d5c6.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative/audit-needed data, so live-law confidence depends on resolving the treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"76393ddf294107f0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity row; support and quote matching are outside lens B.\",\"The row makes no independent treatment, good-law, or authority-weight assertion beyond the cited Johns record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a796c1ad338609c2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity row; support and quote matching are outside lens B.\",\"Any treatment language embedded in the harvested quote text is addressed only through the dedicated treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ba3fdad4af5d7dda\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity row; support and quote matching are outside lens B.\",\"The row does not add a separate currency or treatment claim for Johns.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity was not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1e20de2cfc71d5c6\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page asserts a clean good-law treatment call as of 2026-06-30, but the disclosed treatment record does not verify that call to adversarial certainty: the treatment is migration-seeded, the scope note says S2 may downgrade it, and the derivation records audit-needed proposed negative events with cap hits.\",\"severity\":\"high\",\"proposed_fix\":\"Do not state an unqualified good/no-negative treatment call as of 2026-06-30. Use an audit-pending treatment label, or qualify it as no confirmed negative treatment in the disclosed lake record pending R15 treatment audit.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake treatment.derivation.lane1_negative and lane2_top_cited; content_page Treatment & subsequent history\"},\"reasons\":[\"The lake field_i_validity is good_law, but provenance shows treatment.field_i_validity came from migration/frontmatter rather than a completed current-treatment audit.\",\"The disclosed derivation records audit_needed true in lane1_negative and lane2_top_cited, cap_hit true in both, and proposed_negative_events of 13 and 25.\",\"The disclosed edges are all proposed and field_iii is mentioned, so they do not prove an overruling from the disclosed record; they do prevent verifying the page's categorical no-negative/current-good-law statement.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Full text or completed audit of the proposed progeny edges is needed to determine whether any edge actually limits Johns.\",\"Because the negative-search lanes hit caps, the disclosed treatment search is bounded rather than exhaustive.\"],\"suggested_tightening\":\"Replace categorical good/no-negative wording with an audit-pending treatment statement until the R15 audit resolves the proposed negative events.\"}],\"notes\":\"Lens B only; support and quote-fidelity findings are reserved to lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:47-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:57:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c9839ea0aa",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4dbf285748",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8cb4b1ee80"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Johns.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +123,70 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e440856d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Johns"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 274119,
+      "output": 8429,
+      "source": "codex-events",
+      "total": 282548
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "0c1938dc84e98c24": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e20de2cfc71d5c6": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "76393ddf294107f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a796c1ad338609c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ba3fdad4af5d7dda": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c9839ea0aa",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4dbf285748",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8cb4b1ee80",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 165.1
   }
 }

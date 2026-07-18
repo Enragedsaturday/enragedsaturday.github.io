@@ -1,0 +1,190 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "57c5c88515c7f56c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-slip10 quote reproduced verbatim from the majority opinion (spans slip pp. 10-11): 'We repeat today what we have held before: An officer may enter a home without a warrant if he has \"an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.\" ... The officers' entry satisfied that test.'",
+          "the '. . .' ellipsis correctly elides only the citation 'Brigham City, 547 U.S., at 400.'",
+          "passage straddles the *10/*11 page break exactly as pincited (slip op. 10-11)"
+        ],
+        "residual_risks": [
+          "lake record carries a stale quote_fidelity:'mismatch' flag on a quote that is in fact faithful (ellipsis-insensitive matcher artifact)"
+        ],
+        "suggested_tightening": "re-run the matcher with citation-elision tolerance so pin-slip10 flips to 'matched'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8689873972a646ef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But Brigham City did not adopt Terry's reasonable-suspicion standard for home entries, as both the State of Montana and the United States as amicus curiae acknowledge. ... Rather, Brigham City formulated its own standard for dealing with household emergencies-again, whether an officer has \"an objectively reasonable basis for believing\" that an occupant is seriously injured or imminently threatened with such harm.",
+          "locator_note": "cached opinion at page/star label 7; content page ^pin-slip7 renders the correct quote, so the defect is confined to the lake pinpoint record",
+          "needs_cl": false,
+          "problem": "Stored pin-slip7 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('doctrine. ## Issue Whether the warrantless home entry ... ## Rule Brigham City's standard governs ... The Court declined to lower it to reasonable suspicion:'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+          "proposed_fix": "Re-harvest pin-slip7 to the actual page-7 passage that the content page already renders and cites.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+          "no such text exists in the disclosed cached opinion",
+          "the genuine page-7 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+        ],
+        "residual_risks": [
+          "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+        ],
+        "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e457a56f153a9c2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-slip8 quote reproduced verbatim from slip op. 8: 'We decline Case's invitation to put a new probable-cause spin onto Brigham City. ... So Brigham City adopted a different approach. Rather than strain to relate probable-cause decisions to emergency-aid situations, we asked simply whether an officer had \"an objectively reasonable basis for believing\" that his entry was direly needed to prevent or deal with serious harm.'",
+          "'. . .' ellipsis fairly elides the intervening Von Raab/O'Connor/Gates string discussion; both retained segments are exact and both sit on slip op. page 8"
+        ],
+        "residual_risks": [
+          "record's quote_fidelity:'mismatch' flag is a false positive (multi-sentence ellipsis)"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eb26c3420a1d930e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-slip9 quote reproduced verbatim from slip op. 9: 'an emergency-aid entry provides no basis to search the premises beyond what is reasonably needed to deal with the emergency while maintaining the officers' safety. But we assess the reasonableness of that limited entry on its own terms, rather than through the lens generally used to consider investigative activity.'",
+          "partial quote merely drops the lead-in 'we note that'; retained text exact and on page 9 as pincited"
+        ],
+        "residual_risks": [
+          "record's quote_fidelity:'mismatch' flag is a false positive"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56af28724b6898d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note facts all confirmed by the cached syllabus/opinion: decided January 14, 2026; Kagan, J. for a unanimous Court; Sotomayor, J. and Gorsuch, J. filed concurring opinions",
+          "good_law consistent with the disclosed derivation/progeny: 0 indexed citing opinions and 0 proposed negative events across all three lanes for this Jan-2026 decision",
+          "varies_by_point:false matches the single emergency-aid holding"
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 currency for a slip opinion still 'subject to formal revision' -- normal recency caveat already noted in scope_note"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d991d2b5b7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-37e7e8396d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ec1192174f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Case v. Montana.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-09-2f1b3c3b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Case v. Montana"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "56af28724b6898d4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "57c5c88515c7f56c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8689873972a646ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e457a56f153a9c2e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb26c3420a1d930e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d991d2b5b7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-398461c083",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-37e7e8396d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ec1192174f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

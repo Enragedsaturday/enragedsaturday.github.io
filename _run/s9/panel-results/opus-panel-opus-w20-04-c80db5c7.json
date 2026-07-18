@@ -1,0 +1,142 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3f2fb5d19fb2847f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Brennan, J.) carries reporter page-labels *220 through *243 and internal cite '358 F. 2d 557, 560', consistent with a U.S. Reports opinion beginning at 388 U.S. 218.",
+          "Lake record cluster_id 107486 / lead_opinion 9423472 and official_selection 'selected_rank_1' -> 388 U.S. 218 match the payload; official_selection_present=true is confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b6b4ca01d560acf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-242 quote 'pending a hearing to determine whether the in-court identifications had an independent source.' appears verbatim on page 242 of the cached opinion ('...to vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether... harmless error').",
+          "The *242 star-page (label 242) opens that paragraph, so the 388 U.S. at 242 pincite is correct; the payload 'quote_fidelity: mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a098d7c8725bed3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual content-page pin-237 quote ('there can be little doubt that for Wade the post-indictment lineup was a critical stage of the prosecution at which he was as much entitled to such aid [of counsel] ... as at the trial itself') is verbatim on page 237 of the cached opinion (line beginning at *237, citing Powell v. Alabama, 287 U.S. 45, 57).",
+          "The payload 'quote' string is not that quote: it is a mis-extracted front-matter/Background window ending at the ## Rule colon; the real pincited holding is faithful, so the on-page quotation survives attack."
+        ],
+        "residual_risks": [
+          "Payload quote field for pin-237 is an extractor window artifact, not the pincited text; any downstream check keyed off the raw payload string would mis-signal a mismatch."
+        ],
+        "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a38e10b60bb143f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is the correct null for a 1967 SCOTUS majority; nothing in the disclosed opinion or lake record genuinely refutes continuing validity.",
+          "Disclosed treatment edges are all 'proposed: true' candidate signals and facially noisy (e.g., Bivens/Schneckloth/Teague tagged 'overruled' of Wade is impossible), so they do not support a downgrade.",
+          "scope_note (Kirby limits to post-charge; Ash no counsel at photo arrays) is accurate subsequent-history but the limiting cases are not in the disclosed record."
+        ],
+        "residual_risks": [
+          "Kirby/Ash limitation and 'still good law today' currency are not machine-verifiable from the disclosed evidence (only the 1967 opinion and proposed-edge noise are inlined)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-225ce2619a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-86cd475dd1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Wade.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-04-c80db5c7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Wade"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0b6b4ca01d560acf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a38e10b60bb143f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "3f2fb5d19fb2847f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a098d7c8725bed3f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-225ce2619a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-86cd475dd1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

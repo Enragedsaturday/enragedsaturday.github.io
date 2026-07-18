@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/National Treasury Employees Union v. Von Raab.md",
+    "lens": "A",
+    "notes": "Reviewed all five rows in group_inventory.jsonl. The inventory contained no separate quote_fidelity, pincite, or black_letter assertion rows.",
+    "reviewed": [
+      {
+        "assertion_id": "3b9c47c09fe1d265",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name \"National Treasury Employees Union v. Von Raab\", court \"U.S. Supreme Court\", date_decided \"1989-03-21\", and year 1989.",
+          "Lake citations confirm official cite \"489 U.S. 656\", vendor-neutral cite \"1989 U.S. LEXIS 6033\", and the listed parallel citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1106cd0cdcb84a3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly frames the case as a Fourth Amendment special-needs balancing case beyond ordinary law enforcement.",
+          "The opinion applies and refines that rule to suspicionless Customs employee drug testing, and the lake progeny fields show substantial later citation activity supporting a key-case role."
+        ],
+        "residual_risks": [
+          "The files do not define the corpus's home-role taxonomy, so this review verifies support from the disclosed opinion and lake metadata only."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70ce840026dcae0f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the testing of these employees is reasonable under the Fourth Amendment.",
+          "locator_note": "content_page.md frontmatter field `holding`",
+          "needs_cl": false,
+          "problem": "The core holding is supported, but the asserted holding field is truncated and incomplete because it ends with \"under the…\" instead of stating the legal standard.",
+          "proposed_fix": "Complete the holding: \"Suspicionless drug testing of Customs employees seeking drug-interdiction or firearm-carrying positions is reasonable under the Fourth Amendment.\" Optionally add that the classified-materials category was remanded on an inadequate record.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion upholds testing for employees directly involved in drug interdiction or required to carry firearms.",
+          "The same opinion does not decide the classified-materials category and remands that part, so the holding should remain limited to the interdiction/firearm categories."
+        ],
+        "residual_risks": [
+          "The ellipsis may have been intended as display truncation, but it appears in the disclosed built page as the stored holding value."
+        ],
+        "suggested_tightening": "Use the Court's narrower phrasing: employees who apply for promotion or transfer to positions directly involving illegal-drug interdiction or requiring firearm carrying.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6d7d970ffe1e22f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment fields match the asserted values: field_i_validity \"good_law\", as_of_content \"1989-03-21\", as_of_treatment \"2026-06-30\", composite_basis \"migration-seed\", and scope_note \"Special-needs suspicionless-testing precedent; good law.\"",
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec4c5b8cee98118e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as \"U.S. Supreme Court\" with court_level \"scotus\".",
+          "A Supreme Court case is correctly labeled \"Binding — SCOTUS\" for federal search-and-seizure reference purposes."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/National Treasury Employees Union v. Von Raab.md\",\"reviewed\":[{\"assertion_id\":\"3b9c47c09fe1d265\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms case_name \\\"National Treasury Employees Union v. Von Raab\\\", court \\\"U.S. Supreme Court\\\", date_decided \\\"1989-03-21\\\", and year 1989.\",\"Lake citations confirm official cite \\\"489 U.S. 656\\\", vendor-neutral cite \\\"1989 U.S. LEXIS 6033\\\", and the listed parallel citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1106cd0cdcb84a3b\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion expressly frames the case as a Fourth Amendment special-needs balancing case beyond ordinary law enforcement.\",\"The opinion applies and refines that rule to suspicionless Customs employee drug testing, and the lake progeny fields show substantial later citation activity supporting a key-case role.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The files do not define the corpus's home-role taxonomy, so this review verifies support from the disclosed opinion and lake metadata only.\"],\"suggested_tightening\":null},{\"assertion_id\":\"70ce840026dcae0f\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core holding is supported, but the asserted holding field is truncated and incomplete because it ends with \\\"under the…\\\" instead of stating the legal standard.\",\"severity\":\"medium\",\"proposed_fix\":\"Complete the holding: \\\"Suspicionless drug testing of Customs employees seeking drug-interdiction or firearm-carrying positions is reasonable under the Fourth Amendment.\\\" Optionally add that the classified-materials category was remanded on an inadequate record.\",\"evidence_quote\":\"We hold that the testing of these employees is reasonable under the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter field `holding`\"},\"reasons\":[\"The opinion upholds testing for employees directly involved in drug interdiction or required to carry firearms.\",\"The same opinion does not decide the classified-materials category and remands that part, so the holding should remain limited to the interdiction/firearm categories.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The ellipsis may have been intended as display truncation, but it appears in the disclosed built page as the stored holding value.\"],\"suggested_tightening\":\"Use the Court's narrower phrasing: employees who apply for promotion or transfer to positions directly involving illegal-drug interdiction or requiring firearm carrying.\"},{\"assertion_id\":\"d6d7d970ffe1e22f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake treatment fields match the asserted values: field_i_validity \\\"good_law\\\", as_of_content \\\"1989-03-21\\\", as_of_treatment \\\"2026-06-30\\\", composite_basis \\\"migration-seed\\\", and scope_note \\\"Special-needs suspicionless-testing precedent; good law.\\\"\",\"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ec4c5b8cee98118e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the court as \\\"U.S. Supreme Court\\\" with court_level \\\"scotus\\\".\",\"A Supreme Court case is correctly labeled \\\"Binding — SCOTUS\\\" for federal search-and-seizure reference purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five rows in group_inventory.jsonl. The inventory contained no separate quote_fidelity, pincite, or black_letter assertion rows.\"}",
   "summary": {
-    "at": "2026-07-10T02:48:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:42:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a9d182a708"
+    ],
     "group_id": "content/cases/National Treasury Employees Union v. Von Raab.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +107,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2e8c0b8b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "National Treasury Employees Union v. Von Raab"
     ],
     "tokens": {
-      "input": 830,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 830
+      "input": 156555,
+      "output": 8076,
+      "source": "codex-events",
+      "total": 164631
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "1106cd0cdcb84a3b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b9c47c09fe1d265": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70ce840026dcae0f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d6d7d970ffe1e22f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec4c5b8cee98118e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9d182a708",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.3
   }
 }

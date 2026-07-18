@@ -1,22 +1,208 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Peters v. New York.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support and quote-fidelity only as to the disclosed files; no external search was used.",
+    "reviewed": [
+      {
+        "assertion_id": "4d19e3c05400ebea",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "input caption does not match CL canonical caption",
+          "locator_note": "lake identity canonical_name_match=false; official citation remains 392 U.S. 40.",
+          "needs_cl": false,
+          "problem": "The citation, court, and year match the lake record, but the disclosed lake identity warns that the canonical CourtListener caption is Sibron v. New York rather than the input caption Peters v. New York. The page should clarify that Peters is the No. 74 disposition within the consolidated Sibron opinion.",
+          "proposed_fix": "Keep 392 U.S. 40 (1968), but cite/title it as Peters v. New York, decided in Sibron v. New York, 392 U.S. 40, or otherwise disclose the consolidated/canonical-caption mismatch.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake official citation is 392 U.S. 40, court is U.S. Supreme Court, and date_decided is 1968-06-10.",
+          "Lake identity records input_case_name as Peters v. New York but case_name_full as Sibron v. New York."
+        ],
+        "residual_risks": [
+          "Caption handling for consolidated Supreme Court opinions may be a corpus convention issue."
+        ],
+        "suggested_tightening": "Add a short parenthetical that Peters was decided in the same consolidated opinion captioned Sibron v. New York.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78d34ead566c3070",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When the policeman grabbed Peters by the collar, he abruptly “seized” him and curtailed his freedom of movement on the basis of probable cause to believe that he was engaged in criminal activity.",
+          "locator_note": "pin-67; text page label *67 in paragraph b109-5.",
+          "needs_cl": false,
+          "problem": "The passage is located at page 67 and supports the proposition, but the displayed quote is not character-identical to the opinion text; it stitches the sentence with ellipses and converts the Court's internal double quotation marks around seized into single quotation marks. The lake also flags quote_fidelity as mismatch.",
+          "proposed_fix": "Either quote the exact page-67 language with the Court's quotation marks and omitted material handled explicitly, or paraphrase the stitched sentence and reserve quotation marks for exact fragments.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The text contains the cited arrest/search-incident passage at page 67.",
+          "The lake pinpoint for pin-67 itself records quote_fidelity: mismatch."
+        ],
+        "residual_risks": [
+          "This is a quote-formatting defect, not a support defect."
+        ],
+        "suggested_tightening": "Use a shorter exact quote from page 67 and paraphrase the omitted portions.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d3244710c4397a4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters on the stairway between the fourth and fifth floors of the apartment building, he had probable cause to arrest him for attempted burglary.",
+          "locator_note": "pin-66; correct passage is in text page label *66, paragraph b108-7.",
+          "needs_cl": false,
+          "problem": "pin-66's stored quote is not the opinion passage cited at 392 U.S. 66. It appears to reproduce the built page header/background/issue/rule text rather than the Court's words.",
+          "proposed_fix": "Replace pin-66 with the actual opinion text beginning: We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters...",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page frontmatter/header and narrative background, not the Supreme Court opinion.",
+          "The correct page-66 opinion passage is present in text/Peters v. New York__cb52a0.txt and differs completely from the payload."
+        ],
+        "residual_risks": [
+          "The visible content-page quote after the Rule heading is supported; the defect is the harvested/stored pinpoint quote."
+        ],
+        "suggested_tightening": "Regenerate pin-66 from the opinion text, not from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a65e54188036ba91",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "deliberately furtive actions and flight at the approach of strangers or law officers are strong indicia of <em>mens rea, </em>and when coupled with specific knowledge on the part of the officer relating the suspect to the evidence of crime",
+          "locator_note": "pin-66b; text page labels *66-*67, paragraph b108-7.",
+          "needs_cl": false,
+          "problem": "The quoted language is substantively the page-66 to page-67 opinion language, but it is not character-faithful to the raw disclosed text because the opinion has HTML emphasis and places the comma with mens rea, while the page uses Markdown emphasis as *mens rea*, and the lake flags mismatch.",
+          "proposed_fix": "Normalize the quote to the rendered words exactly, e.g. mens rea, and, or adjust the Markdown emphasis so the comma placement matches the source before marking quote_fidelity as verified.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same words appear in the opinion at the cited page span.",
+          "The only disclosed fidelity defect is formatting/punctuation around the emphasized mens rea phrase; lake records quote_fidelity: mismatch."
+        ],
+        "residual_risks": [
+          "Renderer conventions for Markdown emphasis may determine whether this is treated as a mechanical formatting issue."
+        ],
+        "suggested_tightening": "Use plain rendered text for the quote or include the comma inside the emphasized phrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "569c10ba4843ec39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The payload matches the disclosed lake treatment field_i_validity good_law and as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment review belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Peters v. New York.json\",\"reviewed\":[{\"assertion_id\":\"4d19e3c05400ebea\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The citation, court, and year match the lake record, but the disclosed lake identity warns that the canonical CourtListener caption is Sibron v. New York rather than the input caption Peters v. New York. The page should clarify that Peters is the No. 74 disposition within the consolidated Sibron opinion.\",\"severity\":\"low\",\"proposed_fix\":\"Keep 392 U.S. 40 (1968), but cite/title it as Peters v. New York, decided in Sibron v. New York, 392 U.S. 40, or otherwise disclose the consolidated/canonical-caption mismatch.\",\"evidence_quote\":\"input caption does not match CL canonical caption\",\"needs_cl\":false,\"locator_note\":\"lake identity canonical_name_match=false; official citation remains 392 U.S. 40.\"},\"reasons\":[\"Lake official citation is 392 U.S. 40, court is U.S. Supreme Court, and date_decided is 1968-06-10.\",\"Lake identity records input_case_name as Peters v. New York but case_name_full as Sibron v. New York.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Caption handling for consolidated Supreme Court opinions may be a corpus convention issue.\"],\"suggested_tightening\":\"Add a short parenthetical that Peters was decided in the same consolidated opinion captioned Sibron v. New York.\"},{\"assertion_id\":\"78d34ead566c3070\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The passage is located at page 67 and supports the proposition, but the displayed quote is not character-identical to the opinion text; it stitches the sentence with ellipses and converts the Court's internal double quotation marks around seized into single quotation marks. The lake also flags quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the exact page-67 language with the Court's quotation marks and omitted material handled explicitly, or paraphrase the stitched sentence and reserve quotation marks for exact fragments.\",\"evidence_quote\":\"When the policeman grabbed Peters by the collar, he abruptly “seized” him and curtailed his freedom of movement on the basis of probable cause to believe that he was engaged in criminal activity.\",\"needs_cl\":false,\"locator_note\":\"pin-67; text page label *67 in paragraph b109-5.\"},\"reasons\":[\"The text contains the cited arrest/search-incident passage at page 67.\",\"The lake pinpoint for pin-67 itself records quote_fidelity: mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is a quote-formatting defect, not a support defect.\"],\"suggested_tightening\":\"Use a shorter exact quote from page 67 and paraphrase the omitted portions.\"},{\"assertion_id\":\"9d3244710c4397a4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-66's stored quote is not the opinion passage cited at 392 U.S. 66. It appears to reproduce the built page header/background/issue/rule text rather than the Court's words.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-66 with the actual opinion text beginning: We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters...\",\"evidence_quote\":\"We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters on the stairway between the fourth and fifth floors of the apartment building, he had probable cause to arrest him for attempted burglary.\",\"needs_cl\":false,\"locator_note\":\"pin-66; correct passage is in text page label *66, paragraph b108-7.\"},\"reasons\":[\"The payload quote begins with the content page frontmatter/header and narrative background, not the Supreme Court opinion.\",\"The correct page-66 opinion passage is present in text/Peters v. New York__cb52a0.txt and differs completely from the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote after the Rule heading is supported; the defect is the harvested/stored pinpoint quote.\"],\"suggested_tightening\":\"Regenerate pin-66 from the opinion text, not from content_page.md.\"},{\"assertion_id\":\"a65e54188036ba91\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is substantively the page-66 to page-67 opinion language, but it is not character-faithful to the raw disclosed text because the opinion has HTML emphasis and places the comma with mens rea, while the page uses Markdown emphasis as *mens rea*, and the lake flags mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize the quote to the rendered words exactly, e.g. mens rea, and, or adjust the Markdown emphasis so the comma placement matches the source before marking quote_fidelity as verified.\",\"evidence_quote\":\"deliberately furtive actions and flight at the approach of strangers or law officers are strong indicia of <em>mens rea, </em>and when coupled with specific knowledge on the part of the officer relating the suspect to the evidence of crime\",\"needs_cl\":false,\"locator_note\":\"pin-66b; text page labels *66-*67, paragraph b108-7.\"},\"reasons\":[\"The same words appear in the opinion at the cited page span.\",\"The only disclosed fidelity defect is formatting/punctuation around the emphasized mens rea phrase; lake records quote_fidelity: mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Renderer conventions for Markdown emphasis may determine whether this is treated as a mechanical formatting issue.\"],\"suggested_tightening\":\"Use plain rendered text for the quote or include the comma inside the emphasized phrase.\"},{\"assertion_id\":\"569c10ba4843ec39\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter.\",\"The payload matches the disclosed lake treatment field_i_validity good_law and as_of_treatment 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment review belongs to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed support and quote-fidelity only as to the disclosed files; no external search was used.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:28:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6ca94fb97e",
+      "F-S9-PR-7aca25f915",
+      "F-S9-PR-0c13c6af84",
+      "F-S9-PR-6f990d877a"
+    ],
     "group_id": "_overhaul2/lake/cases/Peters v. New York.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e800fe02",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e800fe02.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:29.634265Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:30.216080Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:31.136283Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:32.426149Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:34.510530Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:38.086086Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Peters v. New York"
+    ],
+    "tokens": {
+      "input": 154518,
+      "output": 9704,
+      "source": "codex-events",
+      "total": 164222
+    },
+    "verdict_map": {
+      "4d19e3c05400ebea": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "569c10ba4843ec39": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78d34ead566c3070": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9d3244710c4397a4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a65e54188036ba91": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ca94fb97e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7aca25f915",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0c13c6af84",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6f990d877a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 183.6
   }
 }

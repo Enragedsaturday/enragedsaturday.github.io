@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7fbde5eaf27f52da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 325 U.S. 91 is well-formed; parallel cites 65 S. Ct. 1031 / 89 L. Ed. 1495 are era-consistent for a 1945 SCOTUS decision.",
+          "Identity block supports existence: cluster 104135, case_name_full 'SCREWS Et Al. v. UNITED STATES', docket 42, identity_method citation+party-text, party_name_in_text=true, canonical_name_match=true."
+        ],
+        "residual_risks": [
+          "No cached opinion text inlined; existence rests on the disclosed identity block rather than opinion text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0a444ab7ab695da9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pinpoint record self-flags pinpoint_status=slip-only and quote_fidelity=mismatch; the stored 'quote' ('requires. ## Rule The statute is saved from vagueness by reading') is content-page markdown scaffolding (Issue→Rule boundary), not opinion text — this confirms the mismatch rather than contradicting it, so the assertion's self-report is honest.",
+          "No cached Screws opinion text is inlined, so the separately displayed Rule quote ('We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness.' — 325 U.S. at 103) cannot be verified against source from disclosed evidence."
+        ],
+        "residual_risks": [
+          "Displayed Rule quote anchored to ^pin-103 remains CL-unverified (star page 103 not resolved).",
+          "Stored pinpoint quote is a broken extraction artifact."
+        ],
+        "suggested_tightening": "Re-derive pin-103 from the opinion text and star-verify page 103, replacing the scaffolding stored quote before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "68ef81d6e3551bfa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with honest scope_note (Douglas plurality; §242 specific-intent construction remains controlling).",
+          "All 30 disclosed negative edges are proposed:true and field_iii='mentioned' (keyword-triggered lane1_negative/lane2_top_cited hits among citing cases such as Monell, Adickes, Wolff, Albright, Parratt); none is a confirmed overruling/abrogation of Screws itself."
+        ],
+        "residual_risks": [
+          "R15 treatment audit flagged audit_needed=true with cap_hit on proposed negative events; full citator confirmation not machine-closed."
+        ],
+        "suggested_tightening": "Complete the R15 audit to clear the proposed keyword-FP negative edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cd1061dd58",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Screws v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-00-6abbb706",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Screws v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0a444ab7ab695da9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "68ef81d6e3551bfa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fbde5eaf27f52da": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd1061dd58",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

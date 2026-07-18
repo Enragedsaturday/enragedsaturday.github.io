@@ -1,0 +1,140 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7703e675fe5d5b25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '428 U.S. 433 (1976)'; official cite '428 U.S. 433' (type 1) properly selected; star pages 450-455 and the facts (LA police defective warrant, IRS wagering-excise-tax civil proceeding) match the record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ca479293ca34f28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload harvest-string is a markdown-polluted block (frontmatter/background/issue/rule), but the actual pin-454 content quote is verbatim in the opinion: '...the additional marginal deterrence provided by forbidding a different sovereign from using the evidence in a civil proceeding surely does not outweigh the cost to society of extending the rule to that situation. If, on the other hand, the exclusionary rule does not result in appreciable deterrence, then, clearly, its use in the instant situation is unwarranted.'",
+          "The quoted sentence spans the *454 star ('surely does not outweigh *454 the cost to society...'), so the 454 pincite is correct; content's bracketed '[T]he' correctly signals the mid-sentence capitalization change."
+        ],
+        "residual_risks": [
+          "Extractor harvest string is polluted with content-page markdown; hygiene artifact, not a content defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b000885633b228c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "'In short, we conclude that exclusion from federal civil proceedings of evidence unlawfully seized by a state criminal enforcement officer has not been shown to have a sufficient likelihood of deterring the conduct of the state police so that it outweighs the societal costs imposed by the exclusion. This Court, therefore, is not justified in so extending the exclusionary rule.' appears verbatim on page 454 (after *454, before *455).",
+          "Matches the payload's star-verified status (star_marker 454, quote_fidelity 'matched')."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0be1e29849880bfe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Every citing-case edge in the disclosed treatment block carries field_iii='mentioned' — no citing case gives Janis negative treatment.",
+          "No disclosed evidence contradicts good_law; the scope_note accurately states the holding (exclusionary rule not extended to a federal civil tax proceeding for state-seized evidence)."
+        ],
+        "residual_risks": [
+          "field_i_validity is a 'migration-seed'; lane1_negative capped at 200 with audit_needed=true / 'R15 treatment audit required' and 7 proposed (keyword) candidates that triaged to 'mentioned' — good-law currency as of 2026-06-30 is provisional/partly unaudited."
+        ],
+        "suggested_tightening": "Complete the flagged R15 treatment audit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-47517cd876",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-58b626f077",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Janis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-00-1e1ab82e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Janis"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0be1e29849880bfe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0ca479293ca34f28": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7703e675fe5d5b25": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b000885633b228c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-47517cd876",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-58b626f077",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory.jsonl rows using only content_page.md, the lake JSON, and the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "5ed64834fbf117cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id United States v. Havens, court U.S. Supreme Court, year 1980, docket 79-305.",
+          "The asserted official citation 446 U.S. 620 and parallel citations 100 S. Ct. 1912, 64 L. Ed. 2d 559, and 1980 U.S. LEXIS 103 match the lake citation fields."
+        ],
+        "residual_risks": [
+          "No external reporter verification performed because the evidentiary universe is limited to the disclosed files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e522041dff4002e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We reaffirm this assessment of the competing interests, and hold that a defendant’s statements made in response to proper cross-examination",
+          "locator_note": "text/United States v. Havens__67e601.txt, paragraph id b685-5, page labels 627-628.",
+          "needs_cl": false,
+          "problem": "The holding sentence is located in the cached opinion at pages 627-628, but the stored quote is not strictly character-faithful to the cached text because it normalizes curly apostrophes to straight apostrophes and silently joins the page-break split in 'impeachment'.",
+          "proposed_fix": "Either mark this quote as renderer-normalized after HTML/page-number stripping and punctuation normalization, or store the strict text characters using curly apostrophes and an explicit page-break handling policy.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text contains the same holding sentence beginning with 'We reaffirm this assessment'.",
+          "The lake/page quote uses defendant's and government's, while the cached text uses defendant’s and government’s."
+        ],
+        "residual_risks": [
+          "If the corpus treats apostrophe normalization and page-number removal as acceptable quote normalization, this is only a metadata cleanup issue."
+        ],
+        "suggested_tightening": "Record the quote as normalized, or replace ASCII apostrophes with the cached text punctuation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6f0b4e62da87b4c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "## Issue Whether illegally seized evidence may be used",
+          "locator_note": "lake pinpoints[].id pin-627; content_page Rule displays a different quote at ^pin-627; the cached opinion text at page 627 contains the Court's 'we see no difference' sentence instead.",
+          "needs_cl": false,
+          "problem": "The stored pin-627 quote is not an opinion quotation. It splices content-page prose across Background, Issue, and Rule headings, and does not match the cached opinion text for the cited page.",
+          "proposed_fix": "Replace pin-627 with the actual Court sentence at page 627 beginning 'In terms of impeaching...' / 'we see no difference...', set the page to 627, and rerun quote-fidelity after applying the corpus quote-normalization policy.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload contains markdown headings '## Issue' and '## Rule', which are from the built page, not the opinion text.",
+          "The actual page-627 opinion language supports the displayed rule quote, but not the stored pin-627 payload fragment."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote for ^pin-627 also uses normalized apostrophes; after replacing the bad lake quote, apply the same normalization policy used for pin-627b."
+        ],
+        "suggested_tightening": "Store only verbatim opinion text in lake pinpoints, not generated page prose around the pin marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf17805fc109438a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1980-05-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment and currency are outside lens A, so no treatment defect is raised here."
+        ],
+        "residual_risks": [
+          "Lens B still needs to evaluate treatment/currency and any effect of the progeny edges or the content-page 'No negative treatment' wording."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Havens.json\",\"reviewed\":[{\"assertion_id\":\"5ed64834fbf117cd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id United States v. Havens, court U.S. Supreme Court, year 1980, docket 79-305.\",\"The asserted official citation 446 U.S. 620 and parallel citations 100 S. Ct. 1912, 64 L. Ed. 2d 559, and 1980 U.S. LEXIS 103 match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external reporter verification performed because the evidentiary universe is limited to the disclosed files.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8e522041dff4002e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding sentence is located in the cached opinion at pages 627-628, but the stored quote is not strictly character-faithful to the cached text because it normalizes curly apostrophes to straight apostrophes and silently joins the page-break split in 'impeachment'.\",\"severity\":\"low\",\"proposed_fix\":\"Either mark this quote as renderer-normalized after HTML/page-number stripping and punctuation normalization, or store the strict text characters using curly apostrophes and an explicit page-break handling policy.\",\"evidence_quote\":\"We reaffirm this assessment of the competing interests, and hold that a defendant’s statements made in response to proper cross-examination\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Havens__67e601.txt, paragraph id b685-5, page labels 627-628.\"},\"reasons\":[\"The cached text contains the same holding sentence beginning with 'We reaffirm this assessment'.\",\"The lake/page quote uses defendant's and government's, while the cached text uses defendant’s and government’s.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats apostrophe normalization and page-number removal as acceptable quote normalization, this is only a metadata cleanup issue.\"],\"suggested_tightening\":\"Record the quote as normalized, or replace ASCII apostrophes with the cached text punctuation.\"},{\"assertion_id\":\"b6f0b4e62da87b4c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-627 quote is not an opinion quotation. It splices content-page prose across Background, Issue, and Rule headings, and does not match the cached opinion text for the cited page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-627 with the actual Court sentence at page 627 beginning 'In terms of impeaching...' / 'we see no difference...', set the page to 627, and rerun quote-fidelity after applying the corpus quote-normalization policy.\",\"evidence_quote\":\"## Issue Whether illegally seized evidence may be used\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id pin-627; content_page Rule displays a different quote at ^pin-627; the cached opinion text at page 627 contains the Court's 'we see no difference' sentence instead.\"},\"reasons\":[\"The payload contains markdown headings '## Issue' and '## Rule', which are from the built page, not the opinion text.\",\"The actual page-627 opinion language supports the displayed rule quote, but not the stored pin-627 payload fragment.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed content-page quote for ^pin-627 also uses normalized apostrophes; after replacing the bad lake quote, apply the same normalization policy used for pin-627b.\"],\"suggested_tightening\":\"Store only verbatim opinion text in lake pinpoints, not generated page prose around the pin marker.\"},{\"assertion_id\":\"bf17805fc109438a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1980-05-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment and currency are outside lens A, so no treatment defect is raised here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B still needs to evaluate treatment/currency and any effect of the progeny edges or the content-page 'No negative treatment' wording.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory.jsonl rows using only content_page.md, the lake JSON, and the cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:56:07-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d8a5043189",
+      "F-S9-PR-a81dac608d"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d3f92aed.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Havens"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 141203,
+      "output": 7843,
+      "source": "codex-events",
+      "total": 149046
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "5ed64834fbf117cd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e522041dff4002e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b6f0b4e62da87b4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bf17805fc109438a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d8a5043189",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a81dac608d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.7
   }
 }

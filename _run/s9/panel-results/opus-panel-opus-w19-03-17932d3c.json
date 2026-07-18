@@ -1,0 +1,147 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "400fb8036406d00d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '456 U.S. 798 (1982)' and caption 'UNITED STATES v. ROSS', Supreme Court of the United States, decided June 1, 1982 (Stevens, J.).",
+          "Lake identity consistent: cluster 110719, official cite 456 U.S. 798 selected_official=true, identity_method 'citation+party-text', expected_citation_found=true, party_name_in_text=true, canonical_name_match=true.",
+          "Official first-page cite 456 U.S. 798 matches the star-paginated case-start; no fabricated cite."
+        ],
+        "residual_risks": [
+          "Parallels 102 S. Ct. 2157 / 72 L. Ed. 2d 572 / 50 U.S.L.W. 4580 and neutral 1982 U.S. LEXIS 18 are not independently verifiable from the inlined opinion (the official cite is)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "327daa9899e95d2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a garbled content-page front-matter mashup (title/Background/Issue/Rule lead-in), i.e. an extraction mis-capture; the recorded quote_fidelity='mismatch'/pinpoint_status='slip-only' flags stem from that mis-capture, not the authored pinpoint.",
+          "Authored ^pin-825 quote ('We hold that the scope of the warrantless search authorized by that exception is no broader and no narrower than a magistrate could legitimately authorize by warrant. If probable cause justifies the search of a lawfully stopped vehicle, it justifies the search of every part of the vehicle and its contents that may conceal the object of the search.') matches the cached opinion verbatim.",
+          "Cached text places the sentence between star-pagination *825A and *825B, confirming the pincite '456 U.S. at 825'."
+        ],
+        "residual_risks": [
+          "Machine payload quote is garbled (pipeline extraction artifact, not an authored defect); orchestrator may re-extract to clear the false mismatch flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57ad7758424e03df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Authored ^pin-824 quote matches the cached opinion verbatim: 'The scope of a warrantless search of an automobile thus is not defined by the nature of the container in which the contraband is secreted. Rather, it is defined by the object of the search and the places in which there is probable cause to believe that it may be found.'",
+          "Cached text shows the sentence immediately after star-pagination *824, confirming pincite 824; payload already recorded star-verified/matched.",
+          "text-fragment anchor (#:~:text=The%20scope%20of%20a%20warrantless%20search%20of) is consistent with the quoted opening."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c455a0cc8b31ac7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is a defensible seed for a landmark 1982 SCOTUS automobile-exception holding; progeny shows 2496 indexed citing opinions.",
+          "Every negative 'edge' is proposed:true and transparently spurious keyword FP - e.g. Ross's own self-edge (cluster 110719) labeled 'overruled', and Illinois v. Gates (462 U.S. 213) and United States v. Leon (468 U.S. 897) labeled 'overruled'; none is a credible abrogation of Ross.",
+          "No confirmed (proposed:false) negative event and no disclosed authority overruling Ross; refuting good_law would require fabricating an overruling."
+        ],
+        "residual_risks": [
+          "Treatment is composite_basis 'migration-seed'; derivation lane1_negative/lane2_top_cited flag audit_needed=true and 'R15 treatment audit required' with caps hit - the negative-treatment sweep is not yet formally cleared, though all disclosed signals are spurious."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit to promote good_law from migration-seed to a derived determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1fe6565b86",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6cd6524576",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Ross.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-03-17932d3c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ross"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0c455a0cc8b31ac7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "327daa9899e95d2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "400fb8036406d00d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "57ad7758424e03df": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1fe6565b86",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6cd6524576",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

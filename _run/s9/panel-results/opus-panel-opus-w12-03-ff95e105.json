@@ -1,0 +1,153 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c971f49486f86f00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official 267 U.S. 498 selected rank_1 (SCOTUS) — correct.",
+          "Cached opinion (Chief Justice Taft) carries U.S. star-pagination *500 through *503 (citation-index 1), consistent with 267 U.S. 498 (opinion opens on 499).",
+          "Parallels 45 S. Ct. 414; 69 L. Ed. 757 and year 1925 consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f89acee210cd333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is a garbled content-page span ('Executing it, agents seized ... ## Issue ... ## Rule Yes.'), not the pin-503 opinion quote; the 'mismatch' flag is an extractor false positive.",
+          "The actual pin-503 Rule quote ('It is enough if the description is such that the officer with a search warrant can with reasonable effort ascertain and identify the place intended.') matches cached opinion paragraph b543-4; the page benignly normalizes the OCR artifact 'search'' to 'search'.",
+          "The sentence sits immediately after the *503 star break (b543-4), so pincite 267 U.S. at 503 is correct."
+        ],
+        "residual_risks": [
+          "Payload quote is a pipeline artifact; adjudicate against the rendered pin-503 text."
+        ],
+        "suggested_tightening": "Re-extract the pin-503 payload to the quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b139e34e55fd0f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched,' matches cached opinion paragraph b543-4 verbatim.",
+          "The 'mismatch' flag is a false positive; pincite 'Id.' (=267 U.S. 503) is correct — the sentence is the opening of the b543-4 paragraph on page 503.",
+          "The trailing comma is a truncation before the page's '— Id. —', so the quote remains faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9713b803a18e21b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All 33 treatment edges are proposed keyword candidates (proposed:true) with field_iii 'mentioned'; none is a confirmed self-overruling of Steele.",
+          "The negative-treatment sweep returned only mention-depth false positives; the content-page 'No negative treatment' claim is consistent, and good_law is not contradicted.",
+          "as_of_treatment 2026-06-30; canonical particularity-of-place standard."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration-seed; citing opinions are not inlined for an independent depth re-read."
+        ],
+        "suggested_tightening": "Convert the migration-seed into a derived composite in S2 re-derivation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-133d7b00a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-73480ff4b6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1dcd72d333",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Steele v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-03-ff95e105",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Steele v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3f89acee210cd333": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9713b803a18e21b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b139e34e55fd0f8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c971f49486f86f00": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-133d7b00a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-73480ff4b6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1dcd72d333",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

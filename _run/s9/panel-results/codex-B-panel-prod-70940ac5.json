@@ -1,38 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Carpenter (6th Cir. 2019 remand).json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "13cd2758549e90d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record confirms the authority identity as United States v. Timothy Carpenter, Sixth Circuit, year 2019, cluster_id 4628336.",
+          "The lake citations block selects 926 F.3d 313 as the official/display citation, matching the assertion payload.",
+          "No disclosed treatment edge, progeny edge, or lake field says this authority has been overruled, abrogated, superseded, or otherwise made non-live."
+        ],
+        "residual_risks": [
+          "The disclosed treatment/progeny data is expressly unverified, so this review cannot affirmatively establish full current good-law status beyond the absence of a contrary disclosed signal."
+        ],
+        "suggested_tightening": "Keep any live-law implication paired with the existing unverified-treatment warning until progeny/treatment promotion is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50ff29bdc08ceeb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment value is unverified, which exactly matches lake.treatment.field_i_validity.",
+          "The assertion's null as_of_content and null as_of_treatment match the lake treatment fields.",
+          "The scope note matches the lake record: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The lake progeny/treatment fields disclose no adverse edges, but they also disclose that treatment has not been derived; the page therefore correctly renders Treatment: Unverified rather than a stronger good-law claim."
+        ],
+        "residual_risks": [
+          "Because progeny enumeration is null and rows_cached is 0, this corpus excerpt cannot rule out later negative treatment."
+        ],
+        "suggested_tightening": "Do not upgrade from Unverified or state a definitive current-validity conclusion until treatment/progeny are populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Carpenter (6th Cir. 2019 remand).json\",\"reviewed\":[{\"assertion_id\":\"13cd2758549e90d6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record confirms the authority identity as United States v. Timothy Carpenter, Sixth Circuit, year 2019, cluster_id 4628336.\",\"The lake citations block selects 926 F.3d 313 as the official/display citation, matching the assertion payload.\",\"No disclosed treatment edge, progeny edge, or lake field says this authority has been overruled, abrogated, superseded, or otherwise made non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment/progeny data is expressly unverified, so this review cannot affirmatively establish full current good-law status beyond the absence of a contrary disclosed signal.\"],\"suggested_tightening\":\"Keep any live-law implication paired with the existing unverified-treatment warning until progeny/treatment promotion is complete.\"},{\"assertion_id\":\"50ff29bdc08ceeb9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment value is unverified, which exactly matches lake.treatment.field_i_validity.\",\"The assertion's null as_of_content and null as_of_treatment match the lake treatment fields.\",\"The scope note matches the lake record: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The lake progeny/treatment fields disclose no adverse edges, but they also disclose that treatment has not been derived; the page therefore correctly renders Treatment: Unverified rather than a stronger good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because progeny enumeration is null and rows_cached is 0, this corpus excerpt cannot rule out later negative treatment.\"],\"suggested_tightening\":\"Do not upgrade from Unverified or state a definitive current-validity conclusion until treatment/progeny are populated.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:30:46-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:49:22-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Carpenter (6th Cir. 2019 remand).json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Carpenter (6th Cir. 2019 remand)"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-70940ac5",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-70940ac5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Carpenter (6th Cir. 2019 remand)' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Carpenter (6th Cir. 2019 remand)"
+    ],
     "tokens": {
-      "input": 762,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 762
+      "input": 119869,
+      "output": 3284,
+      "source": "codex-events",
+      "total": 123153
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "13cd2758549e90d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "50ff29bdc08ceeb9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "wall_clock_s": 75.9
   }
 }

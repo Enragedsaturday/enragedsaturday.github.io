@@ -1,22 +1,173 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kolender v. Lawson.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "f542edbba9d9a676",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Kolender v. Lawson as a U.S. Supreme Court case decided 1983-05-02 with official citation 461 U.S. 352.",
+          "The lake treatment judgment marks the authority as good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law."
+        ],
+        "residual_risks": [
+          "The identity section contains under-review signals, including identity_method pending and two_key_not_satisfied, but the citation and canonical case name are present; that is not a Lens B currency defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28a075c35af58896",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity.",
+          "No point-specific treatment override in the lake record makes this Kolender pinpoint unusable on currency grounds."
+        ],
+        "residual_risks": [
+          "The lake record marks this pinpoint quote_fidelity as mismatch, but that is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4672f7acd08fa81a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity.",
+          "No disclosed treatment field or point override defeats this Kolender pinpoint on currency grounds."
+        ],
+        "residual_risks": [
+          "The lake record marks this pinpoint quote_fidelity as mismatch, but that is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61befa875c17d21f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity.",
+          "The lake record marks Kolender good_law and provides no point-specific treatment override for pin-357."
+        ],
+        "residual_risks": [
+          "Quote accuracy is intentionally not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28d8a1cc8df02731",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 25,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md treatment section; lake treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law call survives, but the page's unqualified negative-treatment phrasing is too strong. The lake record contains proposed negative-treatment edges and flags an R15 treatment audit as required, so the disclosed record supports at most no audited negative treatment, not an absolute no-negative-treatment statement.",
+          "proposed_fix": "Retain field_i_validity: good_law and the Hiibel-distinguished scope note, but replace the blanket 'No negative treatment' language with 'No audited negative treatment in the lake record; proposed negative-event audit pending' unless the proposed progeny audit is completed.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field itself says field_i_validity is good_law as of 2026-06-30 and the scope note already accounts for Hiibel as distinguished.",
+          "But the same lake record lists proposed overruled, abrogated, criticized, and questioned edges, all with proposed: true, and marks two derivation lanes audit_needed.",
+          "Those proposed edges do not prove Kolender is overruled, but they undercut an unqualified no-negative-treatment assertion."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include full text for the proposed negative progeny cases, so a completed treatment audit could reveal a stronger limitation or confirm the current good_law call."
+        ],
+        "suggested_tightening": "State the treatment as good_law, distinguish Hiibel, and avoid saying 'No negative treatment' unless the proposed negative-event audit is resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Kolender v. Lawson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f542edbba9d9a676\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Kolender v. Lawson as a U.S. Supreme Court case decided 1983-05-02 with official citation 461 U.S. 352.\",\n        \"The lake treatment judgment marks the authority as good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The identity section contains under-review signals, including identity_method pending and two_key_not_satisfied, but the citation and canonical case name are present; that is not a Lens B currency defect.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"28a075c35af58896\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate quote fidelity.\",\n        \"No point-specific treatment override in the lake record makes this Kolender pinpoint unusable on currency grounds.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record marks this pinpoint quote_fidelity as mismatch, but that is reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4672f7acd08fa81a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate quote fidelity.\",\n        \"No disclosed treatment field or point override defeats this Kolender pinpoint on currency grounds.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record marks this pinpoint quote_fidelity as mismatch, but that is reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"61befa875c17d21f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate quote fidelity.\",\n        \"The lake record marks Kolender good_law and provides no point-specific treatment override for pin-357.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy is intentionally not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"28d8a1cc8df02731\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law call survives, but the page's unqualified negative-treatment phrasing is too strong. The lake record contains proposed negative-treatment edges and flags an R15 treatment audit as required, so the disclosed record supports at most no audited negative treatment, not an absolute no-negative-treatment statement.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Retain field_i_validity: good_law and the Hiibel-distinguished scope note, but replace the blanket 'No negative treatment' language with 'No audited negative treatment in the lake record; proposed negative-event audit pending' unless the proposed progeny audit is completed.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 25,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment section; lake treatment.derivation.lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake judgment field itself says field_i_validity is good_law as of 2026-06-30 and the scope note already accounts for Hiibel as distinguished.\",\n        \"But the same lake record lists proposed overruled, abrogated, criticized, and questioned edges, all with proposed: true, and marks two derivation lanes audit_needed.\",\n        \"Those proposed edges do not prove Kolender is overruled, but they undercut an unqualified no-negative-treatment assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed files do not include full text for the proposed negative progeny cases, so a completed treatment audit could reveal a stronger limitation or confirm the current good_law call.\"\n      ],\n      \"suggested_tightening\": \"State the treatment as good_law, distinguish Hiibel, and avoid saying 'No negative treatment' unless the proposed negative-event audit is resolved.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:59:37-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1ea3f22ce3"
+    ],
     "group_id": "_overhaul2/lake/cases/Kolender v. Lawson.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3aaa4552",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3aaa4552.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:52.602157Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:53.211963Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:54.098960Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:55.331000Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:57.428171Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:00.933544Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kolender v. Lawson"
+    ],
+    "tokens": {
+      "input": 473071,
+      "output": 6676,
+      "source": "codex-events",
+      "total": 479747
+    },
+    "verdict_map": {
+      "28a075c35af58896": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "28d8a1cc8df02731": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4672f7acd08fa81a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "61befa875c17d21f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f542edbba9d9a676": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1ea3f22ce3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 139.0
   }
 }

@@ -1,0 +1,210 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2f5226f181827020",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms 'CITY OF INDIANAPOLIS et al. v. EDMOND et al.', '531 U.S. 32 (2000)', 'United States Supreme Court', 'Decided November 28, 2000', No. 99-1030.",
+          "Payload official_citation_present=false is internally consistent with the lake (citations.official=null; U.S. cite 531 U.S. 32 filed under parallel); parallel and vendor-neutral cites match the payload."
+        ],
+        "residual_risks": [
+          "Official U.S. Reports cite '531 U.S. 32' exists in the record but is filed as parallel and the frontmatter `citation` field is empty; existence is unaffected."
+        ],
+        "suggested_tightening": "Promote 531 U.S. 32 to the official/citation slot so official_citation_present reflects that a U.S. Reports cite exists.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "365c1baddfd4e80a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because the primary purpose of the Indianapolis narcotics checkpoint program is to uncover evidence of ordinary criminal wrongdoing, the program contravenes the Fourth Amendment.",
+          "locator_note": "frontmatter holding field; lead opinion at *42",
+          "needs_cl": false,
+          "problem": "The frontmatter `holding` field is truncated with an ellipsis and never states the constitutional outcome; it reads 'A checkpoint program whose primary purpose is to detect ordinary criminal wrongdoing / general crime control (here, drug interdiction)…' without saying it violates the Fourth Amendment.",
+          "proposed_fix": "Complete the holding to state the outcome, e.g. '...is unreasonable and contravenes the Fourth Amendment.'",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Substance is supported: at *41 'We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing'; at *42 the program 'contravenes the Fourth Amendment'.",
+          "But the stored holding trails off at '(here, drug interdiction)…' and never states what was held, leaving the proposition incomplete."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Finish the holding sentence with the constitutional outcome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a22c5a8bf7b13b6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Edmond is the seminal programmatic-purpose checkpoint decision; the opinion turns on checkpoint primary-purpose doctrine, distinguishing Sitz/Martinez-Fuerte/Prouse, so 'Key — Anchor' on a Checkpoints and Roadblocks page is apt."
+        ],
+        "residual_risks": [
+          "Precise tier is not verifiable without the home page; doctrinal fit is confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ccf36202a753bbff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly discusses the special-needs line (Vernonia, Von Raab, Skinner, Burger) and contrasts programmatic purpose; a 'Related (cross-doctrine)' link on the Special Needs page is defensible."
+        ],
+        "residual_risks": [
+          "Internal inconsistency: frontmatter homes[] labels this role 'Related (cross-doctrine)' while the page's 'Appears on' section lists 'Special Needs and Administrative Searches — Key — Progeny / Refinement'; the two role labels disagree."
+        ],
+        "suggested_tightening": "Reconcile the homes[] role with the 'Appears on' role for the Special Needs page.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf56193b9958f51b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion devotes extended discussion to the border-checkpoint category (Martinez-Fuerte, Ortiz, Brignoni-Ponce, Almeida-Sanchez, Montoya de Hernandez) as a permitted purpose, so a 'Related (cross-doctrine)' link on Border Searches is well-founded."
+        ],
+        "residual_risks": [
+          "Tier not verifiable without the home page; doctrinal fit confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "176a248a8f110dff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with empty point_overrides; provenance warnings only note the legacy 'good -> good_law' migration; no disclosed evidence of overruling.",
+          "Negative edges are all proposed:true lane1_negative citator candidates (state/lower-court 'questioned/abrogated'), none adopted."
+        ],
+        "residual_risks": [
+          "scope_note is a build-process note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.') rather than a substantive legal scope note.",
+          "Unadjudicated proposed negative edges remain for a currency-lens confirmation."
+        ],
+        "suggested_tightening": "Replace the process-artifact scope_note with a substantive currency note.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56d38c3d61b8b50b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "'Binding — SCOTUS' matches court_level=scotus and the cached caption 'United States Supreme Court'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T13:16:10-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ebdf2d416e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/City of Indianapolis v. Edmond.md",
+    "group_total_assertions": 7,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w29-04-5242ec7b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w29-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 7,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Indianapolis v. Edmond"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "176a248a8f110dff": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2f5226f181827020": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "365c1baddfd4e80a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "56d38c3d61b8b50b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a22c5a8bf7b13b6d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ccf36202a753bbff": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf56193b9958f51b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-443e62cb9a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ebdf2d416e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

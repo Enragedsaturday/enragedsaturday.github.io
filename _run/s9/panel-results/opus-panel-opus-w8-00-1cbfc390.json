@@ -1,0 +1,123 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a2d46858925f4726",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header: '525 U.S. 83 (1998)', 'MINNESOTA v. CARTER', 'United States Supreme Court', 'Decided December 1, 1998' - matches official cite, court, year, and date_decided.",
+          "Parallel 119 S. Ct. 469 / 142 L. Ed. 2d 373 and neutral 1998 U.S. LEXIS 7844 are consistent with the lake citations block; lead opinion 118249."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf874d0d898b4fe7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not.",
+          "locator_note": "Cached opinion page 90 (immediately after the *90 star marker); content page pin-90 anchors the Rule-section sentence cited to '525 U.S. at 90'.",
+          "needs_cl": false,
+          "problem": "Stored pin-90 quote is a slip-extraction: it captured the entire page top matter (frontmatter + Background + Issue + Rule markdown, '--- # Minnesota v. Carter ... ## Rule No.') instead of an opinion quote; quote_fidelity self-flags 'mismatch'.",
+          "proposed_fix": "Re-extract pin-90's stored quote to the actual quoted sentence, verbatim at 525 U.S. 90.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered page pincite is sound: the actual pin-90 quote appears verbatim in the cached opinion on page 90 (just past the *90 star marker), so the proposition survives.",
+          "Defect is confined to the lake pinpoint's stored quote field (slip-only artifact)."
+        ],
+        "residual_risks": [
+          "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only."
+        ],
+        "suggested_tightening": "Persist the block-quoted sentence rather than the anchor's preceding page markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c223527b041f200",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' (migration-seed) matches the lake record; Carter's standing / reasonable-expectation-of-privacy holding is landmark and remains authoritative (refines Rakas; bounds Olson).",
+          "The 32 'overruled' / 32 'questioned' edges are proposed:true candidate signals dominated by state-court entries (e.g., Ohio State v. Howard / Keith / Funk) that cannot overrule SCOTUS - citator/N-blindness noise, not adjudicated into the composite."
+        ],
+        "residual_risks": [
+          "The large volume of proposed negative edges should be adjudicated in S2 re-derivation; from disclosed evidence none is a genuine SCOTUS-level overruling of the cited holding."
+        ],
+        "suggested_tightening": "S2 should filter sub-SCOTUS 'overruled' proposals before they can touch a SCOTUS record's composite validity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5b06bb7027",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-00-1cbfc390",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Carter"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6c223527b041f200": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2d46858925f4726": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf874d0d898b4fe7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6de7c91ca",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5b06bb7027",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,183 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Davis v. United States.md",
+    "lens": "A",
+    "notes": "No web search used. Lens A reviewed the five assertion_ids in group_inventory.jsonl exactly once; treatment rows were checked only for disclosed-field consistency, not legal currency.",
+    "reviewed": [
+      {
+        "assertion_id": "73dce0e316a26299",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "512 U.S. 452",
+          "locator_note": "group_inventory citation payload; lake.citations.official/display",
+          "needs_cl": false,
+          "problem": "The asserted official citation is wrong. The lake record identifies Davis v. United States as 512 U.S. 452, not 513 U.S. 1008.",
+          "proposed_fix": "Change the citation to 512 U.S. 452 (1994); if citation fields are generated, preserve the disclosed parallel and vendor-neutral cites from the lake record.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity confirms Davis v. United States, U.S. Supreme Court, decided 1994-06-24.",
+          "The lake official/display citation is 512 U.S. 452; no disclosed authority record supports 513 U.S. 1008 for this case."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the lake official citation as the canonical citation source for this page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95f5803c3e541f75",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "About an hour and a half into the interview, petitioner said, “Maybe I should talk to a lawyer.” App. 135.",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The substance is supported, but the holding field is unfinished and the embedded quotation is not character-faithful: the opinion has “Maybe I should talk to a lawyer.” with capital M and period. The rule should also be tied to the post-waiver interrogation posture Davis actually decided.",
+          "proposed_fix": "Replace with: After a knowing and voluntary Miranda waiver, a suspect must clearly request counsel; an ambiguous statement such as “Maybe I should talk to a lawyer.” does not require officers to stop questioning, though clarification may be good practice.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states: “Rather, the suspect must unambiguously request counsel.”",
+          "The opinion holds that, after a knowing and voluntary waiver, questioning may continue until and unless the suspect clearly requests an attorney.",
+          "The opinion says Davis's “Maybe I should talk to a lawyer.” remark was not a request for counsel and agents were not required to stop questioning."
+        ],
+        "residual_risks": [
+          "The holding should avoid using quotation marks around a normalized/paraphrased version of the remark."
+        ],
+        "suggested_tightening": "Add the post-waiver limitation and complete the sentence instead of ending with “does…”.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fedba37ec9c547f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion frames the case as deciding how officers should respond when a suspect makes an insufficiently clear counsel reference under Edwards.",
+          "The opinion discusses Miranda waiver and invocation directly and announces a clarity threshold for invoking counsel after waiver.",
+          "That supports placement under Miranda Waiver and Invocation as a key refinement/progeny case."
+        ],
+        "residual_risks": [
+          "No separate taxonomy file defining home-role labels was disclosed; support is assessed from the opinion text and lake identity only."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b65806320893abc2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake record identifies the court as U.S. Supreme Court and court_level as scotus.",
+          "Lens A does not audit treatment or currency; no support/quote-fidelity defect is raised for this treatment-dimension label."
+        ],
+        "residual_risks": [
+          "No separate authority-weight derivation table was disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c18ecaf3aa079da9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Davis v. United States, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Good-law currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Davis v. United States.md\",\"reviewed\":[{\"assertion_id\":\"73dce0e316a26299\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted official citation is wrong. The lake record identifies Davis v. United States as 512 U.S. 452, not 513 U.S. 1008.\",\"severity\":\"high\",\"proposed_fix\":\"Change the citation to 512 U.S. 452 (1994); if citation fields are generated, preserve the disclosed parallel and vendor-neutral cites from the lake record.\",\"evidence_quote\":\"512 U.S. 452\",\"needs_cl\":false,\"locator_note\":\"group_inventory citation payload; lake.citations.official/display\"},\"reasons\":[\"The lake identity confirms Davis v. United States, U.S. Supreme Court, decided 1994-06-24.\",\"The lake official/display citation is 512 U.S. 452; no disclosed authority record supports 513 U.S. 1008 for this case.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the lake official citation as the canonical citation source for this page.\"},{\"assertion_id\":\"95f5803c3e541f75\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The substance is supported, but the holding field is unfinished and the embedded quotation is not character-faithful: the opinion has “Maybe I should talk to a lawyer.” with capital M and period. The rule should also be tied to the post-waiver interrogation posture Davis actually decided.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace with: After a knowing and voluntary Miranda waiver, a suspect must clearly request counsel; an ambiguous statement such as “Maybe I should talk to a lawyer.” does not require officers to stop questioning, though clarification may be good practice.\",\"evidence_quote\":\"About an hour and a half into the interview, petitioner said, “Maybe I should talk to a lawyer.” App. 135.\",\"needs_cl\":false,\"locator_note\":\"holding field\"},\"reasons\":[\"The opinion states: “Rather, the suspect must unambiguously request counsel.”\",\"The opinion holds that, after a knowing and voluntary waiver, questioning may continue until and unless the suspect clearly requests an attorney.\",\"The opinion says Davis's “Maybe I should talk to a lawyer.” remark was not a request for counsel and agents were not required to stop questioning.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The holding should avoid using quotation marks around a normalized/paraphrased version of the remark.\"],\"suggested_tightening\":\"Add the post-waiver limitation and complete the sentence instead of ending with “does…”.\"},{\"assertion_id\":\"fedba37ec9c547f8\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames the case as deciding how officers should respond when a suspect makes an insufficiently clear counsel reference under Edwards.\",\"The opinion discusses Miranda waiver and invocation directly and announces a clarity threshold for invoking counsel after waiver.\",\"That supports placement under Miranda Waiver and Invocation as a key refinement/progeny case.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate taxonomy file defining home-role labels was disclosed; support is assessed from the opinion text and lake identity only.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b65806320893abc2\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the court as U.S. Supreme Court and court_level as scotus.\",\"Lens A does not audit treatment or currency; no support/quote-fidelity defect is raised for this treatment-dimension label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate authority-weight derivation table was disclosed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c18ecaf3aa079da9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Davis v. United States, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No web search used. Lens A reviewed the five assertion_ids in group_inventory.jsonl exactly once; treatment rows were checked only for disclosed-field consistency, not legal currency.\"}",
   "summary": {
-    "at": "2026-07-10T02:42:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:54:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b234f08ae6"
+    ],
     "group_id": "content/cases/Davis v. United States.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1169436b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1169436b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:27.272632Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:28.024321Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:29.029166Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:30.208044Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:32.248418Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States"
+    ],
+    "tokens": {
+      "input": 199184,
+      "output": 10912,
+      "source": "codex-events",
+      "total": 210096
+    },
+    "verdict_map": {
+      "73dce0e316a26299": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "95f5803c3e541f75": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b65806320893abc2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c18ecaf3aa079da9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fedba37ec9c547f8": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-83f328f205",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b234f08ae6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 208.5
   }
 }

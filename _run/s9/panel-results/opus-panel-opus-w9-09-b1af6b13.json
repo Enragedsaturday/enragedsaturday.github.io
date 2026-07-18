@@ -1,0 +1,177 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d66c35dc97d9e386",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Justice Souter) with star pages *368-*379 confirms Safford Unified School District #1 v. Redding within 557 U.S.; caption/party names match and 557 U.S. 364 is present in the cite set.",
+          "Parallel cites (129 S. Ct. 2633; 174 L. Ed. 2d 354; 2009 U.S. LEXIS 4735; etc.) are standard and internally consistent."
+        ],
+        "residual_risks": [
+          "official_selection_present is false and 'official'/'display' are null even though 557 U.S. 364 is the correct official cite present in the set (unlike Ryburn/Sabbath, which have an official selected); parallel-reporter pages not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": "Populate the official-citation selection with 557 U.S. 364 for consistency with the other lake records.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "47c811d910653bcc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote ('Savana's subjective expectation of privacy … is inherent in her account of it as embarrassing, frightening, and humiliating.') matches the cached opinion verbatim, the ellipsis properly marking omission of 'against such a search' (source: 'Savana's subjective expectation of privacy against such a search is inherent in her account of it as embarrassing, ... frightening, and humiliating.').",
+          "Pincite 374-375 is confirmed by the disclosed star markers (*375 falls between 'embarrassing,' and 'frightening').",
+          "Lake 'mismatch' flag is an exact-matcher artifact of the ellipsis."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acbf19cce784afd6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In sum, what was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable.",
+          "locator_note": "Cached opinion para b424-5 (spanning *376-*377); the stored paraphrase's source is the wiki Rule line 'A strip search is \"categorically distinct,\" and its degree of intrusion must be matched by the suspicion supporting it.'",
+          "needs_cl": false,
+          "problem": "pin-376 stores 'and its degree of intrusion must be matched by the suspicion supporting it.', which is the wiki's own PARAPHRASE (rendered UNQUOTED on the content page, where only 'categorically distinct' is in quotation marks). It does not appear verbatim in the cached opinion (which says the search is 'categorically distinct, requiring distinct elements of justification'), so it fails quote fidelity as a quote_pinpoint, and it is not even the text ^pin-376 anchors on the page.",
+          "proposed_fix": "Store the actual opinion quote the content page renders at ^pin-376: '[W]hat was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable.' (557 U.S. at 376-377) — verbatim in the cached text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-376 quote is a paraphrase not present in the opinion; the content page itself does not present it in quotation marks.",
+          "The verbatim quote ^pin-376 actually anchors ('[W]hat was missing... fatal to finding the search reasonable.') IS in the cached text at 376-377, so the pinpoint record is mis-populated."
+        ],
+        "residual_risks": [
+          "Reader-facing page is honest (paraphrase is unquoted; the anchored quote is verbatim); defect is in the pinpoint provenance record."
+        ],
+        "suggested_tightening": "Do not store unquoted paraphrase prose in pinpoint.quote; capture the actual quoted opinion sentence tied to the anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d239e4b05bb07aff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote ('because there is reason to question the clarity with which the right was established, the official who ordered the unconstitutional search is entitled to qualified immunity from liability.') matches the cached opinion's opening paragraph verbatim.",
+          "Star page *368 marks Souter's opinion opening; star_marker 368 verified. Lake flags 'matched'/'star-verified', consistent with my read."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a0603c93112b7b80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct for this 2009 SCOTUS decision, not overruled.",
+          "scope_note accurately states Safford applies and cabins the T.L.O. school-search standard to strip searches (the cached opinion applies T.L.O., holds the strip search unreasonable, and grants qualified immunity).",
+          "All 29 disclosed edges are 'proposed': true citator noise; none is a ratified/binding overrule."
+        ],
+        "residual_risks": [
+          "Full currency depends on citator data beyond the disclosed proposed edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-30ea479986",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-319ae358c3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Safford Unified School District v. Redding.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-09-b1af6b13",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Safford Unified School District v. Redding"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "47c811d910653bcc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a0603c93112b7b80": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acbf19cce784afd6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d239e4b05bb07aff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d66c35dc97d9e386": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-30ea479986",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ed8bb44ef7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-319ae358c3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

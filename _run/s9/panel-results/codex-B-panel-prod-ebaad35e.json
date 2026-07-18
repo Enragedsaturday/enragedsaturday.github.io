@@ -1,22 +1,220 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Touset.md",
+    "lens": "B",
+    "notes": "Lens B only; quote fidelity and merits support were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "3858543a67dcea8a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"name\": \"United States v. Jordan Jysae Pulido\",\n          \"cluster_id\": 10374408,\n          \"cite\": [\n            \"133 F.4th 1256\"\n          ],\n          \"field_ii\": \"overruled\"",
+          "locator_note": "citation/frontmatter/header",
+          "needs_cl": true,
+          "problem": "The case identity and citation are verified, but the citation should not be presented with an unqualified live-law implication because the disclosed progeny record contains unresolved negative-treatment edges.",
+          "proposed_fix": "Keep the citation, but pair it with a treatment caveat pending audit of the negative progeny edge, especially Pulido.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies the case as United States v. Karl Touset, U.S. Court of Appeals for the Eleventh Circuit, decided 2018-05-23.",
+          "Lake citations select 890 F.3d 1227 as the official citation.",
+          "Currency is not clean because the same lake record lists a progeny edge with field_ii='overruled'."
+        ],
+        "residual_risks": [
+          "The negative edge is marked proposed=true and field_iii='mentioned'; the exact scope requires citing-opinion review."
+        ],
+        "suggested_tightening": "Separate existence/citation verification from live-law status in the rendered page.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "24700a907def973a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\",\n        \"field_iii\": \"mentioned\",\n        \"point\": null,\n        \"proposed\": true",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "Lens B does not challenge historical support, but the holding is framed as unqualified current law despite disclosed negative-treatment edges.",
+          "proposed_fix": "Rewrite as a historical Touset holding and add a treatment caveat; audit Pulido to determine whether the no-suspicion rule is overruled or limited.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Support fidelity is outside Lens B.",
+          "The disclosed lake record creates a currency problem for using the no-suspicion proposition as unqualified current law."
+        ],
+        "residual_risks": [
+          "Exact current-law effect cannot be fixed from the provided files alone because the citing opinion text is absent."
+        ],
+        "suggested_tightening": "Use 'Touset held...' plus a current-treatment warning rather than stating the rule categorically.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6ccb630552ac4fa7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"lane2_top_cited\": {\n        \"query\": \"cites:(4277705)\",\n        \"reviewed\": 13,\n        \"cap\": 25,\n        \"cap_hit\": false,\n        \"final_cursor\": null,\n        \"audit_needed\": false,\n        \"proposed_negative_events\": 12",
+          "locator_note": "homes[0].role",
+          "needs_cl": true,
+          "problem": "The home placement may remain, but the role 'Recent development' is incomplete without a currency/treatment caveat given the disclosed negative progeny edges.",
+          "proposed_fix": "Retain the Border Searches placement only with a role such as historical Eleventh Circuit authority / treatment audit needed, or update after Pulido review.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Home-role support is outside Lens B except for currency implications.",
+          "The disclosed treatment derivation reports 12 proposed negative events in the top-cited lane."
+        ],
+        "residual_risks": [
+          "No Border Searches home page was disclosed, so Lens B cannot evaluate the broader role taxonomy."
+        ],
+        "suggested_tightening": "Avoid role text that implies current affirmative authority until treatment is resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "63d962c9ce366cb4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\",\n        \"field_iii\": \"mentioned\",\n        \"point\": null,\n        \"proposed\": true",
+          "locator_note": "treatment",
+          "needs_cl": true,
+          "problem": "The unqualified good_law / varies_by_point=false treatment call is not consistent with the disclosed progeny edges, which include proposed overruled, abrogated, superseded_by_statute, and questioned treatment entries.",
+          "proposed_fix": "Do not publish unqualified good_law. Audit Pulido and the other negative progeny edges, then set the correct field_i_validity and any point_overrides.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Top-level treatment says good_law, but field provenance shows it came from migration/page frontmatter rather than a resolved negative-treatment audit.",
+          "The lake progeny edges contain a Pulido edge with field_ii='overruled' and lane2_top_cited reports 12 proposed negative events.",
+          "Under the default-refute rule, the internal conflict prevents the good-law assertion from standing unqualified."
+        ],
+        "residual_risks": [
+          "Lane1 negative reports zero proposed negative events for SCOTUS/CA11, so the negative edge may be a false positive; that uncertainty is why CL/citing-text audit is needed."
+        ],
+        "suggested_tightening": "Surface an audit-needed or potentially-overruled status instead of good_law until the progeny conflict is resolved.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6cf955fb27eddc8c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"name\": \"United States v. Jordan Jysae Pulido\",\n          \"cluster_id\": 10374408,\n          \"cite\": [\n            \"133 F.4th 1256\"\n          ],\n          \"field_ii\": \"overruled\"",
+          "locator_note": "authority_weight",
+          "needs_cl": true,
+          "problem": "The label 'Binding in-circuit — 11th Cir.' overstates current authority once the disclosed record contains an unresolved overruled progeny edge.",
+          "proposed_fix": "Replace with a qualified weight label, such as Eleventh Circuit authority subject to negative-treatment audit, or update to the post-Pulido status after review.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity confirms Touset is an Eleventh Circuit case, which supports the original in-circuit label only if the case remains good law.",
+          "The disclosed progeny edge marked overruled prevents an unqualified binding-current-authority label from standing."
+        ],
+        "residual_risks": [
+          "Because the negative edge is proposed and only 'mentioned' at field_iii, exact binding effect must be checked in the citing authority."
+        ],
+        "suggested_tightening": "Make authority_weight depend on resolved treatment status, not just court/circuit identity.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Touset.md\",\"reviewed\":[{\"assertion_id\":\"3858543a67dcea8a\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity and citation are verified, but the citation should not be presented with an unqualified live-law implication because the disclosed progeny record contains unresolved negative-treatment edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the citation, but pair it with a treatment caveat pending audit of the negative progeny edge, especially Pulido.\",\"evidence_quote\":\"\\\"name\\\": \\\"United States v. Jordan Jysae Pulido\\\",\\n          \\\"cluster_id\\\": 10374408,\\n          \\\"cite\\\": [\\n            \\\"133 F.4th 1256\\\"\\n          ],\\n          \\\"field_ii\\\": \\\"overruled\\\"\",\"needs_cl\":true,\"locator_note\":\"citation/frontmatter/header\"},\"reasons\":[\"Lake identity verifies the case as United States v. Karl Touset, U.S. Court of Appeals for the Eleventh Circuit, decided 2018-05-23.\",\"Lake citations select 890 F.3d 1227 as the official citation.\",\"Currency is not clean because the same lake record lists a progeny edge with field_ii='overruled'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The negative edge is marked proposed=true and field_iii='mentioned'; the exact scope requires citing-opinion review.\"],\"suggested_tightening\":\"Separate existence/citation verification from live-law status in the rendered page.\"},{\"assertion_id\":\"24700a907def973a\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Lens B does not challenge historical support, but the holding is framed as unqualified current law despite disclosed negative-treatment edges.\",\"severity\":\"high\",\"proposed_fix\":\"Rewrite as a historical Touset holding and add a treatment caveat; audit Pulido to determine whether the no-suspicion rule is overruled or limited.\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\",\\n        \\\"field_iii\\\": \\\"mentioned\\\",\\n        \\\"point\\\": null,\\n        \\\"proposed\\\": true\",\"needs_cl\":true,\"locator_note\":\"holding\"},\"reasons\":[\"Support fidelity is outside Lens B.\",\"The disclosed lake record creates a currency problem for using the no-suspicion proposition as unqualified current law.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Exact current-law effect cannot be fixed from the provided files alone because the citing opinion text is absent.\"],\"suggested_tightening\":\"Use 'Touset held...' plus a current-treatment warning rather than stating the rule categorically.\"},{\"assertion_id\":\"6ccb630552ac4fa7\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The home placement may remain, but the role 'Recent development' is incomplete without a currency/treatment caveat given the disclosed negative progeny edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain the Border Searches placement only with a role such as historical Eleventh Circuit authority / treatment audit needed, or update after Pulido review.\",\"evidence_quote\":\"\\\"lane2_top_cited\\\": {\\n        \\\"query\\\": \\\"cites:(4277705)\\\",\\n        \\\"reviewed\\\": 13,\\n        \\\"cap\\\": 25,\\n        \\\"cap_hit\\\": false,\\n        \\\"final_cursor\\\": null,\\n        \\\"audit_needed\\\": false,\\n        \\\"proposed_negative_events\\\": 12\",\"needs_cl\":true,\"locator_note\":\"homes[0].role\"},\"reasons\":[\"Home-role support is outside Lens B except for currency implications.\",\"The disclosed treatment derivation reports 12 proposed negative events in the top-cited lane.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Border Searches home page was disclosed, so Lens B cannot evaluate the broader role taxonomy.\"],\"suggested_tightening\":\"Avoid role text that implies current affirmative authority until treatment is resolved.\"},{\"assertion_id\":\"63d962c9ce366cb4\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The unqualified good_law / varies_by_point=false treatment call is not consistent with the disclosed progeny edges, which include proposed overruled, abrogated, superseded_by_statute, and questioned treatment entries.\",\"severity\":\"high\",\"proposed_fix\":\"Do not publish unqualified good_law. Audit Pulido and the other negative progeny edges, then set the correct field_i_validity and any point_overrides.\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\",\\n        \\\"field_iii\\\": \\\"mentioned\\\",\\n        \\\"point\\\": null,\\n        \\\"proposed\\\": true\",\"needs_cl\":true,\"locator_note\":\"treatment\"},\"reasons\":[\"Top-level treatment says good_law, but field provenance shows it came from migration/page frontmatter rather than a resolved negative-treatment audit.\",\"The lake progeny edges contain a Pulido edge with field_ii='overruled' and lane2_top_cited reports 12 proposed negative events.\",\"Under the default-refute rule, the internal conflict prevents the good-law assertion from standing unqualified.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Lane1 negative reports zero proposed negative events for SCOTUS/CA11, so the negative edge may be a false positive; that uncertainty is why CL/citing-text audit is needed.\"],\"suggested_tightening\":\"Surface an audit-needed or potentially-overruled status instead of good_law until the progeny conflict is resolved.\"},{\"assertion_id\":\"6cf955fb27eddc8c\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The label 'Binding in-circuit — 11th Cir.' overstates current authority once the disclosed record contains an unresolved overruled progeny edge.\",\"severity\":\"high\",\"proposed_fix\":\"Replace with a qualified weight label, such as Eleventh Circuit authority subject to negative-treatment audit, or update to the post-Pulido status after review.\",\"evidence_quote\":\"\\\"name\\\": \\\"United States v. Jordan Jysae Pulido\\\",\\n          \\\"cluster_id\\\": 10374408,\\n          \\\"cite\\\": [\\n            \\\"133 F.4th 1256\\\"\\n          ],\\n          \\\"field_ii\\\": \\\"overruled\\\"\",\"needs_cl\":true,\"locator_note\":\"authority_weight\"},\"reasons\":[\"Lake identity confirms Touset is an Eleventh Circuit case, which supports the original in-circuit label only if the case remains good law.\",\"The disclosed progeny edge marked overruled prevents an unqualified binding-current-authority label from standing.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Because the negative edge is proposed and only 'mentioned' at field_iii, exact binding effect must be checked in the citing authority.\"],\"suggested_tightening\":\"Make authority_weight depend on resolved treatment status, not just court/circuit identity.\"}],\"notes\":\"Lens B only; quote fidelity and merits support were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:57:41-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:40:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ca057667dc",
+      "F-S9-PR-45cff30789",
+      "F-S9-PR-0b15e63b8b"
+    ],
     "group_id": "content/cases/United States v. Touset.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ebaad35e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ebaad35e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:32.762868Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:33.378920Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:34.159009Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:35.428607Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:37.328412Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Touset"
+    ],
+    "tokens": {
+      "input": 291809,
+      "output": 13999,
+      "source": "codex-events",
+      "total": 305808
+    },
+    "verdict_map": {
+      "24700a907def973a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3858543a67dcea8a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "63d962c9ce366cb4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6ccb630552ac4fa7": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6cf955fb27eddc8c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ca057667dc",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a96bb4bf2b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-85aee1b757",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-45cff30789",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0b15e63b8b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 272.2
   }
 }

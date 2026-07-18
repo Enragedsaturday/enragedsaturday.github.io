@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b5b96b492f971b4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Content-page 528 U.S. 119 (2000) equals lake official cite; parallels match: 120 S. Ct. 673; 145 L. Ed. 2d 570; 2000 U.S. LEXIS 504.",
+          "Identity corroborated: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster_id 118326."
+        ],
+        "residual_risks": [
+          "Frontmatter date_decided=2000-01-19 conflicts with treatment as_of_content=2000-01-12 (the recognized decision date); this is a date-field discrepancy, not a citation defect, so cite existence is unaffected."
+        ],
+        "suggested_tightening": "Reconcile date_decided to 2000-01-12.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4036ab833e871c80",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"## Rule Yes.\"",
+          "locator_note": "Wardlow ^pin-124, Rule section; sentence attributed to 528 U.S. at 124.",
+          "needs_cl": true,
+          "problem": "Extractor 'quote' for pin-124 is a page-top blob (title, header line, HTML comment, Background/Issue, ending at '## Rule Yes.') that stops exactly where the real quotation begins, so quote_fidelity=mismatch is a scoping artifact; the actual pin-124 quotation ('Our cases have also recognized that nervous, evasive behavior is a pertinent factor...') is slip-only/unverified with no source text disclosed.",
+          "proposed_fix": "Re-scope to the quoted sentence and star-verify against 528 U.S. 124.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Blob composition (markdown headers; ends at 'Rule Yes.') shows a mis-scoped span, not a genuine quote comparison.",
+          "No source text disclosed; pincite slip-only."
+        ],
+        "residual_risks": [
+          "Pincite 528 U.S. 124 unverified from disclosed evidence, though pin-124a on the same page 124 was star-verified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "965c3de5f94b9152",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoint_status\": \"slip-only\", \"quote_fidelity\": \"mismatch\"",
+          "locator_note": "Wardlow ^pin-124b, Rule section, attributed to Id. (528 U.S. 124).",
+          "needs_cl": true,
+          "problem": "Pincite ^pin-124b (Id. = 528 U.S. 124) is slip-only with quote_fidelity=mismatch and no source text inlined; the quotation 'An individual's presence in an area of expected criminal activity, standing alone, is not enough...' cannot be confirmed.",
+          "proposed_fix": "Star-verify against 528 U.S. 124 (same page as the star-verified pin-124a).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote reads as genuine Wardlow language but is unverified from disclosed evidence.",
+          "Sits on the same page (124) as star-verified pin-124a, raising confidence but not confirming."
+        ],
+        "residual_risks": [
+          "Fidelity unconfirmed; extractor star-verified pin-124a but not pin-124b on the same page."
+        ],
+        "suggested_tightening": "Add a text-fragment anchor as with pin-124a.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "a29d80fb7444499f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Disclosed extractor status is affirmative: pinpoint_status=star-verified, quote_fidelity=matched, star_marker=124.",
+          "Content page carries a matching text-fragment deep link (#:~:text=Headlong%20flight...) for the same 'Headlong flight...' quotation."
+        ],
+        "residual_risks": [
+          "Clearance relies on the extractor's star-match; raw source opinion text is not inlined in the pack for independent re-derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dcb47c34c2c3a5bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed treatment.edges are proposed:true candidate signals (questioned/overruled/criticized/abrogated) from a keyword scan; none is a confirmed overruling of Wardlow.",
+          "field_i_validity=good_law seed is uncontradicted by any confirmed adverse treatment."
+        ],
+        "residual_risks": [
+          "derivation audit_needed=true, proposed_negative_events lane1=3/lane2=24, 'R15 treatment audit required'; unaudited migration-seed.",
+          "Edge-level 'overruled'/'abrogated' field_ii tags are noisy CL signals on citing cases, not confirmation the target was overruled.",
+          "Badge 'good (as of 2026-06-30)' is a migration-seed date, not a derived 2026 currency check."
+        ],
+        "suggested_tightening": "Complete the R15 audit before relying on the 2026-06-30 as_of.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-917e8b1f28",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Illinois v. Wardlow.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-01-b2324b92",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Wardlow"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4036ab833e871c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "965c3de5f94b9152": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "a29d80fb7444499f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5b96b492f971b4c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dcb47c34c2c3a5bd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4808993ffa",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1c188b3e42",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-917e8b1f28",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

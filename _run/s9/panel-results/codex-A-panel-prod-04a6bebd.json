@@ -1,38 +1,192 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Ex parte Jackson.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "9640c60e8ed858d3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives input_case_name Ex parte Jackson, court U.S. Supreme Court, date_decided 1878-05-13, and year 1878.",
+          "Lake citations list official 96 U.S. 727, parallel 24 L. Ed. 877, and vendor-neutral 1877 U.S. LEXIS 1718; official_selection selects 96 U.S. 727."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c0c88161adae9e1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "such as letters, and sealed packages subject to letter postage",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The holding is supported in substance, but it is slightly broader than the opinion text because the opinion limits the protected package category to sealed packages subject to letter postage/closed against inspection and notes an outward-form-and-weight exception.",
+          "proposed_fix": "Tighten the holding to letters and sealed packages subject to letter postage, closed against inspection, except as to outward form and weight; use oath or affirmation rather than oath alone.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion distinguishes mail intended to be kept free from inspection from open printed matter.",
+          "The opinion states that letters and sealed packages of this kind are guarded like papers in the sender's domicile and may be opened only under a warrant with oath or affirmation and particularity.",
+          "The opinion also supports Congress's power to exclude lottery circulars from the mails while limiting warrantless enforcement against sealed mail."
+        ],
+        "residual_risks": [
+          "Lake pinpoints are empty, so the support check depends on the cached opinion text rather than a lake pinpoint quote."
+        ],
+        "suggested_tightening": "Add the opinion's qualifiers: sealed packages subject to letter postage, closed against inspection, except as to outward form and weight.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40562f8264a1a5f3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "home Common Law Origins / role Historical / origin",
+          "needs_cl": false,
+          "problem": "The disclosed evidence does not establish the taxonomy home Common Law Origins or prove that this case has an origin role rather than merely a historical SCOTUS sealed-mail case.",
+          "proposed_fix": "Provide the Common Law Origins page, classification criteria, or comparative corpus evidence establishing the origin role; otherwise downgrade to a narrower descriptive role supported by the case text.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The lake record has identity, citations, treatment, and empty progeny fields, but no home-role or origin classification field.",
+          "The opinion text supports a historical sealed-mail rule, but does not itself verify placement on Common Law Origins or origin status at the stated breadth."
+        ],
+        "residual_risks": [
+          "The role may be correct in the larger corpus, but it is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Frame the page role as provisional unless the corpus supplies affirmative origin-classification evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "4929930f0ad0b32c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of fields, null composite_basis_ref, varies_by_point false, and the same scope_note.",
+          "Lens A records this match but does not assess treatment currency or good-law status."
+        ],
+        "residual_risks": [
+          "Treatment and currency are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce3ba69ee7fd0ed0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as U.S. Supreme Court and court_level as scotus, supporting the SCOTUS component of the authority-weight label.",
+          "Lens A raises no treatment/currency finding on the binding-weight label."
+        ],
+        "residual_risks": [
+          "The authority-weight mapping itself is not separately encoded in the lake record; treatment/currency review remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Ex parte Jackson.md\",\"reviewed\":[{\"assertion_id\":\"9640c60e8ed858d3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives input_case_name Ex parte Jackson, court U.S. Supreme Court, date_decided 1878-05-13, and year 1878.\",\"Lake citations list official 96 U.S. 727, parallel 24 L. Ed. 877, and vendor-neutral 1877 U.S. LEXIS 1718; official_selection selects 96 U.S. 727.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0c0c88161adae9e1\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is supported in substance, but it is slightly broader than the opinion text because the opinion limits the protected package category to sealed packages subject to letter postage/closed against inspection and notes an outward-form-and-weight exception.\",\"severity\":\"low\",\"proposed_fix\":\"Tighten the holding to letters and sealed packages subject to letter postage, closed against inspection, except as to outward form and weight; use oath or affirmation rather than oath alone.\",\"evidence_quote\":\"such as letters, and sealed packages subject to letter postage\",\"needs_cl\":false,\"locator_note\":\"holding field\"},\"reasons\":[\"The opinion distinguishes mail intended to be kept free from inspection from open printed matter.\",\"The opinion states that letters and sealed packages of this kind are guarded like papers in the sender's domicile and may be opened only under a warrant with oath or affirmation and particularity.\",\"The opinion also supports Congress's power to exclude lottery circulars from the mails while limiting warrantless enforcement against sealed mail.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake pinpoints are empty, so the support check depends on the cached opinion text rather than a lake pinpoint quote.\"],\"suggested_tightening\":\"Add the opinion's qualifiers: sealed packages subject to letter postage, closed against inspection, except as to outward form and weight.\"},{\"assertion_id\":\"40562f8264a1a5f3\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed evidence does not establish the taxonomy home Common Law Origins or prove that this case has an origin role rather than merely a historical SCOTUS sealed-mail case.\",\"severity\":\"medium\",\"proposed_fix\":\"Provide the Common Law Origins page, classification criteria, or comparative corpus evidence establishing the origin role; otherwise downgrade to a narrower descriptive role supported by the case text.\",\"evidence_quote\":null,\"needs_cl\":false,\"locator_note\":\"home Common Law Origins / role Historical / origin\"},\"reasons\":[\"The lake record has identity, citations, treatment, and empty progeny fields, but no home-role or origin classification field.\",\"The opinion text supports a historical sealed-mail rule, but does not itself verify placement on Common Law Origins or origin status at the stated breadth.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The role may be correct in the larger corpus, but it is not verifiable from the disclosed files.\"],\"suggested_tightening\":\"Frame the page role as provisional unless the corpus supplies affirmative origin-classification evidence.\"},{\"assertion_id\":\"4929930f0ad0b32c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of fields, null composite_basis_ref, varies_by_point false, and the same scope_note.\",\"Lens A records this match but does not assess treatment currency or good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency are reserved for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ce3ba69ee7fd0ed0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the court as U.S. Supreme Court and court_level as scotus, supporting the SCOTUS component of the authority-weight label.\",\"Lens A raises no treatment/currency finding on the binding-weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority-weight mapping itself is not separately encoded in the lake record; treatment/currency review remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:42:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:58:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19d26a10f7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2f9805f5a1",
+      "F-S9-PR-e43b567967"
+    ],
     "group_id": "content/cases/Ex parte Jackson.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Ex parte Jackson"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-04a6bebd",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-04a6bebd.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Ex parte Jackson' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Ex parte Jackson"
+    ],
     "tokens": {
-      "input": 823,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 823
+      "input": 94220,
+      "output": 10517,
+      "source": "codex-events",
+      "total": 104737
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "0c0c88161adae9e1": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "40562f8264a1a5f3": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "4929930f0ad0b32c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9640c60e8ed858d3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce3ba69ee7fd0ed0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2f9805f5a1",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e43b567967",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-19d26a10f7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 198.9
   }
 }

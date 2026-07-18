@@ -1,0 +1,123 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "824f4b6d171ecfdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority (Justice Alito) confirms identity: Kentucky v. King, Lexington apartment, burnt-marijuana odor, police-created-exigency doctrine; reporter star labels *455-*472 are consistent with 563 U.S. 452 (body opens at *455; 452-454 are the syllabus, not in cache).",
+          "Citations 563 U.S. 452 / 131 S. Ct. 1849 / 179 L. Ed. 2d 865 / 2011 U.S. LEXIS 3541 are the standard King reporters; none contradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b2086a890c901c0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment, warrantless entry to prevent the destruction of evidence is reasonable and thus allowed.",
+          "locator_note": "pin-op8; cached b542-8 (reporter *462, ~ slip op. 8); the 'warrantless entry based on exigent circumstances' phrase is drawn from b550-9.",
+          "needs_cl": true,
+          "problem": "The shipped page presents, in quotation marks and pincited to '563 U.S. at ___ (slip op., at 8)', the sentence: 'a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment.' This is NOT verbatim in the cached opinion. The pincited holding (slip op. 8, reporter *462, cached p b542-8) actually reads: 'Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment, warrantless entry to prevent the destruction of evidence is reasonable and thus allowed.' The page quote is a stitched paraphrase; it borrows 'warrantless entry based on exigent circumstances' from a different sentence (b550-9) and restructures b542-8, changing 'that violates' to 'violating' and dropping 'to prevent the destruction of evidence'. A reader would reproduce this as a verbatim Supreme Court quote and be wrong. (The separately-stored pin.quote field is additionally a mis-extraction of the Issue tail plus the '## Rule' header.)",
+          "proposed_fix": "Either quote b542-8 verbatim ('Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment, warrantless entry to prevent the destruction of evidence is reasonable and thus allowed.') with a matching pincite, or drop the quotation marks and present it as a paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quotation-marked text does not match the cached opinion at the pincited location; it is a reconstructed/paraphrased sentence, not verbatim.",
+          "The distinctive clause exists in the opinion (b542-8) but with different wording ('that violates' vs 'violating') and a different sentence frame; presenting the reconstruction as a direct quote fails quote fidelity."
+        ],
+        "residual_risks": [
+          "The holding's SUBSTANCE is stated accurately; only verbatim fidelity fails. A verbatim syllabus source (syllabus not in cache) should be checked via CL, but the pincite points to the majority slip op., not the syllabus."
+        ],
+        "suggested_tightening": "Treat quotation-marked spans that merge language from two non-adjacent passages as fidelity failures even when the substance is right.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12d4a3ae8ad23ce8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed record: the cache is King (2011) itself and shows no negative treatment; the scope_note is a pipeline process note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a false legal claim.",
+          "No disclosed evidence that King has been overruled or abrogated."
+        ],
+        "residual_risks": [
+          "'good as of 2026-06-30' is a forward-looking currency judgment; the page's Lange v. California (2021)-leaves-King-intact note is outside the cache, uncontradicted but not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1bb90b777b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Kentucky v. King.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-04-78a811b5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kentucky v. King"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "12d4a3ae8ad23ce8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b2086a890c901c0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "824f4b6d171ecfdc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6aa78bbe3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1bb90b777b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

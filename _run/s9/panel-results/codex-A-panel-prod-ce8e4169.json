@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Vinton.json",
+    "lens": "A",
+    "notes": "Lens A only. The Alton/Aton typo also appears outside the reviewed quote in content_page.md, but only the enumerated group_inventory rows were adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "274a6141e1a9a0ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for United States v. Vinton, decided 2010-02-05 by the U.S. Court of Appeals for the District of Columbia Circuit.",
+          "The official/display citation in the inventory, 594 F.3d 14, matches the lake official citation; the parallel and vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b852f10961b5186",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "hidden elsewhere in the vicinity. This concern was not abated\nby ordering Vinton out of the car and handcuffing him,\nbecause had Vinton ultimately not been arrested, he would\nhave been “permitted to reenter his automobile, and he\nw[ould] then have [had] access to any weapons inside.”\nLong, 463 U.S. at 1052.",
+          "locator_note": "text/United States v. Vinton__916544.txt lines 232-237; lake pinpoints pin-20",
+          "needs_cl": false,
+          "problem": "pin-20's stored pinpoint quote is not a verbatim opinion passage; it is copied from content-page narrative and headings, including '## Issue' and '## Rule', rather than the opinion text supporting the pin.",
+          "proposed_fix": "Replace pin-20's quote with the actual opinion passage beginning 'This concern was not abated...' and remove generated page headings from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion contains the 'This concern was not abated' passage, not the inventory quote beginning 'sticker that could suggest...'.",
+          "The lake record itself marks pin-20 quote_fidelity as 'mismatch' and supplies no page value."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported by the opinion passage; this refutation is limited to quote-fidelity/pinpoint text."
+        ],
+        "suggested_tightening": "Store only source text in pinpoint quotes, not generated markdown section text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa767babc75e92fb",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Examining the totality of the circumstances objectively,\nOfficer Alton had a reasonable belief, based on specific and\narticulable facts, that Vinton was armed and dangerous. See\nLong, 463 U.S. at 1049. Thus, he properly searched the\npassenger compartment of Vinton’s car for additional\nweapons.",
+          "locator_note": "text/United States v. Vinton__916544.txt lines 286-291; content_page.md line 55; lake pinpoints pin-21",
+          "needs_cl": false,
+          "problem": "The quoted passage changes the officer's name from 'Officer Alton' in the opinion to 'Officer Aton' in the inventory/content quote, so it is not character-faithful.",
+          "proposed_fix": "Correct the quote to 'Officer Alton' and preserve an accurate ellipsis only for the omitted citation text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion says 'Officer Alton'; the reviewed quote says 'Officer Aton'.",
+          "The source passage is identifiable, but the verbatim quote as framed contains a material character/name error."
+        ],
+        "residual_risks": [
+          "The legal point supported by the passage appears intact once the name typo is corrected."
+        ],
+        "suggested_tightening": "Run quote checks against the cached opinion text after any typographic normalization.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bee900080e888c3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment fields in the inventory match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2010-02-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Vinton.json\",\"reviewed\":[{\"assertion_id\":\"274a6141e1a9a0ba\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for United States v. Vinton, decided 2010-02-05 by the U.S. Court of Appeals for the District of Columbia Circuit.\",\"The official/display citation in the inventory, 594 F.3d 14, matches the lake official citation; the parallel and vendor citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5b852f10961b5186\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-20's stored pinpoint quote is not a verbatim opinion passage; it is copied from content-page narrative and headings, including '## Issue' and '## Rule', rather than the opinion text supporting the pin.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-20's quote with the actual opinion passage beginning 'This concern was not abated...' and remove generated page headings from the pinpoint quote.\",\"evidence_quote\":\"hidden elsewhere in the vicinity. This concern was not abated\\nby ordering Vinton out of the car and handcuffing him,\\nbecause had Vinton ultimately not been arrested, he would\\nhave been “permitted to reenter his automobile, and he\\nw[ould] then have [had] access to any weapons inside.”\\nLong, 463 U.S. at 1052.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Vinton__916544.txt lines 232-237; lake pinpoints pin-20\"},\"reasons\":[\"The disclosed opinion contains the 'This concern was not abated' passage, not the inventory quote beginning 'sticker that could suggest...'.\",\"The lake record itself marks pin-20 quote_fidelity as 'mismatch' and supplies no page value.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition appears supported by the opinion passage; this refutation is limited to quote-fidelity/pinpoint text.\"],\"suggested_tightening\":\"Store only source text in pinpoint quotes, not generated markdown section text.\"},{\"assertion_id\":\"fa767babc75e92fb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage changes the officer's name from 'Officer Alton' in the opinion to 'Officer Aton' in the inventory/content quote, so it is not character-faithful.\",\"severity\":\"high\",\"proposed_fix\":\"Correct the quote to 'Officer Alton' and preserve an accurate ellipsis only for the omitted citation text.\",\"evidence_quote\":\"Examining the totality of the circumstances objectively,\\nOfficer Alton had a reasonable belief, based on specific and\\narticulable facts, that Vinton was armed and dangerous. See\\nLong, 463 U.S. at 1049. Thus, he properly searched the\\npassenger compartment of Vinton’s car for additional\\nweapons.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Vinton__916544.txt lines 286-291; content_page.md line 55; lake pinpoints pin-21\"},\"reasons\":[\"The disclosed opinion says 'Officer Alton'; the reviewed quote says 'Officer Aton'.\",\"The source passage is identifiable, but the verbatim quote as framed contains a material character/name error.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal point supported by the passage appears intact once the name typo is corrected.\"],\"suggested_tightening\":\"Run quote checks against the cached opinion text after any typographic normalization.\"},{\"assertion_id\":\"1bee900080e888c3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment fields in the inventory match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2010-02-05, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not substantively reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A only. The Alton/Aton typo also appears outside the reviewed quote in content_page.md, but only the enumerated group_inventory rows were adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:10:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a9362bd6cd",
+      "F-S9-PR-621d0612b3"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Vinton.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ce8e4169.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Vinton"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 338146,
+      "output": 9708,
+      "source": "codex-events",
+      "total": 347854
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1bee900080e888c3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "274a6141e1a9a0ba": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b852f10961b5186": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fa767babc75e92fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9362bd6cd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-621d0612b3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 197.4
   }
 }

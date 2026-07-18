@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6f84668d8234047c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '445 U.S. 573 (1980)', 'PAYTON v. NEW YORK', 'No. 78-5420', 'Decided April 15, 1980', 'Supreme Court of United States' — matching official cite, docket 78-5420, and date_decided 1980-04-15.",
+          "official_selection_present=true; parallel cites 100 S. Ct. 1371 / 63 L. Ed. 2d 639 and neutral 1980 U.S. LEXIS 13 internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3fc6f1a4c9d2c7e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote 'In terms that apply equally to seizures of property and to seizures of persons, the Fourth Amendment has drawn a firm line at the entrance to the house. Absent exigent circumstances, that threshold may not reasonably be crossed without a warrant.' matches the cached opinion verbatim.",
+          "The passage follows the '*590' star marker, confirming pincite '445 U.S. at 590'; payload's quote_fidelity='matched' / pinpoint_status='star-verified' / star_marker='590' independently confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48284b734569de8e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.",
+          "locator_note": "Cached opinion paragraph after the '*576' star ('We now reverse ... and hold that the Fourth Amendment ... prohibits ...'); content page ^pin-576.",
+          "needs_cl": false,
+          "problem": "Recorded pin-576 quote is a mis-harvested page front-matter/Background/Issue blob ('--- # Payton ... ## Rule No. The Fourth Amendment'), not opinion text, so quote_fidelity='mismatch' is a harvester artifact. The phrase the page actually quotes at ^pin-576 is verbatim in the opinion at page 576.",
+          "proposed_fix": "Re-point the recorded pin-576 quote to the page's actual ^pin-576 quotation ('prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.'), which sits right after the '*576' star; clear the false mismatch flag.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-576 quotation matches the opinion verbatim and sits on page 576 (right after the '*576' star), so pincite '445 U.S. at 576' is correct.",
+          "Only the recorded pinpoint-quote string is defective (it captured page markdown up to '## Rule No. The Fourth Amendment'); the published quotation is faithful."
+        ],
+        "residual_risks": [
+          "Verbatim-trusting the recorded pin quote would surface a spurious misquote; the rendered page is clean."
+        ],
+        "suggested_tightening": "Anchor the harvester on the quoted-sentence span rather than the preceding page structure.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70d0910963298015",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Internally consistent: as_of_content=1980-04-15 equals the decision date, field_i_validity=good_law, varies_by_point=false.",
+          "Current good-law status is not independently confirmable from the disclosed 1980 opinion; all 27 disclosed negative edges are proposed=true (unadjudicated), so there is no disclosed adjudicated contrary treatment; refuting good_law would fabricate a defect."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed; scope_note warns S2 may downgrade."
+        ],
+        "suggested_tightening": "Run S2 treatment re-derivation to adjudicate the proposed edges and replace the seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-72498ac7f2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Payton v. New York.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-01-3503ef9d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Payton v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3fc6f1a4c9d2c7e0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48284b734569de8e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6f84668d8234047c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70d0910963298015": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c1a611f7d6",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-72498ac7f2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

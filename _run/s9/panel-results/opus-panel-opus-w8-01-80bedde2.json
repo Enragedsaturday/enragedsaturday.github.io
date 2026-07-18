@@ -1,0 +1,123 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7c7606f5a219a4cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption '498 U.S. 146 (1990)' + 'MINNICK v. MISSISSIPPI', 'Decided December 3, 1990' confirms the case and selected official cite and matches date_decided.",
+          "Official '498 U.S. 146' present in cluster.citations[] with selected_official=true; parallel cites (111 S. Ct. 486; 112 L. Ed. 2d 489) consistent."
+        ],
+        "residual_risks": [
+          "Parallel reporter pages not independently re-derived."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b9eff4501b9b7fb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is a misextracted header block (ends at '## Rule No.'), so quote_fidelity=='mismatch' is a harvest false positive.",
+          "The actual pin-153 passage ('we now hold that when counsel is requested, interrogation must cease, and officials may not reinitiate interrogation without counsel present, whether or not the accused has consulted with his attorney.') is VERBATIM in the cached opinion text.",
+          "It falls between the *153 and *154 star markers -> page 153, so the pincite '498 U.S. at 153' is correct."
+        ],
+        "residual_risks": [
+          "Spurious 'mismatch' flag from front-matter harvest."
+        ],
+        "suggested_tightening": "Re-anchor pinpoint harvest to the ^pin-153 span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae68f64957059513",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=='good_law' for a SCOTUS Fifth-Amendment/Edwards holding; no confirmed negative edge (all proposed:true, audit_needed).",
+          "Disclosed negative candidates are keyword-triage snippets from lower courts that cannot overrule SCOTUS; nothing disclosed refutes good_law."
+        ],
+        "residual_risks": [
+          "as_of_treatment is a migration seed; proposed negatives await R15 audit; currency re-derivation would need CourtListener."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e4fb86c906",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c1a2c5aaab",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Minnick v. Mississippi.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-01-80bedde2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnick v. Mississippi"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7c7606f5a219a4cc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae68f64957059513": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b9eff4501b9b7fb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e4fb86c906",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c1a2c5aaab",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

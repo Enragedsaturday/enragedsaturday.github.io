@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Crumble.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "3ebca964e3162537",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity matches United States v. Prentiss Anthony Crumble, decided by the 8th Cir. on 2018-01-02, with cluster_id 4456532 and lead_opinion_id 4233785.",
+          "The asserted citation 878 F.3d 656 is present as the lake record's official/display citation, and expected_citation_found is true.",
+          "No disclosed treatment edge, progeny edge, or lake field says the authority has been overruled, superseded, abrogated, or vacated as to the search-and-seizure holding."
+        ],
+        "residual_risks": [
+          "The disclosed record does not contain a completed citator/progeny query, so this verifies the cited authority's existence and disclosed-record currency only, not an external good-law certification."
+        ],
+        "suggested_tightening": "Keep any live-law implication tied to the separate Unverified treatment banner until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f0624b4a20d7883b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion reports field_i_validity as unverified, with null as_of_content and as_of_treatment, matching the lake treatment fields.",
+          "The scope note matches the lake record: treatment/progeny were intentionally not derived until promotion.",
+          "The lake record has empty treatment edges and no cached progeny enumeration, so the page's Unverified treatment call is consistent with the disclosed authority record and does not assert a verified good-law status."
+        ],
+        "residual_risks": [
+          "Because treatment is explicitly unverified, the record cannot support any stronger good-law statement without additional citator/progeny evidence."
+        ],
+        "suggested_tightening": "Maintain the Unverified status and avoid upgrading the case to a verified good-law label until S9/two-key treatment review is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Crumble.json\",\"reviewed\":[{\"assertion_id\":\"3ebca964e3162537\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity matches United States v. Prentiss Anthony Crumble, decided by the 8th Cir. on 2018-01-02, with cluster_id 4456532 and lead_opinion_id 4233785.\",\"The asserted citation 878 F.3d 656 is present as the lake record's official/display citation, and expected_citation_found is true.\",\"No disclosed treatment edge, progeny edge, or lake field says the authority has been overruled, superseded, abrogated, or vacated as to the search-and-seizure holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not contain a completed citator/progeny query, so this verifies the cited authority's existence and disclosed-record currency only, not an external good-law certification.\"],\"suggested_tightening\":\"Keep any live-law implication tied to the separate Unverified treatment banner until citator/progeny verification is completed.\"},{\"assertion_id\":\"f0624b4a20d7883b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion reports field_i_validity as unverified, with null as_of_content and as_of_treatment, matching the lake treatment fields.\",\"The scope note matches the lake record: treatment/progeny were intentionally not derived until promotion.\",\"The lake record has empty treatment edges and no cached progeny enumeration, so the page's Unverified treatment call is consistent with the disclosed authority record and does not assert a verified good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is explicitly unverified, the record cannot support any stronger good-law statement without additional citator/progeny evidence.\"],\"suggested_tightening\":\"Maintain the Unverified status and avoid upgrading the case to a verified good-law label until S9/two-key treatment review is complete.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:31:05-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:51:48-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Crumble.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Crumble"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3b0a3ad2",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3b0a3ad2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Crumble' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Crumble"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 136550,
+      "output": 5962,
+      "source": "codex-events",
+      "total": 142512
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "3ebca964e3162537": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f0624b4a20d7883b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "wall_clock_s": 118.0
   }
 }

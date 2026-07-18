@@ -1,39 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-di-re--104490.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "4015fe74c449f333",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-di-re--104490__2ebb66.json treatment.scope_note",
+          "needs_cl": true,
+          "problem": "The authority identity and citations are verified, but the disclosed record does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with treatment/progeny intentionally not derived, so the cited authority cannot be confirmed as still live law from the disclosed evidence.",
+          "proposed_fix": "Do not present the authority as current/live law until treatment and progeny are derived; mark the case as identity-verified but treatment-unverified, or promote the record and populate treatment/progeny fields.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies identity with status 'verified_identity' and expected_citation_found true, but that proves citation identity only.",
+          "The treatment field is 'unverified', as_of_content and as_of_treatment are null, and progeny rows_cached is 0, leaving no disclosed basis to confirm live-law currency."
+        ],
+        "residual_risks": [
+          "This refutation is limited to current-law currency, not the historical existence of United States v. Di Re or the listed citations."
+        ],
+        "suggested_tightening": "Separate 'case exists / identity verified' from 'still live law'; for this stub, say only that identity is verified and treatment is unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ba4589bc8d23791f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload's treatment call is 'unverified', matching the lake treatment.field_i_validity value.",
+          "The lake treatment scope_note states treatment/progeny were intentionally not derived, and the disclosed record contains no superseding, overruling, abrogating, or limiting edge."
+        ],
+        "residual_risks": [
+          "Because the treatment call is only 'unverified', it does not establish that Di Re remains good law."
+        ],
+        "suggested_tightening": "Keep the treatment label explicit as 'unverified' and avoid any good-law or no-negative-treatment phrasing for this stub record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-di-re--104490.json\",\"reviewed\":[{\"assertion_id\":\"4015fe74c449f333\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The authority identity and citations are verified, but the disclosed record does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with treatment/progeny intentionally not derived, so the cited authority cannot be confirmed as still live law from the disclosed evidence.\",\"severity\":\"high\",\"proposed_fix\":\"Do not present the authority as current/live law until treatment and progeny are derived; mark the case as identity-verified but treatment-unverified, or promote the record and populate treatment/progeny fields.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-di-re--104490__2ebb66.json treatment.scope_note\"},\"reasons\":[\"The lake record verifies identity with status 'verified_identity' and expected_citation_found true, but that proves citation identity only.\",\"The treatment field is 'unverified', as_of_content and as_of_treatment are null, and progeny rows_cached is 0, leaving no disclosed basis to confirm live-law currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This refutation is limited to current-law currency, not the historical existence of United States v. Di Re or the listed citations.\"],\"suggested_tightening\":\"Separate 'case exists / identity verified' from 'still live law'; for this stub, say only that identity is verified and treatment is unverified.\"},{\"assertion_id\":\"ba4589bc8d23791f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory payload's treatment call is 'unverified', matching the lake treatment.field_i_validity value.\",\"The lake treatment scope_note states treatment/progeny were intentionally not derived, and the disclosed record contains no superseding, overruling, abrogating, or limiting edge.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the treatment call is only 'unverified', it does not establish that Di Re remains good law.\"],\"suggested_tightening\":\"Keep the treatment label explicit as 'unverified' and avoid any good-law or no-negative-treatment phrasing for this stub record.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:37:46-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:23:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-1a816e8726"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-di-re--104490.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "united-states-v-di-re--104490"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-11a0e3bb",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-11a0e3bb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'united-states-v-di-re--104490' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-di-re--104490"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "united-states-v-di-re--104490"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 101618,
+      "output": 3402,
+      "source": "codex-events",
+      "total": 105020
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "4015fe74c449f333": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ba4589bc8d23791f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a816e8726",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 73.7
   }
 }

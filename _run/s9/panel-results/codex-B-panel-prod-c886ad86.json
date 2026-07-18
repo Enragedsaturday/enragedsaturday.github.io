@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/millbrook-v-united-states--856345.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is based on group_inventory.jsonl and the disclosed lake/text files.",
+    "reviewed": [
+      {
+        "assertion_id": "826acf31360e7be9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "record_id=millbrook-v-united-states--856345; lake treatment.field_i_validity is unverified and progeny rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citations, but Lens B requires a currency/live-law check. The lake record is a frontier stub with treatment and progeny intentionally not derived, so live-law status cannot be verified from the disclosed evidence.",
+          "proposed_fix": "Do not present this authority as current/live law from this record alone. Qualify it as identity-verified but treatment-unverified, or promote the record through treatment/progeny derivation.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity fields verify Millbrook v. United States as a U.S. Supreme Court case decided 2013-03-27 with cluster_id 856345.",
+          "The same lake record does not verify current validity: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration is null."
+        ],
+        "residual_risks": [
+          "The case may be live law, but that cannot be confirmed under the disclosed-evidence-only rule."
+        ],
+        "suggested_tightening": "Separate citation existence from currency: display 'identity verified; treatment unverified' unless complete treatment/progeny evidence is supplied.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "f915497eb515aa71",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The group payload matches the lake treatment call: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake scope note expressly says treatment/progeny were not derived, so the asserted unverified treatment status is consistent with the disclosed record."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment label; it does not establish that Millbrook remains good law."
+        ],
+        "suggested_tightening": "Use explicit wording such as 'treatment unverified; no good-law determination made.'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/millbrook-v-united-states--856345.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"826acf31360e7be9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citations, but Lens B requires a currency/live-law check. The lake record is a frontier stub with treatment and progeny intentionally not derived, so live-law status cannot be verified from the disclosed evidence.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not present this authority as current/live law from this record alone. Qualify it as identity-verified but treatment-unverified, or promote the record through treatment/progeny derivation.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"record_id=millbrook-v-united-states--856345; lake treatment.field_i_validity is unverified and progeny rows_cached is 0.\"\n      },\n      \"reasons\": [\n        \"The lake identity fields verify Millbrook v. United States as a U.S. Supreme Court case decided 2013-03-27 with cluster_id 856345.\",\n        \"The same lake record does not verify current validity: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny enumeration is null.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The case may be live law, but that cannot be confirmed under the disclosed-evidence-only rule.\"\n      ],\n      \"suggested_tightening\": \"Separate citation existence from currency: display 'identity verified; treatment unverified' unless complete treatment/progeny evidence is supplied.\"\n    },\n    {\n      \"assertion_id\": \"f915497eb515aa71\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The group payload matches the lake treatment call: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\n        \"The lake scope note expressly says treatment/progeny were not derived, so the asserted unverified treatment status is consistent with the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This stands only as an unverified-treatment label; it does not establish that Millbrook remains good law.\"\n      ],\n      \"suggested_tightening\": \"Use explicit wording such as 'treatment unverified; no good-law determination made.'\"\n    }\n  ],\n  \"notes\": \"No content_page.* file was present in the working directory; review is based on group_inventory.jsonl and the disclosed lake/text files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:37:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:20:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-841e22cb16"
+    ],
     "group_id": "_overhaul2/lake/cases/millbrook-v-united-states--856345.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c886ad86",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c886ad86.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:06.910204Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:07.688094Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:08.888149Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:10.949774Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:14.857306Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record millbrook-v-united-states--856345"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "millbrook-v-united-states--856345"
+    ],
+    "tokens": {
+      "input": 118195,
+      "output": 6140,
+      "source": "codex-events",
+      "total": 124335
+    },
+    "verdict_map": {
+      "826acf31360e7be9": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f915497eb515aa71": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-841e22cb16",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 118.8
   }
 }

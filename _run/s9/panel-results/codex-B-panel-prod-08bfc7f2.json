@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
+    "lens": "B",
+    "notes": "Lens B only. No disclosed confirmed treatment event refutes the good_law/live-law call; quote-fidelity rows were not assessed for quote correctness.",
+    "reviewed": [
+      {
+        "assertion_id": "6c2338afd83e4725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Orozco v. Texas as a U.S. Supreme Court case decided 1969-03-25.",
+          "The official citation in the lake record is 394 U.S. 324 and the same citation is selected for display.",
+          "For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30, with no point_overrides."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-event edges and audit_needed markers, but no disclosed confirmed downgrade."
+        ],
+        "suggested_tightening": "Keep the as-of treatment date visible because currency is treatment-field dependent.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f01999e7ad9a7e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity assertion for pin-326, not a treatment or currency assertion.",
+          "The lake pinpoint for pin-326 exists and carries quote_fidelity=mismatch; lens B raises no quote-support finding."
+        ],
+        "residual_risks": [
+          "Quote correctness and pinpoint support remain for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8b660f14541a35a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity assertion for pin-327, not a treatment or currency assertion.",
+          "The lake pinpoint for pin-327 exists and carries quote_fidelity=mismatch; lens B raises no quote-support finding."
+        ],
+        "residual_risks": [
+          "Quote correctness and pinpoint support remain for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90c3a110aa7890ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=1969-03-25, as_of_treatment=2026-06-30, varies_by_point=false.",
+          "The lake record has point_overrides=[] and no confirmed point-specific downgrade.",
+          "The disclosed treatment edges are marked proposed=true and field_iii=mentioned, so they do not establish a confirmed overruling, supersession, or limitation of Orozco.",
+          "The page's Binding — SCOTUS weight is consistent with identity.court_level=scotus."
+        ],
+        "residual_risks": [
+          "lake.treatment.composite_basis is migration-seed and the derivation sections report audit_needed=true for lane1_negative and lane2_top_cited.",
+          "Several proposed edges have negative field_ii labels, so a future treatment audit could downgrade the record, but the disclosed judgment field remains good_law."
+        ],
+        "suggested_tightening": "If the rendered page supports treatment caveats, surface the migration-seed/audit-needed note alongside the good_law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Orozco v. Texas.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6c2338afd83e4725\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Orozco v. Texas as a U.S. Supreme Court case decided 1969-03-25.\",\n        \"The official citation in the lake record is 394 U.S. 324 and the same citation is selected for display.\",\n        \"For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30, with no point_overrides.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative-event edges and audit_needed markers, but no disclosed confirmed downgrade.\"\n      ],\n      \"suggested_tightening\": \"Keep the as-of treatment date visible because currency is treatment-field dependent.\"\n    },\n    {\n      \"assertion_id\": \"4f01999e7ad9a7e5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote-fidelity assertion for pin-326, not a treatment or currency assertion.\",\n        \"The lake pinpoint for pin-326 exists and carries quote_fidelity=mismatch; lens B raises no quote-support finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote correctness and pinpoint support remain for lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b8b660f14541a35a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote-fidelity assertion for pin-327, not a treatment or currency assertion.\",\n        \"The lake pinpoint for pin-327 exists and carries quote_fidelity=mismatch; lens B raises no quote-support finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote correctness and pinpoint support remain for lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"90c3a110aa7890ed\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=1969-03-25, as_of_treatment=2026-06-30, varies_by_point=false.\",\n        \"The lake record has point_overrides=[] and no confirmed point-specific downgrade.\",\n        \"The disclosed treatment edges are marked proposed=true and field_iii=mentioned, so they do not establish a confirmed overruling, supersession, or limitation of Orozco.\",\n        \"The page's Binding — SCOTUS weight is consistent with identity.court_level=scotus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"lake.treatment.composite_basis is migration-seed and the derivation sections report audit_needed=true for lane1_negative and lane2_top_cited.\",\n        \"Several proposed edges have negative field_ii labels, so a future treatment audit could downgrade the record, but the disclosed judgment field remains good_law.\"\n      ],\n      \"suggested_tightening\": \"If the rendered page supports treatment caveats, surface the migration-seed/audit-needed note alongside the good_law status.\"\n    }\n  ],\n  \"notes\": \"Lens B only. No disclosed confirmed treatment event refutes the good_law/live-law call; quote-fidelity rows were not assessed for quote correctness.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:06-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:24:28-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e08f724d5d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3c507c01cf",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-08bfc7f2",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-08bfc7f2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:32:56.863627Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:57.337007Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:57.976343Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:58.829336Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:00.019432Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:02.125207Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Orozco v. Texas"
+    ],
+    "tokens": {
+      "input": 307024,
+      "output": 6826,
+      "source": "codex-events",
+      "total": 313850
+    },
+    "verdict_map": {
+      "4f01999e7ad9a7e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6c2338afd83e4725": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90c3a110aa7890ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8b660f14541a35a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e08f724d5d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3c507c01cf",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 140.3
   }
 }

@@ -1,13 +1,114 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Knights.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "d57058403e12b6b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Knights, U.S. Supreme Court, decided 2001-12-10, docket 00-1260.",
+          "Lake citations list official 534 U.S. 112 and parallel/vendor citations 122 S. Ct. 587, 151 L. Ed. 2d 497, and 2001 U.S. LEXIS 10950; the content page uses 534 U.S. 112 (2001)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4cf46e2a64cd167d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that the balance of these considerations requires no more than reasonable suspicion to conduct a search of this probationer’s house.",
+          "locator_note": "content_page.md:53; text/United States v. Knights__c1e6fc.txt:19; lake pinpoints id=pin-121",
+          "needs_cl": false,
+          "problem": "pin-121's stored quote is not the opinion passage it purports to pin; it is harvested content-page prose before the actual quoted sentence. The content-page quote also uses a straight apostrophe in probationer's where the cached opinion has probationer’s.",
+          "proposed_fix": "Replace pin-121's stored quote with the exact opinion sentence and set the locator metadata to page/star marker 121.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-121 records quote_fidelity as mismatch, with page and star_marker null.",
+          "The disclosed opinion text at *121 contains the actual sentence beginning We hold that the balance of these considerations, not the inventory quote beginning ; the Ninth Circuit affirmed. ## Issue."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported at page 121; this refutation is limited to the malformed quote/pin record and strict character fidelity."
+        ],
+        "suggested_tightening": "If the corpus normalizes apostrophes, record that normalization; otherwise use probationer’s exactly as in the cached opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f659b0b2206cdb6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment appears verbatim in footnote 6: because the search in this case was supported by reasonable suspicion.",
+          "The lake pinpoint is marked quote_fidelity=matched and star-verified, and the content page's 120 n.6 locator is supported by the note-6 marker attached to the page-*120 discussion."
+        ],
+        "residual_risks": [
+          "Lake star_marker is 122 because the cached text places footnotes after the opinion; that should not be treated as the legal page citation for n.6."
+        ],
+        "suggested_tightening": "Store the legal locator as 120 n.6 if the schema supports footnote-page metadata.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "503fec7a89cb238d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We therefore hold that the warrantless search of Knights, supported by reasonable suspicion and authorized by a condition of probation, was reasonable within the meaning of the Fourth Amendment.",
+          "locator_note": "content_page.md:57; text/United States v. Knights__c1e6fc.txt:22; lake pinpoints id=pin-122",
+          "needs_cl": false,
+          "problem": "pin-122's stored quote is content-page citation prose, not the opinion's holding sentence. As stored, it is not character-faithful to the cached opinion or a valid quote pinpoint.",
+          "proposed_fix": "Replace pin-122's stored quote with the exact holding sentence and set the locator metadata to page/star marker 122.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-122 records quote_fidelity as mismatch, with page and star_marker null.",
+          "The disclosed opinion text at *122 contains the quoted holding sentence, not the inventory quote — *Id.* The Court's ultimate holding:."
+        ],
+        "residual_risks": [
+          "The content page's actual quoted holding is supported by the opinion at *122; the defect is the malformed stored pin quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eb09bd62d04d3d8e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2001-12-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Lens A does not evaluate treatment/currency beyond recording the disclosed lake fields."
+        ],
+        "residual_risks": [
+          "Treatment and currency are reserved to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Knights.json\",\"reviewed\":[{\"assertion_id\":\"d57058403e12b6b1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Knights, U.S. Supreme Court, decided 2001-12-10, docket 00-1260.\",\"Lake citations list official 534 U.S. 112 and parallel/vendor citations 122 S. Ct. 587, 151 L. Ed. 2d 497, and 2001 U.S. LEXIS 10950; the content page uses 534 U.S. 112 (2001).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4cf46e2a64cd167d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-121's stored quote is not the opinion passage it purports to pin; it is harvested content-page prose before the actual quoted sentence. The content-page quote also uses a straight apostrophe in probationer's where the cached opinion has probationer’s.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-121's stored quote with the exact opinion sentence and set the locator metadata to page/star marker 121.\",\"evidence_quote\":\"We hold that the balance of these considerations requires no more than reasonable suspicion to conduct a search of this probationer’s house.\",\"needs_cl\":false,\"locator_note\":\"content_page.md:53; text/United States v. Knights__c1e6fc.txt:19; lake pinpoints id=pin-121\"},\"reasons\":[\"Lake pin-121 records quote_fidelity as mismatch, with page and star_marker null.\",\"The disclosed opinion text at *121 contains the actual sentence beginning We hold that the balance of these considerations, not the inventory quote beginning ; the Ninth Circuit affirmed. ## Issue.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition is supported at page 121; this refutation is limited to the malformed quote/pin record and strict character fidelity.\"],\"suggested_tightening\":\"If the corpus normalizes apostrophes, record that normalization; otherwise use probationer’s exactly as in the cached opinion.\"},{\"assertion_id\":\"4f659b0b2206cdb6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment appears verbatim in footnote 6: because the search in this case was supported by reasonable suspicion.\",\"The lake pinpoint is marked quote_fidelity=matched and star-verified, and the content page's 120 n.6 locator is supported by the note-6 marker attached to the page-*120 discussion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake star_marker is 122 because the cached text places footnotes after the opinion; that should not be treated as the legal page citation for n.6.\"],\"suggested_tightening\":\"Store the legal locator as 120 n.6 if the schema supports footnote-page metadata.\"},{\"assertion_id\":\"503fec7a89cb238d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-122's stored quote is content-page citation prose, not the opinion's holding sentence. As stored, it is not character-faithful to the cached opinion or a valid quote pinpoint.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-122's stored quote with the exact holding sentence and set the locator metadata to page/star marker 122.\",\"evidence_quote\":\"We therefore hold that the warrantless search of Knights, supported by reasonable suspicion and authorized by a condition of probation, was reasonable within the meaning of the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"content_page.md:57; text/United States v. Knights__c1e6fc.txt:22; lake pinpoints id=pin-122\"},\"reasons\":[\"Lake pin-122 records quote_fidelity as mismatch, with page and star_marker null.\",\"The disclosed opinion text at *122 contains the quoted holding sentence, not the inventory quote — *Id.* The Court's ultimate holding:.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's actual quoted holding is supported by the opinion at *122; the defect is the malformed stored pin quote.\"],\"suggested_tightening\":null},{\"assertion_id\":\"eb09bd62d04d3d8e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2001-12-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Lens A does not evaluate treatment/currency beyond recording the disclosed lake fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency are reserved to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:58:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b97bff63ca",
+      "F-S9-PR-4533d2184a"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Knights.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +117,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-812c10b7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Knights"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 170003,
+      "output": 7491,
+      "source": "codex-events",
+      "total": 177494
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "4cf46e2a64cd167d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4f659b0b2206cdb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "503fec7a89cb238d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d57058403e12b6b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb09bd62d04d3d8e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b97bff63ca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4533d2184a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.1
   }
 }

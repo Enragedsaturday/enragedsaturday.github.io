@@ -1,22 +1,184 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Chandler v. Miller.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "243e39b447438a61",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Chandler v. Miller as a U.S. Supreme Court decision dated 1997-04-15.",
+          "Lake citations include 520 U.S. 305, 117 S. Ct. 1295, 137 L. Ed. 2d 513, and 1997 U.S. LEXIS 2505.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-pending proposed negative edges, but no confirmed validity downgrade appears in the judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "111929f9af51ce10",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside Lens B.",
+          "No currency defect appears: lake status is verified and treatment field_i_validity is good_law as of 2026-06-30.",
+          "Lake progeny data shows 321 indexed citing opinions and 525 citation count, consistent with a progeny/refinement role from a currency perspective."
+        ],
+        "residual_risks": [
+          "Lens A should decide whether the home-role label is substantively supported."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "91ed0b70e0d131e9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support and holding fidelity are outside Lens B.",
+          "No disclosed treatment field shows Chandler has been overruled, superseded, or abrogated; field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A should verify the holding text and truncation against the opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "637b9b2a6fa77aee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment frontmatter and Treatment & subsequent history section.",
+          "needs_cl": true,
+          "problem": "The good_law status matches the lake judgment field, but the page's unqualified 'No negative treatment' statement overstates the disclosed record because treatment derivation contains audit-pending proposed negative events.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but change the prose to 'No confirmed negative treatment in the lake record; proposed negative edges remain audit-pending.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "Every listed treatment edge is marked proposed and field_iii is mentioned, so the disclosed final judgment does not confirm a downgrade.",
+          "Derivation lanes report audit_needed true and proposed_negative_events, so an unqualified no-negative-treatment statement should be tightened."
+        ],
+        "residual_risks": [
+          "A CourtListener/audit pass is needed to clear the proposed negative edges conclusively."
+        ],
+        "suggested_tightening": "Say 'no confirmed negative treatment' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ba1d647bef58712",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court is U.S. Supreme Court and court_level is scotus.",
+          "Lake treatment judgment remains good_law as of 2026-06-30, so the Binding — SCOTUS weight label is not contradicted by a confirmed disclosed downgrade."
+        ],
+        "residual_risks": [
+          "Same audit-pending proposed treatment edges remain a general currency risk, but they do not currently defeat the SCOTUS weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Chandler v. Miller.md\",\"reviewed\":[{\"assertion_id\":\"243e39b447438a61\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Chandler v. Miller as a U.S. Supreme Court decision dated 1997-04-15.\",\"Lake citations include 520 U.S. 305, 117 S. Ct. 1295, 137 L. Ed. 2d 513, and 1997 U.S. LEXIS 2505.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-pending proposed negative edges, but no confirmed validity downgrade appears in the judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"111929f9af51ce10\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support merits are outside Lens B.\",\"No currency defect appears: lake status is verified and treatment field_i_validity is good_law as of 2026-06-30.\",\"Lake progeny data shows 321 indexed citing opinions and 525 citation count, consistent with a progeny/refinement role from a currency perspective.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should decide whether the home-role label is substantively supported.\"],\"suggested_tightening\":null},{\"assertion_id\":\"91ed0b70e0d131e9\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support and holding fidelity are outside Lens B.\",\"No disclosed treatment field shows Chandler has been overruled, superseded, or abrogated; field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should verify the holding text and truncation against the opinion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"637b9b2a6fa77aee\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status matches the lake judgment field, but the page's unqualified 'No negative treatment' statement overstates the disclosed record because treatment derivation contains audit-pending proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as of 2026-06-30, but change the prose to 'No confirmed negative treatment in the lake record; proposed negative edges remain audit-pending.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment frontmatter and Treatment & subsequent history section.\"},\"reasons\":[\"Lake treatment field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"Every listed treatment edge is marked proposed and field_iii is mentioned, so the disclosed final judgment does not confirm a downgrade.\",\"Derivation lanes report audit_needed true and proposed_negative_events, so an unqualified no-negative-treatment statement should be tightened.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A CourtListener/audit pass is needed to clear the proposed negative edges conclusively.\"],\"suggested_tightening\":\"Say 'no confirmed negative treatment' rather than 'No negative treatment.'\"},{\"assertion_id\":\"7ba1d647bef58712\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity court is U.S. Supreme Court and court_level is scotus.\",\"Lake treatment judgment remains good_law as of 2026-06-30, so the Binding — SCOTUS weight label is not contradicted by a confirmed disclosed downgrade.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Same audit-pending proposed treatment edges remain a general currency risk, but they do not currently defeat the SCOTUS weight label.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:41:11-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:43:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-804d430951",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7a0f35134f"
+    ],
     "group_id": "content/cases/Chandler v. Miller.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-551ebff6",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-551ebff6.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:03.771132Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:04.545084Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:05.777935Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:07.975502Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:11.424798Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chandler v. Miller"
+    ],
+    "tokens": {
+      "input": 177421,
+      "output": 6271,
+      "source": "codex-events",
+      "total": 183692
+    },
+    "verdict_map": {
+      "111929f9af51ce10": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "243e39b447438a61": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "637b9b2a6fa77aee": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7ba1d647bef58712": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "91ed0b70e0d131e9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-804d430951",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7a0f35134f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 120.6
   }
 }

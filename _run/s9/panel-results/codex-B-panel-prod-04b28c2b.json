@@ -1,22 +1,103 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/McDonough v. Smith.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "3c6c9ffd99d61724",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/McDonough v. Smith__dda88d.json treatment/progeny fields; group_inventory existence row for record_id McDonough v. Smith",
+          "needs_cl": true,
+          "problem": "As a Lens B existence/currency assertion, the disclosed record verifies the case citation but does not verify that the authority is currently live law. Treatment and progeny are expressly unverified and not derived.",
+          "proposed_fix": "Limit this assertion to citation identity only, or complete treatment/progeny verification with an as-of date before using it as a current live-law assertion.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citation fields confirm McDonough v. Smith, 588 U.S. 109, but the treatment field is unverified.",
+          "Lake progeny fields have null query/count data, rows_cached 0, and no outbound opinion edges, so disclosed evidence cannot establish continued validity."
+        ],
+        "residual_risks": [
+          "As a pure citation-existence assertion, the row appears verified; the defect is only the live-law/currency inference required by Lens B."
+        ],
+        "suggested_tightening": "Separate citation existence from current-validity status in the inventory.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "2c08a4db56780612",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and the scope note says treatment/progeny are not derived.",
+          "The content page likewise displays Treatment: Unverified and warns that subsequent treatment has not completed verification."
+        ],
+        "residual_risks": [
+          "No good-law conclusion can be drawn from this row because it is intentionally unverified."
+        ],
+        "suggested_tightening": "If the page's binding-as-to-accrual language is meant as a separate treatment/weight assertion, inventory it separately from the unverified citator status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/McDonough v. Smith.json\",\"reviewed\":[{\"assertion_id\":\"3c6c9ffd99d61724\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"As a Lens B existence/currency assertion, the disclosed record verifies the case citation but does not verify that the authority is currently live law. Treatment and progeny are expressly unverified and not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation identity only, or complete treatment/progeny verification with an as-of date before using it as a current live-law assertion.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/McDonough v. Smith__dda88d.json treatment/progeny fields; group_inventory existence row for record_id McDonough v. Smith\"},\"reasons\":[\"Lake identity and citation fields confirm McDonough v. Smith, 588 U.S. 109, but the treatment field is unverified.\",\"Lake progeny fields have null query/count data, rows_cached 0, and no outbound opinion edges, so disclosed evidence cannot establish continued validity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"As a pure citation-existence assertion, the row appears verified; the defect is only the live-law/currency inference required by Lens B.\"],\"suggested_tightening\":\"Separate citation existence from current-validity status in the inventory.\"},{\"assertion_id\":\"2c08a4db56780612\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and the scope note says treatment/progeny are not derived.\",\"The content page likewise displays Treatment: Unverified and warns that subsequent treatment has not completed verification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law conclusion can be drawn from this row because it is intentionally unverified.\"],\"suggested_tightening\":\"If the page's binding-as-to-accrual language is meant as a separate treatment/weight assertion, inventory it separately from the unverified citator status.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:09:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-13ccd67ad9"
+    ],
     "group_id": "_overhaul2/lake/cases/McDonough v. Smith.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-04b28c2b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-04b28c2b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:29:55.891363Z ERROR codex_models_manager::manager: failed to refresh available models: exceeded retry limit, last status: 429 Too Many Requests, request id: 62906083-8a1c-4e63-a4ed-7b324b6de922\n2026-07-10T22:29:57.967784Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:58.885498Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:59.578153Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:00.715537Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:02.114844Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "McDonough v. Smith"
+    ],
+    "tokens": {
+      "input": 291407,
+      "output": 7104,
+      "source": "codex-events",
+      "total": 298511
+    },
+    "verdict_map": {
+      "2c08a4db56780612": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3c6c9ffd99d61724": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-13ccd67ad9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 158.2
   }
 }

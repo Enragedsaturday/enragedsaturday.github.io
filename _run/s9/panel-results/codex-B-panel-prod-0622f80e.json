@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ruiz.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity issues were not attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "9371ffb9db7f0723",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches United States v. Ruiz, U.S./SCOTUS, decided 2002-06-24, docket 01-595, cluster_id 121166.",
+          "The lake citation fields include the asserted official citation 536 U.S. 622 and the listed parallel/vendor citations.",
+          "No disclosed treatment field or progeny edge says the authority has been superseded, overruled, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "This verifies citation existence only; the disclosed record does not provide a positive good-law citator certification because treatment remains unverified."
+        ],
+        "suggested_tightening": "Keep citation existence separate from any live-law assertion until treatment/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2eb7319f5b164950",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake scope note states that treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page renders Treatment: Unverified and says subsequent treatment has not yet been machine-verified, consistent with the lake record."
+        ],
+        "residual_risks": [
+          "Because treatment edges and progeny enumeration are empty and unverified, no current good-law assurance can be inferred from this record."
+        ],
+        "suggested_tightening": "Avoid any phrasing that implies verified current-law status until the record is promoted with completed treatment/progeny review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Ruiz.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9371ffb9db7f0723\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record matches United States v. Ruiz, U.S./SCOTUS, decided 2002-06-24, docket 01-595, cluster_id 121166.\",\n        \"The lake citation fields include the asserted official citation 536 U.S. 622 and the listed parallel/vendor citations.\",\n        \"No disclosed treatment field or progeny edge says the authority has been superseded, overruled, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This verifies citation existence only; the disclosed record does not provide a positive good-law citator certification because treatment remains unverified.\"\n      ],\n      \"suggested_tightening\": \"Keep citation existence separate from any live-law assertion until treatment/progeny verification is completed.\"\n    },\n    {\n      \"assertion_id\": \"2eb7319f5b164950\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\n        \"The lake scope note states that treatment/progeny were intentionally not derived until S6 promotion.\",\n        \"The content page renders Treatment: Unverified and says subsequent treatment has not yet been machine-verified, consistent with the lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment edges and progeny enumeration are empty and unverified, no current good-law assurance can be inferred from this record.\"\n      ],\n      \"suggested_tightening\": \"Avoid any phrasing that implies verified current-law status until the record is promoted with completed treatment/progeny review.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity issues were not attacked.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:33:58-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:06:48-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Ruiz.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Ruiz"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-0622f80e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0622f80e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Ruiz' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Ruiz"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 148243,
+      "output": 7933,
+      "source": "codex-events",
+      "total": 156176
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "2eb7319f5b164950": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9371ffb9db7f0723": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "wall_clock_s": 155.2
   }
 }

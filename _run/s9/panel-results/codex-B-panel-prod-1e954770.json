@@ -1,22 +1,188 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Colorado v. Bertine.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity findings intentionally not raised.",
+    "reviewed": [
+      {
+        "assertion_id": "0f03ed439f66e8f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake status is verified, stub is false, expected_citation_found is true, and canonical_name_match is true.",
+          "The official citation 479 U.S. 367, vendor-neutral citation 1987 U.S. LEXIS 286, year 1987, and U.S. Supreme Court identity match the assertion.",
+          "For currency, lake treatment marks field_i_validity as good_law and disclosed treatment edges are proposed rather than final adverse treatment."
+        ],
+        "residual_risks": [
+          "The treatment derivation separately flags proposed negative events for audit, so future audit could affect the live-law assessment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14b678398bda71b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate holding support; no support or quote-fidelity defect is raised.",
+          "Currency check only: lake treatment marks Bertine good_law as of 2026-06-30 with no point_overrides.",
+          "All disclosed treatment edges are proposed and field_iii is mentioned, not final adverse treatment of the asserted holding."
+        ],
+        "residual_risks": [
+          "Support fidelity remains for Lens A.",
+          "Treatment audit flags proposed negative events."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "49e9874e1f6ab520",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate whether the home-role label is substantively optimal.",
+          "Currency check: the case is SCOTUS, lake treatment is good_law, and the progeny metadata shows substantial citing activity.",
+          "No final disclosed treatment removes Bertine from live inventory-search doctrine."
+        ],
+        "residual_risks": [
+          "Home-role taxonomy is outside Lens B except for currency/treatment downgrades.",
+          "Proposed negative treatment edges remain unaudited."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a854419871b7c28",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "frontmatter treatment and Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good-law label matches the lake judgment, but the treatment presentation needs qualification. The record is migration-seed treatment, as_of_content predates the decision date, and the derivation flags proposed negative events for R15 audit; that disclosed evidence does not support an unqualified 'No negative treatment' statement.",
+          "proposed_fix": "Retain field_i_validity: good_law as the current lake judgment, correct or omit the impossible as_of_content date, and replace 'No negative treatment' with 'no final negative treatment in this lake record; proposed negative edges pending audit' unless the audit clears them.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and point_overrides is empty, so the core validity label is not refuted.",
+          "Lake identity.date_decided is 1987-01-14 while treatment.as_of_content is 1987-01-13.",
+          "The treatment derivation has audit_needed true/proposed_negative_events, and all 36 treatment edges are proposed with field_iii 'mentioned', so they require caveating rather than final downgrading."
+        ],
+        "residual_risks": [
+          "If the proposed negative edges are confirmed, the good-law label or point-specific treatment may need a real downgrade."
+        ],
+        "suggested_tightening": "Display 'good_law (lake judgment; R15 treatment audit pending)' rather than an unqualified no-negative-treatment sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba19687b99475893",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity.court_id and court_level are scotus, and the content page identifies the court as U.S. Supreme Court.",
+          "Binding — SCOTUS is the correct weight label for a federal search-and-seizure corpus absent final adverse treatment removing the case's precedential force.",
+          "The disclosed record contains no final overruling, superseding, or abrogating treatment of Bertine itself."
+        ],
+        "residual_risks": [
+          "Treatment audit flags proposed negative edges, but they do not presently defeat the SCOTUS weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Colorado v. Bertine.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0f03ed439f66e8f2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake status is verified, stub is false, expected_citation_found is true, and canonical_name_match is true.\",\n        \"The official citation 479 U.S. 367, vendor-neutral citation 1987 U.S. LEXIS 286, year 1987, and U.S. Supreme Court identity match the assertion.\",\n        \"For currency, lake treatment marks field_i_validity as good_law and disclosed treatment edges are proposed rather than final adverse treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation separately flags proposed negative events for audit, so future audit could affect the live-law assessment.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"14b678398bda71b6\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate holding support; no support or quote-fidelity defect is raised.\",\n        \"Currency check only: lake treatment marks Bertine good_law as of 2026-06-30 with no point_overrides.\",\n        \"All disclosed treatment edges are proposed and field_iii is mentioned, not final adverse treatment of the asserted holding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support fidelity remains for Lens A.\",\n        \"Treatment audit flags proposed negative events.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"49e9874e1f6ab520\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate whether the home-role label is substantively optimal.\",\n        \"Currency check: the case is SCOTUS, lake treatment is good_law, and the progeny metadata shows substantial citing activity.\",\n        \"No final disclosed treatment removes Bertine from live inventory-search doctrine.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Home-role taxonomy is outside Lens B except for currency/treatment downgrades.\",\n        \"Proposed negative treatment edges remain unaudited.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1a854419871b7c28\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law label matches the lake judgment, but the treatment presentation needs qualification. The record is migration-seed treatment, as_of_content predates the decision date, and the derivation flags proposed negative events for R15 audit; that disclosed evidence does not support an unqualified 'No negative treatment' statement.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Retain field_i_validity: good_law as the current lake judgment, correct or omit the impossible as_of_content date, and replace 'No negative treatment' with 'no final negative treatment in this lake record; proposed negative edges pending audit' unless the audit clears them.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"frontmatter treatment and Treatment & subsequent history\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law and point_overrides is empty, so the core validity label is not refuted.\",\n        \"Lake identity.date_decided is 1987-01-14 while treatment.as_of_content is 1987-01-13.\",\n        \"The treatment derivation has audit_needed true/proposed_negative_events, and all 36 treatment edges are proposed with field_iii 'mentioned', so they require caveating rather than final downgrading.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the proposed negative edges are confirmed, the good-law label or point-specific treatment may need a real downgrade.\"\n      ],\n      \"suggested_tightening\": \"Display 'good_law (lake judgment; R15 treatment audit pending)' rather than an unqualified no-negative-treatment sentence.\"\n    },\n    {\n      \"assertion_id\": \"ba19687b99475893\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity.court_id and court_level are scotus, and the content page identifies the court as U.S. Supreme Court.\",\n        \"Binding — SCOTUS is the correct weight label for a federal search-and-seizure corpus absent final adverse treatment removing the case's precedential force.\",\n        \"The disclosed record contains no final overruling, superseding, or abrogating treatment of Bertine itself.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment audit flags proposed negative edges, but they do not presently defeat the SCOTUS weight label.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity findings intentionally not raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:41:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:48:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-91b5aa0957",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a310456b80"
+    ],
     "group_id": "content/cases/Colorado v. Bertine.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-1e954770",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1e954770.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:27.312647Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:27.970043Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:28.769975Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:29.994471Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:31.989841Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Colorado v. Bertine"
+    ],
+    "tokens": {
+      "input": 392233,
+      "output": 10700,
+      "source": "codex-events",
+      "total": 402933
+    },
+    "verdict_map": {
+      "0f03ed439f66e8f2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "14b678398bda71b6": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1a854419871b7c28": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "49e9874e1f6ab520": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ba19687b99475893": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-91b5aa0957",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a310456b80",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 213.6
   }
 }

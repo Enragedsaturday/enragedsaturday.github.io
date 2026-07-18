@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Massenburg.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl exactly once. No lens-A support, quote-fidelity, pincite, or black-letter rows were present in the inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "f032b25cb2ae8055",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record gives case_name \"United States v. Massenburg\", court \"4th Cir. 2011\", date_decided \"2011-08-15\", docket \"10-4209\", and expected_citation_found true.",
+          "Lake citations list official/display citation \"654 F.3d 480\" and vendor-neutral citations \"2011 U.S. App. LEXIS 16849\" and \"2011 WL 3559897\", matching the inventory payload.",
+          "Cached opinion text independently matches the identity basics: Fourth Circuit caption, No. 10-4209, and decided August 15, 2011."
+        ],
+        "residual_risks": [
+          "The cached opinion text does not itself display the 654 F.3d 480 reporter citation in the visible header; reporter-citation verification rests on the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2f3ca6e69802ce6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A's attack charter, so no treatment/currency finding is raised.",
+          "The asserted treatment fields match the lake record: field_i_validity \"unverified\", as_of_content null, as_of_treatment null, varies_by_point false, and scope_note \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The content page also discloses Treatment: Unverified and states subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "No disclosed treatment/progeny derivation exists; lens B would need to evaluate currency if a good-law assertion were made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Massenburg.json\",\"reviewed\":[{\"assertion_id\":\"f032b25cb2ae8055\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record gives case_name \\\"United States v. Massenburg\\\", court \\\"4th Cir. 2011\\\", date_decided \\\"2011-08-15\\\", docket \\\"10-4209\\\", and expected_citation_found true.\",\"Lake citations list official/display citation \\\"654 F.3d 480\\\" and vendor-neutral citations \\\"2011 U.S. App. LEXIS 16849\\\" and \\\"2011 WL 3559897\\\", matching the inventory payload.\",\"Cached opinion text independently matches the identity basics: Fourth Circuit caption, No. 10-4209, and decided August 15, 2011.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text does not itself display the 654 F.3d 480 reporter citation in the visible header; reporter-citation verification rests on the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a2f3ca6e69802ce6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside lens A's attack charter, so no treatment/currency finding is raised.\",\"The asserted treatment fields match the lake record: field_i_validity \\\"unverified\\\", as_of_content null, as_of_treatment null, varies_by_point false, and scope_note \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The content page also discloses Treatment: Unverified and states subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed treatment/progeny derivation exists; lens B would need to evaluate currency if a good-law assertion were made.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl exactly once. No lens-A support, quote-fidelity, pincite, or black-letter rows were present in the inventory.\"}",
   "summary": {
-    "at": "2026-07-10T02:32:25-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:00:00-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Massenburg.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Massenburg"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d0e94759",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d0e94759.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Massenburg' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Massenburg"
+    ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 128775,
+      "output": 2446,
+      "source": "codex-events",
+      "total": 131221
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "a2f3ca6e69802ce6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f032b25cb2ae8055": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "wall_clock_s": 85.3
   }
 }

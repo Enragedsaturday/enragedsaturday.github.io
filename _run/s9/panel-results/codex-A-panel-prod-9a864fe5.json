@@ -1,38 +1,192 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Frank v. Maryland.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Out-of-row observation only: if the Rule quote were in scope, content_page.md is not character-faithful because the source text has 'appellant’s' while the page quote has 'appellant's'; no separate verdict is entered because no assertion_id was supplied.",
+    "reviewed": [
+      {
+        "assertion_id": "87ebdbb0a6ecfaf4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies case_name_full as Frank v. Maryland, court as U.S., court_level as scotus, date_decided as 1959-05-04, and year as 1959.",
+          "Lake citations verify official citation 359 U.S. 360, parallel citations 79 S. Ct. 804 and 3 L. Ed. 2d 877, and vendor citation 1959 U.S. LEXIS 1085."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2245c0b7f23fadbe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The Frank holding portion is supported, but the holding field bundles a later Camara overruling/warrant-rule claim that is not verifiable from the disclosed Frank lake/text record. Lake treatment/progeny is expressly unverified and empty. This is a support/field-scope defect, not a Lens A treatment merits finding.",
+          "proposed_fix": "Limit the holding field to Frank's own due-process holding; move the Camara sentence to a separately certified treatment/subsequent-history assertion with disclosed Camara support.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frank text supports the core: an inspector sought entry without an entry warrant, refusal led to a $20 fine, and the Court affirmed against a Fourteenth Amendment due-process challenge.",
+          "The opinion states that the Maryland demand did not deprive appellant of due process of law.",
+          "No disclosed Camara record, Camara text, or Frank progeny edge verifies the later-history clause."
+        ],
+        "residual_risks": [
+          "Lens B should decide the Camara overruling/current-treatment component."
+        ],
+        "suggested_tightening": "A municipal health inspector's demand to enter a home to inspect suspected nuisance conditions, backed by a $20 refusal fine and no forced entry, did not deprive the homeowner of due process.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "f86eb746638e4fd2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Inspection without a warrant, as an adjunct to a regulatory scheme for the general welfare, of the community and not as a means of enforcing the criminal law, has antecedents deep in our history.",
+          "locator_note": "homes[0]",
+          "needs_cl": false,
+          "problem": "The disclosed opinion supports Frank as a historical administrative health-inspection case, but it does not verify the broader home label 'Special Needs and Administrative Searches' or the role 'Historical / origin.' No disclosed home-page, taxonomy, or lake field establishes Frank as an origin case for that home.",
+          "proposed_fix": "Use a narrower disclosed-evidence role such as 'Historical administrative-inspection precursor,' or provide the home/taxonomy evidence that defines this page and origin role.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frank text repeatedly frames the case as a Baltimore health-code inspection/regulatory-scheme case.",
+          "The opinion does not use or define 'special needs,' and the disclosed files contain no independent support for the asserted home-role breadth."
+        ],
+        "residual_risks": [
+          "If the omitted home page defines 'Special Needs and Administrative Searches' to include early administrative-inspection cases, that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Historical administrative-inspection precursor",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "27b8e7ce767cd27d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment stub: field_i_validity unverified, as_of fields null, composite_basis unverified, varies_by_point false, and the same scope note.",
+          "Lens A records this row only; it does not decide treatment/currency merits."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd15bf732759280d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity verifies court as U.S. and court_level as scotus, which supports the SCOTUS source-court portion of the weight label.",
+          "Lens A does not decide whether the overruled/historical status affects live binding force."
+        ],
+        "residual_risks": [
+          "Whether 'Binding' should display for an overruled historical authority is a Lens B or schema-policy question."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Frank v. Maryland.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"87ebdbb0a6ecfaf4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies case_name_full as Frank v. Maryland, court as U.S., court_level as scotus, date_decided as 1959-05-04, and year as 1959.\",\n        \"Lake citations verify official citation 359 U.S. 360, parallel citations 79 S. Ct. 804 and 3 L. Ed. 2d 877, and vendor citation 1959 U.S. LEXIS 1085.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2245c0b7f23fadbe\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Frank holding portion is supported, but the holding field bundles a later Camara overruling/warrant-rule claim that is not verifiable from the disclosed Frank lake/text record. Lake treatment/progeny is expressly unverified and empty. This is a support/field-scope defect, not a Lens A treatment merits finding.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Limit the holding field to Frank's own due-process holding; move the Camara sentence to a separately certified treatment/subsequent-history assertion with disclosed Camara support.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"Frank text supports the core: an inspector sought entry without an entry warrant, refusal led to a $20 fine, and the Court affirmed against a Fourteenth Amendment due-process challenge.\",\n        \"The opinion states that the Maryland demand did not deprive appellant of due process of law.\",\n        \"No disclosed Camara record, Camara text, or Frank progeny edge verifies the later-history clause.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B should decide the Camara overruling/current-treatment component.\"\n      ],\n      \"suggested_tightening\": \"A municipal health inspector's demand to enter a home to inspect suspected nuisance conditions, backed by a $20 refusal fine and no forced entry, did not deprive the homeowner of due process.\"\n    },\n    {\n      \"assertion_id\": \"f86eb746638e4fd2\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed opinion supports Frank as a historical administrative health-inspection case, but it does not verify the broader home label 'Special Needs and Administrative Searches' or the role 'Historical / origin.' No disclosed home-page, taxonomy, or lake field establishes Frank as an origin case for that home.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use a narrower disclosed-evidence role such as 'Historical administrative-inspection precursor,' or provide the home/taxonomy evidence that defines this page and origin role.\",\n        \"evidence_quote\": \"Inspection without a warrant, as an adjunct to a regulatory scheme for the general welfare, of the community and not as a means of enforcing the criminal law, has antecedents deep in our history.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"homes[0]\"\n      },\n      \"reasons\": [\n        \"Frank text repeatedly frames the case as a Baltimore health-code inspection/regulatory-scheme case.\",\n        \"The opinion does not use or define 'special needs,' and the disclosed files contain no independent support for the asserted home-role breadth.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the omitted home page defines 'Special Needs and Administrative Searches' to include early administrative-inspection cases, that evidence is not disclosed here.\"\n      ],\n      \"suggested_tightening\": \"Historical administrative-inspection precursor\"\n    },\n    {\n      \"assertion_id\": \"27b8e7ce767cd27d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment stub: field_i_validity unverified, as_of fields null, composite_basis unverified, varies_by_point false, and the same scope note.\",\n        \"Lens A records this row only; it does not decide treatment/currency merits.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bd15bf732759280d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies court as U.S. and court_level as scotus, which supports the SCOTUS source-court portion of the weight label.\",\n        \"Lens A does not decide whether the overruled/historical status affects live binding force.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Whether 'Binding' should display for an overruled historical authority is a Lens B or schema-policy question.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Out-of-row observation only: if the Rule quote were in scope, content_page.md is not character-faithful because the source text has 'appellant’s' while the page quote has 'appellant's'; no separate verdict is entered because no assertion_id was supplied.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:43:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:05:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3d5b88ff01",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ec10c683c3",
+      "F-S9-PR-47fd0379e4"
+    ],
     "group_id": "content/cases/Frank v. Maryland.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Frank v. Maryland"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-9a864fe5",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9a864fe5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Frank v. Maryland' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Frank v. Maryland"
+    ],
     "tokens": {
-      "input": 823,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 823
+      "input": 165300,
+      "output": 11793,
+      "source": "codex-events",
+      "total": 177093
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.9
+    "verdict_map": {
+      "2245c0b7f23fadbe": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "27b8e7ce767cd27d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87ebdbb0a6ecfaf4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd15bf732759280d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f86eb746638e4fd2": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ec10c683c3",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-47fd0379e4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3d5b88ff01",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 224.2
   }
 }

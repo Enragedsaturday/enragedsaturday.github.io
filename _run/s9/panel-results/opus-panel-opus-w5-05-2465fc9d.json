@@ -1,0 +1,123 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0a1ae49783eae7f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip op header confirms '512 U.S. 477 (1994)' HECK v. HUMPHREY et al., No. 93-6188, United States Supreme Court, decided June 24, 1994 (Scalia, J.).",
+          "Payload official/display '512 U.S. 477' matches; parallel and vendor-neutral cites are consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbe17a37cb22d29d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that, in order to recover damages for allegedly unconstitutional conviction or imprisonment, or for other harm caused by actions whose unlawfulness would render a conviction or sentence invalid, a § 1983 plaintiff must prove that the conviction or sentence has been reversed on direct appeal, expunged by executive order, declared invalid by a state tribunal authorized to make such determination, or called into question by a federal court's issuance of a writ of habeas corpus",
+          "locator_note": "Cached slip op pages *486-*487; content_page ^pin-486.",
+          "needs_cl": false,
+          "problem": "Lake record pinpoint pin-486 stores scraped wiki page-chrome (front-matter, header, Background/Issue/Rule prose beginning '--- # Heck v. Humphrey *512 U.S. 477 (1994)* ... ## Rule Such a claim is barred until the conviction is invalidated.') in its quote field instead of opinion text; not a verifiable pinpoint quotation.",
+          "proposed_fix": "Repopulate pin-486 quote with the actual holding sentence the content page attaches to ^pin-486 at 512 U.S. 486-487: 'We hold that, in order to recover damages for allegedly unconstitutional conviction or imprisonment, or for other harm caused by actions whose unlawfulness would render a conviction or sentence invalid, a § 1983 plaintiff must prove that the conviction or sentence has been reversed on direct appeal, expunged by executive order, declared invalid by a state tribunal authorized to make such determination, or called into question by a federal court's issuance of a writ of habeas corpus.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-486 quote is page chrome, not opinion text; record already self-flags quote_fidelity=mismatch/pinpoint_status=slip-only.",
+          "Content page's own use of ^pin-486 is faithful (verified spanning 486-487), but the lake record quote field is corrupted."
+        ],
+        "residual_risks": [
+          "Reader-facing content page uses pin-486 correctly; the defect is in the lake record data only."
+        ],
+        "suggested_tightening": "Guard the pinpoint extractor against capturing the page's own front-matter/prose as a quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0052c75cc3bccb81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope_note (favorable-termination rule for § 1983 damages claims that would imply the invalidity of a conviction) matches the holding confirmed in the cached opinion at 486-487.",
+          "good_law not refuted by disclosed evidence; content page records elaboration (Spencer v. Kemna, Wallace v. Kato), no overruling."
+        ],
+        "residual_risks": [
+          "2026 citator confirmation of good_law would require CourtListener."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5081e3d8e2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Heck v. Humphrey.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-05-2465fc9d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Heck v. Humphrey"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0052c75cc3bccb81": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0a1ae49783eae7f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbe17a37cb22d29d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b19018a3a0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5081e3d8e2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

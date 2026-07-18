@@ -1,11 +1,50 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-davis--4881258.json",
+    "lens": "A",
+    "notes": "Reviewed both rows in group_inventory.jsonl exactly once. No content_page.* or text opinion file was disclosed in the working directory.",
+    "reviewed": [
+      {
+        "assertion_id": "e171de5cb7956a9f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record exists for record_id united-states-v-davis--4881258.",
+          "The payload citation 997 F.3d 191 matches the lake official citation, display citation, reporter F.3d, volume 997, and page 191.",
+          "The lake identity fields identify the court as 4th Cir. and year as 2021."
+        ],
+        "residual_risks": [
+          "The lake record is marked stub and folded-alias, so this review verifies only the disclosed identity and citation fields."
+        ],
+        "suggested_tightening": "If the page displays a case name, note the lake canonical name United States v. Howard Davis or disclose the United States v. Davis alias relationship.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f4a4baa4292ba3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's support and quote-fidelity charter, so no treatment/currency defect is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No treatment accuracy or currency assessment was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/united-states-v-davis--4881258.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e171de5cb7956a9f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The disclosed lake record exists for record_id united-states-v-davis--4881258.\",\n        \"The payload citation 997 F.3d 191 matches the lake official citation, display citation, reporter F.3d, volume 997, and page 191.\",\n        \"The lake identity fields identify the court as 4th Cir. and year as 2021.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record is marked stub and folded-alias, so this review verifies only the disclosed identity and citation fields.\"\n      ],\n      \"suggested_tightening\": \"If the page displays a case name, note the lake canonical name United States v. Howard Davis or disclose the United States v. Davis alias relationship.\"\n    },\n    {\n      \"assertion_id\": \"4f4a4baa4292ba3b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside Lens A's support and quote-fidelity charter, so no treatment/currency defect is raised.\",\n        \"The payload treatment fields match the disclosed lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment accuracy or currency assessment was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed both rows in group_inventory.jsonl exactly once. No content_page.* or text opinion file was disclosed in the working directory.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:37:48-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:22:51-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/united-states-v-davis--4881258.json",
@@ -18,22 +57,37 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f9e068b0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'united-states-v-davis--4881258' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-davis--4881258"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 78059,
+      "output": 2356,
+      "source": "codex-events",
+      "total": 80415
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "4f4a4baa4292ba3b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e171de5cb7956a9f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 5.8
+    "wall_clock_s": 54.9
   }
 }

@@ -1,0 +1,122 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3ea31f14306cc039",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows '462 U.S. 640 (1983)' for Illinois v. Lafayette; cluster_id 110976 matches lake identity.",
+          "Official cite 462 U.S. 640 (type 1) is selected_official; parallels 103 S. Ct. 2605, 77 L. Ed. 2d 65, 1983 U.S. LEXIS 71 are standard reporters for this case."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec1a8c57846e3c8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pinpoint pin-648 stored quote is a page-header harvest artifact (self-flagged quote_fidelity=mismatch, slip-only) and is not the reader-facing quote.",
+          "Content page ^pin-648 quote 'we hold that it is not \"unreasonable\" for police, as part of the routine procedure incident to incarcerating an arrested person, to search any container or article in his possession, in accordance with established inventory procedures.' matches cached opinion para b692-6 verbatim.",
+          "Quote sits on page 648 (between *648 marker in b691-7 and *649 in b693-4); pincite '462 U.S. at 648' is correct."
+        ],
+        "residual_risks": [
+          "Lake pinpoint.quote field holds page-chrome text rather than the opinion quote."
+        ],
+        "suggested_tightening": "Re-harvest pin-648 quote to the verified holding text and set fidelity=matched.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9217bdce19066fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Subject is an intact SCOTUS majority (Burger, C.J.) per cached opinion; nothing in disclosed evidence shows Lafayette overruled/abrogated.",
+          "All disclosed negative edges are proposed:true snippet-first keyword-triage candidates (lane1 cap-hit 4 events, lane2 cap-hit 25) flagged 'R15 treatment audit required'; none is a confirmed overruling of Lafayette (e.g., the California v. Acevedo edge reflects Acevedo's own overruling of other container law, not of Lafayette).",
+          "field_i_validity=good_law is a migration-seed with honest scope_note; good_law validity is not refuted by 'questioned'/'criticized' proposed edges."
+        ],
+        "residual_risks": [
+          "Negative lanes cap-hit with audit pending; definitive currency to 2026-06-30 would require CL R15 Shepardizing."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit to confirm no proposed negative resolves to a real overruling/abrogation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b710406955",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-116cc8acf1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Illinois v. Lafayette.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-00-4f55fbb0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Lafayette"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3ea31f14306cc039": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9217bdce19066fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec1a8c57846e3c8d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b710406955",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-116cc8acf1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

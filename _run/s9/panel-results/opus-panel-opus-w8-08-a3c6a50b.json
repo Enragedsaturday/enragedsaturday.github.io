@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8d223e86caac43f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Disclosed cached opinion text is O'Connor v. Ortega (Justice O'Connor, announcing the judgment and delivering a plurality opinion joined by the Chief Justice, White, and Powell; workplace Fourth Amendment).",
+          "Official cite 480 U.S. 709 corroborated by in-text U.S.-reporter page labels running *712 through *729.",
+          "Parallel cites (107 S. Ct. 1492, 94 L. Ed. 2d 714, etc.) are well-formed; official_selection_present=true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7901a2e5313b72cb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make some employees' expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.",
+          "locator_note": "Opinion para b763-5, between page labels *717 and *718; content page line 2204 (^pin-717).",
+          "needs_cl": false,
+          "problem": "The pin-717 stored 'quote' is not a quotation from the opinion: it is a corrupted mis-extraction of the page's own front-matter/prose ('--- # O'Connor v. Ortega ... ## Rule Public employees are not stripped of Fourth Amendment protection at work, though their privacy may be reduced by workplace realities.'). No such string appears in the disclosed opinion text.",
+          "proposed_fix": "Replace the pin-717 quote field with the actual authored pin-717 quote from the content page Rule section: 'Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make some employees' expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.' — which is verbatim in the opinion (para b763-5) at 480 U.S. 717.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "As framed, the assertion's quote is garbled header/prose, not a verbatim opinion passage; quote_fidelity mismatch is genuine (same mis-extraction pattern as Butler pin-373).",
+          "Data-integrity artifact in the lake pinpoint record; the RENDERED content page (line 2204) shows the correct verbatim quote, so reader-facing content is unaffected.",
+          "The intended quote is verbatim-confirmable in the disclosed text, so the fix is deterministic and does not require CourtListener."
+        ],
+        "residual_risks": [
+          "Refuting targets only the corrupted quote field; the page's actual pin-717 quote is faithful and must be preserved by the fix."
+        ],
+        "suggested_tightening": "Re-run pinpoint extraction for pin-717 so the quote field captures the Rule-section quotation rather than the page header.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbad6dca46abde8b",
+        "breaks_true_positives": true,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is verbatim-present in the disclosed opinion text (para b771-6): 'We hold, therefore, that public employer intrusions on the constitutionally protected privacy interests of government employees for noninvestigatory, work-related purposes, as well as for investigations of work-related misconduct, should be judged by the standard of reasonableness under all the circumstances. Under this reasonableness standard, both the inception and the scope of the intrusion must be reasonable'.",
+          "Quote spans the *726 page break (label appears mid-sentence at 'standard of reasonableness [*726] under all the circumstances'), so the pin-725 '725-726' pincite is correct.",
+          "Only difference is the terminal ':' in the source (introducing a following blockquote) rendered as '.' in the truncated quote; the quoted words are identical, so no fidelity defect. The stored quote_fidelity=='mismatch' flag is a FALSE POSITIVE."
+        ],
+        "residual_risks": [
+          "Downstream tallies treating the stale 'mismatch' flag as authoritative would wrongly discard a faithful quote."
+        ],
+        "suggested_tightening": "Clear the stale quote_fidelity=mismatch flag on pin-725 to fidelity=match; optionally normalize the terminal colon-vs-period truncation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "398be112f6e1bd9b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is not refuted by disclosed evidence: every negative edge is proposed:true with field_iii='mentioned', and the negative field_ii (questioned/superseded_by_statute/overruled/criticized/abrogated) belongs to the CITING case (e.g., Ashcroft v. al-Kidd, Skinner v. Railway Labor Executives' Assn.), not to O'Connor.",
+          "Scope_note is corroborated by the disclosed opinion header: O'Connor, J., announced the judgment and delivered a four-Justice plurality opinion (Scalia's concurrence in the judgment supplied the controlling fifth vote for the reasonableness standard).",
+          "No disclosed edge shows O'Connor itself receiving negative treatment."
+        ],
+        "residual_risks": [
+          "Proposed lane1_negative edges are citator noise (citing-case status mis-attributed) and should not be promoted to O'Connor's own treatment."
+        ],
+        "suggested_tightening": "Filter proposed field_iii=mentioned edges whose field_ii reflects the citing case's status before any treatment recomputation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1e73b73e46",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/O'Connor v. Ortega.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-08-a3c6a50b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "O'Connor v. Ortega"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "398be112f6e1bd9b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7901a2e5313b72cb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8d223e86caac43f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbad6dca46abde8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b152144912",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1e73b73e46",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

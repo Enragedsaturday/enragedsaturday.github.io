@@ -1,0 +1,183 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f8a0011db7060c13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms cluster_id 111834, lead_opinion_id 9430865, official cite 480 U.S. 321; identity_method citation+party-text with expected_citation_found=true, party_name_in_text=true, canonical_name_match=true.",
+          "Parallels 107 S. Ct. 1149 / 94 L. Ed. 2d 347 / 55 U.S.L.W. 4258 / 1987 U.S. LEXIS 1056 are sourced from cluster.citations[] and match the content-page front-matter."
+        ],
+        "residual_risks": [
+          "Citations checked only against inlined cluster.citations[]."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "224263403f07c6b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pinpoint_status=star-verified and quote_fidelity=matched with star_marker=325 — the disclosed verification signals affirmatively support the quote.",
+          "The text-fragment anchor '#:~:text=A%20search%20is%20a%20search%2C' decodes to 'A search is a search,' which is the leading substring of the quoted line, consistent with a working CL fragment link."
+        ],
+        "residual_risks": [
+          "Verification rests on the star-verified/matched judgment fields plus the fragment anchor; full opinion text is not inlined for a character-by-character recheck."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ba306d61dd8a8bf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and if so whether the plain-view doctrine required probable cause rather than mere reasonable suspicion. ## Rule Moving the equipment to expose hidden information was a new search beyond the entry's justification: the moving of the components",
+          "locator_note": "pin-324 / record Arizona v. Hicks; quote_fidelity=mismatch, pinpoint_status=slip-only",
+          "needs_cl": true,
+          "problem": "The quote stored for pin-324 is the content page's Issue/Rule narrative (it contains the '## Rule' markdown header and reads 'the moving of the components' with no closing opinion language), not a verbatim quotation; recorded quote_fidelity='mismatch' is correct and the pin->quote mapping is corrupt; pinpoint_status=slip-only leaves the page-324 pincite unverified.",
+          "proposed_fix": "Re-extract the opinion language the content page attributes to 480 U.S. at 324 ('did constitute a \"search\" separate and apart from the search for ... the shooter, victims, and weapons that was the lawful objective of his entry into the apartment') and verify text and pincite against the CL opinion.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is page-narrative prose with an embedded '## Rule' header, not an opinion quotation.",
+          "slip-only pincite unverified; no opinion source text inlined to confirm the rendered quotation."
+        ],
+        "residual_risks": [
+          "The rendered pin-324 quotation may itself be accurate; the disclosed defect is the corrupt stored span and unverified pincite."
+        ],
+        "suggested_tightening": "Score fidelity against the rendered pin-324 quotation, not the stored narrative span.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f75b038d4cf08541",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "pin-326 / record Arizona v. Hicks; quote_fidelity=mismatch, pinpoint_status=slip-only",
+          "needs_cl": true,
+          "problem": "Recorded quote_fidelity='mismatch' with pinpoint_status='slip-only' (page-326 pincite unverified) and no opinion source text inlined, so the 'probable cause is required ... theoretical and practical moorings' quotation cannot be confirmed faithful from disclosed evidence; defaulting to refuted on uncertainty.",
+          "proposed_fix": "Verify the quotation and the 480 U.S. at 326 pincite against the CL opinion text; clear or correct the mismatch flag.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is a clean quotation matching the content page, but is flagged quote_fidelity=mismatch and the pincite is slip-only.",
+          "No opinion source text disclosed to confirm fidelity; refute-framed default on uncertainty."
+        ],
+        "residual_risks": [
+          "The quotation reads as genuine Hicks language; a sighted CL re-check may confirm it as a true positive."
+        ],
+        "suggested_tightening": "Attach the CL opinion excerpt for page 326 so fidelity is decidable.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "121d321aa5594e2b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with composite_basis=migration-seed; provenance warning 'legacy treatment migrated: good -> good_law'.",
+          "All negative-treatment edges are proposed=true / field_iii='mentioned'; zero ratified edges; derivation flagged 'R15 treatment audit required'.",
+          "No confirmed negative treatment disclosed against a landmark 1987 SCOTUS plain-view holding."
+        ],
+        "residual_risks": [
+          "Migration-seed basis with a pending R15 audit; proposed negatives could downgrade on re-derivation (scope_note flags this)."
+        ],
+        "suggested_tightening": "Complete the R15 audit and re-derive from ratified edges before relying on good_law.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0cc0737e3f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Hicks.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-00-d8cd659c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Hicks"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "121d321aa5594e2b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "224263403f07c6b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4ba306d61dd8a8bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f75b038d4cf08541": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f8a0011db7060c13": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d5f95169f5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-57fdb73acc",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0cc0737e3f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,86 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Milam v. United States.json",
+    "lens": "A",
+    "notes": "group_inventory.jsonl contains only existence and treatment rows for this group; no support, quote_fidelity, pincite, or black_letter assertion rows were present to review.",
+    "reviewed": [
+      {
+        "assertion_id": "51f1cc41945a5299",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Milam v. United States, with official/display citation 296 F. 629, court 4th Cir., and year 1924.",
+          "The inventory citation payload matches the lake citations, including 296 F. 629 and vendor-neutral 1924 U.S. App. LEXIS 3380."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1431bf707f4fa962",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A's charter, but the asserted treatment fields match the disclosed lake record: field_i_validity is unverified, dates are null, varies_by_point is false, and the frontier-stub scope note is the same."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively assessed under support/quote-fidelity lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Milam v. United States.json\",\"reviewed\":[{\"assertion_id\":\"51f1cc41945a5299\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Milam v. United States, with official/display citation 296 F. 629, court 4th Cir., and year 1924.\",\"The inventory citation payload matches the lake citations, including 296 F. 629 and vendor-neutral 1924 U.S. App. LEXIS 3380.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1431bf707f4fa962\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside lens A's charter, but the asserted treatment fields match the disclosed lake record: field_i_validity is unverified, dates are null, varies_by_point is false, and the frontier-stub scope note is the same.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not substantively assessed under support/quote-fidelity lens A.\"],\"suggested_tightening\":null}],\"notes\":\"group_inventory.jsonl contains only existence and treatment rows for this group; no support, quote_fidelity, pincite, or black_letter assertion rows were present to review.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:39-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:11:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Milam v. United States.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1aac3869",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1aac3869.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.262077Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.940483Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.807885Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.042640Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:35.078876Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:38.529292Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Milam v. United States"
+    ],
+    "tokens": {
+      "input": 61572,
+      "output": 1283,
+      "source": "codex-events",
+      "total": 62855
+    },
+    "verdict_map": {
+      "1431bf707f4fa962": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "51f1cc41945a5299": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 33.7
   }
 }

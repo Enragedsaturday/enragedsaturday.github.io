@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Oregon v. Bradshaw.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment row recorded without a treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "bb80e3bc8168b07a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name 'Oregon v. Bradshaw', court 'U.S. Supreme Court', date_decided '1983-06-23', year 1983, and docket '81-1857'.",
+          "The lake official citation is '462 U.S. 1039', matching the content page display citation '462 U.S. 1039 (1983)'; the listed parallel and vendor citations also match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "608dd68225a8565a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "There are some inquiries, such as a request for a drink of water or a request to use a telephone, that are so routine that they cannot be fairly said to represent a desire on the part of an accused to open up a more generalized discussion relating directly or indirectly to the investigation.",
+          "locator_note": "text/Oregon v. Bradshaw__2b01e4.txt, paragraph b1091-7; lake pinpoints[0] currently stores unrelated page prose with quote_fidelity 'mismatch' and page null.",
+          "needs_cl": false,
+          "problem": "The lake quote for pin-1045 is not character-faithful to the opinion text and appears to be harvested from the built page's Issue/Rule prose rather than the cited opinion passage.",
+          "proposed_fix": "Replace pin-1045's stored quote with the actual routine-inquiry passage from the opinion and anchor it to page 1045.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins 'further communication so that interrogation may resume' and includes markdown-like '## Rule *Edwards*', which does not appear as opinion text at the cited passage.",
+          "The actual page-1045 passage supporting the visible Rule quote is the routine-inquiry language in paragraph b1091-7."
+        ],
+        "residual_risks": [
+          "The visible content-page quotation at pin-1045 is itself supported by the opinion text; the defect is the stored quote-pinpoint record."
+        ],
+        "suggested_tightening": "Regenerate pin-1045 from the opinion text, not from the rendered page context surrounding the footnote marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61a5e46dff023478",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "evinced a willingness <page-number citation-index=\"1\" label=\"1046\">*1046</page-number>and a desire for a generalized discussion about the investigation;",
+          "locator_note": "text/Oregon v. Bradshaw__2b01e4.txt, paragraph b1091-8; the quote spans the page-1046 marker.",
+          "needs_cl": false,
+          "problem": "The quoted words appear in the opinion, but the quote is not character-perfect because the source continues with a semicolon after 'investigation' rather than a period.",
+          "proposed_fix": "Quote the phrase without terminal punctuation, or use the source punctuation: 'evinced a willingness and a desire for a generalized discussion about the investigation;'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive quoted phrase is present in the opinion text across the page-1046 marker.",
+          "The page cite 1045-46 is directionally correct, but exact quote fidelity requires fixing the terminal punctuation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store the normalized quote without a final period unless the period is outside the quotation marks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87b95ccf8ebde1bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; the content page treatment fields match the lake treatment fields: field_i_validity 'good_law', as_of_content '1983-06-23', as_of_treatment '2026-06-30', varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency attack performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Oregon v. Bradshaw.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"bb80e3bc8168b07a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record gives case_name 'Oregon v. Bradshaw', court 'U.S. Supreme Court', date_decided '1983-06-23', year 1983, and docket '81-1857'.\",\n        \"The lake official citation is '462 U.S. 1039', matching the content page display citation '462 U.S. 1039 (1983)'; the listed parallel and vendor citations also match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"608dd68225a8565a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake quote for pin-1045 is not character-faithful to the opinion text and appears to be harvested from the built page's Issue/Rule prose rather than the cited opinion passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1045's stored quote with the actual routine-inquiry passage from the opinion and anchor it to page 1045.\",\n        \"evidence_quote\": \"There are some inquiries, such as a request for a drink of water or a request to use a telephone, that are so routine that they cannot be fairly said to represent a desire on the part of an accused to open up a more generalized discussion relating directly or indirectly to the investigation.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Oregon v. Bradshaw__2b01e4.txt, paragraph b1091-7; lake pinpoints[0] currently stores unrelated page prose with quote_fidelity 'mismatch' and page null.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins 'further communication so that interrogation may resume' and includes markdown-like '## Rule *Edwards*', which does not appear as opinion text at the cited passage.\",\n        \"The actual page-1045 passage supporting the visible Rule quote is the routine-inquiry language in paragraph b1091-7.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The visible content-page quotation at pin-1045 is itself supported by the opinion text; the defect is the stored quote-pinpoint record.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-1045 from the opinion text, not from the rendered page context surrounding the footnote marker.\"\n    },\n    {\n      \"assertion_id\": \"61a5e46dff023478\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words appear in the opinion, but the quote is not character-perfect because the source continues with a semicolon after 'investigation' rather than a period.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the phrase without terminal punctuation, or use the source punctuation: 'evinced a willingness and a desire for a generalized discussion about the investigation;'.\",\n        \"evidence_quote\": \"evinced a willingness <page-number citation-index=\\\"1\\\" label=\\\"1046\\\">*1046</page-number>and a desire for a generalized discussion about the investigation;\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Oregon v. Bradshaw__2b01e4.txt, paragraph b1091-8; the quote spans the page-1046 marker.\"\n      },\n      \"reasons\": [\n        \"The substantive quoted phrase is present in the opinion text across the page-1046 marker.\",\n        \"The page cite 1045-46 is directionally correct, but exact quote fidelity requires fixing the terminal punctuation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Store the normalized quote without a final period unless the period is outside the quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"87b95ccf8ebde1bd\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; the content page treatment fields match the lake treatment fields: field_i_validity 'good_law', as_of_content '1983-06-23', as_of_treatment '2026-06-30', varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment/currency attack performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; treatment row recorded without a treatment finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:23:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e30acf1e78",
+      "F-S9-PR-21102eabec"
+    ],
     "group_id": "_overhaul2/lake/cases/Oregon v. Bradshaw.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-dc6b396d",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dc6b396d.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:34.250848Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:34.936324Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:35.705146Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:37.017569Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:39.047178Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:42.920305Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Oregon v. Bradshaw"
+    ],
+    "tokens": {
+      "input": 172826,
+      "output": 6986,
+      "source": "codex-events",
+      "total": 179812
+    },
+    "verdict_map": {
+      "608dd68225a8565a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "61a5e46dff023478": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "87b95ccf8ebde1bd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb80e3bc8168b07a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e30acf1e78",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-21102eabec",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 139.0
   }
 }

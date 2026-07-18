@@ -1,0 +1,193 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4d19e3c05400ebea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached consolidated opinion (Mr. Chief Justice Warren) confirms Peters v. New York (No. 74) was decided with Sibron v. New York (No. 63) at 392 U.S. 40 (1968); page markers *44-*68 corroborate the 392 U.S. pagination and the pincited Peters pages 66-67.",
+          "official selected=392 U.S. 40; parallels 88 S. Ct. 1889 and 20 L. Ed. 2d 917 are standard for Sibron/Peters; identity_checked=true."
+        ],
+        "residual_risks": [
+          "'44 Ohio Op. 2d 402' is an unusual parallel for a New York SCOTUS case and may be a CourtListener cluster data artifact; it is not verifiable from the disclosed evidence (not-found is not fabricated -- flag for check, not a refutation of existence)."
+        ],
+        "suggested_tightening": "Verify or drop the 44 Ohio Op. 2d 402 parallel cite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78d34ead566c3070",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion para b109-5 reads verbatim: 'When the policeman grabbed Peters by the collar, he abruptly \"seized\" him and curtailed his freedom of movement on the basis of probable cause to believe that he was engaged in criminal activity... At that point he had the authority to search Peters, and the incident search was obviously justified \"by the need to seize weapons and other things which might be used to assault an officer or effect an escape, as well as by the need to prevent the destruction of evidence of the crime.\" Preston v. United States, 376 U.S. 364, 367 (1964).'",
+          "The content quote reproduces this with two correct ellipses (omitting 'and curtailed his freedom of movement' and 'to believe that he was engaged in criminal activity. See Henry...') and correctly attributes the internal quotation to Preston; retained words are verbatim. Payload 'mismatch' is an ellipsis-driven false positive."
+        ],
+        "residual_risks": [
+          "Pincite 'Id. at 67' matches the *67-labeled paragraph in the disclosed text."
+        ],
+        "suggested_tightening": "Teach the comparator to treat ' . . . ' as an omission gap rather than a mismatch.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d3244710c4397a4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters on the stairway between the fourth and fifth floors of the apartment building, he had probable cause to arrest him for attempted burglary.",
+          "locator_note": "pin-66; content 'Rule' section; opinion para b108-7 (392 U.S. 66).",
+          "needs_cl": false,
+          "problem": "Recorded quote for pin-66 is the content page preamble (front matter, header line, HTML comment, ## Background/## Issue/## Rule intro), not opinion text -- the systematic first-pin span mis-extraction.",
+          "proposed_fix": "Re-extract the anchored sentence 'We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters on the stairway between the fourth and fifth floors of the apartment building, he had probable cause to arrest him for attempted burglary.' -- verbatim in opinion para b108-7 (392 U.S. 66); the published page already renders this faithful quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is page chrome, not opinion text (same first-pin mis-extraction pattern as Perry pin-op2 and Plumhoff pin-777).",
+          "The intended/anchored content quote is verbatim in the disclosed opinion, so this is a ledger extraction artifact, not a published-content fidelity error."
+        ],
+        "residual_risks": [
+          "Published content page is unaffected; defect is confined to the S8 assertion record's quote span."
+        ],
+        "suggested_tightening": "Fix the first-pin extractor to capture the sentence following the anchor rather than the page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a65e54188036ba91",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion para b108-7 reads verbatim: '...deliberately furtive actions and flight at the approach of strangers or law officers are strong indicia of mens rea, and when coupled with specific knowledge on the part of the officer relating the suspect to the evidence of crime, they are proper factors [*67] to be considered in the decision to make an arrest.'",
+          "The content quote is verbatim (mens rea italicized as in the original); pincite 'Id. at 66-67' correctly spans the *66/*67 page break that falls inside the sentence. Payload 'mismatch' is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the FP mismatch flag for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "569c10ba4843ec39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Peters v. New York (1968), decided with Sibron and companion to Terry v. Ohio, is a foundational search-incident-to-arrest / probable-cause precedent; not overruled.",
+          "The lake record's negative edges (26 'overruled', 40 'questioned', 2 'criticized') are all proposed:true lane1/lane2 candidate signals (extractor keyword-FP pattern); composite_basis='migration-seed' pending S2 re-derivation; content page states 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "A large volume of unadjudicated proposed negative edges should be triaged by S2; the good_law determination is a seed, not yet re-derived."
+        ],
+        "suggested_tightening": "Dispose of the proposed negative edges to firm the seed into a verified good_law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6ca94fb97e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7aca25f915",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6f990d877a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-32ecaebed1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Peters v. New York.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-04-e800fe02",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Peters v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4d19e3c05400ebea": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "569c10ba4843ec39": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78d34ead566c3070": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d3244710c4397a4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a65e54188036ba91": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ca94fb97e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7aca25f915",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0c13c6af84",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6f990d877a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-32ecaebed1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

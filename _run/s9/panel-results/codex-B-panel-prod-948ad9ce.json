@@ -1,13 +1,108 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Ramirez.md",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "90ff1c437b75566e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies United States v. Ramirez as a U.S. Supreme Court case decided 1998-03-04 with docket 96-1469.",
+          "Lake citations include official cite 523 U.S. 65, parallels 118 S. Ct. 992 and 140 L. Ed. 2d 191, and vendor-neutral cite 1998 U.S. LEXIS 1600.",
+          "Currency angle: lake treatment field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment audit caveat addressed under assertion 790947983db693c6."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2349d64bb15bd17f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support classification is outside Lens B, and no disclosed treatment/currency defect defeats the case's use on a knock-and-announce page.",
+          "The lake record is verified and identifies the case as a Supreme Court knock-and-announce/no-knock authority."
+        ],
+        "residual_risks": [
+          "Lens B did not independently evaluate home-role support."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f0b0b29a1678fed3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/quote fidelity is outside Lens B.",
+          "On the currency axis, the lake scope_note treats the same Ramirez rule as controlling and field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A should handle any holding-support or quote-fidelity challenge."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "559350ab4be93a46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court_id and court_level are scotus.",
+          "For a federal search-and-seizure corpus, the disclosed Supreme Court identity supports the weight label Binding — SCOTUS."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "790947983db693c6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 24, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake.treatment.derivation.lane2_top_cited; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law/control call matches the lake treatment fields, but the page's unqualified treatment presentation is overconfident because disclosed progeny derivation flags an unresolved top-cited treatment audit with proposed negative events.",
+          "proposed_fix": "Keep the good_law/control scope only with a qualifier, or complete the R15 treatment audit before stating unqualified no-negative-treatment language.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and the scope_note matches the page's controlling-law statement.",
+          "All disclosed treatment edges are proposed and have field_iii set to mentioned, so the record does not disclose a confirmed overruling or abrogation of Ramirez itself.",
+          "However, the treatment derivation also reports a capped top-cited review with audit_needed true and 24 proposed negative events, so an unqualified no-negative-treatment formulation should be tightened."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include the completed R15 audit needed to resolve the proposed negative edges."
+        ],
+        "suggested_tightening": "Say no confirmed negative treatment in the disclosed lake record, and note that top-cited progeny audit remains pending unless that audit has been cleared.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Ramirez.md\",\"reviewed\":[{\"assertion_id\":\"90ff1c437b75566e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies United States v. Ramirez as a U.S. Supreme Court case decided 1998-03-04 with docket 96-1469.\",\"Lake citations include official cite 523 U.S. 65, parallels 118 S. Ct. 992 and 140 L. Ed. 2d 191, and vendor-neutral cite 1998 U.S. LEXIS 1600.\",\"Currency angle: lake treatment field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment audit caveat addressed under assertion 790947983db693c6.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2349d64bb15bd17f\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support classification is outside Lens B, and no disclosed treatment/currency defect defeats the case's use on a knock-and-announce page.\",\"The lake record is verified and identifies the case as a Supreme Court knock-and-announce/no-knock authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B did not independently evaluate home-role support.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f0b0b29a1678fed3\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/quote fidelity is outside Lens B.\",\"On the currency axis, the lake scope_note treats the same Ramirez rule as controlling and field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should handle any holding-support or quote-fidelity challenge.\"],\"suggested_tightening\":null},{\"assertion_id\":\"559350ab4be93a46\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity court_id and court_level are scotus.\",\"For a federal search-and-seizure corpus, the disclosed Supreme Court identity supports the weight label Binding — SCOTUS.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"790947983db693c6\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law/control call matches the lake treatment fields, but the page's unqualified treatment presentation is overconfident because disclosed progeny derivation flags an unresolved top-cited treatment audit with proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law/control scope only with a qualifier, or complete the R15 treatment audit before stating unqualified no-negative-treatment language.\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 24, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake.treatment.derivation.lane2_top_cited; content_page.md Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and the scope_note matches the page's controlling-law statement.\",\"All disclosed treatment edges are proposed and have field_iii set to mentioned, so the record does not disclose a confirmed overruling or abrogation of Ramirez itself.\",\"However, the treatment derivation also reports a capped top-cited review with audit_needed true and 24 proposed negative events, so an unqualified no-negative-treatment formulation should be tightened.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include the completed R15 audit needed to resolve the proposed negative edges.\"],\"suggested_tightening\":\"Say no confirmed negative treatment in the disclosed lake record, and note that top-cited progeny audit remains pending unless that audit has been cleared.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T02:56:53-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:33:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-249b5b7950"
+    ],
     "group_id": "content/cases/United States v. Ramirez.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +111,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-948ad9ce.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Ramirez"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 248779,
+      "output": 7981,
+      "source": "codex-events",
+      "total": 256760
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.0
+    "verdict_map": {
+      "2349d64bb15bd17f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "559350ab4be93a46": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "790947983db693c6": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "90ff1c437b75566e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f0b0b29a1678fed3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-249b5b7950",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.0
   }
 }

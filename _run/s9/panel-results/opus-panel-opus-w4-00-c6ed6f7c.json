@@ -1,0 +1,136 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "918fed4028e84cd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header confirms '358 U.S. 307 (1959)', caption 'DRAPER v. UNITED STATES', 'Supreme Court of United States', No. 136, decided January 26, 1959 - official cite matches display and official-selection.",
+          "Whittaker, J., opinion (informant Hereford tip corroborated by agent Marsh = probable cause) corroborates case identity; official_selection_present and consistent."
+        ],
+        "residual_risks": [
+          "Parallel cites (79 S. Ct. 329; 3 L. Ed. 2d 327) and vendor-neutral 1959 U.S. LEXIS 1607 are not shown in the disclosed opinion text; only official 358 U.S. 307 is directly corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "20c9a67d4f168b72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote verifies verbatim in the disclosed opinion at p.313: 'In dealing with probable cause, . . . as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act.'",
+          "Opinion attributes it to 'Brinegar v. United States, supra, at 175', so the content page's '(quoting Brinegar)' parenthetical is accurate; the passage sits within the *313-*314 span, so pincite 313 is precise. pinpoint_status star-verified, fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f78d5c8dbfff3c24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded payload.quote is the page's own frontmatter/Background/Issue/Rule prose (an extraction artifact), not any opinion passage, which is why quote_fidelity was flagged 'mismatch' and pinpoint_status is 'slip-only' - not a true quote failure.",
+          "The page's ACTUAL pin-313 quotation - 'with every other bit of Hereford's information being thus personally verified, Marsh had \"reasonable grounds\" to believe that the remaining unverified bit of Hereford's information - that Draper would have the heroin with him - was likewise true' - verifies verbatim in the disclosed opinion at p.313 (em-dashes restored where the source OCR dropped them). Single page; pincite 358 U.S. at 313 is precise."
+        ],
+        "residual_risks": [
+          "Extractor quote field does not reflect the real quotation; downstream tooling relying on payload.quote would misreport a mismatch even though the rendered page quote is faithful."
+        ],
+        "suggested_tightening": "Re-harvest the pin-313 span to the actual '...reasonable grounds...likewise true' sentence and reject harvests whose captured span matches page frontmatter/header text.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e600c6c352be54d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields (field_i_validity=good_law, as_of_content 1959-01-26 matching the opinion's decision date, varies_by_point=false) are internally consistent and match the content-page frontmatter/lake record.",
+          "scope_note's stated holding (a reliable informant's corroborated tip furnishes probable cause even where corroborated details are innocent) matches the disclosed opinion; nothing in the disclosed text rebuts good_law - declining to fabricate a negative-treatment finding."
+        ],
+        "residual_risks": [
+          "Good-law currency is citator-dependent and not fully verifiable from a single opinion text; the 'folded into Illinois v. Gates totality test' claim is authored orientation not machine-verified from disclosed evidence.",
+          "as_of_treatment 2026-06-30 is a check-date not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9bd4822ef5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Draper v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-00-c6ed6f7c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Draper v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "20c9a67d4f168b72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5e600c6c352be54d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "918fed4028e84cd2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f78d5c8dbfff3c24": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9bd4822ef5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

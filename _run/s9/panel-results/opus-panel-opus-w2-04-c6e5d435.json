@@ -1,0 +1,158 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d5fb3bdf58738c97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header verbatim: '391 U.S. 543 (1968)', 'BUMPER v. NORTH CAROLINA.', 'No. 1016.', 'Decided June 3, 1968.' — matches official cite 391 U.S. 543, docket 1016, date_decided 1968-06-03.",
+          "Star pagination *544 through *562 confirms the opinion opens at 543; official_selection selected_rank_1 = 391 U.S. 543.",
+          "cluster_id 107716 / lead_opinion_id 107716 consistent with absolute_url /opinion/107716/bumper-v-north-carolina/."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1192becc0c9a428e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When a prosecutor seeks to rely upon consent to justify the lawfulness of a search, he has the burden of proving that the consent was, in fact, freely and voluntarily given.",
+          "locator_note": "pin-548; cached opinion para spans *548 into *549: 'This burden cannot be discharged by *549 showing no more than acquiescence to a claim of lawful authority.'",
+          "needs_cl": false,
+          "problem": "The STORED pin-548 quote is a mis-harvested content-page span (Background/Issue prose containing wiki markdown headers '## Issue' and '## Rule No.') and is not opinion text at all; it is correctly flagged quote_fidelity=mismatch/slip-only. The reader-facing rendered quote at ^pin-548 is, by contrast, verbatim-faithful to the source.",
+          "proposed_fix": "Replace the stored pin-548 quote with the actual rendered Rule sentence: 'When a prosecutor seeks to rely upon consent to justify the lawfulness of a search, he has the burden of proving that the consent was, in fact, freely and voluntarily given. This burden cannot be discharged by showing no more than acquiescence to a claim of lawful authority.' (391 U.S. 548-549), so the pinpoint record matches what the page displays.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote text is corrupt (a harvest slip capturing page prose + '## Issue'/'## Rule' markers), so the pinpoint record itself is defective.",
+          "However the RENDERED page quote at ^pin-548 is verbatim-faithful to the cached opinion and the pincite 548-549 is correct (sentence straddles the *549 star), so the reader-facing legal proposition is sound and the defect is data-layer only."
+        ],
+        "residual_risks": [
+          "If a downstream fix were to alter the displayed page quote rather than the stored harvest, it would wrongly disturb a faithful quotation."
+        ],
+        "suggested_tightening": "Re-run the quote harvester against the ^pin anchor's rendered blockquote rather than surrounding section prose; clear the slip-only/mismatch flag once re-harvested.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "145962791fe6d02f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-550 quote is verbatim-faithful to the cached opinion paragraph on page 550: 'When a law enforcement officer claims authority to search a home under a warrant, he announces in effect that the occupant has no right to resist the search. ... Where there is coercion there cannot be consent.'",
+          "The cached source reads 'coercionalbeit' — an OCR artifact where the em-dash was dropped; the wiki correctly restores 'coercion — albeit colorably lawful coercion', so the words are identical and only source OCR differs.",
+          "The payload quote_fidelity=mismatch flag is therefore a false positive caused by that OCR-dropped em-dash defeating an exact string-match; pincite 550 is correct."
+        ],
+        "residual_risks": [
+          "The stale mismatch flag on an actually-faithful quote could mislead a downstream auto-fixer into 'correcting' a correct quote."
+        ],
+        "suggested_tightening": "Clear the mismatch/slip-only flag for pin-550; whitelist the source's 'coercionalbeit' OCR variant in the matcher.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae21b84a1b20ef0e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Bumper (1968) is a foundational consent-voluntariness holding; scope_note (good law, carried into Schneckloth totality test) is doctrinally sound.",
+          "Every disclosed treatment edge is proposed:true with field_iii='mentioned' and field_ii carrying the CITING case's own status flag (e.g., Schneckloth 'questioned', Carpenter/Rakas/Andresen 'overruled') — these are citing-case-status false positives, NOT adverse treatment OF Bumper.",
+          "Derivation marks 'audit_needed:true' / 'R15 treatment audit required'; no edge asserts Bumper was overruled/abrogated, so nothing in disclosed evidence refutes good_law."
+        ],
+        "residual_risks": [
+          "Negative-lane lane1/lane2 hit their caps (200/25) and remain unaudited (R15); a genuine adverse-treatment event could in principle sit beyond the disclosed edges.",
+          "Positive 'good_law' cannot be affirmatively proven from the pack alone (full citator not disclosed)."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit to convert proposed citing-case-status flags into true field_iii treatment verbs before finalizing.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a5f972afa7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-13f1fe9b0a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Bumper v. North Carolina.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-04-c6e5d435",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Bumper v. North Carolina"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1192becc0c9a428e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "145962791fe6d02f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae21b84a1b20ef0e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5fb3bdf58738c97": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ddecd3c00",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a5f972afa7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-13f1fe9b0a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

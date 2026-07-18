@@ -1,38 +1,89 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Trupiano v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No support, quote_fidelity, pincite, or black_letter rows were present in the disclosed inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "34727629658d7ac9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names the case as Trupiano v. United States, identifies the court as U.S., date_decided as 1948-06-14, year as 1948, docket as 427, and cluster_id as 104576.",
+          "The lake citations record selects 334 U.S. 699 as the official citation and contains the asserted parallel/vendor citations listed in the inventory payload."
+        ],
+        "residual_risks": [
+          "Review is limited to exact comparison against the disclosed lake record; no external citation validation was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d6bfdaab55b0769",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no substantive treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says the frontier stub treatment/progeny is intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No Lens A conclusion is made about whether the case is overruled, superseded, or otherwise good law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Trupiano v. United States.json\",\"reviewed\":[{\"assertion_id\":\"34727629658d7ac9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names the case as Trupiano v. United States, identifies the court as U.S., date_decided as 1948-06-14, year as 1948, docket as 427, and cluster_id as 104576.\",\"The lake citations record selects 334 U.S. 699 as the official citation and contains the asserted parallel/vendor citations listed in the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Review is limited to exact comparison against the disclosed lake record; no external citation validation was performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9d6bfdaab55b0769\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no substantive treatment finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says the frontier stub treatment/progeny is intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A conclusion is made about whether the case is overruled, superseded, or otherwise good law.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. No support, quote_fidelity, pincite, or black_letter rows were present in the disclosed inventory.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:43-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:42:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Trupiano v. United States.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "Trupiano v. United States"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cbc4af49",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cbc4af49.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Trupiano v. United States' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Trupiano v. United States"
+    ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 95610,
+      "output": 2234,
+      "source": "codex-events",
+      "total": 97844
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "34727629658d7ac9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d6bfdaab55b0769": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "wall_clock_s": 52.4
   }
 }

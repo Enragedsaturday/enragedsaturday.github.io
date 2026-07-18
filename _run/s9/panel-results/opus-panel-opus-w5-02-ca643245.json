@@ -1,0 +1,156 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e4151cb2cea4946b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms the case: Justice Scalia, warrantless probation search in Wisconsin, cert granted 479 U.S. 1005; header cite '483 U.S. 868 (1987)' matches the official cluster cite.",
+          "Opinion body begins at star-page *870 (syllabus occupies 868-869), consistent with the U.S. Reports first-page cite 868.",
+          "Parallels (107 S. Ct. 3164; 97 L. Ed. 2d 709; 1987 U.S. LEXIS 2897; 55 U.S.L.W. 5156) are the standard set."
+        ],
+        "residual_risks": [
+          "Parallel-cite pages rely on disclosed cluster metadata, not opinion text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f1cbea61a8ffa43",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A State’s operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents “special needs” beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.",
+          "locator_note": "cached text para b923-7; the '*874' star falls mid-quote so pincite '483 U.S. at 873-874' is correct; reader-facing quote at ^pin-873 is faithful. Defect is metadata-only.",
+          "needs_cl": false,
+          "problem": "Stored pin-873 quote is corrupted content-page markdown scaffolding ('satisfies the Fourth Amendment. ## Rule Yes. Supervising probationers is a special need beyond ordinary law enforcement...'), not a verbatim opinion quote.",
+          "proposed_fix": "Repair pin-873 quote to the rendered anchor quote: 'A State's operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents \"special needs\" beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Reader-facing quote at ^pin-873 is faithful and its pincite (873-874) is correct; defect is confined to the corrupted stored metadata quote (self-flagged 'mismatch').",
+          "Metadata repair only; no reader harm."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pinpoint quotes from anchor text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5b5b9fcd9e565dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached text verbatim: 'We think it clear that the special needs of Wisconsin's probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by \"reasonable grounds,\" as defined by the Wisconsin Supreme Court.'",
+          "The '*876' star-pagination falls between 'We' and 'think' in the cached text, so pincite 'Id. at 876' is correct.",
+          "Payload 'mismatch'/'slip-only' = no validated star fragment, not a text error (this stored quote, unlike pin-873, is itself a faithful verbatim quote)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f380cb734f6ebbf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Griffin v. Wisconsin is the foundational special-needs probation-search precedent, carried forward (not overruled) by United States v. Knights and Samson v. California per the content page.",
+          "lane1_negative surfaced 7 proposed_negative_events, but all are proposed:true snippet artifacts from courts that cannot overrule SCOTUS Griffin: State v. Hilton (state, 'overruled'), United States v. Robert Hill (776 F.3d, circuit, 'overruled'), Chandler / Commonwealth v. Moore ('superseded_by_statute'), Grady / Stenhoff (state, 'questioned').",
+          "lane3_recency reviewed 40 with 0 proposed negatives; varies_by_point=false is appropriate."
+        ],
+        "residual_risks": [
+          "lane1_negative cap_hit=true / audit_needed=true with 7 unresolved proposed negatives  not read against citing-opinion text in-pack; classified as false positives by court-hierarchy structure, not by reading.",
+          "scope_note flags derivation 'may downgrade'; a downgrade did not occur and no SCOTUS-level negative appears in the disclosed edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-aaa0a1d718",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-26503a2799",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Griffin v. Wisconsin.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-02-ca643245",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Griffin v. Wisconsin"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1f1cbea61a8ffa43": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3f380cb734f6ebbf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5b5b9fcd9e565dd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e4151cb2cea4946b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d426433204",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-aaa0a1d718",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-26503a2799",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

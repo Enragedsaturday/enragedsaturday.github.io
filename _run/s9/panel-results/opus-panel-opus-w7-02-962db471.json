@@ -1,0 +1,141 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c48eaafcdff4114f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is unmistakably Marbury v. Madison (Marshall, C.J.; Marbury's commission, mandamus, judicial review; 1 Cranch star pagination *154..*178); 5 U.S. 137 / 1 Cranch 137 is the correct official cite; cluster 84759.",
+          "Display '5 U.S. 137' selected rank_1."
+        ],
+        "residual_risks": [
+          "Lake identity flagged status=under_review, identity_method=pending, reason_code two_key_not_satisfied (expected_citation_found and party_name_in_text false) — a process gap, but existence/identity is substantively confirmed from the disclosed cached opinion."
+        ],
+        "suggested_tightening": "Re-run two-key identity so the record promotes out of under_review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5abca5619633bc8b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-177 'It is emphatically the province and duty of the judicial department to say what the law is.' appears verbatim in the cached opinion between star *177 and *178, so pincite 177 is correct."
+        ],
+        "residual_risks": [
+          "Lake/payload pinpoint.quote stores page preamble, producing a spurious mismatch/slip-only flag; the reader-facing quote is clean."
+        ],
+        "suggested_tightening": "Re-harvest pin-177 quote field and re-verify to star.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc2e5b4d430ebe43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-177a 'an act of the legislature, repugnant to the constitution, is void.' appears verbatim on page 177 (after star *177, before *178).",
+          "star_marker 177 and pinpoint_status star-verified / matched are correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fcf3aa5f7fd38438",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with the disclosed edges: all negatives are proposed=true FPs (e.g., state case Savage v. N.C. Dep't of Transp. 'overruled' Marbury — impossible); Marbury is the foundational judicial-review precedent, undisturbed."
+        ],
+        "residual_risks": [
+          "Noisy proposed edges pending re-derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cc34010f00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1767930c03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-02-962db471",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Marbury v. Madison"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5abca5619633bc8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c48eaafcdff4114f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc2e5b4d430ebe43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fcf3aa5f7fd38438": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cc34010f00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1767930c03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

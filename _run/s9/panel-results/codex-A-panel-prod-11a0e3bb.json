@@ -1,39 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-di-re--104490.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "4015fe74c449f333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified_identity for United States v. Di Re, decided 1948-01-19 by the U.S. Supreme Court.",
+          "The inventory citation set matches lake.citations.all exactly: 332 U.S. 581, 68 S. Ct. 222, 92 L. Ed. 2d 210, and 1948 U.S. LEXIS 2667."
+        ],
+        "residual_risks": [
+          "No content_page.* file was present; review is against group_inventory.jsonl and the disclosed lake/text files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba4589bc8d23791f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload mirrors the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note states treatment/progeny were intentionally not derived until S6 promotion.",
+          "Under lens A, treatment/currency is recorded only; no treatment merits finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency is outside lens A and was not substantively evaluated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-di-re--104490.json\",\"reviewed\":[{\"assertion_id\":\"4015fe74c449f333\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record status is verified_identity for United States v. Di Re, decided 1948-01-19 by the U.S. Supreme Court.\",\"The inventory citation set matches lake.citations.all exactly: 332 U.S. 581, 68 S. Ct. 222, 92 L. Ed. 2d 210, and 1948 U.S. LEXIS 2667.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No content_page.* file was present; review is against group_inventory.jsonl and the disclosed lake/text files.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ba4589bc8d23791f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment payload mirrors the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note states treatment/progeny were intentionally not derived until S6 promotion.\",\"Under lens A, treatment/currency is recorded only; no treatment merits finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency is outside lens A and was not substantively evaluated.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:49-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:23:05-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/united-states-v-di-re--104490.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "united-states-v-di-re--104490"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-11a0e3bb",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-11a0e3bb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'united-states-v-di-re--104490' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-di-re--104490"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "united-states-v-di-re--104490"
+    ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 124528,
+      "output": 2711,
+      "source": "codex-events",
+      "total": 127239
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "4015fe74c449f333": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ba4589bc8d23791f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 62.5
   }
 }

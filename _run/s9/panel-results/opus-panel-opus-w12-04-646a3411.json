@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4203f09e3acfdaf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header confirms '527 U.S. 263 (1999)' STRICKLER v. GREENE, WARDEN, No. 98-5864, decided June 17, 1999, at /opinion/118307/ — official cite and identity match.",
+          "Parallels (119 S.Ct. 1936; 144 L.Ed.2d 286; 1999 U.S. LEXIS 4191) are cluster metadata."
+        ],
+        "residual_risks": [
+          "Parallel/neutral cites not confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "147a3c5b45c85383",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There are three components of a true Brady  violation: The evidence at issue must be favorable to the accused, *282 either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.",
+          "locator_note": "Cached opinion crosses the *282 star mid-sentence (after 'favorable to the accused,'); content page ^pin-281, pincite '281-282'.",
+          "needs_cl": false,
+          "problem": "Inventory payload 'quote' for pin-281 is an extraction artifact: it captured the page front-matter/Background/Issue/Rule prose ('...## Rule The Court set out the elements of a Brady violation.'), not the opinion passage anchored at ^pin-281.",
+          "proposed_fix": "Re-anchor to the genuine pin-281 quote ('There are three components of a true Brady violation: The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.'), which is verbatim-faithful and spans 527 U.S. 281-282.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Genuine page quote at ^pin-281 is verbatim-faithful; the *282 star falls after 'favorable to the accused,' so the 281-282 span pincite is correct.",
+          "Defect confined to the inventory payload, not the page."
+        ],
+        "residual_risks": [
+          "Payload quote will not match the opinion if taken literally; re-anchor before any fidelity gate."
+        ],
+        "suggested_tightening": "Fix the extractor anchor window so quote payloads capture the pinned passage.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3600816a74599fb6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'strictly speaking, there is never a real \"Brady violation\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.' appears verbatim at 527 U.S. 281 (source paragraph beginning 'This special status explains...', before the *282 star).",
+          "'Id. at 281' pincite correct.",
+          "Payload 'mismatch' is a false positive from the single-quote/italic markup adaptation of 'Brady violation'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dd0281d0128c6cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed 1999 opinion confirms the three-component Brady framework exists (527 U.S. 281-282) but carries no citator data, so 2026 good-law currency cannot be affirmatively certified from disclosed evidence.",
+          "scope_note is migration boilerplate ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') and makes no substantive treatment claim to refute; nothing disclosed contradicts good-law. Not refuted, not certified."
+        ],
+        "residual_risks": [
+          "Currency (2026) rests on citator data not inlined; the scope-note itself flags a possible future downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-70229d93ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ca58845f70",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Strickler v. Greene.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-04-646a3411",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Strickler v. Greene"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "147a3c5b45c85383": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3600816a74599fb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4203f09e3acfdaf2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4dd0281d0128c6cd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff5e091ced",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-70229d93ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ca58845f70",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

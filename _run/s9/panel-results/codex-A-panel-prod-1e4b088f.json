@@ -1,22 +1,125 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Tucker.json",
+    "lens": "A",
+    "notes": "No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "b52f13bf0732cb14",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Michigan v. Tucker as a U.S. Supreme Court case decided 1974-06-10, docket 73-482.",
+          "The official citation in the lake record is 417 U.S. 433, and the parallel/vendor citations match the inventory and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "781a94e101f354bc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "police conduct at issue here did not abridge respondent’s constitutional privilege against compulsory self-incrimination, but departed only from the prophylactic standards later laid down by this Court",
+          "locator_note": "text/Michigan v. Tucker__ab54a5.txt, paragraph b509-5, page marker label 446",
+          "needs_cl": false,
+          "problem": "The pin-446 stored quote is not character-faithful to the disclosed opinion text. It appears to be harvested from surrounding content-page prose/headings rather than from the opinion passage at 417 U.S. 446.",
+          "proposed_fix": "Replace pin-446 with the actual page-446 opinion passage beginning with the police-conduct sentence, set page to 446, and re-run quote fidelity against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote reads: \"of the *Miranda* violation. ## Rule No. A failure to give the full *Miranda* warnings...\", which includes markdown heading/prose not found as opinion text.",
+          "The disclosed opinion text at the 446 marker instead contains the police-conduct passage cited on the content page.",
+          "The lake record itself marks this pinpoint as quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "The content-page proposition is supported by the opinion, but the specific pin quote record is defective."
+        ],
+        "suggested_tightening": "Tie ^pin-446 only to the actual 417 U.S. at 446 quotation, not to nearby page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c02b3f19e72dcf7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The treatment payload matches the disclosed lake/content fields: good_law, as_of_content 1974-06-10, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Current good-law status was not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Michigan v. Tucker.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b52f13bf0732cb14\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Michigan v. Tucker as a U.S. Supreme Court case decided 1974-06-10, docket 73-482.\",\n        \"The official citation in the lake record is 417 U.S. 433, and the parallel/vendor citations match the inventory and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"781a94e101f354bc\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-446 stored quote is not character-faithful to the disclosed opinion text. It appears to be harvested from surrounding content-page prose/headings rather than from the opinion passage at 417 U.S. 446.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-446 with the actual page-446 opinion passage beginning with the police-conduct sentence, set page to 446, and re-run quote fidelity against the cached opinion text.\",\n        \"evidence_quote\": \"police conduct at issue here did not abridge respondent’s constitutional privilege against compulsory self-incrimination, but departed only from the prophylactic standards later laid down by this Court\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Michigan v. Tucker__ab54a5.txt, paragraph b509-5, page marker label 446\"\n      },\n      \"reasons\": [\n        \"The inventory/lake quote reads: \\\"of the *Miranda* violation. ## Rule No. A failure to give the full *Miranda* warnings...\\\", which includes markdown heading/prose not found as opinion text.\",\n        \"The disclosed opinion text at the 446 marker instead contains the police-conduct passage cited on the content page.\",\n        \"The lake record itself marks this pinpoint as quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content-page proposition is supported by the opinion, but the specific pin quote record is defective.\"\n      ],\n      \"suggested_tightening\": \"Tie ^pin-446 only to the actual 417 U.S. at 446 quotation, not to nearby page text.\"\n    },\n    {\n      \"assertion_id\": \"3c02b3f19e72dcf7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\n        \"The treatment payload matches the disclosed lake/content fields: good_law, as_of_content 1974-06-10, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current good-law status was not audited under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:11:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1b7ffe298b"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Tucker.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1e4b088f",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1e4b088f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.794552Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.531772Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.539908Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.846797Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.965660Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:37.500271Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Tucker"
+    ],
+    "tokens": {
+      "input": 204675,
+      "output": 5302,
+      "source": "codex-events",
+      "total": 209977
+    },
+    "verdict_map": {
+      "3c02b3f19e72dcf7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "781a94e101f354bc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b52f13bf0732cb14": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1b7ffe298b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 105.1
   }
 }

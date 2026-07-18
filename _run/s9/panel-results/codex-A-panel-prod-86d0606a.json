@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kisela v. Hughes.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote-fidelity/support implications only; the treatment row is recorded without a treatment attack because that belongs to lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "dd973219048e2426",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Kisela v. Hughes, U.S. Supreme Court, decided 2018-04-02, docket 17-467.",
+          "Lake official citation is 584 U.S. 100, and the parallel/vendor citations in the payload match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6da11853ebb8e38f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "“Qualified immunity attaches when an official’s conduct\ndoes not violate clearly established statutory or constitu-\ntional rights of which a reasonable person would have\nknown.”",
+          "locator_note": "content_page.md rule paragraph ending ^pin-1152; lake pinpoints id pin-1152 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "pin-1152's stored quote is not a verbatim opinion quote; it is built-page front matter, background, issue, and rule prose. The lake record itself marks the pin quote_fidelity as mismatch.",
+          "proposed_fix": "Re-harvest pin-1152 to the actual quoted rule sentence from the opinion, or store the surrounding page prose as non-quoted summary rather than as a quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with markdown/page text, not opinion text.",
+          "The disclosed opinion text contains the actual qualified-immunity sentence; the stored pin quote does not match that passage character-for-character."
+        ],
+        "residual_risks": [
+          "The official S. Ct. page landing is not independently validated by the lake pin because page is null and status is slip-only."
+        ],
+        "suggested_tightening": "Limit the pin to the actual quoted qualified-immunity sentence and keep background/rule narrative outside the quote field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3e03edb14038732",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Use of excessive force\nis an area of the law “in which the result depends very\nmuch on the facts of each case,”",
+          "locator_note": "content_page.md line with ^pin-1153; lake pinpoints id pin-1153 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "pin-1153's stored quote is page commentary, not a verbatim opinion quote; the phrase 'Force law demands particularity' does not appear in the opinion text.",
+          "proposed_fix": "Store the actual opinion sentence beginning with 'Use of excessive force...' as the quote, and leave 'Force law demands particularity' as unquoted editorial summary.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is '— *Id.* Force law demands particularity.', which is not found in the cached opinion text.",
+          "The actual opinion passage supports the particularity point, but the stored quote is not character-faithful to the disclosed text."
+        ],
+        "residual_risks": [
+          "The official S. Ct. page landing is not independently validated by the lake pin because page is null and status is slip-only."
+        ],
+        "suggested_tightening": "Do not include citation lead-ins or page-summary prose inside quote fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21fd04de194bb898",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2018-04-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency audit was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kisela v. Hughes.json\",\"reviewed\":[{\"assertion_id\":\"dd973219048e2426\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Kisela v. Hughes, U.S. Supreme Court, decided 2018-04-02, docket 17-467.\",\"Lake official citation is 584 U.S. 100, and the parallel/vendor citations in the payload match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6da11853ebb8e38f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1152's stored quote is not a verbatim opinion quote; it is built-page front matter, background, issue, and rule prose. The lake record itself marks the pin quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Re-harvest pin-1152 to the actual quoted rule sentence from the opinion, or store the surrounding page prose as non-quoted summary rather than as a quote.\",\"evidence_quote\":\"“Qualified immunity attaches when an official’s conduct\\ndoes not violate clearly established statutory or constitu-\\ntional rights of which a reasonable person would have\\nknown.”\",\"needs_cl\":false,\"locator_note\":\"content_page.md rule paragraph ending ^pin-1152; lake pinpoints id pin-1152 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote begins with markdown/page text, not opinion text.\",\"The disclosed opinion text contains the actual qualified-immunity sentence; the stored pin quote does not match that passage character-for-character.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The official S. Ct. page landing is not independently validated by the lake pin because page is null and status is slip-only.\"],\"suggested_tightening\":\"Limit the pin to the actual quoted qualified-immunity sentence and keep background/rule narrative outside the quote field.\"},{\"assertion_id\":\"d3e03edb14038732\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1153's stored quote is page commentary, not a verbatim opinion quote; the phrase 'Force law demands particularity' does not appear in the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Store the actual opinion sentence beginning with 'Use of excessive force...' as the quote, and leave 'Force law demands particularity' as unquoted editorial summary.\",\"evidence_quote\":\"Use of excessive force\\nis an area of the law “in which the result depends very\\nmuch on the facts of each case,”\",\"needs_cl\":false,\"locator_note\":\"content_page.md line with ^pin-1153; lake pinpoints id pin-1153 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote is '— *Id.* Force law demands particularity.', which is not found in the cached opinion text.\",\"The actual opinion passage supports the particularity point, but the stored quote is not character-faithful to the disclosed text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The official S. Ct. page landing is not independently validated by the lake pin because page is null and status is slip-only.\"],\"suggested_tightening\":\"Do not include citation lead-ins or page-summary prose inside quote fields.\"},{\"assertion_id\":\"21fd04de194bb898\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2018-04-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment or currency audit was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed existence and quote-fidelity/support implications only; the treatment row is recorded without a treatment attack because that belongs to lens B.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:28-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:15:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-51e251fcba",
+      "F-S9-PR-37ed5f94be"
+    ],
     "group_id": "_overhaul2/lake/cases/Kisela v. Hughes.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-86d0606a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-86d0606a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:19.260471Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:19.873975Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:20.682834Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:21.930083Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:23.904023Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:27.532177Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kisela v. Hughes"
+    ],
+    "tokens": {
+      "input": 191414,
+      "output": 7803,
+      "source": "codex-events",
+      "total": 199217
+    },
+    "verdict_map": {
+      "21fd04de194bb898": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6da11853ebb8e38f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d3e03edb14038732": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "dd973219048e2426": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51e251fcba",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-37ed5f94be",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.6
   }
 }

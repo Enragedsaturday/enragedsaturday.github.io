@@ -1,13 +1,79 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Navarette v. California.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "6e60844ade715358",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Prado Navarette v. California, U.S. Supreme Court, decided 2014-04-22, with cluster_id/opinion_id 2670795.",
+          "The cited reporters in the inventory are present in lake.citations.all, including 572 U.S. 393, 134 S. Ct. 1683, and 188 L. Ed. 2d 680.",
+          "Nothing in the disclosed treatment fields finally marks Navarette itself as overruled, abrogated, superseded, or otherwise non-live law."
+        ],
+        "residual_risks": [
+          "Official citation selection is not populated; the lake warning says official cite selection failed closed, but that is a citation-normalization risk rather than a currency/existence defect."
+        ],
+        "suggested_tightening": "Populate a display/official citation field if the corpus requires one; the existence/currency assertion otherwise survives Lens B.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a95e39ded4debff0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; this review raises no support or quote-fidelity finding.",
+          "No treatment or currency assertion in this row is undermined by the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "The lake row itself flags quote_fidelity as mismatch, but that is for Lens A, not this currency/treatment review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "336dfcfd176dd938",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Navarette v. California__5b9c87.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law call can survive, but the page's absolute 'No negative treatment' phrasing is too strong against the disclosed lake record because the treatment derivation flags proposed negative events and an audit requirement.",
+          "proposed_fix": "Keep the status as good law on anonymous-tip reliability only if tied to the lake judgment field, but change the prose to 'No confirmed negative treatment in the disclosed lake record' or complete the flagged treatment audit before saying 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and the scope note says good law on anonymous-tip reliability for reasonable suspicion.",
+          "The disclosed progeny edges are all proposed:true and field_iii:mentioned, so they do not by themselves finally overrule or abrogate Navarette.",
+          "But lane1_negative and lane2_top_cited both show audit_needed true, and lane2_top_cited reports 25 proposed_negative_events, so the categorical 'No negative treatment' sentence is not fully supported as phrased."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives, but the disclosed record does not include enough audited progeny text to close the currency question completely.",
+          "The treatment.field_i_validity provenance is migration-based, not a completed treatment audit."
+        ],
+        "suggested_tightening": "State the status as 'good law per lake treatment field; no confirmed negative treatment in this record; proposed negative-treatment hits require audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Navarette v. California.json\",\"reviewed\":[{\"assertion_id\":\"6e60844ade715358\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Prado Navarette v. California, U.S. Supreme Court, decided 2014-04-22, with cluster_id/opinion_id 2670795.\",\"The cited reporters in the inventory are present in lake.citations.all, including 572 U.S. 393, 134 S. Ct. 1683, and 188 L. Ed. 2d 680.\",\"Nothing in the disclosed treatment fields finally marks Navarette itself as overruled, abrogated, superseded, or otherwise non-live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is not populated; the lake warning says official cite selection failed closed, but that is a citation-normalization risk rather than a currency/existence defect.\"],\"suggested_tightening\":\"Populate a display/official citation field if the corpus requires one; the existence/currency assertion otherwise survives Lens B.\"},{\"assertion_id\":\"a95e39ded4debff0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; this review raises no support or quote-fidelity finding.\",\"No treatment or currency assertion in this row is undermined by the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake row itself flags quote_fidelity as mismatch, but that is for Lens A, not this currency/treatment review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"336dfcfd176dd938\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call can survive, but the page's absolute 'No negative treatment' phrasing is too strong against the disclosed lake record because the treatment derivation flags proposed negative events and an audit requirement.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good law on anonymous-tip reliability only if tied to the lake judgment field, but change the prose to 'No confirmed negative treatment in the disclosed lake record' or complete the flagged treatment audit before saying 'No negative treatment.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Navarette v. California__5b9c87.json treatment.derivation and treatment.edges\"},\"reasons\":[\"lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and the scope note says good law on anonymous-tip reliability for reasonable suspicion.\",\"The disclosed progeny edges are all proposed:true and field_iii:mentioned, so they do not by themselves finally overrule or abrogate Navarette.\",\"But lane1_negative and lane2_top_cited both show audit_needed true, and lane2_top_cited reports 25 proposed_negative_events, so the categorical 'No negative treatment' sentence is not fully supported as phrased.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges may be false positives, but the disclosed record does not include enough audited progeny text to close the currency question completely.\",\"The treatment.field_i_validity provenance is migration-based, not a completed treatment audit.\"],\"suggested_tightening\":\"State the status as 'good law per lake treatment field; no confirmed negative treatment in this record; proposed negative-treatment hits require audit.'\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:32:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-dad0c59989"
+    ],
     "group_id": "_overhaul2/lake/cases/Navarette v. California.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +82,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7c41ecbc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Navarette v. California"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 207259,
+      "output": 4509,
+      "source": "codex-events",
+      "total": 211768
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "336dfcfd176dd938": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6e60844ade715358": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a95e39ded4debff0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dad0c59989",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 91.7
   }
 }

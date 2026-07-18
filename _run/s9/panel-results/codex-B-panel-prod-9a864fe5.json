@@ -1,38 +1,191 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Frank v. Maryland.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity issues were not reviewed except where support payloads embedded treatment or currency claims.",
+    "reviewed": [
+      {
+        "assertion_id": "87ebdbb0a6ecfaf4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity matches Frank v. Maryland, U.S. Supreme Court, decided 1959-05-04, docket 278, cluster_id 105880.",
+          "The lake citations include official cite 359 U.S. 360, parallel cites 79 S. Ct. 804 and 3 L. Ed. 2d 877, and vendor-neutral cite 1959 U.S. LEXIS 1085.",
+          "No current-good-law status is asserted in this case-cite payload; treatment is reviewed separately."
+        ],
+        "residual_risks": [
+          "The lake treatment fields are unverified, so this existence check does not establish live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2245c0b7f23fadbe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "holding field; treatment clause after the dash",
+          "needs_cl": true,
+          "problem": "The holding payload embeds a treatment assertion that the rule was overruled by Camara, but the disclosed lake record has treatment unverified and no treatment or progeny edge to Camara.",
+          "proposed_fix": "Remove or caveat the overruled-by-Camara clause until the lake record includes certified treatment/progeny evidence, or supply the Camara authority record and edge.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess the underlying holding support or quote fidelity.",
+          "The only disclosed treatment judgment is unverified; lake treatment.edges is empty and progeny rows_cached is 0.",
+          "Under the default-to-refuted rule, the overruled-by-Camara treatment claim cannot stand from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "Camara may support this outside the disclosed record, but that evidence is not present here."
+        ],
+        "suggested_tightening": "Keep the holding limited to Frank itself, and put any Camara overrule statement behind certified treatment evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "f86eb746638e4fd2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "home role for Special Needs and Administrative Searches",
+          "needs_cl": true,
+          "problem": "The home role labels the case as Historical / origin; the Historical status is a treatment/currency label, but the disclosed lake treatment record is unverified and has no derived treatment or progeny.",
+          "proposed_fix": "Change the role to an origin-only label with treatment unverified, or certify the historical/overruled status in the lake record before using Historical.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not decide whether Frank is substantively an origin case.",
+          "The disclosed treatment fields do not verify that Frank is historical rather than live law.",
+          "Default-to-refuted applies because the currency component of the role is not verifiable from the disclosed record."
+        ],
+        "residual_risks": [
+          "The origin component may be supportable under lens A, but the Historical currency label needs treatment evidence."
+        ],
+        "suggested_tightening": "Use 'Origin - treatment unverified' until treatment promotion supplies the overrule history.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "27b8e7ce767cd27d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, as_of_content null, and as_of_treatment null.",
+          "The scope note matches the lake record and accurately discloses that treatment/progeny have not been derived.",
+          "No disclosed lake edge supersedes or contradicts the unverified treatment status."
+        ],
+        "residual_risks": [
+          "This standing unverified treatment field does not validate the page's separate overruled-by-Camara narrative."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd15bf732759280d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "authority_weight field",
+          "needs_cl": true,
+          "problem": "The weight label 'Binding - SCOTUS' is not verifiable as a current-law weight from the disclosed treatment record. The lake verifies SCOTUS identity, but treatment/good-law status is unverified and no no-negative-treatment judgment is supplied.",
+          "proposed_fix": "Separate court hierarchy from current precedential force, e.g. 'SCOTUS - treatment unverified,' or certify treatment before using a Binding label.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity supports only the SCOTUS court label.",
+          "The lake treatment fields do not verify that Frank remains binding live law for the asserted proposition.",
+          "Under lens B, a Binding weight label cannot stand without disclosed good-law/treatment support."
+        ],
+        "residual_risks": [
+          "If authority_weight is intended only as issuing-court hierarchy, the label should be renamed so it does not imply current binding force."
+        ],
+        "suggested_tightening": "Use a non-live-law hierarchy label unless and until treatment is certified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Frank v. Maryland.md\",\"reviewed\":[{\"assertion_id\":\"87ebdbb0a6ecfaf4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity matches Frank v. Maryland, U.S. Supreme Court, decided 1959-05-04, docket 278, cluster_id 105880.\",\"The lake citations include official cite 359 U.S. 360, parallel cites 79 S. Ct. 804 and 3 L. Ed. 2d 877, and vendor-neutral cite 1959 U.S. LEXIS 1085.\",\"No current-good-law status is asserted in this case-cite payload; treatment is reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment fields are unverified, so this existence check does not establish live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2245c0b7f23fadbe\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The holding payload embeds a treatment assertion that the rule was overruled by Camara, but the disclosed lake record has treatment unverified and no treatment or progeny edge to Camara.\",\"severity\":\"high\",\"proposed_fix\":\"Remove or caveat the overruled-by-Camara clause until the lake record includes certified treatment/progeny evidence, or supply the Camara authority record and edge.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"holding field; treatment clause after the dash\"},\"reasons\":[\"Lens B does not assess the underlying holding support or quote fidelity.\",\"The only disclosed treatment judgment is unverified; lake treatment.edges is empty and progeny rows_cached is 0.\",\"Under the default-to-refuted rule, the overruled-by-Camara treatment claim cannot stand from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Camara may support this outside the disclosed record, but that evidence is not present here.\"],\"suggested_tightening\":\"Keep the holding limited to Frank itself, and put any Camara overrule statement behind certified treatment evidence.\"},{\"assertion_id\":\"f86eb746638e4fd2\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The home role labels the case as Historical / origin; the Historical status is a treatment/currency label, but the disclosed lake treatment record is unverified and has no derived treatment or progeny.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the role to an origin-only label with treatment unverified, or certify the historical/overruled status in the lake record before using Historical.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"home role for Special Needs and Administrative Searches\"},\"reasons\":[\"Lens B does not decide whether Frank is substantively an origin case.\",\"The disclosed treatment fields do not verify that Frank is historical rather than live law.\",\"Default-to-refuted applies because the currency component of the role is not verifiable from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The origin component may be supportable under lens A, but the Historical currency label needs treatment evidence.\"],\"suggested_tightening\":\"Use 'Origin - treatment unverified' until treatment promotion supplies the overrule history.\"},{\"assertion_id\":\"27b8e7ce767cd27d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, as_of_content null, and as_of_treatment null.\",\"The scope note matches the lake record and accurately discloses that treatment/progeny have not been derived.\",\"No disclosed lake edge supersedes or contradicts the unverified treatment status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This standing unverified treatment field does not validate the page's separate overruled-by-Camara narrative.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bd15bf732759280d\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The weight label 'Binding - SCOTUS' is not verifiable as a current-law weight from the disclosed treatment record. The lake verifies SCOTUS identity, but treatment/good-law status is unverified and no no-negative-treatment judgment is supplied.\",\"severity\":\"medium\",\"proposed_fix\":\"Separate court hierarchy from current precedential force, e.g. 'SCOTUS - treatment unverified,' or certify treatment before using a Binding label.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"authority_weight field\"},\"reasons\":[\"The lake identity supports only the SCOTUS court label.\",\"The lake treatment fields do not verify that Frank remains binding live law for the asserted proposition.\",\"Under lens B, a Binding weight label cannot stand without disclosed good-law/treatment support.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If authority_weight is intended only as issuing-court hierarchy, the label should be renamed so it does not imply current binding force.\"],\"suggested_tightening\":\"Use a non-live-law hierarchy label unless and until treatment is certified.\"}],\"notes\":\"Lens B only; support and quote-fidelity issues were not reviewed except where support payloads embedded treatment or currency claims.\"}",
   "summary": {
-    "at": "2026-07-10T02:43:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:05:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3d5b88ff01"
+    ],
     "group_id": "content/cases/Frank v. Maryland.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Frank v. Maryland"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9a864fe5",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9a864fe5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Frank v. Maryland' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Frank v. Maryland"
+    ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 98598,
+      "output": 8850,
+      "source": "codex-events",
+      "total": 107448
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "2245c0b7f23fadbe": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "27b8e7ce767cd27d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87ebdbb0a6ecfaf4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd15bf732759280d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f86eb746638e4fd2": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3d5b88ff01",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 207.8
   }
 }

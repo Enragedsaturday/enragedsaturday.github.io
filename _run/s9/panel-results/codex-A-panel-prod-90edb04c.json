@@ -1,22 +1,232 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Flores-Montano.json",
+    "lens": "A",
+    "notes": "No external sources were used. Lens A reviewed only the assertion rows in group_inventory.jsonl; treatment/currency merits are reserved for Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "64d101589f335b4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Flores-Montano as a U.S. Supreme Court decision decided 2004-03-30.",
+          "The inventory citations match lake.citations.all, including 541 U.S. 149, 124 S. Ct. 1582, 158 L. Ed. 2d 311, 2004 U.S. LEXIS 2548, 72 U.S.L.W. 4263, and 17 Fla. L. Weekly Fed. S 207."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b421a2f96cc636a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the search of a gas tank",
+          "locator_note": "pin-155; lake star_marker is 154 and text places the phrase before the *155 marker.",
+          "needs_cl": false,
+          "problem": "The quoted gas-tank privacy phrase is character-faithful, but the built page's combined Application citation labels the whole sentence as Id. at 155 while this quoted phrase is on star page 154.",
+          "proposed_fix": "Split the Application citation so the privacy quote is cited to 541 U.S. 154 and the property/conclusion passages are cited to 541 U.S. 155.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote matches the lake pinpoint and appears in the opinion text.",
+          "The locator is imprecise only as a page citation for that particular phrase."
+        ],
+        "residual_risks": [
+          "This review only evaluates the inventory row's quoted phrase, not every additional quote in the Application paragraph."
+        ],
+        "suggested_tightening": "Use separate pins for page 154 privacy analysis and page 155 property/conclusion analysis.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "453786718913ea8f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "did not require reasonable suspicion.",
+          "locator_note": "pin-150; text line containing star page *150 includes the actual holding sentence.",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-150 is not the opinion passage; it is a capture of the generated page header/background/rule text and omits the actual quoted holding sentence.",
+          "proposed_fix": "Replace pin-150's pinpoint quote with the actual holding sentence from star page 150 and re-run quote validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the holding sentence at star page 150.",
+          "The payload quote begins with the content page front matter/header text, so it is not character-faithful to the opinion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate this pinpoint from the cached opinion text, not from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83d7d10a5d7cfe7d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "what is a \"routine\" search",
+          "locator_note": "pin-152a; text at star page *152 uses double quotation marks.",
+          "needs_cl": false,
+          "problem": "The quote changes the opinion's internal double quotation marks around routine and intrusive into single quotation marks.",
+          "proposed_fix": "Use the opinion's internal double quotation marks or paraphrase instead of presenting the altered text as verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance is supported by the opinion, but the asserted verbatim quote is not character-faithful.",
+          "The lake payload itself marks quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Correct the internal quotation marks in both the lake pinpoint and built page quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9350115e438f4f1c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "at the international border.",
+          "locator_note": "pin-152; text at star page *152 has a period after border.",
+          "needs_cl": false,
+          "problem": "The quoted sentence fragment ends with a comma in the payload, but the opinion sentence ends with a period before the next sentence begins.",
+          "proposed_fix": "Quote the sentence with its period, then separately introduce the Ramsey quotation about border searches.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition is supported, but the punctuation in the asserted verbatim quote is not faithful.",
+          "The lake payload itself marks quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Do not stitch the first sentence into the next proposition with an in-quote comma.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f4fa5ed83e4aa76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload values match the disclosed lake treatment fields: good_law, as_of_content 2004-03-30, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency review was performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Flores-Montano.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"64d101589f335b4f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies United States v. Flores-Montano as a U.S. Supreme Court decision decided 2004-03-30.\",\n        \"The inventory citations match lake.citations.all, including 541 U.S. 149, 124 S. Ct. 1582, 158 L. Ed. 2d 311, 2004 U.S. LEXIS 2548, 72 U.S.L.W. 4263, and 17 Fla. L. Weekly Fed. S 207.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1b421a2f96cc636a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted gas-tank privacy phrase is character-faithful, but the built page's combined Application citation labels the whole sentence as Id. at 155 while this quoted phrase is on star page 154.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Split the Application citation so the privacy quote is cited to 541 U.S. 154 and the property/conclusion passages are cited to 541 U.S. 155.\",\n        \"evidence_quote\": \"the search of a gas tank\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-155; lake star_marker is 154 and text places the phrase before the *155 marker.\"\n      },\n      \"reasons\": [\n        \"The payload quote matches the lake pinpoint and appears in the opinion text.\",\n        \"The locator is imprecise only as a page citation for that particular phrase.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This review only evaluates the inventory row's quoted phrase, not every additional quote in the Application paragraph.\"\n      ],\n      \"suggested_tightening\": \"Use separate pins for page 154 privacy analysis and page 155 property/conclusion analysis.\"\n    },\n    {\n      \"assertion_id\": \"453786718913ea8f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pinpoint quote for pin-150 is not the opinion passage; it is a capture of the generated page header/background/rule text and omits the actual quoted holding sentence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-150's pinpoint quote with the actual holding sentence from star page 150 and re-run quote validation.\",\n        \"evidence_quote\": \"did not require reasonable suspicion.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-150; text line containing star page *150 includes the actual holding sentence.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the holding sentence at star page 150.\",\n        \"The payload quote begins with the content page front matter/header text, so it is not character-faithful to the opinion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate this pinpoint from the cached opinion text, not from content_page.md.\"\n    },\n    {\n      \"assertion_id\": \"83d7d10a5d7cfe7d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote changes the opinion's internal double quotation marks around routine and intrusive into single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the opinion's internal double quotation marks or paraphrase instead of presenting the altered text as verbatim.\",\n        \"evidence_quote\": \"what is a \\\"routine\\\" search\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-152a; text at star page *152 uses double quotation marks.\"\n      },\n      \"reasons\": [\n        \"The substance is supported by the opinion, but the asserted verbatim quote is not character-faithful.\",\n        \"The lake payload itself marks quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Correct the internal quotation marks in both the lake pinpoint and built page quote.\"\n    },\n    {\n      \"assertion_id\": \"9350115e438f4f1c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence fragment ends with a comma in the payload, but the opinion sentence ends with a period before the next sentence begins.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the sentence with its period, then separately introduce the Ramsey quotation about border searches.\",\n        \"evidence_quote\": \"at the international border.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-152; text at star page *152 has a period after border.\"\n      },\n      \"reasons\": [\n        \"The legal proposition is supported, but the punctuation in the asserted verbatim quote is not faithful.\",\n        \"The lake payload itself marks quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Do not stitch the first sentence into the next proposition with an in-quote comma.\"\n    },\n    {\n      \"assertion_id\": \"4f4fa5ed83e4aa76\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\n        \"The payload values match the disclosed lake treatment fields: good_law, as_of_content 2004-03-30, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment or currency review was performed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No external sources were used. Lens A reviewed only the assertion rows in group_inventory.jsonl; treatment/currency merits are reserved for Lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:20-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:55:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5819078830",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2ee0a59de9",
+      "F-S9-PR-b6f7ba318b",
+      "F-S9-PR-65f88093e8",
+      "F-S9-PR-2fb62c0314"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Flores-Montano.json",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-90edb04c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-90edb04c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:11.954143Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:12.851636Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:14.131507Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:16.137008Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:19.590305Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Flores-Montano"
+    ],
+    "tokens": {
+      "input": 162846,
+      "output": 12471,
+      "source": "codex-events",
+      "total": 175317
+    },
+    "verdict_map": {
+      "1b421a2f96cc636a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "453786718913ea8f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4f4fa5ed83e4aa76": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "64d101589f335b4f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83d7d10a5d7cfe7d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9350115e438f4f1c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2ee0a59de9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b6f7ba318b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-65f88093e8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2fb62c0314",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5819078830",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 237.1
   }
 }

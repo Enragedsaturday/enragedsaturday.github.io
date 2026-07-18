@@ -1,13 +1,116 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Evans.md",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. The inventory supplied no standalone quote_fidelity, pincite, or black_letter rows; treatment/currency rows were recorded only for disclosed-field consistency, not lens-B merits.",
+    "reviewed": [
+      {
+        "assertion_id": "35ec817790ad6875",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the same case: United States v. Daryl Lee Evans, docket 90-6234, decided 1991-07-08.",
+          "Lake official citation is 937 F.2d 1534; court is U.S. Court of Appeals, Tenth Circuit; year is 1991; vendor-neutral cites match 1991 U.S. App. LEXIS 14383 and 1991 WL 118519; parallel cites are empty."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76de6fcee1e5f2e9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.",
+          "locator_note": "content_page.md frontmatter holding",
+          "needs_cl": false,
+          "problem": "The holding field is truncated after 'the…' and should not imply that cocaine itself was confirmed during the initial inventory rather than during later warranted openings.",
+          "proposed_fix": "Replace the holding with: \"UPHELD the bus-station inventory opening of an arrestee's carry-on bag under Oklahoma City Police Department Policy Section 239.29 because the officer followed standardized locked-container procedures, had no probable cause triggering the warrant directive when he first opened the bag, and the later warranted cocaine evidence was not fruit of an illegality.\"",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports the core holding: it upheld the bus-station carry-on-bag opening as a lawful inventory search.",
+          "The opinion also supports the procedure rationale: Section 239.29 directed opening locked containers before booking unless probable cause existed, and the court found no probable cause when Sergeant Ring first opened the bag.",
+          "The disclosed holding string itself ends mid-thought with an ellipsis."
+        ],
+        "residual_risks": [
+          "The lake pinpoints for the page quotes are marked quote_fidelity=mismatch, but no quote_fidelity or pincite assertion row was provided for separate review."
+        ],
+        "suggested_tightening": "Use a complete holding that distinguishes the initial inventory discovery of a taped bundle from later warrant-based confirmation of cocaine.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebf34716152f87fe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.",
+          "locator_note": "content_page.md homes[0].role",
+          "needs_cl": false,
+          "problem": "The home subject 'Inventory Searches' is supported, but the role label 'Recent development (role-based)' is not supported by the opinion text or lake fields, and the disclosed files provide no role taxonomy showing why a 1991 case should be classified as 'Recent development'.",
+          "proposed_fix": "Keep the Inventory Searches home only with a supportable role such as 'Application of standardized inventory-search procedure' or supply disclosed role-taxonomy evidence for 'Recent development'.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion plainly concerns a lawful inventory search, so the home page topic is supported.",
+          "Nothing in the lake record or opinion supplies the 'Recent development' role; the lake has no homes, classification, tags, or role field.",
+          "Defaulting to refuted on uncertainty, the role component cannot be verified from disclosed evidence."
+        ],
+        "residual_risks": [
+          "A coarse deletion would remove a supported Inventory Searches home; the defect is the unsupported role label."
+        ],
+        "suggested_tightening": "Separate the supported home topic from the unsupported role taxonomy label.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "12320b4ecd204cbc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment or currency; I only compared disclosed content fields to lake treatment judgment fields.",
+          "Lake treatment fields match the payload: field_i_validity good_law, as_of_content 1991-07-08, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref United States v. Evans, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No lens-B treatment or currency review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b37bbf9ab36be2ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate current treatment; the disclosed court identity supports the label's jurisdictional scope.",
+          "Lake identity lists court_level coa, court U.S. Court of Appeals, Tenth Circuit, and circuit 10th; content's label is limited to 10th Cir. in-circuit authority."
+        ],
+        "residual_risks": [
+          "No independent lens-B treatment or currency check performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/United States v. Evans.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"35ec817790ad6875\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified and identifies the same case: United States v. Daryl Lee Evans, docket 90-6234, decided 1991-07-08.\",\n        \"Lake official citation is 937 F.2d 1534; court is U.S. Court of Appeals, Tenth Circuit; year is 1991; vendor-neutral cites match 1991 U.S. App. LEXIS 14383 and 1991 WL 118519; parallel cites are empty.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"76de6fcee1e5f2e9\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding field is truncated after 'the…' and should not imply that cocaine itself was confirmed during the initial inventory rather than during later warranted openings.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the holding with: \\\"UPHELD the bus-station inventory opening of an arrestee's carry-on bag under Oklahoma City Police Department Policy Section 239.29 because the officer followed standardized locked-container procedures, had no probable cause triggering the warrant directive when he first opened the bag, and the later warranted cocaine evidence was not fruit of an illegality.\\\"\",\n        \"evidence_quote\": \"Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md frontmatter holding\"\n      },\n      \"reasons\": [\n        \"The opinion supports the core holding: it upheld the bus-station carry-on-bag opening as a lawful inventory search.\",\n        \"The opinion also supports the procedure rationale: Section 239.29 directed opening locked containers before booking unless probable cause existed, and the court found no probable cause when Sergeant Ring first opened the bag.\",\n        \"The disclosed holding string itself ends mid-thought with an ellipsis.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pinpoints for the page quotes are marked quote_fidelity=mismatch, but no quote_fidelity or pincite assertion row was provided for separate review.\"\n      ],\n      \"suggested_tightening\": \"Use a complete holding that distinguishes the initial inventory discovery of a taped bundle from later warrant-based confirmation of cocaine.\"\n    },\n    {\n      \"assertion_id\": \"ebf34716152f87fe\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The home subject 'Inventory Searches' is supported, but the role label 'Recent development (role-based)' is not supported by the opinion text or lake fields, and the disclosed files provide no role taxonomy showing why a 1991 case should be classified as 'Recent development'.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the Inventory Searches home only with a supportable role such as 'Application of standardized inventory-search procedure' or supply disclosed role-taxonomy evidence for 'Recent development'.\",\n        \"evidence_quote\": \"Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md homes[0].role\"\n      },\n      \"reasons\": [\n        \"The opinion plainly concerns a lawful inventory search, so the home page topic is supported.\",\n        \"Nothing in the lake record or opinion supplies the 'Recent development' role; the lake has no homes, classification, tags, or role field.\",\n        \"Defaulting to refuted on uncertainty, the role component cannot be verified from disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A coarse deletion would remove a supported Inventory Searches home; the defect is the unsupported role label.\"\n      ],\n      \"suggested_tightening\": \"Separate the supported home topic from the unsupported role taxonomy label.\"\n    },\n    {\n      \"assertion_id\": \"12320b4ecd204cbc\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not adjudicate treatment or currency; I only compared disclosed content fields to lake treatment judgment fields.\",\n        \"Lake treatment fields match the payload: field_i_validity good_law, as_of_content 1991-07-08, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref United States v. Evans, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No lens-B treatment or currency review performed.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b37bbf9ab36be2ed\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not adjudicate current treatment; the disclosed court identity supports the label's jurisdictional scope.\",\n        \"Lake identity lists court_level coa, court U.S. Court of Appeals, Tenth Circuit, and circuit 10th; content's label is limited to 10th Cir. in-circuit authority.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent lens-B treatment or currency check performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 rows in group_inventory.jsonl. The inventory supplied no standalone quote_fidelity, pincite, or black_letter rows; treatment/currency rows were recorded only for disclosed-field consistency, not lens-B merits.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:54:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:21:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5d82942934",
+      "F-S9-PR-cd71e4b267"
+    ],
     "group_id": "content/cases/United States v. Evans.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +119,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b1bb1d3f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Evans"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 184938,
+      "output": 10372,
+      "source": "codex-events",
+      "total": 195310
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "12320b4ecd204cbc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35ec817790ad6875": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76de6fcee1e5f2e9": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b37bbf9ab36be2ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebf34716152f87fe": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5d82942934",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-cd71e4b267",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 203.3
   }
 }

@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
+    "lens": "A",
+    "notes": "No external sources used; review limited to disclosed workspace files and Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "20ede11b27831daf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Lo-Ji Sales, Inc. v. New York, U.S. Supreme Court, decided 1979-06-11.",
+          "The official citation 442 U.S. 319 and listed parallel/vendor citations match the lake citation fields and the content page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834d6d64d14a519c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Once in the store, he conducted a generalized search under authority of an invalid warrant;",
+          "locator_note": "pin-327; the cached opinion shows omitted words between the two quoted clauses at star page 327.",
+          "needs_cl": false,
+          "problem": "The quoted clauses are supported, but the pinpoint quote is not a contiguous character-for-character passage in the cached opinion text; it uses an ellipsis to bridge omitted text while the lake field itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Either apply an explicit ellipsis-quote policy and clear/handle the mismatch flag, or replace with a contiguous page-327 quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The beginning and ending clauses appear in the cached opinion at star page 327.",
+          "The exact ellipsis-spliced string does not appear as a contiguous passage in the opinion text, and the lake pinpoint metadata says quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus permits ellipsis-spliced quotations, this is cleanup rather than a substantive quote defect."
+        ],
+        "suggested_tightening": "Use a contiguous quote or split the quote into two quoted clauses under an explicit ellipsis policy.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c271ee9d35980e76",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer",
+          "locator_note": "pin-326; the lake pinpoint quote contains '## Issue' and '## Rule', while the cached opinion contains the actual judicial sentence.",
+          "needs_cl": false,
+          "problem": "pin-326's recorded quote is not an opinion quote; it contains content-page prose and Markdown headings rather than the cited judicial passage.",
+          "proposed_fix": "Replace the pin-326 quote with the actual page-326 passage quoted on the content page, or mark the rule sentence as authorial synthesis rather than a quotation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes content artifacts such as '## Issue' and '## Rule', not language from the opinion.",
+          "The cached opinion supports a different quoted sentence for this point, beginning with the Town Justice not manifesting neutrality and detachment.",
+          "The lake pinpoint metadata itself marks pin-326 quote_fidelity=mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Attach pin-326 only to the actual judicial quote after the rule sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e573f77b27b6d0c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake treatment record: field_i_validity=good_law, as_of_content=1979-06-11, as_of_treatment=2026-06-30, and varies_by_point=false.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative progeny review are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json\",\"reviewed\":[{\"assertion_id\":\"20ede11b27831daf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Lo-Ji Sales, Inc. v. New York, U.S. Supreme Court, decided 1979-06-11.\",\"The official citation 442 U.S. 319 and listed parallel/vendor citations match the lake citation fields and the content page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"834d6d64d14a519c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted clauses are supported, but the pinpoint quote is not a contiguous character-for-character passage in the cached opinion text; it uses an ellipsis to bridge omitted text while the lake field itself flags quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Either apply an explicit ellipsis-quote policy and clear/handle the mismatch flag, or replace with a contiguous page-327 quotation.\",\"evidence_quote\":\"Once in the store, he conducted a generalized search under authority of an invalid warrant;\",\"needs_cl\":false,\"locator_note\":\"pin-327; the cached opinion shows omitted words between the two quoted clauses at star page 327.\"},\"reasons\":[\"The beginning and ending clauses appear in the cached opinion at star page 327.\",\"The exact ellipsis-spliced string does not appear as a contiguous passage in the opinion text, and the lake pinpoint metadata says quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits ellipsis-spliced quotations, this is cleanup rather than a substantive quote defect.\"],\"suggested_tightening\":\"Use a contiguous quote or split the quote into two quoted clauses under an explicit ellipsis policy.\"},{\"assertion_id\":\"c271ee9d35980e76\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-326's recorded quote is not an opinion quote; it contains content-page prose and Markdown headings rather than the cited judicial passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-326 quote with the actual page-326 passage quoted on the content page, or mark the rule sentence as authorial synthesis rather than a quotation.\",\"evidence_quote\":\"The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer\",\"needs_cl\":false,\"locator_note\":\"pin-326; the lake pinpoint quote contains '## Issue' and '## Rule', while the cached opinion contains the actual judicial sentence.\"},\"reasons\":[\"The payload quote includes content artifacts such as '## Issue' and '## Rule', not language from the opinion.\",\"The cached opinion supports a different quoted sentence for this point, beginning with the Town Justice not manifesting neutrality and detachment.\",\"The lake pinpoint metadata itself marks pin-326 quote_fidelity=mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Attach pin-326 only to the actual judicial quote after the rule sentence.\"},{\"assertion_id\":\"e573f77b27b6d0c1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page treatment fields match the lake treatment record: field_i_validity=good_law, as_of_content=1979-06-11, as_of_treatment=2026-06-30, and varies_by_point=false.\",\"Treatment/currency is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and negative progeny review are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used; review limited to disclosed workspace files and Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:03:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9e976f20ea",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-83ed19e83e",
+      "F-S9-PR-1db3fd5925"
+    ],
     "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +105,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-916743d9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Lo-Ji Sales, Inc. v. New York"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 171391,
+      "output": 9212,
+      "source": "codex-events",
+      "total": 180603
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "20ede11b27831daf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834d6d64d14a519c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c271ee9d35980e76": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e573f77b27b6d0c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-83ed19e83e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1db3fd5925",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9e976f20ea",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 179.0
   }
 }

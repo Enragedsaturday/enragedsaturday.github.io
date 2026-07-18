@@ -1,0 +1,116 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "31a803ac25ea472c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Justice White, 'companion to United States v. Leon', warrant controlled-substance-form defect) is unmistakably Massachusetts v. Sheppard; star-pagination *983-*991 sits within volume 468 U.S. beginning at 981.",
+          "Payload official/display '468 U.S. 981' matches the lake citations block and cluster_id 111263."
+        ],
+        "residual_risks": [
+          "Parallel cites (104 S. Ct. 3424; 82 L. Ed. 2d 737; 52 U.S.L.W. 5177; 1984 U.S. LEXIS 154) are internal to the record; cached XML shows star-pagination but not the parallel reporter first pages, so they were not independently cross-checked."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "81e0fb6dc19df0e3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we refuse to rule that an officer is required to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested.",
+          "locator_note": "pin-989; content-page Rule line vs cached opinion where '*990' falls mid-sentence after 'an officer is required'",
+          "needs_cl": false,
+          "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead) instead of the ^pin-989 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful and the 989-990 pincite exactly straddles the page break.",
+          "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-989 block quote and clear the mismatch flag; rendered quote is verbatim-correct across 468 U.S. 989-990.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-989 block quote matches the cached opinion verbatim; the '*990' star break falls between 'is required' and 'to disbelieve a judge', so the quote genuinely spans pages 989-990 and the pincite '468 U.S. at 989-990' is exactly right.",
+          "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' although reporter star-pagination (*989/*990) is present in cached text; the slip-only label appears stale."
+        ],
+        "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ee3fbbd5af86582",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is consistent with the disclosed record; all 31 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Sheppard.",
+          "No disclosed SCOTUS/binding overruling; the 1984 good-faith companion holding is present in the cached opinion."
+        ],
+        "residual_risks": [
+          "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=7, lane2=24; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+        ],
+        "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Massachusetts v. Sheppard.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-05-7b4c8b5c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Massachusetts v. Sheppard"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "31a803ac25ea472c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ee3fbbd5af86582": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81e0fb6dc19df0e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e50cf79fe6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

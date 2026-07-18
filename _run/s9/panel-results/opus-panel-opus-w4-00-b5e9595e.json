@@ -1,0 +1,198 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9e56127b879a1714",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header confirms '442 U.S. 200 (1979)', caption 'DUNAWAY v. NEW YORK', 'Supreme Court of United States', No. 78-5066, decided June 5, 1979 - official cite matches display and official-selection.",
+          "Brennan, J., opinion (station-house detention for interrogation on less than probable cause = seizure requiring probable cause; Miranda warnings do not attenuate) corroborates identity."
+        ],
+        "residual_risks": [
+          "Parallel cites (99 S. Ct. 2248; 60 L. Ed. 2d 824) and vendor-neutral 1979 U.S. LEXIS 126 are not shown in the disclosed opinion; only official 442 U.S. 200 is directly corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7386512662feeff5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Despite the recorded 'mismatch' flag (pinpoint_status 'slip-only'), the quote 'Miranda warnings, and the exclusion of a confession made without them, do not alone sufficiently deter a Fourth Amendment violation.' verifies verbatim in the disclosed opinion at p.217.",
+          "The opinion presents it as Dunaway quoting Brown v. Illinois (immediately preceding cite '422 U. S., at 601' with trailing 'Ibid.'), so the content page's '- Id. at 217 (quoting Brown v. Illinois, 422 U.S. 590, 601)' attribution and pincite are both correct; the 'mismatch' is an extractor false positive (likely the *Miranda* italic markup)."
+        ],
+        "residual_risks": [
+          "Extractor fidelity flag ('mismatch') contradicts the verified verbatim match; a downstream consumer trusting the flag would wrongly discount a clean quote."
+        ],
+        "suggested_tightening": "Reconcile the 'mismatch' flag - the pin-217 quote is a clean verbatim match to p.217.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "955eb519bb4be2a2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'threshold requirement' verifies verbatim on disclosed p.217: 'this type of \"voluntariness\" is merely a \"threshold requirement\" for Fourth Amendment analysis, 422 U. S., at 604'; the *217 star precedes it and *218 follows, so star_marker 217 is correct.",
+          "The content-page sentence's display pincite '218' governs its companion factors-quote ('temporal proximity... presence of intervening circumstances... purpose and flagrancy of the official misconduct'), which is on p.218; the star-verified phrase this assertion carries genuinely sits on 217 - no fidelity or locator defect in the assertion as framed."
+        ],
+        "residual_risks": [
+          "The rendered sentence blends a p.217 lead-in phrase and a p.218 quotation under a single '218' display pincite; the assertion's star-verified locator (217) differs from that display pincite (218), though each is individually accurate."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad3c144d8b6c23fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'virtually a replica' verifies verbatim on disclosed p.218: 'The situation in this case is virtually a replica of the situation in Brown.'; *218 precedes and *219 follows, so star_marker 218 is correct.",
+          "The companion sentence the page attributes to Dunaway - 'was also admittedly seized without probable cause in the hope that something might turn up, and confessed without any intervening event of significance' - is likewise verbatim on p.218."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afc55cd64e62f35e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded payload.quote is the page's own frontmatter/Background/Issue/Rule prose (extraction artifact), not the opinion passage - hence the spurious 'mismatch' with pinpoint_status 'slip-only'.",
+          "The page's ACTUAL pin-216 quotation - 'detention for custodial interrogation - regardless of its label - intrudes so severely on interests protected by the Fourth Amendment as necessarily to trigger the traditional safeguards against illegal arrest. We accordingly hold that the Rochester police violated the Fourth and Fourteenth Amendments when, without probable cause, they seized petitioner and transported him to the police station for interrogation.' - verifies verbatim in the disclosed opinion at p.216 (em-dashes restored). Single page; pincite 442 U.S. at 216 is precise."
+        ],
+        "residual_risks": [
+          "Extractor quote field does not reflect the real quotation; the rendered page quote is nonetheless faithful."
+        ],
+        "suggested_tightening": "Re-harvest the pin-216 span to the actual 'detention for custodial interrogation...' holding sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e5ffeb589c4ced5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields (good_law, as_of_content 1979-06-05 matching the decision date, varies_by_point=false) are internally consistent and match the content-page frontmatter/lake record.",
+          "scope_note (station-house detention for interrogation requires probable cause; Miranda warnings alone do not attenuate the taint of an illegal arrest) matches the disclosed opinion's holding; nothing in the disclosed text rebuts good_law - declining to fabricate a negative finding."
+        ],
+        "residual_risks": [
+          "Good-law currency is citator-dependent; the 'applied per curiam in Kaupp v. Texas / adopts Brown attenuation factors' narrative is authored orientation not machine-verified from disclosed evidence.",
+          "as_of_treatment 2026-06-30 is a check-date not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f6d78e581",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-840a2a179b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-082293f559",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Dunaway v. New York.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-00-b5e9595e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dunaway v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4e5ffeb589c4ced5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7386512662feeff5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "955eb519bb4be2a2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9e56127b879a1714": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad3c144d8b6c23fd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afc55cd64e62f35e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f6d78e581",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-840a2a179b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-082293f559",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

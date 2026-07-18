@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Simmons v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_ids in group_inventory.jsonl. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "4f93cef88272b3f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity records the case as Simmons v. United States, U.S. Supreme Court, decided 1968-03-18, year 1968.",
+          "Lake citations list official citation 390 U.S. 377 and the same parallel/vendor citations shown in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "613e8560d7569b0c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In these circumstances, we find it intolerable that one constitutional right",
+          "locator_note": "text/Simmons v. United States__7de490.txt line 46; star page *394",
+          "needs_cl": false,
+          "problem": "The quoted suppression-hearing rule lands on the correct passage, but it is not character-faithful to the opinion text: the text begins with the prefatory phrase and lowercase 'we,' while the asserted quote starts '[W]e'. The lake also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Use the exact opinion wording beginning 'In these circumstances, we find it intolerable...' or mark the alteration explicitly under whatever quote-normalization policy the corpus uses.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage is present on star page *394 and supports the stated rule.",
+          "Strict character-fidelity fails at the opening because the source text does not begin '[W]e find'."
+        ],
+        "residual_risks": [
+          "If the corpus permits bracketed capitalization as normalized legal quotation, this is only a style-normalization issue; under the stated character-fidelity lens it still needs correction."
+        ],
+        "suggested_tightening": "Store both an exact source quote and any display-normalized quote separately.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cd5475adc93d37a5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Instead, we hold that each case must be considered on its own facts",
+          "locator_note": "text/Simmons v. United States__7de490.txt line 27; star page *384",
+          "needs_cl": false,
+          "problem": "The pin-384 quote stored in the lake/payload is not the Supreme Court opinion passage at 390 U.S. 384. It is copied from the built content page/front matter and background text. The lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-384 with the actual opinion sentence on star page *384 stating the photographic-identification standard, and set the pinpoint metadata to page/star 384.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material, not opinion text.",
+          "The actual opinion at star page *384 contains the identification rule quoted on the content page, so the current lake pinpoint quote is corrupted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Add a check that pinpoint quotes may not contain markdown page headers, wiki headings, or treatment badges.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce9b6a73daae16bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1968-03-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Lens A does not make an independent treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Simmons v. United States.json\",\"reviewed\":[{\"assertion_id\":\"4f93cef88272b3f5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity records the case as Simmons v. United States, U.S. Supreme Court, decided 1968-03-18, year 1968.\",\"Lake citations list official citation 390 U.S. 377 and the same parallel/vendor citations shown in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"613e8560d7569b0c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted suppression-hearing rule lands on the correct passage, but it is not character-faithful to the opinion text: the text begins with the prefatory phrase and lowercase 'we,' while the asserted quote starts '[W]e'. The lake also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact opinion wording beginning 'In these circumstances, we find it intolerable...' or mark the alteration explicitly under whatever quote-normalization policy the corpus uses.\",\"evidence_quote\":\"In these circumstances, we find it intolerable that one constitutional right\",\"needs_cl\":false,\"locator_note\":\"text/Simmons v. United States__7de490.txt line 46; star page *394\"},\"reasons\":[\"The passage is present on star page *394 and supports the stated rule.\",\"Strict character-fidelity fails at the opening because the source text does not begin '[W]e find'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits bracketed capitalization as normalized legal quotation, this is only a style-normalization issue; under the stated character-fidelity lens it still needs correction.\"],\"suggested_tightening\":\"Store both an exact source quote and any display-normalized quote separately.\"},{\"assertion_id\":\"cd5475adc93d37a5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-384 quote stored in the lake/payload is not the Supreme Court opinion passage at 390 U.S. 384. It is copied from the built content page/front matter and background text. The lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-384 with the actual opinion sentence on star page *384 stating the photographic-identification standard, and set the pinpoint metadata to page/star 384.\",\"evidence_quote\":\"Instead, we hold that each case must be considered on its own facts\",\"needs_cl\":false,\"locator_note\":\"text/Simmons v. United States__7de490.txt line 27; star page *384\"},\"reasons\":[\"The payload quote begins with built-page material, not opinion text.\",\"The actual opinion at star page *384 contains the identification rule quoted on the content page, so the current lake pinpoint quote is corrupted.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Add a check that pinpoint quotes may not contain markdown page headers, wiki headings, or treatment badges.\"},{\"assertion_id\":\"ce9b6a73daae16bf\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1968-03-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Lens A does not make an independent treatment/currency finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_ids in group_inventory.jsonl. No external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:40-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:35:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-7d59a15980",
+      "F-S9-PR-365e5f3367"
+    ],
     "group_id": "_overhaul2/lake/cases/Simmons v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b5976adb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Simmons v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 235291,
+      "output": 5808,
+      "source": "codex-events",
+      "total": 241099
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "4f93cef88272b3f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "613e8560d7569b0c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "cd5475adc93d37a5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ce9b6a73daae16bf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7d59a15980",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-365e5f3367",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 119.1
   }
 }

@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Patane.json",
+    "lens": "B",
+    "notes": "Support and quote-fidelity were not reviewed beyond Lens B currency impact.",
+    "reviewed": [
+      {
+        "assertion_id": "4ef1825eb241919f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record is verified, non-stub, and identifies United States v. Patane as a U.S. Supreme Court case decided 2004-06-28.",
+          "The official citation 542 U.S. 630 matches lake.citations.official and the content page citation.",
+          "Currency angle survives: lake.treatment.field_i_validity is good_law as of 2026-06-30, and all listed treatment edges are proposed with field_iii set to mentioned."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags audit_needed and cap_hit in some lanes, so later audit could change the treatment picture."
+        ],
+        "suggested_tightening": "State live-law currency as tied to lake.field_i_validity=good_law as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cae9a640156104b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no quote/support finding is made.",
+          "This pinpoint row does not assert an independent treatment or currency status beyond the parent authority record."
+        ],
+        "residual_risks": [
+          "Lens A must decide whether the mismatch flag and quoted text are correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "edd2c7020e4ed11e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no quote/support finding is made.",
+          "The embedded page-header treatment language is consistent with the parent lake treatment field showing good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A must decide whether the mismatch flag and quoted text are correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "211064cd63bbb046",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 13,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law treatment call survives, but the built page's categorical 'No negative treatment' wording overstates the disclosed record because the lake treatment derivation flags proposed negative events and an audit requirement. The edges do not currently refute good_law because they are proposed and field_iii is mentioned, but the page should qualify the negative-treatment statement.",
+          "proposed_fix": "Keep good_law, Binding - SCOTUS, and the plurality scope note, but replace 'No negative treatment' with 'No accepted negative treatment in the disclosed lake record; negative-looking proposed/mentioned treatment edges remain audit-marked.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed scope note matches the page: Plurality opinion; Kennedy and O'Connor, JJ., concurred in the judgment.",
+          "All 38 treatment edges are marked proposed and field_iii is mentioned, so the disclosed record does not show an accepted overruling, abrogation, supersession, or limitation of Patane."
+        ],
+        "residual_risks": [
+          "If the proposed negative events are later audited as actual limiting treatment, the treatment field or point overrides may need updating."
+        ],
+        "suggested_tightening": "Qualify 'No negative treatment' as 'no accepted negative treatment in the disclosed lake record.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Patane.json\",\"reviewed\":[{\"assertion_id\":\"4ef1825eb241919f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record is verified, non-stub, and identifies United States v. Patane as a U.S. Supreme Court case decided 2004-06-28.\",\"The official citation 542 U.S. 630 matches lake.citations.official and the content page citation.\",\"Currency angle survives: lake.treatment.field_i_validity is good_law as of 2026-06-30, and all listed treatment edges are proposed with field_iii set to mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags audit_needed and cap_hit in some lanes, so later audit could change the treatment picture.\"],\"suggested_tightening\":\"State live-law currency as tied to lake.field_i_validity=good_law as of 2026-06-30.\"},{\"assertion_id\":\"3cae9a640156104b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no quote/support finding is made.\",\"This pinpoint row does not assert an independent treatment or currency status beyond the parent authority record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must decide whether the mismatch flag and quoted text are correct.\"],\"suggested_tightening\":null},{\"assertion_id\":\"edd2c7020e4ed11e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no quote/support finding is made.\",\"The embedded page-header treatment language is consistent with the parent lake treatment field showing good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must decide whether the mismatch flag and quoted text are correct.\"],\"suggested_tightening\":null},{\"assertion_id\":\"211064cd63bbb046\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call survives, but the built page's categorical 'No negative treatment' wording overstates the disclosed record because the lake treatment derivation flags proposed negative events and an audit requirement. The edges do not currently refute good_law because they are proposed and field_iii is mentioned, but the page should qualify the negative-treatment statement.\",\"severity\":\"low\",\"proposed_fix\":\"Keep good_law, Binding - SCOTUS, and the plurality scope note, but replace 'No negative treatment' with 'No accepted negative treatment in the disclosed lake record; negative-looking proposed/mentioned treatment edges remain audit-marked.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 13,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative and lane2_top_cited\"},\"reasons\":[\"lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The disclosed scope note matches the page: Plurality opinion; Kennedy and O'Connor, JJ., concurred in the judgment.\",\"All 38 treatment edges are marked proposed and field_iii is mentioned, so the disclosed record does not show an accepted overruling, abrogation, supersession, or limitation of Patane.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the proposed negative events are later audited as actual limiting treatment, the treatment field or point overrides may need updating.\"],\"suggested_tightening\":\"Qualify 'No negative treatment' as 'no accepted negative treatment in the disclosed lake record.'\"}],\"notes\":\"Support and quote-fidelity were not reviewed beyond Lens B currency impact.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:03:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0413b6bf38",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b1f22bd7bc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1112711063"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Patane.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c27060c2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Patane"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 397334,
+      "output": 9166,
+      "source": "codex-events",
+      "total": 406500
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "211064cd63bbb046": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3cae9a640156104b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4ef1825eb241919f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "edd2c7020e4ed11e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0413b6bf38",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b1f22bd7bc",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1112711063",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 203.3
   }
 }

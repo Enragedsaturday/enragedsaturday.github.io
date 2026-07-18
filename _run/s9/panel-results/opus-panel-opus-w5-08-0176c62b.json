@@ -1,0 +1,112 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "09b6951890d25156",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 468 U.S. 517 (1984) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 104 S. Ct. 3194 / 82 L. Ed. 2d 393 / 52 U.S.L.W. 5052 / LEXIS cites are internally consistent.",
+          "Cached opinion (Chief Justice Burger) confirms the record is Hudson v. Palmer (no REP in prison cell)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5d336012368db30e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we hold that society is not prepared to recognize as legitimate any subjective expectation of privacy that a prisoner might have in his prison cell and that, accordingly, the Fourth Amendment proscription against unreasonable searches does not apply within the confines of the prison cell. The recognition of privacy rights for prisoners in their individual cells simply cannot be reconciled with the concept of incarceration and the needs and objectives of penal institutions.",
+          "locator_note": "Opinion para b567-5; star marker *526 falls immediately before 'hold', so the quoted passage is on page 526.",
+          "needs_cl": false,
+          "problem": "The payload `quote` is a corrupted extraction capturing the content-page Background/Issue/Rule preamble instead of the opinion quotation at ^pin-526. The actual content-page quote at ^pin-526 is verbatim-faithful, with proper '[W]e' bracket-capitalization of the original mid-sentence 'we', and is correctly pincited to 526.",
+          "proposed_fix": "Re-extract the pin-526 quote span; the content quote and pincite are correct.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote at ^pin-526 matches the opinion verbatim; the leading '[W]e' correctly brackets the opinion's original lowercase 'we' (mid-sentence after 'Notwithstanding our caution...').",
+          "Pincite 468 U.S. at 526 is confirmed by the *526 star marker immediately preceding 'hold'. Only the payload quote-field is garbled harvest metadata; the content page is not defective."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Same preamble-capture guard as Horton pin-130 (anchor trails the quoted sentence).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "04b9b316da378422",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence contradicts good_law; the cached 1984 opinion is Hudson v. Palmer itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+          "The scope_note accurately cabins the in-scope Fourth Amendment holding (no REP in a prison cell) from the companion Parratt-Hudson Fourteenth Amendment due-process holding; the cached opinion (Parts II-A vs II-B and Part III) confirms both holdings and the scope split. Refute-framed review finds no overruling/negative treatment in the disclosed record."
+        ],
+        "residual_risks": [
+          "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hudson v. Palmer.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-08-0176c62b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hudson v. Palmer"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "04b9b316da378422": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "09b6951890d25156": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5d336012368db30e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c9f6c99912",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

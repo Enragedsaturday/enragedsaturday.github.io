@@ -1,38 +1,99 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Capers.json",
+    "lens": "A",
+    "notes": "Non-inventoried observation: content_page.md's rendered header docket conflicts with the lake/frontmatter docket.",
+    "reviewed": [
+      {
+        "assertion_id": "20e423118ae5695a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Capers, decided by the 2d Cir. in 2010, with official citation 627 F.3d 470.",
+          "The inventory's listed vendor-neutral citations, 2010 U.S. App. LEXIS 24516 and 2010 WL 4869768, match lake.citations.vendor_neutral/all."
+        ],
+        "residual_risks": [
+          "The visible content page header says No. 07-1830-cr, while the lake record and frontmatter docket say 09-2101; docket is outside this inventoried case-cite assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fa25445735a0a11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no good-law finding is raised.",
+          "The treatment payload matches the lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note is the frontier-stub note."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Capers.json\",\"reviewed\":[{\"assertion_id\":\"20e423118ae5695a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Capers, decided by the 2d Cir. in 2010, with official citation 627 F.3d 470.\",\"The inventory's listed vendor-neutral citations, 2010 U.S. App. LEXIS 24516 and 2010 WL 4869768, match lake.citations.vendor_neutral/all.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content page header says No. 07-1830-cr, while the lake record and frontmatter docket say 09-2101; docket is outside this inventoried case-cite assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7fa25445735a0a11\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no good-law finding is raised.\",\"The treatment payload matches the lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note is the frontier-stub note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment or currency review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Non-inventoried observation: content_page.md's rendered header docket conflicts with the lake/frontmatter docket.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:38-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:48:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-555d2a8dd4",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Capers.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Capers"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4b6c04de",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4b6c04de.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Capers' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Capers"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 105559,
+      "output": 3073,
+      "source": "codex-events",
+      "total": 108632
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "20e423118ae5695a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fa25445735a0a11": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-555d2a8dd4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 70.5
   }
 }

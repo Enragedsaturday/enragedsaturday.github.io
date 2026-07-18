@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3196e434725f9455",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS opinion + star-pagination (*677-*688) confirm 'United States v. Sharpe' opens at 470 U.S. 675; content page and lake cluster 111378 agree.",
+          "Official cite 470 U.S. 675 is the correct U.S. Reports citation; parallels are cluster.citations[] metadata."
+        ],
+        "residual_risks": [
+          "Parallels (105 S. Ct. 1568; 84 L. Ed. 2d 605; 1985 U.S. LEXIS 74; 53 U.S.L.W. 4346) not printed inline in the disclosed opinion; verified only via cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8f635007c674d92",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion verbatim at p. b742-9: 'In assessing whether a detention is too long in duration...necessary to detain the defendant.'",
+          "Passage sits after the *686 marker (Summers blockquote) and before *687 (mid-paragraph), so star_marker '686' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7bdf0972e9ace86",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But our cases impose no rigid time limitation on Terry stops.",
+          "locator_note": "cached opinion p id=b741-6, between *685 and *686 markers; content page marker ^pin-685",
+          "needs_cl": false,
+          "problem": "pin-685's stored `quote` is not an opinion quotation but the content page's own frontmatter/Background/Issue/Rule-intro prose blob (contains '---', markdown headers, '**Binding - SCOTUS**', an HTML header comment); quote_fidelity is self-flagged 'mismatch'/'slip-only'. The record cannot substantiate any opinion quote and, if surfaced, would falsely imply the page misquotes Sharpe.",
+          "proposed_fix": "Re-capture pin-685's quote as the actual anchored sentence 'But our cases impose no rigid time limitation on Terry stops.', which is verbatim in the cached opinion at p. b741-6 (page 685) and correctly cited '470 U.S. at 685' on the content page.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pinpoint RECORD is malformed (quote = content-page prose, not an opinion passage), but the underlying anchored proposition IS verbatim-supported at 470 U.S. 685, so the deliverable's legal content is sound.",
+          "Same degenerate slip-only capture pattern recurs across the pack's slip pins (Smith pin-838, Sokolow pin-8)."
+        ],
+        "residual_risks": [
+          "If a downstream consumer reads pin-685.quote as the displayed quote it would show page-metadata garbage; only the content-page render is correct."
+        ],
+        "suggested_tightening": "Have the harvester store the anchored sentence (not surrounding page prose) for slip-only pins.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "adad7bc13ce2a42e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Sharpe's holding (no rigid time limit; diligence/necessity test) - a bedrock, unrefuted Fourth Amendment rule; composite field_i_validity 'good_law' is well-founded.",
+          "Every negative treatment.edge (questioned/overruled/abrogated) is 'proposed': true (unadjudicated auto-candidate) and facially mis-attributed - e.g., the Rodriguez edge tagged 'abrogated' actually EXTENDS Sharpe's diligence rule; none is a confirmed overrule."
+        ],
+        "residual_risks": [
+          "Forward currency ('remains controlling', 'underlies Rodriguez') as of 2026-06-30 rests on the migration-seed derivation, not the single disclosed opinion; no disclosed evidence contradicts it.",
+          "Proposed negative edges remain for orchestrator sweep but do not disturb good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-580823e8f1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Sharpe.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-00-ef382095",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Sharpe"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3196e434725f9455": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8f635007c674d92": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "adad7bc13ce2a42e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7bdf0972e9ace86": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0046c2b746",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-580823e8f1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

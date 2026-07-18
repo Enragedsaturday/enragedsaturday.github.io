@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "612913d1698b7bc0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 499 U.S. 621 confirmed by the disclosed cached opinion caption '499 U.S. 621 (1991) CALIFORNIA v. HODARI D. No. 89-1632 ... Decided April 23, 1991' (Scalia, J.), with star-pages *622-*639.",
+          "Parallel cites (111 S. Ct. 1547; 113 L. Ed. 2d 690; 1991 U.S. LEXIS 2397; 59 U.S.L.W. 4335; 91 Cal. Daily Op. Serv. 2893; 91 Daily Journal DAR 4665) are internally consistent with the lake citations block and standard for a 1991 SCOTUS decision."
+        ],
+        "residual_risks": [
+          "Lake record shows opinion_id equal to cluster_id (112579), an identity oddity, but it does not affect the reviewed citation, which is confirmed by the cached caption.",
+          "Parallel reporter pages not independently checkable against the cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "573ee065ee152818",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches cached opinion verbatim (italic emphasis dropped): 'An arrest requires either physical force (as described above) or, where that is absent, submission to the assertion of authority.'",
+          "The sentence sits on page *626 (it follows the *626 star-page marker, and the dissent cites it as 'ante, at 626'), so the content-page pin-626b '*Id.*' (= 499 U.S. at 626) is correct. The record's quote_fidelity=mismatch/slip-only is a false negative; the quote is faithful."
+        ],
+        "residual_risks": [
+          "Record self-flag mismatch/slip-only is a harmless false negative; no deep-link fragment, but the quote verifies against cached text."
+        ],
+        "suggested_tightening": "Clear the false-negative mismatch flag once the fragment matcher is re-run.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe526808aa3bd8ba",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The narrow question before us is whether, with respect to a show of authority as with respect to application of physical force, a seizure occurs even though the subject does not yield. We hold that it does not.",
+          "locator_note": "cached opinion at *626 (paragraph following the *626 star-page marker); content-page ^pin-626 cite '499 U.S. at 626'",
+          "needs_cl": false,
+          "problem": "The pinpoint record's stored quote for pin-626 is truncated page boilerplate ('under the Fourth Amendment before any physical force is applied. ## Rule' - the tail of the Issue section plus a heading), not opinion text; slip-only first-pin extraction artifact, correctly self-flagged quote_fidelity=mismatch. The actual quote anchored at ^pin-626 on the content page verifies verbatim against the cached opinion at page 626.",
+          "proposed_fix": "Repair the pin-626 stored quote/fragment to the real anchored holding ('The narrow question before us is whether ... We hold that it does not.' at 499 U.S. at 626); reader-facing content already cites it correctly.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition survives: the content-page quote at pin-626 matches the cached opinion verbatim and the *626 star-page is correct.",
+          "Only the stored provenance quote is corrupt (boilerplate/truncated capture); not a reader-facing quote-fidelity error."
+        ],
+        "residual_risks": [
+          "No deep-link fragment (slip-only); page pincite verifies against cached text but is not star-anchored."
+        ],
+        "suggested_tightening": "Re-extract first-pin quotes so the frontmatter/header is not captured as the quote span.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "def6a35ce5300a59",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is not refuted by any disclosed evidence; Hodari D.'s show-of-authority-requires-submission rule is canonical and the cached majority (with a Stevens/Marshall dissent that does not overrule) shows a valid, un-negated 1991 SCOTUS holding.",
+          "No disclosed edge establishes adjudicated negative treatment of Hodari D.; content page's 'No negative treatment' is consistent with the disclosed record."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed: treatment was seeded, not independently re-derived (scope_note flags S2 may downgrade); full currency report not disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-aa3dd95bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-49916e03cc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/California v. Hodari D..json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-06-0b368bd1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Hodari D."
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "573ee065ee152818": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "612913d1698b7bc0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "def6a35ce5300a59": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe526808aa3bd8ba": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aa3dd95bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a4dd07938e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-49916e03cc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

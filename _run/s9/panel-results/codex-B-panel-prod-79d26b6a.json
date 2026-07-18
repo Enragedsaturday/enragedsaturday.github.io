@@ -1,22 +1,177 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Griffin v. Wisconsin.md",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "6787fb52897a4f3a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified and matches Griffin v. Wisconsin, U.S. Supreme Court, decided 1987-06-26.",
+          "Lake citations include official 483 U.S. 868, vendor-neutral 1987 U.S. LEXIS 2897, and the listed parallel cites.",
+          "Currency check: lake treatment field_i_validity is good_law as of 2026-06-30 with no point_overrides."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges and audit markers, but no disclosed top-level judgment withdraws the case's live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "47f00af2364d21c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not test holding support or quote fidelity.",
+          "No disclosed treatment field or point override says this proposition has been superseded, overruled, abrogated, or limited; lake treatment remains good_law and varies_by_point is false."
+        ],
+        "residual_risks": [
+          "Support and quote accuracy remain for Lens A; proposed negative treatment edges remain an audit risk."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5dfa9956cb6b935a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B finds no current-treatment defect in using Griffin on a progeny/refinement page.",
+          "Lake progeny shows 1045 indexed citing opinions and citation_count 2150; disclosed treatment edges include later Knights and Samson entries citing Griffin.",
+          "Top-level lake treatment remains good_law."
+        ],
+        "residual_risks": [
+          "The precise strength of the home-role taxonomy is outside Lens B; proposed negative treatment edges remain an audit risk."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "08c6675f6e2ff19f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 7,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative/lane2_top_cited; lake.provenance.field_provenance.treatment.field_i_validity",
+          "needs_cl": true,
+          "problem": "The good_law status matches lake.treatment, but the page's unqualified no-negative-treatment presentation overstates the disclosed treatment confidence. The lake shows proposed negative events and audit_needed markers, while the validity field is migration-seeded.",
+          "proposed_fix": "Keep field_i_validity: good_law only with a qualifier such as 'No confirmed negative treatment in the current lake record; proposed negative edges require audit,' or complete the R15 audit before saying 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Core status survives because lake.treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30.",
+          "But lake derivation lane1_negative and lane2_top_cited both report audit_needed true, cap_hit true, and proposed_negative_events.",
+          "Lake provenance says treatment.field_i_validity came from _treatment-migration.json + page frontmatter, with warning legacy treatment migrated: good -> good_law.",
+          "The proposed edges are marked proposed and field_iii mentioned, so they do not refute good_law outright; they do defeat an unqualified 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full text of proposed negative citers, so exact treatment effect cannot be resolved from this corpus alone."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No confirmed negative treatment in lake; R15 treatment audit pending for proposed negative edges.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f519fbf1e54f9cb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Content labels the court as U.S. Supreme Court and court_level as scotus.",
+          "Lake identity confirms court_id scotus and court_level scotus, and the official citation is selected as 483 U.S. 868.",
+          "No disclosed top-level treatment judgment or point override strips the case of binding SCOTUS weight."
+        ],
+        "residual_risks": [
+          "If the pending treatment audit later produces a confirmed limitation, the weight label may need to be paired with a point-specific limitation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Griffin v. Wisconsin.md\",\"reviewed\":[{\"assertion_id\":\"6787fb52897a4f3a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified and matches Griffin v. Wisconsin, U.S. Supreme Court, decided 1987-06-26.\",\"Lake citations include official 483 U.S. 868, vendor-neutral 1987 U.S. LEXIS 2897, and the listed parallel cites.\",\"Currency check: lake treatment field_i_validity is good_law as of 2026-06-30 with no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative edges and audit markers, but no disclosed top-level judgment withdraws the case's live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"47f00af2364d21c8\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test holding support or quote fidelity.\",\"No disclosed treatment field or point override says this proposition has been superseded, overruled, abrogated, or limited; lake treatment remains good_law and varies_by_point is false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote accuracy remain for Lens A; proposed negative treatment edges remain an audit risk.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5dfa9956cb6b935a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B finds no current-treatment defect in using Griffin on a progeny/refinement page.\",\"Lake progeny shows 1045 indexed citing opinions and citation_count 2150; disclosed treatment edges include later Knights and Samson entries citing Griffin.\",\"Top-level lake treatment remains good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The precise strength of the home-role taxonomy is outside Lens B; proposed negative treatment edges remain an audit risk.\"],\"suggested_tightening\":null},{\"assertion_id\":\"08c6675f6e2ff19f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status matches lake.treatment, but the page's unqualified no-negative-treatment presentation overstates the disclosed treatment confidence. The lake shows proposed negative events and audit_needed markers, while the validity field is migration-seeded.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law only with a qualifier such as 'No confirmed negative treatment in the current lake record; proposed negative edges require audit,' or complete the R15 audit before saying 'No negative treatment.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 7,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative/lane2_top_cited; lake.provenance.field_provenance.treatment.field_i_validity\"},\"reasons\":[\"Core status survives because lake.treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30.\",\"But lake derivation lane1_negative and lane2_top_cited both report audit_needed true, cap_hit true, and proposed_negative_events.\",\"Lake provenance says treatment.field_i_validity came from _treatment-migration.json + page frontmatter, with warning legacy treatment migrated: good -> good_law.\",\"The proposed edges are marked proposed and field_iii mentioned, so they do not refute good_law outright; they do defeat an unqualified 'No negative treatment' statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the full text of proposed negative citers, so exact treatment effect cannot be resolved from this corpus alone.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'No confirmed negative treatment in lake; R15 treatment audit pending for proposed negative edges.'\"},{\"assertion_id\":\"f519fbf1e54f9cb9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Content labels the court as U.S. Supreme Court and court_level as scotus.\",\"Lake identity confirms court_id scotus and court_level scotus, and the official citation is selected as 483 U.S. 868.\",\"No disclosed top-level treatment judgment or point override strips the case of binding SCOTUS weight.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the pending treatment audit later produces a confirmed limitation, the weight label may need to be paired with a point-specific limitation.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; no support or quote-fidelity findings were made.\"}",
   "summary": {
-    "at": "2026-07-10T02:44:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:08:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-358abb2850"
+    ],
     "group_id": "content/cases/Griffin v. Wisconsin.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-79d26b6a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-79d26b6a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:44:28.929196Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:44:29.609216Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:44:30.403053Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:44:31.678466Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:44:33.562619Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Griffin v. Wisconsin"
+    ],
+    "tokens": {
+      "input": 295516,
+      "output": 8623,
+      "source": "codex-events",
+      "total": 304139
+    },
+    "verdict_map": {
+      "08c6675f6e2ff19f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "47f00af2364d21c8": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5dfa9956cb6b935a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6787fb52897a4f3a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f519fbf1e54f9cb9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-358abb2850",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 202.0
   }
 }

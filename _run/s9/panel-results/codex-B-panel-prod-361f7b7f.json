@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wilson v. Layne.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "c6fea08efab2a250",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, not a stub, and identifies Wilson v. Layne as a U.S. Supreme Court decision dated 1999-05-24.",
+          "The disclosed official citation is 526 U.S. 603 and the page uses that citation.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record supports treating the cited authority as still live for currency purposes."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains proposed negative-event edges requiring audit, but those do not defeat existence of the cited authority."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dc2f8f8adfb9b80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity; this row presents no independent currency or treatment assertion to refute.",
+          "The pinpoint exists in the lake record and is already labeled quote_fidelity mismatch, so no B-lens good-law defect is presented by this row."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "54bbc7e366bc1527",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity; this row presents no independent currency or treatment assertion to refute.",
+          "The pinpoint exists in the lake record and is already labeled quote_fidelity mismatch, so no B-lens good-law defect is presented by this row."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ef214ed03e3fee6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 24,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status itself is supported by the lake judgment field, but the page's unqualified 'No negative treatment' language overclaims the disclosed treatment record. The lake includes multiple proposed negative-treatment edges and treatment derivation lanes marked audit_needed, so the page should not state no negative treatment unless that audit is resolved.",
+          "proposed_fix": "Keep the good_law / Binding-SCOTUS treatment call, but delete or qualify 'No negative treatment' with a note that proposed negative-event edges exist and require treatment audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30 and the scope note says the media ride-along Fourth Amendment rule and qualified-immunity holding remain good law.",
+          "However, the same lake treatment record has 30 proposed edges labeled questioned, abrogated, superseded_by_statute, criticized, or overruled, and the negative/top-cited derivation lanes are audit_needed.",
+          "Because those edges are proposed and field_iii is only mentioned, they do not prove Wilson is no longer good law, but they do defeat the page's categorical 'No negative treatment' phrasing."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full text of the citing treatment cases, so the actual effect of each proposed edge cannot be resolved from this packet alone."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'Lake marks Wilson good law as of 2026-06-30; proposed negative-treatment edges are pending audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Wilson v. Layne.json\",\"reviewed\":[{\"assertion_id\":\"c6fea08efab2a250\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, not a stub, and identifies Wilson v. Layne as a U.S. Supreme Court decision dated 1999-05-24.\",\"The disclosed official citation is 526 U.S. 603 and the page uses that citation.\",\"The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record supports treating the cited authority as still live for currency purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation contains proposed negative-event edges requiring audit, but those do not defeat existence of the cited authority.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4dc2f8f8adfb9b80\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity; this row presents no independent currency or treatment assertion to refute.\",\"The pinpoint exists in the lake record and is already labeled quote_fidelity mismatch, so no B-lens good-law defect is presented by this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"54bbc7e366bc1527\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity; this row presents no independent currency or treatment assertion to refute.\",\"The pinpoint exists in the lake record and is already labeled quote_fidelity mismatch, so no B-lens good-law defect is presented by this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1ef214ed03e3fee6\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself is supported by the lake judgment field, but the page's unqualified 'No negative treatment' language overclaims the disclosed treatment record. The lake includes multiple proposed negative-treatment edges and treatment derivation lanes marked audit_needed, so the page should not state no negative treatment unless that audit is resolved.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law / Binding-SCOTUS treatment call, but delete or qualify 'No negative treatment' with a note that proposed negative-event edges exist and require treatment audit.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 24,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30 and the scope note says the media ride-along Fourth Amendment rule and qualified-immunity holding remain good law.\",\"However, the same lake treatment record has 30 proposed edges labeled questioned, abrogated, superseded_by_statute, criticized, or overruled, and the negative/top-cited derivation lanes are audit_needed.\",\"Because those edges are proposed and field_iii is only mentioned, they do not prove Wilson is no longer good law, but they do defeat the page's categorical 'No negative treatment' phrasing.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full text of the citing treatment cases, so the actual effect of each proposed edge cannot be resolved from this packet alone.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'Lake marks Wilson good law as of 2026-06-30; proposed negative-treatment edges are pending audit.'\"}],\"notes\":\"Lens B only; quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:41-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:13:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-57b2e62fa0"
+    ],
     "group_id": "_overhaul2/lake/cases/Wilson v. Layne.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-361f7b7f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Wilson v. Layne"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 280042,
+      "output": 5069,
+      "source": "codex-events",
+      "total": 285111
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "1ef214ed03e3fee6": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4dc2f8f8adfb9b80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "54bbc7e366bc1527": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c6fea08efab2a250": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-57b2e62fa0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 109.4
   }
 }

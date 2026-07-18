@@ -1,22 +1,136 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kingsley v. Hendrickson.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "de1aafd715692218",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Kingsley v. Hendrickson as a U.S. Supreme Court decision dated 2015-06-22, docket 14-6368.",
+          "The disclosed citation set includes 576 U.S. 389 and parallel citations, and the lake treatment field marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Official citation selection is null with a warning, but that is not a currency/existence defect under Lens B."
+        ],
+        "suggested_tightening": "Use 576 U.S. 389 as the primary display cite if the renderer needs an official-looking lead citation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e1cff498ee25f3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row raises no treatment or currency proposition for Lens B to attack.",
+          "Quote-fidelity and support defects are reserved to Lens A under the task instructions."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains unreviewed by this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80638b34f4597d06",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": false,
+          "problem": "The good-law call survives, but the page's categorical 'No negative treatment' wording is too absolute given the disclosed treatment derivation flags proposed negative-lane hits and audit_needed markers. The disclosed lake record supports 'no accepted negative treatment recorded' rather than an unqualified no-negative-treatment statement.",
+          "proposed_fix": "Keep field_i_validity=good_law and Binding-SCOTUS, but revise the prose to: 'No accepted negative treatment is recorded in the lake record; negative-lane progeny hits are proposed/mentioned-only and flagged for audit.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake judgment fields: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The weight label is correct from the disclosed identity fields because the court is U.S. Supreme Court and court_level is scotus.",
+          "The progeny/treatment edges contain negative field_ii labels, but every listed edge is proposed, has field_iii=mentioned, and has no point override against Kingsley itself."
+        ],
+        "residual_risks": [
+          "Treatment derivation shows cap_hit and audit_needed for negative-lane/top-cited review, so the disclosed record has an audit-risk caveat even though the accepted treatment field remains good_law."
+        ],
+        "suggested_tightening": "Avoid 'No negative treatment' without qualification; say 'No accepted negative treatment recorded in this lake record.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Kingsley v. Hendrickson.json\",\"reviewed\":[{\"assertion_id\":\"de1aafd715692218\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Kingsley v. Hendrickson as a U.S. Supreme Court decision dated 2015-06-22, docket 14-6368.\",\"The disclosed citation set includes 576 U.S. 389 and parallel citations, and the lake treatment field marks the authority good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is null with a warning, but that is not a currency/existence defect under Lens B.\"],\"suggested_tightening\":\"Use 576 U.S. 389 as the primary display cite if the renderer needs an official-looking lead citation.\"},{\"assertion_id\":\"8e1cff498ee25f3b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row raises no treatment or currency proposition for Lens B to attack.\",\"Quote-fidelity and support defects are reserved to Lens A under the task instructions.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains unreviewed by this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"80638b34f4597d06\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call survives, but the page's categorical 'No negative treatment' wording is too absolute given the disclosed treatment derivation flags proposed negative-lane hits and audit_needed markers. The disclosed lake record supports 'no accepted negative treatment recorded' rather than an unqualified no-negative-treatment statement.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity=good_law and Binding-SCOTUS, but revise the prose to: 'No accepted negative treatment is recorded in the lake record; negative-lane progeny hits are proposed/mentioned-only and flagged for audit.'\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"The payload matches the lake judgment fields: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The weight label is correct from the disclosed identity fields because the court is U.S. Supreme Court and court_level is scotus.\",\"The progeny/treatment edges contain negative field_ii labels, but every listed edge is proposed, has field_iii=mentioned, and has no point override against Kingsley itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation shows cap_hit and audit_needed for negative-lane/top-cited review, so the disclosed record has an audit-risk caveat even though the accepted treatment field remains good_law.\"],\"suggested_tightening\":\"Avoid 'No negative treatment' without qualification; say 'No accepted negative treatment recorded in this lake record.'\"}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:15:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3c1625145f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6d282ad9c2"
+    ],
     "group_id": "_overhaul2/lake/cases/Kingsley v. Hendrickson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-b1706888",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-b1706888.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:28.570898Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:29.543689Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:30.404076Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:31.652793Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:33.679714Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:37.121707Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kingsley v. Hendrickson"
+    ],
+    "tokens": {
+      "input": 401606,
+      "output": 8587,
+      "source": "codex-events",
+      "total": 410193
+    },
+    "verdict_map": {
+      "80638b34f4597d06": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8e1cff498ee25f3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de1aafd715692218": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c1625145f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6d282ad9c2",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 172.5
   }
 }

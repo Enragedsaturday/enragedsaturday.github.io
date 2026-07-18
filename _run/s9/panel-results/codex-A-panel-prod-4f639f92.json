@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Nix v. Williams.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 inventory rows. Lens A refutes only the pin-444 quote-fidelity assertion.",
+    "reviewed": [
+      {
+        "assertion_id": "e9bbe273752141d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Nix v. Williams as a U.S. Supreme Court case decided 1984-06-11.",
+          "The official citation in the lake record is 467 U.S. 431, matching the content-page display citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "54c196006984037e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the information ultimately or inevitably would have been discovered by lawful means — here the volunteers’ search—",
+          "locator_note": "pin-444",
+          "needs_cl": true,
+          "problem": "pin-444 is not a faithful pinpoint quote. The lake pinpoint itself is flagged quote_fidelity='mismatch', has page=null/slip-only, and contains page-authored background/issue/rule prose rather than the opinion passage at 467 U.S. 444.",
+          "proposed_fix": "Replace pin-444 with the actual page 444 opinion passage supporting the rule and set page to 444, or remove the pinpoint until a verified quote/pin can be supplied.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-444 has quote_fidelity='mismatch' and no page value.",
+          "The opinion text at page 444 contains the inevitable-discovery rule passage; the stored pin quote instead starts mid-background sentence and runs into the page's Issue/Rule headings."
+        ],
+        "residual_risks": [
+          "The visible rule proposition is supportable from the opinion, but this reviewed quote/pin record is not reliable as framed."
+        ],
+        "suggested_tightening": "Use the actual 467 U.S. at 444 passage for the rule quote, preserving any omissions with a verified ellipsis.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95896b78e1501a68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded only under Lens A: the treatment payload matches the lake fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "No treatment/currency merits finding is raised because Lens B owns that review."
+        ],
+        "residual_risks": [
+          "Treatment/currency not evaluated under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Nix v. Williams.json\",\"reviewed\":[{\"assertion_id\":\"e9bbe273752141d6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Nix v. Williams as a U.S. Supreme Court case decided 1984-06-11.\",\"The official citation in the lake record is 467 U.S. 431, matching the content-page display citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"54c196006984037e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-444 is not a faithful pinpoint quote. The lake pinpoint itself is flagged quote_fidelity='mismatch', has page=null/slip-only, and contains page-authored background/issue/rule prose rather than the opinion passage at 467 U.S. 444.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-444 with the actual page 444 opinion passage supporting the rule and set page to 444, or remove the pinpoint until a verified quote/pin can be supplied.\",\"evidence_quote\":\"the information ultimately or inevitably would have been discovered by lawful means — here the volunteers’ search—\",\"needs_cl\":true,\"locator_note\":\"pin-444\"},\"reasons\":[\"The disclosed lake pinpoint for pin-444 has quote_fidelity='mismatch' and no page value.\",\"The opinion text at page 444 contains the inevitable-discovery rule passage; the stored pin quote instead starts mid-background sentence and runs into the page's Issue/Rule headings.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible rule proposition is supportable from the opinion, but this reviewed quote/pin record is not reliable as framed.\"],\"suggested_tightening\":\"Use the actual 467 U.S. at 444 passage for the rule quote, preserving any omissions with a verified ellipsis.\"},{\"assertion_id\":\"95896b78e1501a68\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded only under Lens A: the treatment payload matches the lake fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"No treatment/currency merits finding is raised because Lens B owns that review.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not evaluated under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 inventory rows. Lens A refutes only the pin-444 quote-fidelity assertion.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:18-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:15:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5c7738775f"
+    ],
     "group_id": "_overhaul2/lake/cases/Nix v. Williams.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f639f92.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Nix v. Williams"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 182800,
+      "output": 5091,
+      "source": "codex-events",
+      "total": 187891
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "54c196006984037e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "95896b78e1501a68": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9bbe273752141d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5c7738775f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 102.3
   }
 }

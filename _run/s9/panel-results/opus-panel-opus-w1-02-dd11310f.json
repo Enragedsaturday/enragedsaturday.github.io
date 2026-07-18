@@ -1,0 +1,143 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3d57f302e0c5522a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Rehnquist, C.J.; Isaac Evans / quashed-warrant facts) carries star-pagination *4 through *16 (U.S. reporter), confirming the case begins at 514 U.S. 1.",
+          "Official cite 514 U.S. 1 matches identity; year 1995 consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94a7b86adf53d3cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'are not adjuncts to the law enforcement team engaged in the often competitive enterprise of ferreting out crime,' matches the opinion verbatim (star-verified true positive).",
+          "Extractor star_marker '15' is corroborated: this clause sits in the *15 paragraph (majority); the companion page-16 clause ('Application of the Leon framework supports a categorical exception...') is the one on p.16 to which the sentence's terminal pincite attaches. Quote fidelity is clean; the anchor lands correctly in the same majority passage."
+        ],
+        "residual_risks": [
+          "The content-page sentence quotes two clauses spanning pages 15-16 but pincites only 'Id. at 16'; the 'not adjuncts' clause reviewed here is at star-page *15."
+        ],
+        "suggested_tightening": "Pincite '15-16' (or split pincites) for the two-clause sentence, since the 'not adjuncts' clause is on p.15 and the 'categorical exception' clause on p.16.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae41d4c3ed91c1d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is an extraction-window overshoot — it captured the frontmatter '---' delimiter, the page header, and the Background/Issue/Rule lead-in ending at the colon before the actual quote — which is why the automated compare flagged mismatch.",
+          "The ACTUAL page quote at ^pin-14 ('the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.') is verbatim in the opinion at p.14 (before *15): 'First, as we noted in Leon, the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.'"
+        ],
+        "residual_risks": [
+          "Captured span unusable for downstream re-verification (grabbed page header + section intros rather than the quoted sentence)."
+        ],
+        "suggested_tightening": "Re-anchor the extraction window to the quoted span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec1cf964551d5076",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The currency claim (good_law as of 2026-06-30) is neither confirmable nor refutable from the single disclosed 1995 opinion — no progeny/citing-references inlined.",
+          "field self-discloses composite_basis=migration-seed ('...may downgrade'); no disclosed negative treatment; no fabricated defect or clean-bill."
+        ],
+        "residual_risks": [
+          "Currency unverified from disclosed evidence; S2 re-derivation may downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4510a2fef5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-edc6bab582",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Evans.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-02-dd11310f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Evans"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3d57f302e0c5522a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94a7b86adf53d3cd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae41d4c3ed91c1d7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec1cf964551d5076": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4510a2fef5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-edc6bab582",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

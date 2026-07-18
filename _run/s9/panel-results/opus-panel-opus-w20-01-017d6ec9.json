@@ -1,0 +1,118 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e6eb46712b1234d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms a real 11th Cir. decision: 'UNITED STATES ... v. KARL TOUSET', No. 17-11561, (May 23, 2018), WILLIAM PRYOR, Circuit Judge — matching record identity (cluster 4500452 / opinion 4277705, ca11, 2018-05-23).",
+          "Cite '890 F.3d 1227' is volume-consistent with a mid-2018 F.3d opinion (the opinion itself cites Vergara, 884 F.3d 1309 (11th Cir. 2018)); recorded selected_official from CL cluster.citations[]."
+        ],
+        "residual_risks": [
+          "Exact reporter page (890 F.3d 1227) not printed in the disclosed slip text; sourced from CL cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "674157793084967d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed on-page quote at ^pin-IIIa — 'the Fourth Amendment does not require any suspicion for forensic searches of electronic devices at the border.' — is verbatim in the disclosed opinion (Part III opening: 'First, we explain that the Fourth Amendment does not require any suspicion for forensic searches of electronic devices at the border.').",
+          "Pincite 'Part III.A' is accurate: section III.A is captioned 'The Fourth Amendment Permits Forensic Searches of Electronic Devices at the Border Without Suspicion.'",
+          "Payload 'quote' is the page preamble (harvest artifact); mismatch/slip-only are builder self-flags, not a user-facing defect."
+        ],
+        "residual_risks": [
+          "pinpoint.quote holds the page preamble rather than the quoted sentence.",
+          "Paragraph-structured CL text supports a section-style (III.A) rather than reporter-page pincite."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6821522a5b530ed0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is defensible: lane1_negative (cites:(4277705) AND negative-terms AND court_id:(scotus OR ca11)) reviewed 5, proposed_negative_events=0.",
+          "The scope_note's circuit split is corroborated by the opinion itself (declining to follow the 9th Cir.'s Cotterman, 709 F.3d 952, 968, which requires reasonable suspicion) — a split, not a negation of Touset's binding force in the 11th Cir.",
+          "as_of_content 2018-05-23 equals the decision date; the 'overruled'/'questioned' edges are proposed:true lane2 heuristics."
+        ],
+        "residual_risks": [
+          "Proposed edges (e.g., Pulido 133 F.4th 1256 'overruled', Gilmore 'abrogated') are unadjudicated; the in-circuit/SCOTUS negative lane found no event.",
+          "snippet-first triage read 0 full opinions (triage_read=0); deep-read currency to 2026-06-30 needs CL."
+        ],
+        "suggested_tightening": "Adjudicate the proposed:true field_ii labels, especially the in-circuit Pulido 'overruled' edge.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-de0b43c7c9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-01-017d6ec9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Touset"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "674157793084967d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6821522a5b530ed0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6eb46712b1234d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-de0b43c7c9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

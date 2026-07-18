@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6a0afcbf3eed2625",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS opinion header confirms '490 U.S. 1 (1989) - UNITED STATES v. SOKOLOW, No. 87-1295, Decided April 3, 1989' - matches record (cluster 112239).",
+          "Official cite 490 U.S. 1 is printed inline in the cached opinion; parallels are cluster metadata."
+        ],
+        "residual_risks": [
+          "Parallels (109 S. Ct. 1581; 104 L. Ed. 2d 1; 1989 U.S. LEXIS 1694; 57 U.S.L.W. 4401) verified via cluster metadata, not printed inline."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e64e5f8cac5e144",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion verbatim: 'Any one of these factors is not by itself proof of any illegal conduct and is quite consistent with innocent travel. But we think taken together they amount to reasonable suspicion.'",
+          "Passage sits after the *8 marker and before the *10 marker (which appears mid-paragraph), consistent with star_marker '9'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95243062da7bcefe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In evaluating the validity of a stop such as this, we must consider \"the totality of the circumstances  the whole picture.\"",
+          "locator_note": "cached opinion, sentence right after <span class=star-pagination>*8</span>; content page marker ^pin-8",
+          "needs_cl": false,
+          "problem": "pin-8's stored `quote` is the content page's frontmatter/Background/Issue/Rule-intro prose blob, not an opinion quotation; quote_fidelity self-flagged 'mismatch'/'slip-only'.",
+          "proposed_fix": "Re-capture pin-8's quote as the anchored sentence 'In evaluating the validity of a stop such as this, we must consider \"the totality of the circumstances - the whole picture.\"' - verbatim immediately after the *8 marker in the cached opinion (page 8), correctly cited '490 U.S. at 8'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Malformed pinpoint record (quote = page prose), but the anchored content-page proposition is verbatim-supported at 490 U.S. 8 (the em-dash the CL extraction dropped is faithfully restored on the content page), so the legal content is accurate.",
+          "Same degenerate slip-only capture pattern as Sharpe pin-685 and Smith pin-838."
+        ],
+        "residual_risks": [
+          "CL extraction rendered 'circumstances  the whole picture' (dropped em-dash); content page restores the em-dash faithfully."
+        ],
+        "suggested_tightening": "Fix slip-only pin capture to store the anchored sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ede94a380d51024",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Sokolow's totality-of-the-circumstances reasonable-suspicion holding - settled, unrefuted law; composite field_i_validity 'good_law' is well-founded.",
+          "All negative treatment.edges are 'proposed': true (unadjudicated auto-candidates); none is a confirmed overrule/abrogation of Sokolow."
+        ],
+        "residual_risks": [
+          "Forward currency to 2026-06-30 rests on the migration-seed derivation (scope_note flags possible S2 re-derivation/downgrade), not the single disclosed opinion; no disclosed contradiction.",
+          "Proposed questioned/overruled/abrogated edges remain for orchestrator sweep but do not disturb good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-455265d37c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Sokolow.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-00-d0d90d0f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Sokolow"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6a0afcbf3eed2625": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e64e5f8cac5e144": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95243062da7bcefe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ede94a380d51024": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a2a2c3648",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-455265d37c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

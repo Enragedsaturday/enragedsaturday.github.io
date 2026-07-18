@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/White v. Pauly.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows. Lens A refutes only quote-fidelity defects; no support, pincite, or black-letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "a0a132b87585716b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for White v. Pauly, court U.S. Supreme Court, decided 2017-01-09, docket 16-67.",
+          "The assertion's seven citations match lake.citations.all, including 580 U.S. 73, 137 S. Ct. 548, 196 L. Ed. 2d 463, 2017 U.S. LEXIS 5, and 2017 WL 69170."
+        ],
+        "residual_risks": [
+          "The lake does not select an official/display citation, so this only verifies existence and listed citation metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fad058abfc36792",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Today, it is again necessary to reiterate the longstand-\ning principle that “clearly established law” should not be\ndefined “at a high level of generality.”",
+          "locator_note": "content_page.md Rule paragraph with ^pin-73; lake pinpoints id pin-73.",
+          "needs_cl": false,
+          "problem": "pin-73 is not a character-faithful opinion quote. It concatenates the page's Background/Issue/Rule prose rather than the cited slip-op rule passage, and the lake itself marks the pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-73 with the actual slip-op page 6 rule language, or remove the pinpoint from the prose summary if it is not intended as a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-73 quote begins with page prose: Officer White arrived late, took cover behind a stone wall, and then runs through the Issue heading; that text is not the slip-op quote at page 6.",
+          "The cached opinion's relevant rule passage begins with Today, it is again necessary, not the harvested Background/Issue text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use only the actual quoted rule text from slip op. 6 and keep surrounding case-summary prose outside the quote/pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8215929e130c8368",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "reason, we have held that Garner and Graham do not\nby themselves create clearly established law outside\n“an obvious case.”",
+          "locator_note": "content_page.md Rule paragraph with ^pin-73b; slip op. page 7.",
+          "needs_cl": false,
+          "problem": "The pin-73b quote is substantively supported but not character-faithful: the page/lake quote inserts Markdown italics around Garner and Graham and uses straight single quotes around an obvious case, while the cached opinion has plain case names and curly double quotation marks.",
+          "proposed_fix": "Replace the quoted text with the cached-opinion wording: we have held that Garner and Graham do not by themselves create clearly established law outside “an obvious case.”",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the rule at slip page 7, but not with Markdown italics or straight single quotes.",
+          "Because the page presents the text as a verbatim quotation, display styling inside the quote breaks character fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep display italics in surrounding prose, not inside the verbatim quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73270c3e88593c7e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's findings charter, so no treatment/currency defect is raised.",
+          "The lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, with the same scope note reproduced in the assertion payload."
+        ],
+        "residual_risks": [
+          "Substantive treatment review is deferred to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/White v. Pauly.json\",\"reviewed\":[{\"assertion_id\":\"a0a132b87585716b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for White v. Pauly, court U.S. Supreme Court, decided 2017-01-09, docket 16-67.\",\"The assertion's seven citations match lake.citations.all, including 580 U.S. 73, 137 S. Ct. 548, 196 L. Ed. 2d 463, 2017 U.S. LEXIS 5, and 2017 WL 69170.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake does not select an official/display citation, so this only verifies existence and listed citation metadata.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0fad058abfc36792\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-73 is not a character-faithful opinion quote. It concatenates the page's Background/Issue/Rule prose rather than the cited slip-op rule passage, and the lake itself marks the pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-73 with the actual slip-op page 6 rule language, or remove the pinpoint from the prose summary if it is not intended as a verbatim quote.\",\"evidence_quote\":\"Today, it is again necessary to reiterate the longstand-\\ning principle that “clearly established law” should not be\\ndefined “at a high level of generality.”\",\"needs_cl\":false,\"locator_note\":\"content_page.md Rule paragraph with ^pin-73; lake pinpoints id pin-73.\"},\"reasons\":[\"The asserted pin-73 quote begins with page prose: Officer White arrived late, took cover behind a stone wall, and then runs through the Issue heading; that text is not the slip-op quote at page 6.\",\"The cached opinion's relevant rule passage begins with Today, it is again necessary, not the harvested Background/Issue text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use only the actual quoted rule text from slip op. 6 and keep surrounding case-summary prose outside the quote/pinpoint.\"},{\"assertion_id\":\"8215929e130c8368\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-73b quote is substantively supported but not character-faithful: the page/lake quote inserts Markdown italics around Garner and Graham and uses straight single quotes around an obvious case, while the cached opinion has plain case names and curly double quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quoted text with the cached-opinion wording: we have held that Garner and Graham do not by themselves create clearly established law outside “an obvious case.”\",\"evidence_quote\":\"reason, we have held that Garner and Graham do not\\nby themselves create clearly established law outside\\n“an obvious case.”\",\"needs_cl\":false,\"locator_note\":\"content_page.md Rule paragraph with ^pin-73b; slip op. page 7.\"},\"reasons\":[\"The cached opinion contains the rule at slip page 7, but not with Markdown italics or straight single quotes.\",\"Because the page presents the text as a verbatim quotation, display styling inside the quote breaks character fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep display italics in surrounding prose, not inside the verbatim quotation.\"},{\"assertion_id\":\"73270c3e88593c7e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's findings charter, so no treatment/currency defect is raised.\",\"The lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, with the same scope note reproduced in the assertion payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment review is deferred to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four inventory rows. Lens A refutes only quote-fidelity defects; no support, pincite, or black-letter rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:29-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:13:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-eaac8c5ae7",
+      "F-S9-PR-83323204da"
+    ],
     "group_id": "_overhaul2/lake/cases/White v. Pauly.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e615e9d8",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e615e9d8.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:21.032188Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:21.841886Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:23.138985Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:25.243278Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:28.789424Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "White v. Pauly"
+    ],
+    "tokens": {
+      "input": 199034,
+      "output": 7412,
+      "source": "codex-events",
+      "total": 206446
+    },
+    "verdict_map": {
+      "0fad058abfc36792": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "73270c3e88593c7e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8215929e130c8368": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a0a132b87585716b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eaac8c5ae7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-83323204da",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 170.7
   }
 }

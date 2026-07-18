@@ -1,0 +1,177 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "03a5081424775da2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms the case is real: 'SUPREME COURT OF THE STATE OF ARIZONA / STATE OF ARIZONA v. IAN MITCHAM ... Filed December 17, 2024' (Timmer, C.J.), matching record name/court/date.",
+          "The reporter cite '559 P.3d 1099' is carried in the disclosed cluster.citations[] and is consistent with a Dec-2024 Arizona Supreme Court opinion; parallel 258 Ariz. 435 appears in the page header.",
+          "Nothing in disclosed evidence refutes existence of the case or the cite."
+        ],
+        "residual_risks": [
+          "Slip opinion text does not print the 559 P.3d 1099 reporter pagination, so the exact P.3d page is not independently confirmable from the inlined text (only from cluster.citations metadata).",
+          "Docket discrepancy: record identity.docket = 'CR-23-0238-PR' but the cached slip op caption reads 'No. CR-23-0236-PR' (0238 vs 0236) — almost certainly a single-digit typo since name+court+date match, but worth correction."
+        ],
+        "suggested_tightening": "Reconcile the docket field (0238 vs 0236) against the slip op caption.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35ee42d1f8e32577",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion ¶36 reads: 'the distinction ... rests on whether the evidence was discovered through an independent, untainted source (independent source exception), or whether the evidence would have been discovered through an independent, untainted source despite the illegal search (inevitable discovery exception).'",
+          "The page quote reproduces those words verbatim, eliding only the two parenthetical labels with '...' and '....' — a faithful, properly-marked ellipsis quotation.",
+          "The lake's 'mismatch'/'slip-only' flag is a false negative from the elided parentheticals; the quote is accurate."
+        ],
+        "residual_risks": [
+          "Pincite is to Arizona paragraph numbering (¶36), which the cached opinion confirms; no reporter page verification available (expected for a slip opinion)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61cdf5efdd859394",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion ¶37 reads: 'the police would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood taken after the 2015 DUI arrest.'",
+          "The page quote reproduces those words verbatim, eliding only the tail 'taken after the 2015 DUI arrest.' with '....' — faithful ellipsis quotation.",
+          "The lake 'mismatch' flag is a false negative; quote fidelity is intact."
+        ],
+        "residual_risks": [
+          "Paragraph pincite (¶37) confirmed in cached text; no S.E./P.3d page to cross-check (slip-only)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6bbdd8469334276",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The “independent source” exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality.",
+          "locator_note": "Opinion ¶34 (cached text); harvest artifact affects only the lake pinpoint record, not the published page.",
+          "needs_cl": false,
+          "problem": "The stored pin-34 quote is the wiki page's own header/preamble ('--- # State v. Mitcham *258 Ariz. 435 ...* ... ## Rule The Court distinguished ...'), a quote-harvest artifact — this text is NOT in the opinion. The reader-facing quote actually anchored at ^pin-34, however, is verbatim-correct.",
+          "proposed_fix": "Replace the stored pin-34 quote string with the actual quoted sentence ('The \"independent source\" exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality.'), which matches opinion ¶34 verbatim; do NOT alter the reader-facing quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote for pin-34 is page-header boilerplate (same systematic first-block harvest bug seen across the pack), which does not appear in the opinion.",
+          "The genuine ^pin-34 quote on the content page ('The \"independent source\" exception permits ...') is a verbatim match to opinion ¶34.",
+          "So the pincite is sound and the reader-facing quote is faithful; only the stored harvest string is defective."
+        ],
+        "residual_risks": [
+          "A naive 'delete the quote' remediation would break a genuinely correct reader-facing quotation — the fix must be a replacement of the stored string only."
+        ],
+        "suggested_tightening": "Fix the S2 quote-harvester so the first block-reference pinpoint on a page stops capturing the page preamble.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38698018a982faf1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is a migration-seed (composite_basis 'migration-seed'); all three derivation lanes show reviewed:0 and proposed_negative_events:0, and edges are empty.",
+          "No negative treatment is disclosed for this Dec-2024 case (citation_count 2), so good_law is not refuted by any inlined evidence; for a very recent case good_law is the sound default.",
+          "Currency cannot be independently derived from disclosed data (no scan was run), so I do not fabricate either a defect or a positive currency confirmation."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 is nominal: it is seeded from the old as_of, not earned by an actual treatment scan (lanes reviewed:0). The scope_note transparently discloses this ('S2 derivation re-derives and may downgrade')."
+        ],
+        "suggested_tightening": "Run the S2 treatment re-derivation (or mark as_of_treatment provisional) before certifying the 'good' badge as current.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b324b1213a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/State v. Mitcham.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-02-c9c7164e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Mitcham"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "03a5081424775da2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35ee42d1f8e32577": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "38698018a982faf1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "61cdf5efdd859394": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6bbdd8469334276": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b324b1213a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0df5e15a60",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

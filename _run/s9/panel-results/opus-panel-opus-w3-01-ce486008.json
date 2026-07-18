@@ -1,0 +1,166 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d6f8fac61ffea312",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "official cite selection failed closed: unlisted_reporter:Fla. L. Weekly Fed. S",
+          "locator_note": "lake warnings[]; citations reason_code 'unlisted_reporter:Fla. L. Weekly Fed. S'; front-matter citation:\"\" with 575 U.S. 600 demoted to parallel_cite",
+          "needs_cl": false,
+          "problem": "No official citation selected: official=null, official_selection_present=false, and the content-page front-matter `citation` is empty, even though the type-1 U.S. Reports cite '575 U.S. 600' is present in all[] and renders in the header/parallel_cite. The official-cite selector failed closed on an unlisted parallel reporter.",
+          "proposed_fix": "Promote '575 U.S. 600' to the official `citation` front-matter field; do not let the official-cite selector fail closed on a valid listed U.S. Reports cite merely because an unlisted parallel reporter (Fla. L. Weekly Fed. S) is present in the citation list.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The case and its citation unquestionably exist (575 U.S. 600 (2015), cluster_id 2801435, docket 13-1412, identity_checked=true) — the existence claim survives.",
+          "But the build failed to select/promote the official U.S. cite; the empty `citation` field and official_selection_present=false are a real, disclosed metadata defect traced to a fail-closed on an unlisted reporter."
+        ],
+        "residual_risks": [
+          "Rendered header and Sources line still show '575 U.S. 600 (2015)' correctly (pulled from parallel_cite), so user-facing content is unaffected; the defect is confined to front-matter metadata."
+        ],
+        "suggested_tightening": "Relax the official-selector fail-closed so a present type-1 U.S. Reports cite is chosen even when an unlisted parallel reporter co-occurs.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e1a9097bcdfbe0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "All three rendered pin-1778 fragments match the cached slip opinion VERBATIM: 'no precedent clearly established that there was not \"an objective need for immediate entry\" here' (slip text), '[W]ithout that \"fair notice,\" an officer is entitled to qualified immunity' (bracketed lead-cap only), and 'In sum, we hold that qualified immunity applies because these officers had no \"fair and clear warning of what the Constitution requires.\"'",
+          "The payload 'mismatch' reflects the harvester capturing only fragment 1 as the pin `quote`; the full rendered pin content is faithful."
+        ],
+        "residual_risks": [
+          "Pincite '135 S. Ct. at 1778' is slip-only (star_marker=null); the S. Ct. star page cannot be independently confirmed from the disclosed slip text, though the Sources note claims CL page-label confirmation."
+        ],
+        "suggested_tightening": "Star-verify the 135 S. Ct. 1778 page label so the pin is not slip-only.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f2cd00be0517190",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The rendered pin-600 quote ('we dismiss the first question as improvidently granted. We decide the second question and hold that the officers are entitled to qualified immunity because they did not violate any clearly established Fourth Amendment rights.') matches the cached slip opinion (opening of Alito, J.) VERBATIM.",
+          "The payload 'mismatch' is the harvester capturing the page-preamble blob (Background/Issue/Rule) rather than the actual quoted sentence — an extraction artifact, not a content misquote."
+        ],
+        "residual_risks": [
+          "Pincite '575 U.S. at 600' is the case's opening page (slip-only, star_marker=null); the holding paragraph likely falls a few pages into the U.S. Reports version after the syllabus, so '600' is an opening-page approximation transparently labeled 'opening holding' in Sources."
+        ],
+        "suggested_tightening": "Confirm/refine the U.S. Reports star page for the opening-holding sentence; re-harvest the pin-600 quote off the preamble blob.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9568641791d4b973",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law (migration-seed; warnings show only 'legacy treatment migrated: good -> good_law'). The scope_note (QI for force against an armed, mentally ill suspect; ADA-accommodation question dismissed as improvidently granted / left open) is directly corroborated by the cached slip text ('we dismiss the first question as improvidently granted'; 'we need not decide whether the Constitution was violated by the officers' failure to accommodate Sheehan's illness').",
+          "No disclosed citing opinion flags Sheehan itself as overruled/abrogated; the field_ii statuses on the graph edges belong to the citing cases."
+        ],
+        "residual_risks": [
+          "R15 treatment audit marked required; good_law currency as-of 2026-06-30 rests on seed plus absence of disclosed negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6070cca45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a8b2a0a190",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-295467cc4e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-483ee5050f"
+    ],
+    "group_id": "_overhaul2/lake/cases/City and County of San Francisco v. Sheehan.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-01-ce486008",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City and County of San Francisco v. Sheehan"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4e1a9097bcdfbe0f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f2cd00be0517190": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9568641791d4b973": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6f8fac61ffea312": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-483ee5050f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f6070cca45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a8b2a0a190",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-295467cc4e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

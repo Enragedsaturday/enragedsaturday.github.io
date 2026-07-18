@@ -1,13 +1,131 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Muniz.json",
+    "lens": "A",
+    "notes": "No separate black_letter or support rows were present in group_inventory.jsonl; the Part III-C support concern is recorded under pin-601 because that is where the routine-booking rule appears.",
+    "reviewed": [
+      {
+        "assertion_id": "b65a4f05bb808232",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Pennsylvania v. Muniz, U.S. Supreme Court, decided 1990-06-18, docket 89-213.",
+          "The content page citation, parallel citations, neutral citation, court, and year match the lake citation fields.",
+          "The cached opinion text header identifies the same case and decision date."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0cac75cfaa7a1d5f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "any slurring of speech",
+          "locator_note": "lake pin-591 has quote_fidelity=mismatch, pinpoint_status=slip-only, and null page/star/position.",
+          "needs_cl": false,
+          "problem": "pin-591's stored quote is not opinion text; it is page prose/Markdown captured across the Issue/Rule boundary. The actual slurring passage is elsewhere in the opinion, and the pin lacks a page, star marker, and position.",
+          "proposed_fix": "Replace pin-591 with the actual opinion passage supporting slurring as nontestimonial and correct the official page/pin locator from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains Markdown heading material, which cannot be part of the Supreme Court opinion text.",
+          "The disclosed opinion contains a real slurring/non-testimonial passage, so the legal proposition is supportable, but this asserted quote/pin is not character-faithful.",
+          "The content page cites 496 U.S. at 590-591, while the displayed quoted passage appears after the *592 star marker in the cached text."
+        ],
+        "residual_risks": [
+          "Fixing the pin should preserve the slurring rule but requires re-indexing the official-page locator."
+        ],
+        "suggested_tightening": "Use the exact opinion text and cite the page where the quoted sentence actually appears.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c836ef05672b0d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "your sixth birthday",
+          "locator_note": "lake pin-599 reports star_marker 586 despite the content-page citation to Id. at 599.",
+          "needs_cl": false,
+          "problem": "The quoted words exist, and the underlying testimonial/suppression proposition is supported at 599-600, but the fragment for pin-599 lands on the background occurrence at *586 rather than the 599 passage cited for the rule.",
+          "proposed_fix": "Update pin-599 to store the substantive *599 quote or use a fragment anchored to the testimonial-analysis paragraph.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload phrase is character-faithful to the cached opinion text.",
+          "The substantive rule quote about the incriminating inference appears at *599, and the suppression sentence appears at *600.",
+          "The validated fragment context points to the factual background question at *586, so the pin does not land on the passage it claims."
+        ],
+        "residual_risks": [
+          "The legal proposition remains supported; the defect is locator precision."
+        ],
+        "suggested_tightening": "Store the *599 quotation, not just the phrase, and anchor the fragment to the testimonial-analysis paragraph.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71cce4ebdeddd3ea",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "except as to Part III-C",
+          "locator_note": "pin-601 is slip-only with quote_fidelity=mismatch and no star_marker/page/position.",
+          "needs_cl": false,
+          "problem": "The routine-booking quote is substantively traceable to *601, but it is not character-faithful as stored and the page presents a non-majority Part III-C rationale as an unqualified rule.",
+          "proposed_fix": "Quote the exact *601 wording or remove quotation marks and mark it as paraphrase; identify Part III-C as Brennan plurality/non-majority rationale while preserving the admissibility result.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text says the answers to these first seven questions are nonetheless admissible; the payload alters the wording with brackets and ellipsis.",
+          "Part III-C is expressly outside the opinion of the Court, and the separate opinion concurred in admissibility on a different rationale.",
+          "The heading 'Routine booking questions are exempt' should be narrowed so the plurality rationale is not treated as an unqualified Court holding."
+        ],
+        "residual_risks": [
+          "The result that the seven booking answers were admissible is supported; the routine-booking-exception rationale needs narrowing."
+        ],
+        "suggested_tightening": "Phrase as: Brennan plurality recognized a routine-booking exception; the fractured Court admitted the seven booking answers.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a6de14652b24b58f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A.",
+          "The lake and content page treatment fields are internally consistent on good_law, dates, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency and negative-treatment audit are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Pennsylvania v. Muniz.json\",\"reviewed\":[{\"assertion_id\":\"b65a4f05bb808232\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Pennsylvania v. Muniz, U.S. Supreme Court, decided 1990-06-18, docket 89-213.\",\"The content page citation, parallel citations, neutral citation, court, and year match the lake citation fields.\",\"The cached opinion text header identifies the same case and decision date.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0cac75cfaa7a1d5f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-591's stored quote is not opinion text; it is page prose/Markdown captured across the Issue/Rule boundary. The actual slurring passage is elsewhere in the opinion, and the pin lacks a page, star marker, and position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-591 with the actual opinion passage supporting slurring as nontestimonial and correct the official page/pin locator from the cached opinion text.\",\"evidence_quote\":\"any slurring of speech\",\"needs_cl\":false,\"locator_note\":\"lake pin-591 has quote_fidelity=mismatch, pinpoint_status=slip-only, and null page/star/position.\"},\"reasons\":[\"The payload quote contains Markdown heading material, which cannot be part of the Supreme Court opinion text.\",\"The disclosed opinion contains a real slurring/non-testimonial passage, so the legal proposition is supportable, but this asserted quote/pin is not character-faithful.\",\"The content page cites 496 U.S. at 590-591, while the displayed quoted passage appears after the *592 star marker in the cached text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Fixing the pin should preserve the slurring rule but requires re-indexing the official-page locator.\"],\"suggested_tightening\":\"Use the exact opinion text and cite the page where the quoted sentence actually appears.\"},{\"assertion_id\":\"3c836ef05672b0d4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words exist, and the underlying testimonial/suppression proposition is supported at 599-600, but the fragment for pin-599 lands on the background occurrence at *586 rather than the 599 passage cited for the rule.\",\"severity\":\"low\",\"proposed_fix\":\"Update pin-599 to store the substantive *599 quote or use a fragment anchored to the testimonial-analysis paragraph.\",\"evidence_quote\":\"your sixth birthday\",\"needs_cl\":false,\"locator_note\":\"lake pin-599 reports star_marker 586 despite the content-page citation to Id. at 599.\"},\"reasons\":[\"The payload phrase is character-faithful to the cached opinion text.\",\"The substantive rule quote about the incriminating inference appears at *599, and the suppression sentence appears at *600.\",\"The validated fragment context points to the factual background question at *586, so the pin does not land on the passage it claims.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition remains supported; the defect is locator precision.\"],\"suggested_tightening\":\"Store the *599 quotation, not just the phrase, and anchor the fragment to the testimonial-analysis paragraph.\"},{\"assertion_id\":\"71cce4ebdeddd3ea\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The routine-booking quote is substantively traceable to *601, but it is not character-faithful as stored and the page presents a non-majority Part III-C rationale as an unqualified rule.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the exact *601 wording or remove quotation marks and mark it as paraphrase; identify Part III-C as Brennan plurality/non-majority rationale while preserving the admissibility result.\",\"evidence_quote\":\"except as to Part III-C\",\"needs_cl\":false,\"locator_note\":\"pin-601 is slip-only with quote_fidelity=mismatch and no star_marker/page/position.\"},\"reasons\":[\"The cached text says the answers to these first seven questions are nonetheless admissible; the payload alters the wording with brackets and ellipsis.\",\"Part III-C is expressly outside the opinion of the Court, and the separate opinion concurred in admissibility on a different rationale.\",\"The heading 'Routine booking questions are exempt' should be narrowed so the plurality rationale is not treated as an unqualified Court holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The result that the seven booking answers were admissible is supported; the routine-booking-exception rationale needs narrowing.\"],\"suggested_tightening\":\"Phrase as: Brennan plurality recognized a routine-booking exception; the fractured Court admitted the seven booking answers.\"},{\"assertion_id\":\"a6de14652b24b58f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A.\",\"The lake and content page treatment fields are internally consistent on good_law, dates, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency and negative-treatment audit are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No separate black_letter or support rows were present in group_inventory.jsonl; the Part III-C support concern is recorded under pin-601 because that is where the routine-booking rule appears.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:28:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b8422c8caa",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-bbd4083c24",
+      "F-S9-PR-41931b5623",
+      "F-S9-PR-3c9dbfc573"
+    ],
     "group_id": "_overhaul2/lake/cases/Pennsylvania v. Muniz.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +134,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9460e743.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania v. Muniz"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 384233,
+      "output": 13254,
+      "source": "codex-events",
+      "total": 397487
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "0cac75cfaa7a1d5f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3c836ef05672b0d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "71cce4ebdeddd3ea": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a6de14652b24b58f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b65a4f05bb808232": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bbd4083c24",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-41931b5623",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3c9dbfc573",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b8422c8caa",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 250.7
   }
 }

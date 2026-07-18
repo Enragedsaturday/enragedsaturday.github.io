@@ -1,0 +1,152 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "43645f230c98b9c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: 'New York v. Quarles', SCOTUS, Rehnquist, J. (public-safety exception to Miranda); page markers *651-*660 consistent with the case beginning at 467 U.S. 649.",
+          "Official cite '467 U.S. 649' matches content page and lake record."
+        ],
+        "residual_risks": [
+          "Parallel reporter pages sourced from CL cluster.citations[]."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86ca9851af855be7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'We conclude that the need for answers to questions in a situation posing a threat to the public safety outweighs the need for the prophylactic rule protecting the Fifth Amendment's privilege against self-incrimination.' matches the opinion verbatim (para b715-7), on page *657; pincite 'Id. at 657' correct.",
+          "Recorded 'mismatch/slip-only' is an apostrophe-normalization artifact."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reconcile slip-only/mismatch flags with the verbatim match.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6bb7210ed873e69",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-markdown harvest artifact (fragment of Background/Issue/'## Rule Yes.'), not the anchored quote.",
+          "The actual ^pin-655 quote 'We hold that on these facts there is a 'public safety' exception to the requirement that Miranda warnings be given before a suspect's answers may be admitted into evidence, . . . and that the availability of that exception does not depend upon the motivation of the individual officers involved.' matches the opinion verbatim (para b713-6); pincite '467 U.S. at 655-56' correctly signals the *655-*656 page span."
+        ],
+        "residual_risks": [
+          "Record quote field holds the wrong span; only the rendered page quote verifies.",
+          "The opinion is continuous across the *656 break (verified: 'admitted into evidence, *656 and that the availability'), so the wiki's ' . . . ' marks a page break rather than an omission — benign, all words verbatim, but conventionally an ellipsis signals omission."
+        ],
+        "suggested_tightening": "Re-harvest pin-655 to the anchored holding sentence and consider dropping the mid-quote ellipsis (no text is omitted across *655-*656).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74048efd95ca1a99",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note ('Establishes the public-safety exception to Miranda; good law') tracks the opinion holding verbatim (para b713-6); varies_by_point:false consistent.",
+          "All treatment.edges are proposed:true keyword FPs (e.g., Dickerson v. United States / Missouri v. Seibert tagged overruled do not overrule Quarles); audit_needed, unadjudicated — nothing disclosed establishes negative treatment."
+        ],
+        "residual_risks": [
+          "'good_law as of 2026-06-30' currency not fully confirmable from disclosed text (needs CL Shepardizing); no disclosed evidence refutes it."
+        ],
+        "suggested_tightening": "Close the R15 audit_needed edges (keyword FPs) on the record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2194dfc07f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82ecc9bb6b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-61f3e956de",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/New York v. Quarles.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-07-f02c925e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Quarles"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "43645f230c98b9c5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74048efd95ca1a99": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "86ca9851af855be7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6bb7210ed873e69": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2194dfc07f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82ecc9bb6b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-61f3e956de",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

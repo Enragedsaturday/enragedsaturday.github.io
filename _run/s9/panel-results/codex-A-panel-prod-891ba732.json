@@ -1,22 +1,199 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Elkins v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"467615dec7d381aa\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Elkins v. United States, U.S. Supreme Court, decided 1960-06-27.\",\n        \"The displayed official citation 364 U.S. 206 (1960) and listed parallel/vendor citations match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"261022b40c7717bd\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-208 quote is not character-faithful to the opinion text; it splices generated page background/issue/rule prose rather than the page-208 opinion passage. The lake also marks this pinpoint quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-208 quote with the actual page-208 opinion language about re-examining and rejecting the silver-platter doctrine, or remove the quote claim from this pinpoint.\",\n        \"evidence_quote\": \"we re-examine here the validity\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-208; cached opinion line 6 has the relevant page-208 passage, while the lake pinpoint has page null/slip-only and mismatch.\"\n      },\n      \"reasons\": [\n        \"The payload quote contains markdown section text from the built page, not verbatim opinion text.\",\n        \"The actual page-208 passage supports the doctrine point, but not the quoted text as framed.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact cached opinion sentence or a clearly marked paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"88ff90da02d7f531\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The deterrence quote is substantively the right sentence, but it is not character-faithful to the cached text because the quote inserts a space before the second em dash. The lake also marks quote_fidelity as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Correct the quoted text to match the cached opinion exactly, including the spacing before the second em dash, or adopt a stated normalization rule.\",\n        \"evidence_quote\": \"effectively available way— by\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-217; cached opinion line 23 contains the sentence at page 217.\"\n      },\n      \"reasons\": [\n        \"The page-217 passage contains the deterrence rationale, so the support is present.\",\n        \"Strict character fidelity fails against the disclosed cached text.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"This is a typography/normalization defect rather than a substantive holding defect.\"\n      ],\n      \"suggested_tightening\": \"Either quote the cached text exactly or label punctuation-normalized quotations as normalized.\"\n    },\n    {\n      \"assertion_id\": \"df7b82ff9f3930b0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding quote is not character-faithful as framed: the cached text begins with preceding words before 'we hold' and uses source typography such as curly apostrophes. The lake also marks quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Quote the holding sentence exactly from the cached opinion, or mark the bracketed capitalization and punctuation as editorial normalization.\",\n        \"evidence_quote\": \"For these reasons we hold\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-223; cached opinion line 36 contains the holding sentence beginning on page 223.\"\n      },\n      \"reasons\": [\n        \"The holding proposition is supported by the disclosed opinion text.\",\n        \"The verbatim quotation claim fails strict character fidelity.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal holding remains sound; the defect is in verbatim quotation fidelity.\"\n      ],\n      \"suggested_tightening\": \"Keep the rule statement but make the quotation exact or explicitly editorially normalized.\"\n    },\n    {\n      \"assertion_id\": \"8941cd0ae6194019\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment attack is raised.\",\n        \"The payload treatment fields mirror the lake treatment fields: good_law, as_of_content 1960-06-27, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A found no existence defect. The three quote-fidelity rows fail strict character fidelity, although pins 217 and 223 remain substantively supported.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Elkins v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "467615dec7d381aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Elkins v. United States, U.S. Supreme Court, decided 1960-06-27.",
+          "Official citation, parallel citations, and vendor-neutral citation in the inventory match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "261022b40c7717bd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In a word, we re-examine here",
+          "locator_note": "text/Elkins v. United States__5bd783.txt, page label 208; lake pinpoints[].id pin-208",
+          "needs_cl": false,
+          "problem": "pin-208 quote is not an opinion quotation; it is harvested content-page prose and headings, while the page-208 opinion passage concerns re-examining the silver-platter doctrine.",
+          "proposed_fix": "Replace pin-208 with the actual opinion passage at reporter page 208 and exclude Background/Issue/Rule page text from the harvested quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote contains Markdown emphasis and section headings, which are not in the opinion text.",
+          "The lake pinpoint itself flags quote_fidelity as mismatch, and the text file confirms the page-208 passage is different."
+        ],
+        "residual_risks": [
+          "The underlying silver-platter abolition proposition is supported; the defect is the quoted/pinpointed text."
+        ],
+        "suggested_tightening": "Use the displayed Rule quote from page 208, not the surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "88ff90da02d7f531",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "available way— by",
+          "locator_note": "text/Elkins v. United States__5bd783.txt, page label 217; lake pinpoints[].id pin-217",
+          "needs_cl": false,
+          "problem": "The pin-217 quotation is located and substantively supported, but it is not character-faithful: the payload inserts a space before the second em dash.",
+          "proposed_fix": "Change 'way — by' to 'way— by' for strict quote fidelity.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted deterrence sentence appears at the claimed page-217 location.",
+          "The only detected defect is character-level punctuation spacing; the lake pinpoint also records quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize quote-fidelity checks to preserve reporter typography around em dashes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "df7b82ff9f3930b0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "defendant’s timely objection",
+          "locator_note": "text/Elkins v. United States__5bd783.txt, page label 223; lake pinpoints[].id pin-223",
+          "needs_cl": false,
+          "problem": "The pin-223 holding is located and supported, but the quote is not character-faithful: the text uses curly apostrophes and the sentence begins with omitted introductory words rather than literal '[W]e'.",
+          "proposed_fix": "Use the exact sentence opening from the text or explicitly mark the omission policy; preserve curly apostrophes in defendant’s.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The holding sentence appears at the claimed page-223 location and supports the rule stated.",
+          "Strict quote fidelity fails because the payload/lake quote uses straight apostrophes and an editorial bracketed opening."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Adopt a documented policy for legal editorial brackets; otherwise store exact reporter text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8941cd0ae6194019",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; I record only that the inventory treatment fields match the lake treatment fields.",
+          "Lake treatment states field_i_validity good_law, as_of_content 1960-06-27, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A treatment/currency audit performed; Lens B owns that question."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Elkins v. United States.json\",\"reviewed\":[{\"assertion_id\":\"467615dec7d381aa\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Elkins v. United States, U.S. Supreme Court, decided 1960-06-27.\",\"Official citation, parallel citations, and vendor-neutral citation in the inventory match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"261022b40c7717bd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-208 quote is not an opinion quotation; it is harvested content-page prose and headings, while the page-208 opinion passage concerns re-examining the silver-platter doctrine.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-208 with the actual opinion passage at reporter page 208 and exclude Background/Issue/Rule page text from the harvested quote.\",\"evidence_quote\":\"In a word, we re-examine here\",\"needs_cl\":false,\"locator_note\":\"text/Elkins v. United States__5bd783.txt, page label 208; lake pinpoints[].id pin-208\"},\"reasons\":[\"The asserted quote contains Markdown emphasis and section headings, which are not in the opinion text.\",\"The lake pinpoint itself flags quote_fidelity as mismatch, and the text file confirms the page-208 passage is different.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying silver-platter abolition proposition is supported; the defect is the quoted/pinpointed text.\"],\"suggested_tightening\":\"Use the displayed Rule quote from page 208, not the surrounding page prose.\"},{\"assertion_id\":\"88ff90da02d7f531\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-217 quotation is located and substantively supported, but it is not character-faithful: the payload inserts a space before the second em dash.\",\"severity\":\"low\",\"proposed_fix\":\"Change 'way — by' to 'way— by' for strict quote fidelity.\",\"evidence_quote\":\"available way— by\",\"needs_cl\":false,\"locator_note\":\"text/Elkins v. United States__5bd783.txt, page label 217; lake pinpoints[].id pin-217\"},\"reasons\":[\"The quoted deterrence sentence appears at the claimed page-217 location.\",\"The only detected defect is character-level punctuation spacing; the lake pinpoint also records quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Normalize quote-fidelity checks to preserve reporter typography around em dashes.\"},{\"assertion_id\":\"df7b82ff9f3930b0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-223 holding is located and supported, but the quote is not character-faithful: the text uses curly apostrophes and the sentence begins with omitted introductory words rather than literal '[W]e'.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact sentence opening from the text or explicitly mark the omission policy; preserve curly apostrophes in defendant’s.\",\"evidence_quote\":\"defendant’s timely objection\",\"needs_cl\":false,\"locator_note\":\"text/Elkins v. United States__5bd783.txt, page label 223; lake pinpoints[].id pin-223\"},\"reasons\":[\"The holding sentence appears at the claimed page-223 location and supports the rule stated.\",\"Strict quote fidelity fails because the payload/lake quote uses straight apostrophes and an editorial bracketed opening.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Adopt a documented policy for legal editorial brackets; otherwise store exact reporter text.\"},{\"assertion_id\":\"8941cd0ae6194019\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; I record only that the inventory treatment fields match the lake treatment fields.\",\"Lake treatment states field_i_validity good_law, as_of_content 1960-06-27, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A treatment/currency audit performed; Lens B owns that question.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-11T01:05:24-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:10:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ea003b9290",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1a417f5960",
+      "F-S9-PR-166edd60e0",
+      "F-S9-PR-444c38b5ec"
+    ],
     "group_id": "_overhaul2/lake/cases/Elkins v. United States.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-891ba732",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-891ba732.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Elkins v. United States"
+    ],
+    "tokens": {
+      "input": 468492,
+      "output": 10069,
+      "source": "codex-events",
+      "total": 478561
+    },
+    "verdict_map": {
+      "261022b40c7717bd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "467615dec7d381aa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "88ff90da02d7f531": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8941cd0ae6194019": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "df7b82ff9f3930b0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a417f5960",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-166edd60e0",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-444c38b5ec",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ea003b9290",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 200.5
   }
 }

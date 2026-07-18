@@ -1,11 +1,69 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "e6eb46712b1234d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Karl Touset, Eleventh Circuit, decided 2018-05-23, with expected citation found.",
+          "The disclosed citation fields select 890 F.3d 1227 as the official/display citation.",
+          "The lake treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live from the disclosed currency evidence."
+        ],
+        "residual_risks": [
+          "The disclosed treatment currency date is 2026-06-30; the files do not verify events after that date."
+        ],
+        "suggested_tightening": "State expressly that currency is verified only as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "674157793084967d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity/pinpoint row, and Lens B does not attack support or quote fidelity.",
+          "No treatment or live-law defect is created by this row itself."
+        ],
+        "residual_risks": [
+          "Quote fidelity is not assessed under Lens B and remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6821522a5b530ed0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment judgment states field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed lane1 negative-treatment derivation for SCOTUS or Eleventh Circuit authorities reviewed 5 results, did not hit the cap, and found 0 proposed negative events.",
+          "The cited negative-coded progeny edges are marked proposed and field_iii mentioned, and they do not displace the lake's good_law judgment or create a disclosed point override.",
+          "The weight label is consistent with the lake identity fields showing the court as the U.S. Court of Appeals for the Eleventh Circuit and circuit as 11th."
+        ],
+        "residual_risks": [
+          "The lake contains proposed negative-coded lane2 progeny, so the treatment should not be represented as free of all negative-coded mentions outside the controlling lane.",
+          "The disclosed treatment currency date is 2026-06-30; the files do not verify later changes."
+        ],
+        "suggested_tightening": "Clarify that no controlling SCOTUS/Eleventh Circuit negative treatment was found as of 2026-06-30, while non-controlling proposed/mentioned progeny edges exist.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Touset.json\",\"reviewed\":[{\"assertion_id\":\"e6eb46712b1234d6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Karl Touset, Eleventh Circuit, decided 2018-05-23, with expected citation found.\",\"The disclosed citation fields select 890 F.3d 1227 as the official/display citation.\",\"The lake treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live from the disclosed currency evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment currency date is 2026-06-30; the files do not verify events after that date.\"],\"suggested_tightening\":\"State expressly that currency is verified only as of 2026-06-30.\"},{\"assertion_id\":\"674157793084967d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is a quote-fidelity/pinpoint row, and Lens B does not attack support or quote fidelity.\",\"No treatment or live-law defect is created by this row itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity is not assessed under Lens B and remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6821522a5b530ed0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake treatment judgment states field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The disclosed lane1 negative-treatment derivation for SCOTUS or Eleventh Circuit authorities reviewed 5 results, did not hit the cap, and found 0 proposed negative events.\",\"The cited negative-coded progeny edges are marked proposed and field_iii mentioned, and they do not displace the lake's good_law judgment or create a disclosed point override.\",\"The weight label is consistent with the lake identity fields showing the court as the U.S. Court of Appeals for the Eleventh Circuit and circuit as 11th.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake contains proposed negative-coded lane2 progeny, so the treatment should not be represented as free of all negative-coded mentions outside the controlling lane.\",\"The disclosed treatment currency date is 2026-06-30; the files do not verify later changes.\"],\"suggested_tightening\":\"Clarify that no controlling SCOTUS/Eleventh Circuit negative treatment was found as of 2026-06-30, while non-controlling proposed/mentioned progeny edges exist.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:15-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:07:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
@@ -16,21 +74,43 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-017d6ec9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Touset"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 210049,
+      "output": 5298,
+      "source": "codex-events",
+      "total": 215347
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "674157793084967d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6821522a5b530ed0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6eb46712b1234d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "wall_clock_s": 112.3
   }
 }

@@ -1,38 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Warshak.json",
+    "lens": "B",
+    "notes": "Lens B review only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "59898af87e41b027",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Warshak and lists the displayed citation 631 F.3d 266 as the official citation.",
+          "The same lake record lists the parallel/vendor citations 2010 U.S. App. LEXIS 25415 and 2010 WL 5071766, matching the inventory payload.",
+          "No disclosed treatment edge or progeny field states that the authority has been overruled, superseded, abrogated, or vacated."
+        ],
+        "residual_risks": [
+          "The treatment/progeny record is expressly unverified and not derived, so absence of adverse treatment is not independently citator-confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Keep this as an identity/citation assertion only; do not let it imply verified good-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abac611150140ad5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake treatment scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The content page accurately renders Treatment: Unverified and warns that subsequent treatment has not completed verification.",
+          "The in-circuit weight label is consistent with the disclosed identity fields showing a U.S. Court of Appeals, 6th Cir. decision with circuit ca6."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified and progeny rows_cached is 0, no positive good-law conclusion can be drawn from the disclosed record."
+        ],
+        "suggested_tightening": "Continue labeling the page unverified until treatment/progeny are derived; avoid phrases implying widely followed or live-law status unless separately reviewed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Warshak.json\",\"reviewed\":[{\"assertion_id\":\"59898af87e41b027\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Warshak and lists the displayed citation 631 F.3d 266 as the official citation.\",\"The same lake record lists the parallel/vendor citations 2010 U.S. App. LEXIS 25415 and 2010 WL 5071766, matching the inventory payload.\",\"No disclosed treatment edge or progeny field states that the authority has been overruled, superseded, abrogated, or vacated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment/progeny record is expressly unverified and not derived, so absence of adverse treatment is not independently citator-confirmed from the disclosed files.\"],\"suggested_tightening\":\"Keep this as an identity/citation assertion only; do not let it imply verified good-law status.\"},{\"assertion_id\":\"abac611150140ad5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake treatment scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"The content page accurately renders Treatment: Unverified and warns that subsequent treatment has not completed verification.\",\"The in-circuit weight label is consistent with the disclosed identity fields showing a U.S. Court of Appeals, 6th Cir. decision with circuit ca6.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified and progeny rows_cached is 0, no positive good-law conclusion can be drawn from the disclosed record.\"],\"suggested_tightening\":\"Continue labeling the page unverified until treatment/progeny are derived; avoid phrases implying widely followed or live-law status unless separately reviewed.\"}],\"notes\":\"Lens B review only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:44-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:09:16-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Warshak.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Warshak"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-170177a8",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-170177a8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Warshak' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Warshak"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 98178,
+      "output": 2874,
+      "source": "codex-events",
+      "total": 101052
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "59898af87e41b027": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abac611150140ad5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 71.2
   }
 }

@@ -1,0 +1,155 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5ad08ba2a1dddf5b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is Caniglia v. Strom (2021): community-caretaking, Cady v. Dombrowski, warrantless home entry and firearm seizure; running header 'CANIGLIA v. STROM / Opinion of the Court'.",
+          "Official cite 593 U.S. 194 with parallel 141 S. Ct. 1596 / 209 L. Ed. 2d 604 are the standard Caniglia cites."
+        ],
+        "residual_risks": [
+          "Slip opinion carries no U.S. Reports pagination, so start page 194 is not printed; case identity and parallels are unambiguous."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a0b456f2405eba8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-op3 quote ('The First Circuit\\'s \\'community caretaking\\' rule, however, goes beyond anything this Court has recognized.') matches the slip opinion verbatim (cached 'how-\\never' line-break resolves to 'however').",
+          "It falls on slip op. page 3: the quote precedes the '4  CANIGLIA v. STROM / Opinion of the Court' page-break header.",
+          "The payload 'quote' fragment is a garbled extractor capture spanning the Background/Issue/Rule markdown; the 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [
+          "Extractor captured markdown structure instead of the in-quotes text."
+        ],
+        "suggested_tightening": "Re-anchor the extractor to the quotation span rather than surrounding headers.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5efdcbbb748ab7e2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-op4 quote ('Neither the holding nor logic of Cady justified that approach. True, Cady also involved a warrantless search for a firearm. But the location of that search was an impounded vehicle - not a home - \\'a constitutional difference\\' that the opinion repeatedly stressed.') matches the slip opinion verbatim once line-break hyphenations (ap-proach, im-pounded, differ-ence) and em-dash/nested-quote rendering are resolved.",
+          "It falls on slip op. page 4: the quote follows the page-4 header.",
+          "'mismatch' flag is a normalization false positive (hyphenation + dash/nested-quote), not a page defect."
+        ],
+        "residual_risks": [
+          "Hyphenation/dash normalization defeats naive string-match; page quote is faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c25d009a536217eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law currency (as of 2026-06-30) cannot be affirmed or refuted from the disclosed slip opinion (no citator inlined).",
+          "No contrary treatment signal is present for this 2021 SCOTUS holding; no defect is substantiated ('not found != fabricated')."
+        ],
+        "residual_risks": [
+          "Currency requires a CourtListener citator pass; scope_note itself flags the seeded as_of as re-derivable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-813c12ee45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9a70385bed",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-21c3483c4b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Caniglia v. Strom.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-07-b79eaf95",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Caniglia v. Strom"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3a0b456f2405eba8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5ad08ba2a1dddf5b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5efdcbbb748ab7e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c25d009a536217eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-813c12ee45",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9a70385bed",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-21c3483c4b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

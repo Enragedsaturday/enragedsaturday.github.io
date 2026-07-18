@@ -1,0 +1,209 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "74cd04984089a44f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority (Justice Thomas) confirms identity: Kansas v. Glover, revoked-license traffic stop; reporter star labels *1186-*1194 are consistent with 140 S. Ct. 1183 and the 2020 Term (589 U.S. 376).",
+          "Official selection 589 U.S. 376 present; parallels 140 S. Ct. 1183 and 206 L. Ed. 2d 412 are the standard reporters; nothing in disclosed evidence contradicts any cite."
+        ],
+        "residual_risks": [
+          "Exact star page 376 of 589 U.S. is not printed in the cache (body uses S. Ct. star pages), but identity is unambiguous."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c9d170e0e5e4241",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We emphasize the narrow scope of our holding.",
+          "locator_note": "pin-1191; cached p-44 (after the *1191 label at p-42).",
+          "needs_cl": false,
+          "problem": "The lake pin-1191 quote field stores page connective prose ('so the everyday inference ... supplies reasonable suspicion to stop. The Court cabined the rule.'), which is the wiki's own paraphrase and appears nowhere in the opinion (hence self-flagged quote_fidelity=mismatch/slip-only). The quotation actually anchored to ^pin-1191 on the shipped page is verbatim-faithful.",
+          "proposed_fix": "Re-extract pin-1191.quote to the passage actually quoted at the anchor, 'We emphasize the narrow scope of our holding.', verbatim at cached p-44 (*1191).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Shipped page quote 'We emphasize the narrow scope of our holding.' is verbatim at cached p-44 and correctly pincited to 1191; no user-facing defect.",
+          "Defect is confined to the record's quote field, which captured page paraphrase rather than the opinion passage; record-hygiene only."
+        ],
+        "residual_risks": [
+          "If downstream tooling consumes pin.quote verbatim instead of the page, the mis-captured span would propagate."
+        ],
+        "suggested_tightening": "Bind pin.quote to the nearest quotation-marked span at the anchor, not the preceding prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6bfa27614ec166cb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop.' is verbatim at cached p-28.",
+          "Star-verified at *1188 with a validated text fragment; p-28 sits between *1188 (p-25) and *1189 (p-31), so the 1188 pincite is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7907e3feb4286341",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that when the officer lacks information negating an inference that the owner is the driver of the vehicle, the stop is reasonable.",
+          "locator_note": "pin-1186; cached p-11 (opens with the *1186 label).",
+          "needs_cl": false,
+          "problem": "The lake pin-1186 quote field captured the entire page top (header + Background + Issue + 'Rule Yes.'), not an opinion passage; a gross extractor over-capture (hence quote_fidelity=mismatch/slip-only). The quotation actually anchored to ^pin-1186 on the page is verbatim-faithful.",
+          "proposed_fix": "Re-extract pin-1186.quote to 'We hold that when the officer lacks information negating an inference that the owner is the driver of the vehicle, the stop is reasonable.', verbatim at cached p-11 (*1186).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Shipped page quote at ^pin-1186 is verbatim at cached p-11 and correctly pincited to 140 S. Ct. at 1186; no user-facing defect.",
+          "Defect is record-field over-capture only."
+        ],
+        "residual_risks": [
+          "pin.quote holds a whole-page block; harmless to the page but pollutes the record."
+        ],
+        "suggested_tightening": "Bound extractor capture to the quotation-marked span at the anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92c19a02886b8ded",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored fragment 'justified at its inception,' appears verbatim in the opinion at cached p-44 (the officer's action must be 'justified at its inception.'); the mismatch flag is a false positive driven by nested single-quote punctuation.",
+          "The page's companion quote at the same anchor, 'the presence of additional facts might dispel reasonable suspicion,' is verbatim at cached p-44; the Id.(1191) pincite is correct (p-44 sits between *1191 and *1192)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3a37e763388c666",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note is fully supported by the cached opinion: holding (p-11), 'We emphasize the narrow scope of our holding' (p-44), and the mid-sixties-owner / mid-twenties-driver dispelling example (p-44).",
+          "No disclosed evidence of negative treatment OF Glover; the lake treatment.edges are 'proposed' candidates whose field_ii describes the citing case's own status and field_iii='mentioned' (Glover merely mentioned), not adjudicated overrulings of Glover."
+        ],
+        "residual_risks": [
+          "'good as of 2026-06-30' is a forward-looking currency judgment; the cache (Glover itself) cannot confirm post-decision treatment, but nothing disclosed contradicts good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-950af64561",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb47e11c12",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Kansas v. Glover.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-04-1fd1ca10",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kansas v. Glover"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2c9d170e0e5e4241": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6bfa27614ec166cb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74cd04984089a44f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7907e3feb4286341": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "92c19a02886b8ded": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3a37e763388c666": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ca004f28e4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b052599489",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-950af64561",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb47e11c12",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

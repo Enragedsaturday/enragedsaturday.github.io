@@ -1,13 +1,91 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wyoming v. Houghton.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "5db1d719fad36874",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Wyoming v. Houghton, U.S. Supreme Court, decided 1999-04-05, docket 98-184.",
+          "The official citation in the lake record is 526 U.S. 295, with matching parallel and vendor citations in the inventory.",
+          "The cached opinion header also shows 526 U.S. 295, United States Supreme Court, and decision date April 5, 1999."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "319c0489045d3a2f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Where that inquiry yields no answer, we must evaluate the search or seizure",
+          "locator_note": "text/Wyoming v. Houghton__4bdef2.txt line 28 contains the *300 passage; lake pin-300 has star_marker null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-300 quote record is not an opinion quotation; it is corrupted with built-page/frontmatter prose and is marked mismatch with no star marker or validated position. The actual opinion passage at *300 contains the balancing language, not the payload text.",
+          "proposed_fix": "Replace pin-300's stored quote with the actual quoted passage from the opinion, anchor it to star_marker 300, and rerun quote-fidelity validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markdown/frontmatter, not the Court's opinion text.",
+          "The opinion text places the relevant balancing sentence immediately after the *300 star pagination marker.",
+          "The lake record itself flags pin-300 as quote_fidelity mismatch and slip-only."
+        ],
+        "residual_risks": [
+          "The displayed page quotation appears supportable from the text, but the disclosed pin record under review is defective."
+        ],
+        "suggested_tightening": "Store only the exact quoted sentence fragment for pin-300 and keep page prose outside the pinpoint record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c169d3025fbf874",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted holding appears verbatim in the cached opinion after the *307 pagination marker.",
+          "The lake record marks pin-307 as star-verified with star_marker 307 and quote_fidelity matched.",
+          "The content page's Id. at 307 pin lands on the final holding paragraph."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a68f9b357d69033",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1999-04-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Negative-treatment and currency audit is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Wyoming v. Houghton.json\",\"reviewed\":[{\"assertion_id\":\"5db1d719fad36874\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Wyoming v. Houghton, U.S. Supreme Court, decided 1999-04-05, docket 98-184.\",\"The official citation in the lake record is 526 U.S. 295, with matching parallel and vendor citations in the inventory.\",\"The cached opinion header also shows 526 U.S. 295, United States Supreme Court, and decision date April 5, 1999.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"319c0489045d3a2f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-300 quote record is not an opinion quotation; it is corrupted with built-page/frontmatter prose and is marked mismatch with no star marker or validated position. The actual opinion passage at *300 contains the balancing language, not the payload text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-300's stored quote with the actual quoted passage from the opinion, anchor it to star_marker 300, and rerun quote-fidelity validation.\",\"evidence_quote\":\"Where that inquiry yields no answer, we must evaluate the search or seizure\",\"needs_cl\":false,\"locator_note\":\"text/Wyoming v. Houghton__4bdef2.txt line 28 contains the *300 passage; lake pin-300 has star_marker null and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote begins with page markdown/frontmatter, not the Court's opinion text.\",\"The opinion text places the relevant balancing sentence immediately after the *300 star pagination marker.\",\"The lake record itself flags pin-300 as quote_fidelity mismatch and slip-only.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed page quotation appears supportable from the text, but the disclosed pin record under review is defective.\"],\"suggested_tightening\":\"Store only the exact quoted sentence fragment for pin-300 and keep page prose outside the pinpoint record.\"},{\"assertion_id\":\"8c169d3025fbf874\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted holding appears verbatim in the cached opinion after the *307 pagination marker.\",\"The lake record marks pin-307 as star-verified with star_marker 307 and quote_fidelity matched.\",\"The content page's Id. at 307 pin lands on the final holding paragraph.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2a68f9b357d69033\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1999-04-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Negative-treatment and currency audit is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:14:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-03c2cb5b61"
+    ],
     "group_id": "_overhaul2/lake/cases/Wyoming v. Houghton.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +94,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1f53dc23.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Wyoming v. Houghton"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 250219,
+      "output": 6258,
+      "source": "codex-events",
+      "total": 256477
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "2a68f9b357d69033": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "319c0489045d3a2f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5db1d719fad36874": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c169d3025fbf874": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-03c2cb5b61",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 126.8
   }
 }

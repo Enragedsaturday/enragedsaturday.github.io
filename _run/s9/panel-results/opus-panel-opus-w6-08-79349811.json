@@ -1,0 +1,121 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9072b0bbdf93d084",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 404 U.S. 477 matches disclosed cluster.citations[] (cluster 108429); parallel cites 92 S. Ct. 619, 30 L. Ed. 2d 618, 1972 U.S. LEXIS 100 standard and disclosed non-official.",
+          "Consistent with cached opinion (Lego v. Twomey, 1972, referencing Jackson v. Denno and In re Winship)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8c8a4b6307a7674",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "when a confession challenged as involuntary is sought to be used against a criminal defendant at his trial, he is entitled to a reliable and clear-cut determination that the confession was in fact voluntarily rendered. Thus, the prosecution must prove at least by a preponderance of the evidence that the confession was voluntary. Of course, the States are free, pursuant to their own law, to adopt a higher standard.",
+          "locator_note": "cached opinion star-page *489 (404 U.S. at 489); dissent confirms 'Ante, at 489'; content page ^pin-489",
+          "needs_cl": false,
+          "problem": "lake pinpoints[pin-489].quote is a corrupted capture of page markdown (frontmatter + Background/Issue + '## Rule ...'), not opinion text; self-flagged quote_fidelity='mismatch'.",
+          "proposed_fix": "Repair the lake pin-489 quote field to the actual quoted sentence rendered on the content page, which verifies verbatim in the cached opinion at star-page *489.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is markdown, not a Lego quote (honestly flagged mismatch).",
+          "Content-page ^pin-489 quote '[W]hen a confession challenged as involuntary...adopt a higher standard.' is verbatim in the cached opinion at *489 (bracket-cap of 'when', starting after 'To reiterate what we said in Jackson:'); pincite 489 valid; only lake field needs repair."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-extract pin-489 to store the quoted sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "862ed073a7ac96f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; every disclosed negative edge (lane1 15, lane2 25 proposed) is 'proposed':true, field_iii='mentioned', keyword-triage (incl. 'overruled'/'superseded_by_statute') on lower-court/citing cases, direction citing->Lego.",
+          "No disclosed edge is an adjudicated overruling of this 1972 SCOTUS holding; good_law not refuted on the disclosed record."
+        ],
+        "residual_risks": [
+          "lane1_negative cap_hit=true & audit_needed=true (15 proposed); lane2_top_cited cap_hit=true & audit_needed=true (25 proposed) — negative search truncated at cap and unaudited."
+        ],
+        "suggested_tightening": "Raise the negative-lane cap and audit the proposed events to confirm they are keyword FPs (none from a court able to overrule SCOTUS).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bcf7841276",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lego v. Twomey.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-08-79349811",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lego v. Twomey"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "862ed073a7ac96f3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9072b0bbdf93d084": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8c8a4b6307a7674": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-39cfdb0250",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-bcf7841276",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

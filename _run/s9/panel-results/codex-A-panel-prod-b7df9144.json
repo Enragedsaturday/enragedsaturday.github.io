@@ -1,39 +1,93 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/marron-v-united-states--101164.json",
+    "lens": "A",
+    "notes": "Lens A reviewed every group_inventory.jsonl row exactly once. No support, quote-fidelity, pincite, or black-letter assertions were present in this group.",
+    "reviewed": [
+      {
+        "assertion_id": "04bfa25fc7fba993",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record_id matches the locator: marron-v-united-states--101164.",
+          "Lake identity gives case_name \"Marron v. United States\", court \"U.S. Supreme Court\", date_decided \"1927-11-21\", and year 1927.",
+          "The four asserted citations match lake.citations.all exactly: 275 U.S. 192, 48 S. Ct. 74, 72 L. Ed. 231, and 1927 U.S. LEXIS 273.",
+          "The asserted absence of an official/display citation is consistent with lake.citations.official being null and lake.citations.display being null."
+        ],
+        "residual_risks": [
+          "No content_page.* file was present to cross-check rendered page display; this review verifies the inventory payload against the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c19a7be5acbba0f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so no treatment merits finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity \"unverified\", null as_of fields, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "Lens B must review any treatment/currency implications; Lens A only checked consistency with the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/marron-v-united-states--101164.json\",\"reviewed\":[{\"assertion_id\":\"04bfa25fc7fba993\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record_id matches the locator: marron-v-united-states--101164.\",\"Lake identity gives case_name \\\"Marron v. United States\\\", court \\\"U.S. Supreme Court\\\", date_decided \\\"1927-11-21\\\", and year 1927.\",\"The four asserted citations match lake.citations.all exactly: 275 U.S. 192, 48 S. Ct. 74, 72 L. Ed. 231, and 1927 U.S. LEXIS 273.\",\"The asserted absence of an official/display citation is consistent with lake.citations.official being null and lake.citations.display being null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No content_page.* file was present to cross-check rendered page display; this review verifies the inventory payload against the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c19a7be5acbba0f1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so no treatment merits finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity \\\"unverified\\\", null as_of fields, varies_by_point false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must review any treatment/currency implications; Lens A only checked consistency with the disclosed lake record.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed every group_inventory.jsonl row exactly once. No support, quote-fidelity, pincite, or black-letter assertions were present in this group.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:54-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:19:15-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/marron-v-united-states--101164.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "marron-v-united-states--101164"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b7df9144",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b7df9144.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'marron-v-united-states--101164' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record marron-v-united-states--101164"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "marron-v-united-states--101164"
+    ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 82578,
+      "output": 2461,
+      "source": "codex-events",
+      "total": 85039
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "04bfa25fc7fba993": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c19a7be5acbba0f1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 6.2
+    "wall_clock_s": 50.2
   }
 }

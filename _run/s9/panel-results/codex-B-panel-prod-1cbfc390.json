@@ -1,22 +1,138 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits are left to lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "a2d46858925f4726",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identity-checked for Minnesota v. Carter, with court U.S. Supreme Court, date_decided 1998-12-01, cluster_id 118249, and lead_opinion_id 118249.",
+          "The citations field selects 525 U.S. 83 as the official citation and lists the parallel citations shown in the assertion.",
+          "The disclosed treatment judgment marks the authority good_law as of 2026-06-30; no final disclosed overrule, abrogation, or supersession of Carter itself defeats existence/live-law status."
+        ],
+        "residual_risks": [
+          "The treatment record contains proposed negative-treatment edges and an audit-needed marker, but those are not final downgrades in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf874d0d898b4fe7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B, so I do not raise a support or quote-fidelity defect.",
+          "No separate currency/treatment defect is presented by this quote-fidelity row beyond the treatment status reviewed in assertion 6c223527b041f200."
+        ],
+        "residual_risks": [
+          "The lake pinpoint is marked quote_fidelity mismatch and slip-only, but that is reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c223527b041f200",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Minnesota v. Carter__36e5a0.json treatment.edges and treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The core good_law and Binding — SCOTUS status survives because it matches the lake treatment judgment, but the page's unqualified 'No negative treatment' wording is too strong. The disclosed lake record contains 35 proposed negative-treatment edges and lane2_top_cited has an audit-needed marker, so the page should say no confirmed negative treatment in the current lake judgment, not categorical no negative treatment.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace 'No negative treatment' with 'No confirmed negative treatment in the current lake judgment; proposed negative-treatment edges remain unaudited.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field itself says field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "All disclosed negative-looking edges are marked proposed true and field_iii mentioned, so they do not by themselves overturn the good_law judgment.",
+          "The page's 'No negative treatment' sentence should be qualified because the disclosed derivation reports proposed_negative_events and an R15 treatment audit requirement."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full citing opinions for each proposed edge, so the record cannot conclusively clear every proposed negative-treatment candidate.",
+          "The treatment validity provenance is migration-based rather than a fully completed treatment audit."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative treatment in the current lake judgment' and expose the pending audit/proposed-edge risk.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Minnesota v. Carter.json\",\"reviewed\":[{\"assertion_id\":\"a2d46858925f4726\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identity-checked for Minnesota v. Carter, with court U.S. Supreme Court, date_decided 1998-12-01, cluster_id 118249, and lead_opinion_id 118249.\",\"The citations field selects 525 U.S. 83 as the official citation and lists the parallel citations shown in the assertion.\",\"The disclosed treatment judgment marks the authority good_law as of 2026-06-30; no final disclosed overrule, abrogation, or supersession of Carter itself defeats existence/live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment record contains proposed negative-treatment edges and an audit-needed marker, but those are not final downgrades in the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cf874d0d898b4fe7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B, so I do not raise a support or quote-fidelity defect.\",\"No separate currency/treatment defect is presented by this quote-fidelity row beyond the treatment status reviewed in assertion 6c223527b041f200.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pinpoint is marked quote_fidelity mismatch and slip-only, but that is reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6c223527b041f200\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law and Binding — SCOTUS status survives because it matches the lake treatment judgment, but the page's unqualified 'No negative treatment' wording is too strong. The disclosed lake record contains 35 proposed negative-treatment edges and lane2_top_cited has an audit-needed marker, so the page should say no confirmed negative treatment in the current lake judgment, not categorical no negative treatment.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace 'No negative treatment' with 'No confirmed negative treatment in the current lake judgment; proposed negative-treatment edges remain unaudited.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Minnesota v. Carter__36e5a0.json treatment.edges and treatment.derivation.lane2_top_cited\"},\"reasons\":[\"The lake treatment field itself says field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"All disclosed negative-looking edges are marked proposed true and field_iii mentioned, so they do not by themselves overturn the good_law judgment.\",\"The page's 'No negative treatment' sentence should be qualified because the disclosed derivation reports proposed_negative_events and an R15 treatment audit requirement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the full citing opinions for each proposed edge, so the record cannot conclusively clear every proposed negative-treatment candidate.\",\"The treatment validity provenance is migration-based rather than a fully completed treatment audit.\"],\"suggested_tightening\":\"Use 'No confirmed negative treatment in the current lake judgment' and expose the pending audit/proposed-edge risk.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits are left to lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:14:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6de7c91ca",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-5b06bb7027"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-1cbfc390",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1cbfc390.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:34.859109Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:35.505451Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:36.329046Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:37.515181Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:39.711834Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:43.233288Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Carter"
+    ],
+    "tokens": {
+      "input": 222063,
+      "output": 6914,
+      "source": "codex-events",
+      "total": 228977
+    },
+    "verdict_map": {
+      "6c223527b041f200": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a2d46858925f4726": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf874d0d898b4fe7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6de7c91ca",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5b06bb7027",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.6
   }
 }

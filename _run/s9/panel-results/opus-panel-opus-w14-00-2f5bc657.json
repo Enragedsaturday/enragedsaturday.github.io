@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "32878e701b5a987c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official '156 F.3d 1043' (vol 156 / F.3d / p.1043 / type 1) selected_rank_1, official_selection_present=true; parallels 1998 U.S. App. LEXIS 21392 and 1998 WL 559355, all from cluster.citations[].",
+          "Cached opinion carries star-pagination markers *1045 and *1046, confirming F.3d vol-156 pagination consistent with a start page of 1043; author TACHA, Circuit Judge (10th Cir.).",
+          "Content-page header '156 F.3d 1043 (10th Cir. 1998)' consistent."
+        ],
+        "residual_risks": [
+          "Lake identity is 'pending'/'two_key_not_satisfied' and status under_review, but the cached opinion facts (cocaine search-incident-to-arrest, checkpoint near Las Cruces NM, canine alert) and CL url /opinion/758111/united-states-v-erick-anchondo/ cohere with the cited case."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a3d47f9fead8c04",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.",
+          "locator_note": "Cached opinion paragraph b1123-8; quoted sentence sits between star markers *1045 and *1046, i.e., page 1045, matching content-page pincite '156 F.3d at 1045'.",
+          "needs_cl": false,
+          "problem": "Lake pinpoints[].quote for pin-1045 is a malformed capture: it stores the page's own markdown lead-in (frontmatter + Background + Issue + '## Rule A search may validly precede the arrest it is incident to:') instead of the opinion quote, so the stored text cannot match the source (quote_fidelity flagged 'mismatch'). The reader-facing content-page pincite it backs is verbatim-faithful.",
+          "proposed_fix": "Re-derive pin-1045's stored quote to the actual quoted sentence: 'A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.' (156 F.3d at 1045).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored payload.quote is page markdown, not opinion text -> genuine data-hygiene defect (same 'garbled lead-in capture' pattern as pin-273 and pin-321).",
+          "The underlying content-page quote at ^pin-1045 matches the cached opinion verbatim and is correctly located on page 1045, so no true legal proposition is broken.",
+          "Sibling pin-1046 in the same record stores a clean quote, confirming pin-1045's capture is anomalous."
+        ],
+        "residual_risks": [
+          "Malformed stored quote may trip a downstream auto-verifier into a false 'unsupported' flag until re-derived."
+        ],
+        "suggested_tightening": "Regenerate stored pinpoint.quote from the text immediately following the '## Rule' lead-in, not the lead-in itself.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fae1ea5c39bbb874",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest.' appears VERBATIM in the cached opinion (para b1124-5: 'Given the above analysis, the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest. We AFFIRM.').",
+          "Quote sits after star marker *1046, i.e., page 1046, matching the content-page pincite 'Id. at 1046'.",
+          "The upstream quote_fidelity='mismatch' flag is a FALSE POSITIVE, most likely tripped by the leading 'Given the above analysis,' clause and the star-pagination XML interleaving; the quoted span itself is exact."
+        ],
+        "residual_risks": [
+          "Upstream mismatch flag will likely recur in automated matching until the matcher normalizes leading context/markup."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c0caad6b5be80414",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' rests on composite_basis='migration-seed' (O1 seed), as_of_treatment 2026-06-30; scope_note accurately warns of frequent automobile-exception miscitation, and the cached opinion confirms the holding rests on search-incident-to-arrest, not the automobile exception.",
+          "The proposed treatment edges (McKissick, Rosborough, State v. Anderson, Sanchez, etc.) are all proposed=true, unadjudicated lane2_top_cited candidates with field_iii='mentioned'; their field_ii 'overruled'/'questioned' mirrors each citing case's OWN status (citing_case.field_ii == edge.field_ii), not a negative treatment OF Anchondo, so they do not refute good_law.",
+          "No disclosed evidence contradicts good_law; full treatment-currency verification as of 2026-06-30 would require CourtListener progeny (out of scope), hence verifiable_from_disclosed=false."
+        ],
+        "residual_risks": [
+          "Treatment currency (2026-06-30) not independently verifiable from the disclosed slip opinion; the proposed negative-status edges, if ever mis-read as negative treatment of Anchondo, could distort the composite - they remain unadjudicated."
+        ],
+        "suggested_tightening": "Adjudicate or prune the proposed lane2_top_cited edges so their citing-case-status field_ii is not confusable with treatment-of-Anchondo before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-74728c46e5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Anchondo.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-00-2f5bc657",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Anchondo"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "32878e701b5a987c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a3d47f9fead8c04": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c0caad6b5be80414": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "fae1ea5c39bbb874": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9edaf343c5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-74728c46e5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a489f3ff174941a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 414 U.S. 70 matches disclosed cluster.citations[] (cluster 108882); parallel cites 94 S. Ct. 316, 38 L. Ed. 2d 274, 1973 U.S. LEXIS 132 are standard and disclosed as non-official.",
+          "Identity consistent with cached opinion (Lefkowitz v. Turley, decided 1973-11-19, No. 72-331)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b5353171ffde692",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Also, given adequate immunity, the State may plainly insist that employees either answer questions under oath about the performance of their job or suffer the loss of employment.",
+          "locator_note": "cached opinion star-page *84 (414 U.S. at 84); content page ^pin-84",
+          "needs_cl": false,
+          "problem": "lake pinpoints[pin-84].quote is a corrupted capture of page markdown (frontmatter + Background/Issue + '## Rule ...'), not opinion text; self-flagged quote_fidelity='mismatch'.",
+          "proposed_fix": "Repair the lake pin-84 quote field to the actual quoted sentence rendered on the content page, which verifies verbatim in the cached opinion at star-page *84.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is markdown, not a Lefkowitz quote (honestly flagged mismatch).",
+          "Content-page ^pin-84 quote '[G]iven adequate immunity...suffer the loss of employment' is verbatim in the cached opinion at *84 (bracket-cap of 'given'); pincite 84 valid; only lake field needs repair."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-extract pin-84 to store the quoted sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d65dc23e0494e262",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim-accurate to the cached opinion spanning star-pages *84–*85 ('the State may not insist that appellees waive their Fifth Amendment privilege...may not insist that the employee or contractor waive such immunity.'); bracket-cap '[T]he' from source 'the'.",
+          "Pincite 84–85 correct (the sentence crosses the *85 star break in the cached text)."
+        ],
+        "residual_risks": [
+          "quote_fidelity is flagged 'mismatch' although the stored content verifies verbatim (over-conservative slip-only/fragment flag)."
+        ],
+        "suggested_tightening": "Reconcile pin-84a fidelity flag to 'matched' since the quoted text verifies against the cached opinion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b0cd7b13667a7ab",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; every disclosed negative edge is 'proposed':true, field_iii='mentioned', keyword-triage on citing cases (state courts + circuit + top-cited SCOTUS citers such as Baxter/Loudermill), direction citing->Lefkowitz.",
+          "No disclosed edge is an adjudicated overruling/abrogation OF Lefkowitz; a 1973 SCOTUS holding cannot be overruled by the state/lower-federal citers listed, so good_law is not refuted on the disclosed record."
+        ],
+        "residual_risks": [
+          "lane1_negative audit_needed=true with 11 proposed negative events and lane2_top_cited audit_needed=true (25 proposed) remain unadjudicated in the build."
+        ],
+        "suggested_tightening": "Resolve/audit the proposed negative events to convert them to dismissed keyword-FPs on the record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d42c9fe343",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lefkowitz v. Turley.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-08-a793105b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lefkowitz v. Turley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4b5353171ffde692": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5b0cd7b13667a7ab": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a489f3ff174941a7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d65dc23e0494e262": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3e45ab0e8",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d42c9fe343",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

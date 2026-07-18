@@ -1,0 +1,158 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "387fd7c8b12c7e0f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "official cite selection failed closed: unlisted_reporter:Fla. L. Weekly Fed. S",
+          "locator_note": "lake warnings[]; front-matter citation:\"\" with 531 U.S. 32 demoted to parallel_cite",
+          "needs_cl": false,
+          "problem": "No official citation selected: official=null, official_selection_present=false, and the content-page front-matter `citation` is empty, even though the type-1 U.S. Reports cite '531 U.S. 32' is present in all[] and renders in the header/parallel_cite. The official-cite selector failed closed on an unlisted parallel reporter.",
+          "proposed_fix": "Promote '531 U.S. 32' to the official `citation` front-matter field; do not let the official-cite selector fail closed on a valid listed U.S. Reports cite merely because an unlisted parallel reporter (Fla. L. Weekly Fed. S) is present.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The case and its citation unquestionably exist (531 U.S. 32 (2000), cluster_id 118391, identity_checked=true) — the existence claim survives.",
+          "But the official U.S. cite was not selected/promoted; the empty `citation` field and official_selection_present=false are a real, disclosed metadata defect traced to a fail-closed on the unlisted reporter."
+        ],
+        "residual_risks": [
+          "Rendered header and Sources line still show '531 U.S. 32 (2000)' correctly (from parallel_cite); the defect is confined to front-matter metadata."
+        ],
+        "suggested_tightening": "Relax the official-selector fail-closed so a present type-1 U.S. Reports cite is chosen even when an unlisted parallel reporter co-occurs.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "281de380a721c06b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-42 quote ('Because the primary purpose of the Indianapolis narcotics checkpoint program is to uncover evidence of ordinary criminal wrongdoing, the program contravenes the Fourth Amendment.') matches the cached opinion HTML VERBATIM; the <span class=\"star-pagination\">*42</span> marker falls immediately after 'Because the', placing the substance of the sentence on page 42 — pincite 42 is correct.",
+          "The payload 'mismatch' is a false positive caused by the injected *42 star-pagination span breaking the contiguous substring match, not a content misquote."
+        ],
+        "residual_risks": [
+          "pinpoint_status=slip-only (star_marker=null) despite the *42 marker being present in the cached HTML; the pin could be promoted to star-verified."
+        ],
+        "suggested_tightening": "Make the quote_fidelity matcher star-pagination-aware so injected *NN spans do not trigger false mismatches; promote pin-42 to star-verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8140fa2678c738ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The rendered pin-41 quote ('We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing.') matches the cached opinion HTML VERBATIM and sits between the <span class=\"star-pagination\">*41</span> and <span class=\"star-pagination\">*42</span> markers, so pincite 41 is correct.",
+          "The payload 'mismatch' is the harvester capturing the page-preamble blob rather than the actual quoted sentence — an extraction artifact, not a content misquote."
+        ],
+        "residual_risks": [
+          "The lake pinpoints[] `quote` for pin-41 is a preamble blob; pin-level quote metadata unreliable though the page content is faithful."
+        ],
+        "suggested_tightening": "Re-harvest the pin-41 quote to the actual quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b18dc8707f447e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law (warnings: 'legacy treatment migrated: good -> good_law'; provenance = _treatment-migration.json + page frontmatter). point_overrides is [] — no downgrade has actually been applied despite the scope_note's forward-looking caveat.",
+          "No disclosed citing opinion flags Edmond itself as overruled/abrogated; the field_ii=overruled/abrogated/questioned values on the graph edges belong to the citing cases, not Edmond."
+        ],
+        "residual_risks": [
+          "scope_note self-flags that S2 re-derivation 'may downgrade' and the R15 treatment audit is required; the as_of_treatment 2026-06-30 currency is seeded, not audit-confirmed, so a future re-derivation could refine it."
+        ],
+        "suggested_tightening": "Run the pending S2 treatment re-derivation / R15 audit to confirm or refine the seeded good_law currency.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b621eb1c51",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d1afb7b6b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-03c54cf46d"
+    ],
+    "group_id": "_overhaul2/lake/cases/City of Indianapolis v. Edmond.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-01-908ec1ad",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Indianapolis v. Edmond"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "281de380a721c06b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "387fd7c8b12c7e0f": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8140fa2678c738ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b18dc8707f447e3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-03c54cf46d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b621eb1c51",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d1afb7b6b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

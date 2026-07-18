@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3d196a8974244098",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms the case: '409 U.S. 188 (1972)', 'NEIL, WARDEN v. BIGGERS', No. 71-586, decided December 6, 1972 (MR. JUSTICE POWELL). Official/display cite 409 U.S. 188 matches.",
+          "Parallel cites (93 S. Ct. 375; 34 L. Ed. 2d 401; 1972 U.S. LEXIS 6) come from cluster.citations[] and are not contradicted by any disclosed evidence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "420938a1eb57e618",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We turn, then, to the central question, whether under the \"totality of the circumstances\" the identification was reliable even though the confrontation procedure was suggestive.",
+          "locator_note": "pin-199; content page ^pin-199 displays '[T]he central question [is] whether under the \\'totality of the circumstances\\'...' which matches the opinion at star page *199 (bracket-adapted); only the stored quote metadata is corrupt.",
+          "needs_cl": false,
+          "problem": "The stored pin-199 `quote` field is a content-page-chrome mis-harvest (it captured the page title/Background/Issue/Rule header text, not the opinion sentence); the automated quote_fidelity flag correctly reads 'mismatch'. The legal content is unaffected: the quote actually rendered at content-page anchor ^pin-199 is faithful to the opinion.",
+          "proposed_fix": "Re-harvest pin-199.quote to the intended opinion sentence and keep pincite 199.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content quote at ^pin-199 matches the opinion verbatim at *199 (bracketed cap/insertion only); pincite '409 U.S. at 199' correct.",
+          "Stored pinpoint quote is page chrome, not opinion text -> a real but low-severity data defect in the record's quote field, not a content-accuracy error."
+        ],
+        "residual_risks": [
+          "If a downstream consumer reads the stored pinpoint.quote (rather than the rendered page), it would surface header chrome instead of the holding."
+        ],
+        "suggested_tightening": "Add a harvest guard so slip-only pinpoints do not fall back to capturing page front-matter as the quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94d03bb06c78b82e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-199b quote is verbatim in the opinion: 'the factors to be considered in evaluating the likelihood of misidentification include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of the witness' prior description of the criminal, the level of certainty demonstrated by the witness at the confrontation, and the length of time between the crime and the confrontation.'",
+          "The text spans star pages *199 into *200, so pincite '199-200' is correct.",
+          "The automated quote_fidelity='mismatch' flag here is a false positive (slip-only page-match artifact); the quote is faithful and only bracket-capitalizes the leading 'the' -> '[T]he'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "07b42e8f333e5474",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Neil v. Biggers (1972 SCOTUS) is the source of the five reliability factors; the disclosed opinion sets out the totality-of-the-circumstances reliability test. field_i_validity=good_law is well supported.",
+          "Every treatment.edges entry is proposed:true (unadjudicated), and several are facially unreliable (state intermediate-court 'overruled'/'criticized' cannot overrule SCOTUS; 'Manson v. Brathwaite criticized' is contradicted by Manson's adoption of the Biggers factors, per the scope_note). No confirmed negative treatment is disclosed.",
+          "good_law survives the refute attempt."
+        ],
+        "residual_risks": [
+          "The many proposed negative edges (overruled/questioned/criticized) remain unadjudicated; they should be triaged, but none is confirmed and none undermines good_law on the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-97aa72a584",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-91e9d2b637",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Neil v. Biggers.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-03-7ced08a0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Neil v. Biggers"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "07b42e8f333e5474": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3d196a8974244098": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "420938a1eb57e618": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "94d03bb06c78b82e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8e8dd02612",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-97aa72a584",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-91e9d2b637",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

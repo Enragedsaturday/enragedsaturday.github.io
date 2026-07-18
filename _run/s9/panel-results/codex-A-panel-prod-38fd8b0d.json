@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Turner v. United States.md",
+    "lens": "A",
+    "notes": "Reviewed all 5 assertion_ids in group_inventory.jsonl exactly once. Lens A did not adjudicate treatment currency beyond matching disclosed lake fields.",
+    "reviewed": [
+      {
+        "assertion_id": "c0652f4c25f3b978",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity matches title, court, and year: Turner v. United States, U.S. Supreme Court, decided 2017-06-22.",
+          "The asserted parallel cites and vendor-neutral cites match the lake citation lists, and the lake official citation field is null, consistent with official_citation_present=false."
+        ],
+        "residual_risks": [
+          "Lake provenance reports official cite selection failed closed, so this review accepts the lake judgment rather than independently selecting an official cite."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4293f45d663257a0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Held: The withheld evidence is not material under Brady.",
+          "locator_note": "holding",
+          "needs_cl": false,
+          "problem": "The core holding is supported, but the phrasing that Brady materiality is 'demanding' is not a holding phrase found in the disclosed opinion text and should be replaced with the Court's actual reasonable-probability/whole-record formulation.",
+          "proposed_fix": "Revise to: Counterweight: Brady materiality requires a reasonable probability of a different result and is evaluated in the context of the entire record; the withheld evidence here was not material, so no Brady violation was established.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states the only question was whether the withheld evidence was material under Brady.",
+          "The opinion says the Court must evaluate the withheld evidence in the context of the entire record and concludes there was no reasonable probability of a different outcome.",
+          "The Government did not contest suppression or favorability, so lack of materiality supports the page's no-Brady-violation conclusion."
+        ],
+        "residual_risks": [
+          "The dissent contests application of the standard, but the asserted holding tracks the majority result."
+        ],
+        "suggested_tightening": "Avoid 'demanding' unless separately supported; use the opinion's reasonable-probability and whole-record language.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b21c758373a6539",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is a Supreme Court Brady materiality decision addressing suppressed exculpatory and impeachment evidence.",
+          "The opinion applies Brady, Bagley, Kyles, Strickler, and related materiality doctrine, supporting placement on a Brady-focused home page as progeny/refinement."
+        ],
+        "residual_risks": [
+          "The opinion does not mention Giglio by name; the role stands only as a Brady materiality progeny/refinement entry on a combined Brady-and-Giglio page."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "479c6403eed7064e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment defect is raised.",
+          "The asserted treatment fields match the lake treatment judgment: good_law, as_of_content 2017-06-22, as_of_treatment 2026-06-30, migration-seed basis, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit was performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ebdc4f4ac98600d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity identifies the court as U.S. Supreme Court and court_level as scotus.",
+          "Binding — SCOTUS is supported by that disclosed court identity."
+        ],
+        "residual_risks": [
+          "No treatment/currency issue is assessed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Turner v. United States.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c0652f4c25f3b978\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity matches title, court, and year: Turner v. United States, U.S. Supreme Court, decided 2017-06-22.\",\n        \"The asserted parallel cites and vendor-neutral cites match the lake citation lists, and the lake official citation field is null, consistent with official_citation_present=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake provenance reports official cite selection failed closed, so this review accepts the lake judgment rather than independently selecting an official cite.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4293f45d663257a0\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The core holding is supported, but the phrasing that Brady materiality is 'demanding' is not a holding phrase found in the disclosed opinion text and should be replaced with the Court's actual reasonable-probability/whole-record formulation.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Revise to: Counterweight: Brady materiality requires a reasonable probability of a different result and is evaluated in the context of the entire record; the withheld evidence here was not material, so no Brady violation was established.\",\n        \"evidence_quote\": \"Held: The withheld evidence is not material under Brady.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"The opinion states the only question was whether the withheld evidence was material under Brady.\",\n        \"The opinion says the Court must evaluate the withheld evidence in the context of the entire record and concludes there was no reasonable probability of a different outcome.\",\n        \"The Government did not contest suppression or favorability, so lack of materiality supports the page's no-Brady-violation conclusion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The dissent contests application of the standard, but the asserted holding tracks the majority result.\"\n      ],\n      \"suggested_tightening\": \"Avoid 'demanding' unless separately supported; use the opinion's reasonable-probability and whole-record language.\"\n    },\n    {\n      \"assertion_id\": \"8b21c758373a6539\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion is a Supreme Court Brady materiality decision addressing suppressed exculpatory and impeachment evidence.\",\n        \"The opinion applies Brady, Bagley, Kyles, Strickler, and related materiality doctrine, supporting placement on a Brady-focused home page as progeny/refinement.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The opinion does not mention Giglio by name; the role stands only as a Brady materiality progeny/refinement entry on a combined Brady-and-Giglio page.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"479c6403eed7064e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A; no treatment defect is raised.\",\n        \"The asserted treatment fields match the lake treatment judgment: good_law, as_of_content 2017-06-22, as_of_treatment 2026-06-30, migration-seed basis, varies_by_point=false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment audit was performed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7ebdc4f4ac98600d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity identifies the court as U.S. Supreme Court and court_level as scotus.\",\n        \"Binding — SCOTUS is supported by that disclosed court identity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency issue is assessed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 assertion_ids in group_inventory.jsonl exactly once. Lens A did not adjudicate treatment currency beyond matching disclosed lake fields.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:52:50-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:50:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-42e1667a8d"
+    ],
     "group_id": "content/cases/Turner v. United States.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-38fd8b0d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Turner v. United States"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 269504,
+      "output": 7580,
+      "source": "codex-events",
+      "total": 277084
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "4293f45d663257a0": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "479c6403eed7064e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7ebdc4f4ac98600d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b21c758373a6539": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c0652f4c25f3b978": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-42e1667a8d",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 159.3
   }
 }

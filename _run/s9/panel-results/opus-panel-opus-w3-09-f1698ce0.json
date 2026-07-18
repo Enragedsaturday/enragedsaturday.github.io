@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b6462c581d95d2e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion + lake citations block confirm the case: 'Cite as: 583 U. S. ____ (2018)', No. 15-1485, decided Jan 22 2018, SCOTUS; official 583 U.S. 48 selected_rank_1.",
+          "Parallel 138 S. Ct. 577 / 199 L. Ed. 2d 453 and vendor-neutral 2018 U.S. LEXIS 760 all sourced from cluster.citations[]; identity_method citation+party-text, expected_citation_found and canonical_name_match true."
+        ],
+        "residual_risks": [
+          "Slip opinion shows blank page ('583 U. S. ____'), so bound-volume page 48 comes from cluster data, not the slip text.",
+          "Two same-named alternate clusters (4460853, 4460811, score 120) pose a minor identity-disambiguation risk; selected cluster 4460854 matches the opinion text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7758b0a614feb2f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (page 11): 'the panel majority viewed each fact “in isolation, rather than as a factor in the totality of the circumstances.”' The page's 'view[ing] each fact ...' uses a proper alteration bracket (viewed->view[ing]); the bracketed inner quotation is verbatim.",
+          "Pincite slip op., at 11 is correct — the passage precedes the page-12 break."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' is a naive-matcher false positive from the alteration bracket + slip-only (no-star) pagination; sighted verification against the inlined opinion confirms faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d8734bbfcd1f8caa",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In concluding otherwise, the panel majority engaged in an “excessively technical dissection” of the factors supporting probable cause.",
+          "locator_note": "pin-op11",
+          "needs_cl": false,
+          "problem": "Disclosed pinpoints[pin-op11].quote is a mis-scoped harvest window of the content page's own authored prose (Background tail + '## Issue' + '## Rule' lead-in ending '...may not divide and conquer the facts.'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+          "proposed_fix": "Re-scope the harvest so pin-op11.quote captures the real quoted passage — 'In concluding otherwise, the panel majority engaged in an “excessively technical dissection” of the factors supporting probable cause.' — which matches the cached opinion at page 11; the published content page needs no edit.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed quote is verbatim content-page Markdown (contains '## Issue'/'## Rule'), i.e., an S8 harvest artifact, not a fabricated opinion quotation.",
+          "The page's actual pin-op11 quotation ('excessively technical dissection') is verbatim in the cached opinion at page 11; pincite correct — no reader-facing misquotation."
+        ],
+        "residual_risks": [
+          "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+        ],
+        "suggested_tightening": "Anchor the harvest span to the quoted material between quotation marks, not the paragraph lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9855256e4bdb8da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Composite field_i_validity=good_law; cached opinion is an intact SCOTUS majority reversing the D.C. Circuit and reaffirming the Gates/Pringle totality standard — nothing self-limiting.",
+          "Every treatment.edge is proposed:true derivation-lane seed (journal_ref lane1_negative / lane2_top_cited); provenance labels point_overrides 'proposed only'. No accepted (proposed:false) negative edge exists."
+        ],
+        "residual_risks": [
+          "Edges carry non-credible synthetic field_ii labels — circuit/state courts (e.g., Kee v. City of New York 12 F.4th 150; State v. Mickel 321 Ga. 751) tagged 'overruled'/'questioned' against a SCOTUS holding, which is legally impossible; these are seeds, not treatment.",
+          "field_i_validity is a migration seed ('legacy treatment migrated: good -> good_law'); as_of_treatment 2026-06-30 is not backed by an adjudicated citing report, so currency is asserted, not independently proven from disclosed evidence.",
+          "scope_note itself flags that S2 re-derivation may downgrade."
+        ],
+        "suggested_tightening": "Adjudicate/clear the proposed:true edge seeds before certifying as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-241d4e5b4d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-43aad85674",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/District of Columbia v. Wesby.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-09-f1698ce0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "District of Columbia v. Wesby"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7758b0a614feb2f5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6462c581d95d2e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d8734bbfcd1f8caa": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e9855256e4bdb8da": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-241d4e5b4d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-130f219fc7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-43aad85674",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

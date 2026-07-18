@@ -1,22 +1,134 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
+    "lens": "A",
+    "notes": "No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "2a9bb046a129f73f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity names Patterson v. Illinois, U.S. Supreme Court, decided 1988-06-24, with year 1988.",
+          "Lake citations list official cite 487 U.S. 285 and the same parallel/vendor citations carried in the assertion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "380c532adfa5596d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As a general matter, then, an accused who is admonished with the warnings prescribed by this Court",
+          "locator_note": "lake/Patterson v. Illinois__83fe6b.json pinpoints[0]; text/Patterson v. Illinois__83fe6b.txt line 26; content_page.md Rule pin ^pin-296",
+          "needs_cl": false,
+          "problem": "The pin-296 quote stored in the lake/inventory is not a faithful opinion quotation; it is harvested page/header/background text, while the lake marks it as mismatch with page null and slip-only status.",
+          "proposed_fix": "Replace pin-296's stored quote with the actual opinion passage at 487 U.S. 296 and set page to 296. Preserve the displayed rule quote only with a clear ellipsis for the omitted Miranda citation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page metadata/header content rather than the opinion passage.",
+          "The local opinion text contains the intended rule passage at page label 296, but lake pin-296 has page:null and quote_fidelity:mismatch.",
+          "Because the asserted quote/pin record is wrong, the quote-fidelity assertion as framed cannot stand."
+        ],
+        "residual_risks": [
+          "The visible Rule sentence in content_page.md is substantively the page 296 passage, so the fix should repair the pin record rather than delete the rule."
+        ],
+        "suggested_tightening": "Repair the pin metadata and stored quote; keep the 487 U.S. at 296 source only after the pin lands on the actual passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6dcf9084a24973f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Inventory treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1988-06-24, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Under Lens A, I did not assess treatment/currency beyond disclosed-field consistency."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currentness remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Patterson v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"2a9bb046a129f73f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity names Patterson v. Illinois, U.S. Supreme Court, decided 1988-06-24, with year 1988.\",\"Lake citations list official cite 487 U.S. 285 and the same parallel/vendor citations carried in the assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"380c532adfa5596d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-296 quote stored in the lake/inventory is not a faithful opinion quotation; it is harvested page/header/background text, while the lake marks it as mismatch with page null and slip-only status.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-296's stored quote with the actual opinion passage at 487 U.S. 296 and set page to 296. Preserve the displayed rule quote only with a clear ellipsis for the omitted Miranda citation.\",\"evidence_quote\":\"As a general matter, then, an accused who is admonished with the warnings prescribed by this Court\",\"needs_cl\":false,\"locator_note\":\"lake/Patterson v. Illinois__83fe6b.json pinpoints[0]; text/Patterson v. Illinois__83fe6b.txt line 26; content_page.md Rule pin ^pin-296\"},\"reasons\":[\"The lake pinpoint quote begins with page metadata/header content rather than the opinion passage.\",\"The local opinion text contains the intended rule passage at page label 296, but lake pin-296 has page:null and quote_fidelity:mismatch.\",\"Because the asserted quote/pin record is wrong, the quote-fidelity assertion as framed cannot stand.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible Rule sentence in content_page.md is substantively the page 296 passage, so the fix should repair the pin record rather than delete the rule.\"],\"suggested_tightening\":\"Repair the pin metadata and stored quote; keep the 487 U.S. at 296 source only after the pin lands on the actual passage.\"},{\"assertion_id\":\"e6dcf9084a24973f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Inventory treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1988-06-24, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Under Lens A, I did not assess treatment/currency beyond disclosed-field consistency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currentness remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:24:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-878ace1110",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4b1b139a3f"
+    ],
     "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-9c66ae45",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9c66ae45.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:32:58.149598Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:58.792241Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:59.532081Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:00.285894Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:01.567132Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Patterson v. Illinois"
+    ],
+    "tokens": {
+      "input": 379626,
+      "output": 7264,
+      "source": "codex-events",
+      "total": 386890
+    },
+    "verdict_map": {
+      "2a9bb046a129f73f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "380c532adfa5596d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e6dcf9084a24973f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4b1b139a3f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-878ace1110",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 146.7
   }
 }

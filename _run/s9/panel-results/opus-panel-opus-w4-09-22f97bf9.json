@@ -1,0 +1,136 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "154007b25d752e77",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header prints '385 U.S. 493 (1967)' and caption 'GARRITY ET AL. v. NEW JERSEY', matching the selected official cite 385 U.S. 493 and lake cluster_id 107336.",
+          "official_selection_present=true with the U.S. Reports cite as official; parallel cites (87 S. Ct. 616; 17 L. Ed. 2d 562; 1967 U.S. LEXIS 2882) are internally consistent."
+        ],
+        "residual_risks": [
+          "Front-matter date_decided (1967-01-23) disagrees with cached 'Decided January 16, 1967' and with treatment.as_of_content (1967-01-16); the date field is outside this existence assertion's scope."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "481b1976c6f4b88c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote 'We now hold the protection of the individual under the Fourteenth Amendment against coerced statements ... members of our body politic.' appears verbatim in the cached opinion.",
+          "Star-pagination places the sentence between *500 and *501, confirming the '500' pincite; payload matched/star-verified corroborated."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5430e9e74cd939bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-section blob (title/Background/Issue/Rule) i.e. an extraction artifact, not the on-page quotation; the actual pin-497 quote is 'The choice given petitioners was either to forfeit their jobs or to incriminate themselves. The option to lose their means of livelihood or to pay the penalty of self-incrimination is the antithesis of free choice to speak out or to remain silent.'",
+          "That quotation appears verbatim in the cached opinion on the *497 page (before the *498 marker), so the pincite 497 star-verifies despite the payload's slip-only/mismatch flags."
+        ],
+        "residual_risks": [
+          "S8 payload quote_fidelity=mismatch is a false positive caused by blob capture; the rendered page text is clean."
+        ],
+        "suggested_tightening": "Re-extract the pin-497 quote span so the inventory records the actual quoted sentence rather than the section blob.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6678172268a0df95",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed cached opinion is the controlling SCOTUS majority (Douglas, J.) establishing the Garrity rule; nothing disclosed overrules or negatively treats it, so good_law is unrefuted.",
+          "as_of_content 1967-01-16 matches the cached 'Decided January 16, 1967'."
+        ],
+        "residual_risks": [
+          "Currency 'as of 2026-06-30' and absence-of-negative-treatment cannot be confirmed from the single inlined 1967 opinion; rests on S2 derivation.",
+          "Front-matter date_decided 1967-01-23 conflicts with as_of_content/cached decided date 1967-01-16."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d352e68bdf",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Garrity v. New Jersey.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-09-22f97bf9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Garrity v. New Jersey"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "154007b25d752e77": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "481b1976c6f4b88c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5430e9e74cd939bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6678172268a0df95": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d352e68bdf",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

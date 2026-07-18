@@ -1,22 +1,91 @@
 {
-  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Ziglar v. Abbasi.json\",\"reviewed\":[{\"assertion_id\":\"0db253e9ecec133c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Ziglar v. Abbasi as a U.S. Supreme Court decision dated 2017-06-19 with cluster_id 4403804.\",\"The lake citations record selects 582 U.S. 120 as the official citation and lists the same parallel and vendor citations carried in the assertion payload.\",\"No disclosed treatment or progeny edge states that the authority has been superseded, overruled, abrogated, or vacated as a whole; the disclosed record instead marks treatment unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment record is a frontier stub with no completed citator/progeny review, so this does not verify point-level current good-law status.\"],\"suggested_tightening\":\"Do not treat this existence citation as an affirmative current-good-law signal until treatment is promoted.\"},{\"assertion_id\":\"226a93cfc71184b0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion's field_i_validity, as_of fields, varies_by_point flag, and scope_note match the lake treatment record.\",\"The content page renders Treatment: Unverified and states that subsequent treatment has not been machine-verified, which is consistent with treatment.edges being empty and progeny.rows_cached being 0.\",\"The SCOTUS weight label is supported by identity.court_level=scotus and identity.court being U.S. Supreme Court; no disclosed edge limits that weight.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because as_of_treatment is null and progeny enumeration is absent, no affirmative good-law conclusion can be drawn from the disclosed record.\"],\"suggested_tightening\":\"Keep the unverified banner and avoid any good-law wording until treatment/progeny fields are populated.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ziglar v. Abbasi.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "0db253e9ecec133c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Ziglar v. Abbasi as a U.S. Supreme Court case decided 2017-06-19 with cluster_id 4403804 and lead_opinion_id 4181057.",
+          "The asserted official citation, 582 U.S. 120, matches lake.citations.official and the content page display.",
+          "No disclosed treatment or progeny edge says the authority has been overruled, abrogated, superseded, or limited; the page separately marks treatment as unverified."
+        ],
+        "residual_risks": [
+          "The disclosed record does not affirmatively prove current good-law status because treatment.field_i_validity is unverified and progeny enumeration is absent."
+        ],
+        "suggested_tightening": "Do not let this citation-existence row imply verified live-law status; pair it with the unverified treatment badge until citator/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "226a93cfc71184b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page frontmatter and rendered treatment section use the same unverified status, so the page is not making an affirmative good-law call in the structured treatment fields.",
+          "The Binding - SCOTUS weight label is consistent with lake.identity.court_level=scotus; no disclosed adverse edge contradicts that weight label, though validity remains unverified."
+        ],
+        "residual_risks": [
+          "Because the citator/progeny record is deliberately empty, no affirmative live-law, leading-case, or no-negative-treatment assertion is verified from the disclosed evidence."
+        ],
+        "suggested_tightening": "Keep treatment wording confined to unverified status unless a later record supplies verified treatment, an as-of date, and progeny edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Ziglar v. Abbasi.json\",\"reviewed\":[{\"assertion_id\":\"0db253e9ecec133c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Ziglar v. Abbasi as a U.S. Supreme Court case decided 2017-06-19 with cluster_id 4403804 and lead_opinion_id 4181057.\",\"The asserted official citation, 582 U.S. 120, matches lake.citations.official and the content page display.\",\"No disclosed treatment or progeny edge says the authority has been overruled, abrogated, superseded, or limited; the page separately marks treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not affirmatively prove current good-law status because treatment.field_i_validity is unverified and progeny enumeration is absent.\"],\"suggested_tightening\":\"Do not let this citation-existence row imply verified live-law status; pair it with the unverified treatment badge until citator/progeny verification is complete.\"},{\"assertion_id\":\"226a93cfc71184b0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The content page frontmatter and rendered treatment section use the same unverified status, so the page is not making an affirmative good-law call in the structured treatment fields.\",\"The Binding - SCOTUS weight label is consistent with lake.identity.court_level=scotus; no disclosed adverse edge contradicts that weight label, though validity remains unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the citator/progeny record is deliberately empty, no affirmative live-law, leading-case, or no-negative-treatment assertion is verified from the disclosed evidence.\"],\"suggested_tightening\":\"Keep treatment wording confined to unverified status unless a later record supplies verified treatment, an as-of date, and progeny edges.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:07-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:15:32-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": false,
     "group_id": "_overhaul2/lake/cases/Ziglar v. Abbasi.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-2f6e3837",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2f6e3837.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ziglar v. Abbasi"
+    ],
+    "tokens": {
+      "input": 184647,
+      "output": 7756,
+      "source": "codex-events",
+      "total": 192403
+    },
+    "verdict_map": {
+      "0db253e9ecec133c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "226a93cfc71184b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 151.9
   }
 }

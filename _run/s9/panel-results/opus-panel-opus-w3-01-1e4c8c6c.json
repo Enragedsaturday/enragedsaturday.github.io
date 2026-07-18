@@ -1,0 +1,133 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "70706bb24f3f4dfb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official 395 U.S. 752 is selected (selected_official=true, official_selection_present=true) and every all[] cite (89 S. Ct. 2034; 23 L. Ed. 2d 685; 1969 U.S. LEXIS 1166) matches the lake citations block and the content-page front-matter.",
+          "Identity is corroborated: cluster_id 107979, lead_opinion_id 9841975, expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; display '395 U.S. 752' matches rendered header '395 U.S. 752 (1969)'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "693bfab0f8e5b5d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual rendered pin-763 quote ('There is ample justification, therefore, for a search of the arrestee's person and the area \"within his immediate control\" — construing that phrase to mean the area from within which he might gain possession of a weapon or destructible evidence.') appears VERBATIM in the cached opinion HTML (paragraph b836-6), which sits after the *763 page-number marker, so pincite 763 is correct.",
+          "The payload's 'mismatch' reflects the harvester capturing the page-preamble blob (header + Background + Issue + Rule) as the pin `quote`, not the actual quoted sentence — a false-positive extraction artifact, not a content misquote."
+        ],
+        "residual_risks": [
+          "The lake pinpoints[] `quote` stored for pin-763 is a preamble blob and does not equal the rendered quote; pin-level quote metadata for this pin is unreliable though the page content is faithful."
+        ],
+        "suggested_tightening": "Re-harvest the pin-763 quote to the actual quoted sentence so the stored quote_fidelity check no longer false-positives on the captured preamble.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f83b5d994fcb2f15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-763a quote ('There is no comparable justification, however, for routinely searching any room other than that in which an arrest occurs — or, for that matter, for searching through all the desk drawers or other closed or concealed areas in that room itself.') matches the cached opinion HTML (paragraph b837-5) VERBATIM.",
+          "star-verified at 763 with a validated text fragment (#:~:text=There%20is%20no%20comparable%20justification%2C); pinpoint_status=star-verified is consistent with the disclosed cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "64bc08b2b64c7f4b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law (migration-seed; warnings show only 'legacy treatment migrated: good -> good_law'). No disclosed citing opinion flags Chimel itself as overruled/abrogated — the field_ii=overruled/questioned values in the citation-graph edges belong to the citing cases (e.g. Leon, Coolidge, Payton), not to Chimel.",
+          "scope_note (Gant relied on Chimel's reaching-distance rationale to cabin the broad Belton reading; Chimel core undisturbed) is not contradicted by any disclosed evidence."
+        ],
+        "residual_risks": [
+          "R15 treatment audit is marked 'required' (audit_marker present); currency as-of 2026-06-30 rests on the migration seed plus absence of disclosed negative treatment rather than a completed audit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-097705e86e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Chimel v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-01-1e4c8c6c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chimel v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "64bc08b2b64c7f4b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "693bfab0f8e5b5d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70706bb24f3f4dfb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f83b5d994fcb2f15": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-097705e86e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

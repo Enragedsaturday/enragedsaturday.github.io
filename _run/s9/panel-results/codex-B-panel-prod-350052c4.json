@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Vasquez-Algarin.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, holding, quote-fidelity, or pincite defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "0b5444ecdc7224fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Johnny Vasquez-Algarin, docket 15-1941, decided 2016-05-02 by the Third Circuit, with expected_citation_found true.",
+          "The lake citations field selects 821 F.3d 467 as the official display citation and lists the same vendor-neutral citations shown in the inventory.",
+          "The cached opinion text is marked PRECEDENTIAL and filed May 2, 2016; nothing in the disclosed treatment/progeny fields affirmatively supersedes, overrules, abrogates, or limits the authority."
+        ],
+        "residual_risks": [
+          "Current good-law status is not independently verified because treatment.field_i_validity is unverified and progeny enumeration is null with rows_cached 0."
+        ],
+        "suggested_tightening": "Keep any use of this authority tied to the existing Treatment: Unverified qualifier until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c01b420b304f6964",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "The lake record has no treatment edges or progeny enumeration disclosing adverse treatment; because the page does not claim verified good-law status, the unverified treatment call is consistent with the disclosed record."
+        ],
+        "residual_risks": [
+          "The empty edge list should not be treated as affirmative citator clearance because the same record says treatment/progeny were intentionally not derived."
+        ],
+        "suggested_tightening": "Do not promote the page beyond Unverified without completed treatment/progeny derivation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Vasquez-Algarin.json\",\"reviewed\":[{\"assertion_id\":\"0b5444ecdc7224fe\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Johnny Vasquez-Algarin, docket 15-1941, decided 2016-05-02 by the Third Circuit, with expected_citation_found true.\",\"The lake citations field selects 821 F.3d 467 as the official display citation and lists the same vendor-neutral citations shown in the inventory.\",\"The cached opinion text is marked PRECEDENTIAL and filed May 2, 2016; nothing in the disclosed treatment/progeny fields affirmatively supersedes, overrules, abrogates, or limits the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current good-law status is not independently verified because treatment.field_i_validity is unverified and progeny enumeration is null with rows_cached 0.\"],\"suggested_tightening\":\"Keep any use of this authority tied to the existing Treatment: Unverified qualifier until citator/progeny verification is completed.\"},{\"assertion_id\":\"c01b420b304f6964\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"The lake record has no treatment edges or progeny enumeration disclosing adverse treatment; because the page does not claim verified good-law status, the unverified treatment call is consistent with the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The empty edge list should not be treated as affirmative citator clearance because the same record says treatment/progeny were intentionally not derived.\"],\"suggested_tightening\":\"Do not promote the page beyond Unverified without completed treatment/progeny derivation.\"}],\"notes\":\"Lens B only; no support, holding, quote-fidelity, or pincite defect is raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:38-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:08:05-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Vasquez-Algarin.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Vasquez-Algarin"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-350052c4",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-350052c4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Vasquez-Algarin' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Vasquez-Algarin"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 96679,
+      "output": 5129,
+      "source": "codex-events",
+      "total": 101808
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0b5444ecdc7224fe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c01b420b304f6964": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 103.9
   }
 }

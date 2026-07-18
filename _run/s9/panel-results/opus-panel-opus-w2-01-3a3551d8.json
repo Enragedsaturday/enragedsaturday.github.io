@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "45886aab36721de7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms 'BRENDLIN v. CALIFORNIA', 'No. 06-8120', 'Decided June 18, 2007', 'Cite as: 551 U. S. ____ (2007)', link /opinion/145712/ — matching official cite 551 U.S. 249, docket 06-8120, date 2007-06-18.",
+          "official=551 U.S. 249 consistent with citations block and content page."
+        ],
+        "residual_risks": [
+          "Slip opinion carries '551 U. S. ____'; the page-249 official pagination is not printed in the disclosed slip, though the reporter cite is standard.",
+          "Parallel cites (127 S. Ct. 2400; 168 L. Ed. 2d 132; 2007 U.S. LEXIS 7897) not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab8526d1b1781ed6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment.",
+          "locator_note": "Cached slip opinion, first sentence of 'JUSTICE SOUTER delivered the opinion of the Court.'",
+          "needs_cl": false,
+          "problem": "The stored pinpoint.quote for pin-251 is a corrupt harvest artifact: 'by a traffic stop, so that he has standing to challenge the constitutionality of the stop. ## Rule' is the content page's own Issue-section prose/markdown, not opinion text.",
+          "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-251 is the verbatim opening sentence of the Souter opinion; only the harvested metadata is broken.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content-page quote at ^pin-251 matches the opinion's opening sentence verbatim, so no unsupported proposition is published.",
+          "Stored quote string is content-page markdown (contains '## Rule'); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only': the reporter page 251 for this opening sentence cannot be confirmed from the slip pagination in the disclosed text; the quote is the opinion's first sentence and 251 is a plausible reporter page (official cite 249)."
+        ],
+        "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba9ac86d05d983b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'We hold that a passenger is seized as well and so may challenge the constitutionality of the stop.' is verbatim in the opinion's opening paragraph; quote_fidelity='matched' is corroborated.",
+          "The text-fragment link (#:~:text=We%20hold%20that%20a%20passenger) correctly targets the quoted sentence."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only'; reporter page 251 inferential as above."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "deb681f8ca1a45b9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake record treatment.scope_note (Brendlin).",
+          "needs_cl": false,
+          "problem": "scope_note is a process/migration placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a substantive legal scope note describing Brendlin's treatment. It leaked an internal build caveat into a reader-facing field.",
+          "proposed_fix": "Replace scope_note with a substantive statement (e.g., no negative treatment; Brendlin applies the Hodari D./Rakas seizure-and-standing framework to passengers) or remove the migration caveat once the S2 derivation is finalized.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is correct/uncontradicted: Brendlin (2007) is a solid, oft-cited SCOTUS holding; the content page reports 'No negative treatment.'",
+          "All negative edges in the disclosed lake record (Zamudio/Manuel/Heien/etc. tagged 'overruled'/'questioned'/'abrogated') are 'proposed':true lane1_negative/lane2_top_cited extraction artifacts, i.e. audit-pending noise, not ratified negative treatment of Brendlin.",
+          "The scope_note field itself is defective (a build placeholder), warranting a modification while the validity determination survives."
+        ],
+        "residual_risks": [
+          "The scope_note's own caveat ('may downgrade') signals the as_of_treatment=2026-06-30 derivation may not be fully re-run; the proposed negative edges await R15-style audit."
+        ],
+        "suggested_tightening": "Do not project internal migration/derivation caveats into treatment.scope_note; gate scope_note on a substantive-note check.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brendlin v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-01-3a3551d8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brendlin v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "45886aab36721de7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab8526d1b1781ed6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ba9ac86d05d983b9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "deb681f8ca1a45b9": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4299da42e4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-bef1d30412",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

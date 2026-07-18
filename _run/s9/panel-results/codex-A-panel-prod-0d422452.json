@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Salvucci.json",
+    "lens": "A",
+    "notes": "Treatment/currency findings are reserved to Lens B; Lens A recorded only field consistency for the treatment row.",
+    "reviewed": [
+      {
+        "assertion_id": "0e0d6321b80b5bed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as United States v. Salvucci, U.S. Supreme Court, decided 1980-06-25.",
+          "The disclosed lake citation fields match the asserted official citation 448 U.S. 83 and parallel citations 100 S. Ct. 2547, 65 L. Ed. 2d 619, and 1980 U.S. LEXIS 141."
+        ],
+        "residual_risks": [
+          "Existence was reviewed only against the disclosed lake record, per instructions."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d3b2f3bbba4bf2c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "to challenge the search that produced the evidence, without showing that his own Fourth Amendment rights were violated. ## Rule No.",
+          "locator_note": "lake pinpoints[].quote for pin-85 is itself flagged quote_fidelity='mismatch' and page=null; the opinion text at page 85 contains the actual holding language.",
+          "needs_cl": false,
+          "problem": "The stored pin-85 quote is not a character-faithful excerpt from the Salvucci opinion; it appears to concatenate content-page Issue text with the Rule heading.",
+          "proposed_fix": "Replace pin-85 with the actual page-85 holding passage beginning \"Today we hold that defendants charged with crimes of possession\" and set the page/pincite to 85, or remove the pin until regenerated from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record expressly marks pin-85 quote_fidelity as mismatch.",
+          "The cached opinion text at page 85 supports the page citation for the real holding, but not the stored pin quote."
+        ],
+        "residual_risks": [
+          "The displayed rule quote in content_page.md appears to track the opinion, but the reviewed assertion is the defective stored quote-pin record."
+        ],
+        "suggested_tightening": "Regenerate pin-85 from text/United States v. Salvucci__107a7a.txt rather than from rendered Markdown context.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ede9cfeab68a444",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not substantively review treatment or currency.",
+          "The asserted treatment payload matches the disclosed lake judgment fields: field_i_validity=good_law, as_of_content=1980-06-25, as_of_treatment=2026-06-30, and varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not attacked beyond confirming the payload matches the disclosed lake fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Salvucci.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0e0d6321b80b5bed\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the case as United States v. Salvucci, U.S. Supreme Court, decided 1980-06-25.\",\n        \"The disclosed lake citation fields match the asserted official citation 448 U.S. 83 and parallel citations 100 S. Ct. 2547, 65 L. Ed. 2d 619, and 1980 U.S. LEXIS 141.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Existence was reviewed only against the disclosed lake record, per instructions.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3d3b2f3bbba4bf2c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-85 quote is not a character-faithful excerpt from the Salvucci opinion; it appears to concatenate content-page Issue text with the Rule heading.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-85 with the actual page-85 holding passage beginning \\\"Today we hold that defendants charged with crimes of possession\\\" and set the page/pincite to 85, or remove the pin until regenerated from the opinion text.\",\n        \"evidence_quote\": \"to challenge the search that produced the evidence, without showing that his own Fourth Amendment rights were violated. ## Rule No.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].quote for pin-85 is itself flagged quote_fidelity='mismatch' and page=null; the opinion text at page 85 contains the actual holding language.\"\n      },\n      \"reasons\": [\n        \"The lake record expressly marks pin-85 quote_fidelity as mismatch.\",\n        \"The cached opinion text at page 85 supports the page citation for the real holding, but not the stored pin quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The displayed rule quote in content_page.md appears to track the opinion, but the reviewed assertion is the defective stored quote-pin record.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-85 from text/United States v. Salvucci__107a7a.txt rather than from rendered Markdown context.\"\n    },\n    {\n      \"assertion_id\": \"1ede9cfeab68a444\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not substantively review treatment or currency.\",\n        \"The asserted treatment payload matches the disclosed lake judgment fields: field_i_validity=good_law, as_of_content=1980-06-25, as_of_treatment=2026-06-30, and varies_by_point=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not attacked beyond confirming the payload matches the disclosed lake fields.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment/currency findings are reserved to Lens B; Lens A recorded only field consistency for the treatment row.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:33:59-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f0eca1c092"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Salvucci.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0d422452.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Salvucci"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 68479,
+      "output": 4359,
+      "source": "codex-events",
+      "total": 72838
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0e0d6321b80b5bed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1ede9cfeab68a444": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3d3b2f3bbba4bf2c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f0eca1c092",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 87.0
   }
 }

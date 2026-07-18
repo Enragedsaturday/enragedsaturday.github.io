@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ash.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "78fdcce416d0c6fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Ash, court U.S. Supreme Court, date_decided 1973-06-21, year 1973.",
+          "The lake citation fields list official citation 413 U.S. 300 and parallels 93 S. Ct. 2568, 37 L. Ed. 2d 619, and 1973 U.S. LEXIS 45, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b59055b93519be46",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold, then, that the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.",
+          "locator_note": "lake pinpoints[0] id=pin-321; cached text shows the actual passage immediately after star-pagination *321.",
+          "needs_cl": false,
+          "problem": "The pin-321 stored quote is not the opinion passage; it is a malformed excerpt from the built content page/front matter and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-321's quote with the actual opinion passage at 413 U.S. 321, or remove the malformed pin evidence. The page's displayed holding quote is supported by the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page header rather than opinion text.",
+          "The cached opinion text contains the actual holding sentence at the 321 star page; that sentence is not what lake pinpoints[].quote stores."
+        ],
+        "residual_risks": [
+          "The legal proposition and displayed quote on the content page appear supported, but the underlying pinpoint evidence record is corrupt."
+        ],
+        "suggested_tightening": "Store the exact 321 holding sentence as the pin quote and preserve the 321 page locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "345422af364de3e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the content page match the lake treatment fields: field_i_validity good_law, as_of_content 1973-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "No substantive treatment/currency finding is raised under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency audit is outside Lens A and reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ash.json\",\"reviewed\":[{\"assertion_id\":\"78fdcce416d0c6fa\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names United States v. Ash, court U.S. Supreme Court, date_decided 1973-06-21, year 1973.\",\"The lake citation fields list official citation 413 U.S. 300 and parallels 93 S. Ct. 2568, 37 L. Ed. 2d 619, and 1973 U.S. LEXIS 45, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b59055b93519be46\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-321 stored quote is not the opinion passage; it is a malformed excerpt from the built content page/front matter and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-321's quote with the actual opinion passage at 413 U.S. 321, or remove the malformed pin evidence. The page's displayed holding quote is supported by the cached opinion text.\",\"evidence_quote\":\"We hold, then, that the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] id=pin-321; cached text shows the actual passage immediately after star-pagination *321.\"},\"reasons\":[\"The payload quote begins with the content page header rather than opinion text.\",\"The cached opinion text contains the actual holding sentence at the 321 star page; that sentence is not what lake pinpoints[].quote stores.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition and displayed quote on the content page appear supported, but the underlying pinpoint evidence record is corrupt.\"],\"suggested_tightening\":\"Store the exact 321 holding sentence as the pin quote and preserve the 321 page locator.\"},{\"assertion_id\":\"345422af364de3e8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in the content page match the lake treatment fields: field_i_validity good_law, as_of_content 1973-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"No substantive treatment/currency finding is raised under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency audit is outside Lens A and reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:58-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:44:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-243ada4636"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Ash.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-15ef910d",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-15ef910d.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:52.219326Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:52.727865Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:53.295808Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:54.249352Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:55.577040Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ash"
+    ],
+    "tokens": {
+      "input": 157685,
+      "output": 4958,
+      "source": "codex-events",
+      "total": 162643
+    },
+    "verdict_map": {
+      "345422af364de3e8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78fdcce416d0c6fa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b59055b93519be46": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-243ada4636",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 100.6
   }
 }

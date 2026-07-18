@@ -1,22 +1,197 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Arkansas v. Sanders.md",
+    "lens": "B",
+    "notes": "Lens B did not evaluate quote fidelity or ordinary support. Body/header claims that Sanders was overruled by Acevedo are not certified by the disclosed lake treatment/progeny fields; where that treatment claim appeared in reviewed rows, it was treated as unverifiable and refuted under the task rules.",
+    "reviewed": [
+      {
+        "assertion_id": "e2ec4a3e83ac6d28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Arkansas v. Sanders as a SCOTUS case with date_decided 1979-06-20, docket 77-1497, and cluster_id 110119.",
+          "The lake citation record verifies the official citation 442 U.S. 753 and the listed parallel/vendor-neutral citations."
+        ],
+        "residual_risks": [
+          "This stand is limited to identity/existence; the lake treatment fields do not verify current good-law status."
+        ],
+        "suggested_tightening": "Keep any live-law or historical-status claim separate from the bare case-citation identity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e938dbfbb678116",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"scope_note\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "locator_note": "group row home_role; content_page.md homes/Appears on role",
+          "needs_cl": true,
+          "problem": "The role label includes a currency/treatment characterization, 'Historical', but the disclosed lake record does not certify any historical, overruled, superseded, or otherwise non-live status.",
+          "proposed_fix": "Change the role to avoid a certified treatment implication, or add a certified treatment/progeny record supporting the historical designation.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens B makes no support finding about whether the case belongs under Automobile Exception.",
+          "The currency part of 'Historical / origin' is not verified by lake treatment fields or progeny edges.",
+          "The lake treatment record is expressly unverified and has no treatment edges."
+        ],
+        "residual_risks": [
+          "The historical label may be correct in reality, but it is not confirmable from the disclosed record."
+        ],
+        "suggested_tightening": "Use 'Origin / treatment unverified' until a certified overruled or historical treatment edge is present.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ccb8612932daa070",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"edges\": [],",
+          "locator_note": "group row proposition; content_page.md frontmatter holding",
+          "needs_cl": true,
+          "problem": "The holding embeds the treatment claim that the container rule was later overruled by California v. Acevedo, but the disclosed lake record contains unverified treatment and no Acevedo/Ross treatment edge.",
+          "proposed_fix": "Remove or qualify the Acevedo-overruled clause unless a certified successor authority record or treatment edge is disclosed.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens B makes no quote-fidelity or holding-support finding about the original Sanders rule.",
+          "The overruled-by-Acevedo clause is a treatment/currency assertion, and the lake record does not verify it.",
+          "The treatment fields state composite_basis unverified and provide no progeny enumeration supporting the subsequent-history claim."
+        ],
+        "residual_risks": [
+          "The overruled claim may be true outside this record, but outside knowledge is barred."
+        ],
+        "suggested_tightening": "Phrase the holding without the later-treatment clause, or append 'treatment unverified in lake record' until certification.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "5e9fa74292df8fcc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of dates, varies_by_point false, and the same frontier-stub scope note.",
+          "No lake treatment edge contradicts the unverified treatment posture."
+        ],
+        "residual_risks": [
+          "This only verifies the frontmatter treatment stub; it does not verify the page body's Acevedo/Ross overruled narrative."
+        ],
+        "suggested_tightening": "Add a separate certified overruled treatment entry if the page intends to assert Acevedo as controlling subsequent history.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a416b7d9f8751d5d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "content_page.md authority_weight frontmatter",
+          "needs_cl": true,
+          "problem": "The label 'Binding — SCOTUS' is only partly supported: SCOTUS identity is verified, but current binding force is not verified because treatment is unverified and no progeny/treatment edges are disclosed.",
+          "proposed_fix": "Use a qualified label such as 'SCOTUS; treatment unverified' unless the corpus distinguishes court hierarchy from current precedential force, or add certified treatment showing the proposition remains binding.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity supports court_level scotus, but the lake treatment record does not support a current binding-good-law call.",
+          "A weight label using 'Binding' is a treatment-sensitive representation under Lens B.",
+          "Default-to-refuted applies because the current force of the authority cannot be verified from the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "If the corpus uses 'Binding — SCOTUS' only as court-hierarchy metadata rather than a live-law signal, the field should say that explicitly."
+        ],
+        "suggested_tightening": "Split court hierarchy from validity, e.g. 'Court: SCOTUS' plus 'Treatment: unverified/overruled after certification'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Arkansas v. Sanders.md\",\"reviewed\":[{\"assertion_id\":\"e2ec4a3e83ac6d28\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Arkansas v. Sanders as a SCOTUS case with date_decided 1979-06-20, docket 77-1497, and cluster_id 110119.\",\"The lake citation record verifies the official citation 442 U.S. 753 and the listed parallel/vendor-neutral citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stand is limited to identity/existence; the lake treatment fields do not verify current good-law status.\"],\"suggested_tightening\":\"Keep any live-law or historical-status claim separate from the bare case-citation identity.\"},{\"assertion_id\":\"1e938dbfbb678116\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The role label includes a currency/treatment characterization, 'Historical', but the disclosed lake record does not certify any historical, overruled, superseded, or otherwise non-live status.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the role to avoid a certified treatment implication, or add a certified treatment/progeny record supporting the historical designation.\",\"evidence_quote\":\"\\\"scope_note\\\": \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"needs_cl\":true,\"locator_note\":\"group row home_role; content_page.md homes/Appears on role\"},\"reasons\":[\"Lens B makes no support finding about whether the case belongs under Automobile Exception.\",\"The currency part of 'Historical / origin' is not verified by lake treatment fields or progeny edges.\",\"The lake treatment record is expressly unverified and has no treatment edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The historical label may be correct in reality, but it is not confirmable from the disclosed record.\"],\"suggested_tightening\":\"Use 'Origin / treatment unverified' until a certified overruled or historical treatment edge is present.\"},{\"assertion_id\":\"ccb8612932daa070\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The holding embeds the treatment claim that the container rule was later overruled by California v. Acevedo, but the disclosed lake record contains unverified treatment and no Acevedo/Ross treatment edge.\",\"severity\":\"high\",\"proposed_fix\":\"Remove or qualify the Acevedo-overruled clause unless a certified successor authority record or treatment edge is disclosed.\",\"evidence_quote\":\"\\\"edges\\\": [],\",\"needs_cl\":true,\"locator_note\":\"group row proposition; content_page.md frontmatter holding\"},\"reasons\":[\"Lens B makes no quote-fidelity or holding-support finding about the original Sanders rule.\",\"The overruled-by-Acevedo clause is a treatment/currency assertion, and the lake record does not verify it.\",\"The treatment fields state composite_basis unverified and provide no progeny enumeration supporting the subsequent-history claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The overruled claim may be true outside this record, but outside knowledge is barred.\"],\"suggested_tightening\":\"Phrase the holding without the later-treatment clause, or append 'treatment unverified in lake record' until certification.\"},{\"assertion_id\":\"5e9fa74292df8fcc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of dates, varies_by_point false, and the same frontier-stub scope note.\",\"No lake treatment edge contradicts the unverified treatment posture.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This only verifies the frontmatter treatment stub; it does not verify the page body's Acevedo/Ross overruled narrative.\"],\"suggested_tightening\":\"Add a separate certified overruled treatment entry if the page intends to assert Acevedo as controlling subsequent history.\"},{\"assertion_id\":\"a416b7d9f8751d5d\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The label 'Binding — SCOTUS' is only partly supported: SCOTUS identity is verified, but current binding force is not verified because treatment is unverified and no progeny/treatment edges are disclosed.\",\"severity\":\"high\",\"proposed_fix\":\"Use a qualified label such as 'SCOTUS; treatment unverified' unless the corpus distinguishes court hierarchy from current precedential force, or add certified treatment showing the proposition remains binding.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md authority_weight frontmatter\"},\"reasons\":[\"The lake identity supports court_level scotus, but the lake treatment record does not support a current binding-good-law call.\",\"A weight label using 'Binding' is a treatment-sensitive representation under Lens B.\",\"Default-to-refuted applies because the current force of the authority cannot be verified from the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus uses 'Binding — SCOTUS' only as court-hierarchy metadata rather than a live-law signal, the field should say that explicitly.\"],\"suggested_tightening\":\"Split court hierarchy from validity, e.g. 'Court: SCOTUS' plus 'Treatment: unverified/overruled after certification'.\"}],\"notes\":\"Lens B did not evaluate quote fidelity or ordinary support. Body/header claims that Sanders was overruled by Acevedo are not certified by the disclosed lake treatment/progeny fields; where that treatment claim appeared in reviewed rows, it was treated as unverifiable and refuted under the task rules.\"}",
   "summary": {
-    "at": "2026-07-10T02:39:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:31:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-199af0845c"
+    ],
     "group_id": "content/cases/Arkansas v. Sanders.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-f15b58a0",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f15b58a0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:25.075669Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:25.763733Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:26.685295Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:27.915199Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:29.875076Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arkansas v. Sanders"
+    ],
+    "tokens": {
+      "input": 106361,
+      "output": 8423,
+      "source": "codex-events",
+      "total": 114784
+    },
+    "verdict_map": {
+      "1e938dbfbb678116": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "5e9fa74292df8fcc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a416b7d9f8751d5d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ccb8612932daa070": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "e2ec4a3e83ac6d28": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b604d87ede",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9031a73c49",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-199af0845c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 162.1
   }
 }

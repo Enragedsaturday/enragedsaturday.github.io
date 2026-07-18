@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7f34c4b47d4dcead",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text header reads '394 U.S. 440 (1969)' with caption 'FOSTER v. CALIFORNIA', 'No. 47', 'Supreme Court of United States', 'Decided April 1, 1969' — official display cite 394 U.S. 440 is confirmed.",
+          "Star pagination *441 through *453 in the reporter text is consistent with an opinion beginning at 394 U.S. 440; selected_official=394 U.S. 440 matches.",
+          "Case is real and correctly identified (Fortas, J.; cluster 107890)."
+        ],
+        "residual_risks": [
+          "Parallel cites 89 S. Ct. 1127 / 22 L. Ed. 2d 402 and vendor-neutral 1969 U.S. LEXIS 2050 come from cluster.citations[] and are not independently checkable against the disclosed U.S. Reports text, but are standard-form, uncontradicted, and non-load-bearing."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89eea5c4f74f888b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-443 quote is a verbatim reproduction of the opinion text: cached line reads 'The suggestive elements in this identification procedure made it all but inevitable that David would identify petitioner whether or not he was in fact \"the man.\" In effect, the police repeatedly said to the witness, \"This is the man.\" ... This procedure so undermined the reliability of the eyewitness identification as to violate due process.'",
+          "The ' ... ' ellipsis correctly marks omission of the intervening citation 'See Biggers v. Tennessee, 390 U. S. 404, 407 (dissenting opinion).'; retained words are exact (only italics/quote-mark styling dropped).",
+          "Pincite is correct: the passage falls after the *443 star marker (page 443), matching the ^pin-443 anchor and 'Id. at 443'.",
+          "The lake's own quote_fidelity='mismatch' flag on this pin is a FALSE POSITIVE — sighted read confirms a faithful, correctly-located quotation."
+        ],
+        "residual_risks": [
+          "Lake pinpoint_status='slip-only' and quote_fidelity='mismatch' contradict the verified match; the builder flag should be cleared to 'match' on re-derivation."
+        ],
+        "suggested_tightening": "Clear the stale 'mismatch' fidelity flag for pin-443.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a8254639885e12e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the conduct of identification procedures may be \"so unnecessarily suggestive and conducive to irreparable mistaken identification\" as to be a denial of due process of law.",
+          "locator_note": "pin-442; cached opinion text paragraph following *442 (Fortas opinion); page-442 location independently confirmed by Black dissent fn [4]: 'Ante, at 442, quoting from Stovall v. Denno, 388 U. S. 293, 302'. Defect is confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low.",
+          "needs_cl": false,
+          "problem": "Stored pin-442 quote is a content-page harvest artifact — it captured the Markdown headings and authored prose ('## Issue Whether a pretrial identification procedure ... ## Rule Yes. Even apart from the right-to-counsel rule of Wade/Gilbert (inapplicable to pre-1967 lineups),') and truncates immediately before the real quotation. No such string appears anywhere in the Foster opinion; it is not source text.",
+          "proposed_fix": "Repoint pin-442's stored quote to the actual page-442 holding language the rendered page already displays: 'the conduct of identification procedures may be \"so unnecessarily suggestive and conducive to irreparable mistaken identification\" as to be a denial of due process of law.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is Markdown page scaffolding ('## Issue ... ## Rule Yes.'), not a verbatim opinion passage; the harvest grabbed the preamble and stopped just before the anchored quotation.",
+          "Lake quote_fidelity='mismatch' is a TRUE POSITIVE here — the stored pinpoint quote genuinely does not match any source text."
+        ],
+        "residual_risks": [
+          "Same harvest-artifact failure recurs on the first/preamble-adjacent pin of Franks (pin-155) and Frazier (pin-739) in this pack — likely a systematic extractor span bug."
+        ],
+        "suggested_tightening": "Re-run the pinpoint harvester so pin.quote captures the anchored blockquote, not the page's ## Issue/## Rule scaffolding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b3ce630ad9fb899d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is defensible: the disclosed text is a SCOTUS majority holding (Fortas, J.) that reversed on due-process grounds; nothing in the disclosed record overrules it.",
+          "The scope_note ('rare case in which the Court found a pretrial identification so suggestive as to violate due process') is corroborated by the disclosed majority, which does exactly that.",
+          "The only negative signals in the lake are proposed:true edges from inferior state courts (State v. Dickson, State v. Newman) that cannot overrule a SCOTUS holding and were not adopted into field_i."
+        ],
+        "residual_risks": [
+          "The scope_note's parenthetical attribution '(noted as such in Perry v. New Hampshire)' is not verifiable from disclosed evidence (Perry text not inlined); plausible but should be confirmed against Perry.",
+          "Proposed negative edges (Dickson field_ii='overruled', Newman field_ii='overruled') look like citator false positives (state courts, unadopted) — adjudicator should confirm they remain non-adopted.",
+          "Currency ('good as of 2026-06-30') cannot be fully proven from a single 1969 opinion; supported by disclosed edges but no full citator inlined."
+        ],
+        "suggested_tightening": "Confirm the Perry v. New Hampshire characterization and formally reject the proposed Dickson/Newman negative edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9f92c5abce",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Foster v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-07-ff902b77",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Foster v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7f34c4b47d4dcead": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "89eea5c4f74f888b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9a8254639885e12e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b3ce630ad9fb899d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9f92c5abce",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ccd5f4a9eb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

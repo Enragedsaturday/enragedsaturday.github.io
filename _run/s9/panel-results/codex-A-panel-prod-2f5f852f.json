@@ -1,13 +1,133 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sgro v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all six assertion_ids in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "1df675f13c4044c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as Sgro v. United States, U.S. Supreme Court, decided 1932-12-05.",
+          "The official citation in the lake record is 287 U.S. 206, matching the content page citation 287 U.S. 206 (1932).",
+          "The listed parallel and vendor citations match the lake citations: 53 S. Ct. 138, 77 L. Ed. 260, 85 A.L.R. 108, and 1932 U.S. LEXIS 13."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26cc61b57e5f3375",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The proof supplied must have appropriate relation to the application for the new warrant and must speak as of the time of the issue of that warrant.",
+          "locator_note": "text/Sgro v. United States__41459b.txt, page marker *211",
+          "needs_cl": false,
+          "problem": "The quoted fragment ends with a comma, but the opinion text ends the sentence with a period after 'warrant.' The words otherwise appear at the asserted passage.",
+          "proposed_fix": "Change the quoted fragment to omit the comma or quote the full sentence with the period: \"must speak as of the time of the issue of that warrant.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the phrase at page marker *211.",
+          "The payload quote is not character-faithful because it has a trailing comma where the opinion has a period."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep the quote, but move any syntactic comma outside the quotation or remove it.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "52bd5a9438e1f96e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no provision which authorizes the commissioner to extend its life or to revive it.",
+          "locator_note": "text/Sgro v. United States__41459b.txt, page marker *211",
+          "needs_cl": false,
+          "problem": "The pin-210 payload quote is not an opinion quote. It contains page prose/markdown from the built content page and does not occur in the opinion text.",
+          "proposed_fix": "Replace the pin-210 quote with the actual opinion passage supporting the rule, such as: \"There is no provision which authorizes the commissioner to extend its life or to revive it.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact payload quote does not appear in the disclosed opinion text.",
+          "The payload includes non-opinion material: \") it on the original affidavit\" and \"## Rule No.\"",
+          "The actual quoted rule language appears in the opinion, but the assertion as framed is not character-faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate this pin from the opinion text rather than from surrounding markdown in content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a0b379e7ddc1ec3b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "On the new application of July twenty-seventh the commissioner took no proof to show that probable cause then existed and he made no finding of probable cause at that time.",
+          "locator_note": "text/Sgro v. United States__41459b.txt, page marker *212",
+          "needs_cl": false,
+          "problem": "The payload quote \"On the July 27 application\" does not appear in the opinion text; the opinion says \"On the new application of July twenty-seventh.\"",
+          "proposed_fix": "Use the opinion's exact wording, or treat \"On the July 27 application\" as unquoted paraphrase and attach the pin to the following exact quoted sentence.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact payload quote does not appear in the disclosed opinion text.",
+          "The content page modernizes the date as July 27, but character-fidelity review requires the opinion's wording."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact opinion wording for any harvested quote and reserve modernized dates for paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c9ff1cb98b9bc242",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted passage appears verbatim in the disclosed opinion text.",
+          "The lake pinpoint marks this quote as matched and star-verified at page marker 211.",
+          "The text fragment supports the page's rule that a second warrant is a new proceeding requiring adequate statutory support."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50ec21c55b666cb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so I raise no treatment finding.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1932-12-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment was not independently audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Sgro v. United States.json\",\"reviewed\":[{\"assertion_id\":\"1df675f13c4044c5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies the case as Sgro v. United States, U.S. Supreme Court, decided 1932-12-05.\",\"The official citation in the lake record is 287 U.S. 206, matching the content page citation 287 U.S. 206 (1932).\",\"The listed parallel and vendor citations match the lake citations: 53 S. Ct. 138, 77 L. Ed. 260, 85 A.L.R. 108, and 1932 U.S. LEXIS 13.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"26cc61b57e5f3375\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment ends with a comma, but the opinion text ends the sentence with a period after 'warrant.' The words otherwise appear at the asserted passage.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quoted fragment to omit the comma or quote the full sentence with the period: \\\"must speak as of the time of the issue of that warrant.\\\"\",\"evidence_quote\":\"The proof supplied must have appropriate relation to the application for the new warrant and must speak as of the time of the issue of that warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Sgro v. United States__41459b.txt, page marker *211\"},\"reasons\":[\"The disclosed text contains the phrase at page marker *211.\",\"The payload quote is not character-faithful because it has a trailing comma where the opinion has a period.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep the quote, but move any syntactic comma outside the quotation or remove it.\"},{\"assertion_id\":\"52bd5a9438e1f96e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-210 payload quote is not an opinion quote. It contains page prose/markdown from the built content page and does not occur in the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-210 quote with the actual opinion passage supporting the rule, such as: \\\"There is no provision which authorizes the commissioner to extend its life or to revive it.\\\"\",\"evidence_quote\":\"There is no provision which authorizes the commissioner to extend its life or to revive it.\",\"needs_cl\":false,\"locator_note\":\"text/Sgro v. United States__41459b.txt, page marker *211\"},\"reasons\":[\"The exact payload quote does not appear in the disclosed opinion text.\",\"The payload includes non-opinion material: \\\") it on the original affidavit\\\" and \\\"## Rule No.\\\"\",\"The actual quoted rule language appears in the opinion, but the assertion as framed is not character-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate this pin from the opinion text rather than from surrounding markdown in content_page.md.\"},{\"assertion_id\":\"a0b379e7ddc1ec3b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The payload quote \\\"On the July 27 application\\\" does not appear in the opinion text; the opinion says \\\"On the new application of July twenty-seventh.\\\"\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion's exact wording, or treat \\\"On the July 27 application\\\" as unquoted paraphrase and attach the pin to the following exact quoted sentence.\",\"evidence_quote\":\"On the new application of July twenty-seventh the commissioner took no proof to show that probable cause then existed and he made no finding of probable cause at that time.\",\"needs_cl\":false,\"locator_note\":\"text/Sgro v. United States__41459b.txt, page marker *212\"},\"reasons\":[\"The exact payload quote does not appear in the disclosed opinion text.\",\"The content page modernizes the date as July 27, but character-fidelity review requires the opinion's wording.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact opinion wording for any harvested quote and reserve modernized dates for paraphrase.\"},{\"assertion_id\":\"c9ff1cb98b9bc242\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted passage appears verbatim in the disclosed opinion text.\",\"The lake pinpoint marks this quote as matched and star-verified at page marker 211.\",\"The text fragment supports the page's rule that a second warrant is a new proceeding requiring adequate statutory support.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"50ec21c55b666cb3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so I raise no treatment finding.\",\"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1932-12-05, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment was not independently audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all six assertion_ids in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:18-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:34:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d0a539c8b2",
+      "F-S9-PR-02a2d5624e",
+      "F-S9-PR-c7e92dfd0e"
+    ],
     "group_id": "_overhaul2/lake/cases/Sgro v. United States.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +136,77 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2f5f852f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Sgro v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 310008,
+      "output": 8221,
+      "source": "codex-events",
+      "total": 318229
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "1df675f13c4044c5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "26cc61b57e5f3375": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "50ec21c55b666cb3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "52bd5a9438e1f96e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a0b379e7ddc1ec3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c9ff1cb98b9bc242": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d0a539c8b2",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-02a2d5624e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c7e92dfd0e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 168.4
   }
 }

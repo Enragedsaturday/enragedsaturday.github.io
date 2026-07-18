@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "406c4ca446d0bb00",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official_selection\": {\n      \"court_class\": \"scotus\",\n      \"selected\": null,\n      \"reason\": \"unlisted_reporter:Fla. L. Weekly Fed. S\"",
+          "locator_note": "Soldal lake record citations.official_selection; frontmatter citation:\"\".",
+          "needs_cl": false,
+          "problem": "Official-citation selection failed for this record: citations.official = null, citations.display = null, official_selection.selected = null with reason 'unlisted_reporter:Fla. L. Weekly Fed. S', and the frontmatter 'citation' field is empty ('') - unlike the three sibling records, each of which carries a selected official U.S. cite. The correct SCOTUS official cite (506 U.S. 56, type 1, U.S.) is present in citations.all but was relegated to parallel_cite. The specialty reporter '6 Fla. L. Weekly Fed. S 769' is mis-typed as type 1 and aborted the ranking.",
+          "proposed_fix": "Stop treating 'Fla. L. Weekly Fed. S' as a rankable type-1 official reporter; select 506 U.S. 56 as citations.official/display and populate the frontmatter 'citation' field with '506 U.S. 56 (1992)'.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The case genuinely exists (cluster_id 112795; identity expected_citation_found true) and 506 U.S. 56 is a valid, present U.S. Reports cite; the content-page header and Sources render '506 U.S. 56 (1992)' correctly, so the human-visible citation is right.",
+          "But the structured citation identity is broken: no official was selected (official/display null; official_selection_present false), traced to reason 'unlisted_reporter:Fla. L. Weekly Fed. S', leaving frontmatter 'citation' empty.",
+          "Star-paginations *58-*63 and pins 'at 61'/'at 62' are internally consistent with the case beginning at 506 U.S. 56."
+        ],
+        "residual_risks": [
+          "Downstream S2/render logic keyed on citations.official, citations.display, or frontmatter.citation will see empty values for Soldal."
+        ],
+        "suggested_tightening": "Promote 506 U.S. 56 to official/display and populate frontmatter citation; fix reporter typing for 'Fla. L. Weekly Fed. S'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1be558532729e1f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-61 quotation 'A \"seizure\" of property, we have explained, occurs when \"there is some meaningful interference with an individual's possessory interests in that property.\"' is verbatim in the cached opinion Part II (single vs double quotes normalized).",
+          "Pincite '506 U.S. at 61' correct: the sentence sits just after the '*61' star-page label and before '*62'. The '(quoting United States v. Jacobsen)' attribution is correct - the source sentence cites Jacobsen, 466 U.S. 109, 113.",
+          "Lake pin-61 stored 'quote' is a garbled harvest artifact (page Issue/Rule prose 'under the Fourth Amendment even though no privacy or liberty interest was invaded. ## Rule Yes.'), which triggered the 'mismatch' flag - not a page defect."
+        ],
+        "residual_risks": [
+          "Repair lake pin-61 harvested quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b445c6f61bc01237",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-62 quote 'our cases unmistakably hold that the Amendment protects property as well as privacy.' is verbatim in the cached opinion ('...our cases unmistakably hold that the Amendment protects property as well as privacy.').",
+          "Pincite 'Id. at 62' correct: the sentence sits between the '*62' and '*63' star-page markers. Lake flag quote_fidelity 'matched' / pinpoint_status 'star-verified' is confirmed.",
+          "text-fragment locator (#:~:text=our%20cases%20unmistakably%20hold%20that) matches the quoted opening words."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62e762593d34c787",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields (good_law; as_of_content 1992-12-08; as_of_treatment 2026-06-30; varies_by_point false; scope_note) match the lake treatment block.",
+          "scope_note is substantively sound: Soldal's holding that the Fourth Amendment protects possessory interests independent of privacy/liberty remains controlling (opinion: 'our cases unmistakably hold that the Amendment protects property as well as privacy').",
+          "All treatment edges proposed:true (unratified); no ratified downgrade."
+        ],
+        "residual_risks": [
+          "good_law is migration-seed, not freshly re-derived."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-89b6a07b3c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-27a79ab62b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Soldal v. Cook County.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-03-d9e1b44e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Soldal v. Cook County"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1be558532729e1f3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "406c4ca446d0bb00": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "62e762593d34c787": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b445c6f61bc01237": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-27a79ab62b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-89b6a07b3c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

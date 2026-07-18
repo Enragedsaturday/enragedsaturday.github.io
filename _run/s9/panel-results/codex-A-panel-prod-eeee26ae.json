@@ -1,13 +1,115 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sabbath v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl exactly once. No black-letter assertion rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "5f814040e3bd6de1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name \"Sabbath v. United States,\" court \"U.S. Supreme Court,\" date_decided \"1968-06-03,\" and docket \"898.\"",
+          "The lake official citation is 391 U.S. 585, with parallel citations 88 S. Ct. 1755 and 20 L. Ed. 2d 828, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5cf909d20dd14506",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An unannounced intrusion into a dwelling — what § 3109 basically proscribes",
+          "locator_note": "text/Sabbath v. United States__652d6f.txt contains the actual passage at the star-590 paragraph; lake pinpoints[pin-590] contains the bad markdown fragment.",
+          "needs_cl": false,
+          "problem": "The pin-590 lake quote is not opinion text; it is a harvested content-page Issue/Rule fragment and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-590 with the actual opinion sentence at star page 590 beginning \"An unannounced intrusion into a dwelling\" and mark the pinpoint as matched/star-verified.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted payload includes \"## Rule Yes,\" which appears only as page markdown structure, not in the opinion text.",
+          "The actual content-page rule quote is supported by the opinion text, but the lake pinpoint under review is not character-faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reharvest pin-590 from the opinion text rather than from adjacent markdown headings.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5f39bf28a58b1417",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the method of entry vitiated the arrest",
+          "locator_note": "text/Sabbath v. United States__652d6f.txt opening paragraph; content_page.md and lake pinpoints[pin-585] use the altered form.",
+          "needs_cl": false,
+          "problem": "The quoted wording alters the Court's sentence from \"We hold\" to \"h[e]ld\"; it is not character-faithful to the opinion text.",
+          "proposed_fix": "Quote the sentence exactly as \"We hold that...\" or remove quotation marks and paraphrase the holding.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition is supported, but the verbatim quote as framed is not exact.",
+          "The lake record also marks pin-585 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The cached text lacks an explicit opening-page star marker, so the exact 585-86 page span is not independently validated here."
+        ],
+        "suggested_tightening": "Use exact wording for the quote and leave grammatical adjustment outside the quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd4a800bf55991ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim in the opinion text in the star-590 paragraph.",
+          "The lake record marks pin-590b quote_fidelity as matched and star_marker as 590."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d9632ad60903e311",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency; no support, citation-existence, or quote-fidelity defect is raised for this treatment row.",
+          "The treatment fields in the content page match the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Good-law and currency correctness are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Sabbath v. United States.json\",\"reviewed\":[{\"assertion_id\":\"5f814040e3bd6de1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name \\\"Sabbath v. United States,\\\" court \\\"U.S. Supreme Court,\\\" date_decided \\\"1968-06-03,\\\" and docket \\\"898.\\\"\",\"The lake official citation is 391 U.S. 585, with parallel citations 88 S. Ct. 1755 and 20 L. Ed. 2d 828, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5cf909d20dd14506\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-590 lake quote is not opinion text; it is a harvested content-page Issue/Rule fragment and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-590 with the actual opinion sentence at star page 590 beginning \\\"An unannounced intrusion into a dwelling\\\" and mark the pinpoint as matched/star-verified.\",\"evidence_quote\":\"An unannounced intrusion into a dwelling — what § 3109 basically proscribes\",\"needs_cl\":false,\"locator_note\":\"text/Sabbath v. United States__652d6f.txt contains the actual passage at the star-590 paragraph; lake pinpoints[pin-590] contains the bad markdown fragment.\"},\"reasons\":[\"The quoted payload includes \\\"## Rule Yes,\\\" which appears only as page markdown structure, not in the opinion text.\",\"The actual content-page rule quote is supported by the opinion text, but the lake pinpoint under review is not character-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Reharvest pin-590 from the opinion text rather than from adjacent markdown headings.\"},{\"assertion_id\":\"5f39bf28a58b1417\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted wording alters the Court's sentence from \\\"We hold\\\" to \\\"h[e]ld\\\"; it is not character-faithful to the opinion text.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the sentence exactly as \\\"We hold that...\\\" or remove quotation marks and paraphrase the holding.\",\"evidence_quote\":\"We hold that the method of entry vitiated the arrest\",\"needs_cl\":false,\"locator_note\":\"text/Sabbath v. United States__652d6f.txt opening paragraph; content_page.md and lake pinpoints[pin-585] use the altered form.\"},\"reasons\":[\"The legal proposition is supported, but the verbatim quote as framed is not exact.\",\"The lake record also marks pin-585 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text lacks an explicit opening-page star marker, so the exact 585-86 page span is not independently validated here.\"],\"suggested_tightening\":\"Use exact wording for the quote and leave grammatical adjustment outside the quotation.\"},{\"assertion_id\":\"bd4a800bf55991ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears verbatim in the opinion text in the star-590 paragraph.\",\"The lake record marks pin-590b quote_fidelity as matched and star_marker as 590.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"d9632ad60903e311\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency; no support, citation-existence, or quote-fidelity defect is raised for this treatment row.\",\"The treatment fields in the content page match the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law and currency correctness are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl exactly once. No black-letter assertion rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:05-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:31:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-73511ad75f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3419d519ae",
+      "F-S9-PR-72b96b1dac"
+    ],
     "group_id": "_overhaul2/lake/cases/Sabbath v. United States.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +118,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-eeee26ae.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Sabbath v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 193740,
+      "output": 7506,
+      "source": "codex-events",
+      "total": 201246
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "5cf909d20dd14506": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5f39bf28a58b1417": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5f814040e3bd6de1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd4a800bf55991ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d9632ad60903e311": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3419d519ae",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-72b96b1dac",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-73511ad75f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 151.7
   }
 }

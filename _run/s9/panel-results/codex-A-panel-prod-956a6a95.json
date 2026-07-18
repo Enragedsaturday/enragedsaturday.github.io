@@ -1,22 +1,184 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Plumhoff v. Rickard.json",
+    "lens": "A",
+    "notes": "Reviewed all five assertion_ids in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present in the inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "e5dfb2cae327de7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Plumhoff v. Rickard, U.S. Supreme Court, decided 2014-05-27, docket 12-1117.",
+          "The inventoried citations match the lake citations list, including 572 U.S. 765, 134 S. Ct. 2012, 188 L. Ed. 2d 1056, 2014 U.S. LEXIS 3816, and 2014 WL 2178335."
+        ],
+        "residual_risks": [
+          "The lake official-selection field is null, but the existence/citation assertion matches the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83a7992d83211bdb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "it is beyond serious dispute that Rickard’s flight posed a grave public safety risk, and here, as in Scott, the police acted reasonably in using deadly force to end that risk.",
+          "locator_note": "pin-777; lake pinpoints[0]; content_page.md line 53; text/Plumhoff v. Rickard__dfb6e0.txt lines 555-558",
+          "needs_cl": false,
+          "problem": "The lake pin-777 quote is not the cited opinion passage; it reproduces markdown page content through the Rule heading instead of the quoted sentence from the opinion.",
+          "proposed_fix": "Replace pin-777 with the actual opinion passage and preserve the opinion typography, including Rickard’s curly apostrophe.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the cited public-safety-risk sentence.",
+          "The inventoried quote for pin-777 is a page-harvest artifact, not a character-faithful opinion quote."
+        ],
+        "residual_risks": [
+          "The U.S. Reports page number 777 is not independently verifiable from the slip-text cache."
+        ],
+        "suggested_tightening": "Use the exact opinion quote shown in the text cache and revalidate the pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a39df41abb770308",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote matches the lake pinpoints[].quote for pin-777b.",
+          "The same passage appears in the opinion text: if police officers are justified in firing to end a severe public-safety threat, they need not stop until the threat has ended."
+        ],
+        "residual_risks": [
+          "The text cache is line-wrapped, so fidelity depends on ordinary whitespace normalization."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc1bbaa6fa9b30d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have held that petitioners’ conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity.",
+          "locator_note": "pin-778; content_page.md line 57; text/Plumhoff v. Rickard__dfb6e0.txt lines 600-603",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present, but the page/lake quote uses a straight apostrophe in petitioners' where the opinion text uses petitioners’.",
+          "proposed_fix": "Change petitioners' to petitioners’ in the quoted sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the disclosed opinion text.",
+          "Character fidelity fails only on the apostrophe in petitioners’."
+        ],
+        "residual_risks": [
+          "The U.S. Reports page number 778 is not independently verifiable from the slip-text cache."
+        ],
+        "suggested_tightening": "Preserve opinion punctuation in all verbatim quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d6abfd5c6be5e0e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields.",
+          "Treatment and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Plumhoff v. Rickard.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e5dfb2cae327de7d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Plumhoff v. Rickard, U.S. Supreme Court, decided 2014-05-27, docket 12-1117.\",\n        \"The inventoried citations match the lake citations list, including 572 U.S. 765, 134 S. Ct. 2012, 188 L. Ed. 2d 1056, 2014 U.S. LEXIS 3816, and 2014 WL 2178335.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake official-selection field is null, but the existence/citation assertion matches the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"83a7992d83211bdb\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pin-777 quote is not the cited opinion passage; it reproduces markdown page content through the Rule heading instead of the quoted sentence from the opinion.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-777 with the actual opinion passage and preserve the opinion typography, including Rickard’s curly apostrophe.\",\n        \"evidence_quote\": \"it is beyond serious dispute that Rickard’s flight posed a grave public safety risk, and here, as in Scott, the police acted reasonably in using deadly force to end that risk.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-777; lake pinpoints[0]; content_page.md line 53; text/Plumhoff v. Rickard__dfb6e0.txt lines 555-558\"\n      },\n      \"reasons\": [\n        \"The disclosed text contains the cited public-safety-risk sentence.\",\n        \"The inventoried quote for pin-777 is a page-harvest artifact, not a character-faithful opinion quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The U.S. Reports page number 777 is not independently verifiable from the slip-text cache.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion quote shown in the text cache and revalidate the pinpoint.\"\n    },\n    {\n      \"assertion_id\": \"a39df41abb770308\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quote matches the lake pinpoints[].quote for pin-777b.\",\n        \"The same passage appears in the opinion text: if police officers are justified in firing to end a severe public-safety threat, they need not stop until the threat has ended.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The text cache is line-wrapped, so fidelity depends on ordinary whitespace normalization.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"cc1bbaa6fa9b30d4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively present, but the page/lake quote uses a straight apostrophe in petitioners' where the opinion text uses petitioners’.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change petitioners' to petitioners’ in the quoted sentence.\",\n        \"evidence_quote\": \"We have held that petitioners’ conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-778; content_page.md line 57; text/Plumhoff v. Rickard__dfb6e0.txt lines 600-603\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the disclosed opinion text.\",\n        \"Character fidelity fails only on the apostrophe in petitioners’.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The U.S. Reports page number 778 is not independently verifiable from the slip-text cache.\"\n      ],\n      \"suggested_tightening\": \"Preserve opinion punctuation in all verbatim quotes.\"\n    },\n    {\n      \"assertion_id\": \"3d6abfd5c6be5e0e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields.\",\n        \"Treatment and currency are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all five assertion_ids in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present in the inventory.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:28:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ab2cbce585",
+      "F-S9-PR-eb4c8c59fe"
+    ],
     "group_id": "_overhaul2/lake/cases/Plumhoff v. Rickard.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-956a6a95",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-956a6a95.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:24.914867Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:25.561791Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:26.459239Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:27.659226Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:29.810889Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:33.276940Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Plumhoff v. Rickard"
+    ],
+    "tokens": {
+      "input": 157389,
+      "output": 8289,
+      "source": "codex-events",
+      "total": 165678
+    },
+    "verdict_map": {
+      "3d6abfd5c6be5e0e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83a7992d83211bdb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a39df41abb770308": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc1bbaa6fa9b30d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e5dfb2cae327de7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ab2cbce585",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-eb4c8c59fe",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 159.3
   }
 }

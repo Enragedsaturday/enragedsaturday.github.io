@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Stansbury v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "330fd2e95a695cc2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Stansbury v. California as a U.S. Supreme Court case decided 1994-04-26.",
+          "The lake official citation is 511 U.S. 318, and the listed parallel and vendor citations match the inventory/page fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "45315911a369b94f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold, not for the first time, that an officer’s subjective and undisclosed view concerning whether the person being interrogated is a suspect is irrelevant to the assessment whether the person is in custody.",
+          "locator_note": "pin-318; lake pinpoints[0] / content Rule at 511 U.S. at 318",
+          "needs_cl": false,
+          "problem": "pin-318's stored quote is a harvested page fragment, not a character-faithful opinion quote; it includes markdown/content structure text rather than the cited holding sentence.",
+          "proposed_fix": "Replace pin-318 with the actual opinion sentence and preserve source typography, or treat the page language as paraphrase rather than a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote contains: for *Miranda* purposes ... ## Rule Custody is an objective inquiry; that exact string is not in the cached opinion text.",
+          "The cached opinion instead contains the holding sentence beginning We hold, not for the first time."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported; the defect is the stored pinpoint quote text."
+        ],
+        "suggested_tightening": "Use the opinion sentence beginning \"We hold...\" for ^pin-318, with source typography, and keep page prose out of the harvested quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b8011e207ea2981",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Our decisions make clear that the initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned.",
+          "locator_note": "pin-323; cached text includes page-number label 323 immediately before the sentence",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported at page 323, but the quote is not strictly character-identical because it begins with bracketed [T]he while the source sentence reads: Our decisions make clear that the initial determination...",
+          "proposed_fix": "Quote the full source sentence or introduce it with prose so the quoted text begins with the exact source words after the lead-in.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text places the passage at page 323 and contains the substantive quoted language.",
+          "The exact bracketed string [T]he initial... appears in the page/lake pinpoint, not in the cached opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a lead-in plus quote beginning \"the initial determination...\" or quote the full sentence from the source.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ae705eb1be2e34f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment fields match the lake fields: good_law, as_of_content 1994-04-26, as_of_treatment 2026-06-30, varies_by_point false, scope_note Per curiam.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not independently evaluated under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Stansbury v. California.json\",\"reviewed\":[{\"assertion_id\":\"330fd2e95a695cc2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Stansbury v. California as a U.S. Supreme Court case decided 1994-04-26.\",\"The lake official citation is 511 U.S. 318, and the listed parallel and vendor citations match the inventory/page fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"45315911a369b94f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-318's stored quote is a harvested page fragment, not a character-faithful opinion quote; it includes markdown/content structure text rather than the cited holding sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-318 with the actual opinion sentence and preserve source typography, or treat the page language as paraphrase rather than a verbatim quote.\",\"evidence_quote\":\"We hold, not for the first time, that an officer’s subjective and undisclosed view concerning whether the person being interrogated is a suspect is irrelevant to the assessment whether the person is in custody.\",\"needs_cl\":false,\"locator_note\":\"pin-318; lake pinpoints[0] / content Rule at 511 U.S. at 318\"},\"reasons\":[\"The inventory/lake quote contains: for *Miranda* purposes ... ## Rule Custody is an objective inquiry; that exact string is not in the cached opinion text.\",\"The cached opinion instead contains the holding sentence beginning We hold, not for the first time.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition is supported; the defect is the stored pinpoint quote text.\"],\"suggested_tightening\":\"Use the opinion sentence beginning \\\"We hold...\\\" for ^pin-318, with source typography, and keep page prose out of the harvested quote.\"},{\"assertion_id\":\"8b8011e207ea2981\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted proposition is supported at page 323, but the quote is not strictly character-identical because it begins with bracketed [T]he while the source sentence reads: Our decisions make clear that the initial determination...\",\"severity\":\"low\",\"proposed_fix\":\"Quote the full source sentence or introduce it with prose so the quoted text begins with the exact source words after the lead-in.\",\"evidence_quote\":\"Our decisions make clear that the initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned.\",\"needs_cl\":false,\"locator_note\":\"pin-323; cached text includes page-number label 323 immediately before the sentence\"},\"reasons\":[\"The cached opinion text places the passage at page 323 and contains the substantive quoted language.\",\"The exact bracketed string [T]he initial... appears in the page/lake pinpoint, not in the cached opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a lead-in plus quote beginning \\\"the initial determination...\\\" or quote the full sentence from the source.\"},{\"assertion_id\":\"4ae705eb1be2e34f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment fields match the lake fields: good_law, as_of_content 1994-04-26, as_of_treatment 2026-06-30, varies_by_point false, scope_note Per curiam.\",\"Treatment/currency is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not independently evaluated under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:38:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-01d2f002e3",
+      "F-S9-PR-b600781521"
+    ],
     "group_id": "_overhaul2/lake/cases/Stansbury v. California.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-797d6ed7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Stansbury v. California"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 351436,
+      "output": 8122,
+      "source": "codex-events",
+      "total": 359558
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "330fd2e95a695cc2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "45315911a369b94f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4ae705eb1be2e34f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b8011e207ea2981": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-01d2f002e3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b600781521",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 167.2
   }
 }

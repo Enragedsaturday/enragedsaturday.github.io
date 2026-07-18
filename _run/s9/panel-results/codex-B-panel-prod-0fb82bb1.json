@@ -1,13 +1,79 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
+    "lens": "B",
+    "notes": "Lens B only; no independent support or quote-fidelity finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "34c035d0a0f0ad87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the case as Pennsylvania Bd. of Probation and Parole v. Scott, U.S. Supreme Court, decided 1998-06-25, docket 97-581.",
+          "Lake citations include official citation 524 U.S. 357 and the same parallel/vendor citations listed in the assertion.",
+          "Currency angle is supported by lake.treatment.field_i_validity = good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lake treatment derivation contains proposed negative-treatment candidates, but the final judgment field remains good_law and no point override is recorded."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acef632e09f32ce9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside Lens B; no treatment or live-law assertion is made by this row.",
+          "The row's mismatch status is mirrored in lake.pinpoints for pin-364, so Lens B raises no separate currency defect."
+        ],
+        "residual_risks": [
+          "Lens A should decide any quote-fidelity consequence from the disclosed mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bb1368ac11271a0b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "as_of_content: 1998-06-22",
+          "locator_note": "content_page.md frontmatter treatment block and Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges.",
+          "needs_cl": true,
+          "problem": "The good-law/SCOTUS-weight call survives, but the treatment metadata and body should be tightened: as_of_content is 1998-06-22 even though both the page and lake identify the decision date as 1998-06-25, and the page's unqualified 'No negative treatment' sentence is stronger than the disclosed lake record, which contains proposed negative-treatment edges and audit_needed flags.",
+          "proposed_fix": "Keep field_i_validity as good_law as of 2026-06-30, correct or explain as_of_content, and revise the body to say no final/audited negative treatment is recorded in the lake record.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment judgment field says field_i_validity = good_law, varies_by_point = false, scope_note = 'The federal exclusionary rule does not apply at parole-revocation hearings; good law.'",
+          "Authority weight is consistent with lake.identity.court_level = scotus and content_page authority_weight = Binding — SCOTUS.",
+          "Lake treatment has no point_overrides, but it does disclose 32 proposed negative-labeled edges and derivation.audit_needed = true for lane1_negative and lane2_top_cited, so an absolute 'No negative treatment' statement is not the tightest wording from the disclosed record.",
+          "The as_of_content date is not aligned with the disclosed decision date 1998-06-25."
+        ],
+        "residual_risks": [
+          "Resolving whether any proposed edge is an actual negative treatment would require auditing the underlying citing authorities; that evidence is not present beyond the lake summary."
+        ],
+        "suggested_tightening": "Use: 'Status: good law as of 2026-06-30; no final/audited negative treatment recorded in the lake record.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json\",\"reviewed\":[{\"assertion_id\":\"34c035d0a0f0ad87\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies the case as Pennsylvania Bd. of Probation and Parole v. Scott, U.S. Supreme Court, decided 1998-06-25, docket 97-581.\",\"Lake citations include official citation 524 U.S. 357 and the same parallel/vendor citations listed in the assertion.\",\"Currency angle is supported by lake.treatment.field_i_validity = good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment derivation contains proposed negative-treatment candidates, but the final judgment field remains good_law and no point override is recorded.\"],\"suggested_tightening\":null},{\"assertion_id\":\"acef632e09f32ce9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside Lens B; no treatment or live-law assertion is made by this row.\",\"The row's mismatch status is mirrored in lake.pinpoints for pin-364, so Lens B raises no separate currency defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should decide any quote-fidelity consequence from the disclosed mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bb1368ac11271a0b\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law/SCOTUS-weight call survives, but the treatment metadata and body should be tightened: as_of_content is 1998-06-22 even though both the page and lake identify the decision date as 1998-06-25, and the page's unqualified 'No negative treatment' sentence is stronger than the disclosed lake record, which contains proposed negative-treatment edges and audit_needed flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity as good_law as of 2026-06-30, correct or explain as_of_content, and revise the body to say no final/audited negative treatment is recorded in the lake record.\",\"evidence_quote\":\"as_of_content: 1998-06-22\",\"needs_cl\":true,\"locator_note\":\"content_page.md frontmatter treatment block and Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges.\"},\"reasons\":[\"Lake treatment judgment field says field_i_validity = good_law, varies_by_point = false, scope_note = 'The federal exclusionary rule does not apply at parole-revocation hearings; good law.'\",\"Authority weight is consistent with lake.identity.court_level = scotus and content_page authority_weight = Binding — SCOTUS.\",\"Lake treatment has no point_overrides, but it does disclose 32 proposed negative-labeled edges and derivation.audit_needed = true for lane1_negative and lane2_top_cited, so an absolute 'No negative treatment' statement is not the tightest wording from the disclosed record.\",\"The as_of_content date is not aligned with the disclosed decision date 1998-06-25.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Resolving whether any proposed edge is an actual negative treatment would require auditing the underlying citing authorities; that evidence is not present beyond the lake summary.\"],\"suggested_tightening\":\"Use: 'Status: good law as of 2026-06-30; no final/audited negative treatment recorded in the lake record.'\"}],\"notes\":\"Lens B only; no independent support or quote-fidelity finding made.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:26:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-77c058a66f"
+    ],
     "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +82,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0fb82bb1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania Board of Probation and Parole v. Scott"
     ],
     "tokens": {
-      "input": 762,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 762
+      "input": 129412,
+      "output": 7929,
+      "source": "codex-events",
+      "total": 137341
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "34c035d0a0f0ad87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acef632e09f32ce9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb1368ac11271a0b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-77c058a66f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 153.4
   }
 }

@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. Lens A finding: one high-severity quote-fidelity defect in pin-2179; no treatment/currency finding raised.",
+    "reviewed": [
+      {
+        "assertion_id": "9b3797d292055c0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Salinas v. Texas, U.S. Supreme Court, docket 12-246, decided 2013-06-17.",
+          "The cited reporters listed in the assertion match the lake citations: 133 S. Ct. 2174, 186 L. Ed. 2d 376, 2013 U.S. LEXIS 4697, 570 U.S. 178, 81 U.S.L.W. 4467, 24 Fla. L. Weekly Fed. S 294, and 2013 WL 2922119."
+        ],
+        "residual_risks": [
+          "The lake has no selected official citation, but the asserted citation list itself matches the disclosed record."
+        ],
+        "suggested_tightening": "Select 570 U.S. 178 as the display citation if this corpus wants a primary Supreme Court reporter citation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ab7fdbad820450c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Salinas v. Texas *570 U.S. 178 (2013)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[pin-2179]; text opinion contains the correct sentence at the Alito plurality discussion, but disclosed lake page/star fields are null.",
+          "needs_cl": true,
+          "problem": "The pin-2179 lake quote is corrupt: it contains page markdown/frontmatter and background/rule prose rather than the cited opinion passage. The actual displayed quote on the content page is a short sentence, but the lake pinpoint payload does not faithfully record it. The lake also marks this pinpoint quote_fidelity as mismatch and has no page/star marker.",
+          "proposed_fix": "Replace the pin-2179 quote with the actual opinion sentence, \"A witness does not expressly invoke the privilege by standing mute.\", and do not assert 133 S. Ct. at 2179 unless disclosed star pagination supports that page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pinpoint quote begins with content-page markdown, not opinion text.",
+          "The disclosed text contains the relevant legal sentence as: \"A witness does not expressly invoke the privilege by standing mute.\"",
+          "The lake pinpoint itself flags quote_fidelity as mismatch and provides no star marker or page value."
+        ],
+        "residual_risks": [
+          "The legal proposition on the page appears supported, but the lake pinpoint record cannot support the quote/pin as framed."
+        ],
+        "suggested_tightening": "Keep the rule, but repair the pin record and separately verify the S. Ct. page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "844f49df7f05527a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase appears in the Alito plurality opinion when line-wrapped hyphenation is normalized: \"Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination\".",
+          "The content page uses the quote as a partial quotation within an accurate paraphrase of the plurality holding."
+        ],
+        "residual_risks": [
+          "The cached text line-breaks self-incrimination as self- / incrimination, so exact automated character matching may fail unless hyphenated line wrapping is normalized."
+        ],
+        "suggested_tightening": "Store the full source sentence or mark the quote as normalized from line-wrapped slip text.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87cf361da4ac1552",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The content page treatment fields match the disclosed lake record: good_law, as_of_content 2013-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same fractured-decision scope note."
+        ],
+        "residual_risks": [
+          "No lens A review of treatment currency was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Salinas v. Texas.json\",\"reviewed\":[{\"assertion_id\":\"9b3797d292055c0a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Salinas v. Texas, U.S. Supreme Court, docket 12-246, decided 2013-06-17.\",\"The cited reporters listed in the assertion match the lake citations: 133 S. Ct. 2174, 186 L. Ed. 2d 376, 2013 U.S. LEXIS 4697, 570 U.S. 178, 81 U.S.L.W. 4467, 24 Fla. L. Weekly Fed. S 294, and 2013 WL 2922119.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake has no selected official citation, but the asserted citation list itself matches the disclosed record.\"],\"suggested_tightening\":\"Select 570 U.S. 178 as the display citation if this corpus wants a primary Supreme Court reporter citation.\"},{\"assertion_id\":\"5ab7fdbad820450c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-2179 lake quote is corrupt: it contains page markdown/frontmatter and background/rule prose rather than the cited opinion passage. The actual displayed quote on the content page is a short sentence, but the lake pinpoint payload does not faithfully record it. The lake also marks this pinpoint quote_fidelity as mismatch and has no page/star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-2179 quote with the actual opinion sentence, \\\"A witness does not expressly invoke the privilege by standing mute.\\\", and do not assert 133 S. Ct. at 2179 unless disclosed star pagination supports that page.\",\"evidence_quote\":\"--- # Salinas v. Texas *570 U.S. 178 (2013)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":true,\"locator_note\":\"lake pinpoints[pin-2179]; text opinion contains the correct sentence at the Alito plurality discussion, but disclosed lake page/star fields are null.\"},\"reasons\":[\"The asserted pinpoint quote begins with content-page markdown, not opinion text.\",\"The disclosed text contains the relevant legal sentence as: \\\"A witness does not expressly invoke the privilege by standing mute.\\\"\",\"The lake pinpoint itself flags quote_fidelity as mismatch and provides no star marker or page value.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition on the page appears supported, but the lake pinpoint record cannot support the quote/pin as framed.\"],\"suggested_tightening\":\"Keep the rule, but repair the pin record and separately verify the S. Ct. page.\"},{\"assertion_id\":\"844f49df7f05527a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase appears in the Alito plurality opinion when line-wrapped hyphenation is normalized: \\\"Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination\\\".\",\"The content page uses the quote as a partial quotation within an accurate paraphrase of the plurality holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text line-breaks self-incrimination as self- / incrimination, so exact automated character matching may fail unless hyphenated line wrapping is normalized.\"],\"suggested_tightening\":\"Store the full source sentence or mark the quote as normalized from line-wrapped slip text.\"},{\"assertion_id\":\"87cf361da4ac1552\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The content page treatment fields match the disclosed lake record: good_law, as_of_content 2013-06-17, as_of_treatment 2026-06-30, varies_by_point false, and the same fractured-decision scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens A review of treatment currency was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. Lens A finding: one high-severity quote-fidelity defect in pin-2179; no treatment/currency finding raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:32:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f31f6516ee"
+    ],
     "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cc91786f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Salinas v. Texas"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 341176,
+      "output": 7636,
+      "source": "codex-events",
+      "total": 348812
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "5ab7fdbad820450c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "844f49df7f05527a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87cf361da4ac1552": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b3797d292055c0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f31f6516ee",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.9
   }
 }

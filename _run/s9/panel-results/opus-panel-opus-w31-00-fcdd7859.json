@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "681a244c71394b02",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "citations.display = '564 U.S. 229'; official_selection.selected = '564 U.S. 229'; cached opinion star pages *232 through *250",
+          "locator_note": "existence/case_cite, locator field 'citation'; content-page frontmatter citation = '564 U.S. 229 (2011)'",
+          "needs_cl": false,
+          "problem": "Asserted case_cite '565 U.S. 1100 (2011)' (with parallels '132 S. Ct. 864; 181 L. Ed. 2d 563; 80 U.S.L.W. 3555' and neutral '2011 U.S. LEXIS 8943') does not identify Davis v. United States (2011). The merits good-faith decision is 564 U.S. 229 (2011); the asserted set is a later orders/cert-stage citation (132 S. Ct. 864 dates to ~Jan 2012), not the reporter cite of this opinion.",
+          "proposed_fix": "Reconcile the assertion/seed citation to the merits cite '564 U.S. 229 (2011)' (parallel '131 S. Ct. 2419; 180 L. Ed. 2d 285'; neutral '2011 U.S. LEXIS 4560'), which the content-page frontmatter and lake already carry.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Every disclosed source (content-page frontmatter, lake official/display cite, cached opinion star pages *232-*250) fixes the case at 564 U.S. 229; the asserted 565 U.S. 1100 conflicts with all of them.",
+          "Asserted parallels 132 S. Ct. 864 / 181 L. Ed. 2d 563 / 80 U.S.L.W. 3555 are an orders/cert-stage set, not the merits reporters (131 S. Ct. 2419 / 180 L. Ed. 2d 285)."
+        ],
+        "residual_risks": [
+          "The content page itself carries the correct 564 U.S. 229; the defect lies in the reviewed assertion payload, so the fix is seed/inventory reconciliation rather than a page edit."
+        ],
+        "suggested_tightening": "Regenerate the existence seed from the lake official_selection so a cert-stage/orders citation cannot displace the merits cite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f36d60f8e9073511",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] declares home 'The Good-Faith Exception' with role 'Key — Progeny (good faith)'.",
+          "Role apt: the opinion extends the Leon/Krull/Herring good-faith line to objectively reasonable reliance on binding appellate precedent (564 U.S. at 238-239, 249-250)."
+        ],
+        "residual_risks": [
+          "Internal inconsistency: the 'Appears on' section lists '[[The Exclusionary Rule]] — Key — Progeny (good faith)', not '[[The Good-Faith Exception]]' from frontmatter homes[]; reciprocal home-page listing not inlined."
+        ],
+        "suggested_tightening": "Reconcile the 'Appears on' page name with frontmatter homes[] ('The Good-Faith Exception' vs 'The Exclusionary Rule').",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f8b781c910b43cb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Holding matches opinion: exclusionary rule inapplicable to searches in objectively reasonable reliance on binding appellate precedent later overruled, because there is no culpable police misconduct to deter — rule quote verbatim at 564 U.S. at 232 and conclusion at 249-250.",
+          "'this acknowledged absence of police culpability dooms Davis' claim' (at 240) supports the 'no culpable police misconduct' rationale."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1609c4df932beb61",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' correct; Davis (2011) is a landmark good-faith decision with no negative treatment disclosed (or in fact) — still good law.",
+          "scope_note (extends the Leon good-faith line to reliance on binding appellate precedent later overruled) is accurate."
+        ],
+        "residual_risks": [
+          "Treatment/progeny derivation queried opinion id 7268220, which is not among the record's sibling_ids [218926, 9441776, 9441777, 9441778] (post-rekey artifact), yielding reviewed 0 / indexed_citing_opinions 0 — the negative sweep did not actually cover the case's real opinion ids; the good_law value is a migration-seed, independently correct."
+        ],
+        "suggested_tightening": "Re-run the negative-treatment lanes against the re-keyed sibling ids (cluster 218926 / opinion 9441776) rather than 7268220.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb6c43f03cc8d76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "'Binding — SCOTUS' is correct for a U.S. Supreme Court merits decision."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T13:36:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/Davis v. United States (2011).md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w31-00-fcdd7859",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w31-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States (2011)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1609c4df932beb61": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "681a244c71394b02": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f36d60f8e9073511": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f8b781c910b43cb9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb6c43f03cc8d76": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-82877c804a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

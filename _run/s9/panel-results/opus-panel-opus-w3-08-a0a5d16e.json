@@ -1,0 +1,124 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1e3cdfa0bca0dd67",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header verbatim-confirms the official cite: '440 U.S. 648' (1979), caption 'DELAWARE v. PROUSE.', No. 77-1571, decided March 27, 1979 — matches the record's display/official citation.",
+          "SCOTUS case, cluster 110045; identity is unambiguous and the case demonstrably exists."
+        ],
+        "residual_risks": [
+          "Parallel cites (99 S. Ct. 1391; 59 L. Ed. 2d 660) and vendor-neutral (1979 U.S. LEXIS 80) are not independently reproduced in the cached text, but the controlling official U.S. cite is verbatim-verified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c00227f191e56c39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' field is a garbled extractor artifact — it captured the page frontmatter/header up to '## Rule No.' rather than the pin-663 quote; its 'mismatch' flag therefore compares the wrong span and is not ground truth.",
+          "The actual content_page pin-663 quote matches the cached opinion (section VII) verbatim: cached 'Accordingly, we hold that except in those situations in which there is at least articulable and reasonable suspicion that a motorist is unlicensed ... are unreasonable under the Fourth Amendment.' The only alteration is '[W]e' for 'Accordingly, we' — a proper Bluebook capitalization/omission.",
+          "Pincite 663 is correct: the holding sits on page *663 (section VII), and Rehnquist's dissent cites 'Ante, at 663' for the same passage."
+        ],
+        "residual_risks": [
+          "Payload pinpoint_status:'slip-only' and star_marker:null are extractor artifacts; the source is a 1979 U.S. Reports opinion with proper star-pagination at *663."
+        ],
+        "suggested_tightening": "Re-run the quote extractor so the payload captures the true pin-663 span instead of the page header, and resolve the star marker to *663.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d2c7b7194ee874b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The only inlined evidence is the 1979 opinion text, which cannot confirm forward-looking 2026 treatment currency; no citator/Shepards data is disclosed.",
+          "No disclosed negative treatment; the record frames Prouse as a landmark holding refined (not overruled) by Edmond and complemented by Heien.",
+          "Refuting 'good_law' absent any disclosed negative-treatment evidence would fabricate a defect, which is barred; 'not found is not fabricated'."
+        ],
+        "residual_risks": [
+          "field_i_validity:'good_law' is a migration-seed default; the record's own scope_note concedes S2 re-derivation may downgrade; 2026 currency is not machine-verified from the disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f82b553f1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b426e724f7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Delaware v. Prouse.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-08-a0a5d16e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Delaware v. Prouse"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1d2c7b7194ee874b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "1e3cdfa0bca0dd67": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c00227f191e56c39": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f82b553f1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b426e724f7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

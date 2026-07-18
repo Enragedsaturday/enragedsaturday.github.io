@@ -1,13 +1,127 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sibron v. New York.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote fidelity. The treatment row is recorded only; no lens-A treatment/currency defect is asserted.",
+    "reviewed": [
+      {
+        "assertion_id": "65d10f0168ecd002",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Sibron v. New York as a verified U.S. Supreme Court case decided 1968-06-10.",
+          "The official citation, display citation, and parallel/vendor citations in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73b935795b8c31e8",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Before he places a hand on the person of a citizen in search of anything",
+          "locator_note": "pin-64; lake pinpoints[] and group_inventory payload",
+          "needs_cl": false,
+          "problem": "The pin-64 payload is not a verbatim opinion quote. It concatenates page background, issue, and rule prose instead of the actual page-64 rule passage.",
+          "proposed_fix": "Replace pin-64 with the actual page-64 passage beginning with the rule sentence, or mark this payload as non-quote page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at page *64 contains the rule language, not the payload's generated background/issue/rule-heading text.",
+          "The lake record itself marks pin-64 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The content page's displayed pin-64 quote appears supportable, but the reviewed payload/lake pinpoint is malformed."
+        ],
+        "suggested_tightening": "Keep generated summary prose out of pinpoints[].quote; store only court text or explicitly label summaries.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b216c61566499746",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "His testimony shows that he was looking for narcotics, and he found them.",
+          "locator_note": "pin-65b; opinion text page *65",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported, but the quote is not raw character-faithful: it uses an ellipsis across an omitted sentence and normalizes dash formatting.",
+          "proposed_fix": "Store it as an edited/ellipsized quotation with normalization metadata, or split it into two exact quoted segments.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The surrounding opinion text supports the quoted scope point.",
+          "The payload's ellipsis skips an intervening sentence, so it should not be treated as a continuous character-exact quote."
+        ],
+        "residual_risks": [
+          "The lake record marks this quote_fidelity as mismatch."
+        ],
+        "suggested_tightening": "Add an explicit edited-quote flag for ellipsized pinpoints.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3e05dba44aa0d11",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Even assuming <i>arguendo</i> that there were adequate grounds",
+          "locator_note": "pin-65; opinion text page *65",
+          "needs_cl": false,
+          "problem": "The quote is substantively the page-65 sentence, but the payload uses Markdown italic markers where the disclosed opinion text uses HTML italic markup.",
+          "proposed_fix": "Store the quote text without Markdown asterisks, or compare against rendered text rather than raw markup.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence exists at the cited location and supports the proposition.",
+          "Raw character fidelity fails unless markup/rendering normalization is allowed."
+        ],
+        "residual_risks": [
+          "The lake record marks this quote_fidelity as mismatch."
+        ],
+        "suggested_tightening": "Separate quote text from display styling so fidelity checks compare only court words.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3914948a84e9994c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no adverse treatment finding is raised.",
+          "The payload matches the lake treatment fields, including field_i_validity good_law and as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "Currency and subsequent-treatment accuracy were not audited under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Sibron v. New York.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"65d10f0168ecd002\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Sibron v. New York as a verified U.S. Supreme Court case decided 1968-06-10.\",\n        \"The official citation, display citation, and parallel/vendor citations in the payload match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"73b935795b8c31e8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-64 payload is not a verbatim opinion quote. It concatenates page background, issue, and rule prose instead of the actual page-64 rule passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-64 with the actual page-64 passage beginning with the rule sentence, or mark this payload as non-quote page prose.\",\n        \"evidence_quote\": \"Before he places a hand on the person of a citizen in search of anything\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-64; lake pinpoints[] and group_inventory payload\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text at page *64 contains the rule language, not the payload's generated background/issue/rule-heading text.\",\n        \"The lake record itself marks pin-64 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content page's displayed pin-64 quote appears supportable, but the reviewed payload/lake pinpoint is malformed.\"\n      ],\n      \"suggested_tightening\": \"Keep generated summary prose out of pinpoints[].quote; store only court text or explicitly label summaries.\"\n    },\n    {\n      \"assertion_id\": \"b216c61566499746\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted proposition is supported, but the quote is not raw character-faithful: it uses an ellipsis across an omitted sentence and normalizes dash formatting.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Store it as an edited/ellipsized quotation with normalization metadata, or split it into two exact quoted segments.\",\n        \"evidence_quote\": \"His testimony shows that he was looking for narcotics, and he found them.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-65b; opinion text page *65\"\n      },\n      \"reasons\": [\n        \"The surrounding opinion text supports the quoted scope point.\",\n        \"The payload's ellipsis skips an intervening sentence, so it should not be treated as a continuous character-exact quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record marks this quote_fidelity as mismatch.\"\n      ],\n      \"suggested_tightening\": \"Add an explicit edited-quote flag for ellipsized pinpoints.\"\n    },\n    {\n      \"assertion_id\": \"d3e05dba44aa0d11\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively the page-65 sentence, but the payload uses Markdown italic markers where the disclosed opinion text uses HTML italic markup.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Store the quote text without Markdown asterisks, or compare against rendered text rather than raw markup.\",\n        \"evidence_quote\": \"Even assuming <i>arguendo</i> that there were adequate grounds\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-65; opinion text page *65\"\n      },\n      \"reasons\": [\n        \"The sentence exists at the cited location and supports the proposition.\",\n        \"Raw character fidelity fails unless markup/rendering normalization is allowed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record marks this quote_fidelity as mismatch.\"\n      ],\n      \"suggested_tightening\": \"Separate quote text from display styling so fidelity checks compare only court words.\"\n    },\n    {\n      \"assertion_id\": \"3914948a84e9994c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no adverse treatment finding is raised.\",\n        \"The payload matches the lake treatment fields, including field_i_validity good_law and as_of_treatment 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Currency and subsequent-treatment accuracy were not audited under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed existence and quote fidelity. The treatment row is recorded only; no lens-A treatment/currency defect is asserted.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:34-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:36:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e2dc1fc2fb",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-07adad03a8",
+      "F-S9-PR-bd774f5b8a",
+      "F-S9-PR-6aa8245c8c"
+    ],
     "group_id": "_overhaul2/lake/cases/Sibron v. New York.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +130,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d44636f3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Sibron v. New York"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 179546,
+      "output": 9884,
+      "source": "codex-events",
+      "total": 189430
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "3914948a84e9994c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "65d10f0168ecd002": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "73b935795b8c31e8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b216c61566499746": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d3e05dba44aa0d11": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-07adad03a8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bd774f5b8a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6aa8245c8c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e2dc1fc2fb",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 185.5
   }
 }

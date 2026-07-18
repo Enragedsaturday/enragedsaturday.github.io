@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7d9b610531cc3d34",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms cluster 112873, 'Minnesota v. Dickerson', scotus, decided 1993-06-07, official cite '508 U.S. 366' (expected_citation_found, party_name_in_text, canonical_name_match all true).",
+          "Cached majority (Justice White) carries page-number labels *369 and *376, consistent with a case beginning at 508 U.S. 366; content matches (Terry frisk / plain-feel)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd99798a4062b0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If a police officer lawfully pats down a suspect's outer clothing and feels an object whose contour or mass makes its identity immediately apparent, there has been no invasion of the suspect's privacy beyond that already authorized by the officer's search for weapons; if the object is contraband, its warrantless seizure would be justified by the same practical considerations that inhere in the plain-view context.",
+          "locator_note": "Cached opinion para b423-5; the *376 page-number label falls mid-sentence ('warrantless seizure *376 would be justified'), confirming the 375-376 span; content page pin-375 cited to '508 U.S. at 375-376'.",
+          "needs_cl": false,
+          "problem": "Stored pin-375 quote is a slip-extraction capturing the page top matter (frontmatter + Background + Issue + Rule markdown, '--- # Minnesota v. Dickerson ... ## Rule Yes, within limits - a') instead of an opinion quote; quote_fidelity self-flags 'mismatch'.",
+          "proposed_fix": "Re-extract pin-375's stored quote to the actual quoted sentence, verbatim across 508 U.S. 375-376.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered page pincite is sound: the actual pin-375 quote appears verbatim in the cached opinion spanning pages 375-376 (page label 376 falls mid-sentence), so the proposition survives.",
+          "Defect is confined to the lake pinpoint's stored quote field (slip-only artifact)."
+        ],
+        "residual_risks": [
+          "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only.",
+          "Source uses typographic (curly) apostrophes vs straight in the page - ordinary normalization, not a fidelity defect."
+        ],
+        "suggested_tightening": "Persist the block-quoted sentence rather than the anchor's preceding page markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e328541b263ca3c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' (migration-seed) matches the lake record; Dickerson's plain-feel corollary is landmark and remains authoritative (extends Horton / Hicks plain-view logic to tactile discovery).",
+          "The proposed negative edges (22 overruled / 10 abrogated / 26 questioned / 6 superseded / 2 criticized) are proposed:true candidate signals not adjudicated into the composite (composite_basis migration-seed); scope_note states S2 re-derivation may downgrade."
+        ],
+        "residual_risks": [
+          "The high volume of proposed negative edges warrants S2 adjudication; from disclosed evidence none establishes a SCOTUS-level overruling of the cited plain-feel holding."
+        ],
+        "suggested_tightening": "S2 should down-weight sub-SCOTUS and self-referential 'overruled/abrogated' proposals against a SCOTUS record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3d761f7e7c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-00-914a11d7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Dickerson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7d9b610531cc3d34": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbbd99798a4062b0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e328541b263ca3c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9e1e94f4b0",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3d761f7e7c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

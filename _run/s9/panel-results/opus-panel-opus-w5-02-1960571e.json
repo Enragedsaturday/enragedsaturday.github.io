@@ -1,0 +1,175 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "07fab6a12b3c69e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text confirms the case exists: 8th Cir. No. 19-2512, Teresa M. Graham v. Sgt. Shannon L. Barnette, filed July 16, 2021, Gruender, C.J.",
+          "Official cite '5 F.4th 872' derives from cluster.citations[] (cluster 4900401) with official_selection present; identity_checked=true, party names/year/court all match; no conflicting evidence.",
+          "Opinion in-text references only the prior 2020 opinion (970 F.3d 1075); a court does not self-cite its own new reporter page, so absence of '5 F.4th 872' in the body is expected."
+        ],
+        "residual_risks": [
+          "Exact reporter page (872) not independently confirmable from opinion text; relies on disclosed cluster.citations metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "09b25fdf76a96e7a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached slip opinion verbatim: 'At least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable.'",
+          "The wiki's leading '[a]t' is a proper bracketed-capital quotation adjustment; the remainder is identical.",
+          "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' reflects the absence of a validated star-text deep-link, not a text-fidelity failure."
+        ],
+        "residual_risks": [
+          "Slip-only pincite 'slip op., at 10-11' not star-validated; in cached text the passage sits just after the '-10-' footer, so the exact slip page may be off by one, but that is a pincite (not quote_fidelity) concern and the pagination inference is uncertain."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "507a92ccda1e39a9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Now that Caniglia has made clear that “there is no overarching ‘community caretaking’ doctrine,” 141 S. Ct. at 1600 (Alito, J., concurring), our use of that label seems to be a category error.",
+          "locator_note": "cached opinion text, section II.B; the reader-facing quote rendered at content-page ^pin-op10 is faithful and its pincite 'slip op., at 10' is defensible. Defect is metadata-only.",
+          "needs_cl": false,
+          "problem": "Stored pin-op10 quote is a corrupted extraction of content-page markdown scaffolding ('...governs such a seizure. ## Rule After *Caniglia*, the'), spanning the Issue section into the Rule header; it is not a verbatim opinion quote and appears nowhere in the source.",
+          "proposed_fix": "Repair the pin-op10 quote field to the material actually rendered at ^pin-op10: 'Now that Caniglia has made clear that \"there is no overarching community caretaking doctrine,\" . . . our use of that label seems to be a category error.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Reader-facing quote at ^pin-op10 ('...category error') IS faithful to cached text (elides the parenthetical Alito cite with '. . .') and the pincite is defensible.",
+          "Defect is confined to the stored pinpoint metadata quote, which is garbled markdown scaffolding (builder self-flagged quote_fidelity='mismatch').",
+          "No reader harm; the fix is a metadata repair."
+        ],
+        "residual_risks": [
+          "Same slip-page pagination caveat as sibling pins."
+        ],
+        "suggested_tightening": "Regenerate pinpoint quote fields from the rendered anchor text rather than surrounding markdown to prevent scaffolding capture.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7923c7806c5f0eb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached slip opinion verbatim (opinion: 'First, we again conclude that probable cause of dangerousness is the standard that must be met for a warrantless mental-health seizure to be reasonable under the Fourth Amendment.'); the wiki drops the introductory 'First,' and picks up mid-sentence, which is faithful.",
+          "pinpoint_status='star-verified'; fragment '#:~:text=we%20again%20conclude%20that%20probable' is consistent with the cached text.",
+          "Pincite 'slip op., at 10' defensible."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85bfd2b34453da7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' supported: lane1_negative (targeted overrul*/abrogat*/supersed*/vacat*/reversed search over scotus OR ca8 citing cases) reviewed 10, proposed_negative_events=0, audit_needed=false.",
+          "The 13 lane2_top_cited edges labeled overruled/abrogated/questioned/criticized are all proposed:true snippet classifications; an 8th-Cir. panel cannot overrule Graham (only en banc/SCOTUS can), and 'State v. Teulilo' is a state court, so these are structurally false positives.",
+          "scope_note accurately states the post-Caniglia category-error / probable-cause-of-dangerousness holding, consistent with the cached opinion; varies_by_point=false is appropriate."
+        ],
+        "residual_risks": [
+          "The proposed lane2 negative edges (incl. Ledbetter 'overruled', Cameron 'abrogated') were not read against citing-opinion text within the pack; classified as artifacts by court-hierarchy structure, not by reading.",
+          "as_of_treatment 2026-06-30 currency not independently reconfirmable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9f2a101be9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Graham v. Barnette.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-02-1960571e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Graham v. Barnette"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "07fab6a12b3c69e0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "09b25fdf76a96e7a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "507a92ccda1e39a9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7923c7806c5f0eb7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85bfd2b34453da7d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9f2a101be9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-132099506f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

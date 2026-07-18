@@ -1,0 +1,116 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "29dfcadbb182454c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached 5th Cir. opinion confirms 'No. 23-60321 ... Filed 08/09/2024' - matches record identity (cluster 10036119, 5th Cir., 2024-08-09).",
+          "Reporter cite 110 F.4th 817 is cluster.citations[] metadata; the case's holding (Conclusion) is verbatim in the cached text."
+        ],
+        "residual_risks": [
+          "Slip text shows document pages ('Page: 38'), not reporter pagination; '110 F.4th 817' not printed inline but identity is otherwise confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0778d72697459adf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that geofence warrants are modern-day general warrants and are unconstitutional under the Fourth Amendment. However, considering law enforcement's reasonable conduct in this case in light of the novelty of this type of warrant, we uphold the district court's determination that suppression was unwarranted under the good-faith exception.",
+          "locator_note": "cached opinion 'IV. Conclusion', Document 113-1 Page 38; content page marker ^pin-838",
+          "needs_cl": false,
+          "problem": "pin-838's stored `quote` is the content page's frontmatter/Background/Issue/Rule-intro prose blob (markdown headers, '**Binding in-circuit - 5th Cir.**', HTML header comment), not an opinion quotation; quote_fidelity self-flagged 'mismatch'/'slip-only'.",
+          "proposed_fix": "Re-capture pin-838's quote as the anchored holding: 'We hold that geofence warrants are modern-day general warrants and are unconstitutional under the Fourth Amendment. However, considering law enforcement's reasonable conduct in this case in light of the novelty of this type of warrant, we uphold the district court's determination that suppression was unwarranted under the good-faith exception.' - verbatim in the cached opinion Conclusion (Page 38), correctly cited '110 F.4th at 838'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Malformed pinpoint record (quote = page prose), but the anchored content-page holding is verbatim in the cached Conclusion, so the deliverable's legal content is accurate.",
+          "Identical degenerate slip-only capture pattern to Sharpe pin-685 and Sokolow pin-8."
+        ],
+        "residual_risks": [
+          "Only the content-page render carries the correct holding quote; the pin record itself would display page-metadata garbage if consumed directly."
+        ],
+        "suggested_tightening": "Fix the slip-only pin harvester to store the anchored sentence rather than surrounding page prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4d07ad2599378b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Smith's holdings are verbatim-confirmed in the cached opinion (geofence warrants = general warrants, unconstitutional; good-faith saves suppression), and the search-under-Carpenter threshold holding is stated in the Rule - consistent with composite 'good_law, varies_by_point'.",
+          "No disclosed evidence contradicts good_law; per 'never fabricate a defect', the assertion is not refuted despite the unverifiable forward-currency basis."
+        ],
+        "residual_risks": [
+          "The currency basis - 'confirmed by Chatrie v. United States (2026)' and the point-override that SCOTUS 'expressly declined the categorical rule' - CANNOT be verified from the disclosed pack: the Chatrie 2026 opinion is NOT inlined; only Smith's own opinion is cached. Orchestrator should CL-verify the Chatrie edge (cluster 10881683) before relying on the split-resolution and the 'caution' point-override."
+        ],
+        "suggested_tightening": "Inline or CL-verify the Chatrie (2026) treatment to substantiate the varies-by-point composite and the geofence-general-warrant point-override.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Smith (2024).json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-00-535993a9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Smith (2024)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0778d72697459adf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "29dfcadbb182454c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4d07ad2599378b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5a332ca2ee",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

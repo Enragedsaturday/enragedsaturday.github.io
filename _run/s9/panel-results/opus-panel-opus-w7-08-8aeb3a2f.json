@@ -1,0 +1,116 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "657eb07434761de1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the Fisher per curiam; reporter page-number markers run *46 through *50, so the opinion opens at 558 U.S. 45, matching the selected official cite (display '558 U.S. 45').",
+          "official_selection_present=true with the U.S.-Reports cite marked selected_official; parallel S. Ct./L. Ed. 2d/LEXIS cites are standard and uncontradicted by disclosed evidence."
+        ],
+        "residual_risks": [
+          "Parallel-reporter pages (130 S. Ct. 546; 175 L. Ed. 2d 410) are not independently shown in the U.S.-Reports cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35fa5d5fb3ac8831",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Even a casual review of Brigham City reveals the flaw in this reasoning. Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.",
+          "locator_note": "Cached-text paragraph id b211-4 opens with <page-number label=\"49\">*49</page-number>; the preceding paragraphs b210-5 and b210-6 are on page 48.",
+          "needs_cl": false,
+          "problem": "Pincite off by one: pin-48 attributes the quote to 558 U.S. at 48, but the cached bound-reporter text places the quoted sentence on page 49 (its paragraph opens with the *49 page-number marker, following the page-48 paragraphs b210-5/b210-6).",
+          "proposed_fix": "Repoint to 558 U.S. at 49 (rename ^pin-48 to ^pin-49, fix the '— 558 U.S. at 48.' locator and the Sources note that asserts '558 U.S. 48 / slip op. at 4').",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-48 quote 'Officers do not need ironclad proof of \"a likely serious, life-threatening\" injury to invoke the emergency aid exception.' matches the cached opinion verbatim; the payload's 'mismatch' flag and garbled quote (the page header/front-matter) are an extractor false positive.",
+          "The quoted sentence sits in the paragraph beginning with the *49 reporter marker, so it is at 558 U.S. 49, not the cited 558 U.S. 48."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' suggests the reporter page was never verified at authoring; slip-op pagination can differ, but the disclosed bound-reporter markers control and place the passage on 49."
+        ],
+        "suggested_tightening": "Verify reporter pincites against bound-reporter page-number markers before promoting slip-only pins.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd0de3de441fa860",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The cached opinion is per curiam and expressly applies Brigham City v. Stuart, matching scope_note 'Per curiam; applies Brigham City v. Stuart.'",
+          "No negative treatment of Fisher appears in the disclosed record; the good_law classification is consistent with all inlined evidence."
+        ],
+        "residual_risks": [
+          "Currency to as_of_treatment 2026-06-30 depends on citator data not inlined; disclosed evidence shows nothing to the contrary."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-08-8aeb3a2f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Fisher"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "35fa5d5fb3ac8831": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "657eb07434761de1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd0de3de441fa860": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cf25f48669",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

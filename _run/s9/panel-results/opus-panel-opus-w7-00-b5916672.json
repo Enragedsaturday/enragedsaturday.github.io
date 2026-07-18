@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "81121a1a4fc58cea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Mr. Justice Frankfurter) carries U.S. Reports star-pagination *450 through *456, consistent with the opinion beginning at 449 -- matches official cite 354 U.S. 449.",
+          "Case name 'Mallory v. United States', cluster 105545; official_selection_present true and display cite equals official cite."
+        ],
+        "residual_risks": [
+          "Parallel cites (77 S. Ct. 1356; 1 L. Ed. 2d 1479; 1957 U.S. LEXIS 586) not independently confirmable from slip text; the official U.S. cite is."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22eec4e980b7e3ab",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The captured 'quote' is a mis-extraction: front matter ('---', '# Mallory v. United States', the TreatmentBadge comment) plus Background/Issue/Rule narrative -- not a quotation.",
+          "The page's ACTUAL pin-454 quotation ('is not to be taken to police headquarters in order to carry out a process of inquiry that lends itself, even if not so designed, to eliciting damaging statements to support the arrest and ultimately his guilt.') is verbatim-faithful to opinion page 454 (opinion: 'But he is not to be taken to police headquarters ...').",
+          "Pincite 454 confirmed by the *454 star; the mismatch flag reflects the broken extraction."
+        ],
+        "residual_risks": [
+          "Adopting this mismatch as a defect would break the faithful pin-454 true positive."
+        ],
+        "suggested_tightening": "Anchor quote extraction to the pin's actual span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea0969e6dfb8c0a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion page 455 reads: 'The duty enjoined upon arresting officers to arraign without unnecessary delay indicates that the command does not call for mechanical or automatic obedience. Circumstances may justify a brief delay between arrest and arraignment, as for instance, where the story volunteered by the accused is susceptible of quick verification through third parties. But the delay must not be of a nature to give opportunity for the extraction of a confession.'",
+          "The page's pin-455 quotation is faithful: the clause 'as for instance ... third parties' is properly elided with a marked ellipsis ( . . . . ); every retained word is verbatim. Attribution 'Id. at 455' correct (the *455 star precedes the passage).",
+          "Payload mismatch is a false positive caused by the author-marked ellipsis omission."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Account for author-marked ellipses when scoring quote fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3937c1063194f98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed opinion supports the descriptive core: Mallory is the Rule 5(a) prompt-presentment case building on McNabb (the opinion turns entirely on Fed. R. Crim. P. 5(a) 'without unnecessary delay'), a federal-rule holding rather than a constitutional rule binding the States.",
+          "The scope_note's subsequent-history claim ('modified -- not supplanted -- by 18 U.S.C. 3501's six-hour safe harbor, per Corley v. United States') is NOT verifiable from the disclosed 1957 Mallory opinion; Section 3501 (1968) and Corley (2009) are outside the inlined evidence.",
+          "No disclosed evidence contradicts good_law, but currency as of 2026-06-30 needs a citator/external sources."
+        ],
+        "residual_risks": [
+          "The Corley/Section 3501 'modified not supplanted' proposition and good_law currency require external verification not present in the pack."
+        ],
+        "suggested_tightening": "Attach citator/Corley evidence to substantiate the Section 3501-modification statement and confirm good_law currency.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-061da014f5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4dd30cea40",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mallory v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-00-b5916672",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mallory v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "22eec4e980b7e3ab": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81121a1a4fc58cea": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3937c1063194f98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "ea0969e6dfb8c0a7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-061da014f5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4dd30cea40",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

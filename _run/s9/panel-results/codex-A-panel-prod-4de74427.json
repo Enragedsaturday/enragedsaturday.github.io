@@ -1,39 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/hunter-v-bryant--112671.json",
+    "lens": "A",
+    "notes": "No support, quote_fidelity, pincite, or black_letter assertions were present in group_inventory.jsonl for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "660de908f943db08",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists with record_id hunter-v-bryant--112671 and verified identity status.",
+          "The payload's citations exactly match lake.citations.all: 502 U.S. 224; 112 S. Ct. 534; 116 L. Ed. 2d 589; 1991 U.S. LEXIS 7262.",
+          "The lake identity confirms the case as Hunter v. Bryant, U.S. Supreme Court, decided 1991-12-16, year 1991."
+        ],
+        "residual_risks": [
+          "The lake record has official=null and selected_official=false for all citations; this review only verifies the asserted citation list against the lake record, not whether official-selection metadata should have been populated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea9c3dc19cc4bebf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so I raise no treatment finding.",
+          "The asserted treatment fields mirror the lake record: field_i_validity is unverified, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Good-law status is not substantively verified by Lens A and remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/hunter-v-bryant--112671.json\",\"reviewed\":[{\"assertion_id\":\"660de908f943db08\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists with record_id hunter-v-bryant--112671 and verified identity status.\",\"The payload's citations exactly match lake.citations.all: 502 U.S. 224; 112 S. Ct. 534; 116 L. Ed. 2d 589; 1991 U.S. LEXIS 7262.\",\"The lake identity confirms the case as Hunter v. Bryant, U.S. Supreme Court, decided 1991-12-16, year 1991.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has official=null and selected_official=false for all citations; this review only verifies the asserted citation list against the lake record, not whether official-selection metadata should have been populated.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ea9c3dc19cc4bebf\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so I raise no treatment finding.\",\"The asserted treatment fields mirror the lake record: field_i_validity is unverified, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law status is not substantively verified by Lens A and remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No support, quote_fidelity, pincite, or black_letter assertions were present in group_inventory.jsonl for this group.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:42-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:17:15-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/hunter-v-bryant--112671.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "hunter-v-bryant--112671"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4de74427",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4de74427.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'hunter-v-bryant--112671' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record hunter-v-bryant--112671"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "hunter-v-bryant--112671"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 60703,
+      "output": 1617,
+      "source": "codex-events",
+      "total": 62320
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "660de908f943db08": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea9c3dc19cc4bebf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 37.2
   }
 }

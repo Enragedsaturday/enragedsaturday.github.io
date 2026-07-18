@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "db944fdab5eb8efd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '422 U.S. 590 (1975)' captioned BROWN v. ILLINOIS, No. 73-6650, decided June 26, 1975 — official cite exists.",
+          "official_selection_present=true, 422 U.S. 590 selected_official; parallel cites (95 S. Ct. 2254, 45 L. Ed. 2d 416, 1975 U.S. LEXIS 82) internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "168045fad14316c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered.",
+          "locator_note": "pin-603; cached opinion page 603 (after *603 marker, before *604); content 'Rule' block cited 422 U.S. at 603.",
+          "needs_cl": false,
+          "problem": "The ledger quote field for pin-603 is a mis-extraction: it captured the page's front-matter/Background/Issue text ending at the 'Rule' heading ('--- # Brown v. Illinois ... ## Rule Miranda warnings do not automatically purge the taint:'), not a quotation from the opinion.",
+          "proposed_fix": "Re-point the pin-603 quote span to the true anchored quotation; content requires no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The real anchored quote is verbatim-faithful and sits on page 603 (between the *603 and *604 markers), so content pincite 603 is correct.",
+          "Defect is confined to the ledger quote field, not the published content."
+        ],
+        "residual_risks": [
+          "Ledger quote field will mismatch the opinion until re-pointed."
+        ],
+        "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/front-matter prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e06a79f6a6fae29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is the real content quote at pin-604; cached text reads 'The temporal proximity of the arrest and the confession, the presence of intervening circumstances, see Johnson v. Louisiana, 406 U. S. 356, 365 (1972), and, particularly, the purpose and flagrancy of the official misconduct are all relevant.'",
+          "Content's two ' . . . ' ellipses elide only the interior 'see Johnson v. Louisiana' citation and a footnote call-number; every quoted word is verbatim; pincite 603-604 correct (sentence spans the *604 marker).",
+          "Ledger quote_fidelity=mismatch is an automated false positive from matching across the elided citation/footnote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cefedacfdb71c68f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with disclosed evidence; the Brown attenuation factors (temporal proximity, intervening circumstances, purpose/flagrancy) are canonical and remain governing.",
+          "All negative edges are proposed:true co-citation false positives (e.g., Illinois v. Gates, United States v. Leon, Rakas v. Illinois, Stone v. Powell tagged 'overruled') — none overrules Brown v. Illinois.",
+          "scope_note ('applied in Utah v. Strieff') is a well-known accurate statement of the framework's continued use."
+        ],
+        "residual_risks": [
+          "Negative edges unadjudicated; definitive currency confirmation would need CourtListener, but nothing disclosed contradicts good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9d3f0ce8ce",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c41504bd30",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brown v. Illinois.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-03-0db1788c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brown v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "168045fad14316c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5e06a79f6a6fae29": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cefedacfdb71c68f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db944fdab5eb8efd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ac6625eda1",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9d3f0ce8ce",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c41504bd30",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

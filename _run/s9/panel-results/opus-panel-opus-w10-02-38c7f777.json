@@ -1,0 +1,139 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "18401ecac52bf97d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is Mathis v. United States, Justice Black (1968), relying on Miranda v. Arizona 384 U.S. 436; star-pagination *3/*4/*5 places the opinion body at 391 U.S. 3-5, consistent with the selected official 391 U.S. 1.",
+          "IRS/prison/false-tax-claim facts confirm identity; parallel cites (88 S. Ct. 1503; 20 L. Ed. 2d 381; tax reporters 2 C.B. 903, 21 A.F.T.R.2d 1251) are internally consistent."
+        ],
+        "residual_risks": [
+          "Record correctly disambiguated as the 1968 case (vs. the 2016 Mathis) via title and 391 U.S. 1; specific parallel page numbers not independently confirmable from the slip text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a23edce7294bd3c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "'The Government here seeks to escape application of the Miranda warnings on two arguments: (1) that these questions were asked as a part of a routine tax investigation . . . and (2) that the petitioner had not been put in jail by the officers questioning him, but was there for an entirely separate offense. These differences are too minor and shadowy to justify a departure from the well-considered conclusions of Miranda with reference to warnings to be given to a person held in custody'",
+          "locator_note": "lake pinpoints[].id=pin-4; cached slip opinion para b49-5 (star p. 4). Stored quote instead contains content-page frontmatter '---', H1 title, header line, and '## Background/## Issue/## Rule' Markdown.",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-4 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-4 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+          "proposed_fix": "Re-harvest pinpoints[pin-4].quote to the page's real quote 'The Government here seeks to escape application of the Miranda warnings on two arguments: (1) that these questions were asked as a part of a routine tax investigation . . . and (2) that the petitioner had not been put in jail by the officers questioning him, but was there for an entirely separate offense. These differences are too minor and shadowy to justify a departure from the well-considered conclusions of Miranda with reference to warnings to be given to a person held in custody' which is verbatim in the slip opinion at 391 U.S. 4 (star p. 4, para b49-5).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains frontmatter '---' and Markdown '#'/'##' headers plus content-page narrative, impossible in an opinion.",
+          "Independent check: the page's rendered pin-4 quote is verbatim (with a properly marked ellipsis for 'where no criminal proceedings might even be brought,') at star p. 4; reader-facing content correct.",
+          "Same harvest bug as the other groups' first-Rule-section pinpoints."
+        ],
+        "residual_risks": [
+          "Systemic harvest-offset bug."
+        ],
+        "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a324f1c08d7b225",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (para b50-7, spanning star p. 4-5): 'There is no substance to such a distinction, and in effect it goes against the whole purpose of the Miranda decision... We find nothing in the Miranda opinion which calls for a curtailment of the warnings to be given persons [*5] under interrogation by officers based on the reason why the person is in custody.' The stored quote reproduces this verbatim, using a properly marked four-dot elision ' . . . . ' for the omitted clause.",
+          "Pincite 4-5 correct: the quote straddles the *5 star marker.",
+          "Build's 'mismatch'/'slip-only' flag is a false positive (the marked elision defeats the automated matcher); the quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the pin-5 'mismatch' flag; quote is verbatim (with a Bluebook four-dot elision) to slip opinion at star p. 4-5.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3344e5096a3d4f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='caution' with varies_by_point=true coheres with disclosed evidence: the lake carries a curated negative edge Howes v. Fields (565 U.S. 499), field_ii='limited', journal_ref='migration:limited' (a seeded treatment relationship, distinct from the lane1/lane2 citing-case noise), plus a matching point_override (by Howes v. Fields, field_ii='limited', s3_binding_status='provisional').",
+          "scope_note accurately splits the holding: the separate-offense-custody rule stands (verbatim support in the inlined 1968 opinion, paras b49-5/b50-7), while the broad 'incarceration = custody' reading is limited by Howes; header badge 'limited — by Howes v. Fields' is consistent."
+        ],
+        "residual_risks": [
+          "The Howes v. Fields (2012) opinion is NOT inlined in the pack, so the substantive limiting holding rests on the disclosed curated migration edge rather than independently verified primary text; record status is 'under_review' and the point-override binding is 'provisional'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mathis v. United States (1968).json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-02-38c7f777",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathis v. United States (1968)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "18401ecac52bf97d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a23edce7294bd3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8a324f1c08d7b225": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3344e5096a3d4f8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7f04da6aeb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,158 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Muehler v. Mena.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "1dc43cac2cf9f32e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Muehler v. Mena, U.S. Supreme Court, decided 2005-03-22.",
+          "The official citation in the lake record is 544 U.S. 93, with parallel citations 125 S. Ct. 1465 and 161 L. Ed. 2d 299, matching the content page."
+        ],
+        "residual_risks": [
+          "The lake all-citations array has a selected_official flag inconsistency, but the official citation field and display citation are correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a98fdd8f1c6bb0f1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An officer's authority to detain incident to a search is categorical; it does not depend on the \"quantum of proof",
+          "locator_note": "pin-98 has page=null, star_marker=null, pinpoint_status=slip-only; the supporting passage is in text at star-pagination *98.",
+          "needs_cl": false,
+          "problem": "pin-98 is not a faithful opinion quote. The stored pinpoint quote is harvested page/frontmatter prose, has no star marker, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-98 with the exact opinion passage at star page 98 and set star_marker to 98; preserve the opinion's internal double quotation marks or avoid presenting the sentence as a strict character-faithful quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record for pin-98 stores a block beginning with the content page title and background, not the Supreme Court opinion passage.",
+          "The opinion text does contain the intended categorical-detention sentence at *98, so the support exists, but the pinpoint record and strict quote fidelity do not survive as framed."
+        ],
+        "residual_risks": [
+          "After replacing the lake pinpoint, recheck the rendered page quote because the current page changes the nested quotation marks around the Summers language."
+        ],
+        "suggested_tightening": "Use the exact *98 sentence as the pinpoint quote, or paraphrase the rule without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c66d9e20b37112c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the opinion text at star page 101.",
+          "The lake record marks pin-101 as star-verified with fragment #:~:text=the%20officers%20did%20not%20need, and the content page correctly ties it to Id. at 101."
+        ],
+        "residual_risks": [
+          "The quote starts mid-sentence after 'Hence,' but the quoted substring itself is faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ccadf21e145c808",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; recording only that the disclosed lake treatment fields match the content page fields.",
+          "The lake record states field_i_validity good_law, as_of_treatment 2026-06-30, and the same scope note used on the content page."
+        ],
+        "residual_risks": [
+          "No independent Lens A treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Muehler v. Mena.json\",\"reviewed\":[{\"assertion_id\":\"1dc43cac2cf9f32e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms Muehler v. Mena, U.S. Supreme Court, decided 2005-03-22.\",\"The official citation in the lake record is 544 U.S. 93, with parallel citations 125 S. Ct. 1465 and 161 L. Ed. 2d 299, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake all-citations array has a selected_official flag inconsistency, but the official citation field and display citation are correct.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a98fdd8f1c6bb0f1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-98 is not a faithful opinion quote. The stored pinpoint quote is harvested page/frontmatter prose, has no star marker, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-98 with the exact opinion passage at star page 98 and set star_marker to 98; preserve the opinion's internal double quotation marks or avoid presenting the sentence as a strict character-faithful quote.\",\"evidence_quote\":\"An officer's authority to detain incident to a search is categorical; it does not depend on the \\\"quantum of proof\",\"needs_cl\":false,\"locator_note\":\"pin-98 has page=null, star_marker=null, pinpoint_status=slip-only; the supporting passage is in text at star-pagination *98.\"},\"reasons\":[\"The disclosed lake record for pin-98 stores a block beginning with the content page title and background, not the Supreme Court opinion passage.\",\"The opinion text does contain the intended categorical-detention sentence at *98, so the support exists, but the pinpoint record and strict quote fidelity do not survive as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"After replacing the lake pinpoint, recheck the rendered page quote because the current page changes the nested quotation marks around the Summers language.\"],\"suggested_tightening\":\"Use the exact *98 sentence as the pinpoint quote, or paraphrase the rule without quotation marks.\"},{\"assertion_id\":\"c66d9e20b37112c2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the opinion text at star page 101.\",\"The lake record marks pin-101 as star-verified with fragment #:~:text=the%20officers%20did%20not%20need, and the content page correctly ties it to Id. at 101.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The quote starts mid-sentence after 'Hence,' but the quoted substring itself is faithful.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1ccadf21e145c808\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; recording only that the disclosed lake treatment fields match the content page fields.\",\"The lake record states field_i_validity good_law, as_of_treatment 2026-06-30, and the same scope note used on the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent Lens A treatment audit performed.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:32:58-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:16:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ea050b8140",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8cfa90eb6e"
+    ],
     "group_id": "_overhaul2/lake/cases/Muehler v. Mena.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-a328e3b2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a328e3b2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:49.621457Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:50.216639Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:51.081660Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:52.313753Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:54.278453Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:58.172963Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Muehler v. Mena"
+    ],
+    "tokens": {
+      "input": 121414,
+      "output": 5870,
+      "source": "codex-events",
+      "total": 127284
+    },
+    "verdict_map": {
+      "1ccadf21e145c808": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1dc43cac2cf9f32e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a98fdd8f1c6bb0f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c66d9e20b37112c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8cfa90eb6e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ea050b8140",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 118.7
   }
 }

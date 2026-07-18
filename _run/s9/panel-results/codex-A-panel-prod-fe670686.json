@@ -1,22 +1,189 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Van Leeuwen.json\",\"reviewed\":[{\"assertion_id\":\"2c0d6be7ebf4038e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names United States v. Van Leeuwen, U.S. Supreme Court, decided 1970-04-27, year 1970.\",\"The lake official citation is 397 U.S. 249 and the parallel/vendor citations match the payload: 90 S. Ct. 1029, 25 L. Ed. 2d 282, and 1970 U.S. LEXIS 57.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1abaccb0633aa740\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-252 payload/lake quote is not an opinion quotation; it appears to have harvested content-page front matter and narrative text instead of the cited passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-252 with the actual opinion passage at 397 U.S. 252, e.g. \\\"certainly justified detention, without a warrant, while an investigation was made.\\\", and set the star marker to 252 if validated.\",\"evidence_quote\":\"The nature and weight of the packages, the fictitious return address, and the British Columbia license plates of respondent who made the mailings in this border town certainly justified detention, without a warrant, while an investigation was made.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Van Leeuwen__2be8c7.txt contains the supporting passage on the page-252 paragraph; the lake pinpoints[].quote for pin-252 does not match it.\"},\"reasons\":[\"The lake itself labels pin-252 quote_fidelity as mismatch and has no star_marker.\",\"The disclosed opinion text contains the actual detention sentence, not the payload text beginning with the content-page header.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the exact quoted phrase displayed in the page, tied to the page-252 paragraph, rather than the harvested page text.\"},{\"assertion_id\":\"85aa8d25041c1983\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears character-faithfully in the opinion text.\",\"The lake pinpoints record marks pin-253 as quote_fidelity matched, star-verified, with star_marker 253.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"928c00a68ddd064f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-253b quoted fragment is not character-faithful: it substitutes an ellipsis for the source words \\\"after mailing in order\\\" and truncates before \\\"needed for its inspection\\\" while presenting the result inside quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the source exactly or convert the compressed language to paraphrase. Exact source wording begins: \\\"The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.\\\"\",\"evidence_quote\":\"The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Van Leeuwen__2be8c7.txt page-253 paragraph; lake pinpoints[].quote for pin-253b is also marked mismatch.\"},\"reasons\":[\"The disclosed text does not contain the quoted string with \\\". . .\\\".\",\"The lake record marks pin-253b quote_fidelity as mismatch and provides no verified star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact quotation for the first sentence and a separate exact quotation or paraphrase for the fact-specific 29-hour holding.\"},{\"assertion_id\":\"f7915ce3b63e2fe0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A.\",\"The payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment/currency review performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory rows. No separate black_letter, support, or pincite rows were present in the inventory; quote-fidelity review used only disclosed lake and text files.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Van Leeuwen.json",
+    "lens": "A",
+    "notes": "All rows in group_inventory.jsonl were reviewed once. No evidence outside the working directory was used.",
+    "reviewed": [
+      {
+        "assertion_id": "2c0d6be7ebf4038e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Van Leeuwen, U.S. Supreme Court, decided 1970-04-27.",
+          "Official citation 397 U.S. 249 and parallel citations 90 S. Ct. 1029, 25 L. Ed. 2d 282, and 1970 U.S. LEXIS 57 match the content page and lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1abaccb0633aa740",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The nature and weight of the packages, the fictitious return address, and the British Columbia license plates of respondent who made the mailings in this border town certainly justified detention, without a warrant, while an investigation was made.",
+          "locator_note": "pin-252",
+          "needs_cl": false,
+          "problem": "pin-252's lake quote is page/frontmatter/background text, not the Supreme Court passage supporting the quoted rule.",
+          "proposed_fix": "Replace pin-252 with the actual opinion text at star page 252, or with the exact quoted substring used on the content page, and set the star marker to 252.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-252 quote_fidelity as mismatch and has no star marker.",
+          "The disclosed opinion text contains the supporting sentence at the 252 passage, but the payload quote does not reproduce it."
+        ],
+        "residual_risks": [
+          "The visible content-page quote appears supportable; the defect is the stored pinpoint quote payload."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence or exact substring rather than harvested page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85aa8d25041c1983",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim in the cached opinion text.",
+          "The lake record marks pin-253 as star-verified at 253 with quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "928c00a68ddd064f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.",
+          "locator_note": "pin-253b",
+          "needs_cl": false,
+          "problem": "The quoted substance is present, but pin-253b is stored as a mismatch/slip-only ellipsized fragment rather than a star-verified exact quote.",
+          "proposed_fix": "Set star_marker to 253 and replace or supplement the fragment with the exact source sentence: \"The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text supports the quoted caution, but the stored quote is not exact because it compresses the sentence with ellipsis.",
+          "Lake pin-253b has quote_fidelity mismatch, pinpoint_status slip-only, and no star marker."
+        ],
+        "residual_risks": [
+          "If strict character fidelity disallows this ellipsis form, the quote should be treated as refuted until normalized."
+        ],
+        "suggested_tightening": "Use the full exact sentence or mark the excerpt explicitly as an ellipsized excerpt with page 253.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7915ce3b63e2fe0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1970-04-27, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Van Leeuwen.json\",\"reviewed\":[{\"assertion_id\":\"2c0d6be7ebf4038e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Van Leeuwen, U.S. Supreme Court, decided 1970-04-27.\",\"Official citation 397 U.S. 249 and parallel citations 90 S. Ct. 1029, 25 L. Ed. 2d 282, and 1970 U.S. LEXIS 57 match the content page and lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1abaccb0633aa740\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-252's lake quote is page/frontmatter/background text, not the Supreme Court passage supporting the quoted rule.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-252 with the actual opinion text at star page 252, or with the exact quoted substring used on the content page, and set the star marker to 252.\",\"evidence_quote\":\"The nature and weight of the packages, the fictitious return address, and the British Columbia license plates of respondent who made the mailings in this border town certainly justified detention, without a warrant, while an investigation was made.\",\"needs_cl\":false,\"locator_note\":\"pin-252\"},\"reasons\":[\"The lake pinpoint itself marks pin-252 quote_fidelity as mismatch and has no star marker.\",\"The disclosed opinion text contains the supporting sentence at the 252 passage, but the payload quote does not reproduce it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote appears supportable; the defect is the stored pinpoint quote payload.\"],\"suggested_tightening\":\"Use the exact opinion sentence or exact substring rather than harvested page markdown.\"},{\"assertion_id\":\"85aa8d25041c1983\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears verbatim in the cached opinion text.\",\"The lake record marks pin-253 as star-verified at 253 with quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"928c00a68ddd064f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted substance is present, but pin-253b is stored as a mismatch/slip-only ellipsized fragment rather than a star-verified exact quote.\",\"severity\":\"low\",\"proposed_fix\":\"Set star_marker to 253 and replace or supplement the fragment with the exact source sentence: \\\"The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.\\\"\",\"evidence_quote\":\"The rule of our decisions certainly is not that first-class mail can be detained 29 hours after mailing in order to obtain the search warrant needed for its inspection.\",\"needs_cl\":false,\"locator_note\":\"pin-253b\"},\"reasons\":[\"The cached opinion text supports the quoted caution, but the stored quote is not exact because it compresses the sentence with ellipsis.\",\"Lake pin-253b has quote_fidelity mismatch, pinpoint_status slip-only, and no star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If strict character fidelity disallows this ellipsis form, the quote should be treated as refuted until normalized.\"],\"suggested_tightening\":\"Use the full exact sentence or mark the excerpt explicitly as an ellipsized excerpt with page 253.\"},{\"assertion_id\":\"f7915ce3b63e2fe0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1970-04-27, as_of_treatment 2026-06-30, varies_by_point false.\",\"Treatment/currency is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"All rows in group_inventory.jsonl were reviewed once. No evidence outside the working directory was used.\"}",
   "summary": {
-    "at": "2026-07-11T01:09:28-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:13:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f54da161d3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6caf6311d8",
+      "F-S9-PR-b768ec1881"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Van Leeuwen.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-fe670686",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fe670686.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Van Leeuwen"
+    ],
+    "tokens": {
+      "input": 144876,
+      "output": 10335,
+      "source": "codex-events",
+      "total": 155211
+    },
+    "verdict_map": {
+      "1abaccb0633aa740": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2c0d6be7ebf4038e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85aa8d25041c1983": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "928c00a68ddd064f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f7915ce3b63e2fe0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6caf6311d8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b768ec1881",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f54da161d3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 196.9
   }
 }

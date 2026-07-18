@@ -1,22 +1,192 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/LaChance v. Erickson.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote-fidelity/support implications disclosed by the files; no external search was used.",
+    "reviewed": [
+      {
+        "assertion_id": "224e63005e439621",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names LaChance v. Erickson, U.S. Supreme Court, decided 1998-01-21, docket 96-1395.",
+          "The official citation in the lake record is 522 U.S. 262 and the parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "077b1d9f9ba8c7c2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For these reasons, we hold",
+          "locator_note": "text/LaChance v. Erickson__160a2e.txt, star page 268, paragraph b444-5",
+          "needs_cl": false,
+          "problem": "The quoted wording starts with editorially altered \"[W]e hold,\" while the opinion text begins the sentence with \"For these reasons, we hold\". Under strict character-fidelity, the quote is not exact, though the legal proposition is supported.",
+          "proposed_fix": "Use exact source wording beginning with \"For these reasons, we hold\" or quote the exact lowercase substring after the introductory clause.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The holding sentence appears on star page 268 and supports the stated proposition.",
+          "The lake pinpoint itself marks quote_fidelity as mismatch, consistent with the non-exact bracketed capitalization."
+        ],
+        "residual_risks": [
+          "This is a strict character-fidelity defect, not a support defect."
+        ],
+        "suggested_tightening": "Keep the holding proposition, but make the quotation exact or treat the sentence as a paraphrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ba5c802e8e880fb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If answering an agency’s investigatory question",
+          "locator_note": "text/LaChance v. Erickson__160a2e.txt, star page 267, paragraph b443-7",
+          "needs_cl": false,
+          "problem": "The quote uses a straight apostrophe in \"agency's\" while the opinion text uses a curly apostrophe in \"agency’s\". Under the stated character-faithfulness standard, this is not exact.",
+          "proposed_fix": "Replace the apostrophe with the exact character from the opinion text, or adopt an explicit normalization rule for typography.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in substance at the cited location and supports the silence-not-falsehood point.",
+          "The only identified defect is typographic character fidelity."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes curly punctuation, this would not be a substantive error, but no such normalization rule is disclosed."
+        ],
+        "suggested_tightening": "Use exact opinion punctuation in verbatim quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7efe3ed076b27cae",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # LaChance v. Erickson",
+          "locator_note": "lake/LaChance v. Erickson__160a2e.json pinpoints[pin-265]; compare content_page.md Rule paragraph and text star page 265",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-265 is not a verbatim opinion quote; it is a harvested chunk of the generated page/header/background prose and stops before the actual Bryson quotation.",
+          "proposed_fix": "Replace pin-265's stored quote with the actual Bryson quotation used in the Rule paragraph and tie it to star page 265.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with generated markdown/page material, not opinion text.",
+          "The actual quoted Bryson sentence is present in the opinion text on star page 265, but it is not what the lake pinpoint stores for pin-265."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Repair quote harvesting so pin text starts and ends at the actual quoted passage, not at surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f5416d381277fb49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment defect is raised.",
+          "The inventory treatment fields match the lake treatment fields: good_law, as_of_content 1998-01-21, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits, progeny edges, and audit-needed markers are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/LaChance v. Erickson.json\",\"reviewed\":[{\"assertion_id\":\"224e63005e439621\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names LaChance v. Erickson, U.S. Supreme Court, decided 1998-01-21, docket 96-1395.\",\"The official citation in the lake record is 522 U.S. 262 and the parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"077b1d9f9ba8c7c2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted wording starts with editorially altered \\\"[W]e hold,\\\" while the opinion text begins the sentence with \\\"For these reasons, we hold\\\". Under strict character-fidelity, the quote is not exact, though the legal proposition is supported.\",\"severity\":\"low\",\"proposed_fix\":\"Use exact source wording beginning with \\\"For these reasons, we hold\\\" or quote the exact lowercase substring after the introductory clause.\",\"evidence_quote\":\"For these reasons, we hold\",\"needs_cl\":false,\"locator_note\":\"text/LaChance v. Erickson__160a2e.txt, star page 268, paragraph b444-5\"},\"reasons\":[\"The holding sentence appears on star page 268 and supports the stated proposition.\",\"The lake pinpoint itself marks quote_fidelity as mismatch, consistent with the non-exact bracketed capitalization.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is a strict character-fidelity defect, not a support defect.\"],\"suggested_tightening\":\"Keep the holding proposition, but make the quotation exact or treat the sentence as a paraphrase.\"},{\"assertion_id\":\"0ba5c802e8e880fb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote uses a straight apostrophe in \\\"agency's\\\" while the opinion text uses a curly apostrophe in \\\"agency’s\\\". Under the stated character-faithfulness standard, this is not exact.\",\"severity\":\"low\",\"proposed_fix\":\"Replace the apostrophe with the exact character from the opinion text, or adopt an explicit normalization rule for typography.\",\"evidence_quote\":\"If answering an agency’s investigatory question\",\"needs_cl\":false,\"locator_note\":\"text/LaChance v. Erickson__160a2e.txt, star page 267, paragraph b443-7\"},\"reasons\":[\"The quoted sentence appears in substance at the cited location and supports the silence-not-falsehood point.\",\"The only identified defect is typographic character fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus intentionally normalizes curly punctuation, this would not be a substantive error, but no such normalization rule is disclosed.\"],\"suggested_tightening\":\"Use exact opinion punctuation in verbatim quotes.\"},{\"assertion_id\":\"7efe3ed076b27cae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-265 is not a verbatim opinion quote; it is a harvested chunk of the generated page/header/background prose and stops before the actual Bryson quotation.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-265's stored quote with the actual Bryson quotation used in the Rule paragraph and tie it to star page 265.\",\"evidence_quote\":\"--- # LaChance v. Erickson\",\"needs_cl\":false,\"locator_note\":\"lake/LaChance v. Erickson__160a2e.json pinpoints[pin-265]; compare content_page.md Rule paragraph and text star page 265\"},\"reasons\":[\"The payload begins with generated markdown/page material, not opinion text.\",\"The actual quoted Bryson sentence is present in the opinion text on star page 265, but it is not what the lake pinpoint stores for pin-265.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Repair quote harvesting so pin text starts and ends at the actual quoted passage, not at surrounding page prose.\"},{\"assertion_id\":\"f5416d381277fb49\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment defect is raised.\",\"The inventory treatment fields match the lake treatment fields: good_law, as_of_content 1998-01-21, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits, progeny edges, and audit-needed markers are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote-fidelity/support implications disclosed by the files; no external search was used.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:00:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4a18558d71",
+      "F-S9-PR-ebadc22b95",
+      "F-S9-PR-679b4b4091"
+    ],
     "group_id": "_overhaul2/lake/cases/LaChance v. Erickson.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c88b5df9",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c88b5df9.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 24d57342-fdea-4ffa-b51e-bca89f525315\n2026-07-10T22:28:53.408129Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:54.185316Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:54.925538Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:55.772417Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:57.064496Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:59.114505Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "LaChance v. Erickson"
+    ],
+    "tokens": {
+      "input": 115864,
+      "output": 7640,
+      "source": "codex-events",
+      "total": 123504
+    },
+    "verdict_map": {
+      "077b1d9f9ba8c7c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "0ba5c802e8e880fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "224e63005e439621": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7efe3ed076b27cae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f5416d381277fb49": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4a18558d71",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ebadc22b95",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-679b4b4091",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 147.4
   }
 }

@@ -1,13 +1,64 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Nieves v. Bartlett.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "651d221b6213eee2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "group_inventory existence row for record_id Nieves v. Bartlett; lake/Nieves v. Bartlett__96960d.json treatment and progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but it does not verify the currency/live-law status required by lens B. The lake treatment is expressly unverified and progeny/citator data were not derived.",
+          "proposed_fix": "Separate citation-existence verification from live-law currency. Label this as citation-verified but treatment-unverified unless completed treatment/progeny evidence supports live-law status.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity supports the case and citation: record_id is Nieves v. Bartlett and official citation is 587 U.S. 391.",
+          "For currency, the same lake record says treatment.field_i_validity is unverified and treatment dates are null.",
+          "Progeny is not a completed citator record: complete_query is null, citation_count is null, and rows_cached is 0."
+        ],
+        "residual_risks": [
+          "This refutation is limited to live-law currency; it does not attack citation identity.",
+          "Completed citator/progeny evidence could later show the case remains good law."
+        ],
+        "suggested_tightening": "Use a distinct label such as citation verified; treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "5a805406dde9b36f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment assertion matches the lake treatment fields: field_i_validity is unverified, as_of_content is null, and as_of_treatment is null.",
+          "The lake scope note states that treatment/progeny were intentionally not derived until S6 promotion.",
+          "No disclosed treatment edge says Nieves has been superseded, overruled, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The treatment row verifies only an unverified status, not positive good-law status.",
+          "The content page's prose statement that Nieves remains controlling is not independently verified by the disclosed lake treatment/progeny fields."
+        ],
+        "suggested_tightening": "Keep the unverified banner and qualify or remove controlling-framework prose until treatment/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Nieves v. Bartlett.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"651d221b6213eee2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citation, but it does not verify the currency/live-law status required by lens B. The lake treatment is expressly unverified and progeny/citator data were not derived.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Separate citation-existence verification from live-law currency. Label this as citation-verified but treatment-unverified unless completed treatment/progeny evidence supports live-law status.\",\n        \"evidence_quote\": \"\\\"field_i_validity\\\": \\\"unverified\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"group_inventory existence row for record_id Nieves v. Bartlett; lake/Nieves v. Bartlett__96960d.json treatment and progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake identity supports the case and citation: record_id is Nieves v. Bartlett and official citation is 587 U.S. 391.\",\n        \"For currency, the same lake record says treatment.field_i_validity is unverified and treatment dates are null.\",\n        \"Progeny is not a completed citator record: complete_query is null, citation_count is null, and rows_cached is 0.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutation is limited to live-law currency; it does not attack citation identity.\",\n        \"Completed citator/progeny evidence could later show the case remains good law.\"\n      ],\n      \"suggested_tightening\": \"Use a distinct label such as citation verified; treatment unverified.\"\n    },\n    {\n      \"assertion_id\": \"5a805406dde9b36f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The inventory treatment assertion matches the lake treatment fields: field_i_validity is unverified, as_of_content is null, and as_of_treatment is null.\",\n        \"The lake scope note states that treatment/progeny were intentionally not derived until S6 promotion.\",\n        \"No disclosed treatment edge says Nieves has been superseded, overruled, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment row verifies only an unverified status, not positive good-law status.\",\n        \"The content page's prose statement that Nieves remains controlling is not independently verified by the disclosed lake treatment/progeny fields.\"\n      ],\n      \"suggested_tightening\": \"Keep the unverified banner and qualify or remove controlling-framework prose until treatment/progeny verification is complete.\"\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl exactly once under lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:21:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d402f2e398"
+    ],
     "group_id": "_overhaul2/lake/cases/Nieves v. Bartlett.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,21 +67,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4f7da246.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Nieves v. Bartlett"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 97671,
+      "output": 5836,
+      "source": "codex-events",
+      "total": 103507
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "5a805406dde9b36f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "651d221b6213eee2": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d402f2e398",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 112.2
   }
 }

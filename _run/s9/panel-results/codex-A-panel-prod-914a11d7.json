@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 inventory rows exactly once. No treatment/currency merits finding under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "7d9b610531cc3d34",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Minnesota v. Dickerson, U.S. Supreme Court, decided 1993-06-07, year 1993.",
+          "The lake official citation is 508 U.S. 366, matching the content page citation; the parallel citations 113 S. Ct. 2130 and 124 L. Ed. 2d 334 also match."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd99798a4062b0",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Minnesota v. Dickerson *508 U.S. 366 (1993)* · U.S. Supreme Court · **Binding — SCOTUS**",
+          "locator_note": "pin-375 / Rule quote at 508 U.S. 375-376",
+          "needs_cl": false,
+          "problem": "pin-375 is not character-faithful as framed. The lake pinpoint quote is page/header text rather than the opinion passage, and the lake itself marks quote_fidelity as mismatch. The displayed Rule quote also normalizes the opinion's curly apostrophes to straight apostrophes, so it is not literal character-for-character text.",
+          "proposed_fix": "Replace pin-375 with the exact 508 U.S. 375-376 passage from text/Minnesota v. Dickerson__ce89db.txt and either preserve punctuation exactly or mark the quote as normalized rather than verbatim.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pinpoint quote begins with page/header material, not the opinion text.",
+          "The actual opinion passage at the cited location begins: If a police officer lawfully pats down a suspect’s outer clothing and feels an object whose contour or mass makes its identity immediately apparent."
+        ],
+        "residual_risks": [
+          "The legal proposition and 375-376 pincite appear supportable; this refutation is limited to quote-fidelity/pinpoint-text integrity."
+        ],
+        "suggested_tightening": "Use the exact opinion text for the quoted rule, preserving curly apostrophes in suspect’s and officer’s if the quote is labeled verbatim.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e328541b263ca3c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The inventory treatment fields match the disclosed lake/content fields: good_law, as_of_content 1993-06-07, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits are not evaluated under this Lens A review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Minnesota v. Dickerson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7d9b610531cc3d34\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Minnesota v. Dickerson, U.S. Supreme Court, decided 1993-06-07, year 1993.\",\n        \"The lake official citation is 508 U.S. 366, matching the content page citation; the parallel citations 113 S. Ct. 2130 and 124 L. Ed. 2d 334 also match.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bbbd99798a4062b0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-375 is not character-faithful as framed. The lake pinpoint quote is page/header text rather than the opinion passage, and the lake itself marks quote_fidelity as mismatch. The displayed Rule quote also normalizes the opinion's curly apostrophes to straight apostrophes, so it is not literal character-for-character text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-375 with the exact 508 U.S. 375-376 passage from text/Minnesota v. Dickerson__ce89db.txt and either preserve punctuation exactly or mark the quote as normalized rather than verbatim.\",\n        \"evidence_quote\": \"--- # Minnesota v. Dickerson *508 U.S. 366 (1993)* · U.S. Supreme Court · **Binding — SCOTUS**\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-375 / Rule quote at 508 U.S. 375-376\"\n      },\n      \"reasons\": [\n        \"The stored pinpoint quote begins with page/header material, not the opinion text.\",\n        \"The actual opinion passage at the cited location begins: If a police officer lawfully pats down a suspect’s outer clothing and feels an object whose contour or mass makes its identity immediately apparent.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal proposition and 375-376 pincite appear supportable; this refutation is limited to quote-fidelity/pinpoint-text integrity.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion text for the quoted rule, preserving curly apostrophes in suspect’s and officer’s if the quote is labeled verbatim.\"\n    },\n    {\n      \"assertion_id\": \"e328541b263ca3c8\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\n        \"The inventory treatment fields match the disclosed lake/content fields: good_law, as_of_content 1993-06-07, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are not evaluated under this Lens A review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 inventory rows exactly once. No treatment/currency merits finding under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:13:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9e1e94f4b0"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-914a11d7",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-914a11d7.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.829062Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.710553Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.722558Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.952335Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:34.002431Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:37.367805Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Dickerson"
+    ],
+    "tokens": {
+      "input": 280200,
+      "output": 6491,
+      "source": "codex-events",
+      "total": 286691
+    },
+    "verdict_map": {
+      "7d9b610531cc3d34": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbbd99798a4062b0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e328541b263ca3c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9e1e94f4b0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 128.3
   }
 }

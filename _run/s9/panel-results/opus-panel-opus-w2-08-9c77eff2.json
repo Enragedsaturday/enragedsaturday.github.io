@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b66f974dd047317c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion carries the exact citations in case_cite spans: '267 U.S. 132', '45 S.Ct. 280', '69 L.Ed. 543', parties 'CARROLL et al. v. UNITED STATES' - fully corroborating the existence payload.",
+          "Official 267 U.S. 132 with parallels 45 S. Ct. 280 / 69 L. Ed. 543 / 1925 U.S. LEXIS 361 are internally consistent; identity_checked=true, party_name_in_text=true."
+        ],
+        "residual_risks": [
+          "Out-of-scope but disclosed inconsistency: lake identity.date_decided='1925-11-26' contradicts the cached opinion ('Decided March 2, 1925') and the record's own treatment.as_of_content ('1925-03-02'); the date field, not the cite, is wrong."
+        ],
+        "suggested_tightening": "Correct identity.date_decided to 1925-03-02 to match the cached opinion (outside this existence/cite assertion's payload, but flagged).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "75c911a1883ff6d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a necessary difference between a search of a store, dwelling house, or other structure in respect of which a proper official warrant readily may be obtained and a search of a ship, motor boat, wagon, or automobile for contraband goods, where it is not practicable to secure a warrant, because the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought.",
+          "locator_note": "payload quote vs cached opinion (the indented paragraph beginning 'We have made a somewhat extended reference to these statutes ...'); the real anchored quote sits on the content-page Rule line, pincited to CL paragraph 37.",
+          "needs_cl": false,
+          "problem": "The pin-p37 'quote' is a harvested CONTENT-PAGE span (frontmatter delimiter '---', H1 '# Carroll v. United States', header-comment, Background->Issue->Rule fragment ending 'there is'), not opinion text; it appears nowhere in the opinion. The machine self-flag quote_fidelity='mismatch' is confirmed.",
+          "proposed_fix": "Re-harvest pin-p37 to the sentence the content page actually anchors: the 'necessary difference between a search of a store, dwelling house, ... the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought.' passage, which matches the cached opinion verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' opens with '---' and '# Carroll v. United States' and includes '## Background/## Issue/## Rule' - content-page markdown, not opinion prose.",
+          "The actual content-page ^pin-p37 quote matches the cached opinion verbatim, so only the harvest span is wrong; the published page citation is sound (CL paragraph-number pincite paragraph 37, disclosed as such in Sources)."
+        ],
+        "residual_risks": [
+          "Stored-pinpoint data-hygiene defect only; paragraph 37 is a CL paragraph-number pincite (no U.S. Reports star pagination in the CL text at the quoted passage), disclosed on the page."
+        ],
+        "suggested_tightening": "Fix the pinpoint harvester's span boundary to capture the quoted sentence rather than page frontmatter/prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c8befd131e4418c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law for the 1925 SCOTUS origin of the automobile exception; the cached opinion is that source decision and the scope_note (reaffirmed/refined by Chambers, Ross, Carney, Acevedo) is doctrinally accurate.",
+          "edges are empty; no disclosed negative treatment; treatment.as_of_content 1925-03-02 matches the cached opinion's stated decision date ('Decided March 2, 1925')."
+        ],
+        "residual_risks": [
+          "Currency as-of 2026-06-30 rests on migration-seed basis with no progeny enumeration inlined; no negative treatment is present or plausible for this foundational rule."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f142ca23e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-08-9c77eff2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Carroll v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "75c911a1883ff6d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8c8befd131e4418c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b66f974dd047317c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aa8dc28888",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6f142ca23e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

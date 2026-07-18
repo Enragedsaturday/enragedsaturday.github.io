@@ -1,13 +1,89 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Spano v. New York.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "e5a02d9a9fa32bcc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No. 582.",
+          "locator_note": "text header; content_page frontmatter docket; lake.identity.docket",
+          "needs_cl": false,
+          "problem": "The case exists and the reporter/court/year citations stand, but the disclosed identity docket is inconsistent: content/lake use docket 326 while the cached opinion header gives a different docket number.",
+          "proposed_fix": "Correct the docket field to 582, or omit docket from this case page if docket is outside the validated citation assertion.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity gives case_name Spano v. New York, court U.S. Supreme Court, date_decided 1959-06-22, and year 1959.",
+          "The cached opinion header shows Spano v. New York, 360 U.S. 315 (1959), Supreme Court of United States, decided June 22, 1959.",
+          "The citation payload matches the lake citation fields: official 360 U.S. 315, parallels 79 S. Ct. 1202 and 3 L. Ed. 2d 1265, and vendor cite 1959 U.S. LEXIS 751."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Separate docket identity checks from citation existence checks so a correct citation is not allowed to mask a wrong docket field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3d3d52177cb5ff6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Spano v. New York *360 U.S. 315 (1959)*",
+          "locator_note": "lake.pinpoints[0] / pin-323; content_page ^pin-323; cached opinion text contains the actual quoted sentence before star page 324",
+          "needs_cl": false,
+          "problem": "The asserted lake pinpoint quote for pin-323 is not a character-faithful opinion quote; it is harvested markdown/content-page prose and the lake itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-323's lake quote with the actual opinion sentence beginning at star page 323 and populate page/star_marker as 323 if supported.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[0].quote begins with page frontmatter/markdown rather than the Spano opinion text.",
+          "The lake pinpoint has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "The content page's displayed short quotation is repairable from the cached opinion text, but the asserted pinpoint quote in the inventory is not faithful as framed."
+        ],
+        "residual_risks": [
+          "This refutation is limited to the lake pinpoint quote/pin metadata; the visible short quote on content_page.md appears in the cached opinion text."
+        ],
+        "suggested_tightening": "Quote harvesting should reject markdown/frontmatter blocks and require exact matching against text/<case>.txt or an existing faithful lake pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aec2c90af9fd6210",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields and content_page treatment fields: field_i_validity good_law, as_of_content 1959-06-22, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "No treatment or currency merits finding is made under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Spano v. New York.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e5a02d9a9fa32bcc\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The case exists and the reporter/court/year citations stand, but the disclosed identity docket is inconsistent: content/lake use docket 326 while the cached opinion header gives a different docket number.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Correct the docket field to 582, or omit docket from this case page if docket is outside the validated citation assertion.\",\n        \"evidence_quote\": \"No. 582.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text header; content_page frontmatter docket; lake.identity.docket\"\n      },\n      \"reasons\": [\n        \"The lake identity gives case_name Spano v. New York, court U.S. Supreme Court, date_decided 1959-06-22, and year 1959.\",\n        \"The cached opinion header shows Spano v. New York, 360 U.S. 315 (1959), Supreme Court of United States, decided June 22, 1959.\",\n        \"The citation payload matches the lake citation fields: official 360 U.S. 315, parallels 79 S. Ct. 1202 and 3 L. Ed. 2d 1265, and vendor cite 1959 U.S. LEXIS 751.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Separate docket identity checks from citation existence checks so a correct citation is not allowed to mask a wrong docket field.\"\n    },\n    {\n      \"assertion_id\": \"d3d3d52177cb5ff6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted lake pinpoint quote for pin-323 is not a character-faithful opinion quote; it is harvested markdown/content-page prose and the lake itself flags quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-323's lake quote with the actual opinion sentence beginning at star page 323 and populate page/star_marker as 323 if supported.\",\n        \"evidence_quote\": \"--- # Spano v. New York *360 U.S. 315 (1959)*\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake.pinpoints[0] / pin-323; content_page ^pin-323; cached opinion text contains the actual quoted sentence before star page 324\"\n      },\n      \"reasons\": [\n        \"The lake pinpoints[0].quote begins with page frontmatter/markdown rather than the Spano opinion text.\",\n        \"The lake pinpoint has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch.\",\n        \"The content page's displayed short quotation is repairable from the cached opinion text, but the asserted pinpoint quote in the inventory is not faithful as framed.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"This refutation is limited to the lake pinpoint quote/pin metadata; the visible short quote on content_page.md appears in the cached opinion text.\"\n      ],\n      \"suggested_tightening\": \"Quote harvesting should reject markdown/frontmatter blocks and require exact matching against text/<case>.txt or an existing faithful lake pinpoint.\"\n    },\n    {\n      \"assertion_id\": \"aec2c90af9fd6210\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields and content_page treatment fields: field_i_validity good_law, as_of_content 1959-06-22, as_of_treatment 2026-06-30, and varies_by_point false.\",\n        \"No treatment or currency merits finding is made under Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:38:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e9bcaa6d03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b9677b95ed",
+      "F-S9-PR-0d9773528e"
+    ],
     "group_id": "_overhaul2/lake/cases/Spano v. New York.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +92,56 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bb3b89ea.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Spano v. New York"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 201396,
+      "output": 10835,
+      "source": "codex-events",
+      "total": 212231
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "aec2c90af9fd6210": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d3d3d52177cb5ff6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e5a02d9a9fa32bcc": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9677b95ed",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0d9773528e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e9bcaa6d03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 206.8
   }
 }

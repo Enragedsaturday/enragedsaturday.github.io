@@ -1,0 +1,156 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "55953a17721bf523",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "official: null; official_selection: { selected: null, reason: 'unlisted_reporter:Fla. L. Weekly Fed. S' }",
+          "locator_note": "lake citations.official / citations.official_selection; frontmatter citation: empty string",
+          "needs_cl": false,
+          "problem": "Record selects no official citation (official=null, official_selection_present=false) even though 536 U.S. 822 — the official U.S. Reports cite (type 1) for a SCOTUS case — is present in all[]/parallel[]; the frontmatter citation field is also empty.",
+          "proposed_fix": "Select 536 U.S. 822 as the official cite (U.S. Reports is the official SCOTUS reporter) and populate the empty frontmatter citation field.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Case existence confirmed: cached opinion header '536 U.S. 822 (2002)', 'BOARD OF EDUCATION OF INDEPENDENT SCHOOL DISTRICT NO. 92 OF POTTAWATOMIE COUNTY et al. v. EARLS et al.', No. 01-332, Thomas J. — matches record.",
+          "All eight cites are internally consistent with the lake record; the only defect is the failure to flag the present U.S. Reports cite 536 U.S. 822 as official."
+        ],
+        "residual_risks": [
+          "Official-selection algorithm bailed on an unlisted parallel reporter, leaving a valid U.S. Reports cite unselected."
+        ],
+        "suggested_tightening": "Harden official-selection so a present type-1 U.S. Reports cite is chosen even when a later parallel reporter is unlisted.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57872668044bbad2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Wiki pin-837 quote 'In this context, the Fourth Amendment does not require a finding of individualized suspicion' appears verbatim in the cached opinion on p. 837 (after the *837 marker); pincite '536 U.S. at 837' is correct.",
+          "The payload 'quote' field is a mis-extracted markdown span (page front-matter/Background/Issue/Rule lead-in), so the 'mismatch/slip-only' prior is a false positive — the actual rendered quote is faithful and star-locatable at *837."
+        ],
+        "residual_risks": [
+          "Payload-recorded quote span does not equal the rendered wiki quote; the extractor should re-derive from the ^pin-837 sentence."
+        ],
+        "suggested_tightening": "Re-extract pin-837's quote to the quoted sentence and promote slip-only to star-verified (confirmable at *837).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a433abbe830aaae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Wiki pin-838 quote 'we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest in preventing and deterring drug use among its schoolchildren.' matches the cached opinion Part III verbatim on p. 838 (the *838 marker precedes it).",
+          "Payload is already matched/star-verified (star_marker 838); independently confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f104b55a02e12220",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' as of 2026-06-30; the cached opinion is a majority SCOTUS holding (Thomas J.) upholding the policy — a controlling precedent with no accepted adverse treatment in the record.",
+          "All negative edges on Earls (overruled/questioned/abrogated) are proposed:true citator candidates, none accepted; several are structurally impossible (federal district/state courts and co-SCOTUS cites cannot overrule SCOTUS), i.e., citator false positives."
+        ],
+        "residual_risks": [
+          "Numerous proposed negative edges (e.g., Mangino 'overruled', Morse v. Frederick 'overruled', Safford 'questioned') should be pruned before promotion but do not alter field_i."
+        ],
+        "suggested_tightening": "Adjudicate/prune the proposed lane1/lane2 negative edges to reduce downstream noise.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-422fd0a3ee",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-85fa299eff",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3fc2da2c8c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Board of Education v. Earls.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-00-69096376",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Board of Education v. Earls"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "55953a17721bf523": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "57872668044bbad2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a433abbe830aaae": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f104b55a02e12220": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3fc2da2c8c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-422fd0a3ee",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-85fa299eff",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

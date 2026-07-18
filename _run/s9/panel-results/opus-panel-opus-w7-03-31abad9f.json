@@ -1,0 +1,151 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e002e96285162310",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion carries star page-number labels '*466' and '*467' within a per-curiam opinion reversing the Maryland Court of Special Appeals - consistent with a report beginning at page 465, matching the official cite 527 U.S. 465 (page 465).",
+          "Identity corroborated: Per Curiam, red Toyota / 23 grams crack facts, reversing 122 Md. App. 413 - matches record identity and automobile-exception holding.",
+          "official_selection selected '527 U.S. 465' (scotus, rank 1)."
+        ],
+        "residual_risks": [
+          "The reporter/volume string '527 U.S.' is not literally present in the cached opinion text (only page-number labels 466/467); volume is corroborated by record consistency and the star-page sequence, not independently by the cached header.",
+          "Parallel cites (119 S. Ct. 2013; 144 L. Ed. 2d 442; 1999 U.S. LEXIS 4200) are not verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58860ccce7e4a691",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment . . . permits police to search the vehicle without more.' matches the cached opinion verbatim - Dyson quotes Pennsylvania v. Labron with the same internal ellipsis ('the Fourth Amendment... permits police to search the vehicle without more.').",
+          "Pincite is correct: the page cites '*Id.* at 467 (quoting 518 U.S. at 940)'; the quote appears on Dyson page 467 (after the *467 marker) and the opinion attributes it to Labron '*Id.,* at 940' (Labron = 518 U.S. 938).",
+          "The 'mismatch'/slip-only flag reflects the extractor's inability to star-verify a nested quotation-with-ellipsis, not a content defect."
+        ],
+        "residual_risks": [
+          "This is a quotation-within-quotation (Dyson quoting Labron); the page correctly signals it ('Quoting Pennsylvania v. Labron', 'quoting 518 U.S. at 940'), so the pin correctly attributes to the originating source."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74de8ac9e461f3cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' ('but ample time to get a warrant, the warrantless search was invalid. ## Issue Whether the automobile exception requires a separate finding of exigency ... ## Rule No.') is Background/Issue/Rule run-up prose with Markdown headings - an extractor mis-capture of text preceding ^pin-466, not the actual quotation (slip-only, star_marker null).",
+          "The ACTUAL page quote at ^pin-466 - '[U]nder our established precedent, the automobile exception has no separate exigency requirement.' - matches the cached opinion verbatim ('And under our established precedent, the \"automobile exception\" has no separate exigency re[*467]quirement.'), with a proper bracketed capital '[U]' for the dropped leading 'And'.",
+          "Pincite '527 U.S. at 466' is correct: the sentence begins on page 466 (the word 'requirement' is split by the *467 page break).",
+          "The 'mismatch' flag is a false positive on the underlying content."
+        ],
+        "residual_risks": [
+          "Stored assertion 'quote' string is run-up prose, not the page's quotation."
+        ],
+        "suggested_tightening": "Capture the quoted span inside the pin's quotation marks, not the preceding connective prose.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26ef089364be15a8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment 'good_law' is uncontradicted: Dyson is a settled per-curiam restatement of the automobile exception (Carroll/Ross/Labron), with no disclosed negative treatment (edges/progeny empty).",
+          "as_of_content '1999-06-21' is consistent with the case's decision date and is not contradicted by the disclosed evidence (the cached per curiam text states no conflicting date).",
+          "scope_note honestly frames it: 'Per curiam. Settled statement of the automobile exception; no negative treatment.'"
+        ],
+        "residual_risks": [
+          "composite_basis 'migration-seed': as_of_treatment 2026-06-30 currency is seeded, not backed by a disclosed citator derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3e66fe3726",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-db60d4065b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maryland v. Dyson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-03-31abad9f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Dyson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "26ef089364be15a8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "58860ccce7e4a691": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74de8ac9e461f3cf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e002e96285162310": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3e66fe3726",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-db60d4065b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

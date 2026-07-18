@@ -1,22 +1,171 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Banks.md",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects were assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "d696b0a6e0774c7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies United States v. Banks as a U.S. Supreme Court decision dated 2003-12-02 with official citation 540 U.S. 31.",
+          "Lake treatment field marks the authority as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-treatment signals, but no finalized disclosed judgment removes live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "088d71fbe74a7455",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack support placement except for currency/treatment issues.",
+          "The disclosed page places Banks on Knock-and-Announce as Progeny, and the lake progeny section lists citing-opinion/progeny metadata for Banks."
+        ],
+        "residual_risks": [
+          "No Lens A support-review finding is made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62e986bf8a812b51",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not test holding support or quote fidelity.",
+          "The lake treatment scope note describes the same rule as controlling and marks the point good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No Lens A holding-support review is made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b5d3da198a2c3eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court_level as scotus and court as U.S. Supreme Court.",
+          "A SCOTUS authority-weight label of Binding — SCOTUS is consistent with the disclosed identity fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5fb97628aea97172",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "treatment / Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law/control call survives the lake judgment fields, but the page's categorical 'No negative treatment' language is too strong because the disclosed treatment derivation contains proposed negative-treatment signals and an audit-required marker.",
+          "proposed_fix": "Keep good_law/controlling as the lake judgment, but tighten the subsequent-history sentence to say no finalized negative treatment is reflected in the lake judgment fields, while proposed progeny signals remain unaudited.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30 and the scope_note says the rule is controlling.",
+          "Lake point_overrides is empty, so no disclosed finalized point-specific limitation appears.",
+          "But treatment.derivation.lane2_top_cited has cap_hit true, audit_needed true, and proposed_negative_events 24; that undercuts an unqualified 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "A full citing-case audit would be needed to confirm whether any proposed negative edge is a true limitation, overruling, abrogation, or false positive."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No finalized negative treatment reflected in the lake judgment fields; proposed progeny signals require audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Banks.md\",\"reviewed\":[{\"assertion_id\":\"d696b0a6e0774c7b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies United States v. Banks as a U.S. Supreme Court decision dated 2003-12-02 with official citation 540 U.S. 31.\",\"Lake treatment field marks the authority as good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative-treatment signals, but no finalized disclosed judgment removes live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"088d71fbe74a7455\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack support placement except for currency/treatment issues.\",\"The disclosed page places Banks on Knock-and-Announce as Progeny, and the lake progeny section lists citing-opinion/progeny metadata for Banks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A support-review finding is made.\"],\"suggested_tightening\":null},{\"assertion_id\":\"62e986bf8a812b51\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test holding support or quote fidelity.\",\"The lake treatment scope note describes the same rule as controlling and marks the point good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A holding-support review is made.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5b5d3da198a2c3eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court_level as scotus and court as U.S. Supreme Court.\",\"A SCOTUS authority-weight label of Binding — SCOTUS is consistent with the disclosed identity fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5fb97628aea97172\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law/control call survives the lake judgment fields, but the page's categorical 'No negative treatment' language is too strong because the disclosed treatment derivation contains proposed negative-treatment signals and an audit-required marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law/controlling as the lake judgment, but tighten the subsequent-history sentence to say no finalized negative treatment is reflected in the lake judgment fields, while proposed progeny signals remain unaudited.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"treatment / Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30 and the scope_note says the rule is controlling.\",\"Lake point_overrides is empty, so no disclosed finalized point-specific limitation appears.\",\"But treatment.derivation.lane2_top_cited has cap_hit true, audit_needed true, and proposed_negative_events 24; that undercuts an unqualified 'No negative treatment' statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A full citing-case audit would be needed to confirm whether any proposed negative edge is a true limitation, overruling, abrogation, or false positive.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'No finalized negative treatment reflected in the lake judgment fields; proposed progeny signals require audit.'\"}],\"notes\":\"Lens B only; no support or quote-fidelity defects were assessed.\"}",
   "summary": {
-    "at": "2026-07-10T02:53:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:11:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1ee406932f"
+    ],
     "group_id": "content/cases/United States v. Banks.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-97801166",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-97801166.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:29.768535Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:30.420176Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:31.170381Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:32.407757Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:53:34.383844Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Banks"
+    ],
+    "tokens": {
+      "input": 67021,
+      "output": 4747,
+      "source": "codex-events",
+      "total": 71768
+    },
+    "verdict_map": {
+      "088d71fbe74a7455": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b5d3da198a2c3eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5fb97628aea97172": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "62e986bf8a812b51": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d696b0a6e0774c7b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1ee406932f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 93.9
   }
 }

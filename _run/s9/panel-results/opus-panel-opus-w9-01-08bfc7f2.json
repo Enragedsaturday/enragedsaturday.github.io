@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6c2338afd83e4725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '394 U.S. 324 (1969)', 'OROZCO v. TEXAS', 'No. 641', 'Decided March 25, 1969', 'Supreme Court of United States' — matching official cite, docket 641, court scotus, and date_decided 1969-03-25.",
+          "official_selection_present=true with U.S. reporter ranked first (selected_rank_1); parallel cites 89 S. Ct. 1095 / 22 L. Ed. 2d 311 and vendor-neutral 1969 U.S. LEXIS 2154 are internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f01999e7ad9a7e5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We disagree and hold that the use of these admissions obtained in the absence of the required warnings was a flat violation of the Self-Incrimination Clause of the Fifth Amendment as construed in Miranda.",
+          "locator_note": "Cached opinion, paragraph after the '*326' star; content page line ^pin-326.",
+          "needs_cl": false,
+          "problem": "The recorded pin-326 quote is a mis-harvested concatenation of the page's Background prose plus the '## Issue'/'## Rule Yes.' section headers — not opinion text — so quote_fidelity='mismatch' is a harvester artifact, not a page misquote. The sentence the page actually renders at ^pin-326 checks out verbatim.",
+          "proposed_fix": "Re-point the recorded pin-326 quote to the sentence the page actually quotes at ^pin-326 ('We disagree and hold that the use of these admissions ... as construed in Miranda.'), which is verbatim in the opinion on page 326, and clear the false mismatch flag.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's rendered ^pin-326 quote ('We disagree and hold ... as construed in Miranda.') matches the cached opinion verbatim and sits after the '*326' star marker, so the pincite '394 U.S. at 326' is correct.",
+          "Only the RECORDED pinpoint-quote string is defective (it captured page markdown headers), producing a false 'mismatch'; the published legal content is faithful."
+        ],
+        "residual_risks": [
+          "If downstream tooling trusts the recorded pin quote verbatim it would surface a spurious misquote; the rendered page itself is clean."
+        ],
+        "suggested_tightening": "Have the harvester anchor on the quoted-sentence span at the ^pin anchor rather than the preceding prose/headers.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8b660f14541a35a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote 'in custody at the station or otherwise deprived of his freedom of action in any significant way' matches the cached opinion verbatim; it appears after the '*327' star, so pincite '394 U.S. at 327' is correct.",
+          "The page correctly attributes the nested phrase to Miranda (384 U.S. at 477), matching the opinion's own '384 U. S., at 477' citation; quote_fidelity='mismatch' is a false positive from the markdown emphasis asterisks around the phrase."
+        ],
+        "residual_risks": [
+          "'mismatch' flag is a benign false positive caused by the '*...*' emphasis markers, not a fidelity problem."
+        ],
+        "suggested_tightening": "Normalize markdown emphasis before string-matching so faithful emphasized quotes are not flagged 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90c3a110aa7890ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields are internally consistent: as_of_content=1969-03-25 equals the decision date shown in the cached opinion, field_i_validity=good_law, varies_by_point=false; no internal defect.",
+          "Current good-law status cannot be independently confirmed from the disclosed decision-era opinion text; all disclosed negative edges are proposed=true (unadjudicated lane1/lane2 co-citation signals, several facially spurious e.g. Boys Markets/Chimel labelled 'overruled'/'questioned'), so there is no disclosed adjudicated contrary treatment to refute good_law, and refuting would fabricate a defect."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed; scope_note itself warns S2 re-derivation 'may downgrade'. The large pile of proposed 'overruled'/'questioned' edges is unadjudicated and mostly reads as citation noise, but S2 derivation should adjudicate it."
+        ],
+        "suggested_tightening": "Run S2 treatment re-derivation to replace the migration-seed with a derived field_i and adjudicate the proposed edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3c507c01cf",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-01-08bfc7f2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Orozco v. Texas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4f01999e7ad9a7e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6c2338afd83e4725": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90c3a110aa7890ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "b8b660f14541a35a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e08f724d5d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3c507c01cf",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

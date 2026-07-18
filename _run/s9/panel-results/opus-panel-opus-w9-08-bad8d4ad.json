@@ -1,0 +1,141 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "dffbadef469105dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached text header explicitly reads '365 U.S. 534 (1961) ROGERS v. RICHMOND, WARDEN. No. 40. Supreme Court of United States. ... Decided March 20, 1961' — directly confirming the official cite, docket 40, and date.",
+          "Official selection present (365 U.S. 534) matches header and lake; star pages *535–*549 are consistent; parallels 81 S. Ct. 735 / 5 L. Ed. 2d 760 / 1961 U.S. LEXIS 1494 carry no internal inconsistency."
+        ],
+        "residual_risks": [
+          "S. Ct., L. Ed. 2d and LEXIS parallels not byte-shown in the cached U.S.-reporter text but standard and uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "286fb1a68c715c80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page quote at pin-544 — 'The attention of the trial judge should have been focused, for purposes of the Federal Constitution, on the question whether the behavior of the State's law enforcement officials was such as to overbear petitioner's will to resist and bring about confessions not freely self-determined—a question to be answered with complete disregard of whether or not petitioner in fact spoke the truth.' — matches the cached text immediately following the *544 star marker, word for word.",
+          "The only difference is 'self-determined—a question': the page correctly restores the em-dash where the CL OCR dropped it ('self-determineda question'); the 'mismatch' flag is an OCR em-dash artifact, not a page defect. Pincite 544 is confirmed (passage sits right after the *544 marker)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b37adae1bfe85ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's quoted string at pin-540 — '[C]onvictions following the admission into evidence of confessions which are involuntary, i.e., the product of coercion, either physical or psychological, cannot stand. This is so not because such confessions are unlikely to be true but because the methods used to extract them offend an underlying principle in the enforcement of our criminal law: that ours is an accusatorial and not an inquisitorial system.' — matches the cached text spanning *540 to *541 verbatim; the '[C]' bracket properly signals the mid-sentence capitalization change and the quote is truncated at a clean clause boundary ('inquisitorial system').",
+          "The payload captured a broken front-matter-through-'## Rule No.' span, so the 'mismatch' flag is an extractor span-selection artifact. Pincite 540–541 is correct (the quote straddles the *541 star marker)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35aacc8eec7d825c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed opinion confirms the claimed holding (voluntariness measured by coercion alone, with complete disregard of the confession's probable truth/reliability), so field_i_validity=good_law is uncontradicted by disclosed evidence.",
+          "No disclosed evidence indicates overruling or negative treatment; the scope_note characterization is accurate to the opinion."
+        ],
+        "residual_risks": [
+          "Currency as of 2026-06-30 is not independently verifiable from the inlined opinion alone (no citator/subsequent-treatment data disclosed)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-88733c6bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf9ed6e35a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rogers v. Richmond.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-08-bad8d4ad",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rogers v. Richmond"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "286fb1a68c715c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35aacc8eec7d825c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "7b37adae1bfe85ce": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dffbadef469105dd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-88733c6bb9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf9ed6e35a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

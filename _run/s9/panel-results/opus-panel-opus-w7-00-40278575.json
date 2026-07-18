@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "caf51ab070988bc6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Justice White) carries U.S. Reports star-pagination *337 through *346, consistent with the opinion beginning at 335 -- matches official cite 475 U.S. 335.",
+          "Case name 'Malley v. Briggs', cluster 111611; official_selection_present true and display cite equals official cite."
+        ],
+        "residual_risks": [
+          "Parallel cites (106 S. Ct. 1092; 89 L. Ed. 2d 271; 1986 U.S. LEXIS 29; 54 U.S.L.W. 4243) not independently confirmable from slip text; the official U.S. cite is."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4c45e020a181f58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The captured 'quote' is a mis-extraction: front matter ('---', '# Malley v. Briggs', the TreatmentBadge comment) plus Background/Issue/Rule narrative -- not a quotation.",
+          "The page's ACTUAL pin-341 quotation ('Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized.') is verbatim-faithful to opinion page 341.",
+          "Pincite 341 confirmed by the *341 star; the mismatch flag reflects the broken extraction."
+        ],
+        "residual_risks": [
+          "Adopting this mismatch as a defect would break the faithful pin-341 true positive; the companion quote 'all but the plainly incompetent or those who knowingly violate the law' at 341 is likewise verbatim in the opinion."
+        ],
+        "suggested_tightening": "Anchor quote extraction to the pin's actual span rather than the preceding narrative/front-matter.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e4d2b570fc9a46f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion page 345 reads: 'The analogous question in this case is whether a reasonably well-trained officer in petitioner's position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant.'",
+          "The page's pin-345 quotation matches word-for-word; attribution 'Id. at 345' is correct (the *345 star precedes the sentence).",
+          "Payload mismatch is a false positive (glyph/apostrophe normalization)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize glyphs before the fidelity comparison.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2484938c7b42f46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note description is faithful to the disclosed opinion: officers applying for warrants get qualified, not absolute, immunity, under the objective-reasonableness standard ('no reasonably competent officer would have concluded that a warrant should issue').",
+          "No disclosed evidence contradicts good_law; composite_basis is migration-seed.",
+          "Currency as of 2026-06-30 is not verifiable from the 1986 opinion -- it needs a citator."
+        ],
+        "residual_risks": [
+          "good_law currency is seeded, not citator-derived."
+        ],
+        "suggested_tightening": "Re-derive treatment from a citator before certification.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-71c562cd6b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-70232f4529",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Malley v. Briggs.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-00-40278575",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Malley v. Briggs"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "a4c45e020a181f58": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2484938c7b42f46": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "caf51ab070988bc6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e4d2b570fc9a46f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-71c562cd6b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-70232f4529",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

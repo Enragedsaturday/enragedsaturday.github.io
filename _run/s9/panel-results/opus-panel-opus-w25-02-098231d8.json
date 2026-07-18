@@ -1,0 +1,95 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "72cbcaba7bbdc6c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inlined majority opinion ('Justice Scalia delivered the opinion of the Court'; SCOTUS; date_decided 2007-02-21) corroborates the case identity.",
+          "U.S.-Reports star-pages *386 through *397 in the cached text are consistent with a case beginning at 549 U.S. 384.",
+          "Both payload citations ('127 S. Ct. 1091', '549 U.S. 384') match the lake all[]/parallel[] block and are the standard parallel reporters for Wallace v. Kato; payload correctly reports official=null, display=null, official_selection_present=false."
+        ],
+        "residual_risks": [
+          "official_selection is null with reason 'unlisted_reporter:S. Ct.' even though '549 U.S. 384' is the official SCOTUS reporter cite present in all[] — the selector appears keyed on the first (S. Ct.) entry; a data-quality quirk in official-selection, not an existence defect.",
+          "The 127 S. Ct. 1091 page is not independently stamped by S.Ct. star-pages in the cached text, but it is the standard parallel and existence of the case is confirmed."
+        ],
+        "suggested_tightening": "Official-selection should prefer '549 U.S. 384' (U.S. is the official SCOTUS reporter) rather than returning null on the unlisted 'S. Ct.' parallel.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57b093235fa09021",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Frontier-stub treatment declaration ('unverified', not derived until S6) with scope_note matching the record treatment block and field_provenance; no currency/validity claim to refute.",
+          "No disclosed evidence of subsequent treatment contradicts the stub."
+        ],
+        "residual_risks": [
+          "Currency is not independently checkable without CL; the stub correctly declines to assert good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:29:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6c73ce4b7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/wallace-v-kato--145756.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w25-02-098231d8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w25-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record wallace-v-kato--145756"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "wallace-v-kato--145756"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "57b093235fa09021": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72cbcaba7bbdc6c9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6c73ce4b7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

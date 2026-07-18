@@ -1,22 +1,126 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Kingsley v. Hendrickson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"de1aafd715692218\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Kingsley v. Hendrickson as a verified U.S. Supreme Court case decided 2015-06-22.\",\n        \"The asserted citation list matches the lake record's citations.all entries exactly, including 576 U.S. 389, 135 S. Ct. 2466, 192 L. Ed. 2d 416, 2015 U.S. LEXIS 4073, 25 Fla. L. Weekly Fed. S 401, and 83 U.S.L.W. 4515.\",\n        \"The content page's court and year match the lake identity fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record notes official cite selection failed closed, but the payload mirrors the disclosed lake citation fields.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8e1cff498ee25f3b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-397 payload quote is not a character-faithful opinion quotation; it splices content-page prose and markdown headings, and the lake record itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-397 quote with the actual opinion passage at p-41/S. Ct. 2473, or remove the harvested spliced quote. The displayed Rule quote should anchor to the p-41 passage.\",\n        \"evidence_quote\": \"\\\"quote_fidelity\\\": \\\"mismatch\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[0] id pin-397; content_page.md Rule paragraph with ^pin-397; text p-41/S. Ct. *2473\"\n      },\n      \"reasons\": [\n        \"The lake pinpoints[0] quote begins with content-page prose, includes '## Issue' and '## Rule', and does not appear as a contiguous opinion quotation in text/Kingsley v. Hendrickson__5c6062.txt.\",\n        \"The cached opinion text at p-41 contains the actual rule passage: the force purposely or knowingly used against a pretrial detainee must be objectively unreasonable.\",\n        \"The content page's displayed quoted sentence is supported by p-41, but the assertion payload's harvested quote is not faithful as framed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutes the harvested pinpoint quote, not the underlying legal rule stated on the page.\"\n      ],\n      \"suggested_tightening\": \"Use the opinion-text p-41 quote for pin-397 and avoid harvesting surrounding page headings into pinpoints[].quote.\"\n    },\n    {\n      \"assertion_id\": \"80638b34f4597d06\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\n        \"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2015-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency remains for Lens B review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources used.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kingsley v. Hendrickson.json",
+    "lens": "A",
+    "notes": "Treatment/currency not attacked under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "de1aafd715692218",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies Kingsley v. Hendrickson as a U.S. Supreme Court case decided 2015-06-22.",
+          "The inventory citations match the lake citations: 576 U.S. 389, 135 S. Ct. 2466, 192 L. Ed. 2d 416, 2015 U.S. LEXIS 4073, 25 Fla. L. Weekly Fed. S 401, and 83 U.S.L.W. 4515."
+        ],
+        "residual_risks": [
+          "The lake has no selected official citation, but the asserted citation list itself matches the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e1cff498ee25f3b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we agree with the dissenting appeals court judge",
+          "locator_note": "text/Kingsley v. Hendrickson__5c6062.txt p-41 contains the real quoted passage; lake pinpoints[0] stores a different quote and marks it mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-397 payload quote is not a character-faithful opinion quote; it is a concatenation of page prose/headings. The lake also marks this pinpoint as quote_fidelity='mismatch'.",
+          "proposed_fix": "Replace pin-397's stored quote with the actual opinion passage supporting the displayed rule quote, or remove the pinpoint until it is rebuilt from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote appears in content_page/lake metadata, not as the cited opinion text.",
+          "The opinion text at p-41 contains the displayed rule sentence beginning with 'we agree...', while the lake pin quote begins 'disregarded his safety...' and crosses page headings."
+        ],
+        "residual_risks": [
+          "The page's displayed quotation itself appears supported by the local opinion text; the defect is the stored pin quote/fidelity record."
+        ],
+        "suggested_tightening": "Rebuild pin-397 from p-41 and keep the quote limited to the actual opinion sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80638b34f4597d06",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I raise no treatment finding.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2015-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Any currency or negative-treatment audit belongs to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kingsley v. Hendrickson.json\",\"reviewed\":[{\"assertion_id\":\"de1aafd715692218\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies Kingsley v. Hendrickson as a U.S. Supreme Court case decided 2015-06-22.\",\"The inventory citations match the lake citations: 576 U.S. 389, 135 S. Ct. 2466, 192 L. Ed. 2d 416, 2015 U.S. LEXIS 4073, 25 Fla. L. Weekly Fed. S 401, and 83 U.S.L.W. 4515.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake has no selected official citation, but the asserted citation list itself matches the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8e1cff498ee25f3b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-397 payload quote is not a character-faithful opinion quote; it is a concatenation of page prose/headings. The lake also marks this pinpoint as quote_fidelity='mismatch'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-397's stored quote with the actual opinion passage supporting the displayed rule quote, or remove the pinpoint until it is rebuilt from the opinion text.\",\"evidence_quote\":\"we agree with the dissenting appeals court judge\",\"needs_cl\":false,\"locator_note\":\"text/Kingsley v. Hendrickson__5c6062.txt p-41 contains the real quoted passage; lake pinpoints[0] stores a different quote and marks it mismatch.\"},\"reasons\":[\"The payload quote appears in content_page/lake metadata, not as the cited opinion text.\",\"The opinion text at p-41 contains the displayed rule sentence beginning with 'we agree...', while the lake pin quote begins 'disregarded his safety...' and crosses page headings.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page's displayed quotation itself appears supported by the local opinion text; the defect is the stored pin quote/fidelity record.\"],\"suggested_tightening\":\"Rebuild pin-397 from p-41 and keep the quote limited to the actual opinion sentence.\"},{\"assertion_id\":\"80638b34f4597d06\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so I raise no treatment finding.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2015-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Any currency or negative-treatment audit belongs to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency not attacked under lens A.\"}",
   "summary": {
-    "at": "2026-07-11T01:57:26-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:13:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3c1625145f"
+    ],
     "group_id": "_overhaul2/lake/cases/Kingsley v. Hendrickson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b1706888",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b1706888.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kingsley v. Hendrickson"
+    ],
+    "tokens": {
+      "input": 340489,
+      "output": 6145,
+      "source": "codex-events",
+      "total": 346634
+    },
+    "verdict_map": {
+      "80638b34f4597d06": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e1cff498ee25f3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "de1aafd715692218": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c1625145f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 123.8
   }
 }

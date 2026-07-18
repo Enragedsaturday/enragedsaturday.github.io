@@ -1,0 +1,142 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a1f335c89ee7ff37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 565 U.S. 499 (2012) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 132 S. Ct. 1181 / 182 L. Ed. 2d 17 / LEXIS / WL cites are internally consistent.",
+          "Cached opinion confirms the record is Howes v. Fields (Miranda-custody-of-prisoner holding)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4be947150f1df0b6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Not all restraints on freedom of movement amount to custody for purposes of Miranda.",
+          "locator_note": "Slip op. p.9 — opinion text appears before the 'HOWES v. FIELDS / 10' running header that opens slip page 10.",
+          "needs_cl": false,
+          "problem": "The payload `quote` is a corrupted extraction capturing the content-page Issue/Rule preamble ('...for *Miranda* purposes — requiring warnings... ## Rule No; there is no categorical rule, and imprisonment by itself is not *Miranda* custody.') rather than the opinion quotation at ^pin-op9. The actual content-page quote at ^pin-op9 is verbatim-faithful and correctly pincited to slip op. 9.",
+          "proposed_fix": "Re-extract the pin-op9 quote span; the content page and the slip-op-9 pincite are correct.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote at ^pin-op9 ('Not all restraints on freedom of movement amount to custody for purposes of Miranda.') matches the opinion verbatim.",
+          "Quote sits on slip page 9 (before the page-10 running header); content cites '(slip op., at 9)' — correct. Only the payload quote-field is garbled, not the content."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Same preamble-capture guard as Horton pin-130 (anchor trails the quoted sentence).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7651d1a14fe69181",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page and payload quote at ^pin-op10 ('If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda.') matches the opinion verbatim.",
+          "Quote sits on slip page 10 (after the page-10 running header); content cites '(slip op., at 10)' — correct. quote_fidelity=matched with a valid URL text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ac6d5f77d68d136",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence contradicts good_law; the cached 2012 opinion is Howes v. Fields itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+          "Refute-framed review of the disclosed record finds no overruling/negative treatment; assertion is self-consistent with an honest 'migration-seed' composite_basis and re-derivation scope_note."
+        ],
+        "residual_risks": [
+          "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6eb105e4d9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-08-62c3955e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Howes v. Fields"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3ac6d5f77d68d136": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "4be947150f1df0b6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7651d1a14fe69181": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1f335c89ee7ff37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f88b011fe9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6eb105e4d9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

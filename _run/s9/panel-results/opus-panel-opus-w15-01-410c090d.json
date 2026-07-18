@@ -1,0 +1,181 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f84dc65d9c9f9d5d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Argued December 5, 1977. Decided March 21, 1978.",
+          "locator_note": "identity.date_decided / frontmatter date_decided vs opinion header",
+          "needs_cl": false,
+          "problem": "identity.date_decided='1978-12-05' contradicts the cached opinion 'Argued December 5, 1977. Decided March 21, 1978.' The record's own treatment.as_of_content='1978-03-21' carries the correct decided date, so date_decided is internally inconsistent (appears to be the argument date December 5 stamped with the wrong year).",
+          "proposed_fix": "Set date_decided to 1978-03-21 to match the opinion and as_of_content.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Official cite '435 U.S. 268' is verbatim in the opinion header ('435 U.S. 268 (1978)'); caption 'UNITED STATES v. CECCOLINI, No. 76-1151' matches the record — existence of the citation is directly confirmed.",
+          "Rehnquist, J. opinion, Second Circuit posture, and perjury-trial facts all match the content page; the citation is unambiguously the correct case."
+        ],
+        "residual_risks": [
+          "Parallels 98 S. Ct. 1054 / 55 L. Ed. 2d 268 and vendor-neutral 1978 U.S. LEXIS 70 are not independently confirmable from the disclosed opinion (only 435 U.S. 268 is shown); '55 L. Ed. 2d 268' happens to share the page number of the U.S. cite but this cannot be verified either way."
+        ],
+        "suggested_tightening": "Fix date_decided; the citation then stands cleanly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ed695a4b365276b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the opinion: 'The evidence indicates overwhelmingly that the testimony given by the witness was an act of her own free will in no way coerced or even induced by official authority as a result of Biro's discovery of the policy slips.'",
+          "It sits in Part III after the '*279' star marker and before '*280', so star_marker='279' is correct; matched/star-verified holds."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de967a0daf797c93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the opinion: 'The cost of permanently silencing Hennessey is too great for an evenhanded system of law enforcement to bear in order to secure such a speculative and very likely negligible deterrent effect.'",
+          "It appears immediately after the '*280' star marker, so star_marker='280' is correct; matched/star-verified holds."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e010112b1208d439",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object.",
+          "locator_note": "pinpoints[pin-280].quote; content page ^pin-280 in Rule section",
+          "needs_cl": false,
+          "problem": "Lake pinpoint pin-280's quote field holds a content-page markdown dump ('--- # United States v. Ceccolini *435 U.S. 268 (1978)* ... ## Rule No - exclusion of live-witness testimony...') rather than an opinion quote. It is honestly self-flagged quote_fidelity='mismatch'/pinpoint_status='slip-only', but the field is corrupted.",
+          "proposed_fix": "Repair pin-280 to the actual opinion quote the content page anchors at 435 U.S. 280, which is verbatim in the text: 'the exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored 'quote' is a page-harvest blob that appears nowhere in the opinion, confirming the record's own mismatch flag.",
+          "The reader-facing content is sound: the content page's ^pin-280 anchors the '...much greater reluctance...' sentence, which is verbatim on page 280 of the opinion — so only the lake metadata is corrupt, not the rendered pincite."
+        ],
+        "residual_risks": [
+          "A downstream consumer reading pinpoints[].quote directly (not the content page) would surface garbage."
+        ],
+        "suggested_tightening": "Replace the corrupted quote field with the verbatim 280 quote and promote to star-verified.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a12643c93bed5ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence undercuts good_law: the inlined opinion is the foundational 1978 live-witness attenuation decision and is not shown overruled/abrogated; scope_note ('witness-attenuation factors remain the governing framework') is unrefuted.",
+          "The negative treatment.edges (superseded_by_statute/questioned/overruled/criticized) are all proposed:true and audit_needed:true (R15 audit required) from snippet-first triage; several attach 'overruled' to prominent independent decisions (Illinois v. Gates, United States v. Leon, Rakas v. Illinois), a hallmark of snippet-triage false positives rather than adjudicated negative treatment of Ceccolini."
+        ],
+        "residual_risks": [
+          "2026-currency of good_law is not independently confirmable from the disclosed opinion alone (would need a citator).",
+          "The un-audited proposed negative edges must not be shipped or read as actual negative treatment before the R15 audit completes."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit so the proposed negative edges are resolved before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4c41173184",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-0b8f4b3337"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ceccolini.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-01-410c090d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ceccolini"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2ed695a4b365276b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9a12643c93bed5ea": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "de967a0daf797c93": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e010112b1208d439": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f84dc65d9c9f9d5d": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b8f4b3337",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-66558cc11c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4c41173184",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "91dbe9e2822c8429",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms identity: 'Cite as: 595 U. S. ____ (2021)', 'DANIEL RIVAS-VILLEGAS v. RAMON CORTESLUNA', 'No. 20-1539. Decided October 18, 2021', PER CURIAM.",
+          "Official cite 595 U.S. 1 is consistent with a per curiam opening the volume; the slip's blank page ('595 U. S. ____') is the normal slip-stage placeholder, no contradiction.",
+          "Docket 20-1539, year 2021, and date 2021-10-18 all match the disclosed opinion."
+        ],
+        "residual_risks": [
+          "Parallel cites 142 S. Ct. 4 and 211 L. Ed. 2d 164 are not independently present in the disclosed slip text (standard S. Ct./L. Ed. 2d reporter parallels; no disclosed contradiction)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1717778d23f8217a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-op5 quote '[T]o show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Villegas on notice that his specific conduct was unlawful.' matches the opinion verbatim: 'Thus, to show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Ville-gas on notice that his specific conduct was unlawful.'",
+          "The only alterations are a proper Bluebook '[T]o' bracket for the omitted 'Thus, ' and removal of the line-break hyphen in 'Rivas-Ville-gas' - both standard, not fidelity defects.",
+          "Pincite 'slip op. at 5' is correct: the passage falls after the page-5 marker 'Cite as: 595 U. S. ____ (2021) 5'.",
+          "The lake pinpoints[] quote_fidelity=mismatch flag is a false positive (the automated matcher did not credit the bracketed-capital alteration)."
+        ],
+        "residual_risks": [
+          "Lake pinpoints[] self-flags this quote as mismatch; that flag is a matcher false positive, not a content defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c66e36ce590b171",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This inquiry \"must be undertaken in light of the specific context of the case, not as a broad general proposition.\" Brosseau v. Haugen, 543 U. S. 194, 198 (2004) (per curiam) (internal quotation marks omitted).",
+          "locator_note": "lake pinpoints[].id=pin-op4 quote field; verify against opinion slip op. at 4 (before the page-5 marker).",
+          "needs_cl": false,
+          "problem": "pin-op4's stored quote is not an opinion quote at all - it is a slurp of the content page's own markdown (YAML-style header + Background/Issue/Rule headings) that truncates mid-sentence at 'The'; it does not appear anywhere in the opinion. quote_fidelity=mismatch is correct; this is a genuine quote-harvest defect in the lake pinpoints[] datum.",
+          "proposed_fix": "Re-harvest pin-op4 from the opinion. The intended quote - already correctly rendered on the content page ## Rule block - is: 'must be undertaken in light of the specific context of the case, not as a broad general proposition.' (595 U.S. ___, slip op. at 4) (quoting Brosseau v. Haugen, 543 U.S. 194, 198 (2004)).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pin-op4 quote string is the content page's own markdown ('--- # Rivas-Villegas v. Cortesluna ... ## Rule Clearly established law must be particularized to the case. The'), not opinion text.",
+          "That string is absent from the cached opinion; the opinion's actual page-4 proposition is 'must be undertaken in light of the specific context of the case, not as a broad general proposition.' (quoting Brosseau).",
+          "The reader-facing content page renders the CORRECT quote and pincite at ^pin-op4; the defect is confined to the corrupt lake pinpoints[] harvest datum."
+        ],
+        "residual_risks": [
+          "Defect is confined to the lake pinpoints[] harvest datum; the published content page renders the correct quote, correct 'slip op. at 4' pincite, and correct Brosseau attribution, so no reader-facing legal proposition is affected."
+        ],
+        "suggested_tightening": "Guard the quote-harvester so it cannot capture page frontmatter/markdown as a pin quote when the intended verbatim quote is present in the rendered ## Rule block.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5ee0d2353dc6a75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is supported by the disclosed derivation: lane1_negative (overrul*/abrogat*/supersed*/'recede from'/vacat*/reversed query over 105 citing opinions) returned proposed_negative_events=0, and lane3_recency returned 0.",
+          "The alarming field_ii labels (overruled/abrogated/questioned/superseded) on lane2_top_cited edges are unaudited top-cited artifacts explicitly marked proposed:true with audit_marker 'R15 treatment audit required' - they are not adjudicated negatives of Rivas-Villegas.",
+          "Opinion is a 2021 SCOTUS per curiam QI decision reversing CA9; nothing in the disclosed record shows subsequent invalidation.",
+          "scope_note honestly discloses the as_of_treatment is a migration-seed subject to S2 re-derivation/downgrade."
+        ],
+        "residual_risks": [
+          "lane2_top_cited attaches proposed field_ii=overruled/abrogated to 25 citing cases pending the flagged R15 audit; disclosed lane1_negative shows 0 real negative events so good_law holds, but the unaudited labels justify the R15 pass before final promotion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-487a7c8594",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rivas-Villegas v. Cortesluna.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-07-09ad090b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rivas-Villegas v. Cortesluna"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1717778d23f8217a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c66e36ce590b171": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "91dbe9e2822c8429": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5ee0d2353dc6a75": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-487a7c8594",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b93b6d4b14",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

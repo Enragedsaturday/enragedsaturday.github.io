@@ -1,22 +1,169 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Oregon v. Mathiason.json",
+    "lens": "B",
+    "notes": "Reviewed all 4 group_inventory rows under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "128abd4be8d04903",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is status verified for Oregon v. Mathiason, U.S. Supreme Court, decided 1977-01-25, with expected citation found.",
+          "The lake citation set selects 429 U.S. 492 as the official citation and the treatment judgment is good_law as of 2026-06-30, so disclosed evidence does not show the authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed, unaudited negative progeny signals; treatment-row tightening covers that risk."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32cf087d77740b31",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; this row contains no independent treatment, currency, or live-law assertion.",
+          "Case-level disclosed treatment remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A must evaluate the quote and pinpoint merits."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "551af3ec40f1fe99",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; this row contains no independent treatment, currency, or live-law assertion.",
+          "Case-level disclosed treatment remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A must evaluate the quote and pinpoint merits."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8cb5a19bea015014",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 10,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Oregon v. Mathiason__a21cc1.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status itself is supported by the lake judgment fields, but the page's treatment narrative is too absolute: it says no negative treatment while the lake includes proposed negative progeny edges and audit_needed flags. The disclosed record supports no adopted negative treatment in the lake judgment fields, not an unconditional no-negative-treatment statement.",
+          "proposed_fix": "Keep field_i_validity as good_law as of 2026-06-30, but revise treatment text to say: No adopted negative treatment is recorded in the lake judgment fields; proposed progeny signals are marked mentioned/proposed and require audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment judgment fields support the core status: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "Lake treatment.edges are not empty and include proposed negative labels including overruled, abrogated, superseded_by_statute, criticized, and questioned; all are marked field_iii mentioned and proposed true.",
+          "Derivation shows audit_needed true and cap_hit true for lane1_negative and lane2_top_cited, so the page should not state unqualified no negative treatment.",
+          "Authority weight is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court."
+        ],
+        "residual_risks": [
+          "Because the negative edges are proposed and only mentioned, they do not disclose an adopted overruling or abrogation of Mathiason.",
+          "A full treatment/progeny audit would be needed to restore an unconditional no-negative-treatment sentence."
+        ],
+        "suggested_tightening": "Qualify the page to say no adopted negative treatment appears in the lake judgment fields, while proposed negative progeny signals remain unaudited.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Oregon v. Mathiason.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"128abd4be8d04903\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is status verified for Oregon v. Mathiason, U.S. Supreme Court, decided 1977-01-25, with expected citation found.\",\n        \"The lake citation set selects 429 U.S. 492 as the official citation and the treatment judgment is good_law as of 2026-06-30, so disclosed evidence does not show the authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed, unaudited negative progeny signals; treatment-row tightening covers that risk.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"32cf087d77740b31\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack quote fidelity; this row contains no independent treatment, currency, or live-law assertion.\",\n        \"Case-level disclosed treatment remains good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must evaluate the quote and pinpoint merits.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"551af3ec40f1fe99\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack quote fidelity; this row contains no independent treatment, currency, or live-law assertion.\",\n        \"Case-level disclosed treatment remains good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must evaluate the quote and pinpoint merits.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8cb5a19bea015014\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law status itself is supported by the lake judgment fields, but the page's treatment narrative is too absolute: it says no negative treatment while the lake includes proposed negative progeny edges and audit_needed flags. The disclosed record supports no adopted negative treatment in the lake judgment fields, not an unconditional no-negative-treatment statement.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity as good_law as of 2026-06-30, but revise treatment text to say: No adopted negative treatment is recorded in the lake judgment fields; proposed progeny signals are marked mentioned/proposed and require audit.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 10,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Oregon v. Mathiason__a21cc1.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment judgment fields support the core status: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\n        \"Lake treatment.edges are not empty and include proposed negative labels including overruled, abrogated, superseded_by_statute, criticized, and questioned; all are marked field_iii mentioned and proposed true.\",\n        \"Derivation shows audit_needed true and cap_hit true for lane1_negative and lane2_top_cited, so the page should not state unqualified no negative treatment.\",\n        \"Authority weight is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because the negative edges are proposed and only mentioned, they do not disclose an adopted overruling or abrogation of Mathiason.\",\n        \"A full treatment/progeny audit would be needed to restore an unconditional no-negative-treatment sentence.\"\n      ],\n      \"suggested_tightening\": \"Qualify the page to say no adopted negative treatment appears in the lake judgment fields, while proposed negative progeny signals remain unaudited.\"\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows under Lens B only.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:34-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:24:12-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-51dac6480a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f66d80bab3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2de5c48def"
+    ],
     "group_id": "_overhaul2/lake/cases/Oregon v. Mathiason.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-91b7cfbc",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-91b7cfbc.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:33:25.025235Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:25.609577Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:26.453432Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:27.711420Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:29.748740Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:33.557298Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Oregon v. Mathiason"
+    ],
+    "tokens": {
+      "input": 255355,
+      "output": 8795,
+      "source": "codex-events",
+      "total": 264150
+    },
+    "verdict_map": {
+      "128abd4be8d04903": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "32cf087d77740b31": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "551af3ec40f1fe99": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8cb5a19bea015014": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51dac6480a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f66d80bab3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2de5c48def",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 171.0
   }
 }

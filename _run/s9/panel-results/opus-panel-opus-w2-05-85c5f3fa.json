@@ -1,0 +1,153 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d50192f66c661a33",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header prints '413 U.S. 433 (1973)', 'CADY, WARDEN v. DOMBROWSKI', No. 72-586, Decided June 21, 1973 - matches official cite 413 U.S. 433 and docket 72-586.",
+          "First star-pagination marker is *434, confirming page 433 as the opinion's start page."
+        ],
+        "residual_risks": [
+          "Parallels 93 S. Ct. 2523 / 37 L. Ed. 2d 706 and 1973 U.S. LEXIS 48 are not printed in disclosed text but are well-formed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6ccafb2849b9ee7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-441 content quote 'Local police officers, unlike federal officers, frequently investigate vehicle accidents in which there is no claim of criminal liability and engage in what, for want of a better term, may be described as community caretaking functions, totally divorced from the detection, investigation, or acquisition of evidence relating to the violation of a criminal statute' matches the opinion verbatim.",
+          "The sentence sits in the paragraph between the *441 and *442 star markers, so the pincite '413 U.S. at 441' is correct."
+        ],
+        "residual_risks": [
+          "The payload 'quote' field mis-extraction (frontmatter/Background/Issue ending at '## Rule') drives the payload 'mismatch' flag; the pinned quote itself is faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b30bdbb29e73cbd5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-448 content quote 'Where, as here, the trunk of an automobile, which the officer reasonably believed to contain a gun, was vulnerable to intrusion by vandals, we hold that the search was not [unreasonable] within the meaning of the Fourth and Fourteenth Amendments' matches the opinion word-for-word.",
+          "The sentence falls after the *448 marker in that paragraph, so the pincite 'Id. at 448' is correct."
+        ],
+        "residual_risks": [
+          "Only difference is inner-quote nesting: content renders 'unreasonable' in single quotes inside its double-quoted sentence while the opinion uses double quotes - correct nesting normalization, not a fidelity defect; this typographic difference likely triggered the payload 'mismatch' flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f127a2c997602fb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Only the 1973 Cady opinion is inlined; no citator is disclosed and Caniglia v. Strom (2021) referenced in the scope_note is not inlined, so good_law-as-of-2026-06-30 cannot be positively verified.",
+          "Nothing in the disclosed evidence indicates Cady's vehicle holding was overruled, so no real defect can be asserted."
+        ],
+        "residual_risks": [
+          "Treatment currency and the Caniglia 'declined to extend' characterization are unverifiable from disclosed evidence; belongs to the Codex B currency lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-20ea3af8e3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8bd3ed4f67",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d12d7d1996",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Cady v. Dombrowski.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-05-85c5f3fa",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cady v. Dombrowski"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6ccafb2849b9ee7d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b30bdbb29e73cbd5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d50192f66c661a33": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f127a2c997602fb4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-20ea3af8e3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8bd3ed4f67",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d12d7d1996",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

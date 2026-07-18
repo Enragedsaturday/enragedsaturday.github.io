@@ -1,38 +1,172 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Carroll v. Carman.md",
+    "lens": "B",
+    "notes": "Reviewed only for Lens B currency/treatment issues; no support or quote-fidelity defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "16cb8c568329845c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "lake/Carroll v. Carman__5b23ff.json treatment/progeny",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but it does not verify the currency/live-law status required by Lens B. Treatment is explicitly unverified and progeny has not been derived.",
+          "proposed_fix": "Do not treat the citation as live law until a completed treatment/progeny check supplies an as-of date and validity result; otherwise state that currency is unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake treatment has field_i_validity and composite_basis set to unverified.",
+          "Lake progeny fields show no completed query, no citing-opinion count, and zero cached rows."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain good law, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Separate identity/existence from live-law currency; the citation identity is supported, but current validity is not.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "32444f098ef8c7cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate whether the home-role classification is substantively supported.",
+          "No disclosed treatment edge says Carroll has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "The underlying treatment remains unverified, so the role should not be read as a current-validity judgment."
+        ],
+        "suggested_tightening": "Display the Key role alongside the existing unverified-treatment warning.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9e0090a8436e6f2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not raise support or quote-fidelity findings for the holding statement.",
+          "The disclosed lake record contains no adverse treatment edge undermining the historical qualified-immunity holding."
+        ],
+        "residual_risks": [
+          "Current good-law status is not verified because treatment/progeny were intentionally not derived."
+        ],
+        "suggested_tightening": "Keep the statement framed as the case's holding, not as an independently current knock-and-talk rule.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "81814e5ab4161672",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page's treatment fields match the lake record: unverified validity, null as-of dates, unverified composite basis, no point overrides.",
+          "The scope note accurately tracks the lake record's statement that treatment/progeny were not derived until promotion."
+        ],
+        "residual_risks": [
+          "The actual current treatment is unresolved until a treatment/progeny derivation is performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b573001531d0d1f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity identifies the court as U.S. and court_level as scotus.",
+          "No disclosed treatment edge contradicts the hierarchical weight label."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified, Binding should be understood as court hierarchy rather than confirmed current validity."
+        ],
+        "suggested_tightening": "Define authority_weight as hierarchical weight, or render it with the existing Treatment: Unverified badge to avoid implying confirmed good-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Carroll v. Carman.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"16cb8c568329845c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citation, but it does not verify the currency/live-law status required by Lens B. Treatment is explicitly unverified and progeny has not been derived.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not treat the citation as live law until a completed treatment/progeny check supplies an as-of date and validity result; otherwise state that currency is unverified.\",\n        \"evidence_quote\": \"\\\"field_i_validity\\\": \\\"unverified\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/Carroll v. Carman__5b23ff.json treatment/progeny\"\n      },\n      \"reasons\": [\n        \"Lake treatment has field_i_validity and composite_basis set to unverified.\",\n        \"Lake progeny fields show no completed query, no citing-opinion count, and zero cached rows.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The authority may in fact remain good law, but that cannot be confirmed from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Separate identity/existence from live-law currency; the citation identity is supported, but current validity is not.\"\n    },\n    {\n      \"assertion_id\": \"32444f098ef8c7cc\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not evaluate whether the home-role classification is substantively supported.\",\n        \"No disclosed treatment edge says Carroll has been overruled, abrogated, superseded, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying treatment remains unverified, so the role should not be read as a current-validity judgment.\"\n      ],\n      \"suggested_tightening\": \"Display the Key role alongside the existing unverified-treatment warning.\"\n    },\n    {\n      \"assertion_id\": \"9e0090a8436e6f2d\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not raise support or quote-fidelity findings for the holding statement.\",\n        \"The disclosed lake record contains no adverse treatment edge undermining the historical qualified-immunity holding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current good-law status is not verified because treatment/progeny were intentionally not derived.\"\n      ],\n      \"suggested_tightening\": \"Keep the statement framed as the case's holding, not as an independently current knock-and-talk rule.\"\n    },\n    {\n      \"assertion_id\": \"81814e5ab4161672\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The page's treatment fields match the lake record: unverified validity, null as-of dates, unverified composite basis, no point overrides.\",\n        \"The scope note accurately tracks the lake record's statement that treatment/progeny were not derived until promotion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The actual current treatment is unresolved until a treatment/progeny derivation is performed.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b573001531d0d1f2\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity identifies the court as U.S. and court_level as scotus.\",\n        \"No disclosed treatment edge contradicts the hierarchical weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment is unverified, Binding should be understood as court hierarchy rather than confirmed current validity.\"\n      ],\n      \"suggested_tightening\": \"Define authority_weight as hierarchical weight, or render it with the existing Treatment: Unverified badge to avoid implying confirmed good-law status.\"\n    }\n  ],\n  \"notes\": \"Reviewed only for Lens B currency/treatment issues; no support or quote-fidelity defects were raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:40:47-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:41:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-634f6c2cfc"
+    ],
     "group_id": "content/cases/Carroll v. Carman.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Carroll v. Carman"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3da36194",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3da36194.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Carroll v. Carman' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Carroll v. Carman"
+    ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 118182,
+      "output": 5624,
+      "source": "codex-events",
+      "total": 123806
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.2
+    "verdict_map": {
+      "16cb8c568329845c": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "32444f098ef8c7cc": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81814e5ab4161672": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9e0090a8436e6f2d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b573001531d0d1f2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-634f6c2cfc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 115.8
   }
 }

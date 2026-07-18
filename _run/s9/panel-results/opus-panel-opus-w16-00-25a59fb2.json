@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "17cff1521c403f45",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Disclosed opinion (Brorby, Circuit Judge; star pages *1536-*1539) confirms United States v. Daryl Lee Evans, 10th Cir. 1991; 937 F.2d 1534 selected and displayed.",
+          "Neutral cites 1991 U.S. App. LEXIS 14383 / 1991 WL 118519 are consistent; no existence defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94ffeb5da05ff030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim in the opinion at *1538-1539: 'Section 239.29 of the Oklahoma City Police Department policy does not require officers to conduct their inventory at a particular place.' (page ends before ', but specifically envisions otherwise').",
+          "The companion Wells characterizations on the page ('against inventory searches being used as a ruse for investigatory purposes'; 'dealt with the specific problem of the absence of a department policy or standardized criteria governing such searches') are also verbatim; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c756e1fc80813ce5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained.",
+          "locator_note": "pin-1539; opinion at *1539",
+          "needs_cl": false,
+          "problem": "Stored pin-1539 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule ... The Tenth Circuit held:' lead-in, not opinion text. The quote actually rendered at ^pin-1539 is verbatim-faithful to the opinion at *1539.",
+          "proposed_fix": "Re-harvest pin-1539's stored quote to the actual quoted span, which matches the opinion verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered quote at ^pin-1539 ('we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search... was lawfully obtained') is verbatim at *1539 (page drops leading 'Accordingly,'); pincite 1539 correct.",
+          "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+        ],
+        "residual_risks": [
+          "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c65fc6bb1661eb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct: the negative lane restricted to binding courts (scotus OR ca10) reviewed 1 and found 0 negative events; no verified negative treatment is disclosed.",
+          "lane2 proposed negatives are out-of-circuit state/district keyword hits (proposed=true, mentioned), non-binding on this 10th Cir. holding.",
+          "The generic migration scope_note carries no substantive legal claim."
+        ],
+        "residual_risks": [
+          "lane2 proposed negatives unaudited but non-binding"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b2012c20a2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Evans.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-00-25a59fb2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Evans"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "17cff1521c403f45": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c65fc6bb1661eb9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94ffeb5da05ff030": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c756e1fc80813ce5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b2012c20a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0c472c9630",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

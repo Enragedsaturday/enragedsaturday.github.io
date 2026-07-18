@@ -1,13 +1,120 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lewis v. United States (1966).json",
+    "lens": "A",
+    "notes": "Lens A reviewed support and quote-fidelity issues only. The treatment row was checked only for conformity to disclosed lake fields, not for good-law currency.",
+    "reviewed": [
+      {
+        "assertion_id": "255ad97e50293fbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Lewis v. United States, U.S. Supreme Court, decided 1966-12-12.",
+          "The official citation in the lake record is 385 U.S. 206, and the content page uses 385 U.S. 206 (1966).",
+          "Parallel citations in the content page match the lake record: 87 S. Ct. 424 and 17 L. Ed. 2d 312."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c09332ec3e19722",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted limitation appears verbatim in the cached opinion text on the page-211 paragraph.",
+          "The lake pinpoint for pin-211b is marked quote_fidelity matched, pinpoint_status star-verified, and star_marker 211.",
+          "The quoted language supports the stated limit that an invited business entry does not authorize a general search."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afe04295d1c6e2b9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "During neither of his visits to petitioner’s home did the agent see, hear, or take anything that was not contemplated, and in fact intended, by petitioner as a necessary part of his illegal business.",
+          "locator_note": "text/Lewis v. United States (1966)__a2f3cc.txt line 10; the sentence falls after the page-number label 210 and before label 211.",
+          "needs_cl": false,
+          "problem": "The sentence is substantively present at the cited page, but the verbatim quote is not character-faithful: the opinion text has a curly apostrophe in petitioner’s, while the page/lake quote uses ASCII petitioner's.",
+          "proposed_fix": "Replace petitioner's with petitioner’s in the quoted sentence, or normalize the source text and quote consistently before marking quote_fidelity matched.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text contains the sentence at the asserted location, so the support and page placement survive.",
+          "Strict quote fidelity fails on the apostrophe character, and the lake record itself marks pin-210 quote_fidelity as mismatch and pinpoint_status as slip-only."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes curly punctuation, that normalization rule is not disclosed in this review packet."
+        ],
+        "suggested_tightening": "Use the cached opinion’s exact typography for verbatim quotations.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b027f1903f12adbf",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "But when, as here, the home is converted into a commercial center to which outsiders are invited for purposes of transacting unlawful business, that business is entitled to no greater sanctity than if it were carried on in a store, a garage, a car, or on the street.",
+          "locator_note": "The disclosed lake pin-211 has quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and position null; the actual rule passage is in text line 11 at page label 211.",
+          "needs_cl": false,
+          "problem": "The pin-211 quote in the lake record is not a verbatim opinion passage; it stitches content-page background, issue, and rule prose and does not appear in the cached opinion text.",
+          "proposed_fix": "Replace pin-211 with the actual page-211 rule passage from the opinion, such as the commercial-center sentence beginning 'when, as here, the home is converted...', and revalidate the pinpoint at star page 211.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Exact search of the cached opinion text does not verify the lake pin-211 quoted string.",
+          "The quoted string uses page-generated phrasing such as 'Lewis moved to suppress' and markdown headings like '## Issue' and '## Rule', which are not opinion text.",
+          "Because the asserted pinpoint quote is not character-faithful, the quote-fidelity assertion cannot stand as framed."
+        ],
+        "residual_risks": [
+          "The content page’s visible Rule quote appears supportable from page 211, but the lake pin-211 record does not preserve that quote accurately."
+        ],
+        "suggested_tightening": "Regenerate pin-211 from the cached opinion text rather than from rendered page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d8fba46b2e5101ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1966-12-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency are outside Lens A, so no treatment merits finding is raised."
+        ],
+        "residual_risks": [
+          "Lens B must assess treatment and currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Lewis v. United States (1966).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"255ad97e50293fbe\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Lewis v. United States, U.S. Supreme Court, decided 1966-12-12.\",\n        \"The official citation in the lake record is 385 U.S. 206, and the content page uses 385 U.S. 206 (1966).\",\n        \"Parallel citations in the content page match the lake record: 87 S. Ct. 424 and 17 L. Ed. 2d 312.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7c09332ec3e19722\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted limitation appears verbatim in the cached opinion text on the page-211 paragraph.\",\n        \"The lake pinpoint for pin-211b is marked quote_fidelity matched, pinpoint_status star-verified, and star_marker 211.\",\n        \"The quoted language supports the stated limit that an invited business entry does not authorize a general search.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"afe04295d1c6e2b9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The sentence is substantively present at the cited page, but the verbatim quote is not character-faithful: the opinion text has a curly apostrophe in petitioner’s, while the page/lake quote uses ASCII petitioner's.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace petitioner's with petitioner’s in the quoted sentence, or normalize the source text and quote consistently before marking quote_fidelity matched.\",\n        \"evidence_quote\": \"During neither of his visits to petitioner’s home did the agent see, hear, or take anything that was not contemplated, and in fact intended, by petitioner as a necessary part of his illegal business.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Lewis v. United States (1966)__a2f3cc.txt line 10; the sentence falls after the page-number label 210 and before label 211.\"\n      },\n      \"reasons\": [\n        \"The cached text contains the sentence at the asserted location, so the support and page placement survive.\",\n        \"Strict quote fidelity fails on the apostrophe character, and the lake record itself marks pin-210 quote_fidelity as mismatch and pinpoint_status as slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus intentionally normalizes curly punctuation, that normalization rule is not disclosed in this review packet.\"\n      ],\n      \"suggested_tightening\": \"Use the cached opinion’s exact typography for verbatim quotations.\"\n    },\n    {\n      \"assertion_id\": \"b027f1903f12adbf\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-211 quote in the lake record is not a verbatim opinion passage; it stitches content-page background, issue, and rule prose and does not appear in the cached opinion text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-211 with the actual page-211 rule passage from the opinion, such as the commercial-center sentence beginning 'when, as here, the home is converted...', and revalidate the pinpoint at star page 211.\",\n        \"evidence_quote\": \"But when, as here, the home is converted into a commercial center to which outsiders are invited for purposes of transacting unlawful business, that business is entitled to no greater sanctity than if it were carried on in a store, a garage, a car, or on the street.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The disclosed lake pin-211 has quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and position null; the actual rule passage is in text line 11 at page label 211.\"\n      },\n      \"reasons\": [\n        \"Exact search of the cached opinion text does not verify the lake pin-211 quoted string.\",\n        \"The quoted string uses page-generated phrasing such as 'Lewis moved to suppress' and markdown headings like '## Issue' and '## Rule', which are not opinion text.\",\n        \"Because the asserted pinpoint quote is not character-faithful, the quote-fidelity assertion cannot stand as framed.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content page’s visible Rule quote appears supportable from page 211, but the lake pin-211 record does not preserve that quote accurately.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-211 from the cached opinion text rather than from rendered page prose.\"\n    },\n    {\n      \"assertion_id\": \"d8fba46b2e5101ec\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1966-12-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Treatment and currency are outside Lens A, so no treatment merits finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B must assess treatment and currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed support and quote-fidelity issues only. The treatment row was checked only for conformity to disclosed lake fields, not for good-law currency.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:03:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-99044f3a03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1814a5bba7",
+      "F-S9-PR-00838606ca"
+    ],
     "group_id": "_overhaul2/lake/cases/Lewis v. United States (1966).json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +123,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fadae881.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Lewis v. United States (1966)"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 214286,
+      "output": 10971,
+      "source": "codex-events",
+      "total": 225257
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "255ad97e50293fbe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c09332ec3e19722": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afe04295d1c6e2b9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b027f1903f12adbf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d8fba46b2e5101ec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1814a5bba7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-00838606ca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-99044f3a03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 212.4
   }
 }

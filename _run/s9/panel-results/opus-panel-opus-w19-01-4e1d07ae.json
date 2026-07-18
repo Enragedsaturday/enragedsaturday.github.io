@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "54dbcb1329eb0f7c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip is the O'Connor majority in 'United States v. Place' with official-reporter star pagination *698 through *710, consistent with the case beginning at 462 U.S. 696.",
+          "Official cite '462 U.S. 696 (1983)' matches the record's selected_official; parallel S. Ct./L. Ed. 2d/U.S.L.W./LEXIS cites are internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2673595d7860bc5f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In these respects, the canine sniff is sui generis. We are aware of no other investigative procedure that is so limited both in the manner in which the information is obtained and in the content of the information revealed by the procedure. Therefore, we conclude that the particular course of investigation that the agents intended to pursue here — exposure of respondent's luggage, which was located in a public place, to a trained canine — did not constitute a “search” within the meaning of the Fourth Amendment.",
+          "locator_note": "pinpoints[] pin-707 .quote",
+          "needs_cl": false,
+          "problem": "Stored pin-707 quote is content-page scaffolding, not opinion text: '(2) Whether the 90-minute seizure ... ## Rule **Dog sniff.** A canine sniff of luggage is unique and not a search:'. It contains markdown ('## Rule', '**Dog sniff.**') and the page Issue line, none of which can appear in a judicial slip. The record's quote_fidelity='mismatch' flag is correct.",
+          "proposed_fix": "Replace the stored pin-707 quote with the opinion passage the content page actually renders and anchors at 707 (the 'sui generis' passage), which is verbatim in the cached slip at page 707.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote embeds markdown headers/bold ('## Rule', '**Dog sniff.**') and the page's Issue-2 line — impossible in an opinion, so it fails quote fidelity outright.",
+          "The cached slip at p.707 contains the 'sui generis' passage that the content page renders correctly, so the 707 pincite and reader-facing quote are sound; only the record's stored quote string is defective."
+        ],
+        "residual_risks": [
+          "The page-rendered quote and the 707 pincite are faithful; the defect is confined to the record's stored quote field, not the published page."
+        ],
+        "suggested_tightening": "Re-point the pinpoint.quote extractor to capture the anchored blockquote instead of the preceding lead-in scaffolding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9fa151628f405b70",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached slip contains the quote verbatim spanning two consecutive paragraphs on p.709: 'Under this standard, it is clear that the police conduct here exceeded the permissible limits of a Terry-type investigative stop.' then 'The length of the detention of respondent's luggage alone precludes the conclusion that the seizure was reasonable in the absence of probable cause.'",
+          "Both sentences fall after the *709 marker, matching the ^pin-709 cite; the record's 'mismatch' flag is contradicted by the cached text (only trivial italic/apostrophe normalization differs)."
+        ],
+        "residual_risks": [
+          "Record self-flag 'mismatch'/'slip-only' appears spurious (likely the two-paragraph span or quote normalization)."
+        ],
+        "suggested_tightening": "Clear the stale 'mismatch' flag on pin-709 after re-verification against the reporter text.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "428b0088e10121b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence overrules Place; every treatment.edge is 'proposed:true' unadjudicated citator output, several facially impossible (e.g., 'Scott v. Harris'/'United States v. Sharpe' tagged 'overruled' Place).",
+          "The scope_note account (Caballes applied it; Jardines bounded it at curtilage; Sharpe/Rodriguez refined duration) is coherent and consistent with the cached slip's own footnote 10 declining 'any outside time limitation for a permissible Terry stop.'"
+        ],
+        "residual_risks": [
+          "Definitive currency as of 2026-06-30 ultimately needs citator confirmation; the proposed negative edges are unadjudicated candidates, not confirmed treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fe30fc98c9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Place.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-01-4e1d07ae",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Place"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2673595d7860bc5f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "428b0088e10121b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "54dbcb1329eb0f7c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9fa151628f405b70": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b87f697e2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fe30fc98c9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

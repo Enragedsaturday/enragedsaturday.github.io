@@ -1,22 +1,150 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Brignoni-Ponce.json",
+    "lens": "A",
+    "notes": "Reviewed only the four assertion rows disclosed in group_inventory.jsonl under lens A; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "0343faf2519beaa8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Brignoni-Ponce, U.S. Supreme Court, decided 1975-06-30.",
+          "Lake citations list official citation 422 U.S. 873 and the same parallel/vendor citations shown in the payload.",
+          "Cached opinion text header also shows 422 U.S. 873 (1975), Supreme Court of United States, decided June 30, 1975."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "19915a66373ab4ab",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Except at the border and its functional equivalents, officers on roving patrol may stop vehicles only if they are aware of specific articulable facts, together with rational inferences from those facts, that reasonably warrant suspicion that the vehicles contain aliens who may be illegally in the country.",
+          "locator_note": "group_inventory pin-884 / lake.pinpoints[0]; cached opinion text line 40 at reporter page *884.",
+          "needs_cl": false,
+          "problem": "The pin-884 payload/lake pinpoint quote is not an opinion quote; it is generated content-page material ending just before the actual quoted rule. The actual opinion text at page *884 contains the reasonable-suspicion sentence used on the rendered page.",
+          "proposed_fix": "Replace the pin-884 pinpoint quote with the actual opinion sentence beginning \"Except at the border and its functional equivalents\" and mark the pinpoint as verified after matching it to the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself flags pin-884 quote_fidelity as mismatch.",
+          "The payload quote begins with page title/background/issue material, not Supreme Court opinion text.",
+          "The actual quoted rule appears in text at page *884 and is different from the payload quote."
+        ],
+        "residual_risks": [
+          "The rendered content_page rule quote is supportable; the defect is the inventory/lake pinpoint quote for pin-884."
+        ],
+        "suggested_tightening": "Ensure pinpoint extraction ignores generated Markdown/front-matter content and captures only cached opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4385013b3e01472",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence exactly matches lake.pinpoints[pin-886].quote.",
+          "The cached opinion text contains the same words in order at the end of the paragraph spanning reporter pages *886-*887; the only interruption is the star-pagination marker before \"person\".",
+          "The rendered page's 886-87 pincite is consistent with the paragraph/page break."
+        ],
+        "residual_risks": [
+          "A raw HTML string matcher may still flag this because the cached text inserts a star-pagination span inside the sentence."
+        ],
+        "suggested_tightening": "Normalize star-pagination markup before quote-fidelity checks; a tighter display cite could be 887 or 886-87.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8176a4e353fabd99",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment merits finding is raised.",
+          "The payload treatment fields match lake.treatment and the content_page front matter: good_law, as_of_content 1975-06-30, as_of_treatment 2026-06-30, varies_by_point false, same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits were not reviewed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Brignoni-Ponce.json\",\"reviewed\":[{\"assertion_id\":\"0343faf2519beaa8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Brignoni-Ponce, U.S. Supreme Court, decided 1975-06-30.\",\"Lake citations list official citation 422 U.S. 873 and the same parallel/vendor citations shown in the payload.\",\"Cached opinion text header also shows 422 U.S. 873 (1975), Supreme Court of United States, decided June 30, 1975.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"19915a66373ab4ab\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-884 payload/lake pinpoint quote is not an opinion quote; it is generated content-page material ending just before the actual quoted rule. The actual opinion text at page *884 contains the reasonable-suspicion sentence used on the rendered page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-884 pinpoint quote with the actual opinion sentence beginning \\\"Except at the border and its functional equivalents\\\" and mark the pinpoint as verified after matching it to the cached opinion text.\",\"evidence_quote\":\"Except at the border and its functional equivalents, officers on roving patrol may stop vehicles only if they are aware of specific articulable facts, together with rational inferences from those facts, that reasonably warrant suspicion that the vehicles contain aliens who may be illegally in the country.\",\"needs_cl\":false,\"locator_note\":\"group_inventory pin-884 / lake.pinpoints[0]; cached opinion text line 40 at reporter page *884.\"},\"reasons\":[\"The lake record itself flags pin-884 quote_fidelity as mismatch.\",\"The payload quote begins with page title/background/issue material, not Supreme Court opinion text.\",\"The actual quoted rule appears in text at page *884 and is different from the payload quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The rendered content_page rule quote is supportable; the defect is the inventory/lake pinpoint quote for pin-884.\"],\"suggested_tightening\":\"Ensure pinpoint extraction ignores generated Markdown/front-matter content and captures only cached opinion text.\"},{\"assertion_id\":\"d4385013b3e01472\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence exactly matches lake.pinpoints[pin-886].quote.\",\"The cached opinion text contains the same words in order at the end of the paragraph spanning reporter pages *886-*887; the only interruption is the star-pagination marker before \\\"person\\\".\",\"The rendered page's 886-87 pincite is consistent with the paragraph/page break.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A raw HTML string matcher may still flag this because the cached text inserts a star-pagination span inside the sentence.\"],\"suggested_tightening\":\"Normalize star-pagination markup before quote-fidelity checks; a tighter display cite could be 887 or 886-87.\"},{\"assertion_id\":\"8176a4e353fabd99\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment merits finding is raised.\",\"The payload treatment fields match lake.treatment and the content_page front matter: good_law, as_of_content 1975-06-30, as_of_treatment 2026-06-30, varies_by_point false, same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits were not reviewed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only the four assertion rows disclosed in group_inventory.jsonl under lens A; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:28-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:48:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7ea0171969"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Brignoni-Ponce.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-2ce46a8a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2ce46a8a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:19.660581Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:20.462100Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:21.739682Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:23.881605Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:27.595293Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Brignoni-Ponce"
+    ],
+    "tokens": {
+      "input": 259988,
+      "output": 8642,
+      "source": "codex-events",
+      "total": 268630
+    },
+    "verdict_map": {
+      "0343faf2519beaa8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "19915a66373ab4ab": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8176a4e353fabd99": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d4385013b3e01472": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7ea0171969",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 174.0
   }
 }

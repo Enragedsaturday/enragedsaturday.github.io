@@ -1,0 +1,114 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "31baefddffd057b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official '475 U.S. 469' matches lake citations.official; parallels 106 S. Ct. 1292 / 89 L. Ed. 2d 452 / 54 U.S.L.W. 4289 and vendor-neutral 1986 U.S. LEXIS 33 all present.",
+          "Cached opinion carries page-number labels *482/*483/*484, consistent with the case sitting in 475 U.S. beginning at 469; identity checks all true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "823a5b1862ff7f75",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that municipal liability under §1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy with respect to the subject matter in ques*484tion.",
+          "locator_note": "cached opinion p id=b563-6 (line ~3182); *483/*484 labels straddle the quoted sentence; content page line 2048",
+          "needs_cl": false,
+          "problem": "Harvested payload.quote for pin-483 captured a wrong page-markdown span (Background/Issue/Rule prose) and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-483 content quote is verbatim-faithful and its pincite 483-484 is independently VERIFIABLE from the inlined page labels, so both the mismatch flag and 'slip-only' status are wrong.",
+          "proposed_fix": "Re-harvest pin-483 to the real quoted sentence; set fidelity=match and status to reflect the verifiable 483-484 pincite.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page ^pin-483 quote ('municipal liability under § 1983 attaches where — and only where — ...subject matter in question.') matches the opinion verbatim.",
+          "Page-break labels *483 and *484 fall inside the quoted sentence, confirming the 475 U.S. at 483-484 pincite from disclosed evidence."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' understates what is verifiable: bound-reporter page labels are present in the cached source."
+        ],
+        "suggested_tightening": "Promote star/page-label-verifiable pincites out of 'slip-only' status.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b92930afc7e7b420",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is consistent; Pembaur (1986) single-decision municipal-liability rule remains governing (refined, not displaced, by Praprotnik/McMillian).",
+          "All 36 edges are proposed:true / field_iii='mentioned'; none adopted into field_i."
+        ],
+        "residual_risks": [
+          "Proposed negatives (City of Canton, Bryan County, Praprotnik tagged 'questioned/overruled'; Texas/other circuit cases tagged 'overruled'; 'superseded_by_statute' on a constitutional-tort doctrine) are false positives — progeny that refine, or lower courts that cannot overrule SCOTUS."
+        ],
+        "suggested_tightening": "Suppress 'superseded_by_statute' proposals on constitutional §1983 doctrines.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Pembaur v. City of Cincinnati.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-02-d1b2e761",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pembaur v. City of Cincinnati"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "31baefddffd057b3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "823a5b1862ff7f75": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b92930afc7e7b420": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7465c9b6d",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

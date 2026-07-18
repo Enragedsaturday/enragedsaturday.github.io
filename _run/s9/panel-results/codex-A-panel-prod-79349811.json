@@ -1,13 +1,79 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lego v. Twomey.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 group_inventory.jsonl rows exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "9072b0bbdf93d084",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record is verified for Lego v. Twomey, U.S. Supreme Court, decided 1972-01-12, docket 70-5037.",
+          "The official citation in the lake record is 404 U.S. 477, and the content page uses 404 U.S. 477 (1972); the parallel and vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8c8a4b6307a7674",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Lego v. Twomey *404 U.S. 477 (1972)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[] id pin-489; content_page.md attaches ^pin-489 to the Rule quote.",
+          "needs_cl": false,
+          "problem": "The stored pin-489 quote in the lake record is not the opinion passage at 404 U.S. 489; it is a corrupted excerpt from the generated content page/header/background and is itself marked quote_fidelity=mismatch.",
+          "proposed_fix": "Replace lake pinpoints[].quote for pin-489 with the actual page-489 opinion passage beginning with the Court's 'when a confession challenged as involuntary...' language, and set the page/star marker to 489.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed full opinion text contains the relevant page-489 passage: the Court says that when a confession challenged as involuntary is used at trial, the defendant is entitled to a reliable and clear-cut voluntariness determination, and the prosecution must prove voluntariness at least by a preponderance.",
+          "The lake pin quote instead begins with markdown page matter and background text, not the court's page-489 passage."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote appears substantively supported by the cached opinion text; the defect is the corrupted quote-pin support record."
+        ],
+        "suggested_tightening": "Refresh pin-489 from the cached opinion text and keep the displayed rule quote tied to the corrected pin.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "862ed073a7ac96f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The content page mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and negative-history reconciliation remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Lego v. Twomey.json\",\"reviewed\":[{\"assertion_id\":\"9072b0bbdf93d084\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake identity record is verified for Lego v. Twomey, U.S. Supreme Court, decided 1972-01-12, docket 70-5037.\",\"The official citation in the lake record is 404 U.S. 477, and the content page uses 404 U.S. 477 (1972); the parallel and vendor citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b8c8a4b6307a7674\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-489 quote in the lake record is not the opinion passage at 404 U.S. 489; it is a corrupted excerpt from the generated content page/header/background and is itself marked quote_fidelity=mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace lake pinpoints[].quote for pin-489 with the actual page-489 opinion passage beginning with the Court's 'when a confession challenged as involuntary...' language, and set the page/star marker to 489.\",\"evidence_quote\":\"--- # Lego v. Twomey *404 U.S. 477 (1972)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-489; content_page.md attaches ^pin-489 to the Rule quote.\"},\"reasons\":[\"The disclosed full opinion text contains the relevant page-489 passage: the Court says that when a confession challenged as involuntary is used at trial, the defendant is entitled to a reliable and clear-cut voluntariness determination, and the prosecution must prove voluntariness at least by a preponderance.\",\"The lake pin quote instead begins with markdown page matter and background text, not the court's page-489 passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content-page quote appears substantively supported by the cached opinion text; the defect is the corrupted quote-pin support record.\"],\"suggested_tightening\":\"Refresh pin-489 from the cached opinion text and keep the displayed rule quote tied to the corrected pin.\"},{\"assertion_id\":\"862ed073a7ac96f3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The content page mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and negative-history reconciliation remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 group_inventory.jsonl rows exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:02:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bcf7841276",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-39cfdb0250"
+    ],
     "group_id": "_overhaul2/lake/cases/Lego v. Twomey.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +82,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-79349811.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Lego v. Twomey"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 242613,
+      "output": 9339,
+      "source": "codex-events",
+      "total": 251952
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "862ed073a7ac96f3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9072b0bbdf93d084": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8c8a4b6307a7674": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-39cfdb0250",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bcf7841276",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 183.8
   }
 }

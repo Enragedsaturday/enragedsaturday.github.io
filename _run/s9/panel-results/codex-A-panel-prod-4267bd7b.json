@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Pringle.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertion rows in group_inventory.jsonl exactly once using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "e7cdb46ce3d3dba6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Maryland v. Pringle, U.S. Supreme Court, decided 2003-12-15.",
+          "The asserted official citation 540 U.S. 366 and parallels 124 S. Ct. 795, 157 L. Ed. 2d 769, and 2003 U.S. LEXIS 9198 match the lake citations record.",
+          "The content page displays 540 U.S. 366 (2003), consistent with the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38a51469ec3551ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge, of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.",
+          "locator_note": "lake pinpoints[0] id=pin-372; content_page.md Rule uses ^pin-372; cached opinion text contains the actual passage after star page *372.",
+          "needs_cl": false,
+          "problem": "The pin-372 quote in the lake/inventory is not a verbatim opinion passage at page 372; it is a harvested excerpt of the built content page header/background/rule. The displayed Rule quote also is not character-faithful to the cached text because the cached text reads 'knowledge, of,' while the page quote reads 'knowledge of,'.",
+          "proposed_fix": "Replace pin-372 with the exact opinion passage from the cached text at star page 372 and preserve disclosed punctuation, or remove the pinpoint quote until reharvested correctly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory itself marks quote_fidelity as mismatch.",
+          "The lake pinpoint quote begins with the content page delimiter/header, not the opinion text.",
+          "The actual cached opinion passage at page 372 supports the legal proposition, but the stored pinpoint quote is not character-faithful."
+        ],
+        "residual_risks": [
+          "The cached text may contain OCR punctuation, but under the disclosed-evidence-only rule it controls this fidelity review."
+        ],
+        "suggested_tightening": "Regenerate pin-372 from text/Maryland v. Pringle__199e2e.txt around star page *372 and add an automated check that lake pinpoints do not ingest content_page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7998bc08369f0b52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The asserted treatment fields match the lake treatment fields and the content page frontmatter: field_i_validity good_law, as_of_content 2003-12-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Pringle.json\",\"reviewed\":[{\"assertion_id\":\"e7cdb46ce3d3dba6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Maryland v. Pringle, U.S. Supreme Court, decided 2003-12-15.\",\"The asserted official citation 540 U.S. 366 and parallels 124 S. Ct. 795, 157 L. Ed. 2d 769, and 2003 U.S. LEXIS 9198 match the lake citations record.\",\"The content page displays 540 U.S. 366 (2003), consistent with the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"38a51469ec3551ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-372 quote in the lake/inventory is not a verbatim opinion passage at page 372; it is a harvested excerpt of the built content page header/background/rule. The displayed Rule quote also is not character-faithful to the cached text because the cached text reads 'knowledge, of,' while the page quote reads 'knowledge of,'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-372 with the exact opinion passage from the cached text at star page 372 and preserve disclosed punctuation, or remove the pinpoint quote until reharvested correctly.\",\"evidence_quote\":\"We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge, of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] id=pin-372; content_page.md Rule uses ^pin-372; cached opinion text contains the actual passage after star page *372.\"},\"reasons\":[\"The inventory itself marks quote_fidelity as mismatch.\",\"The lake pinpoint quote begins with the content page delimiter/header, not the opinion text.\",\"The actual cached opinion passage at page 372 supports the legal proposition, but the stored pinpoint quote is not character-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text may contain OCR punctuation, but under the disclosed-evidence-only rule it controls this fidelity review.\"],\"suggested_tightening\":\"Regenerate pin-372 from text/Maryland v. Pringle__199e2e.txt around star page *372 and add an automated check that lake pinpoints do not ingest content_page markdown.\"},{\"assertion_id\":\"7998bc08369f0b52\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment defect is raised.\",\"The asserted treatment fields match the lake treatment fields and the content page frontmatter: field_i_validity good_law, as_of_content 2003-12-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 assertion rows in group_inventory.jsonl exactly once using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:06:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-12d28368cc"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Pringle.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4267bd7b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4267bd7b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:33.599185Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.335422Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:35.319730Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.631482Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:38.541742Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:42.419625Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Pringle"
+    ],
+    "tokens": {
+      "input": 156987,
+      "output": 5200,
+      "source": "codex-events",
+      "total": 162187
+    },
+    "verdict_map": {
+      "38a51469ec3551ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7998bc08369f0b52": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e7cdb46ce3d3dba6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-12d28368cc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 106.3
   }
 }

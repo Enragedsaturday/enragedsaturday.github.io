@@ -1,0 +1,194 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "de4a12fd3ef06ad3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 380 U.S. 102 is confirmed verbatim in the cached opinion header ('380 U.S. 102 (1965)', 'UNITED STATES v. VENTRESCA', 'No. 28', 'Supreme Court of United States', 'Decided March 1, 1965').",
+          "Case name, court, docket 28, and year 1965 all match the disclosed opinion; official_selection rank_1 for scotus is coherent.",
+          "A.F.T.R.2d parallel cite is plausible for this IRS/liquor-tax case; nothing disclosed refutes the reported citations."
+        ],
+        "residual_risks": [
+          "Parallel/vendor-neutral cites (85 S. Ct. 741; 13 L. Ed. 2d 684; 16 A.F.T.R.2d 5787; 1965 U.S. LEXIS 2438) are not individually printed in the disclosed opinion text, so only the official 380 U.S. 102 is directly corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "11fe534661b13333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'purely conclusory,' appears verbatim in the opinion at *108: 'probable cause can be made out by affidavits which are purely conclusory, stating only the affiant's or an informer's belief...'.",
+          "star_marker 108 and star-verified fragment are consistent; the passage sits before the *109 star, i.e., on page 108, matching the content-page 108-09 pincite."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "479ba5f7d20e5437",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote 'underscore[] the preference accorded police action taken under a warrant.' is faithful to the opinion, which reads at the *107 boundary: '...are limited underscores the preference accorded police action taken under a warrant...'.",
+          "The bracket 'underscore[]' is a legitimate Bluebook alteration of 'underscores' to fit the recast subject ('The limited exceptions ... underscore[]'); substance unchanged.",
+          "Pincite 106-07 is correct — the phrase falls on page 107 (right after the *107 star), which the 106-07 span includes."
+        ],
+        "residual_risks": [
+          "Recorded quote_fidelity='mismatch' / pinpoint_status='slip-only' is a mechanical false-negative caused by the '[]' alteration and the *106/*107 split defeating literal string-matching, not a substantive infidelity."
+        ],
+        "suggested_tightening": "Re-run the fidelity matcher with Bluebook-alteration tolerance so validly-altered quotes ('underscore[]') resolve to 'matched'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c544bcdf805ed69f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "affidavits for search warrants, such as the one involved here, must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion. They are normally drafted by nonlawyers in the midst and haste of a criminal investigation. Technical requirements of elaborate specificity once exacted under common law pleadings have no proper place in this area.",
+          "locator_note": "Ventresca opinion at *108, paragraph beginning 'These decisions reflect the recognition...'.",
+          "needs_cl": false,
+          "problem": "The pin-108 record's `quote` field is a corrupted harvest artifact: it captured a block of content-page markdown (title line + Background + Issue + 'Rule Yes.') instead of the passage anchored at ^pin-108. That captured string does not appear in the Ventresca opinion. The actual content-page quotation at ^pin-108, however, IS faithful and correctly pincited to 380 U.S. at 108.",
+          "proposed_fix": "Replace payload.quote for pin-108 with the real anchored passage and re-derive quote_fidelity/pinpoint_status; the rendered content page needs no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote string is content-page markdown ('--- # United States v. Ventresca ... ## Rule Yes.'), which is genuinely absent from the opinion — quote_fidelity='mismatch' is accurate as to the corrupted field.",
+          "But the real ^pin-108 quotation ('commonsense and realistic fashion' passage) is verbatim in the opinion at page 108 and correctly cited; the underlying legal content is sound.",
+          "Defect is data-quality (extractor fallback), not a fabricated or misplaced legal quotation on the page."
+        ],
+        "residual_risks": [
+          "If an automated pass treats the corrupted quote field as the page's actual quotation, it could falsely flag a faithful, correctly-pincited passage."
+        ],
+        "suggested_tightening": "Have the harvester reject captures that contain markdown structural tokens ('---', '##', '^pin-') as quote fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc52a61b97e75dcb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'the resolution of doubtful or marginal cases in this area should be largely determined by the preference to be accorded to warrants.' appears verbatim in the opinion (immediately before 'Jones v. United States, supra, at 270.').",
+          "The passage follows the *109 star, i.e., page 109; star_marker 109 and star-verified fragment are consistent with the 'Id. at 109' pincite."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46034e99d3fd1ea0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is correct: Ventresca is a landmark 1965 SCOTUS decision (2,890 citing opinions per progeny) whose commonsense-affidavit-review rule remains foundational; the disclosed opinion confirms the holding.",
+          "The lake record's proposed negative edges are self-flagged unaudited triage (audit_needed=true, 'R15 treatment audit required', proposed=true) and are facially false positives — e.g., labeling Illinois v. Gates and United States v. Leon as 'overruled' Ventresca is nonsensical (both cite it approvingly as top-cited progeny).",
+          "scope_note's characterization (deferential review reaffirmed in Gates; good-faith rule of Leon) is consistent with the opinion and standard doctrine."
+        ],
+        "residual_risks": [
+          "The 11 lane1_negative + 24 lane2_top_cited proposed negative events remain unadjudicated (R15 audit pending); good_law rests on their being confirmed as triage FPs, which is highly likely but not machine-closed in the pack."
+        ],
+        "suggested_tightening": "Close the R15 audit to convert the proposed keyword-triage negatives to dismissed so field_i_validity carries an audited basis rather than a migration-seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cd77576fc8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Ventresca.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-03-fec1e055",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ventresca"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "11fe534661b13333": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46034e99d3fd1ea0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "479ba5f7d20e5437": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c544bcdf805ed69f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "cc52a61b97e75dcb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de4a12fd3ef06ad3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd77576fc8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-88e97a5f90",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

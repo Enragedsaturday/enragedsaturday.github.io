@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Sokolow.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "6a0afcbf3eed2625",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for United States v. Sokolow, U.S. Supreme Court, decided 1989-04-03.",
+          "The displayed official citation 490 U.S. 1 and listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e64e5f8cac5e144",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text.",
+          "The lake pinpoints record marks pin-9 as quote_fidelity matched, star-verified, with star_marker 9."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95243062da7bcefe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In evaluating the validity of a stop such as this, we must consider \"the totality of the circumstances  the whole picture.\"",
+          "locator_note": "pin-8",
+          "needs_cl": false,
+          "problem": "pin-8 is not a faithful quote pinpoint. The lake pin-8 quote is a harvested content-page/header excerpt, not the Sokolow opinion passage used by the page, and the lake itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-8 with the actual opinion passage at star page 8 and set a verified star_marker/position only after matching the cached text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the relevant passage at star page 8, but the lake pin-8 quote begins with page/frontmatter material rather than that passage.",
+          "The content page's displayed pin-8 quotation is not supported by the stored lake pin-8 quote record."
+        ],
+        "residual_risks": [
+          "The underlying proposition is supported by the opinion, but the current pin-8 quote record cannot verify it."
+        ],
+        "suggested_tightening": "Use the exact cached-text quotation or clearly mark any typographic normalization.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ede94a380d51024",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment or currency.",
+          "The treatment payload fields match the lake treatment fields: good_law, as_of_content 1989-04-03, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Sokolow.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6a0afcbf3eed2625\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified for United States v. Sokolow, U.S. Supreme Court, decided 1989-04-03.\",\n        \"The displayed official citation 490 U.S. 1 and listed parallel/vendor citations match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8e64e5f8cac5e144\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the cached opinion text.\",\n        \"The lake pinpoints record marks pin-9 as quote_fidelity matched, star-verified, with star_marker 9.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"95243062da7bcefe\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-8 is not a faithful quote pinpoint. The lake pin-8 quote is a harvested content-page/header excerpt, not the Sokolow opinion passage used by the page, and the lake itself marks quote_fidelity as mismatch with no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-8 with the actual opinion passage at star page 8 and set a verified star_marker/position only after matching the cached text.\",\n        \"evidence_quote\": \"In evaluating the validity of a stop such as this, we must consider \\\"the totality of the circumstances \\u0097 the whole picture.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-8\"\n      },\n      \"reasons\": [\n        \"The cached opinion contains the relevant passage at star page 8, but the lake pin-8 quote begins with page/frontmatter material rather than that passage.\",\n        \"The content page's displayed pin-8 quotation is not supported by the stored lake pin-8 quote record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying proposition is supported by the opinion, but the current pin-8 quote record cannot verify it.\"\n      ],\n      \"suggested_tightening\": \"Use the exact cached-text quotation or clearly mark any typographic normalization.\"\n    },\n    {\n      \"assertion_id\": \"9ede94a380d51024\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not adjudicate treatment or currency.\",\n        \"The treatment payload fields match the lake treatment fields: good_law, as_of_content 1989-04-03, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review is reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl under Lens A only.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:08:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3a2a2c3648"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Sokolow.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d0d90d0f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Sokolow"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 393188,
+      "output": 7288,
+      "source": "codex-events",
+      "total": 400476
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "6a0afcbf3eed2625": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e64e5f8cac5e144": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95243062da7bcefe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ede94a380d51024": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a2a2c3648",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 155.5
   }
 }

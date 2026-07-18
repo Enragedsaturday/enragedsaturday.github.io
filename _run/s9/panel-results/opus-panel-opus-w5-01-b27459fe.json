@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "492fbf2b9211538d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '416 U.S. 430 (1974)', GOODING v. UNITED STATES, No. 72-6902, decided April 29, 1974.",
+          "Official cite 416 U.S. 430 with parallels 94 S. Ct. 1780 and 40 L. Ed. 2d 250 is consistent with the cluster; official selection present.",
+          "Cluster 109017 matches the sourced opinion URL."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ca90f61624b04ef6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote matches the cached opinion verbatim: 'We therefore conclude that 21 U.S.C. § 879(a) requires no special showing for a nighttime search, other than a showing that the contraband is likely to be on the property or person to be searched at that time.'",
+          "The sentence sits after the '*458' star in the cached text, so pin-458 is correct.",
+          "The payload's quote_fidelity='mismatch' is a false positive attributable only to statutory-cite whitespace ('U. S. C.' / '§ 879 (a)'); the substantive quote is faithful."
+        ],
+        "residual_risks": [
+          "Sole difference from cached text is internal citation spacing, a standard normalization, not a quote variance."
+        ],
+        "suggested_tightening": "Normalize statutory-cite whitespace before the fidelity comparison to suppress this false-positive class.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eafd75ab788c9142",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That section provides that a warrant may be served \"at any time of the day or night\" so long as the issuing authority \"is satisfied that there is probable cause to believe that grounds exist for the warrant and for its service at such time.\"",
+          "locator_note": "Cached Gooding opinion, page-439 star (*439) paragraph; content page Rule section, ^pin-439.",
+          "needs_cl": false,
+          "problem": "The harvested `quote` for pin-439 is not an opinion quote — it is a run of the content page's own editorial prose (Background/Issue/Rule section text) captured up to the ^pin-439 anchor, ending mid-sentence at 'Section 879(a) permits service'. That blob appears nowhere in the Gooding opinion; the harvester grabbed the pre-quote context instead of the pinned quotation.",
+          "proposed_fix": "Re-harvest the pin-439 quote to the actual quoted phrases the content page pins ('at any time of the day or night'; 'is satisfied that there is probable cause to believe that grounds exist for the warrant and for its service at such time'), which are verbatim-faithful to 416 U.S. 439.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is content-page prose ('## Issue ... ## Rule ...'), not text from the opinion — a harvester boundary artifact.",
+          "The real pin-439 phrases appear verbatim at 416 U.S. 439 in the cached opinion, so the underlying page cite is sound.",
+          "Pincite 439 is correct: the '*439' star precedes the quoted § 879(a) language in the cached text."
+        ],
+        "residual_risks": [
+          "The published page quote is clean and faithful; the defect is confined to the assertion record's captured quote string."
+        ],
+        "suggested_tightening": "Fix the quote-harvester's span boundary so it captures the quoted string, not the preceding context up to the pin anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3286635ee48b127",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote 'suggested that there was a continuing traffic of drugs from petitioner's apartment, and a prior purchase through an informer had confirmed that drugs were available.' matches the cached opinion verbatim.",
+          "The text appears after the '*458' star, confirming star_marker 458.",
+          "Payload self-classifies 'matched' / star-verified, consistent with my independent read."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "996884fe7c94f645",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No negative treatment is present in or derivable from the inlined evidence; the disclosed opinion is a live majority SCOTUS holding (Affirmed) construing 21 U.S.C. § 879(a).",
+          "The good_law scope_note (statutory holding, statute in force) is internally coherent and uncontradicted by anything disclosed.",
+          "Refuting 'good_law' would require fabricating negative treatment, which the disclosed record does not support."
+        ],
+        "residual_risks": [
+          "The 'good law as of 2026-06-30' currency rests on citator/progeny data that is NOT inlined; the as_of_treatment date cannot be independently confirmed from disclosed evidence — hence verifiable_from_disclosed=false for the currency component."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ec072a8972",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4236c33f70",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Gooding v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-01-b27459fe",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gooding v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "492fbf2b9211538d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "996884fe7c94f645": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "ca90f61624b04ef6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eafd75ab788c9142": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f3286635ee48b127": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ec072a8972",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-70755e88da",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4236c33f70",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

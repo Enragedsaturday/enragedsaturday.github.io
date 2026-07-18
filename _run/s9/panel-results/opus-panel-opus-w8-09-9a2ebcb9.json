@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f5502b35a49379b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows '519 U.S. 33 (1996)', 'No. 95-891', argued Oct. 8 1996, decided Nov. 18 1996 — matches official cite and display '519 U.S. 33'.",
+          "Parallel cites (117 S. Ct. 417; 136 L. Ed. 2d 347) and vendor-neutral (1996 U.S. LEXIS 6971) are the standard Robinette citations; nothing in disclosed evidence contradicts.",
+          "official_selection_present=true, selected_rank_1; display consistent with cluster.citations[]."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "02e6cb4ab7dbb6ef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary.",
+          "locator_note": "pin-39; cached opinion paragraph ending at *40 (Schneckloth discussion).",
+          "needs_cl": false,
+          "problem": "Stored pin-39 quote is a garbled extraction artifact: 'before a consent to search obtained during the encounter can be voluntary. ## Rule No. Just as the Court has not required a detailed warning before an ordinary consent search,' — it splices Issue-section prose and the literal Markdown heading '## Rule', which cannot appear in the Robinette opinion. Self-flagged quote_fidelity 'mismatch'.",
+          "proposed_fix": "Repair the stored pin-39 quote to the faithful text the page actually displays and which the opinion contains verbatim: 'so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary.' (519 U.S. 40).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains the Markdown token '## Rule' and page Issue-section text — impossible as verbatim opinion text.",
+          "Cached opinion has no such string; the reader-facing rendered quote at ^pin-39 IS faithful, so the defect is confined to the stored pinpoint metadata."
+        ],
+        "residual_risks": [
+          "Rendered/displayed quote is faithful; this is a metadata-only extraction defect, not a reader-facing misquote."
+        ],
+        "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not from raw Markdown surrounding the ^anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e91cb8fa7e3d80de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches the opinion verbatim (cached text, 519 U.S. 40): 'The Fourth Amendment test for a valid consent to search is that the consent be voluntary, and \"[v]oluntariness is a question of fact to be determined from all the circumstances\"'.",
+          "The only difference is truncation of the trailing citation 'id., at 248-249' and a comma->period at the stopping point — standard, non-substantive; the payload 'mismatch' flag is a false positive (bracket/punctuation normalization)."
+        ],
+        "residual_risks": [
+          "Pipeline quote_fidelity 'mismatch' flag on this pin is a false positive; independent check confirms verbatim match."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0218e380dae0ed5b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is correct: Robinette (1996) has not been overruled; its holding (no 'free to go' advisory required for voluntary consent) remains binding, matching the scope_note.",
+          "Every negative treatment edge is proposed:true citator noise flagged audit_needed / 'R15 treatment audit required' (e.g., FLSA case Genesis HealthCare 'questioning', labor case Granite Rock 'overruling', and state courts 'overruling' a SCOTUS holding); none adopted into field_i."
+        ],
+        "residual_risks": [
+          "Unaudited proposed negative edges (Rodriguez 2015 'abrogated', McNeely 'questioned', etc.) are facially spurious citator false positives; the pending R15 audit does not disturb good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1369de35ca",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e437922200",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Ohio v. Robinette.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-09-9a2ebcb9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ohio v. Robinette"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0218e380dae0ed5b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "02e6cb4ab7dbb6ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e91cb8fa7e3d80de": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f5502b35a49379b0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4479195369",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1369de35ca",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e437922200",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

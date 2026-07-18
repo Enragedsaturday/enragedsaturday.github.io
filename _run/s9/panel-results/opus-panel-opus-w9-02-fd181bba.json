@@ -1,0 +1,114 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a60dda296cf9972b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official '555 U.S. 223' matches lake citations.official (selected_official=true) and cached slip-op header 'PEARSON ET AL. v. CALLAHAN', No. 07-751, Argued Oct 14 2008-Decided Jan 21 2009, cert to Tenth Circuit.",
+          "Parallels 129 S. Ct. 808 / 172 L. Ed. 2d 565 and vendor-neutral 2009 U.S. LEXIS 591 all present in lake citations.all; identity expected_citation_found/party_name_in_text/canonical_name_match all true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58f603d317e03b1c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "On reconsidering the procedure required in Saucier, we conclude that, while the sequence set forth there is often appropriate, it should no longer be regarded as manda tory.",
+          "locator_note": "slip op. Part III (cached opinion lines ~1595-1602); content page line 90",
+          "needs_cl": false,
+          "problem": "Harvested pinpoint payload.quote for pin-236 captured a wrong page-markdown span ('theory). Callahan sued under § 1983 ... ## Rule No.') rather than the actual content-page quotation, and labels quote_fidelity='mismatch'. The real ^pin-236 quote IS verbatim-faithful to the slip opinion (Part III), so the mismatch flag is spurious against the published quote.",
+          "proposed_fix": "Re-harvest pin-236 to the actual quoted sentence and clear the false mismatch flag; the published quote and pincite need no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page ^pin-236 quote matches slip-op Part III verbatim (allowing line-break hyphenation 'manda-tory'/'discre-tion').",
+          "Defect is internal to the harvested record: payload.quote is a page-markdown fragment, not opinion text, yet flagged 'mismatch'."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' is legitimate: the inlined slip op shows 'Cite as: 555 U. S. ____ (2009)', so bound page 236 cannot be independently confirmed from disclosed text (236 is the canonical pincite for the 'no longer mandatory' holding)."
+        ],
+        "suggested_tightening": "Distinguish 'quote captured wrong' from 'quote does not match source' in the fidelity label so a genuinely faithful published quote is not tagged mismatch.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99c4c46a983db030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' as of 2026-06-30 is internally consistent; Pearson (2009) is the governing QI-sequencing rule and no adopted negative treatment is present.",
+          "All 25 treatment edges are proposed:true / field_iii='mentioned' (lane1_negative & lane2_top_cited), none promoted into field_i."
+        ],
+        "residual_risks": [
+          "Proposed 'overruled' edges (Nat'l Rifle Ass'n v. Vullo, Citizens United, Ramos v. Louisiana, Kisor v. Wilkie, Michael Lacey v. Arpaio, etc.) are facially-implausible citation-graph false positives (unrelated subject matter and/or circuit cases that cannot overrule a SCOTUS holding); a future S2 re-derivation must not promote them."
+        ],
+        "suggested_tightening": "Filter lane negative edges by authority (a non-SCOTUS citing case cannot overrule SCOTUS) before surfacing 'overruled'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Pearson v. Callahan.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-02-fd181bba",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pearson v. Callahan"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "58f603d317e03b1c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "99c4c46a983db030": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a60dda296cf9972b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-426a6479dc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

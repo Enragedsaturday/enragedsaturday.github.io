@@ -1,0 +1,121 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b3aa22c691725491",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is McNeil v. Wisconsin (Justice Scalia): the offense-specific Sixth Amendment holding, West Allis/Caledonia facts, affirming the Wisconsin Supreme Court - matching the record.",
+          "U.S. Reports star-pagination in the cached text (*173 through *182) confirms volume-501 pagination for an opinion beginning at 171; internal cites read '501 U. S.'. Official 501 U.S. 171 supported (cluster 112622, identity_checked=true)."
+        ],
+        "residual_risks": [
+          "'1991 U.S. LEXIS 3483' not verifiable from disclosed text.",
+          "Page 171 itself (opinion start) is inferred from the *173+ labels rather than shown."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "722a38a31a3c5954",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Sixth Amendment right, however, is offense specific. It cannot be invoked once for all future prosecutions, for it does not attach until a prosecution is commenced.",
+          "locator_note": "pin-175; content page line 1822 vs cached opinion paragraph b245-9 'Sixth Amendment right, however, is offense specific...'",
+          "needs_cl": false,
+          "problem": "payload.quote captured page chrome (YAML delimiter, title/header line, Background/Issue prose, and 'Rule No.') instead of the pin-175 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-175 quotation on the page IS verbatim-faithful to the cached opinion.",
+          "proposed_fix": "Repoint payload.quote to the actual pin-175 quotation and re-run the fidelity check.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual pin-175 page quote is verbatim-faithful to the cached opinion; the cached OCR drops the leading 'The' (paragraph starts 'Sixth Amendment right, however...'), which the page correctly restores, and the page ends the quotation at the complete clause '...prosecution is commenced.', omitting the trailing definitional gloss (', that is, ...').",
+          "The *175 page-label immediately precedes the passage, confirming the pincite 501 U.S. at 175. The reviewed proposition survives; only the serialized payload.quote (chrome) needs modification."
+        ],
+        "residual_risks": [
+          "The page ends the quote at 'commenced.' with a period rather than a trailing ellipsis; the omitted ', that is, [initiation-of-adversary-proceedings gloss]' does not distort meaning (trivial Bluebook nicety).",
+          "pinpoint_status='slip-only' is inaccurate here - the cached text DOES carry the *175 U.S. Reports page-label."
+        ],
+        "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome; optionally add a terminal ellipsis before the closing quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d72d7020263cbbd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' for McNeil's offense-specific holding is consistent with the cached opinion (the holding, and its statement that Michigan v. Jackson 'rests upon' the same distinction).",
+          "The disclosed treatment record contains NO adjudicated negative treatment: all overruled/abrogated/questioned/superseded edges are proposed=true (lane1_negative and lane2_top_cited), with derivation audit_needed=true / 'R15 treatment audit required'.",
+          "The page's treatment note correctly explains that Jackson's later overruling (by Montejo) does not disturb McNeil's distinct offense-specificity holding; refutation fails."
+        ],
+        "residual_risks": [
+          "Currency is composite_basis=migration-seed; the scope_note candidly warns 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.'",
+          "36 proposed negative events (lane1=10, lane2=25, lane3=1) pending R15 audit could downgrade the composite.",
+          "The Jackson->Montejo subsequent history is not verifiable from the disclosed 1991 opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/McNeil v. Wisconsin.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-06-e697a778",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "McNeil v. Wisconsin"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "722a38a31a3c5954": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7d72d7020263cbbd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b3aa22c691725491": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6e3944f0b2",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

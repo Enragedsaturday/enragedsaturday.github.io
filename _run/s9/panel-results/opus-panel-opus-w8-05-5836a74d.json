@@ -1,0 +1,154 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ea80528374bd548a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Napue v. Illinois, Warren C.J. delivering; first star marker *265 places the opinion start on 360 U.S. 264, matching official cite '360 U.S. 264'.",
+          "Cert grant 358 U. S. 919 and Illinois Supreme Court history (13 Ill. 2d 566; 150 N. E. 2d 613) corroborate identity."
+        ],
+        "residual_risks": [
+          "Parallel cites (79 S. Ct. 1173; 3 L. Ed. 2d 1217; 1959 U.S. LEXIS 811) from cluster.citations[], not independently confirmable from disclosed opinion text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c4076543f5084b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered page quote '[I]t is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment.' is verbatim to cached text ('First, it is established ... must fall under the Fourteenth Amendment,'), with proper bracketed [I] and terminal period at truncation.",
+          "Text sits after the *269 star marker and before *270, so pincite 360 U.S. 269 is correct."
+        ],
+        "residual_risks": [
+          "S8 payload.quote for this pin is polluted with page-header/frontmatter text (broken extraction), which is why the pre-computed quote_fidelity='mismatch' is a false positive; the page's actual rendered quote is faithful."
+        ],
+        "suggested_tightening": "Re-extract payload.quote for pin-269 from the rendered ## Rule block, not the page header, so the S8 fidelity check is meaningful.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bcd8ca9624beb0fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quoted fragment 'does not cease to apply merely because the false testimony goes only to the credibility of the witness' appears verbatim in cached text ('... does not cease to apply merely because the false testimony goes only to the credibility of the witness.').",
+          "On 360 U.S. 269 (between *269 and *270); comma at truncation replaces the source period -- acceptable, words are exact."
+        ],
+        "residual_risks": [
+          "S8 pre-computed quote_fidelity='mismatch' is a false positive, likely from star-pagination markup / punctuation-at-truncation normalization; the fragment matches verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b1371c869267138",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' for a foundational 1959 SCOTUS due-process holding (Mooney-Napue-Giglio line); cached opinion confirms the knowing-false-testimony/credibility rule.",
+          "The only disclosed negative signals are 4 proposed(unaccepted) edges -- Schmitt v. State (Ga., 901 S.E.2d) 'overruled'; Sosa and Grand Jury 'superseded_by_statute'; Robinson 'questioned' -- all facially non-credible against a SCOTUS constitutional holding (a state court cannot overrule SCOTUS; a statute cannot supersede a due-process rule), so field_i_validity correctly resolves to good_law."
+        ],
+        "residual_risks": [
+          "composite_basis is 'migration-seed' (not a live citator run); good-law-as-of-2026-06-30 rests on the seed plus rejection of the non-credible proposed edges -- no independent citator confirmation is inlined.",
+          "Content page's flat 'No negative treatment' understates that proposed negative edges exist in the record (though correctly not promoted)."
+        ],
+        "suggested_tightening": "Consider annotating that the proposed negative edges were evaluated and rejected as N-blindness misattributions rather than stating 'No negative treatment' flat.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6223d2e7ea",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-552046bedd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5b9835993b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-05-5836a74d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Napue v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4b1371c869267138": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c4076543f5084b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bcd8ca9624beb0fd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea80528374bd548a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6223d2e7ea",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-552046bedd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5b9835993b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

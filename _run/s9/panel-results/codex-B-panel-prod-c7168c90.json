@@ -1,38 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Christensen.json",
+    "lens": "B",
+    "notes": "Lens B only: no support, quote-fidelity, or holding finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "608da4abe4f8db6e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as State of Tennessee v. James Robert Christensen, Jr., decided 2017-04-07 by Tenn., with cluster_id 4381703.",
+          "The lake citation fields contain the asserted citations, including display 2017 Tenn. LEXIS 195 and parallel 517 S.W.3d 60.",
+          "No disclosed treatment/progeny edge shows the authority was overruled, abrogated, superseded, or limited; the page separately flags treatment as unverified."
+        ],
+        "residual_risks": [
+          "The disclosed record does not prove current live-law status because treatment is a frontier stub and progeny enumeration is absent."
+        ],
+        "suggested_tightening": "Keep the citation, but do not imply verified current good-law status beyond the existing Unverified treatment label.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "372a487c55ea6260",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page's treatment call is Unverified, matching the lake treatment.field_i_validity value.",
+          "The lake scope_note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The lake treatment edges and point_overrides are empty, and progeny rows_cached is 0; the page does not claim verified good law."
+        ],
+        "residual_risks": [
+          "Empty treatment/progeny fields are not evidence of no negative treatment because the record says treatment was not derived.",
+          "The prose phrase leading state-high-court application is not independently supported by disclosed progeny or citation-count data."
+        ],
+        "suggested_tightening": "Avoid importance/currentness language such as leading unless later promotion supplies citation or treatment evidence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/State v. Christensen.json\",\"reviewed\":[{\"assertion_id\":\"608da4abe4f8db6e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as State of Tennessee v. James Robert Christensen, Jr., decided 2017-04-07 by Tenn., with cluster_id 4381703.\",\"The lake citation fields contain the asserted citations, including display 2017 Tenn. LEXIS 195 and parallel 517 S.W.3d 60.\",\"No disclosed treatment/progeny edge shows the authority was overruled, abrogated, superseded, or limited; the page separately flags treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not prove current live-law status because treatment is a frontier stub and progeny enumeration is absent.\"],\"suggested_tightening\":\"Keep the citation, but do not imply verified current good-law status beyond the existing Unverified treatment label.\"},{\"assertion_id\":\"372a487c55ea6260\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The page's treatment call is Unverified, matching the lake treatment.field_i_validity value.\",\"The lake scope_note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"The lake treatment edges and point_overrides are empty, and progeny rows_cached is 0; the page does not claim verified good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Empty treatment/progeny fields are not evidence of no negative treatment because the record says treatment was not derived.\",\"The prose phrase leading state-high-court application is not independently supported by disclosed progeny or citation-count data.\"],\"suggested_tightening\":\"Avoid importance/currentness language such as leading unless later promotion supplies citation or treatment evidence.\"}],\"notes\":\"Lens B only: no support, quote-fidelity, or holding finding made.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:50-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:37:41-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/State v. Christensen.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "State v. Christensen"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c7168c90",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c7168c90.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'State v. Christensen' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "State v. Christensen"
+    ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 149114,
+      "output": 4691,
+      "source": "codex-events",
+      "total": 153805
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "372a487c55ea6260": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "608da4abe4f8db6e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 97.5
   }
 }

@@ -1,0 +1,121 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2fb1494b255a5a3d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.",
+          "locator_note": "Cached opinion slip op. page 13; the sentence is Volle's own restatement of Burgess ('576 F.3d at 1094' is a trailing support cite, not a quotation attribution), so quoting it to Volle slip op. 13 is correct.",
+          "needs_cl": false,
+          "problem": "The stored pin-13 quote is the wiki page header/preamble ('--- # State v. Volle ... ## Rule A digital warrant need not dictate the search method ...'), a harvest artifact absent from the opinion. The reader-facing quote anchored at ^pin-13 is verbatim-correct and correctly attributed to Volle's own prose on slip op. 13.",
+          "proposed_fix": "Replace the stored pin-13 quote string with the real sentence ('Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.'), which matches the opinion verbatim; do not alter the reader-facing quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote for pin-13 is page-header boilerplate (same systematic first-block harvest bug), not opinion text.",
+          "The genuine ^pin-13 quote matches the opinion verbatim and appears on slip op. page 13 as Volle's own words (the opinion does not put it in quotation marks; it cites Burgess as support afterward).",
+          "Pincite ('slip op., at 13') and reader-facing quote are sound; only the stored harvest string is defective."
+        ],
+        "residual_risks": [
+          "The underlying proposition originates with United States v. Burgess, 576 F.3d 1078, 1094 (10th Cir. 2009); Volle states it in its own words and cites Burgess. Attribution to Volle is accurate, but a purist citation could add '(citing Burgess)'.",
+          "Fix must replace, not delete, the stored string."
+        ],
+        "suggested_tightening": "Fix the first-block-reference quote-harvest bug (recurs across this pack).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc967dcfc2f36e5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion (slip op. 13–14) reads: 'Thus, even though investigators may need to review broad portions of a device's contents to locate relevant material, the warrant must still include a meaningful limiting principle tying the authorized seizure to evidence of a specified offense. See United States v. Palms ...'",
+          "The page quote reproduces those words verbatim (dropping only the leading 'Thus,'); it is Volle's own statement (a 'See' support cite follows), correctly attributed via 'Id.' to slip op. 13.",
+          "The lake 'mismatch' flag is a false negative (the mid-sentence page-break '13' and the 'Thus,' prefix); fidelity is intact."
+        ],
+        "residual_risks": [
+          "The sentence spans the slip op. 13→14 page break in the cached text; 'Id.' (slip op. 13) is correct for its start."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b3b8293a3796dfd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is a migration-seed; all derivation lanes show reviewed:0, edges are empty, and progeny citation_count is 0.",
+          "This is a brand-new decision (Kan. Sup. Ct., 2025-12-12) with no citing opinions, so good_law is the only sensible status and nothing in disclosed evidence refutes it.",
+          "Currency cannot be independently derived from disclosed data (no scan, no progeny), so I do not fabricate a defect or a positive currency confirmation."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 is a seed for a ~6-month-old case with zero indexed progeny; re-derivation is expected once progeny accrues (scope_note discloses this).",
+          "Record status is 'under_review' and identity_checked:false."
+        ],
+        "suggested_tightening": "Re-derive treatment once citing opinions appear; keep as_of_treatment marked provisional until then.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/State v. Volle.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-02-fa935aa5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Volle"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2fb1494b255a5a3d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b3b8293a3796dfd2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "cc967dcfc2f36e5e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd16c94050",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

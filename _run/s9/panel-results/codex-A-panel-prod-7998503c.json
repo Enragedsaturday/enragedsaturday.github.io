@@ -1,22 +1,155 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Coolidge v. New Hampshire.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0380471b78aab7ef\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Coolidge v. New Hampshire, U.S. Supreme Court, decided 1971-06-21.\",\n        \"The lake official citation is 403 U.S. 443, matching the content page's displayed citation 403 U.S. 443 (1971).\",\n        \"The parallel and vendor citations in the assertion match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4217e56fda2d824b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted text is not character-faithful to the opinion text: it drops the opening words 'Of course,' changes capitalization with '[T]he', and uses single quotation marks around plain view where the opinion text uses double quotation marks.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the quote with the exact source sentence beginning 'Of course, the extension...' or convert it to a non-verbatim paraphrase.\",\n        \"evidence_quote\": \"Of course, the extension of the original justification is legitimate only where it is immediately apparent to the police that they have evidence before them; the \\\"plain view\\\" doctrine may not be used to extend a general exploratory search from one object to another until something incriminating at last emerges.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Coolidge v. New Hampshire__1277ff.txt line 72; content_page.md line 68; lake pinpoint pin-466a itself flags quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The cached opinion text contains the sentence with 'Of course,' at the start.\",\n        \"The content/lake quote begins '[T]he extension...' and therefore is not character-faithful under the review rule.\",\n        \"The lake pinpoint judgment field also marks this quote as a mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The substantive proposition is supported by the same sentence, but the asserted verbatim quote is not exact.\"\n      ],\n      \"suggested_tightening\": \"Use the exact source wording and punctuation, or introduce the passage as an altered excerpt rather than a verbatim quote.\"\n    },\n    {\n      \"assertion_id\": \"e212cbb4e684ae92\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-466 quote is not an opinion quote at all; it appears to be markdown/page-prose bleed ('doctrine. ## Rule Plain view supplements...') and does not match the cited Coolidge passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-466 with the actual 403 U.S. at 466 quote beginning 'What the \\\"plain view\\\" cases have in common...'.\",\n        \"evidence_quote\": \"What the \\\"plain view\\\" cases have in common is that the police officer in each of them had a prior justification for an intrusion in the course of which he came inadvertently across a piece of evidence incriminating the accused.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Coolidge v. New Hampshire__1277ff.txt line 72; content_page.md line 66; lake pinpoint pin-466 flags quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The lake quote for pin-466 contains '## Rule' and page prose, not language from the opinion.\",\n        \"The content page's visible pin-466 quote is a different sentence from the stored lake quote.\",\n        \"The actual source sentence at the 466 passage uses double quotation marks around plain view, not the stored markdown fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Separate paraphrase from quotation in the page and store only the exact opinion sentence as the pinpoint quote.\"\n    },\n    {\n      \"assertion_id\": \"aecac23ce6b9f996\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment and currency are outside Lens A's charter.\",\n        \"The assertion's treatment fields are present in the lake treatment record and mirrored in the content page frontmatter.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment finding is made; Lens B should assess treatment accuracy and currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Coolidge v. New Hampshire.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows under Lens A. The citation existence assertion survives; both quote-fidelity assertions fail against the disclosed opinion text/lake mismatch flags; the treatment row is recorded without a Lens A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "0380471b78aab7ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists Coolidge v. New Hampshire, U.S. Supreme Court, decided 1971-06-21.",
+          "The official citation in the lake record is 403 U.S. 443, matching the content page citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4217e56fda2d824b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Of course, the extension of the original justification is legitimate only where it is immediately apparent to the police that they have evidence before them; the \"plain view\" doctrine may not be used to extend a general exploratory search from one object to another until something incriminating at last emerges.",
+          "locator_note": "text/Coolidge v. New Hampshire__1277ff.txt line 72; lake pin-466a itself is marked quote_fidelity='mismatch'.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful to the opinion text: it omits the opening words 'Of course,' while presenting the sentence as a verbatim quotation, and changes the opinion's double quotation marks around \"plain view\" to single quotation marks.",
+          "proposed_fix": "Quote the sentence exactly from the opinion, or convert it to a paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text has 'Of course, the extension...' rather than '[T]he extension...'.",
+          "The disclosed opinion text uses \"plain view\", not 'plain view'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact sentence beginning 'Of course, the extension...' or remove quotation marks and state the proposition as a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e212cbb4e684ae92",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "What the \"plain view\" cases have in common is that the police officer in each of them had a prior justification for an intrusion in the course of which he came inadvertently across a piece of evidence incriminating the accused.",
+          "locator_note": "text/Coolidge v. New Hampshire__1277ff.txt line 72; lake pin-466 is marked quote_fidelity='mismatch'.",
+          "needs_cl": false,
+          "problem": "The harvested pinpoint quote is not a quote from the opinion; it contains page-structure text from the content page.",
+          "proposed_fix": "Replace pin-466 with the actual opinion sentence from page 466.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote 'doctrine. ## Rule Plain view supplements...' does not appear in the opinion text.",
+          "The correct supporting passage begins 'What the \"plain view\" cases have in common...'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Repair the lake pinpoint quote and ensure the content quote uses the opinion's double quotation marks around \"plain view\" if retained as verbatim text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aecac23ce6b9f996",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity='caution', as_of_treatment='2026-06-30', varies_by_point=true, and the Horton scope note."
+        ],
+        "residual_risks": [
+          "Treatment substance and currency were not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Coolidge v. New Hampshire.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0380471b78aab7ef\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record lists Coolidge v. New Hampshire, U.S. Supreme Court, decided 1971-06-21.\",\n        \"The official citation in the lake record is 403 U.S. 443, matching the content page citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4217e56fda2d824b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is not character-faithful to the opinion text: it omits the opening words 'Of course,' while presenting the sentence as a verbatim quotation, and changes the opinion's double quotation marks around \\\"plain view\\\" to single quotation marks.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Quote the sentence exactly from the opinion, or convert it to a paraphrase.\",\n        \"evidence_quote\": \"Of course, the extension of the original justification is legitimate only where it is immediately apparent to the police that they have evidence before them; the \\\"plain view\\\" doctrine may not be used to extend a general exploratory search from one object to another until something incriminating at last emerges.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Coolidge v. New Hampshire__1277ff.txt line 72; lake pin-466a itself is marked quote_fidelity='mismatch'.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text has 'Of course, the extension...' rather than '[T]he extension...'.\",\n        \"The disclosed opinion text uses \\\"plain view\\\", not 'plain view'.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact sentence beginning 'Of course, the extension...' or remove quotation marks and state the proposition as a paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"e212cbb4e684ae92\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The harvested pinpoint quote is not a quote from the opinion; it contains page-structure text from the content page.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-466 with the actual opinion sentence from page 466.\",\n        \"evidence_quote\": \"What the \\\"plain view\\\" cases have in common is that the police officer in each of them had a prior justification for an intrusion in the course of which he came inadvertently across a piece of evidence incriminating the accused.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Coolidge v. New Hampshire__1277ff.txt line 72; lake pin-466 is marked quote_fidelity='mismatch'.\"\n      },\n      \"reasons\": [\n        \"The payload quote 'doctrine. ## Rule Plain view supplements...' does not appear in the opinion text.\",\n        \"The correct supporting passage begins 'What the \\\"plain view\\\" cases have in common...'.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Repair the lake pinpoint quote and ensure the content quote uses the opinion's double quotation marks around \\\"plain view\\\" if retained as verbatim text.\"\n    },\n    {\n      \"assertion_id\": \"aecac23ce6b9f996\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\n        \"The payload mirrors the disclosed lake treatment fields: field_i_validity='caution', as_of_treatment='2026-06-30', varies_by_point=true, and the Horton scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment substance and currency were not independently reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four inventory rows under Lens A. The citation existence assertion survives; both quote-fidelity assertions fail against the disclosed opinion text/lake mismatch flags; the treatment row is recorded without a Lens A treatment finding.\"\n}",
   "summary": {
-    "at": "2026-07-11T01:01:34-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:06:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-705165c3a6",
+      "F-S9-PR-bef976c591"
+    ],
     "group_id": "_overhaul2/lake/cases/Coolidge v. New Hampshire.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-7998503c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7998503c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Coolidge v. New Hampshire"
+    ],
+    "tokens": {
+      "input": 227383,
+      "output": 6882,
+      "source": "codex-events",
+      "total": 234265
+    },
+    "verdict_map": {
+      "0380471b78aab7ef": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4217e56fda2d824b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "aecac23ce6b9f996": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e212cbb4e684ae92": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-705165c3a6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bef976c591",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 135.2
   }
 }

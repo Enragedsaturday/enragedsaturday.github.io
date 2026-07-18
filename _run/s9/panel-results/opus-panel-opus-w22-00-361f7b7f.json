@@ -1,0 +1,155 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c6fea08efab2a250",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Chief Justice Rehnquist) confirms 'Wilson v. Layne', star-paginated *606 through *618, consistent with official cite 526 U.S. 603 (case first page 603).",
+          "Cluster 118289, lead opinion 9433801; citation set well-formed (official 526 U.S. 603; parallels 119 S. Ct. 1692, 143 L. Ed. 2d 818; vendor-neutral 1999 U.S. LEXIS 3633).",
+          "Docket 98-83, 1999 decision, party names in text confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "54bbc7e366bc1527",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote 'We hold that it is a violation of the Fourth Amendment for police to bring members of the media or other third parties into a home during the execution of a warrant when the presence of the third parties in the home was not in aid of the execution of the warrant' matches cached paragraph b728-6 verbatim.",
+          "Pincite 526 U.S. at 614 is correct: b728-6 opens with the *614 star marker.",
+          "The lake's quote_fidelity='mismatch'/'slip-only' is an auto-match FALSE POSITIVE driven by the garbled STORED pin-614 quote, which is the page's markdown front-matter + Background/Issue prose ending '## Rule Such a media intrusion violates the Fourth Amendment:' - not opinion text, and not the quote actually rendered."
+        ],
+        "residual_risks": [
+          "The stored pin-614.quote is a garbled extractor artifact (markdown header/prose); the rendered wiki quote is faithful, so the flag is spurious, not a content defect."
+        ],
+        "suggested_tightening": "Repair the stored pin-614 quote to the verbatim holding sentence and clear/promote the slip-only+mismatch auto-flag.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dc2f8f8adfb9b80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The verifiable portion of the content-page quote - 'a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful' - matches cached paragraph b729-6 verbatim; page 615 is correct (b729-6 sits after the *615 marker and before *616).",
+          "The opening clause 'We hold that it was not unreasonable for' is NOT present in the disclosed cached text: b729-6 begins mid-sentence ('a police officer in April 1992 to have believed...'), a grammatically incomplete fragment indicating an OCR truncation dropped the sentence opener; thus the full quote cannot be 100% string-verified from disclosed evidence (verifiable_from_disclosed=false).",
+          "No infidelity found - the lake mismatch/slip-only flag is explained by the same OCR gap (the pipeline's exact-string match against the cached text failed on the truncated opener). Refuting would fabricate a defect; there is no evidence the rendered quote is wrong."
+        ],
+        "residual_risks": [
+          "The opening clause 'We hold that it was not unreasonable for' is unconfirmable from the disclosed cached text (OCR truncation); it should be verified against a clean copy of 526 U.S. 615 before clearing slip-only."
+        ],
+        "suggested_tightening": "Verify the opening clause against a clean reporter copy of 526 U.S. 615; if confirmed, promote pin-615 from slip-only.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "1ef214ed03e3fee6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is doctrinally sound: Wilson v. Layne (media ride-along into a home during warrant execution violates the Fourth Amendment; officers had qualified immunity on then-undeveloped law) is a canonical, still-cited SCOTUS holding; the scope_note accurately captures both the Fourth Amendment violation and the QI ruling.",
+          "The treatment.edges carry multiple proposed 'lane1_negative'/'lane2_top_cited' flags (Morrow v. Meachum 'questioned', Brown v. City of Hous. 'abrogated', Thompson 'questioned', Pirk/Quiroz 'superseded_by_statute', Yee 'criticized', Ashcroft v. Iqbal 'questioned'), but all are proposed:true unconfirmed auto-screen hits - e.g. Iqbal 'questioning' Wilson is a clear classifier false positive, and the QI-sequencing lineage (Pearson) relates to procedure, not the media-ride-along holding; none can be cleared from disclosed evidence (no citing-opinion text).",
+          "Subsequent-history currency is not independently re-derivable from the disclosed pack (migration-seed basis, no citator text inlined)."
+        ],
+        "residual_risks": [
+          "Proposed negative edges should be confirmed benign (QI-sequencing / auto-classifier false positives, not an actual overruling/abrogation of the media-ride-along holding) before good_law is treated as fully currency-verified."
+        ],
+        "suggested_tightening": "Confirm the proposed lane1_negative/lane2 edges do not reflect an actual overruling or abrogation of Wilson v. Layne's Fourth Amendment holding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1c70fe40c1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3f0de16360",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-57b2e62fa0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Wilson v. Layne.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-00-361f7b7f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wilson v. Layne"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1ef214ed03e3fee6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "4dc2f8f8adfb9b80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "54bbc7e366bc1527": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c6fea08efab2a250": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1c70fe40c1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3f0de16360",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-57b2e62fa0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

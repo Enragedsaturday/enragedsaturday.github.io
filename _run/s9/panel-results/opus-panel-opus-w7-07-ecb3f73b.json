@@ -1,0 +1,116 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9472f2ca6ddddb65",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Rehnquist, C.J., delivering the opinion of the Court) confirms this is Michigan Dept. of State Police v. Sitz; the official cite 496 U.S. 444 is internally consistent — the majority opinion opens at star page *447 and the holding sits at *455, all within vol. 496.",
+          "Official selection present (496 U.S. 444, selected_rank_1); parallels 110 S. Ct. 2481, 110 L. Ed. 2d 412, 1990 U.S. LEXIS 3144, 58 U.S.L.W. 4781 are standard 1990 SCOTUS companions."
+        ],
+        "residual_risks": [
+          "Parallel-reporter page numbers (S. Ct./L. Ed. 2d/LEXIS/U.S.L.W.) are not independently confirmable from the disclosed U.S.-reporter cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "781c029356f37aef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The rendered ^pin-455 quote ('In sum, the balance of the State's interest in preventing drunken driving ... weighs in favor of the state program. We therefore hold that it is consistent with the Fourth Amendment.') matches the cached opinion (para b497-5) verbatim.",
+          "The quoted passage follows the *455 star marker (which appears in para b496-6), so the pincite '496 U.S. at 455' is correct.",
+          "The payload quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured the page front-matter/markdown header (title block through '## Rule'), not the actual quoted sentence."
+        ],
+        "residual_risks": [
+          "Stored pinpoint.quote field holds front-matter junk; a consumer reading pinpoint.quote directly rather than the rendered page would see the wrong text."
+        ],
+        "suggested_tightening": "Re-extract pinpoint.quote for pin-455 to the actual quoted sentence so the stored quote and quote_fidelity flag stop reading as a spurious mismatch.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ed336b0c37807b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Nothing in the disclosed evidence refutes good_law: the cached opinion is Sitz itself, and the lake 'edges' are all proposed:true, unadjudicated candidates — several facially spurious (e.g. 'Harmelin v. Michigan ... overruled'), and the 'superseded_by_statute/questioned/criticized' state-court edges reflect state-constitutional divergence, not federal invalidity of Sitz.",
+          "The scope_note's Edmond-distinguished framing states the well-established relationship (City of Indianapolis v. Edmond limited primary-purpose crime-control checkpoints without overruling Sitz's sobriety-checkpoint holding)."
+        ],
+        "residual_risks": [
+          "good_law currency (as_of_treatment 2026-06-30) rests on composite_basis 'migration-seed', not a fresh treatment pull; the Edmond distinction and 2026 currency are not confirmable from the single 1990 opinion inlined in the pack.",
+          "Unadjudicated proposed negative edges (questioned/criticized/superseded_by_statute/overruled) remain in the record."
+        ],
+        "suggested_tightening": "Confirm good_law via a fresh CL treatment pull and resolve/prune the proposed negative edges, especially the spurious 'overruled' cluster matches.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-26ec16b0b5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan Dept. of State Police v. Sitz.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-07-ecb3f73b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan Dept. of State Police v. Sitz"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5ed336b0c37807b8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "781c029356f37aef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9472f2ca6ddddb65": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-26ec16b0b5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

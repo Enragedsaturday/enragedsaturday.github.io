@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2c09c9dca1829584",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is Justice Holmes's majority in Hester v. United States, with '*58' and '*59' star-pagination and 'Judgment affirmed.' — matches the record's identity and 1924 SCOTUS origin of the open-fields doctrine.",
+          "Official cite 265 U.S. 57 with parallels 44 S. Ct. 445 / 68 L. Ed. 898 and 1924 U.S. LEXIS 2577 is consistent; official selection present."
+        ],
+        "residual_risks": [
+          "Cached text shows *58/*59 star-labels (opinion starts p.57); page-57 start not literally labeled but identity/pagination consistent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90ebef2ad4f32761",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.",
+          "locator_note": "cached text under '*58' star marker, before '*59'; content page ## Rule ^pin-58",
+          "needs_cl": false,
+          "problem": "Payload 'quote' field is a mis-extraction: it captured the content page's front matter and Background/Issue/Rule lead-in (ending '...abandons any Fourth Amendment interest in them:'), not an opinion quotation. The content page's actual pin-58 quote is a different clause.",
+          "proposed_fix": "Re-extract pin-58 to the content page's real quoted text: 'there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.' — verbatim-faithful to the cached opinion between the '*58' and '*59' star markers (page 58).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Underlying wiki proposition is sound: the real pin-58 quote matches cached text verbatim and sits on page 58 (between the *58 and *59 star markers), confirming the pincite.",
+          "Defect is confined to the assertion record's quote field, not the rendered page."
+        ],
+        "residual_risks": [
+          "Automated 'mismatch' flag persists until the quote field is re-derived."
+        ],
+        "suggested_tightening": "Re-bind ^pin-58 extraction to post-anchor text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ea44ad7ece39b9d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'the special protection accorded by the Fourth Amendment to the people in their 'persons, houses, papers, and effects,' is not extended to the open fields. The distinction between the latter and the house is as old as the common law.' matches cached text verbatim; the content page renders the internal quotation in single quotes (proper nested-quote style) where the cached HTML uses curly double-quotes with <em> wrappers — same words.",
+          "Passage falls after the '*59' star marker, confirming the page-59 pincite. Extractor 'mismatch'/'slip-only' flag is a false positive from the nested-quote punctuation and HTML artifacts defeating exact substring match."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6b73aec8af104c74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is well-founded: Hester (1924) is the origin of the open-fields doctrine, reaffirmed and elaborated in later SCOTUS cases; cached Holmes opinion confirms the holding.",
+          "Lake record's negative edges are all 'proposed':true, field_iii 'mentioned' — including an obvious-noise 'Bivens ... overruled' edge and various state-court signals; none reflects adjudicated adverse treatment of Hester."
+        ],
+        "residual_risks": [
+          "composite_basis 'migration-seed' (scope_note flags possible S2 re-derivation/downgrade); proposed edges unadjudicated in-record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4a939bae84",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1fe1a21a35",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hester v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-06-d6e0de77",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hester v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2c09c9dca1829584": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6b73aec8af104c74": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90ebef2ad4f32761": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ea44ad7ece39b9d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19b3f2218f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4a939bae84",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1fe1a21a35",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

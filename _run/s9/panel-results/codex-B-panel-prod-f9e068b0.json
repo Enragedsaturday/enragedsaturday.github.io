@@ -1,13 +1,60 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-davis--4881258.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed in the working directory; this review is limited to group_inventory.jsonl and the lake JSON record.",
+    "reviewed": [
+      {
+        "assertion_id": "e171de5cb7956a9f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "folded-alias: subsumed into United States v. Howard Davis (packet-A Group-2); see _manifest.json folded_into + journal s6-dedupe-pointer",
+          "locator_note": "lake/united-states-v-davis--4881258__3e3e3c.json: status/provenance.warnings",
+          "needs_cl": true,
+          "problem": "The citation/identity exists in the disclosed lake record, but the record is marked as a stub folded-alias rather than a fully validated live-law authority. Under the currency lens, it should not be presented without an alias/stub qualifier or canonical target.",
+          "proposed_fix": "Retain the citation only with a folded-alias/stub qualifier, or replace this record target with the canonical United States v. Howard Davis record after full treatment promotion.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed record confirms identity and citation: case_name is United States v. Howard Davis and citations.display is 997 F.3d 191.",
+          "The same record is marked stub=true and status=folded-alias, so currency/live-authority presentation needs qualification."
+        ],
+        "residual_risks": [
+          "No complete treatment or progeny data is present, so live-law status cannot be verified from the disclosed record."
+        ],
+        "suggested_tightening": "Label this authority as a folded alias/stub and avoid implying completed live-law validation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f4a4baa4292ba3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.",
+          "The disclosed record has no point_overrides, no treatment edges, and no outbound progeny edges showing an overrule, abrogation, limitation, or supersession."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment stub; it does not establish that the case is good law."
+        ],
+        "suggested_tightening": "Make clear that treatment is unverified and not a good-law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-davis--4881258.json\",\"reviewed\":[{\"assertion_id\":\"e171de5cb7956a9f\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The citation/identity exists in the disclosed lake record, but the record is marked as a stub folded-alias rather than a fully validated live-law authority. Under the currency lens, it should not be presented without an alias/stub qualifier or canonical target.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain the citation only with a folded-alias/stub qualifier, or replace this record target with the canonical United States v. Howard Davis record after full treatment promotion.\",\"evidence_quote\":\"folded-alias: subsumed into United States v. Howard Davis (packet-A Group-2); see _manifest.json folded_into + journal s6-dedupe-pointer\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-davis--4881258__3e3e3c.json: status/provenance.warnings\"},\"reasons\":[\"The disclosed record confirms identity and citation: case_name is United States v. Howard Davis and citations.display is 997 F.3d 191.\",\"The same record is marked stub=true and status=folded-alias, so currency/live-authority presentation needs qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No complete treatment or progeny data is present, so live-law status cannot be verified from the disclosed record.\"],\"suggested_tightening\":\"Label this authority as a folded alias/stub and avoid implying completed live-law validation.\"},{\"assertion_id\":\"4f4a4baa4292ba3b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.\",\"The disclosed record has no point_overrides, no treatment edges, and no outbound progeny edges showing an overrule, abrogation, limitation, or supersession.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stands only as an unverified-treatment stub; it does not establish that the case is good law.\"],\"suggested_tightening\":\"Make clear that treatment is unverified and not a good-law determination.\"}],\"notes\":\"No content_page.* file was disclosed in the working directory; this review is limited to group_inventory.jsonl and the lake JSON record.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:23:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f34b397889"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-davis--4881258.json",
     "group_total_assertions": 2,
     "lake_only_cases": [
@@ -18,22 +65,42 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f9e068b0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'united-states-v-davis--4881258' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-davis--4881258"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 56246,
+      "output": 4052,
+      "source": "codex-events",
+      "total": 60298
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.5
+    "verdict_map": {
+      "4f4a4baa4292ba3b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e171de5cb7956a9f": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f34b397889",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 77.7
   }
 }

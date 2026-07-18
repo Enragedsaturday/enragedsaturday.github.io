@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4a1b73e258ed254d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official '534 U.S. 266' selected_rank_1, official_selection_present=true; parallels 122 S. Ct. 744, 151 L. Ed. 2d 740, 2002 U.S. LEXIS 490 from cluster.citations[].",
+          "Cached opinion header renders '534 U.S. 266 (2002)' with star markers *268 through *278, consistent with a start page of 266; No. 00-1519, decided Jan 15 2002, Rehnquist, C.J.",
+          "Content-page header '534 U.S. 266 (2002)' consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74e7174ebbe24c70",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote '*Terry*, however, precludes this sort of divide-and-conquer analysis.' matches the cached opinion VERBATIM ('Terry, however, precludes this sort of divide-and-conquer analysis.'); the asterisks are the content page's markdown rendering of the opinion's italicized 'Terry' (HTML <i>Terry</i>).",
+          "Quote sits between star markers *274 and *275, i.e., page 274, matching the content-page pincite 'Id. at 274'.",
+          "The upstream quote_fidelity='mismatch' flag is a FALSE POSITIVE, tripped by the markdown italic asterisks and the interleaved citation/italic markup around 'Terry'."
+        ],
+        "residual_risks": [
+          "Markdown-vs-HTML italic normalization gap will keep producing FP mismatch flags on quotes containing italicized case names until the matcher strips emphasis markers."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a45212117b83a79f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "must look at the \"totality of the circumstances\" of each case to see whether the detaining officer has a \"particularized and objective basis\" for suspecting legal wrongdoing.",
+          "locator_note": "Cached opinion paragraph beginning 'When discussing how reviewing courts should make reasonable-suspicion determinations...'; quoted sentence sits between star markers *273 and *274, i.e., page 273, matching content-page pincite '534 U.S. at 273'.",
+          "needs_cl": false,
+          "problem": "Lake pinpoints[].quote for pin-273 is a malformed capture storing the page's markdown lead-in (frontmatter + Background + Issue + '## Rule Reasonable suspicion is judged on the whole picture, not factor-by-factor: reviewing courts') instead of the opinion quote; quote_fidelity flagged 'mismatch'. The content-page pincite it backs is verbatim-faithful.",
+          "proposed_fix": "Re-derive pin-273's stored quote to the actual quoted sentence: 'must look at the \"totality of the circumstances\" of each case to see whether the detaining officer has a \"particularized and objective basis\" for suspecting legal wrongdoing.' (534 U.S. at 273).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Same garbled lead-in capture pattern as pin-1045 and pin-321; stored quote is page markdown, not opinion text -> data-hygiene defect.",
+          "Underlying content-page quote at ^pin-273 matches the cached opinion verbatim and is correctly located on page 273, so no true legal proposition is broken.",
+          "Sibling pin-274 stores a clean quote, confirming pin-273's capture is anomalous."
+        ],
+        "residual_risks": [
+          "Malformed stored quote may trigger a false 'unsupported' flag downstream until re-derived."
+        ],
+        "suggested_tightening": "Regenerate stored pinpoint.quote from the text following the '## Rule' lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed33aea56a1dea13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law', as_of_content 2002-01-15, as_of_treatment 2026-06-30, composite_basis='migration-seed'; scope_note ('reaffirms the totality-of-the-circumstances reasonable-suspicion standard') is corroborated by the cached opinion's holding.",
+          "Arvizu is a unanimous SCOTUS opinion (Rehnquist, C.J.); no disclosed evidence indicates negative treatment; lake status is 'verified'.",
+          "Full treatment-currency verification as of 2026-06-30 requires CourtListener progeny (out of scope), hence verifiable_from_disclosed=false; nothing disclosed refutes good_law."
+        ],
+        "residual_risks": [
+          "Treatment currency not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-807020bd00",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Arvizu.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-00-8ad083af",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Arvizu"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4a1b73e258ed254d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74e7174ebbe24c70": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a45212117b83a79f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ed33aea56a1dea13": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-807020bd00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-dd252d893c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

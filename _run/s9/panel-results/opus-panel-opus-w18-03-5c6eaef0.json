@@ -1,0 +1,177 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e03503dce5417d03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms a real published 10th Cir. 2020 decision: 'UNITED STATES COURT OF APPEALS FOR THE TENTH CIRCUIT ... JACK DEWAYNE NEUGIN ... No. 19-7043 ... Filed May 1, 2020'.",
+          "Cite '958 F.3d 924' is the record's cluster.citations official (selected_rank_1)."
+        ],
+        "residual_risks": [
+          "Exact F.3d reporter page (924) is from cluster metadata, not confirmable from the slip-only cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "36046261a528e45f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the cached slip opinion on page 15: 'Without the violation, therefore, Mr. Neugin would not inevitably have been arrested. And without the arrest, the truck would not inevitably have been impounded and searched.'",
+          "quote_fidelity=matched is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f1e9090fe42bf2e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and the police would not have inevitably discovered the evidence absent the Fourth Amendment violation. Because the violation caused the discovery of the ammunition and firearm, that evidence is fruit of the poisonous tree and should have been suppressed. We therefore reverse.",
+          "locator_note": "Cached page-16 header precedes 'III. CONCLUSION' and the quote; the page-17 header immediately precedes 'HARTZ, Circuit Judge, dissenting'. Both ellipsis fragments ('the police would not have inevitably discovered the evidence absent the Fourth Amendment violation' and 'that evidence is fruit of the poisonous tree and should have been suppressed') are verbatim; the ellipsis fairly omits 'Because the violation caused the discovery of the ammunition and firearm,'.",
+          "needs_cl": false,
+          "problem": "Pincite off-by-one: the quoted majority-conclusion sentence sits under the slip-opinion page-16 header (page 17 begins the HARTZ dissent), but the content page cites it '(slip op., at 17)'. Separately, quote_fidelity is flagged 'mismatch' although the ellipsis-stitched quote is verbatim-faithful (a false positive of contiguous-substring matching).",
+          "proposed_fix": "Change the pincite to 'slip op., at 16' and reclassify pin-op17 quote_fidelity from mismatch to matched.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote is faithful (both ellipsis fragments verbatim), so the legal proposition holds and the 'mismatch' flag is over-conservative.",
+          "The quote is entirely on slip op. page 16, not 17; the author's own pin-op15 pincite (slip op. 15) matches the same page-header numbering, so pin-op17 is a genuine off-by-one against that scheme."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Correct pincite to 16 and fidelity to matched.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5eb508c160b2a86",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'",
+          "locator_note": "Cached slip op. p.15 quotes Owens verbatim ('See Owens, 782 F.2d at 153 (\"[T]he inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'\")'); content page renders it at ^pin-op15 attributed to United States v. Owens, 782 F.2d 146, 153 (10th Cir. 1986).",
+          "needs_cl": false,
+          "problem": "Pinpoint pin-op15's stored quote is the content page's frontmatter/header block ('--- # United States v. Neugin ... The court reiterated that'), not opinion text; harvest artifact, correctly self-flagged quote_fidelity=mismatch. The rule quote rendered at ^pin-op15 IS verbatim in the opinion.",
+          "proposed_fix": "Re-harvest pin-op15's stored quote to the rendered Owens quotation, which is verbatim on slip op. 15.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered rule quote at ^pin-op15 is verbatim at slip op. 15 with correct Owens attribution and pincite; only the pinpoint's stored quote string is the header-block harvest artifact."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-op15 stored quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1dc6eecf90642907",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disciplined lane1_negative (targeted overrul*/abrogat*/vacat*/reversed query, court_id scotus OR ca10) reviewed 4 with 0 proposed_negative_events.",
+          "The 5 lane2_top_cited proposed edges (Chavez, Braxton, O'Neil, Elmore 'questioned'; Tolbert 'superseded_by_statute') are all field_iii 'mentioned' and proposed:true snippet classifications, not read/adjudicated; a Fourth Amendment inevitable-discovery holding is not plausibly 'superseded by statute', indicating a snippet false positive.",
+          "No confirmed negative treatment on the disclosed evidence; cannot fabricate one."
+        ],
+        "residual_risks": [
+          "5 unadjudicated proposed lane2 edges (esp. the Tolbert 'superseded_by_statute' flag).",
+          "good_law is composite_basis=migration-seed; citing-opinion texts are not inlined, so absence of negative treatment cannot be fully confirmed from disclosed evidence."
+        ],
+        "suggested_tightening": "Read/adjudicate the 5 lane2 citing opinions before finalizing good_law.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f4e47812cd",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Neugin.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-03-5c6eaef0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Neugin"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1dc6eecf90642907": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "36046261a528e45f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f1e9090fe42bf2e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c5eb508c160b2a86": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e03503dce5417d03": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0a71103366",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-85b22daa59",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f4e47812cd",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

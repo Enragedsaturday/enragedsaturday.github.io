@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "196d30012b775079",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "338 U.S. 160 (1949)",
+          "locator_note": "frontmatter parallel_cite (2nd element) / lake citations.parallel[1].reporter",
+          "needs_cl": false,
+          "problem": "parallel_cite '93 L. Ed. 2d 1879' places a 1949 decision in the SECOND series of the Lawyers' Edition. The L. Ed. 2d series did not begin until the mid-1950s, so a case 'Decided June 27, 1949' (338 U.S. 160) cannot bear an 'L. Ed. 2d' cite; the correct parallel is '93 L. Ed. 1879' (first series). The lake citations[] propagate the identical 'L. Ed. 2d' error.",
+          "proposed_fix": "Change '93 L. Ed. 2d 1879' to '93 L. Ed. 1879' in frontmatter parallel_cite and in lake citations.parallel/all.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Official cite is solid: cached slip header prints '338 U.S. 160 (1949)', 'BRINEGAR v. UNITED STATES', 'Supreme Court of United States', 'Decided June 27, 1949'; lake official 338 U.S. 160 and vendor-neutral 1949 U.S. LEXIS 2084 match.",
+          "The defect is confined to the reporter-series token in the parallel L. Ed. cite; the case is unambiguously identified by 338 U.S. 160."
+        ],
+        "residual_risks": [
+          "The cached slip header does not itself print the L. Ed. citation; the corrected form (93 L. Ed. 1879) is inferred from the disclosed 1949 decision year plus reporter-series conventions.",
+          "Outside this assertion's payload: lake identity.date_decided '1949-10-10' conflicts with slip 'Decided June 27, 1949', and lake header shows 'No. 12' while frontmatter docket is '23' — flag for downstream check."
+        ],
+        "suggested_tightening": "Drop the '2d' series token; official 338 U.S. 160 already identifies the case.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "08324bc5b6913907",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion articulates the probable-cause quantum-of-proof standard ('less than evidence which would justify condemnation ... more than bare suspicion'), which is exactly the rung a 'Proof Ladder' page anchors, so 'Key — rung anchor' is supported.",
+          "Frontmatter homes[] lists '[[The Proof Ladder]]' role 'Key — rung anchor', matching the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2019bf7d1e178f80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is squarely and centrally about probable cause ('The crucial question is whether there was probable cause ...'; the classic 'reasonable and prudent men' formulation), so 'Key — Anchor' on the Probable Cause page is apt.",
+          "Frontmatter homes[] lists '[[Probable Cause]]' role 'Key — Anchor', matching the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55170232175bd4b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Cached text at *175: 'In dealing with probable cause, however, as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act.' — verbatim support for the holding proposition (practical, non-technical probabilities on which reasonable people act)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "17a06268fca287d5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached slip: 'Supreme Court of United States', 'MR. JUSTICE RUTLEDGE delivered the opinion of the Court' — a SCOTUS majority decision, so authority_weight 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e69738708207a8f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is sound: Brinegar's probable-cause formulation is bedrock and the scope_note ('Classic probable-cause standard; bedrock and good law') is accurate; edges[] is empty (no negative events).",
+          "as_of_content 1949-06-27 matches the cached slip decided-date ('Decided June 27, 1949')."
+        ],
+        "residual_risks": [
+          "lake identity.date_decided '1949-10-10' conflicts with the slip decided-date; that field is outside this assertion's payload (as_of_content is correct), but the identity date should be corrected downstream."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:53:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bea7ab7c6b"
+    ],
+    "group_id": "content/cases/Brinegar v. United States.md",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w27-04-08bfd2c3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w27-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brinegar v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "08324bc5b6913907": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "17a06268fca287d5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "196d30012b775079": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2019bf7d1e178f80": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "55170232175bd4b6": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e69738708207a8f1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bea7ab7c6b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

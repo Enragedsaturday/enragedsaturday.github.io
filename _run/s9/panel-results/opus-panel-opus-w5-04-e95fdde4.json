@@ -1,0 +1,117 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3a422119d3cec594",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the genuine Harlow v. Fitzgerald, 457 U.S. 800 (1982), Powell, J. ('delivered the opinion of the Court'); internal page labels *803-*820 are consistent with a report beginning at 457 U.S. 800.",
+          "Official cite 457 U.S. 800 is selected (official_selection_present=true); parallel 102 S. Ct. 2727 / 73 L. Ed. 2d 396 and 1982 U.S. LEXIS 139 are drawn from cluster.citations[] in the disclosed lake record.",
+          "Lake identity fields (cluster 110763, opinion 9428863, identity_checked=true) corroborate the case identity confirmed by the cached text."
+        ],
+        "residual_risks": [
+          "Exact page anchors of the parallel S.Ct./L.Ed.2d cites are not independently derivable from the disclosed U.S.-reporter text, but existence at the official cite is confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9952464d1f2cbc3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the page front-matter + Background + Issue + Rule-lead header block (a quote-harvest artifact), not the sentence carrying the ^pin-818 anchor.",
+          "The genuine pin-818 quotation in the Rule section ('[G]overnment officials performing discretionary functions generally are shielded from liability for civil damages insofar as their conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known') reproduces the opinion at p.818 verbatim ('We therefore hold that government officials performing discretionary functions, generally are shielded ... of which a reasonable person would have known'), with a properly bracketed capitalization.",
+          "Pincite 818 is correct: the passage sits immediately after the *818 page label in the disclosed text. The payload quote_fidelity='mismatch' is a header-harvest false positive, not a content defect."
+        ],
+        "residual_risks": [
+          "If adjudication keys literally on the payload 'quote' string, it is wiki chrome rather than an opinion quotation; the assertion's quote field should be re-harvested to the anchored Rule sentence."
+        ],
+        "suggested_tightening": "Content drops the original comma in 'functions, generally' (renders 'functions generally'); immaterial to meaning, but could be restored for strict verbatim fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6324d1261c707990",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed opinion: Harlow announces the foundational objective qualified-immunity standard, and the scope_note ('objective standard refined not displaced by later cases') accurately describes that posture.",
+          "Nothing in the disclosed record signals negative treatment; the case is a canonical, still-cited SCOTUS holding.",
+          "Live 2026-06-30 currency is not independently confirmable from the pack (no citator/treatment report is inlined), so the currency component is not disclosure-verifiable; no defect is asserted."
+        ],
+        "residual_risks": [
+          "field_i_validity=good_law rests on citator data not inlined; verified here only as uncontradicted and doctrinally consistent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-69c8125e5e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Harlow v. Fitzgerald.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-04-e95fdde4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harlow v. Fitzgerald"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3a422119d3cec594": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6324d1261c707990": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f9952464d1f2cbc3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-69c8125e5e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

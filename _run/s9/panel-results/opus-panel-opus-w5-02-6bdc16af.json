@@ -1,0 +1,156 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b26aeb0afa43ed72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms case + cite: '540 U.S. 551 (2004)', 'GROH v. RAMIREZ ET AL.', No. 02-811, argued Nov. 4 2003, decided Feb. 24 2004, Stevens, J.",
+          "Official cite 540 U.S. 551 from cluster.citations[]; parallels (124 S. Ct. 1284; 157 L. Ed. 2d 1068; 2004 U.S. LEXIS 1624; 2004 WL 330057) are the standard set.",
+          "No conflicting evidence."
+        ],
+        "residual_risks": [
+          "Parallel-cite pages rely on disclosed cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38ee66f7f3f998f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The fact that the application adequately described the “things to be seized” does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents.",
+          "locator_note": "cached text, Part II; reader-facing quote at ^pin-557 is faithful and pincite '540 U.S. at 557' is correct. Defect is metadata-only.",
+          "needs_cl": false,
+          "problem": "Stored pin-557 quote is corrupted content-page markdown scaffolding ('), not the weapons. The supporting application listed the items ... ## Issue ... ## Rule No. Particularity is a requirement of the warrant itself...'), not a verbatim opinion quote.",
+          "proposed_fix": "Repair pin-557 quote to the rendered anchor quote: 'The fact that the application adequately described the \"things to be seized\" does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Reader-facing quote at ^pin-557 is faithful and its pincite (557) is correct; defect is confined to the corrupted stored metadata quote (self-flagged 'mismatch').",
+          "Metadata repair only; no reader harm."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pinpoint quotes from anchor text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65765c5f88ae0f8c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored fragment 'did not describe the items to be seized at all,' matches cached text verbatim ('...the warrant did not describe the items to be seized at all.').",
+          "The companion fragment rendered at ^pin-558, 'was so obviously deficient that we must regard the search as \"warrantless\"', also matches cached text; the passage sits on p.558 (before the *559 star), so pincite 'Id. at 558' is correct.",
+          "Payload 'mismatch'/'slip-only' = fragment-validation status, not a text error."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5b3499a280500dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Groh v. Ramirez is a leading particularity-clause decision; substantively good law and not overruled by any disclosed authority.",
+          "lane1_negative surfaced 10 proposed_negative_events, but all are proposed:true snippet artifacts from courts that cannot overrule SCOTUS Groh (state: Foreman, Angel/McDowell, Wheeler, Yee; circuit/district: Toussaint, Chandler, Wright, Covey). Notably the 'Pearson v. Callahan' edge tagged 'overruled' is a misattribution: Pearson (555 U.S. 223) overruled Saucier v. Katz's mandatory QI sequencing, NOT Groh's particularity holding.",
+          "lane3_recency reviewed 50 with 0 proposed negatives; varies_by_point=false is appropriate."
+        ],
+        "residual_risks": [
+          "OPEN PROCESS FLAG: lane1_negative and lane2_top_cited both carry audit_marker 'R15 treatment audit required' with audit_needed=true and cap_hit=true (10 unresolved proposed negatives); a machine-flagged treatment audit is outstanding. This verdict rests on structural false-positive analysis, not a read of each citing opinion.",
+          "scope_note flags derivation 'may downgrade'; a downgrade did not occur."
+        ],
+        "suggested_tightening": "Resolve the 'R15 treatment audit required' marker by reading the 10 lane1 proposed negatives (especially the Pearson v. Callahan snippet) to confirm none downgrades Groh's particularity holding before finalizing good_law.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3be2c87cea",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b2f3648379",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Groh v. Ramirez.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-02-6bdc16af",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Groh v. Ramirez"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "38ee66f7f3f998f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "65765c5f88ae0f8c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b26aeb0afa43ed72": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5b3499a280500dc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c16d0250f5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3be2c87cea",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b2f3648379",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

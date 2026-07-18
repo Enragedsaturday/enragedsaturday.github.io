@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "692fafcadf55de0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake: official '514 U.S. 1'; parallels '115 S. Ct. 1185','131 L. Ed. 2d 34'; vendor-neutral '1995 U.S. LEXIS 1806' - match payload.",
+          "Cached Rehnquist opinion (1995, star pages 4-16, opinion begins 1) corroborates."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a386527123a73d81",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "holding: \"The good-faith exception extends to evidence seized on a mistaken arrest record caused by clerical errors of court employees (here, a...\"",
+          "locator_note": "content_page frontmatter holding field",
+          "needs_cl": false,
+          "problem": "The holding field is truncated mid-sentence - 'The good-faith exception extends to evidence seized on a mistaken arrest record caused by clerical errors of court employees (here, a...' - it breaks off at '(here, a'.",
+          "proposed_fix": "Complete the holding, e.g. '...(here, a court clerk's failure to purge a quashed warrant); under the Leon deterrence framework the exclusionary rule does not require suppression for clerical errors of court employees.'",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Substance is supported - op.: 'Application of the Leon framework supports a categorical exception to the exclusionary rule for clerical errors of court employees' and the Arizona Supreme Court judgment is reversed - but the field is truncated and incomplete."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store the full holding sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ef03581c1fb2f75d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] - *Key - Progeny / Refinement*",
+          "locator_note": "content_page frontmatter homes[0].page vs '## Appears on' bullet",
+          "needs_cl": false,
+          "problem": "homes frontmatter declares home '[[The Good-Faith Exception]]' (role 'Key - Progeny / Refinement') but the rendered 'Appears on' section lists a different page, '[[The Exclusionary Rule]]' - internal inconsistency about the case's home.",
+          "proposed_fix": "Reconcile homes[0].page and the 'Appears on' link to name the same page.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Role fit is correct - Evans extends Leon good faith to court-clerk recordkeeping errors, a 'Key - Progeny / Refinement' of the good-faith exception - so the assertion survives.",
+          "But homes:'[[The Good-Faith Exception]]' vs Appears-on '[[The Exclusionary Rule]]' name different wiki pages."
+        ],
+        "residual_risks": [
+          "Neither target page is inlined; cannot confirm the actual listing."
+        ],
+        "suggested_tightening": "Align homes[].page and the Appears-on link.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5bfbbf39fe77289f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Record status verified, field_i_validity 'good_law' by migration-seed; Herring v. United States (2009) extended, and did not overrule, Evans.",
+          "The many proposed=true 'overruled'/'questioned'/'criticized'/'superseded_by_statute' edges are uncertified automated candidates, not credible evidence of bad law."
+        ],
+        "residual_risks": [
+          "Currency not independently re-derivable under hard independence / no CL; migration-seed basis; scope_note flags a possible downgrade on re-derivation."
+        ],
+        "suggested_tightening": "Adjudicate/prune the spurious proposed negative edges before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "f8858c82f9cf7ccd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "SCOTUS decision; 'Binding - SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:42:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ad53995253"
+    ],
+    "group_id": "content/cases/Arizona v. Evans.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w26-00-ace93fc4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w26-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Evans"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5bfbbf39fe77289f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "692fafcadf55de0d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a386527123a73d81": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ef03581c1fb2f75d": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f8858c82f9cf7ccd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c727ce5c4b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ad53995253",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

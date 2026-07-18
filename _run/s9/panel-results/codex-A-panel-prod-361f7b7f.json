@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wilson v. Layne.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment row recorded for completeness without a treatment/currency attack.",
+    "reviewed": [
+      {
+        "assertion_id": "c6fea08efab2a250",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Wilson v. Layne, U.S. Supreme Court, decided 1999-05-24.",
+          "The official citation in the lake record is 526 U.S. 603, with matching parallel citations 119 S. Ct. 1692 and 143 L. Ed. 2d 818, and vendor citation 1999 U.S. LEXIS 3633."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dc2f8f8adfb9b80",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful.",
+          "locator_note": "pin-615; page label 615 in cached text; lake pinpoints[].quote_fidelity=mismatch",
+          "needs_cl": true,
+          "problem": "The full quoted sentence for pin-615 is not character-verifiable from the cached opinion text. The cached text contains only the suffix beginning with 'a police officer...' and the lake judgment for this pinpoint marks quote_fidelity as mismatch.",
+          "proposed_fix": "Do not use this as a verbatim quote unless the authority text is repaired or a clean disclosed source confirms the missing leading words; otherwise paraphrase the qualified-immunity holding and cite 526 U.S. at 615.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted leading words 'We hold that it was not unreasonable for' are absent from text/Wilson v. Layne__d8a021.txt.",
+          "Because the lake itself flags the pinpoint as a mismatch, the verbatim quote cannot stand on the disclosed evidence alone."
+        ],
+        "residual_risks": [
+          "The full quote may be correct in an external official source, but that source is outside the disclosed evidentiary universe."
+        ],
+        "suggested_tightening": "Paraphrase: in April 1992, a reasonable officer could have believed a media ride-along during execution of an arrest warrant, even in a home, was lawful.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "54bbc7e366bc1527",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that it is a violation of the Fourth Amendment for police to bring members of the media or other third parties into a home during the execution of a warrant when the presence of the third parties in the home was not in aid of the execution of the warrant.",
+          "locator_note": "pin-614; cached text page label 614 contains the correct holding passage",
+          "needs_cl": false,
+          "problem": "The pin-614 payload is not the Supreme Court passage at 526 U.S. 614; it is a mistaken capture of the built page header/background/issue text, and the lake marks it as quote_fidelity=mismatch.",
+          "proposed_fix": "Replace pin-614's stored quote with the actual page-614 holding passage from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material ('--- # Wilson v. Layne') rather than opinion text.",
+          "The cached opinion text at page 614 contains the actual holding sentence used by the content page."
+        ],
+        "residual_risks": [
+          "The visible content_page rule quote appears accurate; the defect is the stored pin-614 quote/pinpoint metadata."
+        ],
+        "suggested_tightening": "Keep the visible rule quote, but repair pin-614 so the pinpoint quote is the actual 526 U.S. at 614 holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ef214ed03e3fee6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1999-05-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and currency were not substantively evaluated under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Wilson v. Layne.json\",\"reviewed\":[{\"assertion_id\":\"c6fea08efab2a250\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Wilson v. Layne, U.S. Supreme Court, decided 1999-05-24.\",\"The official citation in the lake record is 526 U.S. 603, with matching parallel citations 119 S. Ct. 1692 and 143 L. Ed. 2d 818, and vendor citation 1999 U.S. LEXIS 3633.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4dc2f8f8adfb9b80\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The full quoted sentence for pin-615 is not character-verifiable from the cached opinion text. The cached text contains only the suffix beginning with 'a police officer...' and the lake judgment for this pinpoint marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not use this as a verbatim quote unless the authority text is repaired or a clean disclosed source confirms the missing leading words; otherwise paraphrase the qualified-immunity holding and cite 526 U.S. at 615.\",\"evidence_quote\":\"a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful.\",\"needs_cl\":true,\"locator_note\":\"pin-615; page label 615 in cached text; lake pinpoints[].quote_fidelity=mismatch\"},\"reasons\":[\"The quoted leading words 'We hold that it was not unreasonable for' are absent from text/Wilson v. Layne__d8a021.txt.\",\"Because the lake itself flags the pinpoint as a mismatch, the verbatim quote cannot stand on the disclosed evidence alone.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The full quote may be correct in an external official source, but that source is outside the disclosed evidentiary universe.\"],\"suggested_tightening\":\"Paraphrase: in April 1992, a reasonable officer could have believed a media ride-along during execution of an arrest warrant, even in a home, was lawful.\"},{\"assertion_id\":\"54bbc7e366bc1527\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-614 payload is not the Supreme Court passage at 526 U.S. 614; it is a mistaken capture of the built page header/background/issue text, and the lake marks it as quote_fidelity=mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-614's stored quote with the actual page-614 holding passage from the cached opinion text.\",\"evidence_quote\":\"We hold that it is a violation of the Fourth Amendment for police to bring members of the media or other third parties into a home during the execution of a warrant when the presence of the third parties in the home was not in aid of the execution of the warrant.\",\"needs_cl\":false,\"locator_note\":\"pin-614; cached text page label 614 contains the correct holding passage\"},\"reasons\":[\"The payload quote begins with built-page material ('--- # Wilson v. Layne') rather than opinion text.\",\"The cached opinion text at page 614 contains the actual holding sentence used by the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page rule quote appears accurate; the defect is the stored pin-614 quote/pinpoint metadata.\"],\"suggested_tightening\":\"Keep the visible rule quote, but repair pin-614 so the pinpoint quote is the actual 526 U.S. at 614 holding.\"},{\"assertion_id\":\"1ef214ed03e3fee6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1999-05-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency were not substantively evaluated under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment row recorded for completeness without a treatment/currency attack.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:13:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-57b2e62fa0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3f0de16360",
+      "F-S9-PR-1c70fe40c1"
+    ],
     "group_id": "_overhaul2/lake/cases/Wilson v. Layne.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-361f7b7f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Wilson v. Layne"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 172421,
+      "output": 9207,
+      "source": "codex-events",
+      "total": 181628
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "1ef214ed03e3fee6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4dc2f8f8adfb9b80": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "54bbc7e366bc1527": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c6fea08efab2a250": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3f0de16360",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1c70fe40c1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-57b2e62fa0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 177.9
   }
 }

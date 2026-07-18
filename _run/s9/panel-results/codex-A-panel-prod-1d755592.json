@@ -1,22 +1,180 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Preston v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. Lens A refutes only quote-fidelity defects; treatment merits are reserved for Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "d102ae478c242f60",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Preston v. United States as a U.S. Supreme Court case decided 1964-03-23.",
+          "The displayed official citation 376 U.S. 364 and parallel/vendor citations match the lake citation fields and the content page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b5467cb9f8bdc03",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "and conclude, therefore, that",
+          "locator_note": "text/Preston v. United States__aa4a41.txt line 153; lake pin-368 also flags quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-368 quotation is not character-faithful. The content/lake quote inserts '[so]' and omits the opinion's actual connector and phrase after 'obtained'.",
+          "proposed_fix": "Use the exact sentence from the opinion at star page 368, or convert the sentence to a paraphrase instead of a verbatim quotation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text says the Court 'conclude, therefore, that'; the asserted quote replaces that with '[so]'.",
+          "The opinion text says the evidence was obtained 'as a result of the search'; the asserted quote omits that phrase with an ellipsis."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported, but the verbatim quotation is not clean."
+        ],
+        "suggested_tightening": "Keep the 368 pincite, but quote the full sentence exactly or paraphrase the holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8dce0920b2eabcca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted string appears verbatim in the opinion text on star page 367.",
+          "The lake pinpoint for pin-367b is marked star-verified with star_marker 367 and matched quote_fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e5f664f222c7c86b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Once an accused is under arrest and in custody",
+          "locator_note": "The actual source sentence is in text/Preston v. United States__aa4a41.txt line 117; the lake pin-367 quote begins with page markdown instead.",
+          "needs_cl": false,
+          "problem": "The pin-367 harvested quote is not a quotation from the opinion; it is a large slice of the generated content page/frontmatter and page prose.",
+          "proposed_fix": "Replace pin-367's lake quote with the actual opinion sentence used on the page and set the star marker to 367.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # Preston v. United States', which is content_page markdown, not opinion text.",
+          "The opinion passage supporting the page quote is the sentence beginning 'Once an accused is under arrest and in custody' on star page 367."
+        ],
+        "residual_risks": [
+          "The page's displayed short quote is supportable, but the lake pinpoint record for pin-367 is corrupt."
+        ],
+        "suggested_tightening": "Reharvest pin-367 from the opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c99ed8fdcd0128e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B should independently review treatment and currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Preston v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d102ae478c242f60\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Preston v. United States as a U.S. Supreme Court case decided 1964-03-23.\",\"The displayed official citation 376 U.S. 364 and parallel/vendor citations match the lake citation fields and the content page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8b5467cb9f8bdc03\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-368 quotation is not character-faithful. The content/lake quote inserts '[so]' and omits the opinion's actual connector and phrase after 'obtained'.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the exact sentence from the opinion at star page 368, or convert the sentence to a paraphrase instead of a verbatim quotation.\",\"evidence_quote\":\"and conclude, therefore, that\",\"needs_cl\":false,\"locator_note\":\"text/Preston v. United States__aa4a41.txt line 153; lake pin-368 also flags quote_fidelity as mismatch.\"},\"reasons\":[\"The opinion text says the Court 'conclude, therefore, that'; the asserted quote replaces that with '[so]'.\",\"The opinion text says the evidence was obtained 'as a result of the search'; the asserted quote omits that phrase with an ellipsis.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition is supported, but the verbatim quotation is not clean.\"],\"suggested_tightening\":\"Keep the 368 pincite, but quote the full sentence exactly or paraphrase the holding.\"},{\"assertion_id\":\"8dce0920b2eabcca\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted string appears verbatim in the opinion text on star page 367.\",\"The lake pinpoint for pin-367b is marked star-verified with star_marker 367 and matched quote_fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"e5f664f222c7c86b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-367 harvested quote is not a quotation from the opinion; it is a large slice of the generated content page/frontmatter and page prose.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-367's lake quote with the actual opinion sentence used on the page and set the star marker to 367.\",\"evidence_quote\":\"Once an accused is under arrest and in custody\",\"needs_cl\":false,\"locator_note\":\"The actual source sentence is in text/Preston v. United States__aa4a41.txt line 117; the lake pin-367 quote begins with page markdown instead.\"},\"reasons\":[\"The payload quote begins with '--- # Preston v. United States', which is content_page markdown, not opinion text.\",\"The opinion passage supporting the page quote is the sentence beginning 'Once an accused is under arrest and in custody' on star page 367.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page's displayed short quote is supportable, but the lake pinpoint record for pin-367 is corrupt.\"],\"suggested_tightening\":\"Reharvest pin-367 from the opinion text rather than from the rendered content page.\"},{\"assertion_id\":\"c99ed8fdcd0128e0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should independently review treatment and currency.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. Lens A refutes only quote-fidelity defects; treatment merits are reserved for Lens B.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:40-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:28:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-84e4f4d096",
+      "F-S9-PR-f6b75769f9"
+    ],
     "group_id": "_overhaul2/lake/cases/Preston v. United States.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1d755592",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1d755592.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:31.470427Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:32.222445Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:33.033114Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:34.250160Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:36.399281Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:39.681808Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Preston v. United States"
+    ],
+    "tokens": {
+      "input": 238638,
+      "output": 6422,
+      "source": "codex-events",
+      "total": 245060
+    },
+    "verdict_map": {
+      "8b5467cb9f8bdc03": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8dce0920b2eabcca": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c99ed8fdcd0128e0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d102ae478c242f60": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5f664f222c7c86b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-84e4f4d096",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f6b75769f9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 142.9
   }
 }

@@ -1,22 +1,91 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rochin v. California.json",
+    "lens": "B",
+    "notes": "The content-page narrative includes additional treatment-oriented statements about Lewis, Mapp, and Schmerber that are not separately inventoried here; this review covers the two assertion_id rows exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "f5a396c1e6172432",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity fields confirm the same record_id, case name, SCOTUS court, 1952-01-02 decision date, cluster_id 104943, canonical_name_match true, and expected_citation_found true.",
+          "The lake citations fields contain the asserted official citation 342 U.S. 165 and the same parallel and vendor-neutral citations listed in the payload.",
+          "No disclosed treatment or progeny edge negates the citation's existence; the current good-law question is separated into the unverified treatment row."
+        ],
+        "residual_risks": [
+          "This does not prove current good-law status because the lake treatment/progeny record is expressly unverified and empty."
+        ],
+        "suggested_tightening": "Keep this assertion limited to identity/citation existence; do not let it imply a certified live-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "922d3b8cec2ef449",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields.",
+          "The lake treatment record has empty point_overrides and edges, and the progeny record has rows_cached 0 and no outbound_opinion_edges, consistent with the scope note that treatment/progeny were not derived.",
+          "The content page frontmatter carries the same unverified treatment metadata, so the structured treatment call does not overstate good-law status."
+        ],
+        "residual_risks": [
+          "Because treatment is only a frontier stub, no disclosed record verifies whether Rochin is currently good law on any point."
+        ],
+        "suggested_tightening": "Add promoted treatment derivation, dates, and progeny edges before displaying any certified good-law, overruled, superseded, or limited label.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Rochin v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f5a396c1e6172432\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity fields confirm the same record_id, case name, SCOTUS court, 1952-01-02 decision date, cluster_id 104943, canonical_name_match true, and expected_citation_found true.\",\n        \"The lake citations fields contain the asserted official citation 342 U.S. 165 and the same parallel and vendor-neutral citations listed in the payload.\",\n        \"No disclosed treatment or progeny edge negates the citation's existence; the current good-law question is separated into the unverified treatment row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This does not prove current good-law status because the lake treatment/progeny record is expressly unverified and empty.\"\n      ],\n      \"suggested_tightening\": \"Keep this assertion limited to identity/citation existence; do not let it imply a certified live-law status.\"\n    },\n    {\n      \"assertion_id\": \"922d3b8cec2ef449\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields.\",\n        \"The lake treatment record has empty point_overrides and edges, and the progeny record has rows_cached 0 and no outbound_opinion_edges, consistent with the scope note that treatment/progeny were not derived.\",\n        \"The content page frontmatter carries the same unverified treatment metadata, so the structured treatment call does not overstate good-law status.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment is only a frontier stub, no disclosed record verifies whether Rochin is currently good law on any point.\"\n      ],\n      \"suggested_tightening\": \"Add promoted treatment derivation, dates, and progeny edges before displaying any certified good-law, overruled, superseded, or limited label.\"\n    }\n  ],\n  \"notes\": \"The content-page narrative includes additional treatment-oriented statements about Lewis, Mapp, and Schmerber that are not separately inventoried here; this review covers the two assertion_id rows exactly once.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:34:04-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:31:12-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Rochin v. California.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9703e739",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9703e739.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 7cddb31a-4ae7-41d9-8abf-19c9fdc412d4\n2026-07-10T22:33:56.000498Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:56.562034Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:57.245410Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:58.062749Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:59.253104Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:34:01.178654Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rochin v. California"
+    ],
+    "tokens": {
+      "input": 106000,
+      "output": 7849,
+      "source": "codex-events",
+      "total": 113849
+    },
+    "verdict_map": {
+      "922d3b8cec2ef449": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f5a396c1e6172432": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 152.8
   }
 }

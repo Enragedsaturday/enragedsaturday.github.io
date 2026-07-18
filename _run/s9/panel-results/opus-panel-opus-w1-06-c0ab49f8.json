@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "070672164e172c0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is Benn v. Lambert, Reinhardt, Circuit Judge, 9th Cir. habeas granting Gary Michael Benn relief on Brady grounds, page markers *1045..*1056 — reported at 283 F.3d 1040 (9th Cir. 2002).",
+          "Official cite 283 F.3d 1040 selected; opinion body begins at page 1040 (p ids b1040-*)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bf1b7ce2acf9093",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because we hold that the state court's decision that there was no Brady violation in Benn's case constitutes an unreasonable application of clearly established Supreme Court law, we affirm.",
+          "locator_note": "Cached opinion p id=b1040-9 (283 F.3d 1040, para. 1); garbled quote at inventory payload / lake pinpoints[id=pin-p1].",
+          "needs_cl": false,
+          "problem": "The stored pin-p1 quote is not opinion text — it is a scrape of the content page's top matter, beginning with frontmatter/title ('--- # Benn v. Lambert *283 F.3d 1040 ...'), the header comment, and markdown sections '## Background', '## Issue', '## Rule', trailing off at 'Applying that standard, the court held:'. It contains no verbatim court language. The genuine holding sentence the page renders at ^pin-p1 IS verbatim in the cached opinion (paragraph 1).",
+          "proposed_fix": "Replace the garbled pin-p1 quote field with the verbatim opinion sentence (below) from cached opinion p id=b1040-9 (paragraph 1); the rendered page already shows it correctly, so this is a lake-metadata repair.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is markdown/frontmatter contamination ('## Background', '## Issue', '## Rule', 'the court held:') — self-evidently a page scrape, not opinion text.",
+          "Record flags quote_fidelity=mismatch; the cached opinion contains the true ¶1 holding verbatim at b1040-9, confirming the stored text is a mis-captured pinpoint."
+        ],
+        "residual_risks": [
+          "Defect confined to the lake pinpoint quote field; the content page renders the correct verbatim quote at ^pin-p1."
+        ],
+        "suggested_tightening": "Re-derive pin-p1 quote from opinion text rather than the projected page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f0b583e3f108f876",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'Were there no other pieces of withheld evidence in this case, we would hold that the suppression of impeachment evidence about Patrick's criminal misconduct and repeated lies to the police, while acting as an informant, is, standing alone, sufficiently prejudicial to establish a Brady violation.' is verbatim in the cached opinion at p id=b1052-7 (¶ 58).",
+          "Only difference is markdown italics (*Brady*) corresponding to the opinion's <em>Brady</em> emphasis — no textual mismatch."
+        ],
+        "residual_risks": [
+          "Record carries quote_fidelity=mismatch, but that flag is a false positive against the disclosed opinion text."
+        ],
+        "suggested_tightening": "Clear the erroneous quote_fidelity=mismatch flag on pin-p58; the pinpoint verifies verbatim at ¶ 58 (b1052-7).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "51c124d035c09d89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is an honest migration-seed caveat; the disclosed opinion confirms the underlying holding (9th Cir. affirmed habeas grant; Brady violation; unreasonable application of clearly established law).",
+          "No disclosed evidence contradicts good_law; every negative edge is proposed:true and facially spurious (e.g., United States v. Yepiz, Amado v. Gonzalez, State v. Gregory did not overrule Benn v. Lambert)."
+        ],
+        "residual_risks": [
+          "field_i_validity=good_law rests on composite_basis=migration-seed; scope_note itself warns S2 re-derivation 'may downgrade'. Forward currency to 2026-06-30 is not derivable from the case's own text.",
+          "Un-adjudicated proposed:true 'overruled/questioned/superseded' edges are extractor false positives."
+        ],
+        "suggested_tightening": "Complete S2 treatment derivation and prune the facially-false proposed negative edges before promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-867b44e473",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-05439c14ef",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Benn v. Lambert.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-06-c0ab49f8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Benn v. Lambert"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "070672164e172c0f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1bf1b7ce2acf9093": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "51c124d035c09d89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f0b583e3f108f876": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-34846625ad",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-867b44e473",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-05439c14ef",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

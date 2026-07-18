@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5940ba1956ef42b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached CL opinion confirms United States v. Calandra, 414 U.S. 338 (1974) — grand-jury / exclusionary-rule case — with reporter star-pagination *348, *352, *355, *367 within 414 U.S., anchoring the official cite.",
+          "Party name and deterrent-remedy holding are present in the cached text; parallel cites (94 S. Ct. 613; 38 L. Ed. 2d 561; 66 Ohio Op. 2d 320; 1974 U.S. LEXIS 145) are CL cluster metadata, not contradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd5824993ecbea09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual pin-348 quote on the content page — 'the rule is a judicially created remedy designed to safeguard Fourth Amendment rights generally through its deterrent effect, rather than a personal constitutional right of the party aggrieved.' — matches the cached opinion verbatim at star-pagination *348 ('In sum, the rule is a judicially created remedy ... rather than a personal constitutional right of the party aggrieved.').",
+          "Page 348 is independently corroborated within the cached text: the dissent re-quotes the same language as 'Ante, at 348.'",
+          "The payload's quote_fidelity='mismatch' is a harness/extractor artifact — its 'quote' field captured the page's header/Background/Issue block (ending at the ':' lead-in 'not a personal right of the aggrieved party:') instead of the quoted sentence, so it compared the wrong text against the source."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' and star_marker=null on the pinpoint object; the page-348 anchor is confirmed here from the html star-pagination, but the pinpoint record itself lacks a resolved star marker."
+        ],
+        "suggested_tightening": "Re-anchor the pin-348 extractor to the quoted sentence (not the page header) to clear the spurious 'mismatch' and populate star_marker='*348'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "624955926e1f5a4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The 'good_law' framing is not refutable from the disclosed pack: the only disclosed treatment edges are proposed 'lane1_negative' candidates flagging 'overruled'/'questioned', but they attribute the overruling to state courts (State v. Rogers, State v. Thalken, State v. Christian, State of Minnesota v. Douglas) and a district court (Foistner/Gomez) — none of which can overrule a 1974 U.S. Supreme Court decision; all are proposed=true with field_iii='mentioned', i.e., non-credible citator false positives.",
+          "No positive citator sweep is disclosed; composite_basis='migration-seed', so currency 'as of 2026-06-30' cannot be affirmatively confirmed from disclosed evidence (not fabricating a clean).",
+          "The disclosed 1974 opinion does not itself contradict good-law status, so there is no disclosed basis to fabricate a defect either (not found != fabricated)."
+        ],
+        "residual_risks": [
+          "Record carries multiple facially-impossible 'overruled'/'questioned' edges (state/district courts vs a SCOTUS holding) that a B-lens/currency pass should scrub before promotion.",
+          "'good_law as of 2026-06-30' rests on a migration-seed, not on an independent citator derivation disclosed in this pack."
+        ],
+        "suggested_tightening": "Before promotion, curate/drop the lane1_negative proposed 'overruled'/'questioned' edges (state courts cannot overrule SCOTUS) and back the good_law flag with a disclosed positive citator basis.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:28-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-402e83a6ec",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Calandra.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-04-a20cc32e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Calandra"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5940ba1956ef42b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "624955926e1f5a4c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "fd5824993ecbea09": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-402e83a6ec",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Olson.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "4ee5871c486af17d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record is Minnesota v. Olson, U.S. Supreme Court, decided 1990-04-18, year 1990.",
+          "The lake official citation is 495 U.S. 91 and the parallel/vendor citations in the inventory match the lake citation lists."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c8b7d9585128856b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "From either perspective, we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home.",
+          "locator_note": "pin-98 in lake pinpoints[]; content_page.md cites ^pin-98 after the houseguest-expectation quotation at 495 U.S. at 98.",
+          "needs_cl": false,
+          "problem": "The asserted pin-98 quote is not an opinion quote; it is a markdown page/header excerpt and the lake itself marks quote_fidelity as mismatch with page:null and position:null.",
+          "proposed_fix": "Replace pin-98 with the actual page-98 opinion passage supporting the displayed quotation, e.g. the sentence beginning 'From either perspective, we think...' and set a real page/pin locator.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with markdown page content, not the cached opinion text.",
+          "The cached opinion text contains the real passage at the page-98 span, while the lake pin has no page and is expressly labeled mismatch."
+        ],
+        "residual_risks": [
+          "The page's visible short quotation appears supportable from the cached text, but the reviewed lake pinpoint assertion is defective as framed."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence as the pinpoint quote and preserve the 495 U.S. at 98 pincite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86783880786b0830",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The inventory treatment fields mirror the disclosed lake treatment block for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point."
+        ],
+        "residual_risks": [
+          "Treatment accuracy is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Minnesota v. Olson.json\",\"reviewed\":[{\"assertion_id\":\"4ee5871c486af17d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake identity record is Minnesota v. Olson, U.S. Supreme Court, decided 1990-04-18, year 1990.\",\"The lake official citation is 495 U.S. 91 and the parallel/vendor citations in the inventory match the lake citation lists.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c8b7d9585128856b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-98 quote is not an opinion quote; it is a markdown page/header excerpt and the lake itself marks quote_fidelity as mismatch with page:null and position:null.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-98 with the actual page-98 opinion passage supporting the displayed quotation, e.g. the sentence beginning 'From either perspective, we think...' and set a real page/pin locator.\",\"evidence_quote\":\"From either perspective, we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home.\",\"needs_cl\":false,\"locator_note\":\"pin-98 in lake pinpoints[]; content_page.md cites ^pin-98 after the houseguest-expectation quotation at 495 U.S. at 98.\"},\"reasons\":[\"The lake pinpoint quote begins with markdown page content, not the cached opinion text.\",\"The cached opinion text contains the real passage at the page-98 span, while the lake pin has no page and is expressly labeled mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's visible short quotation appears supportable from the cached text, but the reviewed lake pinpoint assertion is defective as framed.\"],\"suggested_tightening\":\"Use the exact opinion sentence as the pinpoint quote and preserve the 495 U.S. at 98 pincite.\"},{\"assertion_id\":\"86783880786b0830\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The inventory treatment fields mirror the disclosed lake treatment block for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:31:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:13:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-00c4a905c5"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnesota v. Olson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-750ab6ba",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-750ab6ba.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:53.586627Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:54.215574Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:55.049409Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:56.275949Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:58.245832Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:31:02.027876Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Olson"
+    ],
+    "tokens": {
+      "input": 108921,
+      "output": 3902,
+      "source": "codex-events",
+      "total": 112823
+    },
+    "verdict_map": {
+      "4ee5871c486af17d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "86783880786b0830": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c8b7d9585128856b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-00c4a905c5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 81.2
   }
 }

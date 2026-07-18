@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "83631ee1cc631d73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms identity: 'DONALD SAUCIER, PETITIONER v. ELLIOT M. KATZ', No. 99-1977, decided June 18, 2001, SUPREME COURT OF THE UNITED STATES, reversing 194 F.3d 962.",
+          "Official cite 533 U.S. 194 present in disclosed cluster.citations[]; parallels 121 S. Ct. 2151 / 150 L. Ed. 2d 272 standard; nothing disclosed contradicts."
+        ],
+        "residual_risks": [
+          "Slip text (pre-U.S.-Reports) does not itself print '533 U.S. 194'; the page-194 locator derives from cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66c014958782c29b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page ^pin-201a quote is a faithful bracketed/elided quotation of opinion para 10: 'On the other hand, if a violation could be made out on a favorable view of the parties' submissions, the next, sequential step is to ask whether the right was clearly established. This inquiry, it is vital to note, must be undertaken in light of the specific context of the case, not as a broad general proposition.'",
+          "'[I]f' and '[in]' brackets and the '. . . .' ellipsis are proper editorial marks; the substance is verbatim. Lake quote_fidelity='mismatch' reads as an exact-substring false positive."
+        ],
+        "residual_risks": [
+          "Pincite '201' not confirmable from slip-only cached text (no star pagination)."
+        ],
+        "suggested_tightening": "Reconcile lake quote_fidelity flag from 'mismatch' to 'matched (editorialized)'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f07e33e8de730fb3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A court required to rule upon the qualified immunity issue must consider, then, this threshold question: Taken in the light most favorable to the party asserting the injury, do the facts alleged show the officer's conduct violated a constitutional right? This must be the initial inquiry.",
+          "locator_note": "opinion para 9 (div id=p9); lake pinpoints[].id=pin-201",
+          "needs_cl": false,
+          "problem": "pinpoint pin-201 'quote' field stores content-page boilerplate (front-matter title/TreatmentBadge line + Background + Issue + 'Rule A court analyzes qualified immunity in a fixed sequence'), not an opinion quotation; this text appears nowhere in the Saucier opinion.",
+          "proposed_fix": "Re-harvest pin-201's quote to the anchored Rule quotation, which is verbatim-faithful to opinion para 9.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verifiably page markdown, not source text (quote-harvest artifact); lake self-flags quote_fidelity='mismatch'.",
+          "The page's actual ^pin-201 anchored quote IS verbatim-faithful to para 9, so no false published proposition ships; the defect is confined to the pinpoint record."
+        ],
+        "residual_risks": [
+          "Pincite '201' not confirmable from slip-only cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c352bf6a25283c15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Saucier's own two-step sequence is confirmed by the disclosed body (paras 8-10: qualified-immunity 'requisites ... must be considered in proper sequence'; threshold constitutional-violation inquiry then clearly-established).",
+          "The subsequent-limitation claim (Pearson v. Callahan, 555 U.S. 223, sequence 'no longer mandatory') is NOT inlined, but nothing disclosed contradicts it; field_i_validity caution / varies_by_point=true is internally consistent."
+        ],
+        "residual_risks": [
+          "Pearson v. Callahan holding is not inlined; the 'limited/no-longer-mandatory' treatment cannot be independently verified from disclosed evidence.",
+          "field_i_validity 'caution' vs header narrative 'limited' reflects a documented legacy migration (provenance warning 'limited -> caution')."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3189959b27",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f935f4fe4a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Saucier v. Katz.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-04-541f3a56",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Saucier v. Katz"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "66c014958782c29b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83631ee1cc631d73": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c352bf6a25283c15": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f07e33e8de730fb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3189959b27",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-05ac1932d2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f935f4fe4a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

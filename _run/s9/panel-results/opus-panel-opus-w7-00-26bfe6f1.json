@@ -1,0 +1,154 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "17b1a966c228e725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Mr. Justice Stewart) carries U.S. Reports star-pagination *529 through *538, placing the opinion's first page at 528 -- matches official cite 372 U.S. 528.",
+          "Case name 'Lynumn v. Illinois', cluster 106558, 1963 SCOTUS provenance all consistent; official_selection_present is true and display cite equals official cite."
+        ],
+        "residual_risks": [
+          "Parallel cites (83 S. Ct. 917; 9 L. Ed. 2d 922; 1963 U.S. LEXIS 1907) are not independently confirmable from the slip text, but the controlling official U.S. cite is."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b979930b02e69e9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion at page 534 reads: 'If so, the confession cannot be deemed [the product of a rational intellect and a free will]. Blackburn v. Alabama, 361 U. S. 199, 208.' -- the page's pin-534a quotation is verbatim; only nested-quote glyph style (single vs double) differs.",
+          "Attribution '(quoting Blackburn v. Alabama, 361 U.S. 199, 208 (1960))' is accurate: the opinion cites Blackburn immediately after the quoted phrase; pincite 534 confirmed by the *534 star.",
+          "Payload flag quote_fidelity=mismatch is a false positive from glyph normalization and the editorial lead-in ('If the will was overborne,' framing the opinion's 'If so,'), which sits outside the quotation marks."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize curly/nested quote glyphs and strip editorial lead-ins before the fidelity comparator runs, to avoid spurious mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c4a27fcd84fe1536",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The captured 'quote' string is a mis-extraction: it concatenates the content page's own Background/Issue/Rule narrative and literal markdown headers ('## Issue', '## Rule') that cannot appear in a court opinion -- it is not a quotation the page presents at pin-534.",
+          "The page's ACTUAL pin-534 quotation ('It is thus abundantly clear that the petitioner's oral confession was made only after the police had told her that state financial aid for her infant children would be cut off, and her children taken from her, if she did not cooperate. ... We think it clear that a confession made under such circumstances must be deemed not voluntary, but coerced. That is the teaching of our cases. We have said that the question in [each] case is whether the defendant's will was overborne at the time he confessed.') is verbatim-faithful to opinion page 534, with a marked ellipsis and a bracketed [each] correcting the slip OCR 'epch'.",
+          "Pincite 534 confirmed by the *534 star; the mismatch flag reflects the broken extraction, not any defect in the page's quote fidelity."
+        ],
+        "residual_risks": [
+          "Treating this extractor mismatch as a real defect would break a genuine true positive (the faithful pin-534 quotation)."
+        ],
+        "suggested_tightening": "Fix the quote extractor to anchor on the pin's actual quoted span rather than capturing the preceding front-matter/narrative block.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2816a2c662d543f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note description is faithful to the disclosed opinion: the Court held the confession coerced and involuntary where police threatened loss of welfare (ADC) aid and removal of the children, and reversed -- a totality-of-circumstances coercion holding.",
+          "No disclosed evidence contradicts good_law; composite_basis is 'migration-seed'.",
+          "Currency (good_law as of 2026-06-30, no negative subsequent treatment) cannot be affirmed from the 1963 slip opinion alone -- it requires a citator."
+        ],
+        "residual_risks": [
+          "good_law is a migration-seeded value, not citator-derived; a citator is needed to confirm no subsequent negative treatment."
+        ],
+        "suggested_tightening": "Re-derive treatment from a citator rather than migration-seed before final certification.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-494a5d584a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d369fd0efb",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1c8ba3e52d",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lynumn v. Illinois.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-00-26bfe6f1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lynumn v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "17b1a966c228e725": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b979930b02e69e9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2816a2c662d543f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "c4a27fcd84fe1536": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-494a5d584a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d369fd0efb",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1c8ba3e52d",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

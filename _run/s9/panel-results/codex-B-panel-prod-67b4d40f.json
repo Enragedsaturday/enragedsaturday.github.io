@@ -1,22 +1,203 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Conner.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "9e72bc34ba5ef398",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and reports expected_citation_found=true and canonical_name_match=true.",
+          "The official citation selected in the lake is 127 F.3d 663, matching the page citation, and the court/year match the lake identity fields.",
+          "No confirmed, non-proposed disclosed edge establishes that the cited case does not exist; treatment currency is addressed in the treatment assertions."
+        ],
+        "residual_risks": [
+          "Live-law status has the unresolved treatment-audit risk addressed under assertion 6127f0ff7e91dfb4."
+        ],
+        "suggested_tightening": "Keep citation/existence separate from treatment status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5a4acbb608b7a30",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The home role appears in content_page.md as Securing the Scene - Recent development (role-based).",
+          "Lens B does not adjudicate support fit or page taxonomy, and no disclosed treatment/progeny field independently defeats this placement."
+        ],
+        "residual_risks": [
+          "The substantive support fit and the word Recent are outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f744a4b607463c26",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate holding support or quote fidelity.",
+          "The lake treatment record has no point_overrides limiting this point; the broader treatment-status risk is addressed under assertion 6127f0ff7e91dfb4."
+        ],
+        "residual_risks": [
+          "Current-law use of the proposition depends on resolving the treatment audit noted for the treatment assertion."
+        ],
+        "suggested_tightening": "Tie displayed current-law use of the holding to resolved treatment status after audit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3fc8dd096f7b5fb2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/United States v. Conner__8e0338.json treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The court/circuit basis for an 8th Circuit in-circuit weight label is disclosed, but the unqualified word Binding depends on unresolved good-law treatment. The lake treatment derivation flags an open treatment audit and proposed negative edges, so the current binding force is not fully verifiable from the disclosed record.",
+          "proposed_fix": "Split precedential source weight from current treatment, or qualify the label pending treatment audit, e.g. 8th Cir. Court of Appeals; treatment audit pending.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity supports that this is a U.S. Court of Appeals, 8th Circuit decision.",
+          "The same lake record flags lane2_top_cited audit_needed=true with proposed negative events, leaving current binding force unresolved."
+        ],
+        "residual_risks": [
+          "If the audit resolves the proposed negative edges as non-substantive, the unqualified binding label may be restorable."
+        ],
+        "suggested_tightening": "Use a separate field for court precedential weight and for current good-law treatment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "6127f0ff7e91dfb4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "lake/United States v. Conner__8e0338.json treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The page states unqualified good_law treatment as of 2026-06-30, but the disclosed lake record does not fully verify that status. The asserted treatment is migration-seed based, while progeny derivation flags an unresolved top-cited audit with 24 proposed negative events and proposed overruled, abrogated, superseded, questioned, and criticized edges.",
+          "proposed_fix": "Do not publish an unqualified good-law status until the proposed negative progeny edges are audited and resolved; otherwise mark the treatment as audit-pending or qualified.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment mirrors lake field_i_validity=good_law, but the lake provenance says treatment.field_i_validity came from _treatment-migration.json + page frontmatter.",
+          "The disclosed derivation reports lane2_top_cited cap_hit=true, audit_needed=true, proposed_negative_events=24, and audit_marker=R15 treatment audit required.",
+          "The treatment.edges list contains only proposed negative edges; the working directory does not contain the citing-opinion text or audit resolutions needed to verify that those negative signals do not limit Conner."
+        ],
+        "residual_risks": [
+          "The good-law judgment may ultimately be correct after audit; the disclosed record simply does not resolve the proposed negative treatment signals."
+        ],
+        "suggested_tightening": "Expose the pending audit status or suppress the as-of good-law badge until the candidate negative treatments are resolved.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Conner.md\",\"reviewed\":[{\"assertion_id\":\"9e72bc34ba5ef398\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified and reports expected_citation_found=true and canonical_name_match=true.\",\"The official citation selected in the lake is 127 F.3d 663, matching the page citation, and the court/year match the lake identity fields.\",\"No confirmed, non-proposed disclosed edge establishes that the cited case does not exist; treatment currency is addressed in the treatment assertions.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Live-law status has the unresolved treatment-audit risk addressed under assertion 6127f0ff7e91dfb4.\"],\"suggested_tightening\":\"Keep citation/existence separate from treatment status.\"},{\"assertion_id\":\"b5a4acbb608b7a30\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The home role appears in content_page.md as Securing the Scene - Recent development (role-based).\",\"Lens B does not adjudicate support fit or page taxonomy, and no disclosed treatment/progeny field independently defeats this placement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive support fit and the word Recent are outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f744a4b607463c26\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate holding support or quote fidelity.\",\"The lake treatment record has no point_overrides limiting this point; the broader treatment-status risk is addressed under assertion 6127f0ff7e91dfb4.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current-law use of the proposition depends on resolving the treatment audit noted for the treatment assertion.\"],\"suggested_tightening\":\"Tie displayed current-law use of the holding to resolved treatment status after audit.\"},{\"assertion_id\":\"3fc8dd096f7b5fb2\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The court/circuit basis for an 8th Circuit in-circuit weight label is disclosed, but the unqualified word Binding depends on unresolved good-law treatment. The lake treatment derivation flags an open treatment audit and proposed negative edges, so the current binding force is not fully verifiable from the disclosed record.\",\"severity\":\"medium\",\"proposed_fix\":\"Split precedential source weight from current treatment, or qualify the label pending treatment audit, e.g. 8th Cir. Court of Appeals; treatment audit pending.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Conner__8e0338.json treatment.derivation.lane2_top_cited\"},\"reasons\":[\"Lake identity supports that this is a U.S. Court of Appeals, 8th Circuit decision.\",\"The same lake record flags lane2_top_cited audit_needed=true with proposed negative events, leaving current binding force unresolved.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the audit resolves the proposed negative edges as non-substantive, the unqualified binding label may be restorable.\"],\"suggested_tightening\":\"Use a separate field for court precedential weight and for current good-law treatment.\"},{\"assertion_id\":\"6127f0ff7e91dfb4\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page states unqualified good_law treatment as of 2026-06-30, but the disclosed lake record does not fully verify that status. The asserted treatment is migration-seed based, while progeny derivation flags an unresolved top-cited audit with 24 proposed negative events and proposed overruled, abrogated, superseded, questioned, and criticized edges.\",\"severity\":\"high\",\"proposed_fix\":\"Do not publish an unqualified good-law status until the proposed negative progeny edges are audited and resolved; otherwise mark the treatment as audit-pending or qualified.\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Conner__8e0338.json treatment.derivation.lane2_top_cited and treatment.edges\"},\"reasons\":[\"The content treatment mirrors lake field_i_validity=good_law, but the lake provenance says treatment.field_i_validity came from _treatment-migration.json + page frontmatter.\",\"The disclosed derivation reports lane2_top_cited cap_hit=true, audit_needed=true, proposed_negative_events=24, and audit_marker=R15 treatment audit required.\",\"The treatment.edges list contains only proposed negative edges; the working directory does not contain the citing-opinion text or audit resolutions needed to verify that those negative signals do not limit Conner.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The good-law judgment may ultimately be correct after audit; the disclosed record simply does not resolve the proposed negative treatment signals.\"],\"suggested_tightening\":\"Expose the pending audit status or suppress the as-of good-law badge until the candidate negative treatments are resolved.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:54:18-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:20:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d3f113eb6a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b8a7888b1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-80e5b80e9a",
+      "F-S9-PR-dbaee13f72"
+    ],
     "group_id": "content/cases/United States v. Conner.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-67b4d40f",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-67b4d40f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:10.037773Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:10.897024Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:12.230721Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:14.374035Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:17.929351Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Conner"
+    ],
+    "tokens": {
+      "input": 154499,
+      "output": 11590,
+      "source": "codex-events",
+      "total": 166089
+    },
+    "verdict_map": {
+      "3fc8dd096f7b5fb2": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "6127f0ff7e91dfb4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9e72bc34ba5ef398": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5a4acbb608b7a30": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f744a4b607463c26": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d3f113eb6a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b8a7888b1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-80e5b80e9a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-dbaee13f72",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 220.3
   }
 }

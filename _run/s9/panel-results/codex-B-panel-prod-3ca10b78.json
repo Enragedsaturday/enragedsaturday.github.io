@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/reichle-v-howards--801500.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review used group_inventory.jsonl, the lake record, and the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "f4978367f53094a7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/reichle-v-howards--801500__064adb.json treatment.scope_note; treatment.field_i_validity is unverified and progeny.rows_cached is 0",
+          "needs_cl": true,
+          "problem": "The record verifies the case identity and citations, but the disclosed treatment/progeny record does not verify that the authority is still live law; treatment is explicitly unverified and progeny was not derived.",
+          "proposed_fix": "Limit this assertion to verified identity/citation only, or obtain current treatment/progeny evidence before implying the authority remains live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake status supports verified identity, but treatment.field_i_validity is unverified and as_of_treatment is null.",
+          "The progeny record has no enumeration and zero cached rows, so disclosed evidence cannot rule out later overruling, abrogation, limitation, or supersession."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain live law, but that cannot be verified from the disclosed treatment record."
+        ],
+        "suggested_tightening": "Separate case existence from current validity: label as identity verified, treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "53c973e2d5d438aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake record expressly states treatment/progeny were intentionally not derived, so the assertion does not make a positive good-law claim."
+        ],
+        "residual_risks": [
+          "No current good-law status can be determined from the disclosed record beyond the unverified label."
+        ],
+        "suggested_tightening": "Keep downstream displays from presenting this authority as current good law unless treatment is promoted beyond the frontier stub.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/reichle-v-howards--801500.json\",\"reviewed\":[{\"assertion_id\":\"f4978367f53094a7\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The record verifies the case identity and citations, but the disclosed treatment/progeny record does not verify that the authority is still live law; treatment is explicitly unverified and progeny was not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to verified identity/citation only, or obtain current treatment/progeny evidence before implying the authority remains live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/reichle-v-howards--801500__064adb.json treatment.scope_note; treatment.field_i_validity is unverified and progeny.rows_cached is 0\"},\"reasons\":[\"Lake status supports verified identity, but treatment.field_i_validity is unverified and as_of_treatment is null.\",\"The progeny record has no enumeration and zero cached rows, so disclosed evidence cannot rule out later overruling, abrogation, limitation, or supersession.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority may in fact remain live law, but that cannot be verified from the disclosed treatment record.\"],\"suggested_tightening\":\"Separate case existence from current validity: label as identity verified, treatment unverified.\"},{\"assertion_id\":\"53c973e2d5d438aa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake record expressly states treatment/progeny were intentionally not derived, so the assertion does not make a positive good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No current good-law status can be determined from the disclosed record beyond the unverified label.\"],\"suggested_tightening\":\"Keep downstream displays from presenting this authority as current good law unless treatment is promoted beyond the frontier stub.\"}],\"notes\":\"No content_page.* file was present in the working directory; review used group_inventory.jsonl, the lake record, and the cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:22:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-69405721a5"
+    ],
     "group_id": "_overhaul2/lake/cases/reichle-v-howards--801500.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3ca10b78",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3ca10b78.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:37:30.960793Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.436867Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:32.071615Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record reichle-v-howards--801500"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "reichle-v-howards--801500"
+    ],
+    "tokens": {
+      "input": 111362,
+      "output": 5120,
+      "source": "codex-events",
+      "total": 116482
+    },
+    "verdict_map": {
+      "53c973e2d5d438aa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4978367f53094a7": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-69405721a5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 100.2
   }
 }

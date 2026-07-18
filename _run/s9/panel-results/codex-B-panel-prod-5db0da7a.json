@@ -1,22 +1,173 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Hope v. Pelzer.md",
+    "lens": "B",
+    "notes": "Reviewed only Lens B currency/treatment issues and did not perform support or quote-fidelity review.",
+    "reviewed": [
+      {
+        "assertion_id": "e73f28e8212e70e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies Hope v. Pelzer as a U.S. Supreme Court case decided 2002-06-27.",
+          "Lake citations include the official cite 536 U.S. 730, parallels 122 S. Ct. 2508 and 153 L. Ed. 2d 666, and vendor cite 2002 U.S. LEXIS 4884.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so the authority is live for Lens B purposes."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges requiring audit, but no final disclosed judgment overrules the case."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42937a6aad2d31d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate support or quote fidelity.",
+          "From the currency/treatment angle, the lake final treatment judgment says good_law and lists no point_overrides."
+        ],
+        "residual_risks": [
+          "Support and quote accuracy remain for Lens A.",
+          "Proposed treatment edges are unaudited and point=null."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ef3b47bbe68f50e4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate the substantive support for the home-role label.",
+          "No disclosed final treatment field makes Hope obsolete for qualified-immunity use; lake treatment remains good_law."
+        ],
+        "residual_risks": [
+          "Home taxonomy fit is outside Lens B except for currentness."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5c16293e31bbce82",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.",
+          "A SCOTUS decision is properly labeled Binding — SCOTUS in this corpus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bb48e5c63083e010",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 25,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Hope v. Pelzer__f996d5.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law field itself matches the lake judgment, but the page's unqualified 'No negative treatment' presentation overstates the disclosed record because the lake contains proposed negative-treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep field_i_validity: good_law, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the final lake judgment; treatment derivation contains proposed negative edges requiring audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, matching the frontmatter.",
+          "Lake treatment.edges contains 26 proposed edges labeled overruled, questioned, abrogated, or criticized.",
+          "Derivation lane1_negative and lane2_top_cited both have audit_needed true, so the categorical 'No negative treatment' sentence is not supported without qualification."
+        ],
+        "residual_risks": [
+          "The proposed edges are not final negative-treatment judgments; a CourtListener treatment audit is needed before downgrading field_i_validity."
+        ],
+        "suggested_tightening": "Separate final treatment status from unaudited derivation signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Hope v. Pelzer.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e73f28e8212e70e6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified and identifies Hope v. Pelzer as a U.S. Supreme Court case decided 2002-06-27.\",\n        \"Lake citations include the official cite 536 U.S. 730, parallels 122 S. Ct. 2508 and 153 L. Ed. 2d 666, and vendor cite 2002 U.S. LEXIS 4884.\",\n        \"Lake treatment field_i_validity is good_law as of 2026-06-30, so the authority is live for Lens B purposes.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative edges requiring audit, but no final disclosed judgment overrules the case.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"42937a6aad2d31d0\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate support or quote fidelity.\",\n        \"From the currency/treatment angle, the lake final treatment judgment says good_law and lists no point_overrides.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support and quote accuracy remain for Lens A.\",\n        \"Proposed treatment edges are unaudited and point=null.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ef3b47bbe68f50e4\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate the substantive support for the home-role label.\",\n        \"No disclosed final treatment field makes Hope obsolete for qualified-immunity use; lake treatment remains good_law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Home taxonomy fit is outside Lens B except for currentness.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5c16293e31bbce82\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.\",\n        \"A SCOTUS decision is properly labeled Binding — SCOTUS in this corpus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bb48e5c63083e010\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law field itself matches the lake judgment, but the page's unqualified 'No negative treatment' presentation overstates the disclosed record because the lake contains proposed negative-treatment edges and audit-needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity: good_law, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the final lake judgment; treatment derivation contains proposed negative edges requiring audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 25,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Hope v. Pelzer__f996d5.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, matching the frontmatter.\",\n        \"Lake treatment.edges contains 26 proposed edges labeled overruled, questioned, abrogated, or criticized.\",\n        \"Derivation lane1_negative and lane2_top_cited both have audit_needed true, so the categorical 'No negative treatment' sentence is not supported without qualification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed edges are not final negative-treatment judgments; a CourtListener treatment audit is needed before downgrading field_i_validity.\"\n      ],\n      \"suggested_tightening\": \"Separate final treatment status from unaudited derivation signals.\"\n    }\n  ],\n  \"notes\": \"Reviewed only Lens B currency/treatment issues and did not perform support or quote-fidelity review.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:45:11-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:12:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-953d0d9194"
+    ],
     "group_id": "content/cases/Hope v. Pelzer.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5db0da7a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5db0da7a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:03.203411Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:04.125376Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:05.347597Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:07.305313Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:10.921645Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hope v. Pelzer"
+    ],
+    "tokens": {
+      "input": 213412,
+      "output": 7445,
+      "source": "codex-events",
+      "total": 220857
+    },
+    "verdict_map": {
+      "42937a6aad2d31d0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5c16293e31bbce82": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb48e5c63083e010": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e73f28e8212e70e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ef3b47bbe68f50e4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-953d0d9194",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 153.4
   }
 }

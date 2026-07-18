@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "378656600947b445",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header confirms cite and identity verbatim (line 7937): '479 U.S. 523 (1987)', CONNECTICUT v. BARRETT, No. 85-899, Argued December 9 1986, Decided January 27 1987, CHIEF JUSTICE REHNQUIST — matches docket/date/court fields.",
+          "Star-pagination *524..*537 confirms the page range opening at 523."
+        ],
+        "residual_risks": [
+          "Parallel cites (107 S. Ct. 828; 93 L. Ed. 2d 920; 1987 U.S. LEXIS 419; 55 U.S.L.W. 4151) are standard but not independently shown; the official U.S. cite and identity are confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "34cd0c34f91d7ec4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-529 quote appears verbatim in cached text at star-page *529 (line 7961): 'Barrett's limited requests for counsel, however, were accompanied by affirmative announcements of his willingness to speak with the authorities.' — the rendered '...' properly elides ', however,'.",
+          "Pincite 529 is independently corroborated by the '*529' star-pagination marker immediately preceding the passage.",
+          "Payload quote_fidelity='mismatch' reflects a missing stored text-fragment/anchor, not a quote-text or pincite discrepancy."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf626c61a5209b3c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Connecticut v. Barrett *479 U.S. 523 (1987)* ... ## Background After Miranda warnings, Barrett told police ... ## Rule No. The right to counsel may be invoked in a limited way, and authorities may honor the limits the suspect himself sets.",
+          "locator_note": "Defect confined to lake pinpoints[].id=pin-528 quote field; the content page renders a verbatim-correct quote at ^pin-528 (pincite 528 confirmed by star-pagination).",
+          "needs_cl": false,
+          "problem": "Stored pin-528 'quote' is a content-page scrape: it begins with YAML '---', H1 '# Connecticut v. Barrett', the header/TreatmentBadge line, an HTML comment, and '## Background'/'## Issue'/'## Rule' Markdown — not opinion language. Payload self-classifies quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-528.quote with the language actually rendered at ^pin-528: 'Nothing in our decisions, however, or in the rationale of Miranda, requires authorities to ignore the tenor or sense of a defendant's response to these warnings.' (verified verbatim in cached text at star-page *528, line 7959).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "YAML '---', H1 '#', HTML comment, and '##' headers in the stored quote prove a content-page scrape, not source text.",
+          "The genuine rendered ^pin-528 quote IS present verbatim in cached text at star-page *528 (line 7959)."
+        ],
+        "residual_risks": [
+          "Same first-pinpoint scrape pattern as Herlth pin-26 / Cone pin-469 / Connally pin-250."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "730c7cc6972f0792",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law: lane1 (9) and lane2 (25) proposed_negative_events are all 'proposed':true, audit_needed:true, and none is applied to field_i; lane3 recency=0.",
+          "Proposed edges are the citing-case-status FP class: e.g., United States v. Plugh ('questioned'), State v. Tellez-Suarez ('questioned'), State v. DeJong ('abrogated') — each describing its OWN status (field_iii='mentioned'), not questioning/overruling Barrett.",
+          "Connecticut v. Barrett (1987 limited Miranda invocation) is not shown overruled/abrogated by any disclosed evidence; varies_by_point=false consistent."
+        ],
+        "residual_risks": [
+          "R15 treatment audit unresolved (lanes 1-2 cap_hit=true, audit_needed=true) while good_law rests on a migration-seed."
+        ],
+        "suggested_tightening": "Close the R15 audit so good_law is derivation-backed rather than seed-only with candidates pending.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a561c2f340",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Connecticut v. Barrett.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-04-10969194",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connecticut v. Barrett"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "34cd0c34f91d7ec4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "378656600947b445": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "730c7cc6972f0792": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf626c61a5209b3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a561c2f340",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fdaf0001a8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

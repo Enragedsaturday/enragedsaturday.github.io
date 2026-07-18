@@ -1,0 +1,114 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3229adf7972b73e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header prints '449 U.S. 411 (1981)', 'UNITED STATES v. CORTEZ ET AL.', No. 79-404, Supreme Court, decided January 21 1981, Burger C.J. — confirms the case and official cite.",
+          "Parallel cites 101 S. Ct. 690 / 66 L. Ed. 2d 621 and the LEXIS/U.S.L.W. cites are consistent with a 1981 SCOTUS decision."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10dbc353addb5dc9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' captured the page's Background/Issue/Rule-lead-in narrative (an extractor span artifact), which is why it self-flags 'mismatch'; that narrative is page prose, not presented as a court quotation.",
+          "The page's actual pin-417 quotation — 'the totality of the circumstances—the whole picture—must be taken into account. Based upon that whole picture the detaining officers must have a particularized and objective basis for suspecting the particular person stopped of criminal activity.' — is verbatim in the cached opinion.",
+          "Star-pagination confirms the pincite: '*417' precedes and '*418' interrupts the quoted sentence ('...criminal *418 activity'), so '449 U.S. at 417–18' is correct."
+        ],
+        "residual_risks": [
+          "Extractor 'quote_fidelity: mismatch' is a false positive from span mis-capture; the page's pinned quote itself is faithful and correctly pincited."
+        ],
+        "suggested_tightening": "Have the extractor anchor the captured span to the quoted sentence rather than the preceding narrative.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5af87766b3d59d85",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake record field_i_validity good_law, composite_basis 'migration-seed'; negative-lane derivation shows only 'proposed' (unaudited, snippet-classified) events from state cases (State v. Tripp, Louisiana v. K.B.) that cannot abrogate a SCOTUS holding.",
+          "Progeny 3643 indexed citing opinions / citation_count 5978; no disclosed confirmed adverse treatment of Cortez's 'whole picture / particularized and objective basis' formulation.",
+          "scope_note accurately describes still-current reasonable-suspicion black letter."
+        ],
+        "residual_risks": [
+          "R15 treatment audit flagged 'required' with 4 (lane1) proposed negative events unaudited; good_law rests on the migration seed plus an as-yet-unconfirmed clean negative lane, not a completed adverse-treatment audit."
+        ],
+        "suggested_tightening": "Complete the R15 audit to convert the proposed negative events to confirmed or dismissed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d6187a9879",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Cortez.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-03-7e6f980d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Cortez"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "10dbc353addb5dc9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3229adf7972b73e7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5af87766b3d59d85": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d6187a9879",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

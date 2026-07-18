@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e9c2723b52264e3c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS opinion (United States v. Martinez-Fuerte; San Clemente checkpoint; 'we affirm the judgment of the Court of Appeals for the Fifth Circuit ... reverse the judgment of the Court of Appeals for the Ninth Circuit') plus Brennan dissent confirm the case exists (cluster 109541).",
+          "Official cite '428 U.S. 543' appears in cached text and is the standard 1976 reporter citation; not fabricated."
+        ],
+        "residual_risks": [
+          "Parallel cites '96 S. Ct. 3074' / '49 L. Ed. 2d 1116' and the LEXIS cite are cluster metadata, not independently confirmable from the cached U.S.-reporter text; not an existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d6c70efeaf5e30a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion at star *563 reads verbatim: 'We further believe that it is constitutional to refer motorists selectively to the secondary inspection area at the San Clemente checkpoint on the basis of criteria that would not sustain a roving-patrol stop. Thus, even if it be assumed that such referrals are made largely on the basis of apparent Mexican ancestry,[16] we perceive no constitutional violation.'",
+          "The stored quote matches word-for-word; the only difference is the omitted footnote call number '[16]', which is standard in quotation. The quote_fidelity='mismatch' flag is a false positive triggered by that embedded footnote marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-normalize the harvest flag to 'matched' (mismatch is a footnote-marker false positive); the pincite sits on p.563 (star-verified in cached text).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e17a951134427fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (after star *562) reads verbatim: 'Accordingly, we hold that the stops and questioning at issue may be made in the absence of any individualized suspicion at reasonably located checkpoints.'",
+          "quote_fidelity='matched', pinpoint_status='star-verified', star_marker '562' all confirmed against the cached star-pagination."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dd1a7b865ebdf937",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.",
+          "locator_note": "lake pinpoints[].id=pin-566; cached opinion section VI, between star *566 and *567",
+          "needs_cl": false,
+          "problem": "Stored pin-566 quote is the content-page frontmatter/header block (Markdown '---', '#', '##', an HTML comment, Background/Issue boilerplate, ending '## Rule Yes.'), not opinion text. It is a harvest artifact that captured the page header instead of the court's holding.",
+          "proposed_fix": "Repoint pin-566.quote to the verbatim holding the content page renders at ^pin-566: 'In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.' (428 U.S. at 566, section VI).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is Markdown/HTML page-header boilerplate ('--- # United States v. Martinez-Fuerte ... ## Rule Yes.'), impossible in opinion text.",
+          "Record self-flags quote_fidelity='mismatch', corroborating the defect.",
+          "The genuine 428 U.S. at 566 holding IS present in cached text (section VI) and is what the content page renders, so there is no reader-facing error; the defect is confined to the stored lake pinpoint quote."
+        ],
+        "residual_risks": [
+          "Identical header-harvest artifact pattern as Lundin pin-1159 — a systemic migration-seed pinpoint-harvest bug."
+        ],
+        "suggested_tightening": "Fix the harvester to exclude frontmatter/heading/HTML-comment lines before storing the quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a7e783477af7d6f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 11, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake treatment.derivation.lane1_negative; content page 'Treatment & subsequent history'",
+          "needs_cl": true,
+          "problem": "field_i_validity='good_law' with as_of_treatment 2026-06-30 is an unreconciled migration-seed (composite_basis: migration-seed). The authoritative negative lane (lane1_negative) hit its cap (cap_hit=true) with audit_needed=true, proposed_negative_events=11, and audit_marker 'R15 treatment audit required' still open; lane2_top_cited likewise carries audit_needed=true. The content page's flat 'No negative subsequent treatment identified' overstates this audit-pending state.",
+          "proposed_fix": "Complete the open R15 treatment audit of the 11 proposed negative events before certifying good_law as of 2026-06-30, and soften the content-page treatment line to reflect audit-pending status rather than 'No negative subsequent treatment identified'.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence contradicts good_law: cached text is the intact 1976 opinion plus Brennan dissent, and the lane2 field_ii='overruled'/'abrogated'/'superseded_by_statute' labels are attached to citing cases like Whren, Prouse, Garner, Rakas, T.L.O. — canonical progeny, not overrulings — so those top-cited labels are non-credible auto-artifacts.",
+          "But currency is not settled: lane1_negative audit_needed=true, proposed_negative_events=11, R15 audit marker open; scope_note itself concedes 'S2 derivation re-derives and may downgrade'.",
+          "Content page's 'No negative subsequent treatment identified' overstates the audit-pending derivation state."
+        ],
+        "residual_risks": [
+          "The 11 proposed negative events are unaudited keyword-triage candidates; a genuine point-scoped narrowing could require a treatment override — needs CL adjudication (R15)."
+        ],
+        "suggested_tightening": "Carry an explicit audit-pending marker until R15 clears; do not present 2026-06-30 as a verified currency date on migration-seed alone.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4ca9da6743",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-04-d2587fa4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Martinez-Fuerte"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0d6c70efeaf5e30a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a7e783477af7d6f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4e17a951134427fa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd1a7b865ebdf937": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e9c2723b52264e3c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4ca9da6743",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-75ecd64d7b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cbd174a461",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

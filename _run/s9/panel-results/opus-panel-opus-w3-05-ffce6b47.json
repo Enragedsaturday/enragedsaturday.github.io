@@ -1,0 +1,143 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "bb786bc4e1f01dfb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached lead opinion confirms the case as Connick v. Thompson, 563 U.S. 51 (2011), Thomas, J.; internal [563 U.S. 54]..[563 U.S. 72] page markers corroborate the U.S. Reports anchor.",
+          "Parallel cites (131 S. Ct. 1350; 179 L. Ed. 2d 417) are standard SCOTUS-2011-term parallels; payload honestly records official=null via fail-closed on unlisted reporter (Fla. L. Weekly Fed. S), not a fabrication."
+        ],
+        "residual_risks": [
+          "No official reporter selected (unlisted_reporter:Fla. L. Weekly Fed. S); parallel-reporter page numbers not independently verifiable from the U.S.-paginated disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4aec096475b165af",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-62 quote 'A pattern of similar constitutional violations by untrained employees is ordinarily necessary to demonstrate deliberate indifference for purposes of failure to train.' matches cached opinion (b525-8) verbatim, appearing immediately after the [563 U.S. 62] marker; pincite 563 U.S. at 62 is correct.",
+          "The payload mismatch/slip-only flag is a harvest artifact: the disclosed 'quote' field captured the page frontmatter/Background blob, not the actual quoted sentence, which is present and faithful on the inlined content_page."
+        ],
+        "residual_risks": [
+          "Extractor quote field is a mis-harvested page chunk; true quote recovered from the inlined content_page."
+        ],
+        "suggested_tightening": "Re-point the pin-62 extractor quote field to the actual quoted sentence so the fidelity flag stops false-positiving.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b1d880806251911",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-64 sentence 'Failure to train prosecutors in their Brady obligations does not fall within the narrow range of Canton's hypothesized single-incident liability.' matches cached opinion (b526-12) verbatim, appearing right after the [563 U.S. 64] marker; pincite Id. at 64 correct and fragment 'narrow range' present.",
+          "Payload records quote_fidelity matched / star-verified, consistent with the disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10614f3c04f1ff5f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is defensible: Connick v. Thompson (2011 SCOTUS) is a landmark holding, never overruled; scope_note accurately states the single-Brady-violation / no-pattern rule and varies_by_point=false is apt.",
+          "All negative citator edges are proposed:true (non-adopted) and facially implausible (district/circuit courts 'overruling'/'abrogating' a SCOTUS case) — citator noise, not adopted composite treatment."
+        ],
+        "residual_risks": [
+          "Proposed negative edges (overruled/abrogated/questioned) remain unresolved though non-adopted; currency (as_of_treatment 2026-06-30) not independently machine-verifiable from the disclosed opinion alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e38719ea34",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f577523a91",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Connick v. Thompson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-05-ffce6b47",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connick v. Thompson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "10614f3c04f1ff5f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4aec096475b165af": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b1d880806251911": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb786bc4e1f01dfb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e38719ea34",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f577523a91",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,143 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Stanford v. Texas.json",
+    "lens": "A",
+    "notes": "No external sources were used. Review is limited to the disclosed files and Lens A support/quote-fidelity/existence scope.",
+    "reviewed": [
+      {
+        "assertion_id": "db73bb7eb7ea7bd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Stanford v. Texas, U.S. Supreme Court, decided 1965-03-01.",
+          "The official/display citation is 379 U.S. 476, and the page citation 379 U.S. 476 (1965) matches the lake record; listed parallel and vendor-neutral cites also match."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "06f7a73d6959eaf7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "shall ransack his home and seize his books and papers",
+          "locator_note": "pin-486b; opinion passage appears on page 486 in the cached text.",
+          "needs_cl": false,
+          "problem": "The quoted language substitutes \"[Stanford's]\" for the opinion text's \"his\". Under the required character-fidelity review, that is not a verbatim match; the lake also marks this pinpoint as quote_fidelity mismatch and slip-only.",
+          "proposed_fix": "Use the exact opinion wording, including \"his home\", or remove quotation marks around the clarified substitution.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content/lake quote reads \"shall ransack [Stanford's] home\", but the cached opinion text reads \"shall ransack his home\".",
+          "The lake pinpoint record itself flags quote_fidelity as mismatch and has no star marker."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally permits bracketed explanatory substitutions inside quotations, this is a style-policy issue; under the stated character-faithful rule, it fails."
+        ],
+        "suggested_tightening": "Quote the sentence exactly or paraphrase the clarified subject outside the quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f4a7cca7fc8c43a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote \"literary material\" appears verbatim in the cached opinion text.",
+          "The lake pinpoint is star-verified at marker 486 and marked quote_fidelity matched."
+        ],
+        "residual_risks": [
+          "This row verifies only the inventoried fragment \"literary material\"; adjacent quoted language on the content page is not separately inventoried here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "567a40594782bc33",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the constitutional requirement that warrants must particularly describe the “things to be seized”",
+          "locator_note": "pin-485; lake page and star_marker are null, pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "The pinpoint quote is a content-page scrape artifact crossing the Issue/Rule boundary, not the cited opinion language at page 485. The lake marks it mismatch and slip-only.",
+          "proposed_fix": "Replace pin-485 with the actual rule quotation from page 485 and validate it against the cached opinion text/star pagination.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains \"## Rule No.\", which is page markup, not opinion text.",
+          "The cached opinion text at the relevant passage contains the scrupulous-exactitude rule, not the harvested Issue/Rule fragment."
+        ],
+        "residual_risks": [
+          "The visible content-page rule proposition is supportable from the opinion; the defect is the pin quote payload and its validation state."
+        ],
+        "suggested_tightening": "Regenerate this pinpoint from the opinion text rather than the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3938e30b3efe5ae",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As to what is to be taken, nothing is left",
+          "locator_note": "pin-485b; quoted sentence appears in the cached opinion text immediately before the page-486 star marker.",
+          "needs_cl": false,
+          "problem": "The quote changes the opinion's initial \"As\" to \"[a]s\". That may be a conventional bracketed capitalization edit, but it is not character-faithful under the review rule; the lake marks it mismatch and slip-only.",
+          "proposed_fix": "Use \"As to what is to be taken\" exactly, or make the corpus policy explicitly allow bracketed capitalization changes.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text starts the sentence with \"As\", while the content/lake quote starts with \"[a]s\".",
+          "The lake pinpoint record flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "If bracketed capitalization edits are accepted by corpus policy, this should be reclassified as policy-compliant rather than character-exact."
+        ],
+        "suggested_tightening": "Store the exact sentence as it appears in the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd372e99a341d51d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment/currency defects.",
+          "The treatment payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1965-03-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative-treatment analysis are reserved to Lens B and were not independently reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Stanford v. Texas.json\",\"reviewed\":[{\"assertion_id\":\"db73bb7eb7ea7bd9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Stanford v. Texas, U.S. Supreme Court, decided 1965-03-01.\",\"The official/display citation is 379 U.S. 476, and the page citation 379 U.S. 476 (1965) matches the lake record; listed parallel and vendor-neutral cites also match.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"06f7a73d6959eaf7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language substitutes \\\"[Stanford's]\\\" for the opinion text's \\\"his\\\". Under the required character-fidelity review, that is not a verbatim match; the lake also marks this pinpoint as quote_fidelity mismatch and slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact opinion wording, including \\\"his home\\\", or remove quotation marks around the clarified substitution.\",\"evidence_quote\":\"shall ransack his home and seize his books and papers\",\"needs_cl\":false,\"locator_note\":\"pin-486b; opinion passage appears on page 486 in the cached text.\"},\"reasons\":[\"The content/lake quote reads \\\"shall ransack [Stanford's] home\\\", but the cached opinion text reads \\\"shall ransack his home\\\".\",\"The lake pinpoint record itself flags quote_fidelity as mismatch and has no star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus intentionally permits bracketed explanatory substitutions inside quotations, this is a style-policy issue; under the stated character-faithful rule, it fails.\"],\"suggested_tightening\":\"Quote the sentence exactly or paraphrase the clarified subject outside the quotation.\"},{\"assertion_id\":\"2f4a7cca7fc8c43a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload quote \\\"literary material\\\" appears verbatim in the cached opinion text.\",\"The lake pinpoint is star-verified at marker 486 and marked quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This row verifies only the inventoried fragment \\\"literary material\\\"; adjacent quoted language on the content page is not separately inventoried here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"567a40594782bc33\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pinpoint quote is a content-page scrape artifact crossing the Issue/Rule boundary, not the cited opinion language at page 485. The lake marks it mismatch and slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-485 with the actual rule quotation from page 485 and validate it against the cached opinion text/star pagination.\",\"evidence_quote\":\"the constitutional requirement that warrants must particularly describe the “things to be seized”\",\"needs_cl\":false,\"locator_note\":\"pin-485; lake page and star_marker are null, pinpoint_status is slip-only.\"},\"reasons\":[\"The payload quote contains \\\"## Rule No.\\\", which is page markup, not opinion text.\",\"The cached opinion text at the relevant passage contains the scrupulous-exactitude rule, not the harvested Issue/Rule fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page rule proposition is supportable from the opinion; the defect is the pin quote payload and its validation state.\"],\"suggested_tightening\":\"Regenerate this pinpoint from the opinion text rather than the rendered content page.\"},{\"assertion_id\":\"f3938e30b3efe5ae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote changes the opinion's initial \\\"As\\\" to \\\"[a]s\\\". That may be a conventional bracketed capitalization edit, but it is not character-faithful under the review rule; the lake marks it mismatch and slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Use \\\"As to what is to be taken\\\" exactly, or make the corpus policy explicitly allow bracketed capitalization changes.\",\"evidence_quote\":\"As to what is to be taken, nothing is left\",\"needs_cl\":false,\"locator_note\":\"pin-485b; quoted sentence appears in the cached opinion text immediately before the page-486 star marker.\"},\"reasons\":[\"The cached opinion text starts the sentence with \\\"As\\\", while the content/lake quote starts with \\\"[a]s\\\".\",\"The lake pinpoint record flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If bracketed capitalization edits are accepted by corpus policy, this should be reclassified as policy-compliant rather than character-exact.\"],\"suggested_tightening\":\"Store the exact sentence as it appears in the opinion text.\"},{\"assertion_id\":\"fd372e99a341d51d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not adjudicate treatment/currency defects.\",\"The treatment payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1965-03-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and negative-treatment analysis are reserved to Lens B and were not independently reviewed here.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources were used. Review is limited to the disclosed files and Lens A support/quote-fidelity/existence scope.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:49-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:39:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c22100149c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-32f7a00914",
+      "F-S9-PR-f92fd6005f",
+      "F-S9-PR-a22d5cea9b"
+    ],
     "group_id": "_overhaul2/lake/cases/Stanford v. Texas.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +146,81 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-77622b34.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Stanford v. Texas"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 321205,
+      "output": 12384,
+      "source": "codex-events",
+      "total": 333589
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "06f7a73d6959eaf7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2f4a7cca7fc8c43a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "567a40594782bc33": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "db73bb7eb7ea7bd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3938e30b3efe5ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd372e99a341d51d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-32f7a00914",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f92fd6005f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a22d5cea9b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c22100149c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 237.9
   }
 }

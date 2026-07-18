@@ -1,0 +1,116 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e209d54ad852784f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms official cite '377 U.S. 201' (1964), caption 'Massiah v. United States', opinion/cluster 106822.",
+          "Payload official/display '377 U.S. 201' matches the lake citations block."
+        ],
+        "residual_risks": [
+          "Parallel cites (84 S. Ct. 1199; 12 L. Ed. 2d 246; 1964 U.S. LEXIS 1277) are internal to the record; cached text shows only the U.S. official cite, so parallel first pages were not independently cross-checked."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dbc72c01ac66feb9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel.",
+          "locator_note": "pin-206; content-page Rule line vs cached opinion where '*206' precedes 'U. S. 458. We hold that the petitioner was denied...'",
+          "needs_cl": false,
+          "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead 'No -- ...') instead of the ^pin-206 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful.",
+          "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-206 block quote and clear the mismatch flag; rendered quote is verbatim-correct at 377 U.S. 206.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-206 block quote matches the cached opinion verbatim; the '*206' star marker immediately precedes the 'We hold that the petitioner was denied...' sentence, confirming the pincite '377 U.S. at 206'.",
+          "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' although reporter star-pagination (*206) is present in cached text; the slip-only label appears stale."
+        ],
+        "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "078a76788f4a6dc9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is consistent with the disclosed record; all 36 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Massiah.",
+          "No disclosed SCOTUS/binding overruling; the 1964 Sixth Amendment holding is present verbatim in the cached opinion."
+        ],
+        "residual_risks": [
+          "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=12, lane2=24; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+        ],
+        "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Massiah v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-05-b25c4df4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Massiah v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "078a76788f4a6dc9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dbc72c01ac66feb9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e209d54ad852784f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-feb953efa9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

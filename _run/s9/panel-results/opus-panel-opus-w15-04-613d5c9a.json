@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "60e1c89d1348359e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms '536 U.S. 194 (2002)', 'UNITED STATES v. DRAYTON et al.', 'No. 01-631', decided June 17 2002, Kennedy J.; star-pagination *196-*213 confirms vol. 536 U.S. with the opinion opening at 194.",
+          "Official cite and parallels (122 S. Ct. 2105; 153 L. Ed. 2d 242; 2002 U.S. LEXIS 4420) are well-formed and sourced from cluster.citations[]."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32093e8e1150bd4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion verbatim: 'The Court has rejected in specific terms the suggestion that police officers must always inform citizens of their right to refuse when seeking permission to conduct a warrantless consent search.'",
+          "The sentence sits after the '*206' star marker and before '*207' in the cached text, confirming pincite page 206 (star-verified)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6d2d1645ce340422",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion verbatim from 'whether': the opinion reads 'The proper inquiry \"is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter.\"'",
+          "The sentence appears after the '*202' star marker, confirming pincite page 202 (star-verified); it is correctly attributed as quoting Bostick (the opinion's 'Ibid.' pointing to 501 U.S. at 436)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f8028332dc55bb6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Applying the Bostick framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers.",
+          "locator_note": "lake pinpoints[] id=pin-203; content_page Rule section, anchor ^pin-203",
+          "needs_cl": false,
+          "problem": "The pin-203 pinpoint 'quote' field does not contain an opinion quotation at all — it stores the wiki page's own markdown ('--- # United States v. Drayton ... ## Rule Bus-sweep questioning is not a per se seizure; the test is objective:'). The record self-flags this (quote_fidelity='mismatch', pinpoint_status='slip-only', star_marker=null), so the pincite is corrupted and unverified.",
+          "proposed_fix": "Replace the pin-203 quote with the verbatim opinion sentence and star-verify it: 'Applying the Bostick framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers.' — set star_marker='203', pinpoint_status='star-verified' (the sentence sits before the '*204' marker, i.e., on page 203).",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pin-203 quote is a self-mismatch — it is page markdown (frontmatter through the 'Rule' heading), not an opinion quotation; pinpoint_status='slip-only' and star_marker is null, so nothing is verified.",
+          "A correct, star-verifiable quote exists: the content page anchors ^pin-203 to 'Applying the Bostick framework ... began questioning passengers.', which the cached opinion places on page 203 (before the '*204' star), so the pin can and should be repaired rather than dropped."
+        ],
+        "residual_risks": [
+          "The rendered page pincite (536 U.S. at 203) is substantively correct; the defect is confined to the lake pinpoint metadata, so it does not mislead readers, but it leaves the pin unverified until repaired."
+        ],
+        "suggested_tightening": "After swapping in the real quote, re-run fragment/star verification so pin-203 flips from slip-only to star-verified 203.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b9e5c739e28b1504",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Holding/scope_note accurately match the cached opinion: bus-sweep questioning and consent requests are not a per se seizure and officers need not advise of the right to refuse (Kennedy, J.; 536 U.S. at 203-207).",
+          "field_i_validity='good_law' for a 2002 SCOTUS holding is uncontradicted by the disclosed record; the only negative treatment edges (Gutierrez, Morris Wise, Parker, White, Fields = 'questioned'; Donjuan = 'overruled'; Camp = 'abrogated') are all sub-SCOTUS and marked 'proposed':true / journal_ref 'lane1_negative', so they legally cannot alter the SCOTUS composite."
+        ],
+        "residual_risks": [
+          "Full citator currency (no post-2002 SCOTUS abrogation) is not independently verifiable from the disclosed pack.",
+          "The proposed 'overruled' (Donjuan, Tex. App.) and 'abrogated' (Camp, Ohio App.) edges cannot overrule a SCOTUS holding but should still be adjudicated/cleared in treatment review."
+        ],
+        "suggested_tightening": "Adjudicate the proposed lane1_negative edges so stray 'overruled'/'abrogated' labels do not linger against a binding SCOTUS record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Drayton.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-04-613d5c9a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Drayton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "32093e8e1150bd4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "60e1c89d1348359e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6d2d1645ce340422": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f8028332dc55bb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b9e5c739e28b1504": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8eec5b9ca8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

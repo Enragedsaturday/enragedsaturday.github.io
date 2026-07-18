@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Patane.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "4ef1825eb241919f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies United States v. Patane as a U.S. Supreme Court case decided 2004-06-28.",
+          "Lake citations match the asserted official cite 542 U.S. 630 and parallel/vendor cites 124 S. Ct. 2620, 159 L. Ed. 2d 667, and 2004 U.S. LEXIS 4577."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cae9a640156104b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For this reason, the exclusionary rule articulated in cases such as <i>Wong Sun</i> does not apply.",
+          "locator_note": "pin-637; text shows the sentence after the *637 star marker.",
+          "needs_cl": false,
+          "problem": "The quoted language is substantively present at the asserted passage, but the raw opinion text uses HTML italics for Wong Sun while the asserted quote uses Markdown italics and the lake marks quote_fidelity as mismatch.",
+          "proposed_fix": "Normalize citation italics consistently or store the rendered-text quote while clearing the mismatch only after the checker accepts the normalization.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source sentence appears on page *637 and supports the page quote.",
+          "The asserted quote omits the introductory phrase For this reason, which is acceptable as a fragment, but raw character fidelity depends on HTML-to-Markdown normalization."
+        ],
+        "residual_risks": [
+          "Strict raw-source quote checkers may continue to flag this unless markup normalization is defined."
+        ],
+        "suggested_tightening": "Use the full sentence or a normalized rendered-text quote: For this reason, the exclusionary rule articulated in cases such as Wong Sun does not apply.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "edd2c7020e4ed11e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Self-Incrimination Clause, however, is not implicated by the admission into evidence of the physical fruit of a voluntary statement. Accordingly, there is no justification for extending the *Miranda* rule to this context.",
+          "locator_note": "pin-636; content_page.md contains the intended quote, and text line 23 contains the corresponding opinion passage before the *637 marker.",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-636 is not an opinion quote; it is a large slice of the built content page ending before the actual quoted passage.",
+          "proposed_fix": "Replace pin-636's stored quote with the actual opinion passage quoted on the content page and re-run quote fidelity for the 542 U.S. at 636 location.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted payload begins with page metadata and background prose, not with text from the Patane opinion.",
+          "Lake pinpoints[] itself marks pin-636 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Anchor pin-636 to the actual two-sentence plurality quote and preserve only opinion text in pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "211064cd63bbb046",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The asserted treatment fields match the lake treatment fields: good_law, as_of_content 2004-06-28, as_of_treatment 2026-06-30, varies_by_point false, and the plurality/concurrence scope note."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and currency remain for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Patane.json\",\"reviewed\":[{\"assertion_id\":\"4ef1825eb241919f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies United States v. Patane as a U.S. Supreme Court case decided 2004-06-28.\",\"Lake citations match the asserted official cite 542 U.S. 630 and parallel/vendor cites 124 S. Ct. 2620, 159 L. Ed. 2d 667, and 2004 U.S. LEXIS 4577.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3cae9a640156104b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is substantively present at the asserted passage, but the raw opinion text uses HTML italics for Wong Sun while the asserted quote uses Markdown italics and the lake marks quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize citation italics consistently or store the rendered-text quote while clearing the mismatch only after the checker accepts the normalization.\",\"evidence_quote\":\"For this reason, the exclusionary rule articulated in cases such as <i>Wong Sun</i> does not apply.\",\"needs_cl\":false,\"locator_note\":\"pin-637; text shows the sentence after the *637 star marker.\"},\"reasons\":[\"The source sentence appears on page *637 and supports the page quote.\",\"The asserted quote omits the introductory phrase For this reason, which is acceptable as a fragment, but raw character fidelity depends on HTML-to-Markdown normalization.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Strict raw-source quote checkers may continue to flag this unless markup normalization is defined.\"],\"suggested_tightening\":\"Use the full sentence or a normalized rendered-text quote: For this reason, the exclusionary rule articulated in cases such as Wong Sun does not apply.\"},{\"assertion_id\":\"edd2c7020e4ed11e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-636 is not an opinion quote; it is a large slice of the built content page ending before the actual quoted passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-636's stored quote with the actual opinion passage quoted on the content page and re-run quote fidelity for the 542 U.S. at 636 location.\",\"evidence_quote\":\"The Self-Incrimination Clause, however, is not implicated by the admission into evidence of the physical fruit of a voluntary statement. Accordingly, there is no justification for extending the *Miranda* rule to this context.\",\"needs_cl\":false,\"locator_note\":\"pin-636; content_page.md contains the intended quote, and text line 23 contains the corresponding opinion passage before the *637 marker.\"},\"reasons\":[\"The asserted payload begins with page metadata and background prose, not with text from the Patane opinion.\",\"Lake pinpoints[] itself marks pin-636 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Anchor pin-636 to the actual two-sentence plurality quote and preserve only opinion text in pinpoints[].quote.\"},{\"assertion_id\":\"211064cd63bbb046\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The asserted treatment fields match the lake treatment fields: good_law, as_of_content 2004-06-28, as_of_treatment 2026-06-30, varies_by_point false, and the plurality/concurrence scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy and currency remain for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:03:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0413b6bf38",
+      "F-S9-PR-b1f22bd7bc"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Patane.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c27060c2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Patane"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 237831,
+      "output": 8662,
+      "source": "codex-events",
+      "total": 246493
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "211064cd63bbb046": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3cae9a640156104b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4ef1825eb241919f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "edd2c7020e4ed11e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0413b6bf38",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b1f22bd7bc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 201.6
   }
 }

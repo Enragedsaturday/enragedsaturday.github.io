@@ -1,22 +1,183 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Robbins v. California.md",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. Treatment/currency merits were not adjudicated under lens A except where a later-treatment statement was embedded in the support/holding assertion and lacked disclosed support.",
+    "reviewed": [
+      {
+        "assertion_id": "3ede0d65fc1a53b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name_full \"Robbins v. California\", court \"U.S.\", date_decided \"1981-07-01\", and year 1981.",
+          "Lake citations list official \"453 U.S. 420\", parallels \"101 S. Ct. 2841\" and \"69 L. Ed. 2d 744\", and vendor-neutral \"1981 U.S. LEXIS 132\"."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "240be1eb35509f0c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In recent years, we have twice been confronted with the suggestion that this “automobile exception” somehow justifies the warrantless search of a closed container found inside an automobile. Each time, the Court has refused to accept the suggestion.",
+          "locator_note": "homes[0].role",
+          "needs_cl": false,
+          "problem": "The Automobile Exception home is supported, but the role label \"Historical / origin\" overstates origin. The opinion treats Robbins as applying/reaffirming Chadwick and Sanders in the automobile-container setting, not as the origin of the automobile exception.",
+          "proposed_fix": "Keep the Automobile Exception home, but change the role to a narrower historical container-rule label, such as \"Historical / container limitation\" or \"Historical / superseded container rule\".",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly concerns the automobile exception and closed containers found during lawful automobile searches.",
+          "The disclosed opinion frames the rule as a continuation of Chadwick/Sanders and later says, \"We reaffirm today,\" which undercuts an unqualified \"origin\" role."
+        ],
+        "residual_risks": [
+          "The corpus may use \"Historical / origin\" as a fixed bucket; no home-page taxonomy file was disclosed."
+        ],
+        "suggested_tightening": "Use a role that preserves historical relevance without implying Robbins originated the automobile exception.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "486cb66acb12032f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In short, the negative implication of footnote 13 of the Sanders opinion is that, unless the container is such that its contents may be said to be in plain view, those contents are fully protected by the Fourth Amendment.",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The core container rule is supported, but the holding as framed is overbroad because it omits Robbins' own plain-view/valid-exception qualifications, and the Ross-overruling clause is not verifiable from the disclosed lake record or Robbins text.",
+          "proposed_fix": "Revise to: \"Absent a valid exception, a closed, opaque container whose contents are not in plain view or otherwise obvious may not be opened without a warrant during a lawful automobile search.\" Move any Ross-overruling statement to treatment only after certified treatment evidence is available.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Robbins supports warrant protection for the closed opaque packages in this case and includes the quoted rule at page 428.",
+          "The opinion expressly preserves exceptions: contents in plain view/obvious containers and other valid exceptions are not covered by the unqualified wording.",
+          "The lake treatment is a frontier stub with field_i_validity \"unverified\" and no treatment/progeny edge proving the Ross-overruling clause."
+        ],
+        "residual_risks": [
+          "A Ross record or certified treatment edge could verify the later-history clause, but it is not in the disclosed evidence."
+        ],
+        "suggested_tightening": "Separate the historical treatment sentence from the holding and add the plain-view/valid-exception limitation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9179aa19c3216cae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment stub: field_i_validity and composite_basis are \"unverified\", as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches.",
+          "Under lens A, no treatment/currency merits finding is raised beyond confirming that the disclosed page mirrors the lake stub."
+        ],
+        "residual_risks": [
+          "This does not certify any overruled-by-Ross narrative; it only verifies the unverified treatment stub fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c235909196caa71",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity shows court \"U.S.\" and court_level \"scotus\" with official citation \"453 U.S. 420\".",
+          "The authority-weight label \"Binding — SCOTUS\" is supported as a court-hierarchy label, separate from treatment validity."
+        ],
+        "residual_risks": [
+          "The label should not be read as live-law status because treatment remains unverified in the lake stub."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Robbins v. California.md\",\"reviewed\":[{\"assertion_id\":\"3ede0d65fc1a53b0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name_full \\\"Robbins v. California\\\", court \\\"U.S.\\\", date_decided \\\"1981-07-01\\\", and year 1981.\",\"Lake citations list official \\\"453 U.S. 420\\\", parallels \\\"101 S. Ct. 2841\\\" and \\\"69 L. Ed. 2d 744\\\", and vendor-neutral \\\"1981 U.S. LEXIS 132\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"240be1eb35509f0c\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The Automobile Exception home is supported, but the role label \\\"Historical / origin\\\" overstates origin. The opinion treats Robbins as applying/reaffirming Chadwick and Sanders in the automobile-container setting, not as the origin of the automobile exception.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the Automobile Exception home, but change the role to a narrower historical container-rule label, such as \\\"Historical / container limitation\\\" or \\\"Historical / superseded container rule\\\".\",\"evidence_quote\":\"In recent years, we have twice been confronted with the suggestion that this “automobile exception” somehow justifies the warrantless search of a closed container found inside an automobile. Each time, the Court has refused to accept the suggestion.\",\"needs_cl\":false,\"locator_note\":\"homes[0].role\"},\"reasons\":[\"The opinion directly concerns the automobile exception and closed containers found during lawful automobile searches.\",\"The disclosed opinion frames the rule as a continuation of Chadwick/Sanders and later says, \\\"We reaffirm today,\\\" which undercuts an unqualified \\\"origin\\\" role.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The corpus may use \\\"Historical / origin\\\" as a fixed bucket; no home-page taxonomy file was disclosed.\"],\"suggested_tightening\":\"Use a role that preserves historical relevance without implying Robbins originated the automobile exception.\"},{\"assertion_id\":\"486cb66acb12032f\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The core container rule is supported, but the holding as framed is overbroad because it omits Robbins' own plain-view/valid-exception qualifications, and the Ross-overruling clause is not verifiable from the disclosed lake record or Robbins text.\",\"severity\":\"high\",\"proposed_fix\":\"Revise to: \\\"Absent a valid exception, a closed, opaque container whose contents are not in plain view or otherwise obvious may not be opened without a warrant during a lawful automobile search.\\\" Move any Ross-overruling statement to treatment only after certified treatment evidence is available.\",\"evidence_quote\":\"In short, the negative implication of footnote 13 of the Sanders opinion is that, unless the container is such that its contents may be said to be in plain view, those contents are fully protected by the Fourth Amendment.\",\"needs_cl\":true,\"locator_note\":\"holding\"},\"reasons\":[\"Robbins supports warrant protection for the closed opaque packages in this case and includes the quoted rule at page 428.\",\"The opinion expressly preserves exceptions: contents in plain view/obvious containers and other valid exceptions are not covered by the unqualified wording.\",\"The lake treatment is a frontier stub with field_i_validity \\\"unverified\\\" and no treatment/progeny edge proving the Ross-overruling clause.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A Ross record or certified treatment edge could verify the later-history clause, but it is not in the disclosed evidence.\"],\"suggested_tightening\":\"Separate the historical treatment sentence from the holding and add the plain-view/valid-exception limitation.\"},{\"assertion_id\":\"9179aa19c3216cae\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the lake treatment stub: field_i_validity and composite_basis are \\\"unverified\\\", as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches.\",\"Under lens A, no treatment/currency merits finding is raised beyond confirming that the disclosed page mirrors the lake stub.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This does not certify any overruled-by-Ross narrative; it only verifies the unverified treatment stub fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9c235909196caa71\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity shows court \\\"U.S.\\\" and court_level \\\"scotus\\\" with official citation \\\"453 U.S. 420\\\".\",\"The authority-weight label \\\"Binding — SCOTUS\\\" is supported as a court-hierarchy label, separate from treatment validity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The label should not be read as live-law status because treatment remains unverified in the lake stub.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. Treatment/currency merits were not adjudicated under lens A except where a later-treatment statement was embedded in the support/holding assertion and lacked disclosed support.\"}",
   "summary": {
-    "at": "2026-07-10T02:50:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:53:54-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4c051e8e71",
+      "F-S9-PR-7323690ba7"
+    ],
     "group_id": "content/cases/Robbins v. California.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1fb6c11c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1fb6c11c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:50:29.092665Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:50:29.950176Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:50:30.880830Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:50:32.037875Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:50:34.068432Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Robbins v. California"
+    ],
+    "tokens": {
+      "input": 128448,
+      "output": 10193,
+      "source": "codex-events",
+      "total": 138641
+    },
+    "verdict_map": {
+      "240be1eb35509f0c": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3ede0d65fc1a53b0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "486cb66acb12032f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9179aa19c3216cae": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9c235909196caa71": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4c051e8e71",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7323690ba7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 193.0
   }
 }

@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/New York v. Quarles.md",
+    "lens": "A",
+    "notes": "No independent quote_fidelity or pincite rows appeared in group_inventory.jsonl; Lens A treatment/currency findings were not raised.",
+    "reviewed": [
+      {
+        "assertion_id": "bf10aef400c8053d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name_full as New York v. Quarles, court as U.S. Supreme Court, date_decided as 1984-06-12, and year as 1984.",
+          "Lake citations list official cite 467 U.S. 649, vendor-neutral cite 1984 U.S. LEXIS 111, and the same parallel citations: 104 S. Ct. 2626, 81 L. Ed. 2d 550, and 52 U.S.L.W. 4790."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cfb65942142d6085",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "police officers ask questions reasonably prompted by a concern for the public safety.",
+          "locator_note": "content frontmatter holding",
+          "needs_cl": false,
+          "problem": "The core holding is supported, but the holding field is truncated/incomplete at 'public…' and should use the opinion's operative formulation.",
+          "proposed_fix": "Revise to: There is a public-safety exception to Miranda when officers ask questions reasonably prompted by a concern for public safety, such as locating a hidden gun posing an immediate danger in a public area.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that there is a public-safety exception to Miranda and that the exception does not depend on the individual officer's motivation.",
+          "The opinion supports the immediate-danger application by describing the hidden supermarket gun as posing more than one danger to public safety."
+        ],
+        "residual_risks": [
+          "The inventory payload itself is ellipsized, so the full intended holding cannot be reconstructed from that field alone."
+        ],
+        "suggested_tightening": "Use 'reasonably prompted by a concern for public safety' rather than the truncated 'immediate threat to public…' phrasing.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eb9c12f79f731433",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion repeatedly frames the question as an exception to Miranda for custodial interrogation warnings.",
+          "The opinion says it is recognizing a narrow exception to the Miranda rule, which supports the home role 'Key — Progeny / Refinement' for Miranda and custodial interrogation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "31ddc38c6041b7f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment currency.",
+          "The asserted treatment fields match the lake treatment fields, including field_i_validity good_law, as_of_content 1984-06-12, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref New York v. Quarles, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment correctness and currency are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e8ad13af71bb25a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as U.S. Supreme Court and court_level as scotus.",
+          "The asserted label 'Binding — SCOTUS' is consistent with the disclosed SCOTUS identity."
+        ],
+        "residual_risks": [
+          "Lake does not contain a separate authority_weight field; this review verifies the label from the disclosed court identity only."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/New York v. Quarles.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"bf10aef400c8053d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity gives case_name_full as New York v. Quarles, court as U.S. Supreme Court, date_decided as 1984-06-12, and year as 1984.\",\n        \"Lake citations list official cite 467 U.S. 649, vendor-neutral cite 1984 U.S. LEXIS 111, and the same parallel citations: 104 S. Ct. 2626, 81 L. Ed. 2d 550, and 52 U.S.L.W. 4790.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"cfb65942142d6085\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The core holding is supported, but the holding field is truncated/incomplete at 'public…' and should use the opinion's operative formulation.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Revise to: There is a public-safety exception to Miranda when officers ask questions reasonably prompted by a concern for public safety, such as locating a hidden gun posing an immediate danger in a public area.\",\n        \"evidence_quote\": \"police officers ask questions reasonably prompted by a concern for the public safety.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content frontmatter holding\"\n      },\n      \"reasons\": [\n        \"The opinion states that there is a public-safety exception to Miranda and that the exception does not depend on the individual officer's motivation.\",\n        \"The opinion supports the immediate-danger application by describing the hidden supermarket gun as posing more than one danger to public safety.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The inventory payload itself is ellipsized, so the full intended holding cannot be reconstructed from that field alone.\"\n      ],\n      \"suggested_tightening\": \"Use 'reasonably prompted by a concern for public safety' rather than the truncated 'immediate threat to public…' phrasing.\"\n    },\n    {\n      \"assertion_id\": \"eb9c12f79f731433\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion repeatedly frames the question as an exception to Miranda for custodial interrogation warnings.\",\n        \"The opinion says it is recognizing a narrow exception to the Miranda rule, which supports the home role 'Key — Progeny / Refinement' for Miranda and custodial interrogation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"31ddc38c6041b7f2\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not audit treatment currency.\",\n        \"The asserted treatment fields match the lake treatment fields, including field_i_validity good_law, as_of_content 1984-06-12, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref New York v. Quarles, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment correctness and currency are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6e8ad13af71bb25a\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity identifies the court as U.S. Supreme Court and court_level as scotus.\",\n        \"The asserted label 'Binding — SCOTUS' is consistent with the disclosed SCOTUS identity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake does not contain a separate authority_weight field; this review verifies the label from the disclosed court identity only.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No independent quote_fidelity or pincite rows appeared in group_inventory.jsonl; Lens A treatment/currency findings were not raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:49:11-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:43:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d335706ef9"
+    ],
     "group_id": "content/cases/New York v. Quarles.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-688525a2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-688525a2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:49:03.652848Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:49:04.542498Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:49:05.723759Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:49:07.622822Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:49:11.145686Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Quarles"
+    ],
+    "tokens": {
+      "input": 198473,
+      "output": 6073,
+      "source": "codex-events",
+      "total": 204546
+    },
+    "verdict_map": {
+      "31ddc38c6041b7f2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e8ad13af71bb25a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf10aef400c8053d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cfb65942142d6085": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "eb9c12f79f731433": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d335706ef9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 124.4
   }
 }

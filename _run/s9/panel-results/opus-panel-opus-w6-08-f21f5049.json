@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "34524a60334f5fcc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 594 U.S. 295 matches the disclosed cluster.citations[] and lake identity (cluster 4894407, lead opinion 4698186, identity_checked=true).",
+          "Cached slip op. header 'Cite as: 594 U. S. ____ (2021)' is consistent; the blank page reflects slip-stage pagination while 295 is the final U.S. Reports page carried in cluster.citations[]."
+        ],
+        "residual_risks": [
+          "Exact page 295 is confirmed only by the disclosed cluster.citations[] record, not the cached slip text (which shows '____')."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b8f8add2fc00062",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in cached opinion ('We hold it does not. A great many misdemeanor pursuits involve exigencies allowing warrantless entry. But whether a given one does so turns on the particular facts of the case.'), on the Opinion-of-the-Court page 1 (slip op., at 1).",
+          "fragment '#:~:text=A%20great%20many%20misdemeanor%20pursuits' aligns; quote_fidelity=matched confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90ff27a56ba35271",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The question presented here is whether the pursuit of a fleeing misdemeanor suspect always—or more legally put, categorically—qualifies as an exigent circumstance. We hold it does not.",
+          "locator_note": "cached opinion, Opinion of the Court p.1 (slip op., at 1); content page ^pin-op1",
+          "needs_cl": false,
+          "problem": "lake pinpoints[pin-op1].quote is a corrupted capture of the rendered page markdown (frontmatter + Background/Issue/Rule), not opinion text; self-flagged quote_fidelity='mismatch'.",
+          "proposed_fix": "Repair the lake pin-op1 quote field to the actual quoted sentence, which the content page already renders correctly and which verifies verbatim against the cached slip opinion.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored quote is markdown, not a Lange quote, and is honestly self-flagged 'mismatch'.",
+          "The real ^pin-op1 quote on the content page is verbatim-accurate to the cached opinion at slip op. 1, so the pincite is valid; only the lake stored text needs repair."
+        ],
+        "residual_risks": [
+          "Corrupted-quote extraction artifact may recur on other first-quote-on-page pinpoints."
+        ],
+        "suggested_tightening": "Re-run the pinpoint extractor so pin-op1 stores the quoted sentence rather than preceding page markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc555689b096a5fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; disclosed derivation lane1_negative reviewed=0, proposed_negative_events=0, no negative edges; progeny citation_count=0.",
+          "2021 SCOTUS holding with no disclosed overruling/abrogation; good_law not refutable on the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment is a migration-seed (composite_basis) with as_of_treatment 2026-06-30 not freshly re-derived; lanes show reviewed=0 (seed, not audited search)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lange v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-08-f21f5049",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lange v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "34524a60334f5fcc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b8f8add2fc00062": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90ff27a56ba35271": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "cc555689b096a5fc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2dc59ffee4",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

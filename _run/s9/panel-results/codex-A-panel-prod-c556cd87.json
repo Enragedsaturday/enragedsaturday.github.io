@@ -1,22 +1,128 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 group_inventory.jsonl rows.",
+    "reviewed": [
+      {
+        "assertion_id": "59388489bc2f6897",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is Missouri v. McNeely, U.S. Supreme Court, decided 2013-04-17, year 2013.",
+          "The citations in the assertion match lake.citations.all exactly: 133 S. Ct. 1552; 185 L. Ed. 2d 696; 2013 U.S. LEXIS 3160; 569 U.S. 141; 81 U.S.L.W. 4250; 24 Fla. L. Weekly Fed. S 150; 2013 WL 1628934."
+        ],
+        "residual_risks": [
+          "Lake official_selection.selected is null even though 569 U.S. 141 appears in all citations; that is a citation-display quality risk, not an existence refutation."
+        ],
+        "suggested_tightening": "If the corpus wants a canonical display citation, populate it from a verified official-selection step rather than leaving citation/display null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92460c55b0b57168",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that in drunk-driving investigations, the natu­ral dissipation of alcohol in the bloodstream does not con-\nstitute an exigency in every case sufficient to justify\nconducting a blood test without a warrant.",
+          "locator_note": "lake.pinpoints[0] for pin-156: page=null, star_marker=null, pinpoint_status='slip-only', quote_fidelity='mismatch'; content_page.md cites 569 U.S. at 156 for the Rule quote.",
+          "needs_cl": true,
+          "problem": "pin-156 is not a faithful quote source for the displayed Rule quote. The lake pinpoint quote is harvested content-page text ending at '## Rule No.', is marked quote_fidelity='mismatch', and has no page/star marker; the cached opinion contains the holding, but with slip-text line breaks/hyphenation and without disclosed official page 156 support.",
+          "proposed_fix": "Replace pin-156 with a pinpoint whose quote is the actual opinion passage, then either verify the official U.S. page 156 from disclosed reporter-pagination evidence or remove/soften the official pincite.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record itself labels pin-156 quote_fidelity as mismatch.",
+          "The pin-156 quote in the lake is not the displayed holding quote; it is a harvested page/header/background/rule prefix.",
+          "The cached opinion text contains the holding, but the disclosed files do not verify the official U.S. page 156 pincite because the cached text is slip pagination only and the lake pin has no page/star marker."
+        ],
+        "residual_risks": [
+          "The substantive holding is present in the opinion, so doctrinal support likely survives after quote/pin repair.",
+          "Exact official U.S. page 156 remains unverified within the disclosed file set."
+        ],
+        "suggested_tightening": "Use the exact terminal holding as the quote or recast the sentence as a paraphrase unless the reporter page pin can be verified from disclosed pagination evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3f95c39e570438c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment/currency; no support or quote-fidelity defect is raised for this row.",
+          "The treatment fields in the assertion match the lake record: field_i_validity=good_law, as_of_content=2013-04-17, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment review, including whether proposed negative edges affect the page's no-negative-treatment language, is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Missouri v. McNeely.json\",\"reviewed\":[{\"assertion_id\":\"59388489bc2f6897\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity is Missouri v. McNeely, U.S. Supreme Court, decided 2013-04-17, year 2013.\",\"The citations in the assertion match lake.citations.all exactly: 133 S. Ct. 1552; 185 L. Ed. 2d 696; 2013 U.S. LEXIS 3160; 569 U.S. 141; 81 U.S.L.W. 4250; 24 Fla. L. Weekly Fed. S 150; 2013 WL 1628934.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official_selection.selected is null even though 569 U.S. 141 appears in all citations; that is a citation-display quality risk, not an existence refutation.\"],\"suggested_tightening\":\"If the corpus wants a canonical display citation, populate it from a verified official-selection step rather than leaving citation/display null.\"},{\"assertion_id\":\"92460c55b0b57168\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-156 is not a faithful quote source for the displayed Rule quote. The lake pinpoint quote is harvested content-page text ending at '## Rule No.', is marked quote_fidelity='mismatch', and has no page/star marker; the cached opinion contains the holding, but with slip-text line breaks/hyphenation and without disclosed official page 156 support.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-156 with a pinpoint whose quote is the actual opinion passage, then either verify the official U.S. page 156 from disclosed reporter-pagination evidence or remove/soften the official pincite.\",\"evidence_quote\":\"We hold that in drunk-driving investigations, the natu­ral dissipation of alcohol in the bloodstream does not con-\\nstitute an exigency in every case sufficient to justify\\nconducting a blood test without a warrant.\",\"needs_cl\":true,\"locator_note\":\"lake.pinpoints[0] for pin-156: page=null, star_marker=null, pinpoint_status='slip-only', quote_fidelity='mismatch'; content_page.md cites 569 U.S. at 156 for the Rule quote.\"},\"reasons\":[\"The disclosed lake record itself labels pin-156 quote_fidelity as mismatch.\",\"The pin-156 quote in the lake is not the displayed holding quote; it is a harvested page/header/background/rule prefix.\",\"The cached opinion text contains the holding, but the disclosed files do not verify the official U.S. page 156 pincite because the cached text is slip pagination only and the lake pin has no page/star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive holding is present in the opinion, so doctrinal support likely survives after quote/pin repair.\",\"Exact official U.S. page 156 remains unverified within the disclosed file set.\"],\"suggested_tightening\":\"Use the exact terminal holding as the quote or recast the sentence as a paraphrase unless the reporter page pin can be verified from disclosed pagination evidence.\"},{\"assertion_id\":\"f3f95c39e570438c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not adjudicate treatment/currency; no support or quote-fidelity defect is raised for this row.\",\"The treatment fields in the assertion match the lake record: field_i_validity=good_law, as_of_content=2013-04-17, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment review, including whether proposed negative edges affect the page's no-negative-treatment language, is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 group_inventory.jsonl rows.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:15:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-00ecd0df8d"
+    ],
     "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c556cd87",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c556cd87.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 19c1ac69-94b6-4d9a-89cf-4fe2509635d4\n2026-07-10T22:30:53.810116Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:54.274913Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:54.932879Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:55.753773Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:57.030679Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:59.180903Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Missouri v. McNeely"
+    ],
+    "tokens": {
+      "input": 510441,
+      "output": 6981,
+      "source": "codex-events",
+      "total": 517422
+    },
+    "verdict_map": {
+      "59388489bc2f6897": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92460c55b0b57168": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f3f95c39e570438c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-00ecd0df8d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.5
   }
 }

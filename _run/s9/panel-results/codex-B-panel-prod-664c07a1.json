@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-morrison--110372.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl plus disclosed lake/text evidence.",
+    "reviewed": [
+      {
+        "assertion_id": "19d00fff15f529e8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-morrison--110372__d7c320.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity and citations, but it does not verify the currency/liveness of the authority. Under Lens B, live-law status cannot be inferred from a stub record with unverified treatment and no derived progeny.",
+          "proposed_fix": "Limit this assertion to identity/citation existence only, or obtain current treatment/progeny before implying the authority is still live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake status is only \"verified_identity\"; that confirms the authority record, not current good-law status.",
+          "Treatment is \"unverified\" with null as-of dates, empty treatment edges, and progeny rows_cached 0, so later limiting/overruling/abrogating treatment cannot be ruled out from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The citation may be valid as an identity/citation assertion, but not as a live-law assertion."
+        ],
+        "suggested_tightening": "Render this as verified identity/citation only, paired with an explicit treatment-unverified warning.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "17dcb0d8c1595b17",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is \"unverified\", as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake record discloses no derived treatment or progeny edges, so the unverified treatment label is consistent with the record rather than a positive good-law call."
+        ],
+        "residual_risks": [
+          "The disclosed evidence supports only the unverified treatment label; it cannot support any affirmative good-law or weight inference."
+        ],
+        "suggested_tightening": "Keep any user-facing label explicit: treatment unverified, no current good-law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-morrison--110372.json\",\"reviewed\":[{\"assertion_id\":\"19d00fff15f529e8\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity and citations, but it does not verify the currency/liveness of the authority. Under Lens B, live-law status cannot be inferred from a stub record with unverified treatment and no derived progeny.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to identity/citation existence only, or obtain current treatment/progeny before implying the authority is still live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-morrison--110372__d7c320.json treatment/progeny fields\"},\"reasons\":[\"Lake status is only \\\"verified_identity\\\"; that confirms the authority record, not current good-law status.\",\"Treatment is \\\"unverified\\\" with null as-of dates, empty treatment edges, and progeny rows_cached 0, so later limiting/overruling/abrogating treatment cannot be ruled out from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citation may be valid as an identity/citation assertion, but not as a live-law assertion.\"],\"suggested_tightening\":\"Render this as verified identity/citation only, paired with an explicit treatment-unverified warning.\"},{\"assertion_id\":\"17dcb0d8c1595b17\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is \\\"unverified\\\", as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake record discloses no derived treatment or progeny edges, so the unverified treatment label is consistent with the record rather than a positive good-law call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed evidence supports only the unverified treatment label; it cannot support any affirmative good-law or weight inference.\"],\"suggested_tightening\":\"Keep any user-facing label explicit: treatment unverified, no current good-law determination.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl plus disclosed lake/text evidence.\"}",
   "summary": {
-    "at": "2026-07-10T02:38:14-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:24:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ab6671eaeb"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-morrison--110372.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-664c07a1",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-664c07a1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:05.634576Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:06.505024Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:07.817752Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:09.912440Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:13.359217Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-morrison--110372"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-morrison--110372"
+    ],
+    "tokens": {
+      "input": 175464,
+      "output": 4765,
+      "source": "codex-events",
+      "total": 180229
+    },
+    "verdict_map": {
+      "17dcb0d8c1595b17": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "19d00fff15f529e8": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ab6671eaeb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.0
   }
 }

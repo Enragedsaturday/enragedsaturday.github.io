@@ -1,13 +1,114 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Johns.json",
+    "lens": "A",
+    "notes": "Lens A only; treatment/currency merits not evaluated.",
+    "reviewed": [
+      {
+        "assertion_id": "0c1938dc84e98c24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Johns, U.S. Supreme Court, decided 1985-01-21.",
+          "The lake official citation is 469 U.S. 478 and the listed parallel/vendor citations match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76393ddf294107f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pinpoint pin-487a repeats the quoted text, marks quote_fidelity matched, star_marker 487, and pinpoint_status star-verified.",
+          "The cached opinion text contains the same quoted sentence at the *487 passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a796c1ad338609c2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The issue presented by this case is whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks.",
+          "locator_note": "pin-482 has pinpoint_status slip-only, star_marker null, and position null in the lake record.",
+          "needs_cl": false,
+          "problem": "The pin-482 payload is not an opinion quote; it is a generated content-page/header/background excerpt harvested as a quote. The lake also marks this pinpoint quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-482 with the actual opinion sentence being quoted, or remove the verbatim quote/pin until it is re-harvested and verified against the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with generated page material, not the Johns opinion text.",
+          "The lake pinpoint for pin-482 records quote_fidelity='mismatch' and pinpoint_status='slip-only'.",
+          "The intended short sentence appears in the cached opinion, but the asserted payload quote is not character-faithful to that source."
+        ],
+        "residual_risks": [
+          "The intended proposition is supported elsewhere in the opinion, but this assertion's captured quote/pin is not verified."
+        ],
+        "suggested_tightening": "Use only the short opinion sentence and re-pin it to the actual reporter page before treating it as a verified quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba3fdad4af5d7dda",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we conclude that the war-rantless search three days after the packages were placed in the DEA warehouse was reasonable and consistent with our <page-number citation-index=\"1\" label=\"488\">*488</page-number>precedent involving searches of impounded vehicles.",
+          "locator_note": "pin-487 has pinpoint_status slip-only, star_marker null, and position null; the cached text spans the *487 to *488 page break.",
+          "needs_cl": false,
+          "problem": "The quote is substantively supported but not character-faithful to the cached text as disclosed, and the lake marks the pinpoint as a quote_fidelity mismatch with no verified star marker.",
+          "proposed_fix": "Either store this as a normalized quote with explicit dehyphenation/page-break handling, or reverify the quote/pin before presenting it as a verbatim quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text renders 'warrantless' as 'war-rantless' and inserts a page marker before 'precedent', so the payload is not character-for-character faithful to text/ as disclosed.",
+          "The lake pinpoint itself records quote_fidelity='mismatch'.",
+          "Lens A requires verbatim fidelity, even though the legal substance of the sentence is otherwise supported."
+        ],
+        "residual_risks": [
+          "A normalized official text may support the clean spelling, but no such normalization rule or verified source is disclosed in this review package."
+        ],
+        "suggested_tightening": "Reharvest the quote with a documented normalizer for line-break hyphenation and page markers, or paraphrase it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e20de2cfc71d5c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1985-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment merits and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Johns.json\",\"reviewed\":[{\"assertion_id\":\"0c1938dc84e98c24\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Johns, U.S. Supreme Court, decided 1985-01-21.\",\"The lake official citation is 469 U.S. 478 and the listed parallel/vendor citations match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"76393ddf294107f0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake pinpoint pin-487a repeats the quoted text, marks quote_fidelity matched, star_marker 487, and pinpoint_status star-verified.\",\"The cached opinion text contains the same quoted sentence at the *487 passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a796c1ad338609c2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-482 payload is not an opinion quote; it is a generated content-page/header/background excerpt harvested as a quote. The lake also marks this pinpoint quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-482 with the actual opinion sentence being quoted, or remove the verbatim quote/pin until it is re-harvested and verified against the opinion text.\",\"evidence_quote\":\"The issue presented by this case is whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks.\",\"needs_cl\":false,\"locator_note\":\"pin-482 has pinpoint_status slip-only, star_marker null, and position null in the lake record.\"},\"reasons\":[\"The payload quote begins with generated page material, not the Johns opinion text.\",\"The lake pinpoint for pin-482 records quote_fidelity='mismatch' and pinpoint_status='slip-only'.\",\"The intended short sentence appears in the cached opinion, but the asserted payload quote is not character-faithful to that source.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The intended proposition is supported elsewhere in the opinion, but this assertion's captured quote/pin is not verified.\"],\"suggested_tightening\":\"Use only the short opinion sentence and re-pin it to the actual reporter page before treating it as a verified quote.\"},{\"assertion_id\":\"ba3fdad4af5d7dda\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively supported but not character-faithful to the cached text as disclosed, and the lake marks the pinpoint as a quote_fidelity mismatch with no verified star marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Either store this as a normalized quote with explicit dehyphenation/page-break handling, or reverify the quote/pin before presenting it as a verbatim quote.\",\"evidence_quote\":\"we conclude that the war-rantless search three days after the packages were placed in the DEA warehouse was reasonable and consistent with our <page-number citation-index=\\\"1\\\" label=\\\"488\\\">*488</page-number>precedent involving searches of impounded vehicles.\",\"needs_cl\":false,\"locator_note\":\"pin-487 has pinpoint_status slip-only, star_marker null, and position null; the cached text spans the *487 to *488 page break.\"},\"reasons\":[\"The cached text renders 'warrantless' as 'war-rantless' and inserts a page marker before 'precedent', so the payload is not character-for-character faithful to text/ as disclosed.\",\"The lake pinpoint itself records quote_fidelity='mismatch'.\",\"Lens A requires verbatim fidelity, even though the legal substance of the sentence is otherwise supported.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A normalized official text may support the clean spelling, but no such normalization rule or verified source is disclosed in this review package.\"],\"suggested_tightening\":\"Reharvest the quote with a documented normalizer for line-break hyphenation and page markers, or paraphrase it.\"},{\"assertion_id\":\"1e20de2cfc71d5c6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1985-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment merits and currency are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A only; treatment/currency merits not evaluated.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:46-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:57:49-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-c9839ea0aa",
+      "F-S9-PR-4dbf285748"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Johns.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +117,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e440856d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Johns"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 252092,
+      "output": 8060,
+      "source": "codex-events",
+      "total": 260152
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "0c1938dc84e98c24": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e20de2cfc71d5c6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76393ddf294107f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a796c1ad338609c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ba3fdad4af5d7dda": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c9839ea0aa",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4dbf285748",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 159.9
   }
 }

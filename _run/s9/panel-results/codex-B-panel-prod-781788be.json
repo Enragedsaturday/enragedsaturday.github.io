@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/new-york-v-p-j-video-inc--111635.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed in the working directory; review is based on group_inventory.jsonl, the lake record, and the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "0c450e6699075052",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/new-york-v-p-j-video-inc--111635__517993.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies historical identity/citations, but does not verify that the cited authority is currently live law under the currency lens. The lake record is a frontier stub with unverified treatment and no derived progeny/currentness basis.",
+          "proposed_fix": "Do not use this existence row as a live-law/currentness signal. Mark currentness unverified, or promote the record with derived treatment/progeny before asserting the authority is live law.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields support that the case record exists: status is verified_identity, court is U.S. Supreme Court, and date_decided is 1986-04-22.",
+          "Currency cannot be verified from disclosed fields because treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny rows_cached is 0."
+        ],
+        "residual_risks": [
+          "The case may in fact remain good law, but the disclosed record does not establish that."
+        ],
+        "suggested_tightening": "Separate historical citation existence from current/live-law status; label the latter unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "1d34a568459a06f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment judgment: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The scope note expressly says treatment/progeny were intentionally not derived, so the page is not making a good-law claim contradicted by the disclosed record."
+        ],
+        "residual_risks": [
+          "Unverified treatment is not a currentness determination and should not be displayed as good-law status."
+        ],
+        "suggested_tightening": "Keep the unverified label prominent and avoid any good-law or weight label until treatment/progeny are derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/new-york-v-p-j-video-inc--111635.json\",\"reviewed\":[{\"assertion_id\":\"0c450e6699075052\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies historical identity/citations, but does not verify that the cited authority is currently live law under the currency lens. The lake record is a frontier stub with unverified treatment and no derived progeny/currentness basis.\",\"severity\":\"high\",\"proposed_fix\":\"Do not use this existence row as a live-law/currentness signal. Mark currentness unverified, or promote the record with derived treatment/progeny before asserting the authority is live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/new-york-v-p-j-video-inc--111635__517993.json treatment/progeny fields\"},\"reasons\":[\"Lake identity fields support that the case record exists: status is verified_identity, court is U.S. Supreme Court, and date_decided is 1986-04-22.\",\"Currency cannot be verified from disclosed fields because treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may in fact remain good law, but the disclosed record does not establish that.\"],\"suggested_tightening\":\"Separate historical citation existence from current/live-law status; label the latter unverified.\"},{\"assertion_id\":\"1d34a568459a06f7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment judgment: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The scope note expressly says treatment/progeny were intentionally not derived, so the page is not making a good-law claim contradicted by the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Unverified treatment is not a currentness determination and should not be displayed as good-law status.\"],\"suggested_tightening\":\"Keep the unverified label prominent and avoid any good-law or weight label until treatment/progeny are derived.\"}],\"notes\":\"No content_page.* file was disclosed in the working directory; review is based on group_inventory.jsonl, the lake record, and the cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:21:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2742cbbc87"
+    ],
     "group_id": "_overhaul2/lake/cases/new-york-v-p-j-video-inc--111635.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-781788be",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-781788be.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:37:29.650011Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:30.167485Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:30.830576Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.633647Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record new-york-v-p-j-video-inc--111635"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "new-york-v-p-j-video-inc--111635"
+    ],
+    "tokens": {
+      "input": 121810,
+      "output": 5393,
+      "source": "codex-events",
+      "total": 127203
+    },
+    "verdict_map": {
+      "0c450e6699075052": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "1d34a568459a06f7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2742cbbc87",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.6
   }
 }

@@ -1,22 +1,136 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects raised.",
+    "reviewed": [
+      {
+        "assertion_id": "09753ceebdc179f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies United States v. Bagley as a U.S. Supreme Court decision decided 1985-07-02 with official citation 473 U.S. 667.",
+          "Lake treatment marks field_i_validity as good_law as of 2026-06-30; no confirmed non-proposed negative treatment edge overrides that live-law status."
+        ],
+        "residual_risks": [
+          "The disclosed treatment derivation is capped and flags audit_needed for proposed negative events, so this review relies on the lake's final judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22c4dd28c3716295",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not evaluate quote/support fidelity; currency embedded in the quoted page header matches the lake treatment good_law as of 2026-06-30.",
+          "The cited authority is the same verified SCOTUS Bagley record, and no confirmed superseding, overruling, abrogating, or limiting treatment appears in disclosed fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy are outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67faf8c4f8fda7c9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/United States v. Bagley__6c76f5.json treatment.derivation lanes; treatment.edges all have proposed=true.",
+          "needs_cl": true,
+          "problem": "The treatment call matches the lake's final good_law field, but the page presents it without qualification while the disclosed lake derivation flags unresolved treatment audit work and proposed negative edges.",
+          "proposed_fix": "Retain good_law/Binding-SCOTUS with an audit caveat, or complete the R15 treatment audit and clear the proposed negative edges before presenting the as-of treatment without qualification.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted field_i_validity, as-of date, scope note, and varies_by_point=false all match the lake treatment fields.",
+          "The same treatment section reports proposed_negative_events and audit_needed=true across lane1_negative, lane2_top_cited, and lane3_recency; all 29 treatment edges are proposed, not final.",
+          "No disclosed confirmed edge says Bagley itself has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "Because the negative-event review hit caps and requires audit, the unqualified as-of label may overstate treatment certainty."
+        ],
+        "suggested_tightening": "Add a treatment-audit caveat unless or until the proposed negative events are adjudicated.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Bagley.json\",\"reviewed\":[{\"assertion_id\":\"09753ceebdc179f9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies United States v. Bagley as a U.S. Supreme Court decision decided 1985-07-02 with official citation 473 U.S. 667.\",\"Lake treatment marks field_i_validity as good_law as of 2026-06-30; no confirmed non-proposed negative treatment edge overrides that live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment derivation is capped and flags audit_needed for proposed negative events, so this review relies on the lake's final judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"22c4dd28c3716295\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not evaluate quote/support fidelity; currency embedded in the quoted page header matches the lake treatment good_law as of 2026-06-30.\",\"The cited authority is the same verified SCOTUS Bagley record, and no confirmed superseding, overruling, abrogating, or limiting treatment appears in disclosed fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy are outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"67faf8c4f8fda7c9\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The treatment call matches the lake's final good_law field, but the page presents it without qualification while the disclosed lake derivation flags unresolved treatment audit work and proposed negative edges.\",\"severity\":\"low\",\"proposed_fix\":\"Retain good_law/Binding-SCOTUS with an audit caveat, or complete the R15 treatment audit and clear the proposed negative edges before presenting the as-of treatment without qualification.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Bagley__6c76f5.json treatment.derivation lanes; treatment.edges all have proposed=true.\"},\"reasons\":[\"The asserted field_i_validity, as-of date, scope note, and varies_by_point=false all match the lake treatment fields.\",\"The same treatment section reports proposed_negative_events and audit_needed=true across lane1_negative, lane2_top_cited, and lane3_recency; all 29 treatment edges are proposed, not final.\",\"No disclosed confirmed edge says Bagley itself has been overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the negative-event review hit caps and requires audit, the unqualified as-of label may overstate treatment certainty.\"],\"suggested_tightening\":\"Add a treatment-audit caveat unless or until the proposed negative events are adjudicated.\"}],\"notes\":\"Lens B only; no support or quote-fidelity defects raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:08-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:45:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fe42ad2c5a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e8f960cf61"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-05ab4f5a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-05ab4f5a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:00.088917Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:00.924285Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:02.183726Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:04.148565Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:08.033716Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Bagley"
+    ],
+    "tokens": {
+      "input": 334897,
+      "output": 6661,
+      "source": "codex-events",
+      "total": 341558
+    },
+    "verdict_map": {
+      "09753ceebdc179f9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "22c4dd28c3716295": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "67faf8c4f8fda7c9": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fe42ad2c5a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e8f960cf61",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 137.6
   }
 }

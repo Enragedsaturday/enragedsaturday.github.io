@@ -1,22 +1,185 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Mathews v. United States.md",
+    "lens": "B",
+    "notes": "Lens B only. No external sources were used; support and quote-fidelity issues were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "bdb7c76541ad150e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Mathews v. United States, U.S. Supreme Court, decided 1988-02-24, cluster_id 112012.",
+          "Lake citations include official 485 U.S. 58, parallel 108 S. Ct. 883 and 99 L. Ed. 2d 54, and vendor-neutral 1988 U.S. LEXIS 943.",
+          "Lake final treatment field lists field_i_validity good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags proposed negative events requiring audit, but no confirmed overruling is recorded in the final treatment field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "09154812e99015cb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack holding support or quote fidelity.",
+          "No point-specific downgrade appears in the lake record; point_overrides is empty and final treatment is good_law."
+        ],
+        "residual_risks": [
+          "Holding support and quote fidelity remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a777fede129cce49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack the substantive home-role classification.",
+          "Currency check does not disclose a confirmed overruling or abrogation of Mathews; the lake final field remains good_law.",
+          "The lake progeny record reports substantial continued citation activity, including 753 indexed citing opinions and citation_count 1244."
+        ],
+        "residual_risks": [
+          "Whether the role label is the best taxonomy fit is outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "53802ba920cdc7ed",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment frontmatter and 'Treatment & subsequent history' section.",
+          "needs_cl": true,
+          "problem": "The core good_law treatment field matches the lake record, but the page's clean 'No negative treatment' formulation overstates certainty because the lake derivation flags proposed negative events and an unresolved treatment audit.",
+          "proposed_fix": "Keep field_i_validity as good_law, but revise the narrative to 'No confirmed negative treatment in the lake final treatment field; derivation contains proposed negative events requiring audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake final treatment fields match the payload: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "The same lake treatment record reports lane1_negative audit_needed true with proposed_negative_events 6 and lane2_top_cited audit_needed true with proposed_negative_events 23.",
+          "Listed treatment edges are marked proposed true and field_iii mentioned, so they do not themselves establish a confirmed overrule, but they do prevent the stronger 'No negative treatment' statement from being cleanly verified."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could downgrade or clear the proposed negative events."
+        ],
+        "suggested_tightening": "Qualify the treatment prose to distinguish final good_law status from unresolved proposed negative treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb2adfd43ab0f2fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as U.S. Supreme Court and court_level scotus.",
+          "The page weight label 'Binding — SCOTUS' is consistent with a U.S. Supreme Court authority in the lake record.",
+          "No disclosed treatment field changes the authority weight label."
+        ],
+        "residual_risks": [
+          "Weight is jurisdictionally broad; any use outside federal constitutional/statutory contexts would need local-law framing, but no contrary record appears here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Mathews v. United States.md\",\"reviewed\":[{\"assertion_id\":\"bdb7c76541ad150e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Mathews v. United States, U.S. Supreme Court, decided 1988-02-24, cluster_id 112012.\",\"Lake citations include official 485 U.S. 58, parallel 108 S. Ct. 883 and 99 L. Ed. 2d 54, and vendor-neutral 1988 U.S. LEXIS 943.\",\"Lake final treatment field lists field_i_validity good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags proposed negative events requiring audit, but no confirmed overruling is recorded in the final treatment field.\"],\"suggested_tightening\":null},{\"assertion_id\":\"09154812e99015cb\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack holding support or quote fidelity.\",\"No point-specific downgrade appears in the lake record; point_overrides is empty and final treatment is good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding support and quote fidelity remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a777fede129cce49\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack the substantive home-role classification.\",\"Currency check does not disclose a confirmed overruling or abrogation of Mathews; the lake final field remains good_law.\",\"The lake progeny record reports substantial continued citation activity, including 753 indexed citing opinions and citation_count 1244.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Whether the role label is the best taxonomy fit is outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"53802ba920cdc7ed\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment field matches the lake record, but the page's clean 'No negative treatment' formulation overstates certainty because the lake derivation flags proposed negative events and an unresolved treatment audit.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity as good_law, but revise the narrative to 'No confirmed negative treatment in the lake final treatment field; derivation contains proposed negative events requiring audit.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment frontmatter and 'Treatment & subsequent history' section.\"},\"reasons\":[\"Lake final treatment fields match the payload: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\"The same lake treatment record reports lane1_negative audit_needed true with proposed_negative_events 6 and lane2_top_cited audit_needed true with proposed_negative_events 23.\",\"Listed treatment edges are marked proposed true and field_iii mentioned, so they do not themselves establish a confirmed overrule, but they do prevent the stronger 'No negative treatment' statement from being cleanly verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could downgrade or clear the proposed negative events.\"],\"suggested_tightening\":\"Qualify the treatment prose to distinguish final good_law status from unresolved proposed negative treatment signals.\"},{\"assertion_id\":\"fb2adfd43ab0f2fd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the court as U.S. Supreme Court and court_level scotus.\",\"The page weight label 'Binding — SCOTUS' is consistent with a U.S. Supreme Court authority in the lake record.\",\"No disclosed treatment field changes the authority weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Weight is jurisdictionally broad; any use outside federal constitutional/statutory contexts would need local-law framing, but no contrary record appears here.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only. No external sources were used; support and quote-fidelity issues were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:47:34-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:29:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-64a6d8f36e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-444a2b0098"
+    ],
     "group_id": "content/cases/Mathews v. United States.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3abb5412",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3abb5412.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:47:28.841446Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:29.399938Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:30.081415Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:30.977731Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:47:32.127484Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathews v. United States"
+    ],
+    "tokens": {
+      "input": 259044,
+      "output": 7130,
+      "source": "codex-events",
+      "total": 266174
+    },
+    "verdict_map": {
+      "09154812e99015cb": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "53802ba920cdc7ed": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a777fede129cce49": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bdb7c76541ad150e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb2adfd43ab0f2fd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-64a6d8f36e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-444a2b0098",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 140.8
   }
 }

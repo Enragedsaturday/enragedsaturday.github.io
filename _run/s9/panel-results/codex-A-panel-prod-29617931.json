@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Montoya de Hernandez.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support/quote-fidelity/existence only. Treatment was checked only for correspondence to disclosed lake fields, not for currency.",
+    "reviewed": [
+      {
+        "assertion_id": "0b0a9b0d83474895",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for United States v. Montoya de Hernandez, U.S. Supreme Court, decided 1985-07-01.",
+          "Lake official citation is 473 U.S. 531, and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f16801c6fce78a6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Here, by analogy, in the presence of articulable suspicion of smuggling in her alimentary canal, the customs officers were not required by the Fourth Amendment to pass respondent and her 88 cocaine-filled balloons into the interior. Her detention for the period of time necessary to either verify or dispel the suspicion was not unreasonable.",
+          "locator_note": "pin-544; text page marker *544 appears in paragraph b582-4, with the quoted passage in b582-5.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-544 is not a verbatim passage from the opinion; it is page-authored paraphrase preceding the actual quotation.",
+          "proposed_fix": "Replace the pin-544 stored quote with the actual page-544 opinion passage or remove the paraphrase from pinpoints[].quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote says: The detention may last as long as is reasonably necessary to confirm or dispel the suspicion:",
+          "That string does not appear as opinion text at the cited passage; the actual supporting passage begins with 'Here, by analogy, in the presence of articulable suspicion...'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep authorial summaries outside pinpoint quote fields; store only text that can be matched character-for-character to the opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b38591e79540d046",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that the detention of a traveler at the border, beyond the scope of a routine customs search and inspection, is justified at its inception if customs agents, considering all the facts surrounding the traveler and her trip, reasonably suspect that the traveler is smuggling contraband in her alimentary canal.",
+          "locator_note": "pin-541; actual holding appears after the *541 page marker in paragraph b579-5.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-541 is not opinion text; it captures generated page prose and Markdown headings.",
+          "proposed_fix": "Replace the pin-541 stored quote with the actual page-541 holding passage from the opinion.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains page prose and headings: '## Issue' and '## Rule'.",
+          "The opinion text at the cited location contains the Court's 'We hold...' formulation, not the payload text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-541 from the opinion text, not from the rendered case-note page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73d1b7201664af05",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's support/quote-fidelity charter, so no treatment/currency defect is raised.",
+          "The disclosed lake treatment fields match the payload: field_i_validity good_law, as_of_content 1985-07-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment substance was not evaluated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Montoya de Hernandez.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0b0a9b0d83474895\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record is verified for United States v. Montoya de Hernandez, U.S. Supreme Court, decided 1985-07-01.\",\n        \"Lake official citation is 473 U.S. 531, and the listed parallel/vendor citations match the inventory payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2f16801c6fce78a6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pinpoint quote for pin-544 is not a verbatim passage from the opinion; it is page-authored paraphrase preceding the actual quotation.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-544 stored quote with the actual page-544 opinion passage or remove the paraphrase from pinpoints[].quote.\",\n        \"evidence_quote\": \"Here, by analogy, in the presence of articulable suspicion of smuggling in her alimentary canal, the customs officers were not required by the Fourth Amendment to pass respondent and her 88 cocaine-filled balloons into the interior. Her detention for the period of time necessary to either verify or dispel the suspicion was not unreasonable.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-544; text page marker *544 appears in paragraph b582-4, with the quoted passage in b582-5.\"\n      },\n      \"reasons\": [\n        \"The payload quote says: The detention may last as long as is reasonably necessary to confirm or dispel the suspicion:\",\n        \"That string does not appear as opinion text at the cited passage; the actual supporting passage begins with 'Here, by analogy, in the presence of articulable suspicion...'.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Keep authorial summaries outside pinpoint quote fields; store only text that can be matched character-for-character to the opinion.\"\n    },\n    {\n      \"assertion_id\": \"b38591e79540d046\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pinpoint quote for pin-541 is not opinion text; it captures generated page prose and Markdown headings.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-541 stored quote with the actual page-541 holding passage from the opinion.\",\n        \"evidence_quote\": \"We hold that the detention of a traveler at the border, beyond the scope of a routine customs search and inspection, is justified at its inception if customs agents, considering all the facts surrounding the traveler and her trip, reasonably suspect that the traveler is smuggling contraband in her alimentary canal.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-541; actual holding appears after the *541 page marker in paragraph b579-5.\"\n      },\n      \"reasons\": [\n        \"The payload quote contains page prose and headings: '## Issue' and '## Rule'.\",\n        \"The opinion text at the cited location contains the Court's 'We hold...' formulation, not the payload text.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate pin-541 from the opinion text, not from the rendered case-note page.\"\n    },\n    {\n      \"assertion_id\": \"73d1b7201664af05\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside Lens A's support/quote-fidelity charter, so no treatment/currency defect is raised.\",\n        \"The disclosed lake treatment fields match the payload: field_i_validity good_law, as_of_content 1985-07-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment substance was not evaluated under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed support/quote-fidelity/existence only. Treatment was checked only for correspondence to disclosed lake fields, not for currency.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:32:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:02:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2005ba00f9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-460a3caad6",
+      "F-S9-PR-3115b6993c"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Montoya de Hernandez.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-29617931.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Montoya de Hernandez"
     ],
     "tokens": {
-      "input": 831,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 831
+      "input": 282467,
+      "output": 7555,
+      "source": "codex-events",
+      "total": 290022
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0b0a9b0d83474895": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2f16801c6fce78a6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "73d1b7201664af05": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b38591e79540d046": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-460a3caad6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3115b6993c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2005ba00f9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 161.9
   }
 }

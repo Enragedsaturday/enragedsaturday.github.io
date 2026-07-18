@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0b248313775cce1f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 5 payload citations present in the lake citations block; official=466 U.S. 380 selected_official=true, display=466 U.S. 380, official_selection_present=true (all match).",
+          "Cached HTML opinion carries 466 U.S. star pages *381/*382/*383, corroborating 466 U.S. 380 (1984)."
+        ],
+        "residual_risks": [
+          "Alias 'Florida v. Myers' / caption 'Meyers, aka Weyers' is a caption/identity matter (documented on the page), not a citation-existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3a43122b0915745",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In Michigan v. Thomas, 458 U. S. 259 (1982), we upheld a warrantless search of an automobile even though the automobile was in police custody and even though a prior inventory search had already been made. That ruling controls the disposition of this case.",
+          "locator_note": "Cached opinion text line ~4173 (para b442-4, immediately after <page-number label=\"382\">); content page line 3199.",
+          "needs_cl": false,
+          "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose (caption note + Background + Issue + 'Rule Yes. The automobile exception is not defeated...'), not the court quote; quote_fidelity=mismatch and pinpoint_status=slip-only reflect the mis-harvest. The actual reader-facing pin-382 quote is verbatim-faithful and star-verifiable.",
+          "proposed_fix": "Re-harvest pin-382 to the actual content-page blockquote; it matches the cached HTML verbatim and appears on *382 (star-verifiable, not slip-only).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page's actual pin-382 quote matches the cached HTML opinion verbatim (war-rantless line-break hyphen removed).",
+          "payload.quote is a page-preamble mis-extraction; pinpoint_status=slip-only is wrong (source is star-paginated at *382)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix S8 harvest span and set pinpoint_status=star-verified/382.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d219a2ca1c10974d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote 'the justification to conduct such a warrantless search does not vanish once the car has been immobilized.' matches the cached HTML verbatim; recorded quote_fidelity=matched, pinpoint_status=star-verified, star_marker=382 all corroborated.",
+          "Content page correctly attributes the internal quote '(quoting 458 U.S. at 261)' — the cited passage carries '458 U. S., at 261'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77bcb5ade947d619",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Case-level field_i_validity=good_law; edges are progeny carrying citing cases' own statuses (overruled/questioned/superseded_by_statute), not negative treatment of Meyers.",
+          "Per curiam settled application of the automobile exception; no disclosed SCOTUS overruling/abrogation of Meyers (1984)."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed (provisional; may re-derive)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7fabeae529",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Florida v. Meyers.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-05-0f923c32",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Meyers"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0b248313775cce1f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77bcb5ade947d619": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c3a43122b0915745": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d219a2ca1c10974d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ec527744a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7fabeae529",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

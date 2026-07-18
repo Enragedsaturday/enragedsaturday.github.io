@@ -1,0 +1,170 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "763e3b67b70d058d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms identity: 'UNITED STATES OF AMERICA v. WAYNE WALKER', 11th Cir., No. 15-10710, PER CURIAM, decided September 3, 2015 -- matching the record and aliases.",
+          "official_selection_present=true and official 799 F.3d 1361 match the payload; pin pages 1363/1364 used on the page are consistent with a case opening at 1361."
+        ],
+        "residual_risks": [
+          "The cached copy is the court slip op (Page 1 of 7 ... 7 of 7), so the exact F.3d start page 1361 is not independently paginated in the disclosed text; nothing contradicts it and identity is confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4db17fb5d6a91248",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the cached opinion: 'approaching Walker's vehicle parked inside of his open-sided carport, instead of going to his front door, did not exceed the geographic limit on the knock and talk exception. A small departure from the front door . . . when seeking to contact the occupants is permissible.'",
+          "The cached text attributes the small-departure phrase to 'Taylor, 458 F.3d 1205', confirming the page's parenthetical '(quoting United States v. Taylor, 458 F.3d 1201, 1205 (11th Cir. 2006))'; payload 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7aff2fc25e90dd30",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase 'is not considered a search,' is verbatim in footnote 1 of the cached opinion ('...a warrantless early morning knock and talk, which is not considered a search').",
+          "The content-page framing (no exigent circumstances required; cite 'Id. (& n.1)') matches footnote 1, which distinguishes Brigham City; payload 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b84f2557dee0e416",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual content-page pin-1363 quote ('The scope of the knock and talk exception is limited in two respects. First, it ceases where an officer's behavior objectively reveals a purpose to conduct a search. ... Second, the exception is geographically limited to the front door or a minor departure from it.') is verbatim in the cached opinion, with the ellipsis eliding the Jardines dog-sniff parenthetical.",
+          "The payload 'quote' string is a mis-extracted front-matter/Background+Issue window ending at the ## Rule text, not the pincited holding; the real pincited quote is faithful."
+        ],
+        "residual_risks": [
+          "Payload quote field for pin-1363 is an extractor window artifact, not the anchored quote text."
+        ],
+        "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "06f891d089718947",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note is directly corroborated by the disclosed opinion: it is 'PER CURIAM' and expressly applies Florida v. Jardines and United States v. Taylor to the geographic scope of the knock-and-talk implied license.",
+          "Disclosed derivation shows lane1_negative reviewed the targeted overrule/abrogate query and returned proposed_negative_events: 0; the lane2 'overruled/questioned' edges are 'proposed: true' generic citing-tag noise; good_law is not downgraded."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a7e91bc825",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cfd59a93f3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2852cd06f3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Walker.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-04-adf3dff2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Walker"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "06f891d089718947": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4db17fb5d6a91248": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "763e3b67b70d058d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7aff2fc25e90dd30": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b84f2557dee0e416": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7e91bc825",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cfd59a93f3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2852cd06f3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

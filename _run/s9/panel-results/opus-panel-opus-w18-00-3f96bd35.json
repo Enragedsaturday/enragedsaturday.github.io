@@ -1,0 +1,181 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8bcc9efbff4169c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached SCOTUS majority opinion by 'MR. Justice White' with U.S. Reports star pagination *166 through *178 corroborates a real, correctly identified United States v. Matlock; the opinion begins at 164 (consistent with 415 U.S. 164).",
+          "Internal cites match the record: CoA below '476 F. 2d 1083', cert granted '412 U. S. 917', reversed and remanded (docket 72-1355, decided 1974-02-20)."
+        ],
+        "residual_risks": [
+          "official_selection.court_class is mislabeled 'state' (reason 'selected_rank_3') for a SCOTUS case — a metadata quirk not affecting the cite string '415 U.S. 164' (type 1) or existence."
+        ],
+        "suggested_tightening": "Correct official_selection.court_class from 'state' to 'scotus'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7437f773d186f8b3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared",
+          "locator_note": "lake pinpoints[] id=pin-170; content_page ## Rule ^pin-170",
+          "needs_cl": false,
+          "problem": "The lake pinpoint pin-170.quote (and derived payload quote) is a corrupted page-scrape (rendered page front-matter through '## Background'/'## Rule'), not the opinion quote; it matches nothing in the source verbatim.",
+          "proposed_fix": "Re-extract pin-170.quote to the actual opinion sentence, already carried verbatim in the content page: 'The consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The rendered content-page pin-170 quote is verbatim-faithful to the cached opinion (text at the *170->*171 boundary), so the fidelity claim survives.",
+          "The structured pin-170.quote field holds corrupted scrape text — a low-severity extraction artifact of the same class as Mathis pin-1276."
+        ],
+        "residual_risks": [
+          "Systemic corrupted-scrape artifact; a re-extraction pass across affected slip-only pinpoints is warranted."
+        ],
+        "suggested_tightening": "Same extractor guard as Mathis pin-1276 (do not capture page front-matter as a quote).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a025d7b426c942f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote matches cached footnote 7 verbatim: '...but rests rather on mutual use of the property by persons generally having joint access or control for most purposes, so that it is reasonable to recognize that any of the co-inhabitants has the right to permit the inspection in his own right and that the others have assumed the risk that one of their number might permit the common area to be searched.'",
+          "Content pincite 'Id. at 171 n.7' is correct — footnote 7 is anchored on the page-171 paragraph; pinpoint_status 'star-verified' via text-fragment #:~:text=rests%20rather%20on%20mutual%20use."
+        ],
+        "residual_risks": [
+          "Payload star_marker is '170' while the quote is footnote 7 (page 171); immaterial to fidelity or the 171 n.7 pincite, but the star_marker metadata is imprecise."
+        ],
+        "suggested_tightening": "Reconcile pin-171a.star_marker (170) with the 171 n.7 pincite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e87e3d04275f3c2a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote matches the cached opinion verbatim (at the *171 region): '...but may show that permission to search was obtained from a third party who possessed common authority over or other sufficient relationship to the premises or effects sought to be inspected.'",
+          "Content pincite 'Id. at 171' is correct; pinpoint_status 'star-verified' (star_marker 171) via text-fragment #:~:text=may%20show%20that%20permission%20to."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94995bfa15e8a0f4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "treatment.derivation.lane1_negative (cap_hit true, proposed_negative_events 7, audit_marker)",
+          "needs_cl": true,
+          "problem": "good_law is presented as settled ('No negative subsequent treatment identified') but is composite_basis 'migration-seed' and NOT machine-confirmed: treatment.derivation.lane1_negative hit its 200-result cap (cap_hit true) with proposed_negative_events 7 and carries audit_marker 'R15 treatment audit required'; no progeny opinions are inlined to confirm currency.",
+          "proposed_fix": "Complete the R15 treatment audit / S2 re-derivation and resolve the 7 capped negative-lane hits before presenting good_law as verified; keep the framing hedged until then.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "No basis to refute good_law: all 32 disclosed treatment edges classify Matlock's own treatment as field_iii 'mentioned' (neutral); edge field_ii values (overruled/questioned/abrogated/superseded/criticized) mirror the citing cases' OWN statuses, not treatment of Matlock.",
+          "But currency cannot be confirmed from disclosed evidence — the negative lane is capped and explicitly audit-flagged, so 'No negative subsequent treatment identified' overstates the machine-verified basis."
+        ],
+        "residual_risks": [
+          "The 7 proposed_negative_events are unaudited keyword hits; I cannot confirm from disclosed evidence that none is a genuine negative treatment.",
+          "Migration-seed as_of 2026-06-30; scope_note concedes re-derivation may downgrade."
+        ],
+        "suggested_tightening": "Gate the 'good' TreatmentBadge behind R15-audit completion for this record.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-da563964b8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Matlock.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-00-3f96bd35",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Matlock"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7437f773d186f8b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8bcc9efbff4169c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94995bfa15e8a0f4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "a025d7b426c942f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e87e3d04275f3c2a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2dc9ca569d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-da563964b8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ba521c7e42",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

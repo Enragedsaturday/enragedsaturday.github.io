@@ -1,0 +1,165 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "837daabd230545e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unmistakably Gouled v. United States (Mr. Justice Clarke; conspiracy to defraud under § 37 Federal Criminal Code; 'Gouled' named throughout), with star-pagination 303-310 consistent with a case beginning at 255 U.S. 298.",
+          "Official cite 255 U.S. 298 (1921) and date 1921-02-28 match the record; official selection present.",
+          "Cluster 99745 matches the sourced opinion URL."
+        ],
+        "residual_risks": [
+          "First page '298' is the cluster's official pagination; the cached excerpt opens at the opinion body (*303), so page 298 is inferred from consistent pagination rather than shown directly — but nothing contradicts it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73a08eb46a15b767",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote tracks the cached opinion at 255 U.S. 309 verbatim with proper quotation practice: leading 'they' dropped ('Warrants' supplied outside the quote), a marked ellipsis 'but . . . they' standing in for 'but that they', and truncation at 'possession of it.'",
+          "The quote sits after the '*309' star, confirming pin-309.",
+          "Cached text reads 'gaming access' — an obvious OCR corruption in a heavily-garbled 1921 scan; the content page's 'gaining access' is the correct reading, so the page is faithful to the true opinion.",
+          "Payload quote_fidelity='mismatch' is a false positive driven by the dropped leading word, the ellipsis, the truncation, and the OCR 'gaming/gaining' artifact."
+        ],
+        "residual_risks": [
+          "Single-word cached-text OCR variance ('gaming' vs 'gaining') noted; not a genuine quote defect."
+        ],
+        "suggested_tightening": "Account for marked ellipses/truncation and OCR noise in the fidelity comparator.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e004d7cc524a811d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "whether entrance to the home or office of a person suspected of crime be obtained by a representative of any branch or subdivision of the Government of the United States by stealth, or through social acquaintance, or in the guise of a business call, and whether the owner be present or not when he enters, any search and seizure subsequently and secretly made in his absence, falls within the scope of the prohibition of the Fourth Amendment.",
+          "locator_note": "Cached Gouled opinion, page-306 star (*306) paragraph (id b344-4); content page Rule section, ^pin-306.",
+          "needs_cl": false,
+          "problem": "The harvested `quote` for pin-306 is not an opinion quote — it is the content page's frontmatter plus Background/Issue/Rule prose captured up to '## Rule ... The Court held that'. None of that appears in the Gouled opinion; the harvester grabbed the pre-quote context instead of the pinned quotation.",
+          "proposed_fix": "Re-harvest the pin-306 quote to the actual pinned sentence ('whether entrance to the home or office of a person suspected of crime be obtained ... by stealth, or through social acquaintance, or in the guise of a business call ... any search and seizure subsequently and secretly made in his absence, falls within the scope of the prohibition of the Fourth Amendment'), which is verbatim-faithful to 255 U.S. 306.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is content-page frontmatter+prose ('--- # Gouled v. United States ... ## Rule ... The Court held that'), not opinion text — a harvester boundary artifact identical in shape to the Gooding pin-439 defect.",
+          "The actual pin-306 sentence is verbatim-faithful to the cached opinion at 255 U.S. 306.",
+          "Pincite 306 is correct: the '*306' star precedes the quoted stealth/ruse holding in the cached text."
+        ],
+        "residual_risks": [
+          "Same class as Gooding pin-439 — the garbled quote is a record artifact; the published page quote is clean and faithful."
+        ],
+        "suggested_tightening": "Same harvester span-boundary fix applies.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e493537c43edc2f8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The mere-evidence rule was overruled/abandoned by Warden v. Hayden (1967), which held the Fourth Amendment does not bar the seizure of items of solely evidentiary value. The separate Gouled holding — that entry obtained by stealth, ruse, or social pretext can render a subsequent search unreasonable — retains vitality.",
+          "locator_note": "treatment.scope_note vs treatment.varies_by_point in the Gouled lake record / assertion payload.",
+          "needs_cl": false,
+          "problem": "varies_by_point is set to false, but the record's own scope_note describes treatment that varies by point: the mere-evidence rule is overruled/abandoned (Warden v. Hayden, 1967) while the separate stealth/ruse-entry holding 'retains vitality'. A single case with one holding overruled and another surviving is point-varying treatment.",
+          "proposed_fix": "Set varies_by_point=true and populate point_overrides distinguishing the overruled mere-evidence holding (255 U.S. 309) from the surviving stealth/ruse-entry holding (255 U.S. 306).",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The scope_note itself splits treatment across two holdings (one overruled, one surviving), which contradicts varies_by_point=false.",
+          "The disclosed Gouled opinion confirms both holdings exist as distinct points: stealth/ruse entry (255 U.S. 306) and mere-evidence rule (255 U.S. 309).",
+          "Substantively the 'overruled (in part)' status is coherent; only the structured varies_by_point flag is inconsistent."
+        ],
+        "residual_risks": [
+          "The overruling itself (Warden v. Hayden, 1967) is not independently verifiable from the inlined evidence — no citator/Warden text is disclosed; only the internal scope_note/varies_by_point inconsistency is disclosed-verifiable.",
+          "field_i_validity code 'superseded' renders as 'overruled' on the page; the code-to-display mapping is not inlined, so it is not flagged."
+        ],
+        "suggested_tightening": "Reconcile varies_by_point with point-split scope_notes at build time (force varies_by_point=true whenever the scope_note enumerates divergent per-holding treatment).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4665aef15b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Gouled v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-01-b243fcaa",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gouled v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "73a08eb46a15b767": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "837daabd230545e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e004d7cc524a811d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e493537c43edc2f8": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4665aef15b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-58c61ed244",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7ba2db4b28",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

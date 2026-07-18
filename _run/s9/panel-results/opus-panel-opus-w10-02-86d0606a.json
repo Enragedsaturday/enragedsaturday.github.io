@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "dd973219048e2426",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is the Kisela v. Hughes PER CURIAM (2018), quoting White v. Pauly and Mullenix v. Luna, with a Sotomayor (joined by Ginsburg) dissent — confirming identity; 'Cite as: 584 U. S. ____ (2018)' is consistent with the selected official 584 U.S. 100.",
+          "S. Ct. pincites 1152-1153 fall within the 138 S. Ct. 1148 volume; official-selection present = 584 U.S. 100."
+        ],
+        "residual_risks": [
+          "Slip op shows the U.S. page as '____' (unassigned at slip time), so the specific page '100' is not independently confirmable from disclosed text; identity and the S. Ct. volume are confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6da11853ebb8e38f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "'Qualified immunity attaches when an official’s conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known' (quoting White v. Pauly)",
+          "locator_note": "lake pinpoints[].id=pin-1152; cached slip opinion (slip op. at 4-5, quoting White v. Pauly). Stored quote instead captures the content-page frontmatter '---', H1 title, header/HTML-comment line, and '## Background/## Issue/## Rule' sections.",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-1152 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-1152 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+          "proposed_fix": "Re-harvest pinpoints[pin-1152].quote to the page's real quote 'Qualified immunity attaches when an official’s conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known' (quoting White v. Pauly) which is verbatim in the slip opinion at 138 S. Ct. 1152 (slip op. at 4-5).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains frontmatter '---', Markdown '#'/'##' headers and an HTML comment — impossible in an opinion.",
+          "Independent check: cached slip opinion carries the rendered pin-1152 quote verbatim ('Qualified immunity attaches when an official's conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known'); reader-facing content correct.",
+          "Same harvest bug as Kaupp pin-630 / Kingsley pin-397 / Mathis pin-4."
+        ],
+        "residual_risks": [
+          "Systemic harvest-offset bug."
+        ],
+        "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3e03edb14038732",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "'Use of excessive force is an area of the law “in which the result depends very much on the facts of each case,” and thus police officers are entitled to qualified immunity unless existing precedent “squarely governs” the specific facts at issue' (quoting Mullenix v. Luna)",
+          "locator_note": "lake pinpoints[].id=pin-1153; cached slip opinion (slip op. at 5-6, quoting Mullenix). Stored quote is instead the content-page section-lead '— *Id.* Force law demands particularity.'",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-1153 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-1153 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+          "proposed_fix": "Re-harvest pinpoints[pin-1153].quote to the page's real quote 'Use of excessive force is an area of the law “in which the result depends very much on the facts of each case,” and thus police officers are entitled to qualified immunity unless existing precedent “squarely governs” the specific facts at issue' (quoting Mullenix v. Luna) which is verbatim in the slip opinion at 138 S. Ct. 1153 (slip op. at 5-6).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote '— *Id.* Force law demands particularity.' is content-page section-lead prose plus a stray '— *Id.*' citation artifact, not opinion text; the opinion contains no such sentence.",
+          "Independent check: cached slip opinion carries the rendered pin-1153 quote verbatim at the Mullenix passage ('Use of excessive force is an area of the law “in which the result depends very much on the facts of each case,” ... unless existing precedent “squarely governs” the specific facts at issue'); reader-facing content correct.",
+          "Corruption variant of the same harvest bug."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21fd04de194bb898",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' consistent with disclosed evidence: 2018 SCOTUS per curiam; disclosed edges are lane1_negative/lane2_top_cited candidates (field_iii='mentioned') whose field_ii is the citing case's own status, not negative treatment of Kisela.",
+          "scope_note correctly notes per curiam, the Brosseau/Mullenix specificity rule ('squarely governs'), and the Sotomayor (joined by Ginsburg) dissent — all confirmed in the cached opinion (which contains repeated SOTOMAYOR dissent text)."
+        ],
+        "residual_risks": [
+          "Good-law currency rests on disclosed curated edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d8273c07f4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Kisela v. Hughes.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-02-86d0606a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kisela v. Hughes"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "21fd04de194bb898": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6da11853ebb8e38f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d3e03edb14038732": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "dd973219048e2426": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51e251fcba",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-37ed5f94be",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d8273c07f4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

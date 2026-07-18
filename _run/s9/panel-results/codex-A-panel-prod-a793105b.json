@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lefkowitz v. Turley.json",
+    "lens": "A",
+    "notes": "No external sources used; review limited to disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "a489f3ff174941a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Lefkowitz v. Turley, U.S. Supreme Court, decided 1973-11-19, docket 72-331.",
+          "Lake citations record official citation 414 U.S. 70 and parallel/vendor citations matching the inventory and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b5353171ffde692",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Also, given adequate immunity, the State may plainly insist that employees either answer questions under oath about the performance of their job or suffer the loss of employment.",
+          "locator_note": "text/Lefkowitz v. Turley__bfc9ee.txt paragraph b236-6 at star page *84; content_page.md line 53; lake pin-84 quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "pin-84's stored quote is not an opinion quote; it is a harvested content-page header/background/issue/rule chunk, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-84 with the actual source passage at star page 84 beginning with the adequate-immunity sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with markdown front matter/content-page prose, not the judicial opinion text.",
+          "The disclosed opinion text contains the cited rule sentence at star page *84, but that is not the quote stored in pin-84."
+        ],
+        "residual_risks": [
+          "Automated consumers of lake pin-84 will retrieve non-authority page prose until the pinpoint is regenerated."
+        ],
+        "suggested_tightening": "Store the exact opinion sentence for pin-84 and preserve the star-page locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d65dc23e0494e262",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But the State may not insist that appellees",
+          "locator_note": "text paragraph b236-6 spans star pages *84-*85; content_page.md line 55; lake pin-84a quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The passage is present at the cited location, but the quote is not strictly character-faithful because the opinion begins the sentence with 'But the State...' while the stored/content quote begins '[T]he State...'.",
+          "proposed_fix": "Use the exact source opening 'But the State may not insist...' or mark the alteration as a non-verbatim legal alteration.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The full opinion text contains the quoted substance across the *84 to *85 page break.",
+          "Strict quote-fidelity fails on the leading bracket alteration and omission of 'But'."
+        ],
+        "residual_risks": [
+          "Lake pin-84a still has null page/star fields and quote_fidelity=mismatch, so validation remains fragile."
+        ],
+        "suggested_tightening": "Record exact source text beginning 'But the State...' and page span 84-85.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b0cd7b13667a7ab",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The inventory payload matches the disclosed lake treatment fields and content-page treatment fields."
+        ],
+        "residual_risks": [
+          "Treatment currency was not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Lefkowitz v. Turley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a489f3ff174941a7\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record verifies Lefkowitz v. Turley, U.S. Supreme Court, decided 1973-11-19, docket 72-331.\",\n        \"Lake citations record official citation 414 U.S. 70 and parallel/vendor citations matching the inventory and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4b5353171ffde692\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-84's stored quote is not an opinion quote; it is a harvested content-page header/background/issue/rule chunk, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-84 with the actual source passage at star page 84 beginning with the adequate-immunity sentence.\",\n        \"evidence_quote\": \"Also, given adequate immunity, the State may plainly insist that employees either answer questions under oath about the performance of their job or suffer the loss of employment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Lefkowitz v. Turley__bfc9ee.txt paragraph b236-6 at star page *84; content_page.md line 53; lake pin-84 quote_fidelity=mismatch.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with markdown front matter/content-page prose, not the judicial opinion text.\",\n        \"The disclosed opinion text contains the cited rule sentence at star page *84, but that is not the quote stored in pin-84.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Automated consumers of lake pin-84 will retrieve non-authority page prose until the pinpoint is regenerated.\"\n      ],\n      \"suggested_tightening\": \"Store the exact opinion sentence for pin-84 and preserve the star-page locator.\"\n    },\n    {\n      \"assertion_id\": \"d65dc23e0494e262\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The passage is present at the cited location, but the quote is not strictly character-faithful because the opinion begins the sentence with 'But the State...' while the stored/content quote begins '[T]he State...'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact source opening 'But the State may not insist...' or mark the alteration as a non-verbatim legal alteration.\",\n        \"evidence_quote\": \"But the State may not insist that appellees\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text paragraph b236-6 spans star pages *84-*85; content_page.md line 55; lake pin-84a quote_fidelity=mismatch.\"\n      },\n      \"reasons\": [\n        \"The full opinion text contains the quoted substance across the *84 to *85 page break.\",\n        \"Strict quote-fidelity fails on the leading bracket alteration and omission of 'But'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake pin-84a still has null page/star fields and quote_fidelity=mismatch, so validation remains fragile.\"\n      ],\n      \"suggested_tightening\": \"Record exact source text beginning 'But the State...' and page span 84-85.\"\n    },\n    {\n      \"assertion_id\": \"5b0cd7b13667a7ab\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\n        \"The inventory payload matches the disclosed lake treatment fields and content-page treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency was not audited under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No external sources used; review limited to disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:02:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-e3e45ab0e8",
+      "F-S9-PR-d42c9fe343"
+    ],
     "group_id": "_overhaul2/lake/cases/Lefkowitz v. Turley.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a793105b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Lefkowitz v. Turley"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 257329,
+      "output": 8615,
+      "source": "codex-events",
+      "total": 265944
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.9
+    "verdict_map": {
+      "4b5353171ffde692": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5b0cd7b13667a7ab": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a489f3ff174941a7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d65dc23e0494e262": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3e45ab0e8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d42c9fe343",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 169.3
   }
 }

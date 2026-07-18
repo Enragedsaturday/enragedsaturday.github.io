@@ -1,0 +1,204 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5908f017c89cb709",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms the case: 'United States v. Leary', 10th Cir., Stephen H. Anderson C.J., F.L. Kleinberg & Co., Export Administration Act warrant-overbreadth suppression — matching identity (cluster 505922, identity_checked, party_name_in_text=true).",
+          "Official cite '846 F.2d 592' (type 1) plus parallel '1988 U.S. App. LEXIS 5755' and '1988 WL 39811' are well-formed; star-pagination in the cached text (595-610) is consistent with a reporter case beginning at 592."
+        ],
+        "residual_risks": [
+          "Benign serialization quirk: the 846 F.2d 592 entry in citations.all[] carries selected_official=false while the official object carries selected_official=true; display and official_selection are correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2914c83409640b97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at pin-610 matches the opinion verbatim: cached text reads 'Accordingly, we hold that the \"good faith\" exception is inapplicable in these circumstances and affirm the district court's decision to suppress all of the evidence from the Kleinberg warrant.' (only curly- vs straight-quote glyph difference).",
+          "Quote falls after the *610 star marker, so the 'Id. at 610' pincite is correct; the payload 'mismatch'/'slip-only' flag is a false positive from quote-glyph / slip-vs-star pagination status, not a substantive misquote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reconcile the extractor's slip-only 'mismatch' flag against the star-paginated CL text so verbatim quotes are not flagged.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ba308a3cb38de4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at pin-609a matches the opinion verbatim: cached text reads 'We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it.'",
+          "Located between the *609 and *610 star markers, confirming the 'Id. at 609' pincite; payload already flags matched / star-verified (star_marker 609, fragment validated)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a16c86c4b1d51c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The particularity requirement [also] ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause.",
+          "locator_note": "cached opinion, between *600 and *601 star markers; quoting Voss v. Bergsgaard, 774 F.2d 402, 404",
+          "needs_cl": false,
+          "problem": "The stored pin-600 quote captured page markdown scaffolding ('...particularity requirement; and (2) whether the [[United States v. Leon]] good-faith exception ... ## Rule No to both. The particularity requirement bars general, exploratory rummaging: it') rather than the actual quoted clause, so it does not string-match the opinion (hence the 'mismatch' flag). The page's rendered quotation is itself faithful and correctly pincited.",
+          "proposed_fix": "Re-extract the stored pin-600 quote to the actually-quoted clause 'ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause' (attributed on-page to Voss v. Bergsgaard); no change to the rendered page text or the 'at 600' pincite is needed.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Reader-facing page quotation is verbatim-faithful to the opinion at star page 600 and correctly attributed to Voss v. Bergsgaard, so the quote proposition survives.",
+          "Only the internal stored-quote field is malformed (page scaffolding, not opinion text); this is a mechanical extraction artifact, not a fabrication or misquote."
+        ],
+        "residual_risks": [
+          "If a downstream consumer trusts the stored quote field rather than the rendered page, the garbled string would surface."
+        ],
+        "suggested_tightening": "Guard the quote extractor against ingesting markdown headings/wikilinks/frontmatter into pinpoint quote fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a90b29935ae806ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at pin-609 matches the opinion verbatim: cached text reads 'A warrant that directs an officer to seize records \"relating to\" violations of the federal export laws offers no such guidelines. The officers were left to their own discretion.' (only curly- vs straight-quote glyph difference).",
+          "Located between the *609 and *610 star markers, confirming the 'Id. at 609' pincite; the payload 'mismatch'/'slip-only' flag is a false positive (quote-glyph / slip-vs-star status), not a real misquote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a59b2d7cf5e3c503",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is supported by the disclosed derivation: lane1_negative (targeted overrule/abrogate/supersede/vacate/reverse query restricted to scotus OR ca10) reviewed 23 and returned proposed_negative_events=0 — no negative signal in binding courts.",
+          "The only adverse signals are lane2_top_cited 'proposed'=true edges (e.g. a SCOTUS cert-denial 'McMonagle' tagged 'questioned') carrying an explicit 'R15 treatment audit required' marker — unconfirmed automated top-cited keyword classifications, not confirmed negative treatment; composite_basis='migration-seed' with an honest re-derivation caveat."
+        ],
+        "residual_risks": [
+          "R15 treatment audit is still pending for the 25 proposed lane2 negative edges (including proposed 'overruled'/'abrogated'/'superseded_by_statute' labels on Dahlman, Galpin, Cooper, etc.); if any are confirmed on read, good_law could downgrade."
+        ],
+        "suggested_tightening": "Complete the R15 audit of the 25 proposed lane2 edges before certifying good_law beyond a migration-seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c8e64911d0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5bc1074b36",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9efd9b09c3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Leary.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-02-8e0bb653",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Leary"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2914c83409640b97": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ba308a3cb38de4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a16c86c4b1d51c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5908f017c89cb709": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a59b2d7cf5e3c503": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a90b29935ae806ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c8e64911d0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5ec0792ee2",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5bc1074b36",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9efd9b09c3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

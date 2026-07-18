@@ -1,39 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/in-re-winship--108111.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "1c58617e7be2a530",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/in-re-winship--108111__1acfd3.json treatment.scope_note; treatment.field_i_validity is unverified and progeny.rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The record verifies identity and citations, but the disclosed evidence does not verify current live-law status. The authority record is a frontier stub with treatment/progeny intentionally not derived, so currency cannot be confirmed under Lens B.",
+          "proposed_fix": "Do not present this authority as live/current law from this record alone. Mark currency as unverified until treatment/progeny are derived or disclose a current treatment record.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity status is verified_identity and expected_citation_found is true, so existence/citation identity is supported.",
+          "Currency is not verified: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny has no cached rows.",
+          "Defaulting to refuted on the live-law question because no disclosed treatment/progeny evidence confirms current status."
+        ],
+        "residual_risks": [
+          "This refutation is limited to currency/live-law verification, not case identity or citation existence."
+        ],
+        "suggested_tightening": "Separate identity verification from currency; label the case as identity-verified but treatment/current-law unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "361615e87ebc2fc5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment call exactly matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake record's scope note states treatment/progeny were intentionally not derived, and no disclosed progeny or treatment edge contradicts that unverified treatment label."
+        ],
+        "residual_risks": [
+          "The standing treatment assertion does not establish that In re Winship is good law; it establishes only that this record's treatment is unverified."
+        ],
+        "suggested_tightening": "Keep the display explicit that no good-law determination has been made.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/in-re-winship--108111.json\",\"reviewed\":[{\"assertion_id\":\"1c58617e7be2a530\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The record verifies identity and citations, but the disclosed evidence does not verify current live-law status. The authority record is a frontier stub with treatment/progeny intentionally not derived, so currency cannot be confirmed under Lens B.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not present this authority as live/current law from this record alone. Mark currency as unverified until treatment/progeny are derived or disclose a current treatment record.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/in-re-winship--108111__1acfd3.json treatment.scope_note; treatment.field_i_validity is unverified and progeny.rows_cached is 0.\"},\"reasons\":[\"Lake identity status is verified_identity and expected_citation_found is true, so existence/citation identity is supported.\",\"Currency is not verified: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny has no cached rows.\",\"Defaulting to refuted on the live-law question because no disclosed treatment/progeny evidence confirms current status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This refutation is limited to currency/live-law verification, not case identity or citation existence.\"],\"suggested_tightening\":\"Separate identity verification from currency; label the case as identity-verified but treatment/current-law unverified.\"},{\"assertion_id\":\"361615e87ebc2fc5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment call exactly matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake record's scope note states treatment/progeny were intentionally not derived, and no disclosed progeny or treatment edge contradicts that unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The standing treatment assertion does not establish that In re Winship is good law; it establishes only that this record's treatment is unverified.\"],\"suggested_tightening\":\"Keep the display explicit that no good-law determination has been made.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:18:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2c0712f7c7"
+    ],
     "group_id": "_overhaul2/lake/cases/in-re-winship--108111.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "in-re-winship--108111"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-368957ee",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-368957ee.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'in-re-winship--108111' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record in-re-winship--108111"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "in-re-winship--108111"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 106280,
+      "output": 3676,
+      "source": "codex-events",
+      "total": 109956
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "1c58617e7be2a530": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "361615e87ebc2fc5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2c0712f7c7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 74.5
   }
 }

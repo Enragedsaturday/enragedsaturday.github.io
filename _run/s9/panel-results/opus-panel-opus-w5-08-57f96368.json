@@ -1,0 +1,192 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c5acee3ac1d7d160",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 496 U.S. 128 (1990) matches the well-formed U.S. Reports citation in cluster.citations[] and the content-page frontmatter/header; official_selection_present=true and the parallel S. Ct./L. Ed. 2d/LEXIS cites are internally consistent.",
+          "Cached majority opinion (Justice Stevens) confirms the record is Horton v. California decided 1990; internal star-pages begin at *131, consistent with a case opening at 128."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8624ca714e2acd09",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that even though inadvertence is a characteristic of most legitimate \"plain-view\" seizures, it is not a necessary condition.",
+          "locator_note": "Opinion para b172-6 (opening paragraph, page 130, before the first *131 marker).",
+          "needs_cl": false,
+          "problem": "The assertion payload's `quote` field is a corrupted extraction: it captured the content page's frontmatter/Background/Issue preamble ending at '## Rule No. The Court rejected inadvertence as a requirement:' instead of the opinion quotation anchored at ^pin-130. The actual content-page quote at ^pin-130 is verbatim-faithful to the opinion and correctly pincited to 130.",
+          "proposed_fix": "Re-extract the pin-130 quote span from the content page; do NOT alter the content page. The pincite (496 U.S. at 130) and the real quote are correct.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote at ^pin-130 ('even though inadvertence is a characteristic of most legitimate \"plain-view\" seizures, it is not a necessary condition.') matches the opinion verbatim (curly vs straight quotes only).",
+          "The payload `quote` field is garbled harvest metadata (document preamble), not a content-page defect; the pin anchor trails the quoted sentence, so the extractor grabbed everything before it."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Guard the quote-harvest against capturing document preamble when the ^pin anchor trails (rather than precedes) the quoted sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f3c7aec20092b6b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page and payload quote at ^pin-136a ('First, not only must the item be in plain view; its incriminating character must also be \"immediately apparent.\"') matches the opinion verbatim (para b178-7).",
+          "Located on page 136 (before the *137 marker); content cites *Id.* chaining to 136 — correct. The payload 'quote_fidelity: mismatch' is a slip-only / fragment-null verification artifact, not an actual misquote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87d86fd5bc53da4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page and payload quote at ^pin-137 ('Second, not only must the officer be lawfully located in a place from which the object can be plainly seen, but he or she must also have a lawful right of access to the object itself.') matches the opinion verbatim (para b178-7).",
+          "Sentence falls after the *137 star marker; content cites *Id.* at 137 — correct. pinpoint_status star-verified with matching URL text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0721f4c986a551b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page and payload quote at ^pin-136 ('It is, of course, an essential predicate to any valid warrantless seizure of incriminating evidence that the officer did not violate the Fourth Amendment in arriving at the place from which the evidence could be plainly viewed.') matches the opinion verbatim (para b178-7).",
+          "Sentence opens on page 136; content cites *Id.* at 136 — correct. pinpoint_status star-verified with matching URL text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4480f9a9fb4feb16",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence contradicts good_law: the cached 1990 opinion is the Horton opinion itself and carries no subsequent-treatment signal; content page and lake both assert good_law with an honest composite_basis of 'migration-seed'.",
+          "Refute-framed search of the disclosed record finds no overruling/negative treatment; the assertion is modest and self-consistent (as_of_content=decision date seeding as_of_treatment, with scope_note disclosing that S2 may re-derive/downgrade)."
+        ],
+        "residual_risks": [
+          "Good-law currency as of 2026-06-30 cannot be independently verified from the disclosed opinion text; it would require a citator (CourtListener) check not inlined in the pack."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1b5ccaf5e2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ac05f90955",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Horton v. California.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-08-57f96368",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Horton v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1f3c7aec20092b6b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4480f9a9fb4feb16": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "8624ca714e2acd09": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "87d86fd5bc53da4d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c5acee3ac1d7d160": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d0721f4c986a551b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1586e0f5c5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1b5ccaf5e2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ac05f90955",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

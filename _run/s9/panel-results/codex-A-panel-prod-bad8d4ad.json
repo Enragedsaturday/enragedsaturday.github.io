@@ -1,22 +1,155 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rogers v. Richmond.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows under Lens A using only the disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "dffbadef469105dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Rogers v. Richmond, Warden, U.S. Supreme Court, decided 1961-03-20, year 1961.",
+          "The lake official citation is 365 U.S. 534, and the content page uses 365 U.S. 534 (1961); the listed parallel and vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "286fb1a68c715c80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the disclosed opinion text at the paragraph carrying star page *544.",
+          "The same wording appears in lake pinpoints[] for pin-544, and content_page.md cites it as Id. at 544."
+        ],
+        "residual_risks": [
+          "The cached opinion text encodes the dash at this location as a mojibake control character, while the lake/content quote normalizes it to an em dash."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b37adae1bfe85ce",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Our decisions under that Amendment have made clear that convictions following the admission into evidence of confessions which are involuntary, <i>i. e.,</i> the product of coercion, either physical or psychological, cannot stand.",
+          "locator_note": "pin-540 / lake pinpoints[]; corresponding opinion text is in text/Rogers v. Richmond__eba0c0.txt at the paragraph spanning star pages *540-*541.",
+          "needs_cl": false,
+          "problem": "The pin-540 payload is not a quotation from Rogers at 540-541; it is built-page header/background/issue/rule prose captured as a pinpoint quote.",
+          "proposed_fix": "Replace pin-540 with the actual opinion passage at *540-*541, beginning with the Court's discussion of involuntary confessions and coercion.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake/inventory pin-540 quote begins with '--- # Rogers v. Richmond' and contains the built case page's Background, Issue, and Rule sections.",
+          "The disclosed opinion text at the *540-*541 passage instead begins with 'Our decisions under that Amendment...' and does not contain the page header/background/issue prose.",
+          "The pinpoint quote is therefore not character-faithful to the disclosed opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If the visible content-page quote remains in use, preserve the source's 'i. e.,' formatting and do not replace the source's dash-continuation after 'system' with a terminal period inside quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35aacc8eec7d825c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1961-03-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Rogers v. Richmond.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"dffbadef469105dd\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Rogers v. Richmond, Warden, U.S. Supreme Court, decided 1961-03-20, year 1961.\",\n        \"The lake official citation is 365 U.S. 534, and the content page uses 365 U.S. 534 (1961); the listed parallel and vendor citations match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"286fb1a68c715c80\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the disclosed opinion text at the paragraph carrying star page *544.\",\n        \"The same wording appears in lake pinpoints[] for pin-544, and content_page.md cites it as Id. at 544.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached opinion text encodes the dash at this location as a mojibake control character, while the lake/content quote normalizes it to an em dash.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7b37adae1bfe85ce\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-540 payload is not a quotation from Rogers at 540-541; it is built-page header/background/issue/rule prose captured as a pinpoint quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-540 with the actual opinion passage at *540-*541, beginning with the Court's discussion of involuntary confessions and coercion.\",\n        \"evidence_quote\": \"Our decisions under that Amendment have made clear that convictions following the admission into evidence of confessions which are involuntary, <i>i. e.,</i> the product of coercion, either physical or psychological, cannot stand.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-540 / lake pinpoints[]; corresponding opinion text is in text/Rogers v. Richmond__eba0c0.txt at the paragraph spanning star pages *540-*541.\"\n      },\n      \"reasons\": [\n        \"The lake/inventory pin-540 quote begins with '--- # Rogers v. Richmond' and contains the built case page's Background, Issue, and Rule sections.\",\n        \"The disclosed opinion text at the *540-*541 passage instead begins with 'Our decisions under that Amendment...' and does not contain the page header/background/issue prose.\",\n        \"The pinpoint quote is therefore not character-faithful to the disclosed opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"If the visible content-page quote remains in use, preserve the source's 'i. e.,' formatting and do not replace the source's dash-continuation after 'system' with a terminal period inside quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"35aacc8eec7d825c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The inventory treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1961-03-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Treatment and currency are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory.jsonl rows under Lens A using only the disclosed working-directory files.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:57-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:33:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cf9ed6e35a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-88733c6bb9"
+    ],
     "group_id": "_overhaul2/lake/cases/Rogers v. Richmond.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-bad8d4ad",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bad8d4ad.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:48.282577Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:49.043988Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:49.829309Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:51.053454Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:53.066839Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:56.871007Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rogers v. Richmond"
+    ],
+    "tokens": {
+      "input": 267968,
+      "output": 10609,
+      "source": "codex-events",
+      "total": 278577
+    },
+    "verdict_map": {
+      "286fb1a68c715c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35aacc8eec7d825c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7b37adae1bfe85ce": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "dffbadef469105dd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-88733c6bb9",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cf9ed6e35a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 257.1
   }
 }

@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "e6eb46712b1234d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for United States v. Karl Touset, decided 2018-05-23 by the U.S. Court of Appeals for the Eleventh Circuit.",
+          "The asserted reporter citation 890 F.3d 1227 matches the lake official citation, display citation, volume, reporter, and first page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "674157793084967d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"quote_fidelity\": \"mismatch\"",
+          "locator_note": "lake pinpoints[0] / pin-IIIa; content_page.md Rule pin",
+          "needs_cl": false,
+          "problem": "pin-IIIa is not a faithful opinion quote. The stored/payload quote is contaminated with content-page markdown and page summary text, and the lake itself marks the pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-IIIa from the opinion text in Part III.A and store only the actual opinion passage supporting the rule, not the built page header/background/rule text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material ('--- # United States v. Touset') rather than language from the opinion text.",
+          "The opinion text does contain the rule in Part III.A, but the stored pin quote is not that passage and therefore fails quote fidelity as framed."
+        ],
+        "residual_risks": [
+          "The underlying short rule quotation on the page appears substantively supported by Part III.A, but this assertion is about the stored quote pinpoint, which is defective."
+        ],
+        "suggested_tightening": "Use the actual Part III.A text, with PDF line wrapping normalized only if the corpus permits normalization, and keep the slip-only section locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6821522a5b530ed0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2018-05-23, as_of_treatment 2026-06-30, varies_by_point false, and the same circuit-split scope note."
+        ],
+        "residual_risks": [
+          "Currency and negative-treatment evaluation are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Touset.json\",\"reviewed\":[{\"assertion_id\":\"e6eb46712b1234d6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for United States v. Karl Touset, decided 2018-05-23 by the U.S. Court of Appeals for the Eleventh Circuit.\",\"The asserted reporter citation 890 F.3d 1227 matches the lake official citation, display citation, volume, reporter, and first page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"674157793084967d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-IIIa is not a faithful opinion quote. The stored/payload quote is contaminated with content-page markdown and page summary text, and the lake itself marks the pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-IIIa from the opinion text in Part III.A and store only the actual opinion passage supporting the rule, not the built page header/background/rule text.\",\"evidence_quote\":\"\\\"quote_fidelity\\\": \\\"mismatch\\\"\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] / pin-IIIa; content_page.md Rule pin\"},\"reasons\":[\"The payload quote begins with built-page material ('--- # United States v. Touset') rather than language from the opinion text.\",\"The opinion text does contain the rule in Part III.A, but the stored pin quote is not that passage and therefore fails quote fidelity as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying short rule quotation on the page appears substantively supported by Part III.A, but this assertion is about the stored quote pinpoint, which is defective.\"],\"suggested_tightening\":\"Use the actual Part III.A text, with PDF line wrapping normalized only if the corpus permits normalization, and keep the slip-only section locator.\"},{\"assertion_id\":\"6821522a5b530ed0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2018-05-23, as_of_treatment 2026-06-30, varies_by_point false, and the same circuit-split scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency and negative-treatment evaluation are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:08:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-de0b43c7c9"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Touset.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-017d6ec9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Touset"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 294006,
+      "output": 7135,
+      "source": "codex-events",
+      "total": 301141
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "674157793084967d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6821522a5b530ed0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6eb46712b1234d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-de0b43c7c9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 156.5
   }
 }

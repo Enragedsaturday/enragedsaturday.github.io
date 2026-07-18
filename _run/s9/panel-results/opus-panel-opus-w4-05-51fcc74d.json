@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d630f3e97b83df43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 4 payload citations present in the lake citations block; official=500 U.S. 248 selected_official=true, display=500 U.S. 248, official_selection_present=true (all match).",
+          "Cached HTML opinion carries the 500 U.S. star pages *250/*251/*252, corroborating 500 U.S. 248 (1991)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "29b03309673af1b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote '[t]he scope of a search is generally defined by its expressed object.' matches the cached HTML verbatim ('The scope of a search is generally defined by its expressed object.'); the bracket [t] is a standard sentence-integration alteration.",
+          "Recorded quote_fidelity=mismatch is a false positive; the quoted text is faithful."
+        ],
+        "residual_risks": [
+          "Id. resolves to 500 U.S. 251; the sentence sits between the *251 and *252 star markers, consistent with the pincite."
+        ],
+        "suggested_tightening": "Clear the false-positive mismatch flag on pin-251a.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41ecbb48b6b41c5a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The standard for measuring the scope of a suspect’s consent under the Fourth Amendment is that of “objective” reasonableness—what would the typical reasonable person have understood by the exchange between the officer and the suspect?",
+          "locator_note": "Cached opinion text line ~3127 (para AY7, immediately after <page-number label=\"251\">); content page line 2218.",
+          "needs_cl": false,
+          "problem": "Recorded pinpoint quote is a large mis-extraction of the entire page preamble (front-matter + Background + Issue + 'Rule Yes — the scope of consent is measured objectively.'), not the court quote; quote_fidelity=mismatch reflects the mis-harvest, not a page defect. The actual reader-facing pin-251 quote is verbatim-faithful and star-verifiable.",
+          "proposed_fix": "Re-harvest pin-251 to the actual content-page blockquote; it matches the cached HTML verbatim and sits after the *251 marker (so 500 U.S. 251 is star-verifiable, not slip-only).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page's actual pin-251 quote matches the cached HTML opinion verbatim.",
+          "payload.quote is a page-preamble mis-extraction (front-matter, headers, editorial prose), not a court quote; pinpoint_status=slip-only is also wrong (source is star-paginated at *251)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix S8 harvest span and set pinpoint_status=star-verified/251.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1598161dfd7c8cad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Case-level field_i_validity=good_law; edges are progeny carrying the citing cases' own statuses (criticized/overruled/questioned), not negative treatment of Jimeno.",
+          "No disclosed SCOTUS overruling/abrogation of Jimeno (1991)."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed (provisional; may re-derive per scope_note)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e469ed5eac",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-593f3992a6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-05-51fcc74d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Jimeno"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1598161dfd7c8cad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "29b03309673af1b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "41ecbb48b6b41c5a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d630f3e97b83df43": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e469ed5eac",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3f19ee3ded",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-593f3992a6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

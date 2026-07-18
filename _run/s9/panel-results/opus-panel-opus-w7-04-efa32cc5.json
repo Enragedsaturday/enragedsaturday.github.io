@@ -1,0 +1,115 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c0b2dc8e1b82bb8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 7 payload cites (569 U.S. 435; 133 S. Ct. 1958; 186 L. Ed. 2d 1; 2013 U.S. LEXIS 4165; 24 Fla. L. Weekly Fed. S 234; 81 U.S.L.W. 4343; 2013 WL 2371466) appear verbatim in lake citations.all[] with matching volume/reporter/page/type.",
+          "payload official=null / display=null / official_selection_present=false matches record official_selection.selected=null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S'); no official over-claimed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62452290a6307e27",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment.",
+          "locator_note": "King cached slip, Opinion of the Court conclusion (immediately preceding 'The judgment ... is reversed. It is so ordered.'); pincite 569 U.S. at 465-466 correct.",
+          "needs_cl": false,
+          "problem": "The pin-465 pinpoint record's stored `quote` field captured rendered page front-matter/chrome ('--- # Maryland v. King ... ## Rule Yes.') instead of the sentence the content anchors to ^pin-465; the record self-flags quote_fidelity='mismatch'. The reader-facing anchored Rule quote is nonetheless verbatim-faithful to the slip.",
+          "proposed_fix": "Repair the pinpoint's captured `quote` to the anchored Rule sentence ('When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment.') so quote_fidelity resolves to match.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content Rule quote anchored at ^pin-465 matches the slip conclusion verbatim (cached text: 'When officers make an arrest ... reasonable under the Fourth Amendment.'), and 569 U.S. 465-466 is the Court's concluding holding page — substantive quote and pincite are sound.",
+          "Only the pinpoint record's stored quote is malformed (page chrome), which is why the automated check reports 'mismatch'; this is a data-hygiene defect, not a substantive misquote."
+        ],
+        "residual_risks": [
+          "Full page-precision (465 vs 466) not independently pinned in disclosed slip which lacks reporter star-pagination; corroborated by the sentence being the opinion's final holding."
+        ],
+        "suggested_tightening": "Re-derive slip-only pinpoint captures so the stored quote equals the anchored sentence rather than the block-start chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce45ff0fc55c3dca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' as of 2026-06-30 is defensible: Maryland v. King is controlling SCOTUS arrestee-DNA authority and no disclosed edge shows a higher-court reversal.",
+          "The proposed negative edges (field_ii overruled/questioned/superseded_by_statute) are all 'proposed':true citator signals from state and lower courts that cannot overrule SCOTUS — classic citator false positives, not adopted treatment.",
+          "Payload treatment fields (as_of_content/as_of_treatment/varies_by_point/scope_note) match the lake treatment block exactly."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true with 'R15 treatment audit required' (lane1=11, lane2=24 proposed_negative_events); good_law is migration-seed and could be re-derived, but lane3_recency shows only 1 unreviewed signal and no confirmed downgrade."
+        ],
+        "suggested_tightening": "Complete the R15 audit to convert proposed negative edges to accept/reject before final treatment lock.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maryland v. King.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-04-efa32cc5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. King"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "62452290a6307e27": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c0b2dc8e1b82bb8d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce45ff0fc55c3dca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b7c10d7a7d",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

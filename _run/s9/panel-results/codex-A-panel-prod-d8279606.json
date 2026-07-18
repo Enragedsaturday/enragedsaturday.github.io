@@ -1,13 +1,110 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Carloss.md",
+    "lens": "A",
+    "notes": "No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "1fe754fb6af23287",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name United States v. Carloss, court U.S. Court of Appeals, 10th Circuit, date_decided 2016-03-11, and year 2016.",
+          "Lake citations confirm official cite 818 F.3d 988 and vendor-neutral cites 2016 WL 929663 and 2016 U.S. App. LEXIS 4547; parallel citations are empty."
+        ],
+        "residual_risks": [
+          "The frontmatter citation field omits the court in the parenthetical, but the separate court field supplies the Tenth Circuit identity and the body displays 818 F.3d 988 (10th Cir. 2016)."
+        ],
+        "suggested_tightening": "If the citation field is meant to be a complete display citation, use 818 F.3d 988 (10th Cir. 2016).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "93412be6289dfe22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that a police officer ordinarily has an implied license to approach a home, knock, and ask to speak with occupants, and concludes that the No Trespassing signs here would not have conveyed to an objective officer that he could not approach and knock.",
+          "The opinion states the revocation inquiry turns on what an objective officer would have perceived, not subjective intent.",
+          "The opinion states that just the presence of a No Trespassing sign is not alone sufficient and that such signs do not have talismanic quality."
+        ],
+        "residual_risks": [
+          "Lake has no separate holding field; support was verified from the cached full opinion text.",
+          "The broader content page contains quoted passages whose lake pinpoints are marked quote_fidelity=mismatch, but no separate quote_fidelity assertion row was supplied."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a76155947e6378c3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Good law. Then-Judge Gorsuch dissented, illustrating the divide over whether 'No Trespassing' signage revokes the implied knock-and-talk license.",
+          "locator_note": "homes -> [[Knock and Talk]] role",
+          "needs_cl": true,
+          "problem": "The disclosed evidence supports a judicial divide/dissent over No Trespassing signage, but not the stronger home-role label 'Illustrates a circuit split.' The cached opinion identifies other circuits agreeing that knock-and-talks remain valid after Jardines and does not supply an opposing circuit rule.",
+          "proposed_fix": "Change the role to 'Illustrates a divide over No Trespassing signage and knock-and-talk' or supply disclosed authority records/text for the asserted opposing circuit position.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lake treatment scope_note says the case illustrates a divide based on then-Judge Gorsuch's dissent, not a circuit split.",
+          "The cached majority opinion cites Fourth and Eleventh Circuit agreement on post-Jardines knock-and-talks and does not disclose an opposing circuit holding."
+        ],
+        "residual_risks": [
+          "An actual circuit split may exist in authorities not included in this working directory, but it is not verifiable from the disclosed evidence."
+        ],
+        "suggested_tightening": "Use 'Illustrates a divide' unless records for the conflicting circuit authority are added to the review set.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "27a72ce1f6902a71",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The payload fields match the lake treatment fields: good_law, as_of_content 2016-03-11, as_of_treatment 2026-06-30, migration-seed basis, same scope_note, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent currency audit was performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a212f8c7e2532f98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "Lake identity confirms the deciding court is the U.S. Court of Appeals, 10th Circuit, with circuit 10th and court_level coa, matching the in-circuit Tenth Circuit label."
+        ],
+        "residual_risks": [
+          "The lake record has no explicit authority_weight field; the label is derived from identity fields rather than copied from a lake judgment field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Carloss.md\",\"reviewed\":[{\"assertion_id\":\"1fe754fb6af23287\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms case_name United States v. Carloss, court U.S. Court of Appeals, 10th Circuit, date_decided 2016-03-11, and year 2016.\",\"Lake citations confirm official cite 818 F.3d 988 and vendor-neutral cites 2016 WL 929663 and 2016 U.S. App. LEXIS 4547; parallel citations are empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The frontmatter citation field omits the court in the parenthetical, but the separate court field supplies the Tenth Circuit identity and the body displays 818 F.3d 988 (10th Cir. 2016).\"],\"suggested_tightening\":\"If the citation field is meant to be a complete display citation, use 818 F.3d 988 (10th Cir. 2016).\"},{\"assertion_id\":\"93412be6289dfe22\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion states that a police officer ordinarily has an implied license to approach a home, knock, and ask to speak with occupants, and concludes that the No Trespassing signs here would not have conveyed to an objective officer that he could not approach and knock.\",\"The opinion states the revocation inquiry turns on what an objective officer would have perceived, not subjective intent.\",\"The opinion states that just the presence of a No Trespassing sign is not alone sufficient and that such signs do not have talismanic quality.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake has no separate holding field; support was verified from the cached full opinion text.\",\"The broader content page contains quoted passages whose lake pinpoints are marked quote_fidelity=mismatch, but no separate quote_fidelity assertion row was supplied.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a76155947e6378c3\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed evidence supports a judicial divide/dissent over No Trespassing signage, but not the stronger home-role label 'Illustrates a circuit split.' The cached opinion identifies other circuits agreeing that knock-and-talks remain valid after Jardines and does not supply an opposing circuit rule.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the role to 'Illustrates a divide over No Trespassing signage and knock-and-talk' or supply disclosed authority records/text for the asserted opposing circuit position.\",\"evidence_quote\":\"Good law. Then-Judge Gorsuch dissented, illustrating the divide over whether 'No Trespassing' signage revokes the implied knock-and-talk license.\",\"needs_cl\":true,\"locator_note\":\"homes -> [[Knock and Talk]] role\"},\"reasons\":[\"Lake treatment scope_note says the case illustrates a divide based on then-Judge Gorsuch's dissent, not a circuit split.\",\"The cached majority opinion cites Fourth and Eleventh Circuit agreement on post-Jardines knock-and-talks and does not disclose an opposing circuit holding.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"An actual circuit split may exist in authorities not included in this working directory, but it is not verifiable from the disclosed evidence.\"],\"suggested_tightening\":\"Use 'Illustrates a divide' unless records for the conflicting circuit authority are added to the review set.\"},{\"assertion_id\":\"27a72ce1f6902a71\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The payload fields match the lake treatment fields: good_law, as_of_content 2016-03-11, as_of_treatment 2026-06-30, migration-seed basis, same scope_note, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent currency audit was performed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a212f8c7e2532f98\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"Lake identity confirms the deciding court is the U.S. Court of Appeals, 10th Circuit, with circuit 10th and court_level coa, matching the in-circuit Tenth Circuit label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has no explicit authority_weight field; the label is derived from identity fields rather than copied from a lake judgment field.\"],\"suggested_tightening\":null}],\"notes\":\"No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:53:50-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:16:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-705b6d2725"
+    ],
     "group_id": "content/cases/United States v. Carloss.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +113,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d8279606.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Carloss"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 389615,
+      "output": 9249,
+      "source": "codex-events",
+      "total": 398864
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1fe754fb6af23287": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "27a72ce1f6902a71": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "93412be6289dfe22": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a212f8c7e2532f98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a76155947e6378c3": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-705b6d2725",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 182.9
   }
 }

@@ -1,22 +1,106 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/morse-v-french--6536632.json",
+    "lens": "B",
+    "notes": "No content_page.* or full text file was present in the disclosed working directory; review is limited to group_inventory.jsonl and the lake stub record.",
+    "reviewed": [
+      {
+        "assertion_id": "cbb97c137adafe72",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "folded-alias: subsumed into French v. Merrill (packet-A Group-2); see _manifest.json folded_into + journal s6-dedupe-pointer",
+          "locator_note": "lake/morse-v-french--6536632__23c75a.json status, stub, provenance.warnings[0], treatment.scope_note",
+          "needs_cl": true,
+          "problem": "The disclosed record does not verify the cited authority as live law. It is only a stub folded-alias record with no derived treatment or progeny, and the provenance warning says it has been subsumed into another record.",
+          "proposed_fix": "Do not present this record as a current live authority. Replace/promote to the canonical disclosed record with derived treatment/progeny, or label the citation as folded-alias and treatment-unverified.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The record status is folded-alias and stub is true, so the disclosed file does not support treating this as an independent live authority.",
+          "Treatment/progeny are not derived: field_i_validity is unverified, edges are empty, and rows_cached is 0."
+        ],
+        "residual_risks": [
+          "External materials might verify the underlying citation, but those materials are outside the disclosed evidence."
+        ],
+        "suggested_tightening": "Require a non-stub promoted record with derived treatment before any live-law existence assertion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ac2f42ef043ba296",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake record expressly states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "The treatment assertion stands only as an unverified/no-treatment metadata call; it does not establish good law or current live-law status."
+        ],
+        "suggested_tightening": "Keep the unverified label prominent and do not style it as a good-law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/morse-v-french--6536632.json\",\"reviewed\":[{\"assertion_id\":\"cbb97c137adafe72\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record does not verify the cited authority as live law. It is only a stub folded-alias record with no derived treatment or progeny, and the provenance warning says it has been subsumed into another record.\",\"severity\":\"high\",\"proposed_fix\":\"Do not present this record as a current live authority. Replace/promote to the canonical disclosed record with derived treatment/progeny, or label the citation as folded-alias and treatment-unverified.\",\"evidence_quote\":\"folded-alias: subsumed into French v. Merrill (packet-A Group-2); see _manifest.json folded_into + journal s6-dedupe-pointer\",\"needs_cl\":true,\"locator_note\":\"lake/morse-v-french--6536632__23c75a.json status, stub, provenance.warnings[0], treatment.scope_note\"},\"reasons\":[\"The record status is folded-alias and stub is true, so the disclosed file does not support treating this as an independent live authority.\",\"Treatment/progeny are not derived: field_i_validity is unverified, edges are empty, and rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"External materials might verify the underlying citation, but those materials are outside the disclosed evidence.\"],\"suggested_tightening\":\"Require a non-stub promoted record with derived treatment before any live-law existence assertion.\"},{\"assertion_id\":\"ac2f42ef043ba296\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake record expressly states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment assertion stands only as an unverified/no-treatment metadata call; it does not establish good law or current live-law status.\"],\"suggested_tightening\":\"Keep the unverified label prominent and do not style it as a good-law determination.\"}],\"notes\":\"No content_page.* or full text file was present in the disclosed working directory; review is limited to group_inventory.jsonl and the lake stub record.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:20:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f040814daa"
+    ],
     "group_id": "_overhaul2/lake/cases/morse-v-french--6536632.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [
+      "morse-v-french--6536632"
+    ],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-09005c5c",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-09005c5c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:06.855065Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:07.723950Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:08.989416Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:10.855441Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:14.437945Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'morse-v-french--6536632' has no lead_opinion_id (text undisclosed)",
+      "no content page for lake record morse-v-french--6536632"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 99632,
+      "output": 4011,
+      "source": "codex-events",
+      "total": 103643
+    },
+    "verdict_map": {
+      "ac2f42ef043ba296": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cbb97c137adafe72": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f040814daa",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 82.5
   }
 }

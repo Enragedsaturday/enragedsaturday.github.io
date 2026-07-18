@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Cano.md",
+    "lens": "A",
+    "notes": "Reviewed all five inventory rows. No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "c155fecc60945c62",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies United States v. Miguel Cano / United States v. Cano, decided 2019 by the U.S. Court of Appeals for the 9th Circuit.",
+          "Lake citations identify the official citation as 934 F.3d 1002, matching the page citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40ed8ce8fa347882",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that the Eleventh Circuit disagreed with Cotterman in Touset and held that no level of suspicion was required for a forensic cell-phone search.",
+          "Cano itself holds forensic cell-phone searches require reasonable suspicion, so the Border Searches home role fairly illustrates a circuit split."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Specify that the split is with the Eleventh Circuit's Touset rule on suspicion for forensic border device searches.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "47c42ba6680c064d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Whether the Cellebrite search constitutes a forensic search is disputed.",
+          "locator_note": "holding field; unsupported parenthetical '(Cellebrite-type)' and incomplete reasonable-suspicion object.",
+          "needs_cl": false,
+          "problem": "The holding overstates Cano by treating a Cellebrite-type search as forensic. Cano held forensic cell-phone searches require reasonable suspicion of digital contraband, but expressly declined to decide whether the Cellebrite logical download was a forensic search.",
+          "proposed_fix": "Manual border cell-phone searches require no individualized suspicion; forensic cell-phone searches require reasonable suspicion that the phone itself contains digital contraband. Cano did not decide whether the Cellebrite logical download qualified as forensic.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports the manual/forensic distinction in general: manual cell-phone searches may be suspicionless, while forensic cell-phone searches require reasonable suspicion.",
+          "But the opinion clarifies that reasonable suspicion must be suspicion that the phone contains digital contraband, not just evidence of crime.",
+          "Footnote 12 prevents characterizing the Cellebrite search itself as definitively forensic."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Remove '(Cellebrite-type)' and add 'that the phone itself contains digital contraband.'",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "050a681c7cfa3aae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity shows a published Ninth Circuit court-of-appeals decision, supporting the in-circuit binding-weight label.",
+          "No independent treatment/currency finding is made under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb04fdb1d111d86",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment judgment fields: good_law, as_of_content 2019-08-16, as_of_treatment 2026-06-30, migration-seed basis, no point variance, and the same scope note.",
+          "No independent treatment/currency finding is made under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Cano.md\",\"reviewed\":[{\"assertion_id\":\"c155fecc60945c62\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies United States v. Miguel Cano / United States v. Cano, decided 2019 by the U.S. Court of Appeals for the 9th Circuit.\",\"Lake citations identify the official citation as 934 F.3d 1002, matching the page citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"40ed8ce8fa347882\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion states that the Eleventh Circuit disagreed with Cotterman in Touset and held that no level of suspicion was required for a forensic cell-phone search.\",\"Cano itself holds forensic cell-phone searches require reasonable suspicion, so the Border Searches home role fairly illustrates a circuit split.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Specify that the split is with the Eleventh Circuit's Touset rule on suspicion for forensic border device searches.\"},{\"assertion_id\":\"47c42ba6680c064d\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding overstates Cano by treating a Cellebrite-type search as forensic. Cano held forensic cell-phone searches require reasonable suspicion of digital contraband, but expressly declined to decide whether the Cellebrite logical download was a forensic search.\",\"severity\":\"medium\",\"proposed_fix\":\"Manual border cell-phone searches require no individualized suspicion; forensic cell-phone searches require reasonable suspicion that the phone itself contains digital contraband. Cano did not decide whether the Cellebrite logical download qualified as forensic.\",\"evidence_quote\":\"Whether the Cellebrite search constitutes a forensic search is disputed.\",\"needs_cl\":false,\"locator_note\":\"holding field; unsupported parenthetical '(Cellebrite-type)' and incomplete reasonable-suspicion object.\"},\"reasons\":[\"The opinion supports the manual/forensic distinction in general: manual cell-phone searches may be suspicionless, while forensic cell-phone searches require reasonable suspicion.\",\"But the opinion clarifies that reasonable suspicion must be suspicion that the phone contains digital contraband, not just evidence of crime.\",\"Footnote 12 prevents characterizing the Cellebrite search itself as definitively forensic.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Remove '(Cellebrite-type)' and add 'that the phone itself contains digital contraband.'\"},{\"assertion_id\":\"050a681c7cfa3aae\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity shows a published Ninth Circuit court-of-appeals decision, supporting the in-circuit binding-weight label.\",\"No independent treatment/currency finding is made under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is outside Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fdb04fdb1d111d86\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment judgment fields: good_law, as_of_content 2019-08-16, as_of_treatment 2026-06-30, migration-seed basis, no point variance, and the same scope note.\",\"No independent treatment/currency finding is made under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is outside Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five inventory rows. No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:53:49-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:15:37-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5abcf5cfd8"
+    ],
     "group_id": "content/cases/United States v. Cano.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +106,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-61195b93.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Cano"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 230884,
+      "output": 6935,
+      "source": "codex-events",
+      "total": 237819
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "050a681c7cfa3aae": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40ed8ce8fa347882": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "47c42ba6680c064d": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c155fecc60945c62": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb04fdb1d111d86": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5abcf5cfd8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 141.8
   }
 }

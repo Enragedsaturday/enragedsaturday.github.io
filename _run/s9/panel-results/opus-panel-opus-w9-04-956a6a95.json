@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e5dfb2cae327de7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms caption 'PLUMHOFF ET AL. v. RICKARD', OCTOBER TERM 2013, 'Cite as: 572 U. S. ____ (2014)' -- the case exists at 572 U.S. 765 (2014).",
+          "Parallels 134 S. Ct. 2012 and 188 L. Ed. 2d 1056 are standard for Plumhoff; cluster 2675750; identity_checked=true."
+        ],
+        "residual_risks": [
+          "official/official_selection is null (official_selection_present=false), so no cite is 'selected' even though 572 U.S. 765 is present in all[]; a display/selection quirk, not an existence defect."
+        ],
+        "suggested_tightening": "Select 572 U.S. 765 as the official cite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83a7992d83211bdb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "it is beyond serious dispute that Rickard's flight posed a grave public safety risk, and here, as in Scott, the police acted reasonably in using deadly force to end that risk.",
+          "locator_note": "pin-777; content 'Rule' section; slip opinion 572 U.S. 777, Part III ('In light of the circumstances we have discussed, it is beyond serious dispute...').",
+          "needs_cl": false,
+          "problem": "Recorded quote for pin-777 is the content page preamble (front matter, header line, HTML comment, ## Background/## Issue/## Rule intro), not opinion text -- the systematic first-pin span mis-extraction.",
+          "proposed_fix": "Re-extract the anchored sentence 'it is beyond serious dispute that Rickard's flight posed a grave public safety risk, and here, as in Scott, the police acted reasonably in using deadly force to end that risk.' -- verbatim in the slip opinion at 572 U.S. 777; the published page already renders this faithful quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is page chrome, not opinion text (same first-pin mis-extraction pattern as Perry pin-op2 and Peters pin-66).",
+          "The intended/anchored content quote is verbatim in the disclosed opinion, so this is a ledger extraction artifact, not a published-content fidelity error."
+        ],
+        "residual_risks": [
+          "Published content page is unaffected; defect is confined to the S8 assertion record's quote span."
+        ],
+        "suggested_tightening": "Fix the first-pin extractor to capture the sentence following the anchor rather than the page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a39df41abb770308",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion body reads verbatim: 'It stands to reason that, if police officers are justified in firing at a suspect in order to end a severe threat to public safety, the officers need not stop shooting until the threat has ended.' The content quote reproduces this from 'if police officers...' onward, verbatim.",
+          "pinpoint_status='star-verified' and the text fragment '#:~:text=if police officers are justified' resolve to this opinion-body sentence; payload quote_fidelity='matched' is confirmed."
+        ],
+        "residual_risks": [
+          "A near-identical paraphrase appears in the syllabus ('if officers are justified... they need not stop shooting'), but the content quote matches the authoritative OPINION-BODY phrasing ('police officers'/'the officers')."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc1bbaa6fa9b30d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion Part III-C reads verbatim: 'We have held that petitioners' conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity.' The content quote is an exact match.",
+          "Payload quote_fidelity='mismatch' is a false positive; the string is verbatim in the disclosed opinion."
+        ],
+        "residual_risks": [
+          "Pincite 'Id. at 778' is not independently confirmable from the disclosed slip-op page markers, but the passage immediately follows the p.777 excessive-force holding (Part III-C), consistent with 778."
+        ],
+        "suggested_tightening": "Clear the FP mismatch flag for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d6abfd5c6be5e0e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Plumhoff v. Rickard (2014) is a landmark deadly-force / qualified-immunity precedent; no disclosed evidence overrules or abrogates it.",
+          "The lake record's negative edges (18 'overruled', 10 'abrogated', 20 'questioned', 2 'criticized') are all proposed:true lane1/lane2 candidate signals (extractor keyword-FP pattern); composite_basis='migration-seed'; the scope_note frames Barnes v. Felix (2025) as CONSISTENT (totality reasonableness), i.e., supportive not adverse; content states 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "25 unadjudicated proposed negative edges should be triaged by S2; treatment is a migration-seed pending re-derivation.",
+          "The 'consistent with Barnes v. Felix (2025)' annotation is not independently verifiable from the disclosed evidence (no Barnes text in pack), but it is a supportive note, not a currency claim requiring a pincite."
+        ],
+        "suggested_tightening": "Dispose of the proposed negative edges to convert the seed into a verified good_law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-eb4c8c59fe",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Plumhoff v. Rickard.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-04-956a6a95",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Plumhoff v. Rickard"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3d6abfd5c6be5e0e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83a7992d83211bdb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a39df41abb770308": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc1bbaa6fa9b30d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5dfb2cae327de7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ab2cbce585",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-eb4c8c59fe",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,184 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Ferguson v. City of Charleston.md",
+    "lens": "B",
+    "notes": "Reviewed every inventory row under Lens B only; support and quote-fidelity merits were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "f996e7f8ac802bfd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, not a stub, and identifies Ferguson v. City of Charleston as a U.S. Supreme Court decision dated 2001-03-21.",
+          "Disclosed citations include 532 U.S. 67 and 2001 U.S. LEXIS 2460, matching the page's displayed citation set.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30; no confirmed edge in the disclosed record shows Ferguson itself overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-needed proposed negative events, but those are not confirmed negative treatment in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5117a0bb8e5c94d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess support/home-role correctness.",
+          "No disclosed treatment or currency defect makes the authority unusable for this role: the lake record is verified and field_i_validity is good_law."
+        ],
+        "residual_risks": [
+          "Home-role support is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b03930a7c5eb8b38",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess holding support or quote fidelity.",
+          "For currency only, the lake treatment judgment remains good_law as of 2026-06-30 and contains no confirmed point override."
+        ],
+        "residual_risks": [
+          "Holding accuracy and ellipsis/support fidelity are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "560b6f1445f39c09",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 10,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment & subsequent history prose, not the YAML field_i_validity value.",
+          "needs_cl": true,
+          "problem": "The good_law treatment call itself matches the lake judgment, but the page's absolute prose statement 'No negative treatment' is too strong because the disclosed treatment derivation flags audit-needed proposed negative events.",
+          "proposed_fix": "Keep the good_law status, but change the prose to 'No confirmed negative treatment in the disclosed lake record' or expose the R15 audit-needed caveat.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "All 34 disclosed treatment edges are marked proposed and have field_iii set to mentioned, so the disclosed record does not confirm an overruling or abrogation of Ferguson.",
+          "Two derivation lanes nevertheless have audit_needed true and proposed_negative_events, so the unqualified 'No negative treatment' wording should be softened."
+        ],
+        "residual_risks": [
+          "A full audit of the proposed negative events would be needed before saying there is categorically no negative treatment."
+        ],
+        "suggested_tightening": "Use 'good law; no confirmed negative treatment in the disclosed lake record; proposed negative events remain audit-pending.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a488eaae0e28e11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court as U.S. Supreme Court, court_id as scotus, and court_level as scotus.",
+          "A SCOTUS authority weight label is consistent with the disclosed identity fields.",
+          "No disclosed treatment field changes the authority-weight label itself."
+        ],
+        "residual_risks": [
+          "Treatment-audit caveats affect the breadth of the treatment prose, not the court-weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Ferguson v. City of Charleston.md\",\"reviewed\":[{\"assertion_id\":\"f996e7f8ac802bfd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, not a stub, and identifies Ferguson v. City of Charleston as a U.S. Supreme Court decision dated 2001-03-21.\",\"Disclosed citations include 532 U.S. 67 and 2001 U.S. LEXIS 2460, matching the page's displayed citation set.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30; no confirmed edge in the disclosed record shows Ferguson itself overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-needed proposed negative events, but those are not confirmed negative treatment in the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5117a0bb8e5c94d0\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess support/home-role correctness.\",\"No disclosed treatment or currency defect makes the authority unusable for this role: the lake record is verified and field_i_validity is good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role support is reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b03930a7c5eb8b38\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess holding support or quote fidelity.\",\"For currency only, the lake treatment judgment remains good_law as of 2026-06-30 and contains no confirmed point override.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding accuracy and ellipsis/support fidelity are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"560b6f1445f39c09\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call itself matches the lake judgment, but the page's absolute prose statement 'No negative treatment' is too strong because the disclosed treatment derivation flags audit-needed proposed negative events.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the good_law status, but change the prose to 'No confirmed negative treatment in the disclosed lake record' or expose the R15 audit-needed caveat.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 10,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment & subsequent history prose, not the YAML field_i_validity value.\"},\"reasons\":[\"Lake treatment field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"All 34 disclosed treatment edges are marked proposed and have field_iii set to mentioned, so the disclosed record does not confirm an overruling or abrogation of Ferguson.\",\"Two derivation lanes nevertheless have audit_needed true and proposed_negative_events, so the unqualified 'No negative treatment' wording should be softened.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A full audit of the proposed negative events would be needed before saying there is categorically no negative treatment.\"],\"suggested_tightening\":\"Use 'good law; no confirmed negative treatment in the disclosed lake record; proposed negative events remain audit-pending.'\"},{\"assertion_id\":\"6a488eaae0e28e11\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields list court as U.S. Supreme Court, court_id as scotus, and court_level as scotus.\",\"A SCOTUS authority weight label is consistent with the disclosed identity fields.\",\"No disclosed treatment field changes the authority-weight label itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment-audit caveats affect the breadth of the treatment prose, not the court-weight label.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every inventory row under Lens B only; support and quote-fidelity merits were not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T02:43:14-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:58:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5561927860",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7b0efe6c33"
+    ],
     "group_id": "content/cases/Ferguson v. City of Charleston.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-7c303236",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7c303236.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:06.499828Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:07.308924Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:08.617379Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:10.555707Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:14.187718Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ferguson v. City of Charleston"
+    ],
+    "tokens": {
+      "input": 280344,
+      "output": 7632,
+      "source": "codex-events",
+      "total": 287976
+    },
+    "verdict_map": {
+      "5117a0bb8e5c94d0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "560b6f1445f39c09": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6a488eaae0e28e11": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b03930a7c5eb8b38": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f996e7f8ac802bfd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5561927860",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7b0efe6c33",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 150.3
   }
 }

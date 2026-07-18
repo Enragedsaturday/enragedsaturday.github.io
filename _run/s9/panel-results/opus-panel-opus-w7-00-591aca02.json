@@ -1,0 +1,154 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e2940a151700e4e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Justice Brennan) carries U.S. Reports star-pagination *162 through *180, consistent with the opinion beginning at 159 -- matches official cite 474 U.S. 159.",
+          "Case name 'Maine v. Moulton', cluster 111546; official_selection_present true and display cite equals official cite."
+        ],
+        "residual_risks": [
+          "Parallel cites (106 S. Ct. 477; 88 L. Ed. 2d 481; 1985 U.S. LEXIS 147; 54 U.S.L.W. 4039) not independently confirmable from slip text; the official U.S. cite is."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57b8c21976b9ca1d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The captured 'quote' is a mis-extraction: it is the content page's front matter ('---', '# Maine v. Moulton', the TreatmentBadge HTML comment) plus Background/Issue/Rule narrative -- not a quotation.",
+          "The page's ACTUAL pin-176 quotation ('the Sixth Amendment is not violated whenever -- by luck or happenstance -- the State obtains incriminating statements from the accused after the right to counsel has attached.') is verbatim-faithful to opinion page 176.",
+          "Pincite 176 confirmed by the *176 star; the mismatch flag reflects the broken extraction, not a page defect."
+        ],
+        "residual_risks": [
+          "Adopting this extractor mismatch as a defect would break the faithful pin-176 true positive."
+        ],
+        "suggested_tightening": "Anchor quote extraction to the pin's actual span; ignore front-matter and markdown headers.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f61be1bbb5901ee1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion page 176 reads: 'However, knowing exploitation by the State of an opportunity to confront the accused without counsel being present is as much a breach of the State's obligation not to circumvent the right to the assistance of counsel as is the intentional creation of such an opportunity. Accordingly, the Sixth Amendment is violated when the State obtains incriminating statements by knowingly circumventing the accused's right to have counsel present in a confrontation between the accused and a state agent.'",
+          "The page's pin-176a quotation matches word-for-word; only the leading 'However,' is trimmed (outside the quotation). Attribution 'Id.' resolves to 474 U.S. at 176 and is correct.",
+          "Payload mismatch is a false positive (trimmed lead-in connector plus em-dash/glyph normalization)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Strip leading connectors and normalize glyphs before the fidelity comparison.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e8abc3ff5bcb0c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed opinion supports the case's nature: the Sixth Amendment right to counsel was violated by knowing exploitation/deliberate elicitation; the Maine SJC was affirmed, and the State's surveillance-of-other-crimes motive did not cure the charged-offense violation.",
+          "field_i_validity good_law is not contradicted by any disclosed evidence.",
+          "The scope_note is an internal process note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'); currency as of 2026-06-30 is not verifiable from the 1985 opinion -- it needs a citator."
+        ],
+        "residual_risks": [
+          "scope_note is a process/meta note rather than a substantive scope description; good_law is migration-seeded, not citator-derived."
+        ],
+        "suggested_tightening": "Replace the meta scope_note with a substantive scope description and re-derive currency from a citator.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f61d636ccf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9abce0179e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-29e57773da",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maine v. Moulton.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-00-591aca02",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maine v. Moulton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "57b8c21976b9ca1d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e8abc3ff5bcb0c0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e2940a151700e4e1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f61be1bbb5901ee1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f61d636ccf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9abce0179e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-29e57773da",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

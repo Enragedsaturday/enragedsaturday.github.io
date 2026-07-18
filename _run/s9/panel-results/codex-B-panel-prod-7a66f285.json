@@ -1,13 +1,78 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mitchell v. Wisconsin.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 group_inventory rows under lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "70d3208d4faffe49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and non-stub for Mitchell v. Wisconsin.",
+          "Lake identity and citations support 588 U.S. 840 as the displayed official citation.",
+          "Currency angle is supported by lake treatment.field_i_validity = good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment audit risks are addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fd4c17ad5babe55",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity/support is outside lens B.",
+          "The embedded treatment phrase in the captured page text matches the lake good_law treatment date."
+        ],
+        "residual_risks": [
+          "Lake marks quote_fidelity as mismatch, but lens B does not raise quote-fidelity defects."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e0def19a5104494",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 20, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Mitchell v. Wisconsin__810eab.json treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law field survives, but the page's absolute 'No negative treatment' statement is too strong because the lake contains proposed negative-treatment edges and an audit-needed flag.",
+          "proposed_fix": "Keep the good_law status only with a qualifier such as: 'No confirmed negative treatment in the final validity field; proposed treatment edges require audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30.",
+          "Lake scope_note correctly limits the authority to an Alito plurality with Thomas concurring in the judgment.",
+          "But lake treatment edges list proposed overruled/questioned entries, and lane2_top_cited says audit_needed true with 20 proposed_negative_events."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include citing-opinion text for the proposed edges, so the negative-treatment audit cannot be completed from these files alone."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with a qualified statement distinguishing confirmed validity from proposed/audit-pending treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Mitchell v. Wisconsin.json\",\"reviewed\":[{\"assertion_id\":\"70d3208d4faffe49\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and non-stub for Mitchell v. Wisconsin.\",\"Lake identity and citations support 588 U.S. 840 as the displayed official citation.\",\"Currency angle is supported by lake treatment.field_i_validity = good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment audit risks are addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7fd4c17ad5babe55\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity/support is outside lens B.\",\"The embedded treatment phrase in the captured page text matches the lake good_law treatment date.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake marks quote_fidelity as mismatch, but lens B does not raise quote-fidelity defects.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7e0def19a5104494\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law field survives, but the page's absolute 'No negative treatment' statement is too strong because the lake contains proposed negative-treatment edges and an audit-needed flag.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status only with a qualifier such as: 'No confirmed negative treatment in the final validity field; proposed treatment edges require audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 20, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Mitchell v. Wisconsin__810eab.json treatment.derivation.lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30.\",\"Lake scope_note correctly limits the authority to an Alito plurality with Thomas concurring in the judgment.\",\"But lake treatment edges list proposed overruled/questioned entries, and lane2_top_cited says audit_needed true with 20 proposed_negative_events.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include citing-opinion text for the proposed edges, so the negative-treatment audit cannot be completed from these files alone.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with a qualified statement distinguishing confirmed validity from proposed/audit-pending treatment signals.\"}],\"notes\":\"Reviewed all 3 group_inventory rows under lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:57-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:16:23-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-abcb2b4b85"
+    ],
     "group_id": "_overhaul2/lake/cases/Mitchell v. Wisconsin.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +81,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7a66f285.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Mitchell v. Wisconsin"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 373153,
+      "output": 6983,
+      "source": "codex-events",
+      "total": 380136
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 32.4
+    "verdict_map": {
+      "70d3208d4faffe49": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e0def19a5104494": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7fd4c17ad5babe55": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-abcb2b4b85",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 145.8
   }
 }

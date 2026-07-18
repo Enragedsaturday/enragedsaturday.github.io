@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pearson v. Callahan.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "a60dda296cf9972b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Pearson v. Callahan, U.S. Supreme Court, decided 2009-01-21, docket 07-751.",
+          "The official citation in the lake record is 555 U.S. 223, and the content page displays 555 U.S. 223 (2009).",
+          "The parallel and vendor citations in the inventory match the lake record: 129 S. Ct. 808, 172 L. Ed. 2d 565, and 2009 U.S. LEXIS 591."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58f603d317e03b1c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "On reconsidering the procedure required in Saucier, we conclude that, while the sequence set forth there is often appropriate",
+          "locator_note": "lake pinpoints[0].id == pin-236; content_page.md uses ^pin-236 in the Rule paragraph.",
+          "needs_cl": false,
+          "problem": "The stored pin-236 quote is not a character-faithful excerpt from the opinion. It is a harvested page fragment containing Markdown headings/wiki links and ending before the actual Rule quote, while the opinion passage for the rule begins with different text.",
+          "proposed_fix": "Replace pin-236's quote with the actual opinion passage beginning 'On reconsidering the procedure required in Saucier...' and remove Markdown styling from inside any verbatim quote, or mark the page language as paraphrase rather than a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page/background text: 'theory). Callahan sued under § 1983...' and includes '## Issue' and '## Rule No.', which are not opinion text.",
+          "The cached opinion text contains the actual rule passage beginning 'On reconsidering the procedure required in Saucier...' and continuing with the discretion language.",
+          "The content page's Rule quote is substantively supported by the cached opinion text, but the disclosed pin-236 quote record itself is not quote-faithful."
+        ],
+        "residual_risks": [
+          "The cached text is slip-format and the lake pinpoint has page null/pinpoint_status slip-only, so official-page pin landing is not independently resolved by this quote-fidelity row."
+        ],
+        "suggested_tightening": "Store the exact quoted opinion passage as the pin quote and keep the background/issue text out of the quote-harvest window.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99c4c46a983db030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so I raise no treatment finding.",
+          "The treatment fields in the inventory match the disclosed lake and content-page fields: field_i_validity good_law, as_of_content 2009-01-21, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Pearson v. Callahan.json\",\"reviewed\":[{\"assertion_id\":\"a60dda296cf9972b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Pearson v. Callahan, U.S. Supreme Court, decided 2009-01-21, docket 07-751.\",\"The official citation in the lake record is 555 U.S. 223, and the content page displays 555 U.S. 223 (2009).\",\"The parallel and vendor citations in the inventory match the lake record: 129 S. Ct. 808, 172 L. Ed. 2d 565, and 2009 U.S. LEXIS 591.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"58f603d317e03b1c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-236 quote is not a character-faithful excerpt from the opinion. It is a harvested page fragment containing Markdown headings/wiki links and ending before the actual Rule quote, while the opinion passage for the rule begins with different text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-236's quote with the actual opinion passage beginning 'On reconsidering the procedure required in Saucier...' and remove Markdown styling from inside any verbatim quote, or mark the page language as paraphrase rather than a verbatim quote.\",\"evidence_quote\":\"On reconsidering the procedure required in Saucier, we conclude that, while the sequence set forth there is often appropriate\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0].id == pin-236; content_page.md uses ^pin-236 in the Rule paragraph.\"},\"reasons\":[\"The lake pinpoint quote begins with page/background text: 'theory). Callahan sued under § 1983...' and includes '## Issue' and '## Rule No.', which are not opinion text.\",\"The cached opinion text contains the actual rule passage beginning 'On reconsidering the procedure required in Saucier...' and continuing with the discretion language.\",\"The content page's Rule quote is substantively supported by the cached opinion text, but the disclosed pin-236 quote record itself is not quote-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text is slip-format and the lake pinpoint has page null/pinpoint_status slip-only, so official-page pin landing is not independently resolved by this quote-fidelity row.\"],\"suggested_tightening\":\"Store the exact quoted opinion passage as the pin quote and keep the background/issue text out of the quote-harvest window.\"},{\"assertion_id\":\"99c4c46a983db030\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so I raise no treatment finding.\",\"The treatment fields in the inventory match the disclosed lake and content-page fields: field_i_validity good_law, as_of_content 2009-01-21, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:24:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-426a6479dc"
+    ],
     "group_id": "_overhaul2/lake/cases/Pearson v. Callahan.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-fd181bba",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fd181bba.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:32:58.673077Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:59.189451Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:59.837462Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:00.775825Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:02.080570Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pearson v. Callahan"
+    ],
+    "tokens": {
+      "input": 139995,
+      "output": 5355,
+      "source": "codex-events",
+      "total": 145350
+    },
+    "verdict_map": {
+      "58f603d317e03b1c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "99c4c46a983db030": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a60dda296cf9972b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-426a6479dc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 108.6
   }
 }

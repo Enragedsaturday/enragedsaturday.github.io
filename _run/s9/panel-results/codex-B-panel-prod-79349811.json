@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lego v. Twomey.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 group_inventory rows under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "9072b0bbdf93d084",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Lego v. Twomey as a U.S. Supreme Court case decided 1972-01-12 with official citation 404 U.S. 477.",
+          "The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so nothing in the disclosed judgment fields makes the cited authority non-live."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains proposed/audit-needed negative-keyword edges, but they are not final adverse treatment in the disclosed judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8c8a4b6307a7674",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B. I do not raise a quote/support finding.",
+          "The only currency/treatment material embedded in the harvested text matches the page/lake treatment display: Binding - SCOTUS and good as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The lake pinpoint itself flags quote_fidelity as mismatch, but that is a Lens A issue not used for this verdict."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "862ed073a7ac96f3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 15",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Lego v. Twomey__7ef63b.json treatment.derivation and treatment.edges",
+          "needs_cl": false,
+          "problem": "The core good_law treatment call survives, but the page's unqualified 'No negative treatment' overstates the disclosed treatment record because the lake includes proposed negative/audit-needed progeny edges with labels such as overruled, questioned, abrogated, superseded_by_statute, and criticized. Those edges are classified as mentioned and proposed, so they do not refute good_law, but the page should qualify the statement.",
+          "proposed_fix": "Keep field_i_validity=good_law and the SCOTUS binding weight, but replace 'No negative treatment' with 'No final adverse treatment reflected in the lake judgment fields; proposed/audit-needed negative-keyword edges are classified as mentioned.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is good_law as of 2026-06-30 and the scope_note says Lego remains good law on the preponderance floor, reaffirmed/extended by Colorado v. Connelly.",
+          "But the disclosed derivation records audit_needed true and proposed negative events; treatment.edges contain proposed entries with negative field_ii labels, so the page should not state 'No negative treatment' without qualification."
+        ],
+        "residual_risks": [
+          "The proposed edges do not include quoted rationale or final point-specific treatment, so a fuller audit would be needed before changing the core good_law label."
+        ],
+        "suggested_tightening": "State the as-of date and distinguish the final good-law judgment from proposed/audit-needed negative-keyword progeny edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Lego v. Twomey.json\",\"reviewed\":[{\"assertion_id\":\"9072b0bbdf93d084\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Lego v. Twomey as a U.S. Supreme Court case decided 1972-01-12 with official citation 404 U.S. 477.\",\"The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so nothing in the disclosed judgment fields makes the cited authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation contains proposed/audit-needed negative-keyword edges, but they are not final adverse treatment in the disclosed judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b8c8a4b6307a7674\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B. I do not raise a quote/support finding.\",\"The only currency/treatment material embedded in the harvested text matches the page/lake treatment display: Binding - SCOTUS and good as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pinpoint itself flags quote_fidelity as mismatch, but that is a Lens A issue not used for this verdict.\"],\"suggested_tightening\":null},{\"assertion_id\":\"862ed073a7ac96f3\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment call survives, but the page's unqualified 'No negative treatment' overstates the disclosed treatment record because the lake includes proposed negative/audit-needed progeny edges with labels such as overruled, questioned, abrogated, superseded_by_statute, and criticized. Those edges are classified as mentioned and proposed, so they do not refute good_law, but the page should qualify the statement.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity=good_law and the SCOTUS binding weight, but replace 'No negative treatment' with 'No final adverse treatment reflected in the lake judgment fields; proposed/audit-needed negative-keyword edges are classified as mentioned.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 15\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Lego v. Twomey__7ef63b.json treatment.derivation and treatment.edges\"},\"reasons\":[\"The lake treatment field_i_validity is good_law as of 2026-06-30 and the scope_note says Lego remains good law on the preponderance floor, reaffirmed/extended by Colorado v. Connelly.\",\"But the disclosed derivation records audit_needed true and proposed negative events; treatment.edges contain proposed entries with negative field_ii labels, so the page should not state 'No negative treatment' without qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed edges do not include quoted rationale or final point-specific treatment, so a fuller audit would be needed before changing the core good_law label.\"],\"suggested_tightening\":\"State the as-of date and distinguish the final good-law judgment from proposed/audit-needed negative-keyword progeny edges.\"}],\"notes\":\"Reviewed all 3 group_inventory rows under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:02:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-bcf7841276"
+    ],
     "group_id": "_overhaul2/lake/cases/Lego v. Twomey.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-79349811.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Lego v. Twomey"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 281824,
+      "output": 7913,
+      "source": "codex-events",
+      "total": 289737
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.4
+    "verdict_map": {
+      "862ed073a7ac96f3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9072b0bbdf93d084": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8c8a4b6307a7674": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcf7841276",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 153.1
   }
 }

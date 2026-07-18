@@ -1,22 +1,160 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/North Carolina v. Butler.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A using only disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "20da48e440683e20",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms North Carolina v. Butler, U.S. Supreme Court, decided 1979-04-24.",
+          "Official citation in the lake is 441 U.S. 369; parallel citations 99 S. Ct. 1755 and 60 L. Ed. 2d 286, plus 1979 U.S. LEXIS 91, match the page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "34bf784032895ee3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The courts must presume that a defendant did not waive his rights; the prosecution’s burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated.",
+          "locator_note": "text/North Carolina v. Butler__0d9ab8.txt line 18; content_page.md line 55; lake pinpoints id pin-373b",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present at the cited passage, but it is not character-faithful: the opinion text uses a curly apostrophe in “prosecution’s,” while the page/lake quote uses a straight apostrophe.",
+          "proposed_fix": "Change “prosecution's” to “prosecution’s” in pin-373b and keep the pinpoint tied to the page-373 passage.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the opinion after the page marker for 373 and before the page marker for 374.",
+          "The lake itself marks pin-373b quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "Strict character fidelity requires preserving source punctuation."
+        ],
+        "suggested_tightening": "Use the exact opinion-text punctuation for the quoted sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "91e1454196b37dce",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver.",
+          "locator_note": "Actual supporting sentence is in text/North Carolina v. Butler__0d9ab8.txt line 18 and content_page.md line 53; lake pinpoints id pin-373 currently contains page prose instead.",
+          "needs_cl": false,
+          "problem": "The lake/payload quote for pin-373 is not a Butler opinion quotation; it is a harvested page/header/background/rule artifact beginning with the content page title and summary text. That payload is not character-faithful to the opinion text.",
+          "proposed_fix": "Replace the pin-373 lake quote with the actual opinion sentence quoted on the page and set the pinpoint to the page-373 passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory payload for pin-373 starts with “--- # North Carolina v. Butler” and includes content-page sections, not the opinion text.",
+          "The correct quoted rule sentence does appear in the opinion at page 373, but that is not the quote stored in the pin-373 payload.",
+          "The lake itself marks pin-373 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The visible content_page quote at pin-373 is a true quote; the repair should preserve it while correcting the lake pinpoint payload."
+        ],
+        "suggested_tightening": "Store only the actual quoted Butler sentence in the pin record, not surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc45231dffb5b7ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The asserted treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1979-04-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and currency were not substantively audited under this support/quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/North Carolina v. Butler.json\",\"reviewed\":[{\"assertion_id\":\"20da48e440683e20\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms North Carolina v. Butler, U.S. Supreme Court, decided 1979-04-24.\",\"Official citation in the lake is 441 U.S. 369; parallel citations 99 S. Ct. 1755 and 60 L. Ed. 2d 286, plus 1979 U.S. LEXIS 91, match the page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"34bf784032895ee3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively present at the cited passage, but it is not character-faithful: the opinion text uses a curly apostrophe in “prosecution’s,” while the page/lake quote uses a straight apostrophe.\",\"severity\":\"low\",\"proposed_fix\":\"Change “prosecution's” to “prosecution’s” in pin-373b and keep the pinpoint tied to the page-373 passage.\",\"evidence_quote\":\"The courts must presume that a defendant did not waive his rights; the prosecution’s burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated.\",\"needs_cl\":false,\"locator_note\":\"text/North Carolina v. Butler__0d9ab8.txt line 18; content_page.md line 55; lake pinpoints id pin-373b\"},\"reasons\":[\"The sentence appears in the opinion after the page marker for 373 and before the page marker for 374.\",\"The lake itself marks pin-373b quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Strict character fidelity requires preserving source punctuation.\"],\"suggested_tightening\":\"Use the exact opinion-text punctuation for the quoted sentence.\"},{\"assertion_id\":\"91e1454196b37dce\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake/payload quote for pin-373 is not a Butler opinion quotation; it is a harvested page/header/background/rule artifact beginning with the content page title and summary text. That payload is not character-faithful to the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-373 lake quote with the actual opinion sentence quoted on the page and set the pinpoint to the page-373 passage.\",\"evidence_quote\":\"An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver.\",\"needs_cl\":false,\"locator_note\":\"Actual supporting sentence is in text/North Carolina v. Butler__0d9ab8.txt line 18 and content_page.md line 53; lake pinpoints id pin-373 currently contains page prose instead.\"},\"reasons\":[\"The inventory payload for pin-373 starts with “--- # North Carolina v. Butler” and includes content-page sections, not the opinion text.\",\"The correct quoted rule sentence does appear in the opinion at page 373, but that is not the quote stored in the pin-373 payload.\",\"The lake itself marks pin-373 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote at pin-373 is a true quote; the repair should preserve it while correcting the lake pinpoint payload.\"],\"suggested_tightening\":\"Store only the actual quoted Butler sentence in the pin record, not surrounding page prose.\"},{\"assertion_id\":\"fc45231dffb5b7ed\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The asserted treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1979-04-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency were not substantively audited under this support/quote-fidelity lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A using only disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:22:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4c9ae92c9e",
+      "F-S9-PR-b94546a233"
+    ],
     "group_id": "_overhaul2/lake/cases/North Carolina v. Butler.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c45a92e3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c45a92e3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:34.697948Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:35.297573Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:36.164937Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:37.404455Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:39.650521Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:43.077186Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "North Carolina v. Butler"
+    ],
+    "tokens": {
+      "input": 134137,
+      "output": 6908,
+      "source": "codex-events",
+      "total": 141045
+    },
+    "verdict_map": {
+      "20da48e440683e20": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "34bf784032895ee3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "91e1454196b37dce": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fc45231dffb5b7ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4c9ae92c9e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b94546a233",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 191.6
   }
 }

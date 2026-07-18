@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "fd36d00ade780b13",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Marshall, J.) confirms Donovan v. Dewey reversing E.D. Wis.; internal page markers run *596-*606, and lake official cite is 452 U.S. 594 (selected_rank_1).",
+          "Parallel 101 S. Ct. 2534 / 69 L. Ed. 2d 262 present; cluster 110530; docket 80-901; decided 1981-06-17."
+        ],
+        "residual_risks": [
+          "Vendor-neutral '1980 U.S. LEXIS 58' bears a 1980 year for a case decided June 17 1981 — a low-severity anomaly in a non-official cite; the official U.S. cite is unaffected."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b90fb2df9f6e0ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.",
+          "locator_note": "pin-598",
+          "needs_cl": false,
+          "problem": "Disclosed pinpoints[pin-598].quote is a mis-scoped harvest window of the content page's own authored prose (frontmatter '---' + '# Donovan v. Dewey' header + Background + Issue + '## Rule' lead-in ending 'reduced privacy.'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+          "proposed_fix": "Re-scope the harvest so pin-598.quote captures the real quoted passage — 'The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections.' — which matches the cached opinion at pages 598-599; the published content page needs no edit.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed quote is verbatim content-page Markdown (title/header + '## Rule'), an S8 harvest artifact, not an opinion quotation.",
+          "The page's actual pin-598 quotation is verbatim in the cached opinion spanning pages 598-599 (the *599 marker falls at 'individual's home'); pincite 598-599 correct."
+        ],
+        "residual_risks": [
+          "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+        ],
+        "suggested_tightening": "Anchor the harvest span to the quoted material, not the section lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55cdc239d467aca5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (page 603): '...the only real issue before us is whether the statute's inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does.' Page's '[T]he' is a proper capitalization bracket; remainder verbatim.",
+          "Pincite 603 correct — the passage sits between the *603 and *604 markers."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' is a naive-matcher false positive (capitalization bracket + slip-only pagination); sighted check confirms faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8ce32c55496f0b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (page 602): 'Applying this analysis to the case before us, we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment.' The page's ellipsis '…' properly elides 'to the case before us,'; remainder verbatim.",
+          "Pincite 602 correct — the sentence opens the paragraph immediately after the *602 marker."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' is a naive-matcher false positive (ellipsis omission + slip-only pagination)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ff83d6600d46f650",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; cached opinion is an intact SCOTUS majority (Colonnade-Biswell pervasively-regulated line) reversing the District Court — not self-limiting.",
+          "All 30 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+        ],
+        "residual_risks": [
+          "Synthetic 'overruled'/'abrogated' labels on citing cases against a 1981 SCOTUS holding are non-credible seeds.",
+          "scope_note (refined into New York v. Burger's three-part test) is consistent with continued good law but is not backed by an adjudicated citing report; currency asserted, not independently proven from disclosed evidence.",
+          "Content-page frontmatter marks lake.status 'under_review'."
+        ],
+        "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-051d0bcbce",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-28a00b4151",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5d0c342dbd",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Donovan v. Dewey.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-09-87fabe7a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Donovan v. Dewey"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0b90fb2df9f6e0ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "55cdc239d467aca5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8ce32c55496f0b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd36d00ade780b13": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ff83d6600d46f650": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6df0103333",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-051d0bcbce",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-28a00b4151",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5d0c342dbd",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

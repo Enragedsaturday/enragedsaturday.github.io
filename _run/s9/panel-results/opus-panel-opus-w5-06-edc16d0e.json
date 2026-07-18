@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4b06bbdc88b4fdf8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms 'HERRING v. UNITED STATES', No. 07-513, 'Argued October 7, 2008 — Decided January 14, 2009', certiorari to the Eleventh Circuit — matches the record's year, date, and identity.",
+          "Official cite 555 U.S. 135 with parallels 129 S. Ct. 695 / 172 L. Ed. 2d 496 and 2009 U.S. LEXIS 581 is consistent with a Jan-2009 SCOTUS decision; official selection present."
+        ],
+        "residual_risks": [
+          "Cached text is the slip opinion (no U.S. Reports pagination); the '135' page not independently star-confirmed but identity is certain."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad986bbec0334708",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "To trigger the exclusionary rule, police conduct must be sufficiently deliberate that exclusion can meaningfully deter it, and sufficiently culpable that such deterrence is worth the price paid by the justice system.",
+          "locator_note": "cached slip op. numbered point '3.' (slip p.9-10); content page ## Rule ^pin-144",
+          "needs_cl": false,
+          "problem": "Payload 'quote' field is a mis-extraction: it captured the content page's front matter and Background/Issue/Rule lead-in (ending '...not on the mere fact of a Fourth Amendment violation.'), not an opinion quotation. The content page's actual pin-144 quote is a different sentence.",
+          "proposed_fix": "Re-extract pin-144 to the content page's real quoted text: 'To trigger the exclusionary rule, police conduct must be sufficiently deliberate that exclusion can meaningfully deter it, and sufficiently culpable that such deterrence is worth the price paid by the justice system.' — verbatim-faithful to the cached slip opinion (analysis point 3).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Underlying wiki proposition is sound: the real pin-144 quote matches the cached slip text verbatim (line-break hyphenation aside).",
+          "Defect is confined to the assertion record's quote field, not the rendered page."
+        ],
+        "residual_risks": [
+          "Slip text lacks U.S. Reports pagination, so the '144' pincite cannot be star-confirmed from disclosed evidence, though it is consistent with slip p.9."
+        ],
+        "suggested_tightening": "Re-bind ^pin-144 extraction to post-anchor text and, if feasible, cache a U.S.-Reports-paginated copy to confirm page 144.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b19f9d16aa103d01",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'As laid out in our cases, the exclusionary rule serves to deter deliberate, reckless, or grossly negligent conduct, or in some circumstances recurring or systemic negligence.' matches cached slip text verbatim (cached shows only the line-break hyphenation 'circum stances' = circumstances).",
+          "Sentence immediately follows the pin-144 passage in the same analysis point, consistent with the shared page-144 pincite ('Id.'). Extractor 'mismatch'/'slip-only' flag is a false positive (no fragment validation against slip text)."
+        ],
+        "residual_risks": [
+          "'144' pincite not star-confirmable from the un-paginated slip text; contextually adjacent to pin-144, so consistent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9be630675e36dabd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is well-founded: Herring (2009) is a landmark exclusionary-rule/good-faith cost-benefit decision, binding SCOTUS precedent extending Leon/Evans; cached slip opinion confirms the majority holding.",
+          "Lake record's negative edges are all 'proposed':true, field_iii 'mentioned' (Davis, Heien, Strieff, etc.) — cases that cite Herring approvingly or merely mention it, none overruling it; the field_ii labels are raw-citator/self-treatment noise, no valid adverse treatment disclosed."
+        ],
+        "residual_risks": [
+          "composite_basis 'migration-seed' (scope_note flags possible S2 re-derivation/downgrade); proposed edges unadjudicated in-record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bd3fcf5341",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Herring v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-06-edc16d0e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Herring v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4b06bbdc88b4fdf8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9be630675e36dabd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad986bbec0334708": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b19f9d16aa103d01": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0fe3b74880",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-bd3fcf5341",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

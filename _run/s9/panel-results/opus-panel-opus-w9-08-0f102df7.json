@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a09b5cdaf1195b40",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is 'ROTHGERY v. GILLESPIE COUNTY, TEXAS, No. 07–440. Argued March 17, 2008—Decided June 23, 2008', certiorari to the Fifth Circuit — matching the lake docket 07-440 and date 2008-06-23.",
+          "'Cite as: 554 U. S. ____ (2008)' confirms volume 554 U.S. and year 2008; 554 U.S. 191 is the correct U.S. Reports first page rendered in the header; no internal inconsistency in the citation set."
+        ],
+        "residual_risks": [
+          "official is null / official_selection_present=false (no official designated), but 554 U.S. 191 is present in all[] and rendered in the header — metadata gap, not an existence error.",
+          "The slip cache shows a blank star page ('554 U. S. ____'), so page 191 is not byte-shown, but it is the standard/known first page and is uncontradicted."
+        ],
+        "suggested_tightening": "Designate 554 U.S. 191 as selected_official to close the null-official metadata gap.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a60e4c24a488b741",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's quoted string at pin-213 — '[A] criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel.' — matches the cached slip text (Part III, 'Our holding is narrow...') verbatim; the '[A]' bracket properly signals capitalization of the source's mid-sentence 'a'.",
+          "The payload captured a broken Background-through-'## Rule' span, so the 'mismatch' flag is an extractor span-selection artifact; the real quote is faithful."
+        ],
+        "residual_risks": [
+          "Pincite 213 is slip-only: the slip cache shows blank star pages ('554 U. S. ____'), so the U.S. Reports page 213 cannot be byte-verified, but the passage is in the final Part III (the last stretch of the majority), consistent with p.213."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a5fa419e365d784",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed opinion confirms the claimed holding (Sixth Amendment right to counsel attaches at the initial appearance before a judicial officer, regardless of prosecutor involvement), so field_i_validity=good_law is uncontradicted by disclosed evidence.",
+          "Treatment is a migration-seed (scope_note flags possible re-derivation); nothing in disclosed evidence indicates overruling or negative treatment."
+        ],
+        "residual_risks": [
+          "Currency as of 2026-06-30 is not independently verifiable from the inlined opinion alone (no citator/subsequent-treatment data disclosed)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e3153c6f5c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rothgery v. Gillespie County.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-08-0f102df7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rothgery v. Gillespie County"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5a5fa419e365d784": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "a09b5cdaf1195b40": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a60e4c24a488b741": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3153c6f5c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

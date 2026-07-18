@@ -1,0 +1,134 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "df3d08717aaebcb2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 460 U.S. 276 (selected_official) with parallels 103 S. Ct. 1081 / 75 L. Ed. 2d 55 / 51 U.S.L.W. 4232 and vendor-neutral 1983 U.S. LEXIS 135 match content-page frontmatter and lake citations block.",
+          "Cached slip op confirms identity: Rehnquist majority, beeper public-roads no-search holding, star pagination *278-*287 consistent with a case beginning at 460 U.S. 276."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "166aee4028f72fce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pinpoint_status='star-verified', quote_fidelity='matched', star_marker='282'; stored quote is verbatim from cached slip op para id=b344-8 (*282): 'Nothing in the Fourth Amendment prohibited the police from augmenting the sensory faculties bestowed upon them at birth with such enhancement as science and technology afforded them in this case.'",
+          "Pincite 282 is correct: the sentence sits after the *282 marker in b343-8/b344-8."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf47842b24d55802",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # United States v. Knotts *460 U.S. 276 (1983)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "pin-281; lake pinpoints[].id=pin-281 and group_inventory payload.quote; content-page Rule ^pin-281; verbatim source: cached opinion para id=b343-8 (*281).",
+          "needs_cl": false,
+          "problem": "Stored pin-281 quote is content-page Markdown, not opinion text: it begins with the YAML boundary '---', the H1 '# United States v. Knotts', the citation/TreatmentBadge header line, and the '## Background' / '## Issue' / '## Rule No.' section headers.",
+          "proposed_fix": "Replace with the verbatim opinion sentence at *281 (para id=b343-8): 'A person traveling in an automobile on public thoroughfares has no reasonable expectation of privacy in his movements from one place to another.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "YAML delimiter, H1, and '## Background/## Issue/## Rule' headers are page scaffolding, proving the quote field harvested content-page text, not opinion text.",
+          "The rendered page anchors a faithful *281 sentence at ^pin-281; defect is confined to the stored quote field."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4c8e0b40d8da1f28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with composite_basis='migration-seed', point_overrides=[], varies_by_point=false; sighted record shows 33 edges all proposed:true and none adopted.",
+          "Cached slip op is the controlling short-term public-tracking opinion itself; scope_note accurately notes Jones/Carpenter neither overruled Knotts.",
+          "as_of_content 1983-03-02 = date_decided; as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "treatment.edges are all proposed:true (none adopted); several 'overruled' tags sit on citing cases (e.g., Carpenter, Collins, Torres) that reinforced/distinguished rather than overruled the anchor — citator false-positives S2 re-derivation should filter, not adopt."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Knotts.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-01-d5650da1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Knotts"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "166aee4028f72fce": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4c8e0b40d8da1f28": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf47842b24d55802": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df3d08717aaebcb2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a89e00bf83",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

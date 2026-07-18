@@ -1,0 +1,84 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7fe85aa9469aba8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record citations.official = '964 F.3d 938' (F.3d, vol 964, p.938, source cluster.citations[]) is internally consistent across official/all/display/official_selection (selected_rank_1, court_class coa).",
+          "Cached CL opinion corroborates identity: 'UNITED STATES COURT OF APPEALS' / 'Tenth Circuit'; 'July 7, 2020'; No. 18-6221; Agent Brown / Young custodial-interrogation facts — matches lake case_name 'United States v. Young', ca10, docket 18-6221, decided 2020-07-07.",
+          "Holding language in the cached body ('...we conclude that Young's capacity for self-determination was critically impaired, rendering his confession involuntary', lines 5117-5119) confirms this is the correct opinion for the cited case."
+        ],
+        "residual_risks": [
+          "CL text is slip-paginated (no F.3d page 938 in-body); the reporter page rests on cluster.citations[] metadata (disclosed).",
+          "opinion_url uses cluster_id 4766220 while identity.lead_opinion_id is 4546567 — the known CourtListener cluster-vs-opinion URL pattern, not a citation defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48f0100a9df90913",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload field_i_validity='unverified' (frontier-stub scope_note, varies_by_point false) matches the lake treatment block exactly (composite_basis 'unverified', edges [], derivation {}) and the 'Treatment: Unverified' render.",
+          "Honest non-derivation; progeny block null/empty (rows_cached 0), consistent with 'intentionally not derived until S6 promotion'.",
+          "Content page carries the ⚪ 'Status: Unverified — subsequent treatment not yet machine-verified' banner."
+        ],
+        "residual_risks": [
+          "Actual subsequent treatment is genuinely unknown; the assertion correctly claims only 'unverified' for a frontier stub — no proposition to refute."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Young.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-00-c47ed056",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Young"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "48f0100a9df90913": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fe85aa9469aba8a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

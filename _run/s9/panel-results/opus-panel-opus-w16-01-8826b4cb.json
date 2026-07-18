@@ -1,0 +1,201 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b27773d05741bd36",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Case exists: cached opinion is the published 10th Cir. decision, HENRY, J., United States v. Mark James Garner, No. 04-4111, filed July 27, 2005 — matches record identity.",
+          "Official cite 416 F.3d 1208 is standard-form and uncontradicted; the community-caretaking test the page relies on sits at slip page (=416 F.3d 1213).",
+          "Vendor-neutral cites (2005 U.S. App. LEXIS 15369; 2005 WL 1766377) are consistent; a COA case correctly carries no S.Ct./L.Ed. parallel."
+        ],
+        "residual_risks": [
+          "Cached opinion is slip-paginated (pages -7-, -8-), so the exact reporter star-page 1208 is not shown in text; identity/existence otherwise fully confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0698ddd5be57cd8b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is VERBATIM in the opinion: 'the government's interest must outweigh the individual's interest in being free from arbitrary governmental interference.' (Garner three-part community-caretaking test paragraph).",
+          "Payload S8 quote_fidelity='mismatch' is a false positive — the opinion uses a curly apostrophe ('government's') and the sentence is preceded by 'Additionally,'; normalization/whitespace defeated the raw string match, not the substance.",
+          "Pincite is slip-only per record and page (416 F.3d at 1213); faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "851a9fbf80af0eda",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "such a community caretaking detention must be based upon \"'specific and articulable facts which . . . reasonably warrant [an] intrusion' into the individual's liberty.\"",
+          "locator_note": "pin-1213; Garner community-caretaking three-part test paragraph (quoting King, 990 F.2d at 1560, quoting Terry, 392 U.S. at 21).",
+          "needs_cl": false,
+          "problem": "The extracted quote_pinpoint span is malformed: it captured the page front-matter/Background/Issue preamble ending at '## Rule A police officer exercising community caretaking functions' instead of the quotation anchored at ^pin-1213. That blob is not a verbatim opinion passage. The actual pin-1213 quotation in the content page is verbatim-faithful to the opinion.",
+          "proposed_fix": "Re-extract the ^pin-1213 span to the sentence actually attributed there ('such a community caretaking detention must be based upon \"specific and articulable facts ... reasonably warrant [an] intrusion\" into the individual's liberty'); drop the captured preamble. No page edit needed — the rendered quote is faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is page-structural text (front-matter through Rule intro), not a quotation, so it cannot be verified as a faithful quote as-framed.",
+          "The underlying page quotation at ^pin-1213 IS present verbatim in the opinion (slip = 416 F.3d 1213), so this is an extractor span artifact, not a page/quote defect."
+        ],
+        "residual_risks": [
+          "Machine should treat this as an extraction-span defect, not a fabricated/misquoted-quote defect, to avoid condemning a faithful page quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b80f2cf6e960de27",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is VERBATIM in the opinion: 'Once the officer has completed the inquiry necessary to satisfy the purpose of the initial detention, he or she must allow the person to proceed unless the officer has a reasonable suspicion of criminal conduct.' (cited to Gonzalez-Lerma, 14 F.3d at 1483).",
+          "Payload S8 quote_fidelity='mismatch' is a false positive: a page-break marker ('-7-') is inserted between 'Once' and 'the officer', breaking the raw string match; text is otherwise identical.",
+          "Slip-only pincite (416 F.3d at 1213) is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f76251f44af21119",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is VERBATIM in the opinion: 'the detention must last no longer than is necessary to effectuate its purpose, and its scope must be carefully tailored to its underlying justification.' (preceded by 'Finally,').",
+          "Payload already labels quote_fidelity='matched'; the text-fragment (#:~:text=the%20detention%20must%20last%20no) points at genuine opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55be6957b76aca97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "as_of_content=2005-07-27 matches the opinion's decision date, and the 'persons-in-public community-caretaking anchor' characterization is consistent with the disclosed opinion (caretaking detention of a person found unconscious in a field).",
+          "The good_law currency as of 2026-06-30 and the scope_note's Caniglia v. Strom (2021) characterization ('confined its no-freestanding-caretaking holding to the home; does not disturb a caretaking detention of a person in public') require citator/Caniglia text that is NOT inlined — cannot be confirmed or refuted from disclosed evidence.",
+          "composite_basis='migration-seed' (not two-key derived); per the stub rule I record verifiable_from_disclosed=false and decline to fabricate either a defect or a clean bill."
+        ],
+        "residual_risks": [
+          "Currency (good_law as of 2026-06-30) unverified from disclosed evidence; needs CL citator (Lens-B).",
+          "Caniglia v. Strom (2021) scope characterization is an external legal proposition not backed by disclosed text; requires verification against Caniglia."
+        ],
+        "suggested_tightening": "Attach a citator/treatment reference for the good_law status and cite Caniglia's home-confinement holding so the scope_note is verifiable.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-867eae941a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7acc2d4c79",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Garner.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-01-8826b4cb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Garner"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0698ddd5be57cd8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "55be6957b76aca97": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "851a9fbf80af0eda": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b27773d05741bd36": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b80f2cf6e960de27": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f76251f44af21119": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-867eae941a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5aa46d8604",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7acc2d4c79",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

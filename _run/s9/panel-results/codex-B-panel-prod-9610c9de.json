@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ganias.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity finding was made.",
+    "reviewed": [
+      {
+        "assertion_id": "fc70671b3cd9b6f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/United States v. Ganias__8613c3.json treatment.scope_note; treatment.field_i_validity is unverified, as_of_treatment is null, and progeny enumeration is null.",
+          "needs_cl": true,
+          "problem": "The disclosed files verify the case identity and citation, but they do not verify the B-lens currency question whether the cited authority is still live law. The lake record is an under-review frontier stub with treatment and progeny intentionally not derived.",
+          "proposed_fix": "Keep the citation/existence metadata, but do not treat it as a verified live-law/current-authority assertion until current treatment and progeny are derived.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity and citation fields verify United States v. Ganias and the display citation 824 F.3d 199.",
+          "The same disclosed record does not verify current live-law status: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny has no derived citing-opinion enumeration.",
+          "Under the default-to-refuted rule, the live-law currency aspect cannot stand on this disclosed evidence."
+        ],
+        "residual_risks": [
+          "A later authority may have overruled, abrogated, limited, superseded, or otherwise affected Ganias, and this frontier stub does not answer that question."
+        ],
+        "suggested_tightening": "Separate citation existence from currency: 'Citation/identity verified; current treatment not verified.'",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "7c169273461bdb89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page labels treatment as Unverified.",
+          "The lake record matches that label: treatment.field_i_validity is unverified and composite_basis is unverified.",
+          "The lake record also states that treatment/progeny were intentionally not derived, with no disclosed edge contradicting the unverified treatment label."
+        ],
+        "residual_risks": [
+          "The unverified label does not establish good law; it only accurately reports that no current treatment verification has been completed."
+        ],
+        "suggested_tightening": "Add an explicit as-of warning that no current good-law check has been completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Ganias.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fc70671b3cd9b6f9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed files verify the case identity and citation, but they do not verify the B-lens currency question whether the cited authority is still live law. The lake record is an under-review frontier stub with treatment and progeny intentionally not derived.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the citation/existence metadata, but do not treat it as a verified live-law/current-authority assertion until current treatment and progeny are derived.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/United States v. Ganias__8613c3.json treatment.scope_note; treatment.field_i_validity is unverified, as_of_treatment is null, and progeny enumeration is null.\"\n      },\n      \"reasons\": [\n        \"The lake identity and citation fields verify United States v. Ganias and the display citation 824 F.3d 199.\",\n        \"The same disclosed record does not verify current live-law status: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny has no derived citing-opinion enumeration.\",\n        \"Under the default-to-refuted rule, the live-law currency aspect cannot stand on this disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A later authority may have overruled, abrogated, limited, superseded, or otherwise affected Ganias, and this frontier stub does not answer that question.\"\n      ],\n      \"suggested_tightening\": \"Separate citation existence from currency: 'Citation/identity verified; current treatment not verified.'\"\n    },\n    {\n      \"assertion_id\": \"7c169273461bdb89\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page labels treatment as Unverified.\",\n        \"The lake record matches that label: treatment.field_i_validity is unverified and composite_basis is unverified.\",\n        \"The lake record also states that treatment/progeny were intentionally not derived, with no disclosed edge contradicting the unverified treatment label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The unverified label does not establish good law; it only accurately reports that no current treatment verification has been completed.\"\n      ],\n      \"suggested_tightening\": \"Add an explicit as-of warning that no current good-law check has been completed.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity finding was made.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:30-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:53:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bd28da6884"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Ganias.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9610c9de",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9610c9de.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:31:29.468840Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:31:29.909461Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ganias"
+    ],
+    "tokens": {
+      "input": 166222,
+      "output": 5544,
+      "source": "codex-events",
+      "total": 171766
+    },
+    "verdict_map": {
+      "7c169273461bdb89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc70671b3cd9b6f9": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bd28da6884",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 116.6
   }
 }

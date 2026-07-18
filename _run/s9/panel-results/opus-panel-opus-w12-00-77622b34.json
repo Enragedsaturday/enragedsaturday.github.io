@@ -1,0 +1,211 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "db73bb7eb7ea7bd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unambiguously Stanford v. Texas (Mr. Justice Stewart; 1965; warrant for materials 'concerning the Communist Party of Texas'; ~2,000 books seized; general-warrant holding).",
+          "Star-pagination labels run *477 through *486, confirming the opinion begins at page 476 — consistent with official cite 379 U.S. 476.",
+          "Lake identity fields (citation+party-text, expected_citation_found/party_name_in_text/canonical_name_match true, reason_code null) corroborate; official_selection = 379 U.S. 476."
+        ],
+        "residual_risks": [
+          "Volume '379 U.S.' and the parallel cites are inferred from case identity + star pagination; the literal volume string is not present in the cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "06f7a73d6959eaf7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Wiki pin-486b quotation 'shall ransack [Stanford's] home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King.' matches the cached opinion ('...no official of the State shall ransack his home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King.').",
+          "'[Stanford's]' is a properly-bracketed substitution for 'his' (antecedent John Stanford is named earlier in the same sentence) — accepted quotation practice, not a misquote.",
+          "Passage is on page 486 (after the *486 marker), matching the 'Id.' pincite chained to pin-486 at 486. Payload 'mismatch' arises solely from the bracketed substitution."
+        ],
+        "residual_risks": [
+          "Bracketed editorial substitution can trigger extractor mismatch false positives."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f4a7cca7fc8c43a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Paneled quote 'literary material' appears verbatim in the cached opinion ('...it was not any contraband of that kind which was ordered to be seized, but literary material —').",
+          "It is on page 486 (after *486) and is star-verified via fragment '#:~:text=literary%20material'; payload quote_fidelity 'matched'.",
+          "Pincite 'Id. at 486' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "567a40594782bc33",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Wiki pin-485 quotation '[T]he constitutional requirement that warrants must particularly describe the \\u2018things to be seized\\u2019 is to be accorded the most scrupulous exactitude when the \\u2018things\\u2019 are books, and the basis for their seizure is the ideas which they contain.' matches the cached opinion verbatim ('...the constitutional requirement that warrants must particularly describe the \"things to be seized\" is to be accorded the most scrupulous exactitude when the \"things\" are books, and the basis for their seizure is the ideas which they contain.').",
+          "'[T]he' is a proper bracketed capitalization (original mid-sentence 'the'); passage is on page 485 (after *485), so pincite '379 U.S. at 485' is correct.",
+          "The payload 'quote' is an extractor artifact (captured the '## Rule No.' narrative), so the flagged 'mismatch' is a false positive at the extractor level, not a defect in the paneled quotation."
+        ],
+        "residual_risks": [
+          "Extractor captured page prose + markdown header instead of the quoted span."
+        ],
+        "suggested_tightening": "Anchor the extractor to the quoted span for ^pin-485.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3938e30b3efe5ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Wiki pin-485b quotation '[a]s to what is to be taken, nothing is left to the discretion of the officer executing the warrant.' matches the cached opinion's Marron quotation ('As to what is to be taken, nothing is left to the discretion of the officer executing the warrant.').",
+          "The parenthetical attribution '(quoting Marron v. United States)' is correct — the cached text shows this sentence is quoted from Marron v. United States, 275 U.S. 192, at 196.",
+          "The quoted sentence sits at the bottom of page 485 with the Marron citation carrying into 486, so pincite '485–86' is appropriate; '[a]s' is a proper bracketed lowercasing."
+        ],
+        "residual_risks": [
+          "Bracketed alteration drives the payload mismatch flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd372e99a341d51d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Substantive scope_note ('most scrupulous exactitude' for expressive materials; subject-matter sweep = unconstitutional general warrant) is verbatim-supported by the opinion (pages 485 and 486).",
+          "field_i_validity 'good_law' is uncontradicted: the disclosed negative-treatment sweep yields only proposed:true keyword candidates (lane_negative), with no confirmed overruling/abrogation edge and no migration negative-treatment seed.",
+          "The good_law currency status as of 2026-06-30 cannot be independently confirmed from the pack because no subsequent-case texts are inlined and the negative sweep is unadjudicated."
+        ],
+        "residual_risks": [
+          "good_law rests on an unadjudicated negative-treatment sweep (all edges proposed); a real overruling among the candidates cannot be positively excluded from the inlined data alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-32f7a00914",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f92fd6005f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a22d5cea9b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c22100149c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Stanford v. Texas.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-00-77622b34",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stanford v. Texas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "06f7a73d6959eaf7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2f4a7cca7fc8c43a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "567a40594782bc33": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db73bb7eb7ea7bd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3938e30b3efe5ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd372e99a341d51d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-32f7a00914",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f92fd6005f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a22d5cea9b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c22100149c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

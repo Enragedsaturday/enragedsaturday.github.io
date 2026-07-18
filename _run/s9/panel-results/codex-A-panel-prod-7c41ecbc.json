@@ -1,13 +1,83 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Navarette v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "6e60844ade715358",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as Prado Navarette v. California, U.S. Supreme Court, decided 2014-04-22, year 2014.",
+          "Every citation listed in the assertion payload appears in lake.citations.all, including 572 U.S. 393, 134 S. Ct. 1683, 188 L. Ed. 2d 680, 2014 U.S. LEXIS 2930, 82 U.S.L.W. 4282, 24 Fla. L. Weekly Fed. S 690, and 2014 WL 1577513."
+        ],
+        "residual_risks": [
+          "Lake official citation selection is null, so I only verified the cited forms against the disclosed lake citation fields."
+        ],
+        "suggested_tightening": "If the corpus expects a primary display citation, make the page/frontmatter consistently reflect the selected display citation rather than leaving citation blank.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a95e39ded4debff0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we conclude that the call bore adequate indicia of reliability for the officer to credit the caller’s account.",
+          "locator_note": "content_page.md line 53; lake pinpoints[0] id pin-398; text opinion section II.B",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-398 is not the opinion passage; it is a harvested chunk of the rendered content page beginning with frontmatter/header text. The actual opinion sentence exists in the cached text, but the page quote also fails character fidelity by using a straight apostrophe in caller's instead of the cached text's curly apostrophe.",
+          "proposed_fix": "Replace pin-398 with the exact opinion sentence from text/Navarette v. California__5b9c87.txt, preserving punctuation, and do not store the content-page header/body as the pinpoint quote. Separately verify or remove the official 572 U.S. at 398 pin because the disclosed pin metadata has page null and slip-only status.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[0].quote starts with \"--- # Navarette v. California\" and continues through the content page background/rule text, which is not the quoted opinion passage.",
+          "The cached opinion text contains the intended sentence, but with caller’s, not caller's, so the page quote is not character-faithful.",
+          "The lake pinpoint has page null and pinpoint_status slip-only, so the disclosed pin record does not itself substantiate the official page 398 locator."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported by the opinion text; the defect is quote/pin fidelity, not the legal rule's substance.",
+          "The cached text is a slip-opinion format, so official U.S. page 398 cannot be independently confirmed from page markers in the disclosed text alone."
+        ],
+        "suggested_tightening": "Store only the exact quoted sentence for pin-398 and normalize quote text from the cached opinion, not from rendered markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "336dfcfd176dd938",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The assertion payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2014-04-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside lens A, so I recorded only field consistency and raised no treatment finding."
+        ],
+        "residual_risks": [
+          "Lens B must assess treatment currency and any effect of the disclosed progeny/treatment edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Navarette v. California.json\",\"reviewed\":[{\"assertion_id\":\"6e60844ade715358\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies the case as Prado Navarette v. California, U.S. Supreme Court, decided 2014-04-22, year 2014.\",\"Every citation listed in the assertion payload appears in lake.citations.all, including 572 U.S. 393, 134 S. Ct. 1683, 188 L. Ed. 2d 680, 2014 U.S. LEXIS 2930, 82 U.S.L.W. 4282, 24 Fla. L. Weekly Fed. S 690, and 2014 WL 1577513.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official citation selection is null, so I only verified the cited forms against the disclosed lake citation fields.\"],\"suggested_tightening\":\"If the corpus expects a primary display citation, make the page/frontmatter consistently reflect the selected display citation rather than leaving citation blank.\"},{\"assertion_id\":\"a95e39ded4debff0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-398 is not the opinion passage; it is a harvested chunk of the rendered content page beginning with frontmatter/header text. The actual opinion sentence exists in the cached text, but the page quote also fails character fidelity by using a straight apostrophe in caller's instead of the cached text's curly apostrophe.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-398 with the exact opinion sentence from text/Navarette v. California__5b9c87.txt, preserving punctuation, and do not store the content-page header/body as the pinpoint quote. Separately verify or remove the official 572 U.S. at 398 pin because the disclosed pin metadata has page null and slip-only status.\",\"evidence_quote\":\"we conclude that the call bore adequate indicia of reliability for the officer to credit the caller’s account.\",\"needs_cl\":false,\"locator_note\":\"content_page.md line 53; lake pinpoints[0] id pin-398; text opinion section II.B\"},\"reasons\":[\"The lake pinpoints[0].quote starts with \\\"--- # Navarette v. California\\\" and continues through the content page background/rule text, which is not the quoted opinion passage.\",\"The cached opinion text contains the intended sentence, but with caller’s, not caller's, so the page quote is not character-faithful.\",\"The lake pinpoint has page null and pinpoint_status slip-only, so the disclosed pin record does not itself substantiate the official page 398 locator.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive proposition is supported by the opinion text; the defect is quote/pin fidelity, not the legal rule's substance.\",\"The cached text is a slip-opinion format, so official U.S. page 398 cannot be independently confirmed from page markers in the disclosed text alone.\"],\"suggested_tightening\":\"Store only the exact quoted sentence for pin-398 and normalize quote text from the cached opinion, not from rendered markdown.\"},{\"assertion_id\":\"336dfcfd176dd938\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2014-04-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside lens A, so I recorded only field consistency and raised no treatment finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess treatment currency and any effect of the disclosed progeny/treatment edges.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-dad0c59989",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-eddb567a08"
+    ],
     "group_id": "_overhaul2/lake/cases/Navarette v. California.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +86,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7c41ecbc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Navarette v. California"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 181901,
+      "output": 7277,
+      "source": "codex-events",
+      "total": 189178
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "336dfcfd176dd938": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e60844ade715358": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a95e39ded4debff0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eddb567a08",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dad0c59989",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 143.6
   }
 }

@@ -1770,3 +1770,36 @@ never re-run the combined-conc-18 config that burned twice. Sequence = thread-N 
 (conc-6, running pid 93042) -> then panel SOLO conc-12 (steady-state 12 < 18 burn peak).
 Multi-window grind accepted: pause clean on 403 cascade, resume on probe-detected reopen,
 drain across windows. Reconciler (P2) runs the moment thread-N drains, in parallel with panel.
+
+**P2 SR-5 RECONCILIATION LANE FULLY CLOSED (2026-07-11 ~01:55).** Sequence this session:
+thread-N drained (Lyle A/B escalated) -> reconcile re-run VALIDATED the leg-C unblock arc
+(UNREADABLE 200->3, STRONG 298->460 +162 double-verified, JOIN-MISS 1->0, floor 724/724) ->
+112 discordant-candidates all adjudicated from cached evidence (0 CL calls): 111 benign
+(76 caption-variance + 16 correctly-keyed incl cluster-collision watch Lange/Gant/Fernandez,
+Lange spot-checked live-from-cache + 6 no-printed-caption + 10 N-blind-unread + 4 already-resolved)
+-> P2-DISCORDANCE-DISPOSITIONS.jsonl (reconcile-free R5); 1 genuine mis-key F-S9-P2-CHAPMANCAL
+UPHELD+FIXED (chapman-v-california re-keyed 2016-cert-denial cluster 8428427 -> merits 386 U.S. 18
+cluster 107359/lead 9423348; 1 sanctioned prime CL call + cache-only rekey; no re-projection).
+Commits 9ce5cfba/60a34ffe/b94aecd6. Role-sep held: finders=codex-thread-N, evidence-prep=opus,
+adjudicator=fable, fixer=opus, re-review=fable — all distinct lanes.
+NEXT PHASE: panel P1 review still grinding (clean 246/0 @ conc-12 solo, ~246/1488 this window;
+multi-window expected). Once P1 drains -> P2 panel-findings adjudication (~1335 findings, the big
+remaining load; check_ledger inv2/inv5 are its end-of-run gates, firing benign mid-grind now).
+
+**SESSION CHECKPOINT 2026-07-11 ~08:55 (codex P1 DONE; opus 26%; opus quota-paused).**
+Full-session arc: re-seated as orchestrator -> read procedures (S9 spec/EXECUTE wrapper/RUNBOOK §3)
+-> thread-N drained (Lyle escalated) -> reconcile validated leg-C unblock arc (UNREADABLE 200->3,
+STRONG 298->460, floor 724/724) -> all 112 P2 discordances adjudicated (111 benign + chapman-v-california
+mis-key UPHELD+FIXED, full re-key to 386 U.S. 18 cluster 107359) -> DISCOVERED the panel N-of-3 is
+2 codex + 1 OPUS lens and the Opus lens was 4/1357 (owed) -> built+validated emit_opus_pack.py (opus
+emission harness, deterministic merge onto codex finding-ids, idempotent, latent fail-open bug fixed)
+-> drove 9 opus reviewer waves (359/1357 groups, 298 findings full-3-vote, 0 emit errors) -> codex
+2-lens resumed on window-reopen (07:04) and COMPLETED all 1357 groups (08:53, 0-residual).
+CONSTRAINTS learned: codex window = ChatGPT rolling cap (~5.5h recovery, burns at conc-18/~1h50m;
+conc-12 solo lasts ~3h); Claude account has its OWN session/usage limit (opus reviewers at 10/wave
+exhausted it @ wave-9). RESUME PLAN: opus lane at ~5 reviewers/wave when Claude quota resets; ~998
+groups remain (all now codex-complete). THEN: P2 panel-findings adjudication (~1884 findings, the big
+remaining judgment work — 5 mechanical defect classes cataloged for class-wide P3 fixes), P3 fix,
+P4 sweeps (Mermaid/lint/coherence/glossary/Case-Index), P5 release gate, P6 publish-brief.
+Commits this session: 9ce5cfba 60a34ffe b94aecd6 a9fde5d3 b3e0e2aa 2c5b7742 e30723d9 b90939e6
+5e2ca828 cdb2a57e 5ecac82d 2d278937 089bbee7 (+ restart commits).

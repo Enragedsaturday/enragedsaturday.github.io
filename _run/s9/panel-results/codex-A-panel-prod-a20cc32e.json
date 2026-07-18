@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Calandra.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "5940ba1956ef42b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Calandra, court U.S. Supreme Court, decided 1974-01-08, year 1974.",
+          "The lake official citation is 414 U.S. 338 and the content page uses 414 U.S. 338 (1974).",
+          "The listed parallel and vendor citations in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd5824993ecbea09",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the rule is a judicially created remedy designed to safeguard Fourth Amendment rights generally through its deterrent effect",
+          "locator_note": "pin-348",
+          "needs_cl": false,
+          "problem": "The lake/inventory pin-348 quote is not the opinion passage at 414 U.S. 348; it is rendered content-page material beginning with the page heading and background, and the lake itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-348 with the actual opinion passage at star page *348 and set the pinpoint metadata to page/star 348 after verification.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "text/United States v. Calandra__925c43.txt contains the quoted rule sentence at star page *348.",
+          "The payload quote for pin-348 instead starts with page markdown/header content and background text, not the opinion text.",
+          "The content-page displayed quotation is faithful to the opinion text, but the reviewed pin assertion as framed is not."
+        ],
+        "residual_risks": [
+          "A separate pincite row would be needed to audit the pin metadata independently."
+        ],
+        "suggested_tightening": "Regenerate quote-pinpoint records from the cached opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "624955926e1f5a4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded only for completeness under Lens A: the treatment payload matches the lake treatment fields and the content page fields.",
+          "Treatment currency and good-law merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Calandra.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5940ba1956ef42b4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names United States v. Calandra, court U.S. Supreme Court, decided 1974-01-08, year 1974.\",\n        \"The lake official citation is 414 U.S. 338 and the content page uses 414 U.S. 338 (1974).\",\n        \"The listed parallel and vendor citations in the assertion match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fd5824993ecbea09\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake/inventory pin-348 quote is not the opinion passage at 414 U.S. 348; it is rendered content-page material beginning with the page heading and background, and the lake itself flags quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-348 with the actual opinion passage at star page *348 and set the pinpoint metadata to page/star 348 after verification.\",\n        \"evidence_quote\": \"the rule is a judicially created remedy designed to safeguard Fourth Amendment rights generally through its deterrent effect\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-348\"\n      },\n      \"reasons\": [\n        \"text/United States v. Calandra__925c43.txt contains the quoted rule sentence at star page *348.\",\n        \"The payload quote for pin-348 instead starts with page markdown/header content and background text, not the opinion text.\",\n        \"The content-page displayed quotation is faithful to the opinion text, but the reviewed pin assertion as framed is not.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A separate pincite row would be needed to audit the pin metadata independently.\"\n      ],\n      \"suggested_tightening\": \"Regenerate quote-pinpoint records from the cached opinion text rather than from the rendered content page.\"\n    },\n    {\n      \"assertion_id\": \"624955926e1f5a4c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Recorded only for completeness under Lens A: the treatment payload matches the lake treatment fields and the content page fields.\",\n        \"Treatment currency and good-law merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not audited under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support, pincite, or black_letter rows were present in group_inventory.jsonl.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:30:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:48:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-402e83a6ec"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Calandra.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a20cc32e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Calandra"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 235232,
+      "output": 5861,
+      "source": "codex-events",
+      "total": 241093
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "5940ba1956ef42b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "624955926e1f5a4c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd5824993ecbea09": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-402e83a6ec",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 117.6
   }
 }

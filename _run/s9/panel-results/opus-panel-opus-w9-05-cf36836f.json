@@ -1,0 +1,158 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "231a1e8aedd4dacb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads literally '448 U.S. 98 (1980)', 'RAWLINGS v. KENTUCKY', 'No. 79-5146.', 'Decided June 25, 1980.', MR. JUSTICE REHNQUIST — confirms identity and the official cite 448 U.S. 98.",
+          "official.selected_official=true on 448 U.S. 98; no disclosed evidence contradicts the cite."
+        ],
+        "residual_risks": [
+          "Parallel cites 100 S. Ct. 2556 / 65 L. Ed. 2d 633 and 1980 U.S. LEXIS 142 pin-pages not independently confirmable from cached text, but uncontradicted (cluster.citations[])."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1203c0948594333a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Source (p. 105): 'While petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case, Rakas emphatically rejected the notion that \"arcane\" concepts of property law ought to control the ability to claim the protections of the Fourth Amendment.'",
+          "Record quote fragment 'is undoubtedly one fact to be considered,' is verbatim on page 105 (between the *105 and *106 markers); the content page's companion fragment 'emphatically rejected the notion that \\'arcane\\' concepts of property law ought to control the ability to claim the protections of the Fourth Amendment.' is likewise verbatim; pincite '448 U.S. at 105' is correct.",
+          "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' is a false positive from a partial, non-star-anchored harvest — the captured text is faithful."
+        ],
+        "residual_risks": [
+          "Payload captured only the first of the two quoted fragments rendered at ^pin-105 (harvest incompleteness, not a fidelity defect)."
+        ],
+        "suggested_tightening": "Capture all quoted fragments attached to a single pin and normalize the matcher so faithful partial fragments are not flagged 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7482a82172e7fadd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.",
+          "locator_note": "448 U.S. at 106; source (after *106 marker): 'After Rakas, the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.' — corroborated by Blackmun, J., concurring: 'these two inquiries \"merge into one,\" ante, at 106'.",
+          "needs_cl": false,
+          "problem": "The harvested `quote` for pin-106 is a page-dump artifact (rendered-markdown from the header through 'After [[Rakas v. Illinois]],'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string is not a contiguous source passage.",
+          "proposed_fix": "Re-harvest pin-106 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 448 U.S. 106.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The ACTUAL content-page pinpoint quote at ^pin-106 is verbatim from the source at page 106 (following the *106 star marker) and correctly pincited; the Blackmun concurrence independently confirms 'ante, at 106'.",
+          "Only the harvested payload string is broken (page-dump); the published quote survives."
+        ],
+        "residual_risks": [
+          "Preserve the published ^pin-106 quote; only the harvested quote string needs correction — do not delete the pin."
+        ],
+        "suggested_tightening": "Sentence-scoped fallback harvest for pins lacking a text-fragment anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4a68ab35a577d2b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is a migration-seed; the negative-treatment lanes returned only 'proposed':true / field_iii='mentioned' candidates with no confirmed overruling of Rawlings.",
+          "Rawlings' holding — ownership of the seized items does not by itself confer a legitimate expectation of privacy in the place searched — is settled, applying Rakas; the source text (Part II-A, p. 105-106) supports that black-letter statement.",
+          "No disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "scope_note self-discloses 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; lanes carry audit_needed=true / 'R15 treatment audit required' — currency is seed-based pending audit, though no overruling is present."
+        ],
+        "suggested_tightening": "Close the R15 negative-treatment audit before treating as_of_treatment as independently re-derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b561470eee",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-34b7cf4f44",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rawlings v. Kentucky.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-05-cf36836f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rawlings v. Kentucky"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1203c0948594333a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "231a1e8aedd4dacb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7482a82172e7fadd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d4a68ab35a577d2b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b561470eee",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c7738a48f1",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-34b7cf4f44",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

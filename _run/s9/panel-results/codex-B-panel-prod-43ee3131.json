@@ -1,39 +1,70 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-cruz--10662743.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "6f4f5eb34ea2f63e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload asserts treatment validity as unverified, with no as-of dates and no point variation.",
+          "The lake record's treatment fields match: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, point_overrides and edges are empty, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "No disclosed progeny edge or treatment field indicates that the record has been overruled, superseded, abrogated, or otherwise assigned a live-law status."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment/stub assertion; it does not verify that the case is good law or still live law.",
+          "No content_page.* file was present in the working directory, so this review is keyed to the group_inventory payload and lake record."
+        ],
+        "suggested_tightening": "Keep the page language explicit that treatment is unverified and that no good-law conclusion is being asserted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-cruz--10662743.json\",\"reviewed\":[{\"assertion_id\":\"6f4f5eb34ea2f63e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory payload asserts treatment validity as unverified, with no as-of dates and no point variation.\",\"The lake record's treatment fields match: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, point_overrides and edges are empty, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"No disclosed progeny edge or treatment field indicates that the record has been overruled, superseded, abrogated, or otherwise assigned a live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stands only as an unverified-treatment/stub assertion; it does not verify that the case is good law or still live law.\",\"No content_page.* file was present in the working directory, so this review is keyed to the group_inventory payload and lake record.\"],\"suggested_tightening\":\"Keep the page language explicit that treatment is unverified and that no good-law conclusion is being asserted.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens B.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:45-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:22:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/united-states-v-cruz--10662743.json",
     "group_total_assertions": 1,
-    "lake_only_cases": [
-      "united-states-v-cruz--10662743"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-43ee3131",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-43ee3131.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'united-states-v-cruz--10662743' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-cruz--10662743"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 1,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "united-states-v-cruz--10662743"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 57183,
+      "output": 1518,
+      "source": "codex-events",
+      "total": 58701
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "6f4f5eb34ea2f63e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 34.0
   }
 }

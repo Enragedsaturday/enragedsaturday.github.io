@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "409d9ddd6fc2470b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion running headers 'GEORGIA v. RANDOLPH' / 'Opinion of the Court' confirm case identity; lake cluster_id 145669 and content page agree on official cite 547 U.S. 103.",
+          "official_selection_present=true; parallel cites (126 S. Ct. 1515; 164 L. Ed. 2d 208; 2006 U.S. LEXIS 2498) consistent."
+        ],
+        "residual_risks": [
+          "Cached slip text is not star-paginated to U.S. Reports (shows slip page '16'), so the exact string '547 U.S. 103' is not printed in the disclosed text; identity is nonetheless unmistakable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bafaead73dedc487",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-section blob; the actual pin-120 quotation is 'We therefore hold that a warrantless search of a shared dwelling for evidence over the express refusal of consent by a physically present resident cannot be justified as reasonable as to him on the basis of consent given to the police by another resident.'",
+          "De-hyphenating the cached PDF line-breaks, that sentence appears verbatim in the cached opinion."
+        ],
+        "residual_risks": [
+          "Cached text lacks U.S. Reports star pagination, so the '120' pincite page is not independently confirmable from disclosed evidence (genuinely slip-only); only the quotation verbatim is confirmed.",
+          "S8 payload quote_fidelity=mismatch is a blob-capture false positive."
+        ],
+        "suggested_tightening": "Re-extract the pin-120 quote span; obtain star-paginated text to confirm the 120 pincite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50965a191184c99f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed cached opinion is the controlling SCOTUS majority stating the present-objector rule; nothing disclosed refutes good_law.",
+          "as_of_content 2006-03-22 matches the decision date."
+        ],
+        "residual_risks": [
+          "scope_note 'Confined to a physically present objector by Fernandez v. California (2014)' relies on a case not inlined; the confinement-vs-overruling characterization and 2026 currency cannot be verified from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2b095e8d3c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Georgia v. Randolph.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-09-173d8c77",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Georgia v. Randolph"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "409d9ddd6fc2470b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "50965a191184c99f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "bafaead73dedc487": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b095e8d3c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

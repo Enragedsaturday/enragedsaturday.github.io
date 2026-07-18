@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Weaver.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "771b8f55c10a8942",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "lake selected the neutral cite 2011 Tex. Crim. App. LEXIS 1320 as official — flagged for S2 re-selection (S.W.3d reporter is the correct primary).",
+          "locator_note": "content_page.md header comment; group_inventory existence payload official/display fields",
+          "needs_cl": false,
+          "problem": "The authority exists, but the existence payload packages 2011 Tex. Crim. App. LEXIS 1320 as the selected official/display citation even though the built page flags that selection for correction to the S.W.3d reporter.",
+          "proposed_fix": "Keep State v. Weaver as an existing 2011 Tex. Crim. App. authority, but use 349 S.W.3d 521 as the primary/official display citation and treat 2011 Tex. Crim. App. LEXIS 1320 as a parallel vendor citation.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies the case exists as State v. Weaver, Tex. Crim. App., decided 2011-09-28, docket PD-1635-10, cluster_id 2546485.",
+          "Lake citations include 349 S.W.3d 521, 2011 Tex. Crim. App. LEXIS 1320, and 2011 WL 4715178.",
+          "Currency/live-law status is not positively verified because the lake treatment fields are expressly unverified."
+        ],
+        "residual_risks": [
+          "No completed progeny or treatment enumeration is disclosed, so live-law status cannot be confirmed beyond the page's unverified treatment warning."
+        ],
+        "suggested_tightening": "Separate case-existence metadata from citation-rank metadata, and avoid any live-law implication while treatment remains unverified.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14ebbd28c8f35346",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload says field_i_validity is unverified, matching the lake treatment field.",
+          "The lake scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The content page also labels treatment as Unverified and says subsequent treatment is not yet machine-verified."
+        ],
+        "residual_risks": [
+          "Because complete_query, indexed_citing_opinions, citation_count, and treatment edges are absent or null, no good-law conclusion should be inferred."
+        ],
+        "suggested_tightening": "Keep the unverified banner until treatment and progeny are actually derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/State v. Weaver.json\",\"reviewed\":[{\"assertion_id\":\"771b8f55c10a8942\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists, but the existence payload packages 2011 Tex. Crim. App. LEXIS 1320 as the selected official/display citation even though the built page flags that selection for correction to the S.W.3d reporter.\",\"severity\":\"low\",\"proposed_fix\":\"Keep State v. Weaver as an existing 2011 Tex. Crim. App. authority, but use 349 S.W.3d 521 as the primary/official display citation and treat 2011 Tex. Crim. App. LEXIS 1320 as a parallel vendor citation.\",\"evidence_quote\":\"lake selected the neutral cite 2011 Tex. Crim. App. LEXIS 1320 as official — flagged for S2 re-selection (S.W.3d reporter is the correct primary).\",\"needs_cl\":false,\"locator_note\":\"content_page.md header comment; group_inventory existence payload official/display fields\"},\"reasons\":[\"Lake identity verifies the case exists as State v. Weaver, Tex. Crim. App., decided 2011-09-28, docket PD-1635-10, cluster_id 2546485.\",\"Lake citations include 349 S.W.3d 521, 2011 Tex. Crim. App. LEXIS 1320, and 2011 WL 4715178.\",\"Currency/live-law status is not positively verified because the lake treatment fields are expressly unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No completed progeny or treatment enumeration is disclosed, so live-law status cannot be confirmed beyond the page's unverified treatment warning.\"],\"suggested_tightening\":\"Separate case-existence metadata from citation-rank metadata, and avoid any live-law implication while treatment remains unverified.\"},{\"assertion_id\":\"14ebbd28c8f35346\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload says field_i_validity is unverified, matching the lake treatment field.\",\"The lake scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"The content page also labels treatment as Unverified and says subsequent treatment is not yet machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because complete_query, indexed_citing_opinions, citation_count, and treatment edges are absent or null, no good-law conclusion should be inferred.\"],\"suggested_tightening\":\"Keep the unverified banner until treatment and progeny are actually derived.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:39:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c48f05e89e"
+    ],
     "group_id": "_overhaul2/lake/cases/State v. Weaver.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d2e02b2e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d2e02b2e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:06.296418Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:07.218789Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:08.357525Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:10.511307Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:14.501389Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Weaver"
+    ],
+    "tokens": {
+      "input": 149351,
+      "output": 5967,
+      "source": "codex-events",
+      "total": 155318
+    },
+    "verdict_map": {
+      "14ebbd28c8f35346": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "771b8f55c10a8942": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c48f05e89e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 117.5
   }
 }

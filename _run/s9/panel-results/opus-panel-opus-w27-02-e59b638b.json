@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "06a92e2fd481fd36",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official = '403 U.S. 388' (reporter U.S., type 1, selected_official true), cluster_id 108375, court_id scotus, year 1971 — matches payload citation '403 U.S. 388 (1971)'.",
+          "Cached opinion header renders '403 U.S. 388 (1971)'; parallel (91 S. Ct. 1999; 29 L. Ed. 2d 619) and neutral (1971 U.S. LEXIS 23) cites match payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b110264148030ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Cached opinion text: 'recover money damages for any injuries he has suffered as a result of the agents' violation of the Amendment' and 'Today we hold that ... cause of action' directly support the money-damages-directly-under-4A holding against federal officers.",
+          "'implied federal-officer analog to § 1983' is standard characterization, not a quoted holding; consistent with the opinion's damages-remedy reasoning."
+        ],
+        "residual_risks": [
+          "The § 1983-analog framing is editorial characterization; the opinion predates and does not itself invoke § 1983 by name."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26586d8abd83582f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*",
+          "locator_note": "frontmatter homes[0].page vs '## Appears on' bullet",
+          "needs_cl": false,
+          "problem": "Internal inconsistency: frontmatter homes declares the anchor page as '[[Suing Federal Officers]]' (Key — Anchor), but the page's '## Appears on' section names a different page, '[[Section 1983 Liability and Qualified Immunity]] — Key — Anchor'. The two do not agree on which page Bivens anchors.",
+          "proposed_fix": "Reconcile the '## Appears on' section with the homes frontmatter so both name the same anchor page (Suing Federal Officers, per homes).",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The home_role assertion (home='Suing Federal Officers', role='Key — Anchor') matches the authoritative frontmatter homes[] block, so the anchor relationship is declared and survives.",
+          "But the rendered '## Appears on' section contradicts it by naming 'Section 1983 Liability and Qualified Immunity' as the Key — Anchor, an internal-consistency defect."
+        ],
+        "residual_risks": [
+          "Existence of the '[[Suing Federal Officers]]' page is not verifiable from the disclosed pack (no page list inlined); role appropriateness is editorial, not opinion-verifiable."
+        ],
+        "suggested_tightening": "Regenerate the Appears-on section from the homes frontmatter so placement is single-sourced.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "418bdfc476e584fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level='scotus', court_id='scotus' — a U.S. Supreme Court decision is binding; authority_weight 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b6a3a2e3fd01a78",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity='good_law' (migration-seed); no adjudicated negative treatment of Bivens is disclosed.",
+          "All treatment.edges carry proposed:true and journal_ref lane1_negative/lane2_top_cited (co-citation extractor noise — e.g., Illinois v. Gates, Graham v. Connor, and a state case 'Lennette v. Iowa' cannot 'overrule' a SCOTUS decision); none is an adjudicated negative edge.",
+          "scope_note honestly records the doctrinal narrowing (Ziglar v. Abbasi 2017; Egbert v. Boule 2022) while keeping the core holding good law — consistent with 'not overruled, but limited'."
+        ],
+        "residual_risks": [
+          "20+ proposed negative edges (overruled/questioned/abrogated) remain unadjudicated; if any were genuine they would bear on validity, but on their face they are top-cited/co-citation artifacts."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:53:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c76e7ad776"
+    ],
+    "group_id": "content/cases/Bivens v. Six Unknown Named Agents.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w27-02-e59b638b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w27-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Bivens v. Six Unknown Named Agents"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "06a92e2fd481fd36": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1b110264148030ea": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "26586d8abd83582f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "418bdfc476e584fa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b6a3a2e3fd01a78": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c76e7ad776",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,104 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Al-Azzawy.json",
+    "lens": "B",
+    "notes": "Reviewed both assertion_ids in group_inventory.jsonl under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "1f18909e5c314731",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as United States v. Riad Abed Al-Azzawy, 9th Cir., decided 1986-03-11, docket 85-5004, cluster_id 465254.",
+          "The disclosed citation fields select 784 F.2d 890 as the official/display citation, with expected_citation_found true."
+        ],
+        "residual_risks": [
+          "Currency/good-law status is not established by this existence row because treatment remains unverified."
+        ],
+        "suggested_tightening": "Keep this assertion limited to case/citation existence; do not let it imply verified current good-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d225aecac59ee1eb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/United States v. Al-Azzawy__b0d559.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The formal lake treatment fields support only an unverified treatment status, but the visible Treatment & subsequent history section goes beyond that by asserting specific subsequent-history/progeny relationships and also uses S9 wording that conflicts with the lake/frontmatter S6 scope note.",
+          "proposed_fix": "Limit the visible treatment section to the unverified frontier-stub status unless Nora/Vaneaton progeny edges are added to the disclosed lake record; align the promotion wording to the lake scope note or update the lake field if S9 is intended.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny.rows_cached is 0.",
+          "The page correctly displays Treatment: Unverified, but then states that Al-Azzawy is an anchor distinguished by United States v. Nora and a counterpoint to United States v. Vaneaton without disclosed progeny edges to verify those treatment relationships.",
+          "The page status text says treatment/progeny are not machine-certified until S9 promotion, while the lake scope_note and frontmatter say S6 promotion."
+        ],
+        "residual_risks": [
+          "No disclosed treatment derivation, citing-opinion enumeration, or point overrides establish whether the case is currently overruled, limited, distinguished, or otherwise affected."
+        ],
+        "suggested_tightening": "Render as treatment unverified only, and move Nora/Vaneaton relationship claims out of Treatment & subsequent history until backed by lake progeny/treatment edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Al-Azzawy.json\",\"reviewed\":[{\"assertion_id\":\"1f18909e5c314731\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies the case as United States v. Riad Abed Al-Azzawy, 9th Cir., decided 1986-03-11, docket 85-5004, cluster_id 465254.\",\"The disclosed citation fields select 784 F.2d 890 as the official/display citation, with expected_citation_found true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency/good-law status is not established by this existence row because treatment remains unverified.\"],\"suggested_tightening\":\"Keep this assertion limited to case/citation existence; do not let it imply verified current good-law status.\"},{\"assertion_id\":\"d225aecac59ee1eb\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The formal lake treatment fields support only an unverified treatment status, but the visible Treatment & subsequent history section goes beyond that by asserting specific subsequent-history/progeny relationships and also uses S9 wording that conflicts with the lake/frontmatter S6 scope note.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit the visible treatment section to the unverified frontier-stub status unless Nora/Vaneaton progeny edges are added to the disclosed lake record; align the promotion wording to the lake scope note or update the lake field if S9 is intended.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/United States v. Al-Azzawy__b0d559.json treatment/progeny fields\"},\"reasons\":[\"Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny.rows_cached is 0.\",\"The page correctly displays Treatment: Unverified, but then states that Al-Azzawy is an anchor distinguished by United States v. Nora and a counterpoint to United States v. Vaneaton without disclosed progeny edges to verify those treatment relationships.\",\"The page status text says treatment/progeny are not machine-certified until S9 promotion, while the lake scope_note and frontmatter say S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed treatment derivation, citing-opinion enumeration, or point overrides establish whether the case is currently overruled, limited, distinguished, or otherwise affected.\"],\"suggested_tightening\":\"Render as treatment unverified only, and move Nora/Vaneaton relationship claims out of Treatment & subsequent history until backed by lake progeny/treatment edges.\"}],\"notes\":\"Reviewed both assertion_ids in group_inventory.jsonl under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:59-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:44:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9b3f264d77"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Al-Azzawy.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ab98f2ee",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ab98f2ee.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:56.670952Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:57.130222Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:57.725823Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Al-Azzawy"
+    ],
+    "tokens": {
+      "input": 88930,
+      "output": 5459,
+      "source": "codex-events",
+      "total": 94389
+    },
+    "verdict_map": {
+      "1f18909e5c314731": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d225aecac59ee1eb": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9b3f264d77",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 111.5
   }
 }

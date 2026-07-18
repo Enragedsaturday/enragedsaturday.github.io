@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0e54b48b86982a9a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Johnson v. United States, Mr. Justice Jackson, SCOTUS 1948, U.S. star pages *12-*17, disposition 'Reversed'.",
+          "Official cite 333 U.S. 10 is real and rank-1 selected; parallel S.Ct./L.Ed. cites are consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "927d4ccc56e2effe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The point of the Fourth Amendment, which often is not grasped by zealous officers, is not that it denies law enforcement the support of the usual inferences which reasonable men draw from evidence. Its protection consists in requiring that those inferences be drawn by a neutral and detached magistrate instead of being judged by the officer engaged in the often competitive enterprise of ferreting out crime.",
+          "locator_note": "cached opinion para b91-10, spanning star pages *13-*14; content page pin-13 already carries the correct quote pincited '333 U.S. at 13-14'.",
+          "needs_cl": false,
+          "problem": "pin-13's stored quote is a page-markdown dump (YAML '---', '# Johnson v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **good** *(as of 2026-06-30)*'), not any text from the 1948 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+          "proposed_fix": "replace pin-13.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote text is impossible in a 1948 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+          "The intended quotation is verbatim in cached text at *13-14, so the pincite is sound; the corruption is confined to the lake pinpoint.quote provenance field."
+        ],
+        "residual_risks": [
+          "Rendered content page is correct; downstream consumers relying on pinpoint.quote for verification would break on the corrupted field."
+        ],
+        "suggested_tightening": "re-harvest pin-13 from the opinion text rather than the page markdown",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7d8c3a4066f9d7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-14 quote matches cached opinion verbatim (para b91-10, star page *14): 'Any assumption that evidence sufficient to support a magistrate's disinterested determination to issue a search warrant will justify the officers in making a search without a warrant would reduce the Amendment to a nullity and leave the people's homes secure only in the discretion of police officers.'",
+          "Pincite 'Id. at 14' is correct."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' / pinpoint_status='slip-only' is a FALSE alarm: the quote is faithful; the auto-matcher likely missed it on star-page indexing."
+        ],
+        "suggested_tightening": "flip pin-14 quote_fidelity to 'matched' (verified against *14)",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c6280240a37cee0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' (legacy migration good->good_law); every one of the ~41 negative treatment edges is proposed=true (unaccepted) and is a name-collision FP: state courts (State v. Hilton, Commonwealth v. Sorenson) cannot overrule SCOTUS, and the 'overruled' top-cited cases (Illinois v. Gates, United States v. Leon, Aguilar) target Aguilar-Spinelli / other doctrines, not the 1948 neutral-magistrate holding.",
+          "lane1_negative proposed 16 and lane2_top_cited 25 events are all unaccepted; no accepted negative event; case is heavily cited (citation_count 3856)."
+        ],
+        "residual_risks": [
+          "Currency as of 2026-06-30 rests on none of the proposed negatives being accepted; the FP volume (collision with the 2015 ACCA 'Johnson v. United States' void-for-vagueness line) should be swept before promotion."
+        ],
+        "suggested_tightening": "prune/close the name-collision negative-edge proposals before promotion",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f3a91ced8b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff7f1e04",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-03-fe4ebb9f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Johnson v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0c6280240a37cee0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0e54b48b86982a9a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "927d4ccc56e2effe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d7d8c3a4066f9d7b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-37c8206676",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f3a91ced8b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff7f1e04",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

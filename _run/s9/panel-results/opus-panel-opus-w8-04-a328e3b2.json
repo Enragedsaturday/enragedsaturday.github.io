@@ -1,0 +1,142 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1dc43cac2cf9f32e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption confirms '544 U.S. 93 (2005)', 'MUEHLER ET AL. v. MENA', No. 03-1423, argued Dec 8 2004, decided March 22 2005 — matches record identity and date_decided.",
+          "Official cite 544 U.S. 93 present and selected_official=true; parallels 125 S. Ct. 1465 and 161 L. Ed. 2d 299 are internally consistent SCOTUS reporter cites."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a98fdd8f1c6bb0f1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An officer's authority to detain incident to a search is categorical; it does not depend on the \"quantum of proof justifying detention or the extent of the intrusion to be imposed by the seizure.\"",
+          "locator_note": "Cached opinion paragraph under the star *98 marker (Rehnquist maj.); *99 marker begins the next paragraph, confirming page 98.",
+          "needs_cl": false,
+          "problem": "The pin-98 pinpoint quote field is a mis-extracted wiki-page blob (frontmatter '---' through Background/Issue/Rule preamble), not an opinion passage; it is correctly self-flagged fidelity=mismatch/slip-only. The content page's actual ^pin-98 quotation is a DIFFERENT, verifiable sentence, so the reader is not misled, but the stored quote is corrupt metadata.",
+          "proposed_fix": "Re-extract the pin-98 quote to the sentence rendered on the page, which verifies verbatim at 544 U.S. 98; keep pincite 98.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-98 quote is verbatim the page's frontmatter/Background/Issue/Rule text — a slip-only extraction artifact, not an opinion quote (matches lake self-flag mismatch).",
+          "The sentence the page actually cites at ^pin-98 ('An officer's authority to detain incident to a search is categorical...') appears verbatim in the cached opinion at star *98; pincite 544 U.S. 98 is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reconcile the pinpoint quote field with the rendered quotation so fidelity can flip mismatch->matched.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c66d9e20b37112c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'the officers did not need reasonable suspicion to ask Mena for her name, date and place of birth, or immigration status.' appears verbatim in the cached opinion, in the paragraph between the star *101 and *102 markers.",
+          "Pincite 101 and star_marker '101' are correct; fragment/star-verified status corroborated by disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ccadf21e145c808",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Muehler v. Mena is a 2005 SCOTUS merits decision (vacating/remanding the 9th Cir.); nothing in the disclosed opinion or edges shows any Supreme Court negative treatment. good_law is supported.",
+          "The disclosed negative treatment.edges (State v. Tripp x3, Harte) are all proposed=true lane1_negative keyword hits from state/lower courts, which cannot abrogate a SCOTUS holding — facially false positives, not a basis to disturb good_law."
+        ],
+        "residual_risks": [
+          "Comprehensive treatment currency as-of 2026-06-30 (full Shepard/KeyCite) is not independently reproducible from the disclosed set; good_law here rests on SCOTUS status plus FP-only disclosed negatives."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ea050b8140",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Muehler v. Mena.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-04-a328e3b2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Muehler v. Mena"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1ccadf21e145c808": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1dc43cac2cf9f32e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a98fdd8f1c6bb0f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c66d9e20b37112c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8cfa90eb6e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ea050b8140",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

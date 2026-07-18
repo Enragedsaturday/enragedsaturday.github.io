@@ -1,22 +1,188 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Florida v. Bostick.md",
+    "lens": "B",
+    "notes": "Lens B reviewed only currency/treatment. Support and quote-fidelity questions were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "ce565f4fe87d027c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies Florida v. Bostick as a U.S. Supreme Court decision dated 1991-06-20.",
+          "The disclosed citation fields match 501 U.S. 429 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit flags, but no final disclosed treatment field says the case is no longer live law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cd4384e5d819b7c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate support or quote fidelity.",
+          "For currency purposes, the cited authority is verified in the lake record and has field_i_validity good_law."
+        ],
+        "residual_risks": [
+          "Holding accuracy is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed71c4cc88ea846f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate whether the Knock and Talk home role is substantively apt.",
+          "No final disclosed treatment field makes Bostick unavailable as current authority."
+        ],
+        "residual_risks": [
+          "Role fit is reserved for a support/home-placement review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb0247acb3ad7e67",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment frontmatter and Treatment & subsequent history section.",
+          "needs_cl": true,
+          "problem": "The good_law field itself matches the lake judgment, but the page's categorical treatment narrative is too clean because the disclosed treatment derivation contains proposed negative-treatment edges and audit-needed flags.",
+          "proposed_fix": "Keep field_i_validity as good_law only if relying on the lake judgment, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the disclosed lake judgment; proposed negative-treatment edges remain audit-flagged.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment judgment says field_i_validity good_law as of 2026-06-30 with varies_by_point false and no point overrides.",
+          "But treatment.edges include proposed entries labeled questioned, criticized, abrogated, overruled, and superseded_by_statute, all with field_iii mentioned.",
+          "Derivation lanes show audit_needed true and cap_hit true, so the page should not state unqualified 'No negative treatment' from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives, but the disclosed record itself requires audit before a categorical no-negative-treatment claim."
+        ],
+        "suggested_tightening": "Surface the migration-seed basis and audit caveat in the rendered treatment text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc2616ed38ebdd50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.",
+          "For a federal search-and-seizure corpus, the Binding - SCOTUS weight label is consistent with the disclosed court identity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Florida v. Bostick.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ce565f4fe87d027c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies Florida v. Bostick as a U.S. Supreme Court decision dated 1991-06-20.\",\n        \"The disclosed citation fields match 501 U.S. 429 and the listed parallel/vendor citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation has audit flags, but no final disclosed treatment field says the case is no longer live law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"cd4384e5d819b7c4\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not evaluate support or quote fidelity.\",\n        \"For currency purposes, the cited authority is verified in the lake record and has field_i_validity good_law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Holding accuracy is reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ed71c4cc88ea846f\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not evaluate whether the Knock and Talk home role is substantively apt.\",\n        \"No final disclosed treatment field makes Bostick unavailable as current authority.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Role fit is reserved for a support/home-placement review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fb0247acb3ad7e67\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law field itself matches the lake judgment, but the page's categorical treatment narrative is too clean because the disclosed treatment derivation contains proposed negative-treatment edges and audit-needed flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity as good_law only if relying on the lake judgment, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the disclosed lake judgment; proposed negative-treatment edges remain audit-flagged.'\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"Treatment frontmatter and Treatment & subsequent history section.\"\n      },\n      \"reasons\": [\n        \"The lake treatment judgment says field_i_validity good_law as of 2026-06-30 with varies_by_point false and no point overrides.\",\n        \"But treatment.edges include proposed entries labeled questioned, criticized, abrogated, overruled, and superseded_by_statute, all with field_iii mentioned.\",\n        \"Derivation lanes show audit_needed true and cap_hit true, so the page should not state unqualified 'No negative treatment' from the disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed negative edges may be false positives, but the disclosed record itself requires audit before a categorical no-negative-treatment claim.\"\n      ],\n      \"suggested_tightening\": \"Surface the migration-seed basis and audit caveat in the rendered treatment text.\"\n    },\n    {\n      \"assertion_id\": \"fc2616ed38ebdd50\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.\",\n        \"For a federal search-and-seizure corpus, the Binding - SCOTUS weight label is consistent with the disclosed court identity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens B reviewed only currency/treatment. Support and quote-fidelity questions were not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:43:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:00:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0c803a3c17",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf12b4eefa",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a9a8bd44e7"
+    ],
     "group_id": "content/cases/Florida v. Bostick.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5e7eca71",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5e7eca71.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:28.623608Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:29.227461Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:29.994055Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:31.149171Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:43:33.218835Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Bostick"
+    ],
+    "tokens": {
+      "input": 446191,
+      "output": 7310,
+      "source": "codex-events",
+      "total": 453501
+    },
+    "verdict_map": {
+      "cd4384e5d819b7c4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce565f4fe87d027c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed71c4cc88ea846f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb0247acb3ad7e67": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fc2616ed38ebdd50": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0c803a3c17",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf12b4eefa",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a9a8bd44e7",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 166.3
   }
 }

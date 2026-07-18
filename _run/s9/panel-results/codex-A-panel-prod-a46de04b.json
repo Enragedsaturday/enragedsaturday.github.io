@@ -1,22 +1,146 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Mansor.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl; no support, pincite, or black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "c8679d52bea391e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name State v. Mansor, court Oregon Supreme Court, date_decided 2018-06-28, and year 2018.",
+          "Lake citations list official 363 Or. 185 and parallel 421 P.3d 323, matching the built page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f4ebd70e64b4a4f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # State v. Mansor *363 Or. 185, 421 P.3d 323 (2018)* · Oregon Supreme Court · **Persuasive — state, illustrative**",
+          "locator_note": "pin-185; lake pinpoints[0] has quote_fidelity=mismatch and pinpoint_status=slip-only, while content_page.md attaches ^pin-185 to the particularity-rule quotation.",
+          "needs_cl": false,
+          "problem": "pin-185 is not a faithful quote pinpoint. The lake quote is generated page text, not opinion text, and the lake itself marks quote_fidelity as mismatch with no star marker, page, or position.",
+          "proposed_fix": "Replace pin-185 with the actual p115 particularity sentence from the cached opinion text, set the star/page locator to 345, and make the rendered quote match the cached text or use a precise bracketed ellipsis.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pin-185 quote begins with the built page heading, not language from text/State v. Mansor__ee4554.txt.",
+          "The real rule passage appears in p115 at star page 345, beginning: We instead conclude that, to meet the particularity requirement of Article I, section 9.",
+          "The rendered quote also diverges from the cached text in punctuation and quotation marks around the omitted passage."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported by p115; the refutation is quote/pin fidelity, not substantive support."
+        ],
+        "suggested_tightening": "Use the full p115 sentence through the temporal-description clause, or a character-faithful excerpt with a clean ellipsis and *345 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f5c6e1c64b2d6a1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-185a quote exactly matches the final sentence of p115 in the cached opinion text.",
+          "Lake pin-185a is marked quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=345, which corresponds to the page label immediately before the conclusion section."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e241603331e4176",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The built page treatment fields mirror the lake treatment fields: field_i_validity=good_law, as_of_content=2018-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the Oregon Article I, section 9 scope note.",
+          "Treatment currency is outside lens A, so I raise no treatment finding."
+        ],
+        "residual_risks": [
+          "Treatment substance and currency are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/State v. Mansor.json\",\"reviewed\":[{\"assertion_id\":\"c8679d52bea391e1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name State v. Mansor, court Oregon Supreme Court, date_decided 2018-06-28, and year 2018.\",\"Lake citations list official 363 Or. 185 and parallel 421 P.3d 323, matching the built page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0f4ebd70e64b4a4f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-185 is not a faithful quote pinpoint. The lake quote is generated page text, not opinion text, and the lake itself marks quote_fidelity as mismatch with no star marker, page, or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-185 with the actual p115 particularity sentence from the cached opinion text, set the star/page locator to 345, and make the rendered quote match the cached text or use a precise bracketed ellipsis.\",\"evidence_quote\":\"--- # State v. Mansor *363 Or. 185, 421 P.3d 323 (2018)* · Oregon Supreme Court · **Persuasive — state, illustrative**\",\"needs_cl\":false,\"locator_note\":\"pin-185; lake pinpoints[0] has quote_fidelity=mismatch and pinpoint_status=slip-only, while content_page.md attaches ^pin-185 to the particularity-rule quotation.\"},\"reasons\":[\"The stored pin-185 quote begins with the built page heading, not language from text/State v. Mansor__ee4554.txt.\",\"The real rule passage appears in p115 at star page 345, beginning: We instead conclude that, to meet the particularity requirement of Article I, section 9.\",\"The rendered quote also diverges from the cached text in punctuation and quotation marks around the omitted passage.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition appears supported by p115; the refutation is quote/pin fidelity, not substantive support.\"],\"suggested_tightening\":\"Use the full p115 sentence through the temporal-description clause, or a character-faithful excerpt with a clean ellipsis and *345 locator.\"},{\"assertion_id\":\"2f5c6e1c64b2d6a1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-185a quote exactly matches the final sentence of p115 in the cached opinion text.\",\"Lake pin-185a is marked quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=345, which corresponds to the page label immediately before the conclusion section.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7e241603331e4176\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The built page treatment fields mirror the lake treatment fields: field_i_validity=good_law, as_of_content=2018-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the Oregon Article I, section 9 scope note.\",\"Treatment currency is outside lens A, so I raise no treatment finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance and currency are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl; no support, pincite, or black_letter rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:39:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cd39534707"
+    ],
     "group_id": "_overhaul2/lake/cases/State v. Mansor.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-a46de04b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a46de04b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:05.087291Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:05.948882Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:07.160990Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:09.070566Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:12.776621Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Mansor"
+    ],
+    "tokens": {
+      "input": 211086,
+      "output": 7177,
+      "source": "codex-events",
+      "total": 218263
+    },
+    "verdict_map": {
+      "0f4ebd70e64b4a4f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2f5c6e1c64b2d6a1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e241603331e4176": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c8679d52bea391e1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd39534707",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 143.6
   }
 }

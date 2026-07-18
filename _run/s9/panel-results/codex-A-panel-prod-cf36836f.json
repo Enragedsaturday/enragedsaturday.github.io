@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rawlings v. Kentucky.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "231a1e8aedd4dacb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity records Rawlings v. Kentucky, U.S. Supreme Court, decided 1980-06-25, year 1980.",
+          "Lake citations identify the official citation as 448 U.S. 98, matching the content page citation 448 U.S. 98 (1980)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1203c0948594333a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "While petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case,",
+          "locator_note": "pin-105 / 448 U.S. at 105",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful: the opinion says the ownership of the drugs is one fact to be considered in this case, but the asserted quote drops 'in this case' and moves the comma after 'considered'.",
+          "proposed_fix": "Replace the quote with an exact excerpt such as: petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case, or remove quotation marks and paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text at the page-105 passage has 'considered in this case,' not 'considered,'.",
+          "The lake pinpoint also marks pin-105 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The surrounding proposition is supported, but the verbatim quotation as framed is not exact."
+        ],
+        "suggested_tightening": "Use the full case-specific wording from the opinion rather than a shortened mid-sentence fragment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7482a82172e7fadd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.",
+          "locator_note": "pin-106 / 448 U.S. at 106; lake pinpoint page is null and status is slip-only",
+          "needs_cl": false,
+          "problem": "The reviewed pinpoint quote is not an opinion quote; it is a harvested markdown/content-page fragment beginning with the page header and ending before the actual quoted sentence.",
+          "proposed_fix": "Set pin-106's quote/pinpoint payload to the exact opinion sentence already displayed on the content page, not the harvested markdown fragment.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload/lake quote begins with content-page material rather than text from the Rawlings opinion.",
+          "The cached opinion text contains the actual page-106 passage: 'the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.'"
+        ],
+        "residual_risks": [
+          "The visible content_page quote appears faithful, but the reviewed payload/lake pinpoint quote is polluted and should not be relied on until regenerated."
+        ],
+        "suggested_tightening": "Reharvest pin-106 directly from the opinion text around the Rakas sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4a68ab35a577d2b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1980-06-25, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Lens A does not assess treatment currency or negative progeny merits."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not reviewed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Rawlings v. Kentucky.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"231a1e8aedd4dacb\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity records Rawlings v. Kentucky, U.S. Supreme Court, decided 1980-06-25, year 1980.\",\n        \"Lake citations identify the official citation as 448 U.S. 98, matching the content page citation 448 U.S. 98 (1980).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1203c0948594333a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment is not character-faithful: the opinion says the ownership of the drugs is one fact to be considered in this case, but the asserted quote drops 'in this case' and moves the comma after 'considered'.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the quote with an exact excerpt such as: petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case, or remove quotation marks and paraphrase.\",\n        \"evidence_quote\": \"While petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case,\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-105 / 448 U.S. at 105\"\n      },\n      \"reasons\": [\n        \"The cached opinion text at the page-105 passage has 'considered in this case,' not 'considered,'.\",\n        \"The lake pinpoint also marks pin-105 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The surrounding proposition is supported, but the verbatim quotation as framed is not exact.\"\n      ],\n      \"suggested_tightening\": \"Use the full case-specific wording from the opinion rather than a shortened mid-sentence fragment.\"\n    },\n    {\n      \"assertion_id\": \"7482a82172e7fadd\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The reviewed pinpoint quote is not an opinion quote; it is a harvested markdown/content-page fragment beginning with the page header and ending before the actual quoted sentence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Set pin-106's quote/pinpoint payload to the exact opinion sentence already displayed on the content page, not the harvested markdown fragment.\",\n        \"evidence_quote\": \"the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-106 / 448 U.S. at 106; lake pinpoint page is null and status is slip-only\"\n      },\n      \"reasons\": [\n        \"The payload/lake quote begins with content-page material rather than text from the Rawlings opinion.\",\n        \"The cached opinion text contains the actual page-106 passage: 'the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content_page quote appears faithful, but the reviewed payload/lake pinpoint quote is polluted and should not be relied on until regenerated.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-106 directly from the opinion text around the Rakas sentence.\"\n    },\n    {\n      \"assertion_id\": \"d4a68ab35a577d2b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1980-06-25, as_of_treatment 2026-06-30, and varies_by_point false.\",\n        \"Lens A does not assess treatment currency or negative progeny merits.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not reviewed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support, pincite, or black_letter rows were present in group_inventory.jsonl.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:56-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:29:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-34b7cf4f44",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b561470eee",
+      "F-S9-PR-c7738a48f1"
+    ],
     "group_id": "_overhaul2/lake/cases/Rawlings v. Kentucky.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cf36836f",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cf36836f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:48.061209Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:48.719654Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:49.481660Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:50.649810Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:52.642884Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:56.322726Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rawlings v. Kentucky"
+    ],
+    "tokens": {
+      "input": 175625,
+      "output": 8763,
+      "source": "codex-events",
+      "total": 184388
+    },
+    "verdict_map": {
+      "1203c0948594333a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "231a1e8aedd4dacb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7482a82172e7fadd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d4a68ab35a577d2b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b561470eee",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c7738a48f1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-34b7cf4f44",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 167.0
   }
 }

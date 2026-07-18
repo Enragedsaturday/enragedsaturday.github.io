@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "09753ceebdc179f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is United States v. Bagley (cluster 111514); internal star-pagination markers (*682, plus pages 720 and 722) are consistent with the official cite 473 U.S. 667 (case begins at 667; the quoted materiality holding sits at 682).",
+          "Parallel/vendor cites (105 S. Ct. 3375; 87 L. Ed. 2d 481; 1985 U.S. LEXIS 130; 53 U.S.L.W. 5084) are from cluster.citations[]; not independently confirmable from the opinion text but well-formed and uncontradicted."
+        ],
+        "residual_risks": [
+          "Parallel reporter numbers rest on cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22c4dd28c3716295",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A \"reasonable probability\" is a probability sufficient to undermine confidence in the outcome.",
+          "locator_note": "Cached opinion, paragraph b720-5, on page 682 (the *682 star marker precedes this paragraph in b719-6).",
+          "needs_cl": false,
+          "problem": "pin-682 stored quote is a header-region mis-harvest (captured '--- # United States v. Bagley' through '## Rule The Court adopted one unified materiality standard for all Brady claims, including suppressed impeachment evidence:') rather than the quotation anchored at ^pin-682; self-flagged 'mismatch'.",
+          "proposed_fix": "Repoint the pin-682 quote field to the anchored materiality standard quoted on the page.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The DISPLAYED quotation anchored at ^pin-682 is verbatim faithful to Bagley at 473 U.S. 682 (cached opinion, paragraph b720-5).",
+          "Only the stored quote field is a harvest artifact; the published legal content is accurate, so the assertion survives with a needed record modification."
+        ],
+        "residual_risks": [
+          "Metadata-only artifact; page render is correct."
+        ],
+        "suggested_tightening": "Anchor the harvester on the ^pin paragraph rather than the frontmatter region.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67faf8c4f8fda7c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "'good_law' is correct: Bagley supplies the controlling Brady/Giglio materiality standard and is still applied (content lists Kyles, Strickler, and Turner as progeny; the cached opinion sets the reasonable-probability standard).",
+          "Every negative edge is proposed=true with field_iii='mentioned' — keyword false positives from citing cases, several of which are Bagley's own affirming progeny (Kyles v. Whitley, Strickler v. Greene) or unrelated (Murray v. Carrier, Pennsylvania v. Ritchie, Moran v. Burbine); none is a confirmed overruling/abrogation OF Bagley."
+        ],
+        "residual_risks": [
+          "Proposed edges (e.g., United States v. Jevric 'superseded_by_statute', State v. Hale 'overruled') are unadjudicated mention-level keyword hits, not opinion-read here; on their face they are not confirmed treatment of Bagley."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e8f960cf61",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-01-05ab4f5a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Bagley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "09753ceebdc179f9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "22c4dd28c3716295": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "67faf8c4f8fda7c9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fe42ad2c5a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e8f960cf61",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

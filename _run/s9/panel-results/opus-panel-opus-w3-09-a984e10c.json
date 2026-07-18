@@ -1,0 +1,138 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0ff1637a5f96b873",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Burger, C.J.) confirms Dow Chemical Co. v. United States affirming CA6; internal page markers *229-*239; lake official cite 476 U.S. 227 (selected_rank_1).",
+          "Full parallel set (106 S. Ct. 1819; 90 L. Ed. 2d 226; 16 Envtl. L. Rep. 20679; 54 U.S.L.W. 4464; 24 ERC (BNA) 1385) from cluster.citations[]; decided 1986-05-19."
+        ],
+        "residual_risks": [
+          "Content-page frontmatter docket is empty — a metadata gap that does not affect the citation/existence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "036baa06d872068f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras.",
+          "locator_note": "pin-239",
+          "needs_cl": false,
+          "problem": "Disclosed pinpoints[pin-239].quote is a mis-scoped harvest window of the content page's own authored prose (Issue tail 'under the Fourth Amendment.' + '## Rule' + authored Rule lead-in ending '...curtilage of a home;'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+          "proposed_fix": "Re-scope the harvest so pin-239.quote captures the real quoted passage — 'such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras.' — which matches the cached opinion at page 239; the published content page needs no edit.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed quote contains '## Rule' Markdown, so it is an S8 harvest artifact of authored page prose, not an opinion quotation.",
+          "The page's actual pin-239 quotation is verbatim in the cached opinion at page 239 (the paragraph following the *239 marker); pincite correct."
+        ],
+        "residual_risks": [
+          "Only the harvest span is defective; the published page quotation is faithful, so no content edit is required."
+        ],
+        "suggested_tightening": "Anchor the harvest span to the quoted material, not the Rule lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d47be934a0ec2c72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (page 239): 'We hold that the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment.' The page quote 'the taking of aerial photographs ... Fourth Amendment.' is verbatim (drops the 'We hold that' lead-in).",
+          "Payload is already star-verified/matched (star_marker 239, text-fragment anchor); sighted check confirms."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8deb0e7149b31271",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; cached opinion is an intact SCOTUS majority affirming on the constitutional question (open-areas/navigable-airspace overflight is not a search) — not self-limiting.",
+          "All 29 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+        ],
+        "residual_risks": [
+          "Synthetic 'superseded_by_statute'/'abrogated' labels against a 1986 Fourth Amendment holding are non-credible seeds.",
+          "scope_note (Kyllo cabined home-interior sense-enhancing tech, distinguishing the commercial/open-area setting) is consistent with good law but is not backed by an adjudicated citing report; currency asserted, not independently proven."
+        ],
+        "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Dow Chemical Co. v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-09-a984e10c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dow Chemical Co. v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "036baa06d872068f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "0ff1637a5f96b873": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8deb0e7149b31271": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d47be934a0ec2c72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aeeebcc253",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

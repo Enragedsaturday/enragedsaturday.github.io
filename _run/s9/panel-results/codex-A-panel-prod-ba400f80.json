@@ -1,13 +1,115 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Pennsylvania v. Muniz.md",
+    "lens": "A",
+    "notes": "Reviewed all five inventory assertions using only disclosed files. No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "e3f8de97e5c06793",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Pennsylvania v. Muniz, U.S. Supreme Court, decided 1990-06-18.",
+          "The lake citation fields match the page: official citation 496 U.S. 582, parallel citations 110 S. Ct. 2638 and 110 L. Ed. 2d 528, and vendor citation 1990 U.S. LEXIS 3211."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "714daf4e8490020a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "JUSTICE BRENNAN delivered the opinion of the Court, except as to Part III-C.",
+          "locator_note": "holding; routine-booking-question clause",
+          "needs_cl": false,
+          "problem": "The holding overstates the routine-booking-question rationale as a Court holding. The slurring and sixth-birthday clauses are supported, but Part III-C was expressly excluded from the opinion of the Court; four Justices concurred in the booking-question result for a different reason, and Justice Marshall rejected the exception.",
+          "proposed_fix": "Revise the final clause to say that the first seven booking answers were admissible, but that the routine-booking-question exception was Justice Brennan's Part III-C plurality rationale, not a majority holding of the Court.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Text supports the slurring clause: the opinion says slurring and lack of muscular coordination are nontestimonial components and do not, without more, compel a testimonial response.",
+          "Text supports the sixth-birthday suppression clause: the opinion says Muniz's response was testimonial and should have been suppressed.",
+          "Text does not support treating the routine-booking-question exception as a Court holding because Part III-C was not the opinion of the Court, and the Rehnquist concurrence states it agreed with the result for a different reason."
+        ],
+        "residual_risks": [
+          "A narrower statement about admissibility of the first seven booking answers would stand."
+        ],
+        "suggested_tightening": "Separate the admissibility result from the noncontrolling routine-booking-exception rationale.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b05725dba4c96cb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly applies Miranda to custodial questioning and discusses when unwarned statements must be suppressed.",
+          "The opinion refines Miranda/Innis analysis in the DUI booking context, including testimonial versus physical evidence and custodial-interrogation boundaries.",
+          "The lake record shows Supreme Court status and substantial progeny, supporting the 'Key - Progeny / Refinement' role."
+        ],
+        "residual_risks": [
+          "The home-role label is editorial, but it is supported by the disclosed opinion text and lake progeny data."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55c5e90187711797",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The authority-weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.",
+          "No treatment/currency merits finding is made under lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency review belongs to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7ccd5de64465867",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "I agree with the conclusion in Part III-C that the seven \"booking\" questions should not be suppressed, I do so for a reason different from that of JUSTICE BRENNAN.",
+          "locator_note": "treatment.scope_note; support wording inside scope note",
+          "needs_cl": false,
+          "problem": "The treatment scope note repeats the support overclaim that the routine biographical booking questions fall within a routine-booking-question exception as though that were a controlling holding. This is a support-scope defect, not a treatment/currency finding.",
+          "proposed_fix": "Keep the treatment fields if lens B approves them, but revise the scope note to state that the case is fractured and that the seven booking answers were admissible; Part III-C's routine-booking-exception rationale was plurality-only.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment fields match the content treatment fields, and lens A does not assess good-law currency.",
+          "The support language inside the scope note needs narrowing because Part III-C was not the opinion of the Court."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits remain for lens B."
+        ],
+        "suggested_tightening": "Use 'seven booking answers were admissible; Brennan plurality used a routine-booking rationale' instead of stating the exception as the case holding.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Pennsylvania v. Muniz.md\",\"reviewed\":[{\"assertion_id\":\"e3f8de97e5c06793\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Pennsylvania v. Muniz, U.S. Supreme Court, decided 1990-06-18.\",\"The lake citation fields match the page: official citation 496 U.S. 582, parallel citations 110 S. Ct. 2638 and 110 L. Ed. 2d 528, and vendor citation 1990 U.S. LEXIS 3211.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"714daf4e8490020a\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding overstates the routine-booking-question rationale as a Court holding. The slurring and sixth-birthday clauses are supported, but Part III-C was expressly excluded from the opinion of the Court; four Justices concurred in the booking-question result for a different reason, and Justice Marshall rejected the exception.\",\"severity\":\"high\",\"proposed_fix\":\"Revise the final clause to say that the first seven booking answers were admissible, but that the routine-booking-question exception was Justice Brennan's Part III-C plurality rationale, not a majority holding of the Court.\",\"evidence_quote\":\"JUSTICE BRENNAN delivered the opinion of the Court, except as to Part III-C.\",\"needs_cl\":false,\"locator_note\":\"holding; routine-booking-question clause\"},\"reasons\":[\"Text supports the slurring clause: the opinion says slurring and lack of muscular coordination are nontestimonial components and do not, without more, compel a testimonial response.\",\"Text supports the sixth-birthday suppression clause: the opinion says Muniz's response was testimonial and should have been suppressed.\",\"Text does not support treating the routine-booking-question exception as a Court holding because Part III-C was not the opinion of the Court, and the Rehnquist concurrence states it agreed with the result for a different reason.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A narrower statement about admissibility of the first seven booking answers would stand.\"],\"suggested_tightening\":\"Separate the admissibility result from the noncontrolling routine-booking-exception rationale.\"},{\"assertion_id\":\"b05725dba4c96cb7\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion directly applies Miranda to custodial questioning and discusses when unwarned statements must be suppressed.\",\"The opinion refines Miranda/Innis analysis in the DUI booking context, including testimonial versus physical evidence and custodial-interrogation boundaries.\",\"The lake record shows Supreme Court status and substantial progeny, supporting the 'Key - Progeny / Refinement' role.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The home-role label is editorial, but it is supported by the disclosed opinion text and lake progeny data.\"],\"suggested_tightening\":null},{\"assertion_id\":\"55c5e90187711797\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The authority-weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.\",\"No treatment/currency merits finding is made under lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review belongs to lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f7ccd5de64465867\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The treatment scope note repeats the support overclaim that the routine biographical booking questions fall within a routine-booking-question exception as though that were a controlling holding. This is a support-scope defect, not a treatment/currency finding.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the treatment fields if lens B approves them, but revise the scope note to state that the case is fractured and that the seven booking answers were admissible; Part III-C's routine-booking-exception rationale was plurality-only.\",\"evidence_quote\":\"I agree with the conclusion in Part III-C that the seven \\\"booking\\\" questions should not be suppressed, I do so for a reason different from that of JUSTICE BRENNAN.\",\"needs_cl\":false,\"locator_note\":\"treatment.scope_note; support wording inside scope note\"},\"reasons\":[\"The lake treatment fields match the content treatment fields, and lens A does not assess good-law currency.\",\"The support language inside the scope note needs narrowing because Part III-C was not the opinion of the Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits remain for lens B.\"],\"suggested_tightening\":\"Use 'seven booking answers were admissible; Brennan plurality used a routine-booking rationale' instead of stating the exception as the case holding.\"}],\"notes\":\"Reviewed all five inventory assertions using only disclosed files. No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:49:49-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:50:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0fc09c3271"
+    ],
     "group_id": "content/cases/Pennsylvania v. Muniz.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +118,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ba400f80.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania v. Muniz"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 424313,
+      "output": 8696,
+      "source": "codex-events",
+      "total": 433009
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "55c5e90187711797": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "714daf4e8490020a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b05725dba4c96cb7": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e3f8de97e5c06793": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7ccd5de64465867": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0fc09c3271",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0335e1b187",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 173.4
   }
 }

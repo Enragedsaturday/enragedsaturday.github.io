@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9a4bb5e77f53d0b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority (Mr. Justice Stewart) confirms identity: Katz, FBI electronic device on a public phone booth, 'the Fourth Amendment protects people, not places'; reporter star labels *349-*359 are consistent with 389 U.S. 347.",
+          "Citations 389 U.S. 347 / 88 S. Ct. 507 / 19 L. Ed. 2d 576 / 1967 U.S. LEXIS 2 are the standard Katz reporters; none contradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7047b52bdd3a3e9f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "pin-361, Harlan, J., concurring; disclosed cache is majority-only and ends at *359.",
+          "needs_cl": true,
+          "problem": "pin-361 attributes the 'twofold requirement, first that a person have exhibited an actual (subjective) expectation of privacy and, second, that the expectation be one that society is prepared to recognize as reasonable' quote to Harlan, J., concurring at 389 U.S. 361, but the disclosed cache contains ONLY Justice Stewart's majority opinion (star pages *349-*359). The Harlan concurrence and page 361 are absent from disclosed evidence, so neither the quote's fidelity nor the 361 pincite can be verified here; the record itself self-flags quote_fidelity=mismatch/slip-only. Refute-framed default on unverifiable material.",
+          "proposed_fix": "Verify the Harlan concurrence text at 389 U.S. 361 against CourtListener; if it matches verbatim, promote to star-verified and withdraw this refutation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The concurrence is not present in the disclosed cache; the quote and the 361 pincite cannot be confirmed from disclosed evidence.",
+          "The record is self-flagged slip-only/mismatch and no star page corroborates it."
+        ],
+        "residual_risks": [
+          "This is very likely the canonical Harlan two-part test and may be verbatim-correct; the refutation is a non-verifiability flag, not a proven misquote; a CL check should resolve it."
+        ],
+        "suggested_tightening": "Cache concurrence text (or a validated text fragment) so the panel can verify concurrence-sourced pins without CL.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "e28814facabbf79a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the Fourth Amendment protects people, not places. What a person knowingly exposes to the public, even in his own home or office, is not a subject of Fourth Amendment protection.",
+          "locator_note": "pin-351; cached b461-5, spanning *351 into *352.",
+          "needs_cl": false,
+          "problem": "The lake pin-351 quote field captured page prose (the Issue-section tail plus the '## Rule' header plus the connective 'The inquiry is personal, not spatial:'), not an opinion passage (hence quote_fidelity=mismatch/slip-only). The quotation actually anchored to ^pin-351 on the shipped page is verbatim-faithful.",
+          "proposed_fix": "Re-extract pin-351.quote to the anchored quotation ('the Fourth Amendment protects people, not places ... may be constitutionally protected'), verbatim at cached b461-5 (*351 into *352).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Shipped page quote is verbatim at cached b461-5 (opinion 'For the Fourth Amendment protects people, not places...'); the leading 'For' is properly dropped, the Lewis/Lee citation string is properly elided with '. . .', and the pincite 351 is correct (quote begins after *351, before *352).",
+          "Defect is confined to the mis-captured record quote field; page content is faithful."
+        ],
+        "residual_risks": [
+          "The cache OCR renders 'he seeks-to preserve' with a stray hyphen; the page correctly reads 'he seeks to preserve'; cosmetic, not a fidelity issue."
+        ],
+        "suggested_tightening": "Bind pin.quote to the quotation-marked span at the anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1aae1a4faaf169aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The core claim that Katz displaced the trespass theory is confirmed by the cached opinion (b463-5: the Olmstead/Goldman 'underpinnings ... have been so eroded ... that the trespass doctrine there enunciated can no longer be regarded as controlling').",
+          "No disclosed evidence of negative treatment of Katz; good_law is consistent with the disclosed record."
+        ],
+        "residual_risks": [
+          "The scope_note's 'revived as an additional basis in Jones (2012)/Carpenter (2018)' post-dates and is outside the cache; uncontradicted but not verifiable from disclosed evidence. 'good as of 2026-06-30' is a forward-looking currency judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Katz v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-04-635b4324",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Katz v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1aae1a4faaf169aa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7047b52bdd3a3e9f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9a4bb5e77f53d0b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e28814facabbf79a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f11d96f96f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-283f01bdea",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

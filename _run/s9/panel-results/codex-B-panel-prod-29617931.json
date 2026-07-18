@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Montoya de Hernandez.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not substantively reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "0b0a9b0d83474895",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status verified and identifies United States v. Montoya De Hernandez as a U.S. Supreme Court case decided 1985-07-01.",
+          "The disclosed citation fields include official citation 473 U.S. 531 with official_selection selected 473 U.S. 531.",
+          "For the currency angle, the lake treatment field lists field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags proposed negative-signal edges and audit_needed; this is addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f16801c6fce78a6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not evaluate quote fidelity; no support or quote-fidelity defect is raised here.",
+          "The pin exists in the lake record, and the disclosed treatment fields are record-level with varies_by_point false and no point_overrides."
+        ],
+        "residual_risks": [
+          "The payload and lake mark this quote_fidelity as mismatch, but Lens A owns that issue.",
+          "Record-level treatment has the audit caveat discussed in the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b38591e79540d046",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not evaluate quote fidelity; no support or quote-fidelity defect is raised here.",
+          "The pin exists in the lake record, and the disclosed treatment fields are record-level with varies_by_point false and no point_overrides."
+        ],
+        "residual_risks": [
+          "The payload and lake mark this quote_fidelity as mismatch, but Lens A owns that issue.",
+          "Record-level treatment has the audit caveat discussed in the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73d1b7201664af05",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 7,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited; lake treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law field itself matches the lake judgment field, but the page's unqualified 'No negative subsequent treatment identified' language is too strong against the disclosed treatment derivation: the lake lists proposed negative-signal edges and marks treatment audit_needed. The surviving treatment call should be qualified as no confirmed adverse treatment in the final validity field, not no negative signals at all.",
+          "proposed_fix": "Retain good_law as the final field_i_validity only with a caveat such as: 'No confirmed adverse treatment reflected in the final treatment field; proposed negative-signal progeny edges require R15 audit.' Alternatively complete the treatment audit before using unqualified 'No negative subsequent treatment identified' language.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment fields match the asserted field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides [].",
+          "The lake also discloses proposed negative treatment edges with labels including questioned, overruled, superseded_by_statute, abrogated, and criticized, all with field_iii mentioned and proposed true.",
+          "Because those signals are proposed/audit-needed rather than final point overrides, they do not refute the good_law call outright, but they do require tightening the subsequent-history wording."
+        ],
+        "residual_risks": [
+          "The disclosed record is capped in treatment derivation lanes and explicitly marks audit_needed; without that audit, the exact scope of any negative treatment remains unresolved."
+        ],
+        "suggested_tightening": "Qualify the treatment narrative to distinguish final good_law status from unresolved proposed negative-signal progeny edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Montoya de Hernandez.json\",\"reviewed\":[{\"assertion_id\":\"0b0a9b0d83474895\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is status verified and identifies United States v. Montoya De Hernandez as a U.S. Supreme Court case decided 1985-07-01.\",\"The disclosed citation fields include official citation 473 U.S. 531 with official_selection selected 473 U.S. 531.\",\"For the currency angle, the lake treatment field lists field_i_validity as good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags proposed negative-signal edges and audit_needed; this is addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2f16801c6fce78a6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not evaluate quote fidelity; no support or quote-fidelity defect is raised here.\",\"The pin exists in the lake record, and the disclosed treatment fields are record-level with varies_by_point false and no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The payload and lake mark this quote_fidelity as mismatch, but Lens A owns that issue.\",\"Record-level treatment has the audit caveat discussed in the treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b38591e79540d046\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not evaluate quote fidelity; no support or quote-fidelity defect is raised here.\",\"The pin exists in the lake record, and the disclosed treatment fields are record-level with varies_by_point false and no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The payload and lake mark this quote_fidelity as mismatch, but Lens A owns that issue.\",\"Record-level treatment has the audit caveat discussed in the treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"73d1b7201664af05\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law field itself matches the lake judgment field, but the page's unqualified 'No negative subsequent treatment identified' language is too strong against the disclosed treatment derivation: the lake lists proposed negative-signal edges and marks treatment audit_needed. The surviving treatment call should be qualified as no confirmed adverse treatment in the final validity field, not no negative signals at all.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain good_law as the final field_i_validity only with a caveat such as: 'No confirmed adverse treatment reflected in the final treatment field; proposed negative-signal progeny edges require R15 audit.' Alternatively complete the treatment audit before using unqualified 'No negative subsequent treatment identified' language.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 7,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited; lake treatment.edges\"},\"reasons\":[\"The lake treatment fields match the asserted field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides [].\",\"The lake also discloses proposed negative treatment edges with labels including questioned, overruled, superseded_by_statute, abrogated, and criticized, all with field_iii mentioned and proposed true.\",\"Because those signals are proposed/audit-needed rather than final point overrides, they do not refute the good_law call outright, but they do require tightening the subsequent-history wording.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record is capped in treatment derivation lanes and explicitly marks audit_needed; without that audit, the exact scope of any negative treatment remains unresolved.\"],\"suggested_tightening\":\"Qualify the treatment narrative to distinguish final good_law status from unresolved proposed negative-signal progeny edges.\"}],\"notes\":\"Lens B only; support and quote fidelity were not substantively reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:32:40-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:01:46-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2005ba00f9"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Montoya de Hernandez.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-29617931.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Montoya de Hernandez"
     ],
     "tokens": {
-      "input": 759,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 759
+      "input": 201326,
+      "output": 7084,
+      "source": "codex-events",
+      "total": 208410
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "0b0a9b0d83474895": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2f16801c6fce78a6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "73d1b7201664af05": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b38591e79540d046": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2005ba00f9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 147.2
   }
 }

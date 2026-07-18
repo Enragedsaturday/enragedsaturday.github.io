@@ -1,0 +1,150 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "eb12f45352084c25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption states verbatim '393 U.S. 410 (1969)' and 'SPINELLI v. UNITED STATES. No. 8. ... Decided January 27, 1969' — official cite, docket 8, and year all confirmed.",
+          "official_selection = 393 U.S. 410 (selected_rank_1); lake identity_method citation+party-text, expected_citation_found/party_name_in_text/canonical_name_match all true, reason_code null.",
+          "Parallel cites (89 S. Ct. 584; 21 L. Ed. 2d 637; 1969 U.S. LEXIS 2701) are standard, not fabricated, though not literally present in the cached text."
+        ],
+        "residual_risks": [
+          "Parallel/vendor-neutral cite page numbers are not independently confirmable from the inlined opinion text (only the official U.S. cite is)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2cc1dc60fa3b2f50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The wiki's pin-415 quotation ('The informer's report must first be measured against Aguilar's standards so that its probative value can be assessed. If the tip is found inadequate under Aguilar, the other allegations which corroborate the information contained in the hearsay report should then be considered.') matches the cached opinion verbatim (para beginning 'The informer's report must first be measured...').",
+          "That text sits on page 415 (between the *415 marker and the *416 marker), so the pincite '393 U.S. at 415' is correct.",
+          "The payload's 'quote' string is an extractor artifact — it captured page narrative including the '## Issue' and '## Rule' markdown headers, not the actual quoted material; the flagged 'mismatch' is therefore a false positive at the extractor level, not a defect in the paneled quotation."
+        ],
+        "residual_risks": [
+          "Extractor quote-capture window is unreliable (grabbed surrounding prose + markdown headers rather than the quoted span)."
+        ],
+        "suggested_tightening": "Re-anchor the extractor to the in-quotes span tied to ^pin-415 so its stored 'quote' reflects the actual quotation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a423aad1513180f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The wiki's pin-418 quotation 'the informant's tip — even when corroborated to the extent indicated — was not sufficient to provide the basis for a finding of probable cause.' matches the cached opinion ('...the informant's tip[—]even when corroborated to the extent indicated[—]was not sufficient to provide the basis for a finding of probable cause.').",
+          "The passage is on page 418 (the *418 marker precedes 'obtained in a reliable way' / 'We conclude, then, ...'), so 'Id. at 418' is correct.",
+          "The payload's 'mismatch' flag is explained by the HTML->text cache dropping the em-dashes ('tipeven', 'indicatedwas'); the wiki faithfully preserves the original em-dashes, so the quotation is faithful to the opinion."
+        ],
+        "residual_risks": [
+          "Cached-text em-dash loss can trigger naive character-mismatch false positives against faithful quotations."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3fcd1c6814289930",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Substantive scope_note ('Refined the Aguilar two-prong informant-tip test') is verbatim-supported by the opinion (it delineates how 'Aguilar's two-pronged test should be applied' and sets the basis-of-knowledge/veracity framework).",
+          "The 'superseded/abrogated by Illinois v. Gates (1983)' status is named in a disclosed treatment edge (Illinois v. Gates, 462 U.S. 213, field_ii 'abrogated', journal_ref migration:abrogated) and is not contradicted by the disclosed negative-treatment sweep (all lane_negative edges are proposed:true keyword candidates).",
+          "The currency/validity component cannot be independently confirmed from the pack because the Gates opinion text is not inlined and the abrogating edge is a proposed migration seed, not an adjudicated citator read."
+        ],
+        "residual_risks": [
+          "Gates (462 U.S. 213) opinion is not inlined for independent confirmation; abrogating edge is proposed (migration:abrogated).",
+          "Frontmatter field_i_validity 'superseded' vs rendered header 'abrogated' are used interchangeably (both convey no-longer-good-law after Gates) — minor terminology inconsistency, not a substantive defect."
+        ],
+        "suggested_tightening": "Reconcile the 'superseded' (field_i) vs 'abrogated' (rendered badge) labels to one consistent treatment term.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b465cea650",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a5222f8ed8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Spinelli v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-00-19d5e39c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Spinelli v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2cc1dc60fa3b2f50": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3fcd1c6814289930": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "8a423aad1513180f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb12f45352084c25": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b465cea650",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a5222f8ed8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,153 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Welsh v. Wisconsin.json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "a75c517c53063308",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Welsh v. Wisconsin, U.S. Supreme Court, decided 1984-05-15.",
+          "The official citation in the lake record is 466 U.S. 740, with the same parallel and vendor citations listed in the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67d79e7cd7d1c051",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted passage appears in the lake pinpoints for pin-755 with quote_fidelity marked matched and star_marker 753.",
+          "The cached opinion text contains the same passage in the page-753 paragraph beginning with the Court's holding on gravity of the offense."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc5682fece552e3c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "hold that an important factor to be considered",
+          "locator_note": "pin-753 has pinpoint_status slip-only, star_marker null, and quote_fidelity mismatch in the disclosed lake record.",
+          "needs_cl": false,
+          "problem": "pin-753's stored quote is not a character-faithful opinion quote; it is generated content-page markdown/front matter and excerpt text, while the cached opinion contains the relevant holding language at page 753.",
+          "proposed_fix": "Replace pin-753 with the exact opinion passage beginning \"hold that an important factor...\" and give it the proper page/star marker; if the page keeps the quote, avoid the non-verbatim \"hold[s]\" wording or move the grammar outside the quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-753 quote_fidelity as mismatch.",
+          "The payload quote begins with built-page material, not the opinion text: \"--- # Welsh v. Wisconsin *466 U.S. 740 (1984)*\".",
+          "The cached opinion supplies the actual page-753 holding language, so the correct quote is verifiable from disclosed evidence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a narrowly scoped pin quote for the exact holding sentence at 466 U.S. 753.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ccc6d8f7081f56a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised here.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1984-05-15, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment substance reserved for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Welsh v. Wisconsin.json\",\"reviewed\":[{\"assertion_id\":\"a75c517c53063308\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Welsh v. Wisconsin, U.S. Supreme Court, decided 1984-05-15.\",\"The official citation in the lake record is 466 U.S. 740, with the same parallel and vendor citations listed in the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"67d79e7cd7d1c051\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted passage appears in the lake pinpoints for pin-755 with quote_fidelity marked matched and star_marker 753.\",\"The cached opinion text contains the same passage in the page-753 paragraph beginning with the Court's holding on gravity of the offense.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"fc5682fece552e3c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-753's stored quote is not a character-faithful opinion quote; it is generated content-page markdown/front matter and excerpt text, while the cached opinion contains the relevant holding language at page 753.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-753 with the exact opinion passage beginning \\\"hold that an important factor...\\\" and give it the proper page/star marker; if the page keeps the quote, avoid the non-verbatim \\\"hold[s]\\\" wording or move the grammar outside the quotation marks.\",\"evidence_quote\":\"hold that an important factor to be considered\",\"needs_cl\":false,\"locator_note\":\"pin-753 has pinpoint_status slip-only, star_marker null, and quote_fidelity mismatch in the disclosed lake record.\"},\"reasons\":[\"The lake record itself marks pin-753 quote_fidelity as mismatch.\",\"The payload quote begins with built-page material, not the opinion text: \\\"--- # Welsh v. Wisconsin *466 U.S. 740 (1984)*\\\".\",\"The cached opinion supplies the actual page-753 holding language, so the correct quote is verifiable from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a narrowly scoped pin quote for the exact holding sentence at 466 U.S. 753.\"},{\"assertion_id\":\"ccc6d8f7081f56a9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised here.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1984-05-15, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance reserved for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:20-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:13:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4f26c44ca9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d9ff2dd680"
+    ],
     "group_id": "_overhaul2/lake/cases/Welsh v. Wisconsin.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-74c0ceef",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-74c0ceef.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:12.498609Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:13.276898Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:14.446120Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:16.496043Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:20.265843Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Welsh v. Wisconsin"
+    ],
+    "tokens": {
+      "input": 149041,
+      "output": 7369,
+      "source": "codex-events",
+      "total": 156410
+    },
+    "verdict_map": {
+      "67d79e7cd7d1c051": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a75c517c53063308": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ccc6d8f7081f56a9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc5682fece552e3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d9ff2dd680",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4f26c44ca9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 206.4
   }
 }

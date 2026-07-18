@@ -1,0 +1,176 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f80b62f06469f3b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '489 U.S. 593 (1989)' captioned BROWER ... v. COUNTY OF INYO ET AL., No. 87-248, decided March 21, 1989 — official cite exists and resolves to cluster 112218.",
+          "official_selection_present=true with 489 U.S. 593 selected_official; parallel/vendor cites (109 S. Ct. 1378, 103 L. Ed. 2d 628, 57 U.S.L.W. 4321, 1989 U.S. LEXIS 1569) are internally consistent SCOTUS-style reporters.",
+          "Lake identity: identity_method citation+party-text, expected_citation_found=true, canonical_name_match=true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a4c5773509fd9e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is the real content quote at pin-596b; cached text at *596 reads 'the Fourth Amendment addresses \"misuse of power,\" Byars v. United States, 273 U. S. 28, 33 (1927), not the accidental effects of otherwise lawful government conduct.'",
+          "Content elides only the Byars citation with ' . . . '; both quoted fragments ('addresses \"misuse of power\"' and 'not the accidental effects of otherwise lawful government conduct.') are verbatim; pincite 596 is correct (sentence sits before the *597 marker).",
+          "The ledger's quote_fidelity=mismatch is an automated false positive from substring-matching across the elided citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a77d22616b1c3136",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached text at *599 reads 'We think it enough for a seizure that a person be stopped by the very instrumentality set in motion or put in place in order to achieve that result.' — content quote 'enough for a seizure ... to achieve that result.' is verbatim.",
+          "Pincite 599 confirmed by the *599 star marker immediately preceding the sentence; star-verified fragment matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d533a3614fab6194",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is clear, in other words, that a Fourth Amendment seizure does not occur whenever there is a governmentally caused termination of an individual's freedom of movement (the innocent passerby), nor even whenever there is a governmentally caused and governmentally desired termination of an individual's freedom of movement (the fleeing felon), but only when there is a governmental termination of freedom of movement through means intentionally applied.",
+          "locator_note": "pin-596; cached opinion *596-*597 span; content 'Rule' block '[A] Fourth Amendment seizure does not occur ... through means intentionally applied' cited 489 U.S. at 596-597.",
+          "needs_cl": false,
+          "problem": "The ledger quote field for pin-596 is a mis-extraction: it captured the page's own Issue/Rule framing prose ('occurs when police stop a fleeing motorist ... ## Rule A seizure requires that the government stop the person by the means it intended.'), which is NOT a quotation from the opinion. The actual block quotation anchored at ^pin-596 in the content is a different, faithful passage.",
+          "proposed_fix": "Re-point the pin-596 quote span to the true anchored quotation; content requires no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The real anchored quote is verbatim-faithful (bracketed '[A]' for 'a' at the start of the mid-sentence quotation is a proper capitalization substitution) and crosses the *597 marker, so the content pincite 596-597 is correct.",
+          "Defect is confined to the ledger's captured quote text, not the published content."
+        ],
+        "residual_risks": [
+          "If a downstream verifier compares the ledger quote field verbatim against the opinion it will always mismatch until re-pointed."
+        ],
+        "suggested_tightening": "Extractor should anchor pin quotes to the nearest enclosing blockquote/quotation, not to preceding heading/framing prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acd0e1619f5b3f7a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with all disclosed evidence: the cached 1989 opinion shows no reversal, and Brower's 'means intentionally applied' seizure definition is canonical.",
+          "Every negative treatment edge in the lake record is proposed:true and facially non-credible co-citation noise (e.g., Scott v. Harris/Albright v. Oliver/County of Sacramento v. Lewis tagged 'overruled', Twombly 'criticized') — none actually overrules Brower.",
+          "scope_note accurately restates the holding shown in the cached opinion."
+        ],
+        "residual_risks": [
+          "Negative edges are unadjudicated; a definitive citator confirmation of good-law-as-of-2026 would require CourtListener, but nothing disclosed contradicts good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1694cd32e1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-59c1e0326f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brower v. County of Inyo.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-03-da346a00",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brower v. County of Inyo"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a4c5773509fd9e0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a77d22616b1c3136": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acd0e1619f5b3f7a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d533a3614fab6194": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f80b62f06469f3b0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1694cd32e1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d01cf7652c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-59c1e0326f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

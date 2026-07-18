@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Sharpe.json",
+    "lens": "B",
+    "notes": "Lens B did not evaluate quote support or quote fidelity beyond noting whether any disclosed treatment-specific limitation applied.",
+    "reviewed": [
+      {
+        "assertion_id": "3196e434725f9455",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and status verified for United States v. Sharpe.",
+          "The identity fields show U.S. Supreme Court, decided 1985-03-20, with expected_citation_found=true and canonical_name_match=true.",
+          "The official citation is selected as 470 U.S. 675."
+        ],
+        "residual_risks": [
+          "Currency/treatment risk is addressed in the treatment assertion; the existence/citation identity itself is verified from the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8f635007c674d92",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity or support.",
+          "No disclosed point-specific treatment override limits pin-686; the treatment record has point_overrides=[] and varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Lens A owns whether the quote and pinpoint are textually correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7bdf0972e9ace86",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity or support.",
+          "No disclosed point-specific treatment override limits pin-685; the treatment record has point_overrides=[] and varies_by_point=false."
+        ],
+        "residual_risks": [
+          "The disclosed pinpoint is marked quote_fidelity=mismatch and slip-only, but that is a Lens A issue, not a currency/treatment defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "adad7bc13ce2a42e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/United States v. Sharpe__72046d.json treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The unqualified good-law call as of 2026-06-30 is not safely verifiable from the disclosed treatment record because the same record flags unresolved negative-treatment audit work and proposed negative events.",
+          "proposed_fix": "Do not publish the treatment as an unqualified good-law call until the R15 treatment audit resolves the proposed negative edges. If the audit confirms no accepted overruling, abrogation, or limitation of Sharpe's Terry-duration rule, restore good_law with an audited basis; otherwise add the appropriate limitation or point override.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The displayed page asserts Treatment: good as of 2026-06-30, matching field_i_validity=good_law in the lake record.",
+          "But treatment.field_provenance says field_i_validity came from migration/page frontmatter, while treatment.derivation marks audit_needed=true for negative and top-cited lanes.",
+          "The disclosed edges include proposed entries labeled abrogated, overruled, superseded_by_statute, questioned, and criticized; they are not resolved into accepted point treatment or dismissed as false positives in the disclosed file."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives; a completed audit could make the good-law label stand."
+        ],
+        "suggested_tightening": "Add an audited treatment basis or suppress the unqualified as-of good-law badge until the proposed negative events are resolved.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Sharpe.json\",\"reviewed\":[{\"assertion_id\":\"3196e434725f9455\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and status verified for United States v. Sharpe.\",\"The identity fields show U.S. Supreme Court, decided 1985-03-20, with expected_citation_found=true and canonical_name_match=true.\",\"The official citation is selected as 470 U.S. 675.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency/treatment risk is addressed in the treatment assertion; the existence/citation identity itself is verified from the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a8f635007c674d92\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity or support.\",\"No disclosed point-specific treatment override limits pin-686; the treatment record has point_overrides=[] and varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A owns whether the quote and pinpoint are textually correct.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d7bdf0972e9ace86\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity or support.\",\"No disclosed point-specific treatment override limits pin-685; the treatment record has point_overrides=[] and varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed pinpoint is marked quote_fidelity=mismatch and slip-only, but that is a Lens A issue, not a currency/treatment defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"adad7bc13ce2a42e\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified good-law call as of 2026-06-30 is not safely verifiable from the disclosed treatment record because the same record flags unresolved negative-treatment audit work and proposed negative events.\",\"severity\":\"high\",\"proposed_fix\":\"Do not publish the treatment as an unqualified good-law call until the R15 treatment audit resolves the proposed negative edges. If the audit confirms no accepted overruling, abrogation, or limitation of Sharpe's Terry-duration rule, restore good_law with an audited basis; otherwise add the appropriate limitation or point override.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Sharpe__72046d.json treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"The displayed page asserts Treatment: good as of 2026-06-30, matching field_i_validity=good_law in the lake record.\",\"But treatment.field_provenance says field_i_validity came from migration/page frontmatter, while treatment.derivation marks audit_needed=true for negative and top-cited lanes.\",\"The disclosed edges include proposed entries labeled abrogated, overruled, superseded_by_statute, questioned, and criticized; they are not resolved into accepted point treatment or dismissed as false positives in the disclosed file.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges may be false positives; a completed audit could make the good-law label stand.\"],\"suggested_tightening\":\"Add an audited treatment basis or suppress the unqualified as-of good-law badge until the proposed negative events are resolved.\"}],\"notes\":\"Lens B did not evaluate quote support or quote fidelity beyond noting whether any disclosed treatment-specific limitation applied.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:07:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0046c2b746",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-580823e8f1"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Sharpe.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ef382095.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Sharpe"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 324571,
+      "output": 7719,
+      "source": "codex-events",
+      "total": 332290
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "3196e434725f9455": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8f635007c674d92": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "adad7bc13ce2a42e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d7bdf0972e9ace86": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0046c2b746",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-580823e8f1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 156.2
   }
 }

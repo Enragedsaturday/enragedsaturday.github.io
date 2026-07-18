@@ -1,22 +1,107 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/michigan-v-harvey--112385.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "d57037b71d326d93",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "lake/michigan-v-harvey--112385__8121d7.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity and citations, but it does not verify the currency/live-law status of Michigan v. Harvey. Under Lens B, existence is reviewed for whether the cited authority is still live law; the lake record is only a frontier identity stub with unverified treatment and no progeny derivation.",
+          "proposed_fix": "Treat this as identity/citation-verified only, not as a current live-law assertion, until treatment/progeny review is completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake status is only \"verified_identity\" and the record is marked \"stub\": true.",
+          "Treatment is \"unverified\" with null as-of dates.",
+          "Progeny has rows_cached 0 and no outbound opinion edges, so no disclosed treatment history supports a live-law conclusion."
+        ],
+        "residual_risks": [
+          "The authority identity and citations may be correct, but current legal force is not established from disclosed files."
+        ],
+        "suggested_tightening": "Separate identity verification from live-law status; label this authority as treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "88eb61caa299f732",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake record: field_i_validity is \"unverified\".",
+          "The scope note discloses that treatment/progeny were intentionally not derived until S6 promotion.",
+          "No disclosed progeny edge contradicts the unverified treatment label."
+        ],
+        "residual_risks": [
+          "No good-law conclusion can be drawn until treatment/progeny is derived."
+        ],
+        "suggested_tightening": "Keep the treatment label explicitly as unverified and avoid any implied good-law or precedential-weight claim.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/michigan-v-harvey--112385.json\",\"reviewed\":[{\"assertion_id\":\"d57037b71d326d93\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity and citations, but it does not verify the currency/live-law status of Michigan v. Harvey. Under Lens B, existence is reviewed for whether the cited authority is still live law; the lake record is only a frontier identity stub with unverified treatment and no progeny derivation.\",\"severity\":\"medium\",\"proposed_fix\":\"Treat this as identity/citation-verified only, not as a current live-law assertion, until treatment/progeny review is completed.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/michigan-v-harvey--112385__8121d7.json treatment/progeny fields\"},\"reasons\":[\"Lake status is only \\\"verified_identity\\\" and the record is marked \\\"stub\\\": true.\",\"Treatment is \\\"unverified\\\" with null as-of dates.\",\"Progeny has rows_cached 0 and no outbound opinion edges, so no disclosed treatment history supports a live-law conclusion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority identity and citations may be correct, but current legal force is not established from disclosed files.\"],\"suggested_tightening\":\"Separate identity verification from live-law status; label this authority as treatment unverified.\"},{\"assertion_id\":\"88eb61caa299f732\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake record: field_i_validity is \\\"unverified\\\".\",\"The scope note discloses that treatment/progeny were intentionally not derived until S6 promotion.\",\"No disclosed progeny edge contradicts the unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law conclusion can be drawn until treatment/progeny is derived.\"],\"suggested_tightening\":\"Keep the treatment label explicitly as unverified and avoid any implied good-law or precedential-weight claim.\"}],\"notes\":\"No content_page.* file was disclosed in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:20:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-734e3a5440"
+    ],
     "group_id": "_overhaul2/lake/cases/michigan-v-harvey--112385.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5a9364ce",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5a9364ce.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:06.425826Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:07.274426Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:08.452157Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:10.615981Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:14.446917Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record michigan-v-harvey--112385"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "michigan-v-harvey--112385"
+    ],
+    "tokens": {
+      "input": 90453,
+      "output": 4712,
+      "source": "codex-events",
+      "total": 95165
+    },
+    "verdict_map": {
+      "88eb61caa299f732": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d57037b71d326d93": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-734e3a5440",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 98.3
   }
 }

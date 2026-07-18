@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8ebfada09b7c96d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inlined opinion header confirms '378 U.S. 108 (1964)', AGUILAR v. TEXAS, No. 548, decided June 15, 1964, Goldberg, J. matches official cite and date_decided 1964-06-15.",
+          "Star-pages *109-*122 consistent with case start at 108."
+        ],
+        "residual_risks": [
+          "Parallels 84 S. Ct. 1509 / 12 L. Ed. 2d 723 and neutral 1964 U.S. LEXIS 994 not independently verifiable from the inlined opinion (official cite is)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8534798cbe5fd59b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the magistrate must be informed of some of the underlying circumstances from which the informant concluded that the narcotics were where he claimed they were, and some of the underlying circumstances from which the officer concluded that the informant ... was \"credible\" or his information \"reliable.\"",
+          "locator_note": "pin-114; cached Aguilar opinion, paragraph after *114. Page ' . . . ' elides 'whose identity need not be disclosed, see Rugendorf v. United States, 376 U. S. 528,'.",
+          "needs_cl": false,
+          "problem": "Assertion flags quote_fidelity='mismatch'/slip-only and its captured 'quote' field is page chrome (front matter through '## Rule ... his reliability. The'), not the quoted proposition. The page's actual pin-114 quotation is verbatim-faithful.",
+          "proposed_fix": "Re-scope the extraction to the actual pin-114 quote and reclassify quote_fidelity=matched (verbatim at 378 U.S. 114).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-114 quote matches the cached opinion verbatim with one properly-marked internal ellipsis; pincite 114 correct (sentence begins after *114, before *115).",
+          "S8 'mismatch' is an artifact of the mis-scoped quote capture."
+        ],
+        "residual_risks": [
+          "Striking on the S8 label would remove a faithful, correctly-pincited quotation."
+        ],
+        "suggested_tightening": "Correct the S8 quote-fidelity metadata; the page text needs no change.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f93885eb2cad5a74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-115 quote 'by a neutral and detached magistrate,' and 'but instead, by a police officer \"engaged in the often competitive enterprise of ferreting out crime.\"' match the cached opinion verbatim; both fall after the *115 marker, pincite 115 correct.",
+          "Star-verified with text-fragment anchor; quote_fidelity=matched confirmed independently."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b7a962c648a07fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The two-prong test (informant's basis of knowledge + veracity/reliability) is confirmed by the inlined opinion: the magistrate must be told 'some of the underlying circumstances from which the informant concluded ...' and 'from which the officer concluded that the informant ... was credible or his information reliable.'",
+          "No disclosed evidence contradicts the superseded status."
+        ],
+        "residual_risks": [
+          "The supersession claim (abandoned by Illinois v. Gates (1983) for totality-of-the-circumstances) is not verifiable from disclosed evidence; Gates is not inlined. Standard black-letter and uncontradicted, but full confirmation would need a citator (CL).",
+          "Frontmatter field_i_validity='superseded' vs the rendered badge 'abrogated by Illinois v. Gates' is a label-mapping nuance, not a substantive treatment error."
+        ],
+        "suggested_tightening": "Consider aligning the field_i_validity label ('superseded') with the rendered treatment badge ('abrogated') for consistency.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-75cdfbc408",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Aguilar v. Texas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-00-a4e2d653",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Aguilar v. Texas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "8534798cbe5fd59b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8ebfada09b7c96d1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b7a962c648a07fd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f93885eb2cad5a74": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-750c145f50",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-75cdfbc408",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,116 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Carloss.md",
+    "lens": "B",
+    "notes": "Lens B review only; support and quote-fidelity were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "1fe754fb6af23287",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified, with expected citation found and canonical name match.",
+          "Lake citations list official citation 818 F.3d 988 and vendor-neutral cites 2016 WL 929663 and 2016 U.S. App. LEXIS 4547.",
+          "Lake treatment field reports field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment edges contain proposed negative labels; see treatment assertion review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "93412be6289dfe22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: the disclosed final treatment field identifies Carloss as good_law.",
+          "No support or quote-fidelity finding is made under this lens."
+        ],
+        "residual_risks": [
+          "Current-law weight depends on resolving the proposed negative progeny labels noted in the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a76155947e6378c3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: the lake scope note itself says the case illustrates the divide over No Trespassing signage and the implied knock-and-talk license.",
+          "No support finding on the existence or exact scope of a circuit split is made under this lens."
+        ],
+        "residual_risks": [
+          "The current split framing is not independently audited from other case records in the disclosed files."
+        ],
+        "suggested_tightening": "If edited, prefer 'illustrates a divide' unless separate disclosed records establish a current circuit split.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27a72ce1f6902a71",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"name\": \"United States v. Ronell Moses, Jr.\",\n          \"cluster_id\": 10623354,\n          \"cite\": [\n            \"142 F.4th 126\"\n          ],\n          \"field_ii\": \"overruled\"",
+          "locator_note": "content_page.md treatment frontmatter and Treatment & subsequent history status line",
+          "needs_cl": true,
+          "problem": "The unqualified good-law treatment mirrors the lake's final field, but it is too clean given disclosed progeny edges with proposed negative labels, including overruled and abrogated. The page should not present the treatment note as fully uneventful without acknowledging or resolving those proposed negative edges.",
+          "proposed_fix": "Audit the proposed negative progeny edges. If they are nonbinding or false positives, keep good_law but add a tighter note that no binding SCOTUS/Tenth Circuit negative treatment was found in the disclosed treatment derivation. If any edge is valid and binding or point-limiting, update field_i_validity, varies_by_point, and point_overrides.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake final treatment states field_i_validity good_law and as_of_treatment 2026-06-30.",
+          "The same lake treatment record lists proposed progeny edges labeled questioned, overruled, and abrogated.",
+          "Lane1 negative treatment scoped to SCOTUS or ca10 reports zero proposed negative events, so the final good-law call may survive, but the disclosed record still warrants a caveat or audit."
+        ],
+        "residual_risks": [
+          "The disclosed edge records do not include enough citing-case text to determine whether the proposed negative labels are binding, point-specific, or false positives."
+        ],
+        "suggested_tightening": "State: 'Good law per lake final treatment; disclosed proposed progeny labels require audit, with no SCOTUS/Tenth Circuit negative event shown in lane1.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a212f8c7e2532f98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as U.S. Court of Appeals, 10th Circuit, court_id ca10, court_level coa, circuit 10th.",
+          "The label is limited to binding in-circuit status, not nationwide binding effect.",
+          "No disclosed final binding negative treatment removes the in-circuit weight label."
+        ],
+        "residual_risks": [
+          "If later audit validates a binding negative progeny edge, this label would need revisiting."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/United States v. Carloss.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1fe754fb6af23287\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified, with expected citation found and canonical name match.\",\n        \"Lake citations list official citation 818 F.3d 988 and vendor-neutral cites 2016 WL 929663 and 2016 U.S. App. LEXIS 4547.\",\n        \"Lake treatment field reports field_i_validity as good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment edges contain proposed negative labels; see treatment assertion review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"93412be6289dfe22\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B only: the disclosed final treatment field identifies Carloss as good_law.\",\n        \"No support or quote-fidelity finding is made under this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current-law weight depends on resolving the proposed negative progeny labels noted in the treatment row.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a76155947e6378c3\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B only: the lake scope note itself says the case illustrates the divide over No Trespassing signage and the implied knock-and-talk license.\",\n        \"No support finding on the existence or exact scope of a circuit split is made under this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The current split framing is not independently audited from other case records in the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"If edited, prefer 'illustrates a divide' unless separate disclosed records establish a current circuit split.\"\n    },\n    {\n      \"assertion_id\": \"27a72ce1f6902a71\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The unqualified good-law treatment mirrors the lake's final field, but it is too clean given disclosed progeny edges with proposed negative labels, including overruled and abrogated. The page should not present the treatment note as fully uneventful without acknowledging or resolving those proposed negative edges.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Audit the proposed negative progeny edges. If they are nonbinding or false positives, keep good_law but add a tighter note that no binding SCOTUS/Tenth Circuit negative treatment was found in the disclosed treatment derivation. If any edge is valid and binding or point-limiting, update field_i_validity, varies_by_point, and point_overrides.\",\n        \"evidence_quote\": \"\\\"name\\\": \\\"United States v. Ronell Moses, Jr.\\\",\\n          \\\"cluster_id\\\": 10623354,\\n          \\\"cite\\\": [\\n            \\\"142 F.4th 126\\\"\\n          ],\\n          \\\"field_ii\\\": \\\"overruled\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment frontmatter and Treatment & subsequent history status line\"\n      },\n      \"reasons\": [\n        \"Lake final treatment states field_i_validity good_law and as_of_treatment 2026-06-30.\",\n        \"The same lake treatment record lists proposed progeny edges labeled questioned, overruled, and abrogated.\",\n        \"Lane1 negative treatment scoped to SCOTUS or ca10 reports zero proposed negative events, so the final good-law call may survive, but the disclosed record still warrants a caveat or audit.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed edge records do not include enough citing-case text to determine whether the proposed negative labels are binding, point-specific, or false positives.\"\n      ],\n      \"suggested_tightening\": \"State: 'Good law per lake final treatment; disclosed proposed progeny labels require audit, with no SCOTUS/Tenth Circuit negative event shown in lane1.'\"\n    },\n    {\n      \"assertion_id\": \"a212f8c7e2532f98\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity identifies the court as U.S. Court of Appeals, 10th Circuit, court_id ca10, court_level coa, circuit 10th.\",\n        \"The label is limited to binding in-circuit status, not nationwide binding effect.\",\n        \"No disclosed final binding negative treatment removes the in-circuit weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If later audit validates a binding negative progeny edge, this label would need revisiting.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens B review only; support and quote-fidelity were not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:53:51-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:17:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-705b6d2725",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-bc58cbfd7b"
+    ],
     "group_id": "content/cases/United States v. Carloss.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +119,66 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d8279606.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Carloss"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 111958,
+      "output": 9252,
+      "source": "codex-events",
+      "total": 121210
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1fe754fb6af23287": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "27a72ce1f6902a71": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "93412be6289dfe22": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a212f8c7e2532f98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a76155947e6378c3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-705b6d2725",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bc58cbfd7b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 177.5
   }
 }

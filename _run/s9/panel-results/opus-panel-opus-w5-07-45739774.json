@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d164fbc0dea99e0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unambiguously Hoffa v. United States (Test Fleet trial, informant Edward Partin, jury tampering; Justice Stewart), with star pages '*295'–'*312' consistent with a case beginning at 385 U.S. 293.",
+          "Selected official cite 385 U.S. 293 matches."
+        ],
+        "residual_risks": [
+          "The cached slip lacks an explicit reporter header; the '293' start page is inferred from the star-pagination sequence ('*295' onward), not printed directly."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "099b0819c5e54600",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.310 (after the '*310' star marker) reads verbatim: 'The police are not required to guess at their peril the precise moment at which they have probable cause to arrest a suspect, risking a violation of the Fourth Amendment if they act too soon, and a violation of the Sixth Amendment if they wait too long.'",
+          "Content-page quote is exact; star_marker 310 confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1354caa3c8a1cad5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no constitutional right to be arrested.",
+          "locator_note": "Cached opinion p.310 (after the '*310' star marker, the sentence immediately preceding the pin-310a quote); content page ^pin-310 renders 'There is no constitutional right to be arrested.' cited to '385 U.S. at 310'.",
+          "needs_cl": false,
+          "problem": "Stored pin-310 quote is a harvest artifact capturing content-page markdown (Background prose + '## Issue ... ## Rule No. The Court rejected the contention...') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-310 quote is faithful and correctly pincited.",
+          "proposed_fix": "Replace the stored pin-310 quote string with the real faithful quote at p.310.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin survives: 'There is no constitutional right to be arrested.' is verbatim in the cached opinion at p.310.",
+          "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+        ],
+        "residual_risks": [
+          "Same first-pin harvest corruption pattern as the batch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aff37993a7328bad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Hoffa is a 1966 SCOTUS decision affirming the convictions ('Affirmed.') — facially valid binding precedent.",
+          "Content page reports no negative treatment; no disclosed authority refutes good_law."
+        ],
+        "residual_risks": [
+          "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 1966 slip alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e219a86f52",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-07-45739774",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hoffa v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "099b0819c5e54600": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1354caa3c8a1cad5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "aff37993a7328bad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "d164fbc0dea99e0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-54a935b1cd",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e219a86f52",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

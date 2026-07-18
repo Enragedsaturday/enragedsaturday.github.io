@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Bruder.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "43fc3f52de04819e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name_full Pennsylvania v. Bruder, court U.S. Supreme Court, date_decided 1988-10-31, and year 1988.",
+          "The lake official citation is 488 U.S. 9, with matching parallel citations 109 S. Ct. 205 and 102 L. Ed. 2d 172, plus 1988 U.S. LEXIS 4816."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10e61e7c72e8ee22",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Background Officer Shallis observed Bruder driving erratically",
+          "locator_note": "pin-10; lake pinpoint has quote_fidelity=mismatch and page=null/slip-only",
+          "needs_cl": false,
+          "problem": "pin-10's stored quotation is a harvested content-page fragment, not a character-faithful quotation from the Bruder opinion text.",
+          "proposed_fix": "Regenerate pin-10 from the actual page-10 opinion passage, or convert it to a non-verbatim support citation rather than a quote pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-10 quote_fidelity as mismatch.",
+          "The quoted text contains markdown page structure such as the Background heading, which is absent from the cached opinion text and belongs to content_page.md."
+        ],
+        "residual_risks": [
+          "After regeneration, the nested quotations from Berkemer within Bruder should be checked separately for exact character fidelity."
+        ],
+        "suggested_tightening": "Use discrete exact snippets from the page-10 opinion text instead of one harvested page digest.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cec67497223ed57",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly,",
+          "locator_note": "pin-11; cached text page *11 has the sentence beginning with Accordingly",
+          "needs_cl": false,
+          "problem": "pin-11 quotes the operative sentence but omits the opening word from the opinion sentence without an ellipsis.",
+          "proposed_fix": "Change the quote to include the introductory word, or mark the omission with an ellipsis before Berkemer's rule.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint marks pin-11 quote_fidelity as mismatch.",
+          "The cached opinion text begins the sentence with Accordingly before Berkemer's rule; the content/lake quote starts directly with Berkemer's rule."
+        ],
+        "residual_risks": [
+          "Markup normalization for italics and embedded citation links may still need a deterministic corpus rule."
+        ],
+        "suggested_tightening": "Quote the full sentence as it appears in the opinion text, preserving the introductory Accordingly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38c38c48210498f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The row's field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields."
+        ],
+        "residual_risks": [
+          "Treatment substance and currency remain for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Pennsylvania v. Bruder.json\",\"reviewed\":[{\"assertion_id\":\"43fc3f52de04819e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name_full Pennsylvania v. Bruder, court U.S. Supreme Court, date_decided 1988-10-31, and year 1988.\",\"The lake official citation is 488 U.S. 9, with matching parallel citations 109 S. Ct. 205 and 102 L. Ed. 2d 172, plus 1988 U.S. LEXIS 4816.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"10e61e7c72e8ee22\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-10's stored quotation is a harvested content-page fragment, not a character-faithful quotation from the Bruder opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-10 from the actual page-10 opinion passage, or convert it to a non-verbatim support citation rather than a quote pinpoint.\",\"evidence_quote\":\"## Background Officer Shallis observed Bruder driving erratically\",\"needs_cl\":false,\"locator_note\":\"pin-10; lake pinpoint has quote_fidelity=mismatch and page=null/slip-only\"},\"reasons\":[\"The lake pinpoint itself marks pin-10 quote_fidelity as mismatch.\",\"The quoted text contains markdown page structure such as the Background heading, which is absent from the cached opinion text and belongs to content_page.md.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"After regeneration, the nested quotations from Berkemer within Bruder should be checked separately for exact character fidelity.\"],\"suggested_tightening\":\"Use discrete exact snippets from the page-10 opinion text instead of one harvested page digest.\"},{\"assertion_id\":\"3cec67497223ed57\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-11 quotes the operative sentence but omits the opening word from the opinion sentence without an ellipsis.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote to include the introductory word, or mark the omission with an ellipsis before Berkemer's rule.\",\"evidence_quote\":\"Accordingly,\",\"needs_cl\":false,\"locator_note\":\"pin-11; cached text page *11 has the sentence beginning with Accordingly\"},\"reasons\":[\"The lake pinpoint marks pin-11 quote_fidelity as mismatch.\",\"The cached opinion text begins the sentence with Accordingly before Berkemer's rule; the content/lake quote starts directly with Berkemer's rule.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Markup normalization for italics and embedded citation links may still need a deterministic corpus rule.\"],\"suggested_tightening\":\"Quote the full sentence as it appears in the opinion text, preserving the introductory Accordingly.\"},{\"assertion_id\":\"38c38c48210498f6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The row's field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance and currency remain for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:33:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:26:43-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ca213d66be",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3c6ad3813e",
+      "F-S9-PR-e35f4b371e"
+    ],
     "group_id": "_overhaul2/lake/cases/Pennsylvania v. Bruder.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b613d921.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Pennsylvania v. Bruder"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 189771,
+      "output": 7905,
+      "source": "codex-events",
+      "total": 197676
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "10e61e7c72e8ee22": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "38c38c48210498f6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3cec67497223ed57": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "43fc3f52de04819e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c6ad3813e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e35f4b371e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ca213d66be",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 156.0
   }
 }

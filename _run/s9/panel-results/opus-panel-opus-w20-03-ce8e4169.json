@@ -1,0 +1,166 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "274a6141e1a9a0ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Case identity confirmed by cached opinion: 'United States Court of Appeals FOR THE DISTRICT OF COLUMBIA CIRCUIT', 'UNITED STATES OF AMERICA v. SAMUEL H. VINTON, JR.', 'Decided February 5, 2010', 'No. 07-3125', opinion by Brown, Circuit Judge.",
+          "594 F.3d 14 (D.C. Cir. 2010) is the standard reporter cite for this decision; court_level coa, circuit D.C., cadc court_id all coherent.",
+          "official_selection rank_1 for coa is consistent."
+        ],
+        "residual_risks": [
+          "Cached text is slip-opinion formatted (pages 2-11), so F.3d reporter star page 14 is not printed; parallel cite 389 U.S. App. D.C. 199 and neutral cites are not line-corroborated. Docket differs cosmetically (opinion 'No. 07-3125' vs record docket null)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b852f10961b5186",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This concern was not abated by ordering Vinton out of the car and handcuffing him, because had Vinton ultimately not been arrested, he would have been \"permitted to reenter his automobile, and he w[ould] then have [had] access to any weapons inside.\"",
+          "locator_note": "Vinton opinion, Section II.A (slip op. 7-8), sentence ending 'Long, 463 U.S. at 1052.'; content page cites 594 F.3d at 20 (reporter star page not confirmable from slip-formatted cache).",
+          "needs_cl": false,
+          "problem": "The pin-20 record's `quote` field is a corrupted harvest artifact: it captured content-page markdown running from mid-Background through the Issue heading into the 'Rule' lead-in, rather than the passage anchored at ^pin-20. That captured string is not in the Vinton opinion. The actual content-page quotation at ^pin-20 IS faithful and correctly attributed to Vinton at 594 F.3d at 20.",
+          "proposed_fix": "Replace payload.quote for pin-20 with the real anchored passage and re-derive fidelity/status; rendered page needs no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote string is page markdown (contains '## Issue', '## Rule', '*Michigan v. Long*'), genuinely absent from the opinion — quote_fidelity='mismatch' is accurate as to the corrupted field.",
+          "The real ^pin-20 quotation is verbatim in the opinion (Vinton restating Long's protective-search rationale post-handcuffing); underlying legal content is sound.",
+          "Defect is extractor data-quality, not a fabricated or misplaced page quotation."
+        ],
+        "residual_risks": [
+          "An automated pass mistaking the corrupted field for the page's quotation could falsely flag faithful content.",
+          "Reporter star page 20 is not independently verifiable from the slip-op-formatted cached text (pin is 'slip-only' by design)."
+        ],
+        "suggested_tightening": "Reject harvester captures containing markdown tokens as quote fields; back-fill reporter star pagination for D.C. Cir. pins.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa767babc75e92fb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Examining the totality of the circumstances objectively, Officer Alton had a reasonable belief, based on specific and articulable facts, that Vinton was armed and dangerous. See Long, 463 U.S. at 1049. Thus, he properly searched the passenger compartment of Vinton's car for additional weapons.",
+          "locator_note": "Vinton opinion, end of Section II.A (slip op. 8-9); content page cites Id. at 21.",
+          "needs_cl": false,
+          "problem": "The quoted passage misspells the officer's surname as 'Officer Aton'; the opinion (caption and text) names him 'U.S. Park Police Officer William Alton' / 'Officer Alton'. The error is systematic — the entire content page calls him 'Aton'. The quotation is otherwise faithful; the ellipsis '. . .' elides only 'See Long, 463 U.S. at 1049.'",
+          "proposed_fix": "Correct 'Aton' to 'Alton' in the pin-21 quote and everywhere the officer is named on the content page.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion text at slip op. 8-9 reads 'Officer Alton had a reasonable belief...'; the recorded/page quote substitutes 'Aton' (dropped 'l'), an infidelity within quotation marks.",
+          "Aside from the name, the quote (including the ellipsis elision of 'See Long, 463 U.S. at 1049.') is verbatim and the supported holding is accurate — hence survives with a correction rather than refuted.",
+          "Because the misspelling recurs across the whole page (Background, Application), this is a page-wide factual/name error, not an isolated typo."
+        ],
+        "residual_risks": [
+          "Reporter star page 21 not independently confirmable from slip-formatted cache (pin is 'slip-only').",
+          "If left uncorrected, the officer's name is wrong wiki-wide for this case."
+        ],
+        "suggested_tightening": "Add a proper-noun cross-check against the source opinion so surname misspellings ('Aton' vs 'Alton') are caught at authoring.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bee900080e888c3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is not contradicted by any disclosed evidence: Vinton (D.C. Cir. 2010) applies settled Long/Gant doctrine and the disclosed opinion shows a standard, uncontroversial holding.",
+          "All negative edges in the lake record are self-flagged proposed triage (proposed=true, lane2_top_cited) — keyword-classified citing cases (Rodgers, Donahue, Fischer 'abrogated'; various 'questioned'), none confirmed to abrogate Vinton itself.",
+          "scope_note honestly flags that S2 derivation may re-derive and downgrade; migration-seed basis is transparent."
+        ],
+        "residual_risks": [
+          "Continued vitality is asserted from a migration-seed with unaudited proposed negatives; no disclosed progeny affirmatively confirms good_law as of 2026-06-30 (would need a citator/CL check).",
+          "'not found != fabricated' governs: absence of disclosed contrary treatment supports stands, but the currency claim is not machine-closed in the pack."
+        ],
+        "suggested_tightening": "Run the S2/R15 treatment derivation to replace the migration-seed good_law with an audited basis and dismiss the proposed keyword-triage negatives.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3e249bd8e6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Vinton.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-03-ce8e4169",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Vinton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1bee900080e888c3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "274a6141e1a9a0ba": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b852f10961b5186": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fa767babc75e92fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9362bd6cd",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-621d0612b3",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3e249bd8e6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

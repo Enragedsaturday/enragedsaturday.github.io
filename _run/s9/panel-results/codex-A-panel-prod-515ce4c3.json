@@ -1,22 +1,173 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/City of Ontario v. Quon.md",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory rows. No standalone black_letter, quote_fidelity, or pincite rows were present; the only Lens A modification is the support pin attached to the holding discussion.",
+    "reviewed": [
+      {
+        "assertion_id": "07d22c12c4cf2ca6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies City of Ontario v. Quon as a U.S. Supreme Court case decided in 2010.",
+          "The payload's neutral cite and parallel citations match the lake citation list; the lake has official/display citation null, consistent with the empty citation field and official_citation_present=false."
+        ],
+        "residual_risks": [
+          "The content Sources line uses an alternate CourtListener URL, but the lake lists that cluster as an alternate and URL identity was not the asserted field."
+        ],
+        "suggested_tightening": "Consider surfacing 560 U.S. 746 as the human display citation while preserving the structured lake citation fields.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e1d9ab5a0fa9e50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that workplace special needs justify an exception and applies the O'Connor government-employer search framework.",
+          "The case concerns employer-provided pager text messages and the Court assumed, rather than decided, the employee privacy expectation before resolving reasonableness."
+        ],
+        "residual_risks": [
+          "The role label should not be read to mean Quon affirmatively held a digital workplace reasonable expectation of privacy existed."
+        ],
+        "suggested_tightening": "If taxonomy permits, clarify the role as digital workplace REP assumed and reasonableness decided.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21558aad7183d4f4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "<p id=\"ACI\">[<span class=\"citation no-link\">560 U.S. 764</span>]</p>",
+          "locator_note": "content_page.md Rule paragraph; text/City of Ontario v. Quon__f36cce.txt places the quoted conclusion in paragraph b276-7 after the 560 U.S. 764 marker.",
+          "needs_cl": false,
+          "problem": "The holding is substantively supported, but the page's supporting pin for the quoted dispositive sentence says 560 U.S. at 761; the disclosed text places that quoted sentence after the 560 U.S. 764 page marker. The lake pin-761 entry is also marked quote_fidelity=mismatch.",
+          "proposed_fix": "Keep the holding, but change the supporting citation for the 'Because the search...' quote to 560 U.S. at 764, or use 560 U.S. at 761 only for the O'Connor framework. Update the pin record accordingly.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports the proposition that the search was reasonable under O'Connor because it had a legitimate work-related purpose and was not excessive in scope.",
+          "The opinion says the Court assumed Quon had a reasonable expectation of privacy and that the review was a Fourth Amendment search.",
+          "The opinion expressly cautions against broad holdings about privacy expectations in emerging employer-provided communications technology."
+        ],
+        "residual_risks": [
+          "The holding should remain tied to O'Connor and the assumed facts, not read as a broad rule for all employer-issued communication devices."
+        ],
+        "suggested_tightening": "Assuming a search and REP, OPD's review was reasonable under O'Connor because it was justified at inception and not excessive in scope; the Court declined broader digital-privacy rules.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a174a6581f2739d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields, including good_law, the dates, migration-seed basis, varies_by_point=false, and the scope note.",
+          "Treatment and currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lake treatment derivation metadata and edges are Lens B issues and were not adjudicated here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6f06a2f2351c4e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The authority_weight label in content is Binding — SCOTUS.",
+          "The lake identity fields identify the court as U.S. Supreme Court with court_level scotus, supporting the SCOTUS binding-weight label."
+        ],
+        "residual_risks": [
+          "No treatment/currency conclusion is made under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/City of Ontario v. Quon.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"07d22c12c4cf2ca6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies City of Ontario v. Quon as a U.S. Supreme Court case decided in 2010.\",\n        \"The payload's neutral cite and parallel citations match the lake citation list; the lake has official/display citation null, consistent with the empty citation field and official_citation_present=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content Sources line uses an alternate CourtListener URL, but the lake lists that cluster as an alternate and URL identity was not the asserted field.\"\n      ],\n      \"suggested_tightening\": \"Consider surfacing 560 U.S. 746 as the human display citation while preserving the structured lake citation fields.\"\n    },\n    {\n      \"assertion_id\": \"1e1d9ab5a0fa9e50\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion states that workplace special needs justify an exception and applies the O'Connor government-employer search framework.\",\n        \"The case concerns employer-provided pager text messages and the Court assumed, rather than decided, the employee privacy expectation before resolving reasonableness.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The role label should not be read to mean Quon affirmatively held a digital workplace reasonable expectation of privacy existed.\"\n      ],\n      \"suggested_tightening\": \"If taxonomy permits, clarify the role as digital workplace REP assumed and reasonableness decided.\"\n    },\n    {\n      \"assertion_id\": \"21558aad7183d4f4\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding is substantively supported, but the page's supporting pin for the quoted dispositive sentence says 560 U.S. at 761; the disclosed text places that quoted sentence after the 560 U.S. 764 page marker. The lake pin-761 entry is also marked quote_fidelity=mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the holding, but change the supporting citation for the 'Because the search...' quote to 560 U.S. at 764, or use 560 U.S. at 761 only for the O'Connor framework. Update the pin record accordingly.\",\n        \"evidence_quote\": \"<p id=\\\"ACI\\\">[<span class=\\\"citation no-link\\\">560 U.S. 764</span>]</p>\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Rule paragraph; text/City of Ontario v. Quon__f36cce.txt places the quoted conclusion in paragraph b276-7 after the 560 U.S. 764 marker.\"\n      },\n      \"reasons\": [\n        \"The opinion supports the proposition that the search was reasonable under O'Connor because it had a legitimate work-related purpose and was not excessive in scope.\",\n        \"The opinion says the Court assumed Quon had a reasonable expectation of privacy and that the review was a Fourth Amendment search.\",\n        \"The opinion expressly cautions against broad holdings about privacy expectations in emerging employer-provided communications technology.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The holding should remain tied to O'Connor and the assumed facts, not read as a broad rule for all employer-issued communication devices.\"\n      ],\n      \"suggested_tightening\": \"Assuming a search and REP, OPD's review was reasonable under O'Connor because it was justified at inception and not excessive in scope; the Court declined broader digital-privacy rules.\"\n    },\n    {\n      \"assertion_id\": \"9a174a6581f2739d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload treatment fields match the lake treatment fields, including good_law, the dates, migration-seed basis, varies_by_point=false, and the scope note.\",\n        \"Treatment and currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake treatment derivation metadata and edges are Lens B issues and were not adjudicated here.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d6f06a2f2351c4e7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The authority_weight label in content is Binding — SCOTUS.\",\n        \"The lake identity fields identify the court as U.S. Supreme Court with court_level scotus, supporting the SCOTUS binding-weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency conclusion is made under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all five group_inventory rows. No standalone black_letter, quote_fidelity, or pincite rows were present; the only Lens A modification is the support pin attached to the holding discussion.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:41:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:47:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ccec5568ae"
+    ],
     "group_id": "content/cases/City of Ontario v. Quon.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-515ce4c3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-515ce4c3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:26.110977Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:26.898916Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:27.917264Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:29.140237Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:31.051764Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Ontario v. Quon"
+    ],
+    "tokens": {
+      "input": 261482,
+      "output": 11787,
+      "source": "codex-events",
+      "total": 273269
+    },
+    "verdict_map": {
+      "07d22c12c4cf2ca6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e1d9ab5a0fa9e50": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "21558aad7183d4f4": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9a174a6581f2739d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6f06a2f2351c4e7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ccec5568ae",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 235.8
   }
 }

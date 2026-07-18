@@ -1,0 +1,126 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6c7c1f863b93ac79",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms a real 7th Cir. decision: 'UNITED STATES ... v. TRAVIS TUGGLE', No. 20-2352, DECIDED JULY 14, 2021, FLAUM, Circuit Judge — matching record identity (cluster 4899735 / opinion 4703514, ca7, 2021-07-14).",
+          "Cite '4 F.4th 505' is volume-consistent with a mid-2021 F.4th opinion; recorded selected_official from CL cluster.citations[]."
+        ],
+        "residual_risks": [
+          "Exact reporter page (4 F.4th 505) not printed in disclosed slip text; sourced from CL cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b75a39b737a3122f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed on-page quote at ^pin-op5 — 'we hold that the extensive pole camera surveillance in this case did not constitute a search under the current understanding of the Fourth Amendment.' — is verbatim in the disclosed opinion (slip p.5).",
+          "Pincite 'slip op., at 5' is accurate (quote sits on the page bearing marker 5).",
+          "Payload 'quote' ('under the Fourth Amendment. ## Rule No, under current doctrine:') is a content-page fragment (harvest artifact), self-flagged mismatch/slip-only, not the displayed quote."
+        ],
+        "residual_risks": [
+          "pinpoint.quote holds a page fragment rather than the quoted holding sentence.",
+          "Slip-only pincite although the case is published (4 F.4th 505)."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the actual holding sentence; consider adding the F.4th reporter pincite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c3482dbac0646a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is defensible: lane1_negative (cites:(4703514) AND negative-terms AND court_id:(scotus OR ca7)) reviewed 1, proposed_negative_events=0.",
+          "scope_note ('issue of first impression; courts split on long-term pole-camera surveillance') is corroborated in-substance by the opinion (first impression for the 7th Cir.; courts 'splintered'); a split does not negate binding in-circuit status.",
+          "as_of_content 2021-07-14 equals the decision date; the 'overruled'/'abrogated'/'questioned' edges are proposed:true lane2 heuristics (e.g., Moore-Bush is a 1st Cir. case; its 'overruled' label is unrelated to Tuggle)."
+        ],
+        "residual_risks": [
+          "Proposed negative edges are unadjudicated; the in-circuit/SCOTUS negative lane found none.",
+          "Live currency to as_of_treatment 2026-06-30 not fully confirmable from the pack (needs CL)."
+        ],
+        "suggested_tightening": "Adjudicate/prune the proposed:true lane2 field_ii labels.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-40612bb7f3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ce971f7f62",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Tuggle.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-01-fc5428d5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Tuggle"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6c7c1f863b93ac79": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c3482dbac0646a9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b75a39b737a3122f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-40612bb7f3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ce971f7f62",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

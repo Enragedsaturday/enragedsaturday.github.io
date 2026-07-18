@@ -1,0 +1,145 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b2011975b1fc0656",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion header confirms the case: 'BRIGHAM CITY, UTAH v. STUART ET AL.', SCOTUS, No. 05-502, decided May 22, 2006, Roberts C.J. for a unanimous Court.",
+          "Official/display cite 547 U.S. 398 is the standard first-page citation and matches cluster.citations[] official_selection (selected_rank_1); lake identity_checked=true, cluster/lead-opinion 145654."
+        ],
+        "residual_risks": [
+          "Slip prints 'Cite as: 547 U. S. ____ (2006)' with no official pagination, so the exact first page 398 and the parallel cites (126 S. Ct. 1943; 164 L. Ed. 2d 650; 2006 U.S. LEXIS 4155) are corroborated only by cluster metadata, not by the disclosed slip text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f814fda7fa33a44",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-400 quote 'may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury' is verbatim in the slip: Held syllabus ('Held: Police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury') and the opening statement of the opinion.",
+          "The payload 'quote' field captured content-page markdown boilerplate up to the anchor (a span-capture artifact), so the pre-computed 'quote_fidelity: mismatch' flag is a false positive; the actual quoted language is faithful."
+        ],
+        "residual_risks": [
+          "pinpoint_status is slip-only; page assignment 400 cannot be confirmed against official reporter pagination from the disclosed slip, though it is consistent with a case beginning at 398."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a608fc0595312b27",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-404 quote matches the slip verbatim (opinion: 'An action is \"reasonable\" under the Fourth Amendment, regardless of the individual officer's state of mind, \"as long as the circumstances, viewed objectively, justify [the] action.\" Scott v. United States... The officer's subjective motivation is irrelevant.').",
+          "The content-page ellipsis (' . . . ') legitimately elides the intervening 'Scott v. United States, 436 U. S. 128, 138 (1978) (emphasis added).' citation; single vs. curly quote glyphs are typographic normalization. The 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [
+          "Slip-only pincite: page 404 not confirmable against official pagination (quote sits on slip page 5, consistent with U.S. page ~404)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c4be1373a3ace6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is facially correct for a landmark emergency-aid holding; the content-page progeny narrative (followed by Michigan v. Fisher; undisturbed by Caniglia v. Strom) shows no adverse treatment.",
+          "Every negative edge in the lake record is marked 'proposed: true' from automated lanes (lane1_negative / lane2_top_cited) and is a transparent keyword-scan false positive (e.g. District of Columbia v. Heller, McDonald v. City of Chicago, Jardines 'overruling/questioning' an emergency-aid holding is doctrinally impossible)."
+        ],
+        "residual_risks": [
+          "True citator currency as of 2026-06-30 is not independently derivable from the inlined case text; composite_basis is 'migration-seed' and scope_note concedes S2 re-derivation may adjust. No genuine adverse treatment is disclosed, so no defect found."
+        ],
+        "suggested_tightening": "S2 should adjudicate/prune the proposed lane1/lane2 negative edges so the spurious 'overruled/questioned' candidates do not leak into any composite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e3685a3f5c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff4bee20",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brigham City v. Stuart.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-02-2b0871b6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brigham City v. Stuart"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2c4be1373a3ace6d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9f814fda7fa33a44": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a608fc0595312b27": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b2011975b1fc0656": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3685a3f5c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff4bee20",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

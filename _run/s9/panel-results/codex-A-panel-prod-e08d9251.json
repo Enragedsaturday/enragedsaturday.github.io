@@ -1,38 +1,89 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ruckman.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once; no support, quote-fidelity, pincite, or black-letter rows were present for lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "73ed367169d7d657",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record confirms record_id United States v. Ruckman, court 10th Cir., date_decided 1986-12-18, and year 1986.",
+          "The inventory citation payload matches the lake citation fields: official/display 806 F.2d 1471, vendor-neutral 1986 U.S. App. LEXIS 34802, and parallel 55 U.S.L.W. 2398."
+        ],
+        "residual_risks": [
+          "The content page contains a non-inventoried docket inconsistency: frontmatter/lake show 85-2801 while the rendered header says No. 85-2731."
+        ],
+        "suggested_tightening": "If docket identity is later inventoried, reconcile the 85-2801 vs 85-2731 discrepancy from disclosed source records.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85e126267ba2bebe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no substantive treatment finding is raised.",
+          "The inventory treatment fields match the lake record: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "Subsequent treatment and good-law status were not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ruckman.json\",\"reviewed\":[{\"assertion_id\":\"73ed367169d7d657\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record confirms record_id United States v. Ruckman, court 10th Cir., date_decided 1986-12-18, and year 1986.\",\"The inventory citation payload matches the lake citation fields: official/display 806 F.2d 1471, vendor-neutral 1986 U.S. App. LEXIS 34802, and parallel 55 U.S.L.W. 2398.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page contains a non-inventoried docket inconsistency: frontmatter/lake show 85-2801 while the rendered header says No. 85-2731.\"],\"suggested_tightening\":\"If docket identity is later inventoried, reconcile the 85-2801 vs 85-2731 discrepancy from disclosed source records.\"},{\"assertion_id\":\"85e126267ba2bebe\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no substantive treatment finding is raised.\",\"The inventory treatment fields match the lake record: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Subsequent treatment and good-law status were not assessed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once; no support, quote-fidelity, pincite, or black-letter rows were present for lens A review.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:52-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:04:29-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Ruckman.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Ruckman"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e08d9251",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e08d9251.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Ruckman' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Ruckman"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 63387,
+      "output": 3183,
+      "source": "codex-events",
+      "total": 66570
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "73ed367169d7d657": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85e126267ba2bebe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 67.3
   }
 }

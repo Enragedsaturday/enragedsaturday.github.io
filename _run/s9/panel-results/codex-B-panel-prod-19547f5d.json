@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Heck v. Humphrey.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "250bff67a4719d57",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Heck v. Humphrey as a U.S. Supreme Court case decided 1994-06-24 with official citation 512 U.S. 477.",
+          "The lake treatment judgment states field_i_validity is good_law as of 2026-06-30 for the favorable-termination rule."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains proposed negative/audit flags, but the disclosed judgment field does not show a confirmed overrule, abrogation, or supersession of Heck itself."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c964906197fe34f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not test support or quote fidelity; on currency only, the lake scope_note states the favorable-termination rule is good law.",
+          "No disclosed treatment field or point_override supersedes the rule stated in this assertion."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity are reserved for lens A.",
+          "Proposed negative edges remain an audit risk but are not a confirmed treatment defect in the disclosed lake judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c74eb90d00a37f68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate whether the home role is substantively supported.",
+          "No disclosed currency or treatment evidence makes a SCOTUS good-law § 1983 case inappropriate as a current authority in this topic area."
+        ],
+        "residual_risks": [
+          "The disclosed lake record does not independently validate the editorial home-role label; that is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d76bcf9cfc290938",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 24,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "treatment field / Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The scoped good-law treatment survives, but the page's unqualified clean-treatment framing is too strong because the lake record contains proposed negative treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep field_i_validity: good_law and the scope note, but remove or qualify any 'No negative treatment' language to say the lake judgment remains good_law despite proposed negative/audit flags pending audit.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake judgment fields: good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "But treatment.edges include proposed labels such as questioned, criticized, overruled, abrogated, and superseded_by_statute, all with field_iii mentioned, and derivation lanes show audit_needed true."
+        ],
+        "residual_risks": [
+          "The disclosed files do not contain the full citing-case texts for the proposed negative edges, so the actual effect of those edges cannot be finally audited from this packet."
+        ],
+        "suggested_tightening": "Qualify treatment text to distinguish the final lake judgment from unresolved proposed negative-treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9829cb1aba02151",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields identify the court as U.S. Supreme Court and court_level/court_id as scotus.",
+          "A Supreme Court authority supports the weight label Binding — SCOTUS; no disclosed treatment edge changes the issuing court or binding source label."
+        ],
+        "residual_risks": [
+          "None under lens B beyond the separate proposed-treatment audit risk noted for the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Heck v. Humphrey.md\",\"reviewed\":[{\"assertion_id\":\"250bff67a4719d57\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Heck v. Humphrey as a U.S. Supreme Court case decided 1994-06-24 with official citation 512 U.S. 477.\",\"The lake treatment judgment states field_i_validity is good_law as of 2026-06-30 for the favorable-termination rule.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation contains proposed negative/audit flags, but the disclosed judgment field does not show a confirmed overrule, abrogation, or supersession of Heck itself.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6c964906197fe34f\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test support or quote fidelity; on currency only, the lake scope_note states the favorable-termination rule is good law.\",\"No disclosed treatment field or point_override supersedes the rule stated in this assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity are reserved for lens A.\",\"Proposed negative edges remain an audit risk but are not a confirmed treatment defect in the disclosed lake judgment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c74eb90d00a37f68\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not evaluate whether the home role is substantively supported.\",\"No disclosed currency or treatment evidence makes a SCOTUS good-law § 1983 case inappropriate as a current authority in this topic area.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed lake record does not independently validate the editorial home-role label; that is outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d76bcf9cfc290938\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The scoped good-law treatment survives, but the page's unqualified clean-treatment framing is too strong because the lake record contains proposed negative treatment edges and audit-needed markers.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity: good_law and the scope note, but remove or qualify any 'No negative treatment' language to say the lake judgment remains good_law despite proposed negative/audit flags pending audit.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 24,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"treatment field / Treatment & subsequent history\"},\"reasons\":[\"The payload matches the lake judgment fields: good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"But treatment.edges include proposed labels such as questioned, criticized, overruled, abrogated, and superseded_by_statute, all with field_iii mentioned, and derivation lanes show audit_needed true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not contain the full citing-case texts for the proposed negative edges, so the actual effect of those edges cannot be finally audited from this packet.\"],\"suggested_tightening\":\"Qualify treatment text to distinguish the final lake judgment from unresolved proposed negative-treatment signals.\"},{\"assertion_id\":\"e9829cb1aba02151\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields identify the court as U.S. Supreme Court and court_level/court_id as scotus.\",\"A Supreme Court authority supports the weight label Binding — SCOTUS; no disclosed treatment edge changes the issuing court or binding source label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"None under lens B beyond the separate proposed-treatment audit risk noted for the treatment assertion.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:44:46-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:10:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-73e8eb9896"
+    ],
     "group_id": "content/cases/Heck v. Humphrey.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-19547f5d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Heck v. Humphrey"
     ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 439566,
+      "output": 7402,
+      "source": "codex-events",
+      "total": 446968
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.2
+    "verdict_map": {
+      "250bff67a4719d57": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6c964906197fe34f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c74eb90d00a37f68": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d76bcf9cfc290938": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e9829cb1aba02151": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-73e8eb9896",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 152.6
   }
 }

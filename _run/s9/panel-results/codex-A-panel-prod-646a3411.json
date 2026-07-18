@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Strickler v. Greene.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory assertions exactly once under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "4203f09e3acfdaf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified, non-stub, and identifies Strickler v. Greene, Warden, U.S. Supreme Court, decided 1999-06-17.",
+          "The official citation 527 U.S. 263 and parallel/vendor citations 119 S. Ct. 1936, 144 L. Ed. 2d 286, and 1999 U.S. LEXIS 4191 match the lake record and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "147a3c5b45c85383",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "There are three components of a true <i><span class=\"citation\" data-id=\"9422583\"><a href=\"/opinion/106598/brady-v-maryland/\" aria-description=\"Citation for case: Brady v. Maryland\">Brady</a></span></i>  violation: The evidence at issue must be favorable to the accused, <span class=\"star-pagination\">*282</span> either because it is exculpatory, or because it is impeaching;",
+          "locator_note": "lake pinpoints[pin-281] and text/Strickler v. Greene__725e6c.txt line 74",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-281 is not a quote from the opinion passage. It is copied from the generated content page header/background/rule prose, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-281's stored quote with the actual three-components passage from the opinion and keep the pin at 527 U.S. 281-282.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with content-page material, not opinion text: \"--- # Strickler v. Greene ... ## Background ... ## Rule\".",
+          "The opinion contains the intended three-components sentence at the 281-282 page break, but that is not the quote stored for pin-281."
+        ],
+        "residual_risks": [
+          "The displayed content-page quotation itself appears supported by the opinion; this refutation is limited to the stored pin quote/fidelity assertion."
+        ],
+        "suggested_tightening": "Store the actual opinion sentence as the pinpoint quote, not surrounding generated page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3600816a74599fb6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "although, strictly speaking, there is never a real \"<span class=\"citation\" data-id=\"9422583\"><a href=\"/opinion/106598/brady-v-maryland/\" aria-description=\"Citation for case: Brady v. Maryland\"><i>Brady</i></a></span> violation\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.",
+          "locator_note": "text/Strickler v. Greene__725e6c.txt line 74; lake pinpoints[pin-281a] quote_fidelity=mismatch",
+          "needs_cl": false,
+          "problem": "The quoted passage exists at page 281, but the stored/content quote is not character-faithful: it changes the opinion's inner double quotation marks around Brady violation to single quotes/Markdown styling, and the lake marks the pinpoint as mismatch.",
+          "proposed_fix": "Use the opinion's wording and punctuation, e.g. quote the fragment as: strictly speaking, there is never a real \"Brady violation\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance and page location are verifiable from the disclosed opinion text.",
+          "The exact characters in the asserted quote do not match the disclosed opinion text's quotation marks/markup."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Correct the internal quotation marks and consider including \"although,\" or bracket/ellipsis conventions if starting mid-sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dd0281d0128c6cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's attack charter.",
+          "The treatment fields in the inventory/content match the lake record: field_i_validity good_law, as_of_content 1999-06-17, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No treatment/currency analysis was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Strickler v. Greene.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"4203f09e3acfdaf2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified, non-stub, and identifies Strickler v. Greene, Warden, U.S. Supreme Court, decided 1999-06-17.\",\n        \"The official citation 527 U.S. 263 and parallel/vendor citations 119 S. Ct. 1936, 144 L. Ed. 2d 286, and 1999 U.S. LEXIS 4191 match the lake record and the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"147a3c5b45c85383\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored quote for pin-281 is not a quote from the opinion passage. It is copied from the generated content page header/background/rule prose, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-281's stored quote with the actual three-components passage from the opinion and keep the pin at 527 U.S. 281-282.\",\n        \"evidence_quote\": \"There are three components of a true <i><span class=\\\"citation\\\" data-id=\\\"9422583\\\"><a href=\\\"/opinion/106598/brady-v-maryland/\\\" aria-description=\\\"Citation for case: Brady v. Maryland\\\">Brady</a></span></i>  violation: The evidence at issue must be favorable to the accused, <span class=\\\"star-pagination\\\">*282</span> either because it is exculpatory, or because it is impeaching;\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[pin-281] and text/Strickler v. Greene__725e6c.txt line 74\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with content-page material, not opinion text: \\\"--- # Strickler v. Greene ... ## Background ... ## Rule\\\".\",\n        \"The opinion contains the intended three-components sentence at the 281-282 page break, but that is not the quote stored for pin-281.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The displayed content-page quotation itself appears supported by the opinion; this refutation is limited to the stored pin quote/fidelity assertion.\"\n      ],\n      \"suggested_tightening\": \"Store the actual opinion sentence as the pinpoint quote, not surrounding generated page prose.\"\n    },\n    {\n      \"assertion_id\": \"3600816a74599fb6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage exists at page 281, but the stored/content quote is not character-faithful: it changes the opinion's inner double quotation marks around Brady violation to single quotes/Markdown styling, and the lake marks the pinpoint as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the opinion's wording and punctuation, e.g. quote the fragment as: strictly speaking, there is never a real \\\"Brady violation\\\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.\",\n        \"evidence_quote\": \"although, strictly speaking, there is never a real \\\"<span class=\\\"citation\\\" data-id=\\\"9422583\\\"><a href=\\\"/opinion/106598/brady-v-maryland/\\\" aria-description=\\\"Citation for case: Brady v. Maryland\\\"><i>Brady</i></a></span> violation\\\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Strickler v. Greene__725e6c.txt line 74; lake pinpoints[pin-281a] quote_fidelity=mismatch\"\n      },\n      \"reasons\": [\n        \"The substance and page location are verifiable from the disclosed opinion text.\",\n        \"The exact characters in the asserted quote do not match the disclosed opinion text's quotation marks/markup.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Correct the internal quotation marks and consider including \\\"although,\\\" or bracket/ellipsis conventions if starting mid-sentence.\"\n    },\n    {\n      \"assertion_id\": \"4dd0281d0128c6cd\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside Lens A's attack charter.\",\n        \"The treatment fields in the inventory/content match the lake record: field_i_validity good_law, as_of_content 1999-06-17, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency analysis was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four group_inventory assertions exactly once under Lens A using only disclosed files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:29:30-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:41:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ff5e091ced",
+      "F-S9-PR-70229d93ab"
+    ],
     "group_id": "_overhaul2/lake/cases/Strickler v. Greene.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-646a3411",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-646a3411.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:28.489451Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:28.959885Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.510963Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Strickler v. Greene"
+    ],
+    "tokens": {
+      "input": 299533,
+      "output": 8389,
+      "source": "codex-events",
+      "total": 307922
+    },
+    "verdict_map": {
+      "147a3c5b45c85383": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3600816a74599fb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4203f09e3acfdaf2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4dd0281d0128c6cd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff5e091ced",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-70229d93ab",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 182.6
   }
 }

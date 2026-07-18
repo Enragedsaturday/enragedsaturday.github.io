@@ -1,0 +1,176 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "df973a1725f08e59",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip op header confirms '373 U.S. 503 (1963)' HAYNES v. WASHINGTON, No. 147, Supreme Court of United States, decided May 27, 1963 (Goldberg, J.).",
+          "Payload official/display '373 U.S. 503' matches; parallel S. Ct./L. Ed. and vendor-neutral cites are consistent with a 1963 SCOTUS decision.",
+          "Citation span data-id 9422619 is a sibling of cluster 106625 (same case)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "269c69ffa982b5b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote matches the cached opinion verbatim on page 514: 'Confronted with the express threat of continued incommunicado detention and induced by the promise of communication with and access to family, Haynes understandably chose to make and sign the damning written statement; given the unfair and inherently coercive context in which made, that choice cannot be said to be the voluntary product of a free and unconstrained will, as required by the Fourteenth Amendment.'",
+          "The *514 star-pagination precedes the sentence, confirming star_marker '514'; fragment is star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7452cf6aefcb0d72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is word-for-word faithful to the cached opinion: 'even apart from the express threat, the basic techniques present here—the secret and incommunicado detention and interrogation—are devices adapted and used to extort confessions from suspects.'",
+          "The recorded quote_fidelity='mismatch' is a cached-text artifact: the HTML-to-text extraction dropped the em-dashes (renders 'herethe' / 'interrogationare'), the same dash-loss seen elsewhere in this opinion; the actual quotation is accurate."
+        ],
+        "residual_risks": [
+          "Recorded quote_fidelity=mismatch is a false positive from em-dash loss in the cached extraction, not a real discrepancy."
+        ],
+        "suggested_tightening": "Normalize em-dashes before quote comparison to avoid false mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5bf5642c4ffa48a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The uncontroverted portions of the record thus disclose that the petitioner's written confession was obtained in an atmosphere of substantial coercion and inducement created by statements and actions of state authorities.",
+          "locator_note": "Cached slip op section III, page *513; content_page ^pin-513.",
+          "needs_cl": false,
+          "problem": "Lake record pinpoint pin-513 stores scraped wiki page-chrome (front-matter, header line, Background/Issue/Rule prose beginning '--- # Haynes v. Washington *373 U.S. 503 (1963)* ... ## Rule No — it was the product of substantial coercion and inducement.') in its quote field instead of opinion text; it is not a verifiable pinpoint quotation and cannot pass quote_fidelity.",
+          "proposed_fix": "Repopulate pin-513 quote with the actual opinion sentence the content page attaches to ^pin-513 at 373 U.S. 513: 'The uncontroverted portions of the record thus disclose that the petitioner's written confession was obtained in an atmosphere of substantial coercion and inducement created by statements and actions of state authorities.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-513 quote is page chrome, not opinion text; record already self-flags quote_fidelity=mismatch/pinpoint_status=slip-only.",
+          "The content page's own use of ^pin-513 is faithful (verified at page 513), but the lake record quote field is corrupted."
+        ],
+        "residual_risks": [
+          "Reader-facing content page uses pin-513 correctly, so no wrong quote reaches readers; the defect is in the lake record data only."
+        ],
+        "suggested_tightening": "Guard the pinpoint extractor against capturing the page's own front-matter/prose as a quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25eae1fb25a322c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope_note (incommunicado detention plus an express threat/promise renders a written confession involuntary under the totality of circumstances) accurately restates the holding confirmed in the cached opinion.",
+          "good_law is not contradicted by any disclosed evidence; the treatment.edges negative signals are self-marked proposed=true and are facially spurious (later cases such as Miranda/Corley cite and build on Haynes rather than overrule it)."
+        ],
+        "residual_risks": [
+          "Definitive 2026 citator confirmation of good_law would require CourtListener; disclosed evidence confirms only the 1963 holding and shows no valid negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b7281f0a74",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ae96643a46",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Haynes v. Washington.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-05-2873e997",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Haynes v. Washington"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "25eae1fb25a322c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "269c69ffa982b5b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7452cf6aefcb0d72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5bf5642c4ffa48a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df973a1725f08e59": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b7281f0a74",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-43505ecf71",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ae96643a46",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

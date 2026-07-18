@@ -1,0 +1,141 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "995a3707d2c53783",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion 'Cite as: 595 U. S. ____ (2021)' and caption 'CITY OF TAHLEQUAH v. BOND' confirm the case and cite 595 U.S. 9 (2021).",
+          "Per curiam, decided 2021-10-18, docket 20-1668 consistent with the record."
+        ],
+        "residual_risks": [
+          "Frontmatter cluster 5292018 vs Sources cluster 5290448 (dual CL cluster).",
+          "Reporter page '9' not shown in the cache's blank '____' slip cite but is the standard reporter cite."
+        ],
+        "suggested_tightening": "Reconcile the two CL cluster URLs.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1884711c7ad5cae9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have repeatedly told courts not to define clearly established law at too high a level of generality.",
+          "locator_note": "lake pinpoints id=pin-op3; content_page ^pin-op3 (line 3548); cached opinion after 'Cite as: 595 U. S. ____ (2021) 3', before '4 CITY OF TAHLEQUAH v. BOND'",
+          "needs_cl": false,
+          "problem": "The lake pinpoints[] stored quote for pin-op3 is corrupt: it captured Background/Issue/Rule lead-in prose (ending at the ':' introducing the quote) instead of the quoted sentence. The content-page ^pin-op3 quote is verbatim-correct and correctly pincited, so the proposition survives.",
+          "proposed_fix": "Re-harvest pin-op3.quote from the content page; the intended quote 'We have repeatedly told courts not to define clearly established law at too high a level of generality.' matches the cached per curiam verbatim at slip op. 3.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content ^pin-op3 quote matches the cached per curiam verbatim and is on slip op. page 3; pincite correct.",
+          "Stored payload quote is garbled lead-in prose (harvest boundary bug)."
+        ],
+        "residual_risks": [
+          "S8 'mismatch' flag is a true positive at the stored-payload layer, harmless at the content layer."
+        ],
+        "suggested_tightening": "Fix the pinpoint-harvest boundary for section-leading quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "529cf268b39f5c0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content ^pin-op3a quote 'all but the plainly incompetent or those who knowingly violate the law.' matches the cached opinion verbatim ('qualified immunity protects ' 'all but the plainly incompetent or those who knowingly violate the law.' ').",
+          "Attribution '(quoting District of Columbia v. Wesby)' is accurate - the opinion cites 'District of Columbia v. Wesby, 583 U. S. ___ (2018)' as the source (Wesby in turn quoting Malley v. Briggs).",
+          "On slip op. page 3; pincite correct. Stored payload quote equals source; S8 'mismatch' is a false positive."
+        ],
+        "residual_risks": [
+          "Nested quotation ultimately traces to Malley v. Briggs via Wesby; the content's attribution to Wesby matches the quoting page and is accurate."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "81de6225172ff474",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; negative edges proposed:true with field_iii='mentioned'.",
+          "Tahlequah (2021 SCOTUS per curiam) qualified-immunity holding; no disclosed overruling."
+        ],
+        "residual_risks": [
+          "Basis is migration-seed (scope_note concedes 'may downgrade'); currency caveat from unadjudicated proposed-negative candidate edges."
+        ],
+        "suggested_tightening": "Run S2 re-derivation to replace the migration seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/City of Tahlequah v. Bond.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-02-17c31b91",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Tahlequah v. Bond"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1884711c7ad5cae9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "529cf268b39f5c0d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81de6225172ff474": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "995a3707d2c53783": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e54352e499",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

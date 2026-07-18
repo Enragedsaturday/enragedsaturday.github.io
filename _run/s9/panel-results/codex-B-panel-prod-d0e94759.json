@@ -1,38 +1,90 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Massenburg.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "f032b25cb2ae8055",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms the case name, Fourth Circuit court, decision date, docket, cluster_id, and expected citation.",
+          "The lake citations record lists display citation 654 F.3d 480 and vendor-neutral cites 2011 U.S. App. LEXIS 16849 and 2011 WL 3559897, matching the payload and content page."
+        ],
+        "residual_risks": [
+          "Treatment/progeny is unverified, so the disclosed record does not prove absence of later negative treatment; this does not defeat the citation/existence assertion itself."
+        ],
+        "suggested_tightening": "Keep existence/citation separate from any live-law representation unless treatment is later verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2f3ca6e69802ce6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment value is unverified, which exactly matches the lake treatment.field_i_validity value.",
+          "The lake treatment scope_note states: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The lake treatment edges array is empty and progeny fields show no cached citing-opinion enumeration, so the page correctly avoids claiming verified good-law status."
+        ],
+        "residual_risks": [
+          "Because treatment is expressly unverified, the disclosed record cannot establish whether later authority has overruled, abrogated, superseded, or limited Massenburg."
+        ],
+        "suggested_tightening": "Avoid any stronger phrasing than \"Treatment: Unverified\" until treatment/progeny is derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Massenburg.json\",\"reviewed\":[{\"assertion_id\":\"f032b25cb2ae8055\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms the case name, Fourth Circuit court, decision date, docket, cluster_id, and expected citation.\",\"The lake citations record lists display citation 654 F.3d 480 and vendor-neutral cites 2011 U.S. App. LEXIS 16849 and 2011 WL 3559897, matching the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny is unverified, so the disclosed record does not prove absence of later negative treatment; this does not defeat the citation/existence assertion itself.\"],\"suggested_tightening\":\"Keep existence/citation separate from any live-law representation unless treatment is later verified.\"},{\"assertion_id\":\"a2f3ca6e69802ce6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment value is unverified, which exactly matches the lake treatment.field_i_validity value.\",\"The lake treatment scope_note states: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The lake treatment edges array is empty and progeny fields show no cached citing-opinion enumeration, so the page correctly avoids claiming verified good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is expressly unverified, the disclosed record cannot establish whether later authority has overruled, abrogated, superseded, or limited Massenburg.\"],\"suggested_tightening\":\"Avoid any stronger phrasing than \\\"Treatment: Unverified\\\" until treatment/progeny is derived.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:32:40-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:59:28-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Massenburg.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Massenburg"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d0e94759",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d0e94759.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Massenburg' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Massenburg"
+    ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 58851,
+      "output": 2192,
+      "source": "codex-events",
+      "total": 61043
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "a2f3ca6e69802ce6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f032b25cb2ae8055": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "wall_clock_s": 49.5
   }
 }

@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Place.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "54dbcb1329eb0f7c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id United States v. Place, case_name United States v. Place, court U.S. Supreme Court, date_decided 1983-06-20, and year 1983.",
+          "The official citation in the lake record is selected as 462 U.S. 696, and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2673595d7860bc5f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In these respects, the canine sniff is <em>sui generis. </em>We are aware of no other investigative procedure that is so limited both in the manner in which the information is obtained and in the content of the information revealed by the procedure.",
+          "locator_note": "pin-707; text line containing page-number label 707 and paragraph id Axx",
+          "needs_cl": false,
+          "problem": "pin-707 is not character-faithful. The lake pinpoint quote is page text from the content page, not the quoted opinion passage; the built-page quote also normalizes punctuation, changing respondent’s to respondent's and “search” to 'search'.",
+          "proposed_fix": "Replace pin-707 with the actual page-707 opinion language and preserve source punctuation/formatting, or mark any editorial normalization explicitly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-707 quote_fidelity as mismatch and stores a quote beginning with the content-page Issue/Rule text, not the opinion passage.",
+          "The opinion text at page 707 contains the dog-sniff passage, but not the inventory quote as framed."
+        ],
+        "residual_risks": [
+          "The substantive dog-sniff proposition is supported; this refutation is limited to quote fidelity."
+        ],
+        "suggested_tightening": "Store the exact opinion quote for pin-707 rather than generated page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9fa151628f405b70",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The length of the detention of respondent’s luggage alone precludes the conclusion that the seizure was reasonable in the absence of probable cause.",
+          "locator_note": "pin-709; text paragraphs b752-5 and b753-5",
+          "needs_cl": false,
+          "problem": "pin-709 is not character-faithful. The inventory/lake quote inserts Markdown emphasis in Terry-type and changes respondent’s to respondent's; the lake record marks quote_fidelity as mismatch.",
+          "proposed_fix": "Use the source text without added emphasis and with source punctuation: Terry-type and respondent’s.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The text has Terry-type without emphasis, while the asserted quote has *Terry*-type.",
+          "The text has respondent’s with a curly apostrophe, while the asserted quote has respondent's.",
+          "The lake pinpoint status is slip-only and quote_fidelity is mismatch."
+        ],
+        "residual_risks": [
+          "The duration proposition is supported; this refutation is limited to exact quote fidelity."
+        ],
+        "suggested_tightening": "If the renderer requires Markdown italics or ASCII punctuation, do not present the result as a verbatim quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "428b0088e10121b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The treatment fields in the inventory match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1983-06-20, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Place.json\",\"reviewed\":[{\"assertion_id\":\"54dbcb1329eb0f7c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id United States v. Place, case_name United States v. Place, court U.S. Supreme Court, date_decided 1983-06-20, and year 1983.\",\"The official citation in the lake record is selected as 462 U.S. 696, and the listed parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2673595d7860bc5f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-707 is not character-faithful. The lake pinpoint quote is page text from the content page, not the quoted opinion passage; the built-page quote also normalizes punctuation, changing respondent’s to respondent's and “search” to 'search'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-707 with the actual page-707 opinion language and preserve source punctuation/formatting, or mark any editorial normalization explicitly.\",\"evidence_quote\":\"In these respects, the canine sniff is <em>sui generis. </em>We are aware of no other investigative procedure that is so limited both in the manner in which the information is obtained and in the content of the information revealed by the procedure.\",\"needs_cl\":false,\"locator_note\":\"pin-707; text line containing page-number label 707 and paragraph id Axx\"},\"reasons\":[\"The lake record itself marks pin-707 quote_fidelity as mismatch and stores a quote beginning with the content-page Issue/Rule text, not the opinion passage.\",\"The opinion text at page 707 contains the dog-sniff passage, but not the inventory quote as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive dog-sniff proposition is supported; this refutation is limited to quote fidelity.\"],\"suggested_tightening\":\"Store the exact opinion quote for pin-707 rather than generated page prose.\"},{\"assertion_id\":\"9fa151628f405b70\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-709 is not character-faithful. The inventory/lake quote inserts Markdown emphasis in Terry-type and changes respondent’s to respondent's; the lake record marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the source text without added emphasis and with source punctuation: Terry-type and respondent’s.\",\"evidence_quote\":\"The length of the detention of respondent’s luggage alone precludes the conclusion that the seizure was reasonable in the absence of probable cause.\",\"needs_cl\":false,\"locator_note\":\"pin-709; text paragraphs b752-5 and b753-5\"},\"reasons\":[\"The text has Terry-type without emphasis, while the asserted quote has *Terry*-type.\",\"The text has respondent’s with a curly apostrophe, while the asserted quote has respondent's.\",\"The lake pinpoint status is slip-only and quote_fidelity is mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The duration proposition is supported; this refutation is limited to exact quote fidelity.\"],\"suggested_tightening\":\"If the renderer requires Markdown italics or ASCII punctuation, do not present the result as a verbatim quote.\"},{\"assertion_id\":\"428b0088e10121b0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The treatment fields in the inventory match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1983-06-20, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:24-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2b87f697e2",
+      "F-S9-PR-fe30fc98c9"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Place.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4e1d07ae.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Place"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 210868,
+      "output": 6572,
+      "source": "codex-events",
+      "total": 217440
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "2673595d7860bc5f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "428b0088e10121b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "54dbcb1329eb0f7c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9fa151628f405b70": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b87f697e2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fe30fc98c9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 238.8
   }
 }

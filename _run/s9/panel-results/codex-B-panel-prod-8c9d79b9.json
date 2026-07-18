@@ -1,22 +1,106 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/chapman-v-california--8428427.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "5eefb05fe2468830",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"display\": \"386 U.S. 18\"",
+          "locator_note": "group_inventory row for record_id chapman-v-california--8428427 conflicts with lake/chapman-v-california--8428427__4e5cac.json citations.",
+          "needs_cl": false,
+          "problem": "The inventory's cited-authority payload is not the disclosed Chapman citation set. It lists 2016/2017 citations, while the lake record for this record_id identifies Chapman v. California as a 1967 Supreme Court case with official citation 386 U.S. 18 and different parallel citations.",
+          "proposed_fix": "Replace the existence/citation payload with the lake record's Chapman citations: 386 U.S. 18, 87 S. Ct. 824, 17 L. Ed. 2d 705, and 1967 U.S. LEXIS 2198, or rekey the assertion to the authority that actually has the listed 2016/2017 citations.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies record_id chapman-v-california--8428427 as Chapman v. California decided 1967-03-27.",
+          "Lake citations list official 386 U.S. 18 and parallels 87 S. Ct. 824, 17 L. Ed. 2d 705, plus 1967 U.S. LEXIS 2198.",
+          "Inventory payload instead lists 137 S. Ct. 389, 196 L. Ed. 2d 306, 85 U.S.L.W. 3209, 2016 WL 4733855, and 2016 U.S. LEXIS 6528, none of which appear in the disclosed Chapman record."
+        ],
+        "residual_risks": [
+          "No content_page.* file is present in the disclosed directory, so the built-page rendering cannot be cross-checked."
+        ],
+        "suggested_tightening": "Require existence assertions to compare group_inventory citation payloads against lake.citations for the same record_id before review export.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e05e8113804bda4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Inventory treatment payload reports field_i_validity as unverified, with null as_of dates and the frontier-stub scope note.",
+          "Lake treatment fields match: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and treatment/progeny edges are empty.",
+          "Because the assertion does not claim Chapman is good law, overruled, limited, or otherwise weighted, there is no disclosed treatment conflict to refute under Lens B."
+        ],
+        "residual_risks": [
+          "The disclosed record cannot support any affirmative current-good-law claim because treatment and progeny are intentionally unverified."
+        ],
+        "suggested_tightening": "Do not surface a good-law label for this authority until the frontier stub is promoted and treatment/progeny are derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/chapman-v-california--8428427.json\",\"reviewed\":[{\"assertion_id\":\"5eefb05fe2468830\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The inventory's cited-authority payload is not the disclosed Chapman citation set. It lists 2016/2017 citations, while the lake record for this record_id identifies Chapman v. California as a 1967 Supreme Court case with official citation 386 U.S. 18 and different parallel citations.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the existence/citation payload with the lake record's Chapman citations: 386 U.S. 18, 87 S. Ct. 824, 17 L. Ed. 2d 705, and 1967 U.S. LEXIS 2198, or rekey the assertion to the authority that actually has the listed 2016/2017 citations.\",\"evidence_quote\":\"\\\"display\\\": \\\"386 U.S. 18\\\"\",\"needs_cl\":false,\"locator_note\":\"group_inventory row for record_id chapman-v-california--8428427 conflicts with lake/chapman-v-california--8428427__4e5cac.json citations.\"},\"reasons\":[\"Lake identity verifies record_id chapman-v-california--8428427 as Chapman v. California decided 1967-03-27.\",\"Lake citations list official 386 U.S. 18 and parallels 87 S. Ct. 824, 17 L. Ed. 2d 705, plus 1967 U.S. LEXIS 2198.\",\"Inventory payload instead lists 137 S. Ct. 389, 196 L. Ed. 2d 306, 85 U.S.L.W. 3209, 2016 WL 4733855, and 2016 U.S. LEXIS 6528, none of which appear in the disclosed Chapman record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"No content_page.* file is present in the disclosed directory, so the built-page rendering cannot be cross-checked.\"],\"suggested_tightening\":\"Require existence assertions to compare group_inventory citation payloads against lake.citations for the same record_id before review export.\"},{\"assertion_id\":\"7e05e8113804bda4\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Inventory treatment payload reports field_i_validity as unverified, with null as_of dates and the frontier-stub scope note.\",\"Lake treatment fields match: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and treatment/progeny edges are empty.\",\"Because the assertion does not claim Chapman is good law, overruled, limited, or otherwise weighted, there is no disclosed treatment conflict to refute under Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record cannot support any affirmative current-good-law claim because treatment and progeny are intentionally unverified.\"],\"suggested_tightening\":\"Do not surface a good-law label for this authority until the frontier stub is promoted and treatment/progeny are derived.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:20-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:16:21-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/chapman-v-california--8428427.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [
+      "chapman-v-california--8428427"
+    ],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-8c9d79b9",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-8c9d79b9.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:11.669516Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:12.422111Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:13.724992Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:15.740953Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:19.451655Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "cached text absent for case 'chapman-v-california--8428427' (lead 9423348); lake-only",
+      "no content page for lake record chapman-v-california--8428427"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 82266,
+      "output": 2470,
+      "source": "codex-events",
+      "total": 84736
+    },
+    "verdict_map": {
+      "5eefb05fe2468830": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7e05e8113804bda4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4a60de1d2c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 55.3
   }
 }

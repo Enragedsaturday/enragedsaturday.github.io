@@ -1,22 +1,169 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/City of Los Angeles v. Patel.md",
+    "lens": "A",
+    "notes": "No separate quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; this output reviews the five listed assertion_ids exactly once. Treatment rows were checked only for disclosed-field consistency, not Lens B currency.",
+    "reviewed": [
+      {
+        "assertion_id": "ec94f1037ab3e2db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the case as City of Los Angeles v. Patel, with input_case_name matching the page title.",
+          "Court and year match the lake identity: U.S. Supreme Court, decided 2015-06-22.",
+          "The page's parallel and neutral citations match lake.citations.parallel and lake.citations.vendor_neutral; lake.citations.official is null, matching official_citation_present=false."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cd6ed468703dbc15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly frames the challenged inspection as an administrative search and analyzes it under the administrative-search exception.",
+          "The opinion assumes a special need apart from ordinary criminal investigation and then refines the administrative-search rule by requiring precompliance review before penalties."
+        ],
+        "residual_risks": [
+          "The role label is corpus taxonomy, not language used by the Court."
+        ],
+        "suggested_tightening": "If the taxonomy allows, a more precise role would be Key — Administrative-search precompliance review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "da7ba18efaefec12",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Section 41.49(3)(a) is facially unconstitutional because it fails to\n    provide hotel operators with an opportunity for precompliance re-\n    view.",
+          "locator_note": "content_page.md holding/frontmatter",
+          "needs_cl": false,
+          "problem": "The holding is supported in substance, but framed too generically as 'A hotel guest-registry inspection ordinance' and omits the key limiting facts: the Los Angeles on-demand inspection provision and penalties for refusal before review.",
+          "proposed_fix": "The Los Angeles on-demand hotel-registry inspection provision is facially unconstitutional because it penalizes refusal without affording hotel operators an opportunity for precompliance review.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports facial invalidity of LAMC Section 41.49(3)(a), not a freestanding rule about all hotel guest-registry inspection ordinances.",
+          "The opinion's operative rationale includes penalties for declining to turn over records before precompliance review."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use 'precompliance' consistently with the opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ee1b1163494971d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "For Lens A purposes, the authority-weight label is supported by the disclosed identity fields: court_level=scotus and court=U.S. Supreme Court.",
+          "No treatment/currency judgment is made under this lens."
+        ],
+        "residual_risks": [
+          "Treatment/currency belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a196e3419ac48a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2015-06-22, as_of_treatment=2026-06-30, composite_basis=migration-seed, composite_basis_ref=City of Los Angeles v. Patel, and varies_by_point=false.",
+          "No Lens A support or quote-fidelity defect appears in the treatment field values themselves."
+        ],
+        "residual_risks": [
+          "Treatment/currency and any negative-treatment implications are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/City of Los Angeles v. Patel.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ec94f1037ab3e2db\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified and identifies the case as City of Los Angeles v. Patel, with input_case_name matching the page title.\",\n        \"Court and year match the lake identity: U.S. Supreme Court, decided 2015-06-22.\",\n        \"The page's parallel and neutral citations match lake.citations.parallel and lake.citations.vendor_neutral; lake.citations.official is null, matching official_citation_present=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"cd6ed468703dbc15\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion expressly frames the challenged inspection as an administrative search and analyzes it under the administrative-search exception.\",\n        \"The opinion assumes a special need apart from ordinary criminal investigation and then refines the administrative-search rule by requiring precompliance review before penalties.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The role label is corpus taxonomy, not language used by the Court.\"\n      ],\n      \"suggested_tightening\": \"If the taxonomy allows, a more precise role would be Key — Administrative-search precompliance review.\"\n    },\n    {\n      \"assertion_id\": \"da7ba18efaefec12\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding is supported in substance, but framed too generically as 'A hotel guest-registry inspection ordinance' and omits the key limiting facts: the Los Angeles on-demand inspection provision and penalties for refusal before review.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"The Los Angeles on-demand hotel-registry inspection provision is facially unconstitutional because it penalizes refusal without affording hotel operators an opportunity for precompliance review.\",\n        \"evidence_quote\": \"Section 41.49(3)(a) is facially unconstitutional because it fails to\\n    provide hotel operators with an opportunity for precompliance re-\\n    view.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md holding/frontmatter\"\n      },\n      \"reasons\": [\n        \"The opinion supports facial invalidity of LAMC Section 41.49(3)(a), not a freestanding rule about all hotel guest-registry inspection ordinances.\",\n        \"The opinion's operative rationale includes penalties for declining to turn over records before precompliance review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use 'precompliance' consistently with the opinion text.\"\n    },\n    {\n      \"assertion_id\": \"1ee1b1163494971d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"For Lens A purposes, the authority-weight label is supported by the disclosed identity fields: court_level=scotus and court=U.S. Supreme Court.\",\n        \"No treatment/currency judgment is made under this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7a196e3419ac48a9\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2015-06-22, as_of_treatment=2026-06-30, composite_basis=migration-seed, composite_basis_ref=City of Los Angeles v. Patel, and varies_by_point=false.\",\n        \"No Lens A support or quote-fidelity defect appears in the treatment field values themselves.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency and any negative-treatment implications are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No separate quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; this output reviews the five listed assertion_ids exactly once. Treatment rows were checked only for disclosed-field consistency, not Lens B currency.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:41:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:46:23-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-df4c4fd2d5"
+    ],
     "group_id": "content/cases/City of Los Angeles v. Patel.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-11afa6c2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-11afa6c2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:25.952086Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:26.775057Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:27.681186Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:29.021987Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:41:30.953739Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Los Angeles v. Patel"
+    ],
+    "tokens": {
+      "input": 373721,
+      "output": 11202,
+      "source": "codex-events",
+      "total": 384923
+    },
+    "verdict_map": {
+      "1ee1b1163494971d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a196e3419ac48a9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cd6ed468703dbc15": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "da7ba18efaefec12": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ec94f1037ab3e2db": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-df4c4fd2d5",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 226.2
   }
 }

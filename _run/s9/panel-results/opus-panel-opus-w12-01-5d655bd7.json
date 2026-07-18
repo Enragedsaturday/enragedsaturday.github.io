@@ -1,0 +1,95 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0dcbaa258a053172",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "<p id=\"b1276-14\" pgmap=\"1276\">ON WRIT OF CERTIORARI TO THE COURT OF APPEAL, FOURTH CIRCUIT, PARISH OF ORLEANS</p>",
+          "locator_note": "cached opinion text — State v. Demesme; existence payload official page=1206",
+          "needs_cl": true,
+          "problem": "Case exists and official cite '228 So. 3d 1206' is recorded in cluster.citations[], but the disclosed cached opinion text places the per curiam writ denial at reporter page 1276 (id 'b1276-14', pgmap='1276'), not 1206; the page's Rule pincite '228 So. 3d at 1206' and Sources depend on 1206. The 1206-vs-1276 conflict cannot be resolved from disclosed evidence (plausibly a batched Louisiana writ-disposition where the compilation cites 1206 but the Demesme entry sits at 1276).",
+          "proposed_fix": "Verify against CourtListener the correct first/pin page for the Demesme writ denial + Crichton concurrence; if the entry is at 1276, correct the Rule pincite and Sources, otherwise annotate why the cluster cite (1206) diverges from the CAP page label (1276).",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Cached writ-denial text carries page label 1276 (b1276-14 / pgmap=1276) while the official cite and pincite use 1206 — a disclosed page conflict.",
+          "The case unquestionably exists (Louisiana Fourth Circuit writ denial on cert), so the citation is not fabricated; only the page needs resolution."
+        ],
+        "residual_risks": [
+          "If 1206 is the compilation first page and 1276 the Demesme entry page, the Crichton pincite '228 So. 3d at 1206' is likely mis-paged."
+        ],
+        "suggested_tightening": "Record both the compilation first page and the entry pincite, or confirm 1206 covers the Demesme entry.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b1583523a7e4d64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment block exactly matches the assertion (field_i_validity 'unverified', as_of null, frontier stub, varies_by_point false, edges []/derivation {}).",
+          "Content page renders 'Treatment: Unverified' under the under_review banner and makes no good-law claim, so there is no overclaim to refute."
+        ],
+        "residual_risks": [
+          "'Unverified' is a deferral, not a clearance; a later pass must actually derive treatment before any good-law claim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-67fb613fe9"
+    ],
+    "group_id": "_overhaul2/lake/cases/State v. Demesme.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-01-5d655bd7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Demesme"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0dcbaa258a053172": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8b1583523a7e4d64": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-67fb613fe9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

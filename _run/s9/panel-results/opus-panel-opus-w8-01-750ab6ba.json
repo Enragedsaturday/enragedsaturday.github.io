@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4ee5871c486af17d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption '495 U.S. 91 (1990)' + 'MINNESOTA v. OLSON', 'Decided April 18, 1990' confirms the case and the selected official cite.",
+          "Official '495 U.S. 91' is present in cluster.citations[] with selected_official=true and matches frontmatter/header/Sources; parallel cites (110 S. Ct. 1684; 109 L. Ed. 2d 85; etc.) are internally consistent."
+        ],
+        "residual_risks": [
+          "Parallel reporter page numbers not independently re-derived; only the U.S. official cite is corroborated by the cached caption."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c8b7d9585128856b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is a misextracted front-matter/header block (harvest grabbed everything up to '## Rule Yes.'), so the recorded quote_fidelity=='mismatch' is a harvest false positive, not a content defect.",
+          "The actual passage anchored at pin-98 on the content page ('we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home.') appears VERBATIM in the cached opinion text.",
+          "That paragraph sits between the *98 and *99 star markers in the cached text, so it is on page 98 — the content-page pincite '495 U.S. at 98' is correct."
+        ],
+        "residual_risks": [
+          "Pinpoint harvest captured the page header rather than the quoted span; the 'mismatch' flag is spurious and should be re-anchored so downstream tooling does not treat it as a real defect."
+        ],
+        "suggested_tightening": "Re-anchor the pinpoint quote harvest to the passage attached to ^pin-98 rather than the document front-matter.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86783880786b0830",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=='good_law' for a landmark SCOTUS standing holding; no disclosed edge is confirmed (all treatment.edges carry proposed:true).",
+          "The 9 proposed-negative edges are state-court/circuit keyword-triage hits (overrul*/abrogat* snippet matches) flagged audit_needed (R15); a state or circuit court cannot overrule a SCOTUS decision, so none refutes good_law."
+        ],
+        "residual_risks": [
+          "as_of_treatment (2026-06-30) is a migration seed; 9 proposed negatives await R15 audit; full currency re-derivation would need CourtListener."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-00c4a905c5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Olson.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-01-750ab6ba",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Olson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4ee5871c486af17d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "86783880786b0830": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c8b7d9585128856b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-00c4a905c5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

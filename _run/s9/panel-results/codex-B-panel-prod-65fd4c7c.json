@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Thompson v. Keohane.json",
+    "lens": "B",
+    "notes": "Lens B review only; quote-fidelity/support defects were not raised.",
+    "reviewed": [
+      {
+        "assertion_id": "a1d1270eee1f5a37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Thompson v. Keohane, U.S. Supreme Court, decided 1995-11-29, docket 94-6615.",
+          "Lake citations include official 516 U.S. 99 and the same parallel/vendor citations in the assertion.",
+          "Lake treatment marks the authority good_law as of 2026-06-30; no disclosed confirmed overrule or abrogation of Thompson itself appears."
+        ],
+        "residual_risks": [
+          "Treatment derivation lists proposed negative edges and audit_needed/cap_hit flags, but those edges are proposed and field_iii is only mentioned."
+        ],
+        "suggested_tightening": "Keep currency caveats in treatment rather than altering the case-cite identity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a743e99066a6150",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is quote_fidelity; Lens B finds no treatment or currency defect to raise for this pinpoint assertion.",
+          "The same lake record carries good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote-fidelity merits are outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e34e6a05e1b2a564",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is quote_fidelity; Lens B finds no treatment or currency defect to raise for this pinpoint assertion.",
+          "The same lake record carries good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote-fidelity merits are outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b67302ad094a323d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Good law; the Miranda custody inquiry is objective (would a reasonable person feel free to terminate the interrogation and leave) and is a mixed question of law and fact. The §2254(d) habeas-review framework was later changed by AEDPA (1996); see Yarborough v. Alvarado for custody under AEDPA deference.",
+          "locator_note": "lake/Thompson v. Keohane__cbbfd6.json treatment.scope_note and treatment.varies_by_point",
+          "needs_cl": false,
+          "problem": "The good-law call is supported for the Miranda custody rule, but the assertion says varies_by_point=false while its own scope note says the §2254(d) habeas-review framework was later changed by AEDPA. That is a point-specific currency limitation.",
+          "proposed_fix": "Keep field_i_validity good_law for the objective Miranda custody/mixed-question rule, but set varies_by_point true and add a point override or explicit current-law caveat that Thompson's pre-AEDPA independent-review habeas point is superseded or limited for AEDPA cases.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field states good_law as of 2026-06-30 and no point_overrides.",
+          "The same disclosed scope note concedes AEDPA changed the §2254(d) framework, so a flat no-variation treatment label overstates currency for the habeas-review point.",
+          "Progeny edges include only proposed negative treatments with field_iii mentioned, so they do not by themselves prove Thompson is overruled."
+        ],
+        "residual_risks": [
+          "The derivation metadata records R15 treatment audit required and cap_hit; a full external audit could refine treatment, but that evidence is outside the disclosed universe."
+        ],
+        "suggested_tightening": "Split treatment into current substantive Miranda custody rule good law and pre-AEDPA habeas review standard superseded or limited by AEDPA.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Thompson v. Keohane.json\",\"reviewed\":[{\"assertion_id\":\"a1d1270eee1f5a37\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Thompson v. Keohane, U.S. Supreme Court, decided 1995-11-29, docket 94-6615.\",\"Lake citations include official 516 U.S. 99 and the same parallel/vendor citations in the assertion.\",\"Lake treatment marks the authority good_law as of 2026-06-30; no disclosed confirmed overrule or abrogation of Thompson itself appears.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation lists proposed negative edges and audit_needed/cap_hit flags, but those edges are proposed and field_iii is only mentioned.\"],\"suggested_tightening\":\"Keep currency caveats in treatment rather than altering the case-cite identity.\"},{\"assertion_id\":\"1a743e99066a6150\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is quote_fidelity; Lens B finds no treatment or currency defect to raise for this pinpoint assertion.\",\"The same lake record carries good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity merits are outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e34e6a05e1b2a564\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is quote_fidelity; Lens B finds no treatment or currency defect to raise for this pinpoint assertion.\",\"The same lake record carries good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity merits are outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b67302ad094a323d\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call is supported for the Miranda custody rule, but the assertion says varies_by_point=false while its own scope note says the §2254(d) habeas-review framework was later changed by AEDPA. That is a point-specific currency limitation.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity good_law for the objective Miranda custody/mixed-question rule, but set varies_by_point true and add a point override or explicit current-law caveat that Thompson's pre-AEDPA independent-review habeas point is superseded or limited for AEDPA cases.\",\"evidence_quote\":\"Good law; the Miranda custody inquiry is objective (would a reasonable person feel free to terminate the interrogation and leave) and is a mixed question of law and fact. The §2254(d) habeas-review framework was later changed by AEDPA (1996); see Yarborough v. Alvarado for custody under AEDPA deference.\",\"needs_cl\":false,\"locator_note\":\"lake/Thompson v. Keohane__cbbfd6.json treatment.scope_note and treatment.varies_by_point\"},\"reasons\":[\"Lake treatment field states good_law as of 2026-06-30 and no point_overrides.\",\"The same disclosed scope note concedes AEDPA changed the §2254(d) framework, so a flat no-variation treatment label overstates currency for the habeas-review point.\",\"Progeny edges include only proposed negative treatments with field_iii mentioned, so they do not by themselves prove Thompson is overruled.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The derivation metadata records R15 treatment audit required and cap_hit; a full external audit could refine treatment, but that evidence is outside the disclosed universe.\"],\"suggested_tightening\":\"Split treatment into current substantive Miranda custody rule good law and pre-AEDPA habeas review standard superseded or limited by AEDPA.\"}],\"notes\":\"Lens B review only; quote-fidelity/support defects were not raised.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:43:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-93225c081b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a06acf96ef",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-da8f86a3e0"
+    ],
     "group_id": "_overhaul2/lake/cases/Thompson v. Keohane.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-65fd4c7c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Thompson v. Keohane"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 406311,
+      "output": 8488,
+      "source": "codex-events",
+      "total": 414799
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1a743e99066a6150": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1d1270eee1f5a37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b67302ad094a323d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e34e6a05e1b2a564": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-93225c081b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a06acf96ef",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-da8f86a3e0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 175.7
   }
 }

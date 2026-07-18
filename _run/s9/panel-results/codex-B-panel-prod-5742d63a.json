@@ -1,22 +1,194 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Immigration & Naturalization Service v. Lopez-Mendoza.md",
+    "lens": "B",
+    "notes": "Review limited to disclosed files and lens B; support and quote-fidelity merits were not independently evaluated.",
+    "reviewed": [
+      {
+        "assertion_id": "a15802202c4860a2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and not a stub; identity fields show U.S. Supreme Court, decided 1984-07-05, with canonical-name and expected-citation checks true.",
+          "The official citation, parallel citations, and vendor-neutral citation in the lake match the content-page citation payload.",
+          "From the currency angle, the lake treatment judgment is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The disclosed lake derivation contains audit-needed proposed negative edges, but no disclosed final treatment downgrade."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a30160bcbb4be64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/home-role accuracy is outside lens B.",
+          "From the treatment angle, the cited authority remains marked good_law and has no point overrides in the lake record.",
+          "No disclosed final non-proposed progeny edge supersedes or overrules the authority."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the home-role/support fit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "810e7f289bcb3949",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Holding support is outside lens B.",
+          "The treatment fields do not show a final validity downgrade: field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed proposed negative-looking edges are not final treatment determinations against this holding."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate holding support and quote fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbf6332e6a203c07",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court as U.S. Supreme Court and court_level as scotus.",
+          "A SCOTUS decision is correctly weighted as Binding — SCOTUS absent a disclosed final overruling or supersession event.",
+          "The lake final treatment remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Proposed treatment edges still require audit, but they do not negate the SCOTUS weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3832ec8cd8a6bee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md treatment field and Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law call survives, but the page's unqualified treatment presentation is too absolute because the lake contains proposed negative-looking edges and audit-needed treatment derivation markers. The safer disclosed-evidence statement is no confirmed negative treatment, not no negative treatment.",
+          "proposed_fix": "Keep field_i_validity: good_law as of 2026-06-30, but render the subsequent-history line as no confirmed negative treatment in the lake and surface that proposed negative events are flagged for audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake's operative treatment field is field_i_validity good_law as of 2026-06-30, with varies_by_point false and no point_overrides.",
+          "The lake also lists proposed edges with negative-looking field_ii values including questioned, criticized, abrogated, and overruled, and the derivation lanes mark audit_needed true.",
+          "Because those edges are proposed and classified as field_iii mentioned, the disclosed record does not prove Lopez-Mendoza is bad law, but it does make the unqualified no-negative-treatment wording overconfident."
+        ],
+        "residual_risks": [
+          "A full audit of the proposed citing cases would be needed to rule out a future treatment downgrade."
+        ],
+        "suggested_tightening": "Use no confirmed negative treatment and expose the audit-needed status next to the good_law badge.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Immigration & Naturalization Service v. Lopez-Mendoza.md\",\"reviewed\":[{\"assertion_id\":\"a15802202c4860a2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and not a stub; identity fields show U.S. Supreme Court, decided 1984-07-05, with canonical-name and expected-citation checks true.\",\"The official citation, parallel citations, and vendor-neutral citation in the lake match the content-page citation payload.\",\"From the currency angle, the lake treatment judgment is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed lake derivation contains audit-needed proposed negative edges, but no disclosed final treatment downgrade.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2a30160bcbb4be64\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/home-role accuracy is outside lens B.\",\"From the treatment angle, the cited authority remains marked good_law and has no point overrides in the lake record.\",\"No disclosed final non-proposed progeny edge supersedes or overrules the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate the home-role/support fit.\"],\"suggested_tightening\":null},{\"assertion_id\":\"810e7f289bcb3949\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Holding support is outside lens B.\",\"The treatment fields do not show a final validity downgrade: field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"The disclosed proposed negative-looking edges are not final treatment determinations against this holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate holding support and quote fidelity.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bbf6332e6a203c07\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields list court as U.S. Supreme Court and court_level as scotus.\",\"A SCOTUS decision is correctly weighted as Binding — SCOTUS absent a disclosed final overruling or supersession event.\",\"The lake final treatment remains good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Proposed treatment edges still require audit, but they do not negate the SCOTUS weight label.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d3832ec8cd8a6bee\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call survives, but the page's unqualified treatment presentation is too absolute because the lake contains proposed negative-looking edges and audit-needed treatment derivation markers. The safer disclosed-evidence statement is no confirmed negative treatment, not no negative treatment.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law as of 2026-06-30, but render the subsequent-history line as no confirmed negative treatment in the lake and surface that proposed negative events are flagged for audit.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment field and Treatment & subsequent history; lake.treatment.derivation and lake.treatment.edges\"},\"reasons\":[\"The lake's operative treatment field is field_i_validity good_law as of 2026-06-30, with varies_by_point false and no point_overrides.\",\"The lake also lists proposed edges with negative-looking field_ii values including questioned, criticized, abrogated, and overruled, and the derivation lanes mark audit_needed true.\",\"Because those edges are proposed and classified as field_iii mentioned, the disclosed record does not prove Lopez-Mendoza is bad law, but it does make the unqualified no-negative-treatment wording overconfident.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A full audit of the proposed citing cases would be needed to rule out a future treatment downgrade.\"],\"suggested_tightening\":\"Use no confirmed negative treatment and expose the audit-needed status next to the good_law badge.\"}],\"notes\":\"Review limited to disclosed files and lens B; support and quote-fidelity merits were not independently evaluated.\"}",
   "summary": {
-    "at": "2026-07-10T02:45:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:18:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f67423aacf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-91e58e7ba8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7c1710ea7e"
+    ],
     "group_id": "content/cases/Immigration & Naturalization Service v. Lopez-Mendoza.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5742d63a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5742d63a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:28.208008Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:28.834116Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:29.653520Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:30.850488Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:45:32.953178Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Immigration & Naturalization Service v. Lopez-Mendoza"
+    ],
+    "tokens": {
+      "input": 178438,
+      "output": 10603,
+      "source": "codex-events",
+      "total": 189041
+    },
+    "verdict_map": {
+      "2a30160bcbb4be64": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "810e7f289bcb3949": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a15802202c4860a2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbf6332e6a203c07": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d3832ec8cd8a6bee": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f67423aacf",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-91e58e7ba8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7c1710ea7e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 202.7
   }
 }

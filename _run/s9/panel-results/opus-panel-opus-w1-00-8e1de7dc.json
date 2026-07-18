@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "964ca2e36d385b03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inlined opinion header confirms '407 U.S. 143 (1972)', ADAMS, WARDEN v. WILLIAMS, No. 70-283, decided June 12, 1972, Rehnquist, J. matches official cite and date_decided 1972-06-12.",
+          "Star-pages *144-*162 consistent with a case beginning at 143."
+        ],
+        "residual_risks": [
+          "Parallels 92 S. Ct. 1921 / 32 L. Ed. 2d 612 and neutral 1972 U.S. LEXIS 2206 not independently verifiable from the inlined opinion (official cite is)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1efa6bd3173c006d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the information carried enough indicia of reliability to justify the officer's forcible stop of Williams.",
+          "locator_note": "pin-147; cached Adams opinion, tail of the *147 paragraph.",
+          "needs_cl": false,
+          "problem": "Assertion flags quote_fidelity='mismatch'/slip-only and its captured 'quote' field is page chrome (front matter through '## Rule ... personal observation:'), not the quoted proposition. The page's actual pin-147 quotation is verbatim-faithful.",
+          "proposed_fix": "Re-scope the extraction to the actual pin-147 quote and reclassify quote_fidelity=matched (verbatim at 407 U.S. 147).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-147 quote 'the information carried enough indicia of reliability to justify the officer's forcible stop of Williams.' appears verbatim after the *147 marker; pincite 147 correct.",
+          "S8 'mismatch' is an automated false alarm caused by the mis-scoped quote capture, not a source-fidelity failure."
+        ],
+        "residual_risks": [
+          "If the harness acted on the S8 'mismatch' label to strike the quote, it would remove a faithful, correctly-pincited quotation (a true positive)."
+        ],
+        "suggested_tightening": "Correct the S8 quote-fidelity metadata; the page text needs no change.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac75836a2634af88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-148 quote 'Under these circumstances the policeman's action in reaching to the spot where the gun was thought to be hidden constituted a limited intrusion designed to insure his safety, and we conclude that it was reasonable.' matches the cached opinion verbatim; the *148 marker precedes it, pincite 148 correct.",
+          "Star-verified with text-fragment anchor; quote_fidelity=matched confirmed independently."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f323dec337358090",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Informants' tips, like all other clues and evidence coming to a policeman on the scene, may vary greatly in their value and reliability. One simple rule will not cover every situation.",
+          "locator_note": "pin-147b; cached Adams opinion, paragraph between *147 and *148. Page ' . . . ' elides 'Some tips, completely lacking in indicia of reliability, ... would be authorized.'",
+          "needs_cl": false,
+          "problem": "Assertion flags quote_fidelity='mismatch'/slip-only, but the page's pin-147b quote is verbatim-faithful modulo one properly-marked internal ellipsis; the mismatch is an automated false alarm (cached text mangled the original em-dashes to 'situationsfor'/'crimethe').",
+          "proposed_fix": "Reclassify quote_fidelity=matched; no page change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opening and closing spans match verbatim; the marked ellipsis correctly elides the omitted sentence.",
+          "Em-dashes around 'for example ... impending crime' correspond to the original; cached OCR dropped the dash glyphs. Pincite 147 correct (paragraph sits between *147 and *148)."
+        ],
+        "residual_risks": [
+          "Striking on the S8 'mismatch' would remove a faithful quotation."
+        ],
+        "suggested_tightening": "Correct S8 fidelity metadata to 'matched'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ddd39a911888ffe3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Black-letter is confirmed by the inlined majority opinion: a known, face-to-face informant's tip carries enough indicia of reliability for a Terry stop/frisk, and reasonable suspicion need not rest on the officer's personal observation ('we reject respondent's argument that reasonable cause for a stop and frisk can only be based on the officer's personal observation').",
+          "No disclosed evidence contradicts the good_law status."
+        ],
+        "residual_risks": [
+          "Currency (good_law as of 2026-06-30) and the claim that Alabama v. White / Florida v. J.L. / Navarette 'do not disturb Adams' are not verifiable from disclosed evidence; those opinions/citator data are not inlined. Full currency confirmation would need a citator (CL)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9e3f798dd2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Adams v. Williams.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-00-8e1de7dc",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Adams v. Williams"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1efa6bd3173c006d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "964ca2e36d385b03": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac75836a2634af88": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ddd39a911888ffe3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f323dec337358090": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a91bfaa150",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a36f060b59",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9e3f798dd2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

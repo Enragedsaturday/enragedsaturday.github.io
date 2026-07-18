@@ -1,0 +1,191 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "cf3dc345a59a9fce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is James v. Illinois (impeachment-exception limit; Walder line; defense witness Henderson; Stevens, J., concurring); star pages *314-*321 confirm the case reports at 493 U.S. 307.",
+          "Official 493 U.S. 307 is selected; parallels 110 S. Ct. 648 / 107 L. Ed. 2d 676 / 1990 U.S. LEXIS 335 / 58 U.S.L.W. 4115 are the standard James cites."
+        ],
+        "residual_risks": [
+          "Lake identity has opinion_id == cluster_id (112350), an oddity worth noting, but it does not affect the existence of the cite."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4724b8f3494e2bf5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion",
+          "locator_note": "lake pinpoints[id=pin-320].quote / group_inventory payload.quote",
+          "needs_cl": false,
+          "problem": "The stored pin-320 quote is a fragment of the content page's own Application prose plus the '## Conclusion' section header ('so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion'); it is not an opinion quotation. quote_fidelity is a genuine mismatch.",
+          "proposed_fix": "Restore pin-320's quote field to the passage the content page renders at ^pin-320 ('...we adhere to the line drawn in our previous cases. Accordingly, we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony'), which is verbatim at 493 U.S. 320.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored/asserted quote captured content-page Application text plus a markdown header rather than opinion text; a real quote-fidelity defect in the pinpoint record.",
+          "The rendered content-page quotation at ^pin-320 is itself verbatim at 493 U.S. 320, so the defect is confined to the corrupted stored quote field."
+        ],
+        "residual_risks": [
+          "A second corruption pattern (Application-tail + section-header capture) distinct from the lead-pinpoint preamble capture."
+        ],
+        "suggested_tightening": "Re-extract pinpoint quote fields; the extractor grabbed surrounding page markdown for this pin.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad1bba4400211a3b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # James v. Illinois *493 U.S. 307 (1990)* · U.S. Supreme Court · **Binding — SCOTUS** ... ## Rule No.",
+          "locator_note": "lake pinpoints[id=pin-313].quote / group_inventory payload.quote",
+          "needs_cl": false,
+          "problem": "The stored pin-313 quote is the content page's own preamble markdown (title, header line, HTML comment, Background, Issue, and the 'Rule No.' lead-in), which does not appear in the source opinion. quote_fidelity is a genuine mismatch.",
+          "proposed_fix": "Restore pin-313's quote field to the passage the content page renders at ^pin-313 ('[E]xpanding the class of impeachable witnesses from the defendant alone to all defense witnesses would create different incentives ... and yet it would significantly undermine the deterrent effect of the general exclusionary rule'), which is verbatim at 493 U.S. 313-*314.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored/asserted quote is page preamble markdown absent from the cached opinion; a real quote-fidelity defect in the pinpoint record.",
+          "The rendered content-page quotation at ^pin-313 is itself verbatim at 493 U.S. 313-*314, so the defect is confined to the corrupted stored quote field."
+        ],
+        "residual_risks": [
+          "Recurring lead-pinpoint preamble-capture corruption (also J.D.B. pin-op1, Jacobson pin-548)."
+        ],
+        "suggested_tightening": "Re-extract lead-pinpoint quote fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2d916e4b07d5884",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-317 quote is verbatim at *317 in the cached opinion: 'defendants ought not be able to [pervert] the exclusion of illegally obtained evidence into a shield for perjury, but it seems no more appropriate for the State to brandish such evidence as a sword with which to dissuade defendants from presenting a meaningful defense through other witnesses'; the content page attributes 'Defendants' outside the quotation marks and quotes from 'ought not be able to'.",
+          "pincite 'at 317' is correct; payload quote_fidelity='mismatch' is a scanner false positive (curly-vs-straight quotes)."
+        ],
+        "residual_risks": [
+          "pinpoint_status slip-only."
+        ],
+        "suggested_tightening": "Normalize quote characters before matching.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "84690db2c6e10a89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with the disclosed lake: no confirmed (proposed:false) negative edge exists; all negative edges are proposed candidates.",
+          "James's holding (impeachment exception confined to the defendant's own testimony) is presented as good law with 'No negative treatment'; proposed negative edges are unadjudicated citator noise."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed; as_of_treatment=2026-06-30 overstates recency of the determination.",
+          "Forward currency is not confirmable from the opinion text alone; proposed negative edges await adjudication."
+        ],
+        "suggested_tightening": "Run S2 treatment re-derivation before relying on as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1bd6fecc4d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-07a8895979",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/James v. Illinois.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-02-f08a0f59",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "James v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4724b8f3494e2bf5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "84690db2c6e10a89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad1bba4400211a3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c2d916e4b07d5884": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf3dc345a59a9fce": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4b063af463",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a0aeed92b0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1bd6fecc4d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-07a8895979",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

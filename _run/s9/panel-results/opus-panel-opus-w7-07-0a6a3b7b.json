@@ -1,0 +1,167 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d3695a425a41704f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Powell, J., announcing the judgment of the Court) confirms Michigan v. Clifford; the official cite 464 U.S. 287 is consistent — the opinion body runs *289 through *299, within vol. 464.",
+          "Official selection present (464 U.S. 287, selected_rank_1); parallels 104 S. Ct. 641, 78 L. Ed. 2d 477, 1984 U.S. LEXIS 14, 52 U.S.L.W. 4056 are standard 1984 companions; docket 82-357."
+        ],
+        "residual_risks": [
+          "Parallel-reporter page numbers not independently confirmable from the disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "432c5ac310be53bc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered ^pin-295 quote ('we hold that the Cliffords retained reasonable privacy interests in their fire-damaged residence and that the postfire investigations were subject to the warrant requirement.') matches cached para b407-7 verbatim.",
+          "The sentence sits between the *295 and *296 markers, so the star-verified page 295 is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b2c0cfb0f7dcdf81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Both halves of the rendered ^pin-294 quote are verbatim in the cached opinion: 'If the primary object is to determine the cause and origin of a recent fire, an administrative warrant will suffice.' (para b406-5) and 'If the primary object of the search is to gather evidence of criminal activity, a criminal search warrant may be obtained only on a showing of probable cause' (para b406-6); the internal ' . . . ' correctly marks the omitted intervening text, and both sentences are on page 294 (between *294 and *295).",
+          "quote_fidelity='mismatch' is an extractor artifact of a stitched two-paragraph quote joined by an ellipsis, which defeats a naive contiguous-substring match."
+        ],
+        "residual_risks": [
+          "The second sentence is truncated at 'probable cause.' with a terminal period substituting for the original '...probable cause to believe that relevant evidence will be found in the place to be searched.'; the omission is non-material but unflagged."
+        ],
+        "suggested_tightening": "Optionally mark the terminal truncation (e.g. 'probable cause . . . .') for scrupulous Bluebook fidelity, and re-extract the stored quote as two spans so the mismatch flag clears.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f8e710335bc0ce12",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered ^pin-293 quote ('If reasonable privacy interests remain in the fire-damaged property, the warrant requirement applies, and any official entry must be made pursuant to a warrant in the absence of consent or exigent circumstances.') matches cached para b404-6 verbatim; the '(plurality)' tag is correct (Powell + Brennan + White + Marshall).",
+          "The *293 marker falls mid-sentence within this quote, so page 293 is correct.",
+          "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured page front-matter (title block through '## Rule'), not the quoted sentence."
+        ],
+        "residual_risks": [
+          "Stored pinpoint.quote holds front-matter junk."
+        ],
+        "suggested_tightening": "Re-extract pinpoint.quote for pin-293 to the actual quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c1bdcfc36e85a6ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The plurality composition asserted in the scope_note (Powell, J., joined by Brennan, White, and Marshall) is confirmed verbatim by the cached author/judges lines.",
+          "No disclosed evidence refutes good_law of the administrative-warrant / criminal-warrant post-fire framework, which the scope_note states correctly."
+        ],
+        "residual_risks": [
+          "The scope_note's claim that Stevens, J., concurred in the judgment to supply the fifth vote is NOT in the disclosed cached text (only the Powell plurality is inlined), and 2026-06-30 currency (composite_basis 'migration-seed') is not confirmable from the 1984 opinion."
+        ],
+        "suggested_tightening": "Confirm the Stevens concurrence-in-judgment and good_law currency via CL (fetch the full cluster's separate opinions plus a treatment pull).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-90903d07c9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-982f089eb8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan v. Clifford.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-07-0a6a3b7b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Clifford"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "432c5ac310be53bc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b2c0cfb0f7dcdf81": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c1bdcfc36e85a6ca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "d3695a425a41704f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f8e710335bc0ce12": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-90903d07c9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-982f089eb8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

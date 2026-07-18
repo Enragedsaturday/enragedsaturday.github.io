@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Navarette v. California.md",
+    "lens": "A",
+    "notes": "Reviewed all five assertion_id rows in group_inventory.jsonl exactly once. No separate quote_fidelity, pincite, or black_letter rows were present in the inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "59de07152b2c41e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the case as Prado Navarette v. California, with input_case_name Navarette v. California.",
+          "Court, year, absence of selected official citation, parallel citations, and neutral citations match the lake record."
+        ],
+        "residual_risks": [
+          "Display title omits Prado, but the lake record treats Navarette v. California as the input case name and the content page lists Prado Navarette v. California as an alias."
+        ],
+        "suggested_tightening": "Consider displaying the canonical lake case name, Prado Navarette v. California, while retaining Navarette v. California as the short title.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1872c3fa16eabed4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The 911 caller in this case reported more than a minor traffic infraction and more than a conclusory allegation of drunk or reckless driving. Instead, she alleged a specific and dangerous result of the driver’s conduct: running another car off the highway.",
+          "locator_note": "holding",
+          "needs_cl": false,
+          "problem": "The holding is supportable only if narrowed. The opinion did not endorse any 911 report of dangerous/reckless driving; it stressed a specific report that the caller was run off the road, with reliability indicia, creating reasonable suspicion of drunk driving.",
+          "proposed_fix": "A 911 call reporting that a specifically identified vehicle ran the caller off the road can, under the totality of the circumstances, supply reasonable suspicion of drunk driving when the call bears adequate indicia of reliability.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion says the stop complied because the officer had reasonable suspicion that the driver was intoxicated.",
+          "The Court found the call reliable based on eyewitness knowledge, near-contemporaneous reporting, and use of the 911 system.",
+          "The broader phrase dangerous/reckless driving risks exceeding the Court's own limitation that not all traffic infractions imply intoxication."
+        ],
+        "residual_risks": [
+          "The lake record has no separate holding field, so support is verified from the cached opinion text."
+        ],
+        "suggested_tightening": "Tie the holding to a specific, contemporaneous 911 report that the identified vehicle ran the caller off the road, and to reasonable suspicion of drunk driving.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "231fea006d6a3aa9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is centrally about whether a 911 tip supplied reasonable suspicion for an investigative traffic stop.",
+          "The Court applied and refined the anonymous-tip reliability framework from White and J.L. under the reasonable-suspicion standard."
+        ],
+        "residual_risks": [
+          "The role label is editorial rather than a direct holding, but it is grounded in the opinion's repeated reasonable-suspicion analysis."
+        ],
+        "suggested_tightening": "Use Key — Anonymous-Tip Reliability Refinement if the corpus supports more specific home-role labels.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "06b2e894489571ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency, but the weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.",
+          "The content authority_weight matches the SCOTUS identity disclosed in the lake record."
+        ],
+        "residual_risks": [
+          "No Lens B treatment review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9e6d9dfdf51bfc8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment payload fields match the lake judgment fields: field_i_validity good_law, as_of_content 2014-04-22, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Navarette v. California, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Navarette v. California.md\",\"reviewed\":[{\"assertion_id\":\"59de07152b2c41e0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies the case as Prado Navarette v. California, with input_case_name Navarette v. California.\",\"Court, year, absence of selected official citation, parallel citations, and neutral citations match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Display title omits Prado, but the lake record treats Navarette v. California as the input case name and the content page lists Prado Navarette v. California as an alias.\"],\"suggested_tightening\":\"Consider displaying the canonical lake case name, Prado Navarette v. California, while retaining Navarette v. California as the short title.\"},{\"assertion_id\":\"1872c3fa16eabed4\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is supportable only if narrowed. The opinion did not endorse any 911 report of dangerous/reckless driving; it stressed a specific report that the caller was run off the road, with reliability indicia, creating reasonable suspicion of drunk driving.\",\"severity\":\"medium\",\"proposed_fix\":\"A 911 call reporting that a specifically identified vehicle ran the caller off the road can, under the totality of the circumstances, supply reasonable suspicion of drunk driving when the call bears adequate indicia of reliability.\",\"evidence_quote\":\"The 911 caller in this case reported more than a minor traffic infraction and more than a conclusory allegation of drunk or reckless driving. Instead, she alleged a specific and dangerous result of the driver’s conduct: running another car off the highway.\",\"needs_cl\":false,\"locator_note\":\"holding\"},\"reasons\":[\"The opinion says the stop complied because the officer had reasonable suspicion that the driver was intoxicated.\",\"The Court found the call reliable based on eyewitness knowledge, near-contemporaneous reporting, and use of the 911 system.\",\"The broader phrase dangerous/reckless driving risks exceeding the Court's own limitation that not all traffic infractions imply intoxication.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has no separate holding field, so support is verified from the cached opinion text.\"],\"suggested_tightening\":\"Tie the holding to a specific, contemporaneous 911 report that the identified vehicle ran the caller off the road, and to reasonable suspicion of drunk driving.\"},{\"assertion_id\":\"231fea006d6a3aa9\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion is centrally about whether a 911 tip supplied reasonable suspicion for an investigative traffic stop.\",\"The Court applied and refined the anonymous-tip reliability framework from White and J.L. under the reasonable-suspicion standard.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The role label is editorial rather than a direct holding, but it is grounded in the opinion's repeated reasonable-suspicion analysis.\"],\"suggested_tightening\":\"Use Key — Anonymous-Tip Reliability Refinement if the corpus supports more specific home-role labels.\"},{\"assertion_id\":\"06b2e894489571ba\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency, but the weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.\",\"The content authority_weight matches the SCOTUS identity disclosed in the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment review performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a9e6d9dfdf51bfc8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment payload fields match the lake judgment fields: field_i_validity good_law, as_of_content 2014-04-22, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Navarette v. California, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment review performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five assertion_id rows in group_inventory.jsonl exactly once. No separate quote_fidelity, pincite, or black_letter rows were present in the inventory.\"}",
   "summary": {
-    "at": "2026-07-10T02:48:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:42:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-120b534e55"
+    ],
     "group_id": "content/cases/Navarette v. California.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5ac4c795.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Navarette v. California"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 196813,
+      "output": 5619,
+      "source": "codex-events",
+      "total": 202432
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "06b2e894489571ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1872c3fa16eabed4": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "231fea006d6a3aa9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59de07152b2c41e0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9e6d9dfdf51bfc8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-120b534e55",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 127.7
   }
 }

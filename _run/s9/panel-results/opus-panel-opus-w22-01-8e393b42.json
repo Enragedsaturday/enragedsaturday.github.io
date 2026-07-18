@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "809f5c187032b9c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Wong Sun v. United States, 371 U.S. 471 (1963); star-pagination *480-*499 present, consistent with 371 U.S. 471.",
+          "Official cite 371 U.S. 471 matches lake / cluster 106515; parallel cites (83 S. Ct. 407; 9 L. Ed. 2d 441; 1963 U.S. LEXIS 2431) internally consistent with no malformed duplicates."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "17257bbb3de904d8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'the connection between the arrest and the statement had “become so attenuated as to dissipate the taint.”' appears verbatim in the cached opinion on page *491 (Wong Sun's attenuation holding, quoting Nardone, 308 U.S. at 341).",
+          "Harvest mismatch/slip-only flags are false positives; the *491 star marker precedes this passage in the cached reporter text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Flip harvest quote_fidelity/slip-only flags (false positive; reporter page 491).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9abdc45a82e759a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the more apt question in such a case is “whether, granting establishment of the primary illegality, the evidence to which instant objection is made has been come at by exploitation of that illegality or instead by means sufficiently distinguishable to be purged of the primary taint.”",
+          "locator_note": "cached opinion paragraph spanning *487-*488 (Maguire, Evidence of Guilt, 221 (1959))",
+          "needs_cl": false,
+          "problem": "Harvested payload 'quote' for pin-488 is content-page prose ('...how to determine when the connection to the illegality is too attenuated to require suppression. ## Rule Not every consequence of police illegality is suppressed;') — the tail of the Issue plus the start of the Rule heading, not an opinion quotation. Extraction artifact. The genuine content-page pin-488 quotations are faithful to the cached opinion at *487-*488.",
+          "proposed_fix": "Re-harvest pin-488 to the two actual quoted sentences (the 'fruit of the poisonous tree ... but for the illegal actions of the police' and the 'more apt question ... come at by exploitation ... purged of the primary taint' passages) at 371 U.S. 487-488; drop the page-prose capture.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is a harvest artifact (page Issue/Rule prose), not an opinion quotation.",
+          "The two true content-page pin-488 quotations are verbatim-faithful to the cached opinion at 487-488 (content-page '…' correctly elides 'in such a case'), so the corpus quotation stands."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix the harvest capture that grabbed page-section prose instead of the quoted material.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d98bbfea2668bdc8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note ('Foundational fruit-of-the-poisonous-tree / attenuation case; good law') accurately captures the cached opinion's holding.",
+          "field_i_validity good_law: the lake's negative edges are all proposed:true and facially noisy (e.g., Katz, Terry, United States v. Leon, Illinois v. Gates listed as 'overruled' toward Wong Sun, which is false); none is a confirmed adverse treatment of Wong Sun itself."
+        ],
+        "residual_risks": [
+          "Lake carries many spurious proposed negative edges from the lane1_negative sweep; they do not disturb good_law but must not be promoted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4e5183c014",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3368ec8d84",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Wong Sun v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-01-8e393b42",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wong Sun v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "17257bbb3de904d8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "809f5c187032b9c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d98bbfea2668bdc8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9abdc45a82e759a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4e5183c014",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f7e4ae2e6c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3368ec8d84",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

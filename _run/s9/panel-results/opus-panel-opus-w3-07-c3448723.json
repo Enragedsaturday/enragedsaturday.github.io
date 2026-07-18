@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f4e0444b98230812",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": { \"cite\": \"564 U.S. 229\", \"volume\": \"564\", \"reporter\": \"U.S.\", \"page\": \"229\", \"type\": 1, \"selected_official\": true }",
+          "locator_note": "existence payload.official '565 U.S. 1100' vs lake record citations.official '564 U.S. 229'; identity.identity_method 'panel-cluster-rekey'; provenance.warnings documents re-key stub 7350241 -> merits 218926 (564 U.S. 229).",
+          "needs_cl": false,
+          "problem": "The existence assertion's citation payload misidentifies the case. Its official/display citation is '565 U.S. 1100' (parallels '132 S. Ct. 864', '181 L. Ed. 2d 563', '2011 U.S. LEXIS 8943', '80 U.S.L.W. 3555') — a later-volume October-Term-2011 orders/cert-stage citation set, not the merits decision. The merits Davis v. United States good-faith opinion is 564 U.S. 229 (2011), 131 S. Ct. 2419, 180 L. Ed. 2d 285.",
+          "proposed_fix": "Re-derive the existence assertion's citations from the merits cluster 218926 so official/display = 564 U.S. 229, matching the content page, the lake record citations block, and the cached opinion pagination (*232-*250). Drop the stale pre-rekey stub-cluster citations.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Payload official/display '565 U.S. 1100' (with '132 S. Ct. 864', '181 L. Ed. 2d 563', '2011 U.S. LEXIS 8943', '80 U.S.L.W. 3555') is a later-volume orders/cert-stage citation set, not the merits opinion.",
+          "The lake record's own citations block, the content page, and the cached opinion pagination (*232-*250 within 564 U.S.) all identify the merits Davis good-faith decision as 564 U.S. 229 (2011), directly contradicting the assertion's official cite.",
+          "provenance.warnings documents a panel cluster re-key (stub 7350241 -> merits 218926, 564 U.S. 229); the existence-assertion payload retained the pre-rekey stub citations."
+        ],
+        "residual_risks": [
+          "The published content page and lake citations block already carry the correct 564 U.S. 229; the defect is confined to the stale existence-assertion payload, so reader-facing harm is low but the verification artifact is materially wrong."
+        ],
+        "suggested_tightening": "Regenerate existence-assertion citation payloads from the current lead cluster after any panel cluster re-key.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "278aedb92d2c6d10",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-frontmatter/Background/Issue/Rule artifact (mismatch / slip-only), not a quotation.",
+          "Genuine pin-232 quotation — 'Because suppression would do nothing to deter police misconduct in these circumstances, and because it would come at a high cost to both the truth and the public safety, we hold that searches conducted in objectively reasonable reliance on binding appellate precedent are not subject to the exclusionary rule.' — is verbatim in the cached text within the paragraph carrying the '*232' marker; pincite 232 correct."
+        ],
+        "residual_risks": [
+          "Extractor 'mismatch' flag is a false alarm from a wrong-span capture."
+        ],
+        "suggested_tightening": "Re-harvest the pin-232 quote payload from the pincited quotation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd1147ec9b65c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' captured the preceding Application paragraph plus the '## Conclusion' header — an adjacent-span extraction artifact (mismatch / slip-only), not the pincited quotation.",
+          "Genuine pin-249 quotation — 'We therefore hold that when the police conduct a search in objectively reasonable reliance on binding appellate precedent, the exclusionary rule does not apply.' — is verbatim in the cached text, spanning *249 into *250; pincite '249-250' correct."
+        ],
+        "residual_risks": [
+          "Extractor 'mismatch' flag is a false alarm; the actual conclusion quote is faithful."
+        ],
+        "suggested_tightening": "Re-harvest the pin-249 quote payload from the pincited quotation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d5e4ea5c727025c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is a migration-seed; the disclosed 2011 SCOTUS opinion (extends the Leon good-faith line to reliance on binding appellate precedent) shows no self-contradiction, and the derivation lanes report 0 proposed negative events.",
+          "Record status is 'under_review' and the treatment derivation reviewed 0 citing opinions — currency is citator-dependent and not independently verifiable from disclosed evidence; no fabricated defect or certification."
+        ],
+        "residual_risks": [
+          "good_law seed is unbacked by any reviewed citing-reference derivation (lanes reviewed: 0; citation_count 0); currency confirmation is CL-dependent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-773223032a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ebc506d53b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Davis v. United States (2011).json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-07-c3448723",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States (2011)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "278aedb92d2c6d10": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2d5e4ea5c727025c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "bbbd1147ec9b65c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4e0444b98230812": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-221787ed46",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-773223032a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ebc506d53b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

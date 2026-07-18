@@ -1,22 +1,139 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "1c6f589b83eea359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub, has status verified, and identifies Mathews v. United States as a U.S. Supreme Court decision dated 1988-02-24.",
+          "The official citation 485 U.S. 58 is present and selected as the official citation in the lake citations fields.",
+          "For the currency angle, the disclosed treatment field marks the case good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No external currency check was permitted; this rests only on the disclosed lake treatment judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a0ca345ad126335",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quotation finding is raised here.",
+          "The only Lens B content embedded in this row is the page header treatment language, which is addressed in the treatment assertion review."
+        ],
+        "residual_risks": [
+          "Not assessed for quote fidelity under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9c6b5fc08793648",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 6,",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Mathews v. United States__c5132b.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law call survives, but the page's categorical 'No negative treatment' wording is too absolute against the disclosed treatment record because the derivation contains proposed negative-event edges and audit-needed flags. The edges are classified as proposed and mentioned, so this is not a downgrade from good_law, but the statement should be qualified.",
+          "proposed_fix": "Keep Treatment: good as of 2026-06-30, but change 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake treatment judgment; proposed negative-treatment hits are marked mentioned and pending audit.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields.",
+          "The lake treatment field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed edges do not show a confirmed adverse treatment of Mathews itself: each listed edge is proposed and has field_iii marked mentioned.",
+          "However, lane1_negative and lane2_top_cited both show audit_needed true and proposed_negative_events, so the page should not state 'No negative treatment' without a confirmation qualifier."
+        ],
+        "residual_risks": [
+          "The treatment field provenance says the good-law label came from legacy treatment migration/page frontmatter; a completed treatment audit could still alter the label.",
+          "The disclosed record does not include full text for the citing cases behind the proposed negative edges."
+        ],
+        "suggested_tightening": "Qualify the subsequent-history sentence to distinguish confirmed treatment from proposed/audit-needed treatment candidates.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Mathews v. United States.json\",\"reviewed\":[{\"assertion_id\":\"1c6f589b83eea359\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub, has status verified, and identifies Mathews v. United States as a U.S. Supreme Court decision dated 1988-02-24.\",\"The official citation 485 U.S. 58 is present and selected as the official citation in the lake citations fields.\",\"For the currency angle, the disclosed treatment field marks the case good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external currency check was permitted; this rests only on the disclosed lake treatment judgment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7a0ca345ad126335\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quotation finding is raised here.\",\"The only Lens B content embedded in this row is the page header treatment language, which is addressed in the treatment assertion review.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Not assessed for quote fidelity under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a9c6b5fc08793648\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call survives, but the page's categorical 'No negative treatment' wording is too absolute against the disclosed treatment record because the derivation contains proposed negative-event edges and audit-needed flags. The edges are classified as proposed and mentioned, so this is not a downgrade from good_law, but the statement should be qualified.\",\"severity\":\"low\",\"proposed_fix\":\"Keep Treatment: good as of 2026-06-30, but change 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake treatment judgment; proposed negative-treatment hits are marked mentioned and pending audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 6,\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Mathews v. United States__c5132b.json treatment.derivation and treatment.edges\"},\"reasons\":[\"The asserted field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note match the lake treatment fields.\",\"The lake treatment field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"The disclosed edges do not show a confirmed adverse treatment of Mathews itself: each listed edge is proposed and has field_iii marked mentioned.\",\"However, lane1_negative and lane2_top_cited both show audit_needed true and proposed_negative_events, so the page should not state 'No negative treatment' without a confirmation qualifier.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment field provenance says the good-law label came from legacy treatment migration/page frontmatter; a completed treatment audit could still alter the label.\",\"The disclosed record does not include full text for the citing cases behind the proposed negative edges.\"],\"suggested_tightening\":\"Qualify the subsequent-history sentence to distinguish confirmed treatment from proposed/audit-needed treatment candidates.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:09:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-51caddabbd",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-da907f2a73"
+    ],
     "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-eb69f860",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-eb69f860.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 1eb93439-7fb7-4b13-bfc1-335a35c67414\n2026-07-10T22:29:56.176464Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:56.805370Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:57.443709Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:58.277191Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:59.595019Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:01.540875Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathews v. United States"
+    ],
+    "tokens": {
+      "input": 414412,
+      "output": 8011,
+      "source": "codex-events",
+      "total": 422423
+    },
+    "verdict_map": {
+      "1c6f589b83eea359": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a0ca345ad126335": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9c6b5fc08793648": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51caddabbd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-da907f2a73",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 164.3
   }
 }

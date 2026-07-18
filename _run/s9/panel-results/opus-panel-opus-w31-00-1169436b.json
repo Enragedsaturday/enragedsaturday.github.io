@@ -1,0 +1,166 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "73dce0e316a26299",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "citations.display = '512 U.S. 452'; official_selection.selected = '512 U.S. 452'; cached opinion star pages *454 through *462",
+          "locator_note": "existence/case_cite, locator field 'citation'; content-page frontmatter citation = '512 U.S. 452 (1994)'",
+          "needs_cl": false,
+          "problem": "Asserted case_cite '513 U.S. 1008 (1994)' does not identify Davis v. United States (1994, Miranda ambiguous-invocation). The merits decision is 512 U.S. 452 (1994); 513 U.S. 1008 is an orders/cert-stage page in the Oct. 1994 Term, not the merits reporter cite of this opinion (decided June 24, 1994).",
+          "proposed_fix": "Reconcile the assertion/seed citation to '512 U.S. 452 (1994)' (parallel '114 S. Ct. 2350; 129 L. Ed. 2d 362'; neutral '1994 U.S. LEXIS 4827'), which the content-page frontmatter and lake already carry.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Content-page frontmatter, lake official/display cite, and cached opinion star pages *454-*462 all fix the case at 512 U.S. 452; the asserted 513 U.S. 1008 conflicts.",
+          "Payload also drops parallel/neutral (empty), whereas the record carries 114 S. Ct. 2350 / 129 L. Ed. 2d 362 / 1994 U.S. LEXIS 4827."
+        ],
+        "residual_risks": [
+          "The correct cite is already on the content page; the defect is in the reviewed assertion payload — reconcile the seed/inventory."
+        ],
+        "suggested_tightening": "Regenerate the existence seed from the lake official_selection.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95f5803c3e541f75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Proposition (counsel must be invoked unambiguously; 'maybe I should talk to a lawyer' is ambiguous and does not invoke) is directly supported: rule quote verbatim at 512 U.S. at 459 ('the suspect must unambiguously request counsel ... If the statement fails to meet the requisite level of clarity, Edwards does not require that the officers stop questioning the suspect'); facts at 505 recount 'Maybe I should talk to a lawyer.'",
+          "Holding at 512-513: 'Unless the suspect actually requests an attorney, questioning may continue.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Frontmatter 'holding' field is truncated mid-sentence ('... does…'); complete it for a self-contained holding statement.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fedba37ec9c547f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] declares home 'Miranda Waiver and Invocation' with role 'Key — Progeny / Refinement'.",
+          "Role apt: Davis refines Edwards v. Arizona by fixing the unambiguous-invocation clarity threshold."
+        ],
+        "residual_risks": [
+          "Reciprocal home-page listing not inlined."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b65806320893abc2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c18ecaf3aa079da9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' correct; the Davis (1994) unambiguous-invocation rule remains good law (later applied to the right to silence in Berghuis v. Thompkins); no negative treatment disclosed or in fact.",
+          "scope_note is a process note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade')."
+        ],
+        "residual_risks": [
+          "Negative-treatment lanes queried opinion id 9143409, not among sibling_ids [117863, 9433017, 9433018] (post-rekey artifact), yielding reviewed 0 — the sweep did not cover the record's real opinion ids; the good_law seed is independently correct."
+        ],
+        "suggested_tightening": "Re-run the negative lanes against the re-keyed sibling ids (cluster 117863 / opinion 9433017).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T13:36:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b234f08ae6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Davis v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w31-00-1169436b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w31-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "73dce0e316a26299": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "95f5803c3e541f75": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b65806320893abc2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c18ecaf3aa079da9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fedba37ec9c547f8": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-83f328f205",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b234f08ae6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

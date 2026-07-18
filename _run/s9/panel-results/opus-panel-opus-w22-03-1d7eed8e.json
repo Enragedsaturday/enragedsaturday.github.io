@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c16a6b3d7b61201a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Inventory payload cites (official 436 U.S. 547; parallels 98 S. Ct. 1970, 56 L. Ed. 2d 525; vendor-neutral 1978 U.S. LEXIS 98) match the inlined lake citations block exactly; official_selection.reason 'selected_rank_1', display '436 U.S. 547'.",
+          "Identity confirmed: cluster_id 109876, expected_citation_found:true, party_name_in_text:true; the inlined cached opinion is Zurcher v. Stanford Daily; content-page frontmatter mirrors the same cites."
+        ],
+        "residual_risks": [
+          "date_decided '1978-10-02' in identity/frontmatter is inconsistent with treatment.as_of_content '1978-05-31' (Zurcher's decision date); outside this cite assertion's payload but worth reconciling."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14f4ed8dff480038",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'Where the materials sought to be seized may be protected by the First Amendment, the requirements of the Fourth Amendment must be applied with \\'scrupulous exactitude.\\'' matches the inlined cached lead-opinion text verbatim (only inner single-vs-double quote normalization around 'scrupulous exactitude').",
+          "Pincite 'Id. at 564' confirmed: the passage sits between star-pagination markers *564 and *565 in the cached opinion; the page correctly attributes it to Zurcher quoting Stanford v. Texas.",
+          "The lake quote_fidelity:'mismatch' flag is a false positive here — the text is faithful; the flag is explained by slip-only pinpoint_status (star_marker null) and quote-glyph normalization, not a text divergence."
+        ],
+        "residual_risks": [
+          "pinpoint_status 'slip-only' / star_marker null means the pincite page was not star-confirmed by the harvester, though it is confirmable from the disclosed star pagination."
+        ],
+        "suggested_tightening": "Clear the mismatch flag and record star_marker *564 so the false positive does not propagate.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac9dc0c540da22d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Zurcher v. Stanford Daily *436 U.S. 547 (1978)* ... ## Rule A warrant may issue to search a non-suspect third party's premises on probable cause that evidence is there.",
+          "locator_note": "pin-556; both the inventory payload.quote and lake pinpoints[0].quote carry the chrome artifact (provenance: 'content page quote harvest + lead opinion text'). The page's rendered ^pin-556 quote is correct — the defect is in the harvest/record, not the page.",
+          "needs_cl": false,
+          "problem": "The recorded pinpoint quote for ^pin-556 is not a discrete quotation but a page-chrome extraction artifact: it spans the markdown file header ('--- # Zurcher v. Stanford Daily *436 U.S. 547 (1978)* ...') through the Background/Issue/Rule sections, ending mid-Rule. It does not correspond to any contiguous passage of the Zurcher opinion.",
+          "proposed_fix": "Re-harvest ^pin-556 to the sentence the content page actually quotes at that anchor: 'The critical element in a reasonable search is not that the owner of the property is suspected of crime but that there is reasonable cause to believe that the specific \"things\" to be searched for and seized are located on the property to which entry is sought.' That sentence is verbatim-faithful to the cached lead opinion at 436 U.S. 556 (it opens the paragraph immediately after the *556 star marker) and the 'at 556' pincite is correct.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is a text-extraction artifact (starts at the file's front-matter delimiter), so as recorded it cannot be a faithful quotation of the source — a genuine quote_fidelity failure in the assertion record.",
+          "Cross-check against the cached opinion shows the intended quote ('The critical element ...') is faithful and its pincite (556) correct, so the fix is a re-harvest rather than a page correction."
+        ],
+        "residual_risks": [
+          "The underlying content-page quote at ^pin-556 is a true positive (verbatim, correct pincite) and must not be disturbed by any fix aimed at the corrupted record."
+        ],
+        "suggested_tightening": "Fix the pin-harvester so anchored quotes are isolated to the quoted sentence, not captured from file start; re-run over all slip-only pins.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c56c88b8cf0d744e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Assertion (field_i_validity 'good_law' as of 2026-06-30; Fourth Amendment holding remains good law; PPA of 1980, 42 U.S.C. 2000aa, is a statutory overlay not a constitutional limitation) is legally coherent and self-consistent with the lake treatment block.",
+          "No ADOPTED negative determination exists: every treatment edge is proposed:true from 'lane1_negative'/'lane2_top_cited' harvests, and the negative labels are transparent candidate noise (e.g., Illinois v. Gates, United States v. Leon, Hensley v. Eckerhart carry 'overruled'/'abrogated' — those are citing-case signals, not statements that Zurcher was overruled; lower courts cannot abrogate SCOTUS).",
+          "Currency itself is migration-seeded (field_provenance src '_treatment-migration.json + page frontmatter'; warning 'legacy treatment migrated: good -> good_law') and not present in the disclosed opinion text, so the good-law status cannot be independently confirmed from disclosed evidence — but nothing disclosed contradicts it."
+        ],
+        "residual_risks": [
+          "Proposed negative edges (State v. Ghim 'questioned'; United States v. Kenneth Rose 'abrogated'; Al-Kidd, Curtin, Gates, Leon 'overruled') are unadjudicated and should be resolved/pruned before S9 close so the noise does not later be mistaken for real negative treatment."
+        ],
+        "suggested_tightening": "Adjudicate or drop the proposed lane-negative edges and attach a citator-derived basis so good_law is verifiable rather than migration-seeded.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c037ec732c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Zurcher v. Stanford Daily.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-03-1d7eed8e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Zurcher v. Stanford Daily"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "14f4ed8dff480038": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac9dc0c540da22d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c16a6b3d7b61201a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c56c88b8cf0d744e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c037ec732c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-062fae8293",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,108 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Moran v. Burbine.md",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings are made.",
+    "reviewed": [
+      {
+        "assertion_id": "5739df5473493a53",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified and matches Moran v. Burbine, U.S. Supreme Court, decided 1986-03-10.",
+          "Lake citations include official cite 475 U.S. 412 and the listed parallel/vendor-neutral citations.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so no disclosed final treatment record makes the authority non-live."
+        ],
+        "residual_risks": [
+          "Separate treatment-audit flags affect the categorical no-negative-treatment statement, not the existence/citation identity assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d4a8363ae8284ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside Lens B.",
+          "No disclosed final treatment field or confirmed progeny edge shows that the cited holding is no longer live law."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "355e50ad65c19b1a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/home-role merits are outside Lens B.",
+          "Currency record supports continued legal relevance: lake treatment says good_law and progeny reports 1991 indexed citing opinions and citation_count 3340."
+        ],
+        "residual_risks": [
+          "Role calibration remains partly editorial and should be handled outside this treatment-only lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9962f9070f18389a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court is U.S. Supreme Court and court_level is scotus.",
+          "A U.S. Supreme Court authority is correctly labeled Binding — SCOTUS for this federal legal-reference corpus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c639857ce0d8a3d9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "treatment.scope_note / Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law label itself matches the lake judgment field, but the categorical scope note 'no negative treatment' is too absolute because the disclosed treatment derivation contains audit-needed flags and 31 proposed negative-treatment edges, even though every edge is proposed and only 'mentioned'.",
+          "proposed_fix": "Keep field_i_validity as good_law, but revise the scope note to qualify that no confirmed negative treatment is recorded in the lake while proposed negative-treatment candidates remain audit-flagged.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and varies_by_point is false, matching the page.",
+          "Lake provenance says treatment.field_i_validity came from migration/frontmatter, while derivation lanes lane1_negative and lane2_top_cited both have audit_needed true.",
+          "Treatment edges contain proposed=true entries labeled overruled, questioned, or criticized, but field_iii is mentioned for all 31; that supports qualification rather than a confirmed overruling/abrogation."
+        ],
+        "residual_risks": [
+          "A completed CourtListener treatment audit could confirm the candidates are harmless mentions or identify point-specific limitations."
+        ],
+        "suggested_tightening": "Replace 'no negative treatment' with 'no confirmed negative treatment recorded in the lake; proposed candidate edges are audit-flagged and all are currently classified as mentions.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Moran v. Burbine.md\",\"reviewed\":[{\"assertion_id\":\"5739df5473493a53\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified and matches Moran v. Burbine, U.S. Supreme Court, decided 1986-03-10.\",\"Lake citations include official cite 475 U.S. 412 and the listed parallel/vendor-neutral citations.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30, so no disclosed final treatment record makes the authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Separate treatment-audit flags affect the categorical no-negative-treatment statement, not the existence/citation identity assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1d4a8363ae8284ec\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support merits are outside Lens B.\",\"No disclosed final treatment field or confirmed progeny edge shows that the cited holding is no longer live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"355e50ad65c19b1a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/home-role merits are outside Lens B.\",\"Currency record supports continued legal relevance: lake treatment says good_law and progeny reports 1991 indexed citing opinions and citation_count 3340.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Role calibration remains partly editorial and should be handled outside this treatment-only lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9962f9070f18389a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity court is U.S. Supreme Court and court_level is scotus.\",\"A U.S. Supreme Court authority is correctly labeled Binding — SCOTUS for this federal legal-reference corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c639857ce0d8a3d9\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law label itself matches the lake judgment field, but the categorical scope note 'no negative treatment' is too absolute because the disclosed treatment derivation contains audit-needed flags and 31 proposed negative-treatment edges, even though every edge is proposed and only 'mentioned'.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity as good_law, but revise the scope note to qualify that no confirmed negative treatment is recorded in the lake while proposed negative-treatment candidates remain audit-flagged.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"treatment.scope_note / Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and varies_by_point is false, matching the page.\",\"Lake provenance says treatment.field_i_validity came from migration/frontmatter, while derivation lanes lane1_negative and lane2_top_cited both have audit_needed true.\",\"Treatment edges contain proposed=true entries labeled overruled, questioned, or criticized, but field_iii is mentioned for all 31; that supports qualification rather than a confirmed overruling/abrogation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed CourtListener treatment audit could confirm the candidates are harmless mentions or identify point-specific limitations.\"],\"suggested_tightening\":\"Replace 'no negative treatment' with 'no confirmed negative treatment recorded in the lake; proposed candidate edges are audit-flagged and all are currently classified as mentions.'\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings are made.\"}",
   "summary": {
-    "at": "2026-07-10T02:48:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:39:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-763d358dd3"
+    ],
     "group_id": "content/cases/Moran v. Burbine.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +111,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-23f38fac.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Moran v. Burbine"
     ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 187678,
+      "output": 5263,
+      "source": "codex-events",
+      "total": 192941
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1d4a8363ae8284ec": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "355e50ad65c19b1a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5739df5473493a53": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9962f9070f18389a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c639857ce0d8a3d9": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-763d358dd3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 132.6
   }
 }

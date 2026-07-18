@@ -1,39 +1,93 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/in-re-winship--108111.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "1c58617e7be2a530",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id in-re-winship--108111 and has status verified_identity.",
+          "The identity fields support the case as In Re Winship, U.S. Supreme Court, decided 1970-05-18, year 1970.",
+          "The asserted citations exactly match lake.citations.all: 397 U.S. 358, 90 S. Ct. 1068, 25 L. Ed. 2d 368, and 1970 U.S. LEXIS 56."
+        ],
+        "residual_risks": [
+          "No content_page.* file was disclosed in the working directory, but this existence assertion is directly verifiable from group_inventory.jsonl and the lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "361615e87ebc2fc5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A, so no treatment defect is raised.",
+          "The payload accurately mirrors the lake treatment stub: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No Lens A support, quotation, pincite, or black-letter issue is presented by this treatment-only assertion.",
+          "Actual good-law status is not verified by this Lens A review."
+        ],
+        "suggested_tightening": "Make clear in the rendered content, if any, that this record has unverified treatment rather than a current good-law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/in-re-winship--108111.json\",\"reviewed\":[{\"assertion_id\":\"1c58617e7be2a530\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for record_id in-re-winship--108111 and has status verified_identity.\",\"The identity fields support the case as In Re Winship, U.S. Supreme Court, decided 1970-05-18, year 1970.\",\"The asserted citations exactly match lake.citations.all: 397 U.S. 358, 90 S. Ct. 1068, 25 L. Ed. 2d 368, and 1970 U.S. LEXIS 56.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No content_page.* file was disclosed in the working directory, but this existence assertion is directly verifiable from group_inventory.jsonl and the lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"361615e87ebc2fc5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A, so no treatment defect is raised.\",\"The payload accurately mirrors the lake treatment stub: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A support, quotation, pincite, or black-letter issue is presented by this treatment-only assertion.\",\"Actual good-law status is not verified by this Lens A review.\"],\"suggested_tightening\":\"Make clear in the rendered content, if any, that this record has unverified treatment rather than a current good-law determination.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:40-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:17:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/in-re-winship--108111.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "in-re-winship--108111"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-368957ee",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-368957ee.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'in-re-winship--108111' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record in-re-winship--108111"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "in-re-winship--108111"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 64358,
+      "output": 2090,
+      "source": "codex-events",
+      "total": 66448
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1c58617e7be2a530": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "361615e87ebc2fc5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 46.3
   }
 }

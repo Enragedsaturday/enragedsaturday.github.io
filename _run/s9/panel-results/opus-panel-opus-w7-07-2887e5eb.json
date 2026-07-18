@@ -1,0 +1,123 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5bb33466756497a0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Burger, C.J.) confirms Michigan v. DeFillippo, No. 77-1680, decided June 25 1979; the official cite 443 U.S. 31 is consistent — the caption reads '443 U.S. 31 (1979)' and the opinion runs *32 through *46.",
+          "Official selection present (443 U.S. 31, selected_rank_1); parallels 99 S. Ct. 2627, 61 L. Ed. 2d 343, 1979 U.S. LEXIS 135 are standard 1979 companions."
+        ],
+        "residual_risks": [
+          "Lake identity has opinion_id == cluster_id (110127), which is unusual, but the citation/existence payload under review is unaffected; parallel-reporter pages not independently confirmable from the disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9094fae5afdc4bc4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered ^pin-40 quote ('The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed.') matches the cached opinion verbatim; the sentence follows the *40 marker, so '443 U.S. at 40' is correct.",
+          "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured page front-matter (title block through '## Rule No.'), not the quoted sentence."
+        ],
+        "residual_risks": [
+          "Stored pinpoint.quote holds front-matter junk."
+        ],
+        "suggested_tightening": "Re-extract pinpoint.quote for pin-40 to the actual quoted sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a7570a0be9bc4f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence refutes good_law; the cached opinion is DeFillippo itself and the record shows 'No negative treatment'. The holding (an arrest under a presumptively valid ordinance, later invalidated, remains valid; the search incident to it is admissible) is confirmed by the cached text.",
+          "The scope_note candidly flags the currency as provisional ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') — an honest provisional label, not a defect."
+        ],
+        "residual_risks": [
+          "good_law currency (2026-06-30) is a migration-seed rather than a fresh derivation, per the scope_note's own admission, and is not confirmable from the 1979 opinion.",
+          "Page-metadata inconsistency outside the reviewed assertions: front-matter homes points to [[The Good-Faith Exception]] but '## Appears on' lists [[The Exclusionary Rule]]."
+        ],
+        "suggested_tightening": "Run the S2 treatment re-derivation the scope_note anticipates to replace the seeded currency.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8f88a838ec",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-279275af86",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-07-2887e5eb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. DeFillippo"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a7570a0be9bc4f9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "5bb33466756497a0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9094fae5afdc4bc4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f88a838ec",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-279275af86",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

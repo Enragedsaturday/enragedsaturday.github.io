@@ -1,13 +1,111 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Jacobson v. United States.md",
+    "lens": "B",
+    "notes": "Support assertions were reviewed only for currency/treatment defects under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "455f95803649dd20",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies Jacobson v. United States as a U.S. Supreme Court decision dated 1992-04-06.",
+          "Official, parallel, and vendor citation fields in the lake match the asserted citation package.",
+          "Lake treatment field says field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes audit-needed proposed negative events, but no validated point override or non-good validity field appears in the disclosed judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "609ad7d1a2e04dae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess proposition support or quote fidelity.",
+          "No disclosed treatment field or validated progeny edge defeats current use of Jacobson for this proposition; the lake validity field remains good_law with no point overrides."
+        ],
+        "residual_risks": [
+          "Support merits reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6ef23d02440cdb1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess the substantive home-role fit.",
+          "The disclosed record identifies Jacobson as SCOTUS good_law and records substantial progeny/citation activity, with no validated treatment downgrade."
+        ],
+        "residual_risks": [
+          "Home-role support merits reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "411bb52f6534bf82",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 15,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment frontmatter and the Treatment & subsequent history section.",
+          "needs_cl": true,
+          "problem": "The good_law status matches the lake judgment fields, but the page's unqualified 'No negative treatment' treatment text is too strong because the lake records proposed negative treatment edges and audit-needed derivation lanes.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but change the narrative to say no validated negative treatment is recorded in the lake and that proposed negative/audit-needed edges remain unresolved.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment fields match the asserted good_law, as_of_content, as_of_treatment, composite_basis, varies_by_point, scope_note, and empty point_overrides.",
+          "Lake derivation records audit_needed true in lane1_negative and lane2_top_cited, and the treatment edge list contains proposed negative labels including overruled, questioned, criticized, and superseded_by_statute.",
+          "Because those edges are proposed and field_iii is only mentioned, they do not themselves overturn the good_law call, but they do refute an unqualified no-negative-treatment narrative."
+        ],
+        "residual_risks": [
+          "Full resolution of the proposed negative edges would require auditing the underlying citing opinions, which is outside the disclosed evidence."
+        ],
+        "suggested_tightening": "Use 'No validated negative treatment recorded in the disclosed lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b396c8f3b1a6714",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.",
+          "A SCOTUS authority supports the asserted Binding — SCOTUS weight label in this federal corpus.",
+          "No disclosed treatment field changes the court identity or binding-weight classification."
+        ],
+        "residual_risks": [
+          "Binding weight remains jurisdiction-context dependent, but the disclosed group is federal and the lake identifies the court as SCOTUS."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Jacobson v. United States.md\",\"reviewed\":[{\"assertion_id\":\"455f95803649dd20\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies Jacobson v. United States as a U.S. Supreme Court decision dated 1992-04-06.\",\"Official, parallel, and vendor citation fields in the lake match the asserted citation package.\",\"Lake treatment field says field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation includes audit-needed proposed negative events, but no validated point override or non-good validity field appears in the disclosed judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"609ad7d1a2e04dae\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess proposition support or quote fidelity.\",\"No disclosed treatment field or validated progeny edge defeats current use of Jacobson for this proposition; the lake validity field remains good_law with no point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support merits reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d6ef23d02440cdb1\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess the substantive home-role fit.\",\"The disclosed record identifies Jacobson as SCOTUS good_law and records substantial progeny/citation activity, with no validated treatment downgrade.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role support merits reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"411bb52f6534bf82\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status matches the lake judgment fields, but the page's unqualified 'No negative treatment' treatment text is too strong because the lake records proposed negative treatment edges and audit-needed derivation lanes.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as of 2026-06-30, but change the narrative to say no validated negative treatment is recorded in the lake and that proposed negative/audit-needed edges remain unresolved.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 15,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment frontmatter and the Treatment & subsequent history section.\"},\"reasons\":[\"Lake treatment fields match the asserted good_law, as_of_content, as_of_treatment, composite_basis, varies_by_point, scope_note, and empty point_overrides.\",\"Lake derivation records audit_needed true in lane1_negative and lane2_top_cited, and the treatment edge list contains proposed negative labels including overruled, questioned, criticized, and superseded_by_statute.\",\"Because those edges are proposed and field_iii is only mentioned, they do not themselves overturn the good_law call, but they do refute an unqualified no-negative-treatment narrative.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Full resolution of the proposed negative edges would require auditing the underlying citing opinions, which is outside the disclosed evidence.\"],\"suggested_tightening\":\"Use 'No validated negative treatment recorded in the disclosed lake record' rather than 'No negative treatment.'\"},{\"assertion_id\":\"5b396c8f3b1a6714\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.\",\"A SCOTUS authority supports the asserted Binding — SCOTUS weight label in this federal corpus.\",\"No disclosed treatment field changes the court identity or binding-weight classification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Binding weight remains jurisdiction-context dependent, but the disclosed group is federal and the lake identifies the court as SCOTUS.\"],\"suggested_tightening\":null}],\"notes\":\"Support assertions were reviewed only for currency/treatment defects under lens B.\"}",
   "summary": {
-    "at": "2026-07-10T02:45:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:17:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-53b8aa949c"
+    ],
     "group_id": "content/cases/Jacobson v. United States.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +114,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f417f98b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Jacobson v. United States"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 178629,
+      "output": 6242,
+      "source": "codex-events",
+      "total": 184871
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "411bb52f6534bf82": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "455f95803649dd20": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b396c8f3b1a6714": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "609ad7d1a2e04dae": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6ef23d02440cdb1": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53b8aa949c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 123.4
   }
 }

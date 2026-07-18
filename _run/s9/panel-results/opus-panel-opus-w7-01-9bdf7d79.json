@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a0efbd6bf180bf43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption confirms '378 U.S. 1 (1964)', 'MALLOY v. HOGAN, SHERIFF', 'No. 110', Supreme Court, decided June 15, 1964 — matching official cite, docket, and date.",
+          "official_selection_present=true with official=378 U.S. 1 (type-1 U.S. reporter); parallels 84 S. Ct. 1489 / 12 L. Ed. 2d 653 are the standard Malloy parallels."
+        ],
+        "residual_risks": [
+          "Parallel-reporter page numbers (S. Ct./L. Ed. 2d/LEXIS) are not independently verifiable from the disclosed U.S.-Reports caption, only the official 378 U.S. 1 is."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00b52bad7b4c7b2a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion at page *8 reads: 'The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringement[—]the right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty, as held in Twining, for such silence.'",
+          "The page quote reproduces every word in order; the ' . . . ' ellipsis properly marks the elision of 'as held in Twining,' and the em-dash matches the original (the cached text merely dropped the dash char in 'infringementthe'). The 'mismatch' flag is a mechanical false-positive.",
+          "Pincite 'Id. at 8' is correct: sentence sits just after the *8 star-marker."
+        ],
+        "residual_risks": [
+          "Ellipsis correctly compresses 'as held in Twining,'; a strict verifier that disallows any elision would still flag it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89c9f2c45dd122c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.",
+          "locator_note": "Opinion page *6 (paragraph immediately after the Betts/Gideon discussion); rendered page cites '378 U.S. at 6' at ^pin-6.",
+          "needs_cl": false,
+          "problem": "pin-6.quote is corrupted: it stores the content page's own preamble markdown (title/header/Background/Issue/Rule lines) rather than any opinion sentence. That text does not occur in the Malloy opinion, so the quote payload fails fidelity (the 'quote_fidelity: mismatch' flag is a true positive here).",
+          "proposed_fix": "Repopulate pin-6.quote with the sentence the ^pin-6 marker anchors on the page — 'We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.' — which appears verbatim in the opinion on page 6.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote begins '--- # Malloy v. Hogan ...' and ends '## Rule The privilege is incorporated against the States.' — this is the page preamble, not opinion text.",
+          "Data-integrity defect only: the sentence the ^pin-6 marker actually renders ('We hold today...') is verbatim in the opinion at page 6, so no reader is misled, but the lake pinpoint record cannot be used to verify the quote."
+        ],
+        "residual_risks": [
+          "Reader-facing rendered quote is correct and supported at p.6; defect is confined to the lake pinpoints[].quote field."
+        ],
+        "suggested_tightening": "Rebuild slip-only pinpoint quote fields from the anchored page sentence rather than the page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f2e15779bc2b5a97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion at *10–*11 reads: '...applies to the States only a \"watered-down, subjective version of the individual guarantees of the Bill of Rights, \"'. The page quote reproduces 'watered-down, subjective version of the individual guarantees of the Bill of Rights' verbatim.",
+          "Only differences are quote-nesting (double->single, because the page nests it inside its own double quotes) and a terminal period replacing the source comma-then-close where the citation followed — standard normalization, not a misquote. The 'mismatch' flag is a mechanical false-positive.",
+          "Pincite 'Id. at 10-11' is correct: phrase spans the *10->*11 break ('individual *11 guarantees')."
+        ],
+        "residual_risks": [
+          "Phrase is itself a quote-within-quote from the Ohio ex rel. Eaton v. Price dissent that Malloy quotes; the page correctly presents it as Malloy's own text at 10-11."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "20d6f51e86a5952e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is unrefuted by disclosed evidence: every negative edge in the lake record is proposed:true (34 proposed, 0 accepted), and the labels are transparently spurious (e.g., Miranda, Chapman, Ramos tagged 'overruled' Malloy — Miranda in fact relied on Malloy).",
+          "scope_note is accurate to the opinion: the Court incorporates the Fifth Amendment privilege against the States and states that decisions since Twining and Adamson departed from the contrary view (overruling them on this point)."
+        ],
+        "residual_risks": [
+          "'good law as of 2026-06-30' currency is not fully verifiable from a 1964 opinion; disclosed citator snapshot shows only unadjudicated candidate negatives, and foundational/relied-upon status makes good_law overwhelmingly likely."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-026236ab8f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bab22ece01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-998fdc5d03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Malloy v. Hogan.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-01-9bdf7d79",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Malloy v. Hogan"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "00b52bad7b4c7b2a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "20d6f51e86a5952e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "89c9f2c45dd122c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a0efbd6bf180bf43": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f2e15779bc2b5a97": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-026236ab8f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-33e3e9bf76",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bab22ece01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-998fdc5d03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

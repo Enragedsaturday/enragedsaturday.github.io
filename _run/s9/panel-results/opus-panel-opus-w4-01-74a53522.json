@@ -1,0 +1,119 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2a89e9caf10701b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 378 U.S. 478 (1964) corroborated by the inlined opinion header ('378 U.S. 478 (1964)', 'ESCOBEDO v. ILLINOIS', No. 615, decided June 22, 1964, Goldberg, J.) with internal star-pages *479 through *499.",
+          "Lake identity consistent: cluster 106883, lead opinion 106883, docket 615, decided 1964-06-22, expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official_selection selected_rank_1.",
+          "Parallels 84 S. Ct. 1758 / 12 L. Ed. 2d 977 / 4 Ohio Misc. 197 / 32 Ohio Op. 2d 31 and vendor-neutral 1964 U.S. LEXIS 827 match cluster.citations[] as recorded."
+        ],
+        "residual_risks": [
+          "The state-reporter parallels (Ohio Misc. / Ohio Op. 2d) and vendor-neutral LEXIS cite are cross-checked against the lake cluster block, not the inlined U.S.-reporter text; the U.S. official cite is fully corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aea5a9f8e8d3c597",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect has been taken into police custody, the police carry out a process of interrogations that lends itself to eliciting incriminating statements, the suspect has requested and been denied an opportunity to consult with his lawyer, and the police have not effectively warned him of his absolute constitutional right to remain silent, the accused has been denied \"the Assistance of Counsel\" in violation of the Sixth Amendment to the Constitution as \"made obligatory upon the States by the Fourteenth Amendment,\" Gideon v. Wainwright, 372 U. S., at 342, and that no statement elicited by the police during the interrogation may be used against him at a criminal trial.",
+          "locator_note": "content_page line 90 area (^pin-490) vs cached opinion body paragraph beginning 'We hold, therefore, that where, as here...' with the *491 marker after 'the suspect'",
+          "needs_cl": false,
+          "problem": "The pinpoint record's recorded quote for pin-490 is a mis-extraction: it captured the page preamble (frontmatter/header + Background + Issue + the Rule lead-in 'Yes.') instead of the quotation-marked holding sentence anchored at ^pin-490, which is why the extractor's quote_fidelity flag reads 'mismatch'. The underlying content-page quote itself is faithful and correctly pincited.",
+          "proposed_fix": "Re-anchor the extracted quote span to the quotation-marked holding sentence at ^pin-490 and clear the mechanical 'mismatch' flag; no change to the published page is required.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-490 quote on the content page is verbatim-faithful to the inlined opinion: all retained words match the source exactly, and the two ' ... ' spans are legitimate ellipsis elisions of 'to the Constitution as \"made obligatory upon the States by the Fourteenth Amendment,\" Gideon v. Wainwright, 372 U. S., at 342,' and of the conjunction 'that'.",
+          "Pincite '378 U.S. at 490-491' is correct: the 'We hold, therefore...' sentence begins after the *490 marker and the *491 star-page falls mid-sentence (after 'the suspect'), so the quote straddles 490-491.",
+          "The recorded payload.quote (the page header/preamble ending at '## Rule Yes.') is an extraction artifact, not a content defect; the 'mismatch' flag is therefore a mechanical false positive. Single-vs-double quotation marks around 'the Assistance of Counsel' are typographic normalization, not a fidelity change."
+        ],
+        "residual_risks": [
+          "A downstream checker reading only the mis-extracted payload.quote (or the raw 'mismatch' flag) could wrongly conclude the CONTENT quote is unfaithful, when the content quote is in fact verbatim-correct with proper ellipses."
+        ],
+        "suggested_tightening": "Repair the extractor's quote-span anchoring for quotation-marked pincites so ^pin markers do not capture the preceding preamble block.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "33ce3edee37a9b35",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='caution' with varies_by_point=true is well-substantiated by the disclosed lake record: a point_override 'legacy-limited-escobedo-v-illinois' and migration:limited edges name Miranda v. Arizona (384 U.S. 436), Kirby v. Illinois (406 U.S. 682), and Moran v. Burbine (475 U.S. 412), each field_ii='limited'.",
+          "The content page consistently renders 'limited (result intact; rationale superseded)' and teaches Escobedo as the historical precursor recast by Miranda and confined to its facts by Kirby/Moran - matching the record's scope_note.",
+          "'caution' is a conservative, self-flagging label; the lane1_negative 'overruled'/'questioned' edges (e.g. Tennessee v. Bishop, Commonwealth v. Simon) are proposed=true unaudited citator candidates that do not refute a caution posture (if anything they cut in the same direction)."
+        ],
+        "residual_risks": [
+          "The specific field_ii='limited' labels for Miranda/Kirby/Moran are migration-seeded (composite_basis='migration-seed', s3_binding_status='provisional') rather than confirmed against inlined treatment-holding text; the caution posture is nonetheless internally documented and conservative."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Escobedo v. Illinois.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-01-74a53522",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Escobedo v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a89e9caf10701b5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "33ce3edee37a9b35": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aea5a9f8e8d3c597": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ca0ae240d",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

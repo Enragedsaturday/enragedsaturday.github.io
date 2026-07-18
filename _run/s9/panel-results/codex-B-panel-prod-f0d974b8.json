@@ -1,22 +1,91 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Knight v. Jacobson.json",
+    "lens": "B",
+    "notes": "Reviewed all 2 assertion rows in group_inventory.jsonl under Lens B only; support and quote fidelity were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "ad09146e51f6f8ee",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms record_id 'Knight v. Jacobson', court '11th Cir. 2002', date_decided '2002-09-18', docket '01-15506', cluster_id 778847, and expected_citation_found true.",
+          "The lake citations record lists official cite '300 F.3d 1272' and display '300 F.3d 1272', matching the inventory payload.",
+          "No disclosed treatment edge, progeny edge, warning, or status field says the authority was vacated, withdrawn, overruled, superseded, abrogated, or otherwise non-live."
+        ],
+        "residual_risks": [
+          "The disclosed treatment/progeny data is explicitly unverified and not enumerated, so this existence review cannot affirmatively certify current good-law status beyond the absence of a contrary disclosed field."
+        ],
+        "suggested_tightening": "Keep any live-law implication separate from this citation-existence assertion unless treatment is promoted from unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a2cc7f37ccd5bda",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity 'unverified', as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.",
+          "The lake treatment record has edges [] and point_overrides [], and the progeny record shows rows_cached 0 with no outbound_opinion_edges, so the disclosed record contains no contrary negative-treatment evidence.",
+          "The content page labels treatment as 'Unverified' rather than claiming the case is verified good law."
+        ],
+        "residual_risks": [
+          "Because treatment is a frontier stub with no progeny derivation, the page should not be read as a verified good-law or no-negative-treatment determination."
+        ],
+        "suggested_tightening": "Preserve the Unverified treatment banner until a promoted record supplies dated treatment/progeny support.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Knight v. Jacobson.json\",\"reviewed\":[{\"assertion_id\":\"ad09146e51f6f8ee\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms record_id 'Knight v. Jacobson', court '11th Cir. 2002', date_decided '2002-09-18', docket '01-15506', cluster_id 778847, and expected_citation_found true.\",\"The lake citations record lists official cite '300 F.3d 1272' and display '300 F.3d 1272', matching the inventory payload.\",\"No disclosed treatment edge, progeny edge, warning, or status field says the authority was vacated, withdrawn, overruled, superseded, abrogated, or otherwise non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment/progeny data is explicitly unverified and not enumerated, so this existence review cannot affirmatively certify current good-law status beyond the absence of a contrary disclosed field.\"],\"suggested_tightening\":\"Keep any live-law implication separate from this citation-existence assertion unless treatment is promoted from unverified.\"},{\"assertion_id\":\"7a2cc7f37ccd5bda\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity 'unverified', as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.\",\"The lake treatment record has edges [] and point_overrides [], and the progeny record shows rows_cached 0 with no outbound_opinion_edges, so the disclosed record contains no contrary negative-treatment evidence.\",\"The content page labels treatment as 'Unverified' rather than claiming the case is verified good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is a frontier stub with no progeny derivation, the page should not be read as a verified good-law or no-negative-treatment determination.\"],\"suggested_tightening\":\"Preserve the Unverified treatment banner until a promoted record supplies dated treatment/progeny support.\"}],\"notes\":\"Reviewed all 2 assertion rows in group_inventory.jsonl under Lens B only; support and quote fidelity were not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:52-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:58:03-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Knight v. Jacobson.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-f0d974b8",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f0d974b8.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:43.336602Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:43.988109Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:44.786041Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:45.962816Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:47.908837Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:51.912182Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Knight v. Jacobson"
+    ],
+    "tokens": {
+      "input": 139805,
+      "output": 4011,
+      "source": "codex-events",
+      "total": 143816
+    },
+    "verdict_map": {
+      "7a2cc7f37ccd5bda": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad09146e51f6f8ee": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 81.9
   }
 }

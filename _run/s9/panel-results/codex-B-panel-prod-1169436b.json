@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Davis v. United States.md",
+    "lens": "B",
+    "notes": "Lens B only; support assertions were reviewed only for currency/treatment defects.",
+    "reviewed": [
+      {
+        "assertion_id": "73dce0e316a26299",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "citation: \"512 U.S. 452 (1994)\"",
+          "locator_note": "locator field=citation; contradiction appears in content_page.md frontmatter and lake citations.display/official fields.",
+          "needs_cl": false,
+          "problem": "The asserted official citation is wrong for the disclosed Davis authority. The inventory says 513 U.S. 1008 (1994), but the content page and lake record identify the merits decision as 512 U.S. 452 (1994).",
+          "proposed_fix": "Replace 513 U.S. 1008 (1994) with 512 U.S. 452 (1994).",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "content_page.md frontmatter gives the citation as 512 U.S. 452 (1994).",
+          "lake citations.official.cite and citations.display both identify the authority as 512 U.S. 452, not 513 U.S. 1008."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the lake selected official citation for this case-cite assertion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95f5803c3e541f75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support is outside Lens B, and no disclosed treatment/progeny field undermines Davis as live law for this proposition.",
+          "Lake treatment lists field_i_validity as good_law with no treatment edges or point overrides."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity are not evaluated under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fedba37ec9c547f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home-role support is outside Lens B, and the disclosed treatment record does not show any overruling, abrogation, supersession, or limitation of Davis.",
+          "The same home role appears in content_page.md, and lake treatment contains no negative edges."
+        ],
+        "residual_risks": [
+          "Whether the home role is substantively ideal is a support/classification question, not a Lens B treatment defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b65806320893abc2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.",
+          "The content page authority_weight is Binding — SCOTUS, matching the disclosed court identity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c18ecaf3aa079da9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.",
+          "The disclosed treatment edges and point_overrides arrays are empty, so no disclosed record supersedes, overrules, abrogates, or limits Davis."
+        ],
+        "residual_risks": [
+          "The disclosed derivation metadata reviewed zero citing opinions and uses a cites query whose ID is not listed among the current identity sibling_ids; this is an audit risk, but the lake judgment field still supports the treatment call within the permitted evidentiary universe."
+        ],
+        "suggested_tightening": "Re-run or refresh treatment derivation against the current rekeyed Davis cluster/opinion identifiers to reduce audit uncertainty.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Davis v. United States.md\",\"reviewed\":[{\"assertion_id\":\"73dce0e316a26299\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted official citation is wrong for the disclosed Davis authority. The inventory says 513 U.S. 1008 (1994), but the content page and lake record identify the merits decision as 512 U.S. 452 (1994).\",\"severity\":\"high\",\"proposed_fix\":\"Replace 513 U.S. 1008 (1994) with 512 U.S. 452 (1994).\",\"evidence_quote\":\"citation: \\\"512 U.S. 452 (1994)\\\"\",\"needs_cl\":false,\"locator_note\":\"locator field=citation; contradiction appears in content_page.md frontmatter and lake citations.display/official fields.\"},\"reasons\":[\"content_page.md frontmatter gives the citation as 512 U.S. 452 (1994).\",\"lake citations.official.cite and citations.display both identify the authority as 512 U.S. 452, not 513 U.S. 1008.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use the lake selected official citation for this case-cite assertion.\"},{\"assertion_id\":\"95f5803c3e541f75\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support is outside Lens B, and no disclosed treatment/progeny field undermines Davis as live law for this proposition.\",\"Lake treatment lists field_i_validity as good_law with no treatment edges or point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity are not evaluated under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fedba37ec9c547f8\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Home-role support is outside Lens B, and the disclosed treatment record does not show any overruling, abrogation, supersession, or limitation of Davis.\",\"The same home role appears in content_page.md, and lake treatment contains no negative edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Whether the home role is substantively ideal is a support/classification question, not a Lens B treatment defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b65806320893abc2\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.\",\"The content page authority_weight is Binding — SCOTUS, matching the disclosed court identity.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c18ecaf3aa079da9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.\",\"The disclosed treatment edges and point_overrides arrays are empty, so no disclosed record supersedes, overrules, abrogates, or limits Davis.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed derivation metadata reviewed zero citing opinions and uses a cites query whose ID is not listed among the current identity sibling_ids; this is an audit risk, but the lake judgment field still supports the treatment call within the permitted evidentiary universe.\"],\"suggested_tightening\":\"Re-run or refresh treatment derivation against the current rekeyed Davis cluster/opinion identifiers to reduce audit uncertainty.\"}],\"notes\":\"Lens B only; support assertions were reviewed only for currency/treatment defects.\"}",
   "summary": {
-    "at": "2026-07-10T02:42:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:53:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-83f328f205"
+    ],
     "group_id": "content/cases/Davis v. United States.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-1169436b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1169436b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:27.092839Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:27.804083Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:28.712208Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:29.832824Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:31.842557Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States"
+    ],
+    "tokens": {
+      "input": 141675,
+      "output": 6376,
+      "source": "codex-events",
+      "total": 148051
+    },
+    "verdict_map": {
+      "73dce0e316a26299": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "95f5803c3e541f75": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b65806320893abc2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c18ecaf3aa079da9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fedba37ec9c547f8": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-83f328f205",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 126.7
   }
 }

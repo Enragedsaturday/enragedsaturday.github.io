@@ -1,0 +1,166 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ebe8460de76aadaa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip op header confirms '365 U.S. 505 (1961)', 'SILVERMAN ET AL. v. UNITED STATES', No. 66, decided March 6, 1961 - official cite and party identity match.",
+          "cluster/opinion 106187 and absolute_url in lake record are consistent with the content page's citation and courtlistener block."
+        ],
+        "residual_risks": [
+          "Parallel cites (81 S. Ct. 679; 5 L. Ed. 2d 734; 97 A.L.R. 2d 1277; 1961 U.S. LEXIS 1605) are not page-verifiable from the disclosed body, but are standard parallels; the official cite is verified verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b585aeecfebe33d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-509 quote 'the eavesdropping was accomplished by means of an unauthorized physical penetration into the premises occupied by the petitioners' matches the slip op verbatim.",
+          "The sentence sits between the *509 and *510 star markers in the cached opinion, confirming the '365 U.S. at 509' pincite.",
+          "Payload 'quote' is a harvest artifact (it captured Background/Issue/Rule page prose including the '## Issue'/'## Rule' headers), which is what drives the payload 'mismatch' flag; the actual pinned quote is faithful."
+        ],
+        "residual_risks": [
+          "The assertion-record quote field is garbled (extractor grabbed surrounding page prose); the wiki content itself is correct."
+        ],
+        "suggested_tightening": "Re-harvest the pin-509 quote span so the assertion record carries the actual quoted sentence, clearing the spurious mismatch flag.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28dbd39bc44c367d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Slip op (page 511): 'In these circumstances we need not pause to consider whether or not there was a technical trespass under the local property law relating to party walls.[3] Inherent Fourth Amendment rights are not inevitably measurable in terms of ancient niceties of tort or real property law.'",
+          "Content-page pin-511 quote reproduces this verbatim with a marked ellipsis '....' properly eliding 'relating to party walls.[3]'; the pincite '365 U.S. at 511' is correct (text follows the *511 marker).",
+          "Payload 'mismatch' stems from the legitimate elision breaking a naive substring match; the quotation is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5016c5bb6d49e6b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-510 quote 'had not been accomplished by means of an unauthorized physical encroachment within a constitutionally protected area' matches the slip op verbatim.",
+          "Text sits after the *510 star marker, confirming '365 U.S. at 510'; payload already flags quote_fidelity=matched / star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bb1f55c39668bb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is defensible: Silverman (1961) trespass-intrusion holding has never been overruled; every negative edge in the lake record is proposed:true / field_iii:mentioned citator candidate (including facially implausible ones such as Katz and Bivens tagged 'overruled'), none adjudicated.",
+          "scope_note (pre-Katz trespass test reaffirmed as an independent approach in United States v. Jones) is accurate Fourth Amendment doctrine; varies_by_point:false is consistent with the single holding."
+        ],
+        "residual_risks": [
+          "The Jones-reaffirmation scope detail is not inlined; it rests on established doctrine, not fabricated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0b966e01e6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3a9b885917",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Silverman v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-02-620a552d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Silverman v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0b585aeecfebe33d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0bb1f55c39668bb7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "28dbd39bc44c367d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5016c5bb6d49e6b4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebe8460de76aadaa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b966e01e6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3a9b885917",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

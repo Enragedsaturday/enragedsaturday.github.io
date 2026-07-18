@@ -1,38 +1,89 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json",
+    "lens": "A",
+    "notes": "Only existence and treatment rows were present in group_inventory.jsonl; treatment merits are outside Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "928b1b78c616c746",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Shaquille Robinson, U.S. Court of Appeals, 4th Cir. (en banc), year 2017, docket No. 14-4902.",
+          "The asserted official citation 846 F.3d 694 and vendor-neutral citations 2017 WL 280727 and 2017 U.S. App. LEXIS 1134 match the lake citations exactly."
+        ],
+        "residual_risks": [
+          "The lake provenance notes a caption mismatch against the CourtListener canonical caption, but the record accepted the disambiguated input caption and the citation/court/year match."
+        ],
+        "suggested_tightening": "Where exact caption matters, include the canonical case name United States v. Shaquille Robinson alongside the disambiguated record title.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7adf3189b1f0061a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion is limited to unverified status, null as-of fields, no point variation, and the frontier-stub scope note; those fields match the disclosed lake treatment record.",
+          "Under Lens A, I record this verdict only and make no treatment/currency merits finding."
+        ],
+        "residual_risks": [
+          "Good-law status and subsequent treatment are not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json\",\"reviewed\":[{\"assertion_id\":\"928b1b78c616c746\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Shaquille Robinson, U.S. Court of Appeals, 4th Cir. (en banc), year 2017, docket No. 14-4902.\",\"The asserted official citation 846 F.3d 694 and vendor-neutral citations 2017 WL 280727 and 2017 U.S. App. LEXIS 1134 match the lake citations exactly.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake provenance notes a caption mismatch against the CourtListener canonical caption, but the record accepted the disambiguated input caption and the citation/court/year match.\"],\"suggested_tightening\":\"Where exact caption matters, include the canonical case name United States v. Shaquille Robinson alongside the disambiguated record title.\"},{\"assertion_id\":\"7adf3189b1f0061a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion is limited to unverified status, null as-of fields, no point variation, and the frontier-stub scope note; those fields match the disclosed lake treatment record.\",\"Under Lens A, I record this verdict only and make no treatment/currency merits finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law status and subsequent treatment are not assessed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Only existence and treatment rows were present in group_inventory.jsonl; treatment merits are outside Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:48-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:04:01-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Robinson (4th Cir. en banc)"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-99a3626b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-99a3626b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Robinson (4th Cir. en banc)' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Robinson (4th Cir. en banc)"
+    ],
     "tokens": {
-      "input": 832,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 832
+      "input": 97568,
+      "output": 2646,
+      "source": "codex-events",
+      "total": 100214
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "7adf3189b1f0061a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "928b1b78c616c746": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "wall_clock_s": 84.4
   }
 }

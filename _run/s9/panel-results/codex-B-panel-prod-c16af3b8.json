@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "781263432fb6b96c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status verified.",
+          "Identity fields confirm the case name, SCOTUS court, 1989-03-21 decision date, and official citation 489 U.S. 656.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the live-law currency angle survives."
+        ],
+        "residual_risks": [
+          "Treatment-edge audit risk is addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b0319239161fd98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "This row presents no independent treatment or currency assertion beyond the case status reviewed separately."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity judgment is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48cda930cd2882cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "The embedded treatment/weight language is handled in the treatment review, not as a quote-fidelity finding."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity judgment is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2226cb199552309",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' sentence is too strong because the lake treatment derivation contains unresolved audit flags and proposed negative-event edges.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but remove or qualify 'No negative treatment' unless the proposed negative edges are audited.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The final lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "The record also shows treatment derivation lanes with audit_needed true and proposed negative-event edges, so a categorical no-negative-treatment assertion is not fully supported by the disclosed record."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full text for the progeny cases, so the proposed negative edges cannot be resolved internally."
+        ],
+        "suggested_tightening": "Say: 'Status: good_law as of 2026-06-30; no point-specific override in the lake record. Proposed treatment-edge candidates remain unaudited.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"781263432fb6b96c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is not a stub and has status verified.\",\n        \"Identity fields confirm the case name, SCOTUS court, 1989-03-21 decision date, and official citation 489 U.S. 656.\",\n        \"The lake treatment field marks the authority good_law as of 2026-06-30, so the live-law currency angle survives.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment-edge audit risk is addressed under the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1b0319239161fd98\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"This row presents no independent treatment or currency assertion beyond the case status reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity judgment is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"48cda930cd2882cf\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"The embedded treatment/weight language is handled in the treatment review, not as a quote-fidelity finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity judgment is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d2226cb199552309\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' sentence is too strong because the lake treatment derivation contains unresolved audit flags and proposed negative-event edges.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law as of 2026-06-30, but remove or qualify 'No negative treatment' unless the proposed negative edges are audited.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"The final lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\n        \"The record also shows treatment derivation lanes with audit_needed true and proposed negative-event edges, so a categorical no-negative-treatment assertion is not fully supported by the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not include full text for the progeny cases, so the proposed negative edges cannot be resolved internally.\"\n      ],\n      \"suggested_tightening\": \"Say: 'Status: good_law as of 2026-06-30; no point-specific override in the lake record. Proposed treatment-edge candidates remain unaudited.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity defects were raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a7c97d02b5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b4cc820b73"
+    ],
     "group_id": "_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c16af3b8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "National Treasury Employees Union v. Von Raab"
     ],
     "tokens": {
-      "input": 761,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 761
+      "input": 345840,
+      "output": 9133,
+      "source": "codex-events",
+      "total": 354973
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1b0319239161fd98": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48cda930cd2882cf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "781263432fb6b96c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2226cb199552309": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7c97d02b5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b4cc820b73",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 178.4
   }
 }

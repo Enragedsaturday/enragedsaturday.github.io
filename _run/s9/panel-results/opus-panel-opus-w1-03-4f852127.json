@@ -1,0 +1,181 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "48342b44a7dac19a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 555 U.S. 323 (selected_rank_1) matches lake citations.official and the content-page citation; parallels 129 S. Ct. 781 / 172 L. Ed. 2d 694 / 2009 U.S. LEXIS 868 all present in cluster.citations[].",
+          "Cached opinion is Arizona v. Johnson, No. 07-1122, decided Jan. 26, 2009 (Ginsburg, J.); syllabus header and body confirm the party and holding; case reports at 555 U.S. 323."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21380b1679d852e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pinned quote at ^pin-327b -- '[f]or the duration of a traffic stop, . . . a police officer effectively seizes 'everyone in the vehicle,' the driver and all passengers.' -- matches the cached opinion body ('For the duration of a traffic stop, we recently confirmed, a police officer effectively seizes \"everyone in the vehicle,\" the driver and all passengers.').",
+          "The bracket [f] correctly signals the lowercased 'For', and the ellipsis '. . .' correctly elides 'we recently confirmed,'; the parenthetical '(quoting Brendlin v. California)' is accurate -- the opinion cites Brendlin v. California, 551 U.S. 249, 255 immediately after."
+        ],
+        "residual_risks": [
+          "pinpoint_status is slip-only: the cached text is a slip opinion (slip pages 1-2), so the 'Id.'/555 U.S. 327 page precision is not verifiable to U.S. Reports pagination; the quoted sentence actually falls on slip page 1 (with the Brendlin cite spanning the page break)."
+        ],
+        "suggested_tightening": "Verify the U.S.-Reports page for the Brendlin-attributed sentence (likely 326 rather than 327) once star-paginated text is available.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e8c572896556963",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is a page-preamble harvest artifact (content-page header/Background/Issue/Rule-lead), hence the machine's mismatch flag; not the text pinned at ^pin-326.",
+          "The real pinned quote -- 'The Court upheld 'stop and frisk' as constitutionally permissible if two conditions are met. First, the investigatory stop must be lawful. . . . Second, to proceed from a stop to a frisk, the police officer must reasonably suspect that the person stopped is armed and dangerous.' -- matches the cached opinion body verbatim; the ellipsis correctly elides the intervening 'That requirement is met...criminal offense.' sentence."
+        ],
+        "residual_risks": [
+          "slip-only: exact U.S. Reports pages 326-327 not verifiable against the slip-paginated cached text (quoted two-conditions passage sits on slip page 1)."
+        ],
+        "suggested_tightening": "Fix harvester to capture the anchored sentence rather than the page preamble.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6bbfadcb4d5bf86",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pinned quote at ^pin-327 -- 'in a traffic-stop setting, the first Terry condition -- a lawful investigatory stop -- is met whenever it is lawful for police to detain an automobile and its occupants pending inquiry into a vehicular violation. The police need not have, in addition, cause to believe any occupant of the vehicle is involved in criminal activity. To justify a patdown of the driver or a passenger during a traffic stop, however, just as in the case of a pedestrian reasonably suspected of criminal activity, the police must harbor reasonable suspicion that the person subjected to the frisk is armed and dangerous.' -- matches the cached opinion body verbatim (quote begins mid-sentence with lowercase 'in', dropping 'Accordingly, we hold that,')."
+        ],
+        "residual_risks": [
+          "slip-only: 'Id. at 327' page precision not verifiable against slip-paginated cached text; quote content is verified faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72acb5231045fae3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law consistent with disclosed record: composite_basis migration-seed; all negative edges proposed:true (un-adopted citator noise -- e.g. Rodriguez 'abrogated', Salcedo 'questioned', Arizona v. United States).",
+          "The scope_note (traffic stop seizes every occupant for its duration, satisfying Terry's first condition without separate passenger-crime suspicion; frisk requires reasonable suspicion the passenger is armed and dangerous) is verbatim-supported by the cached opinion body."
+        ],
+        "residual_risks": [
+          "Currency rests on migration-seed plus proposed-only edges; no accepted negative treatment disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7de0aebc06",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e84103c854",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-83c1098c49",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f1173f17ac",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Johnson.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-03-4f852127",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Johnson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "21380b1679d852e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2e8c572896556963": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48342b44a7dac19a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72acb5231045fae3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6bbfadcb4d5bf86": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7de0aebc06",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e84103c854",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-83c1098c49",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f1173f17ac",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

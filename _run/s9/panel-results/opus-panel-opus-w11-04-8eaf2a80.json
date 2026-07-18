@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b1fb4701bea21f9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Mr. Chief Justice Hughes) with star-pagination *438-*454 and Prohibition-Act entrapment facts (agent Martin, half-gallon of whiskey, 30th Division veteran) unmistakably identifies Sorrells v. United States.",
+          "Official cite 287 U.S. 435 (selected_official cluster citation) is consistent with the in-opinion star-pagination range (438-454); the pin quote is cited to 454, within range."
+        ],
+        "residual_risks": [
+          "Cached excerpt begins at *438 (opinion body); the literal page-435 first-page string is not inlined, but the star-pagination range corroborates 287 U.S. 435."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d7e3b197aa62feb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Actual ^pin-454 quote ('Entrapment is the conception and planning of an offense by an officer, and his procurement of its commission by one who would not have perpetrated it except for the trickery, persuasion, or fraud of the officer.') matches the cached opinion verbatim.",
+          "Quote falls after the *454 star marker and before the next page break, so pincite 287 U.S. at 454 is correct.",
+          "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'quote_fidelity: mismatch' flag is an extractor artifact, not a page defect."
+        ],
+        "residual_risks": [
+          "Extractor captured the wrong span for this pin; any downstream mismatch flag on this record should be re-derived from the ^pin-454 block."
+        ],
+        "suggested_tightening": "Have the extractor isolate the ^pin-N inline quote span rather than the leading document blob before computing quote_fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97025b9a83890ad3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (this is not a clean attestation).",
+          "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+        ],
+        "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-603fb27714",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Sorrells v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-04-8eaf2a80",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Sorrells v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1d7e3b197aa62feb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97025b9a83890ad3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "b1fb4701bea21f9e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-603fb27714",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

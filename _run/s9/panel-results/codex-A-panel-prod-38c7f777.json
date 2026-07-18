@@ -1,22 +1,147 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Mathis v. United States (1968).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"18401ecac52bf97d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Mathis v. United States as a U.S. Supreme Court case decided 1968-05-06 with docket 726.\",\n        \"The official citation in the lake record is 391 U.S. 1, and the listed parallel/vendor citations match the inventory payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8a23edce7294bd3c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-4 quote is not the opinion passage cited at 391 U.S. at 4; it is a malformed harvest of the content page header/background/rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-4 with the actual page-4 quotation beginning with the Government's two Miranda arguments and ending with warnings for a person held in custody; set the pinpoint page to 4.\",\n        \"evidence_quote\": \"The Government here seeks to escape application of the\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin_id=pin-4; lake pinpoints[].quote begins with the page front matter rather than the opinion text.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-4 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\n        \"The cached opinion text contains the cited page-4 passage, but the inventory payload for pin-4 instead starts with the built page header.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Reharvest pin-4 from content_page.md line 64 or directly from text page marker *4, not from the page header.\"\n    },\n    {\n      \"assertion_id\": \"8a324f1c08d7b225\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted retained language appears in the cached opinion text: the first sentence begins on page 4 and the second sentence continues across the page-5 marker.\",\n        \"The omission between 'distinction' and 'We find nothing' is signaled by ellipsis, and the retained words match the opinion text aside from Markdown emphasis normalization.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake metadata still labels this quote as mismatch/slip-only, apparently because of HTML markup, page-marker, or ellipsis normalization rather than a substantive quotation defect.\"\n      ],\n      \"suggested_tightening\": \"Set pin-5 page metadata to 4-5 and normalize emphasis/page markers before automated quote-fidelity comparison.\"\n    },\n    {\n      \"assertion_id\": \"a3344e5096a3d4f8\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no treatment finding is raised.\",\n        \"The treatment payload matches the lake treatment fields and the content page treatment statement.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment accuracy and currency were not independently reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl. Lens A records the treatment row only and raises no treatment/currency finding.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mathis v. United States (1968).json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory rows using only the disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "18401ecac52bf97d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name_full Mathis v. United States, court U.S. Supreme Court, date_decided 1968-05-06, and year 1968.",
+          "The official citation in the lake record is 391 U.S. 1, matching the content page display citation and inventory payload; the listed parallel and vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a23edce7294bd3c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Mathis v. United States (1968) *391 U.S. 1 (1968)*",
+          "locator_note": "pin-4",
+          "needs_cl": false,
+          "problem": "The reviewed pin-4 quote in the lake/inventory is not an opinion quote; it is page header/background/issue/rule prose captured as a pinpoint quote, and the lake itself marks the quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-4 with the actual Mathis page-4 passage beginning 'The Government here seeks to escape application...' and ending 'a person held in custody,' or regenerate the pinpoint from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-4 quote begins with the content page title/header, not language from the cached Mathis opinion text.",
+          "The opinion text at page *4 contains the Government's two-arguments passage; the lake pinpoints entry for pin-4 instead contains content-page prose and has quote_fidelity set to mismatch."
+        ],
+        "residual_risks": [
+          "The displayed content_page pin-4 quote appears to draw from the correct page-4 passage, but the reviewed lake/inventory pinpoint quote is defective."
+        ],
+        "suggested_tightening": "Store the actual page-4 opinion excerpt in lake.pinpoints[pin-4].quote and set page to 4.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a324f1c08d7b225",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted words appear in the cached opinion text: 'There is no substance to such a distinction' followed, after omitted intervening language, by 'We find nothing in the Miranda opinion...'",
+          "The ellipsis accurately signals omission of the intervening clause, and the citation to pages 4-5 lands on the passage because the page marker *5 appears within the quoted sentence."
+        ],
+        "residual_risks": [
+          "Automated fidelity tooling may continue to flag this because the source uses HTML italics/page markup while the page uses markdown italics and an ellipsis."
+        ],
+        "suggested_tightening": "Normalize HTML italics and ellipses before automated quote-fidelity checks.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3344e5096a3d4f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "As a disclosed-record field check only, the inventory treatment payload matches the lake treatment fields and the content page front matter."
+        ],
+        "residual_risks": [
+          "Treatment correctness and currency are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mathis v. United States (1968).json\",\"reviewed\":[{\"assertion_id\":\"18401ecac52bf97d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name_full Mathis v. United States, court U.S. Supreme Court, date_decided 1968-05-06, and year 1968.\",\"The official citation in the lake record is 391 U.S. 1, matching the content page display citation and inventory payload; the listed parallel and vendor citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8a23edce7294bd3c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-4 quote in the lake/inventory is not an opinion quote; it is page header/background/issue/rule prose captured as a pinpoint quote, and the lake itself marks the quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-4 with the actual Mathis page-4 passage beginning 'The Government here seeks to escape application...' and ending 'a person held in custody,' or regenerate the pinpoint from the opinion text.\",\"evidence_quote\":\"--- # Mathis v. United States (1968) *391 U.S. 1 (1968)*\",\"needs_cl\":false,\"locator_note\":\"pin-4\"},\"reasons\":[\"The asserted pin-4 quote begins with the content page title/header, not language from the cached Mathis opinion text.\",\"The opinion text at page *4 contains the Government's two-arguments passage; the lake pinpoints entry for pin-4 instead contains content-page prose and has quote_fidelity set to mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed content_page pin-4 quote appears to draw from the correct page-4 passage, but the reviewed lake/inventory pinpoint quote is defective.\"],\"suggested_tightening\":\"Store the actual page-4 opinion excerpt in lake.pinpoints[pin-4].quote and set page to 4.\"},{\"assertion_id\":\"8a324f1c08d7b225\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted words appear in the cached opinion text: 'There is no substance to such a distinction' followed, after omitted intervening language, by 'We find nothing in the Miranda opinion...'\",\"The ellipsis accurately signals omission of the intervening clause, and the citation to pages 4-5 lands on the passage because the page marker *5 appears within the quoted sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Automated fidelity tooling may continue to flag this because the source uses HTML italics/page markup while the page uses markdown italics and an ellipsis.\"],\"suggested_tightening\":\"Normalize HTML italics and ellipses before automated quote-fidelity checks.\"},{\"assertion_id\":\"a3344e5096a3d4f8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"As a disclosed-record field check only, the inventory treatment payload matches the lake treatment fields and the content page front matter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment correctness and currency are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory rows using only the disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-11T01:01:44-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:07:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7f04da6aeb"
+    ],
     "group_id": "_overhaul2/lake/cases/Mathis v. United States (1968).json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-38c7f777",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-38c7f777.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathis v. United States (1968)"
+    ],
+    "tokens": {
+      "input": 220039,
+      "output": 10410,
+      "source": "codex-events",
+      "total": 230449
+    },
+    "verdict_map": {
+      "18401ecac52bf97d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a23edce7294bd3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8a324f1c08d7b225": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3344e5096a3d4f8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7f04da6aeb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 217.0
   }
 }

@@ -1,0 +1,126 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3302cf806da29b7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms a real 1st Cir. decision: 'UNITED STATES ... v. ORISTEL SOTO-PEGUERO', No. 18-1897, decided October 19, 2020, BARRON, Circuit Judge — matching record identity (cluster 4798028 / opinion 4578375, ca1, 2020-10-19).",
+          "Cite '978 F.3d 13' is well-formed and volume-consistent with a late-2020 F.3d 1st Cir. opinion; recorded selected_official from CL cluster.citations[]."
+        ],
+        "residual_risks": [
+          "Exact reporter pagination (978 F.3d p.13) is not printed in the disclosed slip text; it derives from CL cluster metadata and is not independently confirmable from the pack alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b8fadde3c54d7db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The displayed on-page quote at ^pin-op21 — 'Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.' — is verbatim in the disclosed opinion (slip pp. 20-21).",
+          "Pincite 'slip op., at 21' is accurate: the holding sentence concludes on the page bearing the '- 21 -' marker.",
+          "The payload's recorded 'quote' (page front-matter/preamble) is a harvest-span artifact, not the displayed quote; builder self-flagged quote_fidelity=mismatch / pinpoint_status=slip-only. No fabricated or unfaithful proposition reaches users."
+        ],
+        "residual_risks": [
+          "pinpoint.quote field stores the page preamble rather than the quoted sentence — non-user-facing data-hygiene artifact.",
+          "Slip-only pincite although the case is published (978 F.3d 13); a reporter pincite would be sturdier."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the actual quoted sentence and, where feasible, add the F.3d reporter pincite alongside the slip page.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9cbe66133e39c82f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is defensible: the dedicated negative lane (lane1_negative, cites:(4578375) AND overrul*/abrogat*/... AND court_id:(scotus OR ca1)) reviewed 3 and returned proposed_negative_events=0.",
+          "as_of_content 2020-10-19 equals the decision date; no disclosed opinion evidence shows Soto-Peguero overruled or abrogated.",
+          "The 'overruled'/'criticized'/'questioned' entries in treatment.edges are proposed:true lane2 heuristics (citing-case field_ii labels), not verified negative treatment of this case."
+        ],
+        "residual_risks": [
+          "Proposed negative edges (e.g., Griffin 'overruled', Gonzalez 16 F.4th 37 'overruled') are unadjudicated; if any were a genuine in-circuit overruling good_law would flip — but lane1 found none.",
+          "Live citator currency to as_of_treatment 2026-06-30 cannot be fully re-confirmed from the pack (needs CL)."
+        ],
+        "suggested_tightening": "Adjudicate/prune the proposed:true lane2 field_ii labels so the record does not carry misleading 'overruled' edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-006d5c99a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7ac9f9082a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-01-6ba0d709",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Soto-Peguero"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3302cf806da29b7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4b8fadde3c54d7db": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9cbe66133e39c82f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-006d5c99a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7ac9f9082a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

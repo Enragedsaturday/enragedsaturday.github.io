@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "212349f784ec94df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 7 cluster.citations in payload are present verbatim in the lake citations block (133 S. Ct. 1409; 185 L. Ed. 2d 495; 2013 U.S. LEXIS 2542; 569 U.S. 1; 24 Fla. L. Weekly Fed. S 117; 81 U.S.L.W. 4209; 2013 WL 1196577).",
+          "Cached slip op header 'Cite as: 569 U. S. ____ (2013)' and 'Decided March 26, 2013' corroborate 569 U.S. 1 (2013)."
+        ],
+        "residual_risks": [
+          "official=null / official_selection_present=false: no cite tagged selected_official though the U.S. Reports cite 569 U.S. 1 is present; a completeness gap, not an existence defect."
+        ],
+        "suggested_tightening": "Consider tagging 569 U.S. 1 as selected_official for a SCOTUS record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "861f6aaddb45f2e5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The officers were gathering information in an area belonging to Jardines and immediately surrounding his house—in the curtilage of the house, which we have held enjoys protection as part of the home itself. And they gathered that information by physically entering and occupying the area to engage in conduct not explicitly or implicitly permitted by the homeowner.",
+          "locator_note": "Cached opinion text lines ~1231-1241 (Opinion of the Court, slip op. 3-4; line-break hyphens removed); content page line 92.",
+          "needs_cl": false,
+          "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose ('within the meaning of the Fourth Amendment. ## Rule Yes. Bringing a drug dog onto the curtilage ... and so is a search.'), not the court quote; the quote_fidelity=mismatch / pinpoint_status=slip-only fields reflect this mis-harvest, not a page defect. The actual reader-facing pin-6 blockquote is verbatim-faithful to source.",
+          "proposed_fix": "Re-harvest pin-6 to the actual content-page blockquote, which matches the cached slip op verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page's actual pin-6 quote matches the cached slip opinion verbatim.",
+          "payload.quote is a preamble mis-extraction (it contains the '## Rule' markdown heading and wiki editorial prose), so it is not a court quote and cannot match source."
+        ],
+        "residual_risks": [
+          "U.S. Reports page 6 is not confirmable from slip-only cached text; pincite accuracy is a separate dimension not under review here."
+        ],
+        "suggested_tightening": "Fix the S8 quote-harvest span so markered pins capture the blockquote, not the preceding paragraph.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9431009fbbf3753",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote matches the cached slip opinion verbatim: 'But introducing a trained police dog to explore the area around the home in hopes of discovering incriminating evidence is something else. There is no customary invitation to do that.' (cached lines ~1364-1367).",
+          "The recorded quote_fidelity=mismatch is a false positive; the quoted text is faithful."
+        ],
+        "residual_risks": [
+          "U.S. Reports page 9 (Id.) is not confirmable from slip-only cached text; the passage appears on slip op. p.7."
+        ],
+        "suggested_tightening": "Clear the false-positive mismatch flag on pin-9.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "943d3bbacd758e93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Case-level field_i_validity=good_law; no disclosed edge overrules/abrogates Jardines.",
+          "The treatment edges are progeny (cases citing Jardines) carrying each citing case's OWN validity status (field_ii overruled/abrogated/questioned attach to the citing_case, journal_ref lane2_top_cited), not negative treatment of Jardines; a lower court cannot overrule this 2013 SCOTUS holding and no negative SCOTUS treatment is disclosed."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed: good_law is a provisional seed that S2 derivation may re-derive/downgrade per scope_note."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5e67cd6725",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-05-51932ecb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Jardines"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "212349f784ec94df": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "861f6aaddb45f2e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "943d3bbacd758e93": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9431009fbbf3753": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c71e4a2aac",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5e67cd6725",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

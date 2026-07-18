@@ -1,0 +1,185 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0fd854acd6bd9c0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header confirms '376 U.S. 483 (1964)' STONER v. CALIFORNIA at /opinion/106777/ — official cite and case identity match the record's display and official selection.",
+          "Parallels (84 S.Ct. 889; 11 L.Ed.2d 856; 1964 U.S. LEXIS 1579) are cluster.citations[] metadata not present in the disclosed U.S.-reporter text, but the controlling official cite is verbatim-confirmed."
+        ],
+        "residual_risks": [
+          "Parallel/neutral cites not independently confirmable from the disclosed opinion text (cluster metadata only)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7653d1cedde46ad1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'only the petitioner could waive by word or deed, either directly or through an agent,' appears verbatim at 376 U.S. 489 (source: 'It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.').",
+          "Passage sits after the *489 star-pagination, so the pin-489 pincite is correct.",
+          "Payload 'quote_fidelity: mismatch' is a false positive (only a trailing comma vs. sentence period at the fragment boundary)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8be466d66eff8ca4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No less than a tenant of a house, or the occupant of a room in a boarding house, McDonald v. United States, 335 U. S. 451, a guest in a hotel room is entitled to constitutional protection against unreasonable searches and seizures. Johnson v. United States, 333 U. S. 10. That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.",
+          "locator_note": "Cached opinion *490 star (source paragraph); content page line ^pin-490.",
+          "needs_cl": false,
+          "problem": "Inventory payload 'quote' for pin-490 is an extraction artifact: it captured the content page's preceding section prose ('...Officers searched the room and seized eyeglasses, a jacket, and a pistol... ## Issue ... ## Rule No. A hotel guest enjoys full Fourth Amendment protection in the room.') rather than the opinion passage actually anchored at ^pin-490.",
+          "proposed_fix": "Re-anchor the inventory quote to the genuine pin-490 passage ('No less than a tenant of a house... That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.'), which is verbatim-faithful to 376 U.S. at 490 (page uses an ellipsis to elide the McDonald cite and elides the Johnson cite between sentences).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The genuine content-page quote at ^pin-490 is verbatim-faithful to 376 U.S. at 490 and correctly pincited; the defect is confined to the inventory's captured quote string, not the wiki page.",
+          "Page assertion survives; only the assertion record needs modification."
+        ],
+        "residual_risks": [
+          "If the payload quote is taken literally it will not match the opinion — re-anchor before any automated fidelity gate."
+        ],
+        "suggested_tightening": "Fix the extractor window so quote_pinpoint payloads capture the quoted passage at the anchor, not the preceding page prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "df89b1bc64fe04d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \"apparent authority.\"' appears verbatim at 376 U.S. 488 (source: 'Our decisions make clear that the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \"apparent authority.\"').",
+          "Passage follows the *488 star-pagination — pincite 488 correct.",
+          "Payload 'mismatch' is a false positive from the nested single-quote adaptation of \"apparent authority\"."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56fd72bd97861b58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed evidence is only the 1964 opinion; it confirms the substantive holding (a hotel clerk cannot consent to a current guest's room) but carries no citator/subsequent-treatment data, so 'good law as of 2026-06-30' cannot be affirmatively certified from disclosed evidence.",
+          "Nothing in the disclosed opinion contradicts good-law status; the scope-note's Illinois v. Rodriguez apparent-authority distinction is forward-looking and not verifiable here. Not refuted (no fabricated defect), not certified (currency uncheckable)."
+        ],
+        "residual_risks": [
+          "Treatment currency (2026) rests on citator data not inlined in this pack."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4df9ab86a5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9327b2468f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ee0f6b73f3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Stoner v. California.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-04-60d8039a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stoner v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0fd854acd6bd9c0d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "56fd72bd97861b58": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "7653d1cedde46ad1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8be466d66eff8ca4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "df89b1bc64fe04d7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4df9ab86a5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e534ddf08f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9327b2468f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ee0f6b73f3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

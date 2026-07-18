@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ba712695a3d20ea5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is the Kaupp v. Texas per curiam (2003), citing Brown v. Illinois 422 U.S. 590 and Hayes v. Florida; U.S.-Reports star-pagination labels 627-633 place the opinion body at 538 U.S. 626 et seq., consistent with the selected official cite 538 U.S. 626.",
+          "Parallel cites 123 S. Ct. 1843 / 155 L. Ed. 2d 814 and neutral 2003 U.S. LEXIS 3670 are internally consistent 2003-term reporters; official-selection present and set to the U.S. Reports cite."
+        ],
+        "residual_risks": [
+          "Specific parallel page numbers and the U.S. page 626 itself are not independently confirmable from the slip text (which carries only U.S. star-pagination 627-633); identity is fully confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "059931dd8c3f426e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (star p. 631): 'This evidence points to arrest even more starkly than the facts in Dunaway v. New York...' — the quoted fragment 'even more starkly than the facts in Dunaway' is verbatim; the page truncates at the case name and closes with a period (proper partial quote).",
+          "Pincite 631 correct: the phrase falls after the *631 star marker.",
+          "The lake's quote_fidelity='mismatch'/'slip-only' flag is a false positive here (slip-only pagination + italic/truncation normalization); the quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the pin-631 'mismatch' flag to 'match'; the fragment is verbatim to the slip opinion at star p. 631.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2fd2ed9908bf1b7a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (star p. 632, before the *633 marker): 'well-established precedent requires suppression of the confession unless that confession was “an act of free will [sufficient] to purge the primary taint of the unlawful invasion.”' — verbatim match including the bracketed '[sufficient]'.",
+          "Pincite 632-633 correct: the quote sits on 632; the Wong Sun cite it introduces (371 U.S. 471, 486) is at 633.",
+          "Build's 'mismatch'/'slip-only' flag is a false positive; the quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clear the pin-632 'mismatch' flag; quote is verbatim to slip opinion at star p. 632.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c00575b27f2a401",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "'Such involuntary transport to a police station for questioning is “sufficiently like arres[t] to invoke the traditional rule that arrests may constitutionally be made only on probable cause.”' (quoting Hayes v. Florida, 470 U.S. at 816)",
+          "locator_note": "lake pinpoints[].id=pin-630; cached slip opinion para b724-5 (star p. 630). Stored quote instead contains content-page Background prose + literal '## Issue'/'## Rule' Markdown headers.",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-630 is a corrupted harvest: it reproduces content-page Markdown (frontmatter '---'/'#'/'##' headers and/or Background-Issue-Rule narrative), which cannot appear in a court opinion. Independent check of the cached slip opinion shows the page's ACTUAL rendered pin-630 quote IS faithful and correctly pincited, so this is a lake pinpoint.quote harvest-field corruption, not a reader-facing error.",
+          "proposed_fix": "Re-harvest pinpoints[pin-630].quote to the page's real quote 'Such involuntary transport to a police station for questioning is “sufficiently like arres[t] to invoke the traditional rule that arrests may constitutionally be made only on probable cause.”' (quoting Hayes v. Florida, 470 U.S. at 816) which is verbatim in the slip opinion at star p. 630 (para b724-5).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains Markdown headers '## Issue'/'## Rule' plus content-page narrative ('handcuffed him, and took him — shoeless and in his underwear in January...'), which cannot be opinion text; the opinion actually reads 'The two officers then handcuffed Kaupp and led him, shoeless and dressed only in boxer shorts and a T-shirt...'.",
+          "Independent check: the page's real pin-630 quote (Hayes 'sufficiently like arres[t]') is verbatim at star p. 630, so reader-facing content is correct; only the harvested quote field is corrupt.",
+          "Same corruption pattern (first pinpoint in the Rule section captures a content-page span) recurs across records in this pack."
+        ],
+        "residual_risks": [
+          "Systemic: the same harvest-offset bug corrupts the first-Rule-section pinpoint quote in Kingsley (pin-397), Kisela (pin-1152/pin-1153), and Mathis (pin-4)."
+        ],
+        "suggested_tightening": "Fix the pinpoint-quote harvester offset so it captures the annotated opinion quote, not the preceding content-page Background/Issue/Rule span.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0e35d7b79613477b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' consistent with disclosed evidence: Kaupp is a 2003 SCOTUS per curiam and the disclosed treatment.edges are all lane1_negative candidates whose field_ii ('overruled'/'questioned'/'superseded_by_statute') describes the CITING case's own status with field_iii='mentioned' — none is a genuine negative-treatment edge against Kaupp.",
+          "scope_note accurately states the holding (per curiam application of Dunaway/Brown; 3 a.m. station-house removal without PC is an arrest; confession is fruit absent attenuation)."
+        ],
+        "residual_risks": [
+          "Good-law currency rests on the disclosed curated edges (no independent Shepardizing in-pack); no contrary evidence disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fe3398b3c7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8126936c20",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-14f156120c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Kaupp v. Texas.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-02-0e9b3484",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kaupp v. Texas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "059931dd8c3f426e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0e35d7b79613477b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2fd2ed9908bf1b7a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9c00575b27f2a401": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ba712695a3d20ea5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fe3398b3c7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8126936c20",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7d339d3055",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-14f156120c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

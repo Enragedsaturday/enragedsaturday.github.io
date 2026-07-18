@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "cdb7ba03edf59951",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (FOR PUBLICATION, Ninth Circuit, filed March 22, 2016, Opinion by Judge W. Fletcher) confirms United States v. Lundin exists and matches identity (cluster 3187682, lead opinion 3187625).",
+          "Official cite '817 F.3d 1151' is internally consistent (F.3d vol 817, 2016, 9th Cir.) and drawn from cluster.citations[]; not fabricated."
+        ],
+        "residual_risks": [
+          "Vendor-neutral cites '2016 WL 1104851' and '2016 U.S. App. LEXIS 5236' cannot be independently confirmed from the cached slip text, but they are cluster metadata and not an existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "071b3e0efc40cd75",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "First, unexpected visitors are customarily expected to knock on the front door of a home only during normal waking hours.",
+          "locator_note": "lake pinpoints[].id=pin-1159; cached opinion slip pp.12-13 (817 F.3d 1159)",
+          "needs_cl": false,
+          "problem": "Stored pin-1159 quote is a content-page harvest artifact, not verbatim opinion text: it splices the wiki-authored Issue paraphrase ('exception authorized officers to enter the curtilage and knock on the front door at 4:00 a.m. ... to justify a warrantless search.') into the Markdown heading '## Rule The knock-and-talk exception is'. No such passage exists in the opinion; the '## Rule' Markdown token is dispositive.",
+          "proposed_fix": "Repoint pin-1159.quote to the verbatim opinion sentence the content page already renders at ^pin-1159, e.g. 'unexpected visitors are customarily expected to knock on the front door of a home only during normal waking hours' (817 F.3d at 1159), or drop the stale quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains the literal Markdown token '## Rule' — impossible in opinion text.",
+          "The wording is the wiki Issue-section paraphrase; the opinion says 'encroach upon the curtilage of a home with the intent to arrest the occupant', not 'enter the curtilage and knock on the front door at 4:00 a.m.'.",
+          "Record self-flags quote_fidelity='mismatch', corroborating the defect.",
+          "Content page renders correct verbatim quotes at ^pin-1159, so no reader-facing error; defect is confined to the stored lake pinpoint quote."
+        ],
+        "residual_risks": [
+          "Same header/paraphrase harvest bug likely recurs on other migration-seed pinpoints (cf. MF pin-566)."
+        ],
+        "suggested_tightening": "Re-run the pinpoint harvester to store the verbatim court sentence rather than the content-page splice.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "077f643d38e8774d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (817 F.3d at 1160) reads 'the “knock and talk” exception depends at least in part on an officer’s subjective intent.' — the stored quote reproduces these words verbatim.",
+          "The record's quote_fidelity='mismatch' flag is a false positive from smart-quote/apostrophe normalization (opinion uses curly “ ’, stored uses straight) plus a terminal comma-for-period editorial splice on the content page."
+        ],
+        "residual_risks": [
+          "The content page changes the opinion's terminal period to a comma to splice the next clause; standard editorial practice, substance unchanged."
+        ],
+        "suggested_tightening": "Re-normalize the harvest flag to 'matched' (mismatch is a smart-quote false positive).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f5583953939cf92",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion reads 'Second, the scope of a license is often limited to a specific purpose, Jardines...' — the stored quote 'the scope of a license is often limited to a specific purpose,' (with trailing comma) is a verbatim substring.",
+          "Record flag quote_fidelity='matched' and the validated text-fragment are consistent with the cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61547c0e62963171",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note substance is verified against the cached opinion: the court holds the knock-and-talk implied license is bounded by time and purpose and that intent to arrest defeats the exception ('The “knock and talk” exception ... does not apply when officers encroach upon the curtilage of a home with the intent to arrest the occupant.').",
+          "Authoritative negative lane (lane1_negative, scotus/ca9) reviewed 5, proposed_negative_events 0, audit_needed false — no disclosed evidence contradicts good_law.",
+          "The lane2_top_cited field_ii='overruled'/'abrogated' labels (Staggers, Holmes, Esqueda, Hylton, Murchison) are proposed:true top-cited auto-artifacts, not adjudicated overrulings; French v. Merrill (1st Cir.) 'questioned' cannot overrule a 9th Cir. decision."
+        ],
+        "residual_risks": [
+          "The proposed lane2 negative-treatment labels are unadjudicated; a full currency confirmation of the sister-circuit 'questioned' edges would need CL, but none establishes a downgrade from disclosed evidence."
+        ],
+        "suggested_tightening": "Clear or adjudicate the proposed:true lane2 field_ii labels so they cannot be mistaken for confirmed negative treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-dedf8f329e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Lundin.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-04-c4898015",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Lundin"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "071b3e0efc40cd75": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "077f643d38e8774d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "61547c0e62963171": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f5583953939cf92": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cdb7ba03edf59951": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eeee387109",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dedf8f329e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,80 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mitchell v. Wisconsin.json",
+    "lens": "A",
+    "notes": "Reviewed all three rows in group_inventory.jsonl under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "70d3208d4faffe49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Mitchell v. Wisconsin, U.S. Supreme Court, decided 2019-06-27.",
+          "The displayed official citation 588 U.S. 840 and parallels 139 S. Ct. 2525 and 204 L. Ed. 2d 1040 match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fd4c17ad5babe55",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When police have probable cause to believe a person has committed a drunk-driving offense and the driver's unconsciousness or stupor requires him to be taken to the hospital or similar facility before police have a reasonable opportunity to administer a standard evidentiary breath test, they may almost always order a warrantless blood test to measure the driver's BAC without offending the Fourth Amendment.",
+          "locator_note": "text/Mitchell v. Wisconsin__810eab.txt paragraph p-58 contains the quoted sentence; the page label 2539 appears before it at p-54, and the next reporter page label is 2541 at p-70. Lake pinpoints[0].quote instead begins with the content-page header.",
+          "needs_cl": false,
+          "problem": "The pin-2539 payload/lake pinpoint quote is not the opinion quote; it is generated page-header/background text and the lake itself flags quote_fidelity as mismatch. The actual displayed Rule quote in content_page.md is present verbatim in the opinion text, but the quote-pinpoint record under review is wrong.",
+          "proposed_fix": "Replace pin-2539's stored quote with the actual first sentence of text paragraph p-58, set the reporter page/pin metadata to 139 S. Ct. 2539 or equivalent, and clear the mismatch only after exact quote normalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content-page Rule quote is character-faithful to text paragraph p-58.",
+          "The lake/group payload quote for pin-2539 is not character-faithful to the opinion text and does not contain the cited rule sentence.",
+          "The cited 139 S. Ct. 2539 location is supportable from the cached opinion text, but the stored pin quote/page fields are malformed."
+        ],
+        "residual_risks": [
+          "Do not remove the displayed Rule quote solely because the lake pin record is bad; the displayed quote itself is verified from the disclosed text."
+        ],
+        "suggested_tightening": "Store only the opinion sentence in the pinpoint quote field; keep page-title, treatment, and background prose out of pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e0def19a5104494",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload fields match the lake treatment fields: good_law, as_of_content 2019-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same plurality/concurrence scope note.",
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lens B should evaluate treatment/currency assertions, including any effect of the lake's proposed progeny edges and audit markers."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mitchell v. Wisconsin.json\",\"reviewed\":[{\"assertion_id\":\"70d3208d4faffe49\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Mitchell v. Wisconsin, U.S. Supreme Court, decided 2019-06-27.\",\"The displayed official citation 588 U.S. 840 and parallels 139 S. Ct. 2525 and 204 L. Ed. 2d 1040 match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7fd4c17ad5babe55\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-2539 payload/lake pinpoint quote is not the opinion quote; it is generated page-header/background text and the lake itself flags quote_fidelity as mismatch. The actual displayed Rule quote in content_page.md is present verbatim in the opinion text, but the quote-pinpoint record under review is wrong.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-2539's stored quote with the actual first sentence of text paragraph p-58, set the reporter page/pin metadata to 139 S. Ct. 2539 or equivalent, and clear the mismatch only after exact quote normalization.\",\"evidence_quote\":\"When police have probable cause to believe a person has committed a drunk-driving offense and the driver's unconsciousness or stupor requires him to be taken to the hospital or similar facility before police have a reasonable opportunity to administer a standard evidentiary breath test, they may almost always order a warrantless blood test to measure the driver's BAC without offending the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"text/Mitchell v. Wisconsin__810eab.txt paragraph p-58 contains the quoted sentence; the page label 2539 appears before it at p-54, and the next reporter page label is 2541 at p-70. Lake pinpoints[0].quote instead begins with the content-page header.\"},\"reasons\":[\"The content-page Rule quote is character-faithful to text paragraph p-58.\",\"The lake/group payload quote for pin-2539 is not character-faithful to the opinion text and does not contain the cited rule sentence.\",\"The cited 139 S. Ct. 2539 location is supportable from the cached opinion text, but the stored pin quote/page fields are malformed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Do not remove the displayed Rule quote solely because the lake pin record is bad; the displayed quote itself is verified from the disclosed text.\"],\"suggested_tightening\":\"Store only the opinion sentence in the pinpoint quote field; keep page-title, treatment, and background prose out of pinpoints.\"},{\"assertion_id\":\"7e0def19a5104494\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload fields match the lake treatment fields: good_law, as_of_content 2019-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same plurality/concurrence scope note.\",\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should evaluate treatment/currency assertions, including any effect of the lake's proposed progeny edges and audit markers.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all three rows in group_inventory.jsonl under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:57-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:16:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-abcb2b4b85",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-567c548b2a"
+    ],
     "group_id": "_overhaul2/lake/cases/Mitchell v. Wisconsin.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +83,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7a66f285.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Mitchell v. Wisconsin"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 467895,
+      "output": 7770,
+      "source": "codex-events",
+      "total": 475665
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 32.7
+    "verdict_map": {
+      "70d3208d4faffe49": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e0def19a5104494": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fd4c17ad5babe55": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-567c548b2a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-abcb2b4b85",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 154.4
   }
 }

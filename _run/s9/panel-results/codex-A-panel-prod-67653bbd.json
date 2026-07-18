@@ -1,13 +1,151 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Winston v. Lee.json",
+    "lens": "A",
+    "notes": "Treatment row recorded only for completeness; Lens A findings are limited to existence and quote/support fidelity from the disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "17ee1e6c28569471",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Winston v. Lee, U.S. Supreme Court, decided 1985-03-20.",
+          "The official citation 470 U.S. 753 and listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "447f2823d7c6bec9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "make the search “reasonable.”",
+          "locator_note": "pin-767; text page marker 767 contains the cited passage.",
+          "needs_cl": false,
+          "problem": "The quoted fragment is substantively from the page-767 passage, but it is not character-faithful because the opinion uses curly double quotation marks around reasonable, not ASCII single quotation marks.",
+          "proposed_fix": "Use exact opinion punctuation, or remove quotation marks and paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page-767 passage supports the proposition.",
+          "The pinpoint lands on the correct passage, but the verbatim quote is typographically altered."
+        ],
+        "residual_risks": [
+          "If the corpus normalizes punctuation, this may be cosmetic; under the stated character-fidelity rule, it still needs correction."
+        ],
+        "suggested_tightening": "Quote the full sentence beginning with “when the State seeks” if the surrounding paraphrase is not needed.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "53a8aeb995174196",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "would be “reasonable” under the terms of the Fourth Amendment to search",
+          "locator_note": "pin-766; the cited conclusion appears after the page-766 marker.",
+          "needs_cl": false,
+          "problem": "The quote elides a real phrase and changes the opinion's curly double quotation marks around reasonable to ASCII single quotation marks.",
+          "proposed_fix": "Use the exact text, including “reasonable” and the omitted phrase, or clearly retain a legally proper ellipsis with exact quote punctuation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion supports the conclusion that the Commonwealth failed to show the surgery would be reasonable.",
+          "The quoted wording is not character-faithful to the disclosed opinion text."
+        ],
+        "residual_risks": [
+          "The substantive proposition is sound; the defect is limited to quote fidelity."
+        ],
+        "suggested_tightening": "Prefer the full sentence from the opinion to avoid ellipsis fidelity issues.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f40005581672c53",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A compelled surgical intrusion into an individual’s body for evidence, however,",
+          "locator_note": "pin-759; actual opinion text is present in text/Winston v. Lee__817e94.txt.",
+          "needs_cl": false,
+          "problem": "The stored/payload quote for pin-759 is not an opinion quote at all; it is a harvested block of the built page header/background/rule text.",
+          "proposed_fix": "Replace the pin-759 quote with the actual opinion sentence from page 759, preserving exact punctuation, or remove the faulty pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with page markup and summary text, not the Supreme Court opinion.",
+          "The correct page-759 passage exists in the disclosed opinion text."
+        ],
+        "residual_risks": [
+          "The content-page rule quote is substantively supported, but this harvested pinpoint quote is unusable as verbatim authority."
+        ],
+        "suggested_tightening": "Use the exact page-759 opinion language rather than harvested page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b0cd20bc142752a1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "individual’s interests in privacy and security are weighed against society’s interests",
+          "locator_note": "pin-760; the sentence appears at the page-760 passage.",
+          "needs_cl": false,
+          "problem": "The quote tracks the correct sentence but changes curly apostrophes in individual’s and society’s to ASCII apostrophes.",
+          "proposed_fix": "Replace ASCII possessives with the opinion's exact curly apostrophes.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cited page supports the rule.",
+          "The quote is not character-faithful under a strict verbatim standard."
+        ],
+        "residual_risks": [
+          "Only typographic fidelity is affected."
+        ],
+        "suggested_tightening": "Use exact opinion punctuation in all quoted text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "09fe8ca780b89319",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "For inventory completeness only, the payload treatment fields match the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Treatment and currency should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Winston v. Lee.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"17ee1e6c28569471\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as Winston v. Lee, U.S. Supreme Court, decided 1985-03-20.\",\n        \"The official citation 470 U.S. 753 and listed parallel/vendor citations match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"447f2823d7c6bec9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment is substantively from the page-767 passage, but it is not character-faithful because the opinion uses curly double quotation marks around reasonable, not ASCII single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use exact opinion punctuation, or remove quotation marks and paraphrase.\",\n        \"evidence_quote\": \"make the search “reasonable.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-767; text page marker 767 contains the cited passage.\"\n      },\n      \"reasons\": [\n        \"The page-767 passage supports the proposition.\",\n        \"The pinpoint lands on the correct passage, but the verbatim quote is typographically altered.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus normalizes punctuation, this may be cosmetic; under the stated character-fidelity rule, it still needs correction.\"\n      ],\n      \"suggested_tightening\": \"Quote the full sentence beginning with “when the State seeks” if the surrounding paraphrase is not needed.\"\n    },\n    {\n      \"assertion_id\": \"53a8aeb995174196\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote elides a real phrase and changes the opinion's curly double quotation marks around reasonable to ASCII single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact text, including “reasonable” and the omitted phrase, or clearly retain a legally proper ellipsis with exact quote punctuation.\",\n        \"evidence_quote\": \"would be “reasonable” under the terms of the Fourth Amendment to search\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-766; the cited conclusion appears after the page-766 marker.\"\n      },\n      \"reasons\": [\n        \"The opinion supports the conclusion that the Commonwealth failed to show the surgery would be reasonable.\",\n        \"The quoted wording is not character-faithful to the disclosed opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The substantive proposition is sound; the defect is limited to quote fidelity.\"\n      ],\n      \"suggested_tightening\": \"Prefer the full sentence from the opinion to avoid ellipsis fidelity issues.\"\n    },\n    {\n      \"assertion_id\": \"8f40005581672c53\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored/payload quote for pin-759 is not an opinion quote at all; it is a harvested block of the built page header/background/rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-759 quote with the actual opinion sentence from page 759, preserving exact punctuation, or remove the faulty pinpoint quote.\",\n        \"evidence_quote\": \"A compelled surgical intrusion into an individual’s body for evidence, however,\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-759; actual opinion text is present in text/Winston v. Lee__817e94.txt.\"\n      },\n      \"reasons\": [\n        \"The payload begins with page markup and summary text, not the Supreme Court opinion.\",\n        \"The correct page-759 passage exists in the disclosed opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content-page rule quote is substantively supported, but this harvested pinpoint quote is unusable as verbatim authority.\"\n      ],\n      \"suggested_tightening\": \"Use the exact page-759 opinion language rather than harvested page content.\"\n    },\n    {\n      \"assertion_id\": \"b0cd20bc142752a1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote tracks the correct sentence but changes curly apostrophes in individual’s and society’s to ASCII apostrophes.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace ASCII possessives with the opinion's exact curly apostrophes.\",\n        \"evidence_quote\": \"individual’s interests in privacy and security are weighed against society’s interests\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-760; the sentence appears at the page-760 passage.\"\n      },\n      \"reasons\": [\n        \"The cited page supports the rule.\",\n        \"The quote is not character-faithful under a strict verbatim standard.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Only typographic fidelity is affected.\"\n      ],\n      \"suggested_tightening\": \"Use exact opinion punctuation in all quoted text.\"\n    },\n    {\n      \"assertion_id\": \"09fe8ca780b89319\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\n        \"For inventory completeness only, the payload treatment fields match the disclosed lake treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency should be reviewed by Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment row recorded only for completeness; Lens A findings are limited to existence and quote/support fidelity from the disclosed files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:35:37-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:13:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-35ed5f0c68",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-cb44f31155",
+      "F-S9-PR-04bcd67e96",
+      "F-S9-PR-28a1f2148e",
+      "F-S9-PR-6cd8ee8d3a"
+    ],
     "group_id": "_overhaul2/lake/cases/Winston v. Lee.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +154,85 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-67653bbd.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Winston v. Lee"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 250713,
+      "output": 8306,
+      "source": "codex-events",
+      "total": 259019
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "09fe8ca780b89319": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "17ee1e6c28569471": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "447f2823d7c6bec9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "53a8aeb995174196": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8f40005581672c53": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b0cd20bc142752a1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cb44f31155",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-04bcd67e96",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-28a1f2148e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6cd8ee8d3a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-35ed5f0c68",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 162.7
   }
 }

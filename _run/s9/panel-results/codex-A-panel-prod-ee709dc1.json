@@ -1,13 +1,142 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Crews.json",
+    "lens": "A",
+    "notes": "Reviewed all six inventory rows using only disclosed local files. Treatment/currency was recorded but not substantively assessed under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "64416a9ae950d1ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Crews, U.S. Supreme Court, decided 1980-03-25.",
+          "The lake official citation is 445 U.S. 463, matching the content page display citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38a91ef9bc1d140d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "not traceable to any Fourth Amendment violation.",
+          "locator_note": "pin-472 / 445 U.S. at 472",
+          "needs_cl": false,
+          "problem": "The quoted fragment changes the source punctuation: the opinion ends the phrase with a period, not the comma used in the page quote.",
+          "proposed_fix": "Use the exact source punctuation or move punctuation outside the quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the same words at page 472, but with a terminal period.",
+          "The lake pin record itself marks this quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported; the defect is quote fidelity."
+        ],
+        "suggested_tightening": "Quote the complete sentence exactly or paraphrase the point.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9acfa5ae99233539",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase appears verbatim in the cached opinion text.",
+          "The lake pin record marks pin-474 as star-verified at 474 and quote_fidelity as matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4a99a60e63d2561",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "victim’s capacity to identify her assailant",
+          "locator_note": "pin-473 / 445 U.S. at 473",
+          "needs_cl": false,
+          "problem": "The quoted text normalizes the opinion's typographic apostrophe in 'victim’s' to ASCII 'victim's', so it is not character-faithful.",
+          "proposed_fix": "Replace the apostrophe with the exact character from the cached opinion text, or paraphrase instead of quoting.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text supports the proposition at page 473.",
+          "The lake pin record marks this quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The defect is typographic quote fidelity, not substantive support."
+        ],
+        "suggested_tightening": "Use exact source typography for all verbatim quotations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b84d776364e617f7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A ,victim’s in-court identification",
+          "locator_note": "pin-471 / purported 445 U.S. at 471",
+          "needs_cl": false,
+          "problem": "The pin-471 quote is not an opinion quote; it is a pasted block from the built page, including markdown heading, background, issue, and rule text.",
+          "proposed_fix": "Rebuild pin-471 from the cached opinion text at page 471 and remove built-page markdown from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with built-page material rather than opinion text.",
+          "The actual cached opinion text at page 471 contains the three-elements analysis, not the page header/background block.",
+          "The lake pin record marks this quote_fidelity as mismatch and slip-only."
+        ],
+        "residual_risks": [
+          "The underlying three-elements proposition appears supported, but the quote pinpoint record is corrupted."
+        ],
+        "suggested_tightening": "Quote only exact opinion language from page 471, or paraphrase the three elements and keep only the exact Wong Sun phrase in quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60ef1600af844c2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields mirror the lake treatment fields.",
+          "Treatment currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lens B must assess the good-law and currency judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Crews.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"64416a9ae950d1ae\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names United States v. Crews, U.S. Supreme Court, decided 1980-03-25.\",\n        \"The lake official citation is 445 U.S. 463, matching the content page display citation and year.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"38a91ef9bc1d140d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment changes the source punctuation: the opinion ends the phrase with a period, not the comma used in the page quote.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact source punctuation or move punctuation outside the quotation.\",\n        \"evidence_quote\": \"not traceable to any Fourth Amendment violation.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-472 / 445 U.S. at 472\"\n      },\n      \"reasons\": [\n        \"The cached opinion text contains the same words at page 472, but with a terminal period.\",\n        \"The lake pin record itself marks this quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal proposition is supported; the defect is quote fidelity.\"\n      ],\n      \"suggested_tightening\": \"Quote the complete sentence exactly or paraphrase the point.\"\n    },\n    {\n      \"assertion_id\": \"9acfa5ae99233539\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted phrase appears verbatim in the cached opinion text.\",\n        \"The lake pin record marks pin-474 as star-verified at 474 and quote_fidelity as matched.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a4a99a60e63d2561\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted text normalizes the opinion's typographic apostrophe in 'victim’s' to ASCII 'victim's', so it is not character-faithful.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace the apostrophe with the exact character from the cached opinion text, or paraphrase instead of quoting.\",\n        \"evidence_quote\": \"victim’s capacity to identify her assailant\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-473 / 445 U.S. at 473\"\n      },\n      \"reasons\": [\n        \"The cached opinion text supports the proposition at page 473.\",\n        \"The lake pin record marks this quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The defect is typographic quote fidelity, not substantive support.\"\n      ],\n      \"suggested_tightening\": \"Use exact source typography for all verbatim quotations.\"\n    },\n    {\n      \"assertion_id\": \"b84d776364e617f7\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-471 quote is not an opinion quote; it is a pasted block from the built page, including markdown heading, background, issue, and rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Rebuild pin-471 from the cached opinion text at page 471 and remove built-page markdown from the pinpoint quote.\",\n        \"evidence_quote\": \"A ,victim’s in-court identification\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-471 / purported 445 U.S. at 471\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote begins with built-page material rather than opinion text.\",\n        \"The actual cached opinion text at page 471 contains the three-elements analysis, not the page header/background block.\",\n        \"The lake pin record marks this quote_fidelity as mismatch and slip-only.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The underlying three-elements proposition appears supported, but the quote pinpoint record is corrupted.\"\n      ],\n      \"suggested_tightening\": \"Quote only exact opinion language from page 471, or paraphrase the three elements and keep only the exact Wong Sun phrase in quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"60ef1600af844c2e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page treatment fields mirror the lake treatment fields.\",\n        \"Treatment currency is outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B must assess the good-law and currency judgment.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all six inventory rows using only disclosed local files. Treatment/currency was recorded but not substantively assessed under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:30:59-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:52:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-320ed03913",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-94a6a34890",
+      "F-S9-PR-21cab6f09a",
+      "F-S9-PR-5c3b4bc517"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Crews.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +145,81 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ee709dc1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Crews"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 233272,
+      "output": 9708,
+      "source": "codex-events",
+      "total": 242980
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.7
+    "verdict_map": {
+      "38a91ef9bc1d140d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "60ef1600af844c2e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "64416a9ae950d1ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9acfa5ae99233539": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4a99a60e63d2561": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b84d776364e617f7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-94a6a34890",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-21cab6f09a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5c3b4bc517",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-320ed03913",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 191.7
   }
 }

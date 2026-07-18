@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Moran v. Burbine.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "31b4d5bbdb1056ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Moran v. Burbine, U.S. Supreme Court, decided 1986-03-10, year 1986.",
+          "The official citation 475 U.S. 412 and the listed parallel/vendor citations match the lake citation fields and the built page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0194f58f584f8a82",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Moran v. Burbine *475 U.S. 412 (1986)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[0] / group_inventory pin-421; correct passage is in text/Moran v. Burbine__8e8106.txt at the 421 waiver-standard paragraph.",
+          "needs_cl": false,
+          "problem": "pin-421's stored pinpoint quote is not the opinion's waiver-standard quotation; it is a markdown/content-page preamble and the lake record itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-421 with the actual opinion passage beginning \"First, the relinquishment of the right...\" and ending \"...the consequences of the decision to abandon it.\" Then validate it at star page 421.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote for pin-421 begins with page metadata and background text, not the opinion text attributed to 475 U.S. at 421.",
+          "The actual opinion text contains the quoted two-dimensional waiver standard at the 421 passage, so the built-page quote is supportable but the stored pinpoint object is defective."
+        ],
+        "residual_risks": [
+          "The content-page quote itself appears character-faithful; the defect is the associated pin-421 lake/inventory quote record."
+        ],
+        "suggested_tightening": "Reject generated pinpoints whose quote begins with markdown frontmatter, page headers, or section headings instead of cached opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e3b6c7f0d3fcd3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text.",
+          "The lake record marks pin-422 as quote_fidelity matched, star_marker 422, and star-verified; the built page uses the same quotation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5cf9cf80d0d4d195",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I did not raise a treatment finding.",
+          "The payload's field_i_validity, as_of dates, varies_by_point value, and scope_note match the lake treatment fields and the built page treatment fields."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Moran v. Burbine.json\",\"reviewed\":[{\"assertion_id\":\"31b4d5bbdb1056ea\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Moran v. Burbine, U.S. Supreme Court, decided 1986-03-10, year 1986.\",\"The official citation 475 U.S. 412 and the listed parallel/vendor citations match the lake citation fields and the built page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0194f58f584f8a82\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-421's stored pinpoint quote is not the opinion's waiver-standard quotation; it is a markdown/content-page preamble and the lake record itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-421 with the actual opinion passage beginning \\\"First, the relinquishment of the right...\\\" and ending \\\"...the consequences of the decision to abandon it.\\\" Then validate it at star page 421.\",\"evidence_quote\":\"--- # Moran v. Burbine *475 U.S. 412 (1986)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] / group_inventory pin-421; correct passage is in text/Moran v. Burbine__8e8106.txt at the 421 waiver-standard paragraph.\"},\"reasons\":[\"The inventory/lake quote for pin-421 begins with page metadata and background text, not the opinion text attributed to 475 U.S. at 421.\",\"The actual opinion text contains the quoted two-dimensional waiver standard at the 421 passage, so the built-page quote is supportable but the stored pinpoint object is defective.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page quote itself appears character-faithful; the defect is the associated pin-421 lake/inventory quote record.\"],\"suggested_tightening\":\"Reject generated pinpoints whose quote begins with markdown frontmatter, page headers, or section headings instead of cached opinion text.\"},{\"assertion_id\":\"2e3b6c7f0d3fcd3d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text.\",\"The lake record marks pin-422 as quote_fidelity matched, star_marker 422, and star-verified; the built page uses the same quotation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5cf9cf80d0d4d195\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I did not raise a treatment finding.\",\"The payload's field_i_validity, as_of dates, varies_by_point value, and scope_note match the lake treatment fields and the built page treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currency review remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:17:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0b1f88ee42"
+    ],
     "group_id": "_overhaul2/lake/cases/Moran v. Burbine.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d4509474.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Moran v. Burbine"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 443830,
+      "output": 7980,
+      "source": "codex-events",
+      "total": 451810
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "0194f58f584f8a82": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2e3b6c7f0d3fcd3d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "31b4d5bbdb1056ea": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5cf9cf80d0d4d195": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b1f88ee42",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 170.1
   }
 }

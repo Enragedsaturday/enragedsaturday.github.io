@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Messerschmidt v. Millender.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "3427a77c06ed5bb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Messerschmidt v. Millender, U.S. Supreme Court, decided 2012-02-22, docket 10-704.",
+          "The displayed official citation 565 U.S. 535 matches the lake official citation, and the parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834dd05db0a40ade",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.",
+          "locator_note": "content_page.md Rule paragraph; text opinion lines around the objective-reasonableness discussion",
+          "needs_cl": false,
+          "problem": "The stored pin-547 quote is not a character-faithful quote from the opinion. It is harvested page prose spanning Background, Issue, and Rule text, with markdown headings and formatting, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-547's stored quote with the actual quoted sentence used on the page, or split the page prose from the verbatim quotation. The faithful quotation is: \"the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry for pin-547 stores page-authored prose beginning \"and fired at her as she fled\" rather than the opinion quotation attached to the pin.",
+          "The actual opinion contains the neutral-magistrate sentence, but that is not what the pin-547 lake quote stores."
+        ],
+        "residual_risks": [
+          "Official U.S. page 547 is not independently paginated in the disclosed slip-text cache; the lake marks this pin as slip-only."
+        ],
+        "suggested_tightening": "Store only the quoted sentence in pin-547 and keep surrounding explanatory prose outside the quote-fidelity record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4fd95e2545900f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase matches the lake pinpoints[].quote for pin-547b exactly.",
+          "The cached opinion text contains the same quoted Leon formulation, line-wrapped across the page break, and the lake marks this pinpoint as matched with a validated fragment."
+        ],
+        "residual_risks": [
+          "The same paragraph contains a second quotation about the high threshold; that quotation is not separately represented in this inventory row."
+        ],
+        "suggested_tightening": "Add a separate quote/pin record for the adjacent \"threshold\" quotation if the corpus requires one row per verbatim quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ef42894b2b66197",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2012-02-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Messerschmidt v. Millender.json\",\"reviewed\":[{\"assertion_id\":\"3427a77c06ed5bb7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Messerschmidt v. Millender, U.S. Supreme Court, decided 2012-02-22, docket 10-704.\",\"The displayed official citation 565 U.S. 535 matches the lake official citation, and the parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"834dd05db0a40ade\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-547 quote is not a character-faithful quote from the opinion. It is harvested page prose spanning Background, Issue, and Rule text, with markdown headings and formatting, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-547's stored quote with the actual quoted sentence used on the page, or split the page prose from the verbatim quotation. The faithful quotation is: \\\"the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.\\\"\",\"evidence_quote\":\"the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.\",\"needs_cl\":false,\"locator_note\":\"content_page.md Rule paragraph; text opinion lines around the objective-reasonableness discussion\"},\"reasons\":[\"The lake pinpoints entry for pin-547 stores page-authored prose beginning \\\"and fired at her as she fled\\\" rather than the opinion quotation attached to the pin.\",\"The actual opinion contains the neutral-magistrate sentence, but that is not what the pin-547 lake quote stores.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 547 is not independently paginated in the disclosed slip-text cache; the lake marks this pin as slip-only.\"],\"suggested_tightening\":\"Store only the quoted sentence in pin-547 and keep surrounding explanatory prose outside the quote-fidelity record.\"},{\"assertion_id\":\"a4fd95e2545900f9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase matches the lake pinpoints[].quote for pin-547b exactly.\",\"The cached opinion text contains the same quoted Leon formulation, line-wrapped across the page break, and the lake marks this pinpoint as matched with a validated fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The same paragraph contains a second quotation about the high threshold; that quotation is not separately represented in this inventory row.\"],\"suggested_tightening\":\"Add a separate quote/pin record for the adjacent \\\"threshold\\\" quotation if the corpus requires one row per verbatim quote.\"},{\"assertion_id\":\"8ef42894b2b66197\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2012-02-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:30:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:09:53-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1d9bd62d12"
+    ],
     "group_id": "_overhaul2/lake/cases/Messerschmidt v. Millender.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-538529da",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-538529da.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:29:56.206379Z ERROR codex_models_manager::manager: failed to refresh available models: exceeded retry limit, last status: 429 Too Many Requests, request id: 41ded747-701c-46d0-9791-2953c093c331\n2026-07-10T22:29:57.995071Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:58.833898Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:59.543470Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:00.584556Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:01.872444Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Messerschmidt v. Millender"
+    ],
+    "tokens": {
+      "input": 271772,
+      "output": 7820,
+      "source": "codex-events",
+      "total": 279592
+    },
+    "verdict_map": {
+      "3427a77c06ed5bb7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834dd05db0a40ade": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8ef42894b2b66197": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4fd95e2545900f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1d9bd62d12",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 154.2
   }
 }

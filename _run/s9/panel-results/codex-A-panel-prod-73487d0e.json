@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Walter v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "0b8460077a1da25d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Walter v. United States, U.S. Supreme Court, decided 1980-06-20, year 1980.",
+          "The asserted official citation 447 U.S. 649 and parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e957c991aec8af8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted projection sentence appears verbatim in text/Walter v. United States__498128.txt.",
+          "The lake pin-654 record carries the same quote with quote_fidelity matched, pinpoint_status star-verified, and star_marker 657."
+        ],
+        "residual_risks": [
+          "The pin id is named pin-654 while the payload star marker is 657; this does not break this quote-fidelity assertion."
+        ],
+        "suggested_tightening": "Use the displayed reporter page rather than the opaque pin id when rendering or auditing this quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70747561b8153f9e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "surely the Government may not exceed the scope of the private search unless it has the right to make an independent search.",
+          "locator_note": "pin-657",
+          "needs_cl": false,
+          "problem": "The reviewed pin-657 quote is not a verbatim opinion passage; it is page/frontmatter prose from content_page, and the lake itself marks it quote_fidelity mismatch with no star marker or fragment.",
+          "proposed_fix": "Replace pin-657 with the actual page-657 opinion passage supporting the rule, and validate a star_marker/fragment before using it as a quote pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with markdown/header material, not the opinion text.",
+          "The opinion text contains the rule sentence at the page-657 paragraph, but the lake pin-657 entry has quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and fragment null."
+        ],
+        "residual_risks": [
+          "The content page's displayed rule quote is substantively present in the opinion, but this pinpoint record does not verify it as stored."
+        ],
+        "suggested_tightening": "Tie pin-657 directly to the opinion sentence beginning with the Government scope-limit language.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f2e8db1e57132dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match lake.treatment for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "No treatment/currency merits finding is raised under lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Walter v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0b8460077a1da25d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Walter v. United States, U.S. Supreme Court, decided 1980-06-20, year 1980.\",\n        \"The asserted official citation 447 U.S. 649 and parallel/vendor citations match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4e957c991aec8af8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted projection sentence appears verbatim in text/Walter v. United States__498128.txt.\",\n        \"The lake pin-654 record carries the same quote with quote_fidelity matched, pinpoint_status star-verified, and star_marker 657.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The pin id is named pin-654 while the payload star marker is 657; this does not break this quote-fidelity assertion.\"\n      ],\n      \"suggested_tightening\": \"Use the displayed reporter page rather than the opaque pin id when rendering or auditing this quote.\"\n    },\n    {\n      \"assertion_id\": \"70747561b8153f9e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The reviewed pin-657 quote is not a verbatim opinion passage; it is page/frontmatter prose from content_page, and the lake itself marks it quote_fidelity mismatch with no star marker or fragment.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-657 with the actual page-657 opinion passage supporting the rule, and validate a star_marker/fragment before using it as a quote pinpoint.\",\n        \"evidence_quote\": \"surely the Government may not exceed the scope of the private search unless it has the right to make an independent search.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-657\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with markdown/header material, not the opinion text.\",\n        \"The opinion text contains the rule sentence at the page-657 paragraph, but the lake pin-657 entry has quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and fragment null.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content page's displayed rule quote is substantively present in the opinion, but this pinpoint record does not verify it as stored.\"\n      ],\n      \"suggested_tightening\": \"Tie pin-657 directly to the opinion sentence beginning with the Government scope-limit language.\"\n    },\n    {\n      \"assertion_id\": \"0f2e8db1e57132dc\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload treatment fields match lake.treatment for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\n        \"No treatment/currency merits finding is raised under lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency merits are reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl under lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:35:17-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:11:49-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ac8ea22dbf",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ca6423ce5b"
+    ],
     "group_id": "_overhaul2/lake/cases/Walter v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-73487d0e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-73487d0e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:09.284940Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:10.129606Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:11.422244Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:13.551428Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:17.169507Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Walter v. United States"
+    ],
+    "tokens": {
+      "input": 241771,
+      "output": 8967,
+      "source": "codex-events",
+      "total": 250738
+    },
+    "verdict_map": {
+      "0b8460077a1da25d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0f2e8db1e57132dc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4e957c991aec8af8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70747561b8153f9e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ca6423ce5b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ac8ea22dbf",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 180.3
   }
 }

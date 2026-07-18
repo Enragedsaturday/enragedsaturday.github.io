@@ -1,0 +1,147 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "52587985ce86f6cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads '442 U.S. 735 (1979)', 'No. 78-5374', 'Decided June 20, 1979', matching official cite / docket / date.",
+          "citations.official 442 U.S. 735 (type 1, selected_official true; official_selection_present true); parallels 99 S. Ct. 2577 / 61 L. Ed. 2d 220 and vendor-neutral 1979 U.S. LEXIS 134 match frontmatter.",
+          "cluster_id 110118; identity expected_citation_found true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aeafac42fd206803",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-744 quote 'When he used his phone, petitioner voluntarily conveyed numerical information to the telephone company and \"exposed\" that information to its equipment in the ordinary course of business. In so doing, petitioner assumed the risk that the company would reveal to police the numbers he dialed.' is verbatim in the cached opinion (single vs double quotes on 'exposed' is a typographic normalization).",
+          "Pincite 'Id. at 744' correct: the sentence sits between the '*744' and '*745' star-pagination markers.",
+          "Lake flags quote_fidelity 'mismatch' although the stored quote IS the real quotation and matches - false positive (likely quote-mark/whitespace normalization)."
+        ],
+        "residual_risks": [
+          "Fidelity checker false-positived 'mismatch' on a verbatim quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e4b534deb249fbcb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page pin-743 quotation 'This Court consistently has held that a person has no legitimate expectation of privacy in information he voluntarily turns over to third parties.' is verbatim in the cached opinion (the '*744' marker falls inside this sentence at 'he [*744] voluntarily turns over').",
+          "Pincite '442 U.S. at 743-744' correct: the sentence spans pp.743-744 (begins after '*743'; 'voluntarily' onward on 744).",
+          "The lake pinpoints[] pin-743 'quote' is a garbled harvest artifact (page Issue/Rule prose 'within the meaning of the Fourth Amendment. ## Rule No. A caller has no legitimate expectation...'), which triggered 'mismatch' - not a defect in the page's actual quotation."
+        ],
+        "residual_risks": [
+          "Repair lake pin-743 harvested quote to the real quotation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f35c04ab66db271d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields (good_law; as_of_content 1979-06-20; as_of_treatment 2026-06-30; varies_by_point false; scope_note) match the lake treatment block.",
+          "scope_note is substantively sound: Smith v. Maryland is the foundational third-party-doctrine/pen-register case and remains good law; Carpenter v. United States (2018) declined to extend the third-party doctrine to CSLI but did not overrule Smith - a correct statement of current law.",
+          "All treatment edges proposed:true (unratified); no ratified downgrade."
+        ],
+        "residual_risks": [
+          "good_law is migration-seed, not freshly re-derived; as_of_content 1979-06-20 is stale."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-735b85571f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-64e646513e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Smith v. Maryland.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-03-9789bb21",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Smith v. Maryland"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "52587985ce86f6cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aeafac42fd206803": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e4b534deb249fbcb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f35c04ab66db271d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-735b85571f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-64e646513e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

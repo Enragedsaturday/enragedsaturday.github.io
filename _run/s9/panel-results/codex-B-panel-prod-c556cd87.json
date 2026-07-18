@@ -1,22 +1,139 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pincite merits were not substantively reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "59388489bc2f6897",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status verified for Missouri v. McNeely.",
+          "The cited authority is identified as U.S. Supreme Court, decided 2013-04-17, with cluster_id 858288 and lead_opinion_id 858288.",
+          "The citation list in the assertion matches the lake record's citations.all entries, including 569 U.S. 141, 133 S. Ct. 1552, and 185 L. Ed. 2d 696.",
+          "For the currency angle, the lake treatment field_i_validity is good_law."
+        ],
+        "residual_risks": [
+          "The lake record has official=null and official_selection.selected=null, but that is a citation-display issue rather than a live-law defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92460c55b0b57168",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity assertion; lens B does not raise support or quote-fidelity findings.",
+          "No independent currency or treatment defect is created by this quote-fidelity row."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for lens A; this verdict should not be read as approving the harvested quote."
+        ],
+        "suggested_tightening": "Route the quote_fidelity=mismatch issue to lens A; no B-lens tightening.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3f95c39e570438c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Missouri v. McNeely__8aec18.json treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law status survives, but the page's unqualified 'No negative treatment' prose is too strong against the disclosed treatment record. The lake field says good_law, and all listed progeny treatment edges are proposed with field_iii='mentioned', but the treatment derivation also carries audit-needed flags and proposed negative events, so the page should caveat that no accepted negative treatment is shown in this record.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace 'No negative treatment' with 'No accepted negative treatment shown in the disclosed lake record; treatment derivation includes unresolved audit flags/proposed negative events.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is good_law as of 2026-06-30, matching the content page status.",
+          "The lake identity court_level is scotus, supporting the Binding — SCOTUS weight label.",
+          "No accepted edge in the disclosed record shows McNeely itself overruled, abrogated, superseded, or limited; the edges are proposed and have field_iii='mentioned'.",
+          "The derivation metadata still says audit_needed=true for lane1_negative and lane2_top_cited and records proposed negative events, making the visible 'No negative treatment' sentence overbroad without a caveat."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could downgrade or add point-specific treatment, but that is not established by the disclosed record."
+        ],
+        "suggested_tightening": "Say 'No accepted negative treatment shown in this record' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Missouri v. McNeely.json\",\"reviewed\":[{\"assertion_id\":\"59388489bc2f6897\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub and has status verified for Missouri v. McNeely.\",\"The cited authority is identified as U.S. Supreme Court, decided 2013-04-17, with cluster_id 858288 and lead_opinion_id 858288.\",\"The citation list in the assertion matches the lake record's citations.all entries, including 569 U.S. 141, 133 S. Ct. 1552, and 185 L. Ed. 2d 696.\",\"For the currency angle, the lake treatment field_i_validity is good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has official=null and official_selection.selected=null, but that is a citation-display issue rather than a live-law defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"92460c55b0b57168\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is a quote-fidelity assertion; lens B does not raise support or quote-fidelity findings.\",\"No independent currency or treatment defect is created by this quote-fidelity row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy remain for lens A; this verdict should not be read as approving the harvested quote.\"],\"suggested_tightening\":\"Route the quote_fidelity=mismatch issue to lens A; no B-lens tightening.\"},{\"assertion_id\":\"f3f95c39e570438c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status survives, but the page's unqualified 'No negative treatment' prose is too strong against the disclosed treatment record. The lake field says good_law, and all listed progeny treatment edges are proposed with field_iii='mentioned', but the treatment derivation also carries audit-needed flags and proposed negative events, so the page should caveat that no accepted negative treatment is shown in this record.\",\"severity\":\"low\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 and Binding — SCOTUS, but replace 'No negative treatment' with 'No accepted negative treatment shown in the disclosed lake record; treatment derivation includes unresolved audit flags/proposed negative events.'\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Missouri v. McNeely__8aec18.json treatment.derivation\"},\"reasons\":[\"The lake treatment field_i_validity is good_law as of 2026-06-30, matching the content page status.\",\"The lake identity court_level is scotus, supporting the Binding — SCOTUS weight label.\",\"No accepted edge in the disclosed record shows McNeely itself overruled, abrogated, superseded, or limited; the edges are proposed and have field_iii='mentioned'.\",\"The derivation metadata still says audit_needed=true for lane1_negative and lane2_top_cited and records proposed negative events, making the visible 'No negative treatment' sentence overbroad without a caveat.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could downgrade or add point-specific treatment, but that is not established by the disclosed record.\"],\"suggested_tightening\":\"Say 'No accepted negative treatment shown in this record' instead of 'No negative treatment.'\"}],\"notes\":\"Lens B only; support, quote fidelity, and pincite merits were not substantively reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:00-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:16:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-00ecd0df8d",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-cdd49f2a2e"
+    ],
     "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c556cd87",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c556cd87.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:50.755914Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:51.746031Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:52.618069Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:53.869694Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:56.109591Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:59.890172Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Missouri v. McNeely"
+    ],
+    "tokens": {
+      "input": 332702,
+      "output": 8488,
+      "source": "codex-events",
+      "total": 341190
+    },
+    "verdict_map": {
+      "59388489bc2f6897": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92460c55b0b57168": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3f95c39e570438c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-00ecd0df8d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cdd49f2a2e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 167.1
   }
 }

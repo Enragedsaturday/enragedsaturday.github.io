@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2a9bb046a129f73f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the Patterson majority (White, J.); facts (Vice Lords gang, murder of James Jackson, Illinois Supreme Court applying People v. Thomas), cert granted 484 U.S. 895 (1987), and star markers 288-300 (vol 487 U.S.) corroborate Patterson v. Illinois, 487 U.S. 285 (1988).",
+          "date_decided 1988-06-24, official_selection_present=true; parallel/neutral cites internally consistent."
+        ],
+        "residual_risks": [
+          "Exact first page '285' is not printed in the disclosed excerpt (it starts mid-opinion); volume corroboration is strong.",
+          "Frontmatter docket is empty ('') but this does not affect the cite's existence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "380c532adfa5596d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As a general matter, then, an accused who is admonished with the warnings prescribed by this Court in Miranda, 384 U. S., at 479, has been sufficiently apprised of the nature of his Sixth Amendment rights, and of the consequences of abandoning those rights, so that his waiver on this basis will be considered a knowing and intelligent one.",
+          "locator_note": "Cached opinion paragraph b348-4, immediately after the '*296' star; content page ^pin-296.",
+          "needs_cl": false,
+          "problem": "Recorded pin-296 quote is a mis-harvested page front-matter/Background/Issue blob ('--- # Patterson ... ## Rule Yes.'), not opinion text, so quote_fidelity='mismatch' is a harvester artifact. The sentence the page actually quotes at ^pin-296 is verbatim in the opinion at page 296.",
+          "proposed_fix": "Re-point the recorded pin-296 quote to the page's actual ^pin-296 sentence ('As a general matter, then, an accused who is admonished with the warnings prescribed by this Court in Miranda ... a knowing and intelligent one.'), which sits right after the '*296' star; clear the false mismatch flag.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-296 quote matches the opinion verbatim (the page's ' . . . ' correctly elides the internal '384 U. S., at 479' cite) and is on page 296, so pincite '487 U.S. at 296' is correct.",
+          "Only the recorded pinpoint-quote string is defective; the published quotation is faithful."
+        ],
+        "residual_risks": [
+          "Verbatim-trusting the recorded pin quote would surface a spurious misquote; the rendered page is clean."
+        ],
+        "suggested_tightening": "Anchor the harvester on the quoted-sentence span rather than the preceding page structure.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6dcf9084a24973f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Internally consistent: as_of_content=1988-06-24 equals the decision date, field_i_validity=good_law, varies_by_point=false.",
+          "Current good-law status is not independently confirmable from the disclosed 1988 opinion; all disclosed negative edges are proposed=true (unadjudicated, several facially spurious e.g. Iowa v. Tovar 'criticized', Kansas v. Ventris 'questioned'), so there is no disclosed adjudicated contrary treatment; refuting good_law would fabricate a defect."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed; scope_note warns S2 may downgrade. The content page's narrative that Montejo left Patterson's waiver rule intact is plausible but not verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": "Run S2 treatment re-derivation to adjudicate the proposed edges and replace the seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-878ace1110",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-01-9c66ae45",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Patterson v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2a9bb046a129f73f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "380c532adfa5596d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e6dcf9084a24973f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4b1b139a3f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-878ace1110",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

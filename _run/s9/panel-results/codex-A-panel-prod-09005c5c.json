@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/morse-v-french--6536632.json",
+    "lens": "A",
+    "notes": "No support, quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; no text/<case>.txt or content_page.* file was disclosed.",
+    "reviewed": [
+      {
+        "assertion_id": "cbb97c137adafe72",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"case_name\": \"French v. Morse\",",
+          "locator_note": "lake identity.case_name, identity.input_case_name, identity.canonical_name_match, status, stub, and provenance.warnings",
+          "needs_cl": true,
+          "problem": "The citation string itself matches the lake record, but the cited record is not a clean standalone Morse v. French authority: the lake canonical identity is French v. Morse, the input name Morse v. French has canonical_name_match false, and the record is a folded-alias stub.",
+          "proposed_fix": "If the page displays a case name with this citation, use the lake canonical name French v. Morse and resolve the folded alias before treating it as a fully promoted authority; the bare citation 68 Mass. 111 may remain.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The payload's official citation 68 Mass. 111 matches lake.citations.official.cite and lake.citations.display.",
+          "The lake identity gives the canonical case name as French v. Morse, while the input case name is Morse v. French and canonical_name_match is false.",
+          "The lake record is marked stub and folded-alias, with a provenance warning that it was subsumed elsewhere."
+        ],
+        "residual_risks": [
+          "The lake record has no date_decided, year, court_id, or opinion text, so court/year identity cannot be independently checked from this packet."
+        ],
+        "suggested_tightening": "Treat this as French v. Morse, 68 Mass. 111, only after alias resolution; avoid presenting Morse v. French as canonical.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac2f42ef043ba296",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "Lens A does not assess treatment or currency, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B; this review does not validate good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/morse-v-french--6536632.json\",\"reviewed\":[{\"assertion_id\":\"cbb97c137adafe72\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The citation string itself matches the lake record, but the cited record is not a clean standalone Morse v. French authority: the lake canonical identity is French v. Morse, the input name Morse v. French has canonical_name_match false, and the record is a folded-alias stub.\",\"severity\":\"medium\",\"proposed_fix\":\"If the page displays a case name with this citation, use the lake canonical name French v. Morse and resolve the folded alias before treating it as a fully promoted authority; the bare citation 68 Mass. 111 may remain.\",\"evidence_quote\":\"\\\"case_name\\\": \\\"French v. Morse\\\",\",\"needs_cl\":true,\"locator_note\":\"lake identity.case_name, identity.input_case_name, identity.canonical_name_match, status, stub, and provenance.warnings\"},\"reasons\":[\"The payload's official citation 68 Mass. 111 matches lake.citations.official.cite and lake.citations.display.\",\"The lake identity gives the canonical case name as French v. Morse, while the input case name is Morse v. French and canonical_name_match is false.\",\"The lake record is marked stub and folded-alias, with a provenance warning that it was subsumed elsewhere.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has no date_decided, year, court_id, or opinion text, so court/year identity cannot be independently checked from this packet.\"],\"suggested_tightening\":\"Treat this as French v. Morse, 68 Mass. 111, only after alias resolution; avoid presenting Morse v. French as canonical.\"},{\"assertion_id\":\"ac2f42ef043ba296\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"Lens A does not assess treatment or currency, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B; this review does not validate good-law status.\"],\"suggested_tightening\":null}],\"notes\":\"No support, quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; no text/<case>.txt or content_page.* file was disclosed.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:17-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:21:10-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/morse-v-french--6536632.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [
+      "morse-v-french--6536632"
+    ],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-09005c5c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-09005c5c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:09.239023Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:09.945518Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 502 Bad Gateway, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:11.104150Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:13.252272Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:16.592672Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'morse-v-french--6536632' has no lead_opinion_id (text undisclosed)",
+      "no content page for lake record morse-v-french--6536632"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 80327,
+      "output": 5927,
+      "source": "codex-events",
+      "total": 86254
+    },
+    "verdict_map": {
+      "ac2f42ef043ba296": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cbb97c137adafe72": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f040814daa",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 114.4
   }
 }

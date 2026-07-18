@@ -1,38 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Satterfield.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "f045d89534e83ed7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/United States v. Satterfield__ae0f4d.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but does not verify currency/live-law status. Treatment and progeny are expressly unverified and not derived.",
+          "proposed_fix": "Limit the assertion to citation existence only, or complete treatment/progeny verification before implying the authority remains live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record contains the citation 743 F.2d 827 and identity fields for United States v. Satterfield.",
+          "But treatment.field_i_validity is unverified, treatment.edges is empty, and progeny rows_cached is 0.",
+          "Under the B-lens currency question, disclosed evidence is insufficient to verify that the authority is still live law."
+        ],
+        "residual_risks": [
+          "This refutation is limited to live-law currency; it does not dispute that the cited case record exists."
+        ],
+        "suggested_tightening": "Separate case-existence assertions from live-law/currency assertions.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "933c37472de61e4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload states field_i_validity is unverified, as_of fields are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived.",
+          "Those fields match the lake treatment record exactly.",
+          "No disclosed treatment edge, progeny edge, or judgment field contradicts the unverified treatment label."
+        ],
+        "residual_risks": [
+          "The disclosed record cannot establish affirmative good-law status until treatment/progeny verification is completed."
+        ],
+        "suggested_tightening": "Keep the visible treatment label as Unverified and avoid any stronger good-law claim until S6/S9 promotion is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Satterfield.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f045d89534e83ed7\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citation, but does not verify currency/live-law status. Treatment and progeny are expressly unverified and not derived.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Limit the assertion to citation existence only, or complete treatment/progeny verification before implying the authority remains live law.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/United States v. Satterfield__ae0f4d.json treatment/progeny fields\"\n      },\n      \"reasons\": [\n        \"The lake record contains the citation 743 F.2d 827 and identity fields for United States v. Satterfield.\",\n        \"But treatment.field_i_validity is unverified, treatment.edges is empty, and progeny rows_cached is 0.\",\n        \"Under the B-lens currency question, disclosed evidence is insufficient to verify that the authority is still live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutation is limited to live-law currency; it does not dispute that the cited case record exists.\"\n      ],\n      \"suggested_tightening\": \"Separate case-existence assertions from live-law/currency assertions.\"\n    },\n    {\n      \"assertion_id\": \"933c37472de61e4d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload states field_i_validity is unverified, as_of fields are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived.\",\n        \"Those fields match the lake treatment record exactly.\",\n        \"No disclosed treatment edge, progeny edge, or judgment field contradicts the unverified treatment label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record cannot establish affirmative good-law status until treatment/progeny verification is completed.\"\n      ],\n      \"suggested_tightening\": \"Keep the visible treatment label as Unverified and avoid any stronger good-law claim until S6/S9 promotion is complete.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:04-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-88781dbe46"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Satterfield.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Satterfield"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-34591c3f",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-34591c3f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Satterfield' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Satterfield"
+    ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 58561,
+      "output": 2301,
+      "source": "codex-events",
+      "total": 60862
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "933c37472de61e4d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f045d89534e83ed7": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-88781dbe46",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 60.3
   }
 }

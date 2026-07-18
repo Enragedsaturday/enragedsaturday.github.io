@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Moran v. Burbine.json",
+    "lens": "B",
+    "notes": "Lens B only; no quote-fidelity or support findings are made.",
+    "reviewed": [
+      {
+        "assertion_id": "31b4d5bbdb1056ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and has status verified for record_id Moran v. Burbine.",
+          "Identity fields verify U.S. Supreme Court, date_decided 1986-03-10, cluster_id 111614, and citations.official selects 475 U.S. 412.",
+          "For the currency angle, lake.treatment records field_i_validity good_law as of 2026-06-30; no disclosed non-proposed edge overrules or supersedes the case."
+        ],
+        "residual_risks": [
+          "Treatment derivation has unresolved audit markers; that risk is addressed on the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0194f58f584f8a82",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no support or quote-fidelity defect is asserted here.",
+          "The treatment/currency statement embedded in the harvested text is Treatment: good as of 2026-06-30, matching lake.treatment.field_i_validity and as_of_treatment.",
+          "Lake pinpoints mark this pin quote_fidelity mismatch and slip-only, but Lens B does not adjudicate that defect."
+        ],
+        "residual_risks": [
+          "Pin-421 has no star_marker and is marked mismatch; Lens A should resolve the quote/pinpoint issue.",
+          "The treatment audit risk is addressed on the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e3b6c7f0d3fcd3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no support or quote-fidelity defect is asserted here.",
+          "The cited authority is the same verified Moran record, and no disclosed point_override limits pin-422.",
+          "Lake.treatment.point_overrides is empty, and the disclosed pin has no separate negative-treatment statement."
+        ],
+        "residual_risks": [
+          "The treatment audit risk is addressed on the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5cf9cf80d0d4d195",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 6,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/Moran v. Burbine__8e8106.json treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The unqualified no-negative-treatment treatment call cannot be verified from the disclosed record because the lake derivation flags unresolved proposed negative events and an R15 treatment audit requirement.",
+          "proposed_fix": "Remove or qualify the categorical 'No negative treatment' statement. Use a narrower note such as: recorded as good_law, but treatment derivation contains proposed negative events requiring audit; do not state no negative treatment until the R15 audit clears.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The page asserts good status and 'No negative treatment' as of 2026-06-30.",
+          "Lake.treatment records field_i_validity good_law, but provenance shows the status came from _treatment-migration.json plus page frontmatter and includes the warning 'legacy treatment migrated: good -> good_law'.",
+          "The same treatment record contains proposed treatment edges and derivation lanes with audit_needed true, cap_hit true, and proposed_negative_events of 6 and 25.",
+          "The proposed/mentioned edges do not themselves prove Moran was overruled; the defect is that the disclosed evidence does not support the categorical no-negative-treatment certainty."
+        ],
+        "residual_risks": [
+          "A full audit of the proposed negative events and top-cited progeny is needed to determine whether any actual limitation, overruling, or abrogation exists."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with an audited-status qualifier unless and until the R15 treatment audit clears the proposed negative edges.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Moran v. Burbine.json\",\"reviewed\":[{\"assertion_id\":\"31b4d5bbdb1056ea\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and has status verified for record_id Moran v. Burbine.\",\"Identity fields verify U.S. Supreme Court, date_decided 1986-03-10, cluster_id 111614, and citations.official selects 475 U.S. 412.\",\"For the currency angle, lake.treatment records field_i_validity good_law as of 2026-06-30; no disclosed non-proposed edge overrules or supersedes the case.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has unresolved audit markers; that risk is addressed on the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0194f58f584f8a82\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no support or quote-fidelity defect is asserted here.\",\"The treatment/currency statement embedded in the harvested text is Treatment: good as of 2026-06-30, matching lake.treatment.field_i_validity and as_of_treatment.\",\"Lake pinpoints mark this pin quote_fidelity mismatch and slip-only, but Lens B does not adjudicate that defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Pin-421 has no star_marker and is marked mismatch; Lens A should resolve the quote/pinpoint issue.\",\"The treatment audit risk is addressed on the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2e3b6c7f0d3fcd3d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no support or quote-fidelity defect is asserted here.\",\"The cited authority is the same verified Moran record, and no disclosed point_override limits pin-422.\",\"Lake.treatment.point_overrides is empty, and the disclosed pin has no separate negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment audit risk is addressed on the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5cf9cf80d0d4d195\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified no-negative-treatment treatment call cannot be verified from the disclosed record because the lake derivation flags unresolved proposed negative events and an R15 treatment audit requirement.\",\"severity\":\"medium\",\"proposed_fix\":\"Remove or qualify the categorical 'No negative treatment' statement. Use a narrower note such as: recorded as good_law, but treatment derivation contains proposed negative events requiring audit; do not state no negative treatment until the R15 audit clears.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 6,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Moran v. Burbine__8e8106.json treatment.derivation.lane1_negative and lane2_top_cited\"},\"reasons\":[\"The page asserts good status and 'No negative treatment' as of 2026-06-30.\",\"Lake.treatment records field_i_validity good_law, but provenance shows the status came from _treatment-migration.json plus page frontmatter and includes the warning 'legacy treatment migrated: good -> good_law'.\",\"The same treatment record contains proposed treatment edges and derivation lanes with audit_needed true, cap_hit true, and proposed_negative_events of 6 and 25.\",\"The proposed/mentioned edges do not themselves prove Moran was overruled; the defect is that the disclosed evidence does not support the categorical no-negative-treatment certainty.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A full audit of the proposed negative events and top-cited progeny is needed to determine whether any actual limitation, overruling, or abrogation exists.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with an audited-status qualifier unless and until the R15 treatment audit clears the proposed negative edges.\"}],\"notes\":\"Lens B only; no quote-fidelity or support findings are made.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:18:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0b1f88ee42",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c71641614d"
+    ],
     "group_id": "_overhaul2/lake/cases/Moran v. Burbine.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d4509474.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Moran v. Burbine"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 645973,
+      "output": 8107,
+      "source": "codex-events",
+      "total": 654080
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0194f58f584f8a82": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2e3b6c7f0d3fcd3d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "31b4d5bbdb1056ea": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5cf9cf80d0d4d195": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b1f88ee42",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c71641614d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 211.8
   }
 }

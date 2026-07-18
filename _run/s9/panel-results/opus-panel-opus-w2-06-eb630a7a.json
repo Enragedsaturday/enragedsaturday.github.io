@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "02ad54d38db6cdd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 471 U.S. 386 confirmed by disclosed cached opinion: the majority (Burger, C.J.) with star-pages *388-*395 is the Carney motor-home automobile-exception case, consistent with a slip opinion beginning at 386.",
+          "Parallel cites (105 S. Ct. 2066; 85 L. Ed. 2d 406; 1985 U.S. LEXIS 8; 53 U.S.L.W. 4521) are internally consistent with the lake citations block and standard for a 1985 SCOTUS decision."
+        ],
+        "residual_risks": [
+          "Parallel reporter page numbers are not independently checkable against the cached slip text (only official *388-*395 star-pagination is shown)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fdc5e66ac7038ef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In short, the pervasive schemes of regulation, which necessarily lead to reduced expectations of privacy, and the exigencies attendant to ready mobility justify searches without prior recourse to the authority of a magistrate so long as the overriding standard of probable cause is met.",
+          "locator_note": "cached opinion para b462-6, page *392; content-page ^pin-392 cite '471 U.S. at 392'",
+          "needs_cl": false,
+          "problem": "The pinpoint record's stored quote for pin-392 is page-header/frontmatter boilerplate ('--- # California v. Carney ... ## Rule The vehicle exception rests on two justifications:'), not opinion text; it is a slip-only first-pin extraction artifact, correctly self-flagged quote_fidelity=mismatch. The actual quote anchored at ^pin-392 on the content page verifies verbatim against the cached opinion at page 392.",
+          "proposed_fix": "Repair the pin-392 stored quote/fragment to the real anchored sentence (the 'pervasive schemes of regulation ... probable cause is met' passage at 471 U.S. at 392); reader-facing content already cites it correctly.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition survives: the content-page quote at pin-392 matches cached b462-6 verbatim and the *392 star-page is correct.",
+          "Only the stored provenance quote is corrupt (boilerplate capture); this is a data-record defect, not a reader-facing quote-fidelity error."
+        ],
+        "residual_risks": [
+          "No deep-link fragment (slip-only) means the page pincite is not star-anchored, though it verifies against the cached text."
+        ],
+        "suggested_tightening": "Re-extract first-pin quotes so the frontmatter/header is not captured as the quote span.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "843f1d0f3bbb0eb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion b462-7 verbatim: 'First, the vehicle is obviously readily mobile by the turn of an ignition key, if not actually moving. Second, there is a reduced expectation of privacy stemming from its use as a licensed motor vehicle subject to a range of police regulation inapplicable to a fixed dwelling.'",
+          "The *393 star-page falls immediately before this passage ('two justifications for the vehicle exception *393 come into play'), so the '471 U.S. at 393' pincite is correct; star-verified with a validated fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a2c620265b30090",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is not refuted by any disclosed evidence; Carney's two-justification automobile-exception rule is canonical and the cached majority shows a valid, un-negated 1985 SCOTUS holding.",
+          "All disclosed negative edges are proposed:true co-citation candidates whose field_ii (overruled/abrogated/questioned/superseded) describes the citing cases' own status, not any adjudicated negative treatment OF Carney (e.g., Delaware v. Fensterer, O'Connor v. Ortega, Groh v. Ramirez are unrelated to Carney's holding)."
+        ],
+        "residual_risks": [
+          "composite_basis=migration-seed: treatment currency was seeded, not independently re-derived (scope_note flags S2 may downgrade); full Shepard's/KeyCite currency is not disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8cf03179f9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/California v. Carney.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-06-eb630a7a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Carney"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "02ad54d38db6cdd2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a2c620265b30090": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fdc5e66ac7038ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "843f1d0f3bbb0eb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-78571f5750",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8cf03179f9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

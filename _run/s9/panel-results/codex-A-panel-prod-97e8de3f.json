@@ -1,13 +1,129 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Ventresca.md",
+    "lens": "A",
+    "notes": "No quote_fidelity or pincite assertion IDs were present in group_inventory.jsonl. Separately, the lake pinpoints mark pin-108 and pin-106 as quote_fidelity mismatch/slip-only; those pins are not passed by this reviewed array.",
+    "reviewed": [
+      {
+        "assertion_id": "fe06d10595033fb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Ventresca as a U.S. Supreme Court case decided on 1965-03-01.",
+          "The official citation, vendor-neutral citation, and listed parallel citations in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21d02c0b30a4f6d2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "home=Probable Cause in the Affidavit; role=Progeny",
+          "needs_cl": false,
+          "problem": "The topic fit is supported, but the specific home-role label \"Progeny\" is not verifiable from the disclosed files. The opinion is a primary Supreme Court rule/holding on warrant-affidavit probable cause; no home-page taxonomy or lake home field shows why it should be categorized as Progeny.",
+          "proposed_fix": "Keep the case on Probable Cause in the Affidavit, but relabel it with a core or foundational role if that role exists, or disclose the home-page taxonomy/provenance that supports Progeny.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly concerns standards for interpreting affidavits supporting search warrants, so the home topic is supported.",
+          "The disclosed lake record has progeny data for cases citing Ventresca but no homes/role field establishing Ventresca as Progeny on this home."
+        ],
+        "residual_risks": [
+          "A separate home page or role taxonomy could cure this, but it is not in the disclosed universe."
+        ],
+        "suggested_tightening": "Separate topic placement from role taxonomy; do not use Progeny unless a disclosed source supports it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "c6e29eaa3f2eb793",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "where reason for crediting the source of the information is given",
+          "locator_note": "field=holding",
+          "needs_cl": false,
+          "problem": "The holding is directionally supported but overbroad in its final clause. Ventresca does not hold that detailed underlying circumstances alone always establish probable cause; it adds source-crediting and magistrate-finding conditions and holds that this affidavit showed ample facts.",
+          "proposed_fix": "Revise to: Search-warrant affidavits are read commonsensically and realistically, not hypertechnically; hearsay may support a warrant when there is a substantial basis for crediting it; and where circumstances and source-crediting reasons are detailed and a magistrate has found probable cause, doubtful or marginal cases are resolved largely in favor of the warrant.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The commonsense/not-hypertechnical rule is directly supported by the opinion text.",
+          "The warrant-preference and doubtful-or-marginal formulation is supported, though the opinion uses a more qualified formulation.",
+          "The particular-affidavit holding is supported, but the payload states the affidavit rule at a broader categorical level than the opinion justifies."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use conditional phrasing such as \"may establish\" or include the source-crediting and magistrate-finding requirements.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e140bea4e5bf9714",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly concerns whether a warrant affidavit established probable cause.",
+          "Because the case is specifically about warrant affidavits, placement as related to the broader Probable Cause home is supported."
+        ],
+        "residual_risks": [
+          "No separate home-page taxonomy was disclosed; this stands only as a topic-fit/support judgment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f4e0dbd2c45b71d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload mirrors the lake treatment fields, including field_i_validity, dates, composite basis, varies_by_point, and scope note."
+        ],
+        "residual_risks": [
+          "Treatment accuracy is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6097d82bd03c6f46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.",
+          "For a federal corpus, the label Binding — SCOTUS is supported by the disclosed court identity."
+        ],
+        "residual_risks": [
+          "This is an authority-weight check, not a treatment/currency audit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Ventresca.md\",\"reviewed\":[{\"assertion_id\":\"fe06d10595033fb7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Ventresca as a U.S. Supreme Court case decided on 1965-03-01.\",\"The official citation, vendor-neutral citation, and listed parallel citations in the payload match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"21d02c0b30a4f6d2\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The topic fit is supported, but the specific home-role label \\\"Progeny\\\" is not verifiable from the disclosed files. The opinion is a primary Supreme Court rule/holding on warrant-affidavit probable cause; no home-page taxonomy or lake home field shows why it should be categorized as Progeny.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the case on Probable Cause in the Affidavit, but relabel it with a core or foundational role if that role exists, or disclose the home-page taxonomy/provenance that supports Progeny.\",\"evidence_quote\":null,\"needs_cl\":false,\"locator_note\":\"home=Probable Cause in the Affidavit; role=Progeny\"},\"reasons\":[\"The opinion directly concerns standards for interpreting affidavits supporting search warrants, so the home topic is supported.\",\"The disclosed lake record has progeny data for cases citing Ventresca but no homes/role field establishing Ventresca as Progeny on this home.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A separate home page or role taxonomy could cure this, but it is not in the disclosed universe.\"],\"suggested_tightening\":\"Separate topic placement from role taxonomy; do not use Progeny unless a disclosed source supports it.\"},{\"assertion_id\":\"c6e29eaa3f2eb793\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is directionally supported but overbroad in its final clause. Ventresca does not hold that detailed underlying circumstances alone always establish probable cause; it adds source-crediting and magistrate-finding conditions and holds that this affidavit showed ample facts.\",\"severity\":\"medium\",\"proposed_fix\":\"Revise to: Search-warrant affidavits are read commonsensically and realistically, not hypertechnically; hearsay may support a warrant when there is a substantial basis for crediting it; and where circumstances and source-crediting reasons are detailed and a magistrate has found probable cause, doubtful or marginal cases are resolved largely in favor of the warrant.\",\"evidence_quote\":\"where reason for crediting the source of the information is given\",\"needs_cl\":false,\"locator_note\":\"field=holding\"},\"reasons\":[\"The commonsense/not-hypertechnical rule is directly supported by the opinion text.\",\"The warrant-preference and doubtful-or-marginal formulation is supported, though the opinion uses a more qualified formulation.\",\"The particular-affidavit holding is supported, but the payload states the affidavit rule at a broader categorical level than the opinion justifies.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use conditional phrasing such as \\\"may establish\\\" or include the source-crediting and magistrate-finding requirements.\"},{\"assertion_id\":\"e140bea4e5bf9714\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion expressly concerns whether a warrant affidavit established probable cause.\",\"Because the case is specifically about warrant affidavits, placement as related to the broader Probable Cause home is supported.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate home-page taxonomy was disclosed; this stands only as a topic-fit/support judgment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0f4e0dbd2c45b71d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload mirrors the lake treatment fields, including field_i_validity, dates, composite basis, varies_by_point, and scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy is reserved for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6097d82bd03c6f46\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields identify the court as U.S. Supreme Court and court_level as scotus.\",\"For a federal corpus, the label Binding — SCOTUS is supported by the disclosed court identity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is an authority-weight check, not a treatment/currency audit.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity or pincite assertion IDs were present in group_inventory.jsonl. Separately, the lake pinpoints mark pin-108 and pin-106 as quote_fidelity mismatch/slip-only; those pins are not passed by this reviewed array.\"}",
   "summary": {
-    "at": "2026-07-10T03:12:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:40:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2ae7c7a99b",
+      "F-S9-PR-9465c8003c"
+    ],
     "group_id": "content/cases/United States v. Ventresca.md",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +132,73 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-97e8de3f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Ventresca"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 222184,
+      "output": 13044,
+      "source": "codex-events",
+      "total": 235228
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 900.1
+    "verdict_map": {
+      "0f4e0dbd2c45b71d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "21d02c0b30a4f6d2": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "6097d82bd03c6f46": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c6e29eaa3f2eb793": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e140bea4e5bf9714": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe06d10595033fb7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2ae7c7a99b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9465c8003c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 246.4
   }
 }

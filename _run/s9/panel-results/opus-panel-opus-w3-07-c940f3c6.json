@@ -1,0 +1,141 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "520b7e94e6f20c6a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows '441 U.S. 238 (1979)'; lake citations.official and content-page citation are both '441 U.S. 238' — payload official/display match.",
+          "Parallels (99 S. Ct. 1682; 60 L. Ed. 2d 177) and vendor-neutral (1979 U.S. LEXIS 89) match the lake record citations block."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b7470b1229c729a5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'Nothing in the language of the Constitution ... performance of a search authorized by warrant' appears verbatim in the cached text at *257.",
+          "Pincite 257 correct: the sentence begins immediately after the '*257' star-marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f1edede47d131b4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-frontmatter/Background/Issue/Rule extraction artifact (hence extractor quote_fidelity:'mismatch', pinpoint_status:'slip-only'), not a real quotation.",
+          "The genuine pin-248 quotation in the content page — 'We make explicit, therefore, what has long been implicit in our decisions dealing with this subject: The Fourth Amendment does not prohibit per se a covert entry performed for the purpose of installing otherwise legal electronic bugging equipment.' — is verbatim in the cached text and sits on page 248 (after the '*248' marker). Pincite 248 correct."
+        ],
+        "residual_risks": [
+          "Extractor 'mismatch' flag is a false alarm caused by capturing the wrong text span; a downstream gate treating the flag as a defect would misfire."
+        ],
+        "suggested_tightening": "Re-harvest the pin-248 quote payload from the pincited quotation rather than the page frontmatter.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e0f8a6559b57efc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is a migration-seed; the disclosed 1979 SCOTUS majority (covert-entry / manner-of-execution holding) shows no self-contradiction and no disclosed negative treatment.",
+          "Currency (as_of_treatment 2026-06-30) cannot be independently confirmed from the inlined opinion alone — it is citator-dependent; I neither fabricate a negative-treatment defect nor certify currency."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration-seed with no disclosed citing-reference derivation; treatment currency is CL-dependent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9cf3c14f22",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82760155ea",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Dalia v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-07-c940f3c6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dalia v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1e0f8a6559b57efc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "520b7e94e6f20c6a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b7470b1229c729a5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f1edede47d131b4f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9cf3c14f22",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82760155ea",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

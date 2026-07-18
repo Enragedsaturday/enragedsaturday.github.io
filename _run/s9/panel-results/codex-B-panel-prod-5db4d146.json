@@ -1,22 +1,92 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-new-york-telephone-co--109755.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl and the disclosed lake/text files.",
+    "reviewed": [
+      {
+        "assertion_id": "6ee747cbf602792b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record for the same record_id has status \"verified_identity\" and identifies the case as \"United States v. New York Telephone Co.\", decided by the U.S. Supreme Court on 1977-12-07.",
+          "The lake citations.all list contains the same four citations in the inventory payload: 434 U.S. 159, 98 S. Ct. 364, 54 L. Ed. 2d 376, and 1977 U.S. LEXIS 161."
+        ],
+        "residual_risks": [
+          "This verifies identity/citation existence only. The disclosed treatment record is a frontier stub and does not verify current good-law status."
+        ],
+        "suggested_tightening": "Do not let the existence assertion imply live-law status; keep it separated from the unverified treatment field.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "339a1262914ec3d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is \"unverified\", as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake treatment scope_note states: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The lake progeny fields show no derived progeny review: complete_query is null, citation_count is null, rows_cached is 0, and treatment.edges is empty. That is consistent with an unverified treatment label rather than a good-law claim."
+        ],
+        "residual_risks": [
+          "No disclosed record verifies whether the case remains good law; the only supported treatment call is unverified."
+        ],
+        "suggested_tightening": "Surface this as treatment unverified/no currency review, not as a positive good-law signal.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-new-york-telephone-co--109755.json\",\"reviewed\":[{\"assertion_id\":\"6ee747cbf602792b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record for the same record_id has status \\\"verified_identity\\\" and identifies the case as \\\"United States v. New York Telephone Co.\\\", decided by the U.S. Supreme Court on 1977-12-07.\",\"The lake citations.all list contains the same four citations in the inventory payload: 434 U.S. 159, 98 S. Ct. 364, 54 L. Ed. 2d 376, and 1977 U.S. LEXIS 161.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This verifies identity/citation existence only. The disclosed treatment record is a frontier stub and does not verify current good-law status.\"],\"suggested_tightening\":\"Do not let the existence assertion imply live-law status; keep it separated from the unverified treatment field.\"},{\"assertion_id\":\"339a1262914ec3d7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is \\\"unverified\\\", as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake treatment scope_note states: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The lake progeny fields show no derived progeny review: complete_query is null, citation_count is null, rows_cached is 0, and treatment.edges is empty. That is consistent with an unverified treatment label rather than a good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed record verifies whether the case remains good law; the only supported treatment call is unverified.\"],\"suggested_tightening\":\"Surface this as treatment unverified/no currency review, not as a positive good-law signal.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl and the disclosed lake/text files.\"}",
   "summary": {
-    "at": "2026-07-10T02:38:33-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:25:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/united-states-v-new-york-telephone-co--109755.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5db4d146",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5db4d146.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:38:27.587082Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:28.056007Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:28.782697Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:29.628733Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:30.865344Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-new-york-telephone-co--109755"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-new-york-telephone-co--109755"
+    ],
+    "tokens": {
+      "input": 110184,
+      "output": 5554,
+      "source": "codex-events",
+      "total": 115738
+    },
+    "verdict_map": {
+      "339a1262914ec3d7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6ee747cbf602792b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 107.8
   }
 }

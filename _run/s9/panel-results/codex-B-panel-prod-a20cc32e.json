@@ -1,12 +1,74 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Calandra.json",
+    "lens": "B",
+    "notes": "Lens B review only; quote/support defects intentionally not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "5940ba1956ef42b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Calandra, U.S. Supreme Court, decided 1974-01-08, with expected_citation_found and canonical_name_match true.",
+          "Lake citations select 414 U.S. 338 as the official citation and display citation; treatment.field_i_validity is good_law as of 2026-06-30.",
+          "No disclosed finalized progeny edge marks Calandra itself overruled, superseded, or abrogated; the listed treatment edges are proposed and field_iii=mentioned."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit_needed flags, so this review does not establish currency beyond the disclosed file set or beyond the stated treatment date."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd5824993ecbea09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not test quote fidelity or support.",
+          "The only currency/treatment statements embedded in the pinpoint payload, Treatment: good as of 2026-06-30 and Binding — SCOTUS, match the lake treatment and SCOTUS identity fields."
+        ],
+        "residual_risks": [
+          "Lake pinpoints record quote_fidelity=mismatch and pinpoint_status=slip-only; that issue is reserved for Lens A and is not treated here as a currency/treatment defect."
+        ],
+        "suggested_tightening": "Route the recorded quote-fidelity mismatch to Lens A; no Lens B treatment change indicated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "624955926e1f5a4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Content page and lake record agree on field_i_validity=good_law, as_of_content=1974-01-08, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.",
+          "Authority weight Binding — SCOTUS is consistent with lake identity court=U.S. Supreme Court and court_level=scotus.",
+          "The disclosed progeny/treatment edge set has 34 edges, all proposed=true and field_iii=mentioned; point_overrides is empty. The negative field_ii labels therefore do not amount, in the disclosed record, to a finalized negative treatment of Calandra."
+        ],
+        "residual_risks": [
+          "lane1_negative and lane2_top_cited derivations show audit_needed=true and cap_hit=true; if those proposed events are later audited as direct negative treatment, the good-law label would need revisiting.",
+          "No evidence outside the working directory was reviewed."
+        ],
+        "suggested_tightening": "Add an internal QA note for unresolved proposed negative-treatment audit signals while retaining the public good_law label unless audit changes field_i_validity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Calandra.json\",\"reviewed\":[{\"assertion_id\":\"5940ba1956ef42b4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Calandra, U.S. Supreme Court, decided 1974-01-08, with expected_citation_found and canonical_name_match true.\",\"Lake citations select 414 U.S. 338 as the official citation and display citation; treatment.field_i_validity is good_law as of 2026-06-30.\",\"No disclosed finalized progeny edge marks Calandra itself overruled, superseded, or abrogated; the listed treatment edges are proposed and field_iii=mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit_needed flags, so this review does not establish currency beyond the disclosed file set or beyond the stated treatment date.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fd5824993ecbea09\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test quote fidelity or support.\",\"The only currency/treatment statements embedded in the pinpoint payload, Treatment: good as of 2026-06-30 and Binding — SCOTUS, match the lake treatment and SCOTUS identity fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake pinpoints record quote_fidelity=mismatch and pinpoint_status=slip-only; that issue is reserved for Lens A and is not treated here as a currency/treatment defect.\"],\"suggested_tightening\":\"Route the recorded quote-fidelity mismatch to Lens A; no Lens B treatment change indicated.\"},{\"assertion_id\":\"624955926e1f5a4c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Content page and lake record agree on field_i_validity=good_law, as_of_content=1974-01-08, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\",\"Authority weight Binding — SCOTUS is consistent with lake identity court=U.S. Supreme Court and court_level=scotus.\",\"The disclosed progeny/treatment edge set has 34 edges, all proposed=true and field_iii=mentioned; point_overrides is empty. The negative field_ii labels therefore do not amount, in the disclosed record, to a finalized negative treatment of Calandra.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"lane1_negative and lane2_top_cited derivations show audit_needed=true and cap_hit=true; if those proposed events are later audited as direct negative treatment, the good-law label would need revisiting.\",\"No evidence outside the working directory was reviewed.\"],\"suggested_tightening\":\"Add an internal QA note for unresolved proposed negative-treatment audit signals while retaining the public good_law label unless audit changes field_i_validity.\"}],\"notes\":\"Lens B review only; quote/support defects intentionally not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:39-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:48:23-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-402e83a6ec",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Calandra.json",
     "group_total_assertions": 3,
@@ -16,21 +78,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a20cc32e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Calandra"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 168154,
+      "output": 6166,
+      "source": "codex-events",
+      "total": 174320
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "5940ba1956ef42b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "624955926e1f5a4c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd5824993ecbea09": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-402e83a6ec",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 120.9
   }
 }

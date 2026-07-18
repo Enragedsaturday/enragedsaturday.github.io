@@ -1,13 +1,114 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Silverman v. United States.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources searched.",
+    "reviewed": [
+      {
+        "assertion_id": "ebe8460de76aadaa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for Silverman v. United States and marks status verified.",
+          "The disclosed lake record matches the cited court, year, decision date, docket, official citation 365 U.S. 505, and listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b585aeecfebe33d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the eavesdropping was accomplished by means",
+          "locator_note": "pin-509; text page marker *509; lake pinpoints[].quote is marked mismatch/slip-only with no star_marker.",
+          "needs_cl": false,
+          "problem": "The pin-509 lake quote is not a character-faithful opinion quote; it appears to combine content-page prose and Markdown headings rather than the opinion passage.",
+          "proposed_fix": "Replace pin-509 with the actual page-509 opinion sentence used on the built page and validate it with star_marker 509.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload contains page-structure text such as Markdown headings, which is not opinion text.",
+          "The cached opinion text at the page-509 passage supports the built page's different quote, not this harvested lake quote.",
+          "The lake itself flags pin-509 as quote_fidelity mismatch and slip-only."
+        ],
+        "residual_risks": [
+          "This refutes the harvested pin-509 payload, not the built page's displayed page-509 quote."
+        ],
+        "suggested_tightening": "Use only opinion-text snippets in pinpoints, and reject harvested page prose before projection.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28dbd39bc44c367d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "relating to party walls",
+          "locator_note": "pin-511; cached text places the passage after the *511 marker, but lake pinpoints[].quote is marked mismatch/slip-only with no star_marker.",
+          "needs_cl": false,
+          "problem": "The quote is substantively drawn from the page-511 passage, but the ellipsis omits source words and the lake record has not star-verified it.",
+          "proposed_fix": "Either include the omitted source words or normalize the ellipsis, then set star_marker 511 after validation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentences are located in the disclosed opinion text on page 511.",
+          "The source text contains omitted words between the two quoted portions, while the lake quote uses an unverified ellipsis form.",
+          "The lake record reports quote_fidelity mismatch and slip-only for this pin."
+        ],
+        "residual_risks": [
+          "A stricter no-ellipsis quote policy would require replacing this with a fully exact quotation."
+        ],
+        "suggested_tightening": "Prefer exact contiguous quotations for pin records, or store an explicit normalized-ellipsis form separately.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5016c5bb6d49e6b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-510 quote is present in the cached opinion text at the page-510 passage.",
+          "The lake record marks pin-510 as matched, star-verified, and supplies star_marker 510 and a validated fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bb1f55c39668bb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The disclosed lake and built page fields match the asserted good_law status, dates, varies_by_point value, and scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Silverman v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ebe8460de76aadaa\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record exists for Silverman v. United States and marks status verified.\",\n        \"The disclosed lake record matches the cited court, year, decision date, docket, official citation 365 U.S. 505, and listed parallel/vendor citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0b585aeecfebe33d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-509 lake quote is not a character-faithful opinion quote; it appears to combine content-page prose and Markdown headings rather than the opinion passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-509 with the actual page-509 opinion sentence used on the built page and validate it with star_marker 509.\",\n        \"evidence_quote\": \"the eavesdropping was accomplished by means\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-509; text page marker *509; lake pinpoints[].quote is marked mismatch/slip-only with no star_marker.\"\n      },\n      \"reasons\": [\n        \"The payload contains page-structure text such as Markdown headings, which is not opinion text.\",\n        \"The cached opinion text at the page-509 passage supports the built page's different quote, not this harvested lake quote.\",\n        \"The lake itself flags pin-509 as quote_fidelity mismatch and slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutes the harvested pin-509 payload, not the built page's displayed page-509 quote.\"\n      ],\n      \"suggested_tightening\": \"Use only opinion-text snippets in pinpoints, and reject harvested page prose before projection.\"\n    },\n    {\n      \"assertion_id\": \"28dbd39bc44c367d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively drawn from the page-511 passage, but the ellipsis omits source words and the lake record has not star-verified it.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Either include the omitted source words or normalize the ellipsis, then set star_marker 511 after validation.\",\n        \"evidence_quote\": \"relating to party walls\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-511; cached text places the passage after the *511 marker, but lake pinpoints[].quote is marked mismatch/slip-only with no star_marker.\"\n      },\n      \"reasons\": [\n        \"The quoted sentences are located in the disclosed opinion text on page 511.\",\n        \"The source text contains omitted words between the two quoted portions, while the lake quote uses an unverified ellipsis form.\",\n        \"The lake record reports quote_fidelity mismatch and slip-only for this pin.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A stricter no-ellipsis quote policy would require replacing this with a fully exact quotation.\"\n      ],\n      \"suggested_tightening\": \"Prefer exact contiguous quotations for pin records, or store an explicit normalized-ellipsis form separately.\"\n    },\n    {\n      \"assertion_id\": \"5016c5bb6d49e6b4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pin-510 quote is present in the cached opinion text at the page-510 passage.\",\n        \"The lake record marks pin-510 as matched, star-verified, and supplies star_marker 510 and a validated fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0bb1f55c39668bb7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\n        \"The disclosed lake and built page fields match the asserted good_law status, dates, varies_by_point value, and scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment audit performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources searched.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:35-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:17:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0b966e01e6",
+      "F-S9-PR-3a9b885917"
+    ],
     "group_id": "_overhaul2/lake/cases/Silverman v. United States.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +117,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-620a552d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Silverman v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 357991,
+      "output": 9624,
+      "source": "codex-events",
+      "total": 367615
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "0b585aeecfebe33d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "0bb1f55c39668bb7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "28dbd39bc44c367d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5016c5bb6d49e6b4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebe8460de76aadaa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b966e01e6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3a9b885917",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 192.9
   }
 }

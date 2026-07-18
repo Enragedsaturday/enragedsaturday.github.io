@@ -1,0 +1,153 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0434611c726b0ad3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Mr. Justice Stewart) confirms 413 U.S. 266 (1973): header '413 U.S. 266 (1973)', 'No. 71-6278', 'Decided June 21, 1973'; star-pagination *267 through *280 brackets a case opening at 266.",
+          "Party/subject (roving Border Patrol vehicle search ~20/25 miles from the Mexican border, marihuana, Reversed) match the page — real case, correctly cited."
+        ],
+        "residual_risks": [
+          "Parallel cites (93 S. Ct. 2535; 37 L. Ed. 2d 596; 1973 U.S. LEXIS 44) not independently shown in cached text.",
+          "Lake identity plumbing oddity: opinion_id equals cluster_id (108845) and the cached citation data-id is 9425395 — does not affect the existence of the 413 U.S. 266 cite, but worth a downstream identity check."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3038a6ab71901c39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote verbatim matches cached text: 'But the search of the petitioner's automobile by a roving patrol, on a California road that lies at all points at least 20 miles north of the Mexican border, was of a wholly different sort. In the absence of probable cause or consent, that search violated the petitioner's Fourth Amendment right to be free of \"unreasonable searches and seizures.\"' (source footnote marker [5] properly dropped).",
+          "This paragraph follows the *273 marker, so pincite '413 U.S. at 273' is correct.",
+          "S8 'quote_fidelity: mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9fa203f35d69f586",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "group_inventory payload.quote for this pin is a front-matter MIS-EXTRACTION (page Background/Issue/Rule preamble), not a source quote; I verified the ACTUAL content-page quote at ^pin-272 instead.",
+          "Actual pin-272 quote 'searches of this kind may in certain circumstances take place not only at the border itself, but at its functional equivalents as well.' is a VERBATIM match to cached (the 'Whatever the permissible scope...' paragraph), which sits before the *273 marker, i.e., on page 272 — pincite '413 U.S. at 272' correct."
+        ],
+        "residual_risks": [
+          "payload.quote front-matter mis-extraction would auto-fail a naive matcher (explains the 'mismatch' flag); page quote is clean."
+        ],
+        "suggested_tightening": "Re-extract payload.quote for the record's first slip-only pin to the actual quoted span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6abcfa1badb48782",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is facially correct and uncontradicted: the cached text is a SCOTUS majority holding, and the page narrative reports only Brignoni-Ponce (1975) and Martinez-Fuerte (1976) developing the border-search framework, leaving this holding intact — no negative treatment.",
+          "as_of_content 1973-06-21 equals date_decided (cached 'Decided June 21, 1973')."
+        ],
+        "residual_risks": [
+          "Currency not independently verifiable without a citator (none inlined)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-18c48a5af5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-70ff804959",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6c8983b6be",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Almeida-Sanchez v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-01-7aabdbd8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Almeida-Sanchez v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0434611c726b0ad3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3038a6ab71901c39": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6abcfa1badb48782": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9fa203f35d69f586": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-18c48a5af5",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-70ff804959",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6c8983b6be",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Long.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "2ddb558e4d6f0b53",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Michigan v. Long, U.S. Supreme Court, decided 1983-07-06.",
+          "The asserted official citation 463 U.S. 1032 and listed parallel/vendor citations match the lake citations fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd90ce8615c532f2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "These principles compel our conclusion that the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible",
+          "locator_note": "lake pinpoints[0] id pin-1049; content_page.md Rule cites 463 U.S. at 1049.",
+          "needs_cl": false,
+          "problem": "pin-1049's stored quote is not a faithful opinion quote. It is page Markdown/content text, not the 463 U.S. 1049 passage, and the lake itself marks quote_fidelity as mismatch with page null/slip-only.",
+          "proposed_fix": "Regenerate pin-1049 from the cached opinion text at the 1049 passage, preserve the original quotation marks, and set a real page/position; otherwise remove the pinpoint until fixed.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with '--- # Michigan v. Long' and includes the built page background/issue text rather than the opinion text.",
+          "The cached opinion text at page 1049 contains the actual passenger-compartment rule passage, which is different from the stored pin quote."
+        ],
+        "residual_risks": [
+          "The displayed rule quote is substantively supported, but the stored pinpoint quote cannot verify it as framed."
+        ],
+        "suggested_tightening": "Use the actual 1049 rule sentence as the pinpoint quote and retain the opinion's internal quotation marks around the Terry language.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "937d9a0596c00ea1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The treatment payload values match the disclosed lake treatment fields: good_law, as_of_content 1983-07-06, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lens A did not evaluate whether the good-law/no-negative-treatment claim is current or complete."
+        ],
+        "suggested_tightening": "Route the treatment assertion to lens B for any currency or negative-treatment challenge.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Long.json\",\"reviewed\":[{\"assertion_id\":\"2ddb558e4d6f0b53\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Michigan v. Long, U.S. Supreme Court, decided 1983-07-06.\",\"The asserted official citation 463 U.S. 1032 and listed parallel/vendor citations match the lake citations fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"fd90ce8615c532f2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1049's stored quote is not a faithful opinion quote. It is page Markdown/content text, not the 463 U.S. 1049 passage, and the lake itself marks quote_fidelity as mismatch with page null/slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-1049 from the cached opinion text at the 1049 passage, preserve the original quotation marks, and set a real page/position; otherwise remove the pinpoint until fixed.\",\"evidence_quote\":\"These principles compel our conclusion that the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] id pin-1049; content_page.md Rule cites 463 U.S. at 1049.\"},\"reasons\":[\"The lake pinpoint quote begins with '--- # Michigan v. Long' and includes the built page background/issue text rather than the opinion text.\",\"The cached opinion text at page 1049 contains the actual passenger-compartment rule passage, which is different from the stored pin quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed rule quote is substantively supported, but the stored pinpoint quote cannot verify it as framed.\"],\"suggested_tightening\":\"Use the actual 1049 rule sentence as the pinpoint quote and retain the opinion's internal quotation marks around the Terry language.\"},{\"assertion_id\":\"937d9a0596c00ea1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The treatment payload values match the disclosed lake treatment fields: good_law, as_of_content 1983-07-06, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not evaluate whether the good-law/no-negative-treatment claim is current or complete.\"],\"suggested_tightening\":\"Route the treatment assertion to lens B for any currency or negative-treatment challenge.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:30:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:11:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-72e5a907d8"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Long.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-32d9f243.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Long"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 134173,
+      "output": 5497,
+      "source": "codex-events",
+      "total": 139670
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "2ddb558e4d6f0b53": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "937d9a0596c00ea1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd90ce8615c532f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-72e5a907d8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 110.2
   }
 }

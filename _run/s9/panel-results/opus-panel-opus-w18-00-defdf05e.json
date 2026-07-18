@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "523b7ba125089681",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached 11th Cir. opinion corroborates identity: 'Case: 13-13109  Date Filed: 09/24/2014', party 'Mathis' present in text — matches lake (ca11, date 2014-09-24, cluster 2736649, identity_method citation+party-text, expected_citation_found true).",
+          "Official cite '767 F.3d 1264' (type 1, F.3d) is well-formed; selected_official present."
+        ],
+        "residual_risks": [
+          "Reporter volume/page is from cluster.citations[] and not verbatim in the slip text; case identity is fully corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f1d86043a35c3a3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote matches the cached opinion verbatim: the main-text sentence 'Because the officers engaged in \"objectively reasonable law enforcement activity and . . . acted in good faith when obtaining [the] search warrant . . . the Leon good faith exception applies.\"' spans slip pp.22-23 (footnote 5 interrupts between 'obtaining' and '[the]'; the main text is continuous).",
+          "Only differences are curly-quote and *Leon* italic markdown; the pre-computed quote_fidelity 'mismatch' is a FALSE POSITIVE (likely triggered by the footnote-5 interruption, the '[the]' bracket, and the p.22->23 break)."
+        ],
+        "residual_risks": [
+          "pinpoint_status 'slip-only' — the 1277 pincite is slip-style, verified against slip text rather than a star-paginated reporter."
+        ],
+        "suggested_tightening": "Make the quote matcher tolerant of mid-quote footnote interruptions to clear this false-positive class.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eaaa4bfde80d9e7b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Alternatively, even if the search warrant was not supported by probable cause, evidence obtained from the search of Mathis's phone was not subject to suppression under the good faith exception to the exclusionary rule.",
+          "locator_note": "lake pinpoints[] id=pin-1276; content_page ## Rule ^pin-1276",
+          "needs_cl": false,
+          "problem": "The lake pinpoint pin-1276.quote (and the derived assertion payload quote) is a corrupted page-scrape — rendered page front-matter through the '## Rule' intro — not the opinion quote; as a verbatim quote it matches nothing in the source.",
+          "proposed_fix": "Re-extract pin-1276.quote to the actual opinion sentence, which the rendered content page already carries verbatim: 'Alternatively, even if the search warrant was not supported by probable cause, evidence obtained from the search of Mathis's phone was not subject to suppression under the good faith exception to the exclusionary rule.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The RENDERED content-page pin-1276 quote is verbatim-faithful to the cached opinion (slip op. p.22 = 767 F.3d at 1276), so the fidelity claim itself survives.",
+          "But the structured pinpoint record's quote field holds corrupted scrape text (an extraction artifact) — a genuine low-severity data-hygiene defect distinct from the page content."
+        ],
+        "residual_risks": [
+          "Same corrupted-scrape artifact recurs across records (cf. Matlock pin-170); a systemic re-extraction pass is warranted."
+        ],
+        "suggested_tightening": "Guard the pinpoint extractor against capturing rendered page front-matter as a 'quote'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fec20d67e0d0c461",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed treatment.derivation.lane1_negative (targeted overrul*/abrogat*/supersed*/vacat*/reversed in scotus OR ca11) returned proposed_negative_events 0, audit_needed false, cap_hit false — no negative binding treatment found; lane3_recency also 0.",
+          "All lane2_top_cited edges carry field_iii 'mentioned' (neutral toward Mathis); edge field_ii values mirror each citing case's own status, and the citing courts are out-of-circuit state courts / an FTC case that cannot abrogate an 11th Cir. decision."
+        ],
+        "residual_risks": [
+          "good_law is composite_basis 'migration-seed' (scope_note warns S2 re-derivation may downgrade); the 6 lane2 edges are 'proposed: true' and not yet adjudicated.",
+          "Currency ultimately depends on progeny not inlined; the disclosed derivation summary is the builder's own report."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b6880d22c6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Mathis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-00-defdf05e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Mathis"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "523b7ba125089681": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f1d86043a35c3a3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eaaa4bfde80d9e7b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fec20d67e0d0c461": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b6880d22c6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d25d57422e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

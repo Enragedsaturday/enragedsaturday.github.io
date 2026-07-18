@@ -1,22 +1,138 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 group_inventory rows under lens B only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "7d9b610531cc3d34",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, non-stub, and identifies Minnesota v. Dickerson as a U.S. Supreme Court case decided 1993-06-07.",
+          "The official citation 508 U.S. 366 is selected in the lake citation fields, and the treatment field marks the case good_law as of 2026-06-30.",
+          "No disclosed adopted treatment edge overrules, abrogates, supersedes, or limits Dickerson; the negative-looking edges are proposed and classified as mentioned."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit_needed lanes and proposed negative events, so the disclosed record leaves audit risk even though no adopted negative treatment is shown."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbbd99798a4062b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity and support are outside lens B, so no quote/support defect is raised here.",
+          "The treatment/weight language embedded in the harvested quote header is consistent with the lake fields: field_i_validity is good_law and the court is U.S. Supreme Court/scotus."
+        ],
+        "residual_risks": [
+          "The lake record itself flags quote_fidelity as mismatch, but that belongs to lens A rather than this currency/treatment review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e328541b263ca3c8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 8,",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Minnesota v. Dickerson__ce89db.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status survives, but the page's absolute 'No negative treatment' phrasing is too strong because the lake treatment record discloses proposed negative-treatment edges and audit_needed treatment lanes. The safer disclosed claim is no adopted negative treatment in this lake record, not no negative treatment at all.",
+          "proposed_fix": "Keep field_i_validity as good_law, but change the page language to: 'No adopted negative treatment in the lake record; proposed negative-treatment hits are audit-pending and classified as mentioned.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The formal treatment field is good_law as of 2026-06-30 and has no point_overrides.",
+          "All 33 disclosed treatment edges are proposed=true, field_iii=mentioned, and point=null, so they do not by themselves overrule or downgrade Dickerson.",
+          "However, lane1_negative and lane2_top_cited both show audit_needed=true with proposed negative events, which undercuts an uncaveated 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full citing-opinion audit results for the proposed edges.",
+          "The good_law field is migration-seeded, and the scope note says S2 derivation may downgrade."
+        ],
+        "suggested_tightening": "Use 'No adopted negative treatment in this lake record' rather than 'No negative treatment' until the treatment audit is complete.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Minnesota v. Dickerson.json\",\"reviewed\":[{\"assertion_id\":\"7d9b610531cc3d34\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, non-stub, and identifies Minnesota v. Dickerson as a U.S. Supreme Court case decided 1993-06-07.\",\"The official citation 508 U.S. 366 is selected in the lake citation fields, and the treatment field marks the case good_law as of 2026-06-30.\",\"No disclosed adopted treatment edge overrules, abrogates, supersedes, or limits Dickerson; the negative-looking edges are proposed and classified as mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit_needed lanes and proposed negative events, so the disclosed record leaves audit risk even though no adopted negative treatment is shown.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bbbd99798a4062b0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity and support are outside lens B, so no quote/support defect is raised here.\",\"The treatment/weight language embedded in the harvested quote header is consistent with the lake fields: field_i_validity is good_law and the court is U.S. Supreme Court/scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record itself flags quote_fidelity as mismatch, but that belongs to lens A rather than this currency/treatment review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e328541b263ca3c8\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status survives, but the page's absolute 'No negative treatment' phrasing is too strong because the lake treatment record discloses proposed negative-treatment edges and audit_needed treatment lanes. The safer disclosed claim is no adopted negative treatment in this lake record, not no negative treatment at all.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity as good_law, but change the page language to: 'No adopted negative treatment in the lake record; proposed negative-treatment hits are audit-pending and classified as mentioned.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 8,\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Minnesota v. Dickerson__ce89db.json treatment.derivation and treatment.edges\"},\"reasons\":[\"The formal treatment field is good_law as of 2026-06-30 and has no point_overrides.\",\"All 33 disclosed treatment edges are proposed=true, field_iii=mentioned, and point=null, so they do not by themselves overrule or downgrade Dickerson.\",\"However, lane1_negative and lane2_top_cited both show audit_needed=true with proposed negative events, which undercuts an uncaveated 'No negative treatment' statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full citing-opinion audit results for the proposed edges.\",\"The good_law field is migration-seeded, and the scope note says S2 derivation may downgrade.\"],\"suggested_tightening\":\"Use 'No adopted negative treatment in this lake record' rather than 'No negative treatment' until the treatment audit is complete.\"}],\"notes\":\"Reviewed all 3 group_inventory rows under lens B only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:14:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9e1e94f4b0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3d761f7e7c"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-914a11d7",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-914a11d7.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.315331Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.934974Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.742250Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.022876Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.258292Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:36.984718Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Dickerson"
+    ],
+    "tokens": {
+      "input": 262292,
+      "output": 7552,
+      "source": "codex-events",
+      "total": 269844
+    },
+    "verdict_map": {
+      "7d9b610531cc3d34": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbbd99798a4062b0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e328541b263ca3c8": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9e1e94f4b0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3d761f7e7c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 151.4
   }
 }

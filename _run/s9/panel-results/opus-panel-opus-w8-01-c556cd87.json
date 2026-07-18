@@ -1,0 +1,136 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "59388489bc2f6897",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "McNeely lake record citations block (\"official\": null) + content_page frontmatter 'citation: \"\"'.",
+          "needs_cl": false,
+          "problem": "No official citation was selected for this SCOTUS case: lake citations.official is null, official_selection_present=false, and every entry in citations[] has selected_official=false; the frontmatter 'citation' field is empty (\"\"), even though '569 U.S. 141' (the correct U.S. Reports official cite) is present in the citation list. The rendered header/Sources hard-code '569 U.S. 141 (2013)', so reader-facing text is fine, but the structured citation metadata is defective.",
+          "proposed_fix": "Run official-citation selection so '569 U.S. 141' is marked selected_official=true (citations.official populated) and populate the frontmatter 'citation' field to '569 U.S. 141 (2013)'.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Case existence is confirmed: cached slip opinion caption 'MISSOURI v. MCNEELY', 'No. 11-1425 ... Decided April 17, 2013', and '569 U.S. 141' is present in cluster.citations[] and matches the header/Sources and date_decided.",
+          "Survives the existence attack (the case and the 569 U.S. 141 cite are real and disclosed), but the citation-selection metadata is missing and should be repaired."
+        ],
+        "residual_risks": [
+          "Structured 'official' cite absent; downstream consumers relying on citations.official (rather than the hard-coded header) would get null."
+        ],
+        "suggested_tightening": "Have the S2 builder select the U.S. Reports cite as official for SCOTUS records and mirror it into the frontmatter 'citation' field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92460c55b0b57168",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is a misextracted header block (ends at '## Rule No.'), so quote_fidelity=='mismatch' is a harvest false positive.",
+          "The actual pin-156 passage ('We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant.') is VERBATIM in the cached slip opinion (final holding, allowing for slip line-wrap hyphenation: 'natu-ral', 'con-stitute')."
+        ],
+        "residual_risks": [
+          "pinpoint_status=='slip-only': the disclosed slip opinion carries NO U.S. Reports star pagination, so the page '156' in '569 U.S. at 156' is NOT independently verifiable from disclosed evidence (transparently disclosed in the Sources note); confirming page 156 would need the U.S. Reports/CourtListener. Quote text fidelity itself is confirmed verbatim.",
+          "Harvest 'mismatch' flag is spurious."
+        ],
+        "suggested_tightening": "Re-anchor pinpoint harvest to the ^pin-156 span; carry the slip-only page-attribution caveat forward.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3f95c39e570438c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=='good_law' for a 2013 SCOTUS holding; content correctly frames later authority as 'refined by' Mitchell v. Wisconsin, not overruling.",
+          "No disclosed edge is confirmed (all proposed:true); nothing disclosed refutes good_law."
+        ],
+        "residual_risks": [
+          "as_of_treatment is a migration seed; proposed edges await R15 audit; currency re-derivation would need CourtListener."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-00ecd0df8d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cdd49f2a2e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2023425cbf"
+    ],
+    "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-01-c556cd87",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Missouri v. McNeely"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "59388489bc2f6897": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "92460c55b0b57168": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3f95c39e570438c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2023425cbf",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-00ecd0df8d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cdd49f2a2e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

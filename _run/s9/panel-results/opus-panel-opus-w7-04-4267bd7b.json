@@ -1,0 +1,113 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e7cdb46ce3d3dba6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 4 payload cites (540 U.S. 366; 124 S. Ct. 795; 157 L. Ed. 2d 769; 2003 U.S. LEXIS 9198) appear verbatim in lake citations.all[].",
+          "payload official=540 U.S. 366 / display=540 U.S. 366 / official_selection_present=true matches record official_selection.selected='540 U.S. 366' (reason selected_rank_1)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38a51469ec3551ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge, of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.",
+          "locator_note": "Pringle cached slip immediately after the star-pagination label='372' marker (before label='373'); content drops only the OCR stray comma in 'knowledge, of,'.",
+          "needs_cl": false,
+          "problem": "The pin-372 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Pringle ... reasonable inference of common possession.') instead of the sentence the content anchors to ^pin-372; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+          "proposed_fix": "Repair the stored `quote` to the anchored sentence ('We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.').",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed Rule quote anchored at ^pin-372 matches the slip verbatim except the content omits an OCR-inserted comma ('knowledge, of,' -> 'knowledge of,'); pincite 540 U.S. 372 confirmed by the label='372' star-pagination bracketing the sentence.",
+          "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7998bc08369f0b52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is defensible: Maryland v. Pringle (2003) is controlling probable-cause (common-enterprise) SCOTUS authority with no disclosed higher-court reversal.",
+          "Proposed negative edges are 'proposed':true citator signals; lane3_recency shows only 1 unreviewed signal; no confirmed downgrade.",
+          "Payload treatment fields match the lake treatment block."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=4, lane2=25 proposed_negative_events) pending resolution."
+        ],
+        "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maryland v. Pringle.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-04-4267bd7b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Pringle"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "38a51469ec3551ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7998bc08369f0b52": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e7cdb46ce3d3dba6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-12d28368cc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

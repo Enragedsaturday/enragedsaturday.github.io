@@ -1,0 +1,133 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6740d5acbd2935d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '384 U.S. 757 (1966)', 'SCHMERBER v. CALIFORNIA', No. 658, Decided June 20, 1966, Supreme Court of United States.",
+          "Official/parallel cites match disclosed cluster.citations[]; nothing disclosed contradicts."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abaf2e6bd2afe4eb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the privilege protects an accused only from being compelled to testify against himself, or otherwise provide the State with evidence of a testimonial or communicative nature, and that the withdrawal of blood and use of the analysis in question in this case did not involve compulsion to these ends.",
+          "locator_note": "opinion at star-page *761 (Brennan, J.); lake pinpoints[].id=pin-761",
+          "needs_cl": false,
+          "problem": "pinpoint pin-761 'quote' field stores content-page boilerplate (front-matter + Background + Issue + 'Rule **Fifth Amendment** - blood-alcohol evidence is physical, not testimonial:'), not an opinion quotation.",
+          "proposed_fix": "Re-harvest pin-761's quote to the anchored Fifth-Amendment holding, verbatim-faithful to the opinion at *761.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is page markdown, not source text; lake self-flags quote_fidelity='mismatch'.",
+          "Page's actual ^pin-761 quote is verbatim-faithful to the opinion at *761 (footnote marker [5] dropped, standard); defect confined to the pinpoint record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b026715f949f054a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'there was no time to seek out a magistrate and secure a warrant. Given these special facts, we conclude that the attempt to secure evidence of blood-alcohol content in this case was an appropriate incident to petitioner's arrest.' is verbatim in the opinion spanning *770-*771.",
+          "Lake quote_fidelity='matched'; star_marker '771' corroborated by disclosed star pagination (*771 falls mid-sentence in the passage)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bface561efa1a3f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law core supported by the disclosed opinion's expressly fact-bound holding ('we reach this judgment only on the facts of the present record').",
+          "McNeely (2013) 'no per se exigency' and Birchfield (2016) 'blood not SITA' subsequent-treatment characterizations are NOT inlined; nothing disclosed contradicts them."
+        ],
+        "residual_risks": [
+          "McNeely and Birchfield opinions are not inlined; those subsequent-treatment characterizations cannot be independently verified from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Schmerber v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-04-de49f5d8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Schmerber v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6740d5acbd2935d7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abaf2e6bd2afe4eb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b026715f949f054a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bface561efa1a3f9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-639ddb9674",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

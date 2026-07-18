@@ -1,22 +1,125 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/McNeil v. Wisconsin.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 inventory rows exactly once. Lens A refutes only the quote/pinpoint fidelity record.",
+    "reviewed": [
+      {
+        "assertion_id": "b3aa22c691725491",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record gives case_name McNeil v. Wisconsin, court U.S. Supreme Court, date_decided 1991-06-13, and year 1991.",
+          "Lake citation fields support official citation 501 U.S. 171 and parallel/vendor citations 111 S. Ct. 2204, 115 L. Ed. 2d 158, and 1991 U.S. LEXIS 3483."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "722a38a31a3c5954",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Sixth Amendment right, however, is offense specific. It cannot be invoked once for all future prosecutions, for it does not attach until a prosecution is commenced",
+          "locator_note": "pin-175; lake pin has page:null, pinpoint_status:'slip-only', quote_fidelity:'mismatch'.",
+          "needs_cl": false,
+          "problem": "The pin-175 quote is not a character-faithful opinion quote. It is harvested page/frontmatter text ending at '## Rule No.', while the cached opinion text at the claimed passage contains the offense-specific Sixth Amendment language. The lake record itself flags quote_fidelity as mismatch and gives page null.",
+          "proposed_fix": "Regenerate pin-175 from the cached opinion text at page label 175, set the page/pin to 175, and use the opinion passage rather than the built-page excerpt. Under the disclosed text, also remove the page quote's initial 'The' unless a better disclosed source confirms it.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin quote begins with built-page material: '--- # McNeil v. Wisconsin *501 U.S. 171 (1991)* ...', not opinion text.",
+          "The cached opinion text at the relevant page label 175 contains the rule passage, but the lake pin does not land on or quote that passage.",
+          "The content page's displayed quote starts 'The Sixth Amendment right...' while the disclosed cached opinion text starts 'Sixth Amendment right...'."
+        ],
+        "residual_risks": [
+          "The cached opinion text appears to have OCR/harvest defects, so a future source may confirm the initial 'The'; under the disclosed-evidence rule, it is not confirmable here."
+        ],
+        "suggested_tightening": "Use the disclosed cached wording exactly or avoid quotation marks and paraphrase the rule with the 501 U.S. at 175 cite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d72d7020263cbbd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A; no treatment/currency defect is raised.",
+          "As metadata only, the asserted treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1991-06-13, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A review of whether the treatment judgment is substantively current or correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/McNeil v. Wisconsin.json\",\"reviewed\":[{\"assertion_id\":\"b3aa22c691725491\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record gives case_name McNeil v. Wisconsin, court U.S. Supreme Court, date_decided 1991-06-13, and year 1991.\",\"Lake citation fields support official citation 501 U.S. 171 and parallel/vendor citations 111 S. Ct. 2204, 115 L. Ed. 2d 158, and 1991 U.S. LEXIS 3483.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"722a38a31a3c5954\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-175 quote is not a character-faithful opinion quote. It is harvested page/frontmatter text ending at '## Rule No.', while the cached opinion text at the claimed passage contains the offense-specific Sixth Amendment language. The lake record itself flags quote_fidelity as mismatch and gives page null.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-175 from the cached opinion text at page label 175, set the page/pin to 175, and use the opinion passage rather than the built-page excerpt. Under the disclosed text, also remove the page quote's initial 'The' unless a better disclosed source confirms it.\",\"evidence_quote\":\"Sixth Amendment right, however, is offense specific. It cannot be invoked once for all future prosecutions, for it does not attach until a prosecution is commenced\",\"needs_cl\":false,\"locator_note\":\"pin-175; lake pin has page:null, pinpoint_status:'slip-only', quote_fidelity:'mismatch'.\"},\"reasons\":[\"The asserted pin quote begins with built-page material: '--- # McNeil v. Wisconsin *501 U.S. 171 (1991)* ...', not opinion text.\",\"The cached opinion text at the relevant page label 175 contains the rule passage, but the lake pin does not land on or quote that passage.\",\"The content page's displayed quote starts 'The Sixth Amendment right...' while the disclosed cached opinion text starts 'Sixth Amendment right...'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text appears to have OCR/harvest defects, so a future source may confirm the initial 'The'; under the disclosed-evidence rule, it is not confirmable here.\"],\"suggested_tightening\":\"Use the disclosed cached wording exactly or avoid quotation marks and paraphrase the rule with the 501 U.S. at 175 cite.\"},{\"assertion_id\":\"7d72d7020263cbbd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A; no treatment/currency defect is raised.\",\"As metadata only, the asserted treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1991-06-13, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A review of whether the treatment judgment is substantively current or correct.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 inventory rows exactly once. Lens A refutes only the quote/pinpoint fidelity record.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:08:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6e3944f0b2"
+    ],
     "group_id": "_overhaul2/lake/cases/McNeil v. Wisconsin.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e697a778",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e697a778.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:29:56.200747Z ERROR codex_models_manager::manager: failed to refresh available models: exceeded retry limit, last status: 429 Too Many Requests, request id: b234865b-6ee3-4f9c-b3cc-b965c94a67f1\n2026-07-10T22:29:58.255774Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:59.001632Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:59.741115Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:00.765574Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:02.134246Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "McNeil v. Wisconsin"
+    ],
+    "tokens": {
+      "input": 226467,
+      "output": 3654,
+      "source": "codex-events",
+      "total": 230121
+    },
+    "verdict_map": {
+      "722a38a31a3c5954": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7d72d7020263cbbd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b3aa22c691725491": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6e3944f0b2",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 81.0
   }
 }

@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Turner v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl assertions exactly once. Lens A refutes the two quote-fidelity assertions and raises no treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "72d0d9cf501187eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Turner v. United States, U.S. Supreme Court, decided 2017-06-22, year 2017.",
+          "The payload's seven citations match lake.citations.all exactly: 582 U.S. 313; 2017 U.S. LEXIS 4041; 137 S. Ct. 1885; 198 L. Ed. 2d 443; 26 Fla. L. Weekly Fed. S 700; 85 U.S.L.W. 4488; 2017 WL 2674152."
+        ],
+        "residual_risks": [
+          "Official citation selection is null in the lake record, but that matches this payload and is not refutable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d6377a6dd9208d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Considering the withheld evidence “in the context of the\nentire record,” however, Agurs, supra, at 112, we conclude\nthat it is too little, too weak, or too distant from the main\nevidentiary points to meet Brady’s standards.",
+          "locator_note": "pin-1894; majority opinion passage at slip p.12 in text/Turner v. United States__0213cd.txt.",
+          "needs_cl": false,
+          "problem": "The quoted text is not character-faithful because it inserts Markdown italics and an ASCII apostrophe in Brady's; the opinion text uses plain Brady with a curly possessive apostrophe.",
+          "proposed_fix": "Use the opinion text without Markdown styling: it is too little, too weak, or too distant from the main evidentiary points to meet Brady’s standards.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks quote_fidelity as mismatch.",
+          "The same passage exists in the opinion, but not with *Brady*'s; character-fidelity fails."
+        ],
+        "residual_risks": [
+          "The S. Ct. page pin is not independently embedded in the disclosed slip text; this review only resolves the quote string."
+        ],
+        "suggested_tightening": "Strip Markdown from verbatim quote harvesting before storing pinpoints, or mark the quote as display-normalized rather than verbatim.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2a9384b14f15f30",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the materiality of the undisclosed Brady information.\n“[E]vidence is ‘material’ within the meaning of Brady\nwhen there is a reasonable probability that, had the evi-\ndence been disclosed, the result of the proceeding would\nhave been different.” Cone v. Bell, 556 U. S. 449, 469–470",
+          "locator_note": "pin-1893; majority opinion passage at slip p.10 in text/Turner v. United States__0213cd.txt.",
+          "needs_cl": false,
+          "problem": "The pin-1893 quote is harvested page prose, not the opinion's materiality quote; it concatenates the content page Issue/Rule text and heading into a purported quote.",
+          "proposed_fix": "Replace pin-1893 with the actual materiality sentence from the opinion and remove the harvested Issue/Rule heading text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins 'under *Brady v. Maryland*...' and includes '## Rule', which is not the opinion passage.",
+          "The actual opinion quote is the Cone materiality sentence beginning '[E]vidence is material...'."
+        ],
+        "residual_risks": [
+          "The content page's displayed rule quote also uses Markdown styling inside a verbatim quote; it should be normalized only outside the quoted text."
+        ],
+        "suggested_tightening": "Re-harvest pin-1893 from the opinion text, not from rendered Markdown section text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41a3ec45384eeb88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload reproduces the lake treatment fields: field_i_validity good_law, as_of_content 2017-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Subsequent-history and good-law currency should be reviewed by Lens B, not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Turner v. United States.json\",\"reviewed\":[{\"assertion_id\":\"72d0d9cf501187eb\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Turner v. United States, U.S. Supreme Court, decided 2017-06-22, year 2017.\",\"The payload's seven citations match lake.citations.all exactly: 582 U.S. 313; 2017 U.S. LEXIS 4041; 137 S. Ct. 1885; 198 L. Ed. 2d 443; 26 Fla. L. Weekly Fed. S 700; 85 U.S.L.W. 4488; 2017 WL 2674152.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is null in the lake record, but that matches this payload and is not refutable from disclosed evidence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7d6377a6dd9208d4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted text is not character-faithful because it inserts Markdown italics and an ASCII apostrophe in Brady's; the opinion text uses plain Brady with a curly possessive apostrophe.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion text without Markdown styling: it is too little, too weak, or too distant from the main evidentiary points to meet Brady’s standards.\",\"evidence_quote\":\"Considering the withheld evidence “in the context of the\\nentire record,” however, Agurs, supra, at 112, we conclude\\nthat it is too little, too weak, or too distant from the main\\nevidentiary points to meet Brady’s standards.\",\"needs_cl\":false,\"locator_note\":\"pin-1894; majority opinion passage at slip p.12 in text/Turner v. United States__0213cd.txt.\"},\"reasons\":[\"The lake pinpoint itself marks quote_fidelity as mismatch.\",\"The same passage exists in the opinion, but not with *Brady*'s; character-fidelity fails.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The S. Ct. page pin is not independently embedded in the disclosed slip text; this review only resolves the quote string.\"],\"suggested_tightening\":\"Strip Markdown from verbatim quote harvesting before storing pinpoints, or mark the quote as display-normalized rather than verbatim.\"},{\"assertion_id\":\"d2a9384b14f15f30\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-1893 quote is harvested page prose, not the opinion's materiality quote; it concatenates the content page Issue/Rule text and heading into a purported quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1893 with the actual materiality sentence from the opinion and remove the harvested Issue/Rule heading text.\",\"evidence_quote\":\"the materiality of the undisclosed Brady information.\\n“[E]vidence is ‘material’ within the meaning of Brady\\nwhen there is a reasonable probability that, had the evi-\\ndence been disclosed, the result of the proceeding would\\nhave been different.” Cone v. Bell, 556 U. S. 449, 469–470\",\"needs_cl\":false,\"locator_note\":\"pin-1893; majority opinion passage at slip p.10 in text/Turner v. United States__0213cd.txt.\"},\"reasons\":[\"The payload quote begins 'under *Brady v. Maryland*...' and includes '## Rule', which is not the opinion passage.\",\"The actual opinion quote is the Cone materiality sentence beginning '[E]vidence is material...'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed rule quote also uses Markdown styling inside a verbatim quote; it should be normalized only outside the quoted text.\"],\"suggested_tightening\":\"Re-harvest pin-1893 from the opinion text, not from rendered Markdown section text.\"},{\"assertion_id\":\"41a3ec45384eeb88\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload reproduces the lake treatment fields: field_i_validity good_law, as_of_content 2017-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Subsequent-history and good-law currency should be reviewed by Lens B, not resolved here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl assertions exactly once. Lens A refutes the two quote-fidelity assertions and raises no treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:44:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-4f82594e11",
+      "F-S9-PR-539689fe54"
+    ],
     "group_id": "_overhaul2/lake/cases/Turner v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-18ddddbe.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Turner v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 200528,
+      "output": 9598,
+      "source": "codex-events",
+      "total": 210126
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "41a3ec45384eeb88": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72d0d9cf501187eb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d6377a6dd9208d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d2a9384b14f15f30": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4f82594e11",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-539689fe54",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 185.2
   }
 }

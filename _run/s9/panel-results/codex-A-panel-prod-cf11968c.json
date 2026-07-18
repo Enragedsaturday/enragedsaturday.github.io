@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Shipley v. California.json",
+    "lens": "A",
+    "notes": "No external sources used; review is limited to the disclosed group_inventory.jsonl, content_page.md, lake JSON, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "1b595dd12d180395",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and identifies Shipley v. California as a U.S. Supreme Court case decided 1969-06-23.",
+          "The lake official citation is 395 U.S. 818, and the disclosed parallel/vendor citations match the inventory: 89 S. Ct. 2053, 23 L. Ed. 2d 732, and 1969 U.S. LEXIS 1169.",
+          "content_page.md uses the same case name, court, year, date, docket, and display citation."
+        ],
+        "residual_risks": [
+          "No external reporter source checked, per instruction."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "23cc58443e857d4e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The Court has consistently held that a search \"can be incident to an arrest only if it is substantially contemporaneous with the arrest and is confined to the <i>immediate</i> vicinity of the arrest.\"",
+          "locator_note": "text/Shipley v. California__f072c6.txt contains the rule passage; lake pinpoints[0] and the inventory payload contain page boilerplate instead.",
+          "needs_cl": false,
+          "problem": "pin-819's stored quote is not an opinion passage; it is copied content-page/front-matter material ending at '## Rule No.' and does not match the claimed Shipley passage.",
+          "proposed_fix": "Replace pin-819 with the actual opinion passage supporting the rule and keep the 395 U.S. at 819-820/Stoner attribution.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the actual rule sentence, while the payload quote begins with the built page header and background.",
+          "The lake record itself marks pin-819 quote_fidelity as mismatch and gives no page or star marker."
+        ],
+        "residual_risks": [
+          "The displayed content-page rule quote is close to the opinion text, but the lake pinpoint attached to it is defective."
+        ],
+        "suggested_tightening": "Use the exact opinion quote for pin-819 and pin it to the passage spanning 395 U.S. 819-820.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4cfb696fd1bd9d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But the Constitution has never been construed by this Court to allow the police, in the absence of an emergency, to arrest a person <i>outside</i> his home and then take him inside for the purpose of conducting a warrantless search. On the contrary, \"it has always been assumed that one's house cannot lawfully be searched without a search warrant, except as an incident to a lawful arrest <i>therein.</i>\"",
+          "locator_note": "text/Shipley v. California__f072c6.txt contains the source passage at the page-820 discussion.",
+          "needs_cl": false,
+          "problem": "The quote is substantively supported, but it is an edited quotation rather than character-identical text: it omits 'But' and 'On the contrary,' uses an ellipsis and bracketed capitalization, and changes source HTML italics/italicized punctuation into Markdown formatting.",
+          "proposed_fix": "Either record this as an edited quotation with normalized-fidelity rules, or replace it with the exact source wording and formatting from the opinion text.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text supports the proposition and the quoted language.",
+          "Because the review lens asks for character-faithful quote fidelity, the edited quote should not be treated as exact without a normalization rule or correction."
+        ],
+        "residual_risks": [
+          "If the corpus permits standard legal elisions, bracketed capitalization, and Markdown-normalized italics, this may be acceptable after reclassification."
+        ],
+        "suggested_tightening": "Make pin-820 either an exact quote from the source text or explicitly classify it as an edited legal quotation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a71c7e465ddeda3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1969-06-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and subsequent-history accuracy were not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Shipley v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1b595dd12d180395\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified and identifies Shipley v. California as a U.S. Supreme Court case decided 1969-06-23.\",\n        \"The lake official citation is 395 U.S. 818, and the disclosed parallel/vendor citations match the inventory: 89 S. Ct. 2053, 23 L. Ed. 2d 732, and 1969 U.S. LEXIS 1169.\",\n        \"content_page.md uses the same case name, court, year, date, docket, and display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No external reporter source checked, per instruction.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"23cc58443e857d4e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-819's stored quote is not an opinion passage; it is copied content-page/front-matter material ending at '## Rule No.' and does not match the claimed Shipley passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-819 with the actual opinion passage supporting the rule and keep the 395 U.S. at 819-820/Stoner attribution.\",\n        \"evidence_quote\": \"The Court has consistently held that a search \\\"can be incident to an arrest only if it is substantially contemporaneous with the arrest and is confined to the <i>immediate</i> vicinity of the arrest.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Shipley v. California__f072c6.txt contains the rule passage; lake pinpoints[0] and the inventory payload contain page boilerplate instead.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the actual rule sentence, while the payload quote begins with the built page header and background.\",\n        \"The lake record itself marks pin-819 quote_fidelity as mismatch and gives no page or star marker.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The displayed content-page rule quote is close to the opinion text, but the lake pinpoint attached to it is defective.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion quote for pin-819 and pin it to the passage spanning 395 U.S. 819-820.\"\n    },\n    {\n      \"assertion_id\": \"d4cfb696fd1bd9d1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively supported, but it is an edited quotation rather than character-identical text: it omits 'But' and 'On the contrary,' uses an ellipsis and bracketed capitalization, and changes source HTML italics/italicized punctuation into Markdown formatting.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Either record this as an edited quotation with normalized-fidelity rules, or replace it with the exact source wording and formatting from the opinion text.\",\n        \"evidence_quote\": \"But the Constitution has never been construed by this Court to allow the police, in the absence of an emergency, to arrest a person <i>outside</i> his home and then take him inside for the purpose of conducting a warrantless search. On the contrary, \\\"it has always been assumed that one's house cannot lawfully be searched without a search warrant, except as an incident to a lawful arrest <i>therein.</i>\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Shipley v. California__f072c6.txt contains the source passage at the page-820 discussion.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text supports the proposition and the quoted language.\",\n        \"Because the review lens asks for character-faithful quote fidelity, the edited quote should not be treated as exact without a normalization rule or correction.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus permits standard legal elisions, bracketed capitalization, and Markdown-normalized italics, this may be acceptable after reclassification.\"\n      ],\n      \"suggested_tightening\": \"Make pin-820 either an exact quote from the source text or explicitly classify it as an edited legal quotation.\"\n    },\n    {\n      \"assertion_id\": \"a71c7e465ddeda3f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter, so no treatment defect is raised.\",\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1969-06-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and subsequent-history accuracy were not audited under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No external sources used; review is limited to the disclosed group_inventory.jsonl, content_page.md, lake JSON, and cached opinion text.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:34-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:35:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a518649f93",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-49fa2f00bc",
+      "F-S9-PR-1109015338"
+    ],
     "group_id": "_overhaul2/lake/cases/Shipley v. California.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +109,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cf11968c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Shipley v. California"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 96688,
+      "output": 8662,
+      "source": "codex-events",
+      "total": 105350
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "1b595dd12d180395": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "23cc58443e857d4e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a71c7e465ddeda3f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d4cfb696fd1bd9d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-49fa2f00bc",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1109015338",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a518649f93",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 166.7
   }
 }

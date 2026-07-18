@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a35626a0646ba530",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is Brown v. Mississippi (Hughes, C.J.), murder of Raymond Stewart (1934), with star pages *280/*281/*285/*286/*287 consistent with an opinion beginning at 278.",
+          "official_selection_present=true, 297 U.S. 278 selected_official; parallel cites (56 S. Ct. 461, 80 L. Ed. 682, 1936 U.S. LEXIS 527) internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e7df5ad23edb301",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached text on page 286 reads 'It would be difficult to conceive of methods more revolting to the sense of justice than those taken to procure the confessions of these petitioners, and the use of the confessions thus obtained as the basis for conviction and sentence was a clear denial of due process.' — content quote is verbatim.",
+          "Quote sits between the *286 and *287 markers; content 'Id.' resolves to 297 U.S. at 286; star-verified fragment matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a05549d3353a8136",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "And the trial equally is a mere pretense where the state authorities have contrived a conviction resting solely upon confessions obtained by violence.",
+          "locator_note": "pin-286; cached opinion page 286 (after *286 marker, before *287); content 'Rule' block cited 297 U.S. at 286.",
+          "needs_cl": false,
+          "problem": "The ledger quote field for pin-286 is a mis-extraction: it captured the page's front-matter/Background/Issue prose ending at the 'Rule' heading, not a quotation from the opinion.",
+          "proposed_fix": "Re-point the pin-286 quote span to the true anchored quotation; content requires no change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The real anchored quote is verbatim-faithful and sits on page 286 (between *286 and *287), so content pincite 286 is correct.",
+          "Defect is confined to the ledger quote field, not the published content."
+        ],
+        "residual_risks": [
+          "Ledger quote field will mismatch the opinion until re-pointed."
+        ],
+        "suggested_tightening": "Anchor pin quotes to the enclosing quotation, not to preceding heading/front-matter prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d820cab93c550ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with disclosed evidence; Brown v. Mississippi (1936) is the foundational coerced-confession due-process case shown in the cached opinion.",
+          "All negative edges are proposed:true co-citation false positives (e.g., United States v. Dickerson, People v. Cahill tagged 'overruled') — none overrules Brown v. Mississippi.",
+          "scope_note ('Foundational due-process voluntariness case; good law') matches the cached holding."
+        ],
+        "residual_risks": [
+          "Lake record status is 'under_review' (a processing flag, not a treatment invalidity); negative edges unadjudicated; definitive currency confirmation would need CourtListener, but nothing disclosed contradicts good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-55160b426f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-03-3171beb3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brown v. Mississippi"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1d820cab93c550ec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e7df5ad23edb301": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a05549d3353a8136": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a35626a0646ba530": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-013cf8fcfa",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-55160b426f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

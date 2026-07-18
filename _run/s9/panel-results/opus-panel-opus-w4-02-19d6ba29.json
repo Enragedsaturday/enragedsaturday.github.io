@@ -1,0 +1,141 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5c36788da99c12d9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms '442 U.S. 707 (1979)', 'FARE, ACTING CHIEF PROBATION OFFICER v. MICHAEL C.', No. 78-334, Blackmun, J.; star-pagination *708-*734 corroborates official cite 442 U.S. 707.",
+          "Official-cite selection present and consistent with display."
+        ],
+        "residual_risks": [
+          "Parallel cites (99 S. Ct. 2560, 61 L. Ed. 2d 197, 1979 U.S. LEXIS 133) are not shown in the disclosed HTML text; only official 442 U.S. 707 is directly corroborated.",
+          "Frontmatter/identity date_decided='1979-10-01' conflicts with the opinion's 'Decided June 20, 1979' (treatment as_of_content correctly uses 1979-06-20); a date-field fix, outside this cite-existence assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6fdfe829beba8c5c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A probation officer simply is not necessary, in the way an attorney is, for the protection of the legal rights of the accused, juvenile or adult. ... Nor do we believe that a request by a juvenile to speak with his probation officer constitutes a per se request to remain silent. As indicated, since a probation officer does not fulfill the important role in protecting the rights of the accused [*724] juvenile that an attorney plays, we decline to find that the request for the probation officer is tantamount to the request for an attorney.",
+          "locator_note": "Fare v. Michael C, Rule section, pin-724 (both quoted passages).",
+          "needs_cl": false,
+          "problem": "pin-724 harvest is corrupt: payload.quote captured the page's own frontmatter/Background/Issue prose (not any opinion passage), so the recorded quote_fidelity='mismatch' is an extraction artifact, not a true quote failure. Checking the page's ACTUAL pin-724 quotes against the opinion star-pagination: the first quoted sentence 'A probation officer simply is not necessary, in the way an attorney is, for the protection of the legal rights of the accused, juvenile or adult.' falls between *722 and *723 (page 722); 'Nor do we believe that a request by a juvenile to speak with his probation officer constitutes a per se request to remain silent.' begins on 723; only 'we decline to find that the request for the probation officer is tantamount to the request for an attorney.' lands after *724 (page 724). The single pincite '442 U.S. at 724' is therefore imprecise for the first (722) and lead (723) quoted language.",
+          "proposed_fix": "Re-harvest pin-724 to the actual quoted opinion text and refine the pincite: cite 'A probation officer simply is not necessary...' to 442 U.S. 722 and the 'Nor do we believe... / we decline to find... tantamount to the request for an attorney' passage to 723-724 (or cite the span 722-724).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Both quoted passages verify verbatim in the disclosed opinion, so the substance/holding is faithful; the defect is pincite precision, not fabrication.",
+          "Star-pagination places the 'not necessary' sentence on 722 and only the 'we decline to find... tantamount' clause on 724, so a single '442 U.S. at 724' pincite is imprecise.",
+          "Recorded payload.quote is the page's own header/frontmatter text (extraction artifact) and pinpoint_status is 'slip-only' (no star verification)."
+        ],
+        "residual_risks": [
+          "The rendered wiki page shows the correct quotes under the 724 cite, so a reader is not materially misled; the fix is pincite refinement plus re-harvesting the corrupt pin-724 record."
+        ],
+        "suggested_tightening": "Split multi-page quoted passages into per-page pincites at harvest, and reject any harvest whose captured span matches page frontmatter/header text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9fbd0d3ebb024d2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'This totality-of-the-circumstances approach is adequate to determine whether there has been a waiver even where interrogation of juveniles is involved.' matches the opinion verbatim.",
+          "The *725 star marker precedes this paragraph, confirming the pin-725 pincite; pinpoint_status 'star-verified', fidelity 'matched'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65449f9e0c1dfeca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields match the lake record; as_of_content 1979-06-20 matches the opinion's decision date ('Decided June 20, 1979').",
+          "The 'good_law' determination (composite_basis=migration-seed) and scope_note (juvenile totality-of-the-circumstances waiver test remains the rule; cf. J.D.B. v. North Carolina on age in the custody inquiry) are consistent with the opinion and unrebutted by disclosed evidence.",
+          "The many negative edges (overruled/questioned/criticized/superseded) are explicitly proposed:true with audit_needed:true ('R15 treatment audit required') keyword-lane candidates (e.g. Edwards, Berkemer, Moran, Elstad, Davis) reflecting the citing cases' own status/keyword hits, not confirmed abrogations of Fare."
+        ],
+        "residual_risks": [
+          "Good-law currency is citator-dependent and not fully verifiable from a single opinion text; 33 proposed negative events remain pending R15 audit - if any resolves to a genuine abrogation, field_i_validity would need revisiting.",
+          "as_of_treatment 2026-06-30 is a check-date not independently verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": "Complete the flagged R15 treatment audit to confirm the proposed negative edges are keyword false positives before final promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Fare v. Michael C.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-02-19d6ba29",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Fare v. Michael C"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5c36788da99c12d9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "65449f9e0c1dfeca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6fdfe829beba8c5c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9fbd0d3ebb024d2e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-395bcb5628",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

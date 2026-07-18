@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "dd17f13bc906aac4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Kalkines v. United States, Davis, Judge, U.S. Court of Claims 1973, Ct. Cl. star pages *573-*582, Fifth Amendment / duty-to-answer subject matter.",
+          "Cites 473 F.2d 1391 and 200 Ct. Cl. 570 are real; official=null is a documented limitation (provenance warning 'official cite selection failed closed: unlisted_reporter:Ct. Cl.'), not an existence failure."
+        ],
+        "residual_risks": [
+          "No official cite is selected and display=null / frontmatter citation field is empty; the page relies on parallel_cite and the header line for the display cite."
+        ],
+        "suggested_tightening": "add 'Ct. Cl.' to the official-selection reporter table, or promote 473 F.2d 1391 as the display cite",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "478cd6921306a489",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-1393 quote matches cached opinion verbatim at Ct. Cl. star page *574 (= 473 F.2d 1393) with a proper bracketed capitalization: opinion (para b606-4) reads 'But a governmental employer is not wholly barred ...'; the quote renders '[A] governmental employer is not wholly barred ... cannot be employed against him in a criminal case.'",
+          "Pincite '473 F.2d at 1393 (200 Ct. Cl. at 574)' is sound; Sources note discloses that the CL copy carries Ct. Cl. star-pagination."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' / pinpoint_status='slip-only' is a FALSE alarm caused by the CL copy carrying Ct. Cl. (not F.2d) star-pagination, so an F.2d-page auto-match failed; the quote is faithful."
+        ],
+        "suggested_tightening": "flip pin-1393 quote_fidelity to 'matched' verified against Ct. Cl. *574",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4fa6f06e50394bd7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.",
+          "locator_note": "cached opinion para b606-4, Ct. Cl. star page *574 (= 473 F.2d 1393); content page pin-1393a already carries the correct quote pincited '473 F.2d at 1393 (200 Ct. Cl. at 574)'.",
+          "needs_cl": false,
+          "problem": "pin-1393a's stored quote is a page-markdown dump (YAML '---', '# Kalkines v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **good** *(as of 2026-06-30)*'), not any text from the 1973 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+          "proposed_fix": "replace pin-1393a.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote text is impossible in a 1973 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+          "The intended quotation is verbatim in cached text at Ct. Cl. *574, so the pincite is sound; the corruption is confined to the lake pinpoint.quote field."
+        ],
+        "residual_risks": [
+          "Rendered content page is correct; defect is confined to the lake pinpoint.quote provenance field."
+        ],
+        "suggested_tightening": "re-harvest pin-1393a from the opinion text rather than the page markdown",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5326af6f217a7926",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' (legacy migration good->good_law); lane1_negative reviewed 0 accepted negatives; the 6 lane2_top_cited 'questioned'/'criticized' edges are all proposed=true FPs (later Fed. Cir. / MSPB decisions that apply the Kalkines warning rather than undermine it).",
+          "Cached opinion states the Kalkines-warning rule intact (dual-advisement standard implementing Garrity/Gardner); no disclosed accepted negative treatment."
+        ],
+        "residual_risks": [
+          "scope_note's claim that Kalkines binds in the Federal Circuit via South Corp. v. United States is not verifiable from disclosed evidence (no South Corp. text inlined) — plausible but unverified in this pack."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-68df245683",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Kalkines v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-03-9fc53137",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kalkines v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "478cd6921306a489": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4fa6f06e50394bd7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5326af6f217a7926": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd17f13bc906aac4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-68df245683",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb077bcade",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

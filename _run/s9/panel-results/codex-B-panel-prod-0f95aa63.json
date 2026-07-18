@@ -1,22 +1,138 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Missouri v. Seibert.json",
+    "lens": "B",
+    "notes": "Reviewed every inventory assertion exactly once under lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "fc3f6b3c9d6e53e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, not a stub, and identifies Missouri v. Seibert as a U.S. Supreme Court case decided 2004-06-28.",
+          "The lake official citation is 542 U.S. 600, matching the page display citation.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30; no confirmed disclosed edge supersedes or overrules Seibert itself."
+        ],
+        "residual_risks": [
+          "The treatment derivation includes audit-needed proposed negative hits, but those are not confirmed negative treatment in the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "69a5215735f6c6e2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity/pinpoint assertion, and lens B does not assess support or quote fidelity.",
+          "No currency or treatment defect is embedded in this assertion."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint fidelity are reserved for lens A and are not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae971fa7744f6928",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 25, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Missouri v. Seibert__9c47c7.json treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": false,
+          "problem": "The good-law and SCOTUS-weight call survives, but the page's categorical 'No negative treatment' rendering is too strong because the lake contains proposed negative-treatment edges and audit-needed derivation lanes.",
+          "proposed_fix": "Keep field_i_validity: good_law and Binding — SCOTUS, but qualify the subsequent-history sentence as no confirmed negative treatment in the disclosed lake record, with proposed negative hits awaiting audit.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "The weight label is consistent with the lake identity fields: court is U.S. Supreme Court and court_id is scotus.",
+          "All 29 disclosed treatment edges are proposed and have field_iii 'mentioned', so they do not establish confirmed overruling, abrogation, or supersession of Seibert.",
+          "The disclosed derivation still flags audit_needed and proposed negative events, so the unqualified 'No negative treatment' sentence should be narrowed."
+        ],
+        "residual_risks": [
+          "A completed audit of the proposed negative hits could change the certainty of the subsequent-history statement."
+        ],
+        "suggested_tightening": "Render as: good_law as of 2026-06-30; plurality opinion with Kennedy concurrence generally treated as controlling; no confirmed negative treatment in the disclosed lake record.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Missouri v. Seibert.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fc3f6b3c9d6e53e8\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified, not a stub, and identifies Missouri v. Seibert as a U.S. Supreme Court case decided 2004-06-28.\",\n        \"The lake official citation is 542 U.S. 600, matching the page display citation.\",\n        \"The lake treatment field marks the authority good_law as of 2026-06-30; no confirmed disclosed edge supersedes or overrules Seibert itself.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation includes audit-needed proposed negative hits, but those are not confirmed negative treatment in the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"69a5215735f6c6e2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity/pinpoint assertion, and lens B does not assess support or quote fidelity.\",\n        \"No currency or treatment defect is embedded in this assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and pinpoint fidelity are reserved for lens A and are not resolved here.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ae971fa7744f6928\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and SCOTUS-weight call survives, but the page's categorical 'No negative treatment' rendering is too strong because the lake contains proposed negative-treatment edges and audit-needed derivation lanes.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep field_i_validity: good_law and Binding — SCOTUS, but qualify the subsequent-history sentence as no confirmed negative treatment in the disclosed lake record, with proposed negative hits awaiting audit.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 25, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Missouri v. Seibert__9c47c7.json treatment.derivation.lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The inventory treatment payload matches the lake: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"The weight label is consistent with the lake identity fields: court is U.S. Supreme Court and court_id is scotus.\",\n        \"All 29 disclosed treatment edges are proposed and have field_iii 'mentioned', so they do not establish confirmed overruling, abrogation, or supersession of Seibert.\",\n        \"The disclosed derivation still flags audit_needed and proposed negative events, so the unqualified 'No negative treatment' sentence should be narrowed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed audit of the proposed negative hits could change the certainty of the subsequent-history statement.\"\n      ],\n      \"suggested_tightening\": \"Render as: good_law as of 2026-06-30; plurality opinion with Kennedy concurrence generally treated as controlling; no confirmed negative treatment in the disclosed lake record.\"\n    }\n  ],\n  \"notes\": \"Reviewed every inventory assertion exactly once under lens B only.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:31:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:16:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6b1f726676",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7cbdaab2c1"
+    ],
     "group_id": "_overhaul2/lake/cases/Missouri v. Seibert.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-0f95aa63",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0f95aa63.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 17e10073-6f81-4ce5-8923-c83e44de0009\n2026-07-10T22:30:54.786125Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:55.360872Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:55.981272Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:56.933463Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:58.129601Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:31:00.226033Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Missouri v. Seibert"
+    ],
+    "tokens": {
+      "input": 295179,
+      "output": 7397,
+      "source": "codex-events",
+      "total": 302576
+    },
+    "verdict_map": {
+      "69a5215735f6c6e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae971fa7744f6928": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fc3f6b3c9d6e53e8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6b1f726676",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7cbdaab2c1",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 151.5
   }
 }

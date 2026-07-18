@@ -1,0 +1,163 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "240f75f4a62bfe89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Content-page citation 497 U.S. 177 (1990) equals lake official cite (cluster.citations[], selected_official=true).",
+          "All parallels match content-page parallel_cite/neutral_cite: 110 S. Ct. 2793; 111 L. Ed. 2d 148; 58 U.S.L.W. 4892; 1990 U.S. LEXIS 3295.",
+          "Identity corroborated: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true, cluster_id 112475."
+        ],
+        "residual_risks": [
+          "official_selection reason 'selected_rank_1' is a heuristic rank, not a source-page check; cite existence nonetheless corroborated by the cluster citation set."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "724cc0119ca8bd1b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoint_status\": \"slip-only\", \"quote_fidelity\": \"mismatch\"",
+          "locator_note": "Rodriguez Rule section, ^pin-188a; quote 'If not, then warrantless entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid.'",
+          "needs_cl": true,
+          "problem": "Pincite ^pin-188a (quoted as Id. at 188-189) is slip-only and extractor flags quote_fidelity=mismatch; no source opinion text is inlined in the pack, so the quotation cannot be confirmed against the reporter.",
+          "proposed_fix": "Star-verify the quote against 497 U.S. 188-189 via CourtListener; retain if matched, correct pincite/quote otherwise.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote text reads as a clean, plausible opinion quotation, but with no source text disclosed I cannot affirm fidelity.",
+          "Extractor status slip-only means the pincite was not star-verified."
+        ],
+        "residual_risks": [
+          "Quote may well be accurate; the defect is an unverified pincite, not a demonstrated misquote."
+        ],
+        "suggested_tightening": "Attach a star-pagination text-fragment anchor as done for Wardlow pin-124a.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "c10810dcf5e25480",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"## Issue Whether a warrantless entry ... ## Rule The validity of an entry on apparent authority is measured by objective reasonableness\"",
+          "locator_note": "Rodriguez ^pin-188 anchors the Rule paragraph; page quotes the objective-standard / 'warrant a man of reasonable caution in the belief' language at 497 U.S. at 188.",
+          "needs_cl": true,
+          "problem": "Extractor's captured 'quote' for pin-188 is a page-prose blob spanning Background/Issue/Rule (it contains markdown headers '## Issue' and '## Rule'), not a verbatim opinion quotation, so quote_fidelity=mismatch is a scoping artifact; the actual embedded quotation (Terry 'reasonable caution' standard attributed to 497 U.S. at 188) remains slip-only/unverified with no source text disclosed.",
+          "proposed_fix": "Re-scope the extractor to the embedded quotation only, then star-verify against 497 U.S. 188.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is page prose incl markdown headers, confirming a mis-scoped span; the 'mismatch' is not evidence the page's actual quotation is unfaithful.",
+          "No source opinion text inlined; pincite unverified (slip-only)."
+        ],
+        "residual_risks": [
+          "Underlying pincite 497 U.S. 188 unverified from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "5c8ce41b80f59b8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed treatment.edges are all proposed:true candidate signals (field_ii questioned/overruled) produced by a keyword-triggered scan; none is a confirmed overruling of Rodriguez itself.",
+          "field_i_validity=good_law seed is not contradicted by any confirmed adverse treatment in the disclosed record.",
+          "Content-page 'No negative treatment' is consistent with the absence of confirmed adverse edges."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true with proposed_negative_events (lane1=4, lane2=25) and 'R15 treatment audit required'; good_law is an unaudited migration-seed.",
+          "The 'overruled' field_ii on the Schriro v. Landrigan edge is an edge-level CL signal on a citing case, not confirmation the target was overruled.",
+          "Badge 'good (as of 2026-06-30)' derives from composite_basis=migration-seed, not an independently derived 2026 currency check."
+        ],
+        "suggested_tightening": "Complete the R15 audit before treating the 2026-06-30 as_of as a derived currency date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f0146d4816",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-01-3528ccdb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Rodriguez"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "240f75f4a62bfe89": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5c8ce41b80f59b8a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "724cc0119ca8bd1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "c10810dcf5e25480": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e43e012da",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e3345f6fbe",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f0146d4816",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

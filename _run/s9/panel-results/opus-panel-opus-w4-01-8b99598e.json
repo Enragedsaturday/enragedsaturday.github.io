@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c2db4a892fb265f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 451 U.S. 477 (1981) corroborated by the inlined opinion, which is the Edwards holding text (invoked-counsel / police-reinitiated-interrogation) with internal star-pages *485 and *487 straddling the 477 case-start.",
+          "Lake identity consistent: cluster 110475, lead opinion 9428324, decided 1981-06-22, expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official_selection selected_rank_1.",
+          "Parallels 101 S. Ct. 1880 / 68 L. Ed. 2d 378 and vendor-neutral 1981 U.S. LEXIS 96 match cluster.citations[] as recorded."
+        ],
+        "residual_risks": [
+          "The parallel/vendor-neutral reporters are cross-checked only against the lake cluster.citations[] block, not against the inlined slip text (which carries the U.S.-reporter pagination); the U.S. official cite is fully corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6253e481421c32bb",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we now hold that when an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.",
+          "locator_note": "content_page line 90 (^pin-484) vs cached opinion text (single body paragraph, page 484 before the *485 marker)",
+          "needs_cl": false,
+          "problem": "The pinpoint record's recorded quote for pin-484 is a mis-extraction: it captured the page preamble (frontmatter/header + Background + Issue + the Rule lead-in 'No; once counsel is invoked...') instead of the actual quotation-marked sentence anchored at ^pin-484, which is why the extractor's quote_fidelity flag reads 'mismatch'. The underlying content-page quote itself is faithful and correctly pincited.",
+          "proposed_fix": "Re-anchor the extracted quote span to the quotation-marked holding sentence at ^pin-484 and clear the mechanical 'mismatch' flag; no change to the published page is required.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-484 quote on the content page ('[W]hen an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.') is verbatim-faithful to the inlined slip opinion, with only the bracketed '[W]hen' for capitalization.",
+          "Pincite '451 U.S. 477, 484' is correct: the *485 star-page marker falls in the NEXT sentence ('made avail*485able to him'), so the entire pin-484 sentence sits on page 484.",
+          "The recorded payload.quote (the page header/preamble ending at '## Rule No; once counsel is invoked...') is an extraction artifact, not a defect in the content; the 'mismatch' fidelity flag is therefore a mechanical false positive."
+        ],
+        "residual_risks": [
+          "A downstream checker reading only the mis-extracted payload.quote (or the raw 'mismatch' flag) could wrongly conclude the CONTENT quote is unfaithful, when the content quote is in fact verbatim-correct."
+        ],
+        "suggested_tightening": "Repair the extractor's quote-span anchoring for quotation-marked pincites so ^pin markers do not capture the preceding preamble block.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf7fdd56c4c2f61f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-484a quote ('[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police.') is verbatim-faithful to the inlined slip opinion ('We further hold that an accused, such as Edwards...'), with only the bracketed '[A]n' for capitalization.",
+          "Pincite 'Id. at 484-85' is correct: the *485 star-page marker splits 'made avail*485able' mid-quote, so the quote straddles pages 484 and 485.",
+          "The recorded quote_fidelity 'mismatch' flag is a mechanical false positive caused by the embedded '*485' page-number token breaking the literal string match on 'available'."
+        ],
+        "residual_risks": [
+          "Fidelity confirmed against the cached slip/reporter text; the page label '*485' being present in the source but absent from the page quote is expected star-paging behavior, not an omission."
+        ],
+        "suggested_tightening": "Strip star-page tokens before fuzzy-matching so embedded page markers stop tripping false 'mismatch' flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc01f73458af6909",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is a migration-seed (composite_basis='migration-seed'); the content page and lake treatment block agree on 'good' as of 2026-06-30, varies_by_point=false.",
+          "Every negative edge in the lake record is proposed=true and unadjudicated: the derivation lanes are stamped audit_needed=true / 'R15 treatment audit required', and the field_ii labels attach to the CITING cases' own status (e.g. Dickerson v. United States tagged 'overruled', which is facially a citator artifact since Dickerson ratified Miranda), so none is a disclosed adjudicated overruling of Edwards.",
+          "Nothing in the disclosed evidence refutes good_law; but good_law substance cannot be affirmatively confirmed from the pack because no adjudicated treatment-holding text is inlined and the proposed negatives remain unresolved."
+        ],
+        "residual_risks": [
+          "The as_of_treatment (2026-06-30) is a re-seeded migration date, not a fresh S2 re-derivation; the ~31 proposed negative edges (lane1_negative/lane2_top_cited) still require the R15 audit before good_law is machine-certified.",
+          "I am not asserting a defect: per the stub/unverifiable rule I record verifiable_from_disclosed=false rather than fabricate either a clean confirmation or a negative-treatment finding."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit of the proposed edges and re-derive as_of_treatment so good_law rests on adjudicated (not migration-seed) evidence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2c4fd8063e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-81c93f64dc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-01-8b99598e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Edwards v. Arizona"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6253e481421c32bb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bf7fdd56c4c2f61f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2db4a892fb265f8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc01f73458af6909": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ac7a21e01",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2c4fd8063e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-81c93f64dc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

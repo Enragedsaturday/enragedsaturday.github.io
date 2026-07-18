@@ -1,12 +1,75 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Cotterman.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "d1decc040b637858",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the authority as United States v. Howard Cotterman, U.S. Court of Appeals, 9th Circuit (en banc), decided 2013-03-08, with cluster_id 854692.",
+          "The disclosed citation fields match the assertion: 709 F.3d 952, 2013 WL 856292, and 2013 U.S. App. LEXIS 4731.",
+          "For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30 and no disclosed treatment field marks Cotterman itself overruled, abrogated, superseded, or vacated."
+        ],
+        "residual_risks": [
+          "The identity record is still marked identity_method=pending and expected_citation_found=false, but those are identity QA flags, not disclosed negative treatment or nonexistence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe9ec475082aa33d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is quote_fidelity; Lens B does not adjudicate quote support or quote fidelity.",
+          "The only currency/treatment content embedded in the quoted page header is the same good-law, as-of-2026-06-30 treatment label reviewed in the treatment row.",
+          "The lake record has no point_overrides and no disclosed pin-specific negative treatment for pin-op17."
+        ],
+        "residual_risks": [
+          "Quote/support defects, if any, are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b22fa5b35117b7eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The assertion matches lake.treatment: field_i_validity=good_law, as_of_content=2013-03-08, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.",
+          "The scope_note itself carries the currency limitation: good law in-circuit, later clarified by Cano, and part of a circuit split with Touset.",
+          "The focused negative-treatment derivation reports lane1_negative proposed_negative_events=0 and point_overrides is empty.",
+          "Although treatment.edges list citing cases with negative field_ii labels, each disclosed edge has field_iii=mentioned, point=null, and proposed=true; the disclosed edge judgments do not show Cotterman itself was overruled, abrogated, superseded, or otherwise displaced beyond the stated Cano clarification."
+        ],
+        "residual_risks": [
+          "If the proposed edge field_ii labels are later adjudicated as adverse treatment of Cotterman rather than mentioned/status metadata, the good-law call should be revisited."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Cotterman.json\",\"reviewed\":[{\"assertion_id\":\"d1decc040b637858\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the authority as United States v. Howard Cotterman, U.S. Court of Appeals, 9th Circuit (en banc), decided 2013-03-08, with cluster_id 854692.\",\"The disclosed citation fields match the assertion: 709 F.3d 952, 2013 WL 856292, and 2013 U.S. App. LEXIS 4731.\",\"For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30 and no disclosed treatment field marks Cotterman itself overruled, abrogated, superseded, or vacated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The identity record is still marked identity_method=pending and expected_citation_found=false, but those are identity QA flags, not disclosed negative treatment or nonexistence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fe9ec475082aa33d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is quote_fidelity; Lens B does not adjudicate quote support or quote fidelity.\",\"The only currency/treatment content embedded in the quoted page header is the same good-law, as-of-2026-06-30 treatment label reviewed in the treatment row.\",\"The lake record has no point_overrides and no disclosed pin-specific negative treatment for pin-op17.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support defects, if any, are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b22fa5b35117b7eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion matches lake.treatment: field_i_validity=good_law, as_of_content=2013-03-08, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\",\"The scope_note itself carries the currency limitation: good law in-circuit, later clarified by Cano, and part of a circuit split with Touset.\",\"The focused negative-treatment derivation reports lane1_negative proposed_negative_events=0 and point_overrides is empty.\",\"Although treatment.edges list citing cases with negative field_ii labels, each disclosed edge has field_iii=mentioned, point=null, and proposed=true; the disclosed edge judgments do not show Cotterman itself was overruled, abrogated, superseded, or otherwise displaced beyond the stated Cano clarification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the proposed edge field_ii labels are later adjudicated as adverse treatment of Cotterman rather than mentioned/status metadata, the good-law call should be revisited.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:58-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:51:50-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c006d0a6d0",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Cotterman.json",
     "group_total_assertions": 3,
@@ -16,21 +79,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-de1ecea2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Cotterman"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 421903,
+      "output": 7872,
+      "source": "codex-events",
+      "total": 429775
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "b22fa5b35117b7eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d1decc040b637858": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe9ec475082aa33d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c006d0a6d0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 160.8
   }
 }

@@ -1,0 +1,115 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a93f5ef5a1727513",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Justice O'Connor, 'delivered the opinion of the Court') is captioned Fellers v. United States with star-pagination *521-*525, corroborating the official cite 540 U.S. 519 (2004).",
+          "official_selection is present and agrees with display (540 U.S. 519); the SCOTUS / 2004 / docket 02-6320 identity is internally consistent."
+        ],
+        "residual_risks": [
+          "Parallel cites 124 S. Ct. 1019 and 157 L. Ed. 2d 1016 and vendor-neutral 2004 U.S. LEXIS 825 are not shown in the disclosed opinion text; only the official 540 U.S. 519 is directly corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "17e1f0179fb02e26",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-524 content quote 'We have consistently applied the deliberate-elicitation standard in subsequent Sixth Amendment cases ... and we have expressly distinguished this standard from the Fifth Amendment custodial-interrogation standard.' matches the cached opinion verbatim at *524, the ellipsis properly eliding the Henry/Brewer string cites; the passage sits entirely between *524 and *525, so the 540 U.S. 524 pincite is exact.",
+          "The page's companion Massiah quote 'evidence of his own incriminating words, which federal agents ... deliberately elicited from him after he had been indicted and in the absence of his counsel.' matches verbatim at 377 U.S. 206 in the cached text.",
+          "The lake pinpoint's stored quote ('- Massiah v. United States, 377 U.S. at 206 (quoted).') is a citation-attribution string the harvester mis-scoped, not a quotation, which explains the recorded quote_fidelity=mismatch / pinpoint_status=slip-only; it is a metadata artifact, not a content defect."
+        ],
+        "residual_risks": [
+          "pin-524's stored quote field is mis-anchored to the preceding Massiah attribution rather than the 524 passage; a harvest re-anchor would clear the artifact flag, but the rendered page is faithful."
+        ],
+        "suggested_tightening": "Re-harvest pin-524 to the actual 540 U.S. 524 passage so the stored quote matches the rendered quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5e570bf34afd6d3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached text is the 2004 SCOTUS majority (O'Connor, opinion of the Court); good_law is consistent with a unanimous merits decision, and the scope_note (remanded on the Elstad fruits question) matches the opinion's remand.",
+          "All 26 disclosed negative edges are proposed:true keyword-lane candidates (lane1_negative / lane2_top_cited) from state and lower federal courts (e.g., State of Iowa v. Marshall, Arabzadegan v. State, United States v. Rommy) that cannot overrule a SCOTUS holding; zero edges are accepted (no proposed:false in the record)."
+        ],
+        "residual_risks": [
+          "Good-law currency to as_of_treatment 2026-06-30 is citator-dependent; the proposed negative edges remain pending audit (audit_needed:true), but none is a confirmed abrogation and no disclosed evidence contradicts good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-30a6cac52a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Fellers v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-03-cc3aaed2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Fellers v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "17e1f0179fb02e26": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a93f5ef5a1727513": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5e570bf34afd6d3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-30a6cac52a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

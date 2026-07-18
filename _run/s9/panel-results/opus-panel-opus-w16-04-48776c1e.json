@@ -1,0 +1,182 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8a37ae1cea2f1000",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion confirms United States v. Hensley, O'Connor, J., carrying official U.S. Reports page labels *223 through *236 — consistent with a case reported at 469 U.S. 221 (1985).",
+          "Opinion text confirms the Terry-stop / wanted-flyer holding and cert grant (467 U.S. 1203 (1984)); official cite 469 U.S. 221 selected_rank_1.",
+          "Parallel and vendor-neutral cites are standard 1985 SCOTUS reporter forms."
+        ],
+        "residual_risks": [
+          "Parallel cites (105 S. Ct. 675; 83 L. Ed. 2d 604; 53 U.S.L.W. 4053; 1985 U.S. LEXIS 34) come from cluster.citations[] metadata, not independently paged in the cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "07138dd159967981",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pinpoint.quote is a harvest artifact (content-page lead-in prose '## Rule Yes to both. First, *Terry* stops are not confined...'), not the published quotation.",
+          "The actual ^pin-229 quotation ('if police have a reasonable suspicion, grounded in specific and articulable facts, that a person they encounter was involved in or is wanted in connection with a completed felony, then a Terry stop may be made to investigate that suspicion') is verbatim in cached opinion para b371-6, on page 229 (after the *229 marker).",
+          "'mismatch' flag is a false positive: the automated matcher compared the harvested prose, not the block quote."
+        ],
+        "residual_risks": [
+          "Lake pinpoint.quote field holds surrounding markdown rather than the quoted sentence; should be repaired for future automated re-verification."
+        ],
+        "suggested_tightening": "Repair pinpoint.quote to the published quotation string.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5968e7fc1d62ed96",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Published ^pin-233 quotation is verbatim in cached opinion para b374-5 on page 233 ('Assuming the police make a Terry stop in objective reliance on a flyer or bulletin, we hold that the evidence uncovered ... not significantly more intrusive than would have been permitted the issuing department.').",
+          "Content page omits the embedded internal citation 'United States v. Robinson, supra,' without an ellipsis — accepted convention for embedded citations; substantive text unchanged.",
+          "'mismatch' flag is a false positive, most likely triggered by the omitted embedded cite."
+        ],
+        "residual_risks": [
+          "The embedded-citation omission is unmarked; strict Bluebook 5.1 would flag it."
+        ],
+        "suggested_tightening": "Add a '(citation omitted)' parenthetical after the block quote to flag the dropped 'United States v. Robinson, supra' embedded cite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71f0f1890dac5154",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Published ^pin-232 quotation ('It is the objective reading of the flyer or bulletin that determines whether other police officers can defensibly act in reliance on it.') is verbatim in cached opinion para b374-4.",
+          "The sentence begins on page 232 (after the *232 marker) and straddles into 233; the 232 pincite correctly points to the sentence's starting page.",
+          "'mismatch' flag is a false positive attributable to the page-break straddle."
+        ],
+        "residual_risks": [
+          "Quote spans the 232->233 boundary; pincite convention (start page) is correct but a reader may look on page 233 for the tail."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3020968dfbf790a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Every disclosed treatment edge carries field_iii='mentioned' (neutral citation of Hensley); no disclosed edge asserts negative treatment OF Hensley.",
+          "The field_ii negative labels (overruled/questioned/abrogated/superseded) attach to the CITING cases' own status (e.g., United States v. Sharpe, Minnesota v. Dickerson, Brendlin v. California, Illinois v. Caballes) — transparent snippet-triage artifacts, all 'proposed': true.",
+          "good_law is uncontradicted by any disclosed evidence."
+        ],
+        "residual_risks": [
+          "composite_basis='migration-seed' (not a fresh S2 re-derivation); scope_note concedes derivation may downgrade.",
+          "lane1_negative cap_hit=true (200 reviewed), audit_needed=true / 'R15 treatment audit required', 6 proposed negative events unaudited — a genuine negative beyond the cap cannot be fully excluded from disclosed evidence alone."
+        ],
+        "suggested_tightening": "Run the pending R15 audit to convert the migration-seed good_law into a fresh derivation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:17-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2b1f37869e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-98a1bfc176",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-235f4114d6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Hensley.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-04-48776c1e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Hensley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "07138dd159967981": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5968e7fc1d62ed96": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "71f0f1890dac5154": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a37ae1cea2f1000": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3020968dfbf790a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b1f37869e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-98a1bfc176",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-235f4114d6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

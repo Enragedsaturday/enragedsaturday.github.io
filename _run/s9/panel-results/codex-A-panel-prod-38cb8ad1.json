@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Smith v. Illinois.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "b043c6230e8f6e2c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Smith v. Illinois, U.S. Supreme Court, decided 1984-12-10, docket 84-5332.",
+          "The official citation in the lake record is exactly 469 U.S. 91, matching the content page display citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42c1c1cce0dffae0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold only that, under the clear logical force of settled precedent, an accused’s <em>postrequest </em>responses to further interrogation may not be used",
+          "locator_note": "text/Smith v. Illinois__dabbaf.txt, paragraph b241-6, page label 100; lake pinpoints[0] for pin-100",
+          "needs_cl": false,
+          "problem": "pin-100's stored quote is not a verbatim passage from the opinion text and is already marked quote_fidelity='mismatch' in the lake record. It appears to be harvested page prose spanning Background, Issue, and Rule, not the cited page-100 holding sentence.",
+          "proposed_fix": "Replace pin-100 with the actual page-100 opinion text, preserving character fidelity, or remove the quote-pin assertion until a clean verbatim quote is harvested.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint payload quote begins with 'Rather than stopping...' and includes markdown section headers '## Issue' and '## Rule', which do not appear at page 100 of the opinion text.",
+          "The opinion text at page 100 contains the narrow holding beginning 'We hold only that...', which is the passage the content page cites to 469 U.S. at 100.",
+          "The lake record itself flags this pinpoint as quote_fidelity='mismatch' and has no page value for the pin."
+        ],
+        "residual_risks": [
+          "The content page's displayed quote is substantively aligned with page 100, but its straight apostrophe and markdown emphasis are not character-faithful to the cached HTML text."
+        ],
+        "suggested_tightening": "Use the exact cached text for the displayed quote, including the curly possessive in 'accused’s' and no markdown inside quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abf76da250c77df5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1984-12-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Smith v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"b043c6230e8f6e2c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Smith v. Illinois, U.S. Supreme Court, decided 1984-12-10, docket 84-5332.\",\"The official citation in the lake record is exactly 469 U.S. 91, matching the content page display citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"42c1c1cce0dffae0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-100's stored quote is not a verbatim passage from the opinion text and is already marked quote_fidelity='mismatch' in the lake record. It appears to be harvested page prose spanning Background, Issue, and Rule, not the cited page-100 holding sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-100 with the actual page-100 opinion text, preserving character fidelity, or remove the quote-pin assertion until a clean verbatim quote is harvested.\",\"evidence_quote\":\"We hold only that, under the clear logical force of settled precedent, an accused’s <em>postrequest </em>responses to further interrogation may not be used\",\"needs_cl\":false,\"locator_note\":\"text/Smith v. Illinois__dabbaf.txt, paragraph b241-6, page label 100; lake pinpoints[0] for pin-100\"},\"reasons\":[\"The lake pinpoint payload quote begins with 'Rather than stopping...' and includes markdown section headers '## Issue' and '## Rule', which do not appear at page 100 of the opinion text.\",\"The opinion text at page 100 contains the narrow holding beginning 'We hold only that...', which is the passage the content page cites to 469 U.S. at 100.\",\"The lake record itself flags this pinpoint as quote_fidelity='mismatch' and has no page value for the pin.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed quote is substantively aligned with page 100, but its straight apostrophe and markdown emphasis are not character-faithful to the cached HTML text.\"],\"suggested_tightening\":\"Use the exact cached text for the displayed quote, including the curly possessive in 'accused’s' and no markdown inside quotation marks.\"},{\"assertion_id\":\"abf76da250c77df5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1984-12-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment or currency review was performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:36:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ff5230e549"
+    ],
     "group_id": "_overhaul2/lake/cases/Smith v. Illinois.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-38cb8ad1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Smith v. Illinois"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 201328,
+      "output": 3992,
+      "source": "codex-events",
+      "total": 205320
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "42c1c1cce0dffae0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "abf76da250c77df5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b043c6230e8f6e2c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff5230e549",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 93.6
   }
 }

@@ -1,22 +1,174 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Crumble.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "61f335d4346c3344",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Prentiss Anthony Crumble with input/record name United States v. Crumble.",
+          "The lake citation metadata lists official/display citation 878 F.3d 656, court 8th Cir., date_decided 2018-01-02, and year 2018, with no parallel or vendor-neutral citation."
+        ],
+        "residual_risks": [
+          "The opinion text shows docket No. 16-4308 while the content/lake metadata show a different docket, but docket was not an assertion row under review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1be3da739179ab64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The Fourth Amendment analysis turns on abandonment: the opinion asks whether Crumble had a reasonable expectation of privacy in the cell phone he left behind in the Buick.",
+          "The court affirmed denial of suppression because Crumble abandoned the phone and expressly rejected a categorical bar on applying abandonment to cell phones."
+        ],
+        "residual_risks": [
+          "The label Key is editorial rather than a defined lake field, but the doctrine is central to the holding."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c8cddc647864680",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we cannot say that the district court clearly erred in finding Crumble abandoned the cell phone in the Buick.",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The core abandonment/Riley proposition is supported, but the holding is phrased too categorically and is ambiguous about the later search being warrantless. The opinion affirmed a clear-error abandonment finding and the later phone search followed a warrant, though the court affirmed on abandonment and did not reach warrant validity.",
+          "proposed_fix": "Revise to state that, on clear-error review and under the totality of the circumstances, the Eighth Circuit affirmed the finding that Crumble abandoned the phone by fleeing the accessible wrecked Buick and denying knowledge of it; Riley does not categorically exempt cell phones from abandonment, so Crumble lacked a reasonable expectation of privacy and suppression was properly denied, without deciding warrant validity.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports the physical-relocation and denial facts: Crumble fled the crash, left the phone on the driver's seat, and initially denied knowledge of the Buick.",
+          "The opinion supports forfeiture of privacy: if Crumble abandoned the phone, he forfeited his expectation of privacy and could not raise a Fourth Amendment challenge to the subsequent search.",
+          "The opinion supports the Riley point: Crumble urged a categorical bar for cell phones, and the court declined.",
+          "The stated breadth should preserve the opinion's clear-error posture and avoid implying that the later search itself was warrantless."
+        ],
+        "residual_risks": [
+          "The court's analysis also rested on totality of circumstances, including the key in the ignition, shot-out window, and easy access to the vehicle contents."
+        ],
+        "suggested_tightening": "State the clear-error standard and clarify that the later search was warrant-backed, while the court affirmed on abandonment and did not decide warrant validity.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d765bf8ec5d634db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "For identity support only, the lake record identifies the court as 8th Cir., court_level coa, and circuit ca8."
+        ],
+        "residual_risks": [
+          "Authority-weight taxonomy should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f59aee07aa8eac15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment fields in the assertion mirror the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "Subsequent-treatment validity should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Crumble.md\",\"reviewed\":[{\"assertion_id\":\"61f335d4346c3344\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Prentiss Anthony Crumble with input/record name United States v. Crumble.\",\"The lake citation metadata lists official/display citation 878 F.3d 656, court 8th Cir., date_decided 2018-01-02, and year 2018, with no parallel or vendor-neutral citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion text shows docket No. 16-4308 while the content/lake metadata show a different docket, but docket was not an assertion row under review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1be3da739179ab64\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The Fourth Amendment analysis turns on abandonment: the opinion asks whether Crumble had a reasonable expectation of privacy in the cell phone he left behind in the Buick.\",\"The court affirmed denial of suppression because Crumble abandoned the phone and expressly rejected a categorical bar on applying abandonment to cell phones.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The label Key is editorial rather than a defined lake field, but the doctrine is central to the holding.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3c8cddc647864680\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core abandonment/Riley proposition is supported, but the holding is phrased too categorically and is ambiguous about the later search being warrantless. The opinion affirmed a clear-error abandonment finding and the later phone search followed a warrant, though the court affirmed on abandonment and did not reach warrant validity.\",\"severity\":\"medium\",\"proposed_fix\":\"Revise to state that, on clear-error review and under the totality of the circumstances, the Eighth Circuit affirmed the finding that Crumble abandoned the phone by fleeing the accessible wrecked Buick and denying knowledge of it; Riley does not categorically exempt cell phones from abandonment, so Crumble lacked a reasonable expectation of privacy and suppression was properly denied, without deciding warrant validity.\",\"evidence_quote\":\"we cannot say that the district court clearly erred in finding Crumble abandoned the cell phone in the Buick.\",\"needs_cl\":false,\"locator_note\":\"holding field\"},\"reasons\":[\"The opinion supports the physical-relocation and denial facts: Crumble fled the crash, left the phone on the driver's seat, and initially denied knowledge of the Buick.\",\"The opinion supports forfeiture of privacy: if Crumble abandoned the phone, he forfeited his expectation of privacy and could not raise a Fourth Amendment challenge to the subsequent search.\",\"The opinion supports the Riley point: Crumble urged a categorical bar for cell phones, and the court declined.\",\"The stated breadth should preserve the opinion's clear-error posture and avoid implying that the later search itself was warrantless.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The court's analysis also rested on totality of circumstances, including the key in the ignition, shot-out window, and easy access to the vehicle contents.\"],\"suggested_tightening\":\"State the clear-error standard and clarify that the later search was warrant-backed, while the court affirmed on abandonment and did not decide warrant validity.\"},{\"assertion_id\":\"d765bf8ec5d634db\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"For identity support only, the lake record identifies the court as 8th Cir., court_level coa, and circuit ca8.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Authority-weight taxonomy should be reviewed by Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f59aee07aa8eac15\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment fields in the assertion mirror the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Subsequent-treatment validity should be reviewed by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T02:54:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:19:52-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0e11e50b13"
+    ],
     "group_id": "content/cases/United States v. Crumble.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-8c5887b2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8c5887b2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:54:31.833028Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:32.355358Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:32.964310Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:33.770334Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:34.923109Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Crumble"
+    ],
+    "tokens": {
+      "input": 94074,
+      "output": 7449,
+      "source": "codex-events",
+      "total": 101523
+    },
+    "verdict_map": {
+      "1be3da739179ab64": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3c8cddc647864680": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "61f335d4346c3344": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d765bf8ec5d634db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f59aee07aa8eac15": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0e11e50b13",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 141.6
   }
 }

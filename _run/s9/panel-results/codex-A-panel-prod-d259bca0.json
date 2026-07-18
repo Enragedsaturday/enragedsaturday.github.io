@@ -1,39 +1,90 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/hartman-v-moore--145662.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl exactly once using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "30705bde4def5d3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id hartman-v-moore--145662 and identifies the case as Hartman v. Moore, U.S. Supreme Court, decided 2006-04-26.",
+          "The cited entries in the assertion exactly match lake.citations.all: 547 U.S. 250, 126 S. Ct. 1695, 164 L. Ed. 2d 441, and 2006 U.S. LEXIS 3450.",
+          "The lake record marks status as verified_identity and expected_citation_found as true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "63d73d48f8aed058",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's support and quote-fidelity charter, so no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake.treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical."
+        ],
+        "residual_risks": [
+          "No Lens A support, quote-fidelity, pincite, or black-letter assertion is present for this row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/hartman-v-moore--145662.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"30705bde4def5d3d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record exists for record_id hartman-v-moore--145662 and identifies the case as Hartman v. Moore, U.S. Supreme Court, decided 2006-04-26.\",\n        \"The cited entries in the assertion exactly match lake.citations.all: 547 U.S. 250, 126 S. Ct. 1695, 164 L. Ed. 2d 441, and 2006 U.S. LEXIS 3450.\",\n        \"The lake record marks status as verified_identity and expected_citation_found as true.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"63d73d48f8aed058\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's support and quote-fidelity charter, so no treatment defect is raised.\",\n        \"The treatment payload matches the disclosed lake.treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A support, quote-fidelity, pincite, or black-letter assertion is present for this row.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every row in group_inventory.jsonl exactly once using only disclosed local files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:36:37-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:16:53-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/hartman-v-moore--145662.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "hartman-v-moore--145662"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d259bca0",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d259bca0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'hartman-v-moore--145662' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record hartman-v-moore--145662"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "hartman-v-moore--145662"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 143119,
+      "output": 1828,
+      "source": "codex-events",
+      "total": 144947
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "30705bde4def5d3d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "63d73d48f8aed058": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "wall_clock_s": 43.6
   }
 }

@@ -1,0 +1,155 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7b255822eb187c3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '411 U.S. 423 (1973)', caption 'UNITED STATES v. RUSSELL', No. 71-1585, Supreme Court of the United States.",
+          "Lake identity consistent: cluster 108768, official cite 411 U.S. 423 selected_official=true, decided 1973-04-24.",
+          "Official first-page cite 411 U.S. 423 matches the case-start; no fabricated cite."
+        ],
+        "residual_risks": [
+          "Parallels 93 S. Ct. 1637 / 36 L. Ed. 2d 366 and neutral 1973 U.S. LEXIS 79 are not independently verifiable from the inlined opinion (the official cite is)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67eaedba82cf46a8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a garbled content-page mashup (title/Background/Issue/Rule lead-in), an extraction mis-capture driving the recorded 'mismatch'/'slip-only' flags, not the authored pinpoint.",
+          "Authored ^pin-436 quote ('It is only when the Government's deception actually implants the criminal design in the mind of the defendant that the defense of entrapment comes into play.') matches the cached opinion verbatim.",
+          "Sentence follows star-pagination *436 in the cached text, confirming the pincite '411 U.S. at 436'."
+        ],
+        "residual_risks": [
+          "Machine payload quote is garbled (pipeline extraction artifact, not an authored defect); orchestrator may re-extract to clear the false mismatch flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cad3ed0dcdd8f19c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Authored ^pin-431 quote matches the cached opinion verbatim, with a proper ellipsis (' . . . ') eliding only the citation 'cf. Rochin v. California, 342 U. S. 165 (1952),' between 'obtain a conviction' and 'the instant case'.",
+          "Star-pagination *431 precedes the sentence and *432 is embedded mid-sentence ('invoking judicial processes to *432 obtain a conviction'), confirming the spanning pincite '411 U.S. at 431-432'.",
+          "The recorded 'mismatch'/'slip-only' flag is an ellipsis/normalization artifact (the elided citation breaks an exact contiguous string match); the quoted words are faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5405af32c9339812",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is a defensible seed for a landmark 1973 SCOTUS entrapment holding; progeny shows 1351 indexed citing opinions.",
+          "All 40 negative 'edges' are proposed:true and transparently spurious keyword FPs - well-known good-law citing cases (Bell v. Wolfish, Richmond Newspapers v. Virginia, Weatherford v. Bursey, Mathews v. United States) labeled 'questioned'/'overruled'/'superseded_by_statute'; none credibly abrogates Russell.",
+          "No confirmed (proposed:false) negative event and no disclosed authority overruling Russell; refuting good_law would require fabricating an overruling."
+        ],
+        "residual_risks": [
+          "Treatment is composite_basis 'migration-seed'; derivation lane1_negative/lane2_top_cited flag audit_needed=true and 'R15 treatment audit required' with caps hit - the negative-treatment sweep is not yet formally cleared, though all disclosed signals are spurious."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit to promote good_law from migration-seed to a derived determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4558c6f5a4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-99ac5e324e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5ab5526e25",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Russell.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-03-31d1ff88",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Russell"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5405af32c9339812": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "67eaedba82cf46a8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7b255822eb187c3b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cad3ed0dcdd8f19c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4558c6f5a4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-99ac5e324e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5ab5526e25",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

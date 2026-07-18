@@ -1,0 +1,136 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "fa4045836e3ada3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Payload cites (446 U.S. 291 official; 100 S. Ct. 1682; 64 L. Ed. 2d 297; 1980 U.S. LEXIS 94) all present in lake citations[]; official_selection present (selected_rank_1).",
+          "Cached opinion (Mr. Justice Stewart) with internal page markers *294-*304 and party text confirms Rhode Island v. Innis; identity_method citation+party-text, party_name_in_text true.",
+          "Case and cite set exist as framed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "326f6e73900f2395",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'The latter portion of this definition focuses primarily upon the perceptions of the suspect, rather than the intent of the police.' matches cached opinion verbatim (para b358-6, immediately after the *301 page marker).",
+          "star_marker '301' is correct (sentence sits on page 301); fragment '#:~:text=The%20latter%20portion%20of%20this' decodes to the quote's opening words.",
+          "quote_fidelity='matched'/pinpoint_status='star-verified' independently confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "740a47d6766bfccf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The harvested pin-301 quote ('under *Miranda*, such that it was barred after Innis invoked his right to counsel. ## Rule') is content-page markup (Issue tail + a heading), not opinion text; it does not appear anywhere in the cached opinion.",
+          "Record self-label quote_fidelity='mismatch' / pinpoint_status='slip-only' is therefore ACCURATE and the pin is not promoted to a verified pincite — the guardrail working as intended.",
+          "Separately, the page's actual ^pin-301 Rule quote (the express-questioning-or-functional-equivalent passage) is verbatim-accurate vs cached b358-6, so no false proposition is surfaced."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Repair the lake pin-301 'quote' field, which captured content-page markup rather than the rendered Rule quote (mismatch flag already correctly blocks promotion).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "712725790b739cd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' as of 2026-06-30 is unrefuted: every treatment.edge is proposed=true and field_iii='mentioned', drawn from keyword sweeps (lane1_negative / lane2_top_cited).",
+          "The negative-tagged edges are transparent keyword false-positives about the CITING cases, not downgrades OF Innis (e.g., Crawford v. Washington, Davis v. Washington, Dickerson v. United States, Berkemer v. McCarty tagged 'overruled' — those hits reflect the citing opinions' own overruling discussions).",
+          "No confirmed negative event; scope_note honestly warns the migration-seed 'may downgrade' on re-derivation. Refuting good_law would assert an unsupported downgrade."
+        ],
+        "residual_risks": [
+          "R15 treatment audit pending (derivation.audit_needed=true; proposed_negative_events 7/25/3 across lanes) — none currently confirms a downgrade.",
+          "good_law is a migration-seed pending S2 re-derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2387a2cba4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rhode Island v. Innis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-06-acab5f47",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rhode Island v. Innis"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "326f6e73900f2395": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "712725790b739cd9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "740a47d6766bfccf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fa4045836e3ada3d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2387a2cba4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

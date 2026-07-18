@@ -1,0 +1,169 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "43ecc7fb9f8d0828",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '401 U.S. 797 (1971)' and caption 'HILL v. CALIFORNIA'; selected official cite 401 U.S. 797 matches.",
+          "Opinion content (mistaken-identity arrest of Miller for Hill; search incident) matches Hill v. California."
+        ],
+        "residual_risks": [
+          "Parallel cite '27 A.F.T.R.2d (RIA) 1006' (a federal tax reporter) is anomalous for a Fourth Amendment criminal case and is not confirmable from the disclosed slip; likely a CL cluster data artifact, but it does not affect the case's existence/identity."
+        ],
+        "suggested_tightening": "Sanity-check the A.F.T.R.2d parallel cite against the CL cluster before publishing the parallel_cite list.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38ea6b2791f22c97",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest.",
+          "locator_note": "Cached opinion p.802 (Part II, before the '*803' star marker) — SCOTUS quotes/adopts the California Supreme Court conclusion; content page ^pin-802 renders this cited to '401 U.S. at 802'.",
+          "needs_cl": false,
+          "problem": "Stored pin-802 quote is a harvest artifact capturing the content page's leading markdown ('--- # Hill v. California ... ## Rule Yes. The Court adopted the rule that') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-802 quote is faithful and correctly pincited.",
+          "proposed_fix": "Replace the stored pin-802 quote string with the real faithful quote at p.802.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin survives: the faithful quote exists at p.802, verified in cached text before the '*803' star marker.",
+          "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+        ],
+        "residual_risks": [
+          "Same first-pin harvest corruption pattern as the rest of the batch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41dd552e076989ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.804 (after the '*804' star marker) reads verbatim: 'But sufficient probability, not certainty, is the touchstone of reasonableness under the Fourth Amendment and on the record before us the officers' mistake was understandable and the arrest a reasonable response to the situation facing them at the time.'",
+          "Content-page fragment (dropping leading 'But') is a faithful partial quote; star_marker 804 confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c21a818115624bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.804 reads verbatim: 'In these circumstances the police were entitled to do what the law would have allowed them to do if Miller had in fact been Hill, that is, to search incident to arrest and to seize evidence of the crime the police had probable cause to believe Hill had committed.'",
+          "Content-page fragment (dropping 'In these circumstances') is faithful; the sentence is on p.804 and the cited '804–805' range covers the paragraph that runs to the '*805' marker."
+        ],
+        "residual_risks": [
+          "Cited range '804–805' is slightly over-inclusive (the quoted sentence is wholly on 804), but the discussion paragraph spans to 805 — an acceptable pincite range, not a fidelity defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "982a918fa9dd53fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Hill is a 1971 SCOTUS decision affirming the California Supreme Court ('affirm the judgment of the Supreme Court of California') — facially valid binding precedent.",
+          "Content page reports no negative treatment; no disclosed authority refutes good_law."
+        ],
+        "residual_risks": [
+          "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 1971 slip alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-11fdc87574",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hill v. California.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-07-f8c6bcc9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hill v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "38ea6b2791f22c97": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "41dd552e076989ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "43ecc7fb9f8d0828": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "982a918fa9dd53fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9c21a818115624bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eac5c00fda",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-11fdc87574",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

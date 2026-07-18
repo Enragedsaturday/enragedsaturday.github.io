@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Padilla.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote/pinpoint fidelity from the disclosed files only; no substantive treatment finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "982f6d5d175ff111",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name United States v. Padilla, court U.S. Supreme Court, date_decided 1993-05-03, and year 1993.",
+          "The lake official citation is 508 U.S. 77 and the content page displays 508 U.S. 77 (1993)."
+        ],
+        "residual_risks": [
+          "The all[] citation list separately marks the same official cite selected_official=false, but the official object and official_selection identify 508 U.S. 77 as selected."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21b586a0568e2efa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Padilla__8e249d.txt in the paragraph following the page-82 star marker.",
+          "The lake pinpoint pin-82b records quote_fidelity=matched, pinpoint_status=star-verified, star_marker=82, and the same fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e443a607256e67e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated",
+          "locator_note": "pin-82",
+          "needs_cl": false,
+          "problem": "pin-82 is not a faithful opinion quote or valid pinpoint. The payload text is page/scaffold prose crossing the Issue and Rule sections, not language from the Padilla opinion, and the lake itself marks the pinpoint quote_fidelity as mismatch with pinpoint_status slip-only.",
+          "proposed_fix": "Delete or re-harvest pin-82. If the intended support is the Alderman quotation on the content page, attach pin-82 to the actual blockquote passage beginning 'The established principle is that suppression...' and verify the page-82 star marker.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact payload quote appears only in lake pin-82, where it is expressly flagged quote_fidelity=mismatch and has no star_marker or position.",
+          "The cached opinion text around page 82 contains the Alderman blockquote and the privacy/property paragraph, not the payload text beginning 'supplements the rule...'."
+        ],
+        "residual_risks": [
+          "The content page's visible pin-82 quote may still be supportable if re-pinned to the actual Alderman blockquote, but the current lake pinpoint assertion does not verify it."
+        ],
+        "suggested_tightening": "Keep pin-82b as the clean page-82 quote; rework pin-82 into a separate verified Alderman blockquote pinpoint or remove it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c45d9059ab0e4f88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Under Lens A, treatment/currency is not substantively reviewed.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1993-05-03, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Padilla.json\",\"reviewed\":[{\"assertion_id\":\"982f6d5d175ff111\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name United States v. Padilla, court U.S. Supreme Court, date_decided 1993-05-03, and year 1993.\",\"The lake official citation is 508 U.S. 77 and the content page displays 508 U.S. 77 (1993).\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The all[] citation list separately marks the same official cite selected_official=false, but the official object and official_selection identify 508 U.S. 77 as selected.\"],\"suggested_tightening\":null},{\"assertion_id\":\"21b586a0568e2efa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/United States v. Padilla__8e249d.txt in the paragraph following the page-82 star marker.\",\"The lake pinpoint pin-82b records quote_fidelity=matched, pinpoint_status=star-verified, star_marker=82, and the same fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6e443a607256e67e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-82 is not a faithful opinion quote or valid pinpoint. The payload text is page/scaffold prose crossing the Issue and Rule sections, not language from the Padilla opinion, and the lake itself marks the pinpoint quote_fidelity as mismatch with pinpoint_status slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Delete or re-harvest pin-82. If the intended support is the Alderman quotation on the content page, attach pin-82 to the actual blockquote passage beginning 'The established principle is that suppression...' and verify the page-82 star marker.\",\"evidence_quote\":\"The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated\",\"needs_cl\":false,\"locator_note\":\"pin-82\"},\"reasons\":[\"The exact payload quote appears only in lake pin-82, where it is expressly flagged quote_fidelity=mismatch and has no star_marker or position.\",\"The cached opinion text around page 82 contains the Alderman blockquote and the privacy/property paragraph, not the payload text beginning 'supplements the rule...'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's visible pin-82 quote may still be supportable if re-pinned to the actual Alderman blockquote, but the current lake pinpoint assertion does not verify it.\"],\"suggested_tightening\":\"Keep pin-82b as the clean page-82 quote; rework pin-82 into a separate verified Alderman blockquote pinpoint or remove it.\"},{\"assertion_id\":\"c45d9059ab0e4f88\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under Lens A, treatment/currency is not substantively reviewed.\",\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1993-05-03, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment and currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed existence and quote/pinpoint fidelity from the disclosed files only; no substantive treatment finding made.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:01-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:01:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-625d1556ad"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Padilla.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d46b1227.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Padilla"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 107108,
+      "output": 4072,
+      "source": "codex-events",
+      "total": 111180
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "21b586a0568e2efa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e443a607256e67e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "982f6d5d175ff111": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c45d9059ab0e4f88": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-625d1556ad",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 88.4
   }
 }

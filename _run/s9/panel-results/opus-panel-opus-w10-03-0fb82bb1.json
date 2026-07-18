@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "34c035d0a0f0ad87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms the case: Justice Thomas majority; parolee Keith M. Scott; holding that the Fourth Amendment exclusionary rule does not apply in parole revocation hearings; judgment of the Pennsylvania Supreme Court reversed.",
+          "Opinion star pages run *360 through *369, consistent with a case beginning at 524 U.S. 357; official/display cite 524 U.S. 357 matches.",
+          "Parallel cites (118 S. Ct. 2014; 141 L. Ed. 2d 344; 1998 U.S. LEXIS 4037) from cluster.citations[] are uncontradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acef632e09f32ce9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights.",
+          "locator_note": "pin-364; content page ^pin-364 displays this sentence verbatim; it appears immediately after star page *364 in the opinion; only the stored quote metadata is corrupt.",
+          "needs_cl": false,
+          "problem": "The stored pin-364 `quote` field is a content-page-chrome mis-harvest (Application-paragraph tail + '## Conclusion' header), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-364 is faithful to the opinion.",
+          "proposed_fix": "Re-harvest pin-364.quote to the intended opinion sentence and keep pincite 364.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content quote at ^pin-364 matches the opinion verbatim on star page *364; pincite '524 U.S. at 364' correct.",
+          "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+        ],
+        "residual_risks": [
+          "Consumers reading pinpoint.quote directly would get page chrome, not the holding."
+        ],
+        "suggested_tightening": "Same slip-only harvest guard as above.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bb1368ac11271a0b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed opinion holds the federal exclusionary rule does not bar evidence at parole-revocation hearings (1998 SCOTUS, Thomas, J.); scope_note accurate. field_i_validity=good_law supported.",
+          "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+          "good_law survives."
+        ],
+        "residual_risks": [
+          "Proposed negative edges unadjudicated but non-dispositive."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-77c058a66f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Pennsylvania Board of Probation and Parole v. Scott.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-03-0fb82bb1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania Board of Probation and Parole v. Scott"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "34c035d0a0f0ad87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acef632e09f32ce9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bb1368ac11271a0b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b3f7dbab2e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-77c058a66f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

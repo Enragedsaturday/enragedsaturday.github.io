@@ -1,0 +1,185 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4a142d4956d844f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Nardone v. United States ('Nardone II'), Frankfurter J., 'called upon for the second time to review'; first star marker *339 places the opinion start on 308 U.S. 338, matching official cite.",
+          "Opinion cites Nardone I at 302 U. S. 379, confirming this is the distinct 1939 derivative-use decision."
+        ],
+        "residual_risks": [
+          "Parallel cites (60 S. Ct. 266; 84 L. Ed. 307; 1939 U.S. LEXIS 1132) from cluster.citations[], not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b229c2afb313728f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote 'As a matter of good sense … such connection may have become so attenuated as to dissipate the taint.' matches cached text 'As a matter of good sense, however, such connection may have become so attenuated' as to dissipate the taint.' -- ellipsis properly omits 'however'; OCR apostrophe on 'attenuated' dropped.",
+          "On 308 U.S. 341 (between *341 and *342), matching the Id.-at-341 pincite."
+        ],
+        "residual_risks": [
+          "S8 quote_fidelity='mismatch' is a false positive from the ellipsis omission and OCR artifacts; text is faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb2925735cf35d8f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered page quotes 'shall not be used at all,' and 'the knowledge gained by the Government's own wrong cannot be used by it … simply because it is used derivatively.' are verbatim in cached text ('... but that it shall not be used at all.' and '... cannot be used by it\" simply because it is used derivatively.').",
+          "'shall not be used at all' straddles the *340/*341 break and the derivative-use clause is on 341, so pincite 340-341 is correct."
+        ],
+        "residual_risks": [
+          "S8 payload.quote for pin-340 is polluted with page-background prose (broken extraction) -> its quote_fidelity='mismatch' is a false positive; the page's actual quote is faithful."
+        ],
+        "suggested_tightening": "Re-extract payload.quote for pin-340 from the ## Rule block.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f125e4086cc4bb3c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote 'the trial judge must give opportunity, however closely confined, to the accused to prove that a substantial portion of the case against him was a fruit of the poisonous tree. This leaves ample opportunity to the Government to convince the trial court that its proof had an independent origin.' matches cached text; page silently corrects OCR 'ease'->'case' and drops a stray OCR apostrophe, italicizes the coined phrase.",
+          "On 308 U.S. 341, matching the Id.-at-341 pincite."
+        ],
+        "residual_risks": [
+          "S8 quote_fidelity='mismatch' is a false positive from OCR-artifact normalization ('ease' vs 'case') and italic markup; substance is verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "01db28ac718c7003",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law'; Nardone coined 'fruit of the poisonous tree' and recognized the attenuation limit (both confirmed in cached opinion), carried into Wong Sun and Brown v. Illinois.",
+          "Disclosed negative signals are 4 proposed(unaccepted) edges -- State v. Gilbert (Ohio) and State v. Brunetti x2 (Conn.) 'overruled', plus Wong Sun 'overruled' -- all non-credible (state courts cannot overrule SCOTUS; Wong Sun built on Nardone), so good_law is the defensible resolution."
+        ],
+        "residual_risks": [
+          "composite_basis='migration-seed'; no live citator confirmation inlined.",
+          "Content page 'No negative treatment' understates presence of proposed (correctly-rejected) negative edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0efbd2ae47",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1badbb9322",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f0b2fffd9f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-94bc727600",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Nardone v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-05-b9f332e0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Nardone v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "01db28ac718c7003": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a142d4956d844f2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b229c2afb313728f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cb2925735cf35d8f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f125e4086cc4bb3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0efbd2ae47",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1badbb9322",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f0b2fffd9f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-94bc727600",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

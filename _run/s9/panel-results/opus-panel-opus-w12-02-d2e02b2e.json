@@ -1,0 +1,95 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "771b8f55c10a8942",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "lake selected the neutral cite 2011 Tex. Crim. App. LEXIS 1320 as official — flagged for S2 re-selection (S.W.3d reporter is the correct primary). S9 promotes.",
+          "locator_note": "Self-disclosed in the content-page header comment; the reader-facing header and Sources already display 349 S.W.3d 521 correctly, so only the structured official-selection/frontmatter citation is wrong.",
+          "needs_cl": false,
+          "problem": "Existence is confirmed, but the official/display citation is mis-selected: the record picks the neutral cite '2011 Tex. Crim. App. LEXIS 1320' as selected_official/display (and the frontmatter 'citation' field carries the LEXIS cite), whereas the correct Texas primary is the S.W.3d reporter, 349 S.W.3d 521.",
+          "proposed_fix": "Select 349 S.W.3d 521 as the official/display cite (S.W.3d reporter primary), with 2011 Tex. Crim. App. LEXIS 1320 and 2011 WL 4715178 as parallels; update the frontmatter 'citation' field accordingly.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms the case is real: 'COCHRAN, J., delivered the opinion of the Court in which MEYERS, PRICE, WOMACK, JOHNSON and ALCALA, JJ., joined,' Court of Criminal Appeals of Texas; the ^pin-523 holding sentence appears verbatim in the cached text.",
+          "All three disclosed cites (349 S.W.3d 521; 2011 Tex. Crim. App. LEXIS 1320; 2011 WL 4715178) identify this same real 2011 decision.",
+          "Existence is sound; the only defect is the wrong primary-cite selection, which the record itself flags for S2 re-selection."
+        ],
+        "residual_risks": [
+          "docket PD-1635-10 is not printed in the cached opinion excerpt, but identity (name/court/judges/year/SPA PDR posture) is otherwise fully confirmed."
+        ],
+        "suggested_tightening": "Complete the S2 official-cite re-selection to make 349 S.W.3d 521 primary.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14ebbd28c8f35346",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity is 'unverified' with as_of_content/as_of_treatment null and composite_basis 'unverified' — the record makes no currency claim to refute.",
+          "scope_note honestly discloses this is a 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion,' and the page renders under the ⚪ Unverified banner.",
+          "An accurate, self-disclosed 'unverified' status is internally consistent and cannot be refuted for over-claiming currency."
+        ],
+        "residual_risks": [
+          "Treatment/progeny remain intentionally underived; a real treatment derivation is owed at S6 promotion before any 'good' badge could be asserted."
+        ],
+        "suggested_tightening": "Derive treatment at S6 promotion and replace the Unverified banner with a derived status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/State v. Weaver.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-02-d2e02b2e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Weaver"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "14ebbd28c8f35346": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "771b8f55c10a8942": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c48f05e89e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

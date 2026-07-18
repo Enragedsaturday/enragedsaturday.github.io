@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "fb612d0b4dfc9c02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion 'Cite as: 584 U. S. ____ (2018)' and caption 'COLLINS v. VIRGINIA' confirm the case and cite 584 U.S. 586 (2018).",
+          "Syllabus text ('...of a home or its curtilage in order to search a vehicle therein. Pp. 3-...') matches the holding.",
+          "Frontmatter and Sources both cite cluster 4501697 - internally consistent (no dual-cluster divergence)."
+        ],
+        "residual_risks": [
+          "Parallel cites 138 S. Ct. 1663 / 201 L. Ed. 2d 9 not independently star-verifiable from the cache but consistent with the U.S. cite."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72aa445bd21761b7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For the foregoing reasons, we conclude that the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein.",
+          "locator_note": "lake pinpoints id=pin-op14; content_page ^pin-op14 (line 4061); cached opinion Part IV, after '14 COLLINS v. VIRGINIA' header, before concurrence 'Cite as: 584 U. S. ____ (2018) 1' => slip op. 14",
+          "needs_cl": false,
+          "problem": "The lake pinpoints[] stored quote for pin-op14 is corrupt: it captured Background/Issue/Rule lead-in prose (ending '## Rule No.') instead of the quoted sentence. The content-page ^pin-op14 quote is verbatim-correct and correctly pincited, so the proposition survives.",
+          "proposed_fix": "Re-harvest pin-op14.quote from the content page; the intended quote 'For the foregoing reasons, we conclude that the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein.' matches the cached opinion verbatim at slip op. 14.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content ^pin-op14 quote matches the cached Opinion of the Court verbatim (Part IV) and is on slip op. page 14; pincite correct.",
+          "Stored payload quote is garbled lead-in prose (harvest boundary bug)."
+        ],
+        "residual_risks": [
+          "S8 'mismatch' flag is a true positive at the stored-payload layer, harmless at the content layer."
+        ],
+        "suggested_tightening": "Fix the pinpoint-harvest boundary for section-leading quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c353f017a0026bd3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; negative edges proposed:true with field_iii='mentioned'.",
+          "Collins (2018 SCOTUS) automobile-exception/curtilage holding; no disclosed overruling."
+        ],
+        "residual_risks": [
+          "Basis is migration-seed (scope_note concedes 'may downgrade'); currency caveat from unadjudicated proposed-negative candidate edges."
+        ],
+        "suggested_tightening": "Run S2 re-derivation to replace the migration seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3ad60df30f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Collins v. Virginia.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-02-cebd79e9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Collins v. Virginia"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "72aa445bd21761b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c353f017a0026bd3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb612d0b4dfc9c02": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-775f3ed506",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3ad60df30f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

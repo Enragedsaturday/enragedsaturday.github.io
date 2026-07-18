@@ -1,22 +1,159 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bivens v. Six Unknown Named Agents.json\",\"reviewed\":[{\"assertion_id\":\"f9a24f74b7d46324\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics, U.S. Supreme Court, decided 1971-06-21.\",\"The lake official citation is 403 U.S. 388, matching the content page citation 403 U.S. 388 (1971).\",\"The text file header also shows 403 U.S. 388 (1971), Supreme Court of United States, decided June 21, 1971.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"73a5f08ef5cb40e1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-392 quote is not the quoted opinion passage; it is a malformed harvest of the content page/front matter and surrounding summary text. The lake itself marks quote_fidelity as mismatch and has no page/star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-392 with the actual page 392 Bell quotation from the opinion text, or remove this pinpoint until it is re-harvested accurately.\",\"evidence_quote\":\"--- # Bivens v. Six Unknown Named Agents\",\"needs_cl\":false,\"locator_note\":\"lake pin-392; text/Bivens v. Six Unknown Named Agents__960ee4.txt line 23 contains the actual page *392* passage.\"},\"reasons\":[\"The payload quote begins with markdown/page metadata rather than opinion text.\",\"The actual page 392 passage in the text contains the Bell sentence beginning with \\\"where federally protected rights have been invaded\\\".\",\"Because the harvested quote is not character-faithful to the opinion, the quote-fidelity assertion fails.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content_page quote at 403 U.S. 392 appears to track the opinion; the defect is in the lake/inventory pinpoint quote.\"],\"suggested_tightening\":\"Store page 392 and the exact Bell quotation as the pinpoint quote, with a non-null page/star marker if the schema supports it.\"},{\"assertion_id\":\"ffcad4f2d3278357\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote lands on the right page and passage, but it is not character-faithful as stored because it substitutes an ellipsis for the source phrase \\\", supra, at 390-395,\\\".\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the source exactly, including \\\", supra, at 390-395,\\\" or mark this as an intentionally ellipsized quotation rather than strict character-faithful text.\",\"evidence_quote\":\"Fourth Amendment, <i>supra,</i> at 390-395, we hold\",\"needs_cl\":false,\"locator_note\":\"text/Bivens v. Six Unknown Named Agents__960ee4.txt line 26, page *397*.\"},\"reasons\":[\"The text file contains the same operative sentence on page *397*.\",\"The content/lake quote omits the citation phrase after Fourth Amendment and replaces it with . . . .\",\"The omission is minor and does not alter the holding, but strict quote fidelity requires the omitted words or an explicit ellipsis policy.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats ellipses as quote-faithful, this should stand; under the stated strict character-fidelity lens, it needs modification.\"],\"suggested_tightening\":\"Use the exact source wording around the omission or record the quote as ellipsized.\"},{\"assertion_id\":\"24eaee1bdb773f15\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not own treatment/currency findings.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1971-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance not audited under support/quote-fidelity lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four assertion_id rows in group_inventory.jsonl. No separate support, pincite, or black_letter rows were present for this group.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bivens v. Six Unknown Named Agents.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "f9a24f74b7d46324",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics, U.S. Supreme Court, decided 1971-06-21.",
+          "The official citation in the lake record is 403 U.S. 388, with matching parallel citations and display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73a5f08ef5cb40e1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "where federally protected rights have been invaded",
+          "locator_note": "pin-392; lake.pinpoints[] and content_page Rule first pin",
+          "needs_cl": false,
+          "problem": "The reviewed pin-392 payload/lake quote is corrupted: it contains page frontmatter and summary prose, not the opinion quotation tied to page 392.",
+          "proposed_fix": "Replace pin-392 with the actual page-392 Bell v. Hood quotation from the opinion text and populate the page/star marker as 392.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself labels quote_fidelity as mismatch.",
+          "The actual opinion text at page 392 contains the Bell quotation, while the reviewed payload ends before that quotation and includes generated page text."
+        ],
+        "residual_risks": [
+          "The visible content_page quote at pin-392 appears supportable, but the reviewed lake/payload quote is not."
+        ],
+        "suggested_tightening": "Separate page-summary extraction from quoted-opinion extraction so a pin cannot capture frontmatter or narrative text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ffcad4f2d3278357",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Fourth Amendment, <i>supra,</i> at 390-395, we hold",
+          "locator_note": "pin-397; text page 397 passage",
+          "needs_cl": false,
+          "problem": "The quoted pin-397 text is not character-faithful as a verbatim continuous quote; it replaces the source's internal citation with an ellipsis.",
+          "proposed_fix": "Use the exact source sentence including the omitted internal citation, or store this as an ellipsis excerpt rather than a character-faithful verbatim quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source text contains an internal citation between Fourth Amendment and we hold.",
+          "The reviewed quote omits that wording and inserts . . .; the lake record also labels quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus permits legal ellipsis excerpts, this can be downgraded after that policy is explicit; under the stated character-fidelity lens it fails."
+        ],
+        "suggested_tightening": "Add an explicit field distinguishing exact continuous quotes from edited excerpts with ellipses.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "24eaee1bdb773f15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, dates, scope_note, and varies_by_point.",
+          "Treatment currency is outside Lens A, so no treatment defect is raised here."
+        ],
+        "residual_risks": [
+          "Good-law currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bivens v. Six Unknown Named Agents.json\",\"reviewed\":[{\"assertion_id\":\"f9a24f74b7d46324\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies the case as Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics, U.S. Supreme Court, decided 1971-06-21.\",\"The official citation in the lake record is 403 U.S. 388, with matching parallel citations and display citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"73a5f08ef5cb40e1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-392 payload/lake quote is corrupted: it contains page frontmatter and summary prose, not the opinion quotation tied to page 392.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-392 with the actual page-392 Bell v. Hood quotation from the opinion text and populate the page/star marker as 392.\",\"evidence_quote\":\"where federally protected rights have been invaded\",\"needs_cl\":false,\"locator_note\":\"pin-392; lake.pinpoints[] and content_page Rule first pin\"},\"reasons\":[\"The lake pinpoint itself labels quote_fidelity as mismatch.\",\"The actual opinion text at page 392 contains the Bell quotation, while the reviewed payload ends before that quotation and includes generated page text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote at pin-392 appears supportable, but the reviewed lake/payload quote is not.\"],\"suggested_tightening\":\"Separate page-summary extraction from quoted-opinion extraction so a pin cannot capture frontmatter or narrative text.\"},{\"assertion_id\":\"ffcad4f2d3278357\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted pin-397 text is not character-faithful as a verbatim continuous quote; it replaces the source's internal citation with an ellipsis.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the exact source sentence including the omitted internal citation, or store this as an ellipsis excerpt rather than a character-faithful verbatim quote.\",\"evidence_quote\":\"Fourth Amendment, <i>supra,</i> at 390-395, we hold\",\"needs_cl\":false,\"locator_note\":\"pin-397; text page 397 passage\"},\"reasons\":[\"The source text contains an internal citation between Fourth Amendment and we hold.\",\"The reviewed quote omits that wording and inserts . . .; the lake record also labels quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits legal ellipsis excerpts, this can be downgraded after that policy is explicit; under the stated character-fidelity lens it fails.\"],\"suggested_tightening\":\"Add an explicit field distinguishing exact continuous quotes from edited excerpts with ellipses.\"},{\"assertion_id\":\"24eaee1bdb773f15\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for field_i_validity, dates, scope_note, and varies_by_point.\",\"Treatment currency is outside Lens A, so no treatment defect is raised here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-11T01:03:46-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:09:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-74fea697bf",
+      "F-S9-PR-47d425bbc7"
+    ],
     "group_id": "_overhaul2/lake/cases/Bivens v. Six Unknown Named Agents.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-2aa70d8b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2aa70d8b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Bivens v. Six Unknown Named Agents"
+    ],
+    "tokens": {
+      "input": 274682,
+      "output": 7725,
+      "source": "codex-events",
+      "total": 282407
+    },
+    "verdict_map": {
+      "24eaee1bdb773f15": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "73a5f08ef5cb40e1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f9a24f74b7d46324": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ffcad4f2d3278357": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-74fea697bf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-47d425bbc7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.5
   }
 }

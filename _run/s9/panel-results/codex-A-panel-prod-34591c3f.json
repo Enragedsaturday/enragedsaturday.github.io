@@ -1,38 +1,89 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Satterfield.json",
+    "lens": "A",
+    "notes": "Lens A support/quote-fidelity review found no refutable existence defect; treatment row recorded only for consistency with disclosed lake fields, without a Lens B treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "f045d89534e83ed7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record gives case_name \"United States v. Satterfield\", court \"U.S. Court of Appeals, 11th Cir.\", and year 1984.",
+          "Lake citations record official citation as \"743 F.2d 827\" and parallel citation as \"53 U.S.L.W. 2212\", matching the asserted display and citation payload."
+        ],
+        "residual_risks": [
+          "Lake date_decided is null, so only the asserted year is verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "933c37472de61e4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency defects.",
+          "The treatment assertion is limited to unverified status and the lake record matches: field_i_validity \"unverified\", as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No substantive good-law or progeny review was performed because treatment/currency is outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Satterfield.json\",\"reviewed\":[{\"assertion_id\":\"f045d89534e83ed7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record gives case_name \\\"United States v. Satterfield\\\", court \\\"U.S. Court of Appeals, 11th Cir.\\\", and year 1984.\",\"Lake citations record official citation as \\\"743 F.2d 827\\\" and parallel citation as \\\"53 U.S.L.W. 2212\\\", matching the asserted display and citation payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake date_decided is null, so only the asserted year is verifiable from disclosed evidence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"933c37472de61e4d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not assess treatment or currency defects.\",\"The treatment assertion is limited to unverified status and the lake record matches: field_i_validity \\\"unverified\\\", as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No substantive good-law or progeny review was performed because treatment/currency is outside Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A support/quote-fidelity review found no refutable existence defect; treatment row recorded only for consistency with disclosed lake fields, without a Lens B treatment finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:02-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:05:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Satterfield.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Satterfield"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-34591c3f",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-34591c3f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Satterfield' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Satterfield"
+    ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 103138,
+      "output": 2403,
+      "source": "codex-events",
+      "total": 105541
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "933c37472de61e4d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f045d89534e83ed7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 56.7
   }
 }

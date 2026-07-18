@@ -1,0 +1,142 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1913923944770331",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached 9th Cir. opinion confirms identity: 'UNITED STATES v. BASHER', filed January 20, 2011, No. 09-30311, Opinion by Judge Mills — matches record (cluster 183144, 2011-01-20).",
+          "The running head 'UNITED STATES v. BASHER 1161' appears in the cached text, so official cite 629 F.3d 1161 resolves to a real page of this opinion.",
+          "Vendor-neutral cites (2011 U.S. App. LEXIS 1064; 2011 WL 167045) are internally consistent with a 2011 9th Cir. slip."
+        ],
+        "residual_risks": [
+          "Cached running-heads span 1152-1165 (plus an isolated '1149'); '1161' appears mid-opinion, so the reported first page may differ under a strict first-page reading — a pagination nuance, not an existence problem."
+        ],
+        "suggested_tightening": "Confirm the 629 F.3d first page against the 1152-1165 running-head range in the bound reporter.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2cba5d71a9b99d8c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim in the opinion: cached text reads 'we hold that there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curti-lage.' (running head 1165) — exact match to the quoted string.",
+          "Recorded quote_fidelity='mismatch' is a false positive, explained by the line-break hyphenation 'curti-lage' in the source.",
+          "Quote is faithful; the assertion survives the fidelity attack."
+        ],
+        "residual_risks": [
+          "Content page cites this holding at '1169' but the passage sits at running head 1165 in the cached text — a pincite question outside the quote_fidelity dimension."
+        ],
+        "suggested_tightening": "Reconcile the '1169' pincite with the 1165 running head.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bfe215199457baa3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.",
+          "locator_note": "Basher lake pinpoints[] id 'pin-1169'; correct passage at cached running head 1164.",
+          "needs_cl": false,
+          "problem": "pin-1169's stored quote is the page's own rendered markdown (YAML frontmatter + Background + Issue + '## Rule A tent itself is a private space:'), not opinion text; it does not appear anywhere in the Basher opinion.",
+          "proposed_fix": "Repopulate pin-1169's quote field with the passage the page actually uses at ^pin-1169: 'A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.' (verbatim in the cached opinion, running head 1164).",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-1169 quote field contains content-page chrome (frontmatter through the Rule lead-in), which is not present in the opinion — a genuine extraction defect; recorded 'mismatch' is correct.",
+          "The rendered page nonetheless uses the correct verbatim tent quote at ^pin-1169, so reader-facing text is unaffected."
+        ],
+        "residual_risks": [
+          "A downstream verifier trusting the pin quote field rather than the rendered page will fail to match the opinion."
+        ],
+        "suggested_tightening": "Re-extract pin quotes from the rule body, not the page header (systemic across first-quote pins).",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b0979a17c30640b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The scope_note's legal characterization is opinion-supported: the cached text holds 'there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curtilage' while reaffirming tent-interior privacy ('A tent is comparable to a house...') — matching 'reaffirms tent privacy while holding the area outside a dispersed-campsite tent is not curtilage.'",
+          "No disclosed evidence contradicts good_law; the lake treatment.edges tagged 'overruled/questioned' are all proposed:true auto-signals from a lane2_top_cited list (e.g., Tekoh, Johnson v. BART) with no substantive negative treatment — non-credible noise.",
+          "field_i_validity currency (as of 2026-06-30) is not checkable from the 2011 opinion alone; no defect found and none fabricated."
+        ],
+        "residual_risks": [
+          "Currency (good_law as of 2026-06-30) rests on a migration-seed and is not verifiable from the disclosed opinion; the proposed negative-treatment edges remain unadjudicated."
+        ],
+        "suggested_tightening": "Adjudicate or drop the proposed 'overruled/questioned' edges before promoting treatment currency.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Basher.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-02-54f1d447",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Basher"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1913923944770331": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2cba5d71a9b99d8c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b0979a17c30640b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "bfe215199457baa3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dd66bb52d0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

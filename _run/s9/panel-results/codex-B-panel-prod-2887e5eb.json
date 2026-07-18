@@ -1,13 +1,83 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 inventory rows under Lens B only, using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "5bb33466756497a0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and non-stub for Michigan v. DeFillippo.",
+          "The identity fields confirm the cited Supreme Court authority: court is U.S. Supreme Court, date_decided is 1979-06-25, expected_citation_found is true, and canonical_name_match is true.",
+          "The official citation field selects 443 U.S. 31, matching the page's displayed citation."
+        ],
+        "residual_risks": [
+          "The treatment derivation has capped, audit-needed lanes, but no disclosed confirmed edge establishes that the authority is no longer live law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9094fae5afdc4bc4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote or support fidelity.",
+          "No treatment or currency defect unique to this quote_fidelity row appears beyond the treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote-fidelity consequences, including the recorded mismatch, are left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a7570a0be9bc4f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law label survives, but the page's unqualified 'No negative treatment' wording overstates the disclosed treatment record because the lake derivation flags audit-needed proposed negative events in capped lanes.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but change the treatment note to say there is no confirmed negative treatment in the disclosed lake record and that treatment derivation flags proposed events for audit.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "Every disclosed treatment edge has field_iii set to mentioned and proposed set to true; no disclosed edge is a confirmed overruling, abrogation, supersession, or limitation of DeFillippo itself.",
+          "The lake derivation nevertheless reports audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited, so an absolute no-negative-treatment sentence should be narrowed."
+        ],
+        "residual_risks": [
+          "A completed treatment audit of the proposed negative events could later require a downgrade or point-specific qualification."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative treatment in the disclosed lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Michigan v. DeFillippo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5bb33466756497a0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and non-stub for Michigan v. DeFillippo.\",\n        \"The identity fields confirm the cited Supreme Court authority: court is U.S. Supreme Court, date_decided is 1979-06-25, expected_citation_found is true, and canonical_name_match is true.\",\n        \"The official citation field selects 443 U.S. 31, matching the page's displayed citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation has capped, audit-needed lanes, but no disclosed confirmed edge establishes that the authority is no longer live law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9094fae5afdc4bc4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not assess quote or support fidelity.\",\n        \"No treatment or currency defect unique to this quote_fidelity row appears beyond the treatment issue reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote-fidelity consequences, including the recorded mismatch, are left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2a7570a0be9bc4f9\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law label survives, but the page's unqualified 'No negative treatment' wording overstates the disclosed treatment record because the lake derivation flags audit-needed proposed negative events in capped lanes.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep good_law as of 2026-06-30, but change the treatment note to say there is no confirmed negative treatment in the disclosed lake record and that treatment derivation flags proposed events for audit.\",\n        \"evidence_quote\": \"R15 treatment audit required\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\n        \"Every disclosed treatment edge has field_iii set to mentioned and proposed set to true; no disclosed edge is a confirmed overruling, abrogation, supersession, or limitation of DeFillippo itself.\",\n        \"The lake derivation nevertheless reports audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited, so an absolute no-negative-treatment sentence should be narrowed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed treatment audit of the proposed negative events could later require a downgrade or point-specific qualification.\"\n      ],\n      \"suggested_tightening\": \"Use 'No confirmed negative treatment in the disclosed lake record' rather than 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Reviewed all 3 inventory rows under Lens B only, using only disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:11:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8f88a838ec",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-279275af86"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +86,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2887e5eb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. DeFillippo"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 356468,
+      "output": 7977,
+      "source": "codex-events",
+      "total": 364445
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.1
+    "verdict_map": {
+      "2a7570a0be9bc4f9": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5bb33466756497a0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9094fae5afdc4bc4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f88a838ec",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-279275af86",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 166.9
   }
 }

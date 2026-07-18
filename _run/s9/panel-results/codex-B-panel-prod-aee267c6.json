@@ -1,13 +1,117 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Jackson.json",
+    "lens": "B",
+    "notes": "Reviewed all five inventory rows under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "5788bf01ae9acf74",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\"",
+          "locator_note": "lake/United States v. Jackson__d2fce9.json treatment.edges[0]",
+          "needs_cl": true,
+          "problem": "The case identity and citations are verified, but the live-law/currency framing should not be unqualified because the lake treatment record discloses an unresolved proposed overruled edge.",
+          "proposed_fix": "Keep the citation, but add a currency caveat or link it to the treatment review until the Saddler edge is resolved.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified and citation display is 784 F.3d 1227.",
+          "Treatment/progeny data contains one proposed edge from United States v. Martece Saddler, 19 F.4th 1035, labeled overruled/mentioned."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the Saddler opinion text, so the edge cannot be resolved here."
+        ],
+        "suggested_tightening": "Citation exists; current live-law status requires review of the proposed Saddler treatment edge.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2ad63e6ac1a9f32",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no independent currency/treatment assertion is made by this row.",
+          "The row is tied to the same Jackson record; the treatment defect is addressed under assertion 9133cd5b42a994d1."
+        ],
+        "residual_risks": [
+          "Lens A must resolve the recorded mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d69b6317e061f7bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no support or quote-fidelity defect is raised here.",
+          "The embedded treatment language is covered by the separate treatment assertion."
+        ],
+        "residual_risks": [
+          "Lens A must resolve the recorded mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d98e65696e8b9ccf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no currency/treatment defect is unique to this pinpoint row.",
+          "The disclosed pin row carries the same matched status, but Lens B does not adjudicate that match."
+        ],
+        "residual_risks": [
+          "Treatment status still depends on resolving the proposed Saddler edge."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9133cd5b42a994d1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"proposed_negative_events\": 1",
+          "locator_note": "lake treatment.derivation.lane2_top_cited and treatment.edges[0]",
+          "needs_cl": true,
+          "problem": "The unqualified good-law/no-negative-treatment presentation is not supportable from the disclosed treatment record: field_i_validity is migration-seeded good_law, while treatment.edges contains a proposed overruled edge and lane2_top_cited reports one proposed negative event.",
+          "proposed_fix": "Downgrade the treatment display to needs-review or qualified good-law pending review, and remove 'No negative subsequent treatment identified' unless the Saddler edge is cleared.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment field says good_law as of 2026-06-30, but provenance says it came from legacy migration/page frontmatter.",
+          "The same treatment record includes a proposed edge from United States v. Martece Saddler with field_ii overruled and field_iii mentioned.",
+          "Because the disclosed record contains a proposed negative event, the page's no-negative-treatment statement is too strong."
+        ],
+        "residual_risks": [
+          "The Saddler edge may be a false positive, but the disclosed files do not contain enough evidence to clear it."
+        ],
+        "suggested_tightening": "Status: needs review as of 2026-06-30; disclosed treatment derivation reports one proposed negative event from United States v. Martece Saddler.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Jackson.json\",\"reviewed\":[{\"assertion_id\":\"5788bf01ae9acf74\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity and citations are verified, but the live-law/currency framing should not be unqualified because the lake treatment record discloses an unresolved proposed overruled edge.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the citation, but add a currency caveat or link it to the treatment review until the Saddler edge is resolved.\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Jackson__d2fce9.json treatment.edges[0]\"},\"reasons\":[\"Lake identity is verified and citation display is 784 F.3d 1227.\",\"Treatment/progeny data contains one proposed edge from United States v. Martece Saddler, 19 F.4th 1035, labeled overruled/mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the Saddler opinion text, so the edge cannot be resolved here.\"],\"suggested_tightening\":\"Citation exists; current live-law status requires review of the proposed Saddler treatment edge.\"},{\"assertion_id\":\"c2ad63e6ac1a9f32\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no independent currency/treatment assertion is made by this row.\",\"The row is tied to the same Jackson record; the treatment defect is addressed under assertion 9133cd5b42a994d1.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve the recorded mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d69b6317e061f7bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no support or quote-fidelity defect is raised here.\",\"The embedded treatment language is covered by the separate treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve the recorded mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d98e65696e8b9ccf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no currency/treatment defect is unique to this pinpoint row.\",\"The disclosed pin row carries the same matched status, but Lens B does not adjudicate that match.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment status still depends on resolving the proposed Saddler edge.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9133cd5b42a994d1\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified good-law/no-negative-treatment presentation is not supportable from the disclosed treatment record: field_i_validity is migration-seeded good_law, while treatment.edges contains a proposed overruled edge and lane2_top_cited reports one proposed negative event.\",\"severity\":\"high\",\"proposed_fix\":\"Downgrade the treatment display to needs-review or qualified good-law pending review, and remove 'No negative subsequent treatment identified' unless the Saddler edge is cleared.\",\"evidence_quote\":\"\\\"proposed_negative_events\\\": 1\",\"needs_cl\":true,\"locator_note\":\"lake treatment.derivation.lane2_top_cited and treatment.edges[0]\"},\"reasons\":[\"The treatment field says good_law as of 2026-06-30, but provenance says it came from legacy migration/page frontmatter.\",\"The same treatment record includes a proposed edge from United States v. Martece Saddler with field_ii overruled and field_iii mentioned.\",\"Because the disclosed record contains a proposed negative event, the page's no-negative-treatment statement is too strong.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The Saddler edge may be a false positive, but the disclosed files do not contain enough evidence to clear it.\"],\"suggested_tightening\":\"Status: needs review as of 2026-06-30; disclosed treatment derivation reports one proposed negative event from United States v. Martece Saddler.\"}],\"notes\":\"Reviewed all five inventory rows under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:57:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f6587e96e7",
+      "F-S9-PR-09b3ad6fe0"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Jackson.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +120,66 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-aee267c6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Jackson"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 230637,
+      "output": 7895,
+      "source": "codex-events",
+      "total": 238532
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "5788bf01ae9acf74": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9133cd5b42a994d1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "c2ad63e6ac1a9f32": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d69b6317e061f7bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d98e65696e8b9ccf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6587e96e7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-09b3ad6fe0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 154.5
   }
 }

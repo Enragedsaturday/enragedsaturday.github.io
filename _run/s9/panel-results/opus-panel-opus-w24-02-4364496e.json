@@ -1,0 +1,97 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "bf38bfbe2235d92d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "IN THE COURT OF APPEALS ELEVENTH APPELLATE DISTRICT LAKE COUNTY, OHIO",
+          "locator_note": "identity.court (contradicted by cached opinion caption and by '[Cite as State v. Andrews, 2016-Ohio-8517.]')",
+          "needs_cl": false,
+          "problem": "The case cite 2016-Ohio-8517 is correct and confirmed, but the co-located identity.court field ('Maryland Ct. of Special Appeals', court_level 'other', court_id null) contradicts the disclosed opinion, which is an Ohio Court of Appeals decision. An Ohio neutral citation (20xx-Ohio-####) cannot belong to a Maryland court.",
+          "proposed_fix": "Correct identity.court to 'Ohio Court of Appeals, Eleventh Appellate District (Lake County)' and set court_level/court_id to the Ohio appellate values; the citation itself needs no change.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Cite '2016 Ohio 8517' is verbatim-confirmed by the cached text bracket line '[Cite as State v. Andrews, 2016-Ohio-8517.]'; volume 2016, page 8517, reporter 'Ohio', type 8 (vendor_neutral) are all correct.",
+          "Cached opinion (Wright, J.; Lake County Court of Common Pleas felony-sentencing appeal) matches identity.case_name and year 2016, so the cached text belongs to this record.",
+          "The citation existence survives, but the record misidentifies the deciding court as Maryland when the neutral cite and caption are unambiguously Ohio."
+        ],
+        "residual_risks": [
+          "court_id (null) and court_level ('other') likely also need correction alongside the court name; the citation string remains valid regardless."
+        ],
+        "suggested_tightening": "Reconcile identity.court/court_level/court_id with the citation's jurisdiction (Ohio neutral cite => Ohio court).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "418d9f862c6e3eaa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake record treatment.field_i_validity is 'unverified' with the frontier-stub scope_note and varies_by_point false, matching the asserted payload exactly.",
+          "Record carries stub:true; assertion asserts non-derivation of treatment, not any currency claim, so nothing to refute.",
+          "The court-field defect in the sibling existence assertion does not affect this treatment stub declaration."
+        ],
+        "residual_risks": [
+          "Treatment/progeny intentionally not derived; validity unknown until S6 promotion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:20:18-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/state-v-andrews--4335207.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w24-02-4364496e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w24-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record state-v-andrews--4335207"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "state-v-andrews--4335207"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "418d9f862c6e3eaa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf38bfbe2235d92d": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-02faa91074",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

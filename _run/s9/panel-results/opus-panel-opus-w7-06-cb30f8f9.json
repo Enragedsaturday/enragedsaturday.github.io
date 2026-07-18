@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9ffc90742daa8133",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows case_cite lines '318 U.S. 332', '63 S.Ct. 608', '87 L.Ed. 819', parties 'McNABB et al. v. UNITED STATES', 'No. 25', Mr. Justice FRANKFURTER - matching official 318 U.S. 332 and both parallels.",
+          "Case and citations exist and are correctly identified (cluster 103791, identity_checked=true)."
+        ],
+        "residual_risks": [
+          "Cached text says 'Decided March 1, 1943; Rehearing Denied June 7, 1943'; the record's date_decided 1943-06-07 tracks the rehearing-denied date rather than the March 1 decision date (year 1943 is correct; out of scope for the case_cite dimension).",
+          "'1943 U.S. LEXIS 1280' not verifiable from disclosed text."
+        ],
+        "suggested_tightening": "Consider date_decided=1943-03-01 (decision date) rather than 1943-06-07 (rehearing denied).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2746ab1bb511de48",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote equals the page's pin-347 quotation and is verbatim-present in the cached opinion (paragraph beginning 'In holding that the petitioners' admissions were improperly received...').",
+          "The page's ' . . . ' ellipsis correctly omits the intervening sentence 'In so doing, we respect the policy which underlies Congressional legislation.'; both retained clauses ('We hold only that a decent regard...revealed here.' and 'The history of liberty has largely been the history of observance of procedural safeguards.') match exactly. Faithful."
+        ],
+        "residual_risks": [
+          "The payload flag quote_fidelity='mismatch' is an extractor false-positive: the omission spans an intervening sentence, which breaks a contiguous-substring match but not the Bluebook-marked quotation.",
+          "Pincite page 347 not verifiable from disclosed text (cached opinion carries paragraph numbers, no reporter page-labels; pinpoint_status=slip-only)."
+        ],
+        "suggested_tightening": "Recompute the fidelity flag with ellipsis-aware matching so the true match is not reported as 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a52f0cebeb46368",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Plainly, a conviction resting on evidence secured through such a flagrant disregard of the procedure which Congress has commanded cannot be allowed to stand without making the courts themselves accomplices in wilful disobedience of law. . . . [T]o permit such evidence to be made the basis of a conviction in the federal courts would stultify the policy which Congress has enacted into law.",
+          "locator_note": "pin-345; content page line 447 vs cached opinion paragraph 'The circumstances in which the statements admitted in evidence...'",
+          "needs_cl": false,
+          "problem": "payload.quote captured page chrome (YAML delimiter, title/header line, and the Background/Issue/Rule prose up to the pin anchor) instead of the pin-345 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-345 quotation rendered on the page IS verbatim-faithful to the cached opinion.",
+          "proposed_fix": "Repoint payload.quote to the actual pin-345 quotation and re-run the fidelity check (it matches with the marked ellipsis).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual pin-345 page quote is verbatim-present in the cached opinion; the page ellipsis ' . . . ' correctly omits 'Congress has not explicitly forbidden the use of evidence so procured. But', and '[T]o' correctly brackets the capitalization of the original lowercase 'to'. Faithful - no reader-facing fidelity issue.",
+          "The reviewed proposition (page faithfully quotes McNabb at 345) survives; only the serialized payload.quote needs modification (it is an extraction artifact of page chrome)."
+        ],
+        "residual_risks": [
+          "Pincite page 345 not verifiable from disclosed text (paragraph-numbered cached opinion; pinpoint_status=slip-only)."
+        ],
+        "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e1d948e5afdcc999",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' for the McNabb supervisory-power exclusion rule is consistent with the cached opinion (Frankfurter, exclusion resting on the Court's supervisory authority apart from the Constitution).",
+          "The disclosed treatment record contains NO adjudicated negative treatment: every negative edge is proposed=true, journaled to lane1_negative, with derivation audit_needed=true / 'R15 treatment audit required'.",
+          "The scope_note correctly synthesizes Corley as 'modified - not supplanted' by 18 U.S.C. 3501 (Corley did not overrule the McNabb-Mallory rule); refutation via the Corley edge fails."
+        ],
+        "residual_risks": [
+          "Currency is composite_basis=migration-seed with 15 proposed negative events pending R15 audit; the 'as of 2026-06-30' good-law is seeded, not freshly adjudicated.",
+          "The proposed Corley edge is raw-flagged field_ii='overruled', contradicting the accurate scope_note 'modified - not supplanted' (raw keyword mislabel).",
+          "Subsequent-history specifics (Corley / 3501) are not independently verifiable from the disclosed 1943 opinion."
+        ],
+        "suggested_tightening": "Relabel the proposed Corley edge from 'overruled' to 'modified/limited-by-statute' to match the composite scope_note.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/McNabb v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-06-cb30f8f9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "McNabb v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2746ab1bb511de48": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a52f0cebeb46368": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ffc90742daa8133": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e1d948e5afdcc999": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1ebc7ba161",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

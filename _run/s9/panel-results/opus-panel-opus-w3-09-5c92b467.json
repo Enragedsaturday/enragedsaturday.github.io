@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c61e3b195b53987b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '426 U.S. 610 (1976)', DOYLE v. OHIO, No. 75-5014, argued Feb 23 1976, decided June 17 1976, Powell, J.; lake official cite 426 U.S. 610 (selected_rank_1).",
+          "Parallel 96 S. Ct. 2240 / 49 L. Ed. 2d 91 present; star-paginated opinion runs *611-*629."
+        ],
+        "residual_risks": [
+          "Lake courtlistener block lists opinion_id equal to cluster_id (109491) — an identity-plumbing oddity; the opinion text confirms the citation, so existence is unaffected."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "44b73c77ed456fac",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, every post-arrest silence is insolubly ambiguous because of what the State is required to advise the person arrested.",
+          "locator_note": "pin-617",
+          "needs_cl": false,
+          "problem": "Disclosed pinpoints[pin-617].quote is a mis-scoped harvest window of the content page's own authored prose (frontmatter/title + '# Doyle v. Ohio' header + Background + Issue + '## Rule' lead-in ending '...Post-arrest silence following Miranda warnings is'), not a quotation attributed to the opinion. Provenance marks pinpoints src='content page quote harvest'. It contains Markdown section headers, so it cannot be an opinion quotation; the actual quotation the page attributes to this pincite is faithful.",
+          "proposed_fix": "Re-scope the harvest so pin-617.quote captures the real quoted passage — the quoted phrase 'insolubly ambiguous' (opinion: 'every post-arrest silence is insolubly ambiguous') — which matches the cached opinion at page 617; the published content page needs no edit.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed quote contains '## Rule' Markdown and the case header, so it is an S8 harvest artifact, not an opinion quotation.",
+          "The page's only verbatim quoted phrase at pin-617 ('insolubly ambiguous') is in the cached opinion at page 617; pincite 617 correct."
+        ],
+        "residual_risks": [
+          "The page also attributes an unquoted paraphrase ('may be nothing more than the arrestee's exercise of his Miranda rights') to 617; the opinion supports it in substance ('Silence in the wake of these warnings may be nothing more than the arrestee's exercise of these Miranda rights'), so it is faithful though not in quotation marks."
+        ],
+        "suggested_tightening": "Anchor the harvest span to the quoted phrase, not the Rule lead-in.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bf9ae373ac5bc93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (page 618): 'Moreover, while it is true that the Miranda warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial.' Page's '[W]hile' is a proper capitalization bracket; remainder verbatim.",
+          "Pincite 618 correct — the *618 marker precedes 'Moreover, while it is true...'."
+        ],
+        "residual_risks": [
+          "Payload quote_fidelity='mismatch' is a naive-matcher false positive (capitalization bracket + slip/star handling); sighted check confirms faithful."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fa8ace7674df7f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; cached opinion is an intact SCOTUS majority reversing on due-process grounds — not self-limiting.",
+          "All 32 treatment.edges are proposed:true seeds (lane1_negative/lane2_top_cited), proposed_false=0; no accepted negative treatment."
+        ],
+        "residual_risks": [
+          "Synthetic 'overruled' labels against a 1976 SCOTUS holding are non-credible seeds.",
+          "scope_note (cabined by Jenkins v. Anderson / Fletcher v. Weir / Salinas; core Doyle rule intact) is consistent with good law but is not backed by an adjudicated citing report; currency asserted, not independently proven from disclosed evidence."
+        ],
+        "suggested_tightening": "Resolve the proposed:true edge seeds before certifying as_of_treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1a47da2864",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Doyle v. Ohio.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-09-5c92b467",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Doyle v. Ohio"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0fa8ace7674df7f3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44b73c77ed456fac": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9bf9ae373ac5bc93": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c61e3b195b53987b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2767214c3e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1a47da2864",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

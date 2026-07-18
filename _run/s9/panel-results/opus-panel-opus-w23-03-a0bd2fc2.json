@@ -1,0 +1,86 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "896f7efe0a421647",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is the actual Kentucky v. Graham (Marshall, J., delivering the opinion; 42 U.S.C. 1988 attorney's-fee recovery, personal- vs official-capacity suits), confirming the case exists as identified.",
+          "Star-pagination labels *161, *162, *163 are consistent with official cite 473 U.S. 159 (opinion body opens at *161 after syllabus pages 159-160).",
+          "Payload all[] (473 U.S. 159; 105 S. Ct. 3099; 87 L. Ed. 2d 114; 1985 U.S. LEXIS 86; 53 U.S.L.W. 4966) matches the lake record citations.all[] exactly; no invented reporter/volume/page."
+        ],
+        "residual_risks": [
+          "Parallel S. Ct., L. Ed. 2d, LEXIS, and U.S.L.W. pincites are carried from cluster.citations[] and are not independently verifiable from the inlined opinion text.",
+          "official_selection is null (reason 'unlisted_reporter:U.S.') and identity.lead_opinion_id equals cluster_id (111500) — both honestly reported quirks, neither an existence defect for the case_cite."
+        ],
+        "suggested_tightening": "Fix the 'unlisted_reporter:U.S.' rule so 473 U.S. 159 is promoted to citations.official rather than left null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62081f93ebd42169",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload is a frontier stub: field_i_validity 'unverified', as_of_content/as_of_treatment null, varies_by_point false, scope_note declares treatment/progeny intentionally not derived until S6 promotion — no substantive legal proposition to refute.",
+          "Stub matches the lake record treatment block exactly (unverified composite_basis, empty edges/point_overrides)."
+        ],
+        "residual_risks": [
+          "Actual treatment/currency cannot be checked from disclosed evidence — only the case's own opinion text is inlined; no citing opinions or treatment feed provided.",
+          "The 'unverified' state must be resolved at S6 promotion before any good-law reliance."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:14:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/kentucky-v-graham--111500.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w23-03-a0bd2fc2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w23-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record kentucky-v-graham--111500"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "kentucky-v-graham--111500"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "62081f93ebd42169": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "896f7efe0a421647": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

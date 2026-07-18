@@ -1,0 +1,138 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9c5899f369444489",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads literally '439 U.S. 128 (1978)', 'RAKAS ET AL. v. ILLINOIS', 'No. 77-5781.', 'Decided December 5, 1978.', MR. JUSTICE REHNQUIST — confirms identity and the official cite 439 U.S. 128.",
+          "official.selected_official=true on 439 U.S. 128; no disclosed evidence contradicts the cite."
+        ],
+        "residual_risks": [
+          "Parallel cites 99 S. Ct. 421 / 58 L. Ed. 2d 387 and 1978 U.S. LEXIS 2452 pin-pages not independently confirmable from cached text, but uncontradicted (cluster.citations[])."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78f2c5777f8d736f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Source (p. 143, stating the Katz holding): '...the Court in Katz held that capacity to claim the protection of the Fourth Amendment depends not upon a property right in the invaded place but upon whether the person who claims the protection of the Amendment has a legitimate expectation of privacy in the invaded place. 389 U. S., at 353'.",
+          "Record quote is an exact verbatim reproduction of that clause; the sentence sits between the *143 and *144 markers, so pincite '439 U.S. at 143' is correct; matches star-verified='matched' and the text-fragment anchor."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85d2ef19be365dd3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously asserted.",
+          "locator_note": "439 U.S. at 133-134; source: 'As we stated in Alderman v. United States, 394 U. S. 165, 174 (1969), \"Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously *134 asserted.\"'",
+          "needs_cl": false,
+          "problem": "The harvested `quote` for pin-133 is a page-dump artifact (rendered-markdown from the header through '## Rule No. Fourth Amendment rights are personal:'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string is not a contiguous source passage.",
+          "proposed_fix": "Re-harvest pin-133 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 439 U.S. 133-134.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The ACTUAL content-page pinpoint quote at ^pin-133 is verbatim from Rakas (the quote spans *133-*134, the word 'asserted' following the *134 marker), and is correctly attributed '(quoting Alderman v. United States)' — Rakas quotes Alderman at 394 U.S. 165, 174.",
+          "Only the harvested payload string is broken (page-dump); the published quote and its pincite (133-134) survive."
+        ],
+        "residual_risks": [
+          "Preserve the published ^pin-133 quote; only the harvested quote string needs correction — do not delete the pin."
+        ],
+        "suggested_tightening": "Sentence-scoped fallback harvest for pins lacking a text-fragment anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b166bb37cfc42452",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is a migration-seed; the negative-treatment lanes returned only 'proposed':true / field_iii='mentioned' candidates with no confirmed overruling of Rakas.",
+          "Rakas (merging standing into the substantive legitimate-expectation-of-privacy inquiry) is bedrock Fourth Amendment law; the record's own related links show continued application ([[Rawlings v. Kentucky]], [[Byrd v. United States]]).",
+          "No disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "scope_note self-discloses 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; lanes carry audit_needed=true / 'R15 treatment audit required' — currency is seed-based pending audit, though no overruling is present."
+        ],
+        "suggested_tightening": "Close the R15 negative-treatment audit before treating as_of_treatment as independently re-derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Rakas v. Illinois.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-05-c3a1cef3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rakas v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "78f2c5777f8d736f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85d2ef19be365dd3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9c5899f369444489": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b166bb37cfc42452": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a915a4e11f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

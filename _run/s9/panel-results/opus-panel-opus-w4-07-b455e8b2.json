@@ -1,0 +1,128 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ea2b4b530b4168fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is Marshall, J. delivering the opinion of the Court in petitioner Frazier's Oregon second-degree-murder habeas case (cousin Jerry Lee Rawls; interrogation deception) — the case is real and correctly identified (cluster 107913).",
+          "Star pagination *733 through *739 is consistent with an opinion beginning at 394 U.S. 731; official display cite 394 U.S. 731 supported.",
+          "The pin-739 Rule quote is confirmed at the *739 paragraph (see quote-fidelity assertion below)."
+        ],
+        "residual_risks": [
+          "Parallel cites 89 S. Ct. 1420 / 22 L. Ed. 2d 684 and 1969 U.S. LEXIS 1870 are not independently checkable against the disclosed U.S. Reports text, but are standard-form and uncontradicted.",
+          "Minor cross-field date inconsistency elsewhere in the record (frontmatter date_decided=1969-04-23 vs treatment as_of_content=1969-04-22); not part of this existence payload and the decision date is not shown in the disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee8dfda25c1f606f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the \"totality of the circumstances,\"",
+          "locator_note": "pin-739; cached opinion text at *739 (Marshall opinion, paragraph b813-6). Defect confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low.",
+          "needs_cl": false,
+          "problem": "Stored pin-739 quote is a content-page harvest artifact — it captured the front-matter delimiter, H1, TreatmentBadge HTML comment, and the authored Background/Issue/Rule prose ('--- # Frazier v. Cupp *394 U.S. 731 (1969)* ... ## Rule No. Police deception is one relevant factor, but it does not by itself make an otherwise voluntary confession inadmissible; voluntariness is judged on the totality of the circumstances.'). The actual page-739 quotation is absent from the pinpoint record.",
+          "proposed_fix": "Repoint pin-739's stored quote to the page-739 language the rendered page already displays: 'The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the \"totality of the circumstances\" . . . .'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is page scaffolding/authored prose, not verbatim opinion text; harvest grabbed the preamble instead of the anchored quotation.",
+          "Lake quote_fidelity='mismatch' is a TRUE POSITIVE — the stored pinpoint quote does not match source text."
+        ],
+        "residual_risks": [
+          "Systematic extractor span bug: identical harvest-artifact failure on Foster pin-442 and Franks pin-155 in this pack."
+        ],
+        "suggested_tightening": "Fix the harvester so pin.quote captures the anchored quotation rather than the page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6aa66411694a7f94",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is defensible: the disclosed text is the SCOTUS majority (Marshall, J.) holding that police misrepresentation is only one relevant factor and does not by itself make an otherwise voluntary confession inadmissible; nothing in the disclosed record overrules it, and the page states 'No negative treatment.'",
+          "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a provenance note, not a substantive treatment claim."
+        ],
+        "residual_risks": [
+          "Record status is 'under_review' while treatment is stated as good_law with a full as_of_treatment date, and the page (unlike the Frank stub) shows no ⚪ unverified banner — the good_law claim is substantively sound but not yet machine-certified.",
+          "Currency ('good as of 2026-06-30') cannot be exhaustively proven from the single 1969 opinion; no full citator inlined."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-aef463c994",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Frazier v. Cupp.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-07-b455e8b2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Frazier v. Cupp"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6aa66411694a7f94": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea2b4b530b4168fa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee8dfda25c1f606f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ebd70e361f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-aef463c994",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/harrison-v-united-states--107736.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl and the lake/text records.",
+    "reviewed": [
+      {
+        "assertion_id": "9f7b9b183a39e560",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/harrison-v-united-states--107736__94bfdf.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity and citations, but does not verify the currency/live-law status of Harrison. Treatment is explicitly an unverified frontier stub and progeny was not derived.",
+          "proposed_fix": "Limit the assertion to verified case identity/citations, or promote the record and add current treatment/progeny evidence before implying that the authority remains live law.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity status is verified_identity and the listed citations include 392 U.S. 219, 88 S. Ct. 2008, 20 L. Ed. 2d 1047, and 1968 U.S. LEXIS 1349.",
+          "Currency cannot be verified because treatment.field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0."
+        ],
+        "residual_risks": [
+          "Harrison may in fact remain good law, but that is not confirmable from the disclosed stub record."
+        ],
+        "suggested_tightening": "State only that the case identity/citations are verified and that treatment is unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "385d244d88881ace",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.",
+          "The lake record discloses no derived treatment edges, point overrides, or progeny enumeration that would support a stronger good-law or negative-treatment claim."
+        ],
+        "residual_risks": [
+          "No substantive current-validity conclusion can be drawn from this treatment stub."
+        ],
+        "suggested_tightening": "Keep the visible treatment label at unverified/no treatment derived; do not display this as a good-law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/harrison-v-united-states--107736.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9f7b9b183a39e560\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies identity and citations, but does not verify the currency/live-law status of Harrison. Treatment is explicitly an unverified frontier stub and progeny was not derived.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Limit the assertion to verified case identity/citations, or promote the record and add current treatment/progeny evidence before implying that the authority remains live law.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/harrison-v-united-states--107736__94bfdf.json treatment/progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake identity status is verified_identity and the listed citations include 392 U.S. 219, 88 S. Ct. 2008, 20 L. Ed. 2d 1047, and 1968 U.S. LEXIS 1349.\",\n        \"Currency cannot be verified because treatment.field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Harrison may in fact remain good law, but that is not confirmable from the disclosed stub record.\"\n      ],\n      \"suggested_tightening\": \"State only that the case identity/citations are verified and that treatment is unverified.\"\n    },\n    {\n      \"assertion_id\": \"385d244d88881ace\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.\",\n        \"The lake record discloses no derived treatment edges, point overrides, or progeny enumeration that would support a stronger good-law or negative-treatment claim.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No substantive current-validity conclusion can be drawn from this treatment stub.\"\n      ],\n      \"suggested_tightening\": \"Keep the visible treatment label at unverified/no treatment derived; do not display this as a good-law determination.\"\n    }\n  ],\n  \"notes\": \"No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl and the lake/text records.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:36:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:18:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4bc63fd95e"
+    ],
     "group_id": "_overhaul2/lake/cases/harrison-v-united-states--107736.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-67c1debe",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-67c1debe.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:36:29.950493Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:30.490734Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:31.168452Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:31.905049Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record harrison-v-united-states--107736"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "harrison-v-united-states--107736"
+    ],
+    "tokens": {
+      "input": 178471,
+      "output": 6907,
+      "source": "codex-events",
+      "total": 185378
+    },
+    "verdict_map": {
+      "385d244d88881ace": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f7b9b183a39e560": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4bc63fd95e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 136.6
   }
 }

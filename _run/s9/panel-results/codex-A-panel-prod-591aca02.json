@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maine v. Moulton.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "e2940a151700e4e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies case_name 'Maine v. Moulton', court 'U.S. Supreme Court', date_decided '1985-12-10', and year 1985.",
+          "The official citation in the lake record is exactly '474 U.S. 159', with the same parallel and vendor citations listed in the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57b8c21976b9ca1d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, the Sixth Amendment is not violated whenever — by luck or happenstance — the State obtains incriminating statements",
+          "locator_note": "text/Maine v. Moulton__c7cf04.txt, paragraph b314-4, page label *176; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "pin-176's stored quote is not the quoted 474 U.S. at 176 passage; it is copied from the built page header/background/issue/rule prefix. The lake record itself marks quote_fidelity as 'mismatch' and gives no page.",
+          "proposed_fix": "Replace pin-176 with the actual page 176 passage beginning with the Sixth Amendment luck-or-happenstance sentence, and set the pinpoint page to 176.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text at page label *176 contains the luck-or-happenstance sentence cited in content_page.md.",
+          "The payload quote for pin-176 instead begins with '--- # Maine v. Moulton' and continues through built-page metadata and summary text, which is not opinion text."
+        ],
+        "residual_risks": [
+          "The displayed page quote in content_page.md appears supportable, but the disclosed pin metadata for pin-176 is corrupt."
+        ],
+        "suggested_tightening": "Regenerate pin-176 from the opinion text rather than from rendered page context.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f61be1bbb5901ee1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "State’s obligation not to circumvent the right to the assistance of counsel",
+          "locator_note": "text/Maine v. Moulton__c7cf04.txt, paragraph b314-4, page label *176; lake pinpoints[1]",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present at page *176, but the asserted quote is not character-faithful to the cached opinion text because it uses straight apostrophes in 'State's' and 'accused's' where the text has curly apostrophes. The lake also marks this quote_fidelity as 'mismatch'.",
+          "proposed_fix": "Use the opinion text's exact punctuation: 'State’s' and 'accused’s', or remove quotation marks if normalized punctuation is intended.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the opinion text at the same page-176 paragraph as the prior quote.",
+          "The only identified quote-fidelity defect is character-level punctuation normalization, not a substantive misquotation."
+        ],
+        "residual_risks": [
+          "The lake pinpoint page is null/slip-only even though the cached opinion text supplies page label *176."
+        ],
+        "suggested_tightening": "Make the quotation byte-for-byte faithful to text/Maine v. Moulton__c7cf04.txt.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e8abc3ff5bcb0c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The asserted treatment fields match the lake record fields: field_i_validity 'good_law', as_of_content '1985-12-10', as_of_treatment '2026-06-30', varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently audited under this support/quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Maine v. Moulton.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e2940a151700e4e1\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies case_name 'Maine v. Moulton', court 'U.S. Supreme Court', date_decided '1985-12-10', and year 1985.\",\n        \"The official citation in the lake record is exactly '474 U.S. 159', with the same parallel and vendor citations listed in the assertion payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"57b8c21976b9ca1d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-176's stored quote is not the quoted 474 U.S. at 176 passage; it is copied from the built page header/background/issue/rule prefix. The lake record itself marks quote_fidelity as 'mismatch' and gives no page.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-176 with the actual page 176 passage beginning with the Sixth Amendment luck-or-happenstance sentence, and set the pinpoint page to 176.\",\n        \"evidence_quote\": \"Thus, the Sixth Amendment is not violated whenever — by luck or happenstance — the State obtains incriminating statements\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Maine v. Moulton__c7cf04.txt, paragraph b314-4, page label *176; lake pinpoints[0]\"\n      },\n      \"reasons\": [\n        \"The opinion text at page label *176 contains the luck-or-happenstance sentence cited in content_page.md.\",\n        \"The payload quote for pin-176 instead begins with '--- # Maine v. Moulton' and continues through built-page metadata and summary text, which is not opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The displayed page quote in content_page.md appears supportable, but the disclosed pin metadata for pin-176 is corrupt.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-176 from the opinion text rather than from rendered page context.\"\n    },\n    {\n      \"assertion_id\": \"f61be1bbb5901ee1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively present at page *176, but the asserted quote is not character-faithful to the cached opinion text because it uses straight apostrophes in 'State's' and 'accused's' where the text has curly apostrophes. The lake also marks this quote_fidelity as 'mismatch'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the opinion text's exact punctuation: 'State’s' and 'accused’s', or remove quotation marks if normalized punctuation is intended.\",\n        \"evidence_quote\": \"State’s obligation not to circumvent the right to the assistance of counsel\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Maine v. Moulton__c7cf04.txt, paragraph b314-4, page label *176; lake pinpoints[1]\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the opinion text at the same page-176 paragraph as the prior quote.\",\n        \"The only identified quote-fidelity defect is character-level punctuation normalization, not a substantive misquotation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pinpoint page is null/slip-only even though the cached opinion text supplies page label *176.\"\n      ],\n      \"suggested_tightening\": \"Make the quotation byte-for-byte faithful to text/Maine v. Moulton__c7cf04.txt.\"\n    },\n    {\n      \"assertion_id\": \"8e8abc3ff5bcb0c0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The asserted treatment fields match the lake record fields: field_i_validity 'good_law', as_of_content '1985-12-10', as_of_treatment '2026-06-30', varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency was not independently audited under this support/quote-fidelity lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:03:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-29e57773da",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-f61d636ccf",
+      "F-S9-PR-9abce0179e"
+    ],
     "group_id": "_overhaul2/lake/cases/Maine v. Moulton.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-591aca02.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Maine v. Moulton"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 291957,
+      "output": 7051,
+      "source": "codex-events",
+      "total": 299008
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "verdict_map": {
+      "57b8c21976b9ca1d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8e8abc3ff5bcb0c0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2940a151700e4e1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f61be1bbb5901ee1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f61d636ccf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9abce0179e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-29e57773da",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 181.5
   }
 }

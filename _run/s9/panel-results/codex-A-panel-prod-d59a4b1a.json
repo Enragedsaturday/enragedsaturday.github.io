@@ -1,22 +1,191 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Jackson.md",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "2f5538159a9d1c7a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies a U.S. Court of Appeals, Eighth Circuit decision dated 2015-05-05 with year 2015.",
+          "Lake citations list official cite 784 F.3d 1227 and vendor-neutral cites 2015 U.S. App. LEXIS 7397 and 2015 WL 2048440; lake parallel citations are empty."
+        ],
+        "residual_risks": [
+          "The canonical lake case name is United States v. A.C. Jackson, while the content title shortens it to United States v. Jackson; the lake record_id/input_case_name still support the shorter label."
+        ],
+        "suggested_tightening": "Use United States v. A.C. Jackson as the display title or retain it prominently as an alias.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99cf9fe7917cdcce",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because we find that the good faith exception under Leon applies, it is\nunnecessary to address whether the initial warrant contained sufficient probable\ncause.",
+          "locator_note": "home: The Good-Faith Exception",
+          "needs_cl": false,
+          "problem": "The disclosed evidence supports placing the case under the good-faith exception, but it does not verify the stronger editorial role label Key — Progeny / Refinement. The lake record has no home_roles/classification field, and the opinion text does not establish corpus-level key status.",
+          "proposed_fix": "Keep the Good-Faith Exception home only if desired, but demote or separately substantiate the role label; a supportable label from the disclosed evidence would be an application of Leon good faith.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion is plainly about Leon good faith, but Key status is not verifiable from the opinion text or lake judgment fields.",
+          "No disclosed home-page taxonomy or lake classification supports Progeny / Refinement as a role label."
+        ],
+        "residual_risks": [
+          "A separate corpus taxonomy file might justify the role, but it is not in the disclosed evidence."
+        ],
+        "suggested_tightening": "Demote to a non-key good-faith application unless corpus role evidence is added.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "c0c02c30383bdbe5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because we find that the good faith exception under Leon applies, it is\nunnecessary to address whether the initial warrant contained sufficient probable\ncause.",
+          "locator_note": "field: holding",
+          "needs_cl": false,
+          "problem": "The holding overstates the probable-cause point. The Eighth Circuit did not hold that the warrant application failed to supply probable cause; it affirmed on Leon good faith and expressly declined to decide whether probable cause existed.",
+          "proposed_fix": "Revise to: The district court found no substantial basis for probable cause, but the Eighth Circuit held the Leon good-faith exception applied because the deputy's reliance was objectively reasonable, making it unnecessary to decide probable cause.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports objectively reasonable good-faith reliance based on the deputy's knowledge, prosecutor review, and judge questioning.",
+          "The proposition as framed treats lack of probable cause as the appellate holding rather than as the district court's finding or an assumed premise."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Frame the probable-cause clause as the district court's finding or as an assumption, not as the Eighth Circuit's holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5576edbb46fbc228",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match lake.treatment: field_i_validity good_law, as_of_content 2015-05-05, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref United States v. Jackson, and varies_by_point false.",
+          "Lens A records this treatment assertion only; treatment currency is not reviewed under this lens."
+        ],
+        "residual_risks": [
+          "Treatment merits and subsequent-history currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6738b20e43e3bc2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as the U.S. Court of Appeals, Eighth Circuit, court_id ca8, circuit 8th, court_level coa.",
+          "The authority-weight label Binding in-circuit — 8th Cir. is consistent with that disclosed court identity."
+        ],
+        "residual_risks": [
+          "No broader treatment/currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Jackson.md\",\"reviewed\":[{\"assertion_id\":\"2f5538159a9d1c7a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies a U.S. Court of Appeals, Eighth Circuit decision dated 2015-05-05 with year 2015.\",\"Lake citations list official cite 784 F.3d 1227 and vendor-neutral cites 2015 U.S. App. LEXIS 7397 and 2015 WL 2048440; lake parallel citations are empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The canonical lake case name is United States v. A.C. Jackson, while the content title shortens it to United States v. Jackson; the lake record_id/input_case_name still support the shorter label.\"],\"suggested_tightening\":\"Use United States v. A.C. Jackson as the display title or retain it prominently as an alias.\"},{\"assertion_id\":\"99cf9fe7917cdcce\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed evidence supports placing the case under the good-faith exception, but it does not verify the stronger editorial role label Key — Progeny / Refinement. The lake record has no home_roles/classification field, and the opinion text does not establish corpus-level key status.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the Good-Faith Exception home only if desired, but demote or separately substantiate the role label; a supportable label from the disclosed evidence would be an application of Leon good faith.\",\"evidence_quote\":\"Because we find that the good faith exception under Leon applies, it is\\nunnecessary to address whether the initial warrant contained sufficient probable\\ncause.\",\"needs_cl\":false,\"locator_note\":\"home: The Good-Faith Exception\"},\"reasons\":[\"The opinion is plainly about Leon good faith, but Key status is not verifiable from the opinion text or lake judgment fields.\",\"No disclosed home-page taxonomy or lake classification supports Progeny / Refinement as a role label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A separate corpus taxonomy file might justify the role, but it is not in the disclosed evidence.\"],\"suggested_tightening\":\"Demote to a non-key good-faith application unless corpus role evidence is added.\"},{\"assertion_id\":\"c0c02c30383bdbe5\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding overstates the probable-cause point. The Eighth Circuit did not hold that the warrant application failed to supply probable cause; it affirmed on Leon good faith and expressly declined to decide whether probable cause existed.\",\"severity\":\"medium\",\"proposed_fix\":\"Revise to: The district court found no substantial basis for probable cause, but the Eighth Circuit held the Leon good-faith exception applied because the deputy's reliance was objectively reasonable, making it unnecessary to decide probable cause.\",\"evidence_quote\":\"Because we find that the good faith exception under Leon applies, it is\\nunnecessary to address whether the initial warrant contained sufficient probable\\ncause.\",\"needs_cl\":false,\"locator_note\":\"field: holding\"},\"reasons\":[\"The opinion supports objectively reasonable good-faith reliance based on the deputy's knowledge, prosecutor review, and judge questioning.\",\"The proposition as framed treats lack of probable cause as the appellate holding rather than as the district court's finding or an assumed premise.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Frame the probable-cause clause as the district court's finding or as an assumption, not as the Eighth Circuit's holding.\"},{\"assertion_id\":\"5576edbb46fbc228\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match lake.treatment: field_i_validity good_law, as_of_content 2015-05-05, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref United States v. Jackson, and varies_by_point false.\",\"Lens A records this treatment assertion only; treatment currency is not reviewed under this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and subsequent-history currency remain for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6738b20e43e3bc2f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the court as the U.S. Court of Appeals, Eighth Circuit, court_id ca8, circuit 8th, court_level coa.\",\"The authority-weight label Binding in-circuit — 8th Cir. is consistent with that disclosed court identity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No broader treatment/currency review was performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:55:17-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:25:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f5d28da80a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1da8f656c6",
+      "F-S9-PR-1922ced7ab"
+    ],
     "group_id": "content/cases/United States v. Jackson.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d59a4b1a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d59a4b1a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:55:09.501917Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:55:10.423266Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:55:11.565778Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:55:13.467149Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:55:17.165301Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Jackson"
+    ],
+    "tokens": {
+      "input": 135288,
+      "output": 9004,
+      "source": "codex-events",
+      "total": 144292
+    },
+    "verdict_map": {
+      "2f5538159a9d1c7a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5576edbb46fbc228": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6738b20e43e3bc2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "99cf9fe7917cdcce": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "c0c02c30383bdbe5": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1da8f656c6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1922ced7ab",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f5d28da80a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 174.6
   }
 }

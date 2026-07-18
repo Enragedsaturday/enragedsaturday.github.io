@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ca4d4d32e8ae1351",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached per curiam opinion confirms identity: 'Appellant John Connally was indicted, tried, and convicted in the Superior Court of Walker County, Ga. ... fee system governing the issuance of search warrants by justices of the peace' (lines 6500-6516) — Connally v. Georgia.",
+          "Star-pagination label '*246' (line 6510-6511) places the opinion in the 429 U.S. 24x range, consistent with official cite '429 U.S. 245'."
+        ],
+        "residual_risks": [
+          "Exact opening page 245 and the parallel cites (97 S. Ct. 546; 50 L. Ed. 2d 444; 1977 U.S. LEXIS 27) are not independently shown; identity, per curiam status, and page range are confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28518b2fa00b62f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-251 quote appears verbatim in cached text (line 6684): 'We therefore hold that the issuance of the search warrant by the justice of the peace in Connally's case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments...'.",
+          "The rendered 'h[e]ld' is a proper bracket alteration of source 'hold'; the quoted span matches the source through 'Amendments' (truncating '...of the United States Constitution').",
+          "Payload quote_fidelity='mismatch' reflects anchoring failure, not a quote-text discrepancy."
+        ],
+        "residual_risks": [
+          "Exact reporter page 251 is reporter-supplied and not line-verified against a numbered slip page; quote text is confirmed verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3de19a9537a5d47",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-250b quote appears verbatim in cached text (line 6629): '...subjected to what surely is judicial action by an officer of a court who has \"a direct, personal, substantial, pecuniary interest\" in his conclusion to issue or to deny the warrant.'",
+          "Payload quote_fidelity='mismatch' reflects page/fragment-anchoring failure, not a quote-text mismatch."
+        ],
+        "residual_risks": [
+          "Exact reporter page 250 reporter-supplied; quote text confirmed verbatim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e5671eb2e324286e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Connally v. Georgia *429 U.S. 245 (1977)* ... ## Background A Georgia justice of the peace issued a search warrant ... ## Issue ... ## Rule No. Applying the principle of *Tumey* and *Ward*, the justice's",
+          "locator_note": "Defect confined to lake pinpoints[].id=pin-250 quote field; the content page renders a verbatim-correct Tumey/Ward quote at ^pin-250.",
+          "needs_cl": false,
+          "problem": "Stored pin-250 'quote' is a content-page scrape: it begins with the YAML delimiter '---', the H1 '# Connally v. Georgia', the header/TreatmentBadge line, an HTML comment, and '## Background'/'## Issue'/'## Rule' Markdown — not any opinion language. Payload self-classifies quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-250.quote with the language actually rendered at ^pin-250: the Tumey/Ward passage 'His financial welfare, therefore, is enhanced by positive action and is not enhanced by negative action... \"a possible temptation to the average man as a judge ... or which might lead him not to hold the balance nice, clear and true between the State and the accused.\"' (verified verbatim in cached text, line 6629).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "YAML '---', H1 '#', HTML comment, and '##' headers in the stored quote prove a content-page scrape, not source text.",
+          "The genuine rendered ^pin-250 quote IS present verbatim in cached text (line 6629)."
+        ],
+        "residual_risks": [
+          "Same first-pinpoint scrape pattern as Herlth pin-26 / Cone pin-469 / Barrett pin-528."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28d3835b9eb63650",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law: lane1_negative reviewed=93, audit_needed=false, its 2 candidates not confirmed; lane2_top_cited's 25 proposed_negative_events are 'proposed':true, audit_needed:true, none applied to field_i.",
+          "Proposed edges are the citing-case-status FP class (field_ii overruled/questioned describing the citing cases' own status; field_iii='mentioned' as to Connally).",
+          "Connally v. Georgia (1977 neutral-and-detached-magistrate) is not shown overruled by any disclosed evidence; varies_by_point=false consistent."
+        ],
+        "residual_risks": [
+          "lane2 R15 audit unresolved (cap_hit=true, audit_needed=true) while good_law rests on a migration-seed."
+        ],
+        "suggested_tightening": "Close the R15 lane2 audit to convert good_law from seed-only to derivation-backed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fdeb6db837",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-71d16420d2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3d7c149cba",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Connally v. Georgia.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-04-315be9ca",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Connally v. Georgia"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "28518b2fa00b62f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "28d3835b9eb63650": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3de19a9537a5d47": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ca4d4d32e8ae1351": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5671eb2e324286e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fdeb6db837",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-71d16420d2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7d11eed64b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3d7c149cba",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

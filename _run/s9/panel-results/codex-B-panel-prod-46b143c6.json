@@ -1,39 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/lefkowitz-v-cunningham--109683.json",
+    "lens": "B",
+    "notes": "No content_page.* file or _overhaul2/lake/cases/lefkowitz-v-cunningham--109683.json path was present in the workspace; review used group_inventory.jsonl plus the matching disclosed lake and text records.",
+    "reviewed": [
+      {
+        "assertion_id": "8a543bc0a41dc219",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/lefkowitz-v-cunningham--109683__8377ca.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citations, but it cannot verify the currency/live-law status of the cited authority because treatment and progeny were not derived.",
+          "proposed_fix": "Promote the record through treatment/progeny derivation before presenting it as live/current law, or label it only as identity-verified with treatment unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record has status verified_identity and lists the asserted citations, including 431 U.S. 801, 97 S. Ct. 2132, 53 L. Ed. 2d 1, and 1977 U.S. LEXIS 19.",
+          "The same record sets treatment.field_i_validity to unverified, has as_of_content and as_of_treatment null, and progeny citation_count null with rows_cached 0.",
+          "Under lens B, live-law currency is not confirmable from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain good law, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Separate identity/citation existence from current-treatment status: identity verified; treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ff9e19e886c662c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload matches the lake treatment fields: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.",
+          "The lake record expressly says treatment/progeny were intentionally not derived until S6 promotion, with empty treatment edges and point_overrides."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment label; it does not establish that Lefkowitz remains good law."
+        ],
+        "suggested_tightening": "Keep any visible treatment label as unverified and avoid a good-law/current-law badge until treatment/progeny is derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/lefkowitz-v-cunningham--109683.json\",\"reviewed\":[{\"assertion_id\":\"8a543bc0a41dc219\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citations, but it cannot verify the currency/live-law status of the cited authority because treatment and progeny were not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Promote the record through treatment/progeny derivation before presenting it as live/current law, or label it only as identity-verified with treatment unverified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/lefkowitz-v-cunningham--109683__8377ca.json treatment/progeny fields\"},\"reasons\":[\"The lake record has status verified_identity and lists the asserted citations, including 431 U.S. 801, 97 S. Ct. 2132, 53 L. Ed. 2d 1, and 1977 U.S. LEXIS 19.\",\"The same record sets treatment.field_i_validity to unverified, has as_of_content and as_of_treatment null, and progeny citation_count null with rows_cached 0.\",\"Under lens B, live-law currency is not confirmable from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority may in fact remain good law, but that cannot be confirmed from the disclosed files.\"],\"suggested_tightening\":\"Separate identity/citation existence from current-treatment status: identity verified; treatment unverified.\"},{\"assertion_id\":\"ff9e19e886c662c8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory payload matches the lake treatment fields: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.\",\"The lake record expressly says treatment/progeny were intentionally not derived until S6 promotion, with empty treatment edges and point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stands only as an unverified-treatment label; it does not establish that Lefkowitz remains good law.\"],\"suggested_tightening\":\"Keep any visible treatment label as unverified and avoid a good-law/current-law badge until treatment/progeny is derived.\"}],\"notes\":\"No content_page.* file or _overhaul2/lake/cases/lefkowitz-v-cunningham--109683.json path was present in the workspace; review used group_inventory.jsonl plus the matching disclosed lake and text records.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:49-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:19:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-97a4c1a947"
+    ],
     "group_id": "_overhaul2/lake/cases/lefkowitz-v-cunningham--109683.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "lefkowitz-v-cunningham--109683"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-46b143c6",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-46b143c6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'lefkowitz-v-cunningham--109683' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record lefkowitz-v-cunningham--109683"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "lefkowitz-v-cunningham--109683"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 71453,
+      "output": 3472,
+      "source": "codex-events",
+      "total": 74925
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "8a543bc0a41dc219": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ff9e19e886c662c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-97a4c1a947",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 68.1
   }
 }

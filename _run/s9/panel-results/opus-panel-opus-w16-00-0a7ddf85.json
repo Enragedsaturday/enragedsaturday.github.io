@@ -1,0 +1,156 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c43dd2a08925918e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Disclosed opinion (Justice White, page markers *297 through *305) plus the lake citations block confirm United States v. Dunn, 480 U.S. 294 (1987); official 480 U.S. 294 selected and displayed.",
+          "Parallel cites 107 S. Ct. 1134 / 94 L. Ed. 2d 326 are the standard Dunn parallels; no existence defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c999415eaee70ae",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we believe that curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by.",
+          "locator_note": "pin-301; opinion at *301",
+          "needs_cl": false,
+          "problem": "Stored pin-301 quote is a harvest artifact: it captured the content-page front-matter/prose from the page header through the '## Rule ... Curtilage is determined by reference to four factors:' lead-in, not opinion text. The quote actually rendered at ^pin-301 on the content page is verbatim-faithful to the opinion at *301.",
+          "proposed_fix": "Re-harvest pin-301's stored quote to the actual quoted span (the four-factor sentence), which matches the opinion verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered quote at ^pin-301 ('curtilage questions should be resolved with particular reference to four factors...') is verbatim in the opinion at *301; pincite 301 correct.",
+          "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful, so no substantive quote-fidelity defect."
+        ],
+        "residual_risks": [
+          "quote_fidelity=mismatch/slip-only reflects the bad harvest span, not the faithful page quote"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a208099453f56dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches the opinion at *301 verbatim: 'these factors are useful analytical tools only to the degree that, in any given case, they bear upon the centrally relevant consideration -- whether the area in question is so intimately tied to the home itself that it should be placed under the home's umbrella of Fourth Amendment protection.'",
+          "Page drops only the lead-in 'Rather,'; quote_fidelity=mismatch is a false positive (slip-only verification-status artifact)."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "53029dbf7bcaf542",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct: Dunn's four-factor curtilage test is established black-letter law and the disclosed record shows no verified negative treatment.",
+          "All negative edges are proposed keyword-triage hits (field_iii=mentioned, proposed=true) flagged 'R15 treatment audit required'; none is a verified overruling of Dunn.",
+          "scope_note (governing curtilage framework, applied in Jardines and Collins) is consistent with the record."
+        ],
+        "residual_risks": [
+          "as_of_content 1987-03-03 predates the 1987-04-20 decision date (migration-seed metadata quirk)",
+          "proposed negative edges remain unaudited (R15)"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-dcc7ede979",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-97979c6c8e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Dunn.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-00-0a7ddf85",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Dunn"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2c999415eaee70ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "53029dbf7bcaf542": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9a208099453f56dd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c43dd2a08925918e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-50df7fadd0",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-dcc7ede979",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-97979c6c8e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c9a2c479526ca83b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header prints '403 U.S. 573 (1971)' verbatim (caption 'UNITED STATES v. HARRIS.', 'No. 30.', 'Decided June 28, 1971') — official cite, docket 30 and year all confirmed.",
+          "No disclosed basis to refute; parallel S.Ct./L.Ed.2d/LEXIS cites not printed in the cached text but are uncontradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e24a38839854716",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'practical consideration of everyday life.' is verbatim in the cached opinion at 403 U.S. 583 ('is not a \"practical consideration of everyday life\" upon which an officer (or a magistrate) may properly rely').",
+          "Page's affirmative framing ('a magistrate may likewise rely ... as a ...') faithfully carries the source's double-negative holding ('We cannot conclude that ... is not ...'); pincite 583 correct.",
+          "Ledger payload 'quote_fidelity: mismatch' is a false positive — not reproduced against disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8dc4e536331a7103",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Admissions of crime, like admissions against proprietary interests, carry their own indicia of credibility—sufficient at least to support a finding of probable cause to search.",
+          "locator_note": "Content page Rule paragraph at ^pin-583; source = cached opinion Part III, page 583 (before the *584 star marker).",
+          "needs_cl": false,
+          "problem": "The assertion's recorded `quote` field is a mis-extraction: it captured a span of content-page front-matter and Background/Issue/Rule markdown ('--- # United States v. Harris (1971) ... ## Rule Yes. The informant's statements') instead of the opinion text anchored at ^pin-583. The page's ACTUAL ^pin-583 quotations are each verbatim to the source and correctly pincited to 583, so the built page is faithful; only the extraction/fidelity record is corrupt.",
+          "proposed_fix": "Re-extract the ^pin-583 quote span to the actual quoted sentences ('were against the informant's penal interest, for he thereby admitted major elements of an offense'; '[p]eople do not lightly admit a crime and place critical evidence in the hands of the police in the form of their own admissions'; '[a]dmissions of crime, like admissions against proprietary interests, carry their own indicia of credibility — sufficient at least to support a finding of probable cause to search'), all at 403 U.S. 583.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote is page markdown, not opinion text -> genuine extraction artifact, NOT a page misquote.",
+          "Independently verified all three actual ^pin-583 quotations verbatim against cached opinion Part III at page 583."
+        ],
+        "residual_risks": [
+          "If the corrupt fidelity record auto-suppresses the pin, a faithful quote could be wrongly dropped."
+        ],
+        "suggested_tightening": "Guard the quote extractor against capturing spans that cross '##' section headers or the front-matter '---' delimiter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ffd56142be0f1e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'That the informant may be paid or promised a ‘break’ does not eliminate the residual risk and opprobrium of having admitted criminal conduct.' is verbatim in the cached opinion (Part III), the *584 star marker falling mid-sentence ('does *584 not eliminate ...'); only single-vs-double quote normalization on ‘break’.",
+          "Pincite 584 correct (sentence completes on 584). Ledger payload 'mismatch' is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e7985ddb49af353d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'itself and without more, implicated that property and furnished probable cause to search.' is verbatim at 403 U.S. 584 (Part III, after the *584 marker).",
+          "Star-verified (star_marker 584) and payload 'matched' — confirmed against disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d83e4ca7d33163c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Currency claim (field_i_validity good_law as of 2026-06-30) cannot be verified from the disclosed 1971 opinion alone; requires a post-1971 citator/CL check not inlined.",
+          "Doctrinal setup in the scope_note IS consistent with the disclosed text: the cached opinion shows a fractured plurality (Burger for a plurality; Black & Blackmun would overrule Aguilar/Spinelli; White concurs only in Part III) eroding Aguilar-Spinelli.",
+          "No disclosed basis to refute; not fabricating a negative-treatment defect."
+        ],
+        "residual_risks": [
+          "good_law currency and the 'replaced by Illinois v. Gates (1983)' assertion need a citator/CL verification (needs_cl)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1afc99a813",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fef4967424",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-31071f48e1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Harris (1971).json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-03-215af3d4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Harris (1971)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6e24a38839854716": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8dc4e536331a7103": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ffd56142be0f1e7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c9a2c479526ca83b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d83e4ca7d33163c2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e7985ddb49af353d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1afc99a813",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7cbcafb75b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-fef4967424",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-31071f48e1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

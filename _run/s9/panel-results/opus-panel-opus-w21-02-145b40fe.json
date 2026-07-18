@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "395b14108f9bce9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip: 'Cite as: 553 U. S. ____ (2008)', caption 'VIRGINIA v. MOORE', 'No. 06-1082 ... Decided April 23, 2008' -> docket 06-1082 and date match.",
+          "Official 553 U.S. 164 selected_official true, official_selection_present true, identity_checked.",
+          "Citation real and correctly reportered."
+        ],
+        "residual_risks": [
+          "opinion_id == cluster_id (145814) is a provenance quirk not independently checkable; official cite nonetheless correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3aeabe33a5f369e8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Virginia v. Moore *553 U.S. 164 (2008)*",
+          "locator_note": "lake pinpoints[] id=pin-1607",
+          "needs_cl": false,
+          "problem": "Stored pin-1607 'quote' is the page front-matter plus Background/Issue/Rule-intro prose, not a quotation; broken extraction (quote_fidelity 'mismatch', star_marker null).",
+          "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'warrantless arrests for crimes committed in the presence of an arresting officer are reasonable under the Constitution, and that while States are free to regulate such arrests however they desire, state restrictions do not alter the Fourth Amendment's protections.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is front-matter, not opinion text -> quote_pinpoint invalid as framed.",
+          "The quote the content actually cites at pin-1607 is verbatim-faithful per cached body: 'We conclude that warrantless arrests for crimes committed in the presence of an arresting officer are reasonable under the Constitution, and that while States are free to regulate such arrests however they desire, state restrictions do not alter the Fourth Amendment's protections.' (bracketed '[W]' and elided 'that' are proper) -> reader not misled."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71d7026c673ea1ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'officers may perform searches incident to constitutionally permissible arrests in order to ensure their safety and safeguard evidence' verbatim in cached text (syllabus (d): 'Officers may perform searches incident to constitutionally permissible arrests in order to ensure their safety and safeguard evidence.'; echoed in Part IV of the body).",
+          "Record's quote_fidelity 'mismatch'/slip-only is a FALSE POSITIVE: the cached copy is the SLIP opinion (no S. Ct. reporter star pages), so the S.Ct.-1608 pincite cannot be auto-mapped; the quote text is faithful.",
+          "Companion reader-facing quote at pin-1608 ('When officers have probable cause to believe that a person has committed a crime in their presence, the Fourth Amendment permits them to make an arrest, and to search the suspect in order to safeguard evidence and ensure their own safety.') is verbatim in the cached body."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Attach the S. Ct. reporter copy (or a page-map) so 1607/1608 pincites can be star-verified rather than left slip-only.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22acbb76118ba14a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law for a SCOTUS decision; all disclosed edges are 'proposed: true' automated-citator candidates (Arizona v. Gant, Rodriguez v. United States, Bruen, Missouri v. McNeely, Birchfield, Safford/Redding flagged overruled/abrogated/questioned) - none actually overrules Moore.",
+          "No confirmed negative treatment; varies_by_point false defensible; as_of_treatment 2026-06-30 current."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9ec6d7de54",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Virginia v. Moore.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-02-145b40fe",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Virginia v. Moore"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "22acbb76118ba14a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "395b14108f9bce9e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3aeabe33a5f369e8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "71d7026c673ea1ec": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-16290b714a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9ec6d7de54",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

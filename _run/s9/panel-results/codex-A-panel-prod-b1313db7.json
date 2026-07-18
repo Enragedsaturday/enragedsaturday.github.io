@@ -1,13 +1,112 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Yarborough v. Alvarado.json",
+    "lens": "A",
+    "notes": "For quote-fidelity review, I treated ordinary HTML/markdown italics as formatting, but flagged strict character-fidelity defects where the quoted characters or extracted pin payload diverged from the disclosed opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "29d29b8360e48da3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists case_name \"Yarborough v. Alvarado,\" court \"U.S. Supreme Court,\" date_decided \"2004-06-01,\" and year 2004.",
+          "The lake citations record selects \"541 U.S. 652\" as the official citation and also lists the parallel citations shown in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bad71db53542a6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted two-sentence passage appears in the disclosed opinion text; the only differences are markdown/HTML formatting for Miranda and the reporter page marker inside the passage.",
+          "The payload quote matches the lake pinpoints[].quote for pin-666."
+        ],
+        "residual_risks": [
+          "The quoted passage crosses the *667 star-pagination marker, so a separate pincite review may prefer 666-667 rather than only 666."
+        ],
+        "suggested_tightening": "Consider changing the displayed cite from Id. at 666 to Id. at 666-667 if page-span precision is required.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9afde5bc56a62cd7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the custody inquiry states an objective rule designed to give clear guidance to the police",
+          "locator_note": "pin-668; content_page.md Rule section; text opinion page *668 passage",
+          "needs_cl": false,
+          "problem": "The quoted language is supported, but the page quote is not strictly character-faithful to the disclosed text because it begins with an editorial capitalization, \"[T]he,\" while the opinion text has lowercase \"the,\" and the raw cache uses a different dash encoding around \"including his age.\"",
+          "proposed_fix": "Either quote the passage beginning with lowercase \"the\" or make the bracketed capitalization/dash normalization an accepted quote-normalization rule for this corpus.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance of the quote appears in the disclosed opinion text at the *668 passage.",
+          "The defect is fidelity/normalization, not support."
+        ],
+        "residual_risks": [
+          "Raw-cache dash encoding may be a corpus text-normalization artifact rather than a legal quotation error."
+        ],
+        "suggested_tightening": "Store the normalized quote rule for bracketed capitalization and em dashes, or use the exact disclosed characters.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b84de52ec8dab436",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We cannot grant relief under AEDPA by conducting our own independent inquiry into whether the state court was correct as a <i>de novo</i> matter.",
+          "locator_note": "pin-665; text opinion page *665-*666 passage",
+          "needs_cl": false,
+          "problem": "The pin-665 payload quote is not a quote from the opinion text; it splices content-page issue/rule prose and is marked as a mismatch in the lake pinpoint record.",
+          "proposed_fix": "Replace pin-665 with the actual AEDPA passage from the opinion, preserving the statutory spacing and omitted-text ellipses, or remove this as a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins \"— made without considering his age and inexperience — was an unreasonable application...\", which is page prose from the issue/rule area, not the cited opinion language.",
+          "The disclosed opinion text at the relevant passage instead contains the AEDPA language beginning \"We cannot grant relief under AEDPA...\"."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate the pin-665 quote from the opinion text rather than from surrounding content_page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c4a0d4c8cda95f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The payload treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 2004-06-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Yarborough v. Alvarado.json\",\"reviewed\":[{\"assertion_id\":\"29d29b8360e48da3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record lists case_name \\\"Yarborough v. Alvarado,\\\" court \\\"U.S. Supreme Court,\\\" date_decided \\\"2004-06-01,\\\" and year 2004.\",\"The lake citations record selects \\\"541 U.S. 652\\\" as the official citation and also lists the parallel citations shown in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0bad71db53542a6d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted two-sentence passage appears in the disclosed opinion text; the only differences are markdown/HTML formatting for Miranda and the reporter page marker inside the passage.\",\"The payload quote matches the lake pinpoints[].quote for pin-666.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The quoted passage crosses the *667 star-pagination marker, so a separate pincite review may prefer 666-667 rather than only 666.\"],\"suggested_tightening\":\"Consider changing the displayed cite from Id. at 666 to Id. at 666-667 if page-span precision is required.\"},{\"assertion_id\":\"9afde5bc56a62cd7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is supported, but the page quote is not strictly character-faithful to the disclosed text because it begins with an editorial capitalization, \\\"[T]he,\\\" while the opinion text has lowercase \\\"the,\\\" and the raw cache uses a different dash encoding around \\\"including his age.\\\"\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the passage beginning with lowercase \\\"the\\\" or make the bracketed capitalization/dash normalization an accepted quote-normalization rule for this corpus.\",\"evidence_quote\":\"the custody inquiry states an objective rule designed to give clear guidance to the police\",\"needs_cl\":false,\"locator_note\":\"pin-668; content_page.md Rule section; text opinion page *668 passage\"},\"reasons\":[\"The substance of the quote appears in the disclosed opinion text at the *668 passage.\",\"The defect is fidelity/normalization, not support.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw-cache dash encoding may be a corpus text-normalization artifact rather than a legal quotation error.\"],\"suggested_tightening\":\"Store the normalized quote rule for bracketed capitalization and em dashes, or use the exact disclosed characters.\"},{\"assertion_id\":\"b84de52ec8dab436\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-665 payload quote is not a quote from the opinion text; it splices content-page issue/rule prose and is marked as a mismatch in the lake pinpoint record.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-665 with the actual AEDPA passage from the opinion, preserving the statutory spacing and omitted-text ellipses, or remove this as a verbatim quote.\",\"evidence_quote\":\"We cannot grant relief under AEDPA by conducting our own independent inquiry into whether the state court was correct as a <i>de novo</i> matter.\",\"needs_cl\":false,\"locator_note\":\"pin-665; text opinion page *665-*666 passage\"},\"reasons\":[\"The asserted quote begins \\\"— made without considering his age and inexperience — was an unreasonable application...\\\", which is page prose from the issue/rule area, not the cited opinion language.\",\"The disclosed opinion text at the relevant passage instead contains the AEDPA language beginning \\\"We cannot grant relief under AEDPA...\\\".\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate the pin-665 quote from the opinion text rather than from surrounding content_page markdown.\"},{\"assertion_id\":\"7c4a0d4c8cda95f7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The payload treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 2004-06-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"For quote-fidelity review, I treated ordinary HTML/markdown italics as formatting, but flagged strict character-fidelity defects where the quoted characters or extracted pin payload diverged from the disclosed opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:16:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-dbb135e46e",
+      "F-S9-PR-24349e8557"
+    ],
     "group_id": "_overhaul2/lake/cases/Yarborough v. Alvarado.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +115,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b1313db7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Yarborough v. Alvarado"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 598666,
+      "output": 14086,
+      "source": "codex-events",
+      "total": 612752
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0bad71db53542a6d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "29d29b8360e48da3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c4a0d4c8cda95f7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9afde5bc56a62cd7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b84de52ec8dab436": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dbb135e46e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-24349e8557",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 273.8
   }
 }

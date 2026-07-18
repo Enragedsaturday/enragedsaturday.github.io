@@ -1,0 +1,158 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "20ede11b27831daf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 442 U.S. 319 (1979) matches the cached SCOTUS opinion (Burger, C.J.; star-pagination *321-*329) for Lo-Ji Sales, Inc. v. New York.",
+          "Parallel/neutral cites (99 S. Ct. 2319; 60 L. Ed. 2d 920; 1979 U.S. LEXIS 107; 5 Media L. Rep. 1177) are all volume/year-consistent with a June 1979 SCOTUS decision.",
+          "official_selection present, rank-1 selects 442 U.S. 319; no fabricated or inconsistent reporter in the array."
+        ],
+        "residual_risks": [
+          "Case first page 319 is not literally printed in the opinion body (star-pagination begins at *321); volume and *321-*329 range corroborate it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834d6d64d14a519c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'He allowed himself to become a member, if not the leader, of the search party which was essentially a police operation. . . . he was not acting as a judicial officer but as an adjunct law enforcement officer.' matches the opinion verbatim, with a proper ellipsis replacing 'Once in the store, he conducted a generalized search under authority of an invalid warrant;'.",
+          "The passage sits on page 327 (immediately after the *327 star-marker), matching the ^pin-327 anchor.",
+          "The record's quote_fidelity:'mismatch' flag is a string-match false positive caused by the ellipsis; the substance is faithful."
+        ],
+        "residual_risks": [
+          "Record self-flags quote_fidelity:'mismatch' (ellipsis false positive)."
+        ],
+        "suggested_tightening": "Relabel/clear the false-positive mismatch flag for ellipsis-bearing but faithful quotes.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c271ee9d35980e76",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure.",
+          "locator_note": "pin-326; content-page Rule section; opinion para b372-7, page 326 (between *326 and *327 markers).",
+          "needs_cl": false,
+          "problem": "The pinpoint's stored quote field is a content-page markdown-harvest artifact ('items. ## Issue ... ## Rule A warrant-issuing magistrate must remain neutral and detached and may not become part of the search.') and is not verbatim text from the Lo-Ji opinion.",
+          "proposed_fix": "Re-harvest the pin-326 quote from the opinion. The actual quotation rendered at ^pin-326 on the content page is verbatim in the source: 'The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure.' (442 U.S. at 326).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pinpoint quote is content-page markdown ('## Issue', '## Rule', a page paraphrase) - none of it is verbatim opinion text.",
+          "The quotation actually rendered at ^pin-326 on the content page IS verbatim in the opinion and correctly falls on page 326, so the reader-facing pincite is sound; the defect is confined to the internal stored string."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Harvest pinpoint quote fields from opinion text rather than content-page markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e573f77b27b6d0c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lo-Ji Sales (1979) is a leading, still-cited neutral-magistrate SCOTUS holding; no disclosed evidence reliably shows it overruled or abrogated.",
+          "The proposed negative edges (e.g., 'United States v. Leon ... overruled') are unaudited snippet-classified citator artifacts - Leon (1984) postdates and cites Lo-Ji and does not overrule it; a classic 'cites:(X) AND overrul*' false positive.",
+          "Derivation self-flags audit_needed / R15 for the 8 proposed negative events; field_i_validity good_law is unrefuted."
+        ],
+        "residual_risks": [
+          "field_i_validity is migration-seeded (composite_basis: migration-seed), not freshly S2-derived; as_of_treatment 2026-06-30 seeded from the old as_of.",
+          "8 proposed negative edges remain unaudited (R15); full currency confirmation requires a CourtListener citator pass."
+        ],
+        "suggested_tightening": "Run the R15 treatment audit to clear the false-positive negative edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-83ed19e83e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9e976f20ea",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-09-916743d9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lo-Ji Sales, Inc. v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "20ede11b27831daf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834d6d64d14a519c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c271ee9d35980e76": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e573f77b27b6d0c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-83ed19e83e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1db3fd5925",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9e976f20ea",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

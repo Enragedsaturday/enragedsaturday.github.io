@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-gratkowski--4765051.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl, the lake record, and cached text only.",
+    "reviewed": [
+      {
+        "assertion_id": "cd2dd437dfb267ed",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-gratkowski--4765051__3f2c27.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and reporter citation, but it does not verify the Lens B currency/live-law status. The lake record is a frontier stub with treatment and progeny intentionally not derived, so any live-law implication cannot be confirmed from disclosed evidence.",
+          "proposed_fix": "Limit this assertion to citation/identity existence only, or promote the record with derived treatment/progeny before using it as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record has status verified_identity and citation display 964 F.3d 307, so citation identity is supported.",
+          "The same lake record has field_i_validity unverified, as_of_treatment null, no treatment edges, and rows_cached 0 for progeny; disclosed evidence does not establish current live-law status."
+        ],
+        "residual_risks": [
+          "A later negative, limiting, superseding, or abrogating treatment cannot be ruled out from the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation existence from currency; display this authority as treatment unverified unless full treatment is derived.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "0403a669be7be524",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake scope note says treatment/progeny were intentionally not derived, and no disclosed progeny edges contradict the unverified treatment status."
+        ],
+        "residual_risks": [
+          "This is not an affirmative good-law determination; it only stands as an unverified-treatment label."
+        ],
+        "suggested_tightening": "Render as treatment unverified, not as no negative treatment or good law.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-gratkowski--4765051.json\",\"reviewed\":[{\"assertion_id\":\"cd2dd437dfb267ed\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and reporter citation, but it does not verify the Lens B currency/live-law status. The lake record is a frontier stub with treatment and progeny intentionally not derived, so any live-law implication cannot be confirmed from disclosed evidence.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation/identity existence only, or promote the record with derived treatment/progeny before using it as live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-gratkowski--4765051__3f2c27.json treatment/progeny fields\"},\"reasons\":[\"The lake record has status verified_identity and citation display 964 F.3d 307, so citation identity is supported.\",\"The same lake record has field_i_validity unverified, as_of_treatment null, no treatment edges, and rows_cached 0 for progeny; disclosed evidence does not establish current live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A later negative, limiting, superseding, or abrogating treatment cannot be ruled out from the disclosed files.\"],\"suggested_tightening\":\"Separate citation existence from currency; display this authority as treatment unverified unless full treatment is derived.\"},{\"assertion_id\":\"0403a669be7be524\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake scope note says treatment/progeny were intentionally not derived, and no disclosed progeny edges contradict the unverified treatment status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not an affirmative good-law determination; it only stands as an unverified-treatment label.\"],\"suggested_tightening\":\"Render as treatment unverified, not as no negative treatment or good law.\"}],\"notes\":\"No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl, the lake record, and cached text only.\"}",
   "summary": {
-    "at": "2026-07-10T02:38:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:24:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-24c73f1faf"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-gratkowski--4765051.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d0fc6dff",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d0fc6dff.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:04.699150Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:05.611537Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:06.967962Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:09.091153Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:38:12.965939Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-gratkowski--4765051"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-gratkowski--4765051"
+    ],
+    "tokens": {
+      "input": 92596,
+      "output": 5101,
+      "source": "codex-events",
+      "total": 97697
+    },
+    "verdict_map": {
+      "0403a669be7be524": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cd2dd437dfb267ed": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-24c73f1faf",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.0
   }
 }

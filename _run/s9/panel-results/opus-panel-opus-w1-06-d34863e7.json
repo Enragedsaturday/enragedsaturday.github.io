@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3de55cb0f67466a4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is Beecher v. Alabama, Per Curiam, with page markers *36/*37/*38 — case reported at 389 U.S. 35 (1967).",
+          "Official cite 389 U.S. 35 selected; parallels 88 S. Ct. 189 and 19 L. Ed. 2d 35 are the standard reporter set for this decision."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a62f5c2f98c34400",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A realistic appraisal of the circumstances of this case compels the conclusion that this petitioner's confessions were the product of gross coercion. Under the Due Process Clause of the Fourteenth Amendment, no conviction tainted by a confession so obtained can stand.",
+          "locator_note": "Cached opinion p id=b148-5 (389 U.S. 38); garbled quote at inventory payload / lake pinpoints[id=pin-38].",
+          "needs_cl": false,
+          "problem": "The stored pin-38 quote is not opinion text — it is a content-page scrape containing markdown section headers ('## Issue', '## Rule') and the page's own paraphrase ('re-obtained days later while he was drugged and in severe pain, were voluntary under the Due Process Clause'). A court opinion cannot contain markdown headers; the pinpoint quote field fails fidelity. The genuine passage the page renders at ^pin-38 IS verbatim in the cached opinion at 389 U.S. 38.",
+          "proposed_fix": "Replace the garbled pin-38 quote field with the verbatim page-38 passage from the cached opinion (below); reader-facing page already renders it correctly, so this is a lake-metadata repair.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains '## Issue' and '## Rule' markdown plus page paraphrase — self-evidently a wiki-page scrape, not a verbatim quotation of the Per Curiam opinion.",
+          "The record itself flags quote_fidelity=mismatch; independent read of the cached opinion confirms the stored text appears nowhere in it, while the true page-38 holding sentence is verbatim at b148-5."
+        ],
+        "residual_risks": [
+          "Defect is confined to the lake pinpoint quote field; the rendered content page shows the correct verbatim quote at ^pin-38."
+        ],
+        "suggested_tightening": "Re-derive pin-38 quote from opinion text rather than from the projected page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c85f88b833e50490",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'until he was directed five days later to tell Alabama investigators \\'what they wanted to know,\\' there was \\'no break in the stream of events,\\'' is a verbatim substring of the cached opinion at 389 U.S. 38 (p id=b148-4): 'From that time until he was directed five days later to tell Alabama investigators \"what they wanted to know,\" there was \"no break in the stream of events,\" Clewis v. Texas...'.",
+          "Internal quotation marks and wording match exactly; the quote merely begins mid-sentence at 'until' (leading 'From that time' elided), which is proper pinpoint quotation."
+        ],
+        "residual_risks": [
+          "Record carries quote_fidelity=mismatch, but that flag is a false positive against the disclosed opinion text."
+        ],
+        "suggested_tightening": "Clear the erroneous quote_fidelity=mismatch flag on pin-38a; the pinpoint verifies verbatim at 389 U.S. 38.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "734858326c98c4a1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note accurately paraphrases the disclosed holding: the Per Curiam opinion holds the gunpoint confession and the later drugged/in-pain statement were 'the product of gross coercion' and involuntary, and reverses.",
+          "No disclosed evidence contradicts good_law; every negative treatment edge is proposed:true and facially spurious (e.g., Illinois v. Gates, Colorado v. Connelly, Mincey v. Arizona did not overrule Beecher)."
+        ],
+        "residual_risks": [
+          "field_i_validity=good_law rests on composite_basis=migration-seed, not an independent S2 currency derivation; forward currency to 2026-06-30 is not derivable from the case's own text.",
+          "Record carries many un-adjudicated proposed:true 'overruled/criticized/questioned' edges that are extractor false positives."
+        ],
+        "suggested_tightening": "Prune or adjudicate the facially-false proposed negative edges before S6/S9 promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19e9052c37",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a1fce20e35",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-06-d34863e7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Beecher v. Alabama"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3de55cb0f67466a4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "734858326c98c4a1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a62f5c2f98c34400": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c85f88b833e50490": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f11bf58c83",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-19e9052c37",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a1fce20e35",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

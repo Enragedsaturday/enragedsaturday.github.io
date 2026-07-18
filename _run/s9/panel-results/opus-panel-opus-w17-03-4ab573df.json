@@ -1,0 +1,92 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "974fb651db4bc980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Full 10th Cir. opinion disclosed (EBEL, Circuit Judge; PUBLISH; decided May 13, 2019; Jason Loera; electronic-search-scope holding) confirming the case exists and matches the content page.",
+          "Official cite 923 F.3d 907 matches the disclosed CL cluster 4619076 citations[]; identity expected_citation_found=true. No disclosed evidence contradicts the cite ('not found != fabricated')."
+        ],
+        "residual_risks": [
+          "Disclosed cached text uses internal slip pagination (pages 2-39) and does NOT contain F.3d star-pagination, so the exact reporter page '907' is corroborated only by the CL cluster metadata in the disclosed lake record, not by star-pages in the opinion body.",
+          "Data-quality (out-of-scope of this case_cite payload): the opinion caption reads 'No. 17-2180' while the lake record identity.docket and content header read '17-2087' — an apparent transposition typo in the stub; does not affect the 923 F.3d 907 cite but should be reconciled at S2/S9."
+        ],
+        "suggested_tightening": "Existence detector could cross-check caption docket vs record docket and page-corroboration source (star-page vs CL-cluster-only) to surface stubs whose reporter page is not text-corroborated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "efe1aad3cec9e1fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Disclosed lake record matches paneled payload: field_i_validity='unverified', as_of_content=null, as_of_treatment=null, varies_by_point=false, frontier-stub scope_note; status='under_review'.",
+          "Honest non-claim; no disclosed evidence of adverse treatment to refute."
+        ],
+        "residual_risks": [
+          "Treatment not yet derived by design; later out-of-band citator result is the expected promotion path, not a present defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d0dfee8721",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Loera.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-03-4ab573df",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Loera"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "974fb651db4bc980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "efe1aad3cec9e1fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d0dfee8721",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,11 +1,49 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/People v. Frederick.json",
+    "lens": "A",
+    "notes": "Reviewed both rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "a6e4c2a4c6d92730",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as People of Michigan v. Michael Christopher Frederick, Michigan Supreme Court, decided 2017-06-01.",
+          "The inventory citation exactly matches the lake official citation: 500 Mich. 228, volume 500, reporter Mich., page 228, selected_official true."
+        ],
+        "residual_risks": [
+          "The text file does not itself display the official reporter citation, but the disclosed lake authority record supplies the citation and the review rules permit reliance on lake judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d08e1ab72f13d3e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so I raise no substantive treatment finding.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No good-law or citator conclusion is verified under this lens; the record remains expressly unverified."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner and avoid any implication that later history or good-law status has been checked.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/People v. Frederick.json\",\"reviewed\":[{\"assertion_id\":\"a6e4c2a4c6d92730\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as People of Michigan v. Michael Christopher Frederick, Michigan Supreme Court, decided 2017-06-01.\",\"The inventory citation exactly matches the lake official citation: 500 Mich. 228, volume 500, reporter Mich., page 228, selected_official true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The text file does not itself display the official reporter citation, but the disclosed lake authority record supplies the citation and the review rules permit reliance on lake judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d08e1ab72f13d3e0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so I raise no substantive treatment finding.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law or citator conclusion is verified under this lens; the record remains expressly unverified.\"],\"suggested_tightening\":\"Keep the unverified treatment banner and avoid any implication that later history or good-law status has been checked.\"}],\"notes\":\"Reviewed both rows in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:13-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:25:42-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/People v. Frederick.json",
@@ -16,21 +54,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b83a6559.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "People v. Frederick"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 89360,
+      "output": 2381,
+      "source": "codex-events",
+      "total": 91741
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "a6e4c2a4c6d92730": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d08e1ab72f13d3e0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 54.1
   }
 }

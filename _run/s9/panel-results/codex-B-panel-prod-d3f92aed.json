@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote-fidelity, and pincite merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "5ed64834fbf117cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for United States v. Havens, U.S. Supreme Court, docket 79-305, cluster_id 110267, lead_opinion_id 9427937.",
+          "The lake official citation is 446 U.S. 620 and the content page uses that citation.",
+          "The disclosed lake treatment judgment is good_law as of 2026-06-30; no final disclosed treatment field says Havens itself is overruled, abrogated, superseded, or non-live law."
+        ],
+        "residual_risks": [
+          "Review is limited to disclosed local files; no external currency search was performed by instruction."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e522041dff4002e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment assertion in this row is refuted.",
+          "The disclosed pin record is present in the lake file, but Lens A owns whether the quote_fidelity mismatch label is correct."
+        ],
+        "residual_risks": [
+          "No support, quote-fidelity, or pincite adjudication was performed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6f0b4e62da87b4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment assertion in this row is refuted.",
+          "The disclosed pin record is present in the lake file, but Lens A owns whether the quote_fidelity mismatch label is correct."
+        ],
+        "residual_risks": [
+          "No support, quote-fidelity, or pincite adjudication was performed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf17805fc109438a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 5",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/United States v. Havens__67e601.json treatment.derivation and treatment.edges.",
+          "needs_cl": true,
+          "problem": "The good_law call itself is consistent with the lake judgment fields, but the content-page wording 'No negative treatment' is stronger than the disclosed derivation cleanly supports because the treatment derivation contains audit_needed/cap_hit markers and proposed negative-event edges. The disclosed record supports 'remains good law' more cleanly than an absolute no-negative-treatment statement.",
+          "proposed_fix": "Keep field_i_validity: good_law and Binding — SCOTUS. Soften the treatment sentence to: 'No controlling overruling, abrogation, or supersession is identified in the disclosed lake judgment fields as of 2026-06-30; proposed negative/mentioned progeny edges remain audit-marked.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and the scope_note says Havens remains good law.",
+          "The listed treatment.edges are proposed and have field_iii = mentioned, so the disclosed edges do not finally establish that Havens was overruled, abrogated, superseded, or limited.",
+          "The derivation also reports audit_needed and cap_hit in negative/top-cited lanes, so the categorical 'No negative treatment' wording should be tightened rather than left absolute."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full text for the proposed progeny edges.",
+          "Treatment provenance is migration-seed/page frontmatter rather than a completed negative-treatment audit."
+        ],
+        "suggested_tightening": "Use 'remains good law; no controlling negative treatment identified in the disclosed lake judgment fields' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Havens.json\",\"reviewed\":[{\"assertion_id\":\"5ed64834fbf117cd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for United States v. Havens, U.S. Supreme Court, docket 79-305, cluster_id 110267, lead_opinion_id 9427937.\",\"The lake official citation is 446 U.S. 620 and the content page uses that citation.\",\"The disclosed lake treatment judgment is good_law as of 2026-06-30; no final disclosed treatment field says Havens itself is overruled, abrogated, superseded, or non-live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Review is limited to disclosed local files; no external currency search was performed by instruction.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8e522041dff4002e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment assertion in this row is refuted.\",\"The disclosed pin record is present in the lake file, but Lens A owns whether the quote_fidelity mismatch label is correct.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No support, quote-fidelity, or pincite adjudication was performed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b6f0b4e62da87b4c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment assertion in this row is refuted.\",\"The disclosed pin record is present in the lake file, but Lens A owns whether the quote_fidelity mismatch label is correct.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No support, quote-fidelity, or pincite adjudication was performed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bf17805fc109438a\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call itself is consistent with the lake judgment fields, but the content-page wording 'No negative treatment' is stronger than the disclosed derivation cleanly supports because the treatment derivation contains audit_needed/cap_hit markers and proposed negative-event edges. The disclosed record supports 'remains good law' more cleanly than an absolute no-negative-treatment statement.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity: good_law and Binding — SCOTUS. Soften the treatment sentence to: 'No controlling overruling, abrogation, or supersession is identified in the disclosed lake judgment fields as of 2026-06-30; proposed negative/mentioned progeny edges remain audit-marked.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 5\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/United States v. Havens__67e601.json treatment.derivation and treatment.edges.\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and the scope_note says Havens remains good law.\",\"The listed treatment.edges are proposed and have field_iii = mentioned, so the disclosed edges do not finally establish that Havens was overruled, abrogated, superseded, or limited.\",\"The derivation also reports audit_needed and cap_hit in negative/top-cited lanes, so the categorical 'No negative treatment' wording should be tightened rather than left absolute.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full text for the proposed progeny edges.\",\"Treatment provenance is migration-seed/page frontmatter rather than a completed negative-treatment audit.\"],\"suggested_tightening\":\"Use 'remains good law; no controlling negative treatment identified in the disclosed lake judgment fields' instead of 'No negative treatment.'\"}],\"notes\":\"Lens B only; support, quote-fidelity, and pincite merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:40-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:56:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d8a5043189",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a81dac608d",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7f2d578db6"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +107,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d3f92aed.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Havens"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 175218,
+      "output": 7436,
+      "source": "codex-events",
+      "total": 182654
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "5ed64834fbf117cd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e522041dff4002e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6f0b4e62da87b4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf17805fc109438a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d8a5043189",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a81dac608d",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7f2d578db6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 146.6
   }
 }

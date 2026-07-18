@@ -1,0 +1,141 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "39a71084251bcf5a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header states '423 U.S. 411 (1976)', 'UNITED STATES v. WATSON', 'No. 74-538', 'Supreme Court of United States', 'Decided January 26, 1976', opinion by MR. JUSTICE WHITE -- matching the record.",
+          "Star pagination *412 through *432 confirms reporter pagination from 411; official_selection_present=true and official 423 U.S. 411 match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "247761c91e0b5a81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual content-page pin-424 quote ('He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search.') is verbatim in Part III of the cached opinion, sitting between the *424 and *425 star-pages, so 423 U.S. at 424 is correct.",
+          "The payload 'quote' string is a mis-extracted front-matter/Background+Issue+Rule window, not the pincited holding; the real pincited quote is faithful."
+        ],
+        "residual_risks": [
+          "Payload quote field for pin-424 is an extractor window artifact, not the anchored quote text."
+        ],
+        "suggested_tightening": "Re-run the pincite extractor to capture the anchored quote span rather than the preceding header/Background window.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c00db297c5db9ec8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "'may be a factor in the overall judgment,' is verbatim in the cached opinion at page 424 ('the absence of proof that Watson knew he could withhold his consent, though it may be a factor in the overall judgment, is not to be given controlling significance').",
+          "The content page's paired phrase 'is not to be given controlling significance.' is also verbatim; payload is already star-verified / quote_fidelity 'matched' with star_marker 424, which I confirm."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1504a4c9757045d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct for this 1976 SCOTUS landmark (warrantless public felony arrest on probable cause is reasonable; Schneckloth totality-of-circumstances consent, custody one factor) -- the disclosed opinion so holds.",
+          "Disclosed lane1_negative edges are all 'proposed: true' and facially noisy (state cases tagged 'overruled' cannot overrule SCOTUS; Payton 'questioned' / Atwater 'criticized' are doctrinal tensions, not accepted negative treatment); field_i_validity was not downgraded."
+        ],
+        "residual_risks": [
+          "Full citator currency is not machine-verifiable from disclosed evidence; scope_note is a generic migration-seed placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') rather than a substantive treatment note."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-14043a4b33",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-24d5fde312",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-04-c11b0ab6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Watson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "247761c91e0b5a81": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "39a71084251bcf5a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1504a4c9757045d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "c00db297c5db9ec8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-14043a4b33",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-24d5fde312",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

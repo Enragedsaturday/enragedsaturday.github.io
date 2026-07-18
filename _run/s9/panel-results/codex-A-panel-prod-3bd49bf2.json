@@ -1,13 +1,97 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Smith v. Cain.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "679cc0e644127402",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Smith v. Cain, U.S. Supreme Court, decided 2012-01-10, docket 10-8145.",
+          "The official citation 565 U.S. 73 and parallel/vendor citations 132 S. Ct. 627, 181 L. Ed. 2d 571, and 2012 U.S. LEXIS 576 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8388aa7999bded64",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "App. 196, 200, 308. Boatner’s undisclosed statements\nwere plainly material.",
+          "locator_note": "text/Smith v. Cain__947a0b.txt lines 165-166; content_page.md line 55; lake pin-3.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively supported and the slip-opinion page is correct, but the displayed/lake quote is not character-faithful because it changes the opinion's curly apostrophe in Boatner’s to ASCII Boatner's.",
+          "proposed_fix": "Change the quote to use the opinion typography: Boatner’s undisclosed statements were plainly material.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears on slip op. 3 in the opinion text.",
+          "Only the apostrophe prevents strict character fidelity."
+        ],
+        "residual_risks": [
+          "Formal reporter typography could differ, but the disclosed text controls this review."
+        ],
+        "suggested_tightening": "Keep a separate normalized_quote field if typographic normalization is intended.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99e2e7be55a96859",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have observed that evidence impeaching an eyewit-\nness may not be material if the State’s other evidence is\nstrong enough to sustain confidence in the verdict.",
+          "locator_note": "text/Smith v. Cain__947a0b.txt lines 153-155; content_page.md line 53; lake pin-2.",
+          "needs_cl": false,
+          "problem": "Pin-2's stored quote is not a character-faithful opinion quote; it is a concatenation of content-page prose and markdown headings. The page's displayed quoted rule also differs from the opinion text and is cited to slip op. 2, while the majority-opinion passage appears on slip op. 3.",
+          "proposed_fix": "Replace pin-2 with the actual opinion passage and cite slip op. 3, or separately cite the syllabus if the syllabus wording is intended.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains page prose such as ## Issue and ## Rule, which is not opinion text.",
+          "The actual majority-opinion passage begins with We have observed that and uses State’s, not State's.",
+          "The relevant passage is on slip op. 3 in the disclosed opinion text, not slip op. 2 as displayed on the page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-2 from the opinion text rather than from rendered content-page context.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fc3b3114e37f241",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside lens A.",
+          "The treatment fields in the assertion match the disclosed lake treatment fields and the content page: good_law, as_of_content 2012-01-10, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No treatment/currency audit performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Smith v. Cain.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"679cc0e644127402\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Smith v. Cain, U.S. Supreme Court, decided 2012-01-10, docket 10-8145.\",\n        \"The official citation 565 U.S. 73 and parallel/vendor citations 132 S. Ct. 627, 181 L. Ed. 2d 571, and 2012 U.S. LEXIS 576 match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8388aa7999bded64\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively supported and the slip-opinion page is correct, but the displayed/lake quote is not character-faithful because it changes the opinion's curly apostrophe in Boatner’s to ASCII Boatner's.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the quote to use the opinion typography: Boatner’s undisclosed statements were plainly material.\",\n        \"evidence_quote\": \"App. 196, 200, 308. Boatner’s undisclosed statements\\nwere plainly material.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Smith v. Cain__947a0b.txt lines 165-166; content_page.md line 55; lake pin-3.\"\n      },\n      \"reasons\": [\n        \"The passage appears on slip op. 3 in the opinion text.\",\n        \"Only the apostrophe prevents strict character fidelity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Formal reporter typography could differ, but the disclosed text controls this review.\"\n      ],\n      \"suggested_tightening\": \"Keep a separate normalized_quote field if typographic normalization is intended.\"\n    },\n    {\n      \"assertion_id\": \"99e2e7be55a96859\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin-2's stored quote is not a character-faithful opinion quote; it is a concatenation of content-page prose and markdown headings. The page's displayed quoted rule also differs from the opinion text and is cited to slip op. 2, while the majority-opinion passage appears on slip op. 3.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-2 with the actual opinion passage and cite slip op. 3, or separately cite the syllabus if the syllabus wording is intended.\",\n        \"evidence_quote\": \"We have observed that evidence impeaching an eyewit-\\nness may not be material if the State’s other evidence is\\nstrong enough to sustain confidence in the verdict.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Smith v. Cain__947a0b.txt lines 153-155; content_page.md line 53; lake pin-2.\"\n      },\n      \"reasons\": [\n        \"The payload quote contains page prose such as ## Issue and ## Rule, which is not opinion text.\",\n        \"The actual majority-opinion passage begins with We have observed that and uses State’s, not State's.\",\n        \"The relevant passage is on slip op. 3 in the disclosed opinion text, not slip op. 2 as displayed on the page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate pin-2 from the opinion text rather than from rendered content-page context.\"\n    },\n    {\n      \"assertion_id\": \"0fc3b3114e37f241\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment merits are outside lens A.\",\n        \"The treatment fields in the assertion match the disclosed lake treatment fields and the content page: good_law, as_of_content 2012-01-10, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency audit performed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:36:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b52cc57db4",
+      "F-S9-PR-b0031d894a"
+    ],
     "group_id": "_overhaul2/lake/cases/Smith v. Cain.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +100,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3bd49bf2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Smith v. Cain"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 297146,
+      "output": 7349,
+      "source": "codex-events",
+      "total": 304495
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0fc3b3114e37f241": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "679cc0e644127402": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8388aa7999bded64": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "99e2e7be55a96859": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b52cc57db4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b0031d894a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.4
   }
 }

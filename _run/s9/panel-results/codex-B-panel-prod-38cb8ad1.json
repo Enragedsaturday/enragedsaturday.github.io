@@ -1,12 +1,72 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Smith v. Illinois.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 group_inventory rows under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "b043c6230e8f6e2c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub, has status verified, and identifies Smith v. Illinois as a U.S. Supreme Court decision dated 1984-12-10.",
+          "The disclosed official citation is 469 U.S. 91, matching the content page display and the group-inventory official citation.",
+          "Currency angle does not disclose any field_i invalidity for the case; the treatment field classifies it as good_law."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42c1c1cce0dffae0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support defects.",
+          "This row presents no independent currency/treatment assertion to break under Lens B."
+        ],
+        "residual_risks": [
+          "This verdict should not be read as validating the quote or pinpoint; Lens A owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abf76da250c77df5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is good_law as of 2026-06-30, matching the content page treatment display.",
+          "The lake scope_note expressly limits the status to Smith's narrow holding and notes Davis governs the threshold unambiguous-invocation question; the content page repeats that qualification.",
+          "The disclosed treatment edges are proposed, have field_iii marked mentioned, and no point_overrides are listed; they do not supersede the record-level good_law judgment.",
+          "The authority-weight label is consistent with the disclosed court_level scotus and court U.S. Supreme Court."
+        ],
+        "residual_risks": [
+          "The derivation metadata flags audit_needed and cap_hit for some treatment searches, so a future full external audit could refine the treatment record; under the disclosed lake judgment fields, no current defect is shown."
+        ],
+        "suggested_tightening": "Keep the narrow-holding and Davis limitation adjacent to any short Treatment: good display.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Smith v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"b043c6230e8f6e2c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub, has status verified, and identifies Smith v. Illinois as a U.S. Supreme Court decision dated 1984-12-10.\",\"The disclosed official citation is 469 U.S. 91, matching the content page display and the group-inventory official citation.\",\"Currency angle does not disclose any field_i invalidity for the case; the treatment field classifies it as good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"42c1c1cce0dffae0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support defects.\",\"This row presents no independent currency/treatment assertion to break under Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This verdict should not be read as validating the quote or pinpoint; Lens A owns that review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"abf76da250c77df5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake treatment field_i_validity is good_law as of 2026-06-30, matching the content page treatment display.\",\"The lake scope_note expressly limits the status to Smith's narrow holding and notes Davis governs the threshold unambiguous-invocation question; the content page repeats that qualification.\",\"The disclosed treatment edges are proposed, have field_iii marked mentioned, and no point_overrides are listed; they do not supersede the record-level good_law judgment.\",\"The authority-weight label is consistent with the disclosed court_level scotus and court U.S. Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The derivation metadata flags audit_needed and cap_hit for some treatment searches, so a future full external audit could refine the treatment record; under the disclosed lake judgment fields, no current defect is shown.\"],\"suggested_tightening\":\"Keep the narrow-holding and Davis limitation adjacent to any short Treatment: good display.\"}],\"notes\":\"Reviewed all 3 group_inventory rows under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:41-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:36:32-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ff5230e549",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Smith v. Illinois.json",
     "group_total_assertions": 3,
@@ -16,21 +76,48 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-38cb8ad1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Smith v. Illinois"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 560312,
+      "output": 5292,
+      "source": "codex-events",
+      "total": 565604
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "42c1c1cce0dffae0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abf76da250c77df5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b043c6230e8f6e2c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff5230e549",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 118.8
   }
 }

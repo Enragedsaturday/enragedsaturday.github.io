@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5759fc97f62a974c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion caption 'CITY OF ONTARIO, CALIFORNIA v. JEFF QUON' and star markers ([560 U.S. 750] ... [560 U.S. 765]) confirm the case and lead cite 560 U.S. 746 (2010).",
+          "Docket 08-1332 / decided 2010-06-17 consistent with the record."
+        ],
+        "residual_risks": [
+          "Frontmatter cluster 6796843 vs Sources cluster 148797 (dual CL cluster; lake alternates confirm 148797 is the same case).",
+          "Parallel reporter page numbers not independently star-verifiable beyond the U.S. cite."
+        ],
+        "suggested_tightening": "Reconcile the two CL cluster URLs.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b74e8c886d67b906",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content ^pin-759 quote matches the cached opinion verbatim: 'The Court must proceed with care when considering the whole concept of privacy expectations in communications made on electronic equipment owned by a government employer. The judiciary risks error by elaborating too fully on the Fourth Amendment implications of emerging technology before its role in society has become clear.'",
+          "Pincite 'Id. at 759' is correct: the passage begins immediately after the '[560 U.S. 759]' star marker.",
+          "Stored payload quote equals the source; the S8 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [
+          "pinpoint_status 'slip-only' is mislabeled - the content uses the U.S. Reports page 759, which the cache's star pagination confirms."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7acd4198ca71df5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the O'Connor plurality.",
+          "locator_note": "content_page ^pin-761 (line 2649); cached opinion para b276-7 is immediately after '[560 U.S. 764]' and before '[560 U.S. 765]'.",
+          "needs_cl": false,
+          "problem": "Content ^pin-761 pincites the quote 'Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the O'Connor plurality.' to '560 U.S. at 761', but the cached opinion places that sentence on page 764: it sits between the '[560 U.S. 764]' and '[560 U.S. 765]' star markers. Page 761 carries different text (the O'Connor-plurality framework statement).",
+          "proposed_fix": "Change the pincite from '560 U.S. at 761' to '560 U.S. at 764'.",
+          "severity": "medium"
+        },
+        "dimension": "pincite",
+        "reasons": [
+          "The quote WORDS are verbatim-faithful, but the page pincite is wrong by three pages (quoted sentence is on 764, cited as 761).",
+          "Verified via CL star markers: [560 U.S. 761] (framework text) ... [560 U.S. 764] -> quoted sentence -> [560 U.S. 765].",
+          "Separately, the stored payload quote for this pinpoint is garbled front-matter (harvest artifact)."
+        ],
+        "residual_risks": [
+          "pinpoint_status labeled 'slip-only' though the content uses a reporter pincite."
+        ],
+        "suggested_tightening": "After correcting to 764, re-harvest the stored pinpoint.quote for pin-761 from the content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c767db79fb25690",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law consistent with disclosed data; no confirmed (proposed:false) negative edge; all negative edges proposed:true with field_iii='mentioned'.",
+          "Quon (2010 SCOTUS) applying O'Connor v. Ortega to electronic communications; no disclosed overruling.",
+          "Per the disclosed scope_note, Riley/Carpenter later 'echoed' Quon's caution rather than overruling it."
+        ],
+        "residual_risks": [
+          "Basis is migration-seed (not freshly S2-re-derived); currency caveat from unadjudicated proposed-negative candidate edges."
+        ],
+        "suggested_tightening": "Run S2 re-derivation to replace the migration seed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6759344ce9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d2bcd90e7e"
+    ],
+    "group_id": "_overhaul2/lake/cases/City of Ontario v. Quon.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-02-68959a5a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Ontario v. Quon"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5759fc97f62a974c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c767db79fb25690": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b74e8c886d67b906": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7acd4198ca71df5": {
+        "dimension": "pincite",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d2bcd90e7e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6759344ce9",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

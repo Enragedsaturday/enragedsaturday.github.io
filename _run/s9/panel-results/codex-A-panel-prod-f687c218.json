@@ -1,38 +1,89 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Liddell.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "78a3c670d7157fe5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Liddell, court 8th Cir., docket 07-1337, year 2008, with expected_citation_found true and canonical_name_match true.",
+          "The asserted display citation 517 F.3d 1007 matches the lake record's citations.official.cite and official_selection.selected; the vendor citations 2008 U.S. App. LEXIS 4012 and 2008 WL 482410 also match the lake record."
+        ],
+        "residual_risks": [
+          "The lake identity is a frontier identity record and date_decided is null, but the asserted reporter/court/year fields are confirmable from the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3e65c64baea80678",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised.",
+          "The asserted treatment fields match the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Lens A did not verify good-law status, subsequent treatment, or progeny currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Liddell.json\",\"reviewed\":[{\"assertion_id\":\"78a3c670d7157fe5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Liddell, court 8th Cir., docket 07-1337, year 2008, with expected_citation_found true and canonical_name_match true.\",\"The asserted display citation 517 F.3d 1007 matches the lake record's citations.official.cite and official_selection.selected; the vendor citations 2008 U.S. App. LEXIS 4012 and 2008 WL 482410 also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake identity is a frontier identity record and date_decided is null, but the asserted reporter/court/year fields are confirmable from the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3e65c64baea80678\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\",\"The asserted treatment fields match the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not verify good-law status, subsequent treatment, or progeny currency.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:56-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:57:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Liddell.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Liddell"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-f687c218",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f687c218.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Liddell' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Liddell"
+    ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 83995,
+      "output": 1846,
+      "source": "codex-events",
+      "total": 85841
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "3e65c64baea80678": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78a3c670d7157fe5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 42.1
   }
 }

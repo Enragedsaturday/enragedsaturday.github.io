@@ -1,22 +1,205 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Banks.json",
+    "lens": "A",
+    "notes": "Lens A review only. Treatment/currency findings are left to lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "413d24dd6aa3ef50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Banks, U.S. Supreme Court, decided 2003-12-02, docket 02-473.",
+          "Lake citations list official 540 U.S. 31, parallels 124 S. Ct. 521 and 157 L. Ed. 2d 343, and vendor cite 2003 U.S. LEXIS 8966; content_page uses the same official/year and parallel/neutral cites."
+        ],
+        "residual_risks": [
+          "No external reporter validation performed, per ground rules; this relies on the disclosed lake identity/citation record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "149751ffdd71752b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer.",
+          "locator_note": "pin-38; text page marker *38, paragraph b250-5",
+          "needs_cl": false,
+          "problem": "The reviewed pin-38 quote/pinpoint is not character-faithful to the opinion. It captures background/page prose and Markdown headings rather than the page-38 quoted sentence in the opinion; the lake record also flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-38's stored quote with the exact page-38 opinion sentence used in content_page, or regenerate the lake pinpoint from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes content-page material such as ## Issue and ## Rule, which is not opinion text.",
+          "The opinion text at the cited page contains the 15-or-20-second sentence; the reviewed payload quote does not."
+        ],
+        "residual_risks": [
+          "The visible content_page pin-38 quotation itself is faithful to the opinion; the defect is in the reviewed quote_pinpoint payload/lake pinpoint."
+        ],
+        "suggested_tightening": "Set pin-38 quote to: \"we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer.\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "634ff1058507b47e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Once thé exigency had matured, of course, the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building.",
+          "locator_note": "pin-40b; text paragraph b252-5, immediately before page marker *41",
+          "needs_cl": false,
+          "problem": "The pin-40b quote is not character-faithful to the cached opinion text. The disclosed text reads \"Once thé exigency had matured, of course,\" while the payload normalizes that to \"Once the exigency had matured . . .\"; the lake record flags quote_fidelity as mismatch.",
+          "proposed_fix": "Quote the cached text exactly, or paraphrase unless a disclosed cleaner source supports normalizing the apparent OCR accent.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance is supported, but the quote as framed does not match the disclosed text character-for-character.",
+          "The omission of \"of course\" is signaled with an ellipsis, but the normalized \"the\" is not supported by the cached text, which reads \"thé\"."
+        ],
+        "residual_risks": [
+          "The accent in the cached text may be OCR noise, but under the disclosed-evidence-only rule it cannot be silently normalized."
+        ],
+        "suggested_tightening": "Use the disclosed wording exactly: \"Once thé exigency had matured, of course, the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building.\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf53755c293b24f6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "when circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter;",
+          "locator_note": "pin-40; text page marker *40, paragraph b251-5",
+          "needs_cl": false,
+          "problem": "The pin-40 quote is substantively supported but not character-faithful to the cached opinion text. The text has lowercase \"when\" within a sentence and a semicolon after \"enter\"; the payload uses bracketed capitalization and a terminal period. The lake record flags quote_fidelity as mismatch.",
+          "proposed_fix": "Use the exact source fragment with lowercase opening and semicolon, or quote a larger fragment beginning with \"That is,\".",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text supports the imminent-disposal proposition, but the reviewed quote is not an exact character match.",
+          "The payload's [W] and final period are editorial changes not present in the disclosed text."
+        ],
+        "residual_risks": [
+          "This is a formal quote-fidelity defect, not a substantive support defect."
+        ],
+        "suggested_tightening": "Quote the exact fragment: \"when circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter;\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c9a5df3c2fa6aa26",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2003-12-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency and progeny-edge implications were not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Banks.json\",\"reviewed\":[{\"assertion_id\":\"413d24dd6aa3ef50\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Banks, U.S. Supreme Court, decided 2003-12-02, docket 02-473.\",\"Lake citations list official 540 U.S. 31, parallels 124 S. Ct. 521 and 157 L. Ed. 2d 343, and vendor cite 2003 U.S. LEXIS 8966; content_page uses the same official/year and parallel/neutral cites.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external reporter validation performed, per ground rules; this relies on the disclosed lake identity/citation record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"149751ffdd71752b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-38 quote/pinpoint is not character-faithful to the opinion. It captures background/page prose and Markdown headings rather than the page-38 quoted sentence in the opinion; the lake record also flags quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-38's stored quote with the exact page-38 opinion sentence used in content_page, or regenerate the lake pinpoint from the opinion text.\",\"evidence_quote\":\"we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer.\",\"needs_cl\":false,\"locator_note\":\"pin-38; text page marker *38, paragraph b250-5\"},\"reasons\":[\"The payload quote includes content-page material such as ## Issue and ## Rule, which is not opinion text.\",\"The opinion text at the cited page contains the 15-or-20-second sentence; the reviewed payload quote does not.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page pin-38 quotation itself is faithful to the opinion; the defect is in the reviewed quote_pinpoint payload/lake pinpoint.\"],\"suggested_tightening\":\"Set pin-38 quote to: \\\"we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer.\\\"\"},{\"assertion_id\":\"634ff1058507b47e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-40b quote is not character-faithful to the cached opinion text. The disclosed text reads \\\"Once thé exigency had matured, of course,\\\" while the payload normalizes that to \\\"Once the exigency had matured . . .\\\"; the lake record flags quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the cached text exactly, or paraphrase unless a disclosed cleaner source supports normalizing the apparent OCR accent.\",\"evidence_quote\":\"Once thé exigency had matured, of course, the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building.\",\"needs_cl\":false,\"locator_note\":\"pin-40b; text paragraph b252-5, immediately before page marker *41\"},\"reasons\":[\"The substance is supported, but the quote as framed does not match the disclosed text character-for-character.\",\"The omission of \\\"of course\\\" is signaled with an ellipsis, but the normalized \\\"the\\\" is not supported by the cached text, which reads \\\"thé\\\".\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The accent in the cached text may be OCR noise, but under the disclosed-evidence-only rule it cannot be silently normalized.\"],\"suggested_tightening\":\"Use the disclosed wording exactly: \\\"Once thé exigency had matured, of course, the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building.\\\"\"},{\"assertion_id\":\"bf53755c293b24f6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-40 quote is substantively supported but not character-faithful to the cached opinion text. The text has lowercase \\\"when\\\" within a sentence and a semicolon after \\\"enter\\\"; the payload uses bracketed capitalization and a terminal period. The lake record flags quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact source fragment with lowercase opening and semicolon, or quote a larger fragment beginning with \\\"That is,\\\".\",\"evidence_quote\":\"when circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter;\",\"needs_cl\":false,\"locator_note\":\"pin-40; text page marker *40, paragraph b251-5\"},\"reasons\":[\"The opinion text supports the imminent-disposal proposition, but the reviewed quote is not an exact character match.\",\"The payload's [W] and final period are editorial changes not present in the disclosed text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"This is a formal quote-fidelity defect, not a substantive support defect.\"],\"suggested_tightening\":\"Quote the exact fragment: \\\"when circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter;\\\"\"},{\"assertion_id\":\"c9a5df3c2fa6aa26\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2003-12-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency is outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency and progeny-edge implications were not reviewed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only. Treatment/currency findings are left to lens B.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:09-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:47:07-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0c2a528342",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-23153b2a18",
+      "F-S9-PR-c0b9bbbf78",
+      "F-S9-PR-57b11c7b6f"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Banks.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-98043c31",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-98043c31.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:00.535785Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:01.092802Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:01.878391Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:03.115433Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:05.371849Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Banks"
+    ],
+    "tokens": {
+      "input": 368035,
+      "output": 11585,
+      "source": "codex-events",
+      "total": 379620
+    },
+    "verdict_map": {
+      "149751ffdd71752b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "413d24dd6aa3ef50": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "634ff1058507b47e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bf53755c293b24f6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c9a5df3c2fa6aa26": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-23153b2a18",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c0b9bbbf78",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-57b11c7b6f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0c2a528342",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 228.7
   }
 }

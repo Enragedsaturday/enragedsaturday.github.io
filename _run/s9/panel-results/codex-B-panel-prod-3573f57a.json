@@ -1,22 +1,161 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity/support issues were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "7ea80cd310fa0880",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status verified for Maryland v. Macon/MacOn.",
+          "The official citation is selected as 472 U.S. 463, and the identity fields show court_level scotus, date_decided 1985-06-17, expected_citation_found true, and canonical_name_match true.",
+          "The SCOTUS identity supports the Binding - SCOTUS weight label from a currency/authority perspective; unresolved treatment-audit risk is addressed in the treatment assertion."
+        ],
+        "residual_risks": [
+          "The unqualified live-law confidence depends on the treatment audit issue flagged separately."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "828315d2a9c70211",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No disclosed treatment/progeny field specifically creates a separate currency defect for this quote-pinpoint assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f15a6f2ebc1c9128",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No disclosed treatment/progeny field specifically creates a separate currency defect for this quote-pinpoint assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d735060468023a6f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "lake.treatment.derivation.lane1_negative and lane2_top_cited; content_page treatment header/frontmatter",
+          "needs_cl": true,
+          "problem": "The page renders an unqualified current treatment call of good_law as of 2026-06-30, but the disclosed lake record itself marks the treatment derivation as requiring audit and unresolved. The good_law value is migration/page-frontmatter based, while lane1_negative and lane2_top_cited both flag audit_needed with proposed negative events.",
+          "proposed_fix": "Do not render this as unqualified good law unless the R15 treatment audit is completed. Mark the treatment as provisional/audit-required or add a caveat that proposed negative treatment signals remain unresolved.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field says field_i_validity good_law and as_of_treatment 2026-06-30, matching the content page.",
+          "But provenance says treatment.field_i_validity came from _treatment-migration.json plus page frontmatter, and the record warning says legacy treatment migrated: good -> good_law.",
+          "The treatment derivation shows lane1_negative audit_needed true with proposed_negative_events 6 and lane2_top_cited audit_needed true with proposed_negative_events 25.",
+          "All listed negative edges are proposed and only marked mentioned, so the disclosed record does not confirm overruling, but it also does not verify the unqualified good-law call under the default-refute-on-uncertainty rule."
+        ],
+        "residual_risks": [
+          "The case may still be good law after a completed audit; the disclosed files just do not verify the unqualified current treatment assertion."
+        ],
+        "suggested_tightening": "Expose the treatment as good_law only with an audit-required caveat until the proposed negative progeny edges are resolved.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Macon.json\",\"reviewed\":[{\"assertion_id\":\"7ea80cd310fa0880\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub and has status verified for Maryland v. Macon/MacOn.\",\"The official citation is selected as 472 U.S. 463, and the identity fields show court_level scotus, date_decided 1985-06-17, expected_citation_found true, and canonical_name_match true.\",\"The SCOTUS identity supports the Binding - SCOTUS weight label from a currency/authority perspective; unresolved treatment-audit risk is addressed in the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The unqualified live-law confidence depends on the treatment audit issue flagged separately.\"],\"suggested_tightening\":null},{\"assertion_id\":\"828315d2a9c70211\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"No disclosed treatment/progeny field specifically creates a separate currency defect for this quote-pinpoint assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f15a6f2ebc1c9128\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"No disclosed treatment/progeny field specifically creates a separate currency defect for this quote-pinpoint assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d735060468023a6f\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page renders an unqualified current treatment call of good_law as of 2026-06-30, but the disclosed lake record itself marks the treatment derivation as requiring audit and unresolved. The good_law value is migration/page-frontmatter based, while lane1_negative and lane2_top_cited both flag audit_needed with proposed negative events.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not render this as unqualified good law unless the R15 treatment audit is completed. Mark the treatment as provisional/audit-required or add a caveat that proposed negative treatment signals remain unresolved.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"lake.treatment.derivation.lane1_negative and lane2_top_cited; content_page treatment header/frontmatter\"},\"reasons\":[\"The lake treatment field says field_i_validity good_law and as_of_treatment 2026-06-30, matching the content page.\",\"But provenance says treatment.field_i_validity came from _treatment-migration.json plus page frontmatter, and the record warning says legacy treatment migrated: good -> good_law.\",\"The treatment derivation shows lane1_negative audit_needed true with proposed_negative_events 6 and lane2_top_cited audit_needed true with proposed_negative_events 25.\",\"All listed negative edges are proposed and only marked mentioned, so the disclosed record does not confirm overruling, but it also does not verify the unqualified good-law call under the default-refute-on-uncertainty rule.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The case may still be good law after a completed audit; the disclosed files just do not verify the unqualified current treatment assertion.\"],\"suggested_tightening\":\"Expose the treatment as good_law only with an audit-required caveat until the proposed negative progeny edges are resolved.\"}],\"notes\":\"Lens B only; quote-fidelity/support issues were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:41-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:07:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bcad44f39b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ff9e2d3845"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3573f57a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3573f57a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:31.394363Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:32.000143Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:33.102201Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.418924Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.755434Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:40.597580Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Macon"
+    ],
+    "tokens": {
+      "input": 246985,
+      "output": 7453,
+      "source": "codex-events",
+      "total": 254438
+    },
+    "verdict_map": {
+      "7ea80cd310fa0880": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "828315d2a9c70211": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d735060468023a6f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f15a6f2ebc1c9128": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcad44f39b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ff9e2d3845",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 152.4
   }
 }

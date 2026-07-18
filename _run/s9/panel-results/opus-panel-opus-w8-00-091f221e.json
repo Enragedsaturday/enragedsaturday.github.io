@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c460ecd12fdcb4f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header: '437 U.S. 385 (1978)', 'MINCEY v. ARIZONA', 'Supreme Court of United States', 'Decided June 21, 1978' - matches official cite, court, year, and date_decided.",
+          "Parallel cites 98 S. Ct. 2408 / 57 L. Ed. 2d 290 and neutral 1978 U.S. LEXIS 115 are consistent with the lake citations block; lead opinion 109905."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f4fa74acd1f7810",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion at *393: 'And the police may seize any evidence that is in plain view during the course of their legitimate emergency activities.' - the quoted sentence appears verbatim on page 393 (star marker present).",
+          "star_marker '393' and the text-fragment anchor match; pinpoint_status star-verified, quote_fidelity matched - independently confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "817ed0ece8759726",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid.",
+          "locator_note": "Cached opinion page 392 (between the *392 and *393 star markers); content page pin-392 anchors the Rule-section sentence cited to '437 U.S. at 392'.",
+          "needs_cl": false,
+          "problem": "Stored pinpoint quote for pin-392 is a slip-extraction: it captured page-markdown from the Issue/Rule sections ('...## Rule There is no murder-scene exception...permit warrantless action to render aid:') rather than an opinion quote, so quote_fidelity self-flags 'mismatch'.",
+          "proposed_fix": "Re-extract pin-392's stored quote to the actual quoted sentence the page publishes, which is verbatim-supported at 437 U.S. 392.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered page pincite is sound: the actual pin-392 quote ('...in need of immediate aid.' - 437 U.S. at 392) appears verbatim in the cached opinion on page 392, so the legal proposition survives.",
+          "Defect is confined to the lake pinpoint's stored quote field (slip-only extraction artifact), not the published pincite."
+        ],
+        "residual_risks": [
+          "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only."
+        ],
+        "suggested_tightening": "Persist the block-quoted sentence, not the anchor's preceding page prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afa9df3e4ee05106",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' (composite_basis migration-seed) matches the lake record; the cited holding - no murder-scene exception / emergency-aid - is what the page relies on and is stated in the cached opinion (pp. 392-395).",
+          "All negative edges (incl. Arizona v. Fulminante 'overruled') are proposed:true candidate signals not adjudicated into the composite; scope_note states S2 re-derivation re-derives and may downgrade."
+        ],
+        "residual_risks": [
+          "Proposed 'overruled' edge from Arizona v. Fulminante (499 U.S. 279) targets Mincey's separate coerced-confession/harmless-error holding, not the cited 4A point; S2 re-derivation may need varies_by_point=true to reflect partial overruling on the non-cited point.",
+          "as_of_treatment 2026-06-30 is a migration seed, not a fresh derivation."
+        ],
+        "suggested_tightening": "On re-derivation, point-scope validity so the 4A emergency-aid point stays good_law while flagging the overruled confession point.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-77b54e73db",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mincey v. Arizona.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-00-091f221e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mincey v. Arizona"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0f4fa74acd1f7810": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "817ed0ece8759726": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "afa9df3e4ee05106": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c460ecd12fdcb4f1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-98a01f1b50",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-77b54e73db",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

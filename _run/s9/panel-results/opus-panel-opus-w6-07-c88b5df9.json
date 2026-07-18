@@ -1,0 +1,177 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "224e63005e439621",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion is LaChance v. Erickson (Rehnquist, C.J., delivering the opinion), question re CSRA / Due Process and sanctioning false statements — matches record identity (cluster 118163, decided 1998-01-21).",
+          "Star-pagination *264-*268 in the cached text is consistent with the 522 U.S. reporter run beginning at 262; the selected official cite 522 U.S. 262 is confirmed."
+        ],
+        "residual_risks": [
+          "Parallel cites (118 S. Ct. 753; 139 L. Ed. 2d 695; 1998 U.S. LEXIS 636) are not independently shown in the cached text, but are standard SCOTUS parallels and not load-bearing to existence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "077b1d9f9ba8c7c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (para b444-5, following the *268 star marker): 'For these reasons, we hold that a Government agency may take adverse action against an employee because the employee made false statements in response to an underlying charge of misconduct.' The content quote reproduces this verbatim, with '[W]e' bracket-capitalizing 'we' by standard editorial convention.",
+          "The 'we hold' sentence sits after the *268 marker, so the pincite 522 U.S. at 268 is correct; the payload 'slip-only' / 'mismatch' flags are dissolved by the star-paginated cached text (the naive string mismatch is the '[W]e' vs 'For these reasons, we' bracket)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ba5c802e8e880fb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion (para b443-7): 'If answering an agency's investigatory question could expose an employee to a criminal prosecution, he may exercise his Fifth Amendment right to remain silent.' The content quote is verbatim (apostrophe glyph immaterial).",
+          "Paragraph b443-7 falls between the *267 and *268 star markers, so the pincite 522 U.S. at 267 is correct; payload 'slip-only'/'mismatch' resolved by the star-paginated cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7efe3ed076b27cae",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A citizen may decline to answer the question, or answer it honestly, but he cannot with impunity knowingly and willfully answer with a falsehood.",
+          "locator_note": "content page ^pin-265 (the Bryson-quote line); cached opinion paragraph b441-5, which falls between the *265 and *266 star markers — confirming both the verbatim text and the 265 pincite.",
+          "needs_cl": false,
+          "problem": "The pin-265 assertion's harvested 'quote' is a garbled extraction: it captured the page's frontmatter/preamble block ('--- # LaChance v. Erickson ... ## Rule No. There is no right to lie, even within a right to be heard. Quoting *Bryson*:') instead of a source quotation. That string is the wiki page's own editorial chrome, not a verbatim quotation from the opinion, so it cannot be quote-fidelity-checked as framed.",
+          "proposed_fix": "Re-harvest the pin-265 quote to the sentence the content page actually quotes at that anchor — the Bryson sentence bounded by its quotation marks. Do NOT alter the content page: its pin-265 quotation and its '522 U.S. at 265' pincite are both correct.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The literal harvested quote payload is page chrome (frontmatter + Background/Issue/Rule intro ending at 'Quoting *Bryson*:'), not a verbatim opinion quotation, so the assertion as framed cannot stand unmodified.",
+          "The actual pin-265 quotation on the content page — the Bryson sentence — appears verbatim in the cached opinion (para b441-5), and that paragraph sits between the *265 and *266 star markers, so the '522 U.S. at 265' pincite is also correct.",
+          "The defect is confined to the harvest/extraction boundary, not to the wiki content; hence stands-modified (re-harvest span) rather than refuted."
+        ],
+        "residual_risks": [
+          "A naive 'refute-and-delete' acted on the pin-265 quote would destroy a genuinely faithful, correctly-pincited quotation; the fix must be limited to re-deriving the harvest span, leaving the content page unchanged."
+        ],
+        "suggested_tightening": "Bound quote-harvest by the enclosing quotation marks rather than by the inter-anchor text span, so a section-leading anchor does not scoop preamble chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f5416d381277fb49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The scope_note ('privilege lets a public employee stay silent, but not lie') is directly supported by the disclosed opinion: it holds agencies may sanction false statements yet the employee 'may exercise his Fifth Amendment right to remain silent' — silence protected, falsehood not.",
+          "No disclosed evidence (no citator/progeny data is inlined) refutes good_law; the currency claim 'as of 2026-06-30' is not independently verifiable from the disclosed record, so I neither fabricate a defect nor affirm an independent clean bill on currency.",
+          "as_of_content 1998-01-21 matches the decision date; varies_by_point false is consistent with the single holding."
+        ],
+        "residual_risks": [
+          "good_law currency depends on citator/treatment data not inlined in the pack; only the substantive treatment characterization is verifiable from the disclosed opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4a18558d71",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ebadc22b95",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/LaChance v. Erickson.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-07-c88b5df9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "LaChance v. Erickson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "077b1d9f9ba8c7c2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0ba5c802e8e880fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "224e63005e439621": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7efe3ed076b27cae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f5416d381277fb49": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4a18558d71",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ebadc22b95",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-679b4b4091",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

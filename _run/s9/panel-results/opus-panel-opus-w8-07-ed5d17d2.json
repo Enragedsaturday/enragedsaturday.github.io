@@ -1,0 +1,135 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5f9b872173d5b1f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: 'New York v. Class', SCOTUS, O'Connor, J.; internal page markers *108-*119 are consistent with the case beginning at 475 U.S. 106.",
+          "Official cite '475 U.S. 106' (type-1, selected_official) matches the content page and lake record; parallels are standard reporter forms."
+        ],
+        "residual_risks": [
+          "Parallel S.Ct./L.Ed.2d/U.S.L.W./LEXIS pages are from CL cluster.citations[] and not independently cross-checkable against the opinion body."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1c85cb4ffc5aa7e9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-markdown harvest artifact (title/Background/Issue/Rule intro), not the anchored quote; its mismatch/slip-only flags are tooling artifacts.",
+          "The actual ^pin-114 quote 'because of the important role played by the VIN in the pervasive governmental regulation of the automobile and the efforts by the Federal Government to ensure that the VIN is placed in plain view, we hold that there was no reasonable expectation of privacy in the VIN' matches the opinion verbatim (para b195-7), located after the *114 marker; pincite '475 U.S. at 114' correct."
+        ],
+        "residual_risks": [
+          "The pinpoint record's quote field holds the wrong span; only the rendered page quote verifies."
+        ],
+        "suggested_tightening": "Re-harvest pin-114 to the anchored VIN-holding sentence so the record's quote field matches the rendered page.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3d380ca14ea7f66",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'We hold that this search was sufficiently unintrusive to be constitutionally permissible in light of the lack of a reasonable expectation of privacy in the VIN and the fact that the officers observed respondent commit two traffic violations' matches the opinion verbatim (para b200-5), on page *119; pincite 'Id. at 119' correct.",
+          "Record self-reports star-verified/matched; independent read confirms."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67a66bd17d89c4db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note ('no REP in a legally-mandated visible VIN; minimal intrusion to read it during a lawful traffic stop is reasonable') tracks the opinion holding verbatim; varies_by_point:false is consistent with a unitary holding.",
+          "All treatment.edges are proposed:true keyword false-positives (e.g., Arizona v. Gant / Florida v. Jardines / United States v. Jones tagged overruled/questioned do not actually treat Class); lanes carry audit_needed and are unadjudicated, so nothing disclosed establishes negative treatment."
+        ],
+        "residual_risks": [
+          "'good_law as of 2026-06-30' currency cannot be fully confirmed from disclosed text (would require live CL Shepardizing); no disclosed evidence refutes good_law, so not refuted (not found != fabricated)."
+        ],
+        "suggested_tightening": "Resolve the R15 audit_needed edges (all keyword FPs) so the proposed-negative queue is closed on the record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-93b40e4051",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/New York v. Class.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-07-ed5d17d2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Class"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1c85cb4ffc5aa7e9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5f9b872173d5b1f7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "67a66bd17d89c4db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "a3d380ca14ea7f66": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-93b40e4051",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

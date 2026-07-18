@@ -1,13 +1,97 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Townsend v. Sain.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not substantively audited.",
+    "reviewed": [
+      {
+        "assertion_id": "7cd9edf1fad5b526",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Townsend v. Sain as a verified U.S. Supreme Court authority with official citation 372 U.S. 293.",
+          "The disclosed treatment field keeps the case live at least on the confession-voluntariness holding."
+        ],
+        "residual_risks": [
+          "Live-law use should remain tied to the confession-voluntariness point, not the later-abrogated habeas-hearing standard."
+        ],
+        "suggested_tightening": "When displaying currency, tie the live-law statement to the confession-voluntariness holding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00491e78a97f6d35",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B.",
+          "No disclosed treatment or currency field changes the legal-status assessment of this pinpoint."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity audit performed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "194c29f3135c9342",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B.",
+          "No disclosed treatment or currency field changes the legal-status assessment of this pinpoint."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity audit performed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dc3416435dbaa010",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The separate federal-habeas evidentiary-hearing standard (the Townsend circumstances/deliberate-bypass) was abrogated by Keeney v. Tamayo-Reyes, 504 U.S. 1 (1992)",
+          "locator_note": "lake treatment.scope_note; treatment.varies_by_point",
+          "needs_cl": false,
+          "problem": "The good-law call survives only if scoped to the confession-voluntariness holding. The record's varies_by_point=false is inconsistent with the disclosed caveat that Townsend's separate habeas evidentiary-hearing standard was later abrogated and superseded.",
+          "proposed_fix": "Set varies_by_point=true and add a point override or equivalent treatment entry marking the habeas-procedure/evidentiary-hearing standard as abrogated by Keeney and superseded by AEDPA, while retaining good_law for the confession-voluntariness holding.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment scope note expressly distinguishes the still-good confession-voluntariness holding from a later-abrogated habeas-procedure holding.",
+          "Because the record itself identifies materially different treatment by point, the non-varying treatment flag should not remain false."
+        ],
+        "residual_risks": [
+          "Without a point-specific override, users may read Townsend as generally good law for habeas evidentiary-hearing standards."
+        ],
+        "suggested_tightening": "Display treatment as good only for the drug-induced-confession voluntariness rule, with a separate abrogated/superseded caveat for federal habeas hearing procedure.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Townsend v. Sain.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7cd9edf1fad5b526\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Townsend v. Sain as a verified U.S. Supreme Court authority with official citation 372 U.S. 293.\",\n        \"The disclosed treatment field keeps the case live at least on the confession-voluntariness holding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Live-law use should remain tied to the confession-voluntariness point, not the later-abrogated habeas-hearing standard.\"\n      ],\n      \"suggested_tightening\": \"When displaying currency, tie the live-law statement to the confession-voluntariness holding.\"\n    },\n    {\n      \"assertion_id\": \"00491e78a97f6d35\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B.\",\n        \"No disclosed treatment or currency field changes the legal-status assessment of this pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity audit performed under lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"194c29f3135c9342\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B.\",\n        \"No disclosed treatment or currency field changes the legal-status assessment of this pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity audit performed under lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"dc3416435dbaa010\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law call survives only if scoped to the confession-voluntariness holding. The record's varies_by_point=false is inconsistent with the disclosed caveat that Townsend's separate habeas evidentiary-hearing standard was later abrogated and superseded.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Set varies_by_point=true and add a point override or equivalent treatment entry marking the habeas-procedure/evidentiary-hearing standard as abrogated by Keeney and superseded by AEDPA, while retaining good_law for the confession-voluntariness holding.\",\n        \"evidence_quote\": \"The separate federal-habeas evidentiary-hearing standard (the Townsend circumstances/deliberate-bypass) was abrogated by Keeney v. Tamayo-Reyes, 504 U.S. 1 (1992)\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake treatment.scope_note; treatment.varies_by_point\"\n      },\n      \"reasons\": [\n        \"The lake treatment scope note expressly distinguishes the still-good confession-voluntariness holding from a later-abrogated habeas-procedure holding.\",\n        \"Because the record itself identifies materially different treatment by point, the non-varying treatment flag should not remain false.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"Without a point-specific override, users may read Townsend as generally good law for habeas evidentiary-hearing standards.\"\n      ],\n      \"suggested_tightening\": \"Display treatment as good only for the drug-induced-confession voluntariness rule, with a separate abrogated/superseded caveat for federal habeas hearing procedure.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote fidelity were not substantively audited.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:29:45-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:42:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0f4747f207",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-09628758ef"
+    ],
     "group_id": "_overhaul2/lake/cases/Townsend v. Sain.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +100,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-92d34578.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Townsend v. Sain"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 77823,
+      "output": 5823,
+      "source": "codex-events",
+      "total": 83646
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "00491e78a97f6d35": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "194c29f3135c9342": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cd9edf1fad5b526": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dc3416435dbaa010": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0f4747f207",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09628758ef",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 113.6
   }
 }

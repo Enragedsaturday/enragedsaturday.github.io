@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Basher.json",
+    "lens": "A",
+    "notes": "Lens A review only. The main support/quote problem found is the malformed pin-1169 quote record; the Basher identity/citation and the pin-1169a quoted holding survive this disclosed-evidence review.",
+    "reviewed": [
+      {
+        "assertion_id": "1913923944770331",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for United States v. Basher, decided by the U.S. Court of Appeals, 9th Circuit, on 2011-01-20.",
+          "The lake official citation is 629 F.3d 1161, and the listed vendor citations match 2011 U.S. App. LEXIS 1064 and 2011 WL 167045."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2cba5d71a9b99d8c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches the disclosed lake pinpoint quote for pin-1169a exactly.",
+          "The same holding is present in the opinion text, with only OCR line wrapping/hyphenation across 'curtilage'."
+        ],
+        "residual_risks": [
+          "The pin record is page-null and slip-only, so the official reporter pincite '1169' is not independently proven by the pin metadata."
+        ],
+        "suggested_tightening": "Populate a page/position for pin-1169a if official pincite verification is required.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bfe215199457baa3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.",
+          "locator_note": "pin-1169; content_page line 55; opinion text around the curtilage discussion",
+          "needs_cl": false,
+          "problem": "The pin-1169 payload quote is not an opinion quote; it is a harvested chunk of the built content page beginning with Markdown/header text and running through Background, Issue, and Rule text.",
+          "proposed_fix": "Replace pin-1169's quote with the actual opinion sentence used on the page: 'A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins '--- # United States v. Basher', which is page Markdown, not judicial-opinion text.",
+          "The opinion text supports the underlying tent-privacy quote, but not the malformed quoted payload as framed."
+        ],
+        "residual_risks": [
+          "As with pin-1169a, the official page pinpoint is page-null/slip-only in the lake record."
+        ],
+        "suggested_tightening": "Bind pin-1169 only to the actual quoted sentence from the opinion and store a real page/position when available.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b0979a17c30640b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency review was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Basher.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1913923944770331\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified for United States v. Basher, decided by the U.S. Court of Appeals, 9th Circuit, on 2011-01-20.\",\n        \"The lake official citation is 629 F.3d 1161, and the listed vendor citations match 2011 U.S. App. LEXIS 1064 and 2011 WL 167045.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2cba5d71a9b99d8c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence matches the disclosed lake pinpoint quote for pin-1169a exactly.\",\n        \"The same holding is present in the opinion text, with only OCR line wrapping/hyphenation across 'curtilage'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The pin record is page-null and slip-only, so the official reporter pincite '1169' is not independently proven by the pin metadata.\"\n      ],\n      \"suggested_tightening\": \"Populate a page/position for pin-1169a if official pincite verification is required.\"\n    },\n    {\n      \"assertion_id\": \"bfe215199457baa3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-1169 payload quote is not an opinion quote; it is a harvested chunk of the built content page beginning with Markdown/header text and running through Background, Issue, and Rule text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1169's quote with the actual opinion sentence used on the page: 'A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.'\",\n        \"evidence_quote\": \"A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1169; content_page line 55; opinion text around the curtilage discussion\"\n      },\n      \"reasons\": [\n        \"The payload quote begins '--- # United States v. Basher', which is page Markdown, not judicial-opinion text.\",\n        \"The opinion text supports the underlying tent-privacy quote, but not the malformed quoted payload as framed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"As with pin-1169a, the official page pinpoint is page-null/slip-only in the lake record.\"\n      ],\n      \"suggested_tightening\": \"Bind pin-1169 only to the actual quoted sentence from the opinion and store a real page/position when available.\"\n    },\n    {\n      \"assertion_id\": \"3b0979a17c30640b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\",\n        \"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B treatment/currency review was performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only. The main support/quote problem found is the malformed pin-1169 quote record; the Basher identity/citation and the pin-1169a quoted holding survive this disclosed-evidence review.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:30:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:46:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-dd66bb52d0"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Basher.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-54f1d447",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-54f1d447.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:02.219001Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:03.046475Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:04.209944Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:06.271481Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:10.171675Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Basher"
+    ],
+    "tokens": {
+      "input": 172026,
+      "output": 8810,
+      "source": "codex-events",
+      "total": 180836
+    },
+    "verdict_map": {
+      "1913923944770331": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2cba5d71a9b99d8c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b0979a17c30640b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bfe215199457baa3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dd66bb52d0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 174.1
   }
 }

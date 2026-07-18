@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5cfb803d18351bb0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion header 'Cite as: 576 U. S. ____ (2015)' and caption 'CITY OF LOS ANGELES, CALIFORNIA v. PATEL ET AL.' confirm the case and lead cite 576 U.S. 409 (2015).",
+          "Docket 13-1175 and 'Decided June 22, 2015' in the cache match the record."
+        ],
+        "residual_risks": [
+          "Frontmatter CL cluster (2811846) differs from the Sources-line cluster (2810524); lake 'alternates' confirm 2810524='Los Angeles v. Patel' is the same case (dual CL cluster), so the cite still resolves.",
+          "Parallel S.Ct./L.Ed.2d page numbers not independently star-verifiable from the disclosed cache."
+        ],
+        "suggested_tightening": "Reconcile the frontmatter and Sources CL cluster URLs to one canonical cluster.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "370cd1bdd1669479",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content ^pin-op11 quote matches the cached Opinion of the Court verbatim: 'To be clear, we hold only that a hotel owner must be afforded an opportunity to have a neutral decisionmaker review an officer's demand to search the registry before he or she faces penalties for failing to comply.' (bracketed [W]e legitimately drops 'To be clear, we').",
+          "Pincite 'slip op., at 11' is correct: the passage falls immediately after 'Cite as: 576 U. S. ____ (2015) 11'.",
+          "Stored payload quote equals the source; the S8 'quote_fidelity: mismatch' flag is a false positive (slip-only/normalization artifact)."
+        ],
+        "residual_risks": [
+          "pinpoint_status 'slip-only' gives no reporter star cross-check, but slip pagination is confirmed from the cache."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d08149d570b741fc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Court has held that absent consent, exigent circumstances, or the like, in order for an administrative search to be constitutional, the subject of the search must be afforded an opportunity to obtain precompliance review before a neutral decisionmaker.",
+          "locator_note": "lake pinpoints[0] id=pin-op10; content_page ^pin-op10 (line 90); cached opinion passage precedes 'Cite as: 576 U. S. ____ (2015) 11' => slip op. 10",
+          "needs_cl": false,
+          "problem": "The lake pinpoints[] stored quote for pin-op10 is corrupt: it captured the page's front-matter/lead-in prose (ending at the ':' that introduces the quote) instead of the quoted sentence. The content-page ^pin-op10 quote itself is verbatim-correct and correctly pincited, so the legal proposition survives.",
+          "proposed_fix": "Re-harvest pin-op10.quote from the content page; the intended quote 'absent consent, exigent circumstances, or the like, in order for an administrative search to be constitutional, the subject of the search must be afforded an opportunity to obtain precompliance review before a neutral decisionmaker.' matches the cached opinion verbatim at slip op. 10.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page ^pin-op10 quote matches the cached opinion verbatim (dropping the 'The Court has held that' lead-in) and its pincite slip op. 10 is correct.",
+          "The stored payload quote is garbled front-matter (harvest boundary bug), not the wiki quote."
+        ],
+        "residual_risks": [
+          "The S8 'mismatch' flag is a true positive at the stored-payload layer but harmless at the content layer."
+        ],
+        "suggested_tightening": "Fix the pinpoint-harvest boundary so section-leading quotes capture the quoted sentence, not the preceding block.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ec3c8ec8107144d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is consistent with all disclosed data: every field_i_validity in the record is good_law and there is no confirmed (proposed:false) negative edge.",
+          "All negative edges are proposed:true with field_iii='mentioned' (lane1_negative / lane2_top_cited candidate signals); none establishes that Patel (2015 SCOTUS) is bad law.",
+          "No disclosed overruling/abrogation of Patel."
+        ],
+        "residual_risks": [
+          "Basis is migration-seed (not freshly S2-re-derived); scope_note concedes derivation 'may downgrade'.",
+          "Unadjudicated proposed-negative candidate edges remain (currency caveat)."
+        ],
+        "suggested_tightening": "Run S2 re-derivation to replace the migration seed with a derived treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7a9d15be01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-68cf87dee7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/City of Los Angeles v. Patel.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-02-e42f4da4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Los Angeles v. Patel"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "370cd1bdd1669479": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5cfb803d18351bb0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5ec3c8ec8107144d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d08149d570b741fc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7a9d15be01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fe6a4e3dc6",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-68cf87dee7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

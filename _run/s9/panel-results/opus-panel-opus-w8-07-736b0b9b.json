@@ -1,0 +1,183 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2c976326f7875f09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: 'New York v. Harris', SCOTUS, White, J. (Payton-violation / station-house statement); page markers *16-*21 consistent with the case beginning at 495 U.S. 14.",
+          "Official cite '495 U.S. 14' matches content page and lake record."
+        ],
+        "residual_risks": [
+          "Parallel reporter pages sourced from CL cluster.citations[]; not cross-checkable against the opinion body."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b1f5c70f9046708",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion reads 'the rule in Payton was designed to protect the physical integrity of the home; it was not intended to grant criminal suspects, like Harris, protection for statements made outside their premises where the police have probable cause to arrest the suspect for committing a crime' (para b73-5, page *17).",
+          "Wiki quote begins at 'Payton was designed to protect...' — a legitimate leading elision of 'the rule in' (quotation begins at a word present in the source); remainder is verbatim; pincite 'Id. at 17' correct. Recorded 'mismatch' is a markdown/leading-word checker artifact."
+        ],
+        "residual_risks": [
+          "Starting the quote at 'Payton' slightly shifts the grammatical subject from 'the rule in Payton'; meaning preserved."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b89e54dce3381f57",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'Harris' statement taken at the police station was not the product of being in unlawful custody. Neither was it the fruit of having been arrested in the home rather than someplace else.' matches the opinion verbatim (para b75-5), on page *19; pincite 'Id. at 19' correct.",
+          "Recorded 'mismatch/slip-only' is an apostrophe-normalization artifact (opinion uses curly 'Harris’')."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reconcile the slip-only/mismatch flags with the verbatim match.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "becbc6c0d08f9602",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload 'quote' is a page-markdown harvest artifact (title/Background/Issue/'## Rule No.'), not the anchored quote.",
+          "The actual ^pin-21 quote 'We hold that, where the police have probable cause to arrest a suspect, the exclusionary rule does not bar the State's use of a statement made by the defendant outside of his home, even though the statement is taken after an arrest made in the home in violation of Payton.' matches the opinion verbatim (para b77-5), on page *21; pincite '495 U.S. at 21' correct."
+        ],
+        "residual_risks": [
+          "Record quote field holds the wrong span; only the rendered page quote verifies."
+        ],
+        "suggested_tightening": "Re-harvest pin-21 to the anchored holding sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7159bfe924d1b409",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note (probable cause + Payton violation does not require suppressing an outside-the-home statement; remedy reaches only what is gathered inside; disambiguation from Harris v. New York, 401 U.S. 222 (1971)) tracks the opinion holding verbatim; varies_by_point:false consistent.",
+          "All treatment.edges are proposed:true keyword FPs (e.g., Hudson v. Michigan / Powell v. Nevada tagged overruled/questioned do not overrule Harris); audit_needed, unadjudicated — nothing disclosed establishes negative treatment."
+        ],
+        "residual_risks": [
+          "'good_law as of 2026-06-30' currency not fully confirmable from disclosed text (needs CL Shepardizing); no disclosed evidence refutes it.",
+          "Disambiguation cite Harris v. New York, 401 U.S. 222 (1971) is a standard reference not independently verifiable from the disclosed record, but it is not the record under review."
+        ],
+        "suggested_tightening": "Close the R15 audit_needed edges (keyword FPs) on the record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4230ebedb4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d1146f2af6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ed39a4bf9f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6f84a53ee2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/New York v. Harris.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-07-736b0b9b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Harris"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0b1f5c70f9046708": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c976326f7875f09": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7159bfe924d1b409": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "b89e54dce3381f57": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "becbc6c0d08f9602": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4230ebedb4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d1146f2af6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ed39a4bf9f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6f84a53ee2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

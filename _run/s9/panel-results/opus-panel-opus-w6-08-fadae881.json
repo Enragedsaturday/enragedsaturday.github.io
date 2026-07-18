@@ -1,0 +1,173 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "255ad97e50293fbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 385 U.S. 206 matches disclosed cluster.citations[] (cluster 107312); parallel cites 87 S. Ct. 424, 17 L. Ed. 2d 312, 1966 U.S. LEXIS 3 standard and disclosed non-official.",
+          "Content-page disambiguation correctly separates this 1966 case from 445 U.S. 55 (1980) and 518 U.S. 322 (1996); cached opinion is the undercover-entry/Gouled case."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c09332ec3e19722",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'does not mean that, whenever entry is obtained by invitation and the locus is characterized as a place of business, an agent is authorized to conduct a general search for incriminating materials' is verbatim in the cached opinion at star-page *211.",
+          "pinpoint_status='star-verified', star_marker='211', quote_fidelity='matched' confirmed; pincite 211 correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afe04295d1c6e2b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'During neither of his visits to petitioner's home did the agent see, hear, or take anything that was not contemplated, and in fact intended, by petitioner as a necessary part of his illegal business.' is verbatim in the cached opinion, sitting between the *210 and *211 star markers (page 210).",
+          "Pincite 210 correct."
+        ],
+        "residual_risks": [
+          "quote_fidelity flagged 'mismatch' (slip-only) although the stored content verifies verbatim."
+        ],
+        "suggested_tightening": "Reconcile pin-210 fidelity flag to 'matched'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b027f1903f12adbf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "when, as here, the home is converted into a commercial center to which outsiders are invited for purposes of transacting unlawful business, that business is entitled to no greater sanctity than if it were carried on in a store, a garage, a car, or on the street. A government agent, in the same manner as a private person, may accept an invitation to do business and may enter upon the premises for the very purposes contemplated by the occupant.",
+          "locator_note": "cached opinion star-page *211 (385 U.S. at 211); content page ^pin-211",
+          "needs_cl": false,
+          "problem": "lake pinpoints[pin-211].quote is a corrupted capture of page markdown (Background tail + '## Issue ...' + '## Rule No search occurs.'), not opinion text; self-flagged quote_fidelity='mismatch'.",
+          "proposed_fix": "Repair the lake pin-211 quote field to the actual quoted passage rendered on the content page, which verifies verbatim in the cached opinion at star-page *211.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is markdown, not a Lewis quote (honestly flagged mismatch).",
+          "Content-page ^pin-211 quote '[W]hen … the home is converted into a commercial center...for the very purposes contemplated by the occupant.' is verbatim in the cached opinion at *211 (bracket-cap of 'when', ellipsis for 'as here,'); pincite 211 valid; only lake field needs repair."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-extract pin-211 to store the quoted passage.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d8fba46b2e5101ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law; every disclosed negative edge (lane1 12, lane2 24 proposed) is 'proposed':true, field_iii='mentioned', keyword-triage on citing cases, direction citing->Lewis.",
+          "The only SCOTUS keyword hit, Katz v. United States (389 U.S. 347), is a proposed/'mentioned' citing-case edge, not an adjudicated overruling of Lewis; no adjudicated negative treatment of this 1966 SCOTUS holding is disclosed."
+        ],
+        "residual_risks": [
+          "lane2_top_cited cap_hit=true & audit_needed=true with 24 proposed events (incl. the Katz 'overruled' keyword FP) unadjudicated in the build."
+        ],
+        "suggested_tightening": "Audit the proposed negatives, especially the Katz 'overruled' keyword hit, to record them as dismissed FPs.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1814a5bba7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-99044f3a03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Lewis v. United States (1966).json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-08-fadae881",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lewis v. United States (1966)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "255ad97e50293fbe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c09332ec3e19722": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afe04295d1c6e2b9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b027f1903f12adbf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d8fba46b2e5101ec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1814a5bba7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-00838606ca",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-99044f3a03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New York v. Quarles.json",
+    "lens": "B",
+    "notes": "Lens B reviewed currency and treatment only; quote support/fidelity was not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "43645f230c98b9c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies New York v. Quarles as a U.S. Supreme Court case decided 1984-06-12.",
+          "Lake citations select 467 U.S. 649 as the official citation and display citation.",
+          "Lake treatment marks the authority good_law as of 2026-06-30, so no currency defect is disclosed."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes audit-needed markers, but no disclosed final treatment field says Quarles is no longer live law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86ca9851af855be7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or verbatim finding is raised here.",
+          "The cited authority's currency survives lens-B review because the lake treatment field marks Quarles good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6bb7210ed873e69",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or verbatim finding is raised here.",
+          "The cited authority's currency survives lens-B review because the lake treatment field marks Quarles good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74048efd95ca1a99",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 7, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law status itself is consistent with the lake judgment fields, but the page's categorical 'No negative treatment' wording is stronger than the disclosed treatment record supports because the derivation flags proposed negative events requiring audit.",
+          "proposed_fix": "Keep the good_law status, but qualify the subsequent-history sentence to say the lake marks Quarles good_law as of 2026-06-30 and that disclosed negative-treatment candidates are proposed/mentioned only pending audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment exactly matches field_i_validity good_law, as_of_treatment 2026-06-30, and scope_note 'Establishes the public-safety exception to Miranda; good law.'",
+          "Lake has no point_overrides and all 32 disclosed treatment.edges are proposed with field_iii 'mentioned', not an audited overruling, abrogation, supersession, or limitation of Quarles.",
+          "The page also says 'No negative treatment,' but the lake derivation discloses audit_needed true and proposed_negative_events in the negative-treatment lanes."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could either clear or confirm the proposed negative-treatment candidates."
+        ],
+        "suggested_tightening": "Avoid 'No negative treatment' unless the proposed negative-treatment lanes have been audited; use a qualified good-law statement instead.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/New York v. Quarles.json\",\"reviewed\":[{\"assertion_id\":\"43645f230c98b9c5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies New York v. Quarles as a U.S. Supreme Court case decided 1984-06-12.\",\"Lake citations select 467 U.S. 649 as the official citation and display citation.\",\"Lake treatment marks the authority good_law as of 2026-06-30, so no currency defect is disclosed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation includes audit-needed markers, but no disclosed final treatment field says Quarles is no longer live law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"86ca9851af855be7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or verbatim finding is raised here.\",\"The cited authority's currency survives lens-B review because the lake treatment field marks Quarles good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b6bb7210ed873e69\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or verbatim finding is raised here.\",\"The cited authority's currency survives lens-B review because the lake treatment field marks Quarles good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"74048efd95ca1a99\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself is consistent with the lake judgment fields, but the page's categorical 'No negative treatment' wording is stronger than the disclosed treatment record supports because the derivation flags proposed negative events requiring audit.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status, but qualify the subsequent-history sentence to say the lake marks Quarles good_law as of 2026-06-30 and that disclosed negative-treatment candidates are proposed/mentioned only pending audit.\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 7, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation.lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment exactly matches field_i_validity good_law, as_of_treatment 2026-06-30, and scope_note 'Establishes the public-safety exception to Miranda; good law.'\",\"Lake has no point_overrides and all 32 disclosed treatment.edges are proposed with field_iii 'mentioned', not an audited overruling, abrogation, supersession, or limitation of Quarles.\",\"The page also says 'No negative treatment,' but the lake derivation discloses audit_needed true and proposed_negative_events in the negative-treatment lanes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could either clear or confirm the proposed negative-treatment candidates.\"],\"suggested_tightening\":\"Avoid 'No negative treatment' unless the proposed negative-treatment lanes have been audited; use a qualified good-law statement instead.\"}],\"notes\":\"Lens B reviewed currency and treatment only; quote support/fidelity was not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:19-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:22:07-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2194dfc07f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82ecc9bb6b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-61f3e956de"
+    ],
     "group_id": "_overhaul2/lake/cases/New York v. Quarles.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f02c925e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "New York v. Quarles"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 335666,
+      "output": 8426,
+      "source": "codex-events",
+      "total": 344092
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.6
+    "verdict_map": {
+      "43645f230c98b9c5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74048efd95ca1a99": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "86ca9851af855be7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6bb7210ed873e69": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2194dfc07f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-82ecc9bb6b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-61f3e956de",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 172.0
   }
 }

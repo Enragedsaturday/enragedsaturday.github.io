@@ -1,13 +1,112 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ramirez.json",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory rows exactly once. Treatment row was recorded only to the extent permitted under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "3792d21edf81aef0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record confirms United States v. Ramirez, U.S. Supreme Court, decided 1998-03-04, year 1998, docket 96-1469.",
+          "Lake citations confirm official citation 523 U.S. 65 and parallel/vendor citations 118 S. Ct. 992, 140 L. Ed. 2d 191, and 1998 U.S. LEXIS 1600; the content page displays 523 U.S. 65 (1998)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f38399d27a0329f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In this ease, we must decide whether the Fourth Amendment holds officers to a higher standard than this when a “no-knoek” entry results in the destruction of property. We hold that it does not.",
+          "locator_note": "Lake pin-68 has quote_fidelity 'mismatch', no star_marker, and pinpoint_status 'slip-only'; the payload begins with built-page markdown ('--- # United States v. Ramirez') rather than opinion text.",
+          "needs_cl": false,
+          "problem": "Pin-68's harvested quote is not a character-faithful opinion quote; it is a scrape of the built page header/background/rule text ending at 'No.' rather than the cited Supreme Court passage.",
+          "proposed_fix": "Replace pin-68 with the actual page-68 opinion language or recast the sentence as a paraphrase with a citation to 523 U.S. at 68.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed cached opinion contains the cited page-68 holding sentence; the payload quote is built-page prose and metadata, not that sentence.",
+          "The lake record itself marks pin-68 quote_fidelity as mismatch and gives no verified star marker."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported by the opinion, but the direct quote/pin record is defective."
+        ],
+        "suggested_tightening": "Use an exact quotation from the cached opinion text, or remove quotation marks and cite the holding as a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a537eb2727d5ee8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a no-knoek entry is justified if police have a “reasonable suspicion” that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation.",
+          "locator_note": "Lake pin-71 has quote_fidelity 'mismatch', no star_marker, and pinpoint_status 'slip-only'; the cached text at star page 71 uses the displayed wording quoted in the evidence snippet.",
+          "needs_cl": false,
+          "problem": "Pin-71 is not character-faithful to the cached opinion text under the strict quote-fidelity standard; the content/lake quote normalizes wording and typography and the lake marks it as a mismatch.",
+          "proposed_fix": "Either quote the cached text exactly or convert this sentence to a paraphrase while retaining the citation to page 71.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition is substantively supported at star page 71, but the verbatim quote is not character-faithful to the disclosed text.",
+          "The lake record flags the pin-71 quote as a mismatch rather than a verified quote."
+        ],
+        "residual_risks": [
+          "The cached opinion appears OCR-imperfect, so a clean official source would be needed before preserving the normalized 'no-knock' wording as a direct quote."
+        ],
+        "suggested_tightening": "Make this a paraphrase unless the quote can be revalidated against a clean source.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "75decc6b5087c68d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-71b quote appears verbatim in the cached opinion text: 'Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression.'",
+          "Lake pin-71b is star-verified at marker 71, has quote_fidelity 'matched', and includes a validated fragment for the quoted text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8b09fca86ea6143",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1998-03-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised beyond confirming the disclosed record fields match the assertion."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be evaluated by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ramirez.json\",\"reviewed\":[{\"assertion_id\":\"3792d21edf81aef0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record confirms United States v. Ramirez, U.S. Supreme Court, decided 1998-03-04, year 1998, docket 96-1469.\",\"Lake citations confirm official citation 523 U.S. 65 and parallel/vendor citations 118 S. Ct. 992, 140 L. Ed. 2d 191, and 1998 U.S. LEXIS 1600; the content page displays 523 U.S. 65 (1998).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3f38399d27a0329f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-68's harvested quote is not a character-faithful opinion quote; it is a scrape of the built page header/background/rule text ending at 'No.' rather than the cited Supreme Court passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-68 with the actual page-68 opinion language or recast the sentence as a paraphrase with a citation to 523 U.S. at 68.\",\"evidence_quote\":\"In this ease, we must decide whether the Fourth Amendment holds officers to a higher standard than this when a “no-knoek” entry results in the destruction of property. We hold that it does not.\",\"needs_cl\":false,\"locator_note\":\"Lake pin-68 has quote_fidelity 'mismatch', no star_marker, and pinpoint_status 'slip-only'; the payload begins with built-page markdown ('--- # United States v. Ramirez') rather than opinion text.\"},\"reasons\":[\"The disclosed cached opinion contains the cited page-68 holding sentence; the payload quote is built-page prose and metadata, not that sentence.\",\"The lake record itself marks pin-68 quote_fidelity as mismatch and gives no verified star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition is supported by the opinion, but the direct quote/pin record is defective.\"],\"suggested_tightening\":\"Use an exact quotation from the cached opinion text, or remove quotation marks and cite the holding as a paraphrase.\"},{\"assertion_id\":\"4a537eb2727d5ee8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-71 is not character-faithful to the cached opinion text under the strict quote-fidelity standard; the content/lake quote normalizes wording and typography and the lake marks it as a mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the cached text exactly or convert this sentence to a paraphrase while retaining the citation to page 71.\",\"evidence_quote\":\"a no-knoek entry is justified if police have a “reasonable suspicion” that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation.\",\"needs_cl\":false,\"locator_note\":\"Lake pin-71 has quote_fidelity 'mismatch', no star_marker, and pinpoint_status 'slip-only'; the cached text at star page 71 uses the displayed wording quoted in the evidence snippet.\"},\"reasons\":[\"The quoted proposition is substantively supported at star page 71, but the verbatim quote is not character-faithful to the disclosed text.\",\"The lake record flags the pin-71 quote as a mismatch rather than a verified quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion appears OCR-imperfect, so a clean official source would be needed before preserving the normalized 'no-knock' wording as a direct quote.\"],\"suggested_tightening\":\"Make this a paraphrase unless the quote can be revalidated against a clean source.\"},{\"assertion_id\":\"75decc6b5087c68d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-71b quote appears verbatim in the cached opinion text: 'Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression.'\",\"Lake pin-71b is star-verified at marker 71, has quote_fidelity 'matched', and includes a validated fragment for the quoted text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a8b09fca86ea6143\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1998-03-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised beyond confirming the disclosed record fields match the assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be evaluated by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory rows exactly once. Treatment row was recorded only to the extent permitted under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d42a3cdb91",
+      "F-S9-PR-43b2fe8e69"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Ramirez.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +115,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5328a32c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Ramirez"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 254520,
+      "output": 7826,
+      "source": "codex-events",
+      "total": 262346
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "3792d21edf81aef0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f38399d27a0329f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4a537eb2727d5ee8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "75decc6b5087c68d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8b09fca86ea6143": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d42a3cdb91",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-43b2fe8e69",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 233.9
   }
 }

@@ -1,0 +1,187 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5700d94dfa3f4061",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '542 U.S. 177 (2004)' and caption 'HIIBEL v. SIXTH JUDICIAL DISTRICT COURT OF NEVADA, HUMBOLDT COUNTY, ET AL.'; selected lead cite 542 U.S. 177 matches.",
+          "Parallel reporters (S. Ct., L. Ed. 2d, U.S. LEXIS, U.S.L.W., Fla. L. Weekly) are standard SCOTUS parallels; no fabrication indicators."
+        ],
+        "residual_risks": [
+          "Parallel-cite page numbers are not independently confirmable from the disclosed slip (only the U.S. reporter lead cite appears in the cached header)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "078ef690290d2162",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.188 (after the '*188' star marker) reads verbatim: 'A state law requiring a suspect to disclose his name in the course of a valid Terry stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures.'",
+          "Content-page quote is faithful; the bracket '[a]' is a proper Bluebook capitalization alteration; page 188 confirmed by star-pagination."
+        ],
+        "residual_risks": [
+          "Lake payload flags pinpoint_status 'slip-only'/quote_fidelity 'mismatch', but the disclosed slip carries star-pagination confirming p.188 — that flag is overly conservative, not a content defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1819278ce4fb0e36",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.187 reads verbatim: 'The principles of Terry permit a State to require a suspect to disclose his name in the course of a Terry stop.'",
+          "Content-page '[t]he principles...' is faithful; '[t]' is a proper Bluebook alteration; the sentence sits between the '*187' and '*188' star markers."
+        ],
+        "residual_risks": [
+          "Same conservative 'slip-only'/'mismatch' flag as pin-188; disclosed star-pagination confirms the page."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "897c364ec6c648ca",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Obtaining a suspect's name in the course of a Terry stop serves important government interests.",
+          "locator_note": "Cached opinion p.186 (paragraph immediately after the '*186' star marker); content page ^pin-186 renders this exact sentence cited to '542 U.S. at 186'.",
+          "needs_cl": false,
+          "problem": "Stored pin-186 quote is a harvest artifact: it captured content-page markdown ('...disclose his name. ## Issue ... ## Rule Yes.') rather than opinion text — no opinion contains '## Issue'/'## Rule'. Build already self-flags quote_fidelity='mismatch'. The content page's ACTUAL rendered pin-186 quote is faithful and correctly pincited.",
+          "proposed_fix": "Replace the stored pin-186 quote string with the real faithful quote from p.186.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin survives: a genuine faithful quote exists at p.186 ('Obtaining a suspect's name in the course of a Terry stop serves important government interests.'), verified verbatim in cached text.",
+          "But the stored quote STRING is corrupted content-page markdown, not opinion text — a real quote_fidelity defect in the assertion as framed."
+        ],
+        "residual_risks": [
+          "First-pin-on-page harvest corruption recurs across this batch (Hill pin-802, Hoffa pin-310, Hope pin-741) — systemic harvester bug worth a sweep."
+        ],
+        "suggested_tightening": "Harvester should strip markdown/section-header lines when extracting the pinpoint quote for the first pin on a page.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76d3a9daaa40bd70",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Hiibel is a 2004 SCOTUS decision affirming the conviction ('the judgment... is Affirmed') — facially valid binding precedent.",
+          "No disclosed authority credibly refutes good_law: the lake treatment.edges are all 'proposed'/unadjudicated and are structurally incapable of overruling SCOTUS (state/intermediate/district-court citing cases)."
+        ],
+        "residual_risks": [
+          "2026-06-30 citator currency ('good_law' as-of-treatment) is a migration-seed and is NOT independently re-derivable from the disclosed 2004 slip text alone; S2 re-derivation pending per scope_note."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-de81bcf285",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-260e826fd9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-68acdc9532",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hiibel v. Sixth Judicial Dist. Court.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-07-e2ed0ef6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hiibel v. Sixth Judicial Dist. Court"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "078ef690290d2162": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1819278ce4fb0e36": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5700d94dfa3f4061": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76d3a9daaa40bd70": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "897c364ec6c648ca": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-de81bcf285",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-260e826fd9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a7ea230637",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-68acdc9532",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

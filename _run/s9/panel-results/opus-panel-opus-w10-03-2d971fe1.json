@@ -1,0 +1,153 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3b3fc4fac6346011",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms 'SAMSON v. CALIFORNIA', No. 04-9728, Argued February 22, 2006—Decided June 19, 2006, 'Cite as: 547 U. S. ___ (2006)'. Volume 547 U.S., year 2006, and docket 04-9728 match the record.",
+          "The slip prints the starting page as ___; page 843 comes from cluster.citations[] and is consistent (uncontradicted). Case existence at 547 U.S. 843 (2006) confirmed.",
+          "Parallel cites (126 S. Ct. 2193; 165 L. Ed. 2d 250; 2006 U.S. LEXIS 4885) uncontradicted."
+        ],
+        "residual_risks": [
+          "Exact first-page (843) is not printed in the slip-only cached text, but is consistent with all disclosed identity fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a44672c5965a13e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-857 quote 'we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.' is verbatim in Part IV of the opinion: 'Thus, we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.'",
+          "Only the leading 'Thus,' is dropped; quote_fidelity='matched' is correct. The deep-link fragment ':~:text=we%20conclude%20that%20the%20Fourth' matches.",
+          "The sentence sits in the closing Part IV of the majority (final page of the opinion), consistent with pincite 857."
+        ],
+        "residual_risks": [
+          "Reporter page 857 is not directly confirmable from slip-only cached text (which paginates as slip pages 1-12, 'Cite as: 547 U. S. ___'); the quote itself is verbatim-verified and its Part IV location is consistent with 857."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5fcffdb51e2b4925",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The extent and reach of these conditions clearly demonstrate that parolees like petitioner have severely diminished expectations of privacy by virtue of their status alone.",
+          "locator_note": "pin-852; content page ^pin-852 displays this sentence verbatim; it appears in the diminished-privacy discussion of the slip opinion (slip page 7); only the stored quote metadata is corrupt.",
+          "needs_cl": false,
+          "problem": "The stored pin-852 `quote` field is a content-page-chrome mis-harvest (Background tail + Issue + '## Rule No. Parolees have sharply reduced privacy expectations:'), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-852 is faithful to the opinion.",
+          "proposed_fix": "Re-harvest pin-852.quote to the intended opinion sentence and keep pincite 852.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content quote at ^pin-852 matches the opinion verbatim ('...severely diminished expectations of privacy by virtue of their status alone.'); the assigned holding text is faithful.",
+          "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+        ],
+        "residual_risks": [
+          "Reporter page 852 is not directly confirmable from slip-only cached text; the quote is verbatim-verified but its exact U.S. Reports page is a residual risk.",
+          "Consumers reading pinpoint.quote directly would get page chrome, not the diminished-privacy holding."
+        ],
+        "suggested_tightening": "Same slip-only harvest guard; and confirm 852 against reporter pagination when available.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b5becc88d4f0c29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed opinion holds the Fourth Amendment does not prohibit a suspicionless search of a parolee (2006 SCOTUS), extending United States v. Knights; field_i_validity=good_law supported.",
+          "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+          "good_law survives."
+        ],
+        "residual_risks": [
+          "The scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a process placeholder rather than a substantive scope note, and self-flags a possible future downgrade on S2 re-derivation; validity is nonetheless good_law on the disclosed record.",
+          "Proposed negative edges unadjudicated but non-dispositive."
+        ],
+        "suggested_tightening": "Replace the placeholder scope_note with a substantive one stating the holding (suspicionless parolee search reasonable; diminished privacy).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-360b1c6ff2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Samson v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-03-2d971fe1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Samson v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1a44672c5965a13e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b3fc4fac6346011": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b5becc88d4f0c29": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5fcffdb51e2b4925": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc7572b7de",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-360b1c6ff2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

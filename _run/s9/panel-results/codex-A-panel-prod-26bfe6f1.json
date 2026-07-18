@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lynumn v. Illinois.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows exactly once. Treatment/currency was recorded but not substantively attacked under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "17b1a966c228e725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Lynumn v. Illinois, U.S. Supreme Court, decided 1963-03-25, year 1963.",
+          "The lake citations match the asserted official, parallel, and vendor citations: 372 U.S. 528; 83 S. Ct. 917; 9 L. Ed. 2d 922; 1963 U.S. LEXIS 1907."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b979930b02e69e9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "If so, the confession cannot be deemed “the product of a rational intellect and a free will.”",
+          "locator_note": "pin-534a; text/Lynumn v. Illinois__596420.txt, page-star 534 paragraph b598-6",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful: the source uses typographic double quotation marks around the Blackburn phrase, not single quotation marks.",
+          "proposed_fix": "Replace the fragment with the exact disclosed text: the confession cannot be deemed “the product of a rational intellect and a free will.”",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks quote_fidelity as mismatch.",
+          "The disclosed opinion text contains the same substantive phrase, but with different quotation characters than the asserted quote."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported at page 534, but the verbatim-quote assertion is not exact."
+        ],
+        "suggested_tightening": "Use the exact source punctuation for nested quotation, or treat the sentence as paraphrase rather than a verbatim quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c4a27fcd84fe1536",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "There was no friend or adviser to whom she might turn. She had had no previous experience with the criminal law, and had no reason not to believe that the police had ample power to carry out their threats.",
+          "locator_note": "pin-534; text/Lynumn v. Illinois__596420.txt, page-star 534 paragraphs b598-5 and b598-6",
+          "needs_cl": false,
+          "problem": "The asserted pinpoint quote is not a verbatim passage from the opinion. It combines content-page prose and markdown headings, and its factual sentence differs from the actual page-534 language.",
+          "proposed_fix": "Replace the pin-534 quote with exact text from page 534, beginning with the actual quoted holding passage rather than page prose/headings.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks quote_fidelity as mismatch.",
+          "The payload includes '## Issue' and '## Rule', which are content-page headings, not opinion text.",
+          "The opinion text says 'There was no friend or adviser to whom she might turn' and 'She had had no previous experience with the criminal law,' not the asserted sentence."
+        ],
+        "residual_risks": [
+          "The broader rule is supported by the opinion, but this pinpoint quote must not be treated as verbatim."
+        ],
+        "suggested_tightening": "Separate paraphrase/background prose from exact quoted material; store only opinion text in pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2816a2c662d543f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1963-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and currency were not substantively audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Lynumn v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"17b1a966c228e725\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Lynumn v. Illinois, U.S. Supreme Court, decided 1963-03-25, year 1963.\",\"The lake citations match the asserted official, parallel, and vendor citations: 372 U.S. 528; 83 S. Ct. 917; 9 L. Ed. 2d 922; 1963 U.S. LEXIS 1907.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9b979930b02e69e9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is not character-faithful: the source uses typographic double quotation marks around the Blackburn phrase, not single quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the fragment with the exact disclosed text: the confession cannot be deemed “the product of a rational intellect and a free will.”\",\"evidence_quote\":\"If so, the confession cannot be deemed “the product of a rational intellect and a free will.”\",\"needs_cl\":false,\"locator_note\":\"pin-534a; text/Lynumn v. Illinois__596420.txt, page-star 534 paragraph b598-6\"},\"reasons\":[\"The lake pinpoint itself marks quote_fidelity as mismatch.\",\"The disclosed opinion text contains the same substantive phrase, but with different quotation characters than the asserted quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition is supported at page 534, but the verbatim-quote assertion is not exact.\"],\"suggested_tightening\":\"Use the exact source punctuation for nested quotation, or treat the sentence as paraphrase rather than a verbatim quote.\"},{\"assertion_id\":\"c4a27fcd84fe1536\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pinpoint quote is not a verbatim passage from the opinion. It combines content-page prose and markdown headings, and its factual sentence differs from the actual page-534 language.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-534 quote with exact text from page 534, beginning with the actual quoted holding passage rather than page prose/headings.\",\"evidence_quote\":\"There was no friend or adviser to whom she might turn. She had had no previous experience with the criminal law, and had no reason not to believe that the police had ample power to carry out their threats.\",\"needs_cl\":false,\"locator_note\":\"pin-534; text/Lynumn v. Illinois__596420.txt, page-star 534 paragraphs b598-5 and b598-6\"},\"reasons\":[\"The lake pinpoint itself marks quote_fidelity as mismatch.\",\"The payload includes '## Issue' and '## Rule', which are content-page headings, not opinion text.\",\"The opinion text says 'There was no friend or adviser to whom she might turn' and 'She had had no previous experience with the criminal law,' not the asserted sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The broader rule is supported by the opinion, but this pinpoint quote must not be treated as verbatim.\"],\"suggested_tightening\":\"Separate paraphrase/background prose from exact quoted material; store only opinion text in pinpoints[].quote.\"},{\"assertion_id\":\"a2816a2c662d543f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1963-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency were not substantively audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows exactly once. Treatment/currency was recorded but not substantively attacked under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:03:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-494a5d584a",
+      "F-S9-PR-d369fd0efb"
+    ],
     "group_id": "_overhaul2/lake/cases/Lynumn v. Illinois.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-26bfe6f1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Lynumn v. Illinois"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 182315,
+      "output": 7682,
+      "source": "codex-events",
+      "total": 189997
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "17b1a966c228e725": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b979930b02e69e9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a2816a2c662d543f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c4a27fcd84fe1536": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-494a5d584a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d369fd0efb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 162.0
   }
 }

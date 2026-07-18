@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "388788f288145e73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 479 U.S. 367 (1987) is confirmed by the disclosed opinion: Chief Justice Rehnquist, page markers *369-*376 (opinion opens at 367), caption Colorado v. Bertine.",
+          "Parallels (107 S. Ct. 738; 93 L. Ed. 2d 739; 55 U.S.L.W. 4105; 1987 U.S. LEXIS 286), cluster 111788, and official_selection rank_1 are consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd26fba682535c3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-375 quote ('Nothing in Opperman or Lafayette prohibits the exercise of police discretion so long as that discretion is exercised according to standard criteria and on the basis of something other than suspicion of evidence of criminal activity.') appears VERBATIM in the disclosed opinion (para b529-8).",
+          "The sentence sits on page 375, between the *375 and *376 star markers, so pincite 375 is correct; the only textual difference is markdown italic asterisks around the case names Opperman/Lafayette."
+        ],
+        "residual_risks": [
+          "Record self-flags this pin quote_fidelity='mismatch'/'slip-only' even though the quote is a verbatim match; the mismatch label looks over-conservative (likely triggered by markdown italics or unconfirmed star pagination)."
+        ],
+        "suggested_tightening": "Reclassify pin-375 from mismatch to matched, or record why slip-only pagination remains unconfirmed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d1cde7f9568dd853",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that here, as in Lafayette, reasonable police regulations relating to inventory procedures administered in good faith satisfy the Fourth Amendment, even though courts might as a matter of hindsight be able to devise equally reasonable rules requiring a different procedure.",
+          "locator_note": "pin-374; opinion para b528-7, page 374 (between *374 and *375 markers)",
+          "needs_cl": false,
+          "problem": "Stored pin-374 quote is a content-page markdown harvest artifact ('--- # Colorado v. Bertine ... ## Rule Yes, where standardized procedures govern...'), not opinion text - a genuine mismatch, as the record self-flags. It is not a quotation of the source.",
+          "proposed_fix": "Re-sync the stored pin-374 quote to the content-page quotation, which is verbatim in the opinion: 'reasonable police regulations relating to inventory procedures administered in good faith satisfy the Fourth Amendment, even though courts might as a matter of hindsight be able to devise equally reasonable rules requiring a different procedure.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored pinpoint quote is page markdown (frontmatter delimiter + header + Background/Issue/Rule prose), not opinion text, so as a quotation it is not faithful.",
+          "However the published content page quotes the correct holding at 374, and that quote is verbatim in the disclosed opinion (para b528-7), so the reader-facing legal proposition survives - only the stored metadata needs repair."
+        ],
+        "residual_risks": [
+          "Metadata-only defect; the published content page is unaffected."
+        ],
+        "suggested_tightening": "Re-run the pinpoint harvest so the stored quote captures the actual quotation span rather than the page markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "efb073216c7da891",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' (migration-seed) is not refuted by any disclosed evidence; the disclosed Bertine opinion is a valid 1987 SCOTUS inventory-search holding.",
+          "Every negative edge is proposed=true and R15 audit-flagged. lane2_top_cited mislabels all 25 top-cited co-citers as negative (Whren, Horton, Acevedo, Atwater, Edmond, Skinner, Von Raab, O'Connor v. Ortega, Birchfield) - none overrule Bertine; lane1 negatives are state-court cases that cannot overrule a SCOTUS decision.",
+          "No confirmed negative treatment is disclosed."
+        ],
+        "residual_risks": [
+          "lane1_negative proposed edges (e.g., Kennebrew v. State, People v. Brown) remain unaudited (R15); definitive currency would require reading those citing opinions, which are not disclosed.",
+          "Treatment derivation appears buggy: the top-cited lane assigns a negative field_ii to every citing case."
+        ],
+        "suggested_tightening": "Audit/clear the R15 proposed negative edges and fix the top-cited lane's blanket negative-labeling before promoting treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8422cba529",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Colorado v. Bertine.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-03-c776b028",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Colorado v. Bertine"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "388788f288145e73": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd26fba682535c3f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d1cde7f9568dd853": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "efb073216c7da891": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-20eff56c8c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8422cba529",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

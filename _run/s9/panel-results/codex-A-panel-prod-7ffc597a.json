@@ -1,13 +1,91 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sherman v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows under Lens A using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "30c644dc868b08d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms case_name_full as Sherman v. United States, court as U.S. Supreme Court, date_decided as 1958-05-19, and year as 1958.",
+          "The lake official citation is 356 U.S. 369, matching the page citation and inventory payload.",
+          "The listed parallel and vendor-neutral citations match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d880ed98dc7c1a3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text after the star-page 372 marker.",
+          "The lake pinpoint for pin-372a is marked quote_fidelity matched and pinpoint_status star-verified with star_marker 372.",
+          "The text-fragment target is consistent with the quoted passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a3dc53c8d21b53f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Sherman v. United States *356 U.S. 369 (1958)*",
+          "locator_note": "lake pinpoints[] id pin-372; content_page.md Rule footnote ^pin-372",
+          "needs_cl": false,
+          "problem": "pin-372 is not a faithful opinion quote. The lake pinpoint stores a generated page/header/background block rather than the Sherman opinion passage, and the lake itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "proposed_fix": "Replace pin-372 with the exact opinion passage supporting the Rule sentence at star page 372, or remove this pinpoint until it can be star-verified.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pinpoint payload is page markdown, not opinion text.",
+          "The cached opinion text contains the relevant entrapment sentence at star page 372, but that is not what the lake pinpoint quote records.",
+          "Because the pinpoint is marked mismatch/slip-only, the asserted quote pin cannot stand as a verified quote-fidelity assertion."
+        ],
+        "residual_risks": [
+          "The surrounding rule may be substantively supportable, but this specific quote-pin record is defective."
+        ],
+        "suggested_tightening": "Use a normalized exact quote from the opinion and preserve the internal quotation/italics convention consistently.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7f094f06308dc88c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment review is outside Lens A.",
+          "The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1958-05-19, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Sherman v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"30c644dc868b08d4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms case_name_full as Sherman v. United States, court as U.S. Supreme Court, date_decided as 1958-05-19, and year as 1958.\",\n        \"The lake official citation is 356 U.S. 369, matching the page citation and inventory payload.\",\n        \"The listed parallel and vendor-neutral citations match the lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0d880ed98dc7c1a3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the cached opinion text after the star-page 372 marker.\",\n        \"The lake pinpoint for pin-372a is marked quote_fidelity matched and pinpoint_status star-verified with star_marker 372.\",\n        \"The text-fragment target is consistent with the quoted passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1a3dc53c8d21b53f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-372 is not a faithful opinion quote. The lake pinpoint stores a generated page/header/background block rather than the Sherman opinion passage, and the lake itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-372 with the exact opinion passage supporting the Rule sentence at star page 372, or remove this pinpoint until it can be star-verified.\",\n        \"evidence_quote\": \"--- # Sherman v. United States *356 U.S. 369 (1958)*\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[] id pin-372; content_page.md Rule footnote ^pin-372\"\n      },\n      \"reasons\": [\n        \"The pinpoint payload is page markdown, not opinion text.\",\n        \"The cached opinion text contains the relevant entrapment sentence at star page 372, but that is not what the lake pinpoint quote records.\",\n        \"Because the pinpoint is marked mismatch/slip-only, the asserted quote pin cannot stand as a verified quote-fidelity assertion.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The surrounding rule may be substantively supportable, but this specific quote-pin record is defective.\"\n      ],\n      \"suggested_tightening\": \"Use a normalized exact quote from the opinion and preserve the internal quotation/italics convention consistently.\"\n    },\n    {\n      \"assertion_id\": \"7f094f06308dc88c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment review is outside Lens A.\",\n        \"The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1958-05-19, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment/currency review is reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 inventory rows under Lens A using only disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:33:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-153d619bc5"
+    ],
     "group_id": "_overhaul2/lake/cases/Sherman v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +94,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7ffc597a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Sherman v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 148210,
+      "output": 5590,
+      "source": "codex-events",
+      "total": 153800
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.8
+    "verdict_map": {
+      "0d880ed98dc7c1a3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1a3dc53c8d21b53f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "30c644dc868b08d4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7f094f06308dc88c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-153d619bc5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 110.9
   }
 }

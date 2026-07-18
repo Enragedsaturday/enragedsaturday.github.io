@@ -1,22 +1,151 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ohio v. Robinette.json",
+    "lens": "B",
+    "notes": "Reviewed all four group_inventory rows under lens B using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "f5502b35a49379b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record is verified for Ohio v. Robinette, U.S. Supreme Court, decided 1996-11-18.",
+          "The official citation field selects 519 U.S. 33, matching the asserted display citation.",
+          "The treatment field says good_law as of 2026-06-30, and no disclosed confirmed edge overrules or abrogates Robinette itself."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit markers for proposed negative candidates, but those do not defeat existence or the official citation from the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "02e6cb4ab7dbb6ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No pin-specific treatment limitation is disclosed; treatment.varies_by_point is false and point_overrides is empty."
+        ],
+        "residual_risks": [
+          "Quote fidelity is reserved to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e91cb8fa7e3d80de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No pin-specific treatment limitation is disclosed; treatment.varies_by_point is false and point_overrides is empty."
+        ],
+        "residual_risks": [
+          "Quote fidelity is reserved to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0218e380dae0ed5b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 25,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation lane1_negative/lane2_top_cited.",
+          "needs_cl": false,
+          "problem": "The good-law treatment call survives, but the built page's categorical 'No negative treatment' wording is too absolute. The disclosed record contains proposed negative-treatment candidates and audit markers, while the actual edges are only proposed and classified as mentioned. The disclosed record supports 'no confirmed negative treatment' rather than an unqualified no-negative-treatment statement.",
+          "proposed_fix": "Keep field_i_validity=good_law and the Robinette scope note, but revise treatment prose to say there is no confirmed negative treatment in the disclosed record and that proposed/audit-only candidates are classified as mentions.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment judgment states field_i_validity=good_law as of 2026-06-30 and scope_note=\"No 'free to go' advisory required for voluntary consent; good law.\"",
+          "The lake record has varies_by_point=false and no point_overrides, so no disclosed point-specific limitation changes the core treatment call.",
+          "All disclosed treatment edges are proposed and have field_iii=mentioned, so they do not establish an actual overruling or abrogation of Robinette."
+        ],
+        "residual_risks": [
+          "The derivation shows cap_hit and audit_needed for negative-candidate lanes, so the no-negative-treatment prose should remain qualified unless that audit is completed."
+        ],
+        "suggested_tightening": "Use 'good law; no confirmed negative treatment in this disclosed record' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Ohio v. Robinette.json\",\"reviewed\":[{\"assertion_id\":\"f5502b35a49379b0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake identity record is verified for Ohio v. Robinette, U.S. Supreme Court, decided 1996-11-18.\",\"The official citation field selects 519 U.S. 33, matching the asserted display citation.\",\"The treatment field says good_law as of 2026-06-30, and no disclosed confirmed edge overrules or abrogates Robinette itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit markers for proposed negative candidates, but those do not defeat existence or the official citation from the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"02e6cb4ab7dbb6ef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"No pin-specific treatment limitation is disclosed; treatment.varies_by_point is false and point_overrides is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity is reserved to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e91cb8fa7e3d80de\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support.\",\"No pin-specific treatment limitation is disclosed; treatment.varies_by_point is false and point_overrides is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity is reserved to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0218e380dae0ed5b\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law treatment call survives, but the built page's categorical 'No negative treatment' wording is too absolute. The disclosed record contains proposed negative-treatment candidates and audit markers, while the actual edges are only proposed and classified as mentioned. The disclosed record supports 'no confirmed negative treatment' rather than an unqualified no-negative-treatment statement.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity=good_law and the Robinette scope note, but revise treatment prose to say there is no confirmed negative treatment in the disclosed record and that proposed/audit-only candidates are classified as mentions.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 25,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation lane1_negative/lane2_top_cited.\"},\"reasons\":[\"The lake treatment judgment states field_i_validity=good_law as of 2026-06-30 and scope_note=\\\"No 'free to go' advisory required for voluntary consent; good law.\\\"\",\"The lake record has varies_by_point=false and no point_overrides, so no disclosed point-specific limitation changes the core treatment call.\",\"All disclosed treatment edges are proposed and have field_iii=mentioned, so they do not establish an actual overruling or abrogation of Robinette.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The derivation shows cap_hit and audit_needed for negative-candidate lanes, so the no-negative-treatment prose should remain qualified unless that audit is completed.\"],\"suggested_tightening\":\"Use 'good law; no confirmed negative treatment in this disclosed record' instead of 'No negative treatment.'\"}],\"notes\":\"Reviewed all four group_inventory rows under lens B using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:42-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:23:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e437922200"
+    ],
     "group_id": "_overhaul2/lake/cases/Ohio v. Robinette.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9a2ebcb9",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9a2ebcb9.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:33.507986Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:34.091118Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:34.944797Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:36.282666Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:38.356439Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:42.219494Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ohio v. Robinette"
+    ],
+    "tokens": {
+      "input": 237458,
+      "output": 7346,
+      "source": "codex-events",
+      "total": 244804
+    },
+    "verdict_map": {
+      "0218e380dae0ed5b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "02e6cb4ab7dbb6ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e91cb8fa7e3d80de": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f5502b35a49379b0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e437922200",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 146.1
   }
 }

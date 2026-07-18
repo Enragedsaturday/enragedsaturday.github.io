@@ -1,22 +1,172 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Shipley v. California.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity issues were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "ef9a2c13b825f361",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified and matches Shipley v. California, U.S. Supreme Court, decided 1969-06-23.",
+          "Lake citations include official 395 U.S. 818, parallel 89 S. Ct. 2053 and 23 L. Ed. 2d 732, and vendor cite 1969 U.S. LEXIS 1169.",
+          "Lake treatment field_i_validity is good_law; no confirmed disclosed edge makes the authority non-live."
+        ],
+        "residual_risks": [
+          "Treatment derivation has an R15 audit marker, but it does not defeat existence on the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "998c612f55436638",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not test the taxonomy support merits of the home role.",
+          "From a currency angle, the lake marks Shipley good_law and no confirmed treatment edge removes it as a live SIA authority."
+        ],
+        "residual_risks": [
+          "Role accuracy is a Lens A/support question, not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f78dd7944b78529a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack holding support or quote fidelity.",
+          "No disclosed confirmed overruling, abrogation, or limitation defeats the holding's currency; lake field_i_validity is good_law."
+        ],
+        "residual_risks": [
+          "Substantive holding fit remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7519ba6e14a7e24b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court and court_level as scotus.",
+          "A federal constitutional Supreme Court decision is correctly weighted as Binding — SCOTUS within this corpus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7dd69d8008da613",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "treatment.scope_note / treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law call itself matches the lake, but the unqualified scope-note sentence 'No negative treatment' is too strong because the same lake discloses proposed negative-treatment edges and an incomplete R15 treatment audit. The narrower statement supported by the disclosed record is no confirmed negative treatment.",
+          "proposed_fix": "Keep field_i_validity: good_law, but revise the scope note to say: 'No confirmed negative treatment in the disclosed lake record; listed negative edges are proposed and classified as mentioned; R15 audit pending.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Top-level treatment says field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "All 26 treatment edges are proposed and have field_iii classified as mentioned, so the disclosed record does not confirm an overruling or abrogation.",
+          "The derivation nevertheless reports lane2_top_cited cap_hit true, audit_needed true, and R15 treatment audit required, so an absolute 'No negative treatment' statement should be tightened."
+        ],
+        "residual_risks": [
+          "A completed audit of the proposed negative edges could uncover a real limitation not resolved in the disclosed files."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative treatment in the disclosed record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Shipley v. California.md\",\"reviewed\":[{\"assertion_id\":\"ef9a2c13b825f361\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified and matches Shipley v. California, U.S. Supreme Court, decided 1969-06-23.\",\"Lake citations include official 395 U.S. 818, parallel 89 S. Ct. 2053 and 23 L. Ed. 2d 732, and vendor cite 1969 U.S. LEXIS 1169.\",\"Lake treatment field_i_validity is good_law; no confirmed disclosed edge makes the authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has an R15 audit marker, but it does not defeat existence on the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"998c612f55436638\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test the taxonomy support merits of the home role.\",\"From a currency angle, the lake marks Shipley good_law and no confirmed treatment edge removes it as a live SIA authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Role accuracy is a Lens A/support question, not resolved here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f78dd7944b78529a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack holding support or quote fidelity.\",\"No disclosed confirmed overruling, abrogation, or limitation defeats the holding's currency; lake field_i_validity is good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive holding fit remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7519ba6e14a7e24b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court as U.S. Supreme Court and court_level as scotus.\",\"A federal constitutional Supreme Court decision is correctly weighted as Binding — SCOTUS within this corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"d7dd69d8008da613\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call itself matches the lake, but the unqualified scope-note sentence 'No negative treatment' is too strong because the same lake discloses proposed negative-treatment edges and an incomplete R15 treatment audit. The narrower statement supported by the disclosed record is no confirmed negative treatment.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity: good_law, but revise the scope note to say: 'No confirmed negative treatment in the disclosed lake record; listed negative edges are proposed and classified as mentioned; R15 audit pending.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"treatment.scope_note / treatment.derivation.lane2_top_cited\"},\"reasons\":[\"Top-level treatment says field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"All 26 treatment edges are proposed and have field_iii classified as mentioned, so the disclosed record does not confirm an overruling or abrogation.\",\"The derivation nevertheless reports lane2_top_cited cap_hit true, audit_needed true, and R15 treatment audit required, so an absolute 'No negative treatment' statement should be tightened.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed audit of the proposed negative edges could uncover a real limitation not resolved in the disclosed files.\"],\"suggested_tightening\":\"Use 'No confirmed negative treatment in the disclosed record' rather than 'No negative treatment.'\"}],\"notes\":\"Lens B only; support and quote-fidelity issues were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:51:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:58:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-dcb163f9cd"
+    ],
     "group_id": "content/cases/Shipley v. California.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3f949178",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3f949178.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:51:05.098262Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:51:06.304801Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:51:07.475356Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:51:09.595312Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:51:13.212537Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Shipley v. California"
+    ],
+    "tokens": {
+      "input": 385930,
+      "output": 8173,
+      "source": "codex-events",
+      "total": 394103
+    },
+    "verdict_map": {
+      "7519ba6e14a7e24b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "998c612f55436638": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7dd69d8008da613": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ef9a2c13b825f361": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f78dd7944b78529a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dcb163f9cd",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 166.0
   }
 }

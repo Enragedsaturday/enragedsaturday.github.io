@@ -1,0 +1,84 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6b96eb682674a068",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record citations.official = '67 F.4th 895' (F.4th, vol 67, p.895, source cluster.citations[]) is consistent across official/all/display and the selected cite in official_selection.",
+          "Cached CL opinion corroborates identity: 'United States Court of Appeals For the Eighth Circuit'; No. 22-1801; 'Filed: May 5, 2023'; 'Haitao Xiang'; 'Before SMITH, Chief Judge, WOLLMAN and LOKEN, Circuit Judges. LOKEN, Circuit Judge.' — matches lake case_name 'United States v. Haitao Xiang', ca8, docket 22-1801, decided 2023-05-05.",
+          "Border-search rule language in the cached body ('with equal force to persons or objects leaving the country', line 3899; 'We think it is an appropriate standard...', lines 4106-4107) confirms this is the correct opinion for the cited case."
+        ],
+        "residual_risks": [
+          "CL text is slip-paginated (no F.4th page 895 in-body); the reporter page rests on cluster.citations[] metadata (disclosed).",
+          "official_selection.court_class = 'state' with reason 'selected_rank_3' is anomalous for a federal COA record (court_level 'coa', circuit 'ca8'), and identity.court is oddly ' 8th Cir. 2023' (year appended) — neither alters the single selected cite '67 F.4th 895', which is the correct official citation."
+        ],
+        "suggested_tightening": "Metadata cleanup (out of scope for the cite assertion): normalize citations.official_selection.court_class to 'coa' and identity.court to '8th Cir.' so selection provenance matches the coa court_level.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bca214bfdeb2d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload field_i_validity='unverified' (frontier-stub scope_note, varies_by_point false) matches the lake treatment block exactly (composite_basis 'unverified', edges [], derivation {}) and the 'Treatment: Unverified' render.",
+          "Honest non-derivation; progeny block null/empty (rows_cached 0), consistent with 'intentionally not derived until S6 promotion'.",
+          "Content page carries the ⚪ 'Status: Unverified — subsequent treatment not yet machine-verified' banner."
+        ],
+        "residual_risks": [
+          "Prose references an unresolved circuit split on the forensic-device standard (cf. Kolsuz) — doctrinal teaching, not a citator claim; consistent with the 'unverified' treatment field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Xiang.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-00-ba187350",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Xiang"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0bca214bfdeb2d84": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6b96eb682674a068": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

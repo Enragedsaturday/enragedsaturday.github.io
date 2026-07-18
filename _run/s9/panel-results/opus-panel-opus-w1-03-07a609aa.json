@@ -1,0 +1,114 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "868055f5797209ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 556 U.S. 332 (selected_rank_1) matches the lake citations.official and the content-page citation; parallels 129 S. Ct. 1710 / 173 L. Ed. 2d 485 / 2009 U.S. LEXIS 3120 are all present in cluster.citations[].",
+          "Cached majority opinion (Stevens, J., star pages *335-*351, cabining Belton/Chimel for vehicle SIA) is unmistakably Arizona v. Gant; case reports at 556 U.S. 332."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77f0c665970ef8f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' string is a page-preamble harvest artifact (captured the content-page header/Background/Issue blob), which is why the machine flagged quote_fidelity=mismatch; it is not the text actually pinned at ^pin-351.",
+          "The real quote pinned at ^pin-351 -- 'Police may search a vehicle incident to a recent occupant's arrest only if the arrestee is within reaching distance of the passenger compartment at the time of the search or it is reasonable to believe the vehicle contains evidence of the offense of arrest.' -- appears verbatim in Part VI of the cached opinion at star page *351.",
+          "Pincite 556 U.S. at 351 is confirmed against the star-paginated cached text (*351)."
+        ],
+        "residual_risks": [
+          "Parallel pin '129 S. Ct. at 1723' cannot be checked against the U.S.-Reports-paginated cached text; only the U.S. page 351 is verifiable here."
+        ],
+        "suggested_tightening": "Re-run the pin harvester so payload.quote captures the sentence at the ^pin anchor rather than the page preamble, clearing the spurious mismatch flag.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "330abd3fbfa388ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law is consistent with the disclosed record: composite_basis migration-seed (provenance warning 'legacy treatment migrated: good -> good_law'), and every negative edge is proposed:true (un-adopted).",
+          "The proposed negative edges are mutually-contradictory citator keyword noise (the same case tagged 'overruled' by Ramos v. Louisiana, Kisor v. Wilkie, Riley, Janus, etc. -- unrelated doctrines), none accepted; they do not flip validity.",
+          "The scope_note's substantive claim ('Gant itself cabins the broad reading of New York v. Belton') is directly and verbatim supported by the cached opinion, which rejects the broad reading of Belton."
+        ],
+        "residual_risks": [
+          "The good_law currency rests on migration-seed plus proposed-only edges; a full citator re-derivation is not shown, but no accepted negative treatment is present in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-92d71f95bb",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-03-07a609aa",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Gant"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "330abd3fbfa388ad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77f0c665970ef8f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "868055f5797209ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-92d71f95bb",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

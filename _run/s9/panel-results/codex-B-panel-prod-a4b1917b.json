@@ -1,22 +1,106 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/people-v-seymour--10018335.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review used group_inventory.jsonl plus the disclosed lake and text records.",
+    "reviewed": [
+      {
+        "assertion_id": "4361cd456dc8dc63",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/people-v-seymour--10018335__cd2e3c.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case/citation identity, but it does not verify that the cited authority is still live law; treatment/progeny is expressly unverified.",
+          "proposed_fix": "Do not present this citation as current/live authority unless complete treatment/progeny is derived with an as-of date; otherwise label it only as identity/citation verified with treatment unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity status is verified and the citation list contains 526 P.3d 954, but lens B asks whether the authority is still live law.",
+          "The lake treatment field is field_i_validity=unverified, as_of_content=null, as_of_treatment=null, and progeny rows_cached=0, so current validity cannot be verified from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The cached text is a memorandum order to show cause, but lens B does not resolve precedential/support value.",
+          "A complete current treatment/progeny check could show no negative treatment, but that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Separate citation existence from current-validity status: citation verified; treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "33d48c313375de48",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, both as-of dates are null, varies_by_point is false, and the same frontier-stub scope note is present.",
+          "No disclosed treatment edge, point override, or progeny enumeration contradicts the unverified treatment label."
+        ],
+        "residual_risks": [
+          "This only verifies that the page reports treatment as unverified; it does not establish that the authority remains good law."
+        ],
+        "suggested_tightening": "Keep the unverified-treatment caveat adjacent to any use of the citation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/people-v-seymour--10018335.json\",\"reviewed\":[{\"assertion_id\":\"4361cd456dc8dc63\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case/citation identity, but it does not verify that the cited authority is still live law; treatment/progeny is expressly unverified.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not present this citation as current/live authority unless complete treatment/progeny is derived with an as-of date; otherwise label it only as identity/citation verified with treatment unverified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/people-v-seymour--10018335__cd2e3c.json treatment/progeny fields\"},\"reasons\":[\"Lake identity status is verified and the citation list contains 526 P.3d 954, but lens B asks whether the authority is still live law.\",\"The lake treatment field is field_i_validity=unverified, as_of_content=null, as_of_treatment=null, and progeny rows_cached=0, so current validity cannot be verified from disclosed evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached text is a memorandum order to show cause, but lens B does not resolve precedential/support value.\",\"A complete current treatment/progeny check could show no negative treatment, but that evidence is not disclosed here.\"],\"suggested_tightening\":\"Separate citation existence from current-validity status: citation verified; treatment unverified.\"},{\"assertion_id\":\"33d48c313375de48\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, both as-of dates are null, varies_by_point is false, and the same frontier-stub scope note is present.\",\"No disclosed treatment edge, point override, or progeny enumeration contradicts the unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This only verifies that the page reports treatment as unverified; it does not establish that the authority remains good law.\"],\"suggested_tightening\":\"Keep the unverified-treatment caveat adjacent to any use of the citation.\"}],\"notes\":\"No content_page.* file was present in the working directory; review used group_inventory.jsonl plus the disclosed lake and text records.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:21:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d28c1006e3"
+    ],
     "group_id": "_overhaul2/lake/cases/people-v-seymour--10018335.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-a4b1917b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a4b1917b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:37:29.410393Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:29.913616Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:30.936578Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.810052Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record people-v-seymour--10018335"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "people-v-seymour--10018335"
+    ],
+    "tokens": {
+      "input": 108530,
+      "output": 5593,
+      "source": "codex-events",
+      "total": 114123
+    },
+    "verdict_map": {
+      "33d48c313375de48": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4361cd456dc8dc63": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d28c1006e3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 110.8
   }
 }

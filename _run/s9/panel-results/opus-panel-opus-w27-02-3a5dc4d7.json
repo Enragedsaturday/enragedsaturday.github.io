@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a4dcbabe876ab6c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"cite\": \"536 U.S. 822\", \"volume\": \"536\", \"reporter\": \"U.S.\", \"page\": \"822\", \"type\": 1, \"selected_official\": false",
+          "locator_note": "frontmatter 'citation' + lake citations.official (null) vs citations.parallel/all[0]",
+          "needs_cl": false,
+          "problem": "Frontmatter citation field is empty and payload official_citation_present=false, yet a U.S. Reports (official-reporter) cite for this SCOTUS case IS available in the disclosed data: '536 U.S. 822' with reporter 'U.S.', type 1, appears in the lake parallel[]/all[] arrays (citations.official is null / selected_official false). The page H1 and Sources already render '536 U.S. 822 (2002)'.",
+          "proposed_fix": "Populate the citation frontmatter field with '536 U.S. 822 (2002)' and set official_citation_present true by promoting the reporter='U.S.' cite from parallel to official.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Case existence is fully verified (cluster_id 121171, verified status, party_name_in_text true, canonical_name_match true), so the existence claim itself is not broken.",
+          "But the official-cite-absent framing is contradicted by disclosed evidence: a U.S. Reports cite (the official SCOTUS reporter) is present in parallel/all and rendered on the page, so official_citation_present should be true and the citation field populated."
+        ],
+        "residual_risks": [
+          "Whether CL's cluster genuinely lacks a rank-1 official selection (official_selection absent here) is a data-pipeline artifact; the U.S. cite is nonetheless the official reporter."
+        ],
+        "suggested_tightening": "Have S2 official-selection promote a reporter='U.S.' SCOTUS cite to official when citations.official is null.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "52d4a05082cbec37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Cached opinion text: 'In this context, the Fourth Amendment does not require a finding of individualized suspicion' (pin-837) and 'we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest' (pin-838, star-verified) support 'suspicionless drug testing ... is a reasonable special-needs search'.",
+          "Cached text applies the 'special needs' reasonableness balance to students in 'competitive extracurricular activities' and upholds the policy."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d1a4b58d7249bde4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[0] = '[[Special Needs and Administrative Searches]]' role 'Key — Progeny / Refinement'; the '## Appears on' section matches exactly."
+        ],
+        "residual_risks": [
+          "Progeny/refinement role is editorial; consistent with content-page statement that Earls 'extends Vernonia'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12d3922fb1b92968",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity='good_law'; scope_note 'Extends Vernonia to non-athletes; good law.' is accurate to the holding.",
+          "All treatment.edges carry proposed:true (State v. Grady, Mangino, In re D.H., Ashcroft v. al-Kidd, etc.) — co-citation extractor noise, not adjudicated negative treatment of Earls."
+        ],
+        "residual_risks": [
+          "Proposed overruled/questioned/abrogated edges remain unadjudicated but are facially co-citation artifacts."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9adc9bfb20e50872",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level='scotus' — a U.S. Supreme Court decision; 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:53:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-21733dc85a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-42e11e1642"
+    ],
+    "group_id": "content/cases/Board of Education v. Earls.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w27-02-3a5dc4d7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w27-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Board of Education v. Earls"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "12d3922fb1b92968": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "52d4a05082cbec37": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9adc9bfb20e50872": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4dcbabe876ab6c5": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d1a4b58d7249bde4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-42e11e1642",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-21733dc85a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

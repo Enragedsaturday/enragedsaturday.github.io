@@ -1,0 +1,135 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "dd32baa0925ff42b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header states '518 U.S. 938 (1996)', 'PENNSYLVANIA v. LABRON', No. 95-1691, Decided July 1, 1996, Per Curiam, on cert to the Supreme Court of Pennsylvania — matches official '518 U.S. 938'.",
+          "Parallels 116 S. Ct. 2485 / 135 L. Ed. 2d 1031 and vendor-neutral 1996 U.S. LEXIS 4268 match lake citations; identity checks true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "125eeea03eb63509",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If a car isreadily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more.",
+          "locator_note": "cached opinion line 5116; star *940 (line 5115) precedes and *941 (line 5117) follows; content page line 4215 (source has spacing artifact 'isreadily' -> 'is readily')",
+          "needs_cl": false,
+          "problem": "Harvested payload.quote for pin-940 captured a wrong page-markdown span (frontmatter+Background+Issue ending '## Rule No separate exigency is required.') and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-940 content quote is verbatim-faithful and sits on page 940 (star *940/*941 present).",
+          "proposed_fix": "Re-harvest pin-940 to the real quoted sentence; set fidelity=match and status=star-verified(940).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page ^pin-940 quote ('If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more.') matches the opinion verbatim.",
+          "Quoted sentence lies between star *940 and *941, confirming the 518 U.S. at 940 pincite."
+        ],
+        "residual_risks": [
+          "'slip-only' understates verifiability — star *940 is present in the cached source."
+        ],
+        "suggested_tightening": "Same fidelity-vs-capture distinction; and normalize the 'isreadily' spacing artifact when matching.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "59064c97d843e010",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Positive assertion: quote_fidelity='matched', pinpoint_status='star-verified', star_marker='940'. Confirmed — fragment 'ready mobility' appears verbatim on page 940 (line 5116).",
+          "The fuller ^pin-940a content quote ('an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear.') is verbatim Labron text on page 940, so the star-verified match is a genuine true positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1780adf8335d54ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' consistent; Labron (1996) ready-mobility automobile-exception rule remains good law (reaffirmed by Maryland v. Dyson, 1999).",
+          "All 27 edges are proposed:true / field_iii='mentioned'; none adopted."
+        ],
+        "residual_risks": [
+          "Proposed negatives are false positives: Collins v. Virginia (2018) limited the exception at the home's curtilage but did not overrule the ready-mobility rule; Maryland v. Dyson actually reaffirmed Labron yet is tagged 'questioned'; state cases cannot overrule SCOTUS."
+        ],
+        "suggested_tightening": "Treat 'limits/refines' distinctly from 'overruled' in edge proposals.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Labron.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-02-0ceffc21",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania v. Labron"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "125eeea03eb63509": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1780adf8335d54ae": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59064c97d843e010": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd32baa0925ff42b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-168315ae1a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

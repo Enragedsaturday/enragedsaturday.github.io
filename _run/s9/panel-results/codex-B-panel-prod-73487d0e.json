@@ -1,22 +1,150 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Walter v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "0b8460077a1da25d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and identifies Walter v. United States as a U.S. Supreme Court case decided 1980-06-20 with official citation 447 U.S. 649.",
+          "The lake treatment field states field_i_validity is good_law as of 2026-06-30, so the authority is live for Lens B purposes."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-event flags; addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e957c991aec8af8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support; no treatment/currency defect is attached to this pinpoint row.",
+          "The lake final treatment still marks Walter as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70747561b8153f9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support; no treatment/currency defect is attached to this pinpoint row.",
+          "The row's quote_fidelity mismatch status is a Lens A issue, not a currency/treatment issue."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f2e8db1e57132dc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n                \"proposed_negative_events\": 24,\n                \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Walter v. United States__498128.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law call itself is supported by the lake treatment field, but the page's unqualified 'No negative treatment' wording is too strong because the lake record contains proposed negative-event edges and treatment-derivation audit markers. Those proposed edges do not refute good_law, but they prevent a clean no-negative-treatment claim from the disclosed record alone.",
+          "proposed_fix": "Keep 'good law as of 2026-06-30' and the plurality/Jacobsen scope note, but replace 'No negative treatment' with a narrower statement: 'Lake final treatment is good_law; proposed negative/citing-case flags remain unaudited and are not adopted as point overrides.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and scope_note says the private-search principle was later adopted and refined in United States v. Jacobsen.",
+          "Lake treatment.point_overrides is empty and varies_by_point is false, so no final point-specific negative treatment is recorded.",
+          "However, treatment.edges lists proposed negative labels including overruled, questioned, criticized, and superseded_by_statute, and derivation marks audit_needed for negative/top-cited lanes."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include the underlying citing opinions for the proposed negative edges, so their true treatment effect cannot be resolved here."
+        ],
+        "suggested_tightening": "Avoid saying 'No negative treatment' unless the proposed negative-event audit has been completed.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Walter v. United States.json\",\"reviewed\":[{\"assertion_id\":\"0b8460077a1da25d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified and identifies Walter v. United States as a U.S. Supreme Court case decided 1980-06-20 with official citation 447 U.S. 649.\",\"The lake treatment field states field_i_validity is good_law as of 2026-06-30, so the authority is live for Lens B purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative-event flags; addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4e957c991aec8af8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support; no treatment/currency defect is attached to this pinpoint row.\",\"The lake final treatment still marks Walter as good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"70747561b8153f9e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support; no treatment/currency defect is attached to this pinpoint row.\",\"The row's quote_fidelity mismatch status is a Lens A issue, not a currency/treatment issue.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and pinpoint accuracy are reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0f2e8db1e57132dc\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call itself is supported by the lake treatment field, but the page's unqualified 'No negative treatment' wording is too strong because the lake record contains proposed negative-event edges and treatment-derivation audit markers. Those proposed edges do not refute good_law, but they prevent a clean no-negative-treatment claim from the disclosed record alone.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep 'good law as of 2026-06-30' and the plurality/Jacobsen scope note, but replace 'No negative treatment' with a narrower statement: 'Lake final treatment is good_law; proposed negative/citing-case flags remain unaudited and are not adopted as point overrides.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n                \\\"proposed_negative_events\\\": 24,\\n                \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Walter v. United States__498128.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and scope_note says the private-search principle was later adopted and refined in United States v. Jacobsen.\",\"Lake treatment.point_overrides is empty and varies_by_point is false, so no final point-specific negative treatment is recorded.\",\"However, treatment.edges lists proposed negative labels including overruled, questioned, criticized, and superseded_by_statute, and derivation marks audit_needed for negative/top-cited lanes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include the underlying citing opinions for the proposed negative edges, so their true treatment effect cannot be resolved here.\"],\"suggested_tightening\":\"Avoid saying 'No negative treatment' unless the proposed negative-event audit has been completed.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:20-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:11:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ac8ea22dbf"
+    ],
     "group_id": "_overhaul2/lake/cases/Walter v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-73487d0e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-73487d0e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:12.160033Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:12.949787Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:14.122885Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:16.247966Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:20.277137Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Walter v. United States"
+    ],
+    "tokens": {
+      "input": 170582,
+      "output": 6617,
+      "source": "codex-events",
+      "total": 177199
+    },
+    "verdict_map": {
+      "0b8460077a1da25d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0f2e8db1e57132dc": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4e957c991aec8af8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70747561b8153f9e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ac8ea22dbf",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 131.4
   }
 }

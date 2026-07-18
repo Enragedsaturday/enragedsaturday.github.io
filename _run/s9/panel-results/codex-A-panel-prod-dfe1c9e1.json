@@ -1,13 +1,138 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Vale v. Louisiana.json",
+    "lens": "A",
+    "notes": "Reviewed all six group_inventory rows using only disclosed files. Lens A refutes three quote-fidelity rows; treatment merits were not audited.",
+    "reviewed": [
+      {
+        "assertion_id": "c33347c8a1ee10c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Vale v. Louisiana as U.S. Supreme Court, decided 1970-06-22, docket 727.",
+          "Lake official citation is 399 U.S. 30; parallel and vendor citations match the inventory and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10b1c7a10a308c18",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase appears verbatim in the cached opinion text: \"a few specifically established and well-delineated\".",
+          "Lake marks pin-34b as quote_fidelity matched, star-verified, star_marker 34."
+        ],
+        "residual_risks": [
+          "This row verifies only the harvested pin-34b fragment, not the adjacent burden quote in the same content-page sentence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ccbdd4de51452ad",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "not somewhere outsidewhether two blocks away,",
+          "locator_note": "pin-34; content_page.md line 57; text/Vale v. Louisiana__75346e.txt line 19",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful to the cached opinion text; it compresses omitted citations with ellipses and changes the source dash/punctuation around \"outside\".",
+          "proposed_fix": "Quote a shorter exact clause from the opinion or convert the compressed sentence to paraphrase with a precise citation to 399 U.S. at 34.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-34 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The source text includes embedded citations and different punctuation where the page presents a smooth quoted sentence."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported, but the quote-fidelity assertion fails under the strict character-faithfulness standard."
+        ],
+        "suggested_tightening": "Use exact quoted fragments only, and paraphrase the examples/citation omissions outside quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2fccdf62bc0b3f1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We decline to hold that an arrest on the street can provide its own \"exigent circumstance\"",
+          "locator_note": "pin-35; content_page.md line 61; text/Vale v. Louisiana__75346e.txt line 22",
+          "needs_cl": false,
+          "problem": "The quoted language is an altered excerpt, not character-faithful: the opinion says \"We decline to hold\" and uses double quotation marks around \"exigent circumstance\".",
+          "proposed_fix": "Quote the exact sentence beginning \"We decline to hold...\" or remove the quotation marks around the altered \"decline[d]\" construction.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record marks pin-35 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "Bracketed grammar changes may be conventional, but they are not character-faithful under this review lens."
+        ],
+        "residual_risks": [
+          "The holding is supported; the defect is quote fidelity, not substantive support."
+        ],
+        "suggested_tightening": "Prefer the exact sentence: \"We decline to hold that an arrest on the street can provide its own \\\"exigent circumstance\\\"...\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd10d273b8fa2551",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Vale v. Louisiana *399 U.S. 30 (1970)*",
+          "locator_note": "pin-33 in lake pinpoints; content_page.md line 55; text/Vale v. Louisiana__75346e.txt line 19",
+          "needs_cl": false,
+          "problem": "The pin-33 quote record is plainly not an opinion quote; it captured the content page header/background/rule lead-in instead of the cited Shipley quotation.",
+          "proposed_fix": "Replace pin-33 with the actual opinion passage beginning \"A search may be incident to an arrest...\" and revalidate the pinpoint against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record marks pin-33 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The stored quote begins with page metadata, not the Supreme Court opinion text."
+        ],
+        "residual_risks": [
+          "The content-page rule sentence is substantively supported, but the stored pinpoint evidence for this assertion is unusable as quote support."
+        ],
+        "suggested_tightening": "Re-harvest pin-33 from the opinion text, not from the built markdown page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "895d3dfd9d93fbe5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.",
+          "The inventory treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1970-06-22, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lake treatment derivation lists proposed negative events/audit markers, but treatment review belongs to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Vale v. Louisiana.json\",\"reviewed\":[{\"assertion_id\":\"c33347c8a1ee10c5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Vale v. Louisiana as U.S. Supreme Court, decided 1970-06-22, docket 727.\",\"Lake official citation is 399 U.S. 30; parallel and vendor citations match the inventory and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"10b1c7a10a308c18\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The phrase appears verbatim in the cached opinion text: \\\"a few specifically established and well-delineated\\\".\",\"Lake marks pin-34b as quote_fidelity matched, star-verified, star_marker 34.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This row verifies only the harvested pin-34b fragment, not the adjacent burden quote in the same content-page sentence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9ccbdd4de51452ad\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is not character-faithful to the cached opinion text; it compresses omitted citations with ellipses and changes the source dash/punctuation around \\\"outside\\\".\",\"severity\":\"medium\",\"proposed_fix\":\"Quote a shorter exact clause from the opinion or convert the compressed sentence to paraphrase with a precise citation to 399 U.S. at 34.\",\"evidence_quote\":\"not somewhere outside\\u0097whether two blocks away,\",\"needs_cl\":false,\"locator_note\":\"pin-34; content_page.md line 57; text/Vale v. Louisiana__75346e.txt line 19\"},\"reasons\":[\"The lake record itself marks pin-34 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The source text includes embedded citations and different punctuation where the page presents a smooth quoted sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition is supported, but the quote-fidelity assertion fails under the strict character-faithfulness standard.\"],\"suggested_tightening\":\"Use exact quoted fragments only, and paraphrase the examples/citation omissions outside quotation marks.\"},{\"assertion_id\":\"e2fccdf62bc0b3f1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is an altered excerpt, not character-faithful: the opinion says \\\"We decline to hold\\\" and uses double quotation marks around \\\"exigent circumstance\\\".\",\"severity\":\"low\",\"proposed_fix\":\"Quote the exact sentence beginning \\\"We decline to hold...\\\" or remove the quotation marks around the altered \\\"decline[d]\\\" construction.\",\"evidence_quote\":\"We decline to hold that an arrest on the street can provide its own \\\"exigent circumstance\\\"\",\"needs_cl\":false,\"locator_note\":\"pin-35; content_page.md line 61; text/Vale v. Louisiana__75346e.txt line 22\"},\"reasons\":[\"The lake record marks pin-35 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"Bracketed grammar changes may be conventional, but they are not character-faithful under this review lens.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The holding is supported; the defect is quote fidelity, not substantive support.\"],\"suggested_tightening\":\"Prefer the exact sentence: \\\"We decline to hold that an arrest on the street can provide its own \\\\\\\"exigent circumstance\\\\\\\"...\\\"\"},{\"assertion_id\":\"fd10d273b8fa2551\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-33 quote record is plainly not an opinion quote; it captured the content page header/background/rule lead-in instead of the cited Shipley quotation.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-33 with the actual opinion passage beginning \\\"A search may be incident to an arrest...\\\" and revalidate the pinpoint against the cached opinion text.\",\"evidence_quote\":\"--- # Vale v. Louisiana *399 U.S. 30 (1970)*\",\"needs_cl\":false,\"locator_note\":\"pin-33 in lake pinpoints; content_page.md line 55; text/Vale v. Louisiana__75346e.txt line 19\"},\"reasons\":[\"The lake record marks pin-33 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The stored quote begins with page metadata, not the Supreme Court opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page rule sentence is substantively supported, but the stored pinpoint evidence for this assertion is unusable as quote support.\"],\"suggested_tightening\":\"Re-harvest pin-33 from the opinion text, not from the built markdown page.\"},{\"assertion_id\":\"895d3dfd9d93fbe5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.\",\"The inventory treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1970-06-22, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment derivation lists proposed negative events/audit markers, but treatment review belongs to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all six group_inventory rows using only disclosed files. Lens A refutes three quote-fidelity rows; treatment merits were not audited.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:54-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:12:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-496615d6c3",
+      "F-S9-PR-3613557e3f",
+      "F-S9-PR-847a49e235"
+    ],
     "group_id": "_overhaul2/lake/cases/Vale v. Louisiana.json",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +141,77 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dfe1c9e1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Vale v. Louisiana"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 176537,
+      "output": 6259,
+      "source": "codex-events",
+      "total": 182796
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.2
+    "verdict_map": {
+      "10b1c7a10a308c18": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "895d3dfd9d93fbe5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9ccbdd4de51452ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c33347c8a1ee10c5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2fccdf62bc0b3f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd10d273b8fa2551": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-496615d6c3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3613557e3f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-847a49e235",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 234.5
   }
 }

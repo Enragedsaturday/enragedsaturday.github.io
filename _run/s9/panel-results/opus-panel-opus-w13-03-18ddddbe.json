@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "72d0d9cf501187eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "'582 U.S. 313' (the correct U.S. Reports cite for Turner v. United States, 2017) is present in all[] and rendered in the content-page header and parallel_cite.",
+          "Cached syllabus caption 'TURNER ET AL. v. UNITED STATES', No. 15-1503, Decided June 22, 2017 (Catherine Fuller / Brady) confirms identity."
+        ],
+        "residual_risks": [
+          "official and display are null and official_selection_present=false in the payload, and the frontmatter 'citation' field is empty -- a lake metadata gap (no auto-selected official), though the displayed cite is correct."
+        ],
+        "suggested_tightening": "Populate selected_official for 582 U.S. 313 and the frontmatter citation field so the official cite is machine-selected, not only rendered in the header.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d6377a6dd9208d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-1894 quotation matches the opinion body verbatim: '...we conclude that it is too little, too weak, or too distant from the main evidentiary points to meet Brady's standards.'",
+          "Payload 'mismatch' is a normalization false-positive -- the payload's own captured quote is in fact the correct text."
+        ],
+        "residual_risks": [
+          "Pincite '137 S. Ct. ... 1894' is a reporter-page claim; the disclosed slip opinion carries U.S. Reports internal pagination, not S. Ct. pages, so page 1894 is not independently verifiable from disclosed evidence (content-page Sources discloses this)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2a9384b14f15f30",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-1893 quotation matches the opinion body verbatim: '[E]vidence is material within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.'",
+          "Attribution '(quoting Cone v. Bell)' is accurate -- the opinion places the sentence in quotation marks and cites Cone v. Bell, 556 U.S. 449, 469-470.",
+          "Payload 'mismatch' is an extractor backward-capture of the Issue/Rule lead-in, not the rendered quotation."
+        ],
+        "residual_risks": [
+          "Pincite '137 S. Ct. 1885, 1893' reporter page is not independently verifiable from the disclosed slip text (U.S. Reports pagination only)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41a3ec45384eeb88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope note 'applies the Brady/Bagley materiality standard and finds no violation on the record' is directly confirmed by the disclosed opinion (Held: withheld evidence is not material under Brady).",
+          "field_i=good_law is consistent for a 2017 SCOTUS holding; nothing disclosed indicates reversal or abrogation."
+        ],
+        "residual_risks": [
+          "Currency (good law as of 2026-06-30) is not citator-verified from disclosed evidence, but is uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:12:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4f82594e11",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-539689fe54",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Turner v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w13-03-18ddddbe",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w13-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Turner v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "41a3ec45384eeb88": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72d0d9cf501187eb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d6377a6dd9208d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2a9384b14f15f30": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4f82594e11",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-539689fe54",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

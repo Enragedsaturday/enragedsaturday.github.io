@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7ea80cd310fa0880",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 5 payload cites (472 U.S. 463; 105 S. Ct. 2778; 86 L. Ed. 2d 370; 1985 U.S. LEXIS 110; 53 U.S.L.W. 4783) appear verbatim in lake citations.all[].",
+          "payload official=472 U.S. 463 / display=472 U.S. 463 / official_selection_present=true matches record official_selection.selected='472 U.S. 463' (reason selected_rank_1)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "828315d2a9c70211",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-469a's stored quote is an ellipsis-joined quotation whose both fragments appear verbatim and in order in the cached slip at 472 U.S. 469: 'Nor was the subsequent purchase a seizure within the meaning of the Fourth Amendment.' and 'Here, respondent voluntarily transferred any possessory interest he may have had in the magazines to the purchaser upon the receipt of the funds.'",
+          "The '. . . .' ellipsis legitimately elides the intervening sentence ('A seizure occurs when ... in the property seized. United States v. Jacobsen, supra, at 113.'); pincite 'Id.' = 472 U.S. 469 is correct."
+        ],
+        "residual_risks": [
+          "Record self-flags quote_fidelity='mismatch', but that is an exact-substring-matcher false positive caused by the ellipsis; the quote is faithful, so refuting it would break a true positive."
+        ],
+        "suggested_tightening": "Teach the fidelity checker to split on ellipsis and match fragments so faithful ellipsis quotes stop registering as 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f15a6f2ebc1c9128",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The officer's action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate, expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.",
+          "locator_note": "Macon cached slip para b479-5, on page *469 (the *469 star-page marker precedes this paragraph); content drops only the OCR stray comma in 'legitimate, expectation'.",
+          "needs_cl": false,
+          "problem": "The pin-469 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Macon ... ## Rule **No search.**') instead of the 'No search' sentence the content anchors to ^pin-469; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+          "proposed_fix": "Repair the stored `quote` to the anchored sentence ('The officer's action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.').",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed 'No search' Rule quote anchored at ^pin-469 matches the slip verbatim except the content correctly omits an OCR-inserted comma ('legitimate, expectation' -> 'legitimate expectation'); pincite 472 U.S. 469 confirmed by the *469 page marker.",
+          "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d735060468023a6f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is defensible: Maryland v. Macon (1985) is well-settled SCOTUS authority (undercover over-the-counter purchase of publicly exposed wares is neither search nor seizure) with no disclosed higher-court reversal.",
+          "The negative edges (e.g., Al-Kidd v. Ashcroft 'overruled', Arizona v. Hicks 'overruled', Horton v. California 'questioned') are 'proposed':true citator noise from cases that do not overrule Macon; lane3_recency shows 0 negative events.",
+          "Payload treatment fields match the lake treatment block."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=6, lane2=25 proposed_negative_events) pending resolution."
+        ],
+        "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ff9e2d3845",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-04-3573f57a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Macon"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7ea80cd310fa0880": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "828315d2a9c70211": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d735060468023a6f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f15a6f2ebc1c9128": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bcad44f39b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ff9e2d3845",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

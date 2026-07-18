@@ -1,0 +1,246 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b8b3eca3f74e50f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion carries star pages *29 through *34 and ends 'Judgment reversed.', consistent with an opinion opening at 273 U.S. 28.",
+          "Lake identity: cluster_id 100980, absolute_url /opinion/100980/byars-v-united-states/, docket 72, date 1927-01-03; official_selection selected_rank_1 = 273 U.S. 28.",
+          "Parallel cites (47 S. Ct. 248; 71 L. Ed. 520; 1927 U.S. LEXIS 679) are standard companions."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "02fb25798364e52d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The warrant clearly is bad if tested by the Fourth Amendment and the laws of the United States.",
+          "locator_note": "pin-29; cached opinion para id b103-5 on page *29",
+          "needs_cl": false,
+          "problem": "The STORED pin-29 quote is a mis-harvested content-page span (Background/Issue prose containing wiki markdown '## Issue' and '## Rule No.') and is not opinion text; correctly flagged quote_fidelity=mismatch/slip-only. The reader-facing rendered quote at ^pin-29 is verbatim-faithful to the source.",
+          "proposed_fix": "Replace the stored pin-29 quote with the rendered Rule quotation: '[t]he warrant clearly is bad if tested by the Fourth Amendment and the laws of the United States.' (273 U.S. at 29).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote text is a harvest slip capturing surrounding page prose + '## Issue'/'## Rule' markers, so the pinpoint record is defective.",
+          "The RENDERED page quote at ^pin-29 ('[t]he warrant clearly is bad if tested by the Fourth Amendment and the laws of the United States.') is verbatim-faithful to the cached opinion and pincited correctly to page 29 — reader-facing content is sound; defect is data-layer only."
+        ],
+        "residual_risks": [
+          "A fix that touched the displayed quote rather than the stored harvest would disturb a faithful quotation."
+        ],
+        "suggested_tightening": "Re-harvest against the ^pin-29 rendered blockquote; clear the slip-only/mismatch flag afterward.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e07e6ccdcef3612",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-32 quote is verbatim-faithful to the cached opinion (para id b106-6, page 32): 'the mere participation in a state search of one who is a federal officer does not render it a federal undertaking, the court must be vigilant to scrutinize the attendant facts with an eye to detect and a hand to prevent violations of the Constitution by circuitous and indirect methods.'",
+          "The wiki merely drops the leading 'While it is true that the' and the italics on 'mere', which is standard; pincite 32 is correct (paragraph sits between the *32 and *33 stars).",
+          "The payload mismatch flag is a false positive (source has stray OCR punctuation/italics markup around the sentence)."
+        ],
+        "residual_risks": [
+          "Stale mismatch flag on a faithful quote."
+        ],
+        "suggested_tightening": "Clear the mismatch/slip-only flag for pin-32.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60d3a6c9b7bd7116",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-33 quote 'the search in substance and effect [is] a joint operation of the local and federal officers,' matches the cached opinion 'the search in substance and effect was a joint operation of the local and federal officers.' with a properly-bracketed tense alteration [is] for 'was'.",
+          "Pincite 33 is correct (the sentence follows the *33 star in para id b106-7).",
+          "The payload mismatch flag is a false positive driven by the bracketed [is] vs source 'was'."
+        ],
+        "residual_risks": [
+          "Stale mismatch flag on a faithful (properly-bracketed) quote."
+        ],
+        "suggested_tightening": "Teach the matcher to accept signalled bracket alterations; clear the flag for pin-33.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "db5a289382d39ce9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-29b quote '[a] search prosecuted in violation of the Constitution is not made lawful by what it brings to light.' matches the cached opinion 'A search prosecuted in violation of the Constitution is not made lawful by what it brings to light;' with a properly-bracketed initial-cap alteration [a] and a period substituted for the semicolon.",
+          "The sentence sits on page 29 (para id b103-6, before the *30 star), consistent with the 'Id.' (273 U.S. 29) pincite.",
+          "The payload mismatch flag is a false positive from the [a] bracket / terminal-punctuation change."
+        ],
+        "residual_risks": [
+          "Stale mismatch flag on a faithful (properly-bracketed) quote."
+        ],
+        "suggested_tightening": "Clear the mismatch/slip-only flag for pin-29b.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f87b446f9f1b855e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-33b fragment 'improperly seized by state officers operating entirely upon their own account[,]' matches the cached opinion 'improperly seized by state officers operating entirely upon their own account.' with a properly-bracketed period-to-comma alteration [,].",
+          "The words sit on page 33 (para id b107-6); the fuller rendered quote continues to '[b]ut the rule is otherwise ... in the wrongful search and seizure', whose paragraph runs to the *34 star, supporting the page 33-34 pincite.",
+          "The payload mismatch flag is a false positive from the bracketed punctuation."
+        ],
+        "residual_risks": [
+          "Stale mismatch flag on a faithful (properly-bracketed) fragment quote."
+        ],
+        "suggested_tightening": "Clear the mismatch/slip-only flag for pin-33b.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8d64363088e78fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note is doctrinally accurate: Byars's core Fourth Amendment holdings (conclusory affidavit cannot support a warrant; an unconstitutional search is not made lawful by its fruits) survive, while the silver-platter / federal-participation framework was superseded by Elkins v. United States (1960) and Mapp v. Ohio (1961) — a correct, precise limitation, not an overruling.",
+          "Every disclosed treatment edge is proposed:true with field_iii='mentioned' and field_ii carrying the CITING case's own status flag (e.g., Mapp/Wong Sun/Leon/Bivens 'overruled', Spinelli 'questioned') — citing-case-status false positives, not adverse treatment OF Byars.",
+          "Derivation marks 'audit_needed:true' / 'R15 treatment audit required'; nothing in disclosed evidence says Byars was overruled/abrogated, so good_law is not refuted."
+        ],
+        "residual_risks": [
+          "lane1/lane2 negative lanes hit caps (200/25) and remain unaudited (R15); a genuine adverse-treatment event could lie beyond the disclosed edges.",
+          "Positive good_law cannot be affirmatively proven from the pack alone (full citator not disclosed)."
+        ],
+        "suggested_tightening": "Run the R15 treatment audit to resolve proposed citing-case-status flags into true field_iii treatment verbs; the scope_note already correctly scopes the surviving vs superseded holdings.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7611d7836e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09bed9a76b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1a55c7a463",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b48f22bc62",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Byars v. United States.json",
+    "group_total_assertions": 7,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-04-f89e9e84",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 7,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Byars v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "02fb25798364e52d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1e07e6ccdcef3612": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "60d3a6c9b7bd7116": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8d64363088e78fc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8b3eca3f74e50f3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db5a289382d39ce9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f87b446f9f1b855e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-59af9e80ee",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7611d7836e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09bed9a76b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1a55c7a463",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b48f22bc62",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

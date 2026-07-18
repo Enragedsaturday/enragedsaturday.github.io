@@ -1,22 +1,167 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Tyler.json",
+    "lens": "A",
+    "notes": "Only the five assertions listed in group_inventory.jsonl were reviewed. No separate support, pincite, or black_letter rows were present in this group.",
+    "reviewed": [
+      {
+        "assertion_id": "0dd78f500b985ba7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Michigan v. Tyler, U.S. Supreme Court, decided 1978-05-31, docket 76-1608.",
+          "The lake official citation is 436 U.S. 499, and the parallel/vendor citations in the payload match the lake citation fields; the content page uses 436 U.S. 499 (1978)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1210ace802561319",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text at the star-510 passage, before the footnote marker.",
+          "The lake pinpoints entry for pin-510 is star-verified, has star_marker 510, and records quote_fidelity as matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "da01745c23ca79bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted holding appears verbatim in the cached opinion text in the summation paragraph beginning on page 511.",
+          "The lake pinpoints entry for pin-511 is star-verified, has star_marker 511, and records quote_fidelity as matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6b007ae91aeeb3b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A burning building clearly presents an exigency of sufficient proportions to render a warrantless entry \"reasonable.\" Indeed, it would defy reason to suppose that firemen must secure a warrant or consent before entering a burning structure to put out the blaze. And once in a building for this purpose, firefighters may seize evidence of arson that is in plain view.",
+          "locator_note": "lake pinpoints[pin-509]; content_page.md Rule ^pin-509; cached opinion text at star-pagination *509",
+          "needs_cl": false,
+          "problem": "The pin-509 quote stored in the inventory/lake record is not the 436 U.S. at 509 opinion passage; it is built-page/front-matter material, with no star marker or validated position.",
+          "proposed_fix": "Replace pin-509 with the actual page-509 opinion passage supporting the fire-exigency/plain-view rule, set star_marker to 509, and rerun quote-fidelity/fragment validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake entry itself marks pin-509 as quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null, and position=null.",
+          "The payload quote begins with page/front-matter text rather than an opinion passage, while the disclosed opinion text at *509 contains the actual fire-exigency/plain-view language.",
+          "Because the content page cites ^pin-509 for the 509 rule, the broken lake pinpoint cannot substantiate that quote/pincite as configured."
+        ],
+        "residual_risks": [
+          "The content page's displayed pin-509 quote is substantively supported by the opinion, but the associated lake pinpoint is unusable until corrected."
+        ],
+        "suggested_tightening": "If retaining an ellipsized quotation on the page, preserve the original quoted characters, including the double quotation marks around \"reasonable.\"",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd7b9a0f850b930d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The treatment payload mirrors the disclosed lake treatment fields and the content page treatment metadata."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Tyler.json\",\"reviewed\":[{\"assertion_id\":\"0dd78f500b985ba7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Michigan v. Tyler, U.S. Supreme Court, decided 1978-05-31, docket 76-1608.\",\"The lake official citation is 436 U.S. 499, and the parallel/vendor citations in the payload match the lake citation fields; the content page uses 436 U.S. 499 (1978).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1210ace802561319\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text at the star-510 passage, before the footnote marker.\",\"The lake pinpoints entry for pin-510 is star-verified, has star_marker 510, and records quote_fidelity as matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"da01745c23ca79bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted holding appears verbatim in the cached opinion text in the summation paragraph beginning on page 511.\",\"The lake pinpoints entry for pin-511 is star-verified, has star_marker 511, and records quote_fidelity as matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"e6b007ae91aeeb3b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-509 quote stored in the inventory/lake record is not the 436 U.S. at 509 opinion passage; it is built-page/front-matter material, with no star marker or validated position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-509 with the actual page-509 opinion passage supporting the fire-exigency/plain-view rule, set star_marker to 509, and rerun quote-fidelity/fragment validation.\",\"evidence_quote\":\"A burning building clearly presents an exigency of sufficient proportions to render a warrantless entry \\\"reasonable.\\\" Indeed, it would defy reason to suppose that firemen must secure a warrant or consent before entering a burning structure to put out the blaze. And once in a building for this purpose, firefighters may seize evidence of arson that is in plain view.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[pin-509]; content_page.md Rule ^pin-509; cached opinion text at star-pagination *509\"},\"reasons\":[\"The lake entry itself marks pin-509 as quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null, and position=null.\",\"The payload quote begins with page/front-matter text rather than an opinion passage, while the disclosed opinion text at *509 contains the actual fire-exigency/plain-view language.\",\"Because the content page cites ^pin-509 for the 509 rule, the broken lake pinpoint cannot substantiate that quote/pincite as configured.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed pin-509 quote is substantively supported by the opinion, but the associated lake pinpoint is unusable until corrected.\"],\"suggested_tightening\":\"If retaining an ellipsized quotation on the page, preserve the original quoted characters, including the double quotation marks around \\\"reasonable.\\\"\"},{\"assertion_id\":\"fd7b9a0f850b930d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"The treatment payload mirrors the disclosed lake treatment fields and the content page treatment metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Only the five assertions listed in group_inventory.jsonl were reviewed. No separate support, pincite, or black_letter rows were present in this group.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:12:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f2d57a5860"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Tyler.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e3dc50da",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e3dc50da.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.281342Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.964858Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.846618Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:32.123224Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:34.132884Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:38.022674Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Tyler"
+    ],
+    "tokens": {
+      "input": 216145,
+      "output": 5901,
+      "source": "codex-events",
+      "total": 222046
+    },
+    "verdict_map": {
+      "0dd78f500b985ba7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1210ace802561319": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "da01745c23ca79bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6b007ae91aeeb3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd7b9a0f850b930d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f2d57a5860",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.8
   }
 }

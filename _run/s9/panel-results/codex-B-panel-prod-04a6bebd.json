@@ -1,38 +1,179 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Ex parte Jackson.md",
+    "lens": "B",
+    "notes": "Lens B only. Support and quote-fidelity merits were not reviewed except to check for disclosed treatment/currency defects.",
+    "reviewed": [
+      {
+        "assertion_id": "9640c60e8ed858d3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Ex Parte Jackson as a U.S. Supreme Court case decided 1878-05-13.",
+          "The lake citations include 96 U.S. 727, 24 L. Ed. 877, and 1877 U.S. LEXIS 1718.",
+          "No disclosed treatment edge states that the authority was overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The lake treatment is unverified and progeny enumeration is absent, so this existence review does not certify current good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c0c88161adae9e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess holding support or quote fidelity.",
+          "The payload states the case holding rather than a separate dated treatment or good-law status.",
+          "No disclosed treatment or progeny edge undercuts this assertion within the provided record."
+        ],
+        "residual_risks": [
+          "Support and holding fidelity are reserved to Lens A.",
+          "The lake pinpoints array is empty."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40562f8264a1a5f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess support for the editorial home-role classification.",
+          "The content page lists the Common Law Origins home with role Historical / origin.",
+          "No disclosed adverse treatment edge contradicts a historical-origin role."
+        ],
+        "residual_risks": [
+          "The historical-origin classification is not independently validated by lake treatment fields."
+        ],
+        "suggested_tightening": "Keep the historical-origin role separate from any good-law treatment claim.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4929930f0ad0b32c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md treatment header/comment/section and structured treatment field",
+          "needs_cl": true,
+          "problem": "The built page goes beyond the disclosed treatment record by rendering and narrating Ex parte Jackson as good law, still good law, and never overruled, even though the lake treatment fields are expressly unverified and contain no treatment or progeny derivation.",
+          "proposed_fix": "Remove the good-law/no-overrule language or replace it with an unverified-treatment statement until a dated treatment/progeny check verifies the claim.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified and composite_basis is unverified.",
+          "Lake as_of_content and as_of_treatment are null.",
+          "Lake treatment.edges is empty, and progeny.rows_cached is 0.",
+          "The content page nevertheless states that the case is a historical origin and good law, still good law, and never overruled."
+        ],
+        "residual_risks": [
+          "A full treatment/progeny run could confirm the good-law claim, but it is not confirmable from the disclosed files."
+        ],
+        "suggested_tightening": "Render only the unverified treatment banner unless the lake record supplies a dated good-law field or negative-treatment check.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ce3ba69ee7fd0ed0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity record identifies the court as U.S. Supreme Court with court_id scotus and court_level scotus.",
+          "The Binding — SCOTUS hierarchy label is consistent with the disclosed court identity.",
+          "No disclosed treatment field downgrades the source-weight label itself."
+        ],
+        "residual_risks": [
+          "The weight label should not be read as independent good-law certification because treatment remains unverified."
+        ],
+        "suggested_tightening": "Display authority weight separately from treatment, for example: Binding — SCOTUS; treatment unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Ex parte Jackson.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9640c60e8ed858d3\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Ex Parte Jackson as a U.S. Supreme Court case decided 1878-05-13.\",\n        \"The lake citations include 96 U.S. 727, 24 L. Ed. 877, and 1877 U.S. LEXIS 1718.\",\n        \"No disclosed treatment edge states that the authority was overruled, superseded, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake treatment is unverified and progeny enumeration is absent, so this existence review does not certify current good-law status.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0c0c88161adae9e1\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not assess holding support or quote fidelity.\",\n        \"The payload states the case holding rather than a separate dated treatment or good-law status.\",\n        \"No disclosed treatment or progeny edge undercuts this assertion within the provided record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support and holding fidelity are reserved to Lens A.\",\n        \"The lake pinpoints array is empty.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"40562f8264a1a5f3\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not assess support for the editorial home-role classification.\",\n        \"The content page lists the Common Law Origins home with role Historical / origin.\",\n        \"No disclosed adverse treatment edge contradicts a historical-origin role.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The historical-origin classification is not independently validated by lake treatment fields.\"\n      ],\n      \"suggested_tightening\": \"Keep the historical-origin role separate from any good-law treatment claim.\"\n    },\n    {\n      \"assertion_id\": \"4929930f0ad0b32c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The built page goes beyond the disclosed treatment record by rendering and narrating Ex parte Jackson as good law, still good law, and never overruled, even though the lake treatment fields are expressly unverified and contain no treatment or progeny derivation.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Remove the good-law/no-overrule language or replace it with an unverified-treatment statement until a dated treatment/progeny check verifies the claim.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment header/comment/section and structured treatment field\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is unverified and composite_basis is unverified.\",\n        \"Lake as_of_content and as_of_treatment are null.\",\n        \"Lake treatment.edges is empty, and progeny.rows_cached is 0.\",\n        \"The content page nevertheless states that the case is a historical origin and good law, still good law, and never overruled.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"A full treatment/progeny run could confirm the good-law claim, but it is not confirmable from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Render only the unverified treatment banner unless the lake record supplies a dated good-law field or negative-treatment check.\"\n    },\n    {\n      \"assertion_id\": \"ce3ba69ee7fd0ed0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the court as U.S. Supreme Court with court_id scotus and court_level scotus.\",\n        \"The Binding — SCOTUS hierarchy label is consistent with the disclosed court identity.\",\n        \"No disclosed treatment field downgrades the source-weight label itself.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The weight label should not be read as independent good-law certification because treatment remains unverified.\"\n      ],\n      \"suggested_tightening\": \"Display authority weight separately from treatment, for example: Binding — SCOTUS; treatment unverified.\"\n    }\n  ],\n  \"notes\": \"Lens B only. Support and quote-fidelity merits were not reviewed except to check for disclosed treatment/currency defects.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:42:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:57:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-19d26a10f7"
+    ],
     "group_id": "content/cases/Ex parte Jackson.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Ex parte Jackson"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-04a6bebd",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-04a6bebd.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Ex parte Jackson' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Ex parte Jackson"
+    ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 94819,
+      "output": 7741,
+      "source": "codex-events",
+      "total": 102560
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "0c0c88161adae9e1": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40562f8264a1a5f3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4929930f0ad0b32c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9640c60e8ed858d3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce3ba69ee7fd0ed0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19d26a10f7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 150.2
   }
 }

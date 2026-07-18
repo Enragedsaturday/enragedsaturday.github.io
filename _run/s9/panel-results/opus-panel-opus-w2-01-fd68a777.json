@@ -1,0 +1,151 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "05f85601f0b05d3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms the case and official cite: '116 U.S. 616 (1886)', 'BOYD v. UNITED STATES', 'Decided February 1, 1886', cluster/opinion link /opinion/91573/.",
+          "official=116 U.S. 616 (selected_official) is consistent with the lake record citations block and the content-page citation; display cite matches."
+        ],
+        "residual_risks": [
+          "Parallel cites (6 S. Ct. 524; 29 L. Ed. 746; 1886 U.S. LEXIS 1806; 3 A.F.T.R. (P-H) 2488) are not independently confirmable from the cached opinion header, which shows only the U.S. cite."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ee5e0e6ae73f8f3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "considered it as the true and ultimate expression of constitutional law",
+          "locator_note": "Cached opinion p.626 (star *626 precedes, *627 follows): 'As every American statesmen...and considered it as the true and ultimate expression of constitutional law, it may be confidently asserted...'",
+          "needs_cl": false,
+          "problem": "The stored pinpoint.quote for pin-626 is a corrupt harvest artifact: it is a fragment of the content page's own prose/markdown ('...states the foundational principle the Amendment embodies. ## Rule The Court adopted Lord Camden's judgment...Every American statesman of the founding era'), not text from the Boyd opinion. It does not appear anywhere in the disclosed opinion.",
+          "proposed_fix": "Regenerate pinpoint.quote from the opinion. The content page's actual displayed quotation at ^pin-626 ('considered it as the true and ultimate expression of constitutional law') is verbatim in the opinion on p.626 and correctly pincited; only the harvested metadata is broken. No reader-facing change needed.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The displayed content-page quote at ^pin-626 is verbatim-faithful to the opinion and correctly located on p.626, so no unsupported legal proposition is published.",
+          "The stored quote string, however, is content-page markdown (contains '## Rule'), a mis-harvest; builder flag quote_fidelity='mismatch' is correct as to the stored string."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' — exact reporter page not machine-confirmable, but the phrase demonstrably sits before the *627 marker, so p.626 is correct."
+        ],
+        "suggested_tightening": "Harvest pinpoint.quote from the quoted span delimited by the quotation marks immediately preceding the ^pin anchor, not the surrounding page prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7148a86dca275da1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'propositions were in the minds of those who framed the Fourth Amendment to the Constitution, and were considered as sufficiently explanatory of what was meant by unreasonable searches and seizures.' is verbatim in the opinion (drops only the leading 'its' and the interior *627 page-break token).",
+          "Pincite '626-627' is correct: the phrase begins on p.626 ('its propositions were in the minds') and continues after the *627 marker.",
+          "The builder's quote_fidelity='mismatch' flag appears to be a spurious exact-match artifact (elided 'its' + embedded star-pagination token); the quotation itself is faithful, so the assertion survives the attack."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83dcccbd91c75b2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='caution' with varies_by_point=true is appropriate: the cached opinion confirms Boyd's holding equates compelled production of private papers with an unreasonable search/self-incrimination (heavily curtailed line of doctrine), while the Entick/historical proposition for which the page cites Boyd is the surviving part.",
+          "The scope_note (papers-production/mere-evidence holding abandoned by Warden v. Hayden and limited by Fisher v. United States; Entick historical proposition remains good law) is internally consistent and non-contradicted; the Warden v. Hayden limiting edge (field_ii='limited', 387 U.S. 294) is disclosed in the lake record."
+        ],
+        "residual_risks": [
+          "The lake record's many 'proposed' negative edges (e.g., Miranda/Roe/Griswold/Mapp tagged 'overruled'/'superseded_by_statute' vs Boyd) are automated lane1/lane2 extraction artifacts with audit_needed=true ('R15 treatment audit required') and must NOT leak into the badge.",
+          "Fisher v. United States limiting treatment is asserted in the scope_note but is not present in the disclosed edges, so it is not independently confirmable from disclosed evidence.",
+          "Rendering mismatch: content page displays Treatment 'limited' while field_i_validity='caution' (provenance warns 'legacy treatment migrated: limited -> caution')."
+        ],
+        "suggested_tightening": "Reconcile the displayed 'limited' badge with field_i_validity='caution', and clear the R15 audit on the proposed negative edges before any of them are surfaced.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4cfaab62d7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Boyd v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-01-fd68a777",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Boyd v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "05f85601f0b05d3f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ee5e0e6ae73f8f3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7148a86dca275da1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83dcccbd91c75b2d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d12f7dc906",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4cfaab62d7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,13 +1,84 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Long.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "2ddb558e4d6f0b53",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, not a stub, and identifies Michigan v. Long as a U.S. Supreme Court case decided 1983-07-06 with cluster_id 111020.",
+          "Lake citations select 463 U.S. 1032 as the official citation, matching the content page display.",
+          "Currency angle: lake treatment marks the authority good_law as of 2026-06-30, with no confirmed point override in the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative events and audit markers; that risk is addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd90ce8615c532f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity and support are outside Lens B, so no quote-support defect is raised here.",
+          "The row's embedded treatment/weight text is not independently contradicted on Lens B grounds by the disclosed lake identity and treatment fields."
+        ],
+        "residual_risks": [
+          "Payload reports quote_fidelity as mismatch and pinpoint_status as slip-only; Lens A should decide any quote/pinpoint defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "937d9a0596c00ea1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Michigan v. Long__b74752.json treatment.derivation/provenance",
+          "needs_cl": true,
+          "problem": "The unqualified good/no-negative treatment presentation is not verifiable from the disclosed lake record. The lake marks good_law, but its treatment source is a migration seed, says derivation may downgrade, and includes audit-needed lanes with proposed negative events/negative edge labels. That does not prove Long is bad law, but it defeats the page's absolute treatment assertion under the default-to-refuted uncertainty rule.",
+          "proposed_fix": "Replace the unqualified no-negative treatment language with a qualified status: currently marked good_law as of 2026-06-30 and Binding — SCOTUS, but S2 treatment audit/proposed negative events remain unresolved. Do not state 'No negative treatment' until the audit is complete.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Content page states Treatment: good as of 2026-06-30 and later says No negative treatment.",
+          "Lake treatment.field_i_validity is good_law, but composite_basis is migration-seed and the scope note expressly says the S2 derivation may downgrade.",
+          "Lake derivation has audit_needed true in negative/top-cited lanes, cap_hit true in those lanes, and proposed_negative_events alongside proposed edges labeled superseded_by_statute, overruled, abrogated, questioned, and criticized.",
+          "Because those negative signals are unresolved and proposed, the disclosed record cannot verify the page's absolute no-negative treatment claim."
+        ],
+        "residual_risks": [
+          "The negative edges are proposed and field_iii is mentioned, so a completed audit may leave the good_law status intact."
+        ],
+        "suggested_tightening": "Keep the Binding — SCOTUS label, but qualify treatment as current lake status pending R15 audit and remove 'No negative treatment' until confirmed.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Long.json\",\"reviewed\":[{\"assertion_id\":\"2ddb558e4d6f0b53\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, not a stub, and identifies Michigan v. Long as a U.S. Supreme Court case decided 1983-07-06 with cluster_id 111020.\",\"Lake citations select 463 U.S. 1032 as the official citation, matching the content page display.\",\"Currency angle: lake treatment marks the authority good_law as of 2026-06-30, with no confirmed point override in the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative events and audit markers; that risk is addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fd90ce8615c532f2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity and support are outside Lens B, so no quote-support defect is raised here.\",\"The row's embedded treatment/weight text is not independently contradicted on Lens B grounds by the disclosed lake identity and treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Payload reports quote_fidelity as mismatch and pinpoint_status as slip-only; Lens A should decide any quote/pinpoint defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"937d9a0596c00ea1\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified good/no-negative treatment presentation is not verifiable from the disclosed lake record. The lake marks good_law, but its treatment source is a migration seed, says derivation may downgrade, and includes audit-needed lanes with proposed negative events/negative edge labels. That does not prove Long is bad law, but it defeats the page's absolute treatment assertion under the default-to-refuted uncertainty rule.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the unqualified no-negative treatment language with a qualified status: currently marked good_law as of 2026-06-30 and Binding — SCOTUS, but S2 treatment audit/proposed negative events remain unresolved. Do not state 'No negative treatment' until the audit is complete.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Michigan v. Long__b74752.json treatment.derivation/provenance\"},\"reasons\":[\"Content page states Treatment: good as of 2026-06-30 and later says No negative treatment.\",\"Lake treatment.field_i_validity is good_law, but composite_basis is migration-seed and the scope note expressly says the S2 derivation may downgrade.\",\"Lake derivation has audit_needed true in negative/top-cited lanes, cap_hit true in those lanes, and proposed_negative_events alongside proposed edges labeled superseded_by_statute, overruled, abrogated, questioned, and criticized.\",\"Because those negative signals are unresolved and proposed, the disclosed record cannot verify the page's absolute no-negative treatment claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The negative edges are proposed and field_iii is mentioned, so a completed audit may leave the good_law status intact.\"],\"suggested_tightening\":\"Keep the Binding — SCOTUS label, but qualify treatment as current lake status pending R15 audit and remove 'No negative treatment' until confirmed.\"}],\"notes\":\"Lens B only; no support or quote-fidelity finding is raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:12:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-72e5a907d8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a706d8d52f"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Long.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +87,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-32d9f243.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Long"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 250575,
+      "output": 8098,
+      "source": "codex-events",
+      "total": 258673
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.7
+    "verdict_map": {
+      "2ddb558e4d6f0b53": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "937d9a0596c00ea1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "fd90ce8615c532f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-72e5a907d8",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a706d8d52f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 167.7
   }
 }

@@ -1,0 +1,141 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9b3797d292055c0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip 'Cite as: 570 U. S. ____ (2013)', caption 'GENOVEVO SALINAS, PETITIONER v. TEXAS', No. 12-246, Decided June 17, 2013 confirm case identity, volume (570 U.S.) and year; 570 U.S. 178 is present in the cite set.",
+          "S. Ct. cite 133 S. Ct. 2174 and other parallels are standard and internally consistent."
+        ],
+        "residual_risks": [
+          "official_selection_present false and official/display null although 570 U.S. 178 is the correct official cite present; parallel-reporter pages not independently confirmable from the disclosed slip."
+        ],
+        "suggested_tightening": "Populate the official-citation selection with 570 U.S. 178 for consistency with the other lake records.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ab7fdbad820450c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A witness does not expressly invoke the privilege by standing mute.",
+          "locator_note": "Cached opinion, Opinion of Alito J. (slip p. 7), sentence 'A witness does not expressly invoke the privilege by standing mute.'; corrupt stored quote in payload and lake pinpoints[id=pin-2179].",
+          "needs_cl": false,
+          "problem": "pin-2179 stores a large CONTENT-PAGE chunk (the YAML close '---', the '# Salinas v. Texas' title, the rendered header line, and the entire Background/Issue/Rule sections) instead of an opinion quote; none of it is opinion text, so it fails quote fidelity as a quote_pinpoint.",
+          "proposed_fix": "Replace with the opinion sentence the content page renders at ^pin-2179: 'A witness does not expressly invoke the privilege by standing mute.' (Alito plurality; 133 S. Ct. at 2179) — verbatim in the cached text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-2179 quote is a verbatim slice of the wiki content page (title, YAML close, header, Background/Issue/Rule), not opinion text; absent from the cached opinion.",
+          "The true anchored quote ('A witness does not expressly invoke the privilege by standing mute.') is verbatim in the Alito plurality."
+        ],
+        "residual_risks": [
+          "Reader-facing page at ^pin-2179 shows the correct verbatim quote; defect confined to the pinpoint provenance record."
+        ],
+        "suggested_tightening": "Regenerate pinpoint.quote fields from opinion text rather than from rendered content-page slices; the content-fragment capture pattern recurs (Ryburn pin-476, Sabbath pin-590, Salinas pin-2179).",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "844f49df7f05527a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote ('Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination') is a verbatim substring of the Alito opinion's opening: 'Petitioner's Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination in response to the officer's question.'; the content page properly quotes the substring and places 'Salinas's' and 'in response to the officer's question' outside the quotation marks.",
+          "Attribution to 'the plurality' is correct (Alito, joined by Roberts C.J. and Kennedy); the opening statement sits at slip p. 1 / 133 S. Ct. 2178.",
+          "Lake 'mismatch' flag is an exact-matcher artifact of the partial quote."
+        ],
+        "residual_risks": [
+          "The syllabus paraphrase omits 'against self-incrimination', but the quoted text tracks the Alito OPINION verbatim, which is the correct source."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87cf361da4ac1552",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct for this 2013 SCOTUS decision, not overruled.",
+          "scope_note accurately describes the fractured lineup — Alito plurality of three (with Roberts C.J. & Kennedy), Thomas & Scalia concurring in the judgment on the broader Griffin ground, Breyer dissent joined by three — with the express-invocation holding governing (confirmed by the cached syllabus/vote lineup).",
+          "All 30 disclosed edges are 'proposed': true citator noise; none is a ratified/binding overrule."
+        ],
+        "residual_risks": [
+          "Full currency depends on citator data beyond the disclosed proposed edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-09-cc91786f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Salinas v. Texas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5ab7fdbad820450c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "844f49df7f05527a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87cf361da4ac1552": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b3797d292055c0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f31f6516ee",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

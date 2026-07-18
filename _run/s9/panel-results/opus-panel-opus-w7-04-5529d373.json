@@ -1,0 +1,122 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6bfb09a4964c505b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "All 4 payload cites (559 U.S. 98; 130 S. Ct. 1213; 175 L. Ed. 2d 1045; 2010 U.S. LEXIS 1899) appear verbatim in lake citations.all[].",
+          "payload official=559 U.S. 98 / display=559 U.S. 98 / official_selection_present=true matches record official_selection.selected='559 U.S. 98' (reason selected_rank_1)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1c343debf32bca08",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody.",
+          "locator_note": "Shatzer cached slip Opinion of the Court, on slip page 11 (the 'MARYLAND v. SHATZER' page-12 header follows this passage; the dissent's 'Ante, at 11' corroborates the slip op. at 11 pincite).",
+          "needs_cl": false,
+          "problem": "The pin-op11 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Shatzer ... the Court fixed the period at 14 days:') instead of the sentence the content anchors to ^pin-op11; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+          "proposed_fix": "Repair the stored `quote` to the anchored sentence ('It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody.').",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed Rule quote anchored at ^pin-op11 matches the slip verbatim (line-wrap hyphenation aside); pincite 'slip op., at 11' confirmed both by the page-12 header immediately after the passage and by the dissent's citation 'Ante, at 11'.",
+          "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5c126ba11a534cd7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is defensible: Maryland v. Shatzer (2010) is controlling SCOTUS authority for the 14-day Edwards break-in-custody rule with no disclosed higher-court reversal.",
+          "Proposed negative edges are 'proposed':true citator noise; lane3_recency shows 0 negative events.",
+          "Payload treatment fields match the lake treatment block."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=16, lane2=25 proposed_negative_events) pending resolution."
+        ],
+        "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9b8969edfa",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Maryland v. Shatzer.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-04-5529d373",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Shatzer"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1c343debf32bca08": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5c126ba11a534cd7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6bfb09a4964c505b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8fb3b0ab17",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9b8969edfa",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

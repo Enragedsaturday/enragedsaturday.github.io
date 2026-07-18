@@ -1,0 +1,124 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6539d5ff8aba7712",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official 451 U.S. 204 selected rank_1 (SCOTUS U.S. official reporter) — correct.",
+          "Cached opinion (Justice Marshall) carries U.S. page-labels *206 through *223 (citation-index 1), consistent with 451 U.S. 204 (opinion opens on 205).",
+          "Parallels (101 S. Ct. 1642; 68 L. Ed. 2d 38) and year 1981 consistent with the header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8956cf805a2d31c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' string is a garbled content-page markdown span (frontmatter delimiter + H1 + Background/Issue + '## Rule An arrest warrant does not authorize...'), not the pin-205 opinion quote; the payload 'mismatch' flag is therefore an extractor false positive.",
+          "The actual pin-205 Rule quote ('The issue in this case is whether, under the Fourth Amendment, a law enforcement officer may legally search for the subject of an arrest warrant in the home of a third party without first obtaining a search warrant. Concluding that a search warrant must be obtained absent exigent circumstances or consent, we reverse ....') matches cached opinion paragraph b271-11 verbatim; the '*206' star break falls mid-word ('circum*206stances') and the ellipsis correctly elides 'the judgment of the United States Court of Appeals for the Fifth Circuit...'.",
+          "Pincite 451 U.S. at 205-206 is correct: the quoted sentence spans the *206 star break."
+        ],
+        "residual_risks": [
+          "Payload quote is a pipeline artifact; adjudicate against the rendered pin-205 text, not the payload string."
+        ],
+        "suggested_tightening": "Re-extract the pin-205 payload to the quoted sentence rather than the surrounding markdown span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf8e6d3cf5e8f47f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All 17 treatment edges are keyword-swept candidates (proposed:true; journal_ref lane1_negative / lane2_top_cited) with field_iii 'mentioned' — Steagald is only mentioned; none is an accepted, confirmed self-overruling.",
+          "The negative-treatment derivation query (overrul*/abrogat*/supersed*/vacat*/reversed) returned only mention-depth false positives, so good_law (migration-seed) is not contradicted by the disclosed evidence.",
+          "as_of_treatment 2026-06-30; content-page 'good' badge is consistent."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration-seed; scope_note itself flags that S2 re-derivation may downgrade.",
+          "Citing opinions are not inlined, so the field_iii='mentioned' depth coding is taken from the derivation rather than independently re-read."
+        ],
+        "suggested_tightening": "Finalize the S2 re-derivation to convert the migration-seed into a derived composite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-455afdbaf4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-891307d1d6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Steagald v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-03-56d8971e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Steagald v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6539d5ff8aba7712": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8956cf805a2d31c1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf8e6d3cf5e8f47f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-455afdbaf4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-891307d1d6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

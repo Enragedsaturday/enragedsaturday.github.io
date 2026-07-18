@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kyles v. Whitley.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "894e3006a71555b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies case_name Kyles v. Whitley, court U.S. Supreme Court, date_decided 1995-04-19, and year 1995.",
+          "Lake citations match the page and inventory: official 514 U.S. 419; parallels 115 S. Ct. 1555 and 131 L. Ed. 2d 490; vendor citation 1995 U.S. LEXIS 2845."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "20f14dffb39f1a86",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-434 quote appears verbatim in text/Kyles v. Whitley__1a8960.txt.",
+          "The lake pinpoint for pin-434 has quote_fidelity matched, star_marker 434, and the same quoted sentence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d091d77c2dfb0e1b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the state's obligation under <i>Brady</i> v. <i>Maryland,</i> <span class=\"citation\" data-id=\"9422583\"><a href=\"/opinion/106598/brady-v-maryland/\" aria-description=\"Citation for case: Brady v. Maryland\">373 U. S. 83</a></span> (1963), to disclose evidence favorable to the defense, turns on the cumulative effect",
+          "locator_note": "pin-421 in lake pinpoints has star_marker null and quote_fidelity mismatch; the real passage is in the opening opinion paragraph at *421.",
+          "needs_cl": false,
+          "problem": "The pin-421 quote field is not a faithful quotation from the Kyles opinion; it is page/header prose harvested from the built page and ends before the actual quoted legal sentence.",
+          "proposed_fix": "Replace pin-421.quote with a faithful excerpt from the opinion at star page 421 and set star_marker to 421 / quote_fidelity to matched only after verification.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints record itself marks pin-421 as quote_fidelity mismatch and pinpoint_status slip-only.",
+          "The payload quote begins with markdown/page text ('--- # Kyles v. Whitley...') rather than the opinion's *421 language."
+        ],
+        "residual_risks": [
+          "The visible page's rule quotation appears to point to the correct *421 paragraph, but the stored pin assertion under review is defective."
+        ],
+        "suggested_tightening": "Store only the actual quoted sentence or a clearly marked ellipsis quote from the *421 opinion paragraph, not surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f96eac069c21a24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not review treatment/currency, so no treatment finding is raised.",
+          "The inventory treatment fields match lake.treatment: field_i_validity good_law, as_of_content 1995-04-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency left to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kyles v. Whitley.json\",\"reviewed\":[{\"assertion_id\":\"894e3006a71555b1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies case_name Kyles v. Whitley, court U.S. Supreme Court, date_decided 1995-04-19, and year 1995.\",\"Lake citations match the page and inventory: official 514 U.S. 419; parallels 115 S. Ct. 1555 and 131 L. Ed. 2d 490; vendor citation 1995 U.S. LEXIS 2845.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"20f14dffb39f1a86\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-434 quote appears verbatim in text/Kyles v. Whitley__1a8960.txt.\",\"The lake pinpoint for pin-434 has quote_fidelity matched, star_marker 434, and the same quoted sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"d091d77c2dfb0e1b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-421 quote field is not a faithful quotation from the Kyles opinion; it is page/header prose harvested from the built page and ends before the actual quoted legal sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-421.quote with a faithful excerpt from the opinion at star page 421 and set star_marker to 421 / quote_fidelity to matched only after verification.\",\"evidence_quote\":\"the state's obligation under <i>Brady</i> v. <i>Maryland,</i> <span class=\\\"citation\\\" data-id=\\\"9422583\\\"><a href=\\\"/opinion/106598/brady-v-maryland/\\\" aria-description=\\\"Citation for case: Brady v. Maryland\\\">373 U. S. 83</a></span> (1963), to disclose evidence favorable to the defense, turns on the cumulative effect\",\"needs_cl\":false,\"locator_note\":\"pin-421 in lake pinpoints has star_marker null and quote_fidelity mismatch; the real passage is in the opening opinion paragraph at *421.\"},\"reasons\":[\"The lake pinpoints record itself marks pin-421 as quote_fidelity mismatch and pinpoint_status slip-only.\",\"The payload quote begins with markdown/page text ('--- # Kyles v. Whitley...') rather than the opinion's *421 language.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible page's rule quotation appears to point to the correct *421 paragraph, but the stored pin assertion under review is defective.\"],\"suggested_tightening\":\"Store only the actual quoted sentence or a clearly marked ellipsis quote from the *421 opinion paragraph, not surrounding page prose.\"},{\"assertion_id\":\"6f96eac069c21a24\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not review treatment/currency, so no treatment finding is raised.\",\"The inventory treatment fields match lake.treatment: field_i_validity good_law, as_of_content 1995-04-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency left to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:00:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-02a03dc976"
+    ],
     "group_id": "_overhaul2/lake/cases/Kyles v. Whitley.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-efa2a35e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-efa2a35e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 3fd6454b-3c80-4c29-ba02-12b7f4c8a267\n2026-07-10T22:28:53.514623Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:54.199238Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:54.975257Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:55.954288Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:57.232095Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:59.385426Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kyles v. Whitley"
+    ],
+    "tokens": {
+      "input": 159387,
+      "output": 6710,
+      "source": "codex-events",
+      "total": 166097
+    },
+    "verdict_map": {
+      "20f14dffb39f1a86": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f96eac069c21a24": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "894e3006a71555b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d091d77c2dfb0e1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-02a03dc976",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.1
   }
 }

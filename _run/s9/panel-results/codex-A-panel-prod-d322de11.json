@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Murray v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl assertions using only the disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "ed30276eea9bbc7f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Murray v. United States, U.S. Supreme Court, decided 1988-06-27, year 1988.",
+          "The official cite in the lake record is 487 U.S. 533, matching the content page citation 487 U.S. 533 (1988).",
+          "The disclosed parallel and vendor citations match the lake record: 108 S. Ct. 2529, 101 L. Ed. 2d 472, 56 U.S.L.W. 4801, and 1988 U.S. LEXIS 2881."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8305e99c6875d81b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here.",
+          "locator_note": "lake pinpoints[pin-542] has page:null and quote_fidelity:mismatch; content_page.md cites 487 U.S. at 542, and the disclosed text contains the quoted sentence at the page 542 passage.",
+          "needs_cl": false,
+          "problem": "pin-542 stores built-page title/background/rule prose as the quote instead of the cited opinion passage, so the payload quote is not character-faithful to the disclosed opinion text.",
+          "proposed_fix": "Replace pin-542's quote with the actual 487 U.S. at 542 sentence and set the pinpoint metadata to the page 542 passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The row payload for pin-542 begins with the generated page header and background, not with language from the Murray opinion.",
+          "The disclosed opinion text contains the actual cited page 542 sentence, but that is not the quote stored in this assertion payload.",
+          "The lake record itself labels pin-542 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The visible content-page quote at pin-542 is supportable from the text; the defect is the stored pin payload harvested for this assertion."
+        ],
+        "suggested_tightening": "Constrain quote harvesting to text inside quotation marks immediately associated with the pin marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b21b13e1d073f02",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "This would not have been the case if the agents’ decision to seek the warrant was prompted by what they had seen during the initial entry,<footnotemark>3</footnotemark> or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant.",
+          "locator_note": "text/Murray v. United States__6a8b5f.txt page 542 paragraph b594-5; lake pinpoints[pin-542b] also labels quote_fidelity:mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted fragment is substantively from page 542, but it is not character-faithful: it changes the curly apostrophe in agents’ to a straight apostrophe and adds an ellipsis not present in the disclosed text at that location.",
+          "proposed_fix": "Use the opinion's characters and omit the footnote marker without adding a false ellipsis, or make any editorial alteration explicit under the corpus quote rules.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text uses agents’ with a curly apostrophe, while the payload uses agents' with a straight apostrophe.",
+          "The payload inserts . . . after initial entry, but the disclosed text has a footnote marker followed by or if, not an ellipsis.",
+          "The underlying rule is supported, but the verbatim quote as framed fails exact quote fidelity."
+        ],
+        "residual_risks": [
+          "The pincite appears to land on the right paragraph; this finding is limited to exact quote fidelity."
+        ],
+        "suggested_tightening": "Store a normalized display quote separately from an exact-source quote if typographic normalization is intended.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad2ca900a3322c31",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1988-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency audit was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Murray v. United States.json\",\"reviewed\":[{\"assertion_id\":\"ed30276eea9bbc7f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Murray v. United States, U.S. Supreme Court, decided 1988-06-27, year 1988.\",\"The official cite in the lake record is 487 U.S. 533, matching the content page citation 487 U.S. 533 (1988).\",\"The disclosed parallel and vendor citations match the lake record: 108 S. Ct. 2529, 101 L. Ed. 2d 472, 56 U.S.L.W. 4801, and 1988 U.S. LEXIS 2881.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8305e99c6875d81b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-542 stores built-page title/background/rule prose as the quote instead of the cited opinion passage, so the payload quote is not character-faithful to the disclosed opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-542's quote with the actual 487 U.S. at 542 sentence and set the pinpoint metadata to the page 542 passage.\",\"evidence_quote\":\"The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[pin-542] has page:null and quote_fidelity:mismatch; content_page.md cites 487 U.S. at 542, and the disclosed text contains the quoted sentence at the page 542 passage.\"},\"reasons\":[\"The row payload for pin-542 begins with the generated page header and background, not with language from the Murray opinion.\",\"The disclosed opinion text contains the actual cited page 542 sentence, but that is not the quote stored in this assertion payload.\",\"The lake record itself labels pin-542 quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content-page quote at pin-542 is supportable from the text; the defect is the stored pin payload harvested for this assertion.\"],\"suggested_tightening\":\"Constrain quote harvesting to text inside quotation marks immediately associated with the pin marker.\"},{\"assertion_id\":\"9b21b13e1d073f02\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is substantively from page 542, but it is not character-faithful: it changes the curly apostrophe in agents’ to a straight apostrophe and adds an ellipsis not present in the disclosed text at that location.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion's characters and omit the footnote marker without adding a false ellipsis, or make any editorial alteration explicit under the corpus quote rules.\",\"evidence_quote\":\"This would not have been the case if the agents’ decision to seek the warrant was prompted by what they had seen during the initial entry,<footnotemark>3</footnotemark> or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Murray v. United States__6a8b5f.txt page 542 paragraph b594-5; lake pinpoints[pin-542b] also labels quote_fidelity:mismatch.\"},\"reasons\":[\"The disclosed opinion text uses agents’ with a curly apostrophe, while the payload uses agents' with a straight apostrophe.\",\"The payload inserts . . . after initial entry, but the disclosed text has a footnote marker followed by or if, not an ellipsis.\",\"The underlying rule is supported, but the verbatim quote as framed fails exact quote fidelity.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The pincite appears to land on the right paragraph; this finding is limited to exact quote fidelity.\"],\"suggested_tightening\":\"Store a normalized display quote separately from an exact-source quote if typographic normalization is intended.\"},{\"assertion_id\":\"ad2ca900a3322c31\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1988-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment/currency audit was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl assertions using only the disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-323a27ac1e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e8ec921db3",
+      "F-S9-PR-c3581e3fb1"
+    ],
     "group_id": "_overhaul2/lake/cases/Murray v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +109,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d322de11.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Murray v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 313886,
+      "output": 10004,
+      "source": "codex-events",
+      "total": 323890
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "8305e99c6875d81b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9b21b13e1d073f02": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ad2ca900a3322c31": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed30276eea9bbc7f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e8ec921db3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c3581e3fb1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-323a27ac1e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 208.3
   }
 }

@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pembaur v. City of Cincinnati.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "31baefddffd057b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Pembaur v. City of Cincinnati as a verified U.S. Supreme Court case decided 1986-03-25 with docket 84-1160.",
+          "The lake citation fields match the asserted official citation 475 U.S. 469 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "823a5b1862ff7f75",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that municipal liability under §1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy",
+          "locator_note": "pin-483; lake.pinpoints[0]; content_page.md Rule citation to 475 U.S. at 483-484",
+          "needs_cl": false,
+          "problem": "pin-483's stored quote is not a character-faithful opinion excerpt; it is generated page prose with Markdown headings, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace lake.pinpoints[].quote for pin-483 with the actual page 483-484 passage beginning with the Court's 'We hold that municipal liability under §1983 attaches...' sentence, or remove the pin until corrected.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint quote begins 'the witnesses. The deputies chopped down the door...' and includes '## Issue' and '## Rule', which are content-page text, not the opinion passage.",
+          "The cached opinion text at pages 483-484 contains the actual rule sentence beginning 'We hold that municipal liability under §1983 attaches...'."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition appears supported by the opinion, but this assertion is quote-fidelity only and the pinpoint quote record fails."
+        ],
+        "suggested_tightening": "When quoting the page text, preserve the opinion's form '§1983' or bracket/normalize explicitly if house style permits.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b92930afc7e7b420",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1986-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "No treatment/currency defect is raised because Lens A does not own treatment review."
+        ],
+        "residual_risks": [
+          "Treatment currency and subsequent-history evaluation remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Pembaur v. City of Cincinnati.json\",\"reviewed\":[{\"assertion_id\":\"31baefddffd057b3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Pembaur v. City of Cincinnati as a verified U.S. Supreme Court case decided 1986-03-25 with docket 84-1160.\",\"The lake citation fields match the asserted official citation 475 U.S. 469 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"823a5b1862ff7f75\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-483's stored quote is not a character-faithful opinion excerpt; it is generated page prose with Markdown headings, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace lake.pinpoints[].quote for pin-483 with the actual page 483-484 passage beginning with the Court's 'We hold that municipal liability under §1983 attaches...' sentence, or remove the pin until corrected.\",\"evidence_quote\":\"We hold that municipal liability under §1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy\",\"needs_cl\":false,\"locator_note\":\"pin-483; lake.pinpoints[0]; content_page.md Rule citation to 475 U.S. at 483-484\"},\"reasons\":[\"The disclosed lake pinpoint quote begins 'the witnesses. The deputies chopped down the door...' and includes '## Issue' and '## Rule', which are content-page text, not the opinion passage.\",\"The cached opinion text at pages 483-484 contains the actual rule sentence beginning 'We hold that municipal liability under §1983 attaches...'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition appears supported by the opinion, but this assertion is quote-fidelity only and the pinpoint quote record fails.\"],\"suggested_tightening\":\"When quoting the page text, preserve the opinion's form '§1983' or bracket/normalize explicitly if house style permits.\"},{\"assertion_id\":\"b92930afc7e7b420\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1986-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"No treatment/currency defect is raised because Lens A does not own treatment review.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and subsequent-history evaluation remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:24:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a7465c9b6d"
+    ],
     "group_id": "_overhaul2/lake/cases/Pembaur v. City of Cincinnati.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d1b2e761",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d1b2e761.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:33:01.123785Z ERROR codex_models_manager::manager: failed to refresh available models: exceeded retry limit, last status: 429 Too Many Requests, request id: 0f88b01c-4d2e-44bb-a535-b802e4c78dcf\n2026-07-10T22:33:03.068616Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pembaur v. City of Cincinnati"
+    ],
+    "tokens": {
+      "input": 190954,
+      "output": 5541,
+      "source": "codex-events",
+      "total": 196495
+    },
+    "verdict_map": {
+      "31baefddffd057b3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "823a5b1862ff7f75": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b92930afc7e7b420": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7465c9b6d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 110.3
   }
 }

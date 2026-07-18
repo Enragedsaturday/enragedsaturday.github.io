@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Samson v. California.json",
+    "lens": "A",
+    "notes": "No external sources used; review limited to disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "3b3fc4fac6346011",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies case_name 'Samson v. California', court 'U.S. Supreme Court', date_decided '2006-06-19', year 2006, and docket '04-9728'.",
+          "Lake citations identify the official citation as 547 U.S. 843 and parallel/vendor citations as 126 S. Ct. 2193, 165 L. Ed. 2d 250, and 2006 U.S. LEXIS 4885; content_page displays the same official citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a44672c5965a13e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote exactly matches lake pinpoints[].quote for pin-857.",
+          "The cached opinion text contains the same passage: 'we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.'"
+        ],
+        "residual_risks": [
+          "The official U.S. page number is not independently verifiable from the slip-only cached text, but the row itself has page null and a validated text fragment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5fcffdb51e2b4925",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The extent and reach of these conditions clearly demonstrate that parolees like petitioner have severely diminished expectations of privacy by virtue of their status alone.",
+          "locator_note": "pin-852",
+          "needs_cl": false,
+          "problem": "pin-852's stored quote is not the actual quoted opinion passage tied to the content-page pin; it is harvested Background/Issue/Rule prose and lake itself marks quote_fidelity as mismatch with no position or fragment.",
+          "proposed_fix": "Replace pin-852's quote with the actual opinion sentence beginning 'The extent and reach of these conditions...' and add a validated position or fragment.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion supports the visible content-page quote, not the payload's long Background/Issue/Rule string.",
+          "Lake pinpoints[].quote for pin-852 matches the bad payload but is expressly marked quote_fidelity 'mismatch' and has position null and fragment null."
+        ],
+        "residual_risks": [
+          "The legal proposition may remain supported after the pinpoint record is corrected."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence for pin-852 and avoid allowing markdown section text to populate quote_pinpoint payloads.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b5becc88d4f0c29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment finding is raised.",
+          "The payload treatment fields match the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2006-06-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Lens B must assess substantive treatment/currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Samson v. California.json\",\"reviewed\":[{\"assertion_id\":\"3b3fc4fac6346011\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies case_name 'Samson v. California', court 'U.S. Supreme Court', date_decided '2006-06-19', year 2006, and docket '04-9728'.\",\"Lake citations identify the official citation as 547 U.S. 843 and parallel/vendor citations as 126 S. Ct. 2193, 165 L. Ed. 2d 250, and 2006 U.S. LEXIS 4885; content_page displays the same official citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1a44672c5965a13e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload quote exactly matches lake pinpoints[].quote for pin-857.\",\"The cached opinion text contains the same passage: 'we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official U.S. page number is not independently verifiable from the slip-only cached text, but the row itself has page null and a validated text fragment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5fcffdb51e2b4925\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-852's stored quote is not the actual quoted opinion passage tied to the content-page pin; it is harvested Background/Issue/Rule prose and lake itself marks quote_fidelity as mismatch with no position or fragment.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-852's quote with the actual opinion sentence beginning 'The extent and reach of these conditions...' and add a validated position or fragment.\",\"evidence_quote\":\"The extent and reach of these conditions clearly demonstrate that parolees like petitioner have severely diminished expectations of privacy by virtue of their status alone.\",\"needs_cl\":false,\"locator_note\":\"pin-852\"},\"reasons\":[\"The cached opinion supports the visible content-page quote, not the payload's long Background/Issue/Rule string.\",\"Lake pinpoints[].quote for pin-852 matches the bad payload but is expressly marked quote_fidelity 'mismatch' and has position null and fragment null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition may remain supported after the pinpoint record is corrected.\"],\"suggested_tightening\":\"Use the exact opinion sentence for pin-852 and avoid allowing markdown section text to populate quote_pinpoint payloads.\"},{\"assertion_id\":\"5b5becc88d4f0c29\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment finding is raised.\",\"The payload treatment fields match the lake treatment fields and content_page frontmatter: field_i_validity good_law, as_of_content 2006-06-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess substantive treatment/currency.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used; review limited to disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:33:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-bc7572b7de"
+    ],
     "group_id": "_overhaul2/lake/cases/Samson v. California.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2d971fe1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Samson v. California"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 237716,
+      "output": 7349,
+      "source": "codex-events",
+      "total": 245065
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1a44672c5965a13e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b3fc4fac6346011": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b5becc88d4f0c29": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5fcffdb51e2b4925": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc7572b7de",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 148.2
   }
 }

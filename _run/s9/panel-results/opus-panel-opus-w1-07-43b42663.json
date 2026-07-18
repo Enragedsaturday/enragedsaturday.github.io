@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "40500be314ed75a7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "official: null, official_selection_present: false; frontmatter citation: \"\"",
+          "locator_note": "group_inventory payload for 40500be314ed75a7 plus content_page frontmatter",
+          "needs_cl": false,
+          "problem": "The case exists at 560 U.S. 370 (confirmed by cached opinion), but the citation record selects no official cite (official=null, official_selection_present=false) and the content-page frontmatter citation field is empty; the canonical U.S. cite is carried only in parallel_cite and the rendered header line.",
+          "proposed_fix": "Select 560 U.S. 370 as the official citation and populate the frontmatter citation field.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Justice Kennedy, Thompkins Miranda waiver case) carries [560 U.S. 373] through [560 U.S. 389] markers, confirming the case at 560 U.S. 370.",
+          "Parallel cites 130 S. Ct. 2250 and 176 L. Ed. 2d 1098 are correct; the existence of the cite is not in doubt.",
+          "The defect is metadata completeness (no official selection; empty frontmatter citation), not cite existence."
+        ],
+        "residual_risks": [
+          "Provenance inconsistency: the Sources line cites CL /opinion/147529/ while frontmatter courtlistener.cluster_id=6796082 (/opinion/6796082/) — two different CL cluster ids for the same case."
+        ],
+        "suggested_tightening": "Reconcile the two CL cluster ids (147529 vs 6796082) and select an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "307e61508e82a569",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-382 quote matches the cached opinion (para b1199-8): '... he would have invoked his right to cut off questioning. ... Here he did neither, so he did not invoke his right to remain silent.'",
+          "The bracket [that he wanted to remain silent or did not want to talk] accurately glosses the immediately preceding opinion sentence, and the ellipsis elides only the Mosley/Miranda citation string — proper editorial conventions.",
+          "Para b1199-8 sits between the [560 U.S. 382] and [560 U.S. 383] markers, so pincite 560 U.S. at 382 is correct; quote_fidelity=mismatch is a window artifact."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed0a2a907afffe28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-388 quote matches the cached opinion verbatim (section D, paras b1203-11/-13): 'In sum, a suspect who has received and understood the Miranda warnings, and has not invoked his Miranda rights, waives the right to remain silent by making an uncoerced statement to the police.'",
+          "The 'In sum' sentence begins before the [560 U.S. 389] marker (i.e., on 388), so pincite Id. at 388 and the slip op., at 17 parenthetical are consistent with slip-only status.",
+          "The payload carries the correct quote text; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0629d630debe1d4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed 2010 majority (SCOTUS reverses the Sixth Circuit's habeas grant and upholds the conviction) for a landmark Miranda case not disclosed as overruled.",
+          "All treatment.edges are proposed:true lane1_negative candidates (field_ii on the citing case), none a confirmed overruling of Berghuis.",
+          "Content page states 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "scope_note is build-process boilerplate ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a substantive treatment description.",
+          "2026 currency not independently re-derivable from the 2010 opinion; proposed negatives unadjudicated."
+        ],
+        "suggested_tightening": "Replace the boilerplate scope_note with a substantive treatment description and adjudicate the proposed negatives.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3420a4eae1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0388c1bd33",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f5d441ab03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d17259a0a9"
+    ],
+    "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-07-43b42663",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Berghuis v. Thompkins"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0629d630debe1d4d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "307e61508e82a569": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40500be314ed75a7": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ed0a2a907afffe28": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d17259a0a9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3420a4eae1",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0388c1bd33",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f5d441ab03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

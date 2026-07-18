@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "08bc03f591384b4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms the case is real: 'EXUM, Chief Justice' majority, State v. Tarantino, North Carolina Supreme Court, affirming the Court of Appeals in light of United States v. Dunn.",
+          "All three disclosed cites (368 S.E.2d 588; 322 N.C. 386; 1988 N.C. LEXIS 373) are consistent with a 1988 N.C. Supreme Court decision; the reader-facing header shows '322 N.C. 386, 368 S.E.2d 588 (1988)' correctly.",
+          "Existence of the case and cites is not refutable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "official_selection_present:false and official/display are null — no structured primary cite is designated (frontmatter citation is empty; all three cites sit in parallel). Reader-facing citation is nonetheless correct. Natural primary would be 322 N.C. 386 (state reporter).",
+          "The cached opinion star-paginates N.C. Reports (labels 388-393); S.E.2d page numbers used in pincites cannot be cross-checked against those N.C. labels."
+        ],
+        "suggested_tightening": "Populate an official-cite selection (322 N.C. 386 as primary, 368 S.E.2d 588 parallel).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "23d2485cfc0ce8e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion reads: '... the cracks near the porch floor required him to make a probing examination in order to see inside. Under these circumstances defendant's reasonable expectation of privacy remained intact.'",
+          "The page quote reproduces those words verbatim; the '[,]' bracket signals the editorial change of the period to a comma and '...' elides 'Under these circumstances' — proper editorial quotation.",
+          "The lake 'mismatch' flag is a false negative (from the bracketed edit/ellipsis); fidelity is intact."
+        ],
+        "residual_risks": [
+          "Pincite '592' is to S.E.2d pagination; the quoted passage sits on N.C. Reports page 391 in the cached text (before the *392 marker), so the S.E.2d page 592 cannot be independently confirmed from the disclosed N.C. star markers."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "59ecba9ad35b6f03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion reads verbatim: 'Nothing in the Supreme Court's Dunn decision suggests that an expectation of privacy is eliminated by quarter-inch cracks in the back wall of an otherwise sealed building.'",
+          "The page quote matches exactly (the *Dunn* markdown italics correspond to the opinion's <em>Dunn</em>).",
+          "The lake 'mismatch' flag is a false negative (italics/citation-span markup); fidelity is intact."
+        ],
+        "residual_risks": [
+          "Pincite '591–592' is S.E.2d; the sentence sits on N.C. page 391 in the cached text, so the exact S.E.2d span is not cross-checkable from disclosed N.C. star markers."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf7056138e6b2692",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This expectation was not unreasonable even though there were small cracks between the boards in the building’s back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy.",
+          "locator_note": "Cached opinion paragraph b434-8 (N.C. page 390); artifact affects only the lake pinpoint record.",
+          "needs_cl": false,
+          "problem": "The stored pin-591 quote is the wiki page header/preamble ('--- # State v. Tarantino ... ## Rule Small gaps do not by themselves defeat ...'), a harvest artifact absent from the opinion. The reader-facing quote actually anchored at ^pin-591 is verbatim-correct.",
+          "proposed_fix": "Replace the stored pin-591 quote string with the real quoted sentences ('This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy.'), which match the opinion verbatim; do not alter the reader-facing quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote for pin-591 is page-header boilerplate (same systematic first-block harvest bug), not opinion text.",
+          "The genuine ^pin-591 quote on the content page is a verbatim match to the opinion (b434-8).",
+          "Pincite and reader-facing quote are sound; only the stored harvest string is defective."
+        ],
+        "residual_risks": [
+          "Remediation must replace, not delete, the stored string, to preserve the correct reader-facing quotation."
+        ],
+        "suggested_tightening": "Fix the first-block-reference quote-harvest bug (recurs across this pack).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eb34802a610f7f9b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The targeted negative lane (lane1_negative, restricted to SCOTUS/NC/NC-App with overrul*/abrogat*/vacat* terms) reviewed 3 and found proposed_negative_events:0 — no negative treatment in the controlling jurisdiction; lane3_recency also 0.",
+          "good_law for a 1988 N.C. Supreme Court decision cited 17 times, with a clean in-jurisdiction negative lane, is well supported and not refuted.",
+          "The lane2 'overruled' edge (People v. Hagestedt, 2025 IL 130286) is facially impossible as negative treatment — an Illinois decision cannot overrule a North Carolina Supreme Court case — so it is a cross-jurisdictional extraction false positive, not a downgrade."
+        ],
+        "residual_risks": [
+          "7 un-adjudicated proposed lane2 negative edges exist (all proposed:true): one cross-jurisdiction 'overruled' FP (Hagestedt 2025 IL) plus several persuasive-only 'questioned' signals (WA, IL, PA, and two N.C. App. cases). These are candidate signals, not adopted; they do not unseat NC good law but should be dispositioned.",
+          "field_i_validity is still a migration-seed rather than a derived value."
+        ],
+        "suggested_tightening": "S2 should adjudicate the proposed lane2 edges and explicitly clear the Hagestedt 'overruled' cross-jurisdictional false positive before it could ever be adopted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-764f2cb932",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-aca3e6fa16",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/State v. Tarantino.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-02-07f79856",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Tarantino"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "08bc03f591384b4f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "23d2485cfc0ce8e8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59ecba9ad35b6f03": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf7056138e6b2692": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "eb34802a610f7f9b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-764f2cb932",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-aca3e6fa16",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0a295c44be",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

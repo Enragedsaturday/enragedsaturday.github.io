@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "48742dcd2aabe1ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Full slip opinion inlined confirms the cited authority exists: 'UNITED STATES V. CANO', 9th Cir., decided 2019-08-16, EBEL/border-phone-search holding.",
+          "Official cite 934 F.3d 1002 is internally consistent across content page, frontmatter, and lake official_selection (selected_rank_1); no disclosed contradiction."
+        ],
+        "residual_risks": [
+          "The exact F.3d volume/page (934/1002) is not printed in the slip text itself; it is carried by CL cluster 4649091 (normal for a slip opinion), so page-level reporter pagination is not independently re-derivable from the inlined text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42908c1141a493c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'exceeded the proper scope of a border search and was unreasonable as a border search under the Fourth Amendment.' appears verbatim in the cached opinion body (line-wrapped: 'the search exceeded the proper scope of a border / search and was unreasonable as a border search under / Fourth Amendment.11').",
+          "The locus falls between the slip-op page-29 marker and the page-30 marker, so the content-page pincite 'Id. at 29' is correct; trailing footnote marker '11' properly excluded."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c6725adb0cf906e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We clarify Cotterman by holding that “reasonable suspicion” in this context means that officials must reasonably suspect that the cell phone contains digital contraband. We further conclude that cell phone searches at the border, whether manual or forensic, must be limited in scope to a search for digital contraband.",
+          "locator_note": "cached opinion slip op. p.5 (the page-5 marker immediately precedes the passage); content-page anchor ^pin-op5 already renders this correct quote, so the defect is confined to the lake pinpoint metadata with no reader-facing harm.",
+          "needs_cl": false,
+          "problem": "The stored lake quote for pin-op5 is a content-page header/front-matter dump ('--- # United States v. Cano ... ## Rule The court clarified the standard and capped the scope of border phone searches:'), not an opinion quotation; it does not appear in the opinion and fails quote_fidelity (build self-flagged 'mismatch').",
+          "proposed_fix": "Repopulate pin-op5.quote with the real slip-op p.5 rule statement that the content page already renders verbatim (the 'We clarify Cotterman...' passage below).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-op5 stored quote is a garbled page-dump, not a quotation from the opinion (a genuine quote_fidelity failure the build itself flagged 'mismatch').",
+          "The pinpoint nevertheless anchors to a real, quotable p.5 rule statement that IS verbatim in the cached opinion and IS rendered correctly on the content page, so the pinpoint survives with only a metadata repair needed."
+        ],
+        "residual_risks": [
+          "Same page-dump artifact class recurs at Carloss pin-op1 (extractor populated the quote field with content-page prose rather than the opinion quote)."
+        ],
+        "suggested_tightening": "Replace the pin-op5 lake quote string with the verbatim p.5 passage rather than leaving the header dump.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e037daa2e6824ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note doctrinal claims are corroborated by the inlined opinion: 'We clarify Cotterman by holding...' (Cotterman clarification) and 'the Eleventh Circuit disagreed with Cotterman in United States v. Touset, 890 F.3d 1227, 1234 (11th Cir. 2018)' (the 11th-Cir circuit split).",
+          "No disclosed evidence of negative treatment / overruling; good_law flag has no disclosed contradiction."
+        ],
+        "residual_risks": [
+          "good_law currency 'as of 2026-06-30' depends on a citator/subsequent-history check that is not inlined in the pack (CL barred to this lane), so the currency component is not independently verifiable from disclosed evidence; not refuted absent any disclosed contradiction."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Cano.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-00-bfa7cedb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Cano"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1e037daa2e6824ef": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "42908c1141a493c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48742dcd2aabe1ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c6725adb0cf906e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4cd37053e5",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

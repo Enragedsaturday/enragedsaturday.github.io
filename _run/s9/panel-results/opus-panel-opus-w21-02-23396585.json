@@ -1,0 +1,176 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "458ede4658705d29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header shows '515 U.S. 646 (1995)' and a Scalia majority opinion; star pages *649-*666 consistent with a case beginning at 646.",
+          "Lake record: official 515 U.S. 646 selected_official true, identity_checked, expected_citation_found true, party_name_in_text true, official_selection_present true.",
+          "Citation real and correctly reportered; official selection present."
+        ],
+        "residual_risks": [
+          "opinion_id 9433198 vs cluster_id 117964 not independently verifiable from disclosed text, but consistent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d57045aea3b13da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'special needs' verbatim in cached text: 'when special needs, beyond the normal need for law enforcement, make the warrant and probable-cause requirement impracticable' (transition to *653) and 'We have found such \"special needs\" to exist in the public school context.'",
+          "star_marker 653 correct; fragment (prefix 'when-', textStart 'special needs') resolves; star-verified/matched confirmed.",
+          "Reader-facing pull-quote at pin-657, 'Legitimate privacy expectations are even less with regard to student athletes.', is also verbatim at *657 (para b703-5); pincite 657 correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "814e345a347d0512",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote verbatim at *664-*665 (para b710-3): 'the decreased expectation of privacy, the relative unobtrusiveness of the search, and the severity of the need met by the search'; completing clause 'we conclude Vernonia's Policy is reasonable and hence constitutional' at *665.",
+          "Pincite 664-665 accurate (phrase straddles the *665 page break).",
+          "Record's quote_fidelity 'mismatch'/slip-only is a FALSE POSITIVE: the embedded *665 page-number span splits the contiguous string for the matcher; the quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Make star-matching tolerant of embedded page-number markers so cross-page verbatim quotes are not mis-flagged as mismatch.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89c4804b23ef4b00",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Vernonia School District 47J v. Acton *515 U.S. 646 (1995)*",
+          "locator_note": "lake pinpoints[] id=pin-652",
+          "needs_cl": false,
+          "problem": "Stored pin-652 'quote' is the page YAML/header front-matter plus Background/Issue/Rule-intro prose, not a quotation from 515 U.S. at 652; broken extraction (quote_fidelity 'mismatch', star_marker null), so no valid quote backs the 652 pincite.",
+          "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'the ultimate measure of the constitutionality of a governmental search is \"reasonableness\"' / 'balancing its intrusion on the individual's Fourth Amendment interests against its promotion of legitimate governmental interests.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is front-matter, not opinion text -> the quote_pinpoint as framed is invalid.",
+          "The quotes the content page actually cites at pin-652 ('the ultimate measure...reasonableness' and 'balancing its intrusion...governmental interests.') are verbatim-faithful per cached *652-*653 (paras b698-6/b698-7), so no reader is misled."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8877da5ead42ddbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law for a SCOTUS decision; every disclosed edge is 'proposed: true' and sourced to state courts (Moore v. Portland Public Schools abrogated; State v. Strudwick superseded_by_statute; State v. Hilton overruled; State v. Grady/Thompson/Keller questioned) that cannot overrule a SCOTUS Fourth Amendment holding.",
+          "No confirmed negative federal treatment disclosed; varies_by_point false defensible for the federal proposition; as_of_treatment 2026-06-30 current (~10 days)."
+        ],
+        "residual_risks": [
+          "scope_note's extension by Board of Education v. Earls (2002) not inlined; uncontradicted and consistent with related[]."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-53c93f1e25",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-430fcc2ef6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Vernonia School District 47J v. Acton.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-02-23396585",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Vernonia School District 47J v. Acton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2d57045aea3b13da": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "458ede4658705d29": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "814e345a347d0512": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8877da5ead42ddbe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "89c4804b23ef4b00": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53c93f1e25",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-81172d9cc5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-430fcc2ef6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

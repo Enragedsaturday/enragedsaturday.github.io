@@ -1,22 +1,104 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Black.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "e3938a55b59905b2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.scope_note; lake treatment.field_i_validity=unverified; lake progeny rows_cached=0",
+          "needs_cl": true,
+          "problem": "The case citation and identity are verified, but under the currency lens the disclosed record does not verify that the authority remains live good law. The lake record marks treatment as unverified and contains no derived progeny/treatment enumeration, so this existence assertion must not be treated as a current-validity assertion.",
+          "proposed_fix": "Render this as citation/existence only, and pair it with an explicit Treatment: Unverified warning until treatment/progeny are derived.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citations verify the cited authority as United States v. Nathaniel Black, 707 F.3d 531, decided 2013-02-25 by the Fourth Circuit.",
+          "Currency/live-law status is not verifiable from the disclosed record because treatment is expressly unverified and progeny rows are not cached or enumerated."
+        ],
+        "residual_risks": [
+          "The citation itself is a true positive; the risk is only overreading existence as current good-law status."
+        ],
+        "suggested_tightening": "Separate citation existence from current-validity language wherever this row is consumed.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3ac2bd44938362ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The built page consistently labels treatment as Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "No disclosed treatment edge or progeny edge overrules, abrogates, supersedes, or limits Black; the record instead says treatment/progeny have not been derived."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified and progeny enumeration is absent, this row does not support any affirmative good-law conclusion."
+        ],
+        "suggested_tightening": "Keep the Unverified treatment badge prominent until S6 promotion supplies derived treatment/progeny.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Black.json\",\"reviewed\":[{\"assertion_id\":\"e3938a55b59905b2\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The case citation and identity are verified, but under the currency lens the disclosed record does not verify that the authority remains live good law. The lake record marks treatment as unverified and contains no derived progeny/treatment enumeration, so this existence assertion must not be treated as a current-validity assertion.\",\"severity\":\"medium\",\"proposed_fix\":\"Render this as citation/existence only, and pair it with an explicit Treatment: Unverified warning until treatment/progeny are derived.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake treatment.scope_note; lake treatment.field_i_validity=unverified; lake progeny rows_cached=0\"},\"reasons\":[\"Lake identity and citations verify the cited authority as United States v. Nathaniel Black, 707 F.3d 531, decided 2013-02-25 by the Fourth Circuit.\",\"Currency/live-law status is not verifiable from the disclosed record because treatment is expressly unverified and progeny rows are not cached or enumerated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citation itself is a true positive; the risk is only overreading existence as current good-law status.\"],\"suggested_tightening\":\"Separate citation existence from current-validity language wherever this row is consumed.\"},{\"assertion_id\":\"3ac2bd44938362ec\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The built page consistently labels treatment as Unverified and states that subsequent treatment has not yet been machine-verified.\",\"No disclosed treatment edge or progeny edge overrules, abrogates, supersedes, or limits Black; the record instead says treatment/progeny have not been derived.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified and progeny enumeration is absent, this row does not support any affirmative good-law conclusion.\"],\"suggested_tightening\":\"Keep the Unverified treatment badge prominent until S6 promotion supplies derived treatment/progeny.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:30:31-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:47:02-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b9bebf9023"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Black.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-6ce6fe7c",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6ce6fe7c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:30:25.615456Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:26.107843Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:26.722064Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:27.463360Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:28.956230Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Black"
+    ],
+    "tokens": {
+      "input": 116278,
+      "output": 6343,
+      "source": "codex-events",
+      "total": 122621
+    },
+    "verdict_map": {
+      "3ac2bd44938362ec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e3938a55b59905b2": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b9bebf9023",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 125.2
   }
 }

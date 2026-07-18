@@ -1,38 +1,182 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Rochin v. California.md",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence/support/quote-fidelity implications. Treatment/currency issues are reserved for lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "b3ee222467c6e59c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Rochin v. California, court U.S. Supreme Court, decision date 1952-01-02, and year 1952.",
+          "The lake citation record lists official cite 342 U.S. 165, vendor cite 1952 U.S. LEXIS 2576, and the same parallel citations stated in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b18f6f8484fa46e2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This is conduct that shocks the conscience.",
+          "locator_note": "holding",
+          "needs_cl": false,
+          "problem": "The holding is substantively supported, but the quoted phrase is not character-faithful: the opinion says 'shocks the conscience,' while the holding payload quotes 'shock the conscience.'",
+          "proposed_fix": "Change the quoted phrase to 'shocks the conscience' or remove quotation marks around the doctrinal shorthand 'shock the conscience.'",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that deputies entered the dwelling, forced open Rochin's room, struggled to extract capsules from his mouth, took him to a hospital, and a doctor forced an emetic tube into his stomach against his will.",
+          "The opinion states the capsules were the chief evidence and that the conviction was obtained by methods offending the Due Process Clause.",
+          "The page's broad due-process proposition tracks the opinion's statements that the conduct shocked the conscience and used methods too close to the rack and screw."
+        ],
+        "residual_risks": [
+          "The lake record has no pinpoints or holding field, so support rests on the cached opinion text."
+        ],
+        "suggested_tightening": "Use the opinion's exact wording: government conduct that 'shocks the conscience.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b693ff2e580175e4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "home: Common Law Origins",
+          "needs_cl": false,
+          "problem": "The disclosed authority supports a due-process holding, but it does not independently verify the corpus placement 'Common Law Origins' or the role 'Historical / origin.' The lake record has no homes or role judgment, and the referenced Common Law Origins page or taxonomy is not disclosed.",
+          "proposed_fix": "Provide the Common Law Origins page, an approved taxonomy/source showing why Rochin belongs there, or narrow the role to a disclosed fact such as 'due-process shocks-the-conscience source.'",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion text verifies the due-process ruling, not a corpus home assignment.",
+          "The lake record contains identity, citation, treatment, and progeny fields, but no home-role field supporting this classification.",
+          "Defaulting to refuted on uncertainty, the home-role cannot be verified from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The classification may be correct in the undisclosed corpus taxonomy, but that evidence is outside this review universe."
+        ],
+        "suggested_tightening": "Tie the home role to a disclosed taxonomy or change it to a narrower, opinion-supported role.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "46d474dd596a3f3e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The weight label is consistent with the lake identity fields showing court U.S. Supreme Court and court_level scotus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98f633818cfc7b91",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment record in substance: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No good-law conclusion is reviewed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Rochin v. California.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b3ee222467c6e59c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Rochin v. California, court U.S. Supreme Court, decision date 1952-01-02, and year 1952.\",\n        \"The lake citation record lists official cite 342 U.S. 165, vendor cite 1952 U.S. LEXIS 2576, and the same parallel citations stated in the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b18f6f8484fa46e2\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding is substantively supported, but the quoted phrase is not character-faithful: the opinion says 'shocks the conscience,' while the holding payload quotes 'shock the conscience.'\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the quoted phrase to 'shocks the conscience' or remove quotation marks around the doctrinal shorthand 'shock the conscience.'\",\n        \"evidence_quote\": \"This is conduct that shocks the conscience.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"The opinion states that deputies entered the dwelling, forced open Rochin's room, struggled to extract capsules from his mouth, took him to a hospital, and a doctor forced an emetic tube into his stomach against his will.\",\n        \"The opinion states the capsules were the chief evidence and that the conviction was obtained by methods offending the Due Process Clause.\",\n        \"The page's broad due-process proposition tracks the opinion's statements that the conduct shocked the conscience and used methods too close to the rack and screw.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record has no pinpoints or holding field, so support rests on the cached opinion text.\"\n      ],\n      \"suggested_tightening\": \"Use the opinion's exact wording: government conduct that 'shocks the conscience.'\"\n    },\n    {\n      \"assertion_id\": \"b693ff2e580175e4\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed authority supports a due-process holding, but it does not independently verify the corpus placement 'Common Law Origins' or the role 'Historical / origin.' The lake record has no homes or role judgment, and the referenced Common Law Origins page or taxonomy is not disclosed.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Provide the Common Law Origins page, an approved taxonomy/source showing why Rochin belongs there, or narrow the role to a disclosed fact such as 'due-process shocks-the-conscience source.'\",\n        \"evidence_quote\": null,\n        \"needs_cl\": false,\n        \"locator_note\": \"home: Common Law Origins\"\n      },\n      \"reasons\": [\n        \"The opinion text verifies the due-process ruling, not a corpus home assignment.\",\n        \"The lake record contains identity, citation, treatment, and progeny fields, but no home-role field supporting this classification.\",\n        \"Defaulting to refuted on uncertainty, the home-role cannot be verified from disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The classification may be correct in the undisclosed corpus taxonomy, but that evidence is outside this review universe.\"\n      ],\n      \"suggested_tightening\": \"Tie the home role to a disclosed taxonomy or change it to a narrower, opinion-supported role.\"\n    },\n    {\n      \"assertion_id\": \"46d474dd596a3f3e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The weight label is consistent with the lake identity fields showing court U.S. Supreme Court and court_level scotus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"98f633818cfc7b91\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the lake treatment record in substance: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No good-law conclusion is reviewed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed only existence/support/quote-fidelity implications. Treatment/currency issues are reserved for lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:50:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T07:52:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d1bc30389d",
+      "F-S9-PR-f80d70da89"
+    ],
     "group_id": "content/cases/Rochin v. California.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Rochin v. California"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4e991ded",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4e991ded.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Rochin v. California' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Rochin v. California"
+    ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 149092,
+      "output": 5345,
+      "source": "codex-events",
+      "total": 154437
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "46d474dd596a3f3e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98f633818cfc7b91": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b18f6f8484fa46e2": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b3ee222467c6e59c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b693ff2e580175e4": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d1bc30389d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f80d70da89",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 108.9
   }
 }

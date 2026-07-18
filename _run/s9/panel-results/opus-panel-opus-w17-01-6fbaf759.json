@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "17a4cba35606a290",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 468 U.S. 705 (selected_official) with parallels 104 S. Ct. 3296 / 82 L. Ed. 2d 530 and vendor-neutral 1984 U.S. LEXIS 148 match content-page frontmatter and lake citations block.",
+          "Cached slip op confirms identity: White majority, beeper-in-residence holding, star pagination *708-*721 consistent with a case beginning at 468 U.S. 705."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "790b0016f2365e4a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches cached slip op para id=b757-5 verbatim: '... it does reveal a critical fact about the interior of the premises that the Government is extremely interested in knowing and that it could not have otherwise obtained without a warrant. The case is thus not like Knotts, for there the beeper told the authorities nothing about the interior of Knotts' cabin.'",
+          "Quote begins mid-sentence at 'does reveal' (antecedent 'the monitoring') — a legitimate verbatim excerpt; 'mismatch' flag is an OCR/glyph diff artifact.",
+          "Pincite 715 is correct: b757-5 follows the *715 marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2d8c2cda7e5d932",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # United States v. Karo *468 U.S. 705 (1984)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "pin-714; lake pinpoints[].id=pin-714 and group_inventory payload.quote; content-page Rule ^pin-714; verbatim source: cached opinion para id=b756-6 (*714).",
+          "needs_cl": false,
+          "problem": "Stored pin-714 quote is content-page Markdown, not opinion text: it begins with the YAML boundary '---', the H1 '# United States v. Karo', the citation/TreatmentBadge header line, and the '## Background' / '## Issue' / '## Rule Yes.' section headers.",
+          "proposed_fix": "Replace with the verbatim opinion sentence at *714 (para id=b756-6): 'This case thus presents the question whether the monitoring of a beeper in a private residence, a location not open to visual surveillance, violates the Fourth Amendment rights of those who have a justifiable interest in the privacy of the residence. Contrary to the submission of the United States, we think that it does.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "YAML delimiter, H1, and '## Background/## Issue/## Rule' headers are page scaffolding, proving the quote field harvested content-page text, not opinion text.",
+          "The content page's ^pin-714 does anchor a faithful excerpt of the *714 sentence; defect is confined to the stored quote field."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "406a24c29dd19675",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with composite_basis='migration-seed', point_overrides=[], varies_by_point=false; no adopted negative treatment in the sighted record.",
+          "Cached slip op is the controlling home-interior tracking opinion itself; scope_note accurately notes reinforcement by Jones/Carpenter.",
+          "as_of_content is null (no content-date seed) and as_of_treatment 2026-06-30 — internally consistent."
+        ],
+        "residual_risks": [
+          "treatment.edges are all proposed:true (none adopted); several 'overruled' tags sit on citing cases (e.g., Carpenter, Collins, Torres) that reinforced/distinguished rather than overruled the anchor — citator false-positives S2 re-derivation should filter, not adopt."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-837d36a923",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Karo.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-01-6fbaf759",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Karo"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "17a4cba35606a290": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "406a24c29dd19675": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "790b0016f2365e4a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2d8c2cda7e5d932": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-837d36a923",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1072f4347d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

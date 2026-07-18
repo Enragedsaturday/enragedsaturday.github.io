@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Thompson v. Keohane.json",
+    "lens": "A",
+    "notes": "Reviewed only against the disclosed working-directory files. Treatment was checked only for correspondence to the lake record, not for substantive currency.",
+    "reviewed": [
+      {
+        "assertion_id": "a1d1270eee1f5a37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Thompson v. Keohane, U.S. Supreme Court, decided 1995-11-29, docket 94-6615.",
+          "The displayed citation 516 U.S. 99 and listed parallel/vendor citations match the lake citations payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a743e99066a6150",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Two discrete inquiries are essential to the determination",
+          "locator_note": "text/Thompson v. Keohane__cbbfd6.txt line 38; content_page.md lines 49-53; lake pinpoints[pin-112].quote_fidelity=mismatch",
+          "needs_cl": false,
+          "problem": "pin-112's asserted quote is not the opinion passage at the pin; it is a harvested splice of the page's Issue/Rule prose and even includes markdown heading text. The lake record itself marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Re-harvest pin-112 from the actual opinion passage beginning with the two custody inquiries, or remove verbatim-quote treatment for the harvested page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at the relevant rule passage begins with the Court's two-inquiry formulation, not the inventory quote's Issue/Rule prose.",
+          "The stored pinpoint quote includes '## Rule The custody inquiry is objective and two-part,' which is page-authored markdown, not opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Attach pin-112 only to the actual opinion quotation and preserve the opinion's quotation marks and footnote-handling convention.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e34e6a05e1b2a564",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "presents a \"mixed question of law and fact\" qualifying for independent review",
+          "locator_note": "text/Thompson v. Keohane__cbbfd6.txt line 38; content_page.md line 55; lake pinpoints[pin-113].quote_fidelity=mismatch",
+          "needs_cl": false,
+          "problem": "The quoted sentence is the correct passage, but the page/lake quote changes the opinion's double quotation marks around the phrase 'mixed question of law and fact' to single quotation marks.",
+          "proposed_fix": "Use: This ultimate determination, we hold, presents a \"mixed question of law and fact\" qualifying for independent review.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text contains the quoted sentence at the 112-113 page break, so the citation lands on the right passage.",
+          "Character fidelity fails only because the disclosed text uses double quotation marks while the page/lake quote uses single quotation marks."
+        ],
+        "residual_risks": [
+          "HTML/source typography may differ from print typography, but the disclosed text file is the controlling evidence here."
+        ],
+        "suggested_tightening": "Correct the quotation marks and keep the 112-113 pincite.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b67302ad094a323d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment merits finding is raised.",
+          "The payload reproduces the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1995-11-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Thompson v. Keohane.json\",\"reviewed\":[{\"assertion_id\":\"a1d1270eee1f5a37\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms Thompson v. Keohane, U.S. Supreme Court, decided 1995-11-29, docket 94-6615.\",\"The displayed citation 516 U.S. 99 and listed parallel/vendor citations match the lake citations payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1a743e99066a6150\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-112's asserted quote is not the opinion passage at the pin; it is a harvested splice of the page's Issue/Rule prose and even includes markdown heading text. The lake record itself marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Re-harvest pin-112 from the actual opinion passage beginning with the two custody inquiries, or remove verbatim-quote treatment for the harvested page prose.\",\"evidence_quote\":\"Two discrete inquiries are essential to the determination\",\"needs_cl\":false,\"locator_note\":\"text/Thompson v. Keohane__cbbfd6.txt line 38; content_page.md lines 49-53; lake pinpoints[pin-112].quote_fidelity=mismatch\"},\"reasons\":[\"The disclosed opinion text at the relevant rule passage begins with the Court's two-inquiry formulation, not the inventory quote's Issue/Rule prose.\",\"The stored pinpoint quote includes '## Rule The custody inquiry is objective and two-part,' which is page-authored markdown, not opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Attach pin-112 only to the actual opinion quotation and preserve the opinion's quotation marks and footnote-handling convention.\"},{\"assertion_id\":\"e34e6a05e1b2a564\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is the correct passage, but the page/lake quote changes the opinion's double quotation marks around the phrase 'mixed question of law and fact' to single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use: This ultimate determination, we hold, presents a \\\"mixed question of law and fact\\\" qualifying for independent review.\",\"evidence_quote\":\"presents a \\\"mixed question of law and fact\\\" qualifying for independent review\",\"needs_cl\":false,\"locator_note\":\"text/Thompson v. Keohane__cbbfd6.txt line 38; content_page.md line 55; lake pinpoints[pin-113].quote_fidelity=mismatch\"},\"reasons\":[\"The opinion text contains the quoted sentence at the 112-113 page break, so the citation lands on the right passage.\",\"Character fidelity fails only because the disclosed text uses double quotation marks while the page/lake quote uses single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"HTML/source typography may differ from print typography, but the disclosed text file is the controlling evidence here.\"],\"suggested_tightening\":\"Correct the quotation marks and keep the 112-113 pincite.\"},{\"assertion_id\":\"b67302ad094a323d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment merits finding is raised.\",\"The payload reproduces the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1995-11-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only against the disclosed working-directory files. Treatment was checked only for correspondence to the lake record, not for substantive currency.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:37-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:42:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-93225c081b",
+      "F-S9-PR-a06acf96ef"
+    ],
     "group_id": "_overhaul2/lake/cases/Thompson v. Keohane.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-65fd4c7c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Thompson v. Keohane"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 222129,
+      "output": 7804,
+      "source": "codex-events",
+      "total": 229933
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "1a743e99066a6150": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a1d1270eee1f5a37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b67302ad094a323d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e34e6a05e1b2a564": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-93225c081b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a06acf96ef",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 155.6
   }
 }

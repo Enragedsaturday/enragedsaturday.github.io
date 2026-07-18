@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d102ae478c242f60",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Mr. Justice Black; conspiracy to rob a federally insured bank; 3 a.m. vagrancy arrest; car towed to garage and searched) is unmistakably Preston v. United States.",
+          "Star pagination *365/*366/*367/*368 places the opinion's opening page at 364, confirming the official cite 376 U.S. 364.",
+          "official.selected_official=true on 376 U.S. 364 with official_selection_present=true; no disclosed evidence contradicts the cite."
+        ],
+        "residual_risks": [
+          "Parallel cites 84 S. Ct. 881 / 11 L. Ed. 2d 777 and 1964 U.S. LEXIS 1578 pin-pages are not independently confirmable from the U.S.-Reports cached text, but are sourced from cluster.citations[] and are uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b5467cb9f8bdc03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Source (p. 368): 'We think that the search was too remote in time or place to have been made as incidental to the arrest and conclude, therefore, that the search of the car without a warrant failed to meet the test of reasonableness under the Fourth Amendment, rendering the evidence obtained as a result of the search inadmissible.'",
+          "Record quote reproduces every retained word verbatim, using an ellipsis for the omitted 'and conclude, therefore, that' with a bracketed '[so]' and an ellipsis for 'as a result of the search' — a faithful Bluebook quotation.",
+          "The *368 star marker precedes this concluding sentence, so pincite '376 U.S. at 368' is correct.",
+          "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' is a naive literal-substring false positive caused by the ellipses/brackets, not an actual misquote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fidelity matcher should normalize Bluebook ellipses/brackets before comparison so faithful edited quotations are not flagged 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8dce0920b2eabcca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Source (p. 367): 'But these justifications are absent where a search is remote in time or place from the arrest.'",
+          "Record quote 'justifications are absent where a search is remote in time or place from the arrest.' is a verbatim substring (leading 'But these' dropped without ellipsis, permissible as it starts the quoted clause).",
+          "Sentence falls between the *367 and *368 markers, so the star_marker='367' / pincite is correct; matches star-verified='matched' and the text-fragment anchor."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e5f664f222c7c86b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Once an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest.",
+          "locator_note": "376 U.S. at 367; content-page anchor ^pin-367 renders '[o]nce an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest.'",
+          "needs_cl": false,
+          "problem": "The harvested `quote` for pin-367 is a page-dump artifact (rendered-markdown from the page header through '## Rule No. A search incident to arrest must be contemporaneous, and'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string matches no contiguous source passage.",
+          "proposed_fix": "Re-harvest pin-367 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 376 U.S. 367.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The ACTUAL content-page pinpoint quote at ^pin-367 ('[o]nce an accused...simply not incident to the arrest.') is verbatim from the source (the sentence precedes the *368 marker, i.e., page 367), with only a bracketed lower-case '[o]' — so the underlying legal quote and its pincite (367) survive.",
+          "Only the harvested representation in the assertion payload is broken (page-dump), a mechanical extraction artifact affecting pins that lack a text-fragment anchor."
+        ],
+        "residual_risks": [
+          "The published quote at ^pin-367 is faithful and must be preserved; only the payload's harvested quote string needs correction — do not delete the pin."
+        ],
+        "suggested_tightening": "Pins without a text-fragment anchor should fall back to a sentence-scoped harvest rather than a page-prefix dump.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c99ed8fdcd0128e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is a migration-seed (field_provenance: _treatment-migration.json + page frontmatter); the derivation edges are proposed-only.",
+          "The negative-treatment lanes (lane1_negative 'cites:(106771) AND (overrul*|abrogat*|...)', lane2_top_cited, lane3_recency) returned only 'proposed':true candidates with field_iii='mentioned'; the negative term attaches to the CITING cases, not to Preston — no edge establishes that Preston's search-incident remoteness holding was overruled.",
+          "scope_note correctly characterizes the automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) as distinguishing/limiting, not overruling, Preston; Preston's SITA remoteness holding remains controlling."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 is seed-based; lane1_negative (14 proposed_negative_events) and lane2 carry audit_needed=true / 'R15 treatment audit required' with triage snippet-classified rather than fully read — none is a confirmed overruling, but the audit is not closed."
+        ],
+        "suggested_tightening": "Complete the R15 audit of the proposed_negative_events before treating as_of_treatment as fully re-derived rather than migration-seeded.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-84e4f4d096",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Preston v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-05-1d755592",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Preston v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "8b5467cb9f8bdc03": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8dce0920b2eabcca": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c99ed8fdcd0128e0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d102ae478c242f60": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5f664f222c7c86b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-84e4f4d096",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f6b75769f9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,11 +1,86 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Garrison.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7f2c7c09670a78fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified, non-stub, and identifies Maryland v. Garrison as a U.S. Supreme Court case decided 1987-02-24 with cluster_id 111823 and lead_opinion_id 9430836.",
+          "The lake citations record selects 480 U.S. 79 as the official citation and includes the listed parallel/vendor citations.",
+          "The case-level treatment field is good_law as of 2026-06-30, so the disclosed record supports the authority as live law for lens-B purposes."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit_needed=true and cap_hit=true in some lanes, so later audit could alter the good-law judgment, but no disclosed judgment field currently does so."
+        ],
+        "suggested_tightening": "For visible currency context, surface that the good-law status is migration-seeded and has an audit marker in the treatment metadata.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8112497b9fd6270c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion, and support/quote fidelity is outside lens B.",
+          "No pin-specific treatment override appears in the lake record: varies_by_point is false and point_overrides is empty.",
+          "The case-level treatment field remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No lens-A quote-fidelity review was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bb94a110a81cdf0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion, and support/quote fidelity is outside lens B.",
+          "No pin-specific treatment override appears in the lake record: varies_by_point is false and point_overrides is empty.",
+          "The case-level treatment field remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No lens-A quote-fidelity review was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc9cbf389d51b0eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment judgment: field_i_validity is good_law, as_of_content is 1987-02-24, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed treatment edges include proposed negative labels, but the listed edges are marked proposed=true, field_iii=mentioned, and point=null; the record does not contain a point override or case-level downgrade for Garrison.",
+          "The SCOTUS identity supports the page's binding-weight label for federal constitutional law."
+        ],
+        "residual_risks": [
+          "The derivation metadata flags audit_needed=true for lane1_negative and lane2_top_cited and says the old as_of seed may be re-derived and downgraded.",
+          "The disclosed corpus does not include full text for the proposed citing-case edges, so this review relies on the lake judgment fields as permitted."
+        ],
+        "suggested_tightening": "Keep the status as good_law, but make the migration-seed/audit-needed caveat visible wherever the treatment badge is displayed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Garrison.json\",\"reviewed\":[{\"assertion_id\":\"7f2c7c09670a78fe\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified, non-stub, and identifies Maryland v. Garrison as a U.S. Supreme Court case decided 1987-02-24 with cluster_id 111823 and lead_opinion_id 9430836.\",\"The lake citations record selects 480 U.S. 79 as the official citation and includes the listed parallel/vendor citations.\",\"The case-level treatment field is good_law as of 2026-06-30, so the disclosed record supports the authority as live law for lens-B purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit_needed=true and cap_hit=true in some lanes, so later audit could alter the good-law judgment, but no disclosed judgment field currently does so.\"],\"suggested_tightening\":\"For visible currency context, surface that the good-law status is migration-seeded and has an audit marker in the treatment metadata.\"},{\"assertion_id\":\"8112497b9fd6270c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity assertion, and support/quote fidelity is outside lens B.\",\"No pin-specific treatment override appears in the lake record: varies_by_point is false and point_overrides is empty.\",\"The case-level treatment field remains good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens-A quote-fidelity review was performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9bb94a110a81cdf0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity assertion, and support/quote fidelity is outside lens B.\",\"No pin-specific treatment override appears in the lake record: varies_by_point is false and point_overrides is empty.\",\"The case-level treatment field remains good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens-A quote-fidelity review was performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fc9cbf389d51b0eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment judgment: field_i_validity is good_law, as_of_content is 1987-02-24, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The disclosed treatment edges include proposed negative labels, but the listed edges are marked proposed=true, field_iii=mentioned, and point=null; the record does not contain a point override or case-level downgrade for Garrison.\",\"The SCOTUS identity supports the page's binding-weight label for federal constitutional law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The derivation metadata flags audit_needed=true for lane1_negative and lane2_top_cited and says the old as_of seed may be re-derived and downgraded.\",\"The disclosed corpus does not include full text for the proposed citing-case edges, so this review relies on the lake judgment fields as permitted.\"],\"suggested_tightening\":\"Keep the status as good_law, but make the migration-seed/audit-needed caveat visible wherever the treatment badge is displayed.\"}],\"notes\":\"Lens B only; no support or quote-fidelity defects were raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:17-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:05:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Maryland v. Garrison.json",
@@ -16,21 +91,50 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-777bcc0b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Maryland v. Garrison"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 163581,
+      "output": 5246,
+      "source": "codex-events",
+      "total": 168827
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "7f2c7c09670a78fe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8112497b9fd6270c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bb94a110a81cdf0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc9cbf389d51b0eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 104.0
   }
 }

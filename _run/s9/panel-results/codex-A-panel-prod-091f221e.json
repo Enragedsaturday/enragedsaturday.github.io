@@ -1,22 +1,154 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mincey v. Arizona.json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl. Lens A did not audit treatment merits beyond consistency with disclosed fields.",
+    "reviewed": [
+      {
+        "assertion_id": "c460ecd12fdcb4f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Mincey v. Arizona, U.S. Supreme Court, decided 1978-06-21.",
+          "The official citation 437 U.S. 385 and listed parallel/vendor citations match the lake citations record and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f4fa74acd1f7810",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Mincey v. Arizona__bf7942.txt: \"the police may seize any evidence that is in plain view during the course of their legitimate emergency activities.\"",
+          "The lake pinpoint for pin-393 has the same quote, quote_fidelity \"matched\", star_marker \"393\", and the content page cites Id. at 393."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "817ed0ece8759726",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid.",
+          "locator_note": "pin-392; the correct sentence appears in the opinion text on the page-392 paragraph, while the current payload quote appears only in lake/Mincey v. Arizona__bf7942.json.",
+          "needs_cl": false,
+          "problem": "The pin-392 payload/lake pinpoint quote is not the opinion quote at page 392; it is generated page prose spanning the Issue/Rule text and the lake itself marks it quote_fidelity \"mismatch\" with no star marker.",
+          "proposed_fix": "Replace pin-392's lake/payload quote with the actual quoted opinion sentence used on the content page and present in the opinion text; set the pinpoint to star page 392 if validated.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote beginning \"exception permitting a warrantless search\" does not appear in the cached opinion text as an opinion passage.",
+          "The content page's visible pin-392 quotation is supported by the opinion text, but the assertion record's quoted payload is the wrong harvested text."
+        ],
+        "residual_risks": [
+          "The visible content_page quote at pin-392 appears correct; the defect is in the lake/inventory pinpoint payload."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence already visible on the page as pin-392's stored quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afa9df3e4ee05106",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside lens A, so no treatment/currency finding is raised.",
+          "The inventory treatment values match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1978-06-21, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Current-status and negative-treatment audit questions are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mincey v. Arizona.json\",\"reviewed\":[{\"assertion_id\":\"c460ecd12fdcb4f1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Mincey v. Arizona, U.S. Supreme Court, decided 1978-06-21.\",\"The official citation 437 U.S. 385 and listed parallel/vendor citations match the lake citations record and the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0f4fa74acd1f7810\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Mincey v. Arizona__bf7942.txt: \\\"the police may seize any evidence that is in plain view during the course of their legitimate emergency activities.\\\"\",\"The lake pinpoint for pin-393 has the same quote, quote_fidelity \\\"matched\\\", star_marker \\\"393\\\", and the content page cites Id. at 393.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"817ed0ece8759726\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-392 payload/lake pinpoint quote is not the opinion quote at page 392; it is generated page prose spanning the Issue/Rule text and the lake itself marks it quote_fidelity \\\"mismatch\\\" with no star marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-392's lake/payload quote with the actual quoted opinion sentence used on the content page and present in the opinion text; set the pinpoint to star page 392 if validated.\",\"evidence_quote\":\"the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid.\",\"needs_cl\":false,\"locator_note\":\"pin-392; the correct sentence appears in the opinion text on the page-392 paragraph, while the current payload quote appears only in lake/Mincey v. Arizona__bf7942.json.\"},\"reasons\":[\"The payload quote beginning \\\"exception permitting a warrantless search\\\" does not appear in the cached opinion text as an opinion passage.\",\"The content page's visible pin-392 quotation is supported by the opinion text, but the assertion record's quoted payload is the wrong harvested text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote at pin-392 appears correct; the defect is in the lake/inventory pinpoint payload.\"],\"suggested_tightening\":\"Use the exact opinion sentence already visible on the page as pin-392's stored quote.\"},{\"assertion_id\":\"afa9df3e4ee05106\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside lens A, so no treatment/currency finding is raised.\",\"The inventory treatment values match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1978-06-21, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current-status and negative-treatment audit questions are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl. Lens A did not audit treatment merits beyond consistency with disclosed fields.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:14:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-77b54e73db",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-98a01f1b50"
+    ],
     "group_id": "_overhaul2/lake/cases/Mincey v. Arizona.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-091f221e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-091f221e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.807891Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.497642Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.336221Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.621713Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.974799Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:37.411943Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mincey v. Arizona"
+    ],
+    "tokens": {
+      "input": 257408,
+      "output": 7663,
+      "source": "codex-events",
+      "total": 265071
+    },
+    "verdict_map": {
+      "0f4fa74acd1f7810": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "817ed0ece8759726": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "afa9df3e4ee05106": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c460ecd12fdcb4f1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-98a01f1b50",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-77b54e73db",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 152.8
   }
 }

@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f69f7eea540dd980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Disclosed opinion header confirms 415 U.S. 800 (1974), UNITED STATES v. EDWARDS ET AL., No. 73-88, decided March 26, 1974; official 415 U.S. 800 selected and displayed.",
+          "Parallel cites 94 S. Ct. 1234 / 39 L. Ed. 2d 771 are standard; no existence defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ae747bda1af71d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-808 is verbatim from the DeLeo passage the Edwards Court quotes at *808-09: 'it does -- for at least a reasonable time and to a reasonable extent -- take his own privacy out of the realm of protection from police interest in weapons, means of escape, and evidence.'",
+          "Page brackets 'his' -> '[the arrestee's]', drops leading 'it', and correctly attributes the words to United States v. DeLeo; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "823a0dd55db502da",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is also plain that searches and seizures that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention.",
+          "locator_note": "pin-803; opinion at *802-803",
+          "needs_cl": false,
+          "problem": "Stored pin-803 quote is a harvest artifact: it captured content-page front-matter/prose from the header through the '## Rule No. Searches and seizures' lead-in, not opinion text. The quote actually rendered at ^pin-803 is verbatim-faithful to the opinion at *802-803.",
+          "proposed_fix": "Re-harvest pin-803's stored quote to the actual quoted span, which matches the opinion verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered quote at ^pin-803 ('that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention') is verbatim at *802-803; pincite 803 correct.",
+          "Only the stored pinpoint string is wrong (front-matter chrome); the page's legal quote is faithful."
+        ],
+        "residual_risks": [
+          "quote_fidelity=mismatch/slip-only reflects the harvest span, not the faithful page quote"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1a84bccf2a82774",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-807 is verbatim from the opinion at *807 with a properly marked ellipsis: 'once the accused is lawfully arrested and is in custody, the effects in his possession at the place of detention that were subject to search at the time and place of his arrest may lawfully be searched and seized without a warrant even though a substantial period of time has elapsed between the arrest and subsequent administrative processing . . . and the taking of the property for use as evidence.'",
+          "Original reads '...processing, on the one hand, and the taking of the property ... , on the other.'; the ellipsis and terminal truncation are faithful; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [
+          "mismatch flag should reconcile to matched"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cac1bb8ef545e490",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct: Edwards remains controlling on the timing of a search incident to arrest; the disclosed record shows no verified negative treatment.",
+          "Negative edges (e.g. New York v. Belton, Mincey v. Arizona labeled 'overruled') are proposed keyword-triage hits -- those citing cases contained 'overrul*' etc.; none overrules Edwards; lane markers say 'R15 treatment audit required'.",
+          "scope_note is accurate to the holding."
+        ],
+        "residual_risks": [
+          "page body line 'No negative treatment' is stronger than the unaudited edge set warrants (R15)"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ee0308e82f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-db375ce77a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Edwards.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-00-3643855f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Edwards"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7ae747bda1af71d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "823a0dd55db502da": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b1a84bccf2a82774": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cac1bb8ef545e490": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f69f7eea540dd980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ee0308e82f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ed63cc25f7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-db375ce77a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

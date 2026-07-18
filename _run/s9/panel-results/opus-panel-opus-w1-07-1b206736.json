@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "06b0bd0f4c416bd8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is Birchfield v. North Dakota (DUI breath/blood tests as searches incident to arrest; discusses McNeely, Schmerber, and Justice Thomas's partial dissent), confirming the case.",
+          "official 579 U.S. 438 selected (official_selection_present=true); frontmatter citation '579 U.S. 438 (2016)' populated; parallel 136 S. Ct. 2160 and 195 L. Ed. 2d 560 are standard.",
+          "Frontmatter opinion_url and Sources line share CL cluster 3216497 (consistent)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95634e80873e19ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-2185a quote matches the cached slip opinion verbatim (soft-hyphen line-wraps aside): 'It is another matter, however, for a State not only to insist upon an intrusive blood test, but also to impose criminal penalties on the refusal to submit to such a test. There must be a limit to the consequences to which motorists may be deemed to have consented by virtue of a decision to drive on public roads.'",
+          "The payload carries the correct quote text; quote_fidelity=mismatch is a false positive."
+        ],
+        "residual_risks": [
+          "Cached copy is slip-opinion format with no S. Ct. star pagination, so the 136 S. Ct. at 2185-2186 page cannot be verified from disclosed text (consistent with pinpoint_status slip-only).",
+          "The Sources note claims the CourtListener copy carries S. Ct. pagination, but the disclosed cached text shows none."
+        ],
+        "suggested_tightening": "Confirm the 136 S. Ct. 2185-2186 star pages against a reporter copy that carries S. Ct. pagination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbc6d37a54783b5c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin-2185 quote matches the cached slip opinion verbatim (soft-hyphen wraps aside): 'Because breath tests are significantly less intrusive than blood tests and in most cases amply serve law enforcement interests, we conclude that a breath test, but not a blood test, may be administered as a search incident to a lawful arrest for drunk driving.'",
+          "The payload window captured the content-page header/Background/Issue/Rule scaffolding, so quote_fidelity=mismatch is an extraction artifact, not a defect in the rendered quote."
+        ],
+        "residual_risks": [
+          "Slip-format cached copy has no S. Ct. star pagination; the 136 S. Ct. at 2185 page is not verifiable from disclosed text (slip-only).",
+          "The cached opinion text is truncated at the tail (last 19424 chars), but both Birchfield pin quotes fall before the truncation and are fully verified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b343af200808f394",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law with an accurate scope_note: the disclosed opinion holds breath tests valid as a search incident to arrest, blood tests not, and no criminal penalty for refusing a warrantless blood test — matching the scope_note.",
+          "All treatment.edges are proposed:true lane1_negative candidates, none a confirmed overruling; record status is verified and stub=false."
+        ],
+        "residual_risks": [
+          "2026 currency not independently re-derivable from the 2016 opinion; proposed negatives unadjudicated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-55cf7a4c82",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c23f15f3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-07-1b206736",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Birchfield v. North Dakota"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "06b0bd0f4c416bd8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95634e80873e19ea": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b343af200808f394": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbc6d37a54783b5c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-55cf7a4c82",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c23f15f3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

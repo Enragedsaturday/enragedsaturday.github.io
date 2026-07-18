@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Steele v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not substantively attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "c971f49486f86f00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Steele v. United States No. 1 as a U.S. Supreme Court case decided 1925-04-13.",
+          "The asserted official citation 267 U.S. 498 matches lake.citations.official and the record display citation.",
+          "For currency, lake.treatment.field_i_validity marks the authority good_law as of 2026-06-30, with no point_overrides removing live-law status."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains proposed negative-event audit flags, but those are not final disclosed judgments against existence or live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f89acee210cd333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support; this row presents a pin quote rather than a treatment/currency assertion.",
+          "The pin is tied to the same verified Steele record, and no disclosed treatment field changes the authority's live-law status for this pin."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support are reserved to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b139e34e55fd0f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support; this row presents a pin quote rather than a treatment/currency assertion.",
+          "The pin is tied to the same verified Steele record, and no disclosed treatment field changes the authority's live-law status for this pin."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support are reserved to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9713b803a18e21b3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No negative treatment.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS treatment labels are supported, but the page's categorical 'No negative treatment' needs a caveat because the lake treatment derivation lists proposed negative events and flags treatment audits.",
+          "proposed_fix": "Keep field_i_validity=good_law and Binding-SCOTUS, but change 'No negative treatment' to 'No audited negative treatment in this lake record; proposed negative-event audit pending.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake.treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The authority-weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.",
+          "The disclosed treatment edges include proposed questioned, overruled, criticized, and abrogated entries, and the derivation fields mark lane1_negative and lane2_top_cited as audit_needed."
+        ],
+        "residual_risks": [
+          "Because proposed edges are unaudited and some derivation lanes hit caps, the disclosed record does not prove the absence of all negative treatment."
+        ],
+        "suggested_tightening": "Use 'no audited negative treatment in this lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Steele v. United States.json\",\"reviewed\":[{\"assertion_id\":\"c971f49486f86f00\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Steele v. United States No. 1 as a U.S. Supreme Court case decided 1925-04-13.\",\"The asserted official citation 267 U.S. 498 matches lake.citations.official and the record display citation.\",\"For currency, lake.treatment.field_i_validity marks the authority good_law as of 2026-06-30, with no point_overrides removing live-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation contains proposed negative-event audit flags, but those are not final disclosed judgments against existence or live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3f89acee210cd333\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support; this row presents a pin quote rather than a treatment/currency assertion.\",\"The pin is tied to the same verified Steele record, and no disclosed treatment field changes the authority's live-law status for this pin.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support are reserved to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9b139e34e55fd0f8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity or support; this row presents a pin quote rather than a treatment/currency assertion.\",\"The pin is tied to the same verified Steele record, and no disclosed treatment field changes the authority's live-law status for this pin.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support are reserved to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9713b803a18e21b3\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment labels are supported, but the page's categorical 'No negative treatment' needs a caveat because the lake treatment derivation lists proposed negative events and flags treatment audits.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity=good_law and Binding-SCOTUS, but change 'No negative treatment' to 'No audited negative treatment in this lake record; proposed negative-event audit pending.'\",\"evidence_quote\":\"No negative treatment.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake.treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The authority-weight label is supported by the lake identity fields: court is U.S. Supreme Court and court_level is scotus.\",\"The disclosed treatment edges include proposed questioned, overruled, criticized, and abrogated entries, and the derivation fields mark lane1_negative and lane2_top_cited as audit_needed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because proposed edges are unaudited and some derivation lanes hit caps, the disclosed record does not prove the absence of all negative treatment.\"],\"suggested_tightening\":\"Use 'no audited negative treatment in this lake record' rather than 'No negative treatment.'\"}],\"notes\":\"Lens B only; quote-fidelity rows were not substantively attacked.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:31-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:40:53-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-133d7b00a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-73480ff4b6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1dcd72d333"
+    ],
     "group_id": "_overhaul2/lake/cases/Steele v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ff95e105",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ff95e105.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:27.972946Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:28.499695Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.084888Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.859008Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Steele v. United States"
+    ],
+    "tokens": {
+      "input": 193310,
+      "output": 7208,
+      "source": "codex-events",
+      "total": 200518
+    },
+    "verdict_map": {
+      "3f89acee210cd333": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9713b803a18e21b3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9b139e34e55fd0f8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c971f49486f86f00": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-133d7b00a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-73480ff4b6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1dcd72d333",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 143.2
   }
 }

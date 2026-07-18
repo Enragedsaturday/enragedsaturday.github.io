@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/People v. Frederick.json",
+    "lens": "B",
+    "notes": "Reviewed both group_inventory rows under Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "a6e4c2a4c6d92730",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.field_i_validity is unverified; as_of_content and as_of_treatment are null; progeny rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the reporter citation, but it does not verify the currency/live-law status of the cited authority. The lake record expressly leaves treatment and progeny unverified.",
+          "proposed_fix": "Limit this assertion to citation existence only, or obtain completed treatment/progeny verification before treating the authority as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake citations field supports the cite 500 Mich. 228, but Lens B asks whether the cited authority is still live law.",
+          "The lake treatment fields provide no verified good-law date, no citator basis, and no progeny enumeration.",
+          "Under the default-to-refuted rule, the live-law/currency component cannot be accepted from this disclosed evidence."
+        ],
+        "residual_risks": [
+          "The citation may be accurate even though live-law status is not verifiable from this record."
+        ],
+        "suggested_tightening": "State only that the citation exists; keep any live-law or current-authority implication behind the existing unverified treatment banner.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "d08e1ab72f13d3e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment status is unverified, matching the lake treatment.field_i_validity value.",
+          "The asserted as_of_content and as_of_treatment values are null, matching the lake record.",
+          "The scope note matches the lake treatment scope note and correctly disclaims derived treatment/progeny."
+        ],
+        "residual_risks": [
+          "This standing treatment assertion establishes only that treatment is unverified; it does not establish that Frederick remains live law."
+        ],
+        "suggested_tightening": "Continue rendering the unverified treatment banner until treatment/progeny fields are populated and dated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/People v. Frederick.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a6e4c2a4c6d92730\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the reporter citation, but it does not verify the currency/live-law status of the cited authority. The lake record expressly leaves treatment and progeny unverified.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Limit this assertion to citation existence only, or obtain completed treatment/progeny verification before treating the authority as live law.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake treatment.field_i_validity is unverified; as_of_content and as_of_treatment are null; progeny rows_cached is 0.\"\n      },\n      \"reasons\": [\n        \"The lake citations field supports the cite 500 Mich. 228, but Lens B asks whether the cited authority is still live law.\",\n        \"The lake treatment fields provide no verified good-law date, no citator basis, and no progeny enumeration.\",\n        \"Under the default-to-refuted rule, the live-law/currency component cannot be accepted from this disclosed evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The citation may be accurate even though live-law status is not verifiable from this record.\"\n      ],\n      \"suggested_tightening\": \"State only that the citation exists; keep any live-law or current-authority implication behind the existing unverified treatment banner.\"\n    },\n    {\n      \"assertion_id\": \"d08e1ab72f13d3e0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment status is unverified, matching the lake treatment.field_i_validity value.\",\n        \"The asserted as_of_content and as_of_treatment values are null, matching the lake record.\",\n        \"The scope note matches the lake treatment scope note and correctly disclaims derived treatment/progeny.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This standing treatment assertion establishes only that treatment is unverified; it does not establish that Frederick remains live law.\"\n      ],\n      \"suggested_tightening\": \"Continue rendering the unverified treatment banner until treatment/progeny fields are populated and dated.\"\n    }\n  ],\n  \"notes\": \"Reviewed both group_inventory rows under Lens B only; no support or quote-fidelity findings made.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:33:40-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:26:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-541c49fa48"
+    ],
     "group_id": "_overhaul2/lake/cases/People v. Frederick.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-b83a6559",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-b83a6559.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:31.695704Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:32.391455Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:33.215186Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:34.458885Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:36.249133Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:39.580684Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "People v. Frederick"
+    ],
+    "tokens": {
+      "input": 94842,
+      "output": 5215,
+      "source": "codex-events",
+      "total": 100057
+    },
+    "verdict_map": {
+      "a6e4c2a4c6d92730": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d08e1ab72f13d3e0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-541c49fa48",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.6
   }
 }

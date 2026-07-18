@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Vaneaton.json",
+    "lens": "B",
+    "notes": "No support or quote-fidelity findings made under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "6fc84c7a910012d5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record ties United States v. Vaneaton to the 9th Cir., docket 93-30387, decided 1995-03-13, cluster_id 691388.",
+          "The lake citations record selects 49 F.3d 1423 as the official/display citation and lists the same parallel/vendor citations as the inventory.",
+          "No disclosed treatment/progeny edge says the authority has been vacated, overruled, abrogated, or superseded; this verdict is limited to existence/citation, not current validity."
+        ],
+        "residual_risks": [
+          "Treatment/progeny are unverified and intentionally not derived, so current live-law status remains uncertified from the disclosed record."
+        ],
+        "suggested_tightening": "Keep the citation tied to the unverified-treatment badge; do not let existence imply current validity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a68aecbe3a557d0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md authority_weight/header; lake treatment.scope_note and progeny rows_cached: 0",
+          "needs_cl": true,
+          "problem": "The unverified treatment field is correct, but the page also displays an unqualified 'Binding in-circuit - 9th Cir.' weight label despite no completed treatment/progeny derivation.",
+          "proposed_fix": "Keep field_i_validity as unverified and qualify or replace the weight label until treatment/progeny are completed, e.g. '9th Cir. source; treatment unverified.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake treatment edges are empty, but progeny rows_cached is 0 and the scope note says treatment/progeny were intentionally not derived, so empty edges cannot be read as a no-adverse-treatment finding.",
+          "The disclosed record supports only an unverified treatment status, not a current good-law certification."
+        ],
+        "residual_risks": [
+          "A completed treatment/progeny run could reveal limiting, overruling, abrogating, or superseding authority not present in the disclosed files."
+        ],
+        "suggested_tightening": "Qualify the weight label as source-court orientation only and harmonize the promotion wording, because the lake says S6 while the body says S9.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Vaneaton.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6fc84c7a910012d5\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record ties United States v. Vaneaton to the 9th Cir., docket 93-30387, decided 1995-03-13, cluster_id 691388.\",\n        \"The lake citations record selects 49 F.3d 1423 as the official/display citation and lists the same parallel/vendor citations as the inventory.\",\n        \"No disclosed treatment/progeny edge says the authority has been vacated, overruled, abrogated, or superseded; this verdict is limited to existence/citation, not current validity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/progeny are unverified and intentionally not derived, so current live-law status remains uncertified from the disclosed record.\"\n      ],\n      \"suggested_tightening\": \"Keep the citation tied to the unverified-treatment badge; do not let existence imply current validity.\"\n    },\n    {\n      \"assertion_id\": \"6a68aecbe3a557d0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The unverified treatment field is correct, but the page also displays an unqualified 'Binding in-circuit - 9th Cir.' weight label despite no completed treatment/progeny derivation.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity as unverified and qualify or replace the weight label until treatment/progeny are completed, e.g. '9th Cir. source; treatment unverified.'\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md authority_weight/header; lake treatment.scope_note and progeny rows_cached: 0\"\n      },\n      \"reasons\": [\n        \"The inventory treatment payload matches the lake: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\n        \"The lake treatment edges are empty, but progeny rows_cached is 0 and the scope note says treatment/progeny were intentionally not derived, so empty edges cannot be read as a no-adverse-treatment finding.\",\n        \"The disclosed record supports only an unverified treatment status, not a current good-law certification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed treatment/progeny run could reveal limiting, overruling, abrogating, or superseding authority not present in the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Qualify the weight label as source-court orientation only and harmonize the promotion wording, because the lake says S6 while the body says S9.\"\n    }\n  ],\n  \"notes\": \"No support or quote-fidelity findings made under Lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:32-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:08:43-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9fbe7f7c76"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Vaneaton.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-455973aa",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-455973aa.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:34:30.187385Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:34:30.679168Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:34:31.293518Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Vaneaton"
+    ],
+    "tokens": {
+      "input": 134780,
+      "output": 8511,
+      "source": "codex-events",
+      "total": 143291
+    },
+    "verdict_map": {
+      "6a68aecbe3a557d0": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "6fc84c7a910012d5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9fbe7f7c76",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 166.3
   }
 }

@@ -1,0 +1,137 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ee879ac08fb4b3e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the genuine Harris v. United States, 390 U.S. 234 (1968), PER CURIAM, No. 92, 'Decided March 5, 1968' — matching the record's docket 92 and date_decided 1968-03-05.",
+          "Official cite 390 U.S. 234 is selected; parallel 88 S. Ct. 992 / 19 L. Ed. 2d 1067 and 1968 U.S. LEXIS 2283 come from cluster.citations[].",
+          "The disclosed disambiguation (distinct from 1947 Harris, 331 U.S. 145, and from United States v. Harris (1971)) is consistent with the cached per curiam text; lake identity cluster 107625 corroborates."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25146016438438de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' matches the disclosed opinion verbatim: 'It has long been settled that objects falling in the plain view of an officer who has a right to be in the position to have that view are subject to seizure and may be introduced in evidence.'",
+          "The sentence sits after the *236 label (before *237), so star_marker '236' and the 'Id.' pincite to 236 are correct.",
+          "Extractor already reports quote_fidelity='matched' / star-verified; independent check confirms."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9b9a9360a798112",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the page front-matter + disambiguation + Background + Issue + Rule-lead header block (a harvest artifact), not the ^pin-236 sentence.",
+          "The genuine pin-236 quotation ('the discovery of the card was not the result of a search of the car, but of a measure taken to protect the car while it was in police custody. Nothing in the Fourth Amendment requires the police to obtain a warrant in these narrow circumstances.') matches the disclosed opinion verbatim and sits after the *236 label, so pincite 236 is correct.",
+          "The 'mismatch' flag is a header-harvest false positive, not a content defect."
+        ],
+        "residual_risks": [
+          "Payload 'quote' should be re-harvested to the anchored pin-236 sentence rather than the front-matter block."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10350838b874f36c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law (per curiam) is consistent with the disclosed opinion, whose plain-view-seizure articulation is the settled formulation quoted at p.236.",
+          "The scope_note (later structured by Horton v. California dropping inadvertence; distinct from the 1947 Harris overruled by Chimel) is doctrinally coherent, though Horton/Chimel are not inlined.",
+          "Live 2026-06-30 currency is not confirmable from the pack (no citator inlined); nothing disclosed contradicts good_law; no defect asserted."
+        ],
+        "residual_risks": [
+          "good_law currency and the Horton/Chimel cross-references rest on sources not inlined; verified here only as uncontradicted and coherent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-efd66d3847",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Harris v. United States (1968).json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-04-f76095a3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harris v. United States (1968)"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "10350838b874f36c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "25146016438438de": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee879ac08fb4b3e3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f9b9a9360a798112": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-efd66d3847",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

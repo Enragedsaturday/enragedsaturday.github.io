@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/commonwealth-v-serge--2074658.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed; review was limited to group_inventory.jsonl, the lake record, and cached text.",
+    "reviewed": [
+      {
+        "assertion_id": "ee7d03293581de70",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/commonwealth-v-serge--2074658__3ca603.json treatment.scope_note; treatment.field_i_validity is unverified and progeny rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citations, but it does not verify the currency/live-law status of the cited authority. The treatment/progeny record is a frontier stub with treatment intentionally not derived, so the empty edges cannot be read as no negative treatment.",
+          "proposed_fix": "Limit this assertion to identity/citation existence, or complete treatment/progeny review before presenting Serge as live authority.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields support that Commonwealth v. Serge exists and has the listed citations.",
+          "Currency is not verifiable because treatment.field_i_validity and composite_basis are unverified, and progeny/treatment edges were not derived."
+        ],
+        "residual_risks": [
+          "A completed treatment/progeny pull could show the case remains good law; these disclosed files do not establish that."
+        ],
+        "suggested_tightening": "Do not allow the existence/citation entry to imply current good law; label it identity-only with treatment unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "51b669280d4742e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The disclosed scope note expressly says treatment/progeny were intentionally not derived, and no disclosed progeny edge contradicts the unverified treatment label."
+        ],
+        "residual_risks": [
+          "No affirmative good-law conclusion can be drawn until treatment/progeny derivation is completed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/commonwealth-v-serge--2074658.json\",\"reviewed\":[{\"assertion_id\":\"ee7d03293581de70\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citations, but it does not verify the currency/live-law status of the cited authority. The treatment/progeny record is a frontier stub with treatment intentionally not derived, so the empty edges cannot be read as no negative treatment.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to identity/citation existence, or complete treatment/progeny review before presenting Serge as live authority.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/commonwealth-v-serge--2074658__3ca603.json treatment.scope_note; treatment.field_i_validity is unverified and progeny rows_cached is 0.\"},\"reasons\":[\"Lake identity fields support that Commonwealth v. Serge exists and has the listed citations.\",\"Currency is not verifiable because treatment.field_i_validity and composite_basis are unverified, and progeny/treatment edges were not derived.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment/progeny pull could show the case remains good law; these disclosed files do not establish that.\"],\"suggested_tightening\":\"Do not allow the existence/citation entry to imply current good law; label it identity-only with treatment unverified.\"},{\"assertion_id\":\"51b669280d4742e8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The disclosed scope note expressly says treatment/progeny were intentionally not derived, and no disclosed progeny edge contradicts the unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No affirmative good-law conclusion can be drawn until treatment/progeny derivation is completed.\"],\"suggested_tightening\":null}],\"notes\":\"No content_page.* file was disclosed; review was limited to group_inventory.jsonl, the lake record, and cached text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:30-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:17:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-745c8381aa"
+    ],
     "group_id": "_overhaul2/lake/cases/commonwealth-v-serge--2074658.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-0f6e1e08",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0f6e1e08.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:22.014632Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:22.757021Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:23.985482Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:25.995314Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:29.967261Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record commonwealth-v-serge--2074658"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "commonwealth-v-serge--2074658"
+    ],
+    "tokens": {
+      "input": 91930,
+      "output": 5211,
+      "source": "codex-events",
+      "total": 97141
+    },
+    "verdict_map": {
+      "51b669280d4742e8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee7d03293581de70": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-745c8381aa",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.7
   }
 }

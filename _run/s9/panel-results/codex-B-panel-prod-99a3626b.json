@@ -1,38 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json",
+    "lens": "B",
+    "notes": "No support, quote-fidelity, or holding defects reviewed under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "928b1b78c616c746",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/United States v. Robinson (4th Cir. en banc)__7c34e9.json treatment.scope_note; treatment.field_i_validity=unverified; progeny.rows_cached=0",
+          "needs_cl": true,
+          "problem": "The disclosed files verify the case/citation identity, but Lens B requires verifying whether the cited authority is still live law. The lake record's treatment and progeny fields are expressly unverified/incomplete, so live-law status cannot be confirmed from the disclosed evidence.",
+          "proposed_fix": "Limit this assertion to citation existence only, or populate current treatment/progeny/citator fields before treating the authority as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies identity and citation: official cite 846 F.3d 694, cluster_id 4340460, and expected_citation_found true.",
+          "The same lake record does not verify current validity: field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0.",
+          "Under the default-to-refuted rule, the live-law/currency aspect cannot stand without completed treatment or progeny evidence."
+        ],
+        "residual_risks": [
+          "A completed citator may later show Robinson remains good law, but that evidence is absent from the disclosed files.",
+          "The page's binding-in-circuit weight should not be read as verified current validity while treatment remains unverified."
+        ],
+        "suggested_tightening": "State that citation and identity are verified, but current treatment/live-law status is unverified pending citator/progeny promotion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "7adf3189b1f0061a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.",
+          "The page also renders the treatment status as Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "No disclosed treatment edge, progeny entry, or judgment field contradicts the unverified treatment call."
+        ],
+        "residual_risks": [
+          "The actual good-law status remains unresolved because treatment/progeny were intentionally not derived."
+        ],
+        "suggested_tightening": "Keep the unverified banner and avoid any unqualified current-validity language until treatment/progeny promotion is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"928b1b78c616c746\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed files verify the case/citation identity, but Lens B requires verifying whether the cited authority is still live law. The lake record's treatment and progeny fields are expressly unverified/incomplete, so live-law status cannot be confirmed from the disclosed evidence.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Limit this assertion to citation existence only, or populate current treatment/progeny/citator fields before treating the authority as live law.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/United States v. Robinson (4th Cir. en banc)__7c34e9.json treatment.scope_note; treatment.field_i_validity=unverified; progeny.rows_cached=0\"\n      },\n      \"reasons\": [\n        \"The lake record verifies identity and citation: official cite 846 F.3d 694, cluster_id 4340460, and expected_citation_found true.\",\n        \"The same lake record does not verify current validity: field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0.\",\n        \"Under the default-to-refuted rule, the live-law/currency aspect cannot stand without completed treatment or progeny evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed citator may later show Robinson remains good law, but that evidence is absent from the disclosed files.\",\n        \"The page's binding-in-circuit weight should not be read as verified current validity while treatment remains unverified.\"\n      ],\n      \"suggested_tightening\": \"State that citation and identity are verified, but current treatment/live-law status is unverified pending citator/progeny promotion.\"\n    },\n    {\n      \"assertion_id\": \"7adf3189b1f0061a\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.\",\n        \"The page also renders the treatment status as Unverified and states that subsequent treatment has not yet been machine-verified.\",\n        \"No disclosed treatment edge, progeny entry, or judgment field contradicts the unverified treatment call.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The actual good-law status remains unresolved because treatment/progeny were intentionally not derived.\"\n      ],\n      \"suggested_tightening\": \"Keep the unverified banner and avoid any unqualified current-validity language until treatment/progeny promotion is complete.\"\n    }\n  ],\n  \"notes\": \"No support, quote-fidelity, or holding defects reviewed under Lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:33:50-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-fd813ec148"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Robinson (4th Cir. en banc).json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Robinson (4th Cir. en banc)"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-99a3626b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-99a3626b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Robinson (4th Cir. en banc)' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Robinson (4th Cir. en banc)"
+    ],
     "tokens": {
-      "input": 760,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 760
+      "input": 114181,
+      "output": 6352,
+      "source": "codex-events",
+      "total": 120533
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "7adf3189b1f0061a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "928b1b78c616c746": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fd813ec148",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 128.0
   }
 }

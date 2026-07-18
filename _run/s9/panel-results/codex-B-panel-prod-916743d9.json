@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
+    "lens": "B",
+    "notes": "Support and quote-fidelity merits were not reviewed under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "20ede11b27831daf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status verified and identifies Lo-Ji Sales, Inc. v. New York as a U.S. Supreme Court decision decided 1979-06-11.",
+          "The disclosed citation fields include the official citation 442 U.S. 319 and the content page uses that same citation."
+        ],
+        "residual_risks": [
+          "Case existence is verified, but live-law treatment is separately vulnerable under assertion e573f77b27b6d0c1."
+        ],
+        "suggested_tightening": "Keep citation-existence assertions separate from treatment/current-validity assertions.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834d6d64d14a519c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity pinpoint row, not a treatment or current-validity assertion.",
+          "No lens-B treatment defect is specific to this pinpoint beyond the case-level treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support were not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c271ee9d35980e76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity pinpoint row, not a treatment or current-validity assertion.",
+          "No lens-B treatment defect is specific to this pinpoint beyond the case-level treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support were not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e573f77b27b6d0c1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "lake/Lo-Ji Sales, Inc. v. New York__7d15eb.json treatment, treatment.edges, treatment.derivation, and provenance fields; content_page.md treatment header/frontmatter.",
+          "needs_cl": true,
+          "problem": "The page asserts current good-law treatment as of 2026-06-30, but the disclosed lake record shows the treatment value is migration-seeded and the treatment derivation still requires audit of proposed negative progeny events.",
+          "proposed_fix": "Do not display Lo-Ji as unqualified good law on this record. Mark treatment as needs-audit or unknown until the proposed overruled, superseded, abrogated, criticized, and questioned edges are audited and resolved.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted field_i_validity is good_law as of 2026-06-30, but the lake treatment provenance says it came from _treatment-migration.json plus page frontmatter and warns: legacy treatment migrated: good -> good_law.",
+          "The treatment scope note says the old as_of seeds as_of_treatment and that S2 derivation re-derives and may downgrade.",
+          "The lake contains 31 proposed treatment edges with negative labels including overruled, superseded_by_statute, questioned, abrogated, and criticized.",
+          "Both lane1_negative and lane2_top_cited derivations have audit_needed true and audit_marker R15 treatment audit required; no disclosed completed audit or point override resolves those negative edges."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives after a full audit, but the disclosed record does not permit confirming the unqualified good-law label."
+        ],
+        "suggested_tightening": "Expose migration-seeded treatment separately from audited treatment, and suppress the plain good-law badge whenever treatment.derivation.audit_needed is true.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"20ede11b27831daf\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is status verified and identifies Lo-Ji Sales, Inc. v. New York as a U.S. Supreme Court decision decided 1979-06-11.\",\n        \"The disclosed citation fields include the official citation 442 U.S. 319 and the content page uses that same citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Case existence is verified, but live-law treatment is separately vulnerable under assertion e573f77b27b6d0c1.\"\n      ],\n      \"suggested_tightening\": \"Keep citation-existence assertions separate from treatment/current-validity assertions.\"\n    },\n    {\n      \"assertion_id\": \"834d6d64d14a519c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity pinpoint row, not a treatment or current-validity assertion.\",\n        \"No lens-B treatment defect is specific to this pinpoint beyond the case-level treatment issue reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and pinpoint support were not evaluated under lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c271ee9d35980e76\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity pinpoint row, not a treatment or current-validity assertion.\",\n        \"No lens-B treatment defect is specific to this pinpoint beyond the case-level treatment issue reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and pinpoint support were not evaluated under lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e573f77b27b6d0c1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The page asserts current good-law treatment as of 2026-06-30, but the disclosed lake record shows the treatment value is migration-seeded and the treatment derivation still requires audit of proposed negative progeny events.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Do not display Lo-Ji as unqualified good law on this record. Mark treatment as needs-audit or unknown until the proposed overruled, superseded, abrogated, criticized, and questioned edges are audited and resolved.\",\n        \"evidence_quote\": \"R15 treatment audit required\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/Lo-Ji Sales, Inc. v. New York__7d15eb.json treatment, treatment.edges, treatment.derivation, and provenance fields; content_page.md treatment header/frontmatter.\"\n      },\n      \"reasons\": [\n        \"The asserted field_i_validity is good_law as of 2026-06-30, but the lake treatment provenance says it came from _treatment-migration.json plus page frontmatter and warns: legacy treatment migrated: good -> good_law.\",\n        \"The treatment scope note says the old as_of seeds as_of_treatment and that S2 derivation re-derives and may downgrade.\",\n        \"The lake contains 31 proposed treatment edges with negative labels including overruled, superseded_by_statute, questioned, abrogated, and criticized.\",\n        \"Both lane1_negative and lane2_top_cited derivations have audit_needed true and audit_marker R15 treatment audit required; no disclosed completed audit or point override resolves those negative edges.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The proposed negative edges may be false positives after a full audit, but the disclosed record does not permit confirming the unqualified good-law label.\"\n      ],\n      \"suggested_tightening\": \"Expose migration-seeded treatment separately from audited treatment, and suppress the plain good-law badge whenever treatment.derivation.audit_needed is true.\"\n    }\n  ],\n  \"notes\": \"Support and quote-fidelity merits were not reviewed under lens B.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:29:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:02:53-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-9e976f20ea"
+    ],
     "group_id": "_overhaul2/lake/cases/Lo-Ji Sales, Inc. v. New York.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-916743d9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Lo-Ji Sales, Inc. v. New York"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 138907,
+      "output": 8004,
+      "source": "codex-events",
+      "total": 146911
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "20ede11b27831daf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834d6d64d14a519c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c271ee9d35980e76": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e573f77b27b6d0c1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9e976f20ea",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 158.3
   }
 }

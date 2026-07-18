@@ -1,22 +1,172 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Cotterman.md",
+    "lens": "A",
+    "notes": "No separate quote_fidelity or pincite assertion_id appeared in group_inventory.jsonl. The page quote at ^pin-op17 matches the opinion text on slip page 17, but the lake pinpoints[0] record is itself marked quote_fidelity='mismatch' and contains harvested page text rather than the quoted sentence.",
+    "reviewed": [
+      {
+        "assertion_id": "33229d0d6cc74ada",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as United States v. Howard Cotterman, with input case name United States v. Cotterman.",
+          "The lake citation fields list official citation 709 F.3d 952 and vendor-neutral cites 2013 WL 856292 and 2013 U.S. App. LEXIS 4731; lake identity lists the Ninth Circuit en banc court and year 2013."
+        ],
+        "residual_risks": [
+          "Content metadata says identity_checked:false and lake identity_method is pending, but the disclosed lake identity/citation fields and opinion text verify the asserted citation/court/year."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1138187f1458c3b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is the comprehensive and intrusive nature of a forensic examination—not the location of the examination—that is the key factor triggering the requirement of reasonable suspicion here.",
+          "locator_note": "content_page.md frontmatter field 'holding'; supporting passage appears in text on slip page 17.",
+          "needs_cl": false,
+          "problem": "The legal proposition is supported, but the content_page frontmatter holding is visibly truncated after 'it is the…'.",
+          "proposed_fix": "Replace the truncated holding with a complete statement: A forensic examination of a device seized at the border requires reasonable suspicion because the comprehensive and intrusive nature of the forensic examination, not its location, triggers the requirement.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that reasonable suspicion was required for the forensic examination of Cotterman's laptop.",
+          "The opinion also holds that the forensic examination of Cotterman's computer required a showing of reasonable suspicion."
+        ],
+        "residual_risks": [
+          "Later narrowing or treatment is outside lens A."
+        ],
+        "suggested_tightening": "Use the complete opinion-backed rule rather than an ellipsis-truncated holding.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3be41032d30f309",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The dissent states that narrowing Arnold creates a circuit split regarding reasonable suspicion for border searches of electronic devices.",
+          "The lake treatment scope_note also states that Cotterman is part of a circuit split with the 11th Cir. (Touset)."
+        ],
+        "residual_risks": [
+          "The specific Touset side of the split is supplied by the lake scope_note, not by a separate Touset record in this review group."
+        ],
+        "suggested_tightening": "State that Cotterman illustrates the Ninth Circuit side of a split over suspicion required for forensic border searches of electronic devices.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2cb5bc869df9515e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The binding-in-circuit label is consistent with the disclosed Ninth Circuit en banc identity and published opinion text."
+        ],
+        "residual_risks": [
+          "Lens B should audit treatment/current weight."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdf04ae1714c2575",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields for field_i_validity, dates, composite_basis, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "Lens B should assess whether the good-law and scope-note assertions remain current."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/United States v. Cotterman.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"33229d0d6cc74ada\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the case as United States v. Howard Cotterman, with input case name United States v. Cotterman.\",\n        \"The lake citation fields list official citation 709 F.3d 952 and vendor-neutral cites 2013 WL 856292 and 2013 U.S. App. LEXIS 4731; lake identity lists the Ninth Circuit en banc court and year 2013.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Content metadata says identity_checked:false and lake identity_method is pending, but the disclosed lake identity/citation fields and opinion text verify the asserted citation/court/year.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b1138187f1458c3b\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The legal proposition is supported, but the content_page frontmatter holding is visibly truncated after 'it is the…'.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the truncated holding with a complete statement: A forensic examination of a device seized at the border requires reasonable suspicion because the comprehensive and intrusive nature of the forensic examination, not its location, triggers the requirement.\",\n        \"evidence_quote\": \"It is the comprehensive and intrusive nature of a forensic examination—not the location of the examination—that is the key factor triggering the requirement of reasonable suspicion here.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md frontmatter field 'holding'; supporting passage appears in text on slip page 17.\"\n      },\n      \"reasons\": [\n        \"The opinion states that reasonable suspicion was required for the forensic examination of Cotterman's laptop.\",\n        \"The opinion also holds that the forensic examination of Cotterman's computer required a showing of reasonable suspicion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Later narrowing or treatment is outside lens A.\"\n      ],\n      \"suggested_tightening\": \"Use the complete opinion-backed rule rather than an ellipsis-truncated holding.\"\n    },\n    {\n      \"assertion_id\": \"c3be41032d30f309\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The dissent states that narrowing Arnold creates a circuit split regarding reasonable suspicion for border searches of electronic devices.\",\n        \"The lake treatment scope_note also states that Cotterman is part of a circuit split with the 11th Cir. (Touset).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The specific Touset side of the split is supplied by the lake scope_note, not by a separate Touset record in this review group.\"\n      ],\n      \"suggested_tightening\": \"State that Cotterman illustrates the Ninth Circuit side of a split over suspicion required for forensic border searches of electronic devices.\"\n    },\n    {\n      \"assertion_id\": \"2cb5bc869df9515e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The binding-in-circuit label is consistent with the disclosed Ninth Circuit en banc identity and published opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B should audit treatment/current weight.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fdf04ae1714c2575\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The payload mirrors the disclosed lake treatment fields for field_i_validity, dates, composite_basis, varies_by_point, and scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B should assess whether the good-law and scope-note assertions remain current.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No separate quote_fidelity or pincite assertion_id appeared in group_inventory.jsonl. The page quote at ^pin-op17 matches the opinion text on slip page 17, but the lake pinpoints[0] record is itself marked quote_fidelity='mismatch' and contains harvested page text rather than the quoted sentence.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:54:40-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:20:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-17f23b7d73"
+    ],
     "group_id": "content/cases/United States v. Cotterman.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-6582252e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6582252e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:31.892526Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:32.457660Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:33.252484Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:34.495041Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:54:36.686998Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Cotterman"
+    ],
+    "tokens": {
+      "input": 299602,
+      "output": 10277,
+      "source": "codex-events",
+      "total": 309879
+    },
+    "verdict_map": {
+      "2cb5bc869df9515e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "33229d0d6cc74ada": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1138187f1458c3b": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c3be41032d30f309": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdf04ae1714c2575": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-17f23b7d73",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 205.8
   }
 }

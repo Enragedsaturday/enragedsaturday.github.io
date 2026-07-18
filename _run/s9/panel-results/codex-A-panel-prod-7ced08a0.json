@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Neil v. Biggers.json",
+    "lens": "A",
+    "notes": "Treatment/currency findings are reserved for Lens B; this Lens A review only records correspondence to the disclosed lake treatment fields.",
+    "reviewed": [
+      {
+        "assertion_id": "3d196a8974244098",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Neil v. Biggers, U.S. Supreme Court, decided 1972-12-06, year 1972.",
+          "The disclosed citations match: official 409 U.S. 188, parallels 93 S. Ct. 375 and 34 L. Ed. 2d 401, and vendor cite 1972 U.S. LEXIS 6."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "420938a1eb57e618",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We turn, then, to the central question, whether under the \"totality of the circumstances\" the identification was reliable even though the confrontation procedure was suggestive.",
+          "locator_note": "pin-199; content_page cites 409 U.S. at 199.",
+          "needs_cl": false,
+          "problem": "pin-199's stored quote is not an opinion quote; it is built-page front matter and summary prose. The actual cited passage is different, and the lake itself flags this pinpoint as quote_fidelity=mismatch with no page, star marker, or position.",
+          "proposed_fix": "Replace pin-199 with a character-faithful quote from the opinion text, or convert the sentence to paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote begins with page markup and summary text, not language from the Neil opinion.",
+          "The disclosed opinion text at the cited point says 'the central question, whether' and uses double quotation marks around 'totality of the circumstances'; the page quote also inserts '[is]'."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported, but the verbatim quote/pin record is not reliable as framed."
+        ],
+        "suggested_tightening": "Use the exact sentence from the opinion text for pin-199 and preserve the 409 U.S. at 199 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94d03bb06c78b82e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As indicated by our cases, the factors to be considered in evaluating the likelihood of misidentification include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of the witness' prior description of the criminal, the level of certainty demonstrated by the witness at the confrontation, and the length of time <span class=\"star-pagination\">*200</span> between the crime and the confrontation.",
+          "locator_note": "pin-199b; content_page cites Id. at 199-200.",
+          "needs_cl": false,
+          "problem": "The factor-list quotation is substantively supported, but the raw cached text is not a contiguous character match because it begins after an omitted lead-in and crosses an embedded star-pagination marker; the lake also flags quote_fidelity=mismatch and leaves page/star metadata null.",
+          "proposed_fix": "Store this as a normalized quote spanning 199-200, or store the exact raw text with the pagination marker accounted for, and update the quote_fidelity metadata.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "After ordinary normalization for the omitted lead-in, bracketed initial capital, and star pagination, the quoted factor list is present in the disclosed opinion text.",
+          "As a strict quote-fidelity record, the current metadata still says mismatch and does not encode the page split."
+        ],
+        "residual_risks": [
+          "Strict consumers that require raw contiguous text may still reject the quote until the normalization/pagination metadata is repaired."
+        ],
+        "suggested_tightening": "Mark the quote as normalized and set the locator to 409 U.S. 199-200.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "07b42e8f333e5474",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1972-12-06, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no treatment defect is raised here."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not independently audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Neil v. Biggers.json\",\"reviewed\":[{\"assertion_id\":\"3d196a8974244098\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Neil v. Biggers, U.S. Supreme Court, decided 1972-12-06, year 1972.\",\"The disclosed citations match: official 409 U.S. 188, parallels 93 S. Ct. 375 and 34 L. Ed. 2d 401, and vendor cite 1972 U.S. LEXIS 6.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"420938a1eb57e618\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-199's stored quote is not an opinion quote; it is built-page front matter and summary prose. The actual cited passage is different, and the lake itself flags this pinpoint as quote_fidelity=mismatch with no page, star marker, or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-199 with a character-faithful quote from the opinion text, or convert the sentence to paraphrase without quotation marks.\",\"evidence_quote\":\"We turn, then, to the central question, whether under the \\\"totality of the circumstances\\\" the identification was reliable even though the confrontation procedure was suggestive.\",\"needs_cl\":false,\"locator_note\":\"pin-199; content_page cites 409 U.S. at 199.\"},\"reasons\":[\"The inventory/lake quote begins with page markup and summary text, not language from the Neil opinion.\",\"The disclosed opinion text at the cited point says 'the central question, whether' and uses double quotation marks around 'totality of the circumstances'; the page quote also inserts '[is]'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition appears supported, but the verbatim quote/pin record is not reliable as framed.\"],\"suggested_tightening\":\"Use the exact sentence from the opinion text for pin-199 and preserve the 409 U.S. at 199 locator.\"},{\"assertion_id\":\"94d03bb06c78b82e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The factor-list quotation is substantively supported, but the raw cached text is not a contiguous character match because it begins after an omitted lead-in and crosses an embedded star-pagination marker; the lake also flags quote_fidelity=mismatch and leaves page/star metadata null.\",\"severity\":\"low\",\"proposed_fix\":\"Store this as a normalized quote spanning 199-200, or store the exact raw text with the pagination marker accounted for, and update the quote_fidelity metadata.\",\"evidence_quote\":\"As indicated by our cases, the factors to be considered in evaluating the likelihood of misidentification include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of the witness' prior description of the criminal, the level of certainty demonstrated by the witness at the confrontation, and the length of time <span class=\\\"star-pagination\\\">*200</span> between the crime and the confrontation.\",\"needs_cl\":false,\"locator_note\":\"pin-199b; content_page cites Id. at 199-200.\"},\"reasons\":[\"After ordinary normalization for the omitted lead-in, bracketed initial capital, and star pagination, the quoted factor list is present in the disclosed opinion text.\",\"As a strict quote-fidelity record, the current metadata still says mismatch and does not encode the page split.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Strict consumers that require raw contiguous text may still reject the quote until the normalization/pagination metadata is repaired.\"],\"suggested_tightening\":\"Mark the quote as normalized and set the locator to 409 U.S. 199-200.\"},{\"assertion_id\":\"07b42e8f333e5474\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1972-12-06, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\",\"Treatment/currency is outside Lens A, so no treatment defect is raised here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not independently audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency findings are reserved for Lens B; this Lens A review only records correspondence to the disclosed lake treatment fields.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:48-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:16:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-91e9d2b637",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8e8dd02612",
+      "F-S9-PR-97aa72a584"
+    ],
     "group_id": "_overhaul2/lake/cases/Neil v. Biggers.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-7ced08a0",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7ced08a0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:39.632487Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:40.257071Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:41.122006Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:42.417389Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:44.685695Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:48.352408Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Neil v. Biggers"
+    ],
+    "tokens": {
+      "input": 440102,
+      "output": 11456,
+      "source": "codex-events",
+      "total": 451558
+    },
+    "verdict_map": {
+      "07b42e8f333e5474": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3d196a8974244098": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "420938a1eb57e618": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "94d03bb06c78b82e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8e8dd02612",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-97aa72a584",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-91e9d2b637",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 223.9
   }
 }

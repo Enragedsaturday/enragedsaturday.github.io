@@ -1,0 +1,96 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4015fe74c449f333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is unambiguously United States v. Di Re (Jackson, J.; 'Michael Di Re was convicted on a charge of knowingly possessing counterfeit gasoline ration coupons'), matching identity (SCOTUS, 1948-01-19).",
+          "Star-pagination labels *583 through *595 are consistent with a U.S. Reports opinion beginning at 332 U.S. 581, confirming the primary cite 332 U.S. 581.",
+          "Payload faithfully reports official=null and official_selection_present=false, matching the record's official_selection reason 'unlisted_reporter:U.S.'; an accurate (if suboptimal) representation, not an existence defect."
+        ],
+        "residual_risks": [
+          "For a SCOTUS case the U.S. Reports cite (332 U.S. 581) would normally be official, but the selector left official null (unlisted_reporter:U.S.) and placed all cites in parallel[] — a selection/display limitation to fix downstream, not an existence flaw.",
+          "Parallel cites 68 S. Ct. 222, 92 L. Ed. 2d 210, and 1948 U.S. LEXIS 2667 are not cross-confirmable from the disclosed cached text (which carries only U.S.-reporter star pagination); treat as unverified cluster metadata."
+        ],
+        "suggested_tightening": "Add SCOTUS 'U.S.' to the official-selection reporter allow-list so 332 U.S. 581 is selected as official rather than left null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba4589bc8d23791f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload matches the disclosed record treatment block exactly (field_i_validity 'unverified', frontier-stub scope_note, varies_by_point false).",
+          "No substantive treatment/currency claim is asserted (explicitly deferred to S6), so nothing to refute.",
+          "Honest stub."
+        ],
+        "residual_risks": [
+          "Di Re is a foundational 1948 SCOTUS holding; 'unverified' reflects non-derivation, not doubt about validity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:20:18-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1a816e8726",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/united-states-v-di-re--104490.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w24-04-11a0e3bb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w24-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record united-states-v-di-re--104490"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "united-states-v-di-re--104490"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4015fe74c449f333": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ba4589bc8d23791f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a816e8726",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

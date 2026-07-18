@@ -1,22 +1,169 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kirk v. Louisiana.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were left to Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "154ecde2e3316a46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and non-stub, identifying Kirk v. Louisiana as a U.S. Supreme Court decision dated 2002-06-24 with cluster/opinion id 121167.",
+          "The official citation selected in the lake is 536 U.S. 635, matching the page display citation.",
+          "The disclosed treatment field is good_law as of 2026-06-30, with no final point override invalidating the authority."
+        ],
+        "residual_risks": [
+          "The disclosed treatment check is dated 2026-06-30; no evidence in the working directory verifies treatment after that date."
+        ],
+        "suggested_tightening": "Tie live-law wording to the stated as-of-treatment date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cd856a1f7e1aa11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not test quote fidelity or support, and this row does not assert a separate treatment/currency proposition.",
+          "No disclosed final treatment field or progeny judgment tied to this pinpoint defeats Kirk's good_law status as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support were not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "45192af11e7457d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not test quote fidelity or support, and this row is quote-fidelity metadata.",
+          "To the extent the harvested text includes treatment/header language, the lake treatment field also reports good_law as of 2026-06-30 and SCOTUS status supports the binding-weight label."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support were not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c79e814e973e9b42",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 24, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' wording is too strong because the lake treatment derivation contains proposed negative-signal edges and an unresolved top-cited-progeny audit marker. The final lake judgment still classifies all listed treatment edges as mentioned and has no point overrides, so this is a wording/audit caveat rather than a refutation of good_law status.",
+          "proposed_fix": "Keep good_law and Binding-SCOTUS, but revise the treatment prose to say that no final adverse treatment is identified in the lake record, while proposed negative-signal edges are classified as mentions and the top-cited-progeny audit remains flagged.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "The page's weight label is consistent with the lake identity fields: court and court_level are U.S. Supreme Court/scotus.",
+          "The lake also discloses 31 proposed treatment edges with negative field_ii labels, but every listed edge has field_iii mentioned; this supports good_law status while undermining an unqualified 'No negative treatment' sentence."
+        ],
+        "residual_risks": [
+          "The working directory does not include the full text of the cited progeny cases behind the proposed negative-signal edges.",
+          "The top-cited lane is capped and flagged for audit, so a stronger no-negative-treatment statement would need that audit completed."
+        ],
+        "suggested_tightening": "Use 'No final adverse treatment identified in this lake record as of 2026-06-30' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Kirk v. Louisiana.json\",\"reviewed\":[{\"assertion_id\":\"154ecde2e3316a46\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and non-stub, identifying Kirk v. Louisiana as a U.S. Supreme Court decision dated 2002-06-24 with cluster/opinion id 121167.\",\"The official citation selected in the lake is 536 U.S. 635, matching the page display citation.\",\"The disclosed treatment field is good_law as of 2026-06-30, with no final point override invalidating the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment check is dated 2026-06-30; no evidence in the working directory verifies treatment after that date.\"],\"suggested_tightening\":\"Tie live-law wording to the stated as-of-treatment date.\"},{\"assertion_id\":\"3cd856a1f7e1aa11\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test quote fidelity or support, and this row does not assert a separate treatment/currency proposition.\",\"No disclosed final treatment field or progeny judgment tied to this pinpoint defeats Kirk's good_law status as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support were not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"45192af11e7457d4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test quote fidelity or support, and this row is quote-fidelity metadata.\",\"To the extent the harvested text includes treatment/header language, the lake treatment field also reports good_law as of 2026-06-30 and SCOTUS status supports the binding-weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support were not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c79e814e973e9b42\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' wording is too strong because the lake treatment derivation contains proposed negative-signal edges and an unresolved top-cited-progeny audit marker. The final lake judgment still classifies all listed treatment edges as mentioned and has no point overrides, so this is a wording/audit caveat rather than a refutation of good_law status.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law and Binding-SCOTUS, but revise the treatment prose to say that no final adverse treatment is identified in the lake record, while proposed negative-signal edges are classified as mentions and the top-cited-progeny audit remains flagged.\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 24, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.derivation.lane2_top_cited\"},\"reasons\":[\"The lake treatment fields state field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"The page's weight label is consistent with the lake identity fields: court and court_level are U.S. Supreme Court/scotus.\",\"The lake also discloses 31 proposed treatment edges with negative field_ii labels, but every listed edge has field_iii mentioned; this supports good_law status while undermining an unqualified 'No negative treatment' sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The working directory does not include the full text of the cited progeny cases behind the proposed negative-signal edges.\",\"The top-cited lane is capped and flagged for audit, so a stronger no-negative-treatment statement would need that audit completed.\"],\"suggested_tightening\":\"Use 'No final adverse treatment identified in this lake record as of 2026-06-30' instead of 'No negative treatment.'\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were left to Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:39-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:58:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19e64fb7d4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-28eec18078",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4dec47987e"
+    ],
     "group_id": "_overhaul2/lake/cases/Kirk v. Louisiana.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c8caa1d2",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c8caa1d2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:30.016672Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:30.667355Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:31.462668Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:32.697249Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:34.743391Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:38.366213Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kirk v. Louisiana"
+    ],
+    "tokens": {
+      "input": 264029,
+      "output": 8122,
+      "source": "codex-events",
+      "total": 272151
+    },
+    "verdict_map": {
+      "154ecde2e3316a46": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3cd856a1f7e1aa11": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "45192af11e7457d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c79e814e973e9b42": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19e64fb7d4",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-28eec18078",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4dec47987e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 159.1
   }
 }

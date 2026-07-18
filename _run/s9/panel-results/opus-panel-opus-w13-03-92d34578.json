@@ -1,0 +1,142 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7cd9edf1fad5b526",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official '372 U.S. 293' matches content-page '372 U.S. 293 (1963)'.",
+          "Cached opinion star-pagination (*298 through *334) is consistent with a case opening at 293; identity confirmed (Townsend, hyoscine/scopolamine 'truth serum' confession)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00491e78a97f6d35",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-307 quotation matches the cached opinion verbatim (the 'will was overborne' / 'rational intellect and a free will' passage through 'Any questioning by police officers which in fact produces a confession which is not the product of a free intellect renders that confession inadmissible.').",
+          "The ' . . . ' ellipsis legitimately omits one intervening sentence ('It is not significant that the drug may have been administered...') without distorting meaning.",
+          "Pincite '372 U.S. at 307-308' is correct: the passage spans the *308 page break. Payload 'mismatch' is an extractor backward-capture of the Issue/Rule lead-in, not the rendered quotation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-anchor the extractor: the captured span is text preceding ^pin-307, not the quoted passage.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "194c29f3135c9342",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-308 quotation matches footnote 5 verbatim: 'whether scopolamine produces true confessions or false confessions, if it in fact caused Townsend to make statements, those statements were constitutionally inadmissible.'",
+          "Pincite 'Id. at 308 n.5' is correct -- the [5] reference marker sits on page 308 (before the *309 break). Payload already reports quote_fidelity='matched'."
+        ],
+        "residual_risks": [
+          "Payload star_marker='334' is unrelated to the footnote's page (308); it is metadata-only and does not affect the page's cite."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dc3416435dbaa010",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The homed voluntariness holding (a drug/'truth serum' confession not the product of a free intellect is inadmissible) is the actual holding in the disclosed opinion and remains good law; field_i=good_law is apt for the homed proposition.",
+          "Scope note transparently discloses that the SEPARATE federal-habeas evidentiary-hearing branch was abrogated by Keeney v. Tamayo-Reyes (1992) and superseded by AEDPA sec. 2254(e)(2); the page homes by the voluntariness ratio, which the treatment section reiterates."
+        ],
+        "residual_risks": [
+          "The Keeney/AEDPA abrogation facts are asserted in the scope note but not independently inlined; citator currency is not verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": "varies_by_point=false is defensible only because the page homes solely the voluntariness point; given the documented point-split, consider varies_by_point=true with point_overrides to make the split machine-legible.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:12:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0f4747f207",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09628758ef",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Townsend v. Sain.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w13-03-92d34578",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w13-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Townsend v. Sain"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "00491e78a97f6d35": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "194c29f3135c9342": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cd9edf1fad5b526": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dc3416435dbaa010": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0f4747f207",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09628758ef",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

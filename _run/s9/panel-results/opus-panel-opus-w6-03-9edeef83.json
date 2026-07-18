@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1ae9995d3fa05ccd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms Jones v. United States, Mr. Justice Frankfurter, SCOTUS 1960, U.S. star pages *259-*269, standing / Rule 41(e) subject matter.",
+          "Official cite 362 U.S. 257 is real and rank-1 selected; parallel S.Ct./L.Ed./A.L.R. cites are consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1687c708552524c7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In cases where the indictment itself charges possession, the defendant in a very real sense is revealed as a \"person aggrieved by an unlawful search and seizure\" upon a motion to suppress evidence prior to trial.",
+          "locator_note": "cached opinion para b322-5, star page *264 (immediately before the *265 marker); content page pin-264 already carries the correct quote pincited '362 U.S. at 264'.",
+          "needs_cl": false,
+          "problem": "pin-264's stored quote is a page-markdown dump (YAML '---', '# Jones v. United States', '## Background', '## Issue', '## Rule', '<!-- header line -->', 'Treatment: **overruled** *(as of 2026-06-30)*'), not any text from the 1960 opinion; the self-flagged quote_fidelity 'mismatch' is correct.",
+          "proposed_fix": "replace pin-264.quote with the verbatim opinion sentence the content page already renders at this pincite.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote text is impossible in a 1960 opinion (contains markdown headers and a 2026-dated treatment badge), so it cannot be a faithful pinpoint quote.",
+          "The intended quotation is verbatim in cached text at *264, so the pincite is sound; the corruption is confined to the lake pinpoint.quote field."
+        ],
+        "residual_risks": [
+          "Rendered content page is correct; defect is confined to the lake pinpoint.quote provenance field."
+        ],
+        "suggested_tightening": "re-harvest pin-264 from the opinion text rather than the page markdown",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98d065211961c525",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-267 quote matches cached opinion verbatim (para b324-6, star page *267): 'anyone legitimately on premises where a search occurs may challenge its legality by way of a motion to suppress, when its fruits are proposed to be used against him.'",
+          "star_marker '267' correct; quote_fidelity 'matched' / pinpoint_status 'star-verified' confirmed; the #:~:text fragment anchor is a valid substring."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b60daf32b09a23f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'superseded' is accurate: automatic standing overruled by United States v. Salvucci (448 U.S. 83, disclosed migration edge) and the 'legitimately on premises' test disavowed by Rakas v. Illinois (439 U.S. 128, disclosed migration edge).",
+          "scope_note tracks the cached opinion's two independent standing grounds and states the subsequent history precisely."
+        ],
+        "residual_risks": [
+          "The content-page one-line header labels the case 'overruled ... by Rakas and Salvucci'; Rakas technically disavowed/abandoned rather than formally overruled Jones, so 'superseded' (field) and 'disavowed by Rakas' (prose Treatment section) are the more precise formulations than the header."
+        ],
+        "suggested_tightening": "reconcile the header badge label ('overruled') with field_i_validity ('superseded') and the prose 'disavowed by Rakas'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:32:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e52ebea924",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w6-03-9edeef83",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w6-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Jones v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1687c708552524c7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "1ae9995d3fa05ccd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b60daf32b09a23f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98d065211961c525": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7d1a0fb784",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e52ebea924",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

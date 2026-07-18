@@ -1,39 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/hunter-v-bryant--112671.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "660de908f943db08",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/hunter-v-bryant--112671__679fa8.json treatment.scope_note",
+          "needs_cl": true,
+          "problem": "The citation identity is disclosed, but the currency/live-law status is not verifiable from the disclosed record because treatment and progeny were intentionally not derived.",
+          "proposed_fix": "Do not treat this authority as verified live law until treatment/progeny are populated, or limit the assertion to identity/citation existence only.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake record verifies identity and citations for Hunter v. Bryant, but its treatment.field_i_validity is unverified.",
+          "Progeny data is not available: complete_query, indexed_citing_opinions, citation_count, and enumeration are null, with rows_cached 0."
+        ],
+        "residual_risks": [
+          "The case may be live law, but that cannot be confirmed from the disclosed evidence under Lens B."
+        ],
+        "suggested_tightening": "Separate citation-existence verification from any live-law/currency implication.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ea9c3dc19cc4bebf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment assertion matches the lake treatment field_i_validity value of unverified.",
+          "The lake record expressly states treatment/progeny were intentionally not derived and contains no treatment edges or point overrides."
+        ],
+        "residual_risks": [
+          "No actual good-law conclusion is available from this stub record."
+        ],
+        "suggested_tightening": "Keep the treatment label visibly limited to unverified/no derived treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/hunter-v-bryant--112671.json\",\"reviewed\":[{\"assertion_id\":\"660de908f943db08\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The citation identity is disclosed, but the currency/live-law status is not verifiable from the disclosed record because treatment and progeny were intentionally not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat this authority as verified live law until treatment/progeny are populated, or limit the assertion to identity/citation existence only.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/hunter-v-bryant--112671__679fa8.json treatment.scope_note\"},\"reasons\":[\"Lake record verifies identity and citations for Hunter v. Bryant, but its treatment.field_i_validity is unverified.\",\"Progeny data is not available: complete_query, indexed_citing_opinions, citation_count, and enumeration are null, with rows_cached 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may be live law, but that cannot be confirmed from the disclosed evidence under Lens B.\"],\"suggested_tightening\":\"Separate citation-existence verification from any live-law/currency implication.\"},{\"assertion_id\":\"ea9c3dc19cc4bebf\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment assertion matches the lake treatment field_i_validity value of unverified.\",\"The lake record expressly states treatment/progeny were intentionally not derived and contains no treatment edges or point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No actual good-law conclusion is available from this stub record.\"],\"suggested_tightening\":\"Keep the treatment label visibly limited to unverified/no derived treatment.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:36:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:18:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-62bfca8f50"
+    ],
     "group_id": "_overhaul2/lake/cases/hunter-v-bryant--112671.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "hunter-v-bryant--112671"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-4de74427",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4de74427.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'hunter-v-bryant--112671' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record hunter-v-bryant--112671"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "hunter-v-bryant--112671"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 99222,
+      "output": 3816,
+      "source": "codex-events",
+      "total": 103038
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "660de908f943db08": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ea9c3dc19cc4bebf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-62bfca8f50",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 79.2
   }
 }

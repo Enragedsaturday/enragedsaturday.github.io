@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5ed64834fbf117cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is 'United States v. Havens' (Mr. Justice White, 1980); internal star-pagination labels 622-629 corroborate a first page of 620 -> 446 U.S. 620.",
+          "COA history '592 F. 2d 848 (CA5 1979)' consistent. Reporter volume string '446 U.S.' not printed in the excerpt but uncontradicted; case existence confirmed."
+        ],
+        "residual_risks": [
+          "Frontmatter date_decided 1980-08-11 vs as_of_content 1980-05-27 is an internal date discrepancy, but not part of this (case_cite) assertion and the cached excerpt shows no decision date to arbitrate it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e522041dff4002e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'We reaffirm this assessment of the competing interests, and hold that a defendant's statements made in response to proper cross-examination reasonably suggested by the defendant's direct examination are subject to otherwise proper impeachment by the government, albeit by evidence that has been illegally obtained and that is inadmissible on the government's direct case, or otherwise, as substantive evidence of guilt.' is verbatim, spanning 627-628 (the *628 marker splits 'impeach-ment').",
+          "Pincite 627-628 correct. Ledger payload 'mismatch' is a false positive (only curly-vs-straight apostrophe normalization)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6f0b4e62da87b4c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we see no difference of constitutional magnitude between the defendant’s statements on direct examination and his answers to questions put to him on cross-examination that are plainly within the scope of the defendant’s direct examination.",
+          "locator_note": "Content page Rule paragraph at ^pin-627; source = cached opinion para b684-4, page 627 (the *627 marker precedes it at 'It is essential, *627 therefore ...').",
+          "needs_cl": false,
+          "problem": "The assertion's recorded `quote` field is a mis-extraction: it captured content-page Background/Issue/Rule markdown ('; on cross, the Government asked ... ## Issue ... ## Rule Yes. For impeachment,') instead of the opinion text anchored at ^pin-627. The page's ACTUAL ^pin-627 quote is verbatim and correctly pincited to 627, so the built page is faithful; only the fidelity record is corrupt.",
+          "proposed_fix": "Re-extract the ^pin-627 quote span to the actual quoted sentence 'we see no difference of constitutional magnitude between the defendant's statements on direct examination and his answers to questions put to him on cross-examination that are plainly within the scope of the defendant's direct examination.' at 446 U.S. 627.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote is page markdown, not opinion text -> extraction artifact, NOT a page misquote.",
+          "Independently verified the actual ^pin-627 quote verbatim against the cached opinion at page 627."
+        ],
+        "residual_risks": [
+          "If the corrupt fidelity record auto-suppresses the pin, a faithful quote could be wrongly dropped."
+        ],
+        "suggested_tightening": "Guard the extractor against spans crossing '##' section headers / front-matter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf17805fc109438a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Doctrinal scope_note ('extends Walder's impeachment exception to cross-examination reasonably suggested by direct') IS directly supported by the disclosed holding (para b685-5) and the opinion's Walder/Harris/Hass/Agnello discussion.",
+          "The currency claim ('remains good law' / good_law as of 2026-06-30) is NOT checkable from the 1980 opinion; requires a citator/CL check. No disclosed basis to refute."
+        ],
+        "residual_risks": [
+          "good_law currency and the 'James v. Illinois declined to extend' note require a citator/CL verification (needs_cl)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:47:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d8a5043189",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7f2d578db6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Havens.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w16-03-d3f92aed",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w16-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Havens"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5ed64834fbf117cd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e522041dff4002e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6f0b4e62da87b4c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bf17805fc109438a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d8a5043189",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a81dac608d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-7f2d578db6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

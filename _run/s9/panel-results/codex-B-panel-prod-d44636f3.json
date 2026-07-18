@@ -1,13 +1,107 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sibron v. New York.json",
+    "lens": "B",
+    "notes": "Reviewed all five group_inventory rows under lens B only, using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "65d10f0168ecd002",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Sibron v. New York as a U.S. Supreme Court case decided 1968-06-10.",
+          "The official citation is present as 392 U.S. 40, and the lake treatment judgment marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73b935795b8c31e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.",
+          "The corresponding lake pinpoint exists as pin-64 and the case-level treatment judgment remains good_law."
+        ],
+        "residual_risks": [
+          "Lens A must resolve the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b216c61566499746",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.",
+          "The corresponding lake pinpoint exists as pin-65b and the case-level treatment judgment remains good_law."
+        ],
+        "residual_risks": [
+          "Lens A must resolve the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d3e05dba44aa0d11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.",
+          "The corresponding lake pinpoint exists as pin-65 and the case-level treatment judgment remains good_law."
+        ],
+        "residual_risks": [
+          "Lens A must resolve the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3914948a84e9994c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"criticized\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Sibron v. New York__bf22aa.json treatment.edges and treatment.derivation",
+          "needs_cl": false,
+          "problem": "The good-law label itself is supported by the lake field_i_validity, but the page's blanket 'No negative treatment' phrasing is too strong because the disclosed lake record contains proposed progeny treatment edges labeled criticized, overruled, questioned, and superseded_by_statute, with audit_needed markers.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 and Binding - SCOTUS, but replace 'No negative treatment' with a narrower statement such as 'No confirmed adverse validity change in the lake judgment; proposed progeny flags are present and require audit before saying there is no negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field says field_i_validity is good_law as of 2026-06-30, so the current-validity call survives.",
+          "The full treatment record has 36 proposed progeny edges: criticized 1, overruled 13, questioned 20, and superseded_by_statute 2; lane1_negative and lane2_top_cited both have audit_needed true.",
+          "Because those edges are proposed and field_iii is mentioned, they do not refute the good-law call from the disclosed judgment fields, but they do refute an unqualified no-negative-treatment presentation."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full text of the progeny cases, so the proposed edges may be false positives; they still prevent a clean no-negative-treatment statement from being verified."
+        ],
+        "suggested_tightening": "Use 'good law; no confirmed overruling or abrogation in the lake judgment' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Sibron v. New York.json\",\"reviewed\":[{\"assertion_id\":\"65d10f0168ecd002\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Sibron v. New York as a U.S. Supreme Court case decided 1968-06-10.\",\"The official citation is present as 392 U.S. 40, and the lake treatment judgment marks the authority good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"73b935795b8c31e8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.\",\"The corresponding lake pinpoint exists as pin-64 and the case-level treatment judgment remains good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve the disclosed quote_fidelity mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b216c61566499746\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.\",\"The corresponding lake pinpoint exists as pin-65b and the case-level treatment judgment remains good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve the disclosed quote_fidelity mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d3e05dba44aa0d11\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B; no currency or treatment defect is raised for this row.\",\"The corresponding lake pinpoint exists as pin-65 and the case-level treatment judgment remains good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must resolve the disclosed quote_fidelity mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3914948a84e9994c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law label itself is supported by the lake field_i_validity, but the page's blanket 'No negative treatment' phrasing is too strong because the disclosed lake record contains proposed progeny treatment edges labeled criticized, overruled, questioned, and superseded_by_statute, with audit_needed markers.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 and Binding - SCOTUS, but replace 'No negative treatment' with a narrower statement such as 'No confirmed adverse validity change in the lake judgment; proposed progeny flags are present and require audit before saying there is no negative treatment.'\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"criticized\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Sibron v. New York__bf22aa.json treatment.edges and treatment.derivation\"},\"reasons\":[\"The lake judgment field says field_i_validity is good_law as of 2026-06-30, so the current-validity call survives.\",\"The full treatment record has 36 proposed progeny edges: criticized 1, overruled 13, questioned 20, and superseded_by_statute 2; lane1_negative and lane2_top_cited both have audit_needed true.\",\"Because those edges are proposed and field_iii is mentioned, they do not refute the good-law call from the disclosed judgment fields, but they do refute an unqualified no-negative-treatment presentation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full text of the progeny cases, so the proposed edges may be false positives; they still prevent a clean no-negative-treatment statement from being verified.\"],\"suggested_tightening\":\"Use 'good law; no confirmed overruling or abrogation in the lake judgment' instead of 'No negative treatment.'\"}],\"notes\":\"Reviewed all five group_inventory rows under lens B only, using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:34-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:35:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-e2dc1fc2fb"
+    ],
     "group_id": "_overhaul2/lake/cases/Sibron v. New York.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +110,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d44636f3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Sibron v. New York"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 246158,
+      "output": 7287,
+      "source": "codex-events",
+      "total": 253445
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "3914948a84e9994c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "65d10f0168ecd002": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "73b935795b8c31e8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b216c61566499746": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d3e05dba44aa0d11": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e2dc1fc2fb",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 146.4
   }
 }

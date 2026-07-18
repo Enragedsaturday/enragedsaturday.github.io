@@ -1,13 +1,82 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Salvucci.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "0e0d6321b80b5bed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, non-stub, and identifies the case as United States v. Salvucci decided by the U.S. Supreme Court on 1980-06-25.",
+          "The disclosed citation set includes official citation 448 U.S. 83 and matching display citation."
+        ],
+        "residual_risks": [
+          "Treatment audit caveats are handled in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d3b2f3bbba4bf2c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no currency or treatment defect is raised for this row.",
+          "The lake pinpoints record itself flags pin-85 as quote_fidelity mismatch, so lens A should handle any quote-fidelity consequence."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity review performed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ede9cfeab68a444",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\",\n      \"field_iii\": \"mentioned\",\n      \"point\": null,\n      \"proposed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/United States v. Salvucci__107a7a.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The top-level good_law treatment survives from the lake judgment fields, but the built page's categorical 'No negative treatment' statement is too strong because the lake record contains proposed negative-treatment edges and treatment derivation audit flags.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 only if tied to the top-level field_i_validity, but replace 'No negative treatment' with a qualification that the lake contains proposed negative-treatment edges requiring audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake top-level treatment says field_i_validity is good_law as of 2026-06-30, so the basic good-law label is disclosed and verifiable.",
+          "The same lake treatment record lists 36 proposed treatment edges: overruled, questioned, superseded_by_statute, and abrogated, all with field_iii mentioned.",
+          "The derivation flags audit_needed true for lane1_negative and lane2_top_cited, so 'No negative treatment' cannot be stated categorically from the disclosed record."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full progeny opinions for the proposed edges, so their actual legal effect cannot be confirmed without a treatment audit."
+        ],
+        "suggested_tightening": "Say: 'Top-level treatment: good_law as of 2026-06-30; lake treatment audit lists proposed negative-treatment edges requiring review.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Salvucci.json\",\"reviewed\":[{\"assertion_id\":\"0e0d6321b80b5bed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, non-stub, and identifies the case as United States v. Salvucci decided by the U.S. Supreme Court on 1980-06-25.\",\"The disclosed citation set includes official citation 448 U.S. 83 and matching display citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment audit caveats are handled in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3d3b2f3bbba4bf2c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no currency or treatment defect is raised for this row.\",\"The lake pinpoints record itself flags pin-85 as quote_fidelity mismatch, so lens A should handle any quote-fidelity consequence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No support or quote-fidelity review performed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1ede9cfeab68a444\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The top-level good_law treatment survives from the lake judgment fields, but the built page's categorical 'No negative treatment' statement is too strong because the lake record contains proposed negative-treatment edges and treatment derivation audit flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 only if tied to the top-level field_i_validity, but replace 'No negative treatment' with a qualification that the lake contains proposed negative-treatment edges requiring audit.\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\",\\n      \\\"field_iii\\\": \\\"mentioned\\\",\\n      \\\"point\\\": null,\\n      \\\"proposed\\\": true\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/United States v. Salvucci__107a7a.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake top-level treatment says field_i_validity is good_law as of 2026-06-30, so the basic good-law label is disclosed and verifiable.\",\"The same lake treatment record lists 36 proposed treatment edges: overruled, questioned, superseded_by_statute, and abrogated, all with field_iii mentioned.\",\"The derivation flags audit_needed true for lane1_negative and lane2_top_cited, so 'No negative treatment' cannot be stated categorically from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full progeny opinions for the proposed edges, so their actual legal effect cannot be confirmed without a treatment audit.\"],\"suggested_tightening\":\"Say: 'Top-level treatment: good_law as of 2026-06-30; lake treatment audit lists proposed negative-treatment edges requiring review.'\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T02:34:01-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:06:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f0eca1c092",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-9c9336f2ba"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Salvucci.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +85,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0d422452.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Salvucci"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 222942,
+      "output": 5024,
+      "source": "codex-events",
+      "total": 227966
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "0e0d6321b80b5bed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1ede9cfeab68a444": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3d3b2f3bbba4bf2c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f0eca1c092",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9c9336f2ba",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 105.5
   }
 }

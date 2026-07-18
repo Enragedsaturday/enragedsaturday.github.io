@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Maine v. Moulton.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl; this review did not create extra assertion entries.",
+    "reviewed": [
+      {
+        "assertion_id": "cdad127ed290aa0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Maine v. Moulton with official citation 474 U.S. 159, court U.S. Supreme Court, and year 1985.",
+          "Lake parallel citations and vendor-neutral citation match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e05d92746fd0fe4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion addresses the Sixth Amendment right to counsel after formal charges and clarifies the State's obligation not to circumvent that right.",
+          "The opinion refines Massiah/Henry by holding that knowing exploitation of an uncounseled confrontation can violate the Sixth Amendment even if the police did not initiate the meeting."
+        ],
+        "residual_risks": [
+          "The exact home-role label is editorial, but the disclosed opinion and lake progeny/citation data support treating the case as key/refinement authority."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f0c37ecdfc1e1a4d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the Sixth Amendment is violated when the State obtains incriminating statements by knowingly circumventing the accused’s right",
+          "locator_note": "holding",
+          "needs_cl": false,
+          "problem": "The holding field is truncated and overbroad as framed. The disclosed opinion limits the rule to post-attachment/formal-charge settings, incriminating statements, a confrontation with a state agent, and pending-charge use; the content holding ends with 'it makes no…' and omits those limits.",
+          "proposed_fix": "Replace with: The Sixth Amendment is violated when, after formal charges, the State obtains incriminating statements about pending charges by knowingly circumventing the accused's right to counsel in a confrontation with a state agent; a concurrent investigation of other crimes does not make those statements admissible on the pending charges.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports a narrower rule than the holding field states.",
+          "The field's trailing ellipsis prevents verification of the asserted tail of the holding from the disclosed evidence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "State the formal-charge, incriminating-statement, state-agent, and pending-charge limitations explicitly.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f5c478302065709",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The authority-weight label matches the disclosed lake identity: court_level is scotus and court is U.S. Supreme Court.",
+          "No treatment/currency defect is raised under Lens A."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77f1fe0130e30048",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1985-12-10, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lake contains treatment edges, but Lens B owns treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Maine v. Moulton.md\",\"reviewed\":[{\"assertion_id\":\"cdad127ed290aa0d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Maine v. Moulton with official citation 474 U.S. 159, court U.S. Supreme Court, and year 1985.\",\"Lake parallel citations and vendor-neutral citation match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4e05d92746fd0fe4\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion addresses the Sixth Amendment right to counsel after formal charges and clarifies the State's obligation not to circumvent that right.\",\"The opinion refines Massiah/Henry by holding that knowing exploitation of an uncounseled confrontation can violate the Sixth Amendment even if the police did not initiate the meeting.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The exact home-role label is editorial, but the disclosed opinion and lake progeny/citation data support treating the case as key/refinement authority.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f0c37ecdfc1e1a4d\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding field is truncated and overbroad as framed. The disclosed opinion limits the rule to post-attachment/formal-charge settings, incriminating statements, a confrontation with a state agent, and pending-charge use; the content holding ends with 'it makes no…' and omits those limits.\",\"severity\":\"high\",\"proposed_fix\":\"Replace with: The Sixth Amendment is violated when, after formal charges, the State obtains incriminating statements about pending charges by knowingly circumventing the accused's right to counsel in a confrontation with a state agent; a concurrent investigation of other crimes does not make those statements admissible on the pending charges.\",\"evidence_quote\":\"the Sixth Amendment is violated when the State obtains incriminating statements by knowingly circumventing the accused’s right\",\"needs_cl\":false,\"locator_note\":\"holding\"},\"reasons\":[\"The opinion supports a narrower rule than the holding field states.\",\"The field's trailing ellipsis prevents verification of the asserted tail of the holding from the disclosed evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"State the formal-charge, incriminating-statement, state-agent, and pending-charge limitations explicitly.\"},{\"assertion_id\":\"3f5c478302065709\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The authority-weight label matches the disclosed lake identity: court_level is scotus and court is U.S. Supreme Court.\",\"No treatment/currency defect is raised under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"77f1fe0130e30048\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1985-12-10, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake contains treatment edges, but Lens B owns treatment/currency review.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl; this review did not create extra assertion entries.\"}",
   "summary": {
-    "at": "2026-07-10T02:46:46-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:51:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ad042112cb"
+    ],
     "group_id": "content/cases/Maine v. Moulton.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +105,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9ef4ba6b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Maine v. Moulton"
     ],
     "tokens": {
-      "input": 823,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 823
+      "input": 270506,
+      "output": 9650,
+      "source": "codex-events",
+      "total": 280156
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "3f5c478302065709": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4e05d92746fd0fe4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77f1fe0130e30048": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cdad127ed290aa0d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f0c37ecdfc1e1a4d": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ad042112cb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 186.9
   }
 }

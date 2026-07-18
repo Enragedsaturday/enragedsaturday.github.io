@@ -1,0 +1,149 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1fb740f5ee67c842",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms the case at the official cite: '338 U.S. 160 (1949)', 'BRINEGAR v. UNITED STATES.', Supreme Court, argued Oct 18-19 1948, decided June 27 1949, Rutledge J.; official_selection 338 U.S. 160 (selected_rank_1)."
+        ],
+        "residual_risks": [
+          "Parallel cite '93 L. Ed. 2d 1879' (reporter tagged 'L. Ed. 2d') is likely a reporter-series error for a 1949 decision (should be 93 L. Ed. 1879, first series); this depends on reporter-chronology knowledge outside the inlined evidence, so it is flagged not refuted, and the official cite carrying legal weight is correct.",
+          "Content-page front-matter docket '23' conflicts with the cached opinion's 'No. 12', and front-matter date_decided '1949-10-10' conflicts with 'Decided June 27, 1949'; both are front-matter fields outside this existence payload (treatment.as_of_content 1949-06-27 is correct)."
+        ],
+        "suggested_tightening": "Verify the L. Ed. reporter series (probable fix 93 L. Ed. 1879) and reconcile front-matter docket/date_decided (No. 12 / 1949-06-27) against the CL cluster.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "381eb55746dfeba4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-175 quote 'In dealing with probable cause, however, as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act.' is verbatim in the cached opinion immediately after the '*175' star-pagination marker, so pincite '338 U.S. at 175' is affirmatively confirmed.",
+          "The payload 'quote' field captured content-page prose preceding the anchor (span-capture artifact); the 'quote_fidelity: mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c886a2db17a729ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page pin-176 quote 'the facts and circumstances within their [the officers'] knowledge and of which they had reasonably trustworthy information [are] sufficient in themselves to warrant a man of reasonable caution in the belief that' an offense has been or is being committed' is verbatim in the cached opinion; the '*176' star marker falls immediately before 'belief that', confirming pincite '175-176'.",
+          "Bracketed insertions [the officers'] and [are] match the source; the content page only re-nests the quotation marks. 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "777d03c1c6fd167f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is correct for the bedrock probable-cause standard; as_of_content 1949-06-27 matches the cached opinion's decision date.",
+          "Lake-record negative edges are all 'proposed: true' keyword-scan FPs (e.g. a 2023 Ohio case 'overruling' a 1949 SCOTUS decision is impossible); content-page treatment section reports no negative treatment and carries the standard forward through Illinois v. Gates."
+        ],
+        "residual_risks": [
+          "Citator currency as of 2026-06-30 is not derivable from the inlined case text; migration-seed basis. No adverse treatment disclosed, so no defect found."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a9a4e365f7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f4a91c443a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb1dce5dc5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brinegar v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-02-30689111",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brinegar v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1fb740f5ee67c842": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "381eb55746dfeba4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "777d03c1c6fd167f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "c886a2db17a729ed": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9a4e365f7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f4a91c443a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb1dce5dc5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

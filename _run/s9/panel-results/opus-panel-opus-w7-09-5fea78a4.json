@@ -1,0 +1,155 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "21997b7150d55291",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 458 U.S. 259 confirmed: cached opinion 'Michigan v. Thomas' Per Curiam, star pages *260 through *262, consistent with a case start at 259.",
+          "Lake citations.official selected_official=true; well-formed U.S. Reports SCOTUS citation."
+        ],
+        "residual_risks": [
+          "Lake identity carries opinion_id==cluster_id (110776); not an existence-cite defect but flagged for hygiene.",
+          "Parallel cites not checkable against cached text; facially well-formed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "533b580a1ac045ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page ^pin-261 quotes 'when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.' — verbatim match to cached opinion (para b299-5, the per curiam restating Chambers v. Maroney).",
+          "Pincite 261 is correct: the quoted text sits between the *261 and *262 star markers.",
+          "The payload 'quote' ('## Rule No. Restating Chambers v. Maroney:') is a mis-captured lead-in span; mismatch/slip-only are S8 capture artifacts, not a rendered-quote defect."
+        ],
+        "residual_risks": [
+          "Lake pinpoints[].quote for pin-261 stores the corrupted lead-in span (metadata-hygiene only)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2fcf36f62ab3e39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content page ^pin-261a quote 'It is thus clear that the justification to conduct such a warrantless search does not vanish once the car has been immobilized; nor does it depend upon a reviewing court's assessment of the likelihood in each particular case that the car would have been driven away, or that its contents would have been tampered with, during the period required for the police to obtain a warrant.' matches cached opinion (para b299-5) verbatim.",
+          "'Id.' pincite resolves to 261, where the sentence sits (between *261 and *262).",
+          "The payload quote text is itself verbatim-present in the cached opinion, so quote_fidelity='mismatch'/pinpoint_status='slip-only' are false positives (likely driven by the null-page 'Id.' anchor / normalization), not a real mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e94365094dd6feeb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct; 'Per Curiam' is confirmed by the cached opinion author line; no disclosed edge shows the subject case overruled.",
+          "Disclosed negative edges are proposed lane1_negative citator noise.",
+          "composite_basis='migration-seed' — validity independently seeded."
+        ],
+        "residual_risks": [
+          "scope_note reaffirmation-by-Maryland v. Dyson is not in the 1982 cached opinion (Dyson post-dates); uncontradicted but not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b18aa6347a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09f33ca2ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-53c77ed047",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-09-5fea78a4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Thomas"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "21997b7150d55291": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "533b580a1ac045ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2fcf36f62ab3e39": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e94365094dd6feeb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b18aa6347a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09f33ca2ab",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-53c77ed047",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

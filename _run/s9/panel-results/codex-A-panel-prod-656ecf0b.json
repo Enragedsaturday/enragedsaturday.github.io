@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Colorado v. Connelly.md",
+    "lens": "A",
+    "notes": "No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Separately, the lake pinpoints entry for pin-167 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.",
+    "reviewed": [
+      {
+        "assertion_id": "78fb2d0a7162fa7e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name Colorado v. Connelly, court U.S. Supreme Court, date_decided 1986-12-10, and year 1986.",
+          "Lake citations list official 479 U.S. 157, parallel 107 S. Ct. 515; 93 L. Ed. 2d 473; 55 U.S.L.W. 4043, and vendor citation 1986 U.S. LEXIS 23."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "020410249cb3fe94",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that coercive police activity is a necessary predicate to the finding that a confession is not “voluntary” within the meaning of the Due Process Clause of the Fourteenth Amendment.",
+          "locator_note": "content_page.md frontmatter holding; group_inventory row 2",
+          "needs_cl": false,
+          "problem": "The core due-process proposition is supported, but the holding field is truncated after \"a suspect's mental illness or…\", leaving the asserted holding incomplete as framed.",
+          "proposed_fix": "Replace the holding with: A confession is not constitutionally involuntary under the Due Process Clause absent coercive police activity; mental illness alone, apart from its relation to official coercion, does not dispose of voluntariness, and reliability is governed by evidence law.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly holds that coercive police activity is a necessary predicate for a due-process involuntariness finding.",
+          "The opinion also says a defendant's mental condition by itself, apart from official coercion, should not dispose of constitutional voluntariness.",
+          "The page body states the supported rule, but the reviewed holding payload itself ends with an ellipsis."
+        ],
+        "residual_risks": [
+          "The legal doctrine is supported; the defect is the incomplete frontmatter holding text."
+        ],
+        "suggested_tightening": "Use \"requires coercive police activity\" rather than \"only when there is\" to avoid any possible necessary/sufficient-condition ambiguity.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e036a591d2b226e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is centrally about due-process voluntariness of confessions.",
+          "It refines the prior coerced-confession line by requiring coercive police activity and discussing Brown and later confession cases.",
+          "Lake progeny data shows substantial downstream citation, supporting the \"Key\" label."
+        ],
+        "residual_risks": [
+          "No separate home page file was disclosed, so review is limited to the case text, content page metadata, and lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "279d7e69d9aa452a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1986-12-10, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.",
+          "Treatment currency is outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lake treatment includes proposed negative-edge audit markers, but Lens B owns treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8d572b1ab528a6e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists the court as U.S. Supreme Court and court_level as scotus.",
+          "The content authority_weight \"Binding — SCOTUS\" matches that disclosed identity for a federal corpus."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Colorado v. Connelly.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"78fb2d0a7162fa7e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity gives case_name Colorado v. Connelly, court U.S. Supreme Court, date_decided 1986-12-10, and year 1986.\",\n        \"Lake citations list official 479 U.S. 157, parallel 107 S. Ct. 515; 93 L. Ed. 2d 473; 55 U.S.L.W. 4043, and vendor citation 1986 U.S. LEXIS 23.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"020410249cb3fe94\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The core due-process proposition is supported, but the holding field is truncated after \\\"a suspect's mental illness or…\\\", leaving the asserted holding incomplete as framed.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace the holding with: A confession is not constitutionally involuntary under the Due Process Clause absent coercive police activity; mental illness alone, apart from its relation to official coercion, does not dispose of voluntariness, and reliability is governed by evidence law.\",\n        \"evidence_quote\": \"We hold that coercive police activity is a necessary predicate to the finding that a confession is not “voluntary” within the meaning of the Due Process Clause of the Fourteenth Amendment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md frontmatter holding; group_inventory row 2\"\n      },\n      \"reasons\": [\n        \"The opinion expressly holds that coercive police activity is a necessary predicate for a due-process involuntariness finding.\",\n        \"The opinion also says a defendant's mental condition by itself, apart from official coercion, should not dispose of constitutional voluntariness.\",\n        \"The page body states the supported rule, but the reviewed holding payload itself ends with an ellipsis.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal doctrine is supported; the defect is the incomplete frontmatter holding text.\"\n      ],\n      \"suggested_tightening\": \"Use \\\"requires coercive police activity\\\" rather than \\\"only when there is\\\" to avoid any possible necessary/sufficient-condition ambiguity.\"\n    },\n    {\n      \"assertion_id\": \"e036a591d2b226e7\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion is centrally about due-process voluntariness of confessions.\",\n        \"It refines the prior coerced-confession line by requiring coercive police activity and discussing Brown and later confession cases.\",\n        \"Lake progeny data shows substantial downstream citation, supporting the \\\"Key\\\" label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No separate home page file was disclosed, so review is limited to the case text, content page metadata, and lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"279d7e69d9aa452a\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1986-12-10, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.\",\n        \"Treatment currency is outside Lens A; no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake treatment includes proposed negative-edge audit markers, but Lens B owns treatment/currency review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8d572b1ab528a6e6\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists the court as U.S. Supreme Court and court_level as scotus.\",\n        \"The content authority_weight \\\"Binding — SCOTUS\\\" matches that disclosed identity for a federal corpus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No separate quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory.jsonl. Separately, the lake pinpoints entry for pin-167 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:41:44-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:48:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f81649e800"
+    ],
     "group_id": "content/cases/Colorado v. Connelly.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +109,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-656ecf0b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Colorado v. Connelly"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 284776,
+      "output": 10258,
+      "source": "codex-events",
+      "total": 295034
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.3
+    "verdict_map": {
+      "020410249cb3fe94": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "279d7e69d9aa452a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78fb2d0a7162fa7e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8d572b1ab528a6e6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e036a591d2b226e7": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f81649e800",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 199.7
   }
 }

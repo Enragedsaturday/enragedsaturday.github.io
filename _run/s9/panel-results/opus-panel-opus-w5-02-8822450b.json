@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "34e289300c134906",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms case + cite: '490 U.S. 386 (1989)', 'GRAHAM v. CONNOR ET AL.', No. 87-6571, argued Feb. 21 1989, decided May 15 1989, Rehnquist, C.J.",
+          "Official cite 490 U.S. 386 from cluster.citations[]; parallels (109 S. Ct. 1865; 104 L. Ed. 2d 443; 1989 U.S. LEXIS 2467; 57 U.S.L.W. 4513) are the standard Graham v. Connor parallel set.",
+          "No conflicting evidence."
+        ],
+        "residual_risks": [
+          "Parallel-cite page numbers not independently confirmable from opinion text; rely on disclosed cluster metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8d33102d2ee42bbb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached text verbatim: 'The \"reasonableness\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.'",
+          "Passage sits on U.S. Reports p.396 (immediately after the *396 star-pagination), so pincite 'Id. at 396' is correct.",
+          "Payload 'mismatch'/'slip-only' = no validated star fragment, not a text error."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d82c528653841427",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached text verbatim: '...including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight.'",
+          "pinpoint_status='star-verified'; fragment '#:~:text=including%20the%20severity%20of%20the' consistent; passage on p.396.",
+          "Pincite 'Id.' (396) correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dcda0beea11e9882",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "all claims that law enforcement officers have used excessive force  deadly or not  in the course of an arrest, investigatory stop, or other “seizure” of a free citizen should be analyzed under the Fourth Amendment and its “reasonableness” standard, rather than under a “substantive due process” approach.",
+          "locator_note": "cached text, para beginning 'Today we make explicit what was implicit in Garner...'; reader-facing quote at ^pin-395 is faithful and pincite '490 U.S. at 395' is correct. Defect is metadata-only.",
+          "needs_cl": false,
+          "problem": "Stored pin-395 quote is corrupted content-page markdown scaffolding ('...test drawn from *Johnson v. Glick*. ## Issue ... ## Rule Such claims are governed by the Fourth Amendment's objective-reasonableness standard, not substantive due process.'), not a verbatim opinion quote; appears nowhere in the source.",
+          "proposed_fix": "Repair pin-395 quote to the material actually rendered at ^pin-395: '[A]ll claims that law enforcement officers have used excessive force  deadly or not  in the course of an arrest, investigatory stop, or other \"seizure\" of a free citizen should be analyzed under the Fourth Amendment and its \"reasonableness\" standard, rather than under a \"substantive due process\" approach.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Reader-facing quote at ^pin-395 is faithful to cached text and the pincite (395) is correct; defect is confined to the corrupted stored metadata quote (builder self-flagged 'mismatch').",
+          "No reader harm; metadata repair only."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pinpoint quotes from anchor text, not surrounding markdown.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8fc0f62aa84d4c5f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Graham v. Connor is bedrock excessive-force precedent; lane1_negative reviewed 200 targeted overrul*/abrogat*/vacat* citing hits with proposed_negative_events=0.",
+          "The 25 lane2_top_cited overruled/abrogated/questioned edges are all proposed:true snippet artifacts (Scott v. Harris, Kingsley, Mullenix, White v. Pauly, Tolan, etc. cite and APPLY Graham; none overrule it, and only SCOTUS could).",
+          "varies_by_point=false consistent with the uniform objective-reasonableness holding."
+        ],
+        "residual_risks": [
+          "lane1_negative cap_hit=true / audit_needed=true: the negative search hit its 200 cap and did not exhaust all citing cases  a theoretical residual, very low real risk for a still-cited 1989 landmark.",
+          "Content 'No negative treatment' line asserts a clean status the pack cannot exhaustively prove."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f140739715",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-9dc7814eb8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Graham v. Connor.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-02-8822450b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Graham v. Connor"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "34e289300c134906": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8d33102d2ee42bbb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8fc0f62aa84d4c5f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d82c528653841427": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dcda0beea11e9882": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f140739715",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3647585329",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-9dc7814eb8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

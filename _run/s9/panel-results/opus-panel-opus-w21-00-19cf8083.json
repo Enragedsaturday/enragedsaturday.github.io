@@ -1,0 +1,84 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7c7c37c439f31331",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record citations.official = '13 F.4th 961' (F.4th, vol 13, p.961, source cluster.citations[]) is internally consistent across official/all/display/official_selection (selected_rank_1, court_class coa).",
+          "Cached CL opinion corroborates identity: 'FOR PUBLICATION / UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT'; No. 18-50440; 'Filed September 21, 2021'; 'Luke Wilson' — matches lake case_name 'United States v. Luke Wilson', ca9, docket 18-50440, decided 2021-09-21.",
+          "Holding/reversal language in the cached body ('...motion to suppress and vacate Wilson's conviction', line 2370) matches the private-search disposition, confirming this is the correct opinion for the cited case."
+        ],
+        "residual_risks": [
+          "CL text is slip-paginated (no F.4th page 961 in-body); the reporter page rests on cluster.citations[] metadata (disclosed).",
+          "opinion_url uses cluster_id 5296785 while identity.lead_opinion_id is 5125347 — the known CourtListener cluster-vs-opinion URL pattern, not a citation defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "438f18cf14a4f2ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload field_i_validity='unverified' (frontier-stub scope_note, varies_by_point false) matches the lake treatment block exactly (composite_basis 'unverified', edges [], derivation {}) and the 'Treatment: Unverified' render.",
+          "Honest non-derivation; progeny block null/empty (rows_cached 0), consistent with 'intentionally not derived until S6 promotion'.",
+          "Content page carries the ⚪ 'Status: Unverified — subsequent treatment not yet machine-verified' banner."
+        ],
+        "residual_risks": [
+          "The 'Treatment & subsequent history' prose asserts a live Reddick/Miller circuit split — a doctrinal teaching statement, not a machine-verified citator claim; it does not contradict the 'unverified' treatment field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Wilson.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-00-19cf8083",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Wilson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "438f18cf14a4f2ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c7c37c439f31331": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

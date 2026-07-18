@@ -1,13 +1,59 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
+    "lens": "A",
+    "notes": "content_page.* was not present in the working directory, so this review is limited to group_inventory.jsonl, the lake record, and the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "47002802696d3238",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"display\": \"540 U.S. 544\"",
+          "locator_note": "lake/illinois-v-fisher--5141053__626f32.json citations block",
+          "needs_cl": false,
+          "problem": "The cited reporter entries in the assertion do not match the disclosed lake record for Illinois v. Fisher. The assertion lists 860 A.2d 363 and 2004 WL 2445390, but the lake record identifies Illinois v. Fisher as 540 U.S. 544 with parallel citations 124 S. Ct. 1200, 157 L. Ed. 2d 1060, and 2004 U.S. LEXIS 1412.",
+          "proposed_fix": "Replace the asserted citations with the lake record citations, using 540 U.S. 544 as the official/display citation, and remove 860 A.2d 363 and 2004 WL 2445390 unless separate disclosed evidence ties them to this case.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names the case Illinois v. Fisher, court U.S. Supreme Court, decided 2004-02-23, docket No. 03-374.",
+          "The lake citations block does not contain 860 A.2d 363 or 2004 WL 2445390.",
+          "The lake official citation is 540 U.S. 544, so the assertion's citation set is not exactly right."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the lake record's official/display citation 540 U.S. 544 and include the disclosed parallel citations only if the page needs them.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56eacd28d974f9ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny were intentionally not derived until S6 promotion.",
+          "Lens A does not evaluate treatment or currency merits, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains unreviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/illinois-v-fisher--5141053.json\",\"reviewed\":[{\"assertion_id\":\"47002802696d3238\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The cited reporter entries in the assertion do not match the disclosed lake record for Illinois v. Fisher. The assertion lists 860 A.2d 363 and 2004 WL 2445390, but the lake record identifies Illinois v. Fisher as 540 U.S. 544 with parallel citations 124 S. Ct. 1200, 157 L. Ed. 2d 1060, and 2004 U.S. LEXIS 1412.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the asserted citations with the lake record citations, using 540 U.S. 544 as the official/display citation, and remove 860 A.2d 363 and 2004 WL 2445390 unless separate disclosed evidence ties them to this case.\",\"evidence_quote\":\"\\\"display\\\": \\\"540 U.S. 544\\\"\",\"needs_cl\":false,\"locator_note\":\"lake/illinois-v-fisher--5141053__626f32.json citations block\"},\"reasons\":[\"The lake identity record names the case Illinois v. Fisher, court U.S. Supreme Court, decided 2004-02-23, docket No. 03-374.\",\"The lake citations block does not contain 860 A.2d 363 or 2004 WL 2445390.\",\"The lake official citation is 540 U.S. 544, so the assertion's citation set is not exactly right.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the lake record's official/display citation 540 U.S. 544 and include the disclosed parallel citations only if the page needs them.\"},{\"assertion_id\":\"56eacd28d974f9ba\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny were intentionally not derived until S6 promotion.\",\"Lens A does not evaluate treatment or currency merits, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains unreviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"content_page.* was not present in the working directory, so this review is limited to group_inventory.jsonl, the lake record, and the cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:17:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-8233ea44e1"
+    ],
     "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,23 +62,43 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-add5b3fc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "no content page for lake record illinois-v-fisher--5141053"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "illinois-v-fisher--5141053"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 61032,
+      "output": 1795,
+      "source": "codex-events",
+      "total": 62827
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "47002802696d3238": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "56eacd28d974f9ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8233ea44e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 38.1
   }
 }

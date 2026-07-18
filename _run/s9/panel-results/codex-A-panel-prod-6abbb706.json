@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Screws v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "7fbde5eaf27f52da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Screws v. United States, U.S. Supreme Court, decided 1945-05-07.",
+          "The official citation in the lake record is 325 U.S. 91, matching the content page display citation 325 U.S. 91 (1945).",
+          "The parallel and vendor citations in the payload match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0a444ab7ab695da9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness.",
+          "locator_note": "text/Screws v. United States__f15611.txt, line 34; content_page.md Rule section pin-103",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-103 is not character-faithful to the opinion text; it is a stray page/content fragment rather than the cited passage.",
+          "proposed_fix": "Replace the pin-103 lake quote with the actual page-103 quotation used on the content page, and set the pinpoint to 325 U.S. at 103.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is \"requires. ## Rule The statute is saved from vagueness by reading\", which does not appear as the opinion's page-103 passage.",
+          "The lake record itself marks pin-103 quote_fidelity as mismatch and page as null.",
+          "The disclosed opinion text contains the page-103 quotation supporting the content page's visible quoted sentence."
+        ],
+        "residual_risks": [
+          "The visible content-page quotation appears faithful; the defect is in the harvested lake pinpoint quote/metadata."
+        ],
+        "suggested_tightening": "Store the full quoted sentence from the opinion as pin-103 rather than a cross-boundary harvested fragment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "68ef81d6e3551bfa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1945-05-07, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency audit was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Screws v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7fbde5eaf27f52da\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Screws v. United States, U.S. Supreme Court, decided 1945-05-07.\",\n        \"The official citation in the lake record is 325 U.S. 91, matching the content page display citation 325 U.S. 91 (1945).\",\n        \"The parallel and vendor citations in the payload match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0a444ab7ab695da9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pinpoint quote for pin-103 is not character-faithful to the opinion text; it is a stray page/content fragment rather than the cited passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-103 lake quote with the actual page-103 quotation used on the content page, and set the pinpoint to 325 U.S. at 103.\",\n        \"evidence_quote\": \"We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Screws v. United States__f15611.txt, line 34; content_page.md Rule section pin-103\"\n      },\n      \"reasons\": [\n        \"The payload quote is \\\"requires. ## Rule The statute is saved from vagueness by reading\\\", which does not appear as the opinion's page-103 passage.\",\n        \"The lake record itself marks pin-103 quote_fidelity as mismatch and page as null.\",\n        \"The disclosed opinion text contains the page-103 quotation supporting the content page's visible quoted sentence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page quotation appears faithful; the defect is in the harvested lake pinpoint quote/metadata.\"\n      ],\n      \"suggested_tightening\": \"Store the full quoted sentence from the opinion as pin-103 rather than a cross-boundary harvested fragment.\"\n    },\n    {\n      \"assertion_id\": \"68ef81d6e3551bfa\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter.\",\n        \"The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1945-05-07, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment/currency audit was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:32:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-cd1061dd58"
+    ],
     "group_id": "_overhaul2/lake/cases/Screws v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6abbb706.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Screws v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 262365,
+      "output": 4126,
+      "source": "codex-events",
+      "total": 266491
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "verdict_map": {
+      "0a444ab7ab695da9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "68ef81d6e3551bfa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fbde5eaf27f52da": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd1061dd58",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 84.5
   }
 }

@@ -1,0 +1,143 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4cf9f3b8858be3eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Brennan, J.) is Warden v. Hayden (armed robber, Cocoa Lane, Maryland Penitentiary); reporter star-pagination *296-*310 is consistent with an official cite beginning at 387 U.S. 294.",
+          "Official cite 387 U.S. 294 (selected_official=true) matches the page/frontmatter; the S.Ct./L.Ed.2d/LEXIS parallels are well-formed standard reporters with no disconfirming evidence."
+        ],
+        "residual_risks": [
+          "Exact parallel-reporter pages (87 S. Ct. 1642; 18 L. Ed. 2d 782; 1967 U.S. LEXIS 2753) are not printed in the disclosed opinion text; existence rests on the confirmed U.S. cite + case identity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "13f1c2f9bbac8359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'The Fourth Amendment does not require police officers to delay in the course of an investigation if to do so would gravely endanger their lives or the lives of others.' appears verbatim in the cached opinion (para b342-7).",
+          "The sentence straddles the *299 star marker (begins on 298: '...investigation *299 if to do so...'), so the page attribution 'Id. at 298-299' is accurate; payload 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "721ad54bb36f0836",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is an extractor mis-capture: it reproduces the page's own front-matter/Background/Issue/Rule lead-in ending at the colon before the blockquote, not opinion text.",
+          "The page's actual ^pin-298 blockquote -- 'neither the entry without warrant to search for the robber, nor the search for him without warrant was invalid. Under the circumstances of this case, \"the exigencies of the situation made that course imperative.\"' -- is verbatim in the cached opinion (para b342-7) immediately after the *298 marker; the page attribution '387 U.S. at 298' is correct."
+        ],
+        "residual_risks": [
+          "A naive exact-match on payload.quote would false-flag; the captured string does not correspond to opinion text."
+        ],
+        "suggested_tightening": "Re-extract the pin-298 fragment to the trailing blockquote ('neither the entry without warrant ... made that course imperative.') rather than the preceding page preamble.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1970a5d348ed98f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Doctrinal scope note confirmed by the opinion: hot-pursuit warrantless entry upheld (para b342-7) and the 'mere evidence' rule of Gouled expressly rejected ('We today reject the distinction ...', paras b344-7 ff.).",
+          "The 'good_law as of 2026-06-30' currency claim is not independently checkable from the disclosed 1967 opinion text (no citator/treatment data inlined); no disclosed negative treatment exists to support refutation."
+        ],
+        "residual_risks": [
+          "Currency ('good law') depends on citator evidence not present in the pack; only the stated doctrinal characterization is verified against the opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c89636a808",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-97181a032c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Warden v. Hayden.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-03-00e6ff16",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Warden v. Hayden"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "13f1c2f9bbac8359": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1970a5d348ed98f1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "4cf9f3b8858be3eb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "721ad54bb36f0836": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c89636a808",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-97181a032c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

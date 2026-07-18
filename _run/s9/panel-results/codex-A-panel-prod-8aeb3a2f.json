@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "657eb07434761de1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Michigan v. Fisher, U.S. Supreme Court, decided 2009-12-07.",
+          "The official citation in the lake record is 558 U.S. 45, with parallel citations 130 S. Ct. 546 and 175 L. Ed. 2d 410, matching the inventory payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35fa5d5fb3ac8831",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.",
+          "locator_note": "text/Michigan v. Fisher__d419b5.txt paragraph b211-4 places the quoted sentence immediately after the page-number label 49; content_page.md cites it as 558 U.S. at 48.",
+          "needs_cl": false,
+          "problem": "pin-48 is not quote-faithful as framed: the lake pinpoint quote is a Markdown page excerpt rather than the opinion passage, the displayed quote alters the inner quotation marks, and the cited page 48 does not land on the quoted sentence in the cached opinion text.",
+          "proposed_fix": "Replace pin-48 with the exact opinion sentence and cite it to 558 U.S. at 49, or otherwise verify a reporter/slip pagination source that supports page 48. The exact text should preserve the opinion's quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the sentence, but at the page 49 marker, not page 48.",
+          "The content page renders the embedded quotation as 'a likely serious, life-threatening' while the opinion text uses “a likely serious, life-threatening”.",
+          "The lake pinpoint itself is marked quote_fidelity: mismatch and stores page/header/background Markdown, not the opinion quote."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes curly quotation marks, the character-fidelity defect could be downgraded, but the pinpoint/page defect remains from the disclosed text."
+        ],
+        "suggested_tightening": "Use: \"Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.\" — 558 U.S. at 49.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd0de3de441fa860",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2009-12-07, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A's charter, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment was not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Michigan v. Fisher.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"657eb07434761de1\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Michigan v. Fisher, U.S. Supreme Court, decided 2009-12-07.\",\n        \"The official citation in the lake record is 558 U.S. 45, with parallel citations 130 S. Ct. 546 and 175 L. Ed. 2d 410, matching the inventory payload and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"35fa5d5fb3ac8831\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-48 is not quote-faithful as framed: the lake pinpoint quote is a Markdown page excerpt rather than the opinion passage, the displayed quote alters the inner quotation marks, and the cited page 48 does not land on the quoted sentence in the cached opinion text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-48 with the exact opinion sentence and cite it to 558 U.S. at 49, or otherwise verify a reporter/slip pagination source that supports page 48. The exact text should preserve the opinion's quotation marks.\",\n        \"evidence_quote\": \"Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Michigan v. Fisher__d419b5.txt paragraph b211-4 places the quoted sentence immediately after the page-number label 49; content_page.md cites it as 558 U.S. at 48.\"\n      },\n      \"reasons\": [\n        \"The cached opinion text contains the sentence, but at the page 49 marker, not page 48.\",\n        \"The content page renders the embedded quotation as 'a likely serious, life-threatening' while the opinion text uses “a likely serious, life-threatening”.\",\n        \"The lake pinpoint itself is marked quote_fidelity: mismatch and stores page/header/background Markdown, not the opinion quote.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"If the corpus intentionally normalizes curly quotation marks, the character-fidelity defect could be downgraded, but the pinpoint/page defect remains from the disclosed text.\"\n      ],\n      \"suggested_tightening\": \"Use: \\\"Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.\\\" — 558 U.S. at 49.\"\n    },\n    {\n      \"assertion_id\": \"bd0de3de441fa860\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2009-12-07, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Treatment/currency is outside Lens A's charter, so no independent treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment was not independently reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 rows in group_inventory.jsonl using only disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:10:37-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-cf25f48669"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8aeb3a2f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Fisher"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 137009,
+      "output": 5899,
+      "source": "codex-events",
+      "total": 142908
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.3
+    "verdict_map": {
+      "35fa5d5fb3ac8831": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "657eb07434761de1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd0de3de441fa860": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cf25f48669",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 119.4
   }
 }

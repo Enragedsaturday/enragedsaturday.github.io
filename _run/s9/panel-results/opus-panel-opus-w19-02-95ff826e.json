@@ -1,0 +1,124 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6a833943ef450ae0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: 'Mr. Justice Rehnquist delivered the opinion of the Court', Robinson search-incident-to-arrest heroin/cigarette-package facts, reporter star markers *220 through *237 placing the opinion in 414 U.S. 218.",
+          "display '414 U.S. 218' equals official (selected_official=true, official_selection_present=true); opinion pagination begins at 218 (first shown star *220), consistent.",
+          "Parallels 94 S. Ct. 467; 38 L. Ed. 2d 427; 1973 U.S. LEXIS 21; 66 Ohio Op. 2d 202 are standard reporters for 414 U.S. 218 and are flagged non-official."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "595c7404e13e9aba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-235 quote field holds a capture artifact (the page's own header/Background/Issue markdown), which does not appear in the opinion; quote_fidelity='mismatch' is therefore an accurate, honest self-classification, not a false fidelity claim.",
+          "The intended displayed Rule quote this pin anchors — 'A custodial arrest of a suspect based on probable cause is a reasonable intrusion under the Fourth Amendment; that intrusion being lawful, a search incident to the arrest requires no additional justification... but is also a \"reasonable\" search under that Amendment.' — is verbatim in majority ¶b387-5, which follows the *235 marker, confirming both the quote and the 'at 235' pincite.",
+          "Refutation would require the blob to match the opinion (it does not) or the page quote to be unfaithful (it is faithful); the mismatch flag survives."
+        ],
+        "residual_risks": [
+          "Data-quality artifact: pin-235 'quote' field is polluted with page markdown rather than the holding sentence; benign because self-flagged mismatch/slip-only and the rendered quote independently verifies at page 235."
+        ],
+        "suggested_tightening": "Repopulate pin-235.quote with the actual holding sentence ('A custodial arrest of a suspect based on probable cause...') so the quote field matches the page display.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a029504203c3615",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Currency attack does not land: all treatment.edges are 'proposed':true (lane1_negative/lane2_top_cited), none adjudicated; lane3_recency reviewed 56 with proposed_negative_events 0, so the recent-citing signal shows no negative treatment of this bedrock SIA holding.",
+          "No confirmed overruling in the disclosed evidence; the page correctly frames Riley v. California (digital cell-phone contents) and Arizona v. Gant (vehicle SIA) as distinguishing, not disturbing, Robinson's full-search-of-the-person rule.",
+          "field_i_validity='good_law' as of 2026-06-30 survives, but currency cannot be affirmatively derived from the opinion + unaudited proposed edges; composite_basis is a migration-seed and scope_note itself flags possible downgrade on re-derivation."
+        ],
+        "residual_risks": [
+          "derivation flags audit_needed=true, audit_marker 'R15 treatment audit required', with ~30 proposed negative edges (5 lane1 + 25 lane2) unadjudicated; these read as keyword false-positives (Robinson SIA-of-the-person is manifestly still good law) but remain formally unresolved.",
+          "good_law rests on a migration-seed pending S2 re-derivation."
+        ],
+        "suggested_tightening": "Complete the R15 treatment audit to confirm the proposed 'overruled/abrogated/superseded' edges are off-point keyword hits before marking good_law machine-verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-81298f875c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e488fd75b3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-02-95ff826e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Robinson"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4a029504203c3615": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "595c7404e13e9aba": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a833943ef450ae0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-81298f875c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e488fd75b3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

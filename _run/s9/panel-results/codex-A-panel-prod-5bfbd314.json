@@ -1,22 +1,162 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Perry v. New Hampshire.json",
+    "lens": "A",
+    "notes": "Reviewed all four assertion_id rows in group_inventory.jsonl. Treatment/currency was recorded only, not substantively attacked under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "364db54a45d8ea1e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Perry v. New Hampshire as a U.S. Supreme Court case decided 2012-01-11, docket 10-8974.",
+          "The citation set in the assertion matches the lake record's citations.all list, including 565 U.S. 228, 132 S. Ct. 716, 181 L. Ed. 2d 694, 2012 U.S. LEXIS 579, and 2012 WL 75048."
+        ],
+        "residual_risks": [
+          "The lake official_selection.selected field is null, but the asserted citation set itself matches the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fb66487aa9a5f79",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we hold that [16] the Due Process Clause does not require a preliminary judicial inquiry into the reliability of an eyewitness identification when the identification was not procured under unnecessarily suggestive circumstances arranged by law enforcement.",
+          "locator_note": "text/Perry v. New Hampshire__4eb77e.txt line 83, pin-op18",
+          "needs_cl": false,
+          "problem": "The quoted final holding sentence is substantively present, but it is not character-faithful to the cached text as framed: the text has 'we hold that [16] the Due Process Clause...' while the page/lake quote starts '[T]he Due Process Clause...'. The lake also marks this pinpoint's quote_fidelity as mismatch.",
+          "proposed_fix": "Quote the sentence without the bracketed capitalization, or introduce it so the lower-case 'the Due Process Clause...' can be quoted exactly after stripping only non-opinion marker '[16]' under a documented normalization rule.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion text at the conclusion.",
+          "The displayed/lake quote does not match the cached text character-for-character because of the bracketed capital and omission/treatment of the '[16]' marker."
+        ],
+        "residual_risks": [
+          "If the corpus permits ordinary bracketed capitalization and ignores embedded headnote markers, this defect may be only a normalization issue."
+        ],
+        "suggested_tightening": "Use an introductory signal and quote the lower-case sentence text exactly, with a documented rule for removing the '[16]' marker.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac7f0eded418e8c7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We have not extended pretrial screening for reliability to cases in which the suggestive circumstances were not arranged by law enforcement officers.",
+          "locator_note": "text/Perry v. New Hampshire__4eb77e.txt lines 10 and 12 contain the real slip-opinion passage; lake pin-op2 currently contains page markdown instead.",
+          "needs_cl": false,
+          "problem": "The pin-op2 quote is not an opinion quotation. It is contaminated with the built page's markdown title, header, background, issue, and rule text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op2 with the actual opinion passage beginning 'We have not extended pretrial screening...' and continuing to the 'When no improper law enforcement activity is involved...' sentence, with any omission marked by a proper ellipsis.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with '--- # Perry v. New Hampshire' and includes built-page prose, not opinion text.",
+          "The cached opinion text supports the rule in nearby language, but not the quoted payload as framed.",
+          "The lake pinpoints entry for pin-op2 explicitly has quote_fidelity set to mismatch."
+        ],
+        "residual_risks": [
+          "The underlying rule is supported by the opinion; the defect is the corrupted pinpoint quote, not the legal proposition."
+        ],
+        "suggested_tightening": "Regenerate pin-op2 from the cached opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "031d0255e5a60a98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment defect is raised.",
+          "The asserted treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 2012-01-11, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Currency and treatment analysis remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Perry v. New Hampshire.json\",\"reviewed\":[{\"assertion_id\":\"364db54a45d8ea1e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Perry v. New Hampshire as a U.S. Supreme Court case decided 2012-01-11, docket 10-8974.\",\"The citation set in the assertion matches the lake record's citations.all list, including 565 U.S. 228, 132 S. Ct. 716, 181 L. Ed. 2d 694, 2012 U.S. LEXIS 579, and 2012 WL 75048.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake official_selection.selected field is null, but the asserted citation set itself matches the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0fb66487aa9a5f79\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted final holding sentence is substantively present, but it is not character-faithful to the cached text as framed: the text has 'we hold that [16] the Due Process Clause...' while the page/lake quote starts '[T]he Due Process Clause...'. The lake also marks this pinpoint's quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Quote the sentence without the bracketed capitalization, or introduce it so the lower-case 'the Due Process Clause...' can be quoted exactly after stripping only non-opinion marker '[16]' under a documented normalization rule.\",\"evidence_quote\":\"we hold that [16] the Due Process Clause does not require a preliminary judicial inquiry into the reliability of an eyewitness identification when the identification was not procured under unnecessarily suggestive circumstances arranged by law enforcement.\",\"needs_cl\":false,\"locator_note\":\"text/Perry v. New Hampshire__4eb77e.txt line 83, pin-op18\"},\"reasons\":[\"The sentence appears in the cached opinion text at the conclusion.\",\"The displayed/lake quote does not match the cached text character-for-character because of the bracketed capital and omission/treatment of the '[16]' marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits ordinary bracketed capitalization and ignores embedded headnote markers, this defect may be only a normalization issue.\"],\"suggested_tightening\":\"Use an introductory signal and quote the lower-case sentence text exactly, with a documented rule for removing the '[16]' marker.\"},{\"assertion_id\":\"ac7f0eded418e8c7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op2 quote is not an opinion quotation. It is contaminated with the built page's markdown title, header, background, issue, and rule text, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op2 with the actual opinion passage beginning 'We have not extended pretrial screening...' and continuing to the 'When no improper law enforcement activity is involved...' sentence, with any omission marked by a proper ellipsis.\",\"evidence_quote\":\"We have not extended pretrial screening for reliability to cases in which the suggestive circumstances were not arranged by law enforcement officers.\",\"needs_cl\":false,\"locator_note\":\"text/Perry v. New Hampshire__4eb77e.txt lines 10 and 12 contain the real slip-opinion passage; lake pin-op2 currently contains page markdown instead.\"},\"reasons\":[\"The asserted quote begins with '--- # Perry v. New Hampshire' and includes built-page prose, not opinion text.\",\"The cached opinion text supports the rule in nearby language, but not the quoted payload as framed.\",\"The lake pinpoints entry for pin-op2 explicitly has quote_fidelity set to mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying rule is supported by the opinion; the defect is the corrupted pinpoint quote, not the legal proposition.\"],\"suggested_tightening\":\"Regenerate pin-op2 from the cached opinion text rather than from the rendered content page.\"},{\"assertion_id\":\"031d0255e5a60a98\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment defect is raised.\",\"The asserted treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 2012-01-11, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency and treatment analysis remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four assertion_id rows in group_inventory.jsonl. Treatment/currency was recorded only, not substantively attacked under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:27:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2b31dada62",
+      "F-S9-PR-e241ec08c6"
+    ],
     "group_id": "_overhaul2/lake/cases/Perry v. New Hampshire.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5bfbd314",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5bfbd314.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:29.395806Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:30.057132Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:30.842785Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:32.158147Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:34.287852Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:37.654722Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Perry v. New Hampshire"
+    ],
+    "tokens": {
+      "input": 225718,
+      "output": 8329,
+      "source": "codex-events",
+      "total": 234047
+    },
+    "verdict_map": {
+      "031d0255e5a60a98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0fb66487aa9a5f79": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "364db54a45d8ea1e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac7f0eded418e8c7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b31dada62",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e241ec08c6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 168.3
   }
 }

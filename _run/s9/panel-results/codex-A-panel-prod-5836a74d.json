@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "ea80528374bd548a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms record_id and case name as Napue v. Illinois, court as U.S. Supreme Court, date_decided as 1959-06-15, and year as 1959.",
+          "Lake citations confirm official citation 360 U.S. 264 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c4076543f5084b5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "it is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment,",
+          "locator_note": "text/Napue v. Illinois__e4cabf.txt line 77; lake pinpoints[0] itself marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "pin-269's stored quote is not a verbatim opinion passage; it is harvested page/frontmatter text ending at the Rule heading, while the cited opinion passage at page 269 is the false-evidence rule sentence.",
+          "proposed_fix": "Replace the pin-269 quote with the actual opinion language at 360 U.S. 269 and regenerate the pinpoint metadata so page/star marker points to 269.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoints[0].quote is page markdown, not opinion text.",
+          "The actual opinion text at the 269 star page contains the quoted rule sentence, not the harvested page header/background/issue/rule prose."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supported, but this harvested pinpoint quote is unusable as a verbatim authority quote until corrected."
+        ],
+        "suggested_tightening": "Use the exact 360 U.S. 269 sentence and keep page/content prose out of pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bcd8ca9624beb0fd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury’s estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence",
+          "locator_note": "text/Napue v. Illinois__e4cabf.txt line 168; lake pinpoints[1] marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted words match the opinion up to the final punctuation, but the stored/page quote changes the source period after 'witness' into a comma inside the quotation.",
+          "proposed_fix": "End the quote with the source period, or remove the altered punctuation from the quotation and paraphrase the following causation sentence separately.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive quoted phrase appears in the opinion text.",
+          "The comma inside the asserted quote is not character-faithful to the disclosed opinion text, which has a period after 'witness'."
+        ],
+        "residual_risks": [
+          "Only punctuation fidelity is defective; the legal point and page location otherwise survive."
+        ],
+        "suggested_tightening": "Quote through 'witness.' exactly, then paraphrase the jury-estimate rationale outside the quotation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b1371c869267138",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1959-06-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency merits are outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lens B should handle treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Napue v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"ea80528374bd548a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms record_id and case name as Napue v. Illinois, court as U.S. Supreme Court, date_decided as 1959-06-15, and year as 1959.\",\"Lake citations confirm official citation 360 U.S. 264 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8c4076543f5084b5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-269's stored quote is not a verbatim opinion passage; it is harvested page/frontmatter text ending at the Rule heading, while the cited opinion passage at page 269 is the false-evidence rule sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-269 quote with the actual opinion language at 360 U.S. 269 and regenerate the pinpoint metadata so page/star marker points to 269.\",\"evidence_quote\":\"it is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment,\",\"needs_cl\":false,\"locator_note\":\"text/Napue v. Illinois__e4cabf.txt line 77; lake pinpoints[0] itself marks quote_fidelity as mismatch.\"},\"reasons\":[\"The disclosed lake pinpoints[0].quote is page markdown, not opinion text.\",\"The actual opinion text at the 269 star page contains the quoted rule sentence, not the harvested page header/background/issue/rule prose.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition is supported, but this harvested pinpoint quote is unusable as a verbatim authority quote until corrected.\"],\"suggested_tightening\":\"Use the exact 360 U.S. 269 sentence and keep page/content prose out of pinpoints.\"},{\"assertion_id\":\"bcd8ca9624beb0fd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words match the opinion up to the final punctuation, but the stored/page quote changes the source period after 'witness' into a comma inside the quotation.\",\"severity\":\"low\",\"proposed_fix\":\"End the quote with the source period, or remove the altered punctuation from the quotation and paraphrase the following causation sentence separately.\",\"evidence_quote\":\"does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury’s estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence\",\"needs_cl\":false,\"locator_note\":\"text/Napue v. Illinois__e4cabf.txt line 168; lake pinpoints[1] marks quote_fidelity as mismatch.\"},\"reasons\":[\"The substantive quoted phrase appears in the opinion text.\",\"The comma inside the asserted quote is not character-faithful to the disclosed opinion text, which has a period after 'witness'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only punctuation fidelity is defective; the legal point and page location otherwise survive.\"],\"suggested_tightening\":\"Quote through 'witness.' exactly, then paraphrase the jury-estimate rationale outside the quotation.\"},{\"assertion_id\":\"4b1371c869267138\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1959-06-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency merits are outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should handle treatment/currency review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:03-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5b9835993b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6223d2e7ea",
+      "F-S9-PR-552046bedd"
+    ],
     "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5836a74d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Napue v. Illinois"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 263739,
+      "output": 7047,
+      "source": "codex-events",
+      "total": 270786
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "4b1371c869267138": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c4076543f5084b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bcd8ca9624beb0fd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ea80528374bd548a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6223d2e7ea",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-552046bedd",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5b9835993b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 171.5
   }
 }

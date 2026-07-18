@@ -1,0 +1,122 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "519ff73242972410",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header renders '367 U.S. 643 (1961)' and cluster 106285 is the Mapp majority (Clark, J.); official cite selected rank_1 equals display '367 U.S. 643'.",
+          "Identity fields expected_citation_found / party_name_in_text / canonical_name_match all true; status verified."
+        ],
+        "residual_risks": [
+          "Parallel cites (81 S. Ct. 1684; 6 L. Ed. 2d 1081; 1961 U.S. LEXIS 812) rest on cluster.citations[] metadata, not independently paginated in cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "980d25e98dfea5b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-655 'We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.' appears verbatim in the cached opinion at the close of Part III, immediately after star *655.",
+          "Pincite '367 U.S. at 655' is correct."
+        ],
+        "residual_risks": [
+          "The lake/payload pinpoint.quote stores page preamble (front-matter through '## Rule Yes.') rather than the quoted sentence, producing a spurious quote_fidelity=mismatch / pinpoint_status=slip-only flag; the reader-facing quote is clean."
+        ],
+        "suggested_tightening": "Re-harvest pin-655 quote field to the actual quoted sentence and re-run fidelity to upgrade to star-verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05576641b05bb574",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with the disclosed record: every negative edge is proposed=true lane-extraction (e.g., Miranda/Terry/Katz/Leon and state case State v. Rogers all 'overruled' Mapp) — non-credible keyword false positives, no adjudicated negative treatment.",
+          "Page text confirms Mapp was narrowed (Leon good-faith, Herring culpability) but not abrogated."
+        ],
+        "residual_risks": [
+          "Proposed negative edges are noisy FPs; scope_note flags S2 re-derivation may adjust."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7650be2777",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1d02743812",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-02-dea69e1f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mapp v. Ohio"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "05576641b05bb574": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "519ff73242972410": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "980d25e98dfea5b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7650be2777",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1d02743812",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

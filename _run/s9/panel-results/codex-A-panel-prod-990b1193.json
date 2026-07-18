@@ -1,22 +1,179 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Johnson v. Glick.md",
+    "lens": "A",
+    "notes": "Lens A checked support, quote fidelity, and citation identity from the disclosed files only. Treatment/currency rows were only matched to disclosed lake/frontmatter values; no Lens B current-validity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "44779f121fe653bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name 'Johnson v. Glick', court '2d Cir. 1973', year 1973, and date_decided 1973-06-29.",
+          "Lake citations list official cite '481 F.2d 1028' with no parallel or vendor-neutral citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Where a single rendered legal citation is required, use '481 F.2d 1028 (2d Cir. 1973)' rather than relying on a separate court field.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bee2037c10601f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is directly about force by a correctional officer against a detainee and the constitutional standard for that force.",
+          "The opinion announces the force-factor test and holds the complaint stated a claim against Officer Fuller, supporting placement as a key Use of Force case."
+        ],
+        "residual_risks": [
+          "No separate Use of Force page taxonomy file was disclosed; this finding rests on the opinion substance."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dba6add8992e24f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In determining whether the constitutional line has been crossed, a court must look to such factors as the need for the application of force, the relationship between the need and the amount of force that was used, the extent of injury inflicted, and whether force was applied in a good faith effort to maintain or restore discipline or maliciously and sadistically for the very purpose of causing harm.",
+          "locator_note": "holding field",
+          "needs_cl": true,
+          "problem": "The Johnson opinion supports the due-process factor test, but the holding appends the comparative label 'pre-Graham'; no disclosed Graham authority or other independent source verifies that qualifier.",
+          "proposed_fix": "Remove 'pre-Graham' from the holding, or add a disclosed Graham authority record/source supporting the comparative label.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Text at the 1033 page marker supports the need/relationship/injury/good-faith-or-malicious factors.",
+          "The disclosed files contain no Graham record, so the 'pre-Graham' part is not verifiable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The core Johnson holding is supported; the defect is the unsupported external doctrinal label."
+        ],
+        "suggested_tightening": "Use 'the due-process excessive-force test' unless Graham support is disclosed.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3f29e3a95fd07efc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, and no Lens A treatment finding is raised.",
+          "The payload mirrors the lake treatment stub: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches."
+        ],
+        "residual_risks": [
+          "No current treatment or good-law status was assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f917d84fef3d2f36",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no current-validity attack is made.",
+          "Lake identity identifies the deciding court as the Second Circuit and court_id/circuit as ca2, which supports the in-circuit Second Circuit weight label at the non-currency level."
+        ],
+        "residual_risks": [
+          "Whether any later authority limits the binding effect is a Lens B issue and was not reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Johnson v. Glick.md\",\"reviewed\":[{\"assertion_id\":\"44779f121fe653bd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name 'Johnson v. Glick', court '2d Cir. 1973', year 1973, and date_decided 1973-06-29.\",\"Lake citations list official cite '481 F.2d 1028' with no parallel or vendor-neutral citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Where a single rendered legal citation is required, use '481 F.2d 1028 (2d Cir. 1973)' rather than relying on a separate court field.\"},{\"assertion_id\":\"0bee2037c10601f0\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion is directly about force by a correctional officer against a detainee and the constitutional standard for that force.\",\"The opinion announces the force-factor test and holds the complaint stated a claim against Officer Fuller, supporting placement as a key Use of Force case.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate Use of Force page taxonomy file was disclosed; this finding rests on the opinion substance.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4dba6add8992e24f\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The Johnson opinion supports the due-process factor test, but the holding appends the comparative label 'pre-Graham'; no disclosed Graham authority or other independent source verifies that qualifier.\",\"severity\":\"low\",\"proposed_fix\":\"Remove 'pre-Graham' from the holding, or add a disclosed Graham authority record/source supporting the comparative label.\",\"evidence_quote\":\"In determining whether the constitutional line has been crossed, a court must look to such factors as the need for the application of force, the relationship between the need and the amount of force that was used, the extent of injury inflicted, and whether force was applied in a good faith effort to maintain or restore discipline or maliciously and sadistically for the very purpose of causing harm.\",\"needs_cl\":true,\"locator_note\":\"holding field\"},\"reasons\":[\"Text at the 1033 page marker supports the need/relationship/injury/good-faith-or-malicious factors.\",\"The disclosed files contain no Graham record, so the 'pre-Graham' part is not verifiable from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The core Johnson holding is supported; the defect is the unsupported external doctrinal label.\"],\"suggested_tightening\":\"Use 'the due-process excessive-force test' unless Graham support is disclosed.\"},{\"assertion_id\":\"3f29e3a95fd07efc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, and no Lens A treatment finding is raised.\",\"The payload mirrors the lake treatment stub: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No current treatment or good-law status was assessed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f917d84fef3d2f36\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no current-validity attack is made.\",\"Lake identity identifies the deciding court as the Second Circuit and court_id/circuit as ca2, which supports the in-circuit Second Circuit weight label at the non-currency level.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Whether any later authority limits the binding effect is a Lens B issue and was not reviewed here.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A checked support, quote fidelity, and citation identity from the disclosed files only. Treatment/currency rows were only matched to disclosed lake/frontmatter values; no Lens B current-validity finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T02:46:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T04:19:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5131b9efa8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-34eff7ab67"
+    ],
     "group_id": "content/cases/Johnson v. Glick.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-990b1193",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-990b1193.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:46:05.198309Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:46:06.095936Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:46:07.222955Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:46:09.159117Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:46:12.760609Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Johnson v. Glick"
+    ],
+    "tokens": {
+      "input": 169810,
+      "output": 10070,
+      "source": "codex-events",
+      "total": 179880
+    },
+    "verdict_map": {
+      "0bee2037c10601f0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f29e3a95fd07efc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44779f121fe653bd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4dba6add8992e24f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f917d84fef3d2f36": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-34eff7ab67",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5131b9efa8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 194.1
   }
 }

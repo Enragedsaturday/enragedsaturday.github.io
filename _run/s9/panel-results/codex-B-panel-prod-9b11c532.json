@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Larson.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "ccb8904a7d716dd1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "lake/State v. Larson__d5a470.json treatment and progeny fields",
+          "needs_cl": true,
+          "problem": "Under Lens B's currency angle, the disclosed record verifies the case identity and citation but does not verify that the authority remains live law. The treatment record is expressly unverified and progeny/citator fields are not populated.",
+          "proposed_fix": "Limit this assertion to citation existence only, or keep it under an explicit unverified/current-law warning until completed treatment and progeny verification are available.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms State v. Larson and the official citation 159 Or. App. 34, but Lens B asks for live-law currency.",
+          "The disclosed treatment field says unverified, with no as-of date and no derived progeny/citator judgment.",
+          "Progeny fields show no completed enumeration from which current live-law status could be verified."
+        ],
+        "residual_risks": [
+          "This does not refute that the case exists; it refutes current-law verification from the disclosed evidence."
+        ],
+        "suggested_tightening": "Separate 'case exists/citation verified' from 'still live law'; do not imply the latter while treatment is unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9b734d8cc040eafa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The scope note is consistent with the lake record: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "No disclosed treatment edge or progeny edge says Larson has been overruled, abrogated, superseded, or limited; the page accurately presents treatment as unverified rather than good law."
+        ],
+        "residual_risks": [
+          "Actual subsequent treatment remains unknown from this record because the citator/progeny process has not completed."
+        ],
+        "suggested_tightening": "When promoted, add a concrete as-of treatment date and derived progeny basis.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/State v. Larson.json\",\"reviewed\":[{\"assertion_id\":\"ccb8904a7d716dd1\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"Under Lens B's currency angle, the disclosed record verifies the case identity and citation but does not verify that the authority remains live law. The treatment record is expressly unverified and progeny/citator fields are not populated.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation existence only, or keep it under an explicit unverified/current-law warning until completed treatment and progeny verification are available.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/State v. Larson__d5a470.json treatment and progeny fields\"},\"reasons\":[\"Lake identity confirms State v. Larson and the official citation 159 Or. App. 34, but Lens B asks for live-law currency.\",\"The disclosed treatment field says unverified, with no as-of date and no derived progeny/citator judgment.\",\"Progeny fields show no completed enumeration from which current live-law status could be verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This does not refute that the case exists; it refutes current-law verification from the disclosed evidence.\"],\"suggested_tightening\":\"Separate 'case exists/citation verified' from 'still live law'; do not imply the latter while treatment is unverified.\"},{\"assertion_id\":\"9b734d8cc040eafa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The scope note is consistent with the lake record: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"No disclosed treatment edge or progeny edge says Larson has been overruled, abrogated, superseded, or limited; the page accurately presents treatment as unverified rather than good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Actual subsequent treatment remains unknown from this record because the citator/progeny process has not completed.\"],\"suggested_tightening\":\"When promoted, add a concrete as-of treatment date and derived progeny basis.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:14-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:38:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6c22cf1cbb"
+    ],
     "group_id": "_overhaul2/lake/cases/State v. Larson.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9b11c532",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9b11c532.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:05.974392Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:06.837161Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:08.040529Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:10.074202Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:13.906940Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Larson"
+    ],
+    "tokens": {
+      "input": 154253,
+      "output": 5249,
+      "source": "codex-events",
+      "total": 159502
+    },
+    "verdict_map": {
+      "9b734d8cc040eafa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ccb8904a7d716dd1": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6c22cf1cbb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 105.1
   }
 }

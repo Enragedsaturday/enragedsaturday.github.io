@@ -1,13 +1,95 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity/support issues were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "ea80528374bd548a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, not a stub, and identifies the case as Napue v. Illinois with cluster_id 105912 and lead_opinion_id 105912.",
+          "The disclosed citation set includes the displayed official citation 360 U.S. 264 and matching parallel/vendor citations.",
+          "The lake treatment judgment field marks the authority good_law as of 2026-06-30, so no confirmed currency defect defeats existence/live-law status."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges and audit-needed markers, but no confirmed non-proposed negative treatment edge is disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c4076543f5084b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote_fidelity pinpoint assertion; under lens B I do not raise quote/support defects.",
+          "The treatment/weight language embedded in the quoted page header is separately covered by the treatment assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for lens A and is not adjudicated here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bcd8ca9624beb0fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote_fidelity pinpoint assertion; under lens B I do not raise quote/support defects.",
+          "The row contains no independent good-law, authority-weight, or live-law treatment claim to refute."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for lens A and is not adjudicated here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b1371c869267138",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law treatment call is supported by the lake judgment field, but the page's unqualified no-negative-treatment framing overstates the disclosed record because the lake also contains proposed negative-treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep the good_law call, but qualify the subsequent-history sentence to say there is no confirmed negative treatment in the disclosed lake record and that proposed negative edges remain audit-needed.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field states field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note used by the page.",
+          "The treatment edges disclosed in the lake are all marked proposed, so they do not themselves establish confirmed overruling, abrogation, or supersession.",
+          "The disclosed derivation nevertheless marks negative-treatment lanes audit_needed, so the page should not state no negative treatment without qualification."
+        ],
+        "residual_risks": [
+          "A completed audit of the proposed negative edges could change the treatment judgment.",
+          "The current field provenance says the treatment validity was migrated from legacy/page-frontmatter sources rather than a completed treatment audit."
+        ],
+        "suggested_tightening": "Use: Status good as of 2026-06-30; no confirmed negative treatment in the disclosed lake record, with proposed negative-treatment edges pending audit.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Napue v. Illinois.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ea80528374bd548a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, not a stub, and identifies the case as Napue v. Illinois with cluster_id 105912 and lead_opinion_id 105912.\",\n        \"The disclosed citation set includes the displayed official citation 360 U.S. 264 and matching parallel/vendor citations.\",\n        \"The lake treatment judgment field marks the authority good_law as of 2026-06-30, so no confirmed currency defect defeats existence/live-law status.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative edges and audit-needed markers, but no confirmed non-proposed negative treatment edge is disclosed.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8c4076543f5084b5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote_fidelity pinpoint assertion; under lens B I do not raise quote/support defects.\",\n        \"The treatment/weight language embedded in the quoted page header is separately covered by the treatment assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity remains for lens A and is not adjudicated here.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bcd8ca9624beb0fd\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is a quote_fidelity pinpoint assertion; under lens B I do not raise quote/support defects.\",\n        \"The row contains no independent good-law, authority-weight, or live-law treatment claim to refute.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity remains for lens A and is not adjudicated here.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4b1371c869267138\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law treatment call is supported by the lake judgment field, but the page's unqualified no-negative-treatment framing overstates the disclosed record because the lake also contains proposed negative-treatment edges and audit-needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the good_law call, but qualify the subsequent-history sentence to say there is no confirmed negative treatment in the disclosed lake record and that proposed negative edges remain audit-needed.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake judgment field states field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note used by the page.\",\n        \"The treatment edges disclosed in the lake are all marked proposed, so they do not themselves establish confirmed overruling, abrogation, or supersession.\",\n        \"The disclosed derivation nevertheless marks negative-treatment lanes audit_needed, so the page should not state no negative treatment without qualification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed audit of the proposed negative edges could change the treatment judgment.\",\n        \"The current field provenance says the treatment validity was migrated from legacy/page-frontmatter sources rather than a completed treatment audit.\"\n      ],\n      \"suggested_tightening\": \"Use: Status good as of 2026-06-30; no confirmed negative treatment in the disclosed lake record, with proposed negative-treatment edges pending audit.\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote-fidelity/support issues were not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5b9835993b"
+    ],
     "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +98,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5836a74d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Napue v. Illinois"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 178339,
+      "output": 7474,
+      "source": "codex-events",
+      "total": 185813
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "4b1371c869267138": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8c4076543f5084b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bcd8ca9624beb0fd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea80528374bd548a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5b9835993b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 149.3
   }
 }

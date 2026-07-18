@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Malley v. Briggs.json",
+    "lens": "A",
+    "notes": "Treatment/currency merits were not reviewed under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "caf51ab070988bc6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Malley v. Briggs as a U.S. Supreme Court case decided 1986-03-05.",
+          "Official citation in the lake record is 475 U.S. 335; listed parallel and vendor citations match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4c45e020a181f58",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized.",
+          "locator_note": "text/Malley v. Briggs__9db80c.txt line 18, page marker *341; lake pin-341 currently contains built-page markdown instead.",
+          "needs_cl": false,
+          "problem": "The pin-341 payload quote is not an opinion quote; it is a captured block of the built page/header/background text and is not character-faithful to the opinion text at page 341.",
+          "proposed_fix": "Replace pin-341's quote with the actual page-341 sentence beginning \"Defendants will not be immune...\" and set the page/pin metadata accordingly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text file contains the quoted Malley standard at page 341, not the long markdown/front-matter block stored in pin-341.",
+          "The lake record itself labels pin-341 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact page-341 sentence already quoted in content_page.md rather than the corrupted lake pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e4d2b570fc9a46f2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The analogous question in this case is whether a reasonably well-trained officer in petitioner’s position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant.",
+          "locator_note": "text/Malley v. Briggs__9db80c.txt line 27, page 345 passage; lake/content quote uses straight apostrophe.",
+          "needs_cl": false,
+          "problem": "The quote is substantively the right sentence at page 345, but it is not strictly character-faithful to the cached opinion text because the opinion uses a curly apostrophe in \"petitioner’s\" while the payload uses a straight apostrophe.",
+          "proposed_fix": "Change \"petitioner's\" to \"petitioner’s\" in the pin-345 quote if strict character fidelity is required, or record the quote as normalized.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the opinion text at page 345 and supports the cited proposition.",
+          "Strict character comparison reveals only the apostrophe mismatch; the lake record also labels pin-345 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "If this corpus intentionally normalizes typography, the defect is only metadata/documentation, not legal support."
+        ],
+        "suggested_tightening": "Record whether typographic normalization is allowed for verbatim quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2484938c7b42f46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment fields in the payload match the lake treatment fields.",
+          "Lens A does not adjudicate treatment/currency; no support or quote-fidelity defect is raised for this row."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Malley v. Briggs.json\",\"reviewed\":[{\"assertion_id\":\"caf51ab070988bc6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Malley v. Briggs as a U.S. Supreme Court case decided 1986-03-05.\",\"Official citation in the lake record is 475 U.S. 335; listed parallel and vendor citations match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a4c45e020a181f58\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-341 payload quote is not an opinion quote; it is a captured block of the built page/header/background text and is not character-faithful to the opinion text at page 341.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-341's quote with the actual page-341 sentence beginning \\\"Defendants will not be immune...\\\" and set the page/pin metadata accordingly.\",\"evidence_quote\":\"Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized.\",\"needs_cl\":false,\"locator_note\":\"text/Malley v. Briggs__9db80c.txt line 18, page marker *341; lake pin-341 currently contains built-page markdown instead.\"},\"reasons\":[\"The disclosed text file contains the quoted Malley standard at page 341, not the long markdown/front-matter block stored in pin-341.\",\"The lake record itself labels pin-341 quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use the exact page-341 sentence already quoted in content_page.md rather than the corrupted lake pinpoint quote.\"},{\"assertion_id\":\"e4d2b570fc9a46f2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively the right sentence at page 345, but it is not strictly character-faithful to the cached opinion text because the opinion uses a curly apostrophe in \\\"petitioner’s\\\" while the payload uses a straight apostrophe.\",\"severity\":\"low\",\"proposed_fix\":\"Change \\\"petitioner's\\\" to \\\"petitioner’s\\\" in the pin-345 quote if strict character fidelity is required, or record the quote as normalized.\",\"evidence_quote\":\"The analogous question in this case is whether a reasonably well-trained officer in petitioner’s position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Malley v. Briggs__9db80c.txt line 27, page 345 passage; lake/content quote uses straight apostrophe.\"},\"reasons\":[\"The same sentence appears in the opinion text at page 345 and supports the cited proposition.\",\"Strict character comparison reveals only the apostrophe mismatch; the lake record also labels pin-345 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If this corpus intentionally normalizes typography, the defect is only metadata/documentation, not legal support.\"],\"suggested_tightening\":\"Record whether typographic normalization is allowed for verbatim quotes.\"},{\"assertion_id\":\"c2484938c7b42f46\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment fields in the payload match the lake treatment fields.\",\"Lens A does not adjudicate treatment/currency; no support or quote-fidelity defect is raised for this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency merits were not reviewed under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:04:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-71c562cd6b",
+      "F-S9-PR-70232f4529"
+    ],
     "group_id": "_overhaul2/lake/cases/Malley v. Briggs.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-40278575.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Malley v. Briggs"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 291746,
+      "output": 8937,
+      "source": "codex-events",
+      "total": 300683
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "a4c45e020a181f58": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c2484938c7b42f46": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "caf51ab070988bc6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e4d2b570fc9a46f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-71c562cd6b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-70232f4529",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 171.9
   }
 }

@@ -1,13 +1,111 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/California v. Greenwood.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not independently reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "7c9d762605f1da2a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16 with docket 86-684.",
+          "Lake citations include official citation 486 U.S. 35, vendor-neutral citation 1988 U.S. LEXIS 2279, and the listed parallel citations.",
+          "Currency check does not defeat existence: lake treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation discloses audit_needed/proposed negative events, but the top-level lake judgment field still marks the authority good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d28acec2f6c0f71",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: lake treatment marks Greenwood good_law, varies_by_point false, and point_overrides is empty.",
+          "No disclosed treatment field conclusively overrules or abrogates the curbside-trash rule stated in the holding."
+        ],
+        "residual_risks": [
+          "Support merits and holding fidelity are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afc24fecf610576f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: the role is not defeated by current treatment because the lake marks Greenwood good_law.",
+          "The lake progeny fields show substantial continued citation activity, including indexed_citing_opinions 637 and citation_count 1059."
+        ],
+        "residual_risks": [
+          "Whether Abandonment is the best home classification is a support/classification issue outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1cae3d9707978c61",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court and court_level as scotus.",
+          "For a federal search-and-seizure corpus, the Binding - SCOTUS weight label is consistent with that court identity."
+        ],
+        "residual_risks": [
+          "Treatment derivation has proposed negative events, but they do not change the court-level weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d266ef01ce5b92e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 23,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment & subsequent history / treatment frontmatter",
+          "needs_cl": true,
+          "problem": "The frontmatter good_law fields match the lake, but the rendered treatment sentence 'No negative treatment' is too categorical because the lake discloses proposed negative treatment edges and audit-needed treatment derivation.",
+          "proposed_fix": "Keep good_law as of 2026-06-30 only with the existing migration-seed caveat, and replace 'No negative treatment' with a qualifier such as: 'No confirmed point override in lake; treatment derivation contains proposed negative edges requiring audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The payload fields align with lake.treatment: field_i_validity good_law, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, and point_overrides empty.",
+          "The lake treatment edges nevertheless include proposed negative labels such as overruled, abrogated, criticized, questioned, and superseded_by_statute.",
+          "Because those edges are proposed and field_iii is mentioned, they do not conclusively downgrade the top-level good_law status, but they do refute the page's unqualified 'No negative treatment' wording."
+        ],
+        "residual_risks": [
+          "The disclosed record does not prove Greenwood is no longer good law.",
+          "A citing-case audit is needed before downgrading field_i_validity."
+        ],
+        "suggested_tightening": "Surface the audit caveat and avoid saying 'No negative treatment' unless the proposed negative edges are cleared.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/California v. Greenwood.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7c9d762605f1da2a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies California v. Greenwood as a U.S. Supreme Court case decided 1988-05-16 with docket 86-684.\",\n        \"Lake citations include official citation 486 U.S. 35, vendor-neutral citation 1988 U.S. LEXIS 2279, and the listed parallel citations.\",\n        \"Currency check does not defeat existence: lake treatment.field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation discloses audit_needed/proposed negative events, but the top-level lake judgment field still marks the authority good_law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7d28acec2f6c0f71\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B only: lake treatment marks Greenwood good_law, varies_by_point false, and point_overrides is empty.\",\n        \"No disclosed treatment field conclusively overrules or abrogates the curbside-trash rule stated in the holding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support merits and holding fidelity are reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"afc24fecf610576f\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B only: the role is not defeated by current treatment because the lake marks Greenwood good_law.\",\n        \"The lake progeny fields show substantial continued citation activity, including indexed_citing_opinions 637 and citation_count 1059.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Whether Abandonment is the best home classification is a support/classification issue outside Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1cae3d9707978c61\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists court as U.S. Supreme Court and court_level as scotus.\",\n        \"For a federal search-and-seizure corpus, the Binding - SCOTUS weight label is consistent with that court identity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation has proposed negative events, but they do not change the court-level weight label.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2d266ef01ce5b92e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The frontmatter good_law fields match the lake, but the rendered treatment sentence 'No negative treatment' is too categorical because the lake discloses proposed negative treatment edges and audit-needed treatment derivation.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep good_law as of 2026-06-30 only with the existing migration-seed caveat, and replace 'No negative treatment' with a qualifier such as: 'No confirmed point override in lake; treatment derivation contains proposed negative edges requiring audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 23,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"Treatment & subsequent history / treatment frontmatter\"\n      },\n      \"reasons\": [\n        \"The payload fields align with lake.treatment: field_i_validity good_law, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, and point_overrides empty.\",\n        \"The lake treatment edges nevertheless include proposed negative labels such as overruled, abrogated, criticized, questioned, and superseded_by_statute.\",\n        \"Because those edges are proposed and field_iii is mentioned, they do not conclusively downgrade the top-level good_law status, but they do refute the page's unqualified 'No negative treatment' wording.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not prove Greenwood is no longer good law.\",\n        \"A citing-case audit is needed before downgrading field_i_validity.\"\n      ],\n      \"suggested_tightening\": \"Surface the audit caveat and avoid saying 'No negative treatment' unless the proposed negative edges are cleared.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity merits were not independently reviewed.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:40:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:40:53-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-85627c6bcc"
+    ],
     "group_id": "content/cases/California v. Greenwood.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +114,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e9773bdf.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "California v. Greenwood"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 277377,
+      "output": 9131,
+      "source": "codex-events",
+      "total": 286508
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "1cae3d9707978c61": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2d266ef01ce5b92e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7c9d762605f1da2a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d28acec2f6c0f71": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afc24fecf610576f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-85627c6bcc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 179.3
   }
 }

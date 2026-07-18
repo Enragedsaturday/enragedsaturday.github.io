@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "665339bf5dadebd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '373 U.S. 83 (1963)', 'BRADY v. MARYLAND', 'No. 490.', 'Decided May 13, 1963' — matching official cite, docket 490, and date_decided 1963-05-13.",
+          "official=373 U.S. 83 consistent with citations block and content page."
+        ],
+        "residual_risks": [
+          "Parallel cites (83 S. Ct. 1194; 10 L. Ed. 2d 215; 1963 U.S. LEXIS 1615) not independently confirmable from the cached header."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cc164fcef6de80e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We now hold that the suppression by the prosecution of evidence favorable to an accused upon request violates due process where the evidence is material either to guilt or to punishment, irrespective of the good faith or bad faith of the prosecution.",
+          "locator_note": "Cached opinion p.87 (paragraph following the *87 star marker).",
+          "needs_cl": false,
+          "problem": "The stored pinpoint.quote for pin-87 is a corrupt harvest artifact: it captured the content page's frontmatter/markdown and Background/Issue prose ('--- # Brady v. Maryland ... ## Background ... ## Issue ... ## Rule'), not opinion text. It does not appear in the disclosed opinion.",
+          "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-87 is verbatim in the opinion on p.87 and correctly pincited; only the harvested metadata is broken.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content-page quote at ^pin-87 matches the opinion verbatim and sits on p.87, so no unsupported proposition is published.",
+          "Stored quote string is page markdown/prose (a mis-harvest); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only'."
+        ],
+        "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor, not surrounding prose.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "feacb14c9eb05127",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' with varies_by_point=false is correct for Brady: the cached opinion supplies the intact foundational disclosure holding ('We now hold that the suppression by the prosecution of evidence favorable to an accused...violates due process...'), which remains authoritative.",
+          "scope_note (foundational rule later refined, not undermined, by Giglio and United States v. Bagley) is a standard, non-contradicted characterization; the content page also lists Kyles v. Whitley as elaboration and reports 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "The refinement/extension characterization relies on Giglio/Bagley/Kyles, none of whose treatment is disclosed here, so it is not independently confirmable from disclosed evidence (though non-contradicted)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-551f2d8722",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Brady v. Maryland.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-01-6c9d18e4",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brady v. Maryland"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "665339bf5dadebd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cc164fcef6de80e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "feacb14c9eb05127": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6d3ad9afe7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-551f2d8722",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

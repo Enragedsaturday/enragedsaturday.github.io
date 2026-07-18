@@ -1,0 +1,153 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9c4371fb95c85c68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads '532 U.S. 67 (2001)', 'FERGUSON et al. v. CITY OF CHARLESTON et al.', 'No. 99-936', 'Decided March 21, 2001' (Stevens, J.), with star-pagination *69-*86 corroborating official cite 532 U.S. 67."
+        ],
+        "residual_risks": [
+          "payload records official:null / official_selection_present:false, but 532 U.S. 67 is present in cluster.citations[] 'all' and is directly verified by the cached header; the remaining parallels are not independently shown."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5728aa7047daadb2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-70 content quote 'justify a departure from the general rule that an official nonconsensual search is unconstitutional if not authorized by a valid warrant.' matches the cached opinion verbatim at *70; the clause sits between *70 and *71, so the 532 U.S. 70 pincite is exact.",
+          "The page's lead-in ('The Court framed the narrow question as whether the State's interest could') is a faithful paraphrase of the source's 'the question is whether the interest in using the threat of criminal sanctions to deter pregnant women from using cocaine can'.",
+          "The stored pinpoint quote is a markdown page-context blob (it includes the page's own '## Rule No. ...' heading) captured by the harvester, explaining quote_fidelity=mismatch; it is an extraction artifact, not a content defect."
+        ],
+        "residual_risks": [
+          "pin-70's stored quote is page-context junk; a re-harvest would clear the artifact flag."
+        ],
+        "suggested_tightening": "Reject any harvest whose captured span matches the page's own heading/frontmatter text, and re-scope pin-70 to the *70 passage.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7b81fc821e5019a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-83 content quote 'the immediate objective of the searches was to generate evidence for law enforcement purposes in order to reach that goal.' matches the cached opinion verbatim at *83, including the italicization of 'for law enforcement purposes' (source renders it in <i>...</i>); the sentence sits between *83 and *84, so the page-83 pincite is exact.",
+          "The dropped footnote markers [20]/[21] are not part of the quoted text, so their omission is proper."
+        ],
+        "residual_risks": [
+          "The recorded quote_fidelity=mismatch is not reproduced against the cached text (the stored quote here actually matches the source); likely a star-marker/footnote-marker interruption in the harvester comparison, not a content issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce7c39488fcdf254",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached text is the 2001 SCOTUS majority (Stevens, J.; joined by O'Connor, Souter, Ginsburg, Breyer; Kennedy concurring in the judgment; Scalia dissenting); good_law consistent.",
+          "All 34 disclosed negative edges are proposed:true keyword-lane candidates; SCOTUS citers present (Board of Education v. Earls, Ashcroft v. al-Kidd, Samson v. California, Los Angeles v. Patel) cite Ferguson without overruling it, and zero edges are accepted; the page's 'No negative treatment' holds."
+        ],
+        "residual_risks": [
+          "Good-law currency to 2026-06-30 is citator-dependent; the proposed negative edges remain pending audit (audit_needed:true), but none is a confirmed abrogation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-393ed11c7a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2680454093",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4693820b1e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Ferguson v. City of Charleston.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-03-21de3f24",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ferguson v. City of Charleston"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "5728aa7047daadb2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9c4371fb95c85c68": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce7c39488fcdf254": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7b81fc821e5019a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-393ed11c7a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2680454093",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4693820b1e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

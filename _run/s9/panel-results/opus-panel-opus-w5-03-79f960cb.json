@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3738cb1e95f5a4f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '526 U.S. 808 (1999)', caption 'HANLON et al. v. BERGER et ux.', No. 97-1927, decided May 24, 1999.",
+          "Official cite '526 U.S. 808' matches the lake record; parallels 119 S. Ct. 1706, 143 L. Ed. 2d 978 are well-formed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7953f6e6c34cd729",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "respondents alleged a Fourth Amendment violation under our decision today in Wilson v. Layne",
+          "locator_note": "Cached opinion paragraph containing the *810 star-pagination.",
+          "needs_cl": false,
+          "problem": "Stored pin-810 quote field is corrupted with the wiki page's front-matter/prose (header + Background + Issue + Rule intro), which is absent from the opinion. Confirms the ledger's quote_fidelity='mismatch'.",
+          "proposed_fix": "Repopulate pin-810 with the anchored page quotation 'respondents alleged a Fourth Amendment violation under our decision today in Wilson v. Layne.', which appears verbatim at 526 U.S. 809-810 (cached text, paragraph carrying the *810 marker).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload/stored quote is page markdown ending '... a Fourth Amendment violation under *Wilson* --', which is nowhere in the opinion — a genuine corrupted-quote-field defect; the mismatch flag is correct.",
+          "The rendered page ^pin-810 quotation is itself verbatim-faithful at p. 810, so reader-facing risk is nil; the defect is confined to the pinpoint record's quote field."
+        ],
+        "residual_risks": [
+          "Fix is mechanical; the intended quote and its 526 U.S. 810 locus are both verifiable from the disclosed cached text."
+        ],
+        "suggested_tightening": "Bound pinpoint-quote extraction to the anchored block so page front-matter cannot leak into quote fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2795e0b7f6bb696",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'Petitioners maintain that even though they may have violated the Fourth Amendment rights of respondents, they are entitled to the defense of qualified immunity. We agree. Our holding in *Wilson* makes clear that this right was not clearly established in 1992.' matches the cached text verbatim (only difference is *Wilson* markdown vs <i>Wilson</i> markup).",
+          "Quote sits in the paragraph after the *810 star marker; page cite 'Id.' (=810) is correct; the ledger's 'mismatch' flag is a false positive here."
+        ],
+        "residual_risks": [
+          "'1992' in the quote refers (per the opinion's next sentence) to the Wilson search year; Hanlon's own 1993 search is 'a year later', which the page's Application section states correctly, so no black-letter distortion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41aca81b96bd966b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached text confirms 'Per Curiam' and that the case is governed by same-day companion Wilson v. Layne (ante, p. 603), matching scope_note 'Per curiam companion to Wilson v. Layne; good law.'",
+          "good_law is defensible: no negative treatment shown; Stevens concurring in part/dissenting in part is an internal split, not adverse subsequent treatment; as_of_treatment 2026-06-30 is current."
+        ],
+        "residual_risks": [
+          "Citator currency as of 2026 not independently re-derivable from disclosed evidence; composite_basis is 'migration-seed'."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-eb557f5951",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-03-79f960cb",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hanlon v. Berger"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3738cb1e95f5a4f6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "41aca81b96bd966b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7953f6e6c34cd729": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a2795e0b7f6bb696": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-983e9e1652",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-eb557f5951",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

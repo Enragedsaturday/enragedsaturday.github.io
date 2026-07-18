@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ryburn v. Huff.json",
+    "lens": "A",
+    "notes": "Reviewed all four assertion_ids in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "44dbf6340da7e16d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Ryburn v. Huff, U.S. Supreme Court, decided 2012-01-23, docket 11-208.",
+          "The official citation in the lake record is 565 U.S. 469, and the content page displays 565 U.S. 469 (2012).",
+          "The parallel citations in the content page match the lake record: 132 S. Ct. 987 and 181 L. Ed. 2d 966."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05c3bec1d0a06341",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In sum, reasonable police officers in petitioners’ position",
+          "locator_note": "pin-477; cached opinion text lines 321-331 contain the quoted passage.",
+          "needs_cl": false,
+          "problem": "The quoted passage substantively matches the opinion text, but it is not character-faithful: the content/lake quote uses a straight apostrophe in \"petitioners' position\" while the cached opinion text uses a curly apostrophe in \"petitioners’ position\". The lake record also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace \"petitioners' position\" with \"petitioners’ position\" or mark the quote as typography-normalized rather than character-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears in the cached opinion text and supports the rule stated on the page.",
+          "The only identified quote-fidelity defect is typographic character mismatch, not a holding or support problem."
+        ],
+        "residual_risks": [
+          "The lake pinpoint has page null and pinpoint_status slip-only, so the official-page pincite is not independently verified from the pinpoint metadata."
+        ],
+        "suggested_tightening": "Use the exact cached-opinion typography for verbatim quotations.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dad6a037cbb3048d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A reasonable police officer could read these decisions to\nmean that the Fourth Amendment permits an officer to en-\nter a residence if the officer has a reasonable basis for\nconcluding that there is an imminent threat of violence.",
+          "locator_note": "pin-476; cached opinion text lines 193-196 contain the actual passage.",
+          "needs_cl": false,
+          "problem": "The lake payload for pin-476 is not the quoted rule passage from the opinion. It is a harvested chunk of the built page's Background/Issue/Rule prose and is marked quote_fidelity=mismatch in the lake record.",
+          "proposed_fix": "Replace the pin-476 lake quote with the actual opinion passage beginning \"A reasonable police officer could read these decisions to...\" and recheck the pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins \"his school. At the Huff home...\" and then includes page headings such as \"## Issue\" and \"## Rule Yes.\", which are built-page prose, not opinion text.",
+          "The cached opinion text at the relevant passage contains the rule sentence quoted on the content page, not the payload quote in the lake pinpoint.",
+          "The lake record itself flags pin-476 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Repair the pinpoint harvester so caret anchors capture only the intended quoted sentence, not surrounding Markdown sections.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b56ee6d014e867d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no support, existence, quote-fidelity, pincite, or black-letter defect is raised for this row.",
+          "The row matches the lake treatment judgment fields: field_i_validity good_law, as_of_content 2012-01-23, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Ryburn v. Huff.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"44dbf6340da7e16d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Ryburn v. Huff, U.S. Supreme Court, decided 2012-01-23, docket 11-208.\",\n        \"The official citation in the lake record is 565 U.S. 469, and the content page displays 565 U.S. 469 (2012).\",\n        \"The parallel citations in the content page match the lake record: 132 S. Ct. 987 and 181 L. Ed. 2d 966.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"05c3bec1d0a06341\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage substantively matches the opinion text, but it is not character-faithful: the content/lake quote uses a straight apostrophe in \\\"petitioners' position\\\" while the cached opinion text uses a curly apostrophe in \\\"petitioners’ position\\\". The lake record also marks this pinpoint quote_fidelity as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace \\\"petitioners' position\\\" with \\\"petitioners’ position\\\" or mark the quote as typography-normalized rather than character-faithful.\",\n        \"evidence_quote\": \"In sum, reasonable police officers in petitioners’ position\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-477; cached opinion text lines 321-331 contain the quoted passage.\"\n      },\n      \"reasons\": [\n        \"The passage appears in the cached opinion text and supports the rule stated on the page.\",\n        \"The only identified quote-fidelity defect is typographic character mismatch, not a holding or support problem.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pinpoint has page null and pinpoint_status slip-only, so the official-page pincite is not independently verified from the pinpoint metadata.\"\n      ],\n      \"suggested_tightening\": \"Use the exact cached-opinion typography for verbatim quotations.\"\n    },\n    {\n      \"assertion_id\": \"dad6a037cbb3048d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake payload for pin-476 is not the quoted rule passage from the opinion. It is a harvested chunk of the built page's Background/Issue/Rule prose and is marked quote_fidelity=mismatch in the lake record.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-476 lake quote with the actual opinion passage beginning \\\"A reasonable police officer could read these decisions to...\\\" and recheck the pinpoint.\",\n        \"evidence_quote\": \"A reasonable police officer could read these decisions to\\nmean that the Fourth Amendment permits an officer to en-\\nter a residence if the officer has a reasonable basis for\\nconcluding that there is an imminent threat of violence.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-476; cached opinion text lines 193-196 contain the actual passage.\"\n      },\n      \"reasons\": [\n        \"The asserted quote begins \\\"his school. At the Huff home...\\\" and then includes page headings such as \\\"## Issue\\\" and \\\"## Rule Yes.\\\", which are built-page prose, not opinion text.\",\n        \"The cached opinion text at the relevant passage contains the rule sentence quoted on the content page, not the payload quote in the lake pinpoint.\",\n        \"The lake record itself flags pin-476 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Repair the pinpoint harvester so caret anchors capture only the intended quoted sentence, not surrounding Markdown sections.\"\n    },\n    {\n      \"assertion_id\": \"8b56ee6d014e867d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no support, existence, quote-fidelity, pincite, or black-letter defect is raised for this row.\",\n        \"The row matches the lake treatment judgment fields: field_i_validity good_law, as_of_content 2012-01-23, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four assertion_ids in group_inventory.jsonl exactly once under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:27:53-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:31:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fd29a93360",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-73e90d333d",
+      "F-S9-PR-4ec60615bd"
+    ],
     "group_id": "_overhaul2/lake/cases/Ryburn v. Huff.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-06848950.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Ryburn v. Huff"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 242921,
+      "output": 7522,
+      "source": "codex-events",
+      "total": 250443
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "05c3bec1d0a06341": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "44dbf6340da7e16d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b56ee6d014e867d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dad6a037cbb3048d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-73e90d333d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4ec60615bd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fd29a93360",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 156.8
   }
 }

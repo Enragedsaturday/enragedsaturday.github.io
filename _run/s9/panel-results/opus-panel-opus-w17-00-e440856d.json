@@ -1,0 +1,175 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0c1938dc84e98c24",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion (Justice O'Connor, majority; Ross-line automobile-exception question; three-day-delay marihuana-package search) matches the record; official cite '469 U.S. 478' (type 1) properly selected.",
+          "Opinion star pages 480-488 are consistent with a decision reported starting at 469 U.S. 478; identity_checked=true, cluster 111305."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76393ddf294107f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "'respondents have not even alleged, much less proved, that the delay in the search of packages adversely affected legitimate interests protected by the Fourth Amendment.' appears verbatim on page 487 (after *487, before *488); the omitted lead-in 'Thus,' is outside the quotation marks.",
+          "Matches the payload's star-verified status (star_marker 487, quote_fidelity 'matched')."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a796c1ad338609c2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks",
+          "locator_note": "content pin-482 pincite '482' vs cached opinion star markers: sentence sits between *483 and *484 (paragraph b625-5)",
+          "needs_cl": false,
+          "problem": "The pin-482 quotation 'whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks' is verbatim but is cited '469 U.S. at 482'. In the cached opinion the quoted sentence is the last sentence of paragraph b625-5, which lies entirely between the *483 and *484 star markers (the *483 marker falls inside the preceding paragraph b624-6), so the quoted words are on page 483, not 482. Part II opens at *482, but the quoted language is on the following reporter page.",
+          "proposed_fix": "Change the pin-482 pincite from '469 U.S. at 482' to '469 U.S. at 483', and update the Sources line 'pinpoints: 482, 487' to 'pinpoints: 483, 487'.",
+          "severity": "medium"
+        },
+        "dimension": "pincite",
+        "reasons": [
+          "Quote text is verbatim, so it survives the quote-fidelity attack, but the page pincite is off by one: the quoted sentence sits on page 483 (between *483 and *484), while the content cites 482.",
+          "The section opens at *482, but the *483 star precedes the quoted paragraph; specific-quote pincites must point to the page carrying the quoted words."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Anchor specific-quotation pincites to the reporter page bearing the quoted words, not the section-opening page.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ba3fdad4af5d7dda",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "'Inasmuch as the Government was entitled to seize the packages and could have searched them immediately without a warrant, we conclude that the warrantless search three days after the packages were placed in the DEA warehouse was reasonable and consistent with our precedent involving searches of impounded vehicles.' matches the opinion (OCR 'war-rantless' correctly de-hyphenated to 'warrantless').",
+          "The sentence begins on page 487 (after *487) and runs onto 488 (the *488 star falls before 'precedent'); citing to the starting page 487 is conventional and correct."
+        ],
+        "residual_risks": [
+          "Quoted sentence spans *487 to *488; the '487' pincite is the starting page, which is standard."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e20de2cfc71d5c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Every citing-case edge in the disclosed treatment block carries field_iii='mentioned' — no citing case gives Johns negative treatment.",
+          "No disclosed evidence contradicts good_law; Johns is an intact refinement of the Carroll/Ross automobile-exception line."
+        ],
+        "residual_risks": [
+          "field_i_validity is a 'migration-seed'; lane1_negative capped with audit_needed=true / 'R15 treatment audit required' — good-law currency as of 2026-06-30 is provisional/partly unaudited."
+        ],
+        "suggested_tightening": "Complete the flagged R15 treatment audit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4dbf285748",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8cb4b1ee80",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4dcc841f1d"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Johns.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-00-e440856d",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Johns"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0c1938dc84e98c24": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e20de2cfc71d5c6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76393ddf294107f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a796c1ad338609c2": {
+        "dimension": "pincite",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ba3fdad4af5d7dda": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4dcc841f1d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4dbf285748",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8cb4b1ee80",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,170 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/California v. Prysock.json\",\"reviewed\":[{\"assertion_id\":\"1a7568d1a902c39e\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case exists and the lake/frontmatter official citation is 453 U.S. 355, but the rendered content page and Sources line cite 451 U.S. 355.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the rendered body citation and Sources citation to 453 U.S. 355 (1981).\",\"evidence_quote\":\"*451 U.S. 355 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"content_page.md visible header/source conflict with lake citations.official.cite/display.\"},\"reasons\":[\"lake.citations.official.cite/display identify 453 U.S. 355 and identity.court/year identify U.S. Supreme Court/1981.\",\"content_page frontmatter agrees, but the body header and Sources line use 451 U.S. 355.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Add a consistency check between lake official citation, frontmatter citation, visible header citation, and Sources citation.\"},{\"assertion_id\":\"66c73a7414e5a9de\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-359's stored quote is a built-page excerpt beginning with the page header, not the opinion passage it is supposed to quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-359 with the exact opinion sentence and correct the citation volume to 453 U.S.\",\"evidence_quote\":\"This Court has never indicated that the “rigidity” of <em>Miranda</em> extends to the precise formulation of the warnings given a criminal defendant.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Prysock__db5325.txt contains the relevant passage; lake pinpoints[0] is marked quote_fidelity=mismatch and page=null.\"},\"reasons\":[\"The disclosed lake pin for pin-359 is marked quote_fidelity=mismatch and its quote begins with '--- # California v. Prysock', which is not opinion text.\",\"The cached opinion text contains the actual rule sentence at the page-359 passage.\",\"The content quote also cites 451 U.S. at 359, while the lake official citation is 453 U.S. 355.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This finding attacks quote fidelity only; the underlying legal proposition may still be supportable from the opinion text.\"],\"suggested_tightening\":\"Store only the exact quoted sentence in the pin and keep page/citation metadata separate from quote text.\"},{\"assertion_id\":\"d0d5657caa2baf88\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is not character-faithful to the cached opinion text because it normalizes 'talis-manic' to 'talismanic'; the lake pin also flags mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the disclosed text exactly with 'talis-manic' or paraphrase the point instead of presenting it as a verbatim quote.\",\"evidence_quote\":\"Quite the contrary, <em>Miranda</em> itself indicated that no talis-manic incantation was required to satisfy its strictures.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Prysock__db5325.txt paragraph b401-6; lake pinpoints[1] is marked quote_fidelity=mismatch and page=null.\"},\"reasons\":[\"The cached opinion text uses 'talis-manic'; the payload/content quote uses 'talismanic'.\",\"The lake pinpoint entry itself marks quote_fidelity=mismatch.\",\"Omitting 'Quite the contrary,' can be acceptable for a fragment, but the spelling/hyphenation is not character-faithful under the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The hyphen may be a source-rendering artifact, but under the disclosed-evidence rule it cannot be silently normalized.\"],\"suggested_tightening\":\"Avoid verbatim quotation when the cached text has reporter or OCR artifacts unless the pin records the exact source form.\"},{\"assertion_id\":\"655e68420fc44dba\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload mirrors disclosed lake/content treatment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency require Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only disclosed local files. No external search or outside authority used. Treatment was recorded but not attacked under Lens A.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/California v. Prysock.json",
+    "lens": "A",
+    "notes": "Lens A review only. The principal support rule is supported by the disclosed opinion text, but both quote-fidelity rows have citation/character-fidelity defects in the rendered page or lake pinpoint data.",
+    "reviewed": [
+      {
+        "assertion_id": "1a7568d1a902c39e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as California v. Prysock, U.S. Supreme Court, decided 1981-06-29, docket 80-1846.",
+          "The payload's official citation, display citation, parallel citations, and vendor-neutral citation match the lake citation fields: official/display are 453 U.S. 355."
+        ],
+        "residual_risks": [
+          "The rendered content body also contains unreviewed inconsistent text using 451 U.S. 355, but the existence assertion payload itself states 453 U.S. 355 and matches the lake record."
+        ],
+        "suggested_tightening": "Synchronize all rendered body/source citations to the lake official citation, 453 U.S. 355.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66c73a7414e5a9de",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This Court has never indicated that the “rigidity” of <em><span class=\"citation\" data-id=\"9423233\"><a href=\"/opinion/107252/miranda-v-arizona/\" aria-description=\"Citation for case: Miranda v. Arizona\">Miranda</a></span> </em>extends to the precise formulation of the warnings given a criminal defendant.",
+          "locator_note": "text/California v. Prysock__db5325.txt line 24; content_page.md line 53; lake pinpoints[pin-359]",
+          "needs_cl": false,
+          "problem": "pin-359 is not character-faithful as stored/rendered. The lake pinpoint quote captures a generated page block rather than the quoted opinion sentence, and the rendered page cites 451 U.S. at 359 even though the lake official citation is 453 U.S. 355.",
+          "proposed_fix": "Replace pin-359 with the actual opinion sentence and cite it as 453 U.S. at 359; do not store the generated page header/background/rule block as the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the quoted sentence at the page-359 marker, but the lake pin-359 quote is a markdown page excerpt beginning with the title and background, not the source passage.",
+          "The rendered page uses 451 U.S. at 359 for the quote, while the lake official citation is 453 U.S. 355."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported by the opinion; the defect is quote/pin metadata and rendered citation fidelity."
+        ],
+        "suggested_tightening": "Use the exact source sentence with source-faithful quotation marks and the correct citation volume.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0d5657caa2baf88",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Quite the contrary, <em><span class=\"citation\" data-id=\"9423233\"><a href=\"/opinion/107252/miranda-v-arizona/\" aria-description=\"Citation for case: Miranda v. Arizona\">Miranda</a></span> </em>itself indicated that no talis-manic incantation was required to satisfy its strictures.",
+          "locator_note": "text/California v. Prysock__db5325.txt line 25; content_page.md line 55; lake pinpoints[pin-359a]",
+          "needs_cl": false,
+          "problem": "pin-359a is not character-faithful to the cached opinion text. The page/lake quote omits the introductory phrase and uses 'talismanic', while the disclosed text reads 'talis-manic'. It also relies on Id. following a wrong 451 U.S. citation in the rendered page.",
+          "proposed_fix": "Either quote the cached text exactly or convert the sentence to a paraphrase. If retained as a quote, fix the preceding citation chain to 453 U.S. at 359.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed cached opinion text does not match the quote character-for-character.",
+          "Because the prior rendered citation is 451 U.S. at 359, the Id. reference is also contaminated by the wrong reporter volume."
+        ],
+        "residual_risks": [
+          "The substantive no-talismanic-incantation proposition is supported; the defect is verbatim fidelity under the disclosed text."
+        ],
+        "suggested_tightening": "Use source-faithful text or paraphrase without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "655e68420fc44dba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/California v. Prysock.json\",\"reviewed\":[{\"assertion_id\":\"1a7568d1a902c39e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as California v. Prysock, U.S. Supreme Court, decided 1981-06-29, docket 80-1846.\",\"The payload's official citation, display citation, parallel citations, and vendor-neutral citation match the lake citation fields: official/display are 453 U.S. 355.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The rendered content body also contains unreviewed inconsistent text using 451 U.S. 355, but the existence assertion payload itself states 453 U.S. 355 and matches the lake record.\"],\"suggested_tightening\":\"Synchronize all rendered body/source citations to the lake official citation, 453 U.S. 355.\"},{\"assertion_id\":\"66c73a7414e5a9de\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-359 is not character-faithful as stored/rendered. The lake pinpoint quote captures a generated page block rather than the quoted opinion sentence, and the rendered page cites 451 U.S. at 359 even though the lake official citation is 453 U.S. 355.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-359 with the actual opinion sentence and cite it as 453 U.S. at 359; do not store the generated page header/background/rule block as the pinpoint quote.\",\"evidence_quote\":\"This Court has never indicated that the “rigidity” of <em><span class=\\\"citation\\\" data-id=\\\"9423233\\\"><a href=\\\"/opinion/107252/miranda-v-arizona/\\\" aria-description=\\\"Citation for case: Miranda v. Arizona\\\">Miranda</a></span> </em>extends to the precise formulation of the warnings given a criminal defendant.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Prysock__db5325.txt line 24; content_page.md line 53; lake pinpoints[pin-359]\"},\"reasons\":[\"The disclosed opinion text contains the quoted sentence at the page-359 marker, but the lake pin-359 quote is a markdown page excerpt beginning with the title and background, not the source passage.\",\"The rendered page uses 451 U.S. at 359 for the quote, while the lake official citation is 453 U.S. 355.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition is supported by the opinion; the defect is quote/pin metadata and rendered citation fidelity.\"],\"suggested_tightening\":\"Use the exact source sentence with source-faithful quotation marks and the correct citation volume.\"},{\"assertion_id\":\"d0d5657caa2baf88\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-359a is not character-faithful to the cached opinion text. The page/lake quote omits the introductory phrase and uses 'talismanic', while the disclosed text reads 'talis-manic'. It also relies on Id. following a wrong 451 U.S. citation in the rendered page.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the cached text exactly or convert the sentence to a paraphrase. If retained as a quote, fix the preceding citation chain to 453 U.S. at 359.\",\"evidence_quote\":\"Quite the contrary, <em><span class=\\\"citation\\\" data-id=\\\"9423233\\\"><a href=\\\"/opinion/107252/miranda-v-arizona/\\\" aria-description=\\\"Citation for case: Miranda v. Arizona\\\">Miranda</a></span> </em>itself indicated that no talis-manic incantation was required to satisfy its strictures.\",\"needs_cl\":false,\"locator_note\":\"text/California v. Prysock__db5325.txt line 25; content_page.md line 55; lake pinpoints[pin-359a]\"},\"reasons\":[\"The disclosed cached opinion text does not match the quote character-for-character.\",\"Because the prior rendered citation is 451 U.S. at 359, the Id. reference is also contaminated by the wrong reporter volume.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive no-talismanic-incantation proposition is supported; the defect is verbatim fidelity under the disclosed text.\"],\"suggested_tightening\":\"Use source-faithful text or paraphrase without quotation marks.\"},{\"assertion_id\":\"655e68420fc44dba\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment audit performed.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only. The principal support rule is supported by the disclosed opinion text, but both quote-fidelity rows have citation/character-fidelity defects in the rendered page or lake pinpoint data.\"}",
   "summary": {
-    "at": "2026-07-11T01:20:50-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:14:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5e761d6ebc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3c1e221832",
+      "F-S9-PR-828d952522"
+    ],
     "group_id": "_overhaul2/lake/cases/California v. Prysock.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3642a526",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3642a526.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Prysock"
+    ],
+    "tokens": {
+      "input": 158424,
+      "output": 8289,
+      "source": "codex-events",
+      "total": 166713
+    },
+    "verdict_map": {
+      "1a7568d1a902c39e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "655e68420fc44dba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "66c73a7414e5a9de": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d0d5657caa2baf88": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c1e221832",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-828d952522",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5e761d6ebc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 160.5
   }
 }

@@ -1,22 +1,150 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rogers v. Richmond.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "dffbadef469105dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, not a stub, and identifies Rogers v. Richmond as a U.S. Supreme Court decision decided 1961-03-20.",
+          "The official citation is disclosed as 365 U.S. 534, and the treatment field marks the case good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment audit flags discussed in the treatment row limit any broader no-negative-treatment claim."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "286fb1a68c715c80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity defect is raised.",
+          "For currency purposes, the cited Rogers record is verified and marked good_law in the lake treatment field."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint accuracy remain for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b37adae1bfe85ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity defect is raised.",
+          "The embedded weight label is supported by the lake identity fields showing U.S. Supreme Court and court_level scotus."
+        ],
+        "residual_risks": [
+          "Pin-540 contains treatment text, but the treatment/currency caveat is handled in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35aacc8eec7d825c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Rogers v. Richmond__eba0c0.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The core good_law label is disclosed in the lake record, but the built page's categorical 'No negative treatment' language is too strong because the same lake treatment record contains proposed negative-treatment edges and audit_needed flags.",
+          "proposed_fix": "Keep the good_law label only with a caveat, or remove 'No negative treatment' until the proposed negative edges are audited. Suggested wording: 'Lake marks Rogers good_law as of 2026-06-30; disclosed progeny audit contains only proposed/mentioned negative edges requiring audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity states good_law as of 2026-06-30 and varies_by_point is false, so the main treatment label has disclosed support.",
+          "However, treatment.edges includes 31 proposed negative-status edges: overruled, questioned, criticized, and superseded_by_statute, all with field_iii 'mentioned'.",
+          "Derivation lane1_negative and lane2_top_cited both have audit_needed true, so an unqualified no-negative-treatment assertion is not safely verifiable from the disclosed record."
+        ],
+        "residual_risks": [
+          "Because the negative edges are marked proposed and mentioned, the disclosed record does not prove Rogers is bad law; it proves the no-negative-treatment wording is overconfident."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with an audited-status caveat tied to the proposed/mentioned edge records.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Rogers v. Richmond.json\",\"reviewed\":[{\"assertion_id\":\"dffbadef469105dd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, not a stub, and identifies Rogers v. Richmond as a U.S. Supreme Court decision decided 1961-03-20.\",\"The official citation is disclosed as 365 U.S. 534, and the treatment field marks the case good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment audit flags discussed in the treatment row limit any broader no-negative-treatment claim.\"],\"suggested_tightening\":null},{\"assertion_id\":\"286fb1a68c715c80\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity defect is raised.\",\"For currency purposes, the cited Rogers record is verified and marked good_law in the lake treatment field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint accuracy remain for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7b37adae1bfe85ce\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity defect is raised.\",\"The embedded weight label is supported by the lake identity fields showing U.S. Supreme Court and court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Pin-540 contains treatment text, but the treatment/currency caveat is handled in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"35aacc8eec7d825c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law label is disclosed in the lake record, but the built page's categorical 'No negative treatment' language is too strong because the same lake treatment record contains proposed negative-treatment edges and audit_needed flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law label only with a caveat, or remove 'No negative treatment' until the proposed negative edges are audited. Suggested wording: 'Lake marks Rogers good_law as of 2026-06-30; disclosed progeny audit contains only proposed/mentioned negative edges requiring audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Rogers v. Richmond__eba0c0.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity states good_law as of 2026-06-30 and varies_by_point is false, so the main treatment label has disclosed support.\",\"However, treatment.edges includes 31 proposed negative-status edges: overruled, questioned, criticized, and superseded_by_statute, all with field_iii 'mentioned'.\",\"Derivation lane1_negative and lane2_top_cited both have audit_needed true, so an unqualified no-negative-treatment assertion is not safely verifiable from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the negative edges are marked proposed and mentioned, the disclosed record does not prove Rogers is bad law; it proves the no-negative-treatment wording is overconfident.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with an audited-status caveat tied to the proposed/mentioned edge records.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:33:59-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:31:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cf9ed6e35a"
+    ],
     "group_id": "_overhaul2/lake/cases/Rogers v. Richmond.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-bad8d4ad",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-bad8d4ad.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:50.634534Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:51.283991Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:52.088440Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:53.332378Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:55.378227Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:59.156517Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rogers v. Richmond"
+    ],
+    "tokens": {
+      "input": 316266,
+      "output": 7421,
+      "source": "codex-events",
+      "total": 323687
+    },
+    "verdict_map": {
+      "286fb1a68c715c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35aacc8eec7d825c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7b37adae1bfe85ce": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dffbadef469105dd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cf9ed6e35a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 151.8
   }
 }

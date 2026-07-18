@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Missouri v. Seibert.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl. Treatment was only checked for disclosed-field consistency under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "fc3f6b3c9d6e53e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as Missouri v. Seibert, U.S. Supreme Court, decided 2004-06-28, year 2004.",
+          "The official citation in the lake record is 542 U.S. 600, and the parallel/vendor citations in the inventory match the lake record: 124 S. Ct. 2601, 159 L. Ed. 2d 643, and 2004 U.S. LEXIS 4578.",
+          "The cached opinion text header also shows 542 U.S. 600 (2004), Supreme Court of United States, decided June 28, 2004."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "69a5215735f6c6e2",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "interrogation technique. ## Rule No (plurality).",
+          "locator_note": "pin-604 in lake.pinpoints[] has page=null, star_marker=null, pinpoint_status=slip-only, quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quote attached to pin-604 is not character-faithful to the opinion passage. It appears to be a harvested splice from surrounding page text/heading rather than the quoted rule sentence at 542 U.S. 604; the lake itself flags quote_fidelity as mismatch and gives no page or star marker.",
+          "proposed_fix": "Reharvest pin-604 from the actual *604 passage, using the sentence beginning \"Because this midstream recitation of warnings...\" and ending \"...is inadmissible.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote is \"interrogation technique. ## Rule No (plurality).\", which is not the rule quote displayed in content_page.md.",
+          "The cached opinion text at star page *604 contains the actual quoted holding sentence beginning \"Because this midstream recitation of warnings after interrogation and unwarned confession...\".",
+          "Because the pin quote is corrupt, the quote-fidelity assertion cannot stand as framed."
+        ],
+        "residual_risks": [
+          "The content page's displayed Rule quote itself appears to match the *604 passage; the defect is the stored pin/inventory quote for pin-604."
+        ],
+        "suggested_tightening": "Store the actual *604 holding sentence as pin-604 and set page/star metadata so future quote checks do not compare against a markdown-heading splice.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae971fa7744f6928",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency, so no treatment finding is raised.",
+          "As a disclosed-field transcription matter, the inventory treatment payload matches the lake fields: field_i_validity=good_law, as_of_content=2004-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency is reserved for Lens B and was not substantively audited here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Missouri v. Seibert.json\",\"reviewed\":[{\"assertion_id\":\"fc3f6b3c9d6e53e8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies the case as Missouri v. Seibert, U.S. Supreme Court, decided 2004-06-28, year 2004.\",\"The official citation in the lake record is 542 U.S. 600, and the parallel/vendor citations in the inventory match the lake record: 124 S. Ct. 2601, 159 L. Ed. 2d 643, and 2004 U.S. LEXIS 4578.\",\"The cached opinion text header also shows 542 U.S. 600 (2004), Supreme Court of United States, decided June 28, 2004.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"69a5215735f6c6e2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote attached to pin-604 is not character-faithful to the opinion passage. It appears to be a harvested splice from surrounding page text/heading rather than the quoted rule sentence at 542 U.S. 604; the lake itself flags quote_fidelity as mismatch and gives no page or star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Reharvest pin-604 from the actual *604 passage, using the sentence beginning \\\"Because this midstream recitation of warnings...\\\" and ending \\\"...is inadmissible.\\\"\",\"evidence_quote\":\"interrogation technique. ## Rule No (plurality).\",\"needs_cl\":false,\"locator_note\":\"pin-604 in lake.pinpoints[] has page=null, star_marker=null, pinpoint_status=slip-only, quote_fidelity=mismatch.\"},\"reasons\":[\"The inventory/lake quote is \\\"interrogation technique. ## Rule No (plurality).\\\", which is not the rule quote displayed in content_page.md.\",\"The cached opinion text at star page *604 contains the actual quoted holding sentence beginning \\\"Because this midstream recitation of warnings after interrogation and unwarned confession...\\\".\",\"Because the pin quote is corrupt, the quote-fidelity assertion cannot stand as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed Rule quote itself appears to match the *604 passage; the defect is the stored pin/inventory quote for pin-604.\"],\"suggested_tightening\":\"Store the actual *604 holding sentence as pin-604 and set page/star metadata so future quote checks do not compare against a markdown-heading splice.\"},{\"assertion_id\":\"ae971fa7744f6928\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency, so no treatment finding is raised.\",\"As a disclosed-field transcription matter, the inventory treatment payload matches the lake fields: field_i_validity=good_law, as_of_content=2004-06-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is reserved for Lens B and was not substantively audited here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl. Treatment was only checked for disclosed-field consistency under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:57-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:15:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6b1f726676"
+    ],
     "group_id": "_overhaul2/lake/cases/Missouri v. Seibert.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0f95aa63.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Missouri v. Seibert"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 190078,
+      "output": 7415,
+      "source": "codex-events",
+      "total": 197493
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 32.9
+    "verdict_map": {
+      "69a5215735f6c6e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ae971fa7744f6928": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc3f6b3c9d6e53e8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6b1f726676",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.3
   }
 }

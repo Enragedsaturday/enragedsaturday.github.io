@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Monell v. Department of Social Services.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/support fidelity issues; treatment was checked only against disclosed lake fields, not for currency.",
+    "reviewed": [
+      {
+        "assertion_id": "731dc9d9da39e38b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Monell v. New York City Dept. of Social Servs., U.S. Supreme Court, decided 1978-06-06.",
+          "The official citation in the lake record is 436 U.S. 658, and the built page displays 436 U.S. 658 (1978).",
+          "The parallel and vendor citations listed in the built page match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "633f05131022eeff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Local governing bodies,<sup>[55]</sup> therefore, can be sued directly under § 1983 for monetary, declaratory, or injunctive relief where, as here, the action that is alleged to be unconstitutional implements or executes a policy statement, ordinance, regulation, or decision officially adopted and promulgated by that body's officers.",
+          "locator_note": "text/Monell v. Department of Social Services__5927a4.txt lines 93-94; lake pin-690 quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted pin text is not an opinion quote. It stitches the built page's Issue text and Rule heading/body, and the lake record itself marks the quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-690 with exact opinion language from pages 690-691, or split the page's rule into paraphrase plus separate exact quotes.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes '## Rule', which is page Markdown, not opinion text.",
+          "The opinion passage at the 690-691 marker supports the rule generally, but not the harvested quote string as a verbatim quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact quoted opinion text around 436 U.S. 690-691 and keep surrounding rule language outside quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "995bae8f98a12386",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a municipality cannot be held liable <i>solely</i> because it employs a tortfeasor\\u0097or, in other words, a municipality cannot be held liable under § 1983 on a <i>respondeat superior</i> theory.",
+          "locator_note": "text/Monell v. Department of Social Services__5927a4.txt line 95; lake pin-691 quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful: the opinion contains additional words and HTML italics, while the built quote uses an ellipsis and Markdown italics inside quotation marks. The lake record also marks this pin as quote_fidelity mismatch.",
+          "proposed_fix": "Either quote the exact sentence from the opinion or remove quotation marks and treat the current wording as a paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The proposition is supported at page 691, but the quoted wording is not an exact transcription of the disclosed opinion text.",
+          "The page quote uses '*respondeat superior*' rather than the disclosed '<i>respondeat superior</i>' text and omits material with an ellipsis."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the full sentence exactly, or use a non-quoted paraphrase: Monell rejects municipal respondeat superior liability under § 1983.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc9e3add9004952d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside lens A, so no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1978-06-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No lens-A assessment of current-law accuracy was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Monell v. Department of Social Services.json\",\"reviewed\":[{\"assertion_id\":\"731dc9d9da39e38b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Monell v. New York City Dept. of Social Servs., U.S. Supreme Court, decided 1978-06-06.\",\"The official citation in the lake record is 436 U.S. 658, and the built page displays 436 U.S. 658 (1978).\",\"The parallel and vendor citations listed in the built page match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"633f05131022eeff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted pin text is not an opinion quote. It stitches the built page's Issue text and Rule heading/body, and the lake record itself marks the quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-690 with exact opinion language from pages 690-691, or split the page's rule into paraphrase plus separate exact quotes.\",\"evidence_quote\":\"Local governing bodies,<sup>[55]</sup> therefore, can be sued directly under § 1983 for monetary, declaratory, or injunctive relief where, as here, the action that is alleged to be unconstitutional implements or executes a policy statement, ordinance, regulation, or decision officially adopted and promulgated by that body's officers.\",\"needs_cl\":false,\"locator_note\":\"text/Monell v. Department of Social Services__5927a4.txt lines 93-94; lake pin-690 quote_fidelity=mismatch.\"},\"reasons\":[\"The payload quote includes '## Rule', which is page Markdown, not opinion text.\",\"The opinion passage at the 690-691 marker supports the rule generally, but not the harvested quote string as a verbatim quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact quoted opinion text around 436 U.S. 690-691 and keep surrounding rule language outside quotation marks.\"},{\"assertion_id\":\"995bae8f98a12386\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is not character-faithful: the opinion contains additional words and HTML italics, while the built quote uses an ellipsis and Markdown italics inside quotation marks. The lake record also marks this pin as quote_fidelity mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the exact sentence from the opinion or remove quotation marks and treat the current wording as a paraphrase.\",\"evidence_quote\":\"a municipality cannot be held liable <i>solely</i> because it employs a tortfeasor\\\\u0097or, in other words, a municipality cannot be held liable under § 1983 on a <i>respondeat superior</i> theory.\",\"needs_cl\":false,\"locator_note\":\"text/Monell v. Department of Social Services__5927a4.txt line 95; lake pin-691 quote_fidelity=mismatch.\"},\"reasons\":[\"The proposition is supported at page 691, but the quoted wording is not an exact transcription of the disclosed opinion text.\",\"The page quote uses '*respondeat superior*' rather than the disclosed '<i>respondeat superior</i>' text and omits material with an ellipsis.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the full sentence exactly, or use a non-quoted paraphrase: Monell rejects municipal respondeat superior liability under § 1983.\"},{\"assertion_id\":\"cc9e3add9004952d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment and currency are outside lens A, so no treatment defect is raised.\",\"The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1978-06-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens-A assessment of current-law accuracy was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote/support fidelity issues; treatment was checked only against disclosed lake fields, not for currency.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:16:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-778761aea3",
+      "F-S9-PR-5409d58499"
+    ],
     "group_id": "_overhaul2/lake/cases/Monell v. Department of Social Services.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-99ba9cce",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-99ba9cce.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: c1f85774-ef22-47ee-9775-798e6c58a243\n2026-07-10T22:30:56.267321Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:56.897737Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:57.579596Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:58.424963Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:59.635178Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:31:01.735411Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Monell v. Department of Social Services"
+    ],
+    "tokens": {
+      "input": 258030,
+      "output": 7518,
+      "source": "codex-events",
+      "total": 265548
+    },
+    "verdict_map": {
+      "633f05131022eeff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "731dc9d9da39e38b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "995bae8f98a12386": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cc9e3add9004952d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-778761aea3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5409d58499",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 150.9
   }
 }

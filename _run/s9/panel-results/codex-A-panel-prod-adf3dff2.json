@@ -1,13 +1,127 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Walker.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. No black-letter or standalone support rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "763e3b67b70d058d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Wayne Walker, U.S. Court of Appeals for the 11th Circuit, decided 2015-09-03.",
+          "The official citation in the lake record is exactly 799 F.3d 1361, matching the displayed citation under review."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4db17fb5d6a91248",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Second, approaching Walker’s vehicle parked inside of his open-sided carport",
+          "locator_note": "pin-1364; cached text lines 230-236; lake also marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively located in the opinion but is not character-faithful: the cached opinion uses curly punctuation, including Walker’s and curly quotation marks around the Taylor phrase, while the asserted quote normalizes them to straight punctuation.",
+          "proposed_fix": "Replace the quote with the exact cached-opinion wording and punctuation, or stop presenting it as a verbatim character-faithful quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text reads “Walker’s” with a curly apostrophe, not “Walker's”.",
+          "The Taylor phrase is enclosed in curly quotation marks in the cached text, not straight single quotes.",
+          "The lake pinpoint judgment for pin-1364 itself says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported, but the verbatim quote fails strict character fidelity.",
+          "Reporter-page placement cannot be independently checked from the slip-only text."
+        ],
+        "suggested_tightening": "Use an exact quote from the cached opinion, preserving punctuation, or paraphrase the rule without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7aff2fc25e90dd30",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "which is not considered a search.",
+          "locator_note": "pin-1364a; cached text line 296; lake also marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The fragment adds a comma that is not present in the cached opinion text. The opinion phrase ends with a period.",
+          "proposed_fix": "Quote the exact phrase as “not considered a search” or rewrite the sentence so punctuation is outside the quoted material.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached footnote says “which is not considered a search.”",
+          "The asserted quote is “is not considered a search,” with a trailing comma inside the quotation.",
+          "Strict quote-fidelity review does not allow the asserted comma as part of the verbatim source text."
+        ],
+        "residual_risks": [
+          "The no-search proposition is supported by the footnote, but the quotation is not character-faithful as framed.",
+          "Reporter-page placement cannot be independently checked from the slip-only text."
+        ],
+        "suggested_tightening": "Paraphrase the sentence and quote only the exact words “not considered a search”.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b84f2557dee0e416",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Issue Whether officers exceeded the knock-and-talk exception",
+          "locator_note": "pin-1363; lake pinpoint contains page-generated text and flags quote_fidelity as mismatch; cached text lines 181-193 contain the actual rule passage.",
+          "needs_cl": false,
+          "problem": "The asserted pinpoint quote is not a character-faithful opinion excerpt; it appears to be harvested from the built content page and includes Markdown section text rather than Walker opinion text.",
+          "proposed_fix": "Replace pin-1363 with the actual opinion passage beginning “The scope of the knock and talk exception is limited in two respects” and preserve source punctuation or mark omissions properly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes built-page markers such as “## Issue” and “## Rule”, which are not part of the cached judicial opinion.",
+          "The cached opinion’s relevant passage starts with “The scope of the knock and talk exception is limited in two respects.”",
+          "The lake pinpoint judgment for pin-1363 itself says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [
+          "The displayed rule is broadly supported by the opinion, but this harvested pinpoint quote is unusable as a verbatim authority quote."
+        ],
+        "suggested_tightening": "Regenerate the pinpoint from the cached opinion text, not from the built Markdown page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "06f891d089718947",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not conduct treatment/currency review.",
+          "The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2015-09-03, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency is reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Walker.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"763e3b67b70d058d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies United States v. Wayne Walker, U.S. Court of Appeals for the 11th Circuit, decided 2015-09-03.\",\n        \"The official citation in the lake record is exactly 799 F.3d 1361, matching the displayed citation under review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4db17fb5d6a91248\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage is substantively located in the opinion but is not character-faithful: the cached opinion uses curly punctuation, including Walker’s and curly quotation marks around the Taylor phrase, while the asserted quote normalizes them to straight punctuation.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the quote with the exact cached-opinion wording and punctuation, or stop presenting it as a verbatim character-faithful quote.\",\n        \"evidence_quote\": \"Second, approaching Walker’s vehicle parked inside of his open-sided carport\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1364; cached text lines 230-236; lake also marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The opinion text reads “Walker’s” with a curly apostrophe, not “Walker's”.\",\n        \"The Taylor phrase is enclosed in curly quotation marks in the cached text, not straight single quotes.\",\n        \"The lake pinpoint judgment for pin-1364 itself says quote_fidelity is mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying legal proposition appears supported, but the verbatim quote fails strict character fidelity.\",\n        \"Reporter-page placement cannot be independently checked from the slip-only text.\"\n      ],\n      \"suggested_tightening\": \"Use an exact quote from the cached opinion, preserving punctuation, or paraphrase the rule without quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"7aff2fc25e90dd30\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The fragment adds a comma that is not present in the cached opinion text. The opinion phrase ends with a period.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the exact phrase as “not considered a search” or rewrite the sentence so punctuation is outside the quoted material.\",\n        \"evidence_quote\": \"which is not considered a search.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1364a; cached text line 296; lake also marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The cached footnote says “which is not considered a search.”\",\n        \"The asserted quote is “is not considered a search,” with a trailing comma inside the quotation.\",\n        \"Strict quote-fidelity review does not allow the asserted comma as part of the verbatim source text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The no-search proposition is supported by the footnote, but the quotation is not character-faithful as framed.\",\n        \"Reporter-page placement cannot be independently checked from the slip-only text.\"\n      ],\n      \"suggested_tightening\": \"Paraphrase the sentence and quote only the exact words “not considered a search”.\"\n    },\n    {\n      \"assertion_id\": \"b84f2557dee0e416\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted pinpoint quote is not a character-faithful opinion excerpt; it appears to be harvested from the built content page and includes Markdown section text rather than Walker opinion text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1363 with the actual opinion passage beginning “The scope of the knock and talk exception is limited in two respects” and preserve source punctuation or mark omissions properly.\",\n        \"evidence_quote\": \"## Issue Whether officers exceeded the knock-and-talk exception\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1363; lake pinpoint contains page-generated text and flags quote_fidelity as mismatch; cached text lines 181-193 contain the actual rule passage.\"\n      },\n      \"reasons\": [\n        \"The payload quote includes built-page markers such as “## Issue” and “## Rule”, which are not part of the cached judicial opinion.\",\n        \"The cached opinion’s relevant passage starts with “The scope of the knock and talk exception is limited in two respects.”\",\n        \"The lake pinpoint judgment for pin-1363 itself says quote_fidelity is mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The displayed rule is broadly supported by the opinion, but this harvested pinpoint quote is unusable as a verbatim authority quote.\"\n      ],\n      \"suggested_tightening\": \"Regenerate the pinpoint from the cached opinion text, not from the built Markdown page.\"\n    },\n    {\n      \"assertion_id\": \"06f891d089718947\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not conduct treatment/currency review.\",\n        \"The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2015-09-03, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency is reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 rows in group_inventory.jsonl. No black-letter or standalone support rows were present.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:10:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a7e91bc825",
+      "F-S9-PR-cfd59a93f3",
+      "F-S9-PR-2852cd06f3"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Walker.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +130,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-adf3dff2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Walker"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 153068,
+      "output": 9828,
+      "source": "codex-events",
+      "total": 162896
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "06f891d089718947": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4db17fb5d6a91248": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "763e3b67b70d058d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7aff2fc25e90dd30": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b84f2557dee0e416": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7e91bc825",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cfd59a93f3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2852cd06f3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 187.6
   }
 }

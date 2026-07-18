@@ -1,22 +1,145 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bailey v. United States.json\",\"reviewed\":[{\"assertion_id\":\"bfdd9b809baf3a20\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Bailey v. United States, U.S. Supreme Court, decided 2013-02-19.\",\"The official citation in the lake record is 568 U.S. 186, and the listed parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5b220a2b87f401c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-201 is not character-faithful as framed. The lake pin is marked quote_fidelity=mismatch, has no star marker, and its payload quote is a harvested page excerpt rather than the *201 opinion passage. The displayed content quote also differs from the cached text at the word 'séarch/search'.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-201 with the exact *201 passage from the disclosed opinion text, or remove verbatim quotation marks until the quote is re-harvested and verified.\",\"evidence_quote\":\"A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a séarch warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Bailey v. United States__a622b0.txt page marker *201; lake pinpoints[pin-201] reports mismatch/slip-only.\"},\"reasons\":[\"The disclosed lake record itself flags pin-201 as quote_fidelity=mismatch and pinpoint_status=slip-only.\",\"The inventory quote for pin-201 is not the opinion passage at *201; it is page/header/background/rule text harvested from the built page.\",\"The cached opinion text contains the relevant sentence at *201, but not character-for-character as displayed in content_page.md.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"If OCR normalization is allowed outside this disclosed record, the displayed sentence may be substantively accurate, but this lens requires character fidelity from disclosed evidence.\"],\"suggested_tightening\":\"Use the exact cached text at *201, or treat the sentence as a paraphrase rather than a verbatim quote.\"},{\"assertion_id\":\"9b466077cae517dc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase appears verbatim in the cached opinion text at the *199 page marker.\",\"The lake record marks pin-199 as quote_fidelity=matched, pinpoint_status=star-verified, with star_marker 199.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"e08ab0d4d9081f93\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The inventory treatment fields match the lake record and content frontmatter: field_i_validity=good_law, as_of_content=2013-02-19, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows under Lens A; treatment row recorded only, without treatment/currency attack.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bailey v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "bfdd9b809baf3a20",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Bailey v. United States, U.S. Supreme Court, decided 2013-02-19, year 2013.",
+          "The official citation in the lake record is 568 U.S. 186, matching the page display citation; the parallel and vendor-neutral cites also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b220a2b87f401c9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a séarch warrant.",
+          "locator_note": "text/Bailey v. United States__a622b0.txt, page-number label=\"201\"; lake pinpoints[].id=\"pin-201\" is marked quote_fidelity=\"mismatch\" and star_marker=null.",
+          "needs_cl": false,
+          "problem": "pin-201's stored quote is not a verbatim opinion quote; it is generated content-page text beginning with the page header/background/rule material. The actual cited passage appears in the cached opinion text at page *201.",
+          "proposed_fix": "Replace pin-201's quote with the actual sentence from the opinion text and set the page/star marker to 201 if the corpus supports that marker.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is the same erroneous generated-page excerpt stored in lake.pinpoints for pin-201, not a passage from the Bailey opinion.",
+          "The cached opinion text contains the cited sentence at page *201, so the defect is verifiable without outside evidence."
+        ],
+        "residual_risks": [
+          "The cached text appears OCR-derived and spells 'search' as 'séarch' in the page-*201 sentence; corpus normalization policy may determine the final character form."
+        ],
+        "suggested_tightening": "Use the actual sentence quoted in the Rule section and avoid harvesting page chrome/frontmatter into pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b466077cae517dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment appears verbatim in the cached opinion text at page *199: it follows the words 'This interest'.",
+          "The lake pinpoints record for pin-199 marks the quote as matched, star_marker 199, with a validated text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e08ab0d4d9081f93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2013-02-19, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No lens-A review of treatment correctness or currency was performed; lens B owns that issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bailey v. United States.json\",\"reviewed\":[{\"assertion_id\":\"bfdd9b809baf3a20\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Bailey v. United States, U.S. Supreme Court, decided 2013-02-19, year 2013.\",\"The official citation in the lake record is 568 U.S. 186, matching the page display citation; the parallel and vendor-neutral cites also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5b220a2b87f401c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-201's stored quote is not a verbatim opinion quote; it is generated content-page text beginning with the page header/background/rule material. The actual cited passage appears in the cached opinion text at page *201.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-201's quote with the actual sentence from the opinion text and set the page/star marker to 201 if the corpus supports that marker.\",\"evidence_quote\":\"A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a séarch warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Bailey v. United States__a622b0.txt, page-number label=\\\"201\\\"; lake pinpoints[].id=\\\"pin-201\\\" is marked quote_fidelity=\\\"mismatch\\\" and star_marker=null.\"},\"reasons\":[\"The payload quote is the same erroneous generated-page excerpt stored in lake.pinpoints for pin-201, not a passage from the Bailey opinion.\",\"The cached opinion text contains the cited sentence at page *201, so the defect is verifiable without outside evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached text appears OCR-derived and spells 'search' as 'séarch' in the page-*201 sentence; corpus normalization policy may determine the final character form.\"],\"suggested_tightening\":\"Use the actual sentence quoted in the Rule section and avoid harvesting page chrome/frontmatter into pinpoints.\"},{\"assertion_id\":\"9b466077cae517dc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment appears verbatim in the cached opinion text at page *199: it follows the words 'This interest'.\",\"The lake pinpoints record for pin-199 marks the quote as matched, star_marker 199, with a validated text fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"e08ab0d4d9081f93\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2013-02-19, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens-A review of treatment correctness or currency was performed; lens B owns that issue.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A.\"}",
   "summary": {
-    "at": "2026-07-11T01:11:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:13:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3a4b14f6ed"
+    ],
     "group_id": "_overhaul2/lake/cases/Bailey v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-a774411d",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a774411d.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Bailey v. United States"
+    ],
+    "tokens": {
+      "input": 187171,
+      "output": 4682,
+      "source": "codex-events",
+      "total": 191853
+    },
+    "verdict_map": {
+      "5b220a2b87f401c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9b466077cae517dc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bfdd9b809baf3a20": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e08ab0d4d9081f93": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a4b14f6ed",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 98.2
   }
 }

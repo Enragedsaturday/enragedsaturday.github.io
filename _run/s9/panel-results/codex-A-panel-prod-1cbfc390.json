@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present in this group.",
+    "reviewed": [
+      {
+        "assertion_id": "a2d46858925f4726",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Minnesota v. Carter, U.S. Supreme Court, decided 1998-12-01.",
+          "The page citation 525 U.S. 83 (1998), parallel cites 119 S. Ct. 469 and 142 L. Ed. 2d 373, and vendor cite 1998 U.S. LEXIS 7844 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf874d0d898b4fe7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not.",
+          "locator_note": "text/Minnesota v. Carter__36e5a0.txt contains the sentence in the paragraph spanning star page *90; the lake pinpoints[].quote does not match that opinion passage.",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-90 is not an opinion quote; it is a harvested content-page/frontmatter excerpt ending at '## Rule No.' The disclosed opinion text at page 90 contains the actual quoted sentence, so the quote_fidelity assertion as framed fails.",
+          "proposed_fix": "Replace pin-90's quote with the actual page-90 sentence and set the pinpoint to page/star marker 90; do not use the content-page excerpt as the lake pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The visible page quote is found verbatim in the cached opinion text at the page-90 passage.",
+          "The lake pinpoint payload itself flags quote_fidelity as mismatch and stores a content-page excerpt rather than the opinion text."
+        ],
+        "residual_risks": [
+          "The displayed content_page quote appears faithful, but the reviewed lake pinpoint record is corrupt."
+        ],
+        "suggested_tightening": "Store only the opinion sentence for pin-90 and preserve the page-90 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c223527b041f200",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The content page treatment fields match the disclosed lake judgment fields: field_i_validity good_law, as_of_content 1998-12-01, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment correctness was not independently attacked under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Minnesota v. Carter.json\",\"reviewed\":[{\"assertion_id\":\"a2d46858925f4726\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Minnesota v. Carter, U.S. Supreme Court, decided 1998-12-01.\",\"The page citation 525 U.S. 83 (1998), parallel cites 119 S. Ct. 469 and 142 L. Ed. 2d 373, and vendor cite 1998 U.S. LEXIS 7844 match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"cf874d0d898b4fe7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-90 is not an opinion quote; it is a harvested content-page/frontmatter excerpt ending at '## Rule No.' The disclosed opinion text at page 90 contains the actual quoted sentence, so the quote_fidelity assertion as framed fails.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-90's quote with the actual page-90 sentence and set the pinpoint to page/star marker 90; do not use the content-page excerpt as the lake pinpoint quote.\",\"evidence_quote\":\"Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not.\",\"needs_cl\":false,\"locator_note\":\"text/Minnesota v. Carter__36e5a0.txt contains the sentence in the paragraph spanning star page *90; the lake pinpoints[].quote does not match that opinion passage.\"},\"reasons\":[\"The visible page quote is found verbatim in the cached opinion text at the page-90 passage.\",\"The lake pinpoint payload itself flags quote_fidelity as mismatch and stores a content-page excerpt rather than the opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content_page quote appears faithful, but the reviewed lake pinpoint record is corrupt.\"],\"suggested_tightening\":\"Store only the opinion sentence for pin-90 and preserve the page-90 locator.\"},{\"assertion_id\":\"6c223527b041f200\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The content page treatment fields match the disclosed lake judgment fields: field_i_validity good_law, as_of_content 1998-12-01, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment correctness was not independently attacked under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present in this group.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:13:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f6de7c91ca"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1cbfc390",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1cbfc390.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:28.529005Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:29.225118Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.096204Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.444503Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.617938Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:37.110326Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnesota v. Carter"
+    ],
+    "tokens": {
+      "input": 230993,
+      "output": 4521,
+      "source": "codex-events",
+      "total": 235514
+    },
+    "verdict_map": {
+      "6c223527b041f200": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2d46858925f4726": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf874d0d898b4fe7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6de7c91ca",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 97.0
   }
 }

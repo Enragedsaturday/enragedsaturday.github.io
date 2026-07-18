@@ -1,13 +1,115 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Taylor v. Alabama.json",
+    "lens": "A",
+    "notes": "Treatment row recorded only; no Lens A treatment/currency finding raised.",
+    "reviewed": [
+      {
+        "assertion_id": "477f6265442a5640",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Taylor v. Alabama, U.S. Supreme Court, decided 1982-06-23, docket 81-5152.",
+          "The official citation in the lake record is 457 U.S. 687, matching the content page display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14b6a9673e4764ef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This case is a virtual replica of both <i><span class=\"citation\" data-id=\"9426178\"><a href=\"/opinion/109304/brown-v-illinois/\" aria-description=\"Citation for case: Brown v. Illinois\">Brown</a></span></i> and <i><span class=\"citation\" data-id=\"9427599\"><a href=\"/opinion/110096/dunaway-v-new-york/\" aria-description=\"Citation for case: Dunaway v. New York\">Dunaway</a></span>.</i> <span class=\"star-pagination\">*691</span> Petitioner was arrested without probable cause in the hope that something would turn up, and he confessed shortly thereafter without any meaningful intervening event.",
+          "locator_note": "text/Taylor v. Alabama__339b3b.txt, line 25",
+          "needs_cl": false,
+          "problem": "The quoted 'virtual replica' phrase is not properly anchored to the asserted 691 pin. In the opinion text, that sentence appears before the *691 star marker; only the next sentence begins at *691. The lake also marks this pinpoint as quote_fidelity mismatch and slip-only.",
+          "proposed_fix": "For the standalone 'virtual replica' quote, cite 457 U.S. at 690 and preferably quote the full sentence. If retaining the paired two-sentence application quote, cite 457 U.S. at 690-91.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion places the 'virtual replica' sentence before the *691 marker.",
+          "The lake pinpoint for pin-691 has no star marker and is marked mismatch/slip-only."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported; the defect is quote/pincite precision."
+        ],
+        "suggested_tightening": "Use a 690 or 690-91 pin depending on whether the quote includes only the 'virtual replica' sentence or both application sentences.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "312f3add21891e55",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase 'merely a threshold requirement for Fourth Amendment analysis' appears verbatim in the opinion at the *690 section.",
+          "The lake record marks pin-690b as matched and star-verified at star_marker 690."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a6384d7913747ba9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "reasoning that a confession obtained through custodial interrogation after an illegal arrest should be excluded unless intervening events break the causal connection between the illegal arrest and the confession so that the confession is \" `sufficiently an act of free will to purge the primary taint.' \"",
+          "locator_note": "text/Taylor v. Alabama__339b3b.txt, line 23",
+          "needs_cl": false,
+          "problem": "The pin-690 quote in the lake/inventory is not an opinion quote. It splices content-page prose and headings, including '## Issue' and '## Rule', rather than the Taylor opinion passage.",
+          "proposed_fix": "Replace pin-690 with the actual *690 opinion passage supporting the rule quote, and mark it star-verified at 690.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote contains non-opinion Markdown headings from the built page.",
+          "The disclosed opinion text at *690 supports the rule, but not the malformed quote stored for this pinpoint."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the content page's actual bracketed rule quote as the pin text, not the harvested section-boundary text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5e81a46ed9f50dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The treatment payload matches the disclosed lake treatment fields and content-page frontmatter."
+        ],
+        "residual_risks": [
+          "No Lens A finding is made on whether the treatment judgment is current or legally correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Taylor v. Alabama.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"477f6265442a5640\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Taylor v. Alabama, U.S. Supreme Court, decided 1982-06-23, docket 81-5152.\",\n        \"The official citation in the lake record is 457 U.S. 687, matching the content page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"14b6a9673e4764ef\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted 'virtual replica' phrase is not properly anchored to the asserted 691 pin. In the opinion text, that sentence appears before the *691 star marker; only the next sentence begins at *691. The lake also marks this pinpoint as quote_fidelity mismatch and slip-only.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"For the standalone 'virtual replica' quote, cite 457 U.S. at 690 and preferably quote the full sentence. If retaining the paired two-sentence application quote, cite 457 U.S. at 690-91.\",\n        \"evidence_quote\": \"This case is a virtual replica of both <i><span class=\\\"citation\\\" data-id=\\\"9426178\\\"><a href=\\\"/opinion/109304/brown-v-illinois/\\\" aria-description=\\\"Citation for case: Brown v. Illinois\\\">Brown</a></span></i> and <i><span class=\\\"citation\\\" data-id=\\\"9427599\\\"><a href=\\\"/opinion/110096/dunaway-v-new-york/\\\" aria-description=\\\"Citation for case: Dunaway v. New York\\\">Dunaway</a></span>.</i> <span class=\\\"star-pagination\\\">*691</span> Petitioner was arrested without probable cause in the hope that something would turn up, and he confessed shortly thereafter without any meaningful intervening event.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Taylor v. Alabama__339b3b.txt, line 25\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion places the 'virtual replica' sentence before the *691 marker.\",\n        \"The lake pinpoint for pin-691 has no star marker and is marked mismatch/slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The substantive proposition is supported; the defect is quote/pincite precision.\"\n      ],\n      \"suggested_tightening\": \"Use a 690 or 690-91 pin depending on whether the quote includes only the 'virtual replica' sentence or both application sentences.\"\n    },\n    {\n      \"assertion_id\": \"312f3add21891e55\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The phrase 'merely a threshold requirement for Fourth Amendment analysis' appears verbatim in the opinion at the *690 section.\",\n        \"The lake record marks pin-690b as matched and star-verified at star_marker 690.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a6384d7913747ba9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-690 quote in the lake/inventory is not an opinion quote. It splices content-page prose and headings, including '## Issue' and '## Rule', rather than the Taylor opinion passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-690 with the actual *690 opinion passage supporting the rule quote, and mark it star-verified at 690.\",\n        \"evidence_quote\": \"reasoning that a confession obtained through custodial interrogation after an illegal arrest should be excluded unless intervening events break the causal connection between the illegal arrest and the confession so that the confession is \\\" `sufficiently an act of free will to purge the primary taint.' \\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Taylor v. Alabama__339b3b.txt, line 23\"\n      },\n      \"reasons\": [\n        \"The asserted quote contains non-opinion Markdown headings from the built page.\",\n        \"The disclosed opinion text at *690 supports the rule, but not the malformed quote stored for this pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the content page's actual bracketed rule quote as the pin text, not the harvested section-boundary text.\"\n    },\n    {\n      \"assertion_id\": \"c5e81a46ed9f50dc\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The treatment payload matches the disclosed lake treatment fields and content-page frontmatter.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A finding is made on whether the treatment judgment is current or legally correct.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment row recorded only; no Lens A treatment/currency finding raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:29:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:42:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-27c806a45e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8f08f92b02",
+      "F-S9-PR-6902a362d9"
+    ],
     "group_id": "_overhaul2/lake/cases/Taylor v. Alabama.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +118,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e16228b0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Taylor v. Alabama"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 123539,
+      "output": 9336,
+      "source": "codex-events",
+      "total": 132875
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "14b6a9673e4764ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "312f3add21891e55": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "477f6265442a5640": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a6384d7913747ba9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c5e81a46ed9f50dc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f08f92b02",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6902a362d9",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-27c806a45e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 178.5
   }
 }

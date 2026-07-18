@@ -1,0 +1,198 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c33347c8a1ee10c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "payload cites (official 399 U.S. 30; 90 S. Ct. 1969; 26 L. Ed. 2d 409; 1970 U.S. LEXIS 18) match the disclosed lake record; cached opinion caption confirms '399 U.S. 30 (1970)', 'No. 727', decided June 22, 1970."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10b1c7a10a308c18",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'a few specifically established and well-delineated' matches cached opinion verbatim ('only in \"a few specifically established and well-delineated\" situations, Katz v. United States, 389 U. S. 347, 357').",
+          "The phrase sits after the *34 label and before the *35 label, confirming star_marker 34 and the 'Id. at 34' pincite; pinpoint_status star-verified/matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ccbdd4de51452ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-34 reader-facing quote is a faithful quotation-with-elisions of cached opinion: 'If a search of a house is to be upheld [*34] as incident to an arrest, that arrest must take place inside the house [...] not somewhere outside—whether two blocks away [...] twenty feet away [...] or on the sidewalk near the front steps.' Ellipses replace only the elided internal citations (Agnello 269 U.S. 20,32; James 382 U.S. 36; Shipley supra).",
+          "The content page's em-dash ('outside — whether') matches the true opinion; the cached text merely lost the dash char ('outsidewhether'), so the content is faithful, not divergent.",
+          "Spans *33→*34, supporting the 'Id. at 34' pincite. The 'mismatch' flag is a literal-string artifact of the elisions/dash, not an infidelity."
+        ],
+        "residual_risks": [
+          "Elision-bearing quote will keep tripping literal-string fidelity checks (slip-only)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2fccdf62bc0b3f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-35 quote 'decline[d] to hold that an arrest on the street can provide its own \"exigent circumstance\" so as to justify a warrantless search of the arrestee's house' is faithful to cached opinion 'We decline to hold that an arrest on the street can provide its own \"exigent circumstance\" so as to justify a warrantless search of the arrestee's house.' — only a standard bracketed alteration (We decline -> decline[d]).",
+          "The sentence follows the *35 label and precedes the *36 label, confirming the 'Id. at 35' pincite."
+        ],
+        "residual_risks": [
+          "'mismatch' flag reflects the bracket alteration and smart-vs-straight quotes, not an infidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd10d273b8fa2551",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-33 quote is a page-markdown capture ('--- # Vale v. Louisiana ... ## Rule No. A search') — an extraction artifact (slip-only), not a reader-facing quotation.",
+          "The reader-facing Rule quote verifies against cached opinion (p at *33): 'A search may be incident to an arrest \" `only if it is substantially contemporaneous with the arrest and is confined to the immediate vicinity of the arrest.' \"' with 'immediate' italicized, attributed to Shipley — verbatim.",
+          "The sentence sits after the *33 label and before *34, supporting the '399 U.S. at 33' pincite."
+        ],
+        "residual_risks": [
+          "Stored pin.quote does not match the opinion; only the rendered content-page quotation does."
+        ],
+        "suggested_tightening": "Re-anchor pin-33.quote to the actual Shipley-quoting sentence so the stored span is star-verifiable.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "895d3dfd9d93fbe5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law rests on composite_basis 'migration-seed'; currency is not derivable from the 1970 opinion text.",
+          "No disclosed adjudicated negative treatment: the field_ii questioned/overruled edges (Sivertson; Pair; Vela; Baird) are all proposed:true / journal_ref lane1_negative — unadjudicated candidate signals from lower state courts that cannot overrule a controlling SCOTUS SIA holding; scope_note affirms Vale is still the controlling spatial-limit rule.",
+          "No disclosed basis to affirmatively refute good_law."
+        ],
+        "residual_risks": [
+          "good_law is a seed, not citator-derived; several proposed lane1_negative edges (questioned/overruled) await adjudication.",
+          "Content page states 'No negative treatment' while the record carries proposed negative edges — reconcilable (proposed != confirmed) but worth a citator pass."
+        ],
+        "suggested_tightening": "S2 re-derivation / CL citator should confirm good_law and dispose of the proposed lane1_negative edges before the migration-seed is ratified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-496615d6c3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3613557e3f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-847a49e235",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Vale v. Louisiana.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-01-dfe1c9e1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Vale v. Louisiana"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "10b1c7a10a308c18": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "895d3dfd9d93fbe5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9ccbdd4de51452ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c33347c8a1ee10c5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2fccdf62bc0b3f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd10d273b8fa2551": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-496615d6c3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3613557e3f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-847a49e235",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

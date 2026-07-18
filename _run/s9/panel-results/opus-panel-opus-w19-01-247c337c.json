@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "d99033e779462d87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header is 'UNITED STATES v. RAMSEY ET AL.', 431 U.S. 606 (1977), No. 76-167, Rehnquist, argued Mar. 30 / decided June 6, 1977, with star pagination *607 through *632.",
+          "Official cite '431 U.S. 606 (1977)' matches the record; parallel S. Ct./L. Ed. 2d/LEXIS cites are internally consistent."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c37c74cf1b06e11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase 'reasonable cause to suspect' appears verbatim in the opinion; the fragment 'with %22-,reasonable cause to suspect' targets the page-607 occurrence 'Customs officials, acting with \"reasonable cause to suspect\" a violation of customs laws', consistent with star_marker='607'.",
+          "quote_fidelity='matched' is therefore correct for the stored phrase."
+        ],
+        "residual_risks": [
+          "The deep-link fragment lands on the p.607 occurrence, while the content page cites this pin ('pin-612') at 431 U.S. 612-613 for the fuller sentence 'The \"reasonable cause to suspect\" test adopted by the statute is ... a less stringent requirement than that of \"probable cause\"' (verbatim at *612-*613 in the cached text). The quote-fidelity claim itself holds; the anchor-to-pincite pairing is loose."
+        ],
+        "suggested_tightening": "Aim the pin-612 text fragment at the 612-613 sentence it cites rather than the first (p.607) occurrence of the phrase.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f731d533aa67d9fe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That searches made at the border, pursuant to the longstanding right of the sovereign to protect itself by stopping and examining persons and property crossing into this country, are reasonable simply by virtue of the fact that they occur at the border, should, by now, require no extended demonstration.",
+          "locator_note": "pinpoints[] pin-616 .quote",
+          "needs_cl": false,
+          "problem": "Stored pin-616 quote is content-page scaffolding, not opinion text: '--- # United States v. Ramsey ... ## Background ... ## Issue ... ## Rule Border searches are reasonable simply because they occur at the border.'. It contains markdown ('---', '#', '## Background/Issue/Rule') that cannot appear in a slip. The record's quote_fidelity='mismatch' flag is correct.",
+          "proposed_fix": "Replace the stored pin-616 quote with the opinion passage the page renders at 616: the 'That searches made at the border ... require no extended demonstration' sentence, which is verbatim in the cached opinion after the *616 marker.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is markdown page chrome ('---', '#', '## Background/Issue/Rule'), impossible in an opinion, so it fails quote fidelity outright.",
+          "The cached opinion contains the 'That searches made at the border ... require no extended demonstration' passage on page 616 (after the *616 marker), which the content page renders correctly — the 616 pincite and reader-facing quote are sound; only the stored quote string is defective."
+        ],
+        "residual_risks": [
+          "The defect is confined to the record's stored quote field; the page-rendered quote and 616 pincite are faithful."
+        ],
+        "suggested_tightening": "Re-point the pinpoint.quote extractor to capture the anchored Rule blockquote instead of the page header/Background/Issue scaffolding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56e54acd32231d67",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "treatment.scope_note / treatment.as_of_treatment for 'United States v. Ramsey'",
+          "needs_cl": true,
+          "problem": "The treatment scope_note is a leaked migration/pipeline placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') rather than a substantive scope description; it also concedes that as_of_treatment (2026-06-30) is seeded from as_of_content and 'may downgrade' on re-derivation. The good_law status itself is correct and unrefuted.",
+          "proposed_fix": "Populate scope_note with the substantive treatment description already carried on the content page ('Ramsey anchors the border-search exception ... no negative treatment') and re-derive as_of_treatment through the S2 citator rather than seeding it from as_of_content.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is correct on the merits: Ramsey is the border-search anchor, and all treatment.edges are 'proposed:true' unadjudicated citator FPs (Caballero/Ezeiruaku 'overruled', Cotterman 'abrogated', Irving 'superseded_by_statute' — district/circuit courts cannot overrule this SCOTUS holding).",
+          "But the record's scope_note is a pipeline TODO placeholder that itself flags the currency as seeded and possibly subject to downgrade, so the treatment record is under-derived even though the label survives."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 is seeded from as_of_content, not independently derived; the proposed negative edges are unadjudicated candidates."
+        ],
+        "suggested_tightening": "Replace the seed placeholder with a real scope note and confirm currency via citator re-derivation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3a6a4be6af",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-01-247c337c",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ramsey"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2c37c74cf1b06e11": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "56e54acd32231d67": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d99033e779462d87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f731d533aa67d9fe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a6a4be6af",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a8fac3d274",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b10ce7f97a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

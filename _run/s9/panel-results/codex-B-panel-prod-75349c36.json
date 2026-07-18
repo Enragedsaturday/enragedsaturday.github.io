@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Utah v. Strieff.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pinpoint accuracy were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "c82cf54728c4c8ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and non-stub for Utah v. Strieff, with SCOTUS identity, cluster_id 8176208, lead_opinion_id 8137990, and date_decided 2016-06-20.",
+          "The disclosed treatment judgment for the same record is field_i_validity=good_law as of 2026-06-30, so the record does not show the authority is dead law."
+        ],
+        "residual_risks": [
+          "Official citation selection is null in the lake record, but that is citation-display metadata rather than a currency defect."
+        ],
+        "suggested_tightening": "Do not imply official-cite selection beyond the lake record; use the verified citation set as stored.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "393c69040634bfb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews only currency and treatment. This quote-pinpoint row does not assert a separate good-law or live-law treatment proposition beyond citing the same Strieff record.",
+          "The underlying Strieff treatment judgment remains good_law in the lake record, so no currency defect is raised under this lens."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb6d89c30755ae2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews only currency and treatment. This quote-pinpoint row does not assert a separate good-law or live-law treatment proposition beyond citing the same Strieff record.",
+          "The underlying Strieff treatment judgment remains good_law in the lake record, so no currency defect is raised under this lens."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "af21fa831df93cc7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/Utah v. Strieff__b45cad.json treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law label itself matches the lake judgment, but the page's uncaveated 'No negative treatment' language is stronger than the disclosed treatment derivation because lane2_top_cited is capped and audit-needed with proposed negative events.",
+          "proposed_fix": "Keep Treatment: good / field_i_validity=good_law as of 2026-06-30, but change visible treatment note to 'No confirmed negative treatment in the disclosed lake record; top-cited lane marked R15 audit required' unless the pending audit is completed.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake's final treatment fields support good_law: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false, and no point_overrides.",
+          "The lake identity fields show court_id=scotus and court_level=scotus, supporting the Binding - SCOTUS weight label.",
+          "Lane1 negative treatment review reports proposed_negative_events=0, but lane2_top_cited reports cap_hit=true, audit_needed=true, and proposed_negative_events=25, so an absolute 'No negative treatment' statement should be caveated under Lens B."
+        ],
+        "residual_risks": [
+          "The lake edges are marked proposed=true and field_iii=mentioned, so they do not themselves prove Strieff was overruled, abrogated, or superseded.",
+          "Resolving whether any proposed lane2 item affects Strieff requires the pending R15/CL audit."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative treatment in the disclosed record' rather than 'No negative treatment' until the lane2 audit marker is resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Utah v. Strieff.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c82cf54728c4c8ce\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and non-stub for Utah v. Strieff, with SCOTUS identity, cluster_id 8176208, lead_opinion_id 8137990, and date_decided 2016-06-20.\",\n        \"The disclosed treatment judgment for the same record is field_i_validity=good_law as of 2026-06-30, so the record does not show the authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Official citation selection is null in the lake record, but that is citation-display metadata rather than a currency defect.\"\n      ],\n      \"suggested_tightening\": \"Do not imply official-cite selection beyond the lake record; use the verified citation set as stored.\"\n    },\n    {\n      \"assertion_id\": \"393c69040634bfb7\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews only currency and treatment. This quote-pinpoint row does not assert a separate good-law or live-law treatment proposition beyond citing the same Strieff record.\",\n        \"The underlying Strieff treatment judgment remains good_law in the lake record, so no currency defect is raised under this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and pinpoint accuracy were not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fdb6d89c30755ae2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews only currency and treatment. This quote-pinpoint row does not assert a separate good-law or live-law treatment proposition beyond citing the same Strieff record.\",\n        \"The underlying Strieff treatment judgment remains good_law in the lake record, so no currency defect is raised under this lens.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and pinpoint accuracy were not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"af21fa831df93cc7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law label itself matches the lake judgment, but the page's uncaveated 'No negative treatment' language is stronger than the disclosed treatment derivation because lane2_top_cited is capped and audit-needed with proposed negative events.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep Treatment: good / field_i_validity=good_law as of 2026-06-30, but change visible treatment note to 'No confirmed negative treatment in the disclosed lake record; top-cited lane marked R15 audit required' unless the pending audit is completed.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/Utah v. Strieff__b45cad.json treatment.derivation.lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake's final treatment fields support good_law: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false, and no point_overrides.\",\n        \"The lake identity fields show court_id=scotus and court_level=scotus, supporting the Binding - SCOTUS weight label.\",\n        \"Lane1 negative treatment review reports proposed_negative_events=0, but lane2_top_cited reports cap_hit=true, audit_needed=true, and proposed_negative_events=25, so an absolute 'No negative treatment' statement should be caveated under Lens B.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake edges are marked proposed=true and field_iii=mentioned, so they do not themselves prove Strieff was overruled, abrogated, or superseded.\",\n        \"Resolving whether any proposed lane2 item affects Strieff requires the pending R15/CL audit.\"\n      ],\n      \"suggested_tightening\": \"Use 'No confirmed negative treatment in the disclosed record' rather than 'No negative treatment' until the lane2 audit marker is resolved.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support, quote fidelity, and pinpoint accuracy were not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:51-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:11:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f8f59e6541",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-fff0077e6b"
+    ],
     "group_id": "_overhaul2/lake/cases/Utah v. Strieff.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-75349c36.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Utah v. Strieff"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 214810,
+      "output": 7201,
+      "source": "codex-events",
+      "total": 222011
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.6
+    "verdict_map": {
+      "393c69040634bfb7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "af21fa831df93cc7": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c82cf54728c4c8ce": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb6d89c30755ae2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f8f59e6541",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fff0077e6b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 153.3
   }
 }

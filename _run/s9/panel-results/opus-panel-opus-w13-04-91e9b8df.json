@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "84bab3d156b9e980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached CL opinion header verbatim confirms identity for 427 U.S. 97 (1976): '427 U.S. 97 (1976)', 'UNITED STATES v. AGURS.', 'No. 75-491.', 'Supreme Court of United States.', 'Argued April 28, 1976. Decided June 24, 1976.', 'MR. JUSTICE STEVENS delivered the opinion of the Court.'",
+          "Display/official cite '427 U.S. 97' matches the reporter cite printed at the head of the disclosed opinion; no basis to refute."
+        ],
+        "residual_risks": [
+          "Parallel cites (96 S. Ct. 2392; 49 L. Ed. 2d 342; 1976 U.S. LEXIS 72) not independently printed in disclosed text; only official U.S. cite is corroborated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98e168317d8f568f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote 'if the omitted evidence creates a reasonable doubt that did not otherwise exist, constitutional error has been committed. This means that the omission must be evaluated in the context of the entire record.' is a verbatim match to the disclosed opinion ('It necessarily follows that if the omitted evidence creates a reasonable doubt that did not otherwise exist, constitutional error has been committed. This means that the omission must be evaluated in the context of the entire record.').",
+          "star_marker '112' / pinpoint_status 'star-verified' is corroborated: the *112 break precedes the sentence and *113 follows it, and the Marshall dissent independently cites this exact sentence as 'Ante, at 112.' quote_fidelity 'matched' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fabaedc07c8f6314",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "But to reiterate a critical point, the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.",
+          "locator_note": "pin-108; opinion paragraph beginning 'Nevertheless, there is a significant practical difference...' immediately after the *108 star break.",
+          "needs_cl": false,
+          "problem": "The assertion payload is a corrupted extraction: its 'quote' field contains the content page's own rendered markdown (frontmatter + Background + Issue + Rule prose, truncated at 'The Court rejected any rule that the prosecutor must disclose anything that'), not an opinion quotation; star_marker is null, pinpoint_status is 'slip-only', and quote_fidelity self-reports 'mismatch'. As framed, the payload holds no verifiable quotation to check against the opinion.",
+          "proposed_fix": "Re-extract the pin-108 quotation from the slip/opinion text; do NOT alter the page. The page's actual pin-108 quote ('the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.' — 427 U.S. at 108) is verbatim-correct in the disclosed opinion and sits after the *108 break and before *109, so page 108 is accurate.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Honest stub handling: the delivered payload is a broken extraction (markdown, not a quote), so the assertion is not verifiable as-framed — verifiable_from_disclosed=false.",
+          "Not a page defect: I independently confirmed the page's real pin-108 quotation is a verbatim match to the disclosed opinion at page 108, so no page correction is warranted — refuting would fabricate a defect, attesting clean would ignore the malformed payload; hence stands-modified with re-extraction only."
+        ],
+        "residual_risks": [
+          "If a downstream consumer treats the self-reported 'mismatch' as a page-level quote error, it would break a true positive (the page quote is correct). The fix is confined to the assertion/extraction payload."
+        ],
+        "suggested_tightening": "Extractor should reject a 'quote' payload that string-matches the record's own content-page markdown and emit an explicit re-derivation flag rather than pinpoint_status 'slip-only' + mismatch.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3aab2c1c48a76740",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The Agurs-internal components of the scope_note are verbatim-verified against the disclosed opinion: the three-situation framework (Mooney/perjury; Brady/specific request; no-request or general request) is laid out expressly, and the no-request 'reasonable doubt that did not otherwise exist' materiality formula is the opinion's stated standard (page 112). field_i_validity 'caution', varies_by_point true, as_of dates are internally consistent with the lake record and point_override.",
+          "The forward-looking currency claim — that United States v. Bagley (1985) superseded that formula with a single 'reasonable probability' standard and collapsed the three-situation framework — is NOT verifiable from the disclosed evidence (Agurs (1976) predates Bagley and no Bagley text is inlined). No disclosed basis to refute it and it is not facially wrong, so I do not fabricate a defect; but I cannot certify it from the pack, hence verifiable_from_disclosed=false."
+        ],
+        "residual_risks": [
+          "The Bagley supersession / 'reasonable probability' unification rests on undisclosed authority (473 U.S. 667, cluster 111514). Confirming the currency of the 'caution/limited' treatment requires reading Bagley — needs_cl to close."
+        ],
+        "suggested_tightening": "Panel should route the Bagley-dependent portion to a lens with the Bagley opinion inlined; the Agurs-grounded portion is already verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:12:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w13-04-91e9b8df",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w13-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Agurs"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3aab2c1c48a76740": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "84bab3d156b9e980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98e168317d8f568f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fabaedc07c8f6314": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff655ddce8",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "11a42d5d0dc42423",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unmistakably United States v. Payner (supervisory-power suppression of evidence unlawfully seized from a third-party Bahamian banker; District Court at 434 F. Supp. 135; affirming Sixth Circuit reversed).",
+          "447 U.S. 727 is the canonical official SCOTUS cite; parallels 100 S. Ct. 2439 and 65 L. Ed. 2d 468 are the standard parallels; identity party_name_in_text/canonical_name_match true; official_selection selected_rank_1, court_class scotus."
+        ],
+        "residual_risks": [
+          "Internal record date inconsistency: identity/frontmatter date_decided 1980-08-11 vs treatment.as_of_content 1980-06-23 — outside the citation payload under review, flagged for hygiene only."
+        ],
+        "suggested_tightening": "Reconcile date_decided (identity/frontmatter) with as_of_content.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "322dd6c545e986ab",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'amounts to a substitution of individual judgment for the controlling decisions of this Court.' appears verbatim in cached opinion (para id b778-5): '...This reasoning, which the Court of Appeals affirmed, amounts to a substitution of individual judgment for the controlling decisions of this Court.'",
+          "star_marker 737 aligns with the *737 page marker in the surrounding text; page attributes it to Id. at 737 — correct; pinpoint_status star-verified, quote_fidelity matched confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3463263067857ba7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'The values assigned to the competing interests do not change because a court has elected to analyze the question under the supervisory power instead of the Fourth Amendment.' appears verbatim in cached opinion immediately after the *736 marker (para id b777-7).",
+          "star_marker 736 aligns with *736; page attributes it to Id. at 736 — correct; pinpoint_status star-verified, quote_fidelity matched confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e348268924c9396f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that the supervisory power does not authorize a federal court to suppress otherwise admissible evidence on the ground that it was seized unlawfully from a third party not before the court. Our Fourth Amendment decisions have established beyond any doubt that the interest in deterring illegal searches does not justify the exclusion of tainted evidence at the instance of a party who was not the victim of the challenged practices.",
+          "locator_note": "cached opinion para id b777-7; the passage precedes the *736 page marker, i.e. it sits on page 735, matching the page's 'Id. at 735' attribution.",
+          "needs_cl": false,
+          "problem": "pin-735 stored quote field is a corrupted extraction artifact — it holds page prose including markdown section headers '## Issue' and '## Rule', not an opinion passage — and pinpoint_status is 'slip-only' (star never resolved), so the record self-reports quote_fidelity 'mismatch'.",
+          "proposed_fix": "Repair the pin-735 quote field to the actual Rule-section quotation rendered on the page and upgrade its status to star-verified against page 735.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The corrupted/slip-only pin-735 record is a real but minor data defect; HOWEVER the quotation actually rendered on the page at ^pin-735 is verbatim-faithful to the cached opinion (id b777-7) and correctly pincited to 447 U.S. at 735 (the passage precedes the *736 marker).",
+          "The page's legal proposition is therefore accurate and correctly located; only the lake pinpoint record needs repair. No fabrication — the rendered quote plus its Rakas-at-137 / Alderman-at-174-175 parenthetical match the cached text."
+        ],
+        "residual_risks": [
+          "Star fragment for pin-735 was never resolved (slip-only); repairing the quote field lets it be star-verified from the disclosed cached text on page 735."
+        ],
+        "suggested_tightening": "Rebuild the pin-735 quote field from the rendered Rule text and add a page-735 fragment/marker.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46d546b43741f6de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is the correct default for a canonical 1980 SCOTUS third-party-standing precedent; the scope_note ('A federal court may not use its supervisory power to evade the Fourth Amendment standing rules') accurately states the holding, which matches the cached opinion.",
+          "Disclosed treatment derivation shows ONLY proposed, unaudited negative candidates (lane1 11, lane2 24, lane3 1; every edge 'proposed': true with 'R15 treatment audit required'); none is a confirmed negative treatment.",
+          "Those candidates are facial citator noise: state courts (State v. Rogers, State v. Delaine/Fitzpat, State v. McMillan) cannot overrule a SCOTUS decision, and good-law SCOTUS cases (United States v. Leon, Powers v. Ohio, Thomas v. Arn) are surfaced as 'overruled'/'questioned' — i.e., the citing case's own status, not Payner's treatment."
+        ],
+        "residual_risks": [
+          "Full currency (still-good-law as of 2026) cannot be conclusively verified from a static cached opinion; the 36 proposed negative edges still await the flagged R15 audit, though all disclosed ones are facial false-positives.",
+          "as_of_treatment 2026-06-30 is not independently checkable from the disclosed evidence."
+        ],
+        "suggested_tightening": "Complete the flagged R15 treatment audit to dismiss the proposed negative edges on record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:26:43-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-38edad209b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Payner.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w19-00-92524aea",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w19-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Payner"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "11a42d5d0dc42423": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "322dd6c545e986ab": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3463263067857ba7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46d546b43741f6de": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e348268924c9396f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e0f85d3c21",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-38edad209b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

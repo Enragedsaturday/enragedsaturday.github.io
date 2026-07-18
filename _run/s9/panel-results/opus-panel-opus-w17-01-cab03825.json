@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b51c4a0ee382658d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 565 U.S. 400 (type 1, selected_official) with parallels 132 S. Ct. 945 / 181 L. Ed. 2d 911 and vendor-neutral 2012 U.S. LEXIS 1063 match the content-page frontmatter and lake citations block.",
+          "Cached slip op confirms identity: Scalia majority, GPS-tracker trespass holding, star pagination *402-*413 consistent with a case beginning at 565 U.S. 400."
+        ],
+        "residual_risks": [
+          "CL cluster/opinion ids diverge between frontmatter (622304/9485324) and Sources line (7350871/7268856) — an identity-plumbing note, not a cite defect; the reporter cite is unaffected."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ad6f51b56299c74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches cached slip op para id=b622-5 (*409) word-for-word: 'the Katz reasonable-expectation-of-privacy test has been added to, not substituted for, the common-law trespassory test.'",
+          "payload quote_fidelity='mismatch' is a character-diff false positive against dirty OCR ('reasonable-expeetation' scan error + soft hyphens + comma-vs-italic placement); the content-page normalization is the correct rendering.",
+          "Pincite 409 is correct: the sentence sits after the *409 marker in b622-5."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize OCR artifacts before diffing so faithful quotes stop flagging 'mismatch'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "964e9779fc6c95dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches cached slip op para id=AKbo verbatim: 'The Government physically occupied private property for the purpose of obtaining information. We have no doubt that such a physical intrusion would have been considered a \"search\" within the meaning of the Fourth Amendment when it was adopted.'",
+          "Only differences are an inserted *405 page marker and curly-vs-straight quote glyphs; 'mismatch' flag is a page-marker/OCR diff artifact.",
+          "Pincite 404-05 is correct: sentence spans the *404->*405 boundary."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c7061ef6fb712bc7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "within the meaning of the Fourth Amendment. ## Rule Yes — under a trespass-based theory of the Fourth Amendment.",
+          "locator_note": "pin-404; lake pinpoints[].id=pin-404 and group_inventory payload.quote; content-page Rule ^pin-404; verbatim source: cached opinion para id=AR0 (*404).",
+          "needs_cl": false,
+          "problem": "Stored pin-404 quote is a content-page harvest artifact, not a verbatim opinion quote: it splices trailing opinion-ish words with Markdown scaffolding ('## Rule') and content-page Rule prose ('Yes — under a trespass-based theory of the Fourth Amendment'). The lake pinpoints[] carries the same corrupted string; pinpoint_status='slip-only'.",
+          "proposed_fix": "Replace stored quote with the verbatim holding the content page actually anchors at ^pin-404, present in the cached slip op at *404 (para id=AR0): 'We hold that the Government's installation of a GPS device on a target's vehicle, and its use of that device to monitor the vehicle's movements, constitutes a \"search.\"'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The '## Rule' token is Markdown from the content page, proving the quote field harvested page text, not opinion text.",
+          "Underlying proposition is fine and the rendered page shows the correct verbatim quote — the defect is confined to the stored quote field."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77bf031d68d8b4b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law with composite_basis='migration-seed', point_overrides=[], varies_by_point=false; no adopted negative treatment in the sighted record.",
+          "Cached slip op is the controlling modern trespass-search opinion itself; scope_note honestly flags the seed may be re-derived.",
+          "as_of_content 2012-01-23 = date_decided; as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "treatment.edges are all proposed:true (none adopted); several 'overruled' tags sit on citing cases (e.g., Carpenter, Collins, Torres) that reinforced/distinguished rather than overruled the anchor — citator false-positives S2 re-derivation should filter, not adopt."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:59:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b357a31d39",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f679c21710",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e35c599c86",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Jones.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w17-01-cab03825",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w17-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Jones"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "77bf031d68d8b4b1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8ad6f51b56299c74": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "964e9779fc6c95dc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b51c4a0ee382658d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c7061ef6fb712bc7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b357a31d39",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f679c21710",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-833105c118",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e35c599c86",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

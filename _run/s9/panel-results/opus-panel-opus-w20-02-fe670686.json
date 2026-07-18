@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2c0d6be7ebf4038e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion confirms identity: Mr. Justice Douglas delivered the opinion; first-class mail package detention on suspicion while a warrant was sought; Court of Appeals judgment 'Reversed'.",
+          "Star-pagination *250-*253 is consistent with the official cite 397 U.S. 249."
+        ],
+        "residual_risks": [
+          "Parallel/neutral cites (90 S. Ct. 1029; 25 L. Ed. 2d 282; 1970 U.S. LEXIS 57) are not independently in the opinion text but are standard and uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1abaccb0633aa740",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The nature and weight of the packages, the fictitious return address, and the British Columbia license plates of respondent who made the mailings in this border town certainly justified detention, without a warrant, while an investigation was made.",
+          "locator_note": "pin-252; content-page Rule section; opinion para id b354-6, page 252.",
+          "needs_cl": false,
+          "problem": "The stored pin-252 quote is a content-page harvest artifact -- the entire front-matter/Background/Issue/Rule preamble ending at 'the suspicious circumstances' -- not a passage from the opinion; it appears nowhere in the cached opinion text.",
+          "proposed_fix": "Replace the pin-252 quote with the proposition the content page actually cites at ^pin-252, 'certainly justified detention, without a warrant, while an investigation was made', which is verbatim in the opinion (para b354-6) and sits on 397 U.S. at 252 (between the *252 and *253 star markers); it can then be promoted from slip-only to star-verified.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The record's own 'mismatch/slip-only' flag is correct: the stored blob does not occur in the opinion, so the pin is not asserting a false verified quote.",
+          "The proposition the content page renders at ^pin-252 is verbatim in the opinion at 252, so the defect is a repairable corrupt quote field rather than a fabricated or wrong legal quote -- hence survives-with-modification."
+        ],
+        "residual_risks": [
+          "If downstream tooling consumes pin.quote directly, the harvest blob is garbage data until repaired."
+        ],
+        "suggested_tightening": "Repair the quote field to the verbatim proposition and promote from slip-only to star-verified at 252.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85aa8d25041c1983",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote reproduces the opinion verbatim (para b355-4): 'No interest protected by the Fourth Amendment was invaded by forwarding the packages the following day rather than the day when they were deposited. The significant Fourth Amendment interest was in the privacy of this first-class mail; and that privacy was not disturbed or invaded until the approval of the magistrate was obtained.'",
+          "Passage sits on page 253 (after the *253 star marker), matching star_marker '253'; the 'matched/star-verified' classification is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "928c00a68ddd064f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragments are verbatim in the opinion (para b355-5): 'is not that first-class mail can be detained 29 hours' and 'to obtain the search warrant', with the ellipsis honestly eliding 'after mailing in order' -- a faithful ellipsized quotation, not an infidelity.",
+          "The passage is on page 253; the 'mismatch/slip-only' flag reflects a string-match break caused by the ellipsis, not a fabricated or altered quote, so nothing is refutable on fidelity."
+        ],
+        "residual_risks": [
+          "The conservative slip-only flag under-states the actual fidelity, but that is harmless to reader-facing accuracy."
+        ],
+        "suggested_tightening": "The pin is verifiable at 253 with the ellipsis marked; it could be promoted from slip-only to star-verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7915ce3b63e2fe0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 23, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "treatment.derivation.lane2_top_cited and treatment.edges[] (proposed:true); content page 'Treatment & subsequent history'.",
+          "needs_cl": true,
+          "problem": "Treatment asserts good_law with as_of_treatment 2026-06-30, but the record's own derivation carries 'audit_needed: true' and 'audit_marker: R15 treatment audit required' with 23 unaudited lane2 proposed negative edges (plus 9 in lane1), several labeled field_ii 'overruled' on cases that in fact cite but do not overrule Van Leeuwen (California v. Acevedo, United States v. Ross, California v. Greenwood, United States v. Jacobsen, Robbins v. California) -- facially snippet-first false positives; the good_law status rests on composite_basis 'migration-seed', not a completed fresh audit.",
+          "proposed_fix": "Complete the R15 reconciliation of the proposed edges (they read as snippet-first FPs from container/inventory-doctrine cases that cite the mail-detention rule without overruling it) before presenting 2026-06-30 good-law as machine-verified, and align the content page's flat 'No negative treatment' with the record's pending-audit state.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The doctrinal scope_note (brief detention of mailed packages on reasonable suspicion while a warrant is diligently sought; mere detention invades no privacy interest until opened under a warrant; precursor to United States v. Place) is accurate and supported by the disclosed opinion.",
+          "The good-law currency (as_of_treatment 2026-06-30) is not independently verifiable from the disclosed opinion alone, and the record itself flags an unresolved R15 treatment audit with unaudited proposed 'overruled' edges -- so the currency is a migration-seed assertion, not a completed verification."
+        ],
+        "residual_risks": [
+          "No AUDITED negative treatment is shown; the proposed 'overruled' edges are transparent snippet-first false positives, so the case is very likely still good law -- this finding is about unverified/overstated currency, not a demonstrated bad-law status."
+        ],
+        "suggested_tightening": "Soften 'No negative treatment' to reflect the pending R15 audit, or complete the audit and re-date as_of_treatment accordingly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:36:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b768ec1881",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Van Leeuwen.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w20-02-fe670686",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w20-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Van Leeuwen"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1abaccb0633aa740": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2c0d6be7ebf4038e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85aa8d25041c1983": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "928c00a68ddd064f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7915ce3b63e2fe0": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6caf6311d8",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b768ec1881",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f54da161d3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

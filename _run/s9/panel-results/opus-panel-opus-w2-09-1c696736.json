@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c9cb4e5bd3f1cac4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "official cite 520 U.S. 305 corroborated by the cached opinion's page-number labels *309 through *323, implying the opinion opens at 305",
+          "Justice Ginsburg delivering, reversal of 11th Cir. 73 F.3d 1543, and cert. 518 U.S. 1057 (1996) are all internally consistent with Chandler v. Miller (1997)"
+        ],
+        "residual_risks": [
+          "parallel S.Ct./L.Ed./LEXIS page numbers are not page-verifiable from the U.S. Reports text"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "04779f0e9d565702",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "pin-322 quote reproduced verbatim at page-label *322: 'However well meant, the candidate drug test Georgia has devised diminishes personal privacy for a symbol's sake. The Fourth Amendment shields society against that state action.' (opinion italicizes 'for'; immaterial formatting)",
+          "quote sits in paragraph b414-8, after the *322 marker and before *323, so the content-page pincite (Id. at 322) is correct",
+          "record's quote_fidelity:'mismatch' flag is a false positive -- the stored quote matches the source exactly"
+        ],
+        "residual_risks": [
+          "stale/false quote_fidelity:'mismatch' flag on a verbatim-correct quote (unlike the sibling first-pinpoints, this stored quote is the genuine opinion text)"
+        ],
+        "suggested_tightening": "flip pin-322 to 'matched'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f84c3069665f03a6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But where, as in this case, public safety is not genuinely in jeopardy, the Fourth Amendment precludes the suspicionless search, no matter how conveniently arranged.",
+          "locator_note": "cached opinion at page/star label 323; content page ^pin-323 renders the correct quote, so the defect is confined to the lake pinpoint record",
+          "needs_cl": false,
+          "problem": "Stored pin-323 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('--- # Chandler v. Miller *520 U.S. 305 (1997)* ... ## Rule No, absent a genuine, concrete danger the testing is designed to meet. Where public safety is substantial and real, suspicionless searches calibrated to the risk may be reasonable;'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+          "proposed_fix": "Re-harvest pin-323 to the actual page-323 passage that the content page already renders and cites.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+          "no such text exists in the disclosed cached opinion",
+          "the genuine page-323 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+        ],
+        "residual_risks": [
+          "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+        ],
+        "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea9640ffbd0af8db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is the expected status for this 1997 special-needs / suspicionless-search landmark; the cached opinion establishes the holding but subsequent validity is not positively confirmable from a 1997 text",
+          "every negative edge is proposed:true, field_iii:'mentioned' keyword candidate (State v. Grady, United States v. King, Ferguson v. City of Charleston, Ashcroft v. al-Kidd, City of Indianapolis v. Edmond, Wyoming v. Houghton, ...) that cites but does not overrule Chandler; no verified overruling pincite is disclosed"
+        ],
+        "residual_risks": [
+          "content page 'No negative treatment' vs. the record's unadjudicated proposed overruled/questioned edges -- reconcile via S2 derivation",
+          "true currency needs a CL treatment check beyond the 1997 opinion"
+        ],
+        "suggested_tightening": "adjudicate the lane1_negative proposals (expected to clear as FPs) before the page asserts 'No negative treatment'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-15d52b9935",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5a89a594ab",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Chandler v. Miller.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-09-1c696736",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chandler v. Miller"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "04779f0e9d565702": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c9cb4e5bd3f1cac4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea9640ffbd0af8db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f84c3069665f03a6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-15d52b9935",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7a9f21c446",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5a89a594ab",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

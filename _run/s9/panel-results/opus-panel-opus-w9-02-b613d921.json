@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "43fc3f52de04819e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header states '488 U.S. 9 (1988)', 'PENNSYLVANIA v. BRUDER', No. 88-161, Decided October 31, 1988, PER CURIAM, on cert to the Superior Court of Pennsylvania — matches official '488 U.S. 9'.",
+          "Parallels 109 S. Ct. 205 / 102 L. Ed. 2d 172 and vendor-neutral 1988 U.S. LEXIS 4816 match lake citations; identity checks true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10e61e7c72e8ee22",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, he was not entitled to a recitation of his constitutional rights prior to arrest, and his roadside responses to questioning were admissible.",
+          "locator_note": "cached opinion lines 4132-4134; star *10 (line 4133) precedes and *11 (line 4135) follows the quoted material; content page line 3294",
+          "needs_cl": false,
+          "problem": "Harvested payload.quote for pin-10 captured a wrong page-markdown span (frontmatter+Background+Issue ending '## Rule No. The decision was') and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-10 compound quote is verbatim-faithful and sits on page 10 (star *10/*11 present), so both labels are wrong.",
+          "proposed_fix": "Re-harvest pin-10 to the real quoted material; set fidelity=match and status=star-verified(10).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page ^pin-10 quote (contrary-to-Berkemer; 'noncoercive aspect of ordinary traffic stops...not “in custody” for the purposes of Miranda'; 'he was not entitled to a recitation...admissible') is verbatim in the opinion.",
+          "Quoted material lies between star *10 and *11, confirming the 488 U.S. at 10 pincite; nested attribution to Berkemer, 468 U.S. 420, 440 is correct."
+        ],
+        "residual_risks": [
+          "'slip-only' understates verifiability — star-pagination *10 is present in the cached source."
+        ],
+        "suggested_tightening": "Same fidelity-vs-capture distinction as pin-236/pin-483.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cec67497223ed57",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Berkemer's rule, that ordinary traffic stops do not involve custody for purposes of Miranda, governs this case.",
+          "locator_note": "cached opinion line 4135 (immediately after star *11); content page line 3296",
+          "needs_cl": false,
+          "problem": "pin-11 harvested payload.quote IS the correct quote and is verbatim-faithful to the opinion at page 11, yet it is still labeled quote_fidelity='mismatch'/pinpoint_status='slip-only'. This is a pure false-positive fidelity flag on a good quote.",
+          "proposed_fix": "Flip quote_fidelity mismatch->match and pinpoint_status slip-only->star-verified(11); no content change.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Captured quote '*Berkemer*'s rule, that ordinary traffic stops do not involve custody for purposes of *Miranda*, governs this case.' matches the opinion verbatim (opinion adds only leading 'Accordingly,').",
+          "Sentence follows star *11, confirming the 'Id. at 11' pincite."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Investigate why an exact-match quote was tagged 'mismatch' — likely a normalization/anchor bug in the harvester.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38c38c48210498f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' consistent; Bruder is a per curiam application of Berkemer v. McCarty and remains good law.",
+          "All 28 edges are proposed:true / field_iii='mentioned'; none adopted."
+        ],
+        "residual_risks": [
+          "Proposed negatives (Thompson v. Keohane, Stansbury v. California, Pennsylvania v. Muniz tagged 'questioned/overruled'; numerous state cases tagged 'overruled/superseded_by_statute') are false positives — Miranda-custody-line progeny or lower courts that cannot overrule SCOTUS."
+        ],
+        "suggested_tightening": "Filter negative-edge proposals by authority level.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ca213d66be",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Bruder.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-02-b613d921",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania v. Bruder"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "10e61e7c72e8ee22": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "38c38c48210498f6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3cec67497223ed57": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "43fc3f52de04819e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c6ad3813e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e35f4b371e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ca213d66be",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

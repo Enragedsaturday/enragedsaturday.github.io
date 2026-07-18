@@ -1,0 +1,96 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f5a396c1e6172432",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "parallel_cite: \"72 S. Ct. 205; 96 L. Ed. 2d 183; 25 A.L.R. 2d 1396; 96 L. Ed. 183\"",
+          "locator_note": "frontmatter parallel_cite / lake citations.all[] for Rochin v. California",
+          "needs_cl": false,
+          "problem": "The citation set carries both '96 L. Ed. 2d 183' and '96 L. Ed. 183' — identical volume 96 and identical page 183 but two different Lawyers' Edition series. A single case cannot appear at the same volume/page in both L. Ed. and L. Ed. 2d; one entry is a duplicate/data-entry error. The disclosed date_decided 1952-01-02 is consistent with the first-series form '96 L. Ed. 183', making '96 L. Ed. 2d 183' the spurious entry.",
+          "proposed_fix": "Drop the erroneous '96 L. Ed. 2d 183' parallel and retain '96 L. Ed. 183' (correct first-series L. Ed. cite for the 1952 decision).",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion text is unmistakably Rochin (Frankfurter, J.; three L.A. County deputy sheriffs; forced stomach-pumping; 'This is conduct that shocks the conscience'), so the record identity is sound.",
+          "Star pages *166 through *174 in the cached U.S.-reporter text are consistent with a case beginning at page 165 of volume 342 U.S.; the official/display cite 342 U.S. 165 is correct and matches header, lake official, and cluster 104943.",
+          "The only defect is an internal duplication in the parallel set (96 L. Ed. 2d 183 vs 96 L. Ed. 183); the primary/official cite is unaffected, so the assertion survives with a minor modification."
+        ],
+        "residual_risks": [
+          "Parallel S. Ct., L. Ed., A.L.R. and LEXIS cites are not independently shown in the cached U.S.-reporter text; they are standard-form and uncontradicted but not byte-verified from disclosed evidence."
+        ],
+        "suggested_tightening": "De-duplicate the L. Ed. parallels and add a validator that flags two entries sharing volume+page across different reporter series.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "922d3b8cec2ef449",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake status is under_review with field_i_validity=unverified and composite_basis=unverified; the content page renders the treatment as an unverified historical origin (pending S9), so there is no positive treatment claim to break.",
+          "The assertion is a frontier-stub declaration ('treatment/progeny intentionally not derived until S6 promotion'), which is exactly what the disclosed lake record and page state — self-consistent."
+        ],
+        "residual_risks": [
+          "Because treatment is declared unverified, no good/bad currency can be certified from disclosed evidence; that undetermined status is the honestly declared state, not a defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9e0277eb53"
+    ],
+    "group_id": "_overhaul2/lake/cases/Rochin v. California.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-08-9703e739",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rochin v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "922d3b8cec2ef449": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f5a396c1e6172432": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9e0277eb53",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

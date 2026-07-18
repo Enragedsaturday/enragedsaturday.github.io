@@ -1,22 +1,184 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ornelas v. United States.json",
+    "lens": "A",
+    "notes": "Lens A review only. No external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "256b0fc9b80152a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Ornelas v. United States, U.S. Supreme Court, year 1996, docket 95-5257.",
+          "The official citation 517 U.S. 690 and parallel/vendor citations in the payload match the lake citation fields.",
+          "The cached opinion text header also shows 517 U.S. 690 (1996) and United States Supreme Court."
+        ],
+        "residual_risks": [
+          "The cached text says Decided May 28, 1996 while lake/content date_decided fields say 1996-06-10; that date field is not part of this case-cite assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "16d59ad234cb8aa6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text after the *699 star marker.",
+          "The lake pinpoint for pin-699a is quote_fidelity matched, star-verified at 699, and has a validated text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e563bfc8d18a3ad",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed <i>de novo</i> on appeal.",
+          "locator_note": "text line 33; lake pin-699 has quote_fidelity=mismatch, pinpoint_status=slip-only, and no star_marker.",
+          "needs_cl": false,
+          "problem": "The quoted words are supported at page 699, but the stored/page quote is not raw character-faithful to the cached text because it uses Markdown italics (*de novo*) while the source text uses HTML italics.",
+          "proposed_fix": "Either normalize italics for quote-fidelity comparison or store the quote in source-compatible form without literal Markdown asterisks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive sentence appears in the opinion at the *699 page span.",
+          "The lake record itself flags this pin as a quote_fidelity mismatch, so it should not be treated as a clean verbatim quote without normalization."
+        ],
+        "residual_risks": [
+          "Pin remains slip-only in the disclosed lake record."
+        ],
+        "suggested_tightening": "Preserve the 517 U.S. at 699 citation but make the stored quote and quote-normalization policy consistent for italics.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6e02f67d196cfb3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed <i>de novo.</i>",
+          "locator_note": "The bad quote appears in lake pin-691 and group_inventory; the opinion text contains the actual holding sentence at text line 16 and does not contain the harvested headings as opinion text.",
+          "needs_cl": false,
+          "problem": "The pin-691 payload records content-page headings and summary prose as the quote, not a verbatim passage from the opinion text.",
+          "proposed_fix": "Replace the pin-691 lake quote with the actual opinion sentence quoted on the page, and keep it slip-only/page-unverified unless a source with a 691 marker is disclosed.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-691 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "The recorded quote begins with '## Issue' and '## Rule', showing it was harvested from the built page rather than the case opinion.",
+          "The actual opinion supports the page's intended holding quote, but not the quote payload as framed in this assertion."
+        ],
+        "residual_risks": [
+          "The cached text does not expose a *691 star marker; the page cite may be plausible because the quote precedes *692, but only slip-level verification is disclosed."
+        ],
+        "suggested_tightening": "Use the actual opinion sentence for pin-691 and avoid storing page-section text as an authority quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "311521b7461527d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment merits finding is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1996-06-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No lens B treatment audit was performed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Ornelas v. United States.json\",\"reviewed\":[{\"assertion_id\":\"256b0fc9b80152a9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Ornelas v. United States, U.S. Supreme Court, year 1996, docket 95-5257.\",\"The official citation 517 U.S. 690 and parallel/vendor citations in the payload match the lake citation fields.\",\"The cached opinion text header also shows 517 U.S. 690 (1996) and United States Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text says Decided May 28, 1996 while lake/content date_decided fields say 1996-06-10; that date field is not part of this case-cite assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"16d59ad234cb8aa6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text after the *699 star marker.\",\"The lake pinpoint for pin-699a is quote_fidelity matched, star-verified at 699, and has a validated text fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2e563bfc8d18a3ad\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are supported at page 699, but the stored/page quote is not raw character-faithful to the cached text because it uses Markdown italics (*de novo*) while the source text uses HTML italics.\",\"severity\":\"low\",\"proposed_fix\":\"Either normalize italics for quote-fidelity comparison or store the quote in source-compatible form without literal Markdown asterisks.\",\"evidence_quote\":\"We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed <i>de novo</i> on appeal.\",\"needs_cl\":false,\"locator_note\":\"text line 33; lake pin-699 has quote_fidelity=mismatch, pinpoint_status=slip-only, and no star_marker.\"},\"reasons\":[\"The substantive sentence appears in the opinion at the *699 page span.\",\"The lake record itself flags this pin as a quote_fidelity mismatch, so it should not be treated as a clean verbatim quote without normalization.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Pin remains slip-only in the disclosed lake record.\"],\"suggested_tightening\":\"Preserve the 517 U.S. at 699 citation but make the stored quote and quote-normalization policy consistent for italics.\"},{\"assertion_id\":\"e6e02f67d196cfb3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-691 payload records content-page headings and summary prose as the quote, not a verbatim passage from the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-691 lake quote with the actual opinion sentence quoted on the page, and keep it slip-only/page-unverified unless a source with a 691 marker is disclosed.\",\"evidence_quote\":\"We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed <i>de novo.</i>\",\"needs_cl\":false,\"locator_note\":\"The bad quote appears in lake pin-691 and group_inventory; the opinion text contains the actual holding sentence at text line 16 and does not contain the harvested headings as opinion text.\"},\"reasons\":[\"Lake pin-691 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.\",\"The recorded quote begins with '## Issue' and '## Rule', showing it was harvested from the built page rather than the case opinion.\",\"The actual opinion supports the page's intended holding quote, but not the quote payload as framed in this assertion.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached text does not expose a *691 star marker; the page cite may be plausible because the quote precedes *692, but only slip-level verification is disclosed.\"],\"suggested_tightening\":\"Use the actual opinion sentence for pin-691 and avoid storing page-section text as an authority quote.\"},{\"assertion_id\":\"311521b7461527d6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment merits finding is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1996-06-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens B treatment audit was performed here.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only. No external sources were used.\"}",
   "summary": {
-    "at": "2026-07-10T18:33:05-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:25:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-264b4096a4",
+      "F-S9-PR-d7ed35da6e"
+    ],
     "group_id": "_overhaul2/lake/cases/Ornelas v. United States.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-26b85053",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-26b85053.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:32:56.316468Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:57.049942Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:57.689538Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:58.557766Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:32:59.892641Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:01.900320Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ornelas v. United States"
+    ],
+    "tokens": {
+      "input": 296606,
+      "output": 10271,
+      "source": "codex-events",
+      "total": 306877
+    },
+    "verdict_map": {
+      "16d59ad234cb8aa6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "256b0fc9b80152a9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2e563bfc8d18a3ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "311521b7461527d6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6e02f67d196cfb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-264b4096a4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d7ed35da6e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 199.1
   }
 }

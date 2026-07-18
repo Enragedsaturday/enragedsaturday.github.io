@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were recorded but not adjudicated for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "21997b7150d55291",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub, has status \"verified\", and identifies Michigan v. Thomas as a U.S. Supreme Court case decided 1982-06-28.",
+          "The official citation 458 U.S. 259 is selected in the lake citations and matches the content-page citation.",
+          "The disclosed treatment judgment marks the authority as good_law as of 2026-06-30, so the live-law currency angle is not refuted from the disclosed record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "533b580a1ac045ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; I found no treatment, currency, or live-law defect tied to this row.",
+          "The pin id appears in the lake record, but textual fidelity is reserved for Lens A."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint adequacy were not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2fcf36f62ab3e39",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; I found no treatment, currency, or live-law defect tied to this row.",
+          "The pin id appears in the lake record, but textual fidelity is reserved for Lens A."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint adequacy were not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e94365094dd6feeb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Michigan v. Thomas__335fe8.json treatment.edges and treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law call survives, but the content page's categorical \"No negative treatment\" wording is too strong because the disclosed treatment record contains proposed negative-candidate progeny edges and a top-cited audit marker. The lake judgment still says good_law, so this is a qualification defect, not a refutation of live-law status.",
+          "proposed_fix": "Keep field_i_validity: good_law, but change the public treatment note to say no verified negative treatment in the disclosed lake record; proposed mentioned-only negative-candidate edges remain queued for audit.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field states field_i_validity is good_law as of 2026-06-30, and the scope note says the rule was reaffirmed by later auto-exception cases.",
+          "No point_overrides are listed and varies_by_point is false.",
+          "However, treatment.edges includes proposed entries labeled questioned, overruled, superseded_by_statute, and criticized, all with field_iii \"mentioned\", and lane2_top_cited says audit_needed is true."
+        ],
+        "residual_risks": [
+          "The proposed negative-candidate edges are not enough, by themselves, to displace the lake's good_law judgment.",
+          "Resolving the audit marker would require evidence outside the disclosed files, which this review is barred from consulting."
+        ],
+        "suggested_tightening": "Replace \"No negative treatment\" with \"No verified negative treatment in the disclosed lake record; proposed mentioned-only treatment candidates remain flagged for audit.\"",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Thomas.json\",\"reviewed\":[{\"assertion_id\":\"21997b7150d55291\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub, has status \\\"verified\\\", and identifies Michigan v. Thomas as a U.S. Supreme Court case decided 1982-06-28.\",\"The official citation 458 U.S. 259 is selected in the lake citations and matches the content-page citation.\",\"The disclosed treatment judgment marks the authority as good_law as of 2026-06-30, so the live-law currency angle is not refuted from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"533b580a1ac045ae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; I found no treatment, currency, or live-law defect tied to this row.\",\"The pin id appears in the lake record, but textual fidelity is reserved for Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint adequacy were not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a2fcf36f62ab3e39\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; I found no treatment, currency, or live-law defect tied to this row.\",\"The pin id appears in the lake record, but textual fidelity is reserved for Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint adequacy were not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e94365094dd6feeb\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call survives, but the content page's categorical \\\"No negative treatment\\\" wording is too strong because the disclosed treatment record contains proposed negative-candidate progeny edges and a top-cited audit marker. The lake judgment still says good_law, so this is a qualification defect, not a refutation of live-law status.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity: good_law, but change the public treatment note to say no verified negative treatment in the disclosed lake record; proposed mentioned-only negative-candidate edges remain queued for audit.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Michigan v. Thomas__335fe8.json treatment.edges and treatment.derivation.lane2_top_cited\"},\"reasons\":[\"The lake judgment field states field_i_validity is good_law as of 2026-06-30, and the scope note says the rule was reaffirmed by later auto-exception cases.\",\"No point_overrides are listed and varies_by_point is false.\",\"However, treatment.edges includes proposed entries labeled questioned, overruled, superseded_by_statute, and criticized, all with field_iii \\\"mentioned\\\", and lane2_top_cited says audit_needed is true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative-candidate edges are not enough, by themselves, to displace the lake's good_law judgment.\",\"Resolving the audit marker would require evidence outside the disclosed files, which this review is barred from consulting.\"],\"suggested_tightening\":\"Replace \\\"No negative treatment\\\" with \\\"No verified negative treatment in the disclosed lake record; proposed mentioned-only treatment candidates remain flagged for audit.\\\"\"}],\"notes\":\"Lens B only; quote-fidelity rows were recorded but not adjudicated for textual accuracy.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:11:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-53c77ed047"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5fea78a4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Thomas"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 224070,
+      "output": 5505,
+      "source": "codex-events",
+      "total": 229575
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "21997b7150d55291": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "533b580a1ac045ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2fcf36f62ab3e39": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e94365094dd6feeb": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53c77ed047",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 114.6
   }
 }

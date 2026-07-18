@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Sokolow.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity defects were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "6a0afcbf3eed2625",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub, status verified, and identifies United States v. Sokolow as a U.S. Supreme Court case decided 1989-04-03.",
+          "The official citation in the lake record is 490 U.S. 1, matching the asserted display citation.",
+          "The disclosed treatment field says field_i_validity is good_law as of 2026-06-30, so no disclosed final treatment removes the authority from live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative signals requiring audit, but no final disclosed validity downgrade is present."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e64e5f8cac5e144",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; no currency or treatment defect specific to pin-9 is disclosed.",
+          "The underlying authority remains marked good_law as of 2026-06-30 in the lake treatment fields."
+        ],
+        "residual_risks": [
+          "Quote and pinpoint accuracy are reserved to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95243062da7bcefe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; no currency or treatment defect specific to pin-8 is disclosed.",
+          "The lake record's final treatment field still marks Sokolow good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The lake payload itself flags pin-8 as mismatch/slip-only, but that is outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ede94a380d51024",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 24,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law status itself is consistent with the lake field, but the page's categorical 'No negative treatment' language is too strong because the disclosed treatment derivation contains proposed negative-treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a qualified note that the lake record contains proposed negative-treatment signals requiring audit and no final downgrade is recorded.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, so the core status survives.",
+          "Lake treatment.derivation reports audit_needed true for negative/top-cited lanes and proposed_negative_events, so 'No negative treatment' is not safely stated from the disclosed record.",
+          "All disclosed treatment edges are proposed and field_iii is mentioned, so the record supports qualification rather than a final downgrade."
+        ],
+        "residual_risks": [
+          "Actual negative-treatment effect cannot be resolved without auditing the proposed citing-case edges."
+        ],
+        "suggested_tightening": "Say: 'Status: good as of 2026-06-30. The lake record includes proposed negative-treatment signals requiring audit; no final point override or validity downgrade is recorded.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Sokolow.json\",\"reviewed\":[{\"assertion_id\":\"6a0afcbf3eed2625\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub, status verified, and identifies United States v. Sokolow as a U.S. Supreme Court case decided 1989-04-03.\",\"The official citation in the lake record is 490 U.S. 1, matching the asserted display citation.\",\"The disclosed treatment field says field_i_validity is good_law as of 2026-06-30, so no disclosed final treatment removes the authority from live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative signals requiring audit, but no final disclosed validity downgrade is present.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8e64e5f8cac5e144\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity; no currency or treatment defect specific to pin-9 is disclosed.\",\"The underlying authority remains marked good_law as of 2026-06-30 in the lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote and pinpoint accuracy are reserved to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"95243062da7bcefe\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity; no currency or treatment defect specific to pin-8 is disclosed.\",\"The lake record's final treatment field still marks Sokolow good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake payload itself flags pin-8 as mismatch/slip-only, but that is outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9ede94a380d51024\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself is consistent with the lake field, but the page's categorical 'No negative treatment' language is too strong because the disclosed treatment derivation contains proposed negative-treatment edges and audit-needed markers.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a qualified note that the lake record contains proposed negative-treatment signals requiring audit and no final downgrade is recorded.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 24,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, so the core status survives.\",\"Lake treatment.derivation reports audit_needed true for negative/top-cited lanes and proposed_negative_events, so 'No negative treatment' is not safely stated from the disclosed record.\",\"All disclosed treatment edges are proposed and field_iii is mentioned, so the record supports qualification rather than a final downgrade.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Actual negative-treatment effect cannot be resolved without auditing the proposed citing-case edges.\"],\"suggested_tightening\":\"Say: 'Status: good as of 2026-06-30. The lake record includes proposed negative-treatment signals requiring audit; no final point override or validity downgrade is recorded.'\"}],\"notes\":\"Lens B only; support and quote-fidelity defects were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:08:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3a2a2c3648",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-455265d37c"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Sokolow.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d0d90d0f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Sokolow"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 282293,
+      "output": 7748,
+      "source": "codex-events",
+      "total": 290041
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.0
+    "verdict_map": {
+      "6a0afcbf3eed2625": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e64e5f8cac5e144": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95243062da7bcefe": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9ede94a380d51024": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a2a2c3648",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-455265d37c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.0
   }
 }

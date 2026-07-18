@@ -1,22 +1,178 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Biswell.json\",\"reviewed\":[{\"assertion_id\":\"9456372fb2504952\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for United States v. Biswell, decided 1972-05-15 by the U.S. Supreme Court.\",\"The official citation in the lake record is 406 U.S. 311, with the same parallel citations listed in the inventory and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0e46514a5002d070\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-316a payload/lake quote is not an opinion quotation at all; it is page/front-matter text. The corresponding displayed page quote also changes the source punctuation at the end from a semicolon to a period.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-316a with the actual source passage at 406 U.S. 316 and preserve source punctuation or mark any alteration explicitly.\",\"evidence_quote\":\"In this context, the prerequisite of a warrant could easily frustrate inspection;\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Biswell__5b6f73.txt, star page *316; content_page.md line 53; lake pinpoints pin-316a marks quote_fidelity mismatch.\"},\"reasons\":[\"Lake pin-316a stores markdown page content beginning with the title and background, not language from the opinion.\",\"The opinion text has the warrant-frustration sentence ending with a semicolon before the continuation, while the content page quotes it as ending with a period.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use a shorter exact quote ending before the punctuation, or include the full sentence through the semicolon and continuation.\"},{\"assertion_id\":\"70d85c34e51c2776\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted words before and after the ellipsis appear in the opinion text on star page *316.\",\"The ellipsis marks an omitted intervening sentence about the annual compilation of ordinances; the omission does not distort the quoted privacy-expectation proposition.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record marks this as quote_fidelity mismatch because it is an elided composite rather than one contiguous text extract.\"],\"suggested_tightening\":\"Represent the elision as structured quote components or split the two sentences into separate quotes to avoid automated mismatch.\"},{\"assertion_id\":\"e3355aeb8eb5cc29\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the opinion text immediately after the *317 star marker.\",\"The lake record marks pin-317 as matched and star-verified with the same quote and fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1663fc5b954281c6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment currency is outside Lens A, so no treatment defect is raised.\",\"The inventory treatment fields match the disclosed lake.treatment fields: good_law, as_of_content 1972-05-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment audit performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Biswell.json",
+    "lens": "A",
+    "notes": "Treatment row recorded without a Lens A treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "9456372fb2504952",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity identifies the case as United States v. Biswell, U.S. Supreme Court, decided 1972-05-15, docket 71-81.",
+          "Lake official citation is 406 U.S. 311, and the content page displays 406 U.S. 311 (1972); parallel citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0e46514a5002d070",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Here, if inspection is to be effective and serve as a credible deterrent, unannounced, even frequent, inspections are essential. In this context, the prerequisite of a warrant could easily frustrate inspection;",
+          "locator_note": "content_page.md:53; lake pinpoints pin-316a; text line 19",
+          "needs_cl": false,
+          "problem": "The pin-316a lake/inventory quote is not an opinion quote; it is contaminated with content-page header/background/rule prose. The displayed page quote also changes the source punctuation by ending the second sentence with a period where the opinion has a semicolon before continuing.",
+          "proposed_fix": "Replace pin-316a with the actual page-316 opinion passage and preserve source punctuation, or end the quotation before the semicolon without altering punctuation; populate a page-316 locator/fragment.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake quote for pin-316a begins with markdown/frontmatter-style page text rather than the Supreme Court opinion text.",
+          "The source opinion supports the substance at star page 316, but the rendered quote is not character-faithful at the terminal punctuation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use an exact quote ending with the source semicolon or add an omission marker after the semicolon if truncating the sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70d85c34e51c2776",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Each licensee is annually furnished with a revised compilation of ordinances that describe his obligations and define the inspector's authority.",
+          "locator_note": "content_page.md:55; lake pinpoints pin-316b; text line 20",
+          "needs_cl": false,
+          "problem": "The quoted words are present in the opinion, but the quote is non-contiguous: an omitted sentence appears between the two quoted sentences. The ellipsis discloses the omission, so the substance survives, but it should not be treated as a single contiguous exact-string match.",
+          "proposed_fix": "Record this as an ellipsized/non-contiguous verified quote or split it into two separate quotations, and populate the page-316 locator.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The first quoted sentence appears verbatim in the opinion text.",
+          "The final quoted sentence also appears verbatim, but only after an intervening sentence omitted by ellipsis."
+        ],
+        "residual_risks": [
+          "Exact-string validators may continue to flag this unless the corpus records ellipsized quotations separately from contiguous matches."
+        ],
+        "suggested_tightening": "Split the quotation into two sentence-level pinpoints or mark the pinpoint as ellipsis-verified rather than plain matched.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e3355aeb8eb5cc29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-317 quote appears verbatim in the cached opinion text at star page 317.",
+          "The lake record marks this quote as matched with star_marker 317 and the content page quote matches the disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1663fc5b954281c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "For Lens A, treatment/currency is not adjudicated; the row is recorded for inventory completeness only.",
+          "The payload treatment fields match the disclosed lake treatment object: field_i_validity good_law, as_of_content 1972-05-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Biswell.json\",\"reviewed\":[{\"assertion_id\":\"9456372fb2504952\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the case as United States v. Biswell, U.S. Supreme Court, decided 1972-05-15, docket 71-81.\",\"Lake official citation is 406 U.S. 311, and the content page displays 406 U.S. 311 (1972); parallel citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0e46514a5002d070\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-316a lake/inventory quote is not an opinion quote; it is contaminated with content-page header/background/rule prose. The displayed page quote also changes the source punctuation by ending the second sentence with a period where the opinion has a semicolon before continuing.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-316a with the actual page-316 opinion passage and preserve source punctuation, or end the quotation before the semicolon without altering punctuation; populate a page-316 locator/fragment.\",\"evidence_quote\":\"Here, if inspection is to be effective and serve as a credible deterrent, unannounced, even frequent, inspections are essential. In this context, the prerequisite of a warrant could easily frustrate inspection;\",\"needs_cl\":false,\"locator_note\":\"content_page.md:53; lake pinpoints pin-316a; text line 19\"},\"reasons\":[\"The lake quote for pin-316a begins with markdown/frontmatter-style page text rather than the Supreme Court opinion text.\",\"The source opinion supports the substance at star page 316, but the rendered quote is not character-faithful at the terminal punctuation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use an exact quote ending with the source semicolon or add an omission marker after the semicolon if truncating the sentence.\"},{\"assertion_id\":\"70d85c34e51c2776\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are present in the opinion, but the quote is non-contiguous: an omitted sentence appears between the two quoted sentences. The ellipsis discloses the omission, so the substance survives, but it should not be treated as a single contiguous exact-string match.\",\"severity\":\"low\",\"proposed_fix\":\"Record this as an ellipsized/non-contiguous verified quote or split it into two separate quotations, and populate the page-316 locator.\",\"evidence_quote\":\"Each licensee is annually furnished with a revised compilation of ordinances that describe his obligations and define the inspector's authority.\",\"needs_cl\":false,\"locator_note\":\"content_page.md:55; lake pinpoints pin-316b; text line 20\"},\"reasons\":[\"The first quoted sentence appears verbatim in the opinion text.\",\"The final quoted sentence also appears verbatim, but only after an intervening sentence omitted by ellipsis.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Exact-string validators may continue to flag this unless the corpus records ellipsized quotations separately from contiguous matches.\"],\"suggested_tightening\":\"Split the quotation into two sentence-level pinpoints or mark the pinpoint as ellipsis-verified rather than plain matched.\"},{\"assertion_id\":\"e3355aeb8eb5cc29\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-317 quote appears verbatim in the cached opinion text at star page 317.\",\"The lake record marks this quote as matched with star_marker 317 and the content page quote matches the disclosed text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1663fc5b954281c6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"For Lens A, treatment/currency is not adjudicated; the row is recorded for inventory completeness only.\",\"The payload treatment fields match the disclosed lake treatment object: field_i_validity good_law, as_of_content 1972-05-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded without a Lens A treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:18-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:47:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9166635ce8",
+      "F-S9-PR-3d8f854f58"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Biswell.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-1ee78b33",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1ee78b33.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:20.690764Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:21.516724Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:22.639560Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:24.579542Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:30:28.343980Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Biswell"
+    ],
+    "tokens": {
+      "input": 182919,
+      "output": 9262,
+      "source": "codex-events",
+      "total": 192181
+    },
+    "verdict_map": {
+      "0e46514a5002d070": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "1663fc5b954281c6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70d85c34e51c2776": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9456372fb2504952": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e3355aeb8eb5cc29": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9166635ce8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3d8f854f58",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 179.3
   }
 }

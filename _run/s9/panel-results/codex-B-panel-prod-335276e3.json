@@ -1,22 +1,104 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Robbins v. California.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ea37186dbf64d3b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Robbins v. California and lists court_level as scotus, date_decided as 1981-07-01, docket 80-148, and cluster_id 110558.",
+          "The lake citations record selects 453 U.S. 420 as the official citation and the group payload matches the disclosed citation set."
+        ],
+        "residual_risks": [
+          "This only verifies existence and citation identity; it does not verify live-law status because treatment/progeny are unverified."
+        ],
+        "suggested_tightening": "Make clear that this assertion is citation existence only, not a live-law assertion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "59d19066a754387c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md treatment header, holding, Treatment & subsequent history, and Sources; lake/Robbins v. California__7f41dc.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The page makes a substantive treatment/current-status claim that Robbins was overruled by United States v. Ross and is preserved only as history, but the disclosed lake record carries only unverified treatment, no as-of date, no treatment edges, and no progeny enumeration. Under the default-to-refuted rule, the overruled/live-law call is not verifiable from the disclosed evidence.",
+          "proposed_fix": "Either demote the treatment display to treatment unverified pending certification, or disclose/promote the Ross treatment evidence into lake.treatment.edges with an as_of_treatment date before rendering an overruled-by-Ross status.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified and as_of_treatment is null.",
+          "Lake treatment.edges is empty and progeny.rows_cached is 0, so the disclosed record contains no Ross overruled edge.",
+          "The page's overruled-by-Ross language exceeds the disclosed treatment judgment fields."
+        ],
+        "residual_risks": [
+          "The overruled-by-Ross claim may be correct in the real world, but it is not proven within the disclosed evidentiary universe."
+        ],
+        "suggested_tightening": "Keep the page under an unverified-treatment banner and avoid definitive 'overruled' or 'never as live law' wording until the treatment edge is certified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Robbins v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ea37186dbf64d3b6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is for Robbins v. California and lists court_level as scotus, date_decided as 1981-07-01, docket 80-148, and cluster_id 110558.\",\n        \"The lake citations record selects 453 U.S. 420 as the official citation and the group payload matches the disclosed citation set.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This only verifies existence and citation identity; it does not verify live-law status because treatment/progeny are unverified.\"\n      ],\n      \"suggested_tightening\": \"Make clear that this assertion is citation existence only, not a live-law assertion.\"\n    },\n    {\n      \"assertion_id\": \"59d19066a754387c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The page makes a substantive treatment/current-status claim that Robbins was overruled by United States v. Ross and is preserved only as history, but the disclosed lake record carries only unverified treatment, no as-of date, no treatment edges, and no progeny enumeration. Under the default-to-refuted rule, the overruled/live-law call is not verifiable from the disclosed evidence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Either demote the treatment display to treatment unverified pending certification, or disclose/promote the Ross treatment evidence into lake.treatment.edges with an as_of_treatment date before rendering an overruled-by-Ross status.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment header, holding, Treatment & subsequent history, and Sources; lake/Robbins v. California__7f41dc.json treatment/progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is unverified and as_of_treatment is null.\",\n        \"Lake treatment.edges is empty and progeny.rows_cached is 0, so the disclosed record contains no Ross overruled edge.\",\n        \"The page's overruled-by-Ross language exceeds the disclosed treatment judgment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The overruled-by-Ross claim may be correct in the real world, but it is not proven within the disclosed evidentiary universe.\"\n      ],\n      \"suggested_tightening\": \"Keep the page under an unverified-treatment banner and avoid definitive 'overruled' or 'never as live law' wording until the treatment edge is certified.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity findings raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:34:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:30:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-795983ce22"
+    ],
     "group_id": "_overhaul2/lake/cases/Robbins v. California.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-335276e3",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-335276e3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 1db0dab4-b26f-4857-968e-1a68e44f81e1\n2026-07-10T22:33:55.235889Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:56.016290Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:56.676056Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:57.548307Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:58.806346Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:34:00.807263Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Robbins v. California"
+    ],
+    "tokens": {
+      "input": 107573,
+      "output": 5331,
+      "source": "codex-events",
+      "total": 112904
+    },
+    "verdict_map": {
+      "59d19066a754387c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ea37186dbf64d3b6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-795983ce22",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.8
   }
 }

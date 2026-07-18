@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Mosley.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "7c5db0aa8c4acf96",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as Michigan v. Mosley, U.S. Supreme Court, decided 1975-12-09.",
+          "The lake official citation is 423 U.S. 96, matching the content page citation 423 U.S. 96 (1975).",
+          "The disclosed lake record also lists the same parallel/vendor citations shown or represented in the content page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b6cdbfef32335e1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "on whether his \"right to cut off questioning\" was \"scrupulously honored.\"",
+          "locator_note": "text/Michigan v. Mosley__751847.txt line 23; content_page.md line 53; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "pin-104's stored quote is not the opinion passage, and the page's displayed verbatim quote is not character-faithful to the cached opinion text because it changes the Court's internal double quotation marks to single quotation marks. The lake pinpoint is also explicitly marked quote_fidelity='mismatch'.",
+          "proposed_fix": "Replace pin-104 with the actual 423 U.S. at 104 passage from the opinion text and preserve the Court's internal double quotation marks, or stop presenting the sentence as a character-faithful verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text at the page-104 passage uses internal double quotation marks around \"right to cut off questioning\" and \"scrupulously honored.\"",
+          "The content page quote uses single quotation marks for those internal quoted phrases.",
+          "The lake pinpoint quote is a harvested content-page header/background/rule lead-in, not the opinion's quoted sentence, and its quote_fidelity field says mismatch."
+        ],
+        "residual_risks": [
+          "The legal rule itself is supported at 423 U.S. 104, but the quote-fidelity assertion does not stand as framed."
+        ],
+        "suggested_tightening": "Use a non-quoted paraphrase for the rule, or use the exact Court sentence with the correct internal quotation marks and a clean 423 U.S. at 104 pin.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "017aa9bc00b26538",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 1975-12-09, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment currency remains for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Michigan v. Mosley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7c5db0aa8c4acf96\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the case as Michigan v. Mosley, U.S. Supreme Court, decided 1975-12-09.\",\n        \"The lake official citation is 423 U.S. 96, matching the content page citation 423 U.S. 96 (1975).\",\n        \"The disclosed lake record also lists the same parallel/vendor citations shown or represented in the content page metadata.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4b6cdbfef32335e1\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-104's stored quote is not the opinion passage, and the page's displayed verbatim quote is not character-faithful to the cached opinion text because it changes the Court's internal double quotation marks to single quotation marks. The lake pinpoint is also explicitly marked quote_fidelity='mismatch'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-104 with the actual 423 U.S. at 104 passage from the opinion text and preserve the Court's internal double quotation marks, or stop presenting the sentence as a character-faithful verbatim quote.\",\n        \"evidence_quote\": \"on whether his \\\"right to cut off questioning\\\" was \\\"scrupulously honored.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Michigan v. Mosley__751847.txt line 23; content_page.md line 53; lake pinpoints[0]\"\n      },\n      \"reasons\": [\n        \"The cached opinion text at the page-104 passage uses internal double quotation marks around \\\"right to cut off questioning\\\" and \\\"scrupulously honored.\\\"\",\n        \"The content page quote uses single quotation marks for those internal quoted phrases.\",\n        \"The lake pinpoint quote is a harvested content-page header/background/rule lead-in, not the opinion's quoted sentence, and its quote_fidelity field says mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal rule itself is supported at 423 U.S. 104, but the quote-fidelity assertion does not stand as framed.\"\n      ],\n      \"suggested_tightening\": \"Use a non-quoted paraphrase for the rule, or use the exact Court sentence with the correct internal quotation marks and a clean 423 U.S. at 104 pin.\"\n    },\n    {\n      \"assertion_id\": \"017aa9bc00b26538\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 1975-12-09, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency remains for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 rows in group_inventory.jsonl under lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:11:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b100a16058"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Mosley.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8ba3e434.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Mosley"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 281401,
+      "output": 6451,
+      "source": "codex-events",
+      "total": 287852
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.0
+    "verdict_map": {
+      "017aa9bc00b26538": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4b6cdbfef32335e1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7c5db0aa8c4acf96": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b100a16058",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 134.5
   }
 }

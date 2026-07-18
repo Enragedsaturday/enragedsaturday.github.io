@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "bb1c5c6f0bdff8c7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "98 L. Ed. 2d 503",
+          "locator_note": "citations.all[]/parallel[] and content front-matter parallel_cite; year 1954 / date_decided 1954-02-01",
+          "needs_cl": false,
+          "problem": "The parallel-citation set carries a facially impossible 'L. Ed. 2d' reference for a 1954 decision: '98 L. Ed. 2d 503'. Lawyers' Edition Second Series began in 1956, so a 1954 case cannot appear in L. Ed. 2d; the correct first-series '98 L. Ed. 503' is also present, so the '2d' entry is a spurious/duplicated mis-reportered parallel. It also surfaces reader-facing in the page parallel_cite ('98 L. Ed. 2d 503; 98 L. Ed. 503').",
+          "proposed_fix": "Drop '98 L. Ed. 2d 503'; retain '98 L. Ed. 503'.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Existence core stands: official 347 U.S. 62 (1954) confirmed - cached Frankfurter majority, star pages *63-*66 (case begins 62), facts (1950 indictment/suppression, 1952 retrial) match.",
+          "Minor citation-hygiene defect only (spurious L. Ed. 2d parallel); does not break the true positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "15418bf0c618a725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote verbatim at page 65 (between *65 and *66): 'He must be free to deny all the elements of the case against him without thereby giving leave to the Government to introduce by way of rebuttal evidence illegally secured by it, and therefore not available for its case in chief.'",
+          "star_marker 65 correct; fragment 'must be free to deny' resolves; star-verified/matched confirmed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de12792edb1d1f53",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Walder v. United States *347 U.S. 62 (1954)*",
+          "locator_note": "lake pinpoints[] id=pin-65",
+          "needs_cl": false,
+          "problem": "Stored pin-65 'quote' is the page front-matter plus Background/Issue/Rule-intro prose, not a quotation; broken extraction (quote_fidelity 'mismatch', star_marker null).",
+          "proposed_fix": "Re-extract this pinpoint's quote from the actual cited passage (not page front-matter) and re-run star verification. Correct quote: 'It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained... Such an extension of the Weeks doctrine would be a perversion of the Fourth Amendment.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is front-matter, not opinion text -> quote_pinpoint invalid as framed.",
+          "The quote the content actually cites at pin-65 is verbatim-faithful per cached *65: 'It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained. It is quite another to say that the defendant can turn the illegal method by which evidence in the Government's possession was obtained to his own advantage, and provide himself with a shield against contradiction of his untruths. Such an extension of the [Weeks] doctrine would be a perversion of the Fourth Amendment.' -> reader not misled."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40a7f55f7d984c52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law; all disclosed edges are 'proposed: true' automated-citator noise (Illinois v. Gates, United States v. Leon, Schneckloth v. Bustamonte, Kansas v. Ventris flagged overruled/questioned) - none overrules Walder, the origin of the impeachment exception.",
+          "No confirmed negative treatment; varies_by_point false; as_of_treatment 2026-06-30 current."
+        ],
+        "residual_risks": [
+          "scope_note forward-history (Harris v. New York, Havens, James v. Illinois) not inlined; uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:53:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8ea947cbc4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-864e57fb7d"
+    ],
+    "group_id": "_overhaul2/lake/cases/Walder v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w21-02-f4ff6259",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w21-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Walder v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "15418bf0c618a725": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40a7f55f7d984c52": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb1c5c6f0bdff8c7": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "de12792edb1d1f53": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-864e57fb7d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-682f048b3b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8ea947cbc4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

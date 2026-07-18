@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. King.json",
+    "lens": "A",
+    "notes": "Reviewed all three assertion_ids in group_inventory.jsonl using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "c0b2dc8e1b82bb8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for Maryland v. King, court U.S. Supreme Court, date_decided 2013-06-03, year 2013.",
+          "The citation payload matches the lake citations.all list: 133 S. Ct. 1958; 186 L. Ed. 2d 1; 2013 U.S. LEXIS 4165; 569 U.S. 435; 24 Fla. L. Weekly Fed. S 234; 81 U.S.L.W. 4343; 2013 WL 2371466."
+        ],
+        "residual_risks": [
+          "Lake official_selection.selected is null, so this review does not infer an official citation beyond the disclosed citations list."
+        ],
+        "suggested_tightening": "If the corpus expects a display citation, populate it explicitly from the disclosed 569 U.S. 435 citation rather than leaving display/official null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62452290a6307e27",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "cheek swab of the arrestee’s DNA is, like fingerprinting\nand photographing, a legitimate police booking procedure\nthat is reasonable under the Fourth Amendment.",
+          "locator_note": "lake pinpoints[0] has id pin-465, page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch; content_page.md cites 569 U.S. at 465–466.",
+          "needs_cl": false,
+          "problem": "The pin-465 lake pinpoint quote is not the quoted holding passage; it is a harvested content-page/frontmatter fragment and the lake itself marks quote_fidelity as mismatch with page and position null. The content page's visible quote is substantively supported by the opinion text, but it is not character-faithful as rendered because the text has arrestee’s while the page uses arrestee's.",
+          "proposed_fix": "Replace pin-465 with the exact Court-opinion sentence beginning 'When officers make an arrest...' from the cached opinion text, preserving typography, or mark the page quote as normalized rather than verbatim. Store a usable locator for the passage; do not use the harvested page-intro fragment as the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with '--- # Maryland v. King' and includes the page Background/Issue/Rule preface rather than the opinion passage.",
+          "The cached opinion text contains the actual holding sentence at the end of the Court opinion, but the page quote is not character-identical because it changes the curly apostrophe in arrestee’s to a straight apostrophe."
+        ],
+        "residual_risks": [
+          "The substantive rule survives, but the official reporter pincite 465–466 cannot be independently confirmed from the slip-only text and null lake page locator."
+        ],
+        "suggested_tightening": "Use the exact opinion-text wording for the quote and add a separate pincite assertion only when the official-page mapping is available from disclosed evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce45ff0fc55c3dca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment-quality finding is raised.",
+          "The treatment row matches disclosed fields in the content page and lake record: field_i_validity good_law, as_of_content 2013-06-03, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment currency and downstream progeny effects were not audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. King.json\",\"reviewed\":[{\"assertion_id\":\"c0b2dc8e1b82bb8d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record exists for Maryland v. King, court U.S. Supreme Court, date_decided 2013-06-03, year 2013.\",\"The citation payload matches the lake citations.all list: 133 S. Ct. 1958; 186 L. Ed. 2d 1; 2013 U.S. LEXIS 4165; 569 U.S. 435; 24 Fla. L. Weekly Fed. S 234; 81 U.S.L.W. 4343; 2013 WL 2371466.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official_selection.selected is null, so this review does not infer an official citation beyond the disclosed citations list.\"],\"suggested_tightening\":\"If the corpus expects a display citation, populate it explicitly from the disclosed 569 U.S. 435 citation rather than leaving display/official null.\"},{\"assertion_id\":\"62452290a6307e27\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-465 lake pinpoint quote is not the quoted holding passage; it is a harvested content-page/frontmatter fragment and the lake itself marks quote_fidelity as mismatch with page and position null. The content page's visible quote is substantively supported by the opinion text, but it is not character-faithful as rendered because the text has arrestee’s while the page uses arrestee's.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-465 with the exact Court-opinion sentence beginning 'When officers make an arrest...' from the cached opinion text, preserving typography, or mark the page quote as normalized rather than verbatim. Store a usable locator for the passage; do not use the harvested page-intro fragment as the pinpoint quote.\",\"evidence_quote\":\"cheek swab of the arrestee’s DNA is, like fingerprinting\\nand photographing, a legitimate police booking procedure\\nthat is reasonable under the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] has id pin-465, page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch; content_page.md cites 569 U.S. at 465–466.\"},\"reasons\":[\"The lake pinpoint quote begins with '--- # Maryland v. King' and includes the page Background/Issue/Rule preface rather than the opinion passage.\",\"The cached opinion text contains the actual holding sentence at the end of the Court opinion, but the page quote is not character-identical because it changes the curly apostrophe in arrestee’s to a straight apostrophe.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive rule survives, but the official reporter pincite 465–466 cannot be independently confirmed from the slip-only text and null lake page locator.\"],\"suggested_tightening\":\"Use the exact opinion-text wording for the quote and add a separate pincite assertion only when the official-page mapping is available from disclosed evidence.\"},{\"assertion_id\":\"ce45ff0fc55c3dca\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment-quality finding is raised.\",\"The treatment row matches disclosed fields in the content page and lake record: field_i_validity good_law, as_of_content 2013-06-03, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and downstream progeny effects were not audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all three assertion_ids in group_inventory.jsonl using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:06:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b7c10d7a7d"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. King.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-efa32cc5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Maryland v. King"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 280679,
+      "output": 8227,
+      "source": "codex-events",
+      "total": 288906
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "62452290a6307e27": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c0b2dc8e1b82bb8d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce45ff0fc55c3dca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b7c10d7a7d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 163.3
   }
 }

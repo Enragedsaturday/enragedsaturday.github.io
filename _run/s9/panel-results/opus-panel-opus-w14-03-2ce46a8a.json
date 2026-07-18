@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0343faf2519beaa8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header is verbatim: '422 U.S. 873 (1975) ... UNITED STATES v. BRIGNONI-PONCE. No. 74-114 ... Decided June 30, 1975' (Powell, J.); star-pagination *874-*890 confirms the opinion begins at 873.",
+          "Official cite 422 U.S. 873 correctly selected (scotus, selected_rank_1)."
+        ],
+        "residual_risks": [
+          "Parallel cites (95 S. Ct. 2574; 45 L. Ed. 2d 607; 1975 U.S. LEXIS 10) from cluster.citations[] are not independently confirmable from the opinion text but are uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "19915a66373ab4ab",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Except at the border and its functional equivalents, officers on roving patrol may stop vehicles only if they are aware of specific articulable facts, together with rational inferences from those facts, that reasonably warrant suspicion that the vehicles contain aliens who may be illegally in the country.",
+          "locator_note": "Opinion Part IV, immediately after the *884 star-pagination marker.",
+          "needs_cl": false,
+          "problem": "pin-884's stored quote is not opinion text - it is a content-page markdown dump ('--- # United States v. Brignoni-Ponce ... ## Rule A roving-patrol stop requires reasonable suspicion built on articulable facts:'), so it cannot be matched to the opinion (quote_fidelity correctly self-flagged 'mismatch').",
+          "proposed_fix": "Repopulate pin-884.quote with the verbatim Part IV rule sentence at 422 U.S. 884, then re-run the matcher.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-884 quote field is corrupted with content-page markdown rather than opinion text - a genuine defect in the quote anchor.",
+          "The intended rule quote is verbatim-present at *884 and the content page's pincite (422 U.S. at 884) is correct, so the page display is faithful; the defect is internal to the stored pin."
+        ],
+        "residual_risks": [
+          "Reader-facing harm is low (the content page shows the correct quote); the defect is in the lake pinpoint record."
+        ],
+        "suggested_tightening": "Replace pin-884.quote with the verbatim *884 rule sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4385013b3e01472",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is verbatim in the opinion, spanning *886-*887: 'The likelihood that any given person of Mexican ancestry is an alien is high enough to make Mexican appearance a relevant factor, but standing alone it does not justify stopping all Mexican-Americans to ask if they are aliens.'",
+          "Content-page pincite 'Id. at 886-87' correctly captures the *886->*887 span; the builder's 'mismatch'/'slip-only' flag is a false negative - the quote is faithful."
+        ],
+        "residual_risks": [
+          "Record's quote_fidelity='mismatch'/pinpoint_status='slip-only' understate reality (the quote actually matches); this mislabel does not affect the page's correctness."
+        ],
+        "suggested_tightening": "Reconcile pin-886 quote_fidelity to reflect the verbatim match (currently a false-negative 'mismatch').",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8176a4e353fabd99",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope note is accurate and appropriately hedged: the holding (roving-patrol stops require reasonable suspicion) is bedrock good law; the apparent-ancestry-as-factor language at *886-87 is the widely-criticized dictum - both match the opinion.",
+          "No disclosed evidence the holding has been abrogated; good_law is the well-secured status for this landmark SCOTUS reasonable-suspicion border case."
+        ],
+        "residual_risks": [
+          "lane1_negative cap_hit=true, proposed_negative_events=2, audit_needed=true (R15 treatment audit pending); lane2 edges carry unadjudicated proposed field_ii labels (questioned/overruled/criticized) reflecting citing-case status, not confirmed abrogation of Brignoni-Ponce.",
+          "Currency as of 2026-06-30 is ultimately a citator/CL matter outside disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7417724454",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Brignoni-Ponce.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-03-2ce46a8a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Brignoni-Ponce"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0343faf2519beaa8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "19915a66373ab4ab": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8176a4e353fabd99": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d4385013b3e01472": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7ea0171969",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7417724454",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

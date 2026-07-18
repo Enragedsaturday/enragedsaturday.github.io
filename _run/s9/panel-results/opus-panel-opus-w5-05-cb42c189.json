@@ -1,0 +1,167 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "36bd2eb442305f22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip op (Roberts, C.J., majority) confirms Heien v. North Carolina — Sergeant Darisse's mistake-of-law brake-light stop; S. Ct. star-pagination *535-*540 is consistent with parallel cite 135 S. Ct. 530.",
+          "Parallel cites (135 S. Ct. 530; 190 L. Ed. 2d 475; 2014 U.S. LEXIS 8306) uniquely identify the 2014 Fourth Amendment decision; the case exists and is correctly identified."
+        ],
+        "residual_risks": [
+          "Payload official/display are null (official_selection_present=false) and the record is under_review with identity_checked=false; the official U.S. cite (574 U.S. 54, supplied only in the content-page header/Sources) is not captured in the structured citations block."
+        ],
+        "suggested_tightening": "Select and record the official 574 U.S. 54 citation in the record's citations block during S2 re-derivation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aa39ab580cedbb23",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.",
+          "locator_note": "Cached slip op paragraph p-26, page *536; content_page ^pin-60.",
+          "needs_cl": false,
+          "problem": "Lake record pinpoint pin-60 stores scraped wiki prose ('so the stop rested on a mistaken reading of the law. ... ## Rule Yes. Reasonable suspicion can rest on a reasonable mistake of law...') in its quote field instead of opinion text; not a verifiable pinpoint quotation.",
+          "proposed_fix": "Repopulate pin-60 quote with the actual opinion sentence the content page attaches to ^pin-60 at 574 U.S. 60 (135 S. Ct. 536): 'The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-60 quote is page chrome, not opinion text; record already self-flags quote_fidelity=mismatch/pinpoint_status=slip-only.",
+          "Content page's own use of ^pin-60 is faithful (verified at page 536), but the lake record quote field is corrupted."
+        ],
+        "residual_risks": [
+          "Reader-facing content page uses pin-60 correctly; the defect is in the lake record data only."
+        ],
+        "suggested_tightening": "Guard the pinpoint extractor against capturing the page's own prose as a quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e968f5335c48fd6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is word-for-word faithful to the cached opinion (paragraph p-27): 'To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them \"fair leeway for enforcing the law in the community's protection.\"'",
+          "The recorded quote_fidelity='mismatch' is a quote-mark normalization artifact: the opinion double-quotes the nested Brinegar phrase while the payload single-quotes it; no word-level discrepancy. The '— Id.' pincite (page 60 / 536) is correct."
+        ],
+        "residual_risks": [
+          "Recorded quote_fidelity=mismatch is a false positive from single/double quote-mark normalization."
+        ],
+        "suggested_tightening": "Normalize quote marks before comparison to avoid false mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "18f5cffe30b2c86a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "Record treatment block; status under_review.",
+          "needs_cl": true,
+          "problem": "field_i_validity=good_law is defensible (2014 SCOTUS mistake-of-law holding, not refuted by any disclosed evidence), but the scope_note is a migration/process placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'), not a substantive legal treatment note; the record is under_review with identity_checked=false and the treatment has not been re-derived.",
+          "proposed_fix": "Complete S2 treatment re-derivation and replace the placeholder scope_note with a substantive treatment note; the seed itself flags that the status 'may downgrade'.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is not refuted by disclosed evidence, but the scope_note is placeholder boilerplate and the record self-labels under_review / seed 'may downgrade'.",
+          "Treatment currency cannot be confirmed from the disclosed 2014 slip opinion alone."
+        ],
+        "residual_risks": [
+          "good_law currency unconfirmed from disclosed evidence; needs citator re-derivation."
+        ],
+        "suggested_tightening": "Replace the placeholder scope_note with a real treatment note after S2 re-derivation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1fe915aa08",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0310c24b31",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Heien v. North Carolina.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-05-cb42c189",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Heien v. North Carolina"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "18f5cffe30b2c86a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "36bd2eb442305f22": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa39ab580cedbb23": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e968f5335c48fd6c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1fe915aa08",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4ebed296a3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0310c24b31",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a283cf0489",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

@@ -1,22 +1,107 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/new-jersey-v-portash--110038.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl plus the lake and text files.",
+    "reviewed": [
+      {
+        "assertion_id": "e2bc48a720757238",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "record_id=new-jersey-v-portash--110038",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity/citations, but it does not verify that the authority remains live law under the currency/treatment lens.",
+          "proposed_fix": "Do not treat this citation as current/live authority until treatment and progeny are derived; mark live-law status as unverified or supply a verified treatment record.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity status is only verified_identity, while treatment.field_i_validity is unverified.",
+          "Progeny is not meaningfully populated: indexed_citing_opinions is null and rows_cached is 0.",
+          "No adverse treatment edge is disclosed, but the record says treatment/progeny were intentionally not derived, so absence of adverse edges cannot verify live-law status."
+        ],
+        "residual_risks": [
+          "The case citation itself may be real; this finding is limited to current-validity/live-law treatment."
+        ],
+        "suggested_tightening": "Separate case-existence verification from live-law currency, and display this authority as treatment unverified unless a full treatment record is supplied.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "6d975458d1272bfe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload says field_i_validity is unverified, matching the lake treatment field.",
+          "The payload's scope note matches the lake scope note that treatment/progeny were intentionally not derived until S6 promotion.",
+          "No affirmative good-law, overruled, abrogated, limited, or weight label is asserted in this row."
+        ],
+        "residual_risks": [
+          "Because the treatment status is unverified, no affirmative current-validity conclusion should be drawn from this record."
+        ],
+        "suggested_tightening": "Keep the visible treatment label as unverified until a populated treatment/progeny derivation is available.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/new-jersey-v-portash--110038.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"e2bc48a720757238\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity/citations, but it does not verify that the authority remains live law under the currency/treatment lens.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not treat this citation as current/live authority until treatment and progeny are derived; mark live-law status as unverified or supply a verified treatment record.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"record_id=new-jersey-v-portash--110038\"\n      },\n      \"reasons\": [\n        \"Lake identity status is only verified_identity, while treatment.field_i_validity is unverified.\",\n        \"Progeny is not meaningfully populated: indexed_citing_opinions is null and rows_cached is 0.\",\n        \"No adverse treatment edge is disclosed, but the record says treatment/progeny were intentionally not derived, so absence of adverse edges cannot verify live-law status.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The case citation itself may be real; this finding is limited to current-validity/live-law treatment.\"\n      ],\n      \"suggested_tightening\": \"Separate case-existence verification from live-law currency, and display this authority as treatment unverified unless a full treatment record is supplied.\"\n    },\n    {\n      \"assertion_id\": \"6d975458d1272bfe\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload says field_i_validity is unverified, matching the lake treatment field.\",\n        \"The payload's scope note matches the lake scope note that treatment/progeny were intentionally not derived until S6 promotion.\",\n        \"No affirmative good-law, overruled, abrogated, limited, or weight label is asserted in this row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because the treatment status is unverified, no affirmative current-validity conclusion should be drawn from this record.\"\n      ],\n      \"suggested_tightening\": \"Keep the visible treatment label as unverified until a populated treatment/progeny derivation is available.\"\n    }\n  ],\n  \"notes\": \"No content_page.* file was present in the disclosed working directory; review is based on group_inventory.jsonl plus the lake and text files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:37:17-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:21:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4a83b0cb5b"
+    ],
     "group_id": "_overhaul2/lake/cases/new-jersey-v-portash--110038.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-f521c84d",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f521c84d.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:08.704723Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:09.512979Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:10.789165Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:12.874492Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:16.633516Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record new-jersey-v-portash--110038"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "new-jersey-v-portash--110038"
+    ],
+    "tokens": {
+      "input": 116404,
+      "output": 5925,
+      "source": "codex-events",
+      "total": 122329
+    },
+    "verdict_map": {
+      "6d975458d1272bfe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e2bc48a720757238": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4a83b0cb5b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 113.2
   }
 }

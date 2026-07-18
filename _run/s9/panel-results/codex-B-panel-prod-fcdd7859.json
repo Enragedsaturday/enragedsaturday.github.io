@@ -1,22 +1,175 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Davis v. United States (2011).md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "681a244c71394b02",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "citation: \"564 U.S. 229 (2011)\"",
+          "locator_note": "group_inventory locator field=citation; content_page frontmatter and lake.citations conflict with the inventory payload.",
+          "needs_cl": false,
+          "problem": "The case-cite assertion identifies Davis with 565 U.S. 1100 (2011), 2011 U.S. LEXIS 8943, and 132 S. Ct. 864, but the disclosed page and lake record identify the reviewed 2011 merits authority as 564 U.S. 229, 2011 U.S. LEXIS 4560, 131 S. Ct. 2419, and 180 L. Ed. 2d 285. The asserted cite cannot be treated as the live Davis merits authority from this record.",
+          "proposed_fix": "Replace the citation metadata with 564 U.S. 229 (2011), 131 S. Ct. 2419; 180 L. Ed. 2d 285, and 2011 U.S. LEXIS 4560.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "content_page identifies the authority as 564 U.S. 229 (2011), not 565 U.S. 1100 (2011).",
+          "lake.citations.official.cite is 564 U.S. 229 and lake.citations.vendor_neutral is 2011 U.S. LEXIS 4560.",
+          "lake.identity.expected_citation_found is true for the 564 U.S. 229 merits record."
+        ],
+        "residual_risks": [
+          "The disclosed files do not establish what 565 U.S. 1100 refers to; if it is a separate order, it needs a separate authority record."
+        ],
+        "suggested_tightening": "Keep the disambiguation note, but ensure every citation field points to the 564 U.S. 229 merits decision.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f36d60f8e9073511",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B found no disclosed negative treatment undermining the Good-Faith Exception role.",
+          "content_page lists the home role as Key — Progeny (good faith).",
+          "lake.treatment.scope_note says Davis extends the Leon good-faith line and is good law."
+        ],
+        "residual_risks": [
+          "Home-role support and page-placement consistency are outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f8b781c910b43cb9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B found no disclosed negative treatment undermining the stated holding as live law.",
+          "lake.treatment.field_i_validity is good_law as of 2026-06-30.",
+          "lake.treatment.edges and point_overrides are empty."
+        ],
+        "residual_risks": [
+          "Holding support and quote fidelity are outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1609c4df932beb61",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "lake.treatment.edges, point_overrides, and off_cl_links disclose no superseding, overruling, abrogating, or limiting event.",
+          "content_page states the same good-law status and Binding — SCOTUS label."
+        ],
+        "residual_risks": [
+          "The lake derivation records zero reviewed citing opinions, so this stands on the lake judgment fields and disclosed empty treatment edges."
+        ],
+        "suggested_tightening": "If narrowing is desired, phrase the subsequent-history sentence as no negative treatment recorded in the disclosed lake as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdb6c43f03cc8d76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "content_page authority_weight is Binding — SCOTUS.",
+          "lake.identity.court is U.S. Supreme Court and court_level is scotus.",
+          "No disclosed treatment field limits the precedential weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Davis v. United States (2011).md\",\"reviewed\":[{\"assertion_id\":\"681a244c71394b02\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case-cite assertion identifies Davis with 565 U.S. 1100 (2011), 2011 U.S. LEXIS 8943, and 132 S. Ct. 864, but the disclosed page and lake record identify the reviewed 2011 merits authority as 564 U.S. 229, 2011 U.S. LEXIS 4560, 131 S. Ct. 2419, and 180 L. Ed. 2d 285. The asserted cite cannot be treated as the live Davis merits authority from this record.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the citation metadata with 564 U.S. 229 (2011), 131 S. Ct. 2419; 180 L. Ed. 2d 285, and 2011 U.S. LEXIS 4560.\",\"evidence_quote\":\"citation: \\\"564 U.S. 229 (2011)\\\"\",\"needs_cl\":false,\"locator_note\":\"group_inventory locator field=citation; content_page frontmatter and lake.citations conflict with the inventory payload.\"},\"reasons\":[\"content_page identifies the authority as 564 U.S. 229 (2011), not 565 U.S. 1100 (2011).\",\"lake.citations.official.cite is 564 U.S. 229 and lake.citations.vendor_neutral is 2011 U.S. LEXIS 4560.\",\"lake.identity.expected_citation_found is true for the 564 U.S. 229 merits record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The disclosed files do not establish what 565 U.S. 1100 refers to; if it is a separate order, it needs a separate authority record.\"],\"suggested_tightening\":\"Keep the disambiguation note, but ensure every citation field points to the 564 U.S. 229 merits decision.\"},{\"assertion_id\":\"f36d60f8e9073511\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no disclosed negative treatment undermining the Good-Faith Exception role.\",\"content_page lists the home role as Key — Progeny (good faith).\",\"lake.treatment.scope_note says Davis extends the Leon good-faith line and is good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role support and page-placement consistency are outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f8b781c910b43cb9\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no disclosed negative treatment undermining the stated holding as live law.\",\"lake.treatment.field_i_validity is good_law as of 2026-06-30.\",\"lake.treatment.edges and point_overrides are empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding support and quote fidelity are outside Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1609c4df932beb61\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"lake.treatment.edges, point_overrides, and off_cl_links disclose no superseding, overruling, abrogating, or limiting event.\",\"content_page states the same good-law status and Binding — SCOTUS label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake derivation records zero reviewed citing opinions, so this stands on the lake judgment fields and disclosed empty treatment edges.\"],\"suggested_tightening\":\"If narrowing is desired, phrase the subsequent-history sentence as no negative treatment recorded in the disclosed lake as of 2026-06-30.\"},{\"assertion_id\":\"fdb6c43f03cc8d76\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"content_page authority_weight is Binding — SCOTUS.\",\"lake.identity.court is U.S. Supreme Court and court_level is scotus.\",\"No disclosed treatment field limits the precedential weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:42:13-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:53:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-82877c804a"
+    ],
     "group_id": "content/cases/Davis v. United States (2011).md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-fcdd7859",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-fcdd7859.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:04.959579Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:05.767610Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:06.959235Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:09.003781Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:12.573380Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. United States (2011)"
+    ],
+    "tokens": {
+      "input": 190512,
+      "output": 7660,
+      "source": "codex-events",
+      "total": 198172
+    },
+    "verdict_map": {
+      "1609c4df932beb61": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "681a244c71394b02": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f36d60f8e9073511": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f8b781c910b43cb9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdb6c43f03cc8d76": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-82877c804a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.1
   }
 }

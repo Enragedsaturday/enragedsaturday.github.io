@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Minnick v. Mississippi.json",
+    "lens": "A",
+    "notes": "Lens A review found one quote-pinpoint fidelity defect; no treatment finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7c7606f5a219a4cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Minnick v. Mississippi, U.S. Supreme Court, decided 1990-12-03.",
+          "The official citation 498 U.S. 146 and listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b9eff4501b9b7fb3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we now hold that when counsel is requested, interrogation must cease",
+          "locator_note": "pin-153 in lake pinpoints; displayed page quote is at content_page.md line 53; matching opinion text is at star page *153 in text line 26.",
+          "needs_cl": false,
+          "problem": "The pin-153 quote stored in the lake/payload is not the opinion quote; it captures page/header/background text and stops at '## Rule No.' The lake entry itself marks quote_fidelity as mismatch and has no page/star marker.",
+          "proposed_fix": "Replace pin-153 with the actual opinion sentence beginning 'we now hold...' at star page 153, and set the pin metadata to page/star 153 if the schema permits.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is not present as the claimed opinion passage; it is a harvested content-page fragment.",
+          "The cached opinion text does contain the displayed rule quote at star page *153, so the legal sentence can be repaired from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote appears supported; the defect is the stored pinpoint quote/metadata."
+        ],
+        "suggested_tightening": "Anchor pin-153 directly to the sentence beginning 'we now hold...' on star page *153.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae68f64957059513",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1990-12-03, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Lens A does not substantively assess treatment or currency."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Minnick v. Mississippi.json\",\"reviewed\":[{\"assertion_id\":\"7c7606f5a219a4cc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Minnick v. Mississippi, U.S. Supreme Court, decided 1990-12-03.\",\"The official citation 498 U.S. 146 and listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b9eff4501b9b7fb3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-153 quote stored in the lake/payload is not the opinion quote; it captures page/header/background text and stops at '## Rule No.' The lake entry itself marks quote_fidelity as mismatch and has no page/star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-153 with the actual opinion sentence beginning 'we now hold...' at star page 153, and set the pin metadata to page/star 153 if the schema permits.\",\"evidence_quote\":\"we now hold that when counsel is requested, interrogation must cease\",\"needs_cl\":false,\"locator_note\":\"pin-153 in lake pinpoints; displayed page quote is at content_page.md line 53; matching opinion text is at star page *153 in text line 26.\"},\"reasons\":[\"The payload quote is not present as the claimed opinion passage; it is a harvested content-page fragment.\",\"The cached opinion text does contain the displayed rule quote at star page *153, so the legal sentence can be repaired from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content-page quote appears supported; the defect is the stored pinpoint quote/metadata.\"],\"suggested_tightening\":\"Anchor pin-153 directly to the sentence beginning 'we now hold...' on star page *153.\"},{\"assertion_id\":\"ae68f64957059513\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1990-12-03, as_of_treatment 2026-06-30, varies_by_point false.\",\"Lens A does not substantively assess treatment or currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review found one quote-pinpoint fidelity defect; no treatment finding is raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:31:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:14:37-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e4fb86c906"
+    ],
     "group_id": "_overhaul2/lake/cases/Minnick v. Mississippi.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-80bedde2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-80bedde2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:53.779849Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:54.493409Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:55.344083Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:56.458890Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:58.454041Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:31:02.191390Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Minnick v. Mississippi"
+    ],
+    "tokens": {
+      "input": 250329,
+      "output": 6142,
+      "source": "codex-events",
+      "total": 256471
+    },
+    "verdict_map": {
+      "7c7606f5a219a4cc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae68f64957059513": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b9eff4501b9b7fb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e4fb86c906",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 125.8
   }
 }

@@ -1,0 +1,187 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "79b28256b835b066",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows '500 U.S. 44 (1991)' and caption 'COUNTY OF RIVERSIDE ET AL. v. McLAUGHLIN ET AL.' (No. 89-1817), confirming the case exists at the official cite.",
+          "Official selection present and correct (500 U.S. 44, type 1); lake cluster_id 112585 matches the opinion record."
+        ],
+        "residual_risks": [
+          "Parallel cites (111 S. Ct. 1661; 114 L. Ed. 2d 49; 1991 U.S. LEXIS 2528) not independently reporter-checked, but are internally consistent and uncontradicted by disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1a1d8d62e52a4eef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "within 48 hours of arrest will, as a general matter, comply with the promptness requirement of",
+          "locator_note": "content page ## Rule, ^pin-56; opinion 112585 at 500 U.S. 56",
+          "needs_cl": false,
+          "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (end of Issue paragraph + '## Rule' heading + 'A 48-hour window is presumptively prompt') instead of the sentence actually quoted at ^pin-56; that harvested string does not appear in the opinion.",
+          "proposed_fix": "Re-harvest the ^pin-56 payload to the actual quoted sentence: \"[A] jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement of Gerstein.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-56 content-page quotation is verbatim in the cached opinion ('within 48 hours of arrest will, as a general matter, comply with the promptness requirement of Gerstein').",
+          "The payload `quote` string ('...weekend- and holiday-excluding schedule met it. ## Rule A 48-hour window...') is page structural text absent from the opinion (grep count 0) — an extraction-offset artifact, not a content-page quote defect."
+        ],
+        "residual_risks": [
+          "Verdict rests on the page's real ^pin-56 sentence being faithful; the corrupt payload should be regenerated so downstream tallies do not treat this as a genuine miss."
+        ],
+        "suggested_tightening": "Re-run the quote harvester so the ^pin-56 payload captures the sentence between the quotation marks, not the preceding heading text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "857b77e2f8649eff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Both sentences verbatim in cached opinion: 'This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours' and 'Such a hearing may nonetheless violate Gerstein if the arrested individual can prove that his or her probable cause determination was delayed unreasonably.'",
+          "Pre-computed 'mismatch' flag is a false positive: in the source HTML 'Gerstein' is a citation-span link, which breaks naive contiguous string matching but not the quotation's fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "905658eda859588a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Every fragment verbatim in cached opinion: '...does not receive a probable cause determination within 48 hours, the calculus changes' and 'the burden shifts to the government to demonstrate the existence of a bona fide emergency or other extraordinary circumstance' and 'Nor, for that matter, do intervening weekends.'",
+          "Ellipses ('. . .') correctly elide 'In such a case ... Rather,'; '[T]he' and '[qualify as such a circumstance]' are proper bracketed editorial completions — faithful compressed quotation.",
+          "Pre-computed 'mismatch' is a false positive driven by the multi-sentence ellipsis compression not existing as one contiguous substring."
+        ],
+        "residual_risks": [
+          "'[qualify as such a circumstance]' is an editorial completion of the elided predicate; supported by immediate context (weekends do not qualify as an extraordinary circumstance)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26006df0efce865c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note doctrine (48-hour presumption; burden shift beyond 48 hours; weekends/holidays do not excuse) is fully supported by the verified opinion quotations.",
+          "No negative-treatment signal is disclosed; field_i_validity=good_law is a migration-seed carried from page frontmatter (provenance: 'legacy treatment migrated: good -> good_law')."
+        ],
+        "residual_risks": [
+          "Currency of 'good_law' cannot be independently confirmed from disclosed evidence: only raw outbound citation edges / citation_count (1552) are inlined, with no citator classification of the citing cases.",
+          "date_decided parenthetical (CL dateFiled 1991-05-20 vs announced May 13, 1991) is a metadata caveat, not a doctrinal defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2678a19759",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b004fe2d4c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b476f34c7e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/County of Riverside v. McLaughlin.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-06-84703758",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "County of Riverside v. McLaughlin"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1a1d8d62e52a4eef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "26006df0efce865c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "79b28256b835b066": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "857b77e2f8649eff": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "905658eda859588a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-56723723bb",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2678a19759",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b004fe2d4c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b476f34c7e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

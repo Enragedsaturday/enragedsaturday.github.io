@@ -1,39 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/wallace-v-kato--145756.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review was limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "72cbcaba7bbdc6c9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "record_id=wallace-v-kato--145756; treatment/progeny fields in lake/wallace-v-kato--145756__806799.json",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity/existence of Wallace v. Kato, but it does not verify the currency-angle existence question: whether the authority remains live law. Treatment is expressly unverified and progeny was not derived.",
+          "proposed_fix": "Do not present this authority as live/current law from this record. Mark live-law status as unverified, or promote the record to include derived treatment/progeny before making a currency assertion.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity fields verify the case identity and citations, including Wallace v. Kato, date_decided 2007-02-21, and citations 127 S. Ct. 1091 / 549 U.S. 384.",
+          "The treatment record states field_i_validity is unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0 with no derived edges, so live-law status cannot be verified from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The opinion text confirms a Supreme Court decision, but it does not disclose later overruling, abrogation, limitation, or continued validity."
+        ],
+        "suggested_tightening": "Separate identity/existence from current-law status; label this citation identity-verified but treatment/live-law unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "57b093235fa09021",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, varies_by_point is false, and both as-of fields are null.",
+          "The lake scope note says treatment/progeny were intentionally not derived until S6 promotion, and the disclosed edges/point_overrides are empty, so no contrary treatment call appears in the disclosed record."
+        ],
+        "residual_risks": [
+          "This verifies only the unverified-treatment label; it does not establish Wallace v. Kato as good law."
+        ],
+        "suggested_tightening": "Keep the unverified-treatment limitation explicit anywhere the case is displayed or relied on.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/wallace-v-kato--145756.json\",\"reviewed\":[{\"assertion_id\":\"72cbcaba7bbdc6c9\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity/existence of Wallace v. Kato, but it does not verify the currency-angle existence question: whether the authority remains live law. Treatment is expressly unverified and progeny was not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not present this authority as live/current law from this record. Mark live-law status as unverified, or promote the record to include derived treatment/progeny before making a currency assertion.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"record_id=wallace-v-kato--145756; treatment/progeny fields in lake/wallace-v-kato--145756__806799.json\"},\"reasons\":[\"Lake identity fields verify the case identity and citations, including Wallace v. Kato, date_decided 2007-02-21, and citations 127 S. Ct. 1091 / 549 U.S. 384.\",\"The treatment record states field_i_validity is unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0 with no derived edges, so live-law status cannot be verified from disclosed evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The opinion text confirms a Supreme Court decision, but it does not disclose later overruling, abrogation, limitation, or continued validity.\"],\"suggested_tightening\":\"Separate identity/existence from current-law status; label this citation identity-verified but treatment/live-law unverified.\"},{\"assertion_id\":\"57b093235fa09021\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, varies_by_point is false, and both as-of fields are null.\",\"The lake scope note says treatment/progeny were intentionally not derived until S6 promotion, and the disclosed edges/point_overrides are empty, so no contrary treatment call appears in the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This verifies only the unverified-treatment label; it does not establish Wallace v. Kato as good law.\"],\"suggested_tightening\":\"Keep the unverified-treatment limitation explicit anywhere the case is displayed or relied on.\"}],\"notes\":\"No content_page.* file was present in the disclosed working directory; review was limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:38:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:25:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f6c73ce4b7"
+    ],
     "group_id": "_overhaul2/lake/cases/wallace-v-kato--145756.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "wallace-v-kato--145756"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-098231d8",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-098231d8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'wallace-v-kato--145756' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record wallace-v-kato--145756"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "wallace-v-kato--145756"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 87965,
+      "output": 2865,
+      "source": "codex-events",
+      "total": 90830
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "57b093235fa09021": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72cbcaba7bbdc6c9": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6c73ce4b7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 58.8
   }
 }

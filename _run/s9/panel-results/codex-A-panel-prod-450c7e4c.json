@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Gouveia.json",
+    "lens": "A",
+    "notes": "Reviewed only against disclosed workspace files; no external sources used. Treatment row recorded for field consistency only, with no lens-A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "9b0e9a34693a1998",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for United States v. Gouveia, U.S. Supreme Court, decided 1984-05-29, docket 83-128.",
+          "The lake official citation is 467 U.S. 180 and the listed parallel/vendor citations match the content page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "09cc4aadd2097f93",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "our cases have long recognized that the right to counsel attaches only at or after the initiation of adversary judicial proceedings against the defendant.",
+          "locator_note": "text/United States v. Gouveia__e856c7.txt line 13; content_page.md line 53; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "Pin-187's stored quote is not the opinion passage; it is a harvested content-page/header excerpt ending at '## Rule No.' The actual opinion text contains the right-to-counsel sentence on page 187, but the lake pin has quote_fidelity='mismatch' and no star_marker/page.",
+          "proposed_fix": "Replace pin-187 with the actual opinion sentence and set the page/star marker to 187, or regenerate the pin. If strict character fidelity is required, display the opening word as 'our', not '[O]ur'.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text has the quoted sentence at the page-187 portion of the opinion.",
+          "The lake pin-187 quote is a malformed page excerpt, not a character-faithful quote from the opinion."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supported; the defect is the quote/pin record and possibly the bracketed capitalization in the displayed quote."
+        ],
+        "suggested_tightening": "Store the exact sentence from the opinion text for pin-187 and keep any editorial capitalization outside the quote-fidelity field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd991a6a64e8f151",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text at the page-188 marker contains the same quoted language beginning 'have involved points of time'.",
+          "The lake pin-188 has star_marker='188', quote_fidelity='matched', and the content page's linked fragment targets the same passage."
+        ],
+        "residual_risks": [
+          "The surrounding block has OCR noise before the quoted fragment, but the asserted fragment itself is unaffected."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a7ce63a19553e43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A; no treatment/currency attack is made.",
+          "For disclosed-field consistency only, the payload matches the lake and content page fields: good_law, as_of_treatment 2026-06-30, varies_by_point=false, and the same Rothgery scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Gouveia.json\",\"reviewed\":[{\"assertion_id\":\"9b0e9a34693a1998\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for United States v. Gouveia, U.S. Supreme Court, decided 1984-05-29, docket 83-128.\",\"The lake official citation is 467 U.S. 180 and the listed parallel/vendor citations match the content page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"09cc4aadd2097f93\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-187's stored quote is not the opinion passage; it is a harvested content-page/header excerpt ending at '## Rule No.' The actual opinion text contains the right-to-counsel sentence on page 187, but the lake pin has quote_fidelity='mismatch' and no star_marker/page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-187 with the actual opinion sentence and set the page/star marker to 187, or regenerate the pin. If strict character fidelity is required, display the opening word as 'our', not '[O]ur'.\",\"evidence_quote\":\"our cases have long recognized that the right to counsel attaches only at or after the initiation of adversary judicial proceedings against the defendant.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Gouveia__e856c7.txt line 13; content_page.md line 53; lake pinpoints[0]\"},\"reasons\":[\"The disclosed text has the quoted sentence at the page-187 portion of the opinion.\",\"The lake pin-187 quote is a malformed page excerpt, not a character-faithful quote from the opinion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition appears supported; the defect is the quote/pin record and possibly the bracketed capitalization in the displayed quote.\"],\"suggested_tightening\":\"Store the exact sentence from the opinion text for pin-187 and keep any editorial capitalization outside the quote-fidelity field.\"},{\"assertion_id\":\"fd991a6a64e8f151\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion text at the page-188 marker contains the same quoted language beginning 'have involved points of time'.\",\"The lake pin-188 has star_marker='188', quote_fidelity='matched', and the content page's linked fragment targets the same passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The surrounding block has OCR noise before the quoted fragment, but the asserted fragment itself is unaffected.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9a7ce63a19553e43\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside lens A; no treatment/currency attack is made.\",\"For disclosed-field consistency only, the payload matches the lake and content page fields: good_law, as_of_treatment 2026-06-30, varies_by_point=false, and the same Rothgery scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment audit performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only against disclosed workspace files; no external sources used. Treatment row recorded for field consistency only, with no lens-A treatment finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:54:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-85d0656803"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Gouveia.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-450c7e4c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Gouveia"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 175409,
+      "output": 6685,
+      "source": "codex-events",
+      "total": 182094
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "09cc4aadd2097f93": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9a7ce63a19553e43": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b0e9a34693a1998": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd991a6a64e8f151": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-85d0656803",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 134.0
   }
 }

@@ -1,0 +1,171 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0c38d862e92b4a7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unambiguously United States v. Chadwick (Burger, C.J.; double-locked footlocker/marihuana; D. Mass.; First Circuit affirmance; 1977), matching record identity.",
+          "Internal page labels run *4 through *16, consistent with a decision beginning at 433 U.S. 1; pinpoints at 11, 13, 15 all verify on their labeled pages.",
+          "'433 U.S. 1' is well-formed for a 1977 SCOTUS case and internally consistent across frontmatter/lake/Sources; nothing disclosed contradicts it."
+        ],
+        "residual_risks": [
+          "The CAP-format excerpt begins at *4, so the first-page cite '433 U.S. 1' is not literally shown; parallels 97 S. Ct. 2476 / 53 L. Ed. 2d 538 and 1977 U.S. LEXIS 133 are not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c3a77bbab0119ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the opinion: 'Once law enforcement officers have reduced luggage or other personal property not immediately associated with the person of the arrestee to their exclusive control, and there is no longer any danger that the arrestee might gain access to the property to seize a weapon or destroy evidence, a search of that property is no longer an incident of the arrest.'",
+          "It appears after the '*15' page label, so star_marker='15' is correct; matched/star-verified holds."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c08bc0e180bb8c80",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Despite the record's conservative 'mismatch'/'slip-only' flag, the quote 'a person's expectations of privacy in personal luggage are substantially greater than in an automobile.' is in fact verbatim in the opinion ('In sum, a person's expectations of privacy in personal luggage are substantially greater than in an automobile.') and sits between the '*13' and '*14' page labels, so the content-page pincite 'Id. at 13' is correct.",
+          "The quote is faithful and correctly located; no content defect."
+        ],
+        "residual_risks": [
+          "Payload label understates verifiability (flagged mismatch/slip-only though the quote is actually star-verifiable at 13)."
+        ],
+        "suggested_tightening": "Promote pin-13 from slip-only/mismatch to star-verified at 433 U.S. 13 (quote confirmed verbatim on that page).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f8ea14631c8c5d2d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "By placing personal effects inside a double-locked footlocker, respondents manifested an expectation that the contents would remain free from public examination.",
+          "locator_note": "pinpoints[pin-11].quote; content page ^pin-11 in Rule section",
+          "needs_cl": false,
+          "problem": "Lake pinpoint pin-11's quote field holds a content-page markdown dump ('--- # United States v. Chadwick *433 U.S. 1 (1977)* ... ## Rule No. Personal luggage carries a high expectation of privacy...') rather than an opinion quote. It is honestly self-flagged mismatch/slip-only, but the field is corrupted.",
+          "proposed_fix": "Repair pin-11 to the opinion quote the content page anchors at 433 U.S. 11, verbatim (with a marked ellipsis) in the text: 'By placing personal effects inside a double-locked footlocker, respondents manifested an expectation that the contents would remain free from public examination. ... There being no exigency, it was unreasonable for the Government to conduct this search without the safeguards a judicial warrant provides.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored 'quote' is a page-harvest blob absent from the opinion, confirming the record's own mismatch flag.",
+          "The reader-facing content is sound: the content page's ^pin-11 quote (with a properly marked ellipsis) is verbatim on page 11 of the opinion — so only the lake metadata is corrupt, not the rendered pincite."
+        ],
+        "residual_risks": [
+          "A consumer reading pinpoints[].quote directly would surface garbage."
+        ],
+        "suggested_tightening": "Replace the corrupted quote field with the verbatim 11 quote and promote to star-verified.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f14e5df1ec12f75e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The load-bearing treatment — 'caution', varies_by_point=true, limited by California v. Acevedo (500 U.S. 565) in the automobile-container context with the core surviving outside it — is documented by a non-triage migration edge (journal_ref 'migration:limited') and a matching point_override; it is internally consistent and unrefuted by any disclosed evidence.",
+          "Other negative edges (Camou/Riley/Gates/Leon/Rakas/Ross labeled overruled) are proposed:true, audit_needed (R15), and facially triage artifacts, not the basis of the treatment."
+        ],
+        "residual_risks": [
+          "The Acevedo limitation cannot be independently confirmed from the inlined Chadwick opinion alone (Acevedo's text is not disclosed); it rests on the record's own migration edge and would need the Acevedo opinion/citator to verify.",
+          "Un-audited proposed negative edges pending R15 must not be read as actual negative treatment."
+        ],
+        "suggested_tightening": "Complete the R15 audit of the proposed edges; keep the Acevedo limitation as the governing treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b091bca494",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Chadwick.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-01-63e6e678",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Chadwick"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0c38d862e92b4a7b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0c3a77bbab0119ba": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c08bc0e180bb8c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f14e5df1ec12f75e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f8ea14631c8c5d2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b091bca494",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fef7347dbe",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

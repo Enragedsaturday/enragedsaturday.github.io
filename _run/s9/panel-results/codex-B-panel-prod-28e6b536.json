@@ -1,38 +1,194 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Trupiano v. United States.md",
+    "lens": "B",
+    "notes": "Reviewed all five assertion_ids under lens B only; support merits and quote fidelity were not evaluated.",
+    "reviewed": [
+      {
+        "assertion_id": "1bee62b4b57891b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Trupiano v. United States, court U.S., decided 1948-06-14, year 1948, docket 427, cluster_id 104576.",
+          "Lake citations include official cite 334 U.S. 699, vendor-neutral cite 1948 U.S. LEXIS 1986, and the listed parallel citations."
+        ],
+        "residual_risks": [
+          "Existence is verified; current precedential force is not established by this citation row because lake treatment remains unverified."
+        ],
+        "suggested_tightening": "Keep citation/existence separate from live-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1cad20f45347802e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "home=SIA Persons; role=Historical / origin",
+          "needs_cl": true,
+          "problem": "The role embeds a treatment/currency label, 'Historical', but the disclosed lake treatment record is explicitly unverified and has no progeny/treatment edges certifying historical or overruled status.",
+          "proposed_fix": "Use 'Origin' or 'Under-review / origin' until treatment is certified, or supply disclosed treatment/progeny records supporting the Historical label.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate topical support for the SIA Persons home, but it can test the embedded live-law label.",
+          "Lake treatment has field_i_validity unverified, composite_basis unverified, edges [], and rows_cached 0."
+        ],
+        "residual_risks": [
+          "The 'origin' half may be substantively right, but that is outside this lens and not separable in the asserted role string."
+        ],
+        "suggested_tightening": "Split topic role from treatment status: e.g., role='origin' plus a separately certified treatment badge.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9d691c3f59b3d8a7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "field=holding; later-history clause after the core Trupiano rule",
+          "needs_cl": true,
+          "problem": "The holding field includes later-history treatment claims that Trupiano was rejected by Rabinowitz and superseded by Chimel, but no disclosed lake treatment edge, progeny enumeration, or authority record for Rabinowitz/Chimel verifies that treatment chain.",
+          "proposed_fix": "Remove the Rabinowitz/Chimel clause from the holding or mark it expressly uncertified until disclosed treatment edges or successor authority records are present.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The original Trupiano text can verify the 1948 warrant-practicability rule, but the Rabinowitz/Chimel currency clause depends on later authorities not disclosed as lake records.",
+          "Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges []."
+        ],
+        "residual_risks": [
+          "This is not a quote-fidelity or merits-support finding; it attacks only the uncertified treatment/currency clause embedded in the support assertion."
+        ],
+        "suggested_tightening": "Keep the historical treatment statement only in a treatment section with its certification status, not in the holding field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "59d7ca39b4909923",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake record: field_i_validity unverified, composite_basis unverified, as_of_content null, as_of_treatment null, composite_basis_ref null, and varies_by_point false.",
+          "The lake record also discloses no treatment edges and no cached progeny rows, consistent with the frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "This only verifies the unverified treatment metadata; it does not verify the page's stronger visible 'Overruled' narrative."
+        ],
+        "suggested_tightening": "Do not render stronger treatment conclusions as certified while these lake fields remain unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed26ae95417b6ac6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Preserved as **history**, never as live law.",
+          "locator_note": "field=authority_weight",
+          "needs_cl": false,
+          "problem": "The authority_weight label 'Binding — SCOTUS' overstates live precedential force where the disclosed treatment is unverified and the page itself says the case is preserved as history, never as live law.",
+          "proposed_fix": "Replace with a non-live-law label such as 'SCOTUS — treatment unverified' or split court hierarchy from current precedential status.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity verifies SCOTUS source level, but lake treatment does not verify binding current force.",
+          "The content page's own treatment prose conflicts with a live-law 'Binding' label."
+        ],
+        "residual_risks": [
+          "If 'Binding — SCOTUS' is intended only as court hierarchy, the label is ambiguous and should be renamed to avoid implying current good law."
+        ],
+        "suggested_tightening": "Use separate fields for court_level_weight and current_treatment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Trupiano v. United States.md\",\"reviewed\":[{\"assertion_id\":\"1bee62b4b57891b6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms Trupiano v. United States, court U.S., decided 1948-06-14, year 1948, docket 427, cluster_id 104576.\",\"Lake citations include official cite 334 U.S. 699, vendor-neutral cite 1948 U.S. LEXIS 1986, and the listed parallel citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Existence is verified; current precedential force is not established by this citation row because lake treatment remains unverified.\"],\"suggested_tightening\":\"Keep citation/existence separate from live-law status.\"},{\"assertion_id\":\"1cad20f45347802e\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The role embeds a treatment/currency label, 'Historical', but the disclosed lake treatment record is explicitly unverified and has no progeny/treatment edges certifying historical or overruled status.\",\"severity\":\"medium\",\"proposed_fix\":\"Use 'Origin' or 'Under-review / origin' until treatment is certified, or supply disclosed treatment/progeny records supporting the Historical label.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"home=SIA Persons; role=Historical / origin\"},\"reasons\":[\"Lens B does not evaluate topical support for the SIA Persons home, but it can test the embedded live-law label.\",\"Lake treatment has field_i_validity unverified, composite_basis unverified, edges [], and rows_cached 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The 'origin' half may be substantively right, but that is outside this lens and not separable in the asserted role string.\"],\"suggested_tightening\":\"Split topic role from treatment status: e.g., role='origin' plus a separately certified treatment badge.\"},{\"assertion_id\":\"9d691c3f59b3d8a7\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The holding field includes later-history treatment claims that Trupiano was rejected by Rabinowitz and superseded by Chimel, but no disclosed lake treatment edge, progeny enumeration, or authority record for Rabinowitz/Chimel verifies that treatment chain.\",\"severity\":\"high\",\"proposed_fix\":\"Remove the Rabinowitz/Chimel clause from the holding or mark it expressly uncertified until disclosed treatment edges or successor authority records are present.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"field=holding; later-history clause after the core Trupiano rule\"},\"reasons\":[\"The original Trupiano text can verify the 1948 warrant-practicability rule, but the Rabinowitz/Chimel currency clause depends on later authorities not disclosed as lake records.\",\"Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges [].\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not a quote-fidelity or merits-support finding; it attacks only the uncertified treatment/currency clause embedded in the support assertion.\"],\"suggested_tightening\":\"Keep the historical treatment statement only in a treatment section with its certification status, not in the holding field.\"},{\"assertion_id\":\"59d7ca39b4909923\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the lake record: field_i_validity unverified, composite_basis unverified, as_of_content null, as_of_treatment null, composite_basis_ref null, and varies_by_point false.\",\"The lake record also discloses no treatment edges and no cached progeny rows, consistent with the frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This only verifies the unverified treatment metadata; it does not verify the page's stronger visible 'Overruled' narrative.\"],\"suggested_tightening\":\"Do not render stronger treatment conclusions as certified while these lake fields remain unverified.\"},{\"assertion_id\":\"ed26ae95417b6ac6\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The authority_weight label 'Binding — SCOTUS' overstates live precedential force where the disclosed treatment is unverified and the page itself says the case is preserved as history, never as live law.\",\"severity\":\"high\",\"proposed_fix\":\"Replace with a non-live-law label such as 'SCOTUS — treatment unverified' or split court hierarchy from current precedential status.\",\"evidence_quote\":\"Preserved as **history**, never as live law.\",\"needs_cl\":false,\"locator_note\":\"field=authority_weight\"},\"reasons\":[\"Lake identity verifies SCOTUS source level, but lake treatment does not verify binding current force.\",\"The content page's own treatment prose conflicts with a live-law 'Binding' label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If 'Binding — SCOTUS' is intended only as court hierarchy, the label is ambiguous and should be renamed to avoid implying current good law.\"],\"suggested_tightening\":\"Use separate fields for court_level_weight and current_treatment.\"}],\"notes\":\"Reviewed all five assertion_ids under lens B only; support merits and quote fidelity were not evaluated.\"}",
   "summary": {
-    "at": "2026-07-10T02:52:50-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:09:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ade2f031b9"
+    ],
     "group_id": "content/cases/Trupiano v. United States.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Trupiano v. United States"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-28e6b536",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-28e6b536.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Trupiano v. United States' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Trupiano v. United States"
+    ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 162076,
+      "output": 7642,
+      "source": "codex-events",
+      "total": 169718
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1bee62b4b57891b6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1cad20f45347802e": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "59d7ca39b4909923": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d691c3f59b3d8a7": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": false,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ed26ae95417b6ac6": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7372ae9154",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6b64f2b758",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ade2f031b9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.4
   }
 }

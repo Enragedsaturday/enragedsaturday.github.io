@@ -1,0 +1,137 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "9d73764907ebbe04",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the genuine Harris v. New York, 401 U.S. 222 (1971), Burger, C.J., No. 206, 'Decided February 24, 1971' — matching the record's docket 206 and date_decided 1971-02-24.",
+          "Official cite 401 U.S. 222 is selected; parallel 91 S. Ct. 643 / 28 L. Ed. 2d 1 and 1971 U.S. LEXIS 75 come from cluster.citations[].",
+          "Lake identity (cluster 108272, identity_checked=true) corroborates the cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ada526c55077e9d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the genuine pin-226 quotation and it reproduces the disclosed opinion verbatim: 'The shield provided by Miranda cannot be perverted into a license to use perjury by way of a defense, free from the risk of confrontation with prior inconsistent utterances. We hold, therefore, that petitioner's credibility was appropriately impeached by use of his earlier conflicting statements.'",
+          "The passage sits after the *226 page label in the disclosed text, so the 'Id. at 226' pincite is correct.",
+          "quote_fidelity='mismatch' is a normalization false positive (source has italic markup on 'Miranda' and slip-only pagination); the content quote is faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ceed0a6a24f0a37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is the page front-matter + Background + Issue + 'Rule Yes.' header block (a harvest artifact), not the ^pin-225 sentence.",
+          "The genuine pin-225 quotation ('Having voluntarily taken the stand, petitioner was under an obligation to speak truthfully and accurately, and the prosecution here did no more than utilize the traditional truth-testing devices of the adversary process') matches the disclosed opinion verbatim and sits between the *225 and *226 labels, so pincite 225 is correct.",
+          "The 'mismatch' flag is a header-harvest false positive, not a content defect."
+        ],
+        "residual_risks": [
+          "Payload 'quote' should be re-harvested to the anchored pin-225 sentence rather than the front-matter block."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a70d6ce2c8d2558",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed opinion, which establishes the Miranda impeachment exception (relying on Walder, quoted in the cached text).",
+          "The scope_note's boundaries (extended by Oregon v. Hass; Fourth-Amendment analog via Walder/Havens; not reaching Doyle silence or James defense witnesses) are doctrinally coherent; the Walder relationship is confirmed in the disclosed text, though the Hass/Doyle/James specifics turn on cases not inlined.",
+          "Live 2026-06-30 currency is not confirmable from the pack (no citator inlined); nothing disclosed contradicts good_law; no defect asserted."
+        ],
+        "residual_risks": [
+          "good_law currency and the non-Harris progeny in the scope_note rest on sources not inlined; verified here only as uncontradicted and internally coherent."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c197a11fc8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Harris v. New York.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-04-ab29d48b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harris v. New York"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0ada526c55077e9d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0ceed0a6a24f0a37": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a70d6ce2c8d2558": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9d73764907ebbe04": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c197a11fc8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

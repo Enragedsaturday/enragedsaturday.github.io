@@ -1,39 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/killian-v-united-states--106310.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "8efe3089d2229f65",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record exists for record_id killian-v-united-states--106310 and identifies the case as Killian v. United States, U.S. Supreme Court, decided 1962-01-22.",
+          "The assertion's citation list exactly matches lake.citations.all: 368 U.S. 231, 82 S. Ct. 302, 7 L. Ed. 2d 256, and 1961 U.S. LEXIS 1931.",
+          "The assertion's official/display/null official-selection fields match the lake record's citations.display null, citations.official null, and official_selection.selected null."
+        ],
+        "residual_risks": [
+          "No content_page.* file is present in the disclosed directory, so this review verifies the inventory assertion against the lake record only."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "190388e3438e4334",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so no treatment merits finding is raised.",
+          "The treatment payload mirrors the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note states that treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Lens A did not assess whether the case remains good law or whether the unverified treatment status is substantively adequate."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/killian-v-united-states--106310.json\",\"reviewed\":[{\"assertion_id\":\"8efe3089d2229f65\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record exists for record_id killian-v-united-states--106310 and identifies the case as Killian v. United States, U.S. Supreme Court, decided 1962-01-22.\",\"The assertion's citation list exactly matches lake.citations.all: 368 U.S. 231, 82 S. Ct. 302, 7 L. Ed. 2d 256, and 1961 U.S. LEXIS 1931.\",\"The assertion's official/display/null official-selection fields match the lake record's citations.display null, citations.official null, and official_selection.selected null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No content_page.* file is present in the disclosed directory, so this review verifies the inventory assertion against the lake record only.\"],\"suggested_tightening\":null},{\"assertion_id\":\"190388e3438e4334\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so no treatment merits finding is raised.\",\"The treatment payload mirrors the disclosed lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note states that treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not assess whether the case remains good law or whether the unverified treatment status is substantively adequate.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:49-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:18:21-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/killian-v-united-states--106310.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "killian-v-united-states--106310"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-dbe1c892",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dbe1c892.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'killian-v-united-states--106310' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record killian-v-united-states--106310"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "killian-v-united-states--106310"
+    ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 66894,
+      "output": 1666,
+      "source": "codex-events",
+      "total": 68560
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "190388e3438e4334": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8efe3089d2229f65": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 6.7
+    "wall_clock_s": 36.8
   }
 }

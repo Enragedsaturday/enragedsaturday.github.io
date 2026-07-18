@@ -1,22 +1,189 @@
 {
-  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Brigham City v. Stuart.md\",\"reviewed\":[{\"assertion_id\":\"c581999ee41d3781\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name \\\"Brigham City v. Stuart\\\", court \\\"U.S. Supreme Court\\\", year 2006, docket 05-502, and date_decided 2006-05-22.\",\"Lake citations list official \\\"547 U.S. 398\\\", parallels \\\"126 S. Ct. 1943\\\" and \\\"164 L. Ed. 2d 650\\\", and vendor neutral \\\"2006 U.S. LEXIS 4155\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7f8bb3450bc8c2a1\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding field is substantively supported only as a prefix, but it is truncated with an ellipsis and omits the operative injury condition.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the holding with a complete rule: \\\"Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.\\\"\",\"evidence_quote\":\"holding: \\\"Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis to believe an occupant…\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter holding\"},\"reasons\":[\"The opinion states the question as warrantless home entry where officers have an objectively reasonable basis for believing an occupant is seriously injured or imminently threatened, and concludes that they may enter.\",\"The body rule in content_page.md supplies the missing condition, but the reviewed holding field itself is incomplete.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lake-level holding field appears beyond pinpoints, so support was checked against the cached opinion text and page body.\"],\"suggested_tightening\":\"Use \\\"for believing\\\" rather than \\\"to believe\\\" if the field is intended to track the Court's wording.\"},{\"assertion_id\":\"dce64478e935c735\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames emergency aid as an exigency obviating the warrant requirement and separately lists hot pursuit as another exigent entry category.\",\"The role is only \\\"Related (cross-doctrine)\\\", not anchor, so it does not overclaim that Brigham City is itself a hot-pursuit case.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep this as related, not key, because the facts involve emergency aid and ongoing violence rather than pursuit.\"},{\"assertion_id\":\"e82e9dedfcd45e5e\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Emergency aid is the central doctrine in the opinion: the Court considered whether police may enter a home without a warrant on an objectively reasonable basis to believe an occupant is seriously injured or imminently threatened.\",\"The opinion reverses suppression on that emergency-aid rationale, making \\\"Key — Anchor\\\" supportable.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5a2204039c39645a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court_level \\\"scotus\\\" and court \\\"U.S. Supreme Court\\\"; the page authority_weight \\\"Binding — SCOTUS\\\" matches that identity.\",\"Under lens A, no treatment/currency finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is outside lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9c4c9191eb5c3c96\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2006-05-22, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Brigham City v. Stuart, varies_by_point false, and the same scope note.\",\"Under lens A, no independent treatment/currency finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake derivation materials include audit-needed/proposed-edge information, but treatment review belongs to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Inventory contained no separate quote_fidelity, pincite, or black_letter assertion rows; this output reviews each of the six listed assertion_ids exactly once.\"}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Brigham City v. Stuart.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; every disclosed inventory row was reviewed exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "c581999ee41d3781",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name Brigham City v. Stuart, court U.S. Supreme Court, date_decided 2006-05-22, and year 2006.",
+          "Lake citations confirm official cite 547 U.S. 398, parallel cites 126 S. Ct. 1943 and 164 L. Ed. 2d 650, and vendor-neutral cite 2006 U.S. LEXIS 4155."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7f8bb3450bc8c2a1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In this case we consider whether police may enter a\nhome without a warrant when they have an objectively\nreasonable basis for believing that an occupant is seriously\ninjured or imminently threatened with such injury. We\nconclude that they may.",
+          "locator_note": "content_page frontmatter holding",
+          "needs_cl": false,
+          "problem": "The holding field is materially incomplete: it ends at 'believe an occupant…' and omits the injury/threat condition that makes the emergency-aid entry lawful.",
+          "proposed_fix": "Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion's operative condition is serious injury or imminent threat of such injury; the payload omits that limiting phrase.",
+          "As framed, the holding is dangling and potentially overbroad because it does not state what officers must reasonably believe about the occupant."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace the ellipsis with the full injury/threat condition from the opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dce64478e935c735",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion frames emergency aid as an exigency obviating the warrant requirement and lists hot pursuit among related warrant exceptions.",
+          "The assigned role is only Related (cross-doctrine), which matches the case's relationship to exigent-circumstances doctrine rather than overstating it as a hot-pursuit anchor."
+        ],
+        "residual_risks": [
+          "No separate home taxonomy page was disclosed; review rests on the case text and lake/content-page fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e82e9dedfcd45e5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion's opening question and conclusion state the emergency-aid rule for warrantless home entry.",
+          "The case applies that rule to ongoing violence and injury inside the home, making Emergency Aid a supported anchor role."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a2204039c39645a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court U.S. Supreme Court and court_level scotus.",
+          "The content-page authority_weight exactly states Binding — SCOTUS, consistent with the disclosed lake identity fields."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not attacked under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c4c9191eb5c3c96",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the disclosed lake treatment judgment fields: good_law, as_of_content 2006-05-22, as_of_treatment 2026-06-30, migration-seed basis, and varies_by_point false.",
+          "Lens A records this consistency without raising a treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Brigham City v. Stuart.md\",\"reviewed\":[{\"assertion_id\":\"c581999ee41d3781\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms case_name Brigham City v. Stuart, court U.S. Supreme Court, date_decided 2006-05-22, and year 2006.\",\"Lake citations confirm official cite 547 U.S. 398, parallel cites 126 S. Ct. 1943 and 164 L. Ed. 2d 650, and vendor-neutral cite 2006 U.S. LEXIS 4155.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7f8bb3450bc8c2a1\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding field is materially incomplete: it ends at 'believe an occupant…' and omits the injury/threat condition that makes the emergency-aid entry lawful.\",\"severity\":\"high\",\"proposed_fix\":\"Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.\",\"evidence_quote\":\"In this case we consider whether police may enter a\\nhome without a warrant when they have an objectively\\nreasonable basis for believing that an occupant is seriously\\ninjured or imminently threatened with such injury. We\\nconclude that they may.\",\"needs_cl\":false,\"locator_note\":\"content_page frontmatter holding\"},\"reasons\":[\"The opinion's operative condition is serious injury or imminent threat of such injury; the payload omits that limiting phrase.\",\"As framed, the holding is dangling and potentially overbroad because it does not state what officers must reasonably believe about the occupant.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Replace the ellipsis with the full injury/threat condition from the opinion.\"},{\"assertion_id\":\"dce64478e935c735\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames emergency aid as an exigency obviating the warrant requirement and lists hot pursuit among related warrant exceptions.\",\"The assigned role is only Related (cross-doctrine), which matches the case's relationship to exigent-circumstances doctrine rather than overstating it as a hot-pursuit anchor.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate home taxonomy page was disclosed; review rests on the case text and lake/content-page fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e82e9dedfcd45e5e\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion's opening question and conclusion state the emergency-aid rule for warrantless home entry.\",\"The case applies that rule to ongoing violence and injury inside the home, making Emergency Aid a supported anchor role.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5a2204039c39645a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court U.S. Supreme Court and court_level scotus.\",\"The content-page authority_weight exactly states Binding — SCOTUS, consistent with the disclosed lake identity fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not attacked under Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9c4c9191eb5c3c96\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the disclosed lake treatment judgment fields: good_law, as_of_content 2006-05-22, as_of_treatment 2026-06-30, migration-seed basis, and varies_by_point false.\",\"Lens A records this consistency without raising a treatment/currency finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter rows appeared in group_inventory.jsonl; every disclosed inventory row was reviewed exactly once.\"}",
   "summary": {
-    "at": "2026-07-11T01:05:14-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:09:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d47ddd45fa"
+    ],
     "group_id": "content/cases/Brigham City v. Stuart.md",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-be224607",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-be224607.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brigham City v. Stuart"
+    ],
+    "tokens": {
+      "input": 149177,
+      "output": 6680,
+      "source": "codex-events",
+      "total": 155857
+    },
+    "verdict_map": {
+      "5a2204039c39645a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7f8bb3450bc8c2a1": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9c4c9191eb5c3c96": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c581999ee41d3781": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dce64478e935c735": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e82e9dedfcd45e5e": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d47ddd45fa",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.3
   }
 }

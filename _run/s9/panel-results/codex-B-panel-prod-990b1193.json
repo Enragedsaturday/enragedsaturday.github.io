@@ -1,38 +1,174 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Johnson v. Glick.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not independently reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "44779f121fe653bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies case_name 'Johnson v. Glick', court '2d Cir. 1973', date_decided '1973-06-29', and expected_citation_found true.",
+          "The lake citation display is '481 F.2d 1028', matching the content-page citation."
+        ],
+        "residual_risks": [
+          "The disclosed treatment record is unverified, so this does not establish current good-law status beyond identity/citation existence."
+        ],
+        "suggested_tightening": "Keep the citation/existence assertion separate from any implication of current validity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bee2037c10601f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/home-role merits are outside Lens B.",
+          "No disclosed treatment/progeny edge refutes placing the case on the Use of Force home, and the page itself labels treatment as unverified."
+        ],
+        "residual_risks": [
+          "Because lake progeny rows_cached is 0 and treatment is unverified, the 'Key' role should not be read as a current-good-law signal."
+        ],
+        "suggested_tightening": "Consider labeling the home role as historical or treatment-unverified if the consuming page treats 'Key' as current-law weight.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4dba6add8992e24f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/holding merits are outside Lens B.",
+          "The holding text itself includes the limiting phrase 'pre-Graham due-process test', so it does not present the Glick test as unqualified current law."
+        ],
+        "residual_risks": [
+          "Lake treatment/progeny is unverified, so current scope after later cases is not machine-verified from the lake record."
+        ],
+        "suggested_tightening": "Tie the pre-Graham limitation to the treatment banner wherever this holding is reused.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f29e3a95fd07efc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content-page treatment fields match the lake treatment fields: field_i_validity and composite_basis are both unverified, with null as-of dates.",
+          "The lake scope_note states: 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+          "The lake progeny fields show no cached treatment basis: rows_cached is 0 and outbound_opinion_edges is empty."
+        ],
+        "residual_risks": [
+          "The field varies_by_point is false in the stub, but no derived treatment analysis exists to substantively validate point-specific treatment."
+        ],
+        "suggested_tightening": "Clarify that varies_by_point=false is part of an unverified stub, not an affirmative no-variation treatment judgment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f917d84fef3d2f36",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Status: Unverified — subsequent treatment not yet machine-verified.",
+          "locator_note": "authority_weight frontmatter/header",
+          "needs_cl": true,
+          "problem": "The jurisdictional part of the weight label is supported by the lake identity record, but the unqualified 'Binding in-circuit' label is too strong for a treatment-unverified record whose own page describes later doctrinal limits.",
+          "proposed_fix": "Change the label to something like 'Second Circuit - treatment unverified; historically important/limited' or qualify 'Binding in-circuit' with the page's Graham/Kingsley limitations until treatment is promoted.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity supports that this is a Second Circuit court of appeals decision: court_id ca2, court_level coa, circuit ca2.",
+          "Lake treatment does not verify current binding force: field_i_validity is unverified, edges is empty, and progeny rows_cached is 0.",
+          "The content page itself says Graham governed seizure-force claims under Fourth Amendment objective reasonableness rather than Glick's substantive-due-process test, and says the pretrial-detainee standard was later recalibrated by Kingsley."
+        ],
+        "residual_risks": [
+          "The case may remain binding for narrower historical or residual propositions, but that scope is not established by the disclosed treatment fields."
+        ],
+        "suggested_tightening": "Do not display unqualified binding weight for this case until the treatment record states the surviving point-specific scope.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Johnson v. Glick.md\",\"reviewed\":[{\"assertion_id\":\"44779f121fe653bd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies case_name 'Johnson v. Glick', court '2d Cir. 1973', date_decided '1973-06-29', and expected_citation_found true.\",\"The lake citation display is '481 F.2d 1028', matching the content-page citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment record is unverified, so this does not establish current good-law status beyond identity/citation existence.\"],\"suggested_tightening\":\"Keep the citation/existence assertion separate from any implication of current validity.\"},{\"assertion_id\":\"0bee2037c10601f0\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/home-role merits are outside Lens B.\",\"No disclosed treatment/progeny edge refutes placing the case on the Use of Force home, and the page itself labels treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because lake progeny rows_cached is 0 and treatment is unverified, the 'Key' role should not be read as a current-good-law signal.\"],\"suggested_tightening\":\"Consider labeling the home role as historical or treatment-unverified if the consuming page treats 'Key' as current-law weight.\"},{\"assertion_id\":\"4dba6add8992e24f\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/holding merits are outside Lens B.\",\"The holding text itself includes the limiting phrase 'pre-Graham due-process test', so it does not present the Glick test as unqualified current law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment/progeny is unverified, so current scope after later cases is not machine-verified from the lake record.\"],\"suggested_tightening\":\"Tie the pre-Graham limitation to the treatment banner wherever this holding is reused.\"},{\"assertion_id\":\"3f29e3a95fd07efc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content-page treatment fields match the lake treatment fields: field_i_validity and composite_basis are both unverified, with null as-of dates.\",\"The lake scope_note states: 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'\",\"The lake progeny fields show no cached treatment basis: rows_cached is 0 and outbound_opinion_edges is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The field varies_by_point is false in the stub, but no derived treatment analysis exists to substantively validate point-specific treatment.\"],\"suggested_tightening\":\"Clarify that varies_by_point=false is part of an unverified stub, not an affirmative no-variation treatment judgment.\"},{\"assertion_id\":\"f917d84fef3d2f36\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The jurisdictional part of the weight label is supported by the lake identity record, but the unqualified 'Binding in-circuit' label is too strong for a treatment-unverified record whose own page describes later doctrinal limits.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the label to something like 'Second Circuit - treatment unverified; historically important/limited' or qualify 'Binding in-circuit' with the page's Graham/Kingsley limitations until treatment is promoted.\",\"evidence_quote\":\"Status: Unverified — subsequent treatment not yet machine-verified.\",\"needs_cl\":true,\"locator_note\":\"authority_weight frontmatter/header\"},\"reasons\":[\"Lake identity supports that this is a Second Circuit court of appeals decision: court_id ca2, court_level coa, circuit ca2.\",\"Lake treatment does not verify current binding force: field_i_validity is unverified, edges is empty, and progeny rows_cached is 0.\",\"The content page itself says Graham governed seizure-force claims under Fourth Amendment objective reasonableness rather than Glick's substantive-due-process test, and says the pretrial-detainee standard was later recalibrated by Kingsley.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The case may remain binding for narrower historical or residual propositions, but that scope is not established by the disclosed treatment fields.\"],\"suggested_tightening\":\"Do not display unqualified binding weight for this case until the treatment record states the surviving point-specific scope.\"}],\"notes\":\"Lens B only; support and quote fidelity were not independently reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T02:45:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:18:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5131b9efa8"
+    ],
     "group_id": "content/cases/Johnson v. Glick.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "Johnson v. Glick"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-990b1193",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-990b1193.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Johnson v. Glick' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Johnson v. Glick"
+    ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 100807,
+      "output": 7060,
+      "source": "codex-events",
+      "total": 107867
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0bee2037c10601f0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f29e3a95fd07efc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44779f121fe653bd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4dba6add8992e24f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f917d84fef3d2f36": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5131b9efa8",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 139.6
   }
 }

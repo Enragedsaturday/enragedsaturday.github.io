@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Chavez.json",
+    "lens": "B",
+    "notes": "Reviewed both group_inventory rows under Lens B. No disclosed currency/treatment evidence refutes the asserted unverified status or the cited authority's existence, but current-validity remains unverified.",
+    "reviewed": [
+      {
+        "assertion_id": "606624120a6672b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record identifies United States v. Chavez as a Tenth Circuit case decided 2008-07-29 with cluster_id 171034 and expected_citation_found=true.",
+          "The lake citation fields match the asserted display and official citation, 534 F.3d 1338, and also list the asserted LEXIS and WL citations.",
+          "No disclosed treatment edge, progeny edge, or other disclosed record says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The record's treatment status is expressly unverified, so the disclosed file does not provide a positive citator-backed live-law certification."
+        ],
+        "suggested_tightening": "Keep the citation paired with the existing unverified-treatment banner; do not imply verified current validity from this existence assertion alone.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "144950aba7e27044",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the frontier-stub scope note is the same.",
+          "The lake treatment edges array is empty and progeny rows_cached is 0 with citation_count null, so the disclosed record contains no contrary negative-treatment information.",
+          "The content page accurately renders the status as Treatment: Unverified and states that subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "Because the record is a frontier stub with no derived progeny, the disclosed evidence cannot establish good-law status beyond the unverified label."
+        ],
+        "suggested_tightening": "Do not upgrade the case to good-law/current-validity language until treatment and progeny are derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Chavez.json\",\"reviewed\":[{\"assertion_id\":\"606624120a6672b8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake identity record identifies United States v. Chavez as a Tenth Circuit case decided 2008-07-29 with cluster_id 171034 and expected_citation_found=true.\",\"The lake citation fields match the asserted display and official citation, 534 F.3d 1338, and also list the asserted LEXIS and WL citations.\",\"No disclosed treatment edge, progeny edge, or other disclosed record says the authority has been overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The record's treatment status is expressly unverified, so the disclosed file does not provide a positive citator-backed live-law certification.\"],\"suggested_tightening\":\"Keep the citation paired with the existing unverified-treatment banner; do not imply verified current validity from this existence assertion alone.\"},{\"assertion_id\":\"144950aba7e27044\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the frontier-stub scope note is the same.\",\"The lake treatment edges array is empty and progeny rows_cached is 0 with citation_count null, so the disclosed record contains no contrary negative-treatment information.\",\"The content page accurately renders the status as Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the record is a frontier stub with no derived progeny, the disclosed evidence cannot establish good-law status beyond the unverified label.\"],\"suggested_tightening\":\"Do not upgrade the case to good-law/current-validity language until treatment and progeny are derived.\"}],\"notes\":\"Reviewed both group_inventory rows under Lens B. No disclosed currency/treatment evidence refutes the asserted unverified status or the cited authority's existence, but current-validity remains unverified.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:52-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:50:32-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Chavez.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Chavez"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-63657407",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-63657407.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Chavez' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Chavez"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 103904,
+      "output": 6496,
+      "source": "codex-events",
+      "total": 110400
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "144950aba7e27044": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "606624120a6672b8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 129.2
   }
 }

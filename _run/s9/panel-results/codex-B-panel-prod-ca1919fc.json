@@ -1,39 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-eatherton--328838.json",
+    "lens": "B",
+    "notes": "No content_page.* file was disclosed; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "5a1c5d4fac71e136",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/united-states-v-eatherton--328838__ea38ce.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The record verifies identity and citation, but the B-lens live-law existence check is not verifiable from the disclosed treatment/progeny evidence.",
+          "proposed_fix": "Limit this assertion to historical identity/citation, or complete treatment/progeny review before presenting the authority as live current law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake status is verified_identity and citations.display is 519 F.2d 603, so historical identity/citation is supported.",
+          "Current-law status is not supported: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0.",
+          "Default-to-refuted-on-uncertainty applies to the live-law currency angle."
+        ],
+        "residual_risks": [
+          "This refutation is limited to live-law currency, not the historical existence of the case or citation."
+        ],
+        "suggested_tightening": "Separate citation existence from live-law currency; require verified treatment before using this as current authority.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "581224e2363ec3f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.",
+          "The lake record's scope note expressly says treatment/progeny were intentionally not derived, and no disclosed progeny edge contradicts that unverified call."
+        ],
+        "residual_risks": [
+          "No affirmative good-law or bad-law status can be inferred from this record."
+        ],
+        "suggested_tightening": "Keep the unverified treatment label visible and avoid any good-law/current-law label until treatment is populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-eatherton--328838.json\",\"reviewed\":[{\"assertion_id\":\"5a1c5d4fac71e136\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The record verifies identity and citation, but the B-lens live-law existence check is not verifiable from the disclosed treatment/progeny evidence.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to historical identity/citation, or complete treatment/progeny review before presenting the authority as live current law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/united-states-v-eatherton--328838__ea38ce.json treatment/progeny fields\"},\"reasons\":[\"Lake status is verified_identity and citations.display is 519 F.2d 603, so historical identity/citation is supported.\",\"Current-law status is not supported: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0.\",\"Default-to-refuted-on-uncertainty applies to the live-law currency angle.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This refutation is limited to live-law currency, not the historical existence of the case or citation.\"],\"suggested_tightening\":\"Separate citation existence from live-law currency; require verified treatment before using this as current authority.\"},{\"assertion_id\":\"581224e2363ec3f2\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, and varies_by_point is false.\",\"The lake record's scope note expressly says treatment/progeny were intentionally not derived, and no disclosed progeny edge contradicts that unverified call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No affirmative good-law or bad-law status can be inferred from this record.\"],\"suggested_tightening\":\"Keep the unverified treatment label visible and avoid any good-law/current-law label until treatment is populated.\"}],\"notes\":\"No content_page.* file was disclosed; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:24:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d25cc45760"
+    ],
     "group_id": "_overhaul2/lake/cases/united-states-v-eatherton--328838.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "united-states-v-eatherton--328838"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ca1919fc",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ca1919fc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'united-states-v-eatherton--328838' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-eatherton--328838"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "united-states-v-eatherton--328838"
+    ],
     "tokens": {
-      "input": 758,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 758
+      "input": 201615,
+      "output": 6534,
+      "source": "codex-events",
+      "total": 208149
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "581224e2363ec3f2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a1c5d4fac71e136": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d25cc45760",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 130.5
   }
 }

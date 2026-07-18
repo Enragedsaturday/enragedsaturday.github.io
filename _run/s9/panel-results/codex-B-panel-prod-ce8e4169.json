@@ -1,13 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Vinton.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "274a6141e1a9a0ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies United States v. Vinton as a D.C. Circuit decision dated 2010-02-05.",
+          "The lake selects 594 F.3d 14 as the official citation, matching the page display.",
+          "For the currency angle, the lake treatment judgment lists field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes an unresolved top-cited audit flag; addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b852f10961b5186",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B.",
+          "No separate currency or treatment defect is tied to pin-20 in the disclosed record; Vinton has no point-specific treatment override."
+        ],
+        "residual_risks": [
+          "Lens A must resolve quote and pinpoint fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa767babc75e92fb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B.",
+          "No separate currency or treatment defect is tied to pin-21 in the disclosed record; Vinton has no point-specific treatment override."
+        ],
+        "residual_risks": [
+          "Lens A must resolve quote and pinpoint fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bee900080e888c3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 21, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law treatment call is present in the lake, but the page's unqualified 'No negative treatment' language is too strong because the disclosed derivation flags an unresolved audit with proposed negative events.",
+          "proposed_fix": "Keep Status: good_law as of 2026-06-30, but replace 'No negative treatment' with 'No confirmed controlling negative treatment in the disclosed lake; lane2 top-cited audit remains flagged.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field supports field_i_validity good_law as of 2026-06-30 and varies_by_point false.",
+          "The D.C. Circuit weight label is consistent with the lake identity fields: court_id cadc, court_level coa, circuit D.C.",
+          "All listed treatment edges are proposed and have field_iii 'mentioned', so the disclosed record does not confirm a downgrade.",
+          "But the same treatment derivation reports lane2_top_cited cap_hit true, audit_needed true, and 21 proposed_negative_events, so the absolute no-negative phrasing should be narrowed."
+        ],
+        "residual_risks": [
+          "A completed progeny audit could either confirm the good-law call or require a downgrade.",
+          "The disclosed files do not include full texts for the proposed citing-case edges."
+        ],
+        "suggested_tightening": "Use 'No confirmed controlling negative treatment in the disclosed lake' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Vinton.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"274a6141e1a9a0ba\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies United States v. Vinton as a D.C. Circuit decision dated 2010-02-05.\",\n        \"The lake selects 594 F.3d 14 as the official citation, matching the page display.\",\n        \"For the currency angle, the lake treatment judgment lists field_i_validity as good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation includes an unresolved top-cited audit flag; addressed in the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5b852f10961b5186\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B.\",\n        \"No separate currency or treatment defect is tied to pin-20 in the disclosed record; Vinton has no point-specific treatment override.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must resolve quote and pinpoint fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fa767babc75e92fb\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B.\",\n        \"No separate currency or treatment defect is tied to pin-21 in the disclosed record; Vinton has no point-specific treatment override.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A must resolve quote and pinpoint fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1bee900080e888c3\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law treatment call is present in the lake, but the page's unqualified 'No negative treatment' language is too strong because the disclosed derivation flags an unresolved audit with proposed negative events.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep Status: good_law as of 2026-06-30, but replace 'No negative treatment' with 'No confirmed controlling negative treatment in the disclosed lake; lane2 top-cited audit remains flagged.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 21, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake judgment field supports field_i_validity good_law as of 2026-06-30 and varies_by_point false.\",\n        \"The D.C. Circuit weight label is consistent with the lake identity fields: court_id cadc, court_level coa, circuit D.C.\",\n        \"All listed treatment edges are proposed and have field_iii 'mentioned', so the disclosed record does not confirm a downgrade.\",\n        \"But the same treatment derivation reports lane2_top_cited cap_hit true, audit_needed true, and 21 proposed_negative_events, so the absolute no-negative phrasing should be narrowed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A completed progeny audit could either confirm the good-law call or require a downgrade.\",\n        \"The disclosed files do not include full texts for the proposed citing-case edges.\"\n      ],\n      \"suggested_tightening\": \"Use 'No confirmed controlling negative treatment in the disclosed lake' instead of 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:34:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:10:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a9362bd6cd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-621d0612b3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3e249bd8e6"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Vinton.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +108,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ce8e4169.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Vinton"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 245985,
+      "output": 8822,
+      "source": "codex-events",
+      "total": 254807
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1bee900080e888c3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "274a6141e1a9a0ba": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b852f10961b5186": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fa767babc75e92fb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9362bd6cd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-621d0612b3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3e249bd8e6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 178.8
   }
 }

@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/support fidelity from the disclosed files; no external search was used.",
+    "reviewed": [
+      {
+        "assertion_id": "21997b7150d55291",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Michigan v. Thomas, U.S. Supreme Court, decided 1982-06-28, docket 81-593.",
+          "Official citation in lake is 458 U.S. 259, and the page display uses 458 U.S. 259 (1982).",
+          "Parallel and vendor citations in the inventory match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "533b580a1ac045ae",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "nor does it depend upon a reviewing court’s assessment of the likelihood",
+          "locator_note": "text/Michigan v. Thomas__335fe8.txt at the paragraph following the 456 U.S. 798 citation; pin-261a in lake pinpoints.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively the right passage, but it is not character-faithful to the cached opinion text because the page/lake quote uses a straight apostrophe in court's while the text uses a curly apostrophe in court’s. The lake also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Change court's to court’s in the quoted passage, or adopt an explicit quote-normalization policy that permits typographic apostrophe normalization.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears in the cached opinion text at the claimed location.",
+          "The only visible character-fidelity defect is the apostrophe in court’s/court's.",
+          "Lake pinpoints[] independently records quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "Closed-corpus review did not compare against the printed U.S. reporter."
+        ],
+        "suggested_tightening": "Preserve source typography in verbatim quotes, especially apostrophes and quotation marks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2fcf36f62ab3e39",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.",
+          "locator_note": "content_page.md Rule section uses ^pin-261 after the Chambers quote; lake pinpoints[0] instead stores \"## Rule No. Restating *Chambers v. Maroney*:\".",
+          "needs_cl": false,
+          "problem": "The pin-261 lake quote is not an opinion quote at all; it captured the page heading text, while the actual quoted rule in the cached opinion begins with the Chambers holding language.",
+          "proposed_fix": "Replace the pin-261 quote with the actual opinion passage: \"when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached text contains the actual Chambers holding sentence at page 261.",
+          "The lake quote for pin-261 is markdown/page prose, not text from the opinion.",
+          "Lake pinpoints[] marks pin-261 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote itself appears supported; the defect is the stored pinpoint quote for this assertion row."
+        ],
+        "suggested_tightening": "Fix the quote harvester so it captures the quoted substring after the colon rather than the section heading or surrounding markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e94365094dd6feeb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake fields: field_i_validity good_law, as_of_content 1982-06-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and later-citing-case currency require Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Thomas.json\",\"reviewed\":[{\"assertion_id\":\"21997b7150d55291\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Michigan v. Thomas, U.S. Supreme Court, decided 1982-06-28, docket 81-593.\",\"Official citation in lake is 458 U.S. 259, and the page display uses 458 U.S. 259 (1982).\",\"Parallel and vendor citations in the inventory match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"533b580a1ac045ae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively the right passage, but it is not character-faithful to the cached opinion text because the page/lake quote uses a straight apostrophe in court's while the text uses a curly apostrophe in court’s. The lake also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Change court's to court’s in the quoted passage, or adopt an explicit quote-normalization policy that permits typographic apostrophe normalization.\",\"evidence_quote\":\"nor does it depend upon a reviewing court’s assessment of the likelihood\",\"needs_cl\":false,\"locator_note\":\"text/Michigan v. Thomas__335fe8.txt at the paragraph following the 456 U.S. 798 citation; pin-261a in lake pinpoints.\"},\"reasons\":[\"The passage appears in the cached opinion text at the claimed location.\",\"The only visible character-fidelity defect is the apostrophe in court’s/court's.\",\"Lake pinpoints[] independently records quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Closed-corpus review did not compare against the printed U.S. reporter.\"],\"suggested_tightening\":\"Preserve source typography in verbatim quotes, especially apostrophes and quotation marks.\"},{\"assertion_id\":\"a2fcf36f62ab3e39\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-261 lake quote is not an opinion quote at all; it captured the page heading text, while the actual quoted rule in the cached opinion begins with the Chambers holding language.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-261 quote with the actual opinion passage: \\\"when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.\\\"\",\"evidence_quote\":\"when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.\",\"needs_cl\":false,\"locator_note\":\"content_page.md Rule section uses ^pin-261 after the Chambers quote; lake pinpoints[0] instead stores \\\"## Rule No. Restating *Chambers v. Maroney*:\\\".\"},\"reasons\":[\"The cached text contains the actual Chambers holding sentence at page 261.\",\"The lake quote for pin-261 is markdown/page prose, not text from the opinion.\",\"Lake pinpoints[] marks pin-261 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content-page quote itself appears supported; the defect is the stored pinpoint quote for this assertion row.\"],\"suggested_tightening\":\"Fix the quote harvester so it captures the quoted substring after the colon rather than the section heading or surrounding markdown.\"},{\"assertion_id\":\"e94365094dd6feeb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload matches the lake fields: field_i_validity good_law, as_of_content 1982-06-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy and later-citing-case currency require Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote/support fidelity from the disclosed files; no external search was used.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:11:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-53c77ed047",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-b18aa6347a",
+      "F-S9-PR-09f33ca2ab"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +109,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5fea78a4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Thomas"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 205419,
+      "output": 6201,
+      "source": "codex-events",
+      "total": 211620
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "21997b7150d55291": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "533b580a1ac045ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a2fcf36f62ab3e39": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e94365094dd6feeb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b18aa6347a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-09f33ca2ab",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-53c77ed047",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 131.0
   }
 }

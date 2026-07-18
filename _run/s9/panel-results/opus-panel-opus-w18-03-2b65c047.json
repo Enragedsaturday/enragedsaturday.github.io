@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "aa87aa240b8fb8b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms a real published 11th Cir. 2024 decision: 'In the United States Court of Appeals For the Eleventh Circuit ... No. 22-12988 ... DERRICK ALFONDSO MORLEY ... Date Filed: 04/30/2024', LAGOA, Circuit Judge.",
+          "Cite '99 F.4th 1328' is the record's cluster.citations official (selected_rank_1); existence of the cited case is not in doubt."
+        ],
+        "residual_risks": [
+          "Exact F.4th reporter page (1328) is taken from cluster metadata and is not independently confirmable from the slip-only cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9318dcb065a4425a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'All that is necessary to satisfy the first element is that the automobile is operational.' appears verbatim in the cached slip opinion on page 15 (USCA11 Page: 15 of 30): 'All that is necessary to satisfy the first element is that the automobile is operational. United States v. Watts, 329 F.3d 1282, 1286 (11th Cir. 2003).'",
+          "quote_fidelity=matched is correct; pincite context (slip op. 15) is confirmed by the 'Page: 15 of 30' marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac24822611ac43db",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The automobile exception allows law enforcement to con-duct a warrantless search of a vehicle if (1) the vehicle is readily mobile and (2) law enforcement has probable cause to search it.",
+          "locator_note": "Content-page Rule section renders the rule quote at ^pin-op15 with pincite (slip op., at 15); cached slip op. p.15 contains the sentence verbatim (hyphenation 'con-duct' is a line-break artifact).",
+          "needs_cl": false,
+          "problem": "Pinpoint pin-op15's stored quote is the content page's own frontmatter/header block ('--- # United States v. Morley ... The court restated the circuit's formulation:'), not opinion text; it is a quote-harvest artifact, correctly self-flagged quote_fidelity=mismatch. The actual rule quote rendered at the ^pin-op15 anchor IS verbatim in the opinion.",
+          "proposed_fix": "Re-harvest pin-op15's stored quote to the rendered rule sentence, which is verbatim on slip op. 15.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The rendered rule quote at ^pin-op15 is verbatim at slip op. 15 and correctly pincited, so the legal proposition stands.",
+          "Only the pinpoint's stored quote string is defective (it captured the page header/frontmatter), a systemic first-pin harvest artifact."
+        ],
+        "residual_risks": [
+          "Same header-artifact pattern recurs on the first pinpoint of the sibling records (Morton pin-op13, Neugin pin-op15)."
+        ],
+        "suggested_tightening": "Re-harvest first-pin stored quotes across the affected records.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f6d822572288570",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence of negative treatment: lane1_negative (targeted overrul*/abrogat*/vacat*/reversed query, court_id scotus OR ca11) reviewed 1 with 0 proposed_negative_events.",
+          "The sole treatment edge (United States v. Lawrence Alexander, cluster 10814315, field_ii 'overruled') is proposed:true and internally inconsistent (field_iii 'mentioned' contradicts a controlling 'overruled'), a snippet-first triage classification not read/adjudicated; cannot fabricate a negative holding from it.",
+          "Cached opinion shows Morley (2024) restating settled circuit law (Lindsey 2007, Watts 2003, Nixon 1990); nothing suggests it is bad law."
+        ],
+        "residual_risks": [
+          "good_law is composite_basis=migration-seed, not a fresh derivation.",
+          "Only 1 of a claimed citation_count 10 citing opinions was reviewed (indexed_citing_opinions 1).",
+          "Proposed 'overruled' edge (cluster 10814315) is unadjudicated; currency not independently confirmable from disclosed evidence (citing-opinion text not inlined)."
+        ],
+        "suggested_tightening": "Read/adjudicate the cluster 10814315 proposed 'overruled' edge before finalizing good_law.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1acf07d54c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-03-2b65c047",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Morley"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "8f6d822572288570": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "9318dcb065a4425a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa87aa240b8fb8b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac24822611ac43db": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dde329d155",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1acf07d54c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

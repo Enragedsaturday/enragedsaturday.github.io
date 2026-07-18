@@ -1,0 +1,96 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "47002802696d3238",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In re Mirsky mis-key cluster 5141053 -> Illinois v. Fisher 131160 (540 U.S. 544, per curiam, docket 03-374)",
+          "locator_note": "Compare assertion payload.all (860 A.2d 363; 2004 WL 2445390) against lake citations.all/official (540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, 2004 U.S. LEXIS 1412) and provenance.warnings re-key note; opinion header '*545 Per Curiam' + 'Arizona v. Youngblood, 488 U. S. 51 (1988)' confirms the record is Illinois v. Fisher.",
+          "needs_cl": false,
+          "problem": "Assertion attaches citations 860 A.2d 363 and 2004 WL 2445390 to record illinois-v-fisher--5141053, but the disclosed lake record and cached opinion identify this record as Illinois v. Fisher, 540 U.S. 544 (per curiam, 2004). The A.2d/WL cites are stale residue of the pre-rekey mis-keyed cluster 5141053 (In re Mirsky) and do not belong to Illinois v. Fisher.",
+          "proposed_fix": "Regenerate the case_cite existence assertion from the re-keyed lake record: citations.all = 540 U.S. 544; 124 S. Ct. 1200; 157 L. Ed. 2d 1060; 2004 U.S. LEXIS 1412 (official 540 U.S. 544).",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Payload.all lists 860 A.2d 363 and 2004 WL 2445390; lake citations.all and official list 540 U.S. 544, 124 S. Ct. 1200, 157 L. Ed. 2d 1060, 2004 U.S. LEXIS 1412 — zero overlap.",
+          "Cached opinion is unmistakably Illinois v. Fisher (Per Curiam, *545-*549, holding the Arizona v. Youngblood bad-faith rule governs the good-faith destruction of the cocaine evidence), a SCOTUS per curiam at 540 U.S. 544 — not an Atlantic Reporter / Westlaw case.",
+          "provenance.warnings documents the re-key from mis-keyed In re Mirsky cluster 5141053; the A.2d/WL cites are that stale cluster's citations, so the assertion's citation set is wrong for this record."
+        ],
+        "residual_risks": [
+          "The live lake record already carries the correct 540 U.S. 544 citation set; the defect is a stale group_inventory snapshot rather than a live wrong-cite in the record — adjudicator should confirm the inventory is regenerated from the post-rekey record."
+        ],
+        "suggested_tightening": "Rebuild group_inventory case_cite payloads from post-rekey lake records so F-S9-IDS-001 re-key targets never carry pre-rekey citations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56eacd28d974f9ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Assertion mirrors lake treatment exactly: field_i_validity 'unverified', varies_by_point false, frontier-stub scope_note; no affirmative currency claim is made, so there is no treatment proposition to refute.",
+          "The re-key affected identity/citations, not treatment — treatment remains an undived stub regardless of cluster, and the assertion's 'unverified' is accurate."
+        ],
+        "residual_risks": [
+          "Record underwent an identity re-key (In re Mirsky cluster 5141053 -> Illinois v. Fisher 131160); when treatment is derived at S6 it must be computed for Illinois v. Fisher, not the stale cluster."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:14:40-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/illinois-v-fisher--5141053.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w23-02-add5b3fc",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w23-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record illinois-v-fisher--5141053"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "illinois-v-fisher--5141053"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "47002802696d3238": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "56eacd28d974f9ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8233ea44e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

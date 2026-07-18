@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8c2eb1e7a9241197",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 547 U.S. 586 (2006) matches the U.S. Reports citation in cluster.citations[] and the content-page frontmatter; official_selection_present=true and parallel 126 S. Ct. 2159 / 165 L. Ed. 2d 56 / LEXIS cites are internally consistent.",
+          "Cached opinion confirms the record is Hudson v. Michigan (knock-and-announce / exclusionary-rule holding)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b368ebef1a6b3b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page and payload quote at ^pin-594a ('Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable.') matches the opinion verbatim.",
+          "Cited *Id.* (=594), same paragraph as the ^pin-594 sentence. The payload 'quote_fidelity: mismatch' is a slip-only / fragment-null verification artifact, not an actual misquote."
+        ],
+        "residual_risks": [
+          "Pincite 594 is a U.S. Reports star-page, but the cached opinion text is slip-paginated (running header 'HUDSON v. MICHIGAN / 8'), so page 594 cannot be independently confirmed from disclosed text; the quote is verbatim and 594 is uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f45fba80f5288721",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant.",
+          "locator_note": "Opinion body near slip p.7-8 (before the 'HUDSON v. MICHIGAN / 8' running header); content cites this as U.S. 594.",
+          "needs_cl": false,
+          "problem": "The payload `quote` is a corrupted extraction capturing the content-page frontmatter/Background/Issue/Rule preamble instead of the opinion quotation at ^pin-594. The actual content-page quote at ^pin-594 is verbatim-faithful to the opinion.",
+          "proposed_fix": "Re-extract the pin-594 quote span; the content quote is correct.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Content-page quote at ^pin-594 ('What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant.') matches the opinion verbatim.",
+          "Only the payload quote-field is garbled harvest metadata; the content page and its cite are not defective."
+        ],
+        "residual_risks": [
+          "Pincite 594 (U.S. Reports star-page) is not independently confirmable from the slip-paginated cached text; the quote is verbatim and 594 is uncontradicted."
+        ],
+        "suggested_tightening": "Same preamble-capture guard as Horton pin-130.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "192383edae71525a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence contradicts good_law; the cached 2006 opinion is Hudson v. Michigan itself with no subsequent-treatment signal, and the lake record status is 'verified'.",
+          "Refute-framed review finds no overruling/negative treatment in the disclosed record; assertion is self-consistent with an honest 'migration-seed' composite_basis and re-derivation scope_note."
+        ],
+        "residual_risks": [
+          "Good-law currency as of 2026-06-30 is not independently verifiable from the disclosed opinion text; a citator check is not inlined."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hudson v. Michigan.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-08-488368c3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hudson v. Michigan"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "192383edae71525a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "3b368ebef1a6b3b8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c2eb1e7a9241197": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f45fba80f5288721": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f1ac131c5",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

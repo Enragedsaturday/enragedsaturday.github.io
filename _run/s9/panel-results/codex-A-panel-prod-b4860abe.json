@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Texas v. Cobb.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "d31544984e9e01e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Texas v. Cobb, U.S. Supreme Court, decided 2001-04-17, year 2001.",
+          "The official citation 532 U.S. 162 and parallel/vendor citations 121 S. Ct. 1335, 149 L. Ed. 2d 321, and 2001 U.S. LEXIS 2696 match the inventory payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4ccc337de484991",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "“where the same act or transaction constitutes a violation of two distinct statutory provisions, the test to be applied to determine whether there are two offenses or only one, is whether each provision requires proof of a fact which the other does not.”",
+          "locator_note": "text/Texas v. Cobb__66b5fb.txt paragraph b266-7, page label *173; content_page.md pin-173.",
+          "needs_cl": false,
+          "problem": "pin-173's stored quote is page prose, not the opinion's verbatim Blockburger quotation. The lake record itself marks quote_fidelity as mismatch and leaves the page null.",
+          "proposed_fix": "Replace the pin-173 stored quote with the actual Blockburger quotation from the opinion and populate the page/pin as 173.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is \"is fixed by the *Blockburger* same-elements test:\", which is not the opinion's quoted language.",
+          "The actual text at page 173 contains the Blockburger same-elements quotation that follows the page's lead-in prose."
+        ],
+        "residual_risks": [
+          "The visible legal rule is supportable; the defect is the harvested/stored pinpoint quote."
+        ],
+        "suggested_tightening": "Do not harvest pre-quote explanatory prose as the pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8c581809b82fad4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and that the Sixth Amendment right is “offense specific.”",
+          "locator_note": "text/Texas v. Cobb__66b5fb.txt paragraph b258-7; the following paragraph starts at page label *165, so this passage is on 532 U.S. 164.",
+          "needs_cl": false,
+          "problem": "pin-164's stored quote is a large chunk of the built content page, not a verbatim passage from the opinion. The lake record itself marks quote_fidelity as mismatch and leaves the page null.",
+          "proposed_fix": "Replace the pin-164 stored quote with the actual offense-specific passage from the opinion and populate the page/pin as 164.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page header and background text, which is not opinion text.",
+          "The opinion does contain the cited offense-specific language, but the stored pin quote is not character-faithful to that passage."
+        ],
+        "residual_risks": [
+          "The visible page's legal proposition is supportable after correcting the malformed pinpoint quote."
+        ],
+        "suggested_tightening": "Store only the opinion sentence supporting the page quote, not the surrounding generated page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "693f47b49ffac9c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2001-04-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment correctness is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Texas v. Cobb.json\",\"reviewed\":[{\"assertion_id\":\"d31544984e9e01e8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Texas v. Cobb, U.S. Supreme Court, decided 2001-04-17, year 2001.\",\"The official citation 532 U.S. 162 and parallel/vendor citations 121 S. Ct. 1335, 149 L. Ed. 2d 321, and 2001 U.S. LEXIS 2696 match the inventory payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a4ccc337de484991\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-173's stored quote is page prose, not the opinion's verbatim Blockburger quotation. The lake record itself marks quote_fidelity as mismatch and leaves the page null.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-173 stored quote with the actual Blockburger quotation from the opinion and populate the page/pin as 173.\",\"evidence_quote\":\"“where the same act or transaction constitutes a violation of two distinct statutory provisions, the test to be applied to determine whether there are two offenses or only one, is whether each provision requires proof of a fact which the other does not.”\",\"needs_cl\":false,\"locator_note\":\"text/Texas v. Cobb__66b5fb.txt paragraph b266-7, page label *173; content_page.md pin-173.\"},\"reasons\":[\"The payload quote is \\\"is fixed by the *Blockburger* same-elements test:\\\", which is not the opinion's quoted language.\",\"The actual text at page 173 contains the Blockburger same-elements quotation that follows the page's lead-in prose.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible legal rule is supportable; the defect is the harvested/stored pinpoint quote.\"],\"suggested_tightening\":\"Do not harvest pre-quote explanatory prose as the pinpoint quote.\"},{\"assertion_id\":\"b8c581809b82fad4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-164's stored quote is a large chunk of the built content page, not a verbatim passage from the opinion. The lake record itself marks quote_fidelity as mismatch and leaves the page null.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-164 stored quote with the actual offense-specific passage from the opinion and populate the page/pin as 164.\",\"evidence_quote\":\"and that the Sixth Amendment right is “offense specific.”\",\"needs_cl\":false,\"locator_note\":\"text/Texas v. Cobb__66b5fb.txt paragraph b258-7; the following paragraph starts at page label *165, so this passage is on 532 U.S. 164.\"},\"reasons\":[\"The payload quote begins with the content page header and background text, which is not opinion text.\",\"The opinion does contain the cited offense-specific language, but the stored pin quote is not character-faithful to that passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page's legal proposition is supportable after correcting the malformed pinpoint quote.\"],\"suggested_tightening\":\"Store only the opinion sentence supporting the page quote, not the surrounding generated page content.\"},{\"assertion_id\":\"693f47b49ffac9c1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2001-04-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment and currency are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment correctness is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:41:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6298ea4f49",
+      "F-S9-PR-cd4ec8417d"
+    ],
     "group_id": "_overhaul2/lake/cases/Texas v. Cobb.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b4860abe.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Texas v. Cobb"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 185300,
+      "output": 7845,
+      "source": "codex-events",
+      "total": 193145
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "693f47b49ffac9c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4ccc337de484991": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b8c581809b82fad4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d31544984e9e01e8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6298ea4f49",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cd4ec8417d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 152.8
   }
 }

@@ -1,38 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Trupiano v. United States.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "34727629658d7ac9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Trupiano v. United States as a Supreme Court case decided 1948-06-14 with cluster_id 104576.",
+          "The disclosed citation record selects 334 U.S. 699 as the official citation and includes the same display citation asserted in the inventory."
+        ],
+        "residual_risks": [
+          "This existence finding does not certify current good-law status; treatment is separately unverified in the lake record."
+        ],
+        "suggested_tightening": "Keep citation existence distinct from any live-law or good-law characterization.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d6bfdaab55b0769",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md header and Treatment & subsequent history; lake/Trupiano v. United States__83b444.json treatment and progeny fields",
+          "needs_cl": true,
+          "problem": "The built page makes a substantive treatment/current-law claim that Trupiano is overruled, rendered historical, and superseded by Chimel, but the disclosed lake treatment record is only an unverified frontier stub with null as-of dates and no progeny or treatment edges.",
+          "proposed_fix": "Do not render or rely on the overruled/superseded/live-law conclusion as certified treatment until the lake record contains treatment derivation, as-of dates, and progeny edges or point overrides supporting that conclusion. Otherwise limit the page to 'treatment unverified' and mark the Rabinowitz/Chimel discussion as uncited authored orientation.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and composite_basis is unverified.",
+          "Lake treatment.edges is empty and progeny rows_cached is 0, so the disclosed authority record does not verify Rabinowitz, Chimel, overruling, supersession, or current-law status.",
+          "The content page itself admits the subsequent-history treatment is authored orientation rather than machine-certified."
+        ],
+        "residual_risks": [
+          "The treatment narrative may be correct in the real world, but that cannot be credited under the disclosed-evidence-only rule."
+        ],
+        "suggested_tightening": "Replace the displayed treatment line with 'Treatment unverified pending S9' unless certified treatment fields are added.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Trupiano v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"34727629658d7ac9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Trupiano v. United States as a Supreme Court case decided 1948-06-14 with cluster_id 104576.\",\n        \"The disclosed citation record selects 334 U.S. 699 as the official citation and includes the same display citation asserted in the inventory.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This existence finding does not certify current good-law status; treatment is separately unverified in the lake record.\"\n      ],\n      \"suggested_tightening\": \"Keep citation existence distinct from any live-law or good-law characterization.\"\n    },\n    {\n      \"assertion_id\": \"9d6bfdaab55b0769\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The built page makes a substantive treatment/current-law claim that Trupiano is overruled, rendered historical, and superseded by Chimel, but the disclosed lake treatment record is only an unverified frontier stub with null as-of dates and no progeny or treatment edges.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Do not render or rely on the overruled/superseded/live-law conclusion as certified treatment until the lake record contains treatment derivation, as-of dates, and progeny edges or point overrides supporting that conclusion. Otherwise limit the page to 'treatment unverified' and mark the Rabinowitz/Chimel discussion as uncited authored orientation.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md header and Treatment & subsequent history; lake/Trupiano v. United States__83b444.json treatment and progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and composite_basis is unverified.\",\n        \"Lake treatment.edges is empty and progeny rows_cached is 0, so the disclosed authority record does not verify Rabinowitz, Chimel, overruling, supersession, or current-law status.\",\n        \"The content page itself admits the subsequent-history treatment is authored orientation rather than machine-certified.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The treatment narrative may be correct in the real world, but that cannot be credited under the disclosed-evidence-only rule.\"\n      ],\n      \"suggested_tightening\": \"Replace the displayed treatment line with 'Treatment unverified pending S9' unless certified treatment fields are added.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:29:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:42:55-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-32ea5e5154"
+    ],
     "group_id": "_overhaul2/lake/cases/Trupiano v. United States.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "Trupiano v. United States"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-cbc4af49",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cbc4af49.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Trupiano v. United States' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Trupiano v. United States"
+    ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 95631,
+      "output": 4145,
+      "source": "codex-events",
+      "total": 99776
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "34727629658d7ac9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d6bfdaab55b0769": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-32ea5e5154",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 80.9
   }
 }

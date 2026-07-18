@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f4cd7b0e2e54610b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "payload.all[] cites (425 U.S. 341; 96 S. Ct. 1612; 48 L. Ed. 2d 1; 1976 U.S. LEXIS 147; 37 A.F.T.R.2d (RIA) 1232) match the lake citations block, source cluster.citations[]; official cite 425 U.S. 341 selected/present.",
+          "Disclosed opinion carries *346/*347 star pages within 425 U.S., consistent with 425 U.S. 341."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "479252e358afea98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-347 quote is the actual Caiello quotation and matches the disclosed opinion blockquote verbatim ('It was the compulsive aspect of custodial interrogation, and not the strength or content of the government's suspicions at the time the questioning was conducted, which led the court to impose the Miranda requirements with regard to custodial questioning.').",
+          "The *347 star break falls mid-quote ('...led the court to impose the *347 Miranda requirements...'), so the content-page pincite 346-347 is correct, as is the 'quoting United States v. Caiello, 420 F.2d 471, 473 (CA2 1969)' attribution.",
+          "CL OCR renders the opening as 'Tt was' (OCR artifact); the page correctly reads 'It was'. The mismatch/slip-only flag is a false-negative star-verification gap, not a real fidelity defect."
+        ],
+        "residual_risks": [
+          "pin metadata still labeled slip-only/mismatch despite verbatim match."
+        ],
+        "suggested_tightening": "Promote pin-347 from slip-only to star-verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92ab48c4b51d4192",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the Court specifically stressed that it was the custodial nature of the interrogation which triggered the necessity for adherence to the specific requirements of its Miranda holding.",
+          "locator_note": "opinion para b415-6, sentence 'In subsequent decisions, the Court specifically stressed...' after the *346 page-number marker; cites Orozco and Mathis",
+          "needs_cl": false,
+          "problem": "Stored pinpoint quote for pin-346 is a harvest artifact (tail of Issue + Rule heading + editorial lead: 'of the investigation. ## Rule No — Miranda turns on custody, not investigative focus. In its decisions after *Miranda*'), not the intended opinion quotation; self-reported mismatch/slip-only confirmed.",
+          "proposed_fix": "Re-harvest pin-346 quote to the actual rule quotation, verbatim in the opinion on 425 U.S. 346.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is spliced page prose (harvest artifact), not a source quotation.",
+          "The actual content-page quotation at ^pin-346 is verbatim-faithful to the disclosed opinion, correctly pincited to 346, and correctly cites Orozco v. Texas and Mathis v. United States (1968); defect confined to metadata, non-propositional."
+        ],
+        "residual_risks": [
+          "pin remains slip-only (no star-verified fragment)."
+        ],
+        "suggested_tightening": "Star-verify the corrected pin-346 quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b358a23d5fd309bb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity good_law consistent with disclosed record: composite_basis migration-seed, point_overrides empty, all edges proposed:true (none applied).",
+          "scope_note (Miranda triggered by custody, not investigative 'focus'; noncustodial interview of a criminal-investigation target in a private home requires no Miranda warnings) accurately states the disclosed holding.",
+          "No disclosed adjudicated negative treatment."
+        ],
+        "residual_risks": [
+          "Proposed treatment edges unadjudicated; currency (2026-06-30) not independently re-run from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1a1b1b474f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Beckwith v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-05-c48168d8",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Beckwith v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "479252e358afea98": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92ab48c4b51d4192": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b358a23d5fd309bb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4cd7b0e2e54610b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a1b1b474f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8e4f05d35e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

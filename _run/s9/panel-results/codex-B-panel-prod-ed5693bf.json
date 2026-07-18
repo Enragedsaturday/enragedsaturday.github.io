@@ -1,22 +1,106 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/coleman-v-alabama--108182.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "7261085a64b01003",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.field_i_validity is unverified; as_of_content and as_of_treatment are null; progeny rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies Coleman v. Alabama's identity and citations, but it does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with unverified treatment and no derived progeny.",
+          "proposed_fix": "Limit this assertion to identity/citation existence only, or promote the authority to a full treatment/progeny record before using it as current/live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record status is verified_identity and expected_citation_found is true, so citation existence is supported.",
+          "Lens B asks whether the cited authority is still live law; treatment.field_i_validity is unverified and both as-of dates are null.",
+          "The progeny record has no enumeration and rows_cached is 0, so the disclosed record cannot rule out superseding, overruling, abrogating, or limiting treatment."
+        ],
+        "residual_risks": [
+          "The citation itself may be accurate; this refutes only any current-law/live-authority implication under lens B."
+        ],
+        "suggested_tightening": "Display Coleman as an identified cited authority, but do not imply current good-law status until treatment is derived.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "d40340418c73d01e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload reports field_i_validity as unverified, with null as-of dates, matching the lake treatment fields.",
+          "The lake scope note says treatment/progeny were intentionally not derived, and the disclosed progeny fields contain no conflicting negative-treatment edge."
+        ],
+        "residual_risks": [
+          "Substantive good-law status remains unknown because the record is a frontier stub."
+        ],
+        "suggested_tightening": "Keep this labeled as unverified/no treatment review rather than as an affirmative good-law signal.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/coleman-v-alabama--108182.json\",\"reviewed\":[{\"assertion_id\":\"7261085a64b01003\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies Coleman v. Alabama's identity and citations, but it does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with unverified treatment and no derived progeny.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to identity/citation existence only, or promote the authority to a full treatment/progeny record before using it as current/live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake treatment.field_i_validity is unverified; as_of_content and as_of_treatment are null; progeny rows_cached is 0.\"},\"reasons\":[\"The lake record status is verified_identity and expected_citation_found is true, so citation existence is supported.\",\"Lens B asks whether the cited authority is still live law; treatment.field_i_validity is unverified and both as-of dates are null.\",\"The progeny record has no enumeration and rows_cached is 0, so the disclosed record cannot rule out superseding, overruling, abrogating, or limiting treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citation itself may be accurate; this refutes only any current-law/live-authority implication under lens B.\"],\"suggested_tightening\":\"Display Coleman as an identified cited authority, but do not imply current good-law status until treatment is derived.\"},{\"assertion_id\":\"d40340418c73d01e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload reports field_i_validity as unverified, with null as-of dates, matching the lake treatment fields.\",\"The lake scope note says treatment/progeny were intentionally not derived, and the disclosed progeny fields contain no conflicting negative-treatment edge.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive good-law status remains unknown because the record is a frontier stub.\"],\"suggested_tightening\":\"Keep this labeled as unverified/no treatment review rather than as an affirmative good-law signal.\"}],\"notes\":\"No content_page.* file was present in the disclosed working directory; review is limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:19-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:17:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7843978a21"
+    ],
     "group_id": "_overhaul2/lake/cases/coleman-v-alabama--108182.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-ed5693bf",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ed5693bf.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:10.986397Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:11.760040Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:12.895317Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:14.972003Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:36:18.700989Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record coleman-v-alabama--108182"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "coleman-v-alabama--108182"
+    ],
+    "tokens": {
+      "input": 122063,
+      "output": 4903,
+      "source": "codex-events",
+      "total": 126966
+    },
+    "verdict_map": {
+      "7261085a64b01003": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d40340418c73d01e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7843978a21",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.8
   }
 }

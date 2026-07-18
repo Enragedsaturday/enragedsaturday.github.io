@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b65a4f05bb808232",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '496 U.S. 582 (1990)', No. 89-213, decided June 18, 1990; star pages *584 through *604; cluster 112464.",
+          "Official selection present; parallel S. Ct./L. Ed. 2d/LEXIS cites well-formed and non-conflicting."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0cac75cfaa7a1d5f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Under Schmerber and its progeny, we agree with the Commonwealth that any slurring of speech and other evidence of lack of muscular coordination revealed by Muniz's responses to Officer Hosterman's direct questions constitute nontestimonial components of those responses.",
+          "locator_note": "Cached-text star markers: *592 sits in the preceding Wade sentence ('compulsion of the accused to *592 exhibit his physical characteristics'); the quoted paragraph is entirely after *592 and before *593, hence page 592. Cross-validated: pin-599 and pin-601 quotes land correctly on 599/600/601 by the same star markers, so the pagination is reliable.",
+          "needs_cl": false,
+          "problem": "Quote is verbatim-faithful, but the pincite '496 U.S. at 590-591' excludes the page where the quoted holding actually sits. In the cached opinion the 'slurring is nontestimonial' holding paragraph ('Under Schmerber and its progeny, we agree with the Commonwealth that any slurring of speech... does not, without more, compel him to provide a testimonial response') follows the *592 star marker (it comes after the Wade/Gilbert/Dionisio discussion) and precedes *593 — i.e., it is on page 592, not 590-591.",
+          "proposed_fix": "Correct the pin-591 pincite from '590-591' to '592' (both quoted sentences are on p.592); update the Sources pinpoint list accordingly.",
+          "severity": "low"
+        },
+        "dimension": "pincite",
+        "reasons": [
+          "Quote text matches the cached opinion verbatim; '[A]ny' bracket and the two ' . . . ' ellipses (omitting 'to Officer Hosterman's direct questions' and 'like requiring him to reveal the physical properties of the sound produced by his voice, see Dionisio, supra,') are faithful.",
+          "Holding is correctly attributed to Muniz; only the page pointer is off by one page (should reach 592).",
+          "Payload 'quote' capture is garbled (content-page markdown) and its 'mismatch' flag is a separate false positive; the real defect is the pincite."
+        ],
+        "residual_risks": [
+          "Off-by-one page pincite; the true page (592) is adjacent to the cited range, so reader impact is limited."
+        ],
+        "suggested_tightening": "Have the pincite verifier land quote-pinpoints on the star page immediately following the last preceding star marker rather than on the section's lead page.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c836ef05672b0d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload is 'matched'/star-verified; the pin-599 quotes verify verbatim: 'the incriminating inference of impaired mental faculties stemmed, not just from the fact that Muniz slurred his response, but also from a testimonial aspect of that response.' sits after *599 and before *600 (page 599).",
+          "Second quoted sentence ('because we conclude that Muniz's response to the sixth birthday question was testimonial, the response should have been suppressed.') sits after *600 (page 600); pincites 599 and 600 both correct.",
+          "URL text-anchor 'sixth birthday' legitimately points to the first mention at *586 ('Do you know what the date was of your sixth birthday?')."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71cce4ebdeddd3ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote matches cached opinion verbatim: 'answers to th[e] first seven questions are . . . admissible because the questions fall within a routine booking question exception which exempts from Miranda's coverage questions to secure the biographical data necessary to complete booking or pretrial services.'",
+          "'th[e]' bracket (from 'these') and ' . . . ' (omitting 'nonetheless') are faithful alterations.",
+          "Passage sits after *601 and before *602 (page 601); pincite 'Id. at 601' is correct. S8 'mismatch' is a slip-only false positive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a6de14652b24b58f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All three scope-note holdings are confirmed by the cached opinion: slurring is nontestimonial (p.592), the sixth-birthday answer is testimonial and should have been suppressed (pp.599-600), and the seven booking questions fall within the routine-booking-question exception (p.601).",
+          "'Fractured opinion' characterization is accurate (Brennan writes for the Court 'except as to Part III-C'); no disclosed adverse treatment."
+        ],
+        "residual_risks": [
+          "good_law currency as of 2026-06-30 rests on migration-seed; no citator inlined, so later adverse treatment not independently checkable from disclosed evidence — none known/disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:12:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-41931b5623",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3c9dbfc573",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b8422c8caa",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-0d1fcbac97"
+    ],
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Muniz.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-03-9460e743",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania v. Muniz"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0cac75cfaa7a1d5f": {
+        "dimension": "pincite",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3c836ef05672b0d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "71cce4ebdeddd3ea": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a6de14652b24b58f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b65a4f05bb808232": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0d1fcbac97",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-41931b5623",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3c9dbfc573",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-b8422c8caa",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

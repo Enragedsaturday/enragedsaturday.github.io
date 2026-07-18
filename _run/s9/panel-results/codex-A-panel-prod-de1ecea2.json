@@ -1,13 +1,76 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Cotterman.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertion_id rows in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present in this review group.",
+    "reviewed": [
+      {
+        "assertion_id": "d1decc040b637858",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and identifies the case as United States v. Howard Cotterman, decided 2013-03-08 by the U.S. Court of Appeals, 9th Circuit (en banc).",
+          "The asserted official citation 709 F.3d 952, reporter F.3d, volume 709, page 952, matches lake.citations.official; the asserted WL and U.S. App. LEXIS cites match lake.citations.vendor_neutral/all."
+        ],
+        "residual_risks": [
+          "The lake identity fields say identity_method is pending and expected_citation_found is false, so I am relying on the disclosed lake citation judgment as permitted rather than independent confirmation."
+        ],
+        "suggested_tightening": "If this corpus requires completed identity QA, surface the lake warning two_key_not_satisfied separately from the citation-existence assertion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe9ec475082aa33d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "It is the comprehensive and intrusive nature of a forensic examination—not the location of the examination—that is the key factor triggering the requirement of reasonable suspicion here.",
+          "locator_note": "text/United States v. Cotterman__d8fbaa.txt slip page 17 contains the quoted sentence; lake.pinpoints[0] has page null, position null, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-op17 lake pinpoint quote is not the opinion passage; it is a harvested chunk of the built Markdown page/frontmatter/background and the lake itself marks quote_fidelity as mismatch. The actual opinion sentence appears on slip page 17, but it is not what pinpoints[].quote stores.",
+          "proposed_fix": "Replace pin-op17 pinpoints[].quote with the actual slip-page-17 sentence and store page/position metadata. The visible content-page quote can remain because it matches the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the visible quoted sentence on slip page 17.",
+          "The asserted payload quote begins with the built page marker and header, not the opinion text, and ends before the actual quoted sentence."
+        ],
+        "residual_risks": [
+          "This refutes the stored pinpoint/quote-fidelity assertion, not the underlying legal proposition in the page text."
+        ],
+        "suggested_tightening": "Use the actual page-17 sentence as the pin quote and add a regression check that pinpoints[].quote cannot be harvested from content_page Markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b22fa5b35117b7eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I make no treatment finding.",
+          "The asserted treatment fields match the disclosed lake.treatment fields: good_law, as_of_content 2013-03-08, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No Lens A review of later-authority accuracy or good-law currency was performed; that belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Cotterman.json\",\"reviewed\":[{\"assertion_id\":\"d1decc040b637858\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and identifies the case as United States v. Howard Cotterman, decided 2013-03-08 by the U.S. Court of Appeals, 9th Circuit (en banc).\",\"The asserted official citation 709 F.3d 952, reporter F.3d, volume 709, page 952, matches lake.citations.official; the asserted WL and U.S. App. LEXIS cites match lake.citations.vendor_neutral/all.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake identity fields say identity_method is pending and expected_citation_found is false, so I am relying on the disclosed lake citation judgment as permitted rather than independent confirmation.\"],\"suggested_tightening\":\"If this corpus requires completed identity QA, surface the lake warning two_key_not_satisfied separately from the citation-existence assertion.\"},{\"assertion_id\":\"fe9ec475082aa33d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op17 lake pinpoint quote is not the opinion passage; it is a harvested chunk of the built Markdown page/frontmatter/background and the lake itself marks quote_fidelity as mismatch. The actual opinion sentence appears on slip page 17, but it is not what pinpoints[].quote stores.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op17 pinpoints[].quote with the actual slip-page-17 sentence and store page/position metadata. The visible content-page quote can remain because it matches the opinion text.\",\"evidence_quote\":\"It is the comprehensive and intrusive nature of a forensic examination—not the location of the examination—that is the key factor triggering the requirement of reasonable suspicion here.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Cotterman__d8fbaa.txt slip page 17 contains the quoted sentence; lake.pinpoints[0] has page null, position null, and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the visible quoted sentence on slip page 17.\",\"The asserted payload quote begins with the built page marker and header, not the opinion text, and ends before the actual quoted sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"This refutes the stored pinpoint/quote-fidelity assertion, not the underlying legal proposition in the page text.\"],\"suggested_tightening\":\"Use the actual page-17 sentence as the pin quote and add a regression check that pinpoints[].quote cannot be harvested from content_page Markdown.\"},{\"assertion_id\":\"b22fa5b35117b7eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I make no treatment finding.\",\"The asserted treatment fields match the disclosed lake.treatment fields: good_law, as_of_content 2013-03-08, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A review of later-authority accuracy or good-law currency was performed; that belongs to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 assertion_id rows in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present in this review group.\"}",
   "summary": {
-    "at": "2026-07-10T02:30:59-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:51:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-c006d0a6d0"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Cotterman.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +79,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-de1ecea2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Cotterman"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 295231,
+      "output": 6817,
+      "source": "codex-events",
+      "total": 302048
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "b22fa5b35117b7eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d1decc040b637858": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe9ec475082aa33d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c006d0a6d0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.1
   }
 }

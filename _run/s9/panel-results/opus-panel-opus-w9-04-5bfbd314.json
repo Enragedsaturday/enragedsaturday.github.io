@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "364db54a45d8ea1e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion (Justice Ginsburg, delivered the opinion of the Court) confirms the case exists at 565 U.S. 228 (2012); page markers 565 U.S. 231-241 and L.Ed.2d star pages *703-*709 corroborate the 565 U.S. and 181 L. Ed. 2d parallels.",
+          "All seven listed cites (565 U.S. 228; 132 S. Ct. 716; 181 L. Ed. 2d 694; 80 U.S.L.W. 4073; 23 Fla. L. Weekly Fed. S 60; 2012 U.S. LEXIS 579; 2012 WL 75048) are standard parallels for Perry v. New Hampshire; identity_checked=true, cluster 7350294."
+        ],
+        "residual_risks": [
+          "official selection returned null (reason unlisted_reporter: Fla. L. Weekly Fed. S), so no cite is 'selected' as official even though 565 U.S. 228 is present in all[] -- a display/selection quirk, not an existence defect."
+        ],
+        "suggested_tightening": "Select 565 U.S. 228 as the official cite instead of abstaining on the unlisted Fla. L. Weekly reporter.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0fb66487aa9a5f79",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Opinion text reads '...we hold that [16] the Due Process Clause does not require a preliminary judicial inquiry into the reliability of an eyewitness identification when the identification was not procured under unnecessarily suggestive circumstances arranged by law enforcement. Accordingly, the judgment of the New Hampshire Supreme Court is affirmed.' -- the content quote is verbatim, using only the standard editorial capitalization '[T]he' for the mid-sentence 'the'.",
+          "Payload quote_fidelity='mismatch' is a disclosure-induced false positive triggered by the '[T]he' bracket normalization; the substance is faithful."
+        ],
+        "residual_risks": [
+          "Pincite 'slip op., at 18-19' cannot be confirmed against the disclosed official-reporter pagination (cached text carries 565 U.S./181 L.Ed.2d star pages, not slip-op pages); the quote sits at the opinion's conclusion (~565 U.S. 248), consistent with a late slip-op page."
+        ],
+        "suggested_tightening": "Normalize editorial brackets before the fidelity comparison to avoid FP mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac7f0eded418e8c7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have not extended pretrial screening for reliability to cases in which the suggestive circumstances were not arranged by law enforcement officers.",
+          "locator_note": "pin-op2; content 'Rule' section; opinion paras b803-4 and b803-5 (565 U.S. 232-233).",
+          "needs_cl": false,
+          "problem": "Recorded quote for pin-op2 is the content page preamble (YAML front matter, header line, the 'TreatmentBadge...' HTML comment, and the ## Background/## Issue/## Rule intro text), not a quotation from the opinion -- a first-pin span mis-extraction. quote_fidelity='mismatch' is technically correct that this string is absent from the opinion, but the assertion as a quote_pinpoint is malformed.",
+          "proposed_fix": "Re-extract the sentence the ^pin-op2 anchor actually marks: 'We have not extended pretrial screening for reliability to cases in which the suggestive circumstances were not arranged by law enforcement officers. . . . When no improper law enforcement activity is involved, we hold, it suffices to test reliability...' -- both segments are verbatim in the opinion (paras b803-4/b803-5) with a correct ellipsis; the published content page already renders this faithful quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is page chrome, not opinion text -- the systematic first-pin span mis-extraction (same pattern as Peters pin-66 and Plumhoff pin-777).",
+          "The intended/anchored content quote IS verbatim in the disclosed opinion, so this is a ledger extraction artifact, not a published-content fidelity error."
+        ],
+        "residual_risks": [
+          "Published content page is unaffected (its rendered quote is faithful); the defect is confined to the S8 assertion record's quote span."
+        ],
+        "suggested_tightening": "Fix the first-pin extractor so it captures the sentence following the anchor rather than the preceding page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "031d0255e5a60a98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Perry v. New Hampshire (2012), Ginsburg, J., is a foundational eyewitness-ID due-process precedent; no disclosed evidence overrules or abrogates Perry itself.",
+          "The lake record's negative edges (State v. Dickson 'overruled', United States v. Shepard-Fraser 'abrogated', etc.) are all proposed:true lane1_negative/lane2_top_cited candidate signals -- the known extractor keyword-FP pattern (field_ii attaches to the citing cases, not to Perry) -- and composite_basis='migration-seed' pending S2 re-derivation."
+        ],
+        "residual_risks": [
+          "Treatment is a migration-seed not yet independently re-derived; unadjudicated proposed negative edges exist and should be triaged by S2 (scope_note acknowledges possible downgrade)."
+        ],
+        "suggested_tightening": "Re-derive treatment and formally dispose of the proposed negative edges to convert the seed into a verified good_law determination.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T08:54:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2b31dada62",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Perry v. New Hampshire.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w9-04-5bfbd314",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w9-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Perry v. New Hampshire"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "031d0255e5a60a98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0fb66487aa9a5f79": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "364db54a45d8ea1e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac7f0eded418e8c7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b31dada62",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e241ec08c6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

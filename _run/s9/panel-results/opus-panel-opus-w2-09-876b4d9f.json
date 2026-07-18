@@ -1,0 +1,128 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "fadd5866bc60e216",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "official cite 399 U.S. 42 corroborated by the cached opinion's page-number labels *44 through *54, implying the opinion opens at 42",
+          "Mr. Justice White delivering, Mr. Justice Blackmun taking no part, affirmance of 3d Cir. 408 F.2d 1186 and cert. 396 U.S. 900 (1969) are all internally consistent with Chambers v. Maroney (1970)"
+        ],
+        "residual_risks": [
+          "parallel S.Ct./L.Ed./LEXIS page numbers are not page-verifiable from the U.S. Reports text"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f18bbfe5a5ea69e2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For constitutional purposes, we see no difference between on the one hand seizing and holding a car before presenting the probable cause issue to a magistrate and on the other hand carrying out an immediate search without a warrant. Given probable cause to search, either course is reasonable under the Fourth Amendment.",
+          "locator_note": "cached opinion at page/star label 52; content page ^pin-52 renders the correct quote, so the defect is confined to the lake pinpoint record",
+          "needs_cl": false,
+          "problem": "Stored pin-52 quote is a corrupted harvest of the content page's own front-matter/Background/Issue/Rule markdown ('--- # Chambers v. Maroney *399 U.S. 42 (1970)* ... ## Rule Yes. Given probable cause to search a vehicle that was mobile when stopped, a warrantless search at the station house is reasonable:'), which is NOT a verbatim passage of the opinion and appears nowhere in the cached text.",
+          "proposed_fix": "Re-harvest pin-52 to the actual page-52 passage that the content page already renders and cites.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "assertion quote contains literal markdown ('---'/'#'/'##') and the page title line -- a harvest of the wiki page, not opinion text",
+          "no such text exists in the disclosed cached opinion",
+          "the genuine page-52 passage IS present in the cached opinion and IS what the content page displays and correctly pincites"
+        ],
+        "residual_risks": [
+          "first-pinpoint content-page-prose corruption recurs across this pack (Case slip7, Chambers v. Florida 240, Chambers v. Maroney 52, Chandler v. Miller 323) -- appears systematic"
+        ],
+        "suggested_tightening": "add a harvest guard rejecting candidate quotes that contain markdown ('##','---','<!--') or the page-title line",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf423a24c54fd5d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is the expected status for this 1970 automobile-exception landmark (Carroll line); the cached opinion establishes the holding but subsequent validity is not positively confirmable from a 1970 text",
+          "every negative edge is proposed:true keyword candidate (State v. McCarthy, State v. Podrazo, Williams v. State, Illinois v. Gates, Schneckloth v. Bustamonte, Coolidge v. New Hampshire, Franks v. Delaware, Rakas v. Illinois, ...) that cites but does not overrule Chambers v. Maroney; no verified overruling pincite is disclosed"
+        ],
+        "residual_risks": [
+          "content page 'No negative treatment' vs. the record's many unadjudicated proposed overruled/questioned edges -- reconcile via S2 derivation",
+          "internal inconsistency between two disclosed fields: frontmatter date_decided 1970-10-12 vs. treatment.as_of_content 1970-06-22",
+          "true currency needs a CL treatment check beyond the 1970 opinion"
+        ],
+        "suggested_tightening": "reconcile the two disclosed decision-date fields and adjudicate the lane1_negative proposals",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7c1bbad77e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Chambers v. Maroney.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-09-876b4d9f",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chambers v. Maroney"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "cf423a24c54fd5d7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f18bbfe5a5ea69e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fadd5866bc60e216": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f918d43b8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7c1bbad77e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

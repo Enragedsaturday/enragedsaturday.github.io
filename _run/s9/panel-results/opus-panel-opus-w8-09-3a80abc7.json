@@ -1,0 +1,144 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8f0014cec35d894f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header shows '277 U.S. 438 (1928)' — matches official cite and display '277 U.S. 438'.",
+          "Parallel cites (48 S. Ct. 564; 72 L. Ed. 944; 66 A.L.R. 376) and vendor-neutral (1928 U.S. LEXIS 694) are the standard Olmstead citations; case_name_full ('OLMSTEAD Et Al. v. UNITED STATES; ...') is consistent; official_selection_present=true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b49e527492026b3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Amendment itself shows that the search is to be of material things  the person, the house, his papers or his effects.",
+          "locator_note": "pin-464; cached opinion at 277 U.S. 464.",
+          "needs_cl": false,
+          "problem": "Stored pin-464 quote is a garbled extraction: 'within the Fourth Amendment. ## Rule *(Historical — this holding has been overruled; see Treatment.)* The Court tied Fourth Amendment protection to physical trespass and tangible things:' — it splices Issue-tail text, the Markdown heading '## Rule', the page's own editorial parenthetical, and the page's lead-in prose; none of it is opinion text. Self-flagged quote_fidelity 'mismatch'.",
+          "proposed_fix": "Repair the stored pin-464 quote to the faithful text the page displays: 'The Amendment itself shows that the search is to be of material things — the person, the house, his papers or his effects.' (277 U.S. 464).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains the Markdown token '## Rule' and the page's editorial note '(Historical — this holding has been overruled; see Treatment.)' — impossible in a 1928 opinion.",
+          "Cached opinion contains the faithful 'material things' sentence; the reader-facing rendered quote at ^pin-464 is correct, so the defect is confined to the stored pinpoint metadata."
+        ],
+        "residual_risks": [
+          "Rendered quote is faithful; metadata-only extraction defect."
+        ],
+        "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not raw Markdown around the ^anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9f4933be830080d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only.' matches the cached opinion verbatim (277 U.S. 464).",
+          "Payload flags quote_fidelity 'matched' / pinpoint_status 'star-verified' (star_marker 464); independent re-read of the cached text confirms the match."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dae9a04461320ed6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Olmstead (1928) is no longer good law: overruled on the privacy point by Katz v. United States (1967), with the property-trespass approach later revived as an alternative test in United States v. Jones (2012) — black-letter Fourth Amendment history that matches the scope_note.",
+          "field_i_validity 'superseded' is used here as the taxonomy's no-longer-good-law bucket (cf. 'good_law'/'unverified' in the sibling records); the specific overruling mechanism is stated in the scope_note and the badge renders 'overruled'."
+        ],
+        "residual_risks": [
+          "field_i label 'superseded' vs scope_note/badge 'overruled' is a terminology nuance ('superseded' can connote by-statute); the substance (overruled by Katz, revived by Jones) is correct."
+        ],
+        "suggested_tightening": "If the field_i enum supports it, use 'overruled' to align with the scope_note/badge and avoid the by-statute connotation of 'superseded'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-682a0ae242",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-09-3a80abc7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Olmstead v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7b49e527492026b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8f0014cec35d894f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9f4933be830080d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dae9a04461320ed6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-694cea7c77",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-682a0ae242",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

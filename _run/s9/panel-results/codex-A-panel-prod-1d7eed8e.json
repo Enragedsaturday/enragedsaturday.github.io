@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Zurcher v. Stanford Daily.json",
+    "lens": "A",
+    "notes": "Treatment/currency was only recorded for field consistency with the disclosed lake record; no Lens A treatment finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "c16a6b3d7b61201a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies case name, Supreme Court court level, docket 76-1484, and year 1978.",
+          "The official citation in the lake record is 436 U.S. 547 and the page displays 436 U.S. 547 (1978).",
+          "The parallel and vendor citations in the inventory match the lake citations."
+        ],
+        "residual_risks": [
+          "The opinion text says Decided May 31, 1978, while content_page.md and the lake identity use date_decided 1978-10-02; no separate inventory row asks for that date field."
+        ],
+        "suggested_tightening": "Add a separate date_decided assertion if decision-date accuracy is in scope.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "14f4ed8dff480038",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "with \"scrupulous exactitude.\"",
+          "locator_note": "pin-564; the passage appears in the paragraph beginning at star pagination *564.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present at the claimed passage, but the inner quotation marks are not character-faithful to the opinion text.",
+          "proposed_fix": "Change the inner quoted phrase to use the opinion text's double quotation marks around scrupulous exactitude, or avoid wrapping the whole sentence in outer double quotation marks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text contains the sentence beginning Where the materials sought to be seized may be protected by the First Amendment.",
+          "The content pin to 436 U.S. at 564 lands on the correct paragraph.",
+          "The lake and content quote use single quotation marks around scrupulous exactitude, while the disclosed opinion text uses double quotation marks."
+        ],
+        "residual_risks": [
+          "The lake pinpoint still has page:null, star_marker:null, and quote_fidelity:mismatch."
+        ],
+        "suggested_tightening": "Store page 564 and the exact text-normalized quote in the lake pinpoint.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac9dc0c540da22d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The critical element in a reasonable search is not that the owner of the property is suspected of crime",
+          "locator_note": "pin-556; the correct passage begins at star pagination *556 in text/Zurcher v. Stanford Daily__caf7b6.txt.",
+          "needs_cl": false,
+          "problem": "The pin-556 quote stored in the inventory/lake is not the opinion quote; it is a captured block of the built page's header, background, issue, and rule prose.",
+          "proposed_fix": "Replace pin-556's lake quote with the actual opinion sentence at star pagination *556 and update the visible quote to preserve the opinion's double quotation marks around things.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markdown and content_page prose, not text from the Supreme Court opinion.",
+          "The disclosed opinion text contains the intended critical element passage at star pagination *556.",
+          "The visible content quote is closer to the opinion, but the lake/inventory pinpoint quote itself is not character-faithful."
+        ],
+        "residual_risks": [
+          "The content quote also changes the opinion's double quotation marks around things to single quotation marks."
+        ],
+        "suggested_tightening": "Reharvest pin-556 from the opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c56c88b8cf0d744e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment or currency.",
+          "The treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "The lake treatment derivation lists proposed negative-event audits, but treatment assessment belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Zurcher v. Stanford Daily.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c16a6b3d7b61201a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies case name, Supreme Court court level, docket 76-1484, and year 1978.\",\n        \"The official citation in the lake record is 436 U.S. 547 and the page displays 436 U.S. 547 (1978).\",\n        \"The parallel and vendor citations in the inventory match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The opinion text says Decided May 31, 1978, while content_page.md and the lake identity use date_decided 1978-10-02; no separate inventory row asks for that date field.\"\n      ],\n      \"suggested_tightening\": \"Add a separate date_decided assertion if decision-date accuracy is in scope.\"\n    },\n    {\n      \"assertion_id\": \"14f4ed8dff480038\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively present at the claimed passage, but the inner quotation marks are not character-faithful to the opinion text.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the inner quoted phrase to use the opinion text's double quotation marks around scrupulous exactitude, or avoid wrapping the whole sentence in outer double quotation marks.\",\n        \"evidence_quote\": \"with \\\"scrupulous exactitude.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-564; the passage appears in the paragraph beginning at star pagination *564.\"\n      },\n      \"reasons\": [\n        \"The opinion text contains the sentence beginning Where the materials sought to be seized may be protected by the First Amendment.\",\n        \"The content pin to 436 U.S. at 564 lands on the correct paragraph.\",\n        \"The lake and content quote use single quotation marks around scrupulous exactitude, while the disclosed opinion text uses double quotation marks.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pinpoint still has page:null, star_marker:null, and quote_fidelity:mismatch.\"\n      ],\n      \"suggested_tightening\": \"Store page 564 and the exact text-normalized quote in the lake pinpoint.\"\n    },\n    {\n      \"assertion_id\": \"ac9dc0c540da22d4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-556 quote stored in the inventory/lake is not the opinion quote; it is a captured block of the built page's header, background, issue, and rule prose.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-556's lake quote with the actual opinion sentence at star pagination *556 and update the visible quote to preserve the opinion's double quotation marks around things.\",\n        \"evidence_quote\": \"The critical element in a reasonable search is not that the owner of the property is suspected of crime\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-556; the correct passage begins at star pagination *556 in text/Zurcher v. Stanford Daily__caf7b6.txt.\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with page markdown and content_page prose, not text from the Supreme Court opinion.\",\n        \"The disclosed opinion text contains the intended critical element passage at star pagination *556.\",\n        \"The visible content quote is closer to the opinion, but the lake/inventory pinpoint quote itself is not character-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content quote also changes the opinion's double quotation marks around things to single quotation marks.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-556 from the opinion text rather than from the rendered content page.\"\n    },\n    {\n      \"assertion_id\": \"c56c88b8cf0d744e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not adjudicate treatment or currency.\",\n        \"The treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake treatment derivation lists proposed negative-event audits, but treatment assessment belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment/currency was only recorded for field consistency with the disclosed lake record; no Lens A treatment finding is raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:35:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:15:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-c037ec732c",
+      "F-S9-PR-062fae8293"
+    ],
     "group_id": "_overhaul2/lake/cases/Zurcher v. Stanford Daily.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1d7eed8e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Zurcher v. Stanford Daily"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 228504,
+      "output": 8039,
+      "source": "codex-events",
+      "total": 236543
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "14f4ed8dff480038": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ac9dc0c540da22d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c16a6b3d7b61201a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c56c88b8cf0d744e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c037ec732c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-062fae8293",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 159.4
   }
 }

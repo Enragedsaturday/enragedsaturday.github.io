@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e9bbe273752141d6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unmistakably Nix v. Williams (Chief Justice Burger; victim Pamela Powers; adoption of the ultimate/inevitable-discovery exception; Brewer v. Williams antecedent right-to-counsel violation; judgment reversed).",
+          "Opinion star pages run *434 through *450, consistent with a case beginning at 467 U.S. 431; official/display cite 467 U.S. 431 matches.",
+          "Parallel cites (104 S. Ct. 2501; 81 L. Ed. 2d 377; 52 U.S.L.W. 4732; 1984 U.S. LEXIS 101) from cluster.citations[] are uncontradicted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "54c196006984037e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If the prosecution can establish by a preponderance of the evidence that the information ultimately or inevitably would have been discovered by lawful means — here the volunteers' search— then the deterrence rationale has so little basis that the evidence should be received.",
+          "locator_note": "pin-444; content page ^pin-444 displays the sentence with ' . . . ' eliding '— here the volunteers' search—'; text is on star page *444; only the stored quote metadata is corrupt.",
+          "needs_cl": false,
+          "problem": "The stored pin-444 `quote` field is a content-page-chrome mis-harvest (Background tail + Issue + '## Rule Yes.'), not the opinion sentence; the quote_fidelity flag correctly reads 'mismatch'. The quote rendered at content-page anchor ^pin-444 is faithful to the opinion.",
+          "proposed_fix": "Re-harvest pin-444.quote to the intended opinion sentence and keep pincite 444.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content quote at ^pin-444 matches the opinion at *444 (a fair mid-quote ellipsis replaces 'here the volunteers' search'); pincite '467 U.S. at 444' correct.",
+          "Stored pinpoint quote is page chrome, not opinion text -> real but low-severity metadata defect."
+        ],
+        "residual_risks": [
+          "Consumers reading pinpoint.quote directly would get page chrome, not the inevitable-discovery holding."
+        ],
+        "suggested_tightening": "Same slip-only harvest guard as Neil pin-199.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95896b78e1501a68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed opinion adopts the ultimate/inevitable-discovery exception to the exclusionary rule (1984 SCOTUS); scope_note is accurate. field_i_validity=good_law supported.",
+          "All treatment.edges are proposed:true and unconfirmed; no disclosed overruling.",
+          "good_law survives."
+        ],
+        "residual_risks": [
+          "Proposed negative edges unadjudicated but non-dispositive."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c3344381f0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Nix v. Williams.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-03-4f639f92",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Nix v. Williams"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "54c196006984037e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "95896b78e1501a68": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9bbe273752141d6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5c7738775f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-c3344381f0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

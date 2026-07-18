@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Dyson.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support and quote fidelity only; treatment was recorded without a treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "e002e96285162310",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Maryland v. Dyson, U.S. Supreme Court, decided 1999-06-21.",
+          "Official citation 527 U.S. 465 and parallel/vendor citations match the lake citation fields and the content page citation metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58860ccce7e4a691",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "“If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment... permits police to search the vehicle without more.”",
+          "locator_note": "text/Maryland v. Dyson__292ef8.txt, paragraph b500-6, page marker 467",
+          "needs_cl": false,
+          "problem": "The quoted Labron passage is substantively the right passage, but it is not character-faithful to the cached opinion text: the payload uses a spaced ellipsis and straight quotation marks, while the text uses an unspaced ellipsis and curly quotation marks.",
+          "proposed_fix": "Use the exact cached text for the quoted sentence or stop treating the normalized legal-style ellipsis as character-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears on the cached text at page 467, but the character-level typography and ellipsis do not match the payload quote.",
+          "The lake record itself marks this pinpoint quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact opinion-text form: “Fourth Amendment... permits,” not “Fourth Amendment . . . permits.”",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74de8ac9e461f3cf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "And under our established precedent, the “automobile exception” has no separate exigency re<page-number citation-index=\"1\" label=\"467\">*467</page-number>quirement.",
+          "locator_note": "text/Maryland v. Dyson__292ef8.txt, paragraph b500-6; lake pin-466 quote_fidelity is marked mismatch",
+          "needs_cl": false,
+          "problem": "The pin-466 payload quote is not an opinion quote; it appears to splice content-page prose and Markdown section headings. It is not character-faithful to the cached Dyson opinion.",
+          "proposed_fix": "Replace pin-466 with the actual opinion sentence supporting the rule and consider citing 466-67 because the word 'requirement' crosses the page marker.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote text is found in content_page.md/lake metadata, not as a verbatim passage in the cached opinion text.",
+          "The actual opinion sentence supporting the rule is different and spans the 466-to-467 page marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace the pin text with the actual sentence beginning 'And under our established precedent...' and normalize the displayed quote only if it is not represented as character-faithful.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26ef089364be15a8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload mirrors the disclosed lake treatment judgment fields: field_i_validity good_law, as_of_content 1999-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency not assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Dyson.json\",\"reviewed\":[{\"assertion_id\":\"e002e96285162310\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Maryland v. Dyson, U.S. Supreme Court, decided 1999-06-21.\",\"Official citation 527 U.S. 465 and parallel/vendor citations match the lake citation fields and the content page citation metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"58860ccce7e4a691\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted Labron passage is substantively the right passage, but it is not character-faithful to the cached opinion text: the payload uses a spaced ellipsis and straight quotation marks, while the text uses an unspaced ellipsis and curly quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact cached text for the quoted sentence or stop treating the normalized legal-style ellipsis as character-faithful.\",\"evidence_quote\":\"“If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment... permits police to search the vehicle without more.”\",\"needs_cl\":false,\"locator_note\":\"text/Maryland v. Dyson__292ef8.txt, paragraph b500-6, page marker 467\"},\"reasons\":[\"The passage appears on the cached text at page 467, but the character-level typography and ellipsis do not match the payload quote.\",\"The lake record itself marks this pinpoint quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the exact opinion-text form: “Fourth Amendment... permits,” not “Fourth Amendment . . . permits.”\"},{\"assertion_id\":\"74de8ac9e461f3cf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-466 payload quote is not an opinion quote; it appears to splice content-page prose and Markdown section headings. It is not character-faithful to the cached Dyson opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-466 with the actual opinion sentence supporting the rule and consider citing 466-67 because the word 'requirement' crosses the page marker.\",\"evidence_quote\":\"And under our established precedent, the “automobile exception” has no separate exigency re<page-number citation-index=\\\"1\\\" label=\\\"467\\\">*467</page-number>quirement.\",\"needs_cl\":false,\"locator_note\":\"text/Maryland v. Dyson__292ef8.txt, paragraph b500-6; lake pin-466 quote_fidelity is marked mismatch\"},\"reasons\":[\"The asserted quote text is found in content_page.md/lake metadata, not as a verbatim passage in the cached opinion text.\",\"The actual opinion sentence supporting the rule is different and spans the 466-to-467 page marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Replace the pin text with the actual sentence beginning 'And under our established precedent...' and normalize the displayed quote only if it is not represented as character-faithful.\"},{\"assertion_id\":\"26ef089364be15a8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload mirrors the disclosed lake treatment judgment fields: field_i_validity good_law, as_of_content 1999-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not assessed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed support and quote fidelity only; treatment was recorded without a treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:05:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3e66fe3726",
+      "F-S9-PR-db60d4065b"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Dyson.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-31abad9f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Maryland v. Dyson"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 222046,
+      "output": 8060,
+      "source": "codex-events",
+      "total": 230106
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "26ef089364be15a8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "58860ccce7e4a691": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "74de8ac9e461f3cf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e002e96285162310": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3e66fe3726",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-db60d4065b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.4
   }
 }

@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Richards v. Wisconsin.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "5c5346620199b4c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Richards v. Wisconsin, U.S. Supreme Court, decided 1997-04-28, year 1997.",
+          "The lake record's official citation is 520 U.S. 385, with parallel citations 117 S. Ct. 1416 and 137 L. Ed. 2d 615, and vendor citation 1997 U.S. LEXIS 2794.",
+          "The content page citation, court, date, docket, and CourtListener identifiers match the lake identity fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f1dc0ec1c4a2898",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In order to justify a “no-knock” entry, the police must have a reasonable suspicion that knocking and announcing their presence, under the particular circumstances, would be dangerous or futile, or that it would inhibit the effective investigation of the crime by, for example, allowing the destruction of evidence.",
+          "locator_note": "The passage appears in text/Richards v. Wisconsin__b16219.txt on the page-394 section before the *395 marker.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the right passage, but it is not character-faithful: the disclosed opinion text uses curly double quotation marks around “no-knock,” while the asserted quote uses straight single quotation marks.",
+          "proposed_fix": "Replace \"a 'no-knock' entry\" with \"a “no-knock” entry\" in pin-394a.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-394a quote_fidelity as mismatch.",
+          "The text file confirms the only visible mismatch is quote punctuation around “no-knock”; strict quote-fidelity does not survive."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact opinion punctuation for verbatim quotes, or mark normalized typography explicitly if the corpus permits normalization.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97214cb6986a5c63",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, the fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case.",
+          "locator_note": "The actual passage appears in text/Richards v. Wisconsin__b16219.txt in the page-394 section; the lake pinpoint quote instead reproduces content_page.md frontmatter/page prose.",
+          "needs_cl": false,
+          "problem": "The asserted pin-394 quote is not the quoted legal passage at all; it is a harvested block of the content page header/background/issue/rule text, ending before the actual quoted sentence.",
+          "proposed_fix": "Set pin-394 to the actual page-394 passage: \"Thus, the fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case.\" If using the page's bracketed start, ensure the system treats bracketed alteration as non-verbatim.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-394 is marked quote_fidelity mismatch.",
+          "The asserted quote begins with the content page delimiter/header and background prose, which is not opinion text.",
+          "The text file supplies the actual 520 U.S. 394 passage supporting the content page's rule quote."
+        ],
+        "residual_risks": [
+          "The content page's displayed quote uses [T]he instead of the opinion's \"Thus, the\"; decide whether bracketed capitalization is permitted for quote-fidelity."
+        ],
+        "suggested_tightening": "Regenerate pin-394 from the quoted sentence only, not from the surrounding markdown page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb4350cfed4ed172",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment defect is raised.",
+          "The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1997-04-28, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Any good-law/currency challenge is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Richards v. Wisconsin.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5c5346620199b4c0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Richards v. Wisconsin, U.S. Supreme Court, decided 1997-04-28, year 1997.\",\n        \"The lake record's official citation is 520 U.S. 385, with parallel citations 117 S. Ct. 1416 and 137 L. Ed. 2d 615, and vendor citation 1997 U.S. LEXIS 2794.\",\n        \"The content page citation, court, date, docket, and CourtListener identifiers match the lake identity fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2f1dc0ec1c4a2898\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is substantively the right passage, but it is not character-faithful: the disclosed opinion text uses curly double quotation marks around “no-knock,” while the asserted quote uses straight single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace \\\"a 'no-knock' entry\\\" with \\\"a “no-knock” entry\\\" in pin-394a.\",\n        \"evidence_quote\": \"In order to justify a “no-knock” entry, the police must have a reasonable suspicion that knocking and announcing their presence, under the particular circumstances, would be dangerous or futile, or that it would inhibit the effective investigation of the crime by, for example, allowing the destruction of evidence.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The passage appears in text/Richards v. Wisconsin__b16219.txt on the page-394 section before the *395 marker.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself marks pin-394a quote_fidelity as mismatch.\",\n        \"The text file confirms the only visible mismatch is quote punctuation around “no-knock”; strict quote-fidelity does not survive.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact opinion punctuation for verbatim quotes, or mark normalized typography explicitly if the corpus permits normalization.\"\n    },\n    {\n      \"assertion_id\": \"97214cb6986a5c63\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted pin-394 quote is not the quoted legal passage at all; it is a harvested block of the content page header/background/issue/rule text, ending before the actual quoted sentence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Set pin-394 to the actual page-394 passage: \\\"Thus, the fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case.\\\" If using the page's bracketed start, ensure the system treats bracketed alteration as non-verbatim.\",\n        \"evidence_quote\": \"Thus, the fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The actual passage appears in text/Richards v. Wisconsin__b16219.txt in the page-394 section; the lake pinpoint quote instead reproduces content_page.md frontmatter/page prose.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint for pin-394 is marked quote_fidelity mismatch.\",\n        \"The asserted quote begins with the content page delimiter/header and background prose, which is not opinion text.\",\n        \"The text file supplies the actual 520 U.S. 394 passage supporting the content page's rule quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's displayed quote uses [T]he instead of the opinion's \\\"Thus, the\\\"; decide whether bracketed capitalization is permitted for quote-fidelity.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-394 from the quoted sentence only, not from the surrounding markdown page content.\"\n    },\n    {\n      \"assertion_id\": \"cb4350cfed4ed172\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter, so no treatment defect is raised.\",\n        \"The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1997-04-28, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Any good-law/currency challenge is reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:34:06-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:29:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-012589faa6",
+      "F-S9-PR-a7c9f813d7"
+    ],
     "group_id": "_overhaul2/lake/cases/Richards v. Wisconsin.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5f215337",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5f215337.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: f093d16b-3a3d-46ce-891b-b263d1bb943b\n2026-07-10T22:33:57.678550Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:58.120759Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:58.736839Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:33:59.515185Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:34:00.645139Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:34:02.766227Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Richards v. Wisconsin"
+    ],
+    "tokens": {
+      "input": 110889,
+      "output": 4748,
+      "source": "codex-events",
+      "total": 115637
+    },
+    "verdict_map": {
+      "2f1dc0ec1c4a2898": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5c5346620199b4c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97214cb6986a5c63": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cb4350cfed4ed172": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-012589faa6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a7c9f813d7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 93.2
   }
 }

@@ -1,0 +1,145 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3af4288baf269bae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header states '428 U.S. 364 (1976)', 'SOUTH DAKOTA v. OPPERMAN', 'No. 75-76', decided July 6 1976 — matches the record exactly.",
+          "Official cite 428 U.S. 364 (selected_official cluster citation) is confirmed verbatim in the source header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "49716aae5d5421cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "^pin-376a quote matches the cached opinion verbatim; the sole difference is the marks around 'unreasonable' (the page uses single quotes inside its outer double-quote — correct nested-quotation convention; the source uses double quotes).",
+          "The sentence follows the *376 star marker (same page as pin-376), so 'Id.' (= 428 U.S. at 376) is correct.",
+          "The extractor 'quote_fidelity: mismatch' flag is a false positive driven by the single/double inner-quote normalization."
+        ],
+        "residual_risks": [
+          "Naive string comparators will keep flagging the inner-quote style; this is not a substantive misquote."
+        ],
+        "suggested_tightening": "Normalize inner quotation marks before computing quote_fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "671d131321840b00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Actual ^pin-376 quote ('there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive.') matches the cached opinion verbatim.",
+          "Quote sits immediately after the mid-paragraph *376 star marker, so pincite 428 U.S. at 376 is correct.",
+          "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'mismatch' flag is an extractor artifact."
+        ],
+        "residual_risks": [
+          "Same wrong-span extraction pattern as the other pin blobs; re-derive from the ^pin-376 block."
+        ],
+        "suggested_tightening": "Isolate the ^pin-N inline quote span before computing quote_fidelity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b0e79b22f58f355b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (not a clean attestation).",
+          "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+        ],
+        "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:44:45-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9b9bc494fd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ac1701b508",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/South Dakota v. Opperman.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w11-04-902114e0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w11-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "South Dakota v. Opperman"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3af4288baf269bae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "49716aae5d5421cc": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "671d131321840b00": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b0e79b22f58f355b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9b9bc494fd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ac1701b508",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

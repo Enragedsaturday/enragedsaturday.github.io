@@ -1,0 +1,124 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "a0f694382a865f9c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached Scalia majority for 'Devenpeck v. Alford' carries star-pages *148 through *154, corroborating volume 543 U.S. with the opinion beginning at 146.",
+          "Lake record cluster 137733; official cite 543 U.S. 146 is selected and the case identity is unambiguous."
+        ],
+        "residual_risks": [
+          "First page '146' is not shown verbatim (cached text begins at *148) and parallel cites are not independently reproduced, but the page range and case identity are consistent with 543 U.S. 146."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e03775a681cd49f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' field is a garbled extractor artifact (a page-header span), not the pin-153 quote; its 'mismatch' flag compares the wrong span and is not ground truth.",
+          "The actual pin-153 quote matches the cached opinion verbatim: first sentence 'Our cases make clear that an arresting officer's state of mind (except for the facts that he knows) is irrelevant to the existence of probable cause.' exact; a properly formed four-dot ellipsis elides the intervening 'See Whren ... ; Arkansas v. Sullivan ... (per curiam).' citation string; 'That is to say, his subjective reason for making the arrest need not be the criminal offense as to which the known facts provide probable cause.' exact.",
+          "Pincite 153 is correct: star *153 immediately precedes the quoted passage."
+        ],
+        "residual_risks": [
+          "'[T]hat' is bracketed although the original 'That' was already a sentence-initial capital in the source — a de minimis over-bracket, not a fidelity break; no words are altered."
+        ],
+        "suggested_tightening": "Render 'That is to say' unbracketed (the source letter was already capitalized), and re-run the extractor to capture the true pin-153 span.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1504b1db3abfd7c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The only inlined evidence is the 2004 opinion text, which cannot confirm 2026 treatment currency; no citator data is disclosed.",
+          "No disclosed negative treatment; the record frames Devenpeck's objective-probable-cause holding as reaffirmed (not overruled) by Wesby.",
+          "Refuting 'good_law' absent disclosed negative-treatment evidence would fabricate a defect, which is barred."
+        ],
+        "residual_risks": [
+          "field_i_validity:'good_law' is a migration-seed default; scope_note flags possible S2 downgrade; currency is not machine-verified from the disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-771bb02009",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-71584c68e0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Devenpeck v. Alford.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-08-c72eca32",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-08.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Devenpeck v. Alford"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1504b1db3abfd7c4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "a0f694382a865f9c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e03775a681cd49f0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-771bb02009",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-71584c68e0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

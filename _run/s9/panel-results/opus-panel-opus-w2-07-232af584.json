@@ -1,0 +1,147 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "2f38a10b7ceb9d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached majority opinion (Mr. Justice White) is Camara: San Francisco housing-code inspection, administrative warrant, overrules Frank v. Maryland.",
+          "Official cite 387 U.S. 523 is consistent with interior star markers *525..*538; parallel S.Ct./L.Ed.2d/LEXIS cites are standard Camara parallels."
+        ],
+        "residual_risks": [
+          "First page 523 not printed (excerpt starts at *525); identity unambiguous."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f63f308b2738abb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-534 quote ('we hold that administrative searches ... guarantees to the individual') reproduces the opinion verbatim; cached text: 'In summary, we hold that administrative searches of the kind at issue here are significant intrusions ... guarantees to the individual'.",
+          "The quote sits on page 534: star *534 immediately precedes it and *535 follows later in the same section.",
+          "The payload 'quote' fragment ('such a warrant may issue. ## Rule Administrative inspections require a warrant procedure:') is a garbled extractor capture spanning the Issue->Rule markdown boundary, not the page's actual quoted material; the 'mismatch' flag is a false positive."
+        ],
+        "residual_risks": [
+          "Extractor captured structural markdown rather than the in-quotes text; harness should re-anchor to the quotation span."
+        ],
+        "suggested_tightening": "Point the quote extractor at the material inside the quotation marks, not the surrounding markdown headers.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd111b2f54df4f87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's ^pin-538 quote ('\\'probable cause\\' to issue a warrant to inspect must exist if reasonable legislative or administrative standards for conducting an area inspection are satisfied with respect to a particular dwelling.') matches the opinion verbatim at cached line beginning 'Having concluded that the area inspection is a \"reasonable\" search ... it is obvious that \"probable cause\" to issue a warrant to inspect must exist ...'.",
+          "Quote sits on page 538: star *538 precedes it (the *539 boundary is later).",
+          "'mismatch' flag is a normalization false positive (straight vs curly quotation marks)."
+        ],
+        "residual_risks": [
+          "Quote-normalization (curly/straight quotes) trips naive string-match; not a page defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b71eb672fd223069",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The overruled-Frank-v-Maryland sub-claim is corroborated by the disclosed opinion, which expressly rejects Frank's warrantless-inspection disposition.",
+          "The good_law currency claim (as of 2026-06-30) cannot be affirmed or refuted from the opinion text alone (no citator/subsequent-history inlined); no contrary signal present, so no defect is substantiated ('not found != fabricated')."
+        ],
+        "residual_risks": [
+          "Currency good_law-as-of-2026 requires a CourtListener citator pass, not available in this pack."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19bf574c52",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf8d1313c7",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Camara v. Municipal Court.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-07-232af584",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Camara v. Municipal Court"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2f38a10b7ceb9d84": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b71eb672fd223069": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "f63f308b2738abb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd111b2f54df4f87": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19bf574c52",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf8d1313c7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

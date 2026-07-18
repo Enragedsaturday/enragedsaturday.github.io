@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Aigbekaen.json",
+    "lens": "B",
+    "notes": "Reviewed both rows in group_inventory.jsonl under lens B only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "b3a182aedb57101b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Raymond Aigbekaen, Fourth Circuit, decided 2019-11-21, docket 17-4109, cluster_id 4680725.",
+          "The lake citations field lists 943 F.3d 713 as the official/display citation and marks expected_citation_found true.",
+          "No disclosed treatment field or progeny edge says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "Treatment/progeny were intentionally not derived; live-law currency beyond the disclosed record is not independently verified."
+        ],
+        "suggested_tightening": "Keep the page's Treatment: Unverified banner until treatment/progeny are actually derived.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "763a8d95002ab7b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny were not derived.",
+          "The content page likewise renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "The disclosed progeny/treatment edges are empty, so there is no disclosed contrary treatment call to reconcile."
+        ],
+        "residual_risks": [
+          "Because treatment is explicitly unverified, the disclosed record cannot support a stronger good-law claim."
+        ],
+        "suggested_tightening": "Do not promote this page beyond an unverified treatment status without adding an as-of date and derived treatment/progeny evidence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Aigbekaen.json\",\"reviewed\":[{\"assertion_id\":\"b3a182aedb57101b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Raymond Aigbekaen, Fourth Circuit, decided 2019-11-21, docket 17-4109, cluster_id 4680725.\",\"The lake citations field lists 943 F.3d 713 as the official/display citation and marks expected_citation_found true.\",\"No disclosed treatment field or progeny edge says the authority has been overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny were intentionally not derived; live-law currency beyond the disclosed record is not independently verified.\"],\"suggested_tightening\":\"Keep the page's Treatment: Unverified banner until treatment/progeny are actually derived.\"},{\"assertion_id\":\"763a8d95002ab7b9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny were not derived.\",\"The content page likewise renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"The disclosed progeny/treatment edges are empty, so there is no disclosed contrary treatment call to reconcile.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is explicitly unverified, the disclosed record cannot support a stronger good-law claim.\"],\"suggested_tightening\":\"Do not promote this page beyond an unverified treatment status without adding an as-of date and derived treatment/progeny evidence.\"}],\"notes\":\"Reviewed both rows in group_inventory.jsonl under lens B only; no support or quote-fidelity finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:46-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:43:21-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Aigbekaen.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Aigbekaen"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3b19d567",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3b19d567.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Aigbekaen' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Aigbekaen"
+    ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 81941,
+      "output": 2973,
+      "source": "codex-events",
+      "total": 84914
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "763a8d95002ab7b9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b3a182aedb57101b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 64.9
   }
 }

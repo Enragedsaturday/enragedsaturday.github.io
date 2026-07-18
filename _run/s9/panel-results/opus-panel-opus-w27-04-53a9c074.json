@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5dd3443d1a42642f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip header prints '430 U.S. 387 (1977)', 'BREWER, WARDEN v. WILLIAMS', 'No. 74-1263', 'Supreme Court of United States' — official cite, court, docket, and year confirmed.",
+          "Lake citations[] carry 430 U.S. 387 (official), parallels 97 S. Ct. 1232 and 51 L. Ed. 2d 424 (L. Ed. 2d correct for a 1977 case), and vendor-neutral 1977 U.S. LEXIS 64 — all match the payload."
+        ],
+        "residual_risks": [
+          "identity.date_decided 1977-05-16 conflicts with cached slip 'Decided March 23, 1977'; the decision YEAR (1977) is unaffected so existence stands, but the stored decision date is likely wrong (see treatment finding)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0029aa6152214226",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Cached text: 'There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely as ... if he had formally interrogated him.' — directly supports the deliberate-elicitation half of the holding.",
+          "Cached text: 'The state courts clearly proceeded upon the hypothesis that Detective Leaming's \"Christian burial speech\" had been tantamount to interrogation.' plus the Massiah 'constitutionally indistinguishable' passage — supports the equivalent-of-interrogation / Sixth Amendment right-to-counsel holding."
+        ],
+        "residual_risks": [
+          "'functional equivalent of interrogation' is Rhode Island v. Innis (Fifth Amendment) phrasing; Brewer's own words are 'tantamount to interrogation' and Massiah 'deliberately elicited'. Substance is supported; the label imports a sibling doctrine's term."
+        ],
+        "suggested_tightening": "Prefer the opinion's phrasing ('tantamount to interrogation' / 'deliberately elicited') to avoid conflating with Innis.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d42dc620f2cb5c6a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion holds the case 'constitutionally indistinguishable from those presented in Massiah v. United States' and applies the Massiah deliberate-elicitation rule to find a Sixth Amendment right-to-counsel violation — a genuine progeny/refinement, so 'Key — Progeny / Refinement' on the Sixth Amendment Right to Counsel page is supported.",
+          "Frontmatter homes[] lists page '[[Sixth Amendment Right to Counsel]]' role 'Key — Progeny / Refinement', matching the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12db821c22e7e63c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached slip: 'Supreme Court of United States', 'MR. JUSTICE STEWART delivered the opinion of the Court' — a SCOTUS majority decision, so authority_weight 'Binding — SCOTUS' is correct.",
+          "Lake identity court_level 'scotus' corroborates."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e3771b0042819287",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Decided March 23, 1977.",
+          "locator_note": "treatment.as_of_content / identity.date_decided vs cached slip 'Decided ...' line",
+          "needs_cl": false,
+          "problem": "as_of_content 1977-05-16 does not match the disclosed decision date. The cached slip reads 'Decided March 23, 1977', and the two sibling records in this pack set as_of_content to the slip's decided-date (Brinegar 1949-06-27 = 'Decided June 27, 1949'; Brigham City 2006-05-22 = 'Decided May 22, 2006'). Brewer's as_of_content (and identity.date_decided) is therefore off by ~2 months.",
+          "proposed_fix": "Set as_of_content and identity.date_decided to 1977-03-23.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Core treatment claim is sound: field_i_validity 'good_law' is right — Brewer's Sixth Amendment right-to-counsel holding is intact and there is no confirmed negative event (composite_basis is 'migration-seed').",
+          "scope_note is correct: Nix v. Williams concerned inevitable-discovery (the exclusionary remedy), not Brewer's right-to-counsel rule.",
+          "All 'negative' edges are proposed:true keyword-search candidates (e.g., Illinois v. Gates / Franks v. Delaware flagged 'overruled') that are facially non-probative citation-analysis noise, not adjudicated treatments."
+        ],
+        "residual_risks": [
+          "derivation lanes 1 and 2 carry audit_needed=true ('R15 treatment audit required'); the good_law label rests on migration-seed and the proposed negative edges are not yet adjudicated."
+        ],
+        "suggested_tightening": "Fix the decision date only; the good_law disposition itself needs no change.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:53:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-38afcfaac9"
+    ],
+    "group_id": "content/cases/Brewer v. Williams.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w27-04-53a9c074",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w27-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brewer v. Williams"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0029aa6152214226": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "12db821c22e7e63c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5dd3443d1a42642f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d42dc620f2cb5c6a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e3771b0042819287": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-38afcfaac9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

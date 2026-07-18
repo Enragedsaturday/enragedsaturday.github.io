@@ -1,0 +1,151 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c8679d52bea391e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Internal cross-references in the opinion ('363 Or. at 204, 421 P.3d at 328'; '363 Or. at 196-203, 421 P.3d at 331-34') and dual page-label tracks (Or. **190-204, P.3d *328-345) confirm both volume/reporter for official '363 Or. 185' and parallel '421 P.3d 323'.",
+          "Oregon Supreme Court, decided 2018-06-28; official selection present."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f4ebd70e64b4a4f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # State v. Mansor *363 Or. 185, 421 P.3d 323 (2018)* ... ## Rule The Oregon Supreme Court set a particularity rule for computer warrants and limited the use of unauthorized data.",
+          "locator_note": "lake pinpoints[] id=pin-185; content page Rule ^pin-185",
+          "needs_cl": false,
+          "problem": "pin-185's stored 'quote' is not opinion text at all — it is the wiki page's own front-matter/markdown (title line, header, Background/Issue/Rule-intro), so it cannot faithfully support any pincite. pinpoint_status 'slip-only' and quote_fidelity 'mismatch' confirm it was never verified against the reporter. The content page nonetheless renders ^pin-185 on a real-looking Rule quote cited only to '363 Or. 185 (2018)' with no star-verified page.",
+          "proposed_fix": "Drop the corrupt pin-185 quote (or replace its quote field with the actual opinion language the Rule section relies on) and cite it to a star-verified page in the 363 Or. **190-204 / 421 P.3d **328-345 range; alternatively rely on pin-185a, which is star-verified. Do not ship a pincite backed by page front-matter.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-185 quote payload is verbatim the page's own markdown front-matter, not any sentence of the Mansor opinion — a broken/unverifiable quote pinpoint.",
+          "Self-labeled slip-only + mismatch; the disclosed cached opinion contains no such 'quote', confirming the defect."
+        ],
+        "residual_risks": [
+          "The rendered ^pin-185 Rule quote ('a warrant to search for and seize a computer...') sits in the truncated conclusion tail and could not be byte-verified here; a full-text checker must confirm that separate quote and assign it a star page."
+        ],
+        "suggested_tightening": "Every rendered quote pincite should carry a star-verified reporter page, not a bare '(2018)'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f5c6e1c64b2d6a1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact pin-185a sentence falls in the truncated conclusion tail, so it could not be byte-matched, but its holding is verbatim-corroborated by disclosed p-109 ('when the state ... uncovers information that was not authorized by the warrant, Article I, section 9, prohibits the state from using that information at trial, unless it comes within an exception to the warrant requirement').",
+          "star_marker '345' matches the disclosed conclusion location ('*345 VI. CONCLUSION'); pin is flagged star-verified with a validated text fragment — supports fidelity, so refuting would fabricate a defect."
+        ],
+        "residual_risks": [
+          "Exact wording of the summary-section 'We also hold that, because of the possibility...' sentence was not in the non-truncated disclosed text; a full-text checker should confirm the verbatim string and star page 345."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "7e241603331e4176",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true ... \"proposed_negative_events\": 24 ... \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake treatment.derivation.lane2_top_cited; treatment.edges[] proposed:true",
+          "needs_cl": true,
+          "problem": "The page renders 'Treatment: good (as of 2026-06-30)' on a migration-seed basis while the record's own derivation carries 20+ PROPOSED negative-treatment edges (field_ii 'questioned'/'abrogated'/'overruled') and an explicit unresolved flag: lane2_top_cited audit_needed:true, audit_marker 'R15 treatment audit required', proposed_negative_events 24. Certifying unqualified 'good' before that audit overstates certainty.",
+          "proposed_fix": "Complete (or record the disposition of) the R15 top-cited negative-treatment audit before rendering unqualified 'good'; dismiss the structurally-impossible negatives — Oregon Court of Appeals citing cases (e.g., Serrano 324 Or. App., Bock 310 Or. App., Goode 335 Or. App., DiMolfetto 342 Or. App.) and a Nebraska case (State v. Short) cannot overrule/abrogate an Oregon Supreme Court decision, so those 'overruled'/'abrogated' labels are snippet false positives; adjudicate the two Oregon Supreme Court edges (Turay 371 Or. 128 'overruled'; Pittman 367 Or. 498 'questioned').",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Good-law status rests on composite_basis 'migration-seed' while 24 proposed negative events remain unaudited (R15 audit required) — the disclosed record does not settle 'good'.",
+          "The claim is not refuted outright: most negatives are structurally-impossible intermediate-court 'overrule' snippet FPs, and the two Oregon Supreme Court edges are merely proposed/unadjudicated, so nothing disclosed shows Mansor is actually bad law.",
+          "as_of_content (2018-06-28 = date decided) and the Article I section 9 (not Fourth Amendment) scope note are accurate against the opinion."
+        ],
+        "residual_risks": [
+          "A genuine negative in the unaudited pile (e.g., State v. Turay, 371 Or. 128) cannot be excluded from disclosed evidence alone; only a CL citator pass resolves it."
+        ],
+        "suggested_tightening": "Surface an 'audit-pending' caveat on the treatment badge until the R15 top-cited audit closes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:59:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-00b4b39420"
+    ],
+    "group_id": "_overhaul2/lake/cases/State v. Mansor.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w12-01-a46de04b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w12-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Mansor"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0f4ebd70e64b4a4f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2f5c6e1c64b2d6a1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "7e241603331e4176": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c8679d52bea391e1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd39534707",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-00b4b39420",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

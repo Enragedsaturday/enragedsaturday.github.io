@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1a7568d1a902c39e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite '453 U.S. 355' is confirmed by cluster.citations[] and the front-matter citation field; the cached opinion's star pagination (*356-*362) is consistent with a per curiam case beginning at page 355.",
+          "The existence assertion (the lake payload cite) is 453 U.S. 355, which is correct; the wrong-volume '451' error lives only in the rendered page body (surfaced under the pin-359/pin-359a assertions)."
+        ],
+        "residual_risks": [
+          "The rendered page header ('451 U.S. 355 (1981)'), pincites ('451 U.S. at 359'), and Sources line print the WRONG reporter volume 451; the authoritative cite is 453 (see pin-359 defect)."
+        ],
+        "suggested_tightening": "Reconcile the page body's reporter volume with the lake payload/front-matter (453, not 451).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66c73a7414e5a9de",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "453 U.S. 355",
+          "locator_note": "content_page Rule pin-359 ('451 U.S. at 359'); also header '451 U.S. 355 (1981)' and Sources '451 U.S. 355'.",
+          "needs_cl": false,
+          "problem": "The pin-359 pincite reads '451 U.S. at 359', but the correct reporter volume is 453 (California v. Prysock is 453 U.S. 355 per cluster.citations[] and front-matter). Volume 451 points to a different reporter location; the page number 359 is correct and the quoted text is faithful.",
+          "proposed_fix": "Correct the reporter volume 451->453 throughout the page body (header, pin-359 pincite, Sources line), matching cluster.citations[] and the front-matter citation '453 U.S. 355'.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'This Court has never indicated that the \"rigidity\" of Miranda extends to the precise formulation of the warnings given a criminal defendant.' matches the cached opinion (para b401-5) verbatim; it sits on page 359 (after the *359 marker, before *360).",
+          "Quote fidelity itself is intact, but the accompanying pinpoint carries the wrong reporter volume (451 vs 453) — a real, fixable citation error, so the assertion survives only with the stated volume correction."
+        ],
+        "residual_risks": [
+          "Same wrong-volume typo propagates to the header and Sources; the payload quote_fidelity='mismatch' flag also reflects the extractor grabbing a header span, not the true quote."
+        ],
+        "suggested_tightening": "Regenerate the page body cite from the lake payload to prevent volume drift.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0d5657caa2baf88",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "453 U.S. 355",
+          "locator_note": "content_page Rule pin-359a ('*Miranda* itself indicated that no talismanic incantation was required to satisfy its strictures.' — *Id.*).",
+          "needs_cl": false,
+          "problem": "The pin-359a pincite '*Id.*' inherits the wrong reporter volume from pin-359 ('451 U.S. at 359'); the correct volume is 453. Page 359 is correct and the quoted text is faithful.",
+          "proposed_fix": "Fix the volume at pin-359 (451->453); '*Id.*' at pin-359a then resolves correctly to 453 U.S. 359.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'Miranda itself indicated that no talismanic incantation was required to satisfy its strictures.' matches the cached opinion (para b401-6) verbatim; the source's 'talis-manic' is a line-break hyphenation of 'talismanic'. Quote sits on page 359 (before *360).",
+          "Fidelity is intact; the only defect is the reporter volume inherited via '*Id.*' from pin-359 (451 should be 453)."
+        ],
+        "residual_risks": [
+          "Defect is shared/root-caused with pin-359; correcting pin-359 fixes this Id. reference."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "655e68420fc44dba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity=good_law is consistent with the disclosed 1981 per curiam opinion (not overruled in any disclosed text).",
+          "The scope_note's reaffirmations (Duckworth v. Eagan (1989); Florida v. Powell (2010)) post-date the cached opinion and cannot be confirmed from disclosed evidence; composite_basis is migration-seed. No disclosed evidence contradicts the status."
+        ],
+        "residual_risks": [
+          "The lake record status is 'under_review' and identity_checked=false; treatment currency rests on migration-seed with no inlined citator evidence — a CourtListener citator pull would be needed to verify."
+        ],
+        "suggested_tightening": "Resolve the under_review/identity_checked=false status and attach a citator basis for the currency claim.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5e761d6ebc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/California v. Prysock.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-01-3642a526",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "California v. Prysock"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1a7568d1a902c39e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "655e68420fc44dba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "66c73a7414e5a9de": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d0d5657caa2baf88": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3c1e221832",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-828d952522",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5e761d6ebc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

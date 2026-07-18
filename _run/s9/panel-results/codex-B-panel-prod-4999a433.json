@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/o-brien-v-united-states--107396.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the disclosed working directory; review was limited to group_inventory.jsonl, the lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "822b75c17ac84838",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/o-brien-v-united-states--107396__b41501.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies identity/citations, but it does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with treatment and progeny intentionally not derived.",
+          "proposed_fix": "Do not treat this authority as current/live law from this record alone. Populate treatment/progeny or render the citation as identity-verified with currency unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Identity is disclosed as verified_identity and the citation list includes 386 U.S. 345, 87 S. Ct. 1158, 18 L. Ed. 2d 94, and 1967 U.S. LEXIS 1984.",
+          "Currency is not verifiable: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0."
+        ],
+        "residual_risks": [
+          "This refutation is limited to currency/live-law status, not citation existence as an identity matter."
+        ],
+        "suggested_tightening": "Separate identity-verified existence from live-law currency; label the latter unverified until treatment/progeny is derived.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "88a71594f4eafea1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The scope note accurately discloses that treatment/progeny has not been derived, and no disclosed edge contradicts that unverified treatment posture."
+        ],
+        "residual_risks": [
+          "No affirmative good-law or negative-treatment conclusion can be drawn from this record."
+        ],
+        "suggested_tightening": "Keep any rendered treatment label explicit as unverified and avoid implying good-law status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/o-brien-v-united-states--107396.json\",\"reviewed\":[{\"assertion_id\":\"822b75c17ac84838\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies identity/citations, but it does not verify the currency/live-law status required under lens B. The lake record is a frontier stub with treatment and progeny intentionally not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat this authority as current/live law from this record alone. Populate treatment/progeny or render the citation as identity-verified with currency unverified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/o-brien-v-united-states--107396__b41501.json treatment/progeny fields\"},\"reasons\":[\"Identity is disclosed as verified_identity and the citation list includes 386 U.S. 345, 87 S. Ct. 1158, 18 L. Ed. 2d 94, and 1967 U.S. LEXIS 1984.\",\"Currency is not verifiable: treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This refutation is limited to currency/live-law status, not citation existence as an identity matter.\"],\"suggested_tightening\":\"Separate identity-verified existence from live-law currency; label the latter unverified until treatment/progeny is derived.\"},{\"assertion_id\":\"88a71594f4eafea1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The scope note accurately discloses that treatment/progeny has not been derived, and no disclosed edge contradicts that unverified treatment posture.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No affirmative good-law or negative-treatment conclusion can be drawn from this record.\"],\"suggested_tightening\":\"Keep any rendered treatment label explicit as unverified and avoid implying good-law status.\"}],\"notes\":\"No content_page.* file was present in the disclosed working directory; review was limited to group_inventory.jsonl, the lake record, and cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:33-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:21:04-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0fd27d026a"
+    ],
     "group_id": "_overhaul2/lake/cases/o-brien-v-united-states--107396.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-4999a433",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4999a433.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:37:29.666985Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:30.246820Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:30.869692Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:37:31.762051Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "no content page for lake record o-brien-v-united-states--107396"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "o-brien-v-united-states--107396"
+    ],
+    "tokens": {
+      "input": 82253,
+      "output": 3481,
+      "source": "codex-events",
+      "total": 85734
+    },
+    "verdict_map": {
+      "822b75c17ac84838": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "88a71594f4eafea1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0fd27d026a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 76.8
   }
 }

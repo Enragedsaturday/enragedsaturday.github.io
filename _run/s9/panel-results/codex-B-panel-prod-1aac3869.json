@@ -1,22 +1,91 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Milam v. United States.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl under Lens B using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "51f1cc41945a5299",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms record_id 'Milam v. United States', canonical_name_match true, expected_citation_found true, cluster_id 8849836, and lead_opinion_id 8835196.",
+          "The lake citations record lists official cite '296 F. 629' and vendor-neutral cite '1924 U.S. App. LEXIS 3380', matching the inventory payload and content page display.",
+          "No disclosed treatment edge, progeny edge, or lake field affirmatively says the authority has been overruled, vacated, superseded, or abrogated."
+        ],
+        "residual_risks": [
+          "Currency beyond citation existence is not established because treatment is expressly unverified and progeny enumeration is absent."
+        ],
+        "suggested_tightening": "Keep citation-existence claims separate from any current-good-law claim until treatment is promoted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1431bf707f4fa962",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload says field_i_validity is 'unverified', as_of_content and as_of_treatment are null, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The lake treatment fields match: field_i_validity 'unverified', composite_basis 'unverified', null as-of fields, empty edges, empty point_overrides, and the same frontier-stub scope note.",
+          "The content page also labels treatment as 'Unverified' and states subsequent treatment is not yet machine-verified, so it does not overclaim good-law status."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified and progeny rows_cached is 0, the disclosed record cannot support any stronger current-validity conclusion."
+        ],
+        "suggested_tightening": "Avoid presenting Milam as confirmed current good law unless a later treatment pass supplies verified validity and progeny data.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Milam v. United States.json\",\"reviewed\":[{\"assertion_id\":\"51f1cc41945a5299\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms record_id 'Milam v. United States', canonical_name_match true, expected_citation_found true, cluster_id 8849836, and lead_opinion_id 8835196.\",\"The lake citations record lists official cite '296 F. 629' and vendor-neutral cite '1924 U.S. App. LEXIS 3380', matching the inventory payload and content page display.\",\"No disclosed treatment edge, progeny edge, or lake field affirmatively says the authority has been overruled, vacated, superseded, or abrogated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency beyond citation existence is not established because treatment is expressly unverified and progeny enumeration is absent.\"],\"suggested_tightening\":\"Keep citation-existence claims separate from any current-good-law claim until treatment is promoted.\"},{\"assertion_id\":\"1431bf707f4fa962\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload says field_i_validity is 'unverified', as_of_content and as_of_treatment are null, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The lake treatment fields match: field_i_validity 'unverified', composite_basis 'unverified', null as-of fields, empty edges, empty point_overrides, and the same frontier-stub scope note.\",\"The content page also labels treatment as 'Unverified' and states subsequent treatment is not yet machine-verified, so it does not overclaim good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified and progeny rows_cached is 0, the disclosed record cannot support any stronger current-validity conclusion.\"],\"suggested_tightening\":\"Avoid presenting Milam as confirmed current good law unless a later treatment pass supplies verified validity and progeny data.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl under Lens B using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T18:30:39-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T02:12:31-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Milam v. United States.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-1aac3869",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1aac3869.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:30.510102Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:31.448598Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:32.312348Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:33.661939Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:35.510028Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:30:39.328588Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Milam v. United States"
+    ],
+    "tokens": {
+      "input": 119204,
+      "output": 3869,
+      "source": "codex-events",
+      "total": 123073
+    },
+    "verdict_map": {
+      "1431bf707f4fa962": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "51f1cc41945a5299": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 81.1
   }
 }

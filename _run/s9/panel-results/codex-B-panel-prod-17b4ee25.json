@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Williams.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, or pincite defects assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "9cdd28d11b981144",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms the case as United States v. Tashiri Wayne Williams, decided 2006-01-30 by the U.S. Court of Appeals for the Ninth Circuit, docket 04-50182, cluster_id 793121.",
+          "The lake citation fields list 435 F.3d 1148 as the official/display citation and also list the LEXIS and WL citations shown in the assertion.",
+          "No disclosed treatment edge, progeny edge, or judgment field states that Williams has been overruled, abrogated, superseded, or otherwise displaced."
+        ],
+        "residual_risks": [
+          "The lake treatment/progeny data is explicitly unverified, so the disclosed record does not provide an affirmative citator-complete live-law certification."
+        ],
+        "suggested_tightening": "Keep the citation/existence assertion paired with the visible Treatment: Unverified warning until treatment/progeny are promoted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a8a72e8453095251",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.",
+          "The lake treatment record has empty edges and no point_overrides; the progeny record has no cached/enumerated citing-opinion data. Nothing disclosed contradicts the Unverified treatment label.",
+          "The weight label is consistent with the disclosed identity fields identifying the court as the U.S. Court of Appeals, 9th Cir., with circuit ca9, while the page separately warns that treatment is unverified."
+        ],
+        "residual_risks": [
+          "Because treatment/progeny are intentionally not derived, this does not verify Williams as currently good law; it only verifies that the page accurately labels treatment as unverified."
+        ],
+        "suggested_tightening": "Do not upgrade the treatment badge or teach the case as citator-verified live law until S9/two-key treatment review is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Williams.json\",\"reviewed\":[{\"assertion_id\":\"9cdd28d11b981144\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms the case as United States v. Tashiri Wayne Williams, decided 2006-01-30 by the U.S. Court of Appeals for the Ninth Circuit, docket 04-50182, cluster_id 793121.\",\"The lake citation fields list 435 F.3d 1148 as the official/display citation and also list the LEXIS and WL citations shown in the assertion.\",\"No disclosed treatment edge, progeny edge, or judgment field states that Williams has been overruled, abrogated, superseded, or otherwise displaced.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment/progeny data is explicitly unverified, so the disclosed record does not provide an affirmative citator-complete live-law certification.\"],\"suggested_tightening\":\"Keep the citation/existence assertion paired with the visible Treatment: Unverified warning until treatment/progeny are promoted.\"},{\"assertion_id\":\"a8a72e8453095251\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.\",\"The lake treatment record has empty edges and no point_overrides; the progeny record has no cached/enumerated citing-opinion data. Nothing disclosed contradicts the Unverified treatment label.\",\"The weight label is consistent with the disclosed identity fields identifying the court as the U.S. Court of Appeals, 9th Cir., with circuit ca9, while the page separately warns that treatment is unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment/progeny are intentionally not derived, this does not verify Williams as currently good law; it only verifies that the page accurately labels treatment as unverified.\"],\"suggested_tightening\":\"Do not upgrade the treatment badge or teach the case as citator-verified live law until S9/two-key treatment review is complete.\"}],\"notes\":\"Lens B only; no support, quote-fidelity, or pincite defects assessed.\"}",
   "summary": {
-    "at": "2026-07-10T02:34:44-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:09:31-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Williams.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Williams"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-17b4ee25",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-17b4ee25.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Williams' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Williams"
+    ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 147847,
+      "output": 3562,
+      "source": "codex-events",
+      "total": 151409
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "9cdd28d11b981144": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a8a72e8453095251": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 74.1
   }
 }

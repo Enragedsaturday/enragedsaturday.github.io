@@ -1,13 +1,110 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Gastiaburo.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "348d89f6bec5f786",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as United States v. Gastiaburo, U.S. Court of Appeals for the Fourth Circuit, decided 1994-02-08.",
+          "The lake official citation is 16 F.3d 582 and the vendor-neutral citation is 1994 WL 32623, matching the inventory payload and content page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "44711a28c8afe6ec",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Not a single published federal case speaks of a “temporal limit” to the automobile exception. The Supreme Court has repeatedly stated that a warrantless search of a car (1) need not occur contemporaneously with the car’s lawful seizure and (2) need not be justified by the existence of exigent circumstances that might have made it impractical to secure a warrant prior to the search.",
+          "locator_note": "pin-587 / p.587; cached text contains the passage immediately after the *587 page marker.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively the p.587 passage, but it is not character-faithful to the cached opinion text: the text uses curly quotation marks around “temporal limit” and a curly apostrophe in car’s.",
+          "proposed_fix": "Replace the quote with the cached-text version using “temporal limit” and car’s.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition appears at p.587 in the cached opinion text.",
+          "The lake pinpoint itself flags quote_fidelity as mismatch and has no star marker or fragment."
+        ],
+        "residual_risks": [
+          "Pin is slip-only in the lake record even though the cached text supports the p.587 location."
+        ],
+        "suggested_tightening": "Make the quote typographically exact to the cached opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "674ca5d5126ac2c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text on p.586.",
+          "The lake pinpoint is star-verified at marker 586 and reports quote_fidelity as matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b45a1ff1a1a85cde",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The third argument, based on the “automobile exception” to the warrant requirement, is clearly correct.",
+          "locator_note": "pin-585 / p.585; the correct sentence appears in the cached text before the *586 page marker.",
+          "needs_cl": false,
+          "problem": "The pin-585 payload quote is not an opinion quote; it is a large excerpt from the built content page and stops before the cited 'is clearly correct' language. It is not character-faithful to the cached opinion text.",
+          "proposed_fix": "Replace pin-585 with the actual p.585 opinion sentence or the narrower quoted phrase used on the page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-585 is marked quote_fidelity mismatch and slip-only.",
+          "The disclosed cached opinion text supports the page's short quote, but not the inventory payload's long built-page excerpt."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use only the actual p.585 opinion language for pin-585.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03c8d8c7e4aa98ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's support/quote-fidelity charter.",
+          "The inventory treatment fields match the lake record: field_i_validity good_law, as_of_content 1994-02-08, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A conclusion is made about treatment completeness or currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Gastiaburo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"348d89f6bec5f786\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as United States v. Gastiaburo, U.S. Court of Appeals for the Fourth Circuit, decided 1994-02-08.\",\n        \"The lake official citation is 16 F.3d 582 and the vendor-neutral citation is 1994 WL 32623, matching the inventory payload and content page display.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"44711a28c8afe6ec\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage is substantively the p.587 passage, but it is not character-faithful to the cached opinion text: the text uses curly quotation marks around “temporal limit” and a curly apostrophe in car’s.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace the quote with the cached-text version using “temporal limit” and car’s.\",\n        \"evidence_quote\": \"Not a single published federal case speaks of a “temporal limit” to the automobile exception. The Supreme Court has repeatedly stated that a warrantless search of a car (1) need not occur contemporaneously with the car’s lawful seizure and (2) need not be justified by the existence of exigent circumstances that might have made it impractical to secure a warrant prior to the search.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-587 / p.587; cached text contains the passage immediately after the *587 page marker.\"\n      },\n      \"reasons\": [\n        \"The quoted proposition appears at p.587 in the cached opinion text.\",\n        \"The lake pinpoint itself flags quote_fidelity as mismatch and has no star marker or fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Pin is slip-only in the lake record even though the cached text supports the p.587 location.\"\n      ],\n      \"suggested_tightening\": \"Make the quote typographically exact to the cached opinion text.\"\n    },\n    {\n      \"assertion_id\": \"674ca5d5126ac2c8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the cached opinion text on p.586.\",\n        \"The lake pinpoint is star-verified at marker 586 and reports quote_fidelity as matched.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b45a1ff1a1a85cde\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-585 payload quote is not an opinion quote; it is a large excerpt from the built content page and stops before the cited 'is clearly correct' language. It is not character-faithful to the cached opinion text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-585 with the actual p.585 opinion sentence or the narrower quoted phrase used on the page.\",\n        \"evidence_quote\": \"The third argument, based on the “automobile exception” to the warrant requirement, is clearly correct.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-585 / p.585; the correct sentence appears in the cached text before the *586 page marker.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint for pin-585 is marked quote_fidelity mismatch and slip-only.\",\n        \"The disclosed cached opinion text supports the page's short quote, but not the inventory payload's long built-page excerpt.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use only the actual p.585 opinion language for pin-585.\"\n    },\n    {\n      \"assertion_id\": \"03c8d8c7e4aa98ca\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside Lens A's support/quote-fidelity charter.\",\n        \"The inventory treatment fields match the lake record: field_i_validity good_law, as_of_content 1994-02-08, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A conclusion is made about treatment completeness or currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:35-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:54:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-caf33e318f",
+      "F-S9-PR-24292273c6"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Gastiaburo.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +113,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-da738a85.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Gastiaburo"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 159417,
+      "output": 6428,
+      "source": "codex-events",
+      "total": 165845
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "03c8d8c7e4aa98ca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "348d89f6bec5f786": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "44711a28c8afe6ec": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "674ca5d5126ac2c8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b45a1ff1a1a85cde": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-caf33e318f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-24292273c6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 126.5
   }
 }

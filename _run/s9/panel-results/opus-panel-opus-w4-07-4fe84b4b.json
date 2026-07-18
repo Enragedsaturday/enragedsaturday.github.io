@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6ade265a6226cee0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads '438 U.S. 154 (1978)' with caption 'FRANKS v. DELAWARE', 'No. 77-5176', 'Supreme Court of United States', 'Decided June 26, 1978', 'MR. JUSTICE BLACKMUN delivered the opinion of the Court' — official display cite 438 U.S. 154 confirmed.",
+          "Star pagination *155 through *172 is consistent with an opinion beginning at 438 U.S. 154.",
+          "Case is real and correctly identified (cluster 109925)."
+        ],
+        "residual_risks": [
+          "Parallel cites 98 S. Ct. 2674 / 57 L. Ed. 2d 667 and 1978 U.S. LEXIS 127 are not independently checkable against the disclosed U.S. Reports text, but are standard-form and uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50d80cecea9545bb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "where the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request.",
+          "locator_note": "pin-155; cached opinion text at *155-*156 (Blackmun, opening holding paragraph). Defect confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low.",
+          "needs_cl": false,
+          "problem": "Stored pin-155 quote is a content-page harvest artifact — it captured the front-matter delimiter, H1, TreatmentBadge HTML comment, and the authored Background/Issue/Rule prose ('--- # Franks v. Delaware *438 U.S. 154 (1978)* ... ## Rule Yes — on a substantial preliminary showing, the defendant is entitled to a veracity hearing, and a proven falsehood essential to probable cause voids the warrant.'). None of this is quoted from the Franks opinion.",
+          "proposed_fix": "Repoint pin-155's stored quote to the holding language the rendered page already displays and which appears verbatim spanning 155-156: '[W]here the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is page scaffolding/authored prose, not verbatim opinion text; harvest grabbed the preamble and stopped before the anchored quotation.",
+          "Lake quote_fidelity='mismatch' is a TRUE POSITIVE — the stored pinpoint quote does not match source text."
+        ],
+        "residual_risks": [
+          "Systematic extractor span bug: identical harvest-artifact failure on Foster pin-442 and Frazier pin-739 in this pack."
+        ],
+        "suggested_tightening": "Fix the harvester so pin.quote captures the anchored quotation rather than the page preamble.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a486e35beba2a054",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-156 quote reproduces the opinion verbatim: cached text reads 'In the event that at that hearing the allegation of perjury or reckless disregard is established by the defendant by a preponderance of the evidence, and, with the affidavit's false material set to one side, the affidavit's remaining content is insufficient to establish probable cause, the search warrant must be voided and the fruits of the search excluded to the same extent as if probable cause was lacking on the face of the affidavit.'",
+          "Pincite is correct: the sentence falls after the *156 star marker (page 156), matching the 'Id. at 156' attribution.",
+          "The lake's quote_fidelity='mismatch' flag on this pin is a FALSE POSITIVE — the quotation is faithful and correctly located."
+        ],
+        "residual_risks": [
+          "The quote is truncated at '...fruits of the search excluded.' — a complete-thought stop that drops the original trailing qualifier 'to the same extent as if probable cause was lacking on the face of the affidavit' without an ellipsis. Retained words are exact; the omission does not alter the holding, but the truncation is un-signaled."
+        ],
+        "suggested_tightening": "Add an ellipsis after 'excluded' (or restore the trailing clause) to signal the omission, and clear the stale 'mismatch' fidelity flag.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf2dff5559564b73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is well-supported: the disclosed text is the SCOTUS majority (Blackmun, J.) that established the 'Franks hearing'; nothing in the disclosed record overrules or negatively treats it, and the page states 'No negative treatment.'",
+          "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a provenance note about date seeding, not a substantive treatment claim."
+        ],
+        "residual_risks": [
+          "Currency ('good as of 2026-06-30') cannot be exhaustively proven from the single 1978 opinion; no full citator inlined, though disclosed evidence shows no negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:01:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f2de21690f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Franks v. Delaware.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w4-07-4fe84b4b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w4-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Franks v. Delaware"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "50d80cecea9545bb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6ade265a6226cee0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a486e35beba2a054": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf2dff5559564b73": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cbfa596238",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f2de21690f",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

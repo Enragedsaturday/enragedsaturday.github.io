@@ -1,22 +1,185 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Monell v. Department of Social Services.md",
+    "lens": "A",
+    "notes": "Reviewed all five assertion_ids in group_inventory.jsonl under Lens A using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "d288f2efab77f626",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as a U.S. Supreme Court decision decided 1978-06-06.",
+          "The lake citation fields match the page assertion: official citation 436 U.S. 658, vendor-neutral citation 1978 U.S. LEXIS 100, and the listed parallel citations."
+        ],
+        "residual_risks": [
+          "The display title is shortened compared with the lake canonical case name, but it matches the lake record_id/input_case_name and identifies the same case."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7dfa85160005c693",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Instead, it is when execution of a government's policy or custom, whether made by its lawmakers or by those whose edicts or acts may fairly be said to represent official policy, inflicts the injury that the government as an entity is responsible under § 1983.",
+          "locator_note": "frontmatter holding",
+          "needs_cl": false,
+          "problem": "The holding field is truncated at \"official…\" and does not state the full policy-or-custom limitation. Read literally, it risks omitting municipal liability for governmental custom not formally approved.",
+          "proposed_fix": "Revise to: Local governments are § 1983 persons, but liability attaches only when execution of an official policy or governmental custom causes the constitutional injury; no respondeat superior liability.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports municipal § 1983 personhood and direct municipal liability for official policy or custom.",
+          "The opinion also rejects liability solely because the municipality employs a tortfeasor, i.e. respondeat superior."
+        ],
+        "residual_risks": [
+          "The page's Rule section states the policy/custom rule more completely than the frontmatter holding."
+        ],
+        "suggested_tightening": "Replace the ellipsis with the full policy-or-custom/no-respondeat-superior formulation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80fa75bb3b859a3b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "homes[0].role",
+          "needs_cl": false,
+          "problem": "The disclosed evidence does not independently verify the corpus home-role label \"Key — Progeny / Refinement.\" The opinion verifies Monell's importance to § 1983 municipal liability, but the lake record contains no home-role field or taxonomy support for this exact classification.",
+          "proposed_fix": "Disclose the relevant home page or taxonomy record, or change the role to a directly supported label such as \"Key — Municipal Liability / Policy-or-Custom Rule.\"",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The only occurrence of the role label is on the content page under review.",
+          "The lake record has identity, citations, pinpoints, treatment, and progeny data, but no disclosed field validating this home-role assignment."
+        ],
+        "residual_risks": [
+          "The role may be correct in undisclosed corpus context, but it is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Tie home-role labels to a disclosed home/taxonomy source.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "86b5e61a944c994e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity record identifies the court as U.S. Supreme Court and court_level as scotus, supporting the page's Binding — SCOTUS weight label.",
+          "Treatment merits are outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency review belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ed148260c6cc45d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1978-06-06, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.",
+          "The scope note is consistent with the opinion's statement overruling Monroe insofar as it held local governments wholly immune from § 1983 suit.",
+          "Treatment merits are outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency review belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Monell v. Department of Social Services.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d288f2efab77f626\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies the case as a U.S. Supreme Court decision decided 1978-06-06.\",\n        \"The lake citation fields match the page assertion: official citation 436 U.S. 658, vendor-neutral citation 1978 U.S. LEXIS 100, and the listed parallel citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The display title is shortened compared with the lake canonical case name, but it matches the lake record_id/input_case_name and identifies the same case.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7dfa85160005c693\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding field is truncated at \\\"official…\\\" and does not state the full policy-or-custom limitation. Read literally, it risks omitting municipal liability for governmental custom not formally approved.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Revise to: Local governments are § 1983 persons, but liability attaches only when execution of an official policy or governmental custom causes the constitutional injury; no respondeat superior liability.\",\n        \"evidence_quote\": \"Instead, it is when execution of a government's policy or custom, whether made by its lawmakers or by those whose edicts or acts may fairly be said to represent official policy, inflicts the injury that the government as an entity is responsible under § 1983.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"frontmatter holding\"\n      },\n      \"reasons\": [\n        \"The opinion supports municipal § 1983 personhood and direct municipal liability for official policy or custom.\",\n        \"The opinion also rejects liability solely because the municipality employs a tortfeasor, i.e. respondeat superior.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page's Rule section states the policy/custom rule more completely than the frontmatter holding.\"\n      ],\n      \"suggested_tightening\": \"Replace the ellipsis with the full policy-or-custom/no-respondeat-superior formulation.\"\n    },\n    {\n      \"assertion_id\": \"80fa75bb3b859a3b\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed evidence does not independently verify the corpus home-role label \\\"Key — Progeny / Refinement.\\\" The opinion verifies Monell's importance to § 1983 municipal liability, but the lake record contains no home-role field or taxonomy support for this exact classification.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Disclose the relevant home page or taxonomy record, or change the role to a directly supported label such as \\\"Key — Municipal Liability / Policy-or-Custom Rule.\\\"\",\n        \"evidence_quote\": null,\n        \"needs_cl\": false,\n        \"locator_note\": \"homes[0].role\"\n      },\n      \"reasons\": [\n        \"The only occurrence of the role label is on the content page under review.\",\n        \"The lake record has identity, citations, pinpoints, treatment, and progeny data, but no disclosed field validating this home-role assignment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The role may be correct in undisclosed corpus context, but it is not verifiable from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Tie home-role labels to a disclosed home/taxonomy source.\"\n    },\n    {\n      \"assertion_id\": \"86b5e61a944c994e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the court as U.S. Supreme Court and court_level as scotus, supporting the page's Binding — SCOTUS weight label.\",\n        \"Treatment merits are outside Lens A; no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8ed148260c6cc45d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1978-06-06, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.\",\n        \"The scope note is consistent with the opinion's statement overruling Monroe insofar as it held local governments wholly immune from § 1983 suit.\",\n        \"Treatment merits are outside Lens A; no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all five assertion_ids in group_inventory.jsonl under Lens A using only disclosed local files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:48:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T07:38:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-af872c2661",
+      "F-S9-PR-340682392c"
+    ],
     "group_id": "content/cases/Monell v. Department of Social Services.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-d374d267",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d374d267.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:48:27.364456Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:48:27.993085Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:48:28.751334Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:48:29.970035Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:48:32.071612Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Monell v. Department of Social Services"
+    ],
+    "tokens": {
+      "input": 222372,
+      "output": 7738,
+      "source": "codex-events",
+      "total": 230110
+    },
+    "verdict_map": {
+      "7dfa85160005c693": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "80fa75bb3b859a3b": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "86b5e61a944c994e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8ed148260c6cc45d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d288f2efab77f626": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-af872c2661",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-340682392c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 150.8
   }
 }

@@ -1,0 +1,119 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "16f60372750fc3ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion carries '313 U.S. 299' verbatim in its case_cite block, docket No. 618, United States v. Classic — matches the official rank-1 cite.",
+          "Parallel cites 61 S. Ct. 1031 and 85 L. Ed. 1368 are consistent with a 1941 SCOTUS opinion at 313 U.S. 299.",
+          "Cached opinion header (Argued April 7, 1941; Decided May 26, 1941) confirms the case and year."
+        ],
+        "residual_risks": [
+          "Frontmatter/lake date_decided '1941-10-13' is actually the Rehearing-Denied date; the cached opinion shows 'Decided May 26, 1941' (which matches the treatment as_of_content 1941-05-26)."
+        ],
+        "suggested_tightening": "Set date_decided to the 1941-05-26 decision date and record the rehearing-denied date separately.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26c71e20eb7ce2f4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.",
+          "locator_note": "pin-326; the page's ## Rule paragraph verbatim quote vs. the lake pinpoint.quote field.",
+          "needs_cl": false,
+          "problem": "The stored pin-326 quote is a mis-extracted span that crosses the '## Issue' and '## Rule' markdown headings ('...constitutionally protected). ## Rule Officials who abuse power...'), so it cannot match opinion text and is flagged 'mismatch'. The reader-facing quote actually rendered on the page is verbatim-faithful to the opinion; only the stored quote field is wrong.",
+          "proposed_fix": "Normalize the pin-326 quote field to the true quoted passage: \"Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page's Rule quote matches the cached opinion verbatim (cached passage: 'Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken ‘under color of’ state law.').",
+          "The 'mismatch' reflects the mis-extracted stored quote (which contains literal '## Rule' markdown), not a reader-facing misquote.",
+          "Pincite 326 is slip-only: the Classic cached text carries zero star-page markers, so 326 cannot be verified from disclosed evidence; the page honestly discloses it is taken from the official U.S. Reports citation (not fabricated)."
+        ],
+        "residual_risks": [
+          "Pincite 326 is not machine-verifiable from the disclosed CL text (no star pagination) — honestly disclosed, not fabricated."
+        ],
+        "suggested_tightening": "Store the actual quoted string in the pinpoint.quote field instead of the surrounding page-navigation span.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39faf92c2c7ed9e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "as_of_content 1941-05-26 matches the cached opinion's 'Decided May 26, 1941' (verified).",
+          "field_i_validity 'good_law' currency (as_of_treatment 2026-06-30) rests on citator/treatment data not present in the disclosed 1941 opinion, so it is not machine-verifiable from the pack.",
+          "No disclosed evidence contradicts good-law status; the scope_note is careful and correct on its face (color-of-law test governing, adopted for § 1983 in Monroe v. Pape, overruled Grovey v. Townsend only on the primary-voting point) — marked not-verifiable rather than a fabricated defect/clean."
+        ],
+        "residual_risks": [
+          "Good-law currency depends on citator data outside the disclosed pack."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:36:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Classic.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w15-02-8aa113ae",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w15-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Classic"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "16f60372750fc3ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "26c71e20eb7ce2f4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "39faf92c2c7ed9e5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-504211673c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

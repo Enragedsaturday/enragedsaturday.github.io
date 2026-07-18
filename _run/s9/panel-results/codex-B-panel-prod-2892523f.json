@@ -1,22 +1,174 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Steele v. United States.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "82fd1c8ccb08940e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified and identity matches Steele v. United States No. 1, U.S. Supreme Court, decided 1925-04-13.",
+          "Lake citations include official 267 U.S. 498, parallel 45 S. Ct. 414 and 69 L. Ed. 757, and vendor-neutral 1925 U.S. LEXIS 386.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags proposed negative-edge audits, but the top-level disclosed judgment still says good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0031ea198ddd1c6a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack support or quote fidelity.",
+          "From the treatment/currency angle, the lake scope_note identifies the same reasonable-effort place-particularity point as controlling and canonical.",
+          "No disclosed treatment field or point override supersedes or limits this point."
+        ],
+        "residual_risks": [
+          "Support merits are reserved to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "943e11a240bc5d02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack ordinary support placement.",
+          "The page assigns Particularity / Progeny, and the lake progeny section reports 480 indexed citing opinions and 727 citation_count.",
+          "No disclosed treatment field makes the case unusable as live particularity progeny."
+        ],
+        "residual_risks": [
+          "Classification fit is not independently tested under Lens B beyond currency/treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05d59aa192460345",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment & subsequent history narrative plus front-matter treatment field.",
+          "needs_cl": true,
+          "problem": "The good_law treatment call survives, but the page's unqualified 'No negative treatment' language is too strong because the lake treatment record lists proposed negative edges and marks treatment audit needed.",
+          "proposed_fix": "Keep field_i_validity: good_law and the canonical scope_note, but replace 'No negative treatment' with a qualified statement such as 'No verified negative treatment in the top-level treatment judgment; proposed negative-edge audit pending.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field_i_validity is good_law as of 2026-06-30 and point_overrides is empty.",
+          "Lake scope_note matches the page's controlling/canonical reasonable-effort standard.",
+          "The same lake treatment section lists proposed edges with field_ii values including questioned, overruled, criticized, and abrogated, and derivation lanes mark audit_needed true."
+        ],
+        "residual_risks": [
+          "The disclosed record does not establish that any proposed edge actually overrules Steele; external audit would be needed to resolve the proposed events."
+        ],
+        "suggested_tightening": "Do not state 'No negative treatment' unless the proposed negative-edge audit is resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dbf181fb7bd1eb22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court and court_level as scotus.",
+          "Lake treatment says good_law as of 2026-06-30, so the disclosed record does not remove binding SCOTUS weight."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Steele v. United States.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"82fd1c8ccb08940e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record status is verified and identity matches Steele v. United States No. 1, U.S. Supreme Court, decided 1925-04-13.\",\n        \"Lake citations include official 267 U.S. 498, parallel 45 S. Ct. 414 and 69 L. Ed. 757, and vendor-neutral 1925 U.S. LEXIS 386.\",\n        \"Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation flags proposed negative-edge audits, but the top-level disclosed judgment still says good_law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0031ea198ddd1c6a\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack support or quote fidelity.\",\n        \"From the treatment/currency angle, the lake scope_note identifies the same reasonable-effort place-particularity point as controlling and canonical.\",\n        \"No disclosed treatment field or point override supersedes or limits this point.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Support merits are reserved to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"943e11a240bc5d02\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not attack ordinary support placement.\",\n        \"The page assigns Particularity / Progeny, and the lake progeny section reports 480 indexed citing opinions and 727 citation_count.\",\n        \"No disclosed treatment field makes the case unusable as live particularity progeny.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Classification fit is not independently tested under Lens B beyond currency/treatment.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"05d59aa192460345\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law treatment call survives, but the page's unqualified 'No negative treatment' language is too strong because the lake treatment record lists proposed negative edges and marks treatment audit needed.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity: good_law and the canonical scope_note, but replace 'No negative treatment' with a qualified statement such as 'No verified negative treatment in the top-level treatment judgment; proposed negative-edge audit pending.'\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"Treatment & subsequent history narrative plus front-matter treatment field.\"\n      },\n      \"reasons\": [\n        \"Lake treatment field_i_validity is good_law as of 2026-06-30 and point_overrides is empty.\",\n        \"Lake scope_note matches the page's controlling/canonical reasonable-effort standard.\",\n        \"The same lake treatment section lists proposed edges with field_ii values including questioned, overruled, criticized, and abrogated, and derivation lanes mark audit_needed true.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not establish that any proposed edge actually overrules Steele; external audit would be needed to resolve the proposed events.\"\n      ],\n      \"suggested_tightening\": \"Do not state 'No negative treatment' unless the proposed negative-edge audit is resolved.\"\n    },\n    {\n      \"assertion_id\": \"dbf181fb7bd1eb22\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists court as U.S. Supreme Court and court_level as scotus.\",\n        \"Lake treatment says good_law as of 2026-06-30, so the disclosed record does not remove binding SCOTUS weight.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity merits were not reviewed.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:52:15-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:05:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4af93caa49"
+    ],
     "group_id": "content/cases/Steele v. United States.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-2892523f",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2892523f.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:07.395327Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:08.180397Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:09.423428Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:11.487304Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:52:15.079554Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Steele v. United States"
+    ],
+    "tokens": {
+      "input": 150572,
+      "output": 7023,
+      "source": "codex-events",
+      "total": 157595
+    },
+    "verdict_map": {
+      "0031ea198ddd1c6a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "05d59aa192460345": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "82fd1c8ccb08940e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "943e11a240bc5d02": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dbf181fb7bd1eb22": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4af93caa49",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 134.4
   }
 }

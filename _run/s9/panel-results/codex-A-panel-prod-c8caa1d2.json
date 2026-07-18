@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kirk v. Louisiana.json",
+    "lens": "A",
+    "notes": "Treatment/currency findings intentionally omitted under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "154ecde2e3316a46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Kirk v. Louisiana, U.S. Supreme Court, decided 2002-06-24.",
+          "The official citation in the lake record is 536 U.S. 635 and the listed parallel/vendor citations match the content page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3cd856a1f7e1aa11",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "police officers need either a warrant or probable cause plus exigent circumstances in order to make a lawful entry into a home. The Court of Appeal’s ruling to the contrary, and consequent failure to assess whether exigent circumstances were present in this case, violated Payton.",
+          "locator_note": "text/Kirk v. Louisiana__6ef366.txt, page marker *638, paragraph b688-5",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively present at the cited page, but it is not character-faithful: the source uses the curly apostrophe in “Court of Appeal’s” and does not contain literal Markdown asterisks around Payton.",
+          "proposed_fix": "Normalize the quote to the opinion text: use “Court of Appeal’s” and render Payton as emphasis outside the verbatim quote or as plain text in the quote string.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears after the *638 star-pagination marker and supports the rule stated on the page.",
+          "Strict quote fidelity fails because the content/lake quote has straight apostrophe and literal Markdown emphasis not found in the opinion text."
+        ],
+        "residual_risks": [
+          "Markup-to-rendered-text handling may intentionally strip the asterisks, but the disclosed lake field itself marks quote_fidelity as mismatch."
+        ],
+        "suggested_tightening": "Keep the pinpoint, but store a text-faithful quote and handle italics outside the verbatim quote field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "45192af11e7457d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "that “[a]bsent exigent circumstances,” the “firm line at the entrance to the house ... may not reasonably be crossed without a warrant.”",
+          "locator_note": "text/Kirk v. Louisiana__6ef366.txt, page marker *636, paragraph b685-11",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote for pin-636 is not an opinion quote at all; it contains content-page/frontmatter-style material and stops before the actual quoted Payton passage. It is not character-faithful to the opinion text.",
+          "proposed_fix": "Replace pin-636 with the actual opinion passage: “that ‘[a]bsent exigent circumstances,’ the ‘firm line at the entrance to the house ... may not reasonably be crossed without a warrant.’” Also align the page’s ellipsis with the text if strict character fidelity is required.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pin-636 quote begins with page material such as “--- # Kirk v. Louisiana” and background text, not the Supreme Court opinion passage.",
+          "The actual quoted rule appears in the opinion near the *636 marker, but the stored pinpoint quote does not capture it."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-636 from the opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c79e814e973e9b42",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "No Lens A support or quote-fidelity defect is raised for this treatment row; treatment/currency is reserved for Lens B."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kirk v. Louisiana.json\",\"reviewed\":[{\"assertion_id\":\"154ecde2e3316a46\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Kirk v. Louisiana, U.S. Supreme Court, decided 2002-06-24.\",\"The official citation in the lake record is 536 U.S. 635 and the listed parallel/vendor citations match the content page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3cd856a1f7e1aa11\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively present at the cited page, but it is not character-faithful: the source uses the curly apostrophe in “Court of Appeal’s” and does not contain literal Markdown asterisks around Payton.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize the quote to the opinion text: use “Court of Appeal’s” and render Payton as emphasis outside the verbatim quote or as plain text in the quote string.\",\"evidence_quote\":\"police officers need either a warrant or probable cause plus exigent circumstances in order to make a lawful entry into a home. The Court of Appeal’s ruling to the contrary, and consequent failure to assess whether exigent circumstances were present in this case, violated Payton.\",\"needs_cl\":false,\"locator_note\":\"text/Kirk v. Louisiana__6ef366.txt, page marker *638, paragraph b688-5\"},\"reasons\":[\"The sentence appears after the *638 star-pagination marker and supports the rule stated on the page.\",\"Strict quote fidelity fails because the content/lake quote has straight apostrophe and literal Markdown emphasis not found in the opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Markup-to-rendered-text handling may intentionally strip the asterisks, but the disclosed lake field itself marks quote_fidelity as mismatch.\"],\"suggested_tightening\":\"Keep the pinpoint, but store a text-faithful quote and handle italics outside the verbatim quote field.\"},{\"assertion_id\":\"45192af11e7457d4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote for pin-636 is not an opinion quote at all; it contains content-page/frontmatter-style material and stops before the actual quoted Payton passage. It is not character-faithful to the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-636 with the actual opinion passage: “that ‘[a]bsent exigent circumstances,’ the ‘firm line at the entrance to the house ... may not reasonably be crossed without a warrant.’” Also align the page’s ellipsis with the text if strict character fidelity is required.\",\"evidence_quote\":\"that “[a]bsent exigent circumstances,” the “firm line at the entrance to the house ... may not reasonably be crossed without a warrant.”\",\"needs_cl\":false,\"locator_note\":\"text/Kirk v. Louisiana__6ef366.txt, page marker *636, paragraph b685-11\"},\"reasons\":[\"The disclosed lake pin-636 quote begins with page material such as “--- # Kirk v. Louisiana” and background text, not the Supreme Court opinion passage.\",\"The actual quoted rule appears in the opinion near the *636 marker, but the stored pinpoint quote does not capture it.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-636 from the opinion text rather than from content_page.md.\"},{\"assertion_id\":\"c79e814e973e9b42\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"No Lens A support or quote-fidelity defect is raised for this treatment row; treatment/currency is reserved for Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency findings intentionally omitted under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:57:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-19e64fb7d4",
+      "F-S9-PR-28eec18078"
+    ],
     "group_id": "_overhaul2/lake/cases/Kirk v. Louisiana.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c8caa1d2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c8caa1d2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:29.891634Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:30.512466Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:31.350351Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:32.539906Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:34.388860Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:37.692714Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kirk v. Louisiana"
+    ],
+    "tokens": {
+      "input": 109383,
+      "output": 6528,
+      "source": "codex-events",
+      "total": 115911
+    },
+    "verdict_map": {
+      "154ecde2e3316a46": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3cd856a1f7e1aa11": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "45192af11e7457d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c79e814e973e9b42": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19e64fb7d4",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-28eec18078",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 125.1
   }
 }

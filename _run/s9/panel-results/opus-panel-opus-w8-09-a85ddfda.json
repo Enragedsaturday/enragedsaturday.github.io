@@ -1,0 +1,188 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ef22fd2a2b8de626",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header cites '466 U.S. 170' and Justice Powell's majority runs through star-pages *173-*184; pincite pages *179 and *180 are both present in the text.",
+          "Parallel cites (104 S. Ct. 1735; 80 L. Ed. 2d 214; 52 U.S.L.W. 4425) and vendor-neutral (1984 U.S. LEXIS 55) are the standard Oliver citations; official_selection_present=true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9aced01f5fcee6e3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is not generally true that fences or \"No Trespassing\" signs effectively bar the public from viewing open fields in rural areas.",
+          "locator_note": "pin-179b; cached opinion at *179 ('In contrast, open fields do not provide the setting...').",
+          "needs_cl": false,
+          "problem": "The pin-179b quotation drops the locative qualifier 'in rural areas' and terminates with a period as though the sentence ends at 'open fields', but the opinion reads '...effectively bar the public from viewing open fields in rural areas.' The shown words are verbatim, yet the silent mid-sentence truncation slightly overstates the generality of the Court's practical observation.",
+          "proposed_fix": "Restore 'in rural areas' to complete the sentence, or add an ellipsis/bracket to signal the omission.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "All words shown are verbatim from the opinion up to 'open fields'.",
+          "The opinion continues 'in rural areas.'; the quote silently drops that qualifier and supplies a terminal period, so it is not a complete-sentence match — a real but minor fidelity issue."
+        ],
+        "residual_risks": [
+          "Underlying proposition (fences/'No Trespassing' signs do not effectively bar public viewing of open fields) remains accurate; only the scope qualifier is dropped."
+        ],
+        "suggested_tightening": "Prefer full-sentence quotations or explicit ellipses when truncating before a sentence's grammatical end.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a92326cf2e260130",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "open fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance.",
+          "locator_note": "pin-179; cached opinion at *179.",
+          "needs_cl": false,
+          "problem": "Stored pin-179 quote is a garbled extraction: 'signs, and secluded. ## Rule Yes.' — it is the tail of the page Issue section plus the literal Markdown heading '## Rule' and 'Yes.', not verbatim opinion text. Self-flagged quote_fidelity 'mismatch'.",
+          "proposed_fix": "Repair the stored pin-179 quote to the faithful text the page displays: '[O]pen fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance.' (466 U.S. 179).",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote contains the Markdown token '## Rule' and page Issue text — cannot be opinion text.",
+          "The reader-facing rendered quote at ^pin-179 is faithful to 466 U.S. 179; the defect is confined to the stored pinpoint metadata."
+        ],
+        "residual_risks": [
+          "Rendered quote is faithful; metadata-only extraction defect."
+        ],
+        "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not raw Markdown around the ^anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2937de357bc76c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored/displayed quote matches the opinion verbatim, de-hyphenating the line-break OCR 'curti-lage': 'distinguished \"open fields\" from the \"curtilage,\" the land immediately surrounding and associated with the home' (466 U.S. 180).",
+          "The companion clause '[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home' is also verbatim; the 'mismatch' flag is a false positive (hyphen + [t] capitalization bracket)."
+        ],
+        "residual_risks": [
+          "Pipeline 'mismatch' flag on this pin is a false positive."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2df7707c68537eec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is correct: the open-fields doctrine reaffirmed in Oliver (1984) — including the curtilage distinction — remains good law; the opinion itself reaffirms Hester.",
+          "All 33 treatment edges in the record are proposed:true citator noise; 0 confirmed negative edges (grep 'proposed: false' -> none)."
+        ],
+        "residual_risks": [
+          "Proposed overruled/abrogated/superseded_by_statute edges are unaudited citator false positives and do not disturb good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a98b523466",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1b70cd915c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Oliver v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-09-a85ddfda",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-09.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Oliver v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2df7707c68537eec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9aced01f5fcee6e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a92326cf2e260130": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e2937de357bc76c4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ef22fd2a2b8de626": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4bc8ee5794",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e9e76c01a0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a98b523466",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1b70cd915c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

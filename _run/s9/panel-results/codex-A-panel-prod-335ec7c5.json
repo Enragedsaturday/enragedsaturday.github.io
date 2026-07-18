@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Henry.json",
+    "lens": "A",
+    "notes": "Lens A only; treatment was checked only for correspondence to disclosed lake fields.",
+    "reviewed": [
+      {
+        "assertion_id": "b19ba619192b3827",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Henry, U.S. Supreme Court, decided 1980-06-16, year 1980.",
+          "The lake citation fields list official citation 447 U.S. 264 and parallel/vendor citations 100 S. Ct. 2183, 65 L. Ed. 2d 115, and 1980 U.S. LEXIS 111, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "23fdc7c1cf58aa41",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Three factors are important. First, Nichols was acting under instructions as a paid informant for the Government; second, Nichols was ostensibly no more than a fellow inmate of Henry; and third, Henry was in custody and under indictment at the time he was engaged in conversation by Nichols.",
+          "locator_note": "pin-270; text/United States v. Henry__22c290.txt contains the actual p.270 passage.",
+          "needs_cl": false,
+          "problem": "The pin-270 quote field is not a character-faithful opinion quotation; it is a stitched excerpt from the content page with markdown artifacts and is already marked quote_fidelity=mismatch in the lake record.",
+          "proposed_fix": "Replace the pin-270 quote with the actual opinion passage supporting the 270 pinpoint, beginning with 'Three factors are important...', and remove the stitched Issue/Rule prose from the quote field.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains '*Massiah*', '## Rule', and wiki-link syntax, none of which are part of the opinion text.",
+          "The disclosed opinion text at the cited passage contains the 'Three factors are important' discussion, not the payload's stitched Issue/Rule excerpt."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate the quote window from the opinion text rather than from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d72e2cdc2726341",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry’s Sixth Amendment right to counsel.",
+          "locator_note": "pin-274; text/United States v. Henry__22c290.txt p.274 passage.",
+          "needs_cl": false,
+          "problem": "The quoted holding is substantively the same sentence, but it is not character-faithful because the payload uses ASCII 'Henry's' while the opinion text uses the curly apostrophe 'Henry’s'.",
+          "proposed_fix": "Change the quote to match the opinion text exactly, including 'Henry’s Sixth Amendment right to counsel.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the opinion at the p.274 passage.",
+          "Exact quote fidelity fails only on apostrophe character normalization in Henry’s."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If normalized punctuation is allowed, mark the quote as normalized rather than verbatim.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4997322bea08be19",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1980-06-16, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Henry.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b19ba619192b3827\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names United States v. Henry, U.S. Supreme Court, decided 1980-06-16, year 1980.\",\n        \"The lake citation fields list official citation 447 U.S. 264 and parallel/vendor citations 100 S. Ct. 2183, 65 L. Ed. 2d 115, and 1980 U.S. LEXIS 111, matching the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"23fdc7c1cf58aa41\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-270 quote field is not a character-faithful opinion quotation; it is a stitched excerpt from the content page with markdown artifacts and is already marked quote_fidelity=mismatch in the lake record.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-270 quote with the actual opinion passage supporting the 270 pinpoint, beginning with 'Three factors are important...', and remove the stitched Issue/Rule prose from the quote field.\",\n        \"evidence_quote\": \"Three factors are important. First, Nichols was acting under instructions as a paid informant for the Government; second, Nichols was ostensibly no more than a fellow inmate of Henry; and third, Henry was in custody and under indictment at the time he was engaged in conversation by Nichols.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-270; text/United States v. Henry__22c290.txt contains the actual p.270 passage.\"\n      },\n      \"reasons\": [\n        \"The payload quote contains '*Massiah*', '## Rule', and wiki-link syntax, none of which are part of the opinion text.\",\n        \"The disclosed opinion text at the cited passage contains the 'Three factors are important' discussion, not the payload's stitched Issue/Rule excerpt.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate the quote window from the opinion text rather than from the rendered content page.\"\n    },\n    {\n      \"assertion_id\": \"3d72e2cdc2726341\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted holding is substantively the same sentence, but it is not character-faithful because the payload uses ASCII 'Henry's' while the opinion text uses the curly apostrophe 'Henry’s'.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the quote to match the opinion text exactly, including 'Henry’s Sixth Amendment right to counsel.'\",\n        \"evidence_quote\": \"By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry’s Sixth Amendment right to counsel.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-274; text/United States v. Henry__22c290.txt p.274 passage.\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the opinion at the p.274 passage.\",\n        \"Exact quote fidelity fails only on apostrophe character normalization in Henry’s.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"If normalized punctuation is allowed, mark the quote as normalized rather than verbatim.\"\n    },\n    {\n      \"assertion_id\": \"4997322bea08be19\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1980-06-16, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency was not independently assessed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A only; treatment was checked only for correspondence to disclosed lake fields.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:31:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:57:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-8912a54939",
+      "F-S9-PR-d7f7b124df"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Henry.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-335ec7c5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Henry"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 260771,
+      "output": 9448,
+      "source": "codex-events",
+      "total": 270219
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "23fdc7c1cf58aa41": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3d72e2cdc2726341": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4997322bea08be19": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b19ba619192b3827": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8912a54939",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d7f7b124df",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 187.3
   }
 }

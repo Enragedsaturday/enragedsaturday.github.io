@@ -1,12 +1,90 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defect findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "9b3797d292055c0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stubbed, and identifies Salinas v. Texas as a U.S. Supreme Court case decided 2013-06-17 with cluster_id/opinion_id 903977.",
+          "The asserted citations appear in lake.citations.all, including 570 U.S. 178, 133 S. Ct. 2174, 186 L. Ed. 2d 376, 2013 U.S. LEXIS 4697, and 2013 WL 2922119.",
+          "For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The lake record has no selected official citation, but that is not a Lens B currency/treatment defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ab7fdbad820450c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; Lens B does not adjudicate quote support or mismatch flags.",
+          "The only Lens B-relevant embedded treatment text, Treatment: good as of 2026-06-30, is consistent with the lake treatment field."
+        ],
+        "residual_risks": [
+          "The payload carries quote_fidelity=mismatch, but quote fidelity belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "844f49df7f05527a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; Lens B does not adjudicate quote support or mismatch flags.",
+          "No distinct currency, precedential-weight, or adverse-treatment assertion in this row is contradicted by the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "The payload carries quote_fidelity=mismatch, but quote fidelity belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87cf361da4ac1552",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake record: good_law, as_of_content 2013-06-17, as_of_treatment 2026-06-30, varies_by_point false.",
+          "The Binding - SCOTUS weight is supported by lake.identity.court_level scotus and the case being a U.S. Supreme Court judgment.",
+          "The disclosed treatment edges do not show direct negative treatment of Salinas; the edge field_iii value is mentioned and point_overrides is empty.",
+          "The fractured posture is disclosed consistently: Alito plurality of three, with Thomas and Scalia concurring in the judgment on a broader ground."
+        ],
+        "residual_risks": [
+          "lake.treatment.derivation.lane2_top_cited has cap_hit=true and audit_needed=true, so there is process risk, but the disclosed judgment field still marks the case good_law and no direct overruling/abrogation is shown."
+        ],
+        "suggested_tightening": "If audit completeness is user-facing, surface the lane2 audit marker separately from the good-law label.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Salinas v. Texas.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9b3797d292055c0a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stubbed, and identifies Salinas v. Texas as a U.S. Supreme Court case decided 2013-06-17 with cluster_id/opinion_id 903977.\",\n        \"The asserted citations appear in lake.citations.all, including 570 U.S. 178, 133 S. Ct. 2174, 186 L. Ed. 2d 376, 2013 U.S. LEXIS 4697, and 2013 WL 2922119.\",\n        \"For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record has no selected official citation, but that is not a Lens B currency/treatment defect.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5ab7fdbad820450c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity row; Lens B does not adjudicate quote support or mismatch flags.\",\n        \"The only Lens B-relevant embedded treatment text, Treatment: good as of 2026-06-30, is consistent with the lake treatment field.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The payload carries quote_fidelity=mismatch, but quote fidelity belongs to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"844f49df7f05527a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity row; Lens B does not adjudicate quote support or mismatch flags.\",\n        \"No distinct currency, precedential-weight, or adverse-treatment assertion in this row is contradicted by the disclosed treatment record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The payload carries quote_fidelity=mismatch, but quote fidelity belongs to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"87cf361da4ac1552\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page treatment fields match the lake record: good_law, as_of_content 2013-06-17, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"The Binding - SCOTUS weight is supported by lake.identity.court_level scotus and the case being a U.S. Supreme Court judgment.\",\n        \"The disclosed treatment edges do not show direct negative treatment of Salinas; the edge field_iii value is mentioned and point_overrides is empty.\",\n        \"The fractured posture is disclosed consistently: Alito plurality of three, with Thomas and Scalia concurring in the judgment on a broader ground.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"lake.treatment.derivation.lane2_top_cited has cap_hit=true and audit_needed=true, so there is process risk, but the disclosed judgment field still marks the case good_law and no direct overruling/abrogation is shown.\"\n      ],\n      \"suggested_tightening\": \"If audit completeness is user-facing, surface the lane2 audit marker separately from the good-law label.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity defect findings were made.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:28:09-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-11T02:32:56-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f31f6516ee",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
     "group_total_assertions": 4,
@@ -16,21 +94,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cc91786f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Salinas v. Texas"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 359210,
+      "output": 7800,
+      "source": "codex-events",
+      "total": 367010
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "5ab7fdbad820450c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "844f49df7f05527a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87cf361da4ac1552": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b3797d292055c0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f31f6516ee",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 165.3
   }
 }

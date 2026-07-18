@@ -1,0 +1,185 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "97bcd6eebaf39aa4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion (6th Cir., 'RECOMMENDED FOR PUBLICATION', File Name 20a0185p.06, No. 19-3452, caption 'LAMAR WRIGHT v. CITY OF EUCLID, OHIO; KYLE FLAGG; VASHON WILLIAMS') confirms the case.",
+          "Lake identity: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official cite 962 F.3d 852, cluster 4762133 -> lead opinion 4542480; no parallel-cite anomalies."
+        ],
+        "residual_risks": [
+          "The slip opinion carries no F.3d page marker, so reporter page 852 rests on cluster metadata (identity_checked=true), not the opinion body."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bd5480368c4a375",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the right to be free from arrest without probable cause is a “quintessential example[] of [a] ‘clearly established’ constitutional right.”",
+          "locator_note": "cached slip op. Page 23 (between the 'Page 23' and 'Page 24' running headers)",
+          "needs_cl": false,
+          "problem": "Harvested payload 'quote' for pin-op23 is truncated mid-sentence at '...quintessential example[] of [a]' — a harvest artifact cut off before completion. The genuine content-page pin-op23 quotation is faithful to the cached slip opinion at Page 23 (false-arrest holding, citing Jones, 947 F.3d at 915).",
+          "proposed_fix": "Restore the full quotation (through 'constitutional right.') in the harvested payload; the content page already renders it in full.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is truncated (harvest artifact), not the full attributed quotation.",
+          "The full content-page quotation is verbatim-faithful to slip op. Page 23; the content page's outer-single/inner-double quote nesting is a correct re-quote of the opinion's outer-double/inner-single.",
+          "The phrase also recurs on Page 25 (extended-detention), but the content page cites the false-arrest instance, which is on Page 23 — pincite correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix quote truncation at the nested-bracket boundary in harvest.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7fe79013ddabddf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force.",
+          "locator_note": "cached slip op. Page 17 (between the 'Page 17' and 'Page 18' running headers)",
+          "needs_cl": false,
+          "problem": "Harvested payload 'quote' for pin-op17 is the content-page front-matter/header blob (YAML + title + Background + Issue + '## Rule ... On excessive force:'), not an opinion quotation — a first-pin extraction artifact. The genuine content-page pin-op17 quotation is verbatim-faithful to the cached slip opinion at Page 17.",
+          "proposed_fix": "Re-harvest pin-op17 to the actual quotation ('It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force.') at slip op. 17; drop the front-matter capture.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is a harvest artifact (front-matter), not an opinion quotation.",
+          "The true content-page pin-op17 quotation appears verbatim in the cached slip opinion and sits on Page 17 (correct slip pincite), so the corpus quotation stands."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix the first-pin harvest off-by-one that captures front-matter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d9139b004411eed7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'Wright has produced enough evidence such that a reasonable jury could find that the City's custom surrounding use of force is so settled so as to have the force of law and that it was the moving force behind violations of Wright's constitutional rights.' appears verbatim in the cached slip opinion on Page 33 (municipal-liability holding).",
+          "Harvest quote_fidelity='mismatch' is a false positive; pinpoint_status='slip-only' is accurate here (the pincite is a slip-opinion page)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Flip harvest quote_fidelity 'mismatch' (false positive).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f85584c9ed6e53e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "scope_note ('Published Sixth Circuit decision; good law') is accurate; the cached opinion is a 'RECOMMENDED FOR PUBLICATION' 6th Cir. 2020 decision.",
+          "field_i_validity good_law: lake negative edges are all proposed:true (Gambrel, Saalim, Chaney-Snell, Raimey, etc.) with noisy field_ii ('questioned'/'abrogated'/'overruled'); none is a confirmed adverse treatment of Wright itself."
+        ],
+        "residual_risks": [
+          "2026 currency is not independently citator-verified in the pack, but nothing disclosed refutes good_law for this 2020 published decision."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:09:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-241970fe87",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-18102356bc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Wright v. City of Euclid.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w22-01-4917aff7",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w22-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wright v. City of Euclid"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "97bcd6eebaf39aa4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bd5480368c4a375": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d7fe79013ddabddf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d9139b004411eed7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f85584c9ed6e53e8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8123d93e82",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-084b660f04",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-241970fe87",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-18102356bc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

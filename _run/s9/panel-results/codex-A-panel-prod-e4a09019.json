@@ -1,22 +1,195 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Davis v. Mississippi.md",
+    "lens": "A",
+    "notes": "group_inventory.jsonl contains no quote_fidelity, pincite, or black_letter rows. I reviewed only the six inventory rows; an un-inventoried pin-726 issue remains because the lake pinpoint is marked quote_fidelity=mismatch and slip-only, and the page's internal quotation marks differ from the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "e08510608eb4ee42",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies case name, court, and 1969 year.",
+          "Lake citations include official 394 U.S. 721, the two listed parallel cites, and 1969 U.S. LEXIS 1869."
+        ],
+        "residual_risks": [
+          "Cached opinion header and lake identity differ on the exact decision date, but the reviewed payload asserts only the year."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "174c59ecec90180a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion relies on Terry for the point that Fourth Amendment limits apply before a technical arrest or full-blown search.",
+          "Davis concerns investigatory detentions, so Related (cross-doctrine) is supported and not overstated."
+        ],
+        "residual_risks": [
+          "Davis does not itself set a general reasonable-suspicion fingerprinting rule."
+        ],
+        "suggested_tightening": "Keep this as Related (cross-doctrine), not a primary Terry-stop rule case.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a6689722cb8c331a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have no occasion in this case, however, to determine whether",
+          "locator_note": "holding",
+          "needs_cl": false,
+          "problem": "The holding is directionally right but too broad unless tied to the dragnet station-house facts and the Court's reservation of narrow fingerprinting procedures.",
+          "proposed_fix": "Revise to: On the dragnet facts, station-house detention and transport for fingerprinting without probable cause, warrant, or judicial authorization was an unreasonable seizure, so the resulting fingerprints were inadmissible; the Court reserved narrow fingerprinting procedures.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports suppression: the fingerprints used at trial were admitted over objection, the Court found the detention constitutionally invalid, and the judgment was reversed.",
+          "The opinion also says no compliant narrow procedure was used, citing no judicial authorization, repeated fingerprinting, and interrogation."
+        ],
+        "residual_risks": [
+          "No separate Hayes record is disclosed, so this review does not rely on Hayes to broaden Davis."
+        ],
+        "suggested_tightening": "Add dragnet/station-house and reservation language to the holding field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aeb3c2c5e0cb2b3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion frames the question as whether Davis's detention was an unreasonable seizure of his person.",
+          "The case limits police authority to use investigatory detention and station-house fingerprinting without adequate Fourth Amendment justification."
+        ],
+        "residual_risks": [
+          "The role is best read as limiting seizure authority, not as a general exclusionary-rule page role."
+        ],
+        "suggested_tightening": "If the taxonomy permits, specify station-house/investigatory detention as the limiting point.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ab74d414ce3c7f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity marks the court as U.S. Supreme Court and court_level as scotus.",
+          "Binding — SCOTUS follows from that identity; no currency review is performed under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2707db32688be755",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for validity, treatment date, basis, scope note, and varies_by_point.",
+          "Under the instructions, Lens A records the treatment verdict but does not audit treatment currency."
+        ],
+        "residual_risks": [
+          "Treatment/currency and progeny assessment are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Davis v. Mississippi.md\",\"reviewed\":[{\"assertion_id\":\"e08510608eb4ee42\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies case name, court, and 1969 year.\",\"Lake citations include official 394 U.S. 721, the two listed parallel cites, and 1969 U.S. LEXIS 1869.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Cached opinion header and lake identity differ on the exact decision date, but the reviewed payload asserts only the year.\"],\"suggested_tightening\":null},{\"assertion_id\":\"174c59ecec90180a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion relies on Terry for the point that Fourth Amendment limits apply before a technical arrest or full-blown search.\",\"Davis concerns investigatory detentions, so Related (cross-doctrine) is supported and not overstated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Davis does not itself set a general reasonable-suspicion fingerprinting rule.\"],\"suggested_tightening\":\"Keep this as Related (cross-doctrine), not a primary Terry-stop rule case.\"},{\"assertion_id\":\"a6689722cb8c331a\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is directionally right but too broad unless tied to the dragnet station-house facts and the Court's reservation of narrow fingerprinting procedures.\",\"severity\":\"medium\",\"proposed_fix\":\"Revise to: On the dragnet facts, station-house detention and transport for fingerprinting without probable cause, warrant, or judicial authorization was an unreasonable seizure, so the resulting fingerprints were inadmissible; the Court reserved narrow fingerprinting procedures.\",\"evidence_quote\":\"We have no occasion in this case, however, to determine whether\",\"needs_cl\":false,\"locator_note\":\"holding\"},\"reasons\":[\"The opinion supports suppression: the fingerprints used at trial were admitted over objection, the Court found the detention constitutionally invalid, and the judgment was reversed.\",\"The opinion also says no compliant narrow procedure was used, citing no judicial authorization, repeated fingerprinting, and interrogation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate Hayes record is disclosed, so this review does not rely on Hayes to broaden Davis.\"],\"suggested_tightening\":\"Add dragnet/station-house and reservation language to the holding field.\"},{\"assertion_id\":\"aeb3c2c5e0cb2b3d\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames the question as whether Davis's detention was an unreasonable seizure of his person.\",\"The case limits police authority to use investigatory detention and station-house fingerprinting without adequate Fourth Amendment justification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The role is best read as limiting seizure authority, not as a general exclusionary-rule page role.\"],\"suggested_tightening\":\"If the taxonomy permits, specify station-house/investigatory detention as the limiting point.\"},{\"assertion_id\":\"0ab74d414ce3c7f5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity marks the court as U.S. Supreme Court and court_level as scotus.\",\"Binding — SCOTUS follows from that identity; no currency review is performed under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is outside this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2707db32688be755\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for validity, treatment date, basis, scope note, and varies_by_point.\",\"Under the instructions, Lens A records the treatment verdict but does not audit treatment currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency and progeny assessment are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"group_inventory.jsonl contains no quote_fidelity, pincite, or black_letter rows. I reviewed only the six inventory rows; an un-inventoried pin-726 issue remains because the lake pinpoint is marked quote_fidelity=mismatch and slip-only, and the page's internal quotation marks differ from the cached opinion text.\"}",
   "summary": {
-    "at": "2026-07-10T02:42:12-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:53:12-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bc1ce156bf"
+    ],
     "group_id": "content/cases/Davis v. Mississippi.md",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-e4a09019",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e4a09019.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:04.054324Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:04.958576Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:06.191891Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:08.071418Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:42:11.846522Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Davis v. Mississippi"
+    ],
+    "tokens": {
+      "input": 213241,
+      "output": 8624,
+      "source": "codex-events",
+      "total": 221865
+    },
+    "verdict_map": {
+      "0ab74d414ce3c7f5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "174c59ecec90180a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2707db32688be755": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a6689722cb8c331a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "aeb3c2c5e0cb2b3d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e08510608eb4ee42": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc1ce156bf",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 169.8
   }
 }

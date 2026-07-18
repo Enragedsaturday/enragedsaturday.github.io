@@ -1,13 +1,92 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json",
+    "lens": "A",
+    "notes": "Lens A found one quote-fidelity defect at pin-665; treatment merits were not audited under this lens.",
+    "reviewed": [
+      {
+        "assertion_id": "781263432fb6b96c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for National Treasury Employees Union v. Von Raab, U.S. Supreme Court, decided 1989-03-21.",
+          "The lake official citation is 489 U.S. 656 and the content page displays 489 U.S. 656 (1989); the listed parallel and neutral citations are present in the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b0319239161fd98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text on page marker 672 after the words 'We think'.",
+          "Lake pin-672 contains the same sentence and is marked quote_fidelity=matched with star_marker=672.",
+          "The content page uses the same quoted sentence and links to a fragment beginning with 'Customs employees who are directly involved'."
+        ],
+        "residual_risks": [
+          "The quote omits the prefatory words 'We think', but the quoted substring is complete and not misleading."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48cda930cd2882cf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "our cases establish that where a Fourth Amendment intrusion serves special governmental needs, beyond the normal need for law enforcement, it is necessary to balance the individual’s privacy expectations against the Government’s interests to determine whether it is impractical to require a warrant or",
+          "locator_note": "lake pinpoints[pin-665]; content_page.md Rule; text/National Treasury Employees Union v. Von Raab__fba250.txt line 22",
+          "needs_cl": false,
+          "problem": "Pin-665 is not character-faithful as recorded. The lake pinpoint quote is harvested markdown from the built page rather than the 665-66 opinion passage, has no star marker, and is marked quote_fidelity=mismatch. The displayed content-page quote also changes the opinion's curly apostrophes in individual’s/Government’s to straight apostrophes.",
+          "proposed_fix": "Replace pin-665 with the actual 489 U.S. 665-66 opinion passage, preserving the original characters and page-spanning pin, then validate before marking it matched.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-665 begins with the content-page header and background material, not the opinion quote at 489 U.S. 665-66.",
+          "The actual opinion text uses individual’s and Government’s, while the content page's quoted sentence uses straight apostrophes.",
+          "The substantive special-needs balancing rule is supported by the opinion text, but the quote-fidelity assertion fails as framed."
+        ],
+        "residual_risks": [
+          "Correcting the quote should preserve the legal proposition, but the pinpoint should be revalidated after replacement."
+        ],
+        "suggested_tightening": "Use the exact 665-66 opinion text and cite it as 489 U.S. at 665-66.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2226cb199552309",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page and lake record agree on field_i_validity=good_law, as_of_content=1989-03-21, as_of_treatment=2026-06-30, varies_by_point=false, and the stated scope note.",
+          "Treatment and currency are outside lens A, so no treatment finding is raised here."
+        ],
+        "residual_risks": [
+          "Lens B must audit whether the treatment statement is current and fully supported."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"781263432fb6b96c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for National Treasury Employees Union v. Von Raab, U.S. Supreme Court, decided 1989-03-21.\",\n        \"The lake official citation is 489 U.S. 656 and the content page displays 489 U.S. 656 (1989); the listed parallel and neutral citations are present in the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1b0319239161fd98\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the cached opinion text on page marker 672 after the words 'We think'.\",\n        \"Lake pin-672 contains the same sentence and is marked quote_fidelity=matched with star_marker=672.\",\n        \"The content page uses the same quoted sentence and links to a fragment beginning with 'Customs employees who are directly involved'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The quote omits the prefatory words 'We think', but the quoted substring is complete and not misleading.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"48cda930cd2882cf\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"Pin-665 is not character-faithful as recorded. The lake pinpoint quote is harvested markdown from the built page rather than the 665-66 opinion passage, has no star marker, and is marked quote_fidelity=mismatch. The displayed content-page quote also changes the opinion's curly apostrophes in individual’s/Government’s to straight apostrophes.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-665 with the actual 489 U.S. 665-66 opinion passage, preserving the original characters and page-spanning pin, then validate before marking it matched.\",\n        \"evidence_quote\": \"our cases establish that where a Fourth Amendment intrusion serves special governmental needs, beyond the normal need for law enforcement, it is necessary to balance the individual’s privacy expectations against the Government’s interests to determine whether it is impractical to require a warrant or\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[pin-665]; content_page.md Rule; text/National Treasury Employees Union v. Von Raab__fba250.txt line 22\"\n      },\n      \"reasons\": [\n        \"Lake pin-665 begins with the content-page header and background material, not the opinion quote at 489 U.S. 665-66.\",\n        \"The actual opinion text uses individual’s and Government’s, while the content page's quoted sentence uses straight apostrophes.\",\n        \"The substantive special-needs balancing rule is supported by the opinion text, but the quote-fidelity assertion fails as framed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Correcting the quote should preserve the legal proposition, but the pinpoint should be revalidated after replacement.\"\n      ],\n      \"suggested_tightening\": \"Use the exact 665-66 opinion text and cite it as 489 U.S. at 665-66.\"\n    },\n    {\n      \"assertion_id\": \"d2226cb199552309\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page and lake record agree on field_i_validity=good_law, as_of_content=1989-03-21, as_of_treatment=2026-06-30, varies_by_point=false, and the stated scope note.\",\n        \"Treatment and currency are outside lens A, so no treatment finding is raised here.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B must audit whether the treatment statement is current and fully supported.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A found one quote-fidelity defect at pin-665; treatment merits were not audited under this lens.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:19:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a7c97d02b5"
+    ],
     "group_id": "_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +95,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c16af3b8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "National Treasury Employees Union v. Von Raab"
     ],
     "tokens": {
-      "input": 833,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 833
+      "input": 173945,
+      "output": 6813,
+      "source": "codex-events",
+      "total": 180758
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1b0319239161fd98": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48cda930cd2882cf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "781263432fb6b96c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2226cb199552309": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7c97d02b5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 146.4
   }
 }

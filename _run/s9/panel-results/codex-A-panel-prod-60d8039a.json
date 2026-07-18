@@ -1,22 +1,199 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Stoner v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory.jsonl assertions. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "0fd854acd6bd9c0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Stoner v. California as a U.S. Supreme Court case with official citation 376 U.S. 483 and year 1964.",
+          "The inventory citation set matches the lake record's official, parallel, and vendor-neutral citations."
+        ],
+        "residual_risks": [
+          "The disclosed opinion text says Decided March 23, 1964, while lake/content frontmatter lists 1964-05-18; that date issue is outside this case-cite payload."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7653d1cedde46ad1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.",
+          "locator_note": "text/Stoner v. California__1b81c8.txt, star page *489",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful: the opinion has surrounding words and ends the quoted sentence with a period, not a comma.",
+          "proposed_fix": "Quote the exact sentence or remove the altered terminal comma: \"It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote ends \"through an agent,\" but the disclosed opinion text says \"through an agent.\"",
+          "The content page turns the court's sentence into a grammatical fragment, which breaks strict verbatim quote fidelity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a full-sentence quote from page 489 and paraphrase any transition into the following sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8be466d66eff8ca4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a guest in a hotel room is entitled to constitutional protection against unreasonable searches and seizures. That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.",
+          "locator_note": "text/Stoner v. California__1b81c8.txt, star page *490",
+          "needs_cl": false,
+          "problem": "The pinpoint quote is a malformed splice of page content, not a verbatim passage from the opinion text.",
+          "proposed_fix": "Replace the payload quote with the actual page-490 passage beginning \"No less than a tenant...\" and ending with the hotel-employee discretion sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload includes markdown headings such as \"## Issue\" and \"## Rule,\" which are not in the opinion text.",
+          "The opinion text at page 490 supports the rule, but not the malformed quote harvested in this assertion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store the actual opinion quotation separately from the page's Background/Issue/Rule prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "df89b1bc64fe04d7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \"apparent authority.\"",
+          "locator_note": "text/Stoner v. California__1b81c8.txt, star page *488",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively present, but the quotation marks around apparent authority are changed from the opinion's double quotation marks to single quotation marks.",
+          "proposed_fix": "Use the exact text: \"the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \\\"apparent authority.\\\"\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text uses double quotation marks around \"apparent authority.\"",
+          "The payload/content quote uses single quotation marks, so it is not character-faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Correct only the quotation marks; the page-488 proposition itself is supported.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56fd72bd97861b58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Lens A does not evaluate treatment currency beyond matching the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Stoner v. California.json\",\"reviewed\":[{\"assertion_id\":\"0fd854acd6bd9c0d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Stoner v. California as a U.S. Supreme Court case with official citation 376 U.S. 483 and year 1964.\",\"The inventory citation set matches the lake record's official, parallel, and vendor-neutral citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed opinion text says Decided March 23, 1964, while lake/content frontmatter lists 1964-05-18; that date issue is outside this case-cite payload.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7653d1cedde46ad1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is not character-faithful: the opinion has surrounding words and ends the quoted sentence with a period, not a comma.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the exact sentence or remove the altered terminal comma: \\\"It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.\\\"\",\"evidence_quote\":\"It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.\",\"needs_cl\":false,\"locator_note\":\"text/Stoner v. California__1b81c8.txt, star page *489\"},\"reasons\":[\"The payload quote ends \\\"through an agent,\\\" but the disclosed opinion text says \\\"through an agent.\\\"\",\"The content page turns the court's sentence into a grammatical fragment, which breaks strict verbatim quote fidelity.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a full-sentence quote from page 489 and paraphrase any transition into the following sentence.\"},{\"assertion_id\":\"8be466d66eff8ca4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pinpoint quote is a malformed splice of page content, not a verbatim passage from the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the payload quote with the actual page-490 passage beginning \\\"No less than a tenant...\\\" and ending with the hotel-employee discretion sentence.\",\"evidence_quote\":\"a guest in a hotel room is entitled to constitutional protection against unreasonable searches and seizures. That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.\",\"needs_cl\":false,\"locator_note\":\"text/Stoner v. California__1b81c8.txt, star page *490\"},\"reasons\":[\"The payload includes markdown headings such as \\\"## Issue\\\" and \\\"## Rule,\\\" which are not in the opinion text.\",\"The opinion text at page 490 supports the rule, but not the malformed quote harvested in this assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Store the actual opinion quotation separately from the page's Background/Issue/Rule prose.\"},{\"assertion_id\":\"df89b1bc64fe04d7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are substantively present, but the quotation marks around apparent authority are changed from the opinion's double quotation marks to single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact text: \\\"the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \\\\\\\"apparent authority.\\\\\\\"\\\"\",\"evidence_quote\":\"the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \\\"apparent authority.\\\"\",\"needs_cl\":false,\"locator_note\":\"text/Stoner v. California__1b81c8.txt, star page *488\"},\"reasons\":[\"The disclosed opinion text uses double quotation marks around \\\"apparent authority.\\\"\",\"The payload/content quote uses single quotation marks, so it is not character-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Correct only the quotation marks; the page-488 proposition itself is supported.\"},{\"assertion_id\":\"56fd72bd97861b58\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Lens A does not evaluate treatment currency beyond matching the disclosed treatment record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 group_inventory.jsonl assertions. No external sources used.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:31-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:40:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ee0f6b73f3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4df9ab86a5",
+      "F-S9-PR-e534ddf08f",
+      "F-S9-PR-9327b2468f"
+    ],
     "group_id": "_overhaul2/lake/cases/Stoner v. California.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-60d8039a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-60d8039a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:28.032922Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:28.533610Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.166017Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.942241Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stoner v. California"
+    ],
+    "tokens": {
+      "input": 186535,
+      "output": 6845,
+      "source": "codex-events",
+      "total": 193380
+    },
+    "verdict_map": {
+      "0fd854acd6bd9c0d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "56fd72bd97861b58": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7653d1cedde46ad1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8be466d66eff8ca4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df89b1bc64fe04d7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4df9ab86a5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e534ddf08f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9327b2468f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ee0f6b73f3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 134.0
   }
 }

@@ -1,0 +1,138 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7d73c1df78e6e786",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion is the genuine United States v. Braxton, 10th Cir., No. 21-1149, decided March 7, 2023 (Moritz, Circuit Judge; parties United States v. Tyrell Braxton) - identity fully confirmed.",
+          "Official cite 61 F.4th 830 correctly selected (coa, selected_rank_1) and consistent with a 2023 Tenth Circuit F.4th citation."
+        ],
+        "residual_risks": [
+          "Exact reporter page 830 is not star-verifiable from the slip opinion (CL carries slip-op page numbers, not F.4th stars); nothing contradicts it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ddd96ee53713f69",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote matches the opinion verbatim in the Conclusion: 'the inevitable-discovery exception to the exclusionary rule does not apply, and the gun discovered during the illegal search of the backpack must be suppressed.'",
+          "pinpoint_status star-verified; quote_fidelity 'matched' confirmed by independent read of the cached text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97acb97817cc8632",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.",
+          "locator_note": "Opinion Analysis section, internal slip op. page 7: 'Here, the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.'",
+          "needs_cl": false,
+          "problem": "pin-op7's stored quote is not opinion text - it is a dump of the content-page front-matter/markdown ('--- # United States v. Braxton ... ## Rule The search-incident-to-arrest point was conceded:'), so as stored it cannot be string-matched to the opinion (quote_fidelity correctly self-flagged 'mismatch').",
+          "proposed_fix": "Repopulate pin-op7.quote with the actual verbatim concession sentence, which exists in the opinion at internal slip page 7, then re-run the string-match.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pinpoint record's quote field is corrupted with content-page markdown rather than opinion text - a genuine data-integrity defect in the quote anchor.",
+          "The underlying proposition IS verbatim-supported at slip op. 7, so the content page's displayed quote is faithful; the defect is confined to the stored pin-op7 quote."
+        ],
+        "residual_risks": [
+          "Because the page display uses the correct quote and correct pincite (slip op., at 7), reader-facing harm is low; the defect is internal to the lake pinpoint record."
+        ],
+        "suggested_tightening": "Replace pin-op7.quote with the verbatim slip-op-7 concession sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "15b624b7c962ba32",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope note ('good law in-circuit; backpack search conceded invalid as SITA, and inevitable discovery did not save it') matches the opinion, which suppresses the gun and reverses the denial.",
+          "Dedicated negative-treatment lane (lane1_negative, court_id scotus OR ca10) reviewed 4, proposed_negative_events 0, audit_needed false - no confirmed adverse treatment in the disclosed record; good_law is defensible for a 2023 published 10th Cir. opinion."
+        ],
+        "residual_risks": [
+          "treatment.edges are S2-proposed (proposed:true), unadjudicated; the 'questioned'/'overruled' field_ii labels from lane2_top_cited reflect citing-case status / auto-proposals, not confirmed abrogation of Braxton, and await adjudication.",
+          "Full currency as of 2026-06-30 ultimately depends on the citator (CL), outside disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Braxton.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-03-7e97fd6a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Braxton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "15b624b7c962ba32": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2ddd96ee53713f69": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d73c1df78e6e786": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97acb97817cc8632": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e77921905e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

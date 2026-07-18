@@ -1,0 +1,97 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "5eefb05fe2468830",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "panel cluster re-key -> cluster 107359 (evidence: _run/s9/adjudications.jsonl F-S9-P2-CHAPMANCAL (UPHELD); 6 lake treatment-edges cluster 107359; cached merits text 107359.txt; prime GET clusters/107359 confirmed 386 U.S. 18/87 S. Ct. 824/1967)",
+          "locator_note": "chapman-v-california--8428427: assertion payload all[] (five 2016 cites) vs lake citations.all/official/display (386 U.S. 18, 1967)",
+          "needs_cl": false,
+          "problem": "Payload attributes 2016-vintage citations (137 S. Ct. 389; 196 L. Ed. 2d 306; 85 U.S.L.W. 3209; 2016 WL 4733855; 2016 U.S. LEXIS 6528) to Chapman v. California, but the lake record was panel-cluster-rekeyed to cluster 107359 and now carries 386 U.S. 18 / 87 S. Ct. 824 / 17 L. Ed. 2d 705 / 1967 U.S. LEXIS 2198 (decided 1967-03-27). None of the five payload cites appears in the record's citations.all; the payload is a stale pre-rekey snapshot of a mis-identified 2016 cluster (record_id suffix 8428427).",
+          "proposed_fix": "Re-derive the assertion payload from the current lake record: display/official '386 U.S. 18' (court_class scotus, reason selected_rank_1), parallels '87 S. Ct. 824' and '17 L. Ed. 2d 705', vendor-neutral '1967 U.S. LEXIS 2198'; discard the 2016 citation set and set official_selection_present:true.",
+          "severity": "high"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Payload all[] = five 2016-era citations; lake citations.all = [386 U.S. 18, 87 S. Ct. 824, 17 L. Ed. 2d 705, 1967 U.S. LEXIS 2198] — zero overlap",
+          "Lake identity.identity_method 'panel-cluster-rekey', cluster_id 107359, date_decided 1967-03-27; warnings document F-S9-P2-CHAPMANCAL UPHELD confirming 386 U.S. 18",
+          "Payload display null / official null / official_selection_present false contradicts lake display '386 U.S. 18', official '386 U.S. 18', official_selection.selected '386 U.S. 18'"
+        ],
+        "residual_risks": [
+          "record_id suffix '8428427' still preserves the old (wrong) cluster id though identity.cluster_id is now 107359 — downstream keys may still resolve the stale cluster"
+        ],
+        "suggested_tightening": "Refresh downstream assertion payloads whenever an identity/cluster rekey lands so ledger cites track the corrected record rather than a pre-rekey snapshot",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e05e8113804bda4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Frontier stub faithfully echoes lake treatment block (field_i_validity 'unverified', as_of_* null, varies_by_point false, edges []); it asserts only 'not yet derived', so the identity rekey does not falsify the treatment claim",
+          "scope_note verbatim matches lake"
+        ],
+        "residual_risks": [
+          "After the rekey to cluster 107359, S6 treatment derivation must target the corrected cluster; the stub remains valid only as a 'not yet derived' placeholder"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T12:14:40-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/chapman-v-california--8428427.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "chapman-v-california--8428427"
+    ],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w23-00-8c9d79b9",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w23-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "cached text absent for case 'chapman-v-california--8428427' (lead 9423348); lake-only",
+      "no content page for lake record chapman-v-california--8428427"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": null,
+    "verdict_map": {
+      "5eefb05fe2468830": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7e05e8113804bda4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4a60de1d2c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

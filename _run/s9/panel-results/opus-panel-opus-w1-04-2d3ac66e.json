@@ -1,0 +1,143 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "3f87471a4fa454f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 322 U.S. 143 verified: cached opinion header reads '322 U.S. 143 (1944)', star-pagination *144-*174, cluster 103981, Black, J.; party name 'Ashcraft' in text; judgment 'reversed'.",
+          "Parallel (64 S. Ct. 921; 88 L. Ed. 1192) and vendor-neutral (1944 U.S. LEXIS 782) well-formed; U.S. reporter selected official."
+        ],
+        "residual_risks": [
+          "identity.case_name_full 'ASHCRAFT Et Al. v. TENNESSEE' is OCR-cased — cosmetic."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1394a4920eef9766",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote 'The Constitution of the United States stands as a bar against the conviction of any individual in an American court by means of a coerced confession.' appears verbatim in the cached opinion at *155.",
+          "Pin is star-verified (matched) with a validated text-fragment (fragment_validated_at 2026-07-09); clean."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c2ec2cf7c0c98c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page's rendered Rule quote at ^pin-154 — 'We think a situation such as that here shown by uncontradicted evidence is so inherently coercive that its very existence is irreconcilable with the possession of mental freedom by a lone suspect against whom its full coercive force is brought to bear.' — appears verbatim in the cached opinion at *154 (Black, J.).",
+          "The garbled string stored in the pin record is a slip-only page-markdown harvest artifact, not the reader-facing quote."
+        ],
+        "residual_risks": [
+          "Lake pin record stores corrupted harvest text with quote_fidelity='mismatch'/pinpoint_status='slip-only'; the delivered page quote is faithful."
+        ],
+        "suggested_tightening": "Re-harvest pin-154 from opinion text to replace the slip-only capture and star-verify (as pin-155 already is).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e26eea949cd5ea6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is correct for the 1944 foundational due-process voluntariness decision; it has not been overruled by SCOTUS.",
+          "All negative edges are proposed:true / field_iii='mentioned' automated-lane artifacts whose field_ii values are the citing cases' OWN treatment (e.g., Miranda 'overruled', Furman 'overruled', Escobedo 'superseded_by_statute', Jackson v. Denno 'overruled'), not treatment applied to Ashcraft."
+        ],
+        "residual_risks": [
+          "lane1_negative (cap_hit at 200; 9 proposed negative) and lane2_top_cited (5 proposed negative) flag audit_needed=true, 'R15 treatment audit required'; scope_note concedes 'S2 derivation re-derives and may downgrade'. The voluntariness standard later settled into totality-of-circumstances requiring coercive police activity (Connelly), but Ashcraft itself remains good law."
+        ],
+        "suggested_tightening": "Complete the R15 audit before certifying good_law; confirm none of the flagged citing opinions actually abrogates Ashcraft.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-57089e034c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-dfdafa9c97",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Ashcraft v. Tennessee.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-04-2d3ac66e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ashcraft v. Tennessee"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1394a4920eef9766": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c2ec2cf7c0c98c6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f87471a4fa454f3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e26eea949cd5ea6c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-57089e034c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-dfdafa9c97",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

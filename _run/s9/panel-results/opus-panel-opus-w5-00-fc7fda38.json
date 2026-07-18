@@ -1,0 +1,116 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "7693463cdddd3ec6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached CL reporter text confirms official cite: header 'Gilbert v. California, 388 U.S. 263 (1967)', caption 'GILBERT v. CALIFORNIA', 'Decided June 12, 1967'.",
+          "official_selection_present=true; display '388 U.S. 263' matches lake citations.official."
+        ],
+        "residual_risks": [
+          "Parallels 87 S. Ct. 1951 / 18 L. Ed. 2d 1178 / 1967 U.S. LEXIS 1086 are not independently printed in the disclosed opinion text, but the official U.S. cite is confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abb55e50a191274d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "payload.quote is an extraction artifact (a dump of the page YAML/header + Background, not the pin-273 blockquote); its 'mismatch' flag is a false positive.",
+          "The actual pin-273 quotation on the page ('Only a per se exclusionary rule as to such testimony can be an effective sanction to assure that law enforcement authorities will respect the accused's constitutional right to the presence of his counsel at the critical lineup.') matches the cached opinion verbatim.",
+          "Pincite 388 U.S. at 273 correct: the quoted sentence falls after the '*273' star-pagination marker."
+        ],
+        "residual_risks": [
+          "Extractor mismatch flag will recur on re-run until the quote-span capture is fixed; the rendered page text is clean."
+        ],
+        "suggested_tightening": "Fix the quote extractor to capture the ^pin-273 blockquote span rather than the page header.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e589497514fd23b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is consistent with the disclosed 1967 final SCOTUS judgment; every negative-sweep edge is proposed:true, field_iii:'mentioned', from non-SCOTUS courts (Minn. App., Conn., Colo., Tex.) which cannot overrule SCOTUS -- keyword false positives, no confirmed negative event.",
+          "scope_note (Wade-Gilbert right to counsel attaches only at/after initiation of adversary judicial proceedings, per Kirby v. Illinois) is a correct limitation, not an overruling; consistent with the post-indictment lineup shown in the opinion."
+        ],
+        "residual_risks": [
+          "Derivation reports audit_needed:true with proposed_negative_events (lane1=7, lane2=24) still un-triaged; none is a confirmed negative event but the audit is not machine-complete.",
+          "Kirby v. Illinois is not inlined, so the scope note's holding is not independently confirmable from disclosed text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ff358f55ba",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Gilbert v. California.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-00-fc7fda38",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gilbert v. California"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "7693463cdddd3ec6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abb55e50a191274d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e589497514fd23b7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff358f55ba",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

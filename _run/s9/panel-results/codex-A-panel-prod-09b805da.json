@@ -1,22 +1,179 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Andresen v. Maryland.md",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows exactly once. No quote_fidelity, pincite, or black_letter assertion IDs were present; this output does not add extra reviewed rows.",
+    "reviewed": [
+      {
+        "assertion_id": "52d5b66983324d7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the case as Andresen v. Maryland, U.S. Supreme Court, decided 1976-06-29.",
+          "Lake citations match the payload: official 427 U.S. 463, parallels 96 S. Ct. 2737 and 49 L. Ed. 2d 627, and vendor-neutral 1976 U.S. LEXIS 78."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "349ee891891d7c41",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion squarely addresses Fourth Amendment particularity: it evaluates whether the warrant's catch-all phrase made the warrants impermissibly general.",
+          "The Court held the catch-all phrase was limited by context to evidence of false pretenses concerning Lot 13T, supporting a Particularity refinement role.",
+          "Lake progeny data lists 849 indexed citing opinions and citation_count 1306, supporting the page's 'Key' characterization."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Tie this home-role specifically to contextual limits on catch-all warrant language, not to the separate Fifth Amendment business-records holding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e691755f4be2edde",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that \"[n]o person . . . shall be compelled in any criminal case to be a witness against himself.\"",
+          "locator_note": "content_page.md frontmatter holding / group_inventory field=holding",
+          "needs_cl": false,
+          "problem": "The holding text is truncated and incomplete: it ends with 'does not violate the…' without identifying the Fifth Amendment or the particularity holding.",
+          "proposed_fix": "Replace with: 'The search of an individual's office for pre-existing business records, their seizure, and later introduction into evidence did not offend the Fifth Amendment; the Lot 13T warrant's catch-all clause did not make it general because context limited it to evidence of that false-pretenses crime.'",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "A completed Fifth Amendment version is supported by the opinion text.",
+          "The opinion separately supports the particularity component by reading the challenged phrase as limited to the Lot 13T false-pretenses crime.",
+          "As framed in the payload, the holding is not a complete legal proposition."
+        ],
+        "residual_risks": [
+          "Lake has no separate holdings field; support was verified from the cached opinion text."
+        ],
+        "suggested_tightening": "Split the Fifth Amendment holding and Fourth Amendment particularity holding if the corpus supports multi-holding fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a336166f565ffa6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match lake.treatment and content_page frontmatter: good_law, as_of_content 1976-06-29, as_of_treatment 2026-06-30, migration-seed basis, same basis ref, and varies_by_point false.",
+          "No Lens A treatment/currency defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits are outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a8a2e80c2243016",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the court as U.S. Supreme Court with court_level scotus.",
+          "The content_page court and court_level fields match that identity, supporting the SCOTUS component of the authority-weight label."
+        ],
+        "residual_risks": [
+          "Authority weight is inferred from disclosed court identity rather than stored as a lake authority_weight field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Andresen v. Maryland.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"52d5b66983324d7d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record is verified and identifies the case as Andresen v. Maryland, U.S. Supreme Court, decided 1976-06-29.\",\n        \"Lake citations match the payload: official 427 U.S. 463, parallels 96 S. Ct. 2737 and 49 L. Ed. 2d 627, and vendor-neutral 1976 U.S. LEXIS 78.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"349ee891891d7c41\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion squarely addresses Fourth Amendment particularity: it evaluates whether the warrant's catch-all phrase made the warrants impermissibly general.\",\n        \"The Court held the catch-all phrase was limited by context to evidence of false pretenses concerning Lot 13T, supporting a Particularity refinement role.\",\n        \"Lake progeny data lists 849 indexed citing opinions and citation_count 1306, supporting the page's 'Key' characterization.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Tie this home-role specifically to contextual limits on catch-all warrant language, not to the separate Fifth Amendment business-records holding.\"\n    },\n    {\n      \"assertion_id\": \"e691755f4be2edde\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding text is truncated and incomplete: it ends with 'does not violate the…' without identifying the Fifth Amendment or the particularity holding.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace with: 'The search of an individual's office for pre-existing business records, their seizure, and later introduction into evidence did not offend the Fifth Amendment; the Lot 13T warrant's catch-all clause did not make it general because context limited it to evidence of that false-pretenses crime.'\",\n        \"evidence_quote\": \"Accordingly, we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that \\\"[n]o person . . . shall be compelled in any criminal case to be a witness against himself.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md frontmatter holding / group_inventory field=holding\"\n      },\n      \"reasons\": [\n        \"A completed Fifth Amendment version is supported by the opinion text.\",\n        \"The opinion separately supports the particularity component by reading the challenged phrase as limited to the Lot 13T false-pretenses crime.\",\n        \"As framed in the payload, the holding is not a complete legal proposition.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake has no separate holdings field; support was verified from the cached opinion text.\"\n      ],\n      \"suggested_tightening\": \"Split the Fifth Amendment holding and Fourth Amendment particularity holding if the corpus supports multi-holding fields.\"\n    },\n    {\n      \"assertion_id\": \"3a336166f565ffa6\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload treatment fields match lake.treatment and content_page frontmatter: good_law, as_of_content 1976-06-29, as_of_treatment 2026-06-30, migration-seed basis, same basis ref, and varies_by_point false.\",\n        \"No Lens A treatment/currency defect is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are outside Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6a8a2e80c2243016\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity identifies the court as U.S. Supreme Court with court_level scotus.\",\n        \"The content_page court and court_level fields match that identity, supporting the SCOTUS component of the authority-weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Authority weight is inferred from disclosed court identity rather than stored as a lake authority_weight field.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory rows exactly once. No quote_fidelity, pincite, or black_letter assertion IDs were present; this output does not add extra reviewed rows.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:39:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:28:16-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-87fc3b09b4",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4782779307"
+    ],
     "group_id": "content/cases/Andresen v. Maryland.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-09b805da",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-09b805da.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:02.309729Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:03.107851Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:04.252705Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:06.308530Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:39:09.665727Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Andresen v. Maryland"
+    ],
+    "tokens": {
+      "input": 223189,
+      "output": 8281,
+      "source": "codex-events",
+      "total": 231470
+    },
+    "verdict_map": {
+      "349ee891891d7c41": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a336166f565ffa6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "52d5b66983324d7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a8a2e80c2243016": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e691755f4be2edde": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4782779307",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-87fc3b09b4",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 162.5
   }
 }

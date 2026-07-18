@@ -1,0 +1,114 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "540ddeae83c244ee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We do not decide if the state judge should have authorized full searches of the phones based on these affidavits. We decide only that the officers acted in good faith when relying on the judge's decision to issue the warrants.",
+          "locator_note": "Cached slip op. Page: 13 contains the two sentences verbatim; content page renders them at ^pin-op13 with pincite (slip op., at 13).",
+          "needs_cl": false,
+          "problem": "Pinpoint pin-op13's stored quote is the content page's frontmatter/header block ('--- # United States v. Morton ... The en banc court resolved the case on good faith and expressly declined to reach the underlying Fourth Amendment question:'), not opinion text; harvest artifact, correctly self-flagged quote_fidelity=mismatch. The rule quote rendered at ^pin-op13 IS verbatim in the opinion.",
+          "proposed_fix": "Re-harvest pin-op13's stored quote to the rendered rule sentences, which are verbatim on slip op. 13.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Rendered rule quote at ^pin-op13 is verbatim at slip op. 13 and correctly pincited, so the legal proposition stands.",
+          "Only the pinpoint's stored quote string is defective (page header/frontmatter), same first-pin harvest artifact class as the siblings."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-op13 stored quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ff5d39c2f5186445",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote is verbatim in the cached slip opinion on page 16 within the opinion concurring in the judgment: 'it would be unsurprising if the Court, again acknowledging the need to adapt rules constructed for the physical world to the reality of the digital world, recognized an exception to another longstanding Fourth Amendment doctrine, this time plain view.'",
+          "The quote begins mid-sentence at 'would be' (properly dropping leading 'it'); rest matches exactly.",
+          "Pincite (slip op., at 16) confirmed by the 'Page: 16' marker; concurrence attribution confirmed by the 'concurring in the judgment' opinion beginning on page 14."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35221def06364d07",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "No disclosed evidence of negative treatment (edges: [], all derivation lanes proposed_negative_events 0).",
+          "Cannot fabricate a negative holding; Morton is a 2022 en banc 5th Cir. decision and the disclosed record shows no contrary treatment."
+        ],
+        "residual_risks": [
+          "good_law here rests on zero derivation: lane1_negative/lane2_top_cited/lane3_recency all reviewed 0; progeny indexed_citing_opinions 0, citation_count 0; composite_basis migration-seed; lake status under_review.",
+          "Record identity is thin (identity_checked false, expected_citation_found false, citations.official null) while the content page renders '46 F.4th 331' (citation not paneled here)."
+        ],
+        "suggested_tightening": "Run the S2 treatment derivation (all lanes reviewed 0) and resolve identity/official-citation before promoting good_law out of under_review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Morton.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-03-dcfe6a58",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Morton"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "35221def06364d07": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "540ddeae83c244ee": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ff5d39c2f5186445": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9eeddb4060",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

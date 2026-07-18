@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Cano.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "48742dcd2aabe1ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms United States v. Miguel Cano, U.S. Court of Appeals for the Ninth Circuit, decided 2019-08-16.",
+          "The lake citation fields identify the official/display citation as 934 F.3d 1002, matching the built page's 934 F.3d 1002 (9th Cir. 2019)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42908c1141a493c5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears in the cached opinion text at slip page 29.",
+          "The lake record marks pin-op29 quote_fidelity as matched and provides a validated text fragment for the same passage."
+        ],
+        "residual_risks": [
+          "The page uses a CourtListener text fragment URL, but this review did not leave the disclosed files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c6725adb0cf906e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We clarify Cotterman by holding that “reasonable suspicion” in this context means that officials must reasonably suspect that the cell phone contains digital contraband.",
+          "locator_note": "text/United States v. Cano__a0b509.txt, slip page 5; lake pinpoints[pin-op5] itself records quote_fidelity=mismatch with page and position null.",
+          "needs_cl": false,
+          "problem": "The pin-op5 payload quote is not a verbatim excerpt from the Cano opinion; it is a corrupted scrape of the built page header/background/rule lead-in. The built page's displayed quote is substantively supported by slip page 5, but it is not character-faithful because it adds Markdown italics around Cotterman and changes the opinion's curly double quotation marks around reasonable suspicion to single quotation marks.",
+          "proposed_fix": "Replace pin-op5 with the exact slip-page-5 opinion quote and remove quote-internal Markdown styling or altered quotation marks from the built page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-op5 quote reproduces content_page.md prose beginning with the page header, not the opinion text.",
+          "The actual slip-page-5 passage supports the rule, but the asserted quote fidelity as framed does not survive."
+        ],
+        "residual_risks": [
+          "This refutation is limited to quote fidelity and pin metadata; the underlying legal proposition appears supported by the disclosed opinion text."
+        ],
+        "suggested_tightening": "Use the exact opinion wording: Cotterman unstyled inside the quotation and curly double quotation marks around “reasonable suspicion.”",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e037daa2e6824ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside lens A, so no treatment/currency defect is raised.",
+          "The built page mirrors the lake treatment judgment fields: field_i_validity good_law, as_of_content 2019-08-16, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B owns treatment and currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Cano.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"48742dcd2aabe1ae\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms United States v. Miguel Cano, U.S. Court of Appeals for the Ninth Circuit, decided 2019-08-16.\",\n        \"The lake citation fields identify the official/display citation as 934 F.3d 1002, matching the built page's 934 F.3d 1002 (9th Cir. 2019).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"42908c1141a493c5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted language appears in the cached opinion text at slip page 29.\",\n        \"The lake record marks pin-op29 quote_fidelity as matched and provides a validated text fragment for the same passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page uses a CourtListener text fragment URL, but this review did not leave the disclosed files.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7c6725adb0cf906e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-op5 payload quote is not a verbatim excerpt from the Cano opinion; it is a corrupted scrape of the built page header/background/rule lead-in. The built page's displayed quote is substantively supported by slip page 5, but it is not character-faithful because it adds Markdown italics around Cotterman and changes the opinion's curly double quotation marks around reasonable suspicion to single quotation marks.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-op5 with the exact slip-page-5 opinion quote and remove quote-internal Markdown styling or altered quotation marks from the built page.\",\n        \"evidence_quote\": \"We clarify Cotterman by holding that “reasonable suspicion” in this context means that officials must reasonably suspect that the cell phone contains digital contraband.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/United States v. Cano__a0b509.txt, slip page 5; lake pinpoints[pin-op5] itself records quote_fidelity=mismatch with page and position null.\"\n      },\n      \"reasons\": [\n        \"The lake pin-op5 quote reproduces content_page.md prose beginning with the page header, not the opinion text.\",\n        \"The actual slip-page-5 passage supports the rule, but the asserted quote fidelity as framed does not survive.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This refutation is limited to quote fidelity and pin metadata; the underlying legal proposition appears supported by the disclosed opinion text.\"\n      ],\n      \"suggested_tightening\": \"Use the exact opinion wording: Cotterman unstyled inside the quotation and curly double quotation marks around “reasonable suspicion.”\"\n    },\n    {\n      \"assertion_id\": \"1e037daa2e6824ef\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment merits are outside lens A, so no treatment/currency defect is raised.\",\n        \"The built page mirrors the lake treatment judgment fields: field_i_validity good_law, as_of_content 2019-08-16, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B owns treatment and currency review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 inventory rows using only disclosed workspace files.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:30:38-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:49:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-4cd37053e5"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Cano.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bfa7cedb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Cano"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 183586,
+      "output": 7266,
+      "source": "codex-events",
+      "total": 190852
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1e037daa2e6824ef": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "42908c1141a493c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48742dcd2aabe1ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c6725adb0cf906e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4cd37053e5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.9
   }
 }

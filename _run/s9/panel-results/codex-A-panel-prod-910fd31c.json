@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Wilson.json",
+    "lens": "A",
+    "notes": "Reviewed exactly the three assertion_ids in group_inventory.jsonl. Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "9ebd8f5cf5eaccff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Maryland v. Wilson, U.S. Supreme Court, decided 1997-02-19, year 1997.",
+          "The official citation in the lake is 519 U.S. 408, and the opinion text header also shows 519 U.S. 408 (1997).",
+          "The listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8bdcf9716f7fc70a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop.",
+          "locator_note": "The opinion text places the holding at star-pagination *415; lake pinpoints[0].quote begins with '--- # Maryland v. Wilson' and ends before the actual quoted holding.",
+          "needs_cl": false,
+          "problem": "pin-415's recorded quote is not character-faithful to the opinion; it is a flattened excerpt of the built page, and the lake itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-415's stored quote with the exact holding sentence from the opinion and record the page/star marker as 415 if supported.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint has quote_fidelity: mismatch.",
+          "The lake/payload quote is page markdown, not an opinion passage.",
+          "The actual opinion text at *415 contains the holding sentence quoted above."
+        ],
+        "residual_risks": [
+          "The visible content_page Rule quote itself matches the opinion text; the defect is the stored pinpoint quote/metadata for pin-415."
+        ],
+        "suggested_tightening": "Use the exact page-415 holding sentence as the pin quote instead of a generated page excerpt.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6eda12838d514d3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The payload treatment fields match the disclosed lake/content treatment fields: field_i_validity good_law, as_of_content 1997-02-19, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A review of treatment currency was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Maryland v. Wilson.json\",\"reviewed\":[{\"assertion_id\":\"9ebd8f5cf5eaccff\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Maryland v. Wilson, U.S. Supreme Court, decided 1997-02-19, year 1997.\",\"The official citation in the lake is 519 U.S. 408, and the opinion text header also shows 519 U.S. 408 (1997).\",\"The listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8bdcf9716f7fc70a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-415's recorded quote is not character-faithful to the opinion; it is a flattened excerpt of the built page, and the lake itself flags quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-415's stored quote with the exact holding sentence from the opinion and record the page/star marker as 415 if supported.\",\"evidence_quote\":\"We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop.\",\"needs_cl\":false,\"locator_note\":\"The opinion text places the holding at star-pagination *415; lake pinpoints[0].quote begins with '--- # Maryland v. Wilson' and ends before the actual quoted holding.\"},\"reasons\":[\"The disclosed lake pinpoint has quote_fidelity: mismatch.\",\"The lake/payload quote is page markdown, not an opinion passage.\",\"The actual opinion text at *415 contains the holding sentence quoted above.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page Rule quote itself matches the opinion text; the defect is the stored pinpoint quote/metadata for pin-415.\"],\"suggested_tightening\":\"Use the exact page-415 holding sentence as the pin quote instead of a generated page excerpt.\"},{\"assertion_id\":\"6eda12838d514d3f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The payload treatment fields match the disclosed lake/content treatment fields: field_i_validity good_law, as_of_content 1997-02-19, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A review of treatment currency was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed exactly the three assertion_ids in group_inventory.jsonl. Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:29:43-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:07:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cb24ecc132"
+    ],
     "group_id": "_overhaul2/lake/cases/Maryland v. Wilson.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-910fd31c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-910fd31c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:33.725791Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:34.457503Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:35.436364Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:36.795626Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:38.828144Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:29:42.557814Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Wilson"
+    ],
+    "tokens": {
+      "input": 126579,
+      "output": 5420,
+      "source": "codex-events",
+      "total": 131999
+    },
+    "verdict_map": {
+      "6eda12838d514d3f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8bdcf9716f7fc70a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ebd8f5cf5eaccff": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cb24ecc132",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 104.8
   }
 }

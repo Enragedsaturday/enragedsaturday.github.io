@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "24eae06c73ec711c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached header confirms '412 U.S. 218 (1973)', 'SCHNECKLOTH, CONSERVATION CENTER SUPERINTENDENT v. BUSTAMONTE', No. 71-732, Decided May 29, 1973.",
+          "Cites match disclosed cluster.citations[]; nothing disclosed contradicts."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c24b7ed5f9a238b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the question whether a consent to a search was in fact \"voluntary\" or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances.",
+          "locator_note": "opinion at *227 (Stewart, J.); lake pinpoints[].id=pin-227",
+          "needs_cl": false,
+          "problem": "pinpoint pin-227 'quote' field stores content-page boilerplate (Background tail + Issue + 'Rule Voluntariness is judged on the totality of the circumstances, and knowledge of the right to refuse is not required'), not an opinion quotation.",
+          "proposed_fix": "Re-harvest pin-227's quote to the anchored totality-of-circumstances holding, verbatim-faithful to the opinion at *227.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote is page markdown, not source text; lake self-flags quote_fidelity='mismatch'.",
+          "Page's actual ^pin-227 quote is verbatim-faithful to the opinion at *227 (between disclosed *227 and *230 markers); defect confined to the pinpoint record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6738626789a267a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote 'While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the sine qua non of an effective consent.' is verbatim in the opinion, the sentence immediately following the pin-227 totality holding.",
+          "It falls between disclosed *227 and *230 star markers, confirming page 227; lake 'mismatch'/'slip-only' flags are false positives (cached text carries star pagination)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Reconcile lake quote_fidelity to 'matched' and revisit pinpoint_status 'slip-only' (disclosed cached text is the star-paginated reporter version).",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7d781fe8541abf4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is supported: Schneckloth is the controlling consent-voluntariness holding in the disclosed opinion; nothing disclosed shows negative treatment.",
+          "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is an internal build-process note, not a substantive legal claim; it does not render the assertion false."
+        ],
+        "residual_risks": [
+          "The 2026-06-30 subsequent-history sweep behind as_of_treatment is not itself inlined."
+        ],
+        "suggested_tightening": "Replace the build-process scope_note with a substantive currency scope_note.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T09:30:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-676421a7d7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fcab061b5a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w10-04-4a07357a",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w10-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Schneckloth v. Bustamonte"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "24eae06c73ec711c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6c24b7ed5f9a238b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d6738626789a267a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7d781fe8541abf4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8ca7b9832f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-676421a7d7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-fcab061b5a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

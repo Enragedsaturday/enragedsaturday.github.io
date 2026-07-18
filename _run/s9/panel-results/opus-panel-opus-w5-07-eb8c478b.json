@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "6a36a85bd13279f4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is unambiguously Hope v. Pelzer (hitching-post qualified-immunity; Justice Stevens, 2002), with star pages '*734'–'*748' consistent with a case beginning at 536 U.S. 730.",
+          "Selected official cite 536 U.S. 730 matches."
+        ],
+        "residual_risks": [
+          "The cached slip lacks an explicit reporter header; the '730' start page is inferred from the star-pagination sequence ('*734' onward)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98848fcc626429aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Cached opinion p.741 reads verbatim: '...the salient question that the Court of Appeals ought to have asked is whether the state of the law in 1995 gave respondents fair warning that their alleged treatment of Hope was unconstitutional.'",
+          "Content-page quote is exact; star_marker 741 confirmed (paragraph following the '*741' blockquote marker)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2bb0ff3b96b700a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "officials can still be on notice that their conduct violates established law even in novel factual circumstances.",
+          "locator_note": "Cached opinion p.741 ('Our opinion in Lanier thus makes clear that officials can still be on notice...'); content page ^pin-741 renders '[O]fficials can still be on notice that their conduct violates established law even in novel factual circumstances.' cited to '536 U.S. at 741'.",
+          "needs_cl": false,
+          "problem": "Stored pin-741 quote is a harvest artifact capturing content-page markdown ('facts, or whether a right can be clearly established without such a factually identical precedent. ## Rule A right may be clearly established without a factually identical case.') instead of opinion text. Build self-flags quote_fidelity='mismatch'. The content page's actual rendered pin-741 quote is faithful and correctly pincited.",
+          "proposed_fix": "Replace the stored pin-741 quote string with the real faithful quote at p.741.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Pin survives: the faithful quote exists at p.741 ('officials can still be on notice that their conduct violates established law even in novel factual circumstances'); the content page's '[O]fficials...' is a proper Bluebook capitalization.",
+          "Stored quote string is corrupted content-page markdown — a real quote_fidelity defect in the assertion as framed."
+        ],
+        "residual_risks": [
+          "Same first-pin harvest corruption pattern as the batch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf611fb2b4a1a327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion confirms Hope is a 2002 SCOTUS decision reversing the Eleventh Circuit and denying qualified immunity ('The judgment of the Court of Appeals is reversed.') — facially valid binding precedent.",
+          "Content page reports no negative treatment; no disclosed authority refutes good_law."
+        ],
+        "residual_risks": [
+          "2026 citator currency is a migration-seed and is not re-derivable from the disclosed 2002 slip alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:15:35-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a78f8ec038",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Hope v. Pelzer.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w5-07-eb8c478b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w5-07.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hope v. Pelzer"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6a36a85bd13279f4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98848fcc626429aa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf611fb2b4a1a327": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "c2bb0ff3b96b700a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-25242d5204",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a78f8ec038",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

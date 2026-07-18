@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e40818204df5c7f4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion is the Mendenhall majority (Stewart, J., 'announced the judgment of the Court'), with internal page markers *547 through *560 within volume 446 U.S., consistent with a case beginning at 446 U.S. 544.",
+          "Parallel cites (100 S. Ct. 1870; 64 L. Ed. 2d 497) and vendor-neutral (1980 U.S. LEXIS 102) are standard and uncontradicted by the disclosed text; official '446 U.S. 544' is correctly selected (scotus, rank_1)."
+        ],
+        "residual_risks": [
+          "S. Ct. and L. Ed. 2d page numbers are not printed in the disclosed U.S.-Reports text; only the U.S. cite is directly confirmable from the page markers."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d2e5755888dac3e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that a person has been “seized” within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.",
+          "locator_note": "pin-554; the content page Rule-section blockquote is correct and verbatim and correctly pinned to 446 U.S. at 554 — only the lake pinpoint.quote metadata string is garbled.",
+          "needs_cl": false,
+          "problem": "Lake pinpoint pin-554 records a garbled, non-verbatim quote string '? ## Rule A person is seized only when a reasonable person would not feel free to leave.' — a harvest artifact that captured the content page's markdown header and plain-language topic-sentence gloss, not opinion language. The opinion at 446 U.S. 554 reads that a reasonable person 'would have believed that he was not free to leave', not 'would not feel free to leave'. The record itself self-flags quote_fidelity='mismatch'.",
+          "proposed_fix": "Repair pin-554.quote to the verbatim opinion text the content page already blockquotes: 'We conclude that a person has been \"seized\" within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.' (446 U.S. at 554); then set quote_fidelity=match.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded pin-554 quote '? ## Rule A person is seized only when a reasonable person would not feel free to leave.' is a markdown/gloss harvest artifact, not opinion language; the opinion (p. b612-6, *554) reads '...a reasonable person would have believed that he was not free to leave.'",
+          "The pincite (446 U.S. at 554) and the content page's displayed blockquote are verbatim-correct, so the reader-facing text and cite stand; only the lake pinpoint.quote metadata is corrupted (record already flags quote_fidelity='mismatch')."
+        ],
+        "residual_risks": [
+          "If the garbled quote string were ever surfaced downstream it would misrepresent the holding language."
+        ],
+        "suggested_tightening": "Re-harvest pin-554.quote from the content-page blockquote (already correct) rather than the topic-sentence line.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c4e1e2cb60211526",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Recorded quote matches the opinion verbatim at 446 U.S. 554 ('Examples of circumstances that might indicate a seizure, even where the person did not attempt to leave, would be the threatening presence of several officers, the display of a weapon by an officer, some physical touching of the person of the citizen, or the use of language or tone of voice indicating that compliance with the officer's request might be compelled.') — word-for-word except a straight-vs-curly apostrophe normalization.",
+          "Correctly pinned to 446 U.S. at 554 (the sentence sits on the page opened by the *554 marker); tried to break fidelity and could not."
+        ],
+        "residual_risks": [
+          "The lake flags this pinpoint quote_fidelity='mismatch', which is a false positive for a verbatim quote (likely an apostrophe-normalization or slip-only page-resolution artifact)."
+        ],
+        "suggested_tightening": "Correct pin-554a.quote_fidelity from 'mismatch' to 'match'.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "162e23c078f8c327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The scope_note is fully corroborated by the disclosed opinion: Stewart, J. 'announced the judgment of the Court and delivered an opinion, in which Mr. Justice Rehnquist joined,' and the † footnote shows Burger/Blackmun/Powell joined 'all but Part II-A' (the seizure holding) — so the free-to-leave test was a plurality on the seizure point, later adopted by the full Court.",
+          "No disclosed evidence of genuine negative treatment: the 'overruled/abrogated/superseded' edges are all 'proposed:true' keyword-triage from lanes flagged 'audit_needed:true' / 'R15 treatment audit required' (e.g., Gates, Bostick, Sharpe 'overruling' Mendenhall are facially false positives). good_law rests on composite_basis='migration-seed'."
+        ],
+        "residual_risks": [
+          "Forward-looking currency ('good_law' as of 2026-06-30) cannot be fully confirmed from static disclosed evidence; it is merely uncontradicted here.",
+          "Unaudited negative edges (overruled/abrogated/superseded proposals) must not be promoted into treatment without the flagged R15 audit.",
+          "treatment.as_of_content is 1980-05-27 while identity.date_decided is 1980-06-30; Mendenhall was in fact decided May 27, 1980, so date_decided may carry an identity error (out of scope for this treatment assertion)."
+        ],
+        "suggested_tightening": "Run the flagged R15 treatment audit to clear the proposed keyword false-positive negative edges before any treatment promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T11:14:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-82599577ba",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Mendenhall.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w18-01-a9647f3b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w18-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Mendenhall"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "162e23c078f8c327": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d2e5755888dac3e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c4e1e2cb60211526": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e40818204df5c7f4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d78205a3e2",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-82599577ba",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

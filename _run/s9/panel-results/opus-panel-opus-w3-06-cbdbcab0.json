@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "45da7fa87a505e11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion contains '523 U.S. 833' and 'SACRAMENTO' caption, confirming the case at the official cite; lake cluster_id 118214 consistent.",
+          "Official selection present and correct (523 U.S. 833, type 1)."
+        ],
+        "residual_risks": [
+          "Parallels (118 S. Ct. 1708; 140 L. Ed. 2d 1043; 1998 U.S. LEXIS 3404) not independently reporter-checked but uncontradicted."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ef0dabde186b141",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation",
+          "locator_note": "content page ## Rule, ^pin-836; opinion 118214 at 523 U.S. 836",
+          "needs_cl": false,
+          "problem": "Harvested `quote` payload is a mis-extraction: it captured content-page structural text (the whole page header block: front matter + Background + Issue + '## Rule' heading + 'only a purpose to harm shocks the conscience') instead of the sentence actually quoted at ^pin-836; that harvested string does not appear in the opinion.",
+          "proposed_fix": "Re-harvest the ^pin-836 payload to the actual quoted sentence: \"We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-836 content-page quotation is verbatim in the cached opinion ('We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation').",
+          "The payload `quote` is a mass mis-harvest of page structure (its paraphrase 'only a purpose to harm shocks the conscience' has grep count 0 in the opinion) — an extraction artifact, not a page defect."
+        ],
+        "residual_risks": [
+          "Verdict rests on the page's real ^pin-836 sentence being faithful; the corrupt payload should be regenerated."
+        ],
+        "suggested_tightening": "Re-harvest the ^pin-836 payload to the quoted 'We answer no...' sentence rather than the page front matter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9ef54e76b4f50da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Verbatim in cached opinion: 'Accordingly, we hold that high-speed chases with no intent to harm suspects physically or to worsen their legal plight do not give rise to liability under the Fourteenth Amendment, redressible by an action under § 1983.' (opinion carries a trailing footnote marker [13] after the quoted text, outside the quote).",
+          "Consistent with the payload's own 'matched' / star-verified status and the #:~:text fragment on ^pin-854."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "538accf0d35cddf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Scope-note doctrine (pursuit deaths without a seizure judged under Fourteenth Amendment substantive due process / 'shocks the conscience', requiring purpose to cause harm) is supported by the verified holding quotations (pin-836, pin-854).",
+          "No negative-treatment signal disclosed; field_i_validity=good_law (migration-seed)."
+        ],
+        "residual_risks": [
+          "'good_law' currency not independently derivable from disclosed evidence (no citator classification inlined)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:46:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/County of Sacramento v. Lewis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w3-06-cbdbcab0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w3-06.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "County of Sacramento v. Lewis"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "3ef0dabde186b141": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "45da7fa87a505e11": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "538accf0d35cddf2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "e9ef54e76b4f50da": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b720590dbd",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

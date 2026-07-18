@@ -1,22 +1,177 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Small.md",
+    "lens": "B",
+    "notes": "Lens B only. I did not treat empty, unverified progeny fields as proof that the case remains live law.",
+    "reviewed": [
+      {
+        "assertion_id": "9042ef052119e1bc",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Status: Unverified — subsequent treatment not yet machine-verified.",
+          "locator_note": "citation/live-law currency",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but it does not verify the live-law currency question assigned to this lens. Treatment is expressly unverified and progeny/citator data are not populated.",
+          "proposed_fix": "Treat the citation as identity-verified only, and do not imply current live-law status until treatment/progeny verification is completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citation fields confirm United States v. Dontae Small, 944 F.3d 490, Fourth Circuit, decided 2019-12-06.",
+          "Lake treatment fields show field_i_validity and composite_basis as unverified, with null treatment dates.",
+          "Lake progeny fields show no completed query, no enumeration, and rows_cached 0, so absence of adverse treatment is not evidence of live law."
+        ],
+        "residual_risks": [
+          "A later disclosed citator record could show the case remains live law, but that evidence is not present here."
+        ],
+        "suggested_tightening": "Separate identity/citation verification from any live-law representation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "021fe4a72021915c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside Lens B; no support or quote-fidelity defect is raised.",
+          "No disclosed treatment edge supersedes, overrules, abrogates, or limits the proposition.",
+          "The page separately renders treatment as Unverified, consistent with the lake record."
+        ],
+        "residual_risks": [
+          "Current good-law status is not independently verified because treatment/progeny remain unverified."
+        ],
+        "suggested_tightening": "Keep the Unverified treatment warning visible wherever this holding is reused.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8405db8ee173f6af",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home-role classification is not a treatment assertion, and support merits are outside Lens B.",
+          "No disclosed adverse treatment or progeny edge undermines using the case on the Abandonment page.",
+          "The page marks the authority's treatment as Unverified rather than good law."
+        ],
+        "residual_risks": [
+          "The Key role could overstate practical teaching weight if later treatment limits Small."
+        ],
+        "suggested_tightening": "Consider qualifying the Key role until treatment/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d859278386319cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The opinion text identifies a PUBLISHED Fourth Circuit decision.",
+          "Lake identity lists court as 4th Cir., court_level as coa, and circuit as ca4.",
+          "The page pairs the weight label with Treatment: Unverified, so the weight label is not presented as a good-law certification."
+        ],
+        "residual_risks": [
+          "The actual current force of the precedent remains unresolved because citator/progeny verification is absent."
+        ],
+        "suggested_tightening": "If readers may treat Binding as a current-validity claim, render it as published Fourth Circuit authority with treatment unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f98a8549c32634d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of dates, varies_by_point false.",
+          "The scope note matches the lake record: Frontier stub treatment/progeny were intentionally not derived until promotion.",
+          "No disclosed treatment edge or progeny record contradicts the Unverified treatment label."
+        ],
+        "residual_risks": [
+          "Unverified treatment is not a good-law determination."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/United States v. Small.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9042ef052119e1bc\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citation, but it does not verify the live-law currency question assigned to this lens. Treatment is expressly unverified and progeny/citator data are not populated.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Treat the citation as identity-verified only, and do not imply current live-law status until treatment/progeny verification is completed.\",\n        \"evidence_quote\": \"Status: Unverified — subsequent treatment not yet machine-verified.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"citation/live-law currency\"\n      },\n      \"reasons\": [\n        \"Lake identity/citation fields confirm United States v. Dontae Small, 944 F.3d 490, Fourth Circuit, decided 2019-12-06.\",\n        \"Lake treatment fields show field_i_validity and composite_basis as unverified, with null treatment dates.\",\n        \"Lake progeny fields show no completed query, no enumeration, and rows_cached 0, so absence of adverse treatment is not evidence of live law.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"A later disclosed citator record could show the case remains live law, but that evidence is not present here.\"\n      ],\n      \"suggested_tightening\": \"Separate identity/citation verification from any live-law representation.\"\n    },\n    {\n      \"assertion_id\": \"021fe4a72021915c\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Support merits are outside Lens B; no support or quote-fidelity defect is raised.\",\n        \"No disclosed treatment edge supersedes, overrules, abrogates, or limits the proposition.\",\n        \"The page separately renders treatment as Unverified, consistent with the lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current good-law status is not independently verified because treatment/progeny remain unverified.\"\n      ],\n      \"suggested_tightening\": \"Keep the Unverified treatment warning visible wherever this holding is reused.\"\n    },\n    {\n      \"assertion_id\": \"8405db8ee173f6af\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Home-role classification is not a treatment assertion, and support merits are outside Lens B.\",\n        \"No disclosed adverse treatment or progeny edge undermines using the case on the Abandonment page.\",\n        \"The page marks the authority's treatment as Unverified rather than good law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The Key role could overstate practical teaching weight if later treatment limits Small.\"\n      ],\n      \"suggested_tightening\": \"Consider qualifying the Key role until treatment/progeny verification is complete.\"\n    },\n    {\n      \"assertion_id\": \"0d859278386319cc\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion text identifies a PUBLISHED Fourth Circuit decision.\",\n        \"Lake identity lists court as 4th Cir., court_level as coa, and circuit as ca4.\",\n        \"The page pairs the weight label with Treatment: Unverified, so the weight label is not presented as a good-law certification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The actual current force of the precedent remains unresolved because citator/progeny verification is absent.\"\n      ],\n      \"suggested_tightening\": \"If readers may treat Binding as a current-validity claim, render it as published Fourth Circuit authority with treatment unverified.\"\n    },\n    {\n      \"assertion_id\": \"9f98a8549c32634d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as_of dates, varies_by_point false.\",\n        \"The scope note matches the lake record: Frontier stub treatment/progeny were intentionally not derived until promotion.\",\n        \"No disclosed treatment edge or progeny record contradicts the Unverified treatment label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Unverified treatment is not a good-law determination.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens B only. I did not treat empty, unverified progeny fields as proof that the case remains live law.\"\n}",
   "summary": {
-    "at": "2026-07-10T02:57:17-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T08:36:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-8c8572e362"
+    ],
     "group_id": "content/cases/United States v. Small.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-28658097",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-28658097.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:09.505561Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:10.335485Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:11.532798Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:13.643484Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:57:17.407064Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Small"
+    ],
+    "tokens": {
+      "input": 177260,
+      "output": 7841,
+      "source": "codex-events",
+      "total": 185101
+    },
+    "verdict_map": {
+      "021fe4a72021915c": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0d859278386319cc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8405db8ee173f6af": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9042ef052119e1bc": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9f98a8549c32634d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8c8572e362",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 159.3
   }
 }

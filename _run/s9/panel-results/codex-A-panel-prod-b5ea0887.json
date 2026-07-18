@@ -1,38 +1,174 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Reddick.md",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "df9b6788f3c45275",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms the case as United States v. Henry Reddick, with input/record name United States v. Reddick.",
+          "Lake citation is 900 F.3d 636, court is 5th Cir., date decided is 2018-08-17, and year is 2018.",
+          "Lake lists no parallel or vendor-neutral citation, consistent with the asserted empty fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "163433f91c32147f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that Microsoft PhotoDNA matched Reddick's uploaded files against known child-pornography hash values and sent CyberTips onward.",
+          "The opinion holds that Detective Ilse's viewing did not violate the Fourth Amendment because it did not add a privacy intrusion beyond the private search.",
+          "The holding is limited to files whose hash values matched known child-pornography images, which matches the asserted fact pattern."
+        ],
+        "residual_risks": [
+          "Lake pinpoints are empty, so support verification relies on the cached full opinion text rather than lake pinpoint quotes."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3651a26812f23e8e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "no other circuit has confronted the precise question before us",
+          "locator_note": "homes[0].role",
+          "needs_cl": true,
+          "problem": "The role label's 'split' component is not verified by the disclosed Reddick materials. The opinion supports a key Fifth Circuit hash-match private-search rule, but the disclosed files do not establish a circuit split.",
+          "proposed_fix": "Change the role to 'Key — hash-match private-search rule (5th Cir.)' or add disclosed authority establishing the split.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Reddick itself supports the hash-match and Fifth Circuit portions of the role.",
+          "The opinion distinguishes Ackerman on different facts, but that does not establish the asserted hash-match split.",
+          "No progeny, citator, Ninth Circuit authority, or other split-confirming record appears in the disclosed lake record."
+        ],
+        "residual_risks": [
+          "A split may exist outside the disclosed evidence, but it is not verifiable under this review universe."
+        ],
+        "suggested_tightening": "Use a role label tied only to the verified holding unless split authorities are disclosed.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "504c26d90122de76",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.",
+          "Treatment merits and currency are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment and subsequent-history review remains reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f33d9865fedf975c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity verifies that the authority is a Fifth Circuit court-of-appeals case with circuit ca5.",
+          "The weight label is consistent with the verified court and circuit metadata.",
+          "Treatment merits and currency are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "The lake record does not contain a separate authority_weight judgment field; this review verifies the label only against court and circuit identity metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/United States v. Reddick.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"df9b6788f3c45275\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms the case as United States v. Henry Reddick, with input/record name United States v. Reddick.\",\n        \"Lake citation is 900 F.3d 636, court is 5th Cir., date decided is 2018-08-17, and year is 2018.\",\n        \"Lake lists no parallel or vendor-neutral citation, consistent with the asserted empty fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"163433f91c32147f\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion states that Microsoft PhotoDNA matched Reddick's uploaded files against known child-pornography hash values and sent CyberTips onward.\",\n        \"The opinion holds that Detective Ilse's viewing did not violate the Fourth Amendment because it did not add a privacy intrusion beyond the private search.\",\n        \"The holding is limited to files whose hash values matched known child-pornography images, which matches the asserted fact pattern.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake pinpoints are empty, so support verification relies on the cached full opinion text rather than lake pinpoint quotes.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3651a26812f23e8e\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The role label's 'split' component is not verified by the disclosed Reddick materials. The opinion supports a key Fifth Circuit hash-match private-search rule, but the disclosed files do not establish a circuit split.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Change the role to 'Key — hash-match private-search rule (5th Cir.)' or add disclosed authority establishing the split.\",\n        \"evidence_quote\": \"no other circuit has confronted the precise question before us\",\n        \"needs_cl\": true,\n        \"locator_note\": \"homes[0].role\"\n      },\n      \"reasons\": [\n        \"Reddick itself supports the hash-match and Fifth Circuit portions of the role.\",\n        \"The opinion distinguishes Ackerman on different facts, but that does not establish the asserted hash-match split.\",\n        \"No progeny, citator, Ninth Circuit authority, or other split-confirming record appears in the disclosed lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A split may exist outside the disclosed evidence, but it is not verifiable under this review universe.\"\n      ],\n      \"suggested_tightening\": \"Use a role label tied only to the verified holding unless split authorities are disclosed.\"\n    },\n    {\n      \"assertion_id\": \"504c26d90122de76\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\",\n        \"Treatment merits and currency are outside lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and subsequent-history review remains reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f33d9865fedf975c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies that the authority is a Fifth Circuit court-of-appeals case with circuit ca5.\",\n        \"The weight label is consistent with the verified court and circuit metadata.\",\n        \"Treatment merits and currency are outside lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record does not contain a separate authority_weight judgment field; this review verifies the label only against court and circuit identity metadata.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T02:56:53-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T08:33:22-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-172d07ec2c"
+    ],
     "group_id": "content/cases/United States v. Reddick.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Reddick"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b5ea0887",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b5ea0887.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Reddick' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Reddick"
+    ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 98433,
+      "output": 6529,
+      "source": "codex-events",
+      "total": 104962
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.5
+    "verdict_map": {
+      "163433f91c32147f": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3651a26812f23e8e": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "504c26d90122de76": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "df9b6788f3c45275": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f33d9865fedf975c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-172d07ec2c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 125.0
   }
 }

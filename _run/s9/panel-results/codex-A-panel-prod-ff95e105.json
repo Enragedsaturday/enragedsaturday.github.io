@@ -1,22 +1,160 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Steele v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows in group_inventory.jsonl under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "c971f49486f86f00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Steele v. United States No. 1, U.S. Supreme Court, decided 1925-04-13.",
+          "The official citation in the lake record is 267 U.S. 498, and the content page displays 267 U.S. 498 (1925).",
+          "Parallel and vendor citations in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f89acee210cd333",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched. It is enough if the description is such that the officer with a search' warrant can with reasonable effort ascertain and identify the place intended.",
+          "locator_note": "text/Steele v. United States__efafe1.txt, page marker *503; content_page.md places ^pin-503 after the rule quote.",
+          "needs_cl": false,
+          "problem": "The pin-503 quote is not a character-faithful case quote. It is page prose and markdown heading text from the built page, not the opinion passage at 267 U.S. 503.",
+          "proposed_fix": "Replace pin-503's quote with the actual page-503 rule passage from the cached opinion, or mark the page prose as non-verbatim background rather than a case quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with 'Executing it, agents seized...' and includes '## Issue' and '## Rule Yes.', which do not appear as opinion text in the cached opinion.",
+          "The lake pinpoint itself marks pin-503 quote_fidelity as mismatch.",
+          "The opinion text at page 503 contains the relevant rule sentence, not the asserted markdown/page-prose block."
+        ],
+        "residual_risks": [
+          "The cached text contains an OCR artifact in 'search' warrant'; any normalized verbatim quote should be verified against a cleaner disclosed source before being treated as exact."
+        ],
+        "suggested_tightening": "Use the page-503 rule sentence as the pinpoint quote and keep background prose out of quote_fidelity pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b139e34e55fd0f8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched.",
+          "locator_note": "text/Steele v. United States__efafe1.txt, page marker *503; content_page.md application paragraph uses the same sentence with a comma inside the quote.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the page-503 sentence, but the final punctuation is not character-faithful: the asserted quote ends with a comma, while the cached opinion ends the sentence with a period.",
+          "proposed_fix": "Change the closing punctuation inside the quotation from comma to period, or remove the punctuation from the quoted material and place sentence punctuation outside the quotation if stylistically necessary.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion at the page-503 passage.",
+          "The assertion's only observed mismatch is the final comma substituted for the opinion's period.",
+          "The lake pinpoint marks quote_fidelity as mismatch, consistent with this punctuation defect."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the full sentence with its original period before the citation signal.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9713b803a18e21b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside lens A's attack charter, so no treatment finding is raised.",
+          "The treatment payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1925-04-13, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently evaluated under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Steele v. United States.json\",\"reviewed\":[{\"assertion_id\":\"c971f49486f86f00\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Steele v. United States No. 1, U.S. Supreme Court, decided 1925-04-13.\",\"The official citation in the lake record is 267 U.S. 498, and the content page displays 267 U.S. 498 (1925).\",\"Parallel and vendor citations in the assertion match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3f89acee210cd333\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-503 quote is not a character-faithful case quote. It is page prose and markdown heading text from the built page, not the opinion passage at 267 U.S. 503.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-503's quote with the actual page-503 rule passage from the cached opinion, or mark the page prose as non-verbatim background rather than a case quote.\",\"evidence_quote\":\"The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched. It is enough if the description is such that the officer with a search' warrant can with reasonable effort ascertain and identify the place intended.\",\"needs_cl\":false,\"locator_note\":\"text/Steele v. United States__efafe1.txt, page marker *503; content_page.md places ^pin-503 after the rule quote.\"},\"reasons\":[\"The asserted quote begins with 'Executing it, agents seized...' and includes '## Issue' and '## Rule Yes.', which do not appear as opinion text in the cached opinion.\",\"The lake pinpoint itself marks pin-503 quote_fidelity as mismatch.\",\"The opinion text at page 503 contains the relevant rule sentence, not the asserted markdown/page-prose block.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text contains an OCR artifact in 'search' warrant'; any normalized verbatim quote should be verified against a cleaner disclosed source before being treated as exact.\"],\"suggested_tightening\":\"Use the page-503 rule sentence as the pinpoint quote and keep background prose out of quote_fidelity pinpoints.\"},{\"assertion_id\":\"9b139e34e55fd0f8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively the page-503 sentence, but the final punctuation is not character-faithful: the asserted quote ends with a comma, while the cached opinion ends the sentence with a period.\",\"severity\":\"low\",\"proposed_fix\":\"Change the closing punctuation inside the quotation from comma to period, or remove the punctuation from the quoted material and place sentence punctuation outside the quotation if stylistically necessary.\",\"evidence_quote\":\"The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched.\",\"needs_cl\":false,\"locator_note\":\"text/Steele v. United States__efafe1.txt, page marker *503; content_page.md application paragraph uses the same sentence with a comma inside the quote.\"},\"reasons\":[\"The sentence appears in the cached opinion at the page-503 passage.\",\"The assertion's only observed mismatch is the final comma substituted for the opinion's period.\",\"The lake pinpoint marks quote_fidelity as mismatch, consistent with this punctuation defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the full sentence with its original period before the citation signal.\"},{\"assertion_id\":\"9713b803a18e21b3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment and currency are outside lens A's attack charter, so no treatment finding is raised.\",\"The treatment payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1925-04-13, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently evaluated under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion rows in group_inventory.jsonl under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:30-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T02:40:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-133d7b00a2",
+      "F-S9-PR-73480ff4b6"
+    ],
     "group_id": "_overhaul2/lake/cases/Steele v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ff95e105",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ff95e105.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T06:29:28.402550Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:28.891600Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:29:29.489105Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Steele v. United States"
+    ],
+    "tokens": {
+      "input": 94551,
+      "output": 6238,
+      "source": "codex-events",
+      "total": 100789
+    },
+    "verdict_map": {
+      "3f89acee210cd333": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9713b803a18e21b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b139e34e55fd0f8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c971f49486f86f00": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-133d7b00a2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-73480ff4b6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 119.5
   }
 }

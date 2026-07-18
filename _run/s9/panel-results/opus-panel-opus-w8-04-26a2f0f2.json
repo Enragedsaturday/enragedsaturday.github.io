@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "8bc9812a32fc6616",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms 'CHADRIN LEE MULLENIX v. BEATRICE LUNA...', No. 14-1143, decided November 9, 2015, PER CURIAM, 'Cite as: 577 U. S. ___ (2015)' — matches record identity and date_decided.",
+          "577 U.S. 7 and parallels (136 S. Ct. 305; 193 L. Ed. 2d 255) are present and mutually consistent; the case plainly exists."
+        ],
+        "residual_risks": [
+          "official_selection.selected is null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S'), so no cite is flagged selected_official even though 577 U.S. 7 is present in all[]; a metadata gap, not an existence defect."
+        ],
+        "suggested_tightening": "Whitelist/rank 577 U.S. 7 as selected_official so display is non-null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "69f7f923d4c33fb8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have repeatedly told courts . . . not to define clearly established law at a high level of generality.",
+          "locator_note": "Cached slip op.: quote appears verbatim followed by 'al-Kidd, supra, at 742.' — page attribution matches the content page's '(quoting al-Kidd)'.",
+          "needs_cl": false,
+          "problem": "The pin-12 pinpoint quote field is a mis-extracted wiki-page blob (frontmatter through Background/Issue/Rule preamble), not an opinion passage; correctly self-flagged fidelity=mismatch/slip-only. The page's actual ^pin-12 quotation is a different, verifiable sentence.",
+          "proposed_fix": "Re-extract the pin-12 quote to the sentence rendered on the page, which verifies verbatim in the cached opinion; the U.S. Reports pincite 12 is slip-only (not star-verifiable in the slip-format cache) but consistent with the official cite.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored pin-12 quote is verbatim the page preamble text, not an opinion quote (matches lake self-flag mismatch).",
+          "The sentence the page actually cites at ^pin-12 verifies verbatim in the cached slip opinion and is correctly attributed as quoting al-Kidd; the companion 'dispositive question... violative nature of particular conduct is clearly established' line also verifies verbatim."
+        ],
+        "residual_risks": [
+          "Slip-format cache lacks U.S. Reports star pages, so the 11/12 pincites cannot be star-verified from disclosed text (Sources line already discloses this)."
+        ],
+        "suggested_tightening": "Reconcile the pinpoint quote field with the rendered quotation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0940d26c4b3e244a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Mullenix v. Luna is a 2015 per curiam SCOTUS decision reversing the 5th Cir. on qualified immunity; nothing in the disclosed opinion or edges shows SCOTUS negative treatment. good_law is supported.",
+          "The disclosed negative edge 'Nat'l Rifle Ass'n of Am. v. Vullo' field_ii=overruled is proposed=true lane1_negative — a facial keyword false positive (Vullo is a First Amendment decision that does not overrule Mullenix's QI-specificity holding)."
+        ],
+        "residual_risks": [
+          "Full treatment currency as-of 2026-06-30 is not independently reproducible from the disclosed set."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T07:02:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c813ccb145",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w8-04-26a2f0f2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w8-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mullenix v. Luna"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0940d26c4b3e244a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "69f7f923d4c33fb8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8bc9812a32fc6616": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a44214977c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-c813ccb145",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

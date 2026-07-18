@@ -1,0 +1,116 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "92aabf18771c7b8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached slip opinion confirms the case: 'United States ... versus Kirk August', No. 24-30457, U.S. Court of Appeals for the Fifth Circuit, Filed May 8, 2025, Edith H. Jones, Circuit Judge — matching record docket 24-30457, court ca5, date 2025-05-08, cluster 10574922.",
+          "Official cite '136 F.4th 595' is well-formed for a 2025 published 5th Cir. decision and is sourced from cluster.citations[]; the slip opinion carries no reporter pagination, so the '595' page is not independently confirmable from the slip text, but nothing in the disclosed evidence contradicts it."
+        ],
+        "residual_risks": [
+          "Reporter start page '595' rests on cluster metadata, not the inlined slip text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "918704732f03eacf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A protective sweep is lawful if: (1) the government agents have a legitimate law enforcement purpose for being in the house [or curtilage]; (2) the sweep is supported by a reasonable, articulable suspicion that the area to be swept harbors an individual posing a danger to those on the scene; (3) the sweep is no more than a cursory inspection of those spaces where a person may be found; and (4) the sweep lasts no longer than is necessary to dispel the reasonable suspicion of danger and lasts no longer than the police are justified in remaining on the premises.",
+          "locator_note": "Cached opinion, slip op. page 5 (Case 24-30457, Document 68-1, Page 5), section 'A. Protective Sweep Doctrine'.",
+          "needs_cl": false,
+          "problem": "The pin-op5 stored quote is a mis-harvest: it captured the page's frontmatter/header/Background/Issue prose (from '--- # United States v. August' through '## Rule The court applied the circuit's four-part protective-sweep test, extending it by its terms to curtilage:') instead of the quotation actually anchored at ^pin-op5. quote_fidelity is self-flagged 'mismatch'.",
+          "proposed_fix": "Repoint the pin-op5 quote field to the four-part protective-sweep test as displayed on the content page and quoted verbatim in the opinion at slip op. 5.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The DISPLAYED quotation anchored at ^pin-op5 (the four-part test) is verbatim faithful to the opinion at slip op. 5, including the bracketed '[or curtilage]' insertion which the opinion itself contains, and is correctly attributed to United States v. Mendez, 431 F.3d 420, 428 (5th Cir. 2005).",
+          "Only the stored pinpoint.quote field is wrong (a header-region harvest artifact); the published legal content is accurate, so the assertion survives but the record needs a modification."
+        ],
+        "residual_risks": [
+          "Harvest artifact is a record-hygiene issue in the lake metadata, not a rendered error on the page."
+        ],
+        "suggested_tightening": "Re-run the quote harvester to anchor on the ^pin marker's paragraph rather than the frontmatter region.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bfbae02e5183bfe8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is consistent with the disclosed derivation: all three lanes reviewed 0 citing opinions with 0 proposed negative events (cap not hit), progeny citation_count 0, and edges [] — no overruling/abrogation signal.",
+          "Recent (2025-05-08) published 5th Cir. decision; the cached opinion AFFIRMS and articulates the protective-sweep test with nothing self-undermining. as_of_treatment 2026-06-30 and varies_by_point=false are reasonable for a single-holding case."
+        ],
+        "residual_risks": [
+          "Negative/progeny lanes reviewed 0 opinions (very recent case); good-law rests on the absence of indexed citing opinions as of 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T10:23:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. August.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w14-01-36abd5b3",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w14-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. August"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "918704732f03eacf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "92aabf18771c7b8d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bfbae02e5183bfe8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6dfa696c0d",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

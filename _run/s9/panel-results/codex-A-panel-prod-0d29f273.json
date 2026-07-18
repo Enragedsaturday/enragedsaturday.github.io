@@ -1,22 +1,220 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wearry v. Cain.json",
+    "lens": "A",
+    "notes": "Reviewed all 6 rows in group_inventory.jsonl. No black-letter assertion rows were present for Lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "86118510f68bce74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Wearry v. Cain as a U.S. Supreme Court case decided 2016-03-07.",
+          "The cited reporters in the assertion match the lake citations: 577 U.S. 385, 136 S. Ct. 1002, 194 L. Ed. 2d 78, 2016 U.S. LEXIS 1654, 84 U.S.L.W. 4125, 26 Fla. L. Weekly Fed. S 17, and 2016 WL 854158."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "30891be4f45debde",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase “cumulative evaluation” appears in the disclosed opinion text in the Kyles citation passage.",
+          "The lake pinpoint pin-1007 also records quote_fidelity as matched and gives a validated text fragment for cumulative evaluation."
+        ],
+        "residual_risks": [
+          "The text cache is slip-format; no independent S. Ct. page marker is available in the cached text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "405421ca979bc993",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The State’s\ntrial evidence resembles a house of cards, built on the jury\ncrediting Scott’s account rather than Wearry’s alibi.",
+          "locator_note": "pin-1006b",
+          "needs_cl": false,
+          "problem": "The asserted quote is not character-faithful. The opinion says “The State’s trial evidence resembles...”; the page/lake quote changes that to “resemble[d]...” and omits the subject.",
+          "proposed_fix": "Quote the opinion as: “The State’s trial evidence resembles a house of cards, built on the jury crediting Scott’s account rather than Wearry’s alibi.”",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source uses “resembles,” not “resemble[d].”",
+          "Bracketed alteration may be intelligible legally, but it is not character-faithful under this review lens."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the full sentence or paraphrase without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a1b2a401763a2d3f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "He must show only that the new evi-\ndence is sufficient to “undermine confidence” in the ver-\ndict.",
+          "locator_note": "pin-1006a",
+          "needs_cl": false,
+          "problem": "The quote is substantively close but not character-faithful to the disclosed opinion text; the source uses double curly quotation marks around “undermine confidence,” not straight single quotation marks.",
+          "proposed_fix": "Use: “He must show only that the new evidence is sufficient to “undermine confidence” in the verdict.” Or paraphrase without quotation marks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake itself marks pin-1006a quote_fidelity as mismatch.",
+          "The cached opinion text confirms the quoted words but not the exact quotation punctuation used on the page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize the quotation to the opinion’s punctuation or remove verbatim quotation styling.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d381ff6d9ebbfdac",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Evidence qualifies as material when there is “ ‘any\nreasonable likelihood’ ” it could have “ ‘affected the judg-\nment of the jury.’ ”",
+          "locator_note": "pin-1006",
+          "needs_cl": false,
+          "problem": "The asserted pin-1006 quote is not an opinion quote at all; it captures page/front-matter and summary text before the actual rule quotation. The lake marks this pinpoint as a mismatch.",
+          "proposed_fix": "Replace pin-1006 with the actual opinion sentence beginning “Evidence qualifies as material...”",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page metadata and background text, not Wearry’s opinion text.",
+          "The disclosed opinion contains the intended materiality sentence, but not the asserted front-matter block."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix the nested quotation markup around the materiality rule so extraction does not swallow preceding page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5c727fe1c6b805f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields asserted on the content page match the lake record: good_law, as_of_content 2016-03-07, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Lens A records this field match only; treatment/currency merits are outside this lens."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not independently attacked under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Wearry v. Cain.json\",\"reviewed\":[{\"assertion_id\":\"86118510f68bce74\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Wearry v. Cain as a U.S. Supreme Court case decided 2016-03-07.\",\"The cited reporters in the assertion match the lake citations: 577 U.S. 385, 136 S. Ct. 1002, 194 L. Ed. 2d 78, 2016 U.S. LEXIS 1654, 84 U.S.L.W. 4125, 26 Fla. L. Weekly Fed. S 17, and 2016 WL 854158.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"30891be4f45debde\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase “cumulative evaluation” appears in the disclosed opinion text in the Kyles citation passage.\",\"The lake pinpoint pin-1007 also records quote_fidelity as matched and gives a validated text fragment for cumulative evaluation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The text cache is slip-format; no independent S. Ct. page marker is available in the cached text.\"],\"suggested_tightening\":null},{\"assertion_id\":\"405421ca979bc993\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted quote is not character-faithful. The opinion says “The State’s trial evidence resembles...”; the page/lake quote changes that to “resemble[d]...” and omits the subject.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the opinion as: “The State’s trial evidence resembles a house of cards, built on the jury crediting Scott’s account rather than Wearry’s alibi.”\",\"evidence_quote\":\"The State’s\\ntrial evidence resembles a house of cards, built on the jury\\ncrediting Scott’s account rather than Wearry’s alibi.\",\"needs_cl\":false,\"locator_note\":\"pin-1006b\"},\"reasons\":[\"The source uses “resembles,” not “resemble[d].”\",\"Bracketed alteration may be intelligible legally, but it is not character-faithful under this review lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the full sentence or paraphrase without quotation marks.\"},{\"assertion_id\":\"a1b2a401763a2d3f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively close but not character-faithful to the disclosed opinion text; the source uses double curly quotation marks around “undermine confidence,” not straight single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use: “He must show only that the new evidence is sufficient to “undermine confidence” in the verdict.” Or paraphrase without quotation marks.\",\"evidence_quote\":\"He must show only that the new evi-\\ndence is sufficient to “undermine confidence” in the ver-\\ndict.\",\"needs_cl\":false,\"locator_note\":\"pin-1006a\"},\"reasons\":[\"The lake itself marks pin-1006a quote_fidelity as mismatch.\",\"The cached opinion text confirms the quoted words but not the exact quotation punctuation used on the page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Normalize the quotation to the opinion’s punctuation or remove verbatim quotation styling.\"},{\"assertion_id\":\"d381ff6d9ebbfdac\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-1006 quote is not an opinion quote at all; it captures page/front-matter and summary text before the actual rule quotation. The lake marks this pinpoint as a mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1006 with the actual opinion sentence beginning “Evidence qualifies as material...”\",\"evidence_quote\":\"Evidence qualifies as material when there is “ ‘any\\nreasonable likelihood’ ” it could have “ ‘affected the judg-\\nment of the jury.’ ”\",\"needs_cl\":false,\"locator_note\":\"pin-1006\"},\"reasons\":[\"The payload quote begins with page metadata and background text, not Wearry’s opinion text.\",\"The disclosed opinion contains the intended materiality sentence, but not the asserted front-matter block.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Fix the nested quotation markup around the materiality rule so extraction does not swallow preceding page content.\"},{\"assertion_id\":\"5c727fe1c6b805f9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields asserted on the content page match the lake record: good_law, as_of_content 2016-03-07, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Lens A records this field match only; treatment/currency merits are outside this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not independently attacked under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 6 rows in group_inventory.jsonl. No black-letter assertion rows were present for Lens A review.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:18-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T03:12:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ad97c29856",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3f3bbe1df8",
+      "F-S9-PR-2126cc9195",
+      "F-S9-PR-7bd467655e"
+    ],
     "group_id": "_overhaul2/lake/cases/Wearry v. Cain.json",
     "group_total_assertions": 6,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0d29f273",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0d29f273.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:09.205532Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:10.025033Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:11.299977Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:13.517671Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T06:35:17.487371Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wearry v. Cain"
+    ],
+    "tokens": {
+      "input": 137171,
+      "output": 8921,
+      "source": "codex-events",
+      "total": 146092
+    },
+    "verdict_map": {
+      "30891be4f45debde": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "405421ca979bc993": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5c727fe1c6b805f9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "86118510f68bce74": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1b2a401763a2d3f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d381ff6d9ebbfdac": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3f3bbe1df8",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2126cc9195",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7bd467655e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ad97c29856",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 170.0
   }
 }

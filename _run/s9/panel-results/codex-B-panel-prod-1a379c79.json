@@ -1,13 +1,61 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wyman v. James.json",
+    "lens": "B",
+    "notes": "Reviewed all rows in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "be07519eae069f72",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Wyman v. James__2f1ebf.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but does not verify the currency/live-law status required under lens B. Treatment is expressly unverified, has no as-of date, and has no progeny or treatment edges.",
+          "proposed_fix": "Limit this assertion to identity/citation existence only, or complete citator/progeny treatment verification before treating the authority as live current law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citations support that Wyman v. James exists at 400 U.S. 309.",
+          "Currency cannot be verified: treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny.rows_cached is 0."
+        ],
+        "residual_risks": [
+          "The case may still be live law, but that cannot be confirmed from the disclosed record."
+        ],
+        "suggested_tightening": "Separate citation existence from current-law status: state that treatment/live-law status is unverified until citator/progeny promotion is complete.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "13b6c4fc3434f3f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion says field_i_validity is unverified, matching the lake treatment field and the content page treatment banner.",
+          "The lake record discloses no negative treatment, no point overrides, and no progeny edges; the page does not claim verified good-law status.",
+          "The weight label Binding — SCOTUS is consistent with the lake identity fields court U.S. and court_level scotus."
+        ],
+        "residual_risks": [
+          "Unverified treatment is not a verified good-law determination; no disclosed citator/progeny data resolves later limitation, overruling, or abrogation risk."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner and avoid any live-law upgrade until treatment/progeny verification is populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Wyman v. James.json\",\"reviewed\":[{\"assertion_id\":\"be07519eae069f72\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citation, but does not verify the currency/live-law status required under lens B. Treatment is expressly unverified, has no as-of date, and has no progeny or treatment edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to identity/citation existence only, or complete citator/progeny treatment verification before treating the authority as live current law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Wyman v. James__2f1ebf.json treatment/progeny fields\"},\"reasons\":[\"Lake identity and citations support that Wyman v. James exists at 400 U.S. 309.\",\"Currency cannot be verified: treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, treatment.edges is empty, and progeny.rows_cached is 0.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The case may still be live law, but that cannot be confirmed from the disclosed record.\"],\"suggested_tightening\":\"Separate citation existence from current-law status: state that treatment/live-law status is unverified until citator/progeny promotion is complete.\"},{\"assertion_id\":\"13b6c4fc3434f3f8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion says field_i_validity is unverified, matching the lake treatment field and the content page treatment banner.\",\"The lake record discloses no negative treatment, no point overrides, and no progeny edges; the page does not claim verified good-law status.\",\"The weight label Binding — SCOTUS is consistent with the lake identity fields court U.S. and court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Unverified treatment is not a verified good-law determination; no disclosed citator/progeny data resolves later limitation, overruling, or abrogation risk.\"],\"suggested_tightening\":\"Keep the unverified treatment banner and avoid any live-law upgrade until treatment/progeny verification is populated.\"}],\"notes\":\"Reviewed all rows in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-10T02:35:41-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:13:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d95d0f0451"
+    ],
     "group_id": "_overhaul2/lake/cases/Wyman v. James.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,21 +64,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1a379c79.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Wyman v. James"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 137010,
+      "output": 4548,
+      "source": "codex-events",
+      "total": 141558
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "13b6c4fc3434f3f8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "be07519eae069f72": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d95d0f0451",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.9
   }
 }

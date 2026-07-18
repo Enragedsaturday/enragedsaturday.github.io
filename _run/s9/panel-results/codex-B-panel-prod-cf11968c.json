@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Shipley v. California.json",
+    "lens": "B",
+    "notes": "Reviewed every inventory row under lens B only; quote-fidelity issues were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "1b595dd12d180395",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record is verified, identifies Shipley v. California as a U.S. Supreme Court decision dated 1969-06-23, and lists the official citation as 395 U.S. 818.",
+          "For the currency angle, the lake treatment field states field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The treatment record contains proposed negative-treatment edges, reviewed separately under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "23cc58443e857d4e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support defects.",
+          "No independent currency or treatment assertion is made by this quote-fidelity row beyond the case header treatment, which is reviewed in the treatment row."
+        ],
+        "residual_risks": [
+          "Quote-fidelity mismatch is left to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d4cfb696fd1bd9d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support defects.",
+          "This row does not add a distinct treatment or live-law claim for lens B to attack."
+        ],
+        "residual_risks": [
+          "Quote-fidelity mismatch is left to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a71c7e465ddeda3f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 24,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/Shipley v. California__f072c6.json treatment.scope_note, treatment.edges, and treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The treatment assertion overstates the record by saying there is no negative treatment. The same disclosed lake treatment record contains 26 proposed negative-treatment edges, including overruled, questioned, and abrogated signals, and its derivation marks a top-cited treatment audit as required. The good_law field may be the current top-line judgment, but the no-negative-treatment scope note is not verifiable from the disclosed evidence.",
+          "proposed_fix": "Do not state 'No negative treatment.' Use a narrower treatment note such as: 'Current field_i_validity is good_law as of 2026-06-30; no point overrides are recorded, but proposed negative-treatment edges require audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake top-line treatment field says good_law, but the scope note's 'No negative treatment' claim is inconsistent with disclosed proposed treatment edges.",
+          "The treatment edges include field_ii values counted from the disclosed record as 17 overruled, 8 questioned, and 1 abrogated.",
+          "Because lane2_top_cited has audit_needed true and an R15 treatment audit marker, the disclosed record does not let a sighted reviewer verify the unconditional no-negative-treatment assertion."
+        ],
+        "residual_risks": [
+          "The proposed edges may prove false positives after audit, but the current disclosed record does not support the stronger scope note."
+        ],
+        "suggested_tightening": "Separate the top-line good_law label from the unaudited negative-edge caveat.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Shipley v. California.json\",\"reviewed\":[{\"assertion_id\":\"1b595dd12d180395\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record is verified, identifies Shipley v. California as a U.S. Supreme Court decision dated 1969-06-23, and lists the official citation as 395 U.S. 818.\",\"For the currency angle, the lake treatment field states field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment record contains proposed negative-treatment edges, reviewed separately under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"23cc58443e857d4e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review quote fidelity or support defects.\",\"No independent currency or treatment assertion is made by this quote-fidelity row beyond the case header treatment, which is reviewed in the treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity mismatch is left to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d4cfb696fd1bd9d1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review quote fidelity or support defects.\",\"This row does not add a distinct treatment or live-law claim for lens B to attack.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity mismatch is left to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a71c7e465ddeda3f\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The treatment assertion overstates the record by saying there is no negative treatment. The same disclosed lake treatment record contains 26 proposed negative-treatment edges, including overruled, questioned, and abrogated signals, and its derivation marks a top-cited treatment audit as required. The good_law field may be the current top-line judgment, but the no-negative-treatment scope note is not verifiable from the disclosed evidence.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not state 'No negative treatment.' Use a narrower treatment note such as: 'Current field_i_validity is good_law as of 2026-06-30; no point overrides are recorded, but proposed negative-treatment edges require audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 24,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Shipley v. California__f072c6.json treatment.scope_note, treatment.edges, and treatment.derivation.lane2_top_cited\"},\"reasons\":[\"The lake top-line treatment field says good_law, but the scope note's 'No negative treatment' claim is inconsistent with disclosed proposed treatment edges.\",\"The treatment edges include field_ii values counted from the disclosed record as 17 overruled, 8 questioned, and 1 abrogated.\",\"Because lane2_top_cited has audit_needed true and an R15 treatment audit marker, the disclosed record does not let a sighted reviewer verify the unconditional no-negative-treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed edges may prove false positives after audit, but the current disclosed record does not support the stronger scope note.\"],\"suggested_tightening\":\"Separate the top-line good_law label from the unaudited negative-edge caveat.\"}],\"notes\":\"Reviewed every inventory row under lens B only; quote-fidelity issues were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T02:28:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:34:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a518649f93"
+    ],
     "group_id": "_overhaul2/lake/cases/Shipley v. California.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cf11968c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Shipley v. California"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 212131,
+      "output": 4603,
+      "source": "codex-events",
+      "total": 216734
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "1b595dd12d180395": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "23cc58443e857d4e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a71c7e465ddeda3f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d4cfb696fd1bd9d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a518649f93",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 95.9
   }
 }

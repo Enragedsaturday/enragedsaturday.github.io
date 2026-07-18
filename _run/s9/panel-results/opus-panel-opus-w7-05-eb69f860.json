@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "1c6f589b83eea359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms official cite '485 U.S. 58' (1988), caption 'Mathews v. United States', opinion/cluster 112012; body recites the SBA/DeShazer entrapment facts and the Seventh Circuit affirmance.",
+          "Payload official/display '485 U.S. 58' matches the lake citations block."
+        ],
+        "residual_risks": [
+          "Parallel cites (108 S. Ct. 883; 99 L. Ed. 2d 54; 1988 U.S. LEXIS 943) are internal to the record; cached text shows only the U.S. official cite, so parallel first pages were not independently cross-checked."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a0ca345ad126335",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that even if the defendant denies one or more elements of the crime, he is entitled to an entrapment instruction whenever there is sufficient evidence from which a reasonable jury could find entrapment.",
+          "locator_note": "pin-62; content-page Rule line vs cached opinion where the holding sits between '*62' and the following '*63' marker",
+          "needs_cl": false,
+          "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead 'Yes.') instead of the ^pin-62 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful.",
+          "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-62 block quote and clear the mismatch flag; rendered quote is verbatim-correct at 485 U.S. 62.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The actual ^pin-62 block quote matches the cached opinion verbatim; the holding 'We hold that even if the defendant denies one or more elements...' falls after the '*62' star marker and before the '*63' marker, confirming the pincite '485 U.S. at 62'.",
+          "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only' although reporter star-pagination (*62/*63) is present in cached text; the slip-only label appears stale."
+        ],
+        "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9c6b5fc08793648",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' is consistent with the disclosed record; all 29 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Mathews.",
+          "No disclosed SCOTUS/binding overruling; the 1988 entrapment-instruction holding is present verbatim in the cached opinion."
+        ],
+        "residual_risks": [
+          "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=6, lane2=23; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+        ],
+        "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T06:50:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-da907f2a73",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w7-05-eb69f860",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w7-05.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mathews v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1c6f589b83eea359": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a0ca345ad126335": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a9c6b5fc08793648": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51caddabbd",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-da907f2a73",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

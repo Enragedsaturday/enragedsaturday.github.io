@@ -1,13 +1,78 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
+    "lens": "A",
+    "notes": "Reviewed only the disclosed workspace files. Lens A refutes the corrupted pinpoint quote; treatment was not substantively adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "8bc9812a32fc6616",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Mullenix v. Luna, U.S. Supreme Court, decided 2015-11-09, year 2015.",
+          "The asserted citation list matches lake.citations.all: 577 U.S. 7; 136 S. Ct. 305; 193 L. Ed. 2d 255; 2015 U.S. LEXIS 7160; 84 U.S.L.W. 4003; 25 Fla. L. Weekly Fed. S 555.",
+          "The content page display of 577 U.S. 7 (2015) and U.S. Supreme Court is consistent with the lake record."
+        ],
+        "residual_risks": [
+          "Lake official/display selection is null, but the existence/citation assertion does not depend on official-selection metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "69f7f923d4c33fb8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "“We have repeatedly told courts . . . not to define clearly\nestablished law at a high level of generality.”",
+          "locator_note": "pin-12; lake pinpoints[0]; content_page.md Rule paragraph; text/Mullenix v. Luna__9ed4bd.txt around the qualified-immunity rule passage.",
+          "needs_cl": false,
+          "problem": "pin-12.quote is not an opinion quotation. It is a harvested chunk of the built page, beginning with the page header and continuing through Background, Issue, and Rule summary text.",
+          "proposed_fix": "Replace pin-12.quote with the exact opinion text supporting the visible rule quote; do not store the rendered page summary as the authority pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote starts with '--- # Mullenix v. Luna' and includes content-page summary prose, which is not in the cached opinion text.",
+          "The actual cached opinion contains the visible al-Kidd quotation, so the page's displayed quote can be supported, but the stored pin-12 quote is corrupt.",
+          "The lake record itself flags pin-12 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The cached opinion is slip-format and the lake pin page is null, so exact official U.S. page landing should be separately verified if the system requires official-pagination certification."
+        ],
+        "suggested_tightening": "Anchor pin-12 to the actual rule passage and keep only character-faithful opinion text in pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0940d26c4b3e244a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised here.",
+          "The treatment payload matches the disclosed lake treatment judgment fields: field_i_validity good_law, as_of_content 2015-11-09, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency, including the content-page 'No negative treatment' sentence, remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mullenix v. Luna.json\",\"reviewed\":[{\"assertion_id\":\"8bc9812a32fc6616\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Mullenix v. Luna, U.S. Supreme Court, decided 2015-11-09, year 2015.\",\"The asserted citation list matches lake.citations.all: 577 U.S. 7; 136 S. Ct. 305; 193 L. Ed. 2d 255; 2015 U.S. LEXIS 7160; 84 U.S.L.W. 4003; 25 Fla. L. Weekly Fed. S 555.\",\"The content page display of 577 U.S. 7 (2015) and U.S. Supreme Court is consistent with the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official/display selection is null, but the existence/citation assertion does not depend on official-selection metadata.\"],\"suggested_tightening\":null},{\"assertion_id\":\"69f7f923d4c33fb8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-12.quote is not an opinion quotation. It is a harvested chunk of the built page, beginning with the page header and continuing through Background, Issue, and Rule summary text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-12.quote with the exact opinion text supporting the visible rule quote; do not store the rendered page summary as the authority pinpoint quote.\",\"evidence_quote\":\"“We have repeatedly told courts . . . not to define clearly\\nestablished law at a high level of generality.”\",\"needs_cl\":false,\"locator_note\":\"pin-12; lake pinpoints[0]; content_page.md Rule paragraph; text/Mullenix v. Luna__9ed4bd.txt around the qualified-immunity rule passage.\"},\"reasons\":[\"The lake pinpoint quote starts with '--- # Mullenix v. Luna' and includes content-page summary prose, which is not in the cached opinion text.\",\"The actual cached opinion contains the visible al-Kidd quotation, so the page's displayed quote can be supported, but the stored pin-12 quote is corrupt.\",\"The lake record itself flags pin-12 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion is slip-format and the lake pin page is null, so exact official U.S. page landing should be separately verified if the system requires official-pagination certification.\"],\"suggested_tightening\":\"Anchor pin-12 to the actual rule passage and keep only character-faithful opinion text in pinpoints[].quote.\"},{\"assertion_id\":\"0940d26c4b3e244a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised here.\",\"The treatment payload matches the disclosed lake treatment judgment fields: field_i_validity good_law, as_of_content 2015-11-09, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency, including the content-page 'No negative treatment' sentence, remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only the disclosed workspace files. Lens A refutes the corrupted pinpoint quote; treatment was not substantively adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:32:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:18:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a44214977c"
+    ],
     "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +81,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-26a2f0f2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Mullenix v. Luna"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 221311,
+      "output": 9099,
+      "source": "codex-events",
+      "total": 230410
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "0940d26c4b3e244a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "69f7f923d4c33fb8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8bc9812a32fc6616": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a44214977c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 176.5
   }
 }

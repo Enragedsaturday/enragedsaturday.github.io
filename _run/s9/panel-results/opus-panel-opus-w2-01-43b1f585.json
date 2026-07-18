@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e494bf740cea40fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header confirms '430 U.S. 387 (1977)', 'BREWER, WARDEN v. WILLIAMS.', 'No. 74-1263.', link /opinion/109624/ — matching official cite 430 U.S. 387 and docket 74-1263.",
+          "official=430 U.S. 387 consistent with citations block and content page."
+        ],
+        "residual_risks": [
+          "Date mismatch: cached opinion header states 'Argued October 4, 1976. Decided March 23, 1977.', but the record/frontmatter carry date_decided=1977-05-16 (flagged as a defect on the treatment assertion via as_of_content).",
+          "Parallel cites (97 S. Ct. 1232; 51 L. Ed. 2d 424; 1977 U.S. LEXIS 64) not independently confirmable from the cached header."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4d4051735ee39605",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the right to counsel granted by the Sixth and Fourteenth Amendments means at least that a person is entitled to the help of a lawyer at or after the time that judicial proceedings have been initiated against him—\"whether by way of formal charge, preliminary hearing, indictment, information, or arraignment.\"",
+          "locator_note": "Cached opinion p.398 (Part II-B; sentence beginning 'Whatever else it may mean, the right to counsel...', before the *399 marker).",
+          "needs_cl": false,
+          "problem": "The stored pinpoint.quote for pin-398 is a corrupt harvest artifact: it captured content-page Background/Issue prose and markdown ('suggesting the child deserved a Christian burial before snow hid the body. Williams then directed the officers to the body. ## Issue ... ## Rule The right had attached:'), not opinion text.",
+          "proposed_fix": "Regenerate pinpoint.quote from the opinion. The displayed content-page quotation at ^pin-398 is verbatim on p.398 and correctly pincited; only the harvested metadata is broken.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Displayed content-page quote at ^pin-398 matches the opinion verbatim (page legitimately starts the quotation at 'the right to counsel', dropping the introductory 'Whatever else it may mean,') and sits on p.398.",
+          "Stored quote string is page prose/markdown (a mis-harvest); builder flag quote_fidelity='mismatch' is correct as to the stored string."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only'; cached text is truncated but includes pp.388-410, covering p.398."
+        ],
+        "suggested_tightening": "Harvest the quoted span between the quotation marks preceding the ^pin anchor.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afd7efbdbf29e9ce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Stored quote 'There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely as — and perhaps more effectively than — if he had formally interrogated him.' matches the opinion word-for-word on p.399 (the only difference is em-dash spacing: page renders ' — ' vs opinion '—').",
+          "Pincite 'Id. at 399' is correct (sentence sits after the *399 marker, before *400).",
+          "The builder's quote_fidelity='mismatch' flag is a spurious em-dash/whitespace-normalization artifact; the quotation is faithful, so the assertion survives the attack."
+        ],
+        "residual_risks": [
+          "pinpoint_status='slip-only'."
+        ],
+        "suggested_tightening": "Normalize em-dash spacing before the exact-match fidelity check to avoid spurious 'mismatch' flags on faithful quotes.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a376e68a26dfa09e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Decided March 23, 1977.",
+          "locator_note": "Cached opinion header line ('Argued October 4, 1976.' / 'Decided March 23, 1977.').",
+          "needs_cl": false,
+          "problem": "as_of_content='1977-05-16' is contradicted by the disclosed cached opinion header, which states the case was decided March 23, 1977. The seeded content date (and the record/frontmatter date_decided=1977-05-16) is the wrong decision date.",
+          "proposed_fix": "Correct as_of_content and date_decided to 1977-03-23 to match the opinion's own 'Decided March 23, 1977.' The good_law validity and scope_note are unaffected.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity='good_law' with varies_by_point=false is correct: the cached opinion supplies the intact Sixth Amendment right-to-counsel/deliberate-elicitation holding, which remains authoritative.",
+          "scope_note ('Sixth Amendment holding intact; the sequel Nix v. Williams concerned the exclusionary remedy (inevitable discovery), not Brewer's right-to-counsel holding') is an accurate, standard characterization and is non-contradicted.",
+          "The validity/scope determination survives, but one framed field (as_of_content) is factually wrong per disclosed evidence, warranting the modification."
+        ],
+        "residual_risks": [
+          "Nix v. Williams treatment is asserted in the scope_note but not disclosed here, so it is not independently confirmable (though non-contradicted)."
+        ],
+        "suggested_tightening": "Validate seeded as_of_content/date_decided against the opinion's own 'Decided' header during S2 build.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:28:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-0785050a06",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e3b522dedc"
+    ],
+    "group_id": "_overhaul2/lake/cases/Brewer v. Williams.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w2-01-43b1f585",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w2-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brewer v. Williams"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4d4051735ee39605": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a376e68a26dfa09e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "afd7efbdbf29e9ce": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e494bf740cea40fc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e21802e7b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0785050a06",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e3b522dedc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

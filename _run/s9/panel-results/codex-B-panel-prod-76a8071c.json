@@ -1,39 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/lee-art-theatre-inc-v-virginia--107755.json",
+    "lens": "B",
+    "notes": "No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached text.",
+    "reviewed": [
+      {
+        "assertion_id": "afb1c34fa4887e90",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/lee-art-theatre-inc-v-virginia--107755__32a031.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies case identity and citations, but it does not verify the currency/live-law status required by Lens B. Treatment is expressly unverified, as-of dates are null, and no progeny/treatment edges are disclosed.",
+          "proposed_fix": "Treat this as an existence-only citation unless and until treatment/progeny is derived; do not imply the authority is live law from this record.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake status is only verified_identity, not verified good law.",
+          "treatment.field_i_validity and treatment.composite_basis are unverified; as_of_content and as_of_treatment are null.",
+          "progeny rows_cached is 0 and treatment.edges is empty, so no disclosed record establishes live-law currency."
+        ],
+        "residual_risks": [
+          "The citation may still be a valid historical case citation; the refutation is limited to live-law currency."
+        ],
+        "suggested_tightening": "Label the authority as identity/citation verified only, with no live-law treatment conclusion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9d073c653da40647",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record: field_i_validity is unverified, as-of fields are null, varies_by_point is false, and the scope note states treatment/progeny was intentionally not derived.",
+          "No disclosed treatment edge, point override, or progeny record contradicts the unverified treatment label."
+        ],
+        "residual_risks": [
+          "This verifies only that the record is marked unverified; it does not establish that Lee Art is good law or currently live law."
+        ],
+        "suggested_tightening": "Keep any page-facing treatment label explicit as unverified and avoid any good-law or weight label until treatment/progeny is populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/lee-art-theatre-inc-v-virginia--107755.json\",\"reviewed\":[{\"assertion_id\":\"afb1c34fa4887e90\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies case identity and citations, but it does not verify the currency/live-law status required by Lens B. Treatment is expressly unverified, as-of dates are null, and no progeny/treatment edges are disclosed.\",\"severity\":\"medium\",\"proposed_fix\":\"Treat this as an existence-only citation unless and until treatment/progeny is derived; do not imply the authority is live law from this record.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/lee-art-theatre-inc-v-virginia--107755__32a031.json treatment/progeny fields\"},\"reasons\":[\"Lake status is only verified_identity, not verified good law.\",\"treatment.field_i_validity and treatment.composite_basis are unverified; as_of_content and as_of_treatment are null.\",\"progeny rows_cached is 0 and treatment.edges is empty, so no disclosed record establishes live-law currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citation may still be a valid historical case citation; the refutation is limited to live-law currency.\"],\"suggested_tightening\":\"Label the authority as identity/citation verified only, with no live-law treatment conclusion.\"},{\"assertion_id\":\"9d073c653da40647\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake record: field_i_validity is unverified, as-of fields are null, varies_by_point is false, and the scope note states treatment/progeny was intentionally not derived.\",\"No disclosed treatment edge, point override, or progeny record contradicts the unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This verifies only that the record is marked unverified; it does not establish that Lee Art is good law or currently live law.\"],\"suggested_tightening\":\"Keep any page-facing treatment label explicit as unverified and avoid any good-law or weight label until treatment/progeny is populated.\"}],\"notes\":\"No content_page.* file was present in the working directory; review is limited to group_inventory.jsonl, the lake record, and cached text.\"}",
   "summary": {
-    "at": "2026-07-10T02:36:48-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:19:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-11463989d9"
+    ],
     "group_id": "_overhaul2/lake/cases/lee-art-theatre-inc-v-virginia--107755.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "lee-art-theatre-inc-v-virginia--107755"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-76a8071c",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-76a8071c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'lee-art-theatre-inc-v-virginia--107755' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record lee-art-theatre-inc-v-virginia--107755"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "lee-art-theatre-inc-v-virginia--107755"
+    ],
     "tokens": {
-      "input": 759,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 759
+      "input": 128174,
+      "output": 4830,
+      "source": "codex-events",
+      "total": 133004
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "9d073c653da40647": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afb1c34fa4887e90": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-11463989d9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 98.3
   }
 }

@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "5bb33466756497a0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Michigan v. DeFillippo, U.S. Supreme Court, decided 1979-06-25.",
+          "The official citation in the lake record is 443 U.S. 31, with parallel citations 99 S. Ct. 2627 and 61 L. Ed. 2d 343, matching the inventory and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9094fae5afdc4bc4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed.",
+          "locator_note": "content_page.md uses ^pin-40 for the quoted rule; text/Michigan v. DeFillippo__c1d47f.txt contains that sentence at the *40 passage, while lake pin-40 stores a markdown excerpt ending '## Rule No.'",
+          "needs_cl": false,
+          "problem": "The pin-40 authority quote in the lake record is not the opinion passage tied to the page's quoted rule; it is a generated markdown/page excerpt and the lake itself labels quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-40.quote with the actual page-40 opinion sentence quoted on the content page and set the pinpoint metadata to page/star marker 40.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The displayed quote itself is present in the cached opinion text at the *40 passage.",
+          "The disclosed lake pinpoint for pin-40 has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch."
+        ],
+        "residual_risks": [
+          "Do not delete the content-page quoted sentence; the defect is the stored pinpoint quote/metadata."
+        ],
+        "suggested_tightening": "Regenerate pin-40 from the opinion text so the authority record and content-page quote point to the same passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2a7570a0be9bc4f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1979-06-25, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment and currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Michigan v. DeFillippo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"5bb33466756497a0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Michigan v. DeFillippo, U.S. Supreme Court, decided 1979-06-25.\",\n        \"The official citation in the lake record is 443 U.S. 31, with parallel citations 99 S. Ct. 2627 and 61 L. Ed. 2d 343, matching the inventory and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9094fae5afdc4bc4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-40 authority quote in the lake record is not the opinion passage tied to the page's quoted rule; it is a generated markdown/page excerpt and the lake itself labels quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-40.quote with the actual page-40 opinion sentence quoted on the content page and set the pinpoint metadata to page/star marker 40.\",\n        \"evidence_quote\": \"The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md uses ^pin-40 for the quoted rule; text/Michigan v. DeFillippo__c1d47f.txt contains that sentence at the *40 passage, while lake pin-40 stores a markdown excerpt ending '## Rule No.'\"\n      },\n      \"reasons\": [\n        \"The displayed quote itself is present in the cached opinion text at the *40 passage.\",\n        \"The disclosed lake pinpoint for pin-40 has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Do not delete the content-page quoted sentence; the defect is the stored pinpoint quote/metadata.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-40 from the opinion text so the authority record and content-page quote point to the same passage.\"\n    },\n    {\n      \"assertion_id\": \"2a7570a0be9bc4f9\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 1979-06-25, as_of_treatment 2026-06-30, and varies_by_point false.\",\n        \"Treatment and currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not substantively audited under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:30:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:10:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-8f88a838ec"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2887e5eb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. DeFillippo"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 232736,
+      "output": 7487,
+      "source": "codex-events",
+      "total": 240223
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "2a7570a0be9bc4f9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5bb33466756497a0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9094fae5afdc4bc4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f88a838ec",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 145.3
   }
 }

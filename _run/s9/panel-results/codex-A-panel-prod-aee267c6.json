@@ -1,13 +1,121 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Jackson.json",
+    "lens": "A",
+    "notes": "Treatment/currency was only field-matched to the disclosed lake record; no Lens B finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "5788bf01ae9acf74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. A.C. Jackson, U.S. Court of Appeals, Eighth Circuit, decided 2015-05-05.",
+          "The payload's official/display citation 784 F.3d 1227 and vendor-neutral cites match lake.citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2ad63e6ac1a9f32",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "deputy’s knowledge",
+          "locator_note": "pin-1232; content_page.md line 57; text/United States v. Jackson__d2fce9.txt lines 211-215; lake pin-1232 is marked quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is the right passage, but it is not character-faithful: the opinion text uses a curly apostrophe in deputy’s while the payload/content quote uses deputy's.",
+          "proposed_fix": "Replace deputy's knowledge with deputy’s knowledge in pin-1232/content quote, preserving the rest of the sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion text at lines 211-215.",
+          "The only identified character defect is the apostrophe in deputy’s/deputy's, so the quote survives with a typographic correction."
+        ],
+        "residual_risks": [
+          "The disclosed slip text has no reporter page marker, so this verdict addresses quote fidelity rather than independent reporter pagination."
+        ],
+        "suggested_tightening": "Regenerate quote pins from the cached opinion text with typographic punctuation preserved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d69b6317e061f7bf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Yet, this exclusionary rule does not apply “when an",
+          "locator_note": "pin-1231; lake position is null and quote_fidelity=mismatch; the payload begins with page/frontmatter material rather than opinion text.",
+          "needs_cl": false,
+          "problem": "pin-1231 is a corrupted quote harvest from the built page, not a verbatim passage from the opinion text.",
+          "proposed_fix": "Replace pin-1231 with the actual quoted rule passage from text lines 165-167 or remove the pin until it can be regenerated from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with '--- # United States v. Jackson' and includes Background/Issue/Rule material from content_page.md, not the opinion text.",
+          "The actual opinion passage for the Leon rule appears at text lines 165-167, and the lake record itself marks pin-1231 as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Do not allow page-body harvests to populate opinion pinpoints; require a validated text position for quote pins.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d98e65696e8b9ccf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase appears in the cached opinion text at lines 147-149.",
+          "The lake pinpoint for pin-1232a records the same quote, marks quote_fidelity as matched, and includes a validated fragment/position."
+        ],
+        "residual_risks": [
+          "This verdict is limited to quote fidelity; the phrase appears in the defendant-argument/Leon-standard discussion, not as a standalone new factual finding."
+        ],
+        "suggested_tightening": "For support/pincite review, separately verify that the page's Id. at 1232 link is intended to anchor this legal-standard phrase rather than the final holding sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9133cd5b42a994d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload's field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point match lake.treatment.",
+          "No treatment/currency merits finding is raised under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Jackson.json\",\"reviewed\":[{\"assertion_id\":\"5788bf01ae9acf74\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. A.C. Jackson, U.S. Court of Appeals, Eighth Circuit, decided 2015-05-05.\",\"The payload's official/display citation 784 F.3d 1227 and vendor-neutral cites match lake.citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c2ad63e6ac1a9f32\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is the right passage, but it is not character-faithful: the opinion text uses a curly apostrophe in deputy’s while the payload/content quote uses deputy's.\",\"severity\":\"low\",\"proposed_fix\":\"Replace deputy's knowledge with deputy’s knowledge in pin-1232/content quote, preserving the rest of the sentence.\",\"evidence_quote\":\"deputy’s knowledge\",\"needs_cl\":false,\"locator_note\":\"pin-1232; content_page.md line 57; text/United States v. Jackson__d2fce9.txt lines 211-215; lake pin-1232 is marked quote_fidelity=mismatch.\"},\"reasons\":[\"The sentence appears in the cached opinion text at lines 211-215.\",\"The only identified character defect is the apostrophe in deputy’s/deputy's, so the quote survives with a typographic correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed slip text has no reporter page marker, so this verdict addresses quote fidelity rather than independent reporter pagination.\"],\"suggested_tightening\":\"Regenerate quote pins from the cached opinion text with typographic punctuation preserved.\"},{\"assertion_id\":\"d69b6317e061f7bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1231 is a corrupted quote harvest from the built page, not a verbatim passage from the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1231 with the actual quoted rule passage from text lines 165-167 or remove the pin until it can be regenerated from the opinion text.\",\"evidence_quote\":\"Yet, this exclusionary rule does not apply “when an\",\"needs_cl\":false,\"locator_note\":\"pin-1231; lake position is null and quote_fidelity=mismatch; the payload begins with page/frontmatter material rather than opinion text.\"},\"reasons\":[\"The payload begins with '--- # United States v. Jackson' and includes Background/Issue/Rule material from content_page.md, not the opinion text.\",\"The actual opinion passage for the Leon rule appears at text lines 165-167, and the lake record itself marks pin-1231 as quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Do not allow page-body harvests to populate opinion pinpoints; require a validated text position for quote pins.\"},{\"assertion_id\":\"d98e65696e8b9ccf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase appears in the cached opinion text at lines 147-149.\",\"The lake pinpoint for pin-1232a records the same quote, marks quote_fidelity as matched, and includes a validated fragment/position.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This verdict is limited to quote fidelity; the phrase appears in the defendant-argument/Leon-standard discussion, not as a standalone new factual finding.\"],\"suggested_tightening\":\"For support/pincite review, separately verify that the page's Id. at 1232 link is intended to anchor this legal-standard phrase rather than the final holding sentence.\"},{\"assertion_id\":\"9133cd5b42a994d1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload's field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point match lake.treatment.\",\"No treatment/currency merits finding is raised under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency was only field-matched to the disclosed lake record; no Lens B finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T02:31:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:59:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6587e96e7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-09b3ad6fe0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c3f066e726",
+      "F-S9-PR-eee1e771ca"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Jackson.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +124,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-aee267c6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Jackson"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 351273,
+      "output": 15018,
+      "source": "codex-events",
+      "total": 366291
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "5788bf01ae9acf74": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9133cd5b42a994d1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2ad63e6ac1a9f32": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d69b6317e061f7bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d98e65696e8b9ccf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6587e96e7",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c3f066e726",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-eee1e771ca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-09b3ad6fe0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 295.5
   }
 }

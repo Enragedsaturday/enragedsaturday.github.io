@@ -1,38 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ruckman.json",
+    "lens": "B",
+    "notes": "Reviewed both group_inventory.jsonl rows exactly once. Lens B raises no support or quote-fidelity finding.",
+    "reviewed": [
+      {
+        "assertion_id": "73ed367169d7d657",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/United States v. Ruckman__023d96.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies citation identity, but it does not verify the currency/live-law status required by lens B for an existence assertion. Treatment is expressly unverified and progeny was not derived.",
+          "proposed_fix": "Do not treat the authority as verified live law from this record; require completed treatment/progeny/citator data or mark current-law status as unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record has expected_citation_found true and selects 806 F.2d 1471, so bare citation existence is supported.",
+          "For current-law existence, the same lake record says field_i_validity is unverified, as_of_treatment is null, edges is empty, and progeny rows_cached is 0."
+        ],
+        "residual_risks": [
+          "A completed citator/progeny record could show the case is still live, limited, overruled, or otherwise affected; the disclosed record cannot decide that."
+        ],
+        "suggested_tightening": "Separate verified case identity from unverified live-law currency in the assertion model.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "85e126267ba2bebe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.",
+          "The content page also renders treatment as Unverified and states that subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "No disclosed treatment edges or progeny enumeration exist, so there is no affirmative good-law verification."
+        ],
+        "suggested_tightening": "Qualify the visible binding-weight label as hierarchy-only or subject to unverified treatment until promotion completes.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ruckman.json\",\"reviewed\":[{\"assertion_id\":\"73ed367169d7d657\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies citation identity, but it does not verify the currency/live-law status required by lens B for an existence assertion. Treatment is expressly unverified and progeny was not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the authority as verified live law from this record; require completed treatment/progeny/citator data or mark current-law status as unverified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Ruckman__023d96.json treatment/progeny fields\"},\"reasons\":[\"The lake record has expected_citation_found true and selects 806 F.2d 1471, so bare citation existence is supported.\",\"For current-law existence, the same lake record says field_i_validity is unverified, as_of_treatment is null, edges is empty, and progeny rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed citator/progeny record could show the case is still live, limited, overruled, or otherwise affected; the disclosed record cannot decide that.\"],\"suggested_tightening\":\"Separate verified case identity from unverified live-law currency in the assertion model.\"},{\"assertion_id\":\"85e126267ba2bebe\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.\",\"The content page also renders treatment as Unverified and states that subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No disclosed treatment edges or progeny enumeration exist, so there is no affirmative good-law verification.\"],\"suggested_tightening\":\"Qualify the visible binding-weight label as hierarchy-only or subject to unverified treatment until promotion completes.\"}],\"notes\":\"Reviewed both group_inventory.jsonl rows exactly once. Lens B raises no support or quote-fidelity finding.\"}",
   "summary": {
-    "at": "2026-07-10T02:33:55-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T03:05:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-fca077b08a"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Ruckman.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "United States v. Ruckman"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-e08d9251",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e08d9251.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Ruckman' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Ruckman"
+    ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 206360,
+      "output": 5303,
+      "source": "codex-events",
+      "total": 211663
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "73ed367169d7d657": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "85e126267ba2bebe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fca077b08a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 109.9
   }
 }

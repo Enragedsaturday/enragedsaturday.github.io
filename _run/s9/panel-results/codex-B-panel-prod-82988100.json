@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New York v. Burger.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "7d1674d7db68ad9f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies New York v. Burger as a U.S. Supreme Court decision dated 1987-06-19.",
+          "The official citation field selects 482 U.S. 691, matching the page display and inventory payload.",
+          "The treatment field marks the case good_law, so the disclosed record does not show the cited authority as dead law."
+        ],
+        "residual_risks": [
+          "The treatment derivation has audit_needed flags for proposed negative events, but the disclosed judgment field still marks the authority good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2f03751bf2d4f73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B, so I do not raise a support or quote-fidelity finding.",
+          "The current-law statement embedded in the harvested text, Treatment: good as of 2026-06-30, matches lake.treatment.field_i_validity and as_of_treatment."
+        ],
+        "residual_risks": [
+          "Lens A should handle the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f88a9a240883f6f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B, so I do not raise a support or quote-fidelity finding.",
+          "This pinpoint assertion does not add a separate current-law or treatment claim that conflicts with the lake record."
+        ],
+        "residual_risks": [
+          "Lens A should handle the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c8f5d05be066f4e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.edges; lake.treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": false,
+          "problem": "The good_law treatment call survives, but the page's absolute 'No negative treatment' wording is too strong because the lake record contains proposed negative-treatment edges and audit_needed derivation flags.",
+          "proposed_fix": "Keep Status: good and Binding - SCOTUS, but change 'No negative treatment' to 'No audited adverse treatment in this record; proposed negative-treatment signals are marked as mentioned and require audit.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law and scope_note says the three-part test is good law.",
+          "point_overrides is empty and all listed treatment edges have point null.",
+          "However, lane1_negative and lane2_top_cited both show audit_needed true, and the edges include proposed entries labeled overruled, abrogated, questioned, criticized, or superseded_by_statute while also marked field_iii mentioned."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full text for the cited progeny cases, so the proposed negative events cannot be finally audited from these files alone."
+        ],
+        "suggested_tightening": "Qualify the treatment section to distinguish the audited good_law judgment from unresolved proposed citator signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/New York v. Burger.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7d1674d7db68ad9f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies New York v. Burger as a U.S. Supreme Court decision dated 1987-06-19.\",\n        \"The official citation field selects 482 U.S. 691, matching the page display and inventory payload.\",\n        \"The treatment field marks the case good_law, so the disclosed record does not show the cited authority as dead law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation has audit_needed flags for proposed negative events, but the disclosed judgment field still marks the authority good_law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a2f03751bf2d4f73\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B, so I do not raise a support or quote-fidelity finding.\",\n        \"The current-law statement embedded in the harvested text, Treatment: good as of 2026-06-30, matches lake.treatment.field_i_validity and as_of_treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle the disclosed quote_fidelity mismatch.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f88a9a240883f6f6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B, so I do not raise a support or quote-fidelity finding.\",\n        \"This pinpoint assertion does not add a separate current-law or treatment claim that conflicts with the lake record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle the disclosed quote_fidelity mismatch.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0c8f5d05be066f4e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law treatment call survives, but the page's absolute 'No negative treatment' wording is too strong because the lake record contains proposed negative-treatment edges and audit_needed derivation flags.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep Status: good and Binding - SCOTUS, but change 'No negative treatment' to 'No audited adverse treatment in this record; proposed negative-treatment signals are marked as mentioned and require audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake.treatment.edges; lake.treatment.derivation.lane1_negative and lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"lake.treatment.field_i_validity is good_law and scope_note says the three-part test is good law.\",\n        \"point_overrides is empty and all listed treatment edges have point null.\",\n        \"However, lane1_negative and lane2_top_cited both show audit_needed true, and the edges include proposed entries labeled overruled, abrogated, questioned, criticized, or superseded_by_statute while also marked field_iii mentioned.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not include full text for the cited progeny cases, so the proposed negative events cannot be finally audited from these files alone.\"\n      ],\n      \"suggested_tightening\": \"Qualify the treatment section to distinguish the audited good_law judgment from unresolved proposed citator signals.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:32:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:21:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-22441b81cd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d3f2fd097a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2beb8a4fd6"
+    ],
     "group_id": "_overhaul2/lake/cases/New York v. Burger.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-82988100.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "New York v. Burger"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 307989,
+      "output": 6469,
+      "source": "codex-events",
+      "total": 314458
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "0c8f5d05be066f4e": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7d1674d7db68ad9f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2f03751bf2d4f73": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f88a9a240883f6f6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-22441b81cd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d3f2fd097a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2beb8a4fd6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 142.9
   }
 }

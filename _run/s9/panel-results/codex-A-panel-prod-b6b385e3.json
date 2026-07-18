@@ -1,39 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/united-states-v-cunningham--166076.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "a154d90a4a4084d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id united-states-v-cunningham--166076.",
+          "The lake identity identifies United States v. Cunningham, U.S. Court of Appeals, 10th Cir., year 2005.",
+          "The lake citations field selects 413 F.3d 1199 as the official/display citation and also lists 2005 U.S. App. LEXIS 13145 and 2005 WL 1541074 as vendor-neutral citations, matching the assertion payload."
+        ],
+        "residual_risks": [
+          "The lake record has date_decided null, so only the year 2005 is verifiable from the identity field; the cached opinion text separately shows July 1, 2005."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b89969498023804",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A's support and quote-fidelity charter, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment stub: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No good-law conclusion is verified by this lens because the disclosed lake record labels treatment as unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/united-states-v-cunningham--166076.json\",\"reviewed\":[{\"assertion_id\":\"a154d90a4a4084d0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for record_id united-states-v-cunningham--166076.\",\"The lake identity identifies United States v. Cunningham, U.S. Court of Appeals, 10th Cir., year 2005.\",\"The lake citations field selects 413 F.3d 1199 as the official/display citation and also lists 2005 U.S. App. LEXIS 13145 and 2005 WL 1541074 as vendor-neutral citations, matching the assertion payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has date_decided null, so only the year 2005 is verifiable from the identity field; the cached opinion text separately shows July 1, 2005.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0b89969498023804\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A's support and quote-fidelity charter, so no treatment finding is raised.\",\"The treatment payload matches the lake treatment stub: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law conclusion is verified by this lens because the disclosed lake record labels treatment as unverified.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T02:37:47-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T03:22:32-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/united-states-v-cunningham--166076.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "united-states-v-cunningham--166076"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b6b385e3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b6b385e3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
-      "case 'united-states-v-cunningham--166076' has no lead_opinion_id (text undisclosed)",
       "no content page for lake record united-states-v-cunningham--166076"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "united-states-v-cunningham--166076"
+    ],
     "tokens": {
-      "input": 830,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 830
+      "input": 59221,
+      "output": 1626,
+      "source": "codex-events",
+      "total": 60847
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0b89969498023804": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a154d90a4a4084d0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 36.6
   }
 }

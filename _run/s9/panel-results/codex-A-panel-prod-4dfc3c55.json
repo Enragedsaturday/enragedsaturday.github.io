@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Heien v. North Carolina.md",
+    "lens": "A",
+    "notes": "Inventory contained no quote_fidelity, pincite, or black_letter assertion rows. Separately, the lake pinpoints for pin-60 and pin-60a are marked quote_fidelity mismatch and slip-only, but no assertion_id was provided for those page quotes/pins.",
+    "reviewed": [
+      {
+        "assertion_id": "e5826cfc3acb346f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record names Heien v. North Carolina, court U.S. Supreme Court, decided 2014-12-15, year 2014.",
+          "Inventory citation fields match the lake citation record: official/display citation is null, vendor-neutral cite is 2014 U.S. LEXIS 8306, and listed parallel cites match the lake parallel citations."
+        ],
+        "residual_risks": [
+          "Lake provenance warns that identity_method is pending and expected_citation_found is false; I did not use outside sources to cure that."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d2e2f9274e976228",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly concerns a traffic stop: an officer stopped a vehicle for a faulty brake light and the Court decided whether that mistake could support reasonable suspicion.",
+          "The role as a key refinement is supported by the SCOTUS identity, the holding extending reasonable-suspicion analysis to objectively reasonable mistakes of law, and lake progeny data showing 280 indexed citing opinions and citation_count 620."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the Traffic Stops home page taxonomy, so the exact corpus label convention cannot be independently audited."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed5dee1566c311f3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The question presented is whether such a mistake of law can nonetheless give rise to the reasonable suspicion necessary to uphold the seizure under the Fourth Amendment. We hold that it can.",
+          "locator_note": "content_page.md frontmatter holding field",
+          "needs_cl": false,
+          "problem": "The proposition is directionally supported, but the wording is slightly too categorical and the frontmatter sentence is visibly truncated with 'a…'. Heien holds that a reasonable mistake of law can supply reasonable suspicion for the stop, not that every stop 'is valid' in all respects merely because it is based on such a mistake.",
+          "proposed_fix": "Replace with: 'An objectively reasonable mistake of law, like a reasonable mistake of fact, can supply the reasonable suspicion necessary to justify a traffic stop under the Fourth Amendment.'",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The majority states that a reasonable mistake of law can give rise to reasonable suspicion and that the officer's reasonable brake-light-law mistake made the stop lawful in this case.",
+          "The opinion limits the rule to objectively reasonable mistakes: 'The Fourth Amendment tolerates only reasonable mistakes, and those mistakes-whether of fact or of law-must be objectively reasonable.'"
+        ],
+        "residual_risks": [
+          "The inventory payload is truncated, so only the visible holding text could be reviewed."
+        ],
+        "suggested_tightening": "Use 'can supply reasonable suspicion necessary to justify a traffic stop' instead of 'is valid if based on'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ec133898cea8398",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; I recorded only whether the payload matches disclosed lake fields.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2014-12-15, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Heien v. North Carolina, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "I did not audit whether good_law is correct; Lens B owns treatment/currency.",
+          "Lake treatment derivation contains audit_needed markers and proposed negative edges, but I raise no treatment finding under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4bcfae6828145d8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, but the authority-weight label is supported by the lake identity court_level scotus and court U.S. Supreme Court.",
+          "A U.S. Supreme Court decision is accurately labeled Binding — SCOTUS for this federal search-and-seizure corpus."
+        ],
+        "residual_risks": [
+          "I did not audit any downstream treatment consequences of the weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Heien v. North Carolina.md\",\"reviewed\":[{\"assertion_id\":\"e5826cfc3acb346f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record names Heien v. North Carolina, court U.S. Supreme Court, decided 2014-12-15, year 2014.\",\"Inventory citation fields match the lake citation record: official/display citation is null, vendor-neutral cite is 2014 U.S. LEXIS 8306, and listed parallel cites match the lake parallel citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake provenance warns that identity_method is pending and expected_citation_found is false; I did not use outside sources to cure that.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d2e2f9274e976228\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion directly concerns a traffic stop: an officer stopped a vehicle for a faulty brake light and the Court decided whether that mistake could support reasonable suspicion.\",\"The role as a key refinement is supported by the SCOTUS identity, the holding extending reasonable-suspicion analysis to objectively reasonable mistakes of law, and lake progeny data showing 280 indexed citing opinions and citation_count 620.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the Traffic Stops home page taxonomy, so the exact corpus label convention cannot be independently audited.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ed5dee1566c311f3\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The proposition is directionally supported, but the wording is slightly too categorical and the frontmatter sentence is visibly truncated with 'a…'. Heien holds that a reasonable mistake of law can supply reasonable suspicion for the stop, not that every stop 'is valid' in all respects merely because it is based on such a mistake.\",\"severity\":\"low\",\"proposed_fix\":\"Replace with: 'An objectively reasonable mistake of law, like a reasonable mistake of fact, can supply the reasonable suspicion necessary to justify a traffic stop under the Fourth Amendment.'\",\"evidence_quote\":\"The question presented is whether such a mistake of law can nonetheless give rise to the reasonable suspicion necessary to uphold the seizure under the Fourth Amendment. We hold that it can.\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter holding field\"},\"reasons\":[\"The majority states that a reasonable mistake of law can give rise to reasonable suspicion and that the officer's reasonable brake-light-law mistake made the stop lawful in this case.\",\"The opinion limits the rule to objectively reasonable mistakes: 'The Fourth Amendment tolerates only reasonable mistakes, and those mistakes-whether of fact or of law-must be objectively reasonable.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The inventory payload is truncated, so only the visible holding text could be reviewed.\"],\"suggested_tightening\":\"Use 'can supply reasonable suspicion necessary to justify a traffic stop' instead of 'is valid if based on'.\"},{\"assertion_id\":\"2ec133898cea8398\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; I recorded only whether the payload matches disclosed lake fields.\",\"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2014-12-15, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Heien v. North Carolina, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"I did not audit whether good_law is correct; Lens B owns treatment/currency.\",\"Lake treatment derivation contains audit_needed markers and proposed negative edges, but I raise no treatment finding under Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4bcfae6828145d8a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, but the authority-weight label is supported by the lake identity court_level scotus and court U.S. Supreme Court.\",\"A U.S. Supreme Court decision is accurately labeled Binding — SCOTUS for this federal search-and-seizure corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"I did not audit any downstream treatment consequences of the weight label.\"],\"suggested_tightening\":null}],\"notes\":\"Inventory contained no quote_fidelity, pincite, or black_letter assertion rows. Separately, the lake pinpoints for pin-60 and pin-60a are marked quote_fidelity mismatch and slip-only, but no assertion_id was provided for those page quotes/pins.\"}",
   "summary": {
-    "at": "2026-07-10T02:44:43-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T04:10:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b46923cdfc"
+    ],
     "group_id": "content/cases/Heien v. North Carolina.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4dfc3c55.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Heien v. North Carolina"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 223906,
+      "output": 5860,
+      "source": "codex-events",
+      "total": 229766
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "2ec133898cea8398": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4bcfae6828145d8a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2e2f9274e976228": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5826cfc3acb346f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed5dee1566c311f3": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b46923cdfc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 115.8
   }
 }

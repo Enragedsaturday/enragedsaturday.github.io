@@ -1,0 +1,180 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "59edb912afa15736",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header '427 U.S. 463 (1976)', Blackmun, No. 74-1646, Decided June 29 1976; star-pagination *464 through *484 (U.S. reporter) confirms the case begins at 463.",
+          "Official cite 427 U.S. 463 matches identity; display/official coherent."
+        ],
+        "residual_risks": [
+          "Content-page frontmatter docket is empty while the opinion caption shows No. 74-1646 (metadata gap, not a citation defect)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1035ce1de370f3de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload 'quote' is an extraction-window overshoot spanning the Issue->'## Rule' markdown header (captures lead-in prose, not the quoted proposition) — which is why the automated compare flagged mismatch.",
+          "The ACTUAL page quote at ^pin-473 ('[P]etitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing.') is verbatim in the opinion at p.473: 'Similarly, in this case, petitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing.'"
+        ],
+        "residual_risks": [
+          "The extractor's captured span is unusable for downstream re-verification (grabbed preceding prose + section header rather than the quoted sentence)."
+        ],
+        "suggested_tightening": "Re-anchor the extraction window to the quoted span, not the preceding lead-in prose/header.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "be9349f42212c1c3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-477 ('we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that \"[n]o person . . . shall be compelled in any criminal case to be a witness against himself.\"') matches the opinion verbatim ('Accordingly, we hold that the search of an individual's office for business records...').",
+          "Pincite 477 correct: the sentence sits between star markers *477 and *478. Mismatch flag is a false positive (curly-quote/apostrophe/ellipsis normalization)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3a74c101496e14b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Page quote at ^pin-480 ('the challenged phrase must be read as authorizing only the search for and seizure of evidence relating to \"the crime of false pretenses with respect to Lot 13T.\"') matches the opinion verbatim.",
+          "Pincite 480 correct: the passage sits between *480 and *481. Mismatch flag is a false positive (internal quotation-mark normalization)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "086341120640a967",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The currency claim (good_law as of 2026-06-30) can be neither confirmed nor refuted from the single disclosed 1976 opinion — no progeny/citing-references are inlined; the opinion text speaks only to the 1976 decision.",
+          "field self-discloses composite_basis=migration-seed with scope_note 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; no disclosed negative treatment, so no fabricated defect and no fabricated clean-bill."
+        ],
+        "residual_risks": [
+          "Currency is unverified from disclosed evidence; S2 re-derivation may downgrade the seeded good_law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-11T05:14:26-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5e35503662",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8ad3b07d2e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8409a25fe6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-375ea5c2af",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Andresen v. Maryland.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w1-02-1131c639",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w1-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Andresen v. Maryland"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "086341120640a967": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "1035ce1de370f3de": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59edb912afa15736": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "be9349f42212c1c3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c3a74c101496e14b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e35503662",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8ad3b07d2e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8409a25fe6",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-375ea5c2af",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

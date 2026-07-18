@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Thompson v. Louisiana.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl using only the disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "01b665dd65190947",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Thompson v. Louisiana, U.S. Supreme Court, decided 1984-11-26, year 1984.",
+          "Lake citations match the asserted official and parallel citations: 469 U.S. 17, 105 S. Ct. 409, 83 L. Ed. 2d 246, and 1984 U.S. LEXIS 161."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00e61c43be6cc9c6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A 2-hour general search remains a significant intrusion on petitioner’s privacy and therefore may only be conducted subject to the constraints — including the warrant requirement — of the Fourth Amendment.",
+          "locator_note": "pin-21a; disclosed text places this passage on page *21 before the *22 marker.",
+          "needs_cl": false,
+          "problem": "The quote is not character-faithful: the opinion text uses petitioner’s with a curly apostrophe, while the page/lake quote uses petitioner's.",
+          "proposed_fix": "Change petitioner's to petitioner’s in the quoted sentence, or stop presenting the sentence as a character-exact quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the same sentence but with petitioner’s, not petitioner's.",
+          "The lake pinpoint itself flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Set the pinpoint page/star metadata to page 21 if this corpus expects reporter-page pin data.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46079641799ca423",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we held that “the ‘murder scene exception’... is inconsistent with the Fourth and Fourteenth Amendments — that the warrantless search of Mincey’s apartment was not constitutionally permissible simply because a homicide had recently occurred there.”",
+          "locator_note": "pin-21; lake page/star fields are null, and the stored quote includes content-page headings rather than the cached opinion passage.",
+          "needs_cl": false,
+          "problem": "The stored pin quote is not an opinion quote; it is harvested content-page prose spanning Background, Issue, and Rule headings.",
+          "proposed_fix": "Replace pin-21 with the actual page-21 opinion passage supporting the no murder-scene exception rule, and remove the Background/Issue/Rule markdown text from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin quote contains markdown headings such as ## Issue and ## Rule, which are not in the opinion text.",
+          "The cached opinion page *21 contains the Mincey discussion and murder-scene-exception language, not the harvested content-page prose.",
+          "The lake pinpoint flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "After reharvesting, preserve the actual typography from the opinion text, including curly quotation marks and Mincey’s.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c0bb64aff1c61a31",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the assertion match the lake record: good_law, as_of_content 1985-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency are outside Lens A, so no substantive treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review is left to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Thompson v. Louisiana.json\",\"reviewed\":[{\"assertion_id\":\"01b665dd65190947\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms Thompson v. Louisiana, U.S. Supreme Court, decided 1984-11-26, year 1984.\",\"Lake citations match the asserted official and parallel citations: 469 U.S. 17, 105 S. Ct. 409, 83 L. Ed. 2d 246, and 1984 U.S. LEXIS 161.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"00e61c43be6cc9c6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is not character-faithful: the opinion text uses petitioner’s with a curly apostrophe, while the page/lake quote uses petitioner's.\",\"severity\":\"low\",\"proposed_fix\":\"Change petitioner's to petitioner’s in the quoted sentence, or stop presenting the sentence as a character-exact quotation.\",\"evidence_quote\":\"A 2-hour general search remains a significant intrusion on petitioner’s privacy and therefore may only be conducted subject to the constraints — including the warrant requirement — of the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"pin-21a; disclosed text places this passage on page *21 before the *22 marker.\"},\"reasons\":[\"The cached opinion text contains the same sentence but with petitioner’s, not petitioner's.\",\"The lake pinpoint itself flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Set the pinpoint page/star metadata to page 21 if this corpus expects reporter-page pin data.\"},{\"assertion_id\":\"46079641799ca423\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin quote is not an opinion quote; it is harvested content-page prose spanning Background, Issue, and Rule headings.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-21 with the actual page-21 opinion passage supporting the no murder-scene exception rule, and remove the Background/Issue/Rule markdown text from the pinpoint quote.\",\"evidence_quote\":\"we held that “the ‘murder scene exception’... is inconsistent with the Fourth and Fourteenth Amendments — that the warrantless search of Mincey’s apartment was not constitutionally permissible simply because a homicide had recently occurred there.”\",\"needs_cl\":false,\"locator_note\":\"pin-21; lake page/star fields are null, and the stored quote includes content-page headings rather than the cached opinion passage.\"},\"reasons\":[\"The asserted pin quote contains markdown headings such as ## Issue and ## Rule, which are not in the opinion text.\",\"The cached opinion page *21 contains the Mincey discussion and murder-scene-exception language, not the harvested content-page prose.\",\"The lake pinpoint flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"After reharvesting, preserve the actual typography from the opinion text, including curly quotation marks and Mincey’s.\"},{\"assertion_id\":\"c0bb64aff1c61a31\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in the assertion match the lake record: good_law, as_of_content 1985-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment and currency are outside Lens A, so no substantive treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currency review is left to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl using only the disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-10T02:29:41-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T02:43:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8d31e785b0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-dc1faa6e3c",
+      "F-S9-PR-5b041c15f4"
+    ],
     "group_id": "_overhaul2/lake/cases/Thompson v. Louisiana.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-efe0ef72.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Thompson v. Louisiana"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 284200,
+      "output": 8961,
+      "source": "codex-events",
+      "total": 293161
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.8
+    "verdict_map": {
+      "00e61c43be6cc9c6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "01b665dd65190947": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46079641799ca423": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c0bb64aff1c61a31": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dc1faa6e3c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5b041c15f4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8d31e785b0",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 176.9
   }
 }
