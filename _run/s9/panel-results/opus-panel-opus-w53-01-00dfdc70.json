@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "f30c7bcb57408bbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Official cite 447 U.S. 264, parallels 100 S. Ct. 2183 and 65 L. Ed. 2d 115, and vendor-neutral 1980 U.S. LEXIS 111 all appear in the lake citations[] for cluster 110300.",
+          "Court scotus, year 1980, title all match the lake identity; opinion is the 447 U.S. 264 Massiah-line decision."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f92860ea49651d7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "holding: \"By intentionally creating a situation likely to induce the indicted defendant to make incriminating statements, the government (through…\"",
+          "locator_note": "front matter holding: field",
+          "needs_cl": false,
+          "problem": "The stored holding field is truncated mid-clause and ends with an ellipsis: '...the government (through…'. This is not a display/length cap — Havens and Janis have longer holdings reproduced in full — so the holding metadata is genuinely incomplete.",
+          "proposed_fix": "Complete the holding field, e.g. '...the government (through its paid informant Nichols) violated Henry's Sixth Amendment right to counsel.' matching the opinion's holding at 447 U.S. 274.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The visible portion is supported by the opinion holding at *274: 'By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry's Sixth Amendment right to counsel.'",
+          "Defect is completeness, not accuracy: the holding is cut off mid-sentence in both the content page and the inventory payload."
+        ],
+        "residual_risks": [
+          "The elided tail of the holding field cannot be verified verbatim from disclosed evidence, though the opinion supports the evident intended completion."
+        ],
+        "suggested_tightening": "Restore the truncated holding front-matter field to a complete sentence anchored to 447 U.S. 274.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eafae8f97f7310eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home [[Sixth Amendment Right to Counsel]] is topically correct — Henry is a Massiah-line deliberate-elicitation/right-to-counsel progeny per the disclosed opinion — and matches the page's own 'Appears on' render.",
+          "Role 'Key — Progeny / Refinement' is well supported."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05c44cd47b33506d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is not contradicted by any confirmed negative treatment in the disclosed record.",
+          "scope_note (cabined by Kuhlmann v. Wilson's passive 'listening post' line; Henry itself remains good law) is doctrinally consistent with the opinion's own listening-post reservation (majority note distinguishing an informant who makes no effort to stimulate conversation).",
+          "as_of_content 1980-06-16 is internally consistent with date_decided 1980-06-16."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "999c6a1ab1627333",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Henry is a U.S. Supreme Court decision (447 U.S. 264); 'Binding — SCOTUS' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T05:41:41-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Henry.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w53-01-00dfdc70",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w53-01.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Henry"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "05c44cd47b33506d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f92860ea49651d7": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "999c6a1ab1627333": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eafae8f97f7310eb": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f30c7bcb57408bbe": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3b5a143140",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

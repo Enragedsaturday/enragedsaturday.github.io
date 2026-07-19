@@ -1,0 +1,177 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "0be367dea03651b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official = '846 F.2d 592', year 1988, date_decided 1988-05-02, court_id ca10, matching '846 F.2d 592 (1988)' / 'U.S. Court of Appeals, Tenth Circuit'.",
+          "Vendor-neutral cites 1988 U.S. App. LEXIS 5755 and 1988 WL 39811 both present in lake citations[], matching the asserted neutral_cite string."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25cbf3f954ccc1f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion opening: 'We affirm the district court, holding that the defendants' fourth amendment rights were infringed, that the search warrant was facially overbroad and invalid, and that the evidence seized should be suppressed.' — supports 'facially overbroad / general warrant'.",
+          "Warrant blockquote authorizes seizure of records 'relating to the purchase, sale and illegal exportation of materials in violation of' the export statutes, matching the 'records relating to violations of the export laws' characterization.",
+          "Recited district-court ground that the Leon good-faith exception 'was inapplicable', which the Tenth Circuit affirmed."
+        ],
+        "residual_risks": [
+          "Opinion text is truncated before pages 600/609/610; the good-faith-inapplicability holding is confirmed only via the opening paragraph and recited district-court findings, not the full analysis. Lake marks pin-600 (Voss quote) and pin-609 quote_fidelity 'mismatch' (slip-only) — not paneled here, but the Rule-section supporting quotes are not verifiable from the disclosed (truncated) text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb7edbbd184a5ca4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*",
+          "locator_note": "content_page 'Appears on' section (contradicts frontmatter homes[0] = '[[The Good-Faith Exception]]')",
+          "needs_cl": false,
+          "problem": "The page is internally inconsistent about its home. Frontmatter homes[0] declares '[[The Good-Faith Exception]]' (role 'Key — Progeny / Refinement'), and this assertion is keyed to that, but the rendered 'Appears on' section names a different page — '[[The Exclusionary Rule]] — Key — Progeny / Refinement' — which does not appear in the `homes` block at all.",
+          "proposed_fix": "Reconcile the 'Appears on' backlink with the frontmatter home: change the 'Appears on' entry to '[[The Good-Faith Exception]]' (the correct doctrinal home) or, if Leary is meant to home on both, add '[[The Exclusionary Rule]]' to the frontmatter `homes` block so the two agree.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The asserted home ('The Good-Faith Exception', 'Key — Progeny / Refinement') matches frontmatter homes[0] and is doctrinally correct: Leary holds the Leon good-faith exception inapplicable to a facially overbroad warrant, squarely a Good-Faith Exception progeny.",
+          "However the human-visible 'Appears on' section lists '[[The Exclusionary Rule]]' instead, a page absent from `homes` — a real internal cross-reference inconsistency worth reconciling."
+        ],
+        "residual_risks": [
+          "Neither 'The Good-Faith Exception' nor 'The Exclusionary Rule' home page is inlined, so the reciprocal listing cannot be confirmed from disclosed evidence."
+        ],
+        "suggested_tightening": "Align the 'Appears on' backlink ('The Exclusionary Rule') with the frontmatter home ('The Good-Faith Exception'); the frontmatter home is the doctrinally correct target for a Leon good-faith case.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "16de1d431dcee7ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity court_id 'ca10', court_level 'coa', circuit '10th'; published Tenth Circuit decision. 'Binding in-circuit — 10th Cir.' is the correct weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b86941c165ec240",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload treatment fields (good_law, migration-seed, as_of_content null, as_of_treatment 2026-06-30, varies_by_point false) match the lake treatment block and frontmatter.",
+          "No negative subsequent treatment disclosed; nothing in the evidence contradicts good_law."
+        ],
+        "residual_risks": [
+          "good_law is a migration-seed pending S2 re-derivation per scope_note; currency not machine-verified from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T05:41:41-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b0880742c2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-8f946a2a3b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-0131018b95"
+    ],
+    "group_id": "content/cases/United States v. Leary.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w53-02-e4073ef0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w53-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Leary"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0be367dea03651b6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "16de1d431dcee7ff": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "25cbf3f954ccc1f3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7b86941c165ec240": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb7edbbd184a5ca4": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b0880742c2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-0131018b95",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8f946a2a3b",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

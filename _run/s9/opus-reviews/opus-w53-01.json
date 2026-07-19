@@ -1,0 +1,345 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/United States v. Havens.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "8ec74a7c9db58fdc",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 446 U.S. 620, parallels 100 S. Ct. 1912 and 64 L. Ed. 2d 559, and vendor-neutral 1980 U.S. LEXIS 103 all appear in the lake citations[] block for cluster 110267.",
+            "Court (scotus / U.S. Supreme Court), year 1980, and title match the lake identity; opinion text is the 446 U.S. 620 (1980) White majority."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "de76e9b361a0204f",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Holding tracks the opinion's express holding at 446 U.S. 627-628: defendant's statements on proper cross-examination reasonably suggested by direct are subject to impeachment by illegally obtained evidence, but inadmissible as substantive evidence of guilt.",
+            "'first elicited on cross-examination' and 'inadmissible as substantive proof of guilt' both grounded in the disclosed opinion text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fe49adbd52e2109b",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Front-matter home is [[Fruits & Attenuation]], but the disclosed holding/scope_note show Havens concerns the impeachment exception (the Walder/Harris/Hass line), not fruits-of-the-poisonous-tree / attenuation doctrine; and the page's own 'Appears on' section lists a different page, [[The Exclusionary Rule]].",
+            "severity": "low",
+            "proposed_fix": "Reconcile the home: place Havens under the exclusionary-rule / impeachment-exception topic (matching the 'Appears on' render and the disclosed subject matter) rather than Fruits & Attenuation.",
+            "evidence_quote": "## Appears on\n- [[The Exclusionary Rule]] — *Key — Progeny (impeachment exception)*",
+            "needs_cl": false,
+            "locator_note": "front matter homes[].page vs '## Appears on' section"
+          },
+          "reasons": [
+            "Role 'Key — Progeny (impeachment exception)' is correct and well supported by the holding.",
+            "The home-page token is internally inconsistent: front matter says Fruits & Attenuation while 'Appears on' says The Exclusionary Rule, and the impeachment exception is doctrinally distinct from attenuation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile front-matter home with the 'Appears on' render; the impeachment-exception placement belongs on the exclusionary-rule family page, not Fruits & Attenuation."
+        },
+        {
+          "assertion_id": "42c69fffa38a0f7c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Havens is a U.S. Supreme Court decision (446 U.S. 620); 'Binding — SCOTUS' is the correct authority weight."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c99302b9486040a9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law is not contradicted: every treatment edge in the lake record is proposed:true auto-candidate output of lane1_negative / lane2_top_cited (e.g. 'Illinois v. Gates', 'United States v. Leon' tagged overruled), which are obvious retrieval noise, not confirmed negative treatment.",
+            "scope_note accurately restates the disclosed holding (extends Walder's impeachment exception to cross-examination reasonably suggested by direct)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "treatment.as_of_content 1980-05-27 differs from front-matter date_decided 1980-08-11; the opinion text states no decision date, so the discrepancy cannot be resolved from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Henry.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "f30c7bcb57408bbe",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 447 U.S. 264, parallels 100 S. Ct. 2183 and 65 L. Ed. 2d 115, and vendor-neutral 1980 U.S. LEXIS 111 all appear in the lake citations[] for cluster 110300.",
+            "Court scotus, year 1980, title all match the lake identity; opinion is the 447 U.S. 264 Massiah-line decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3f92860ea49651d7",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored holding field is truncated mid-clause and ends with an ellipsis: '...the government (through…'. This is not a display/length cap — Havens and Janis have longer holdings reproduced in full — so the holding metadata is genuinely incomplete.",
+            "severity": "medium",
+            "proposed_fix": "Complete the holding field, e.g. '...the government (through its paid informant Nichols) violated Henry's Sixth Amendment right to counsel.' matching the opinion's holding at 447 U.S. 274.",
+            "evidence_quote": "holding: \"By intentionally creating a situation likely to induce the indicted defendant to make incriminating statements, the government (through…\"",
+            "needs_cl": false,
+            "locator_note": "front matter holding: field"
+          },
+          "reasons": [
+            "The visible portion is supported by the opinion holding at *274: 'By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry's Sixth Amendment right to counsel.'",
+            "Defect is completeness, not accuracy: the holding is cut off mid-sentence in both the content page and the inventory payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The elided tail of the holding field cannot be verified verbatim from disclosed evidence, though the opinion supports the evident intended completion."
+          ],
+          "suggested_tightening": "Restore the truncated holding front-matter field to a complete sentence anchored to 447 U.S. 274."
+        },
+        {
+          "assertion_id": "eafae8f97f7310eb",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home [[Sixth Amendment Right to Counsel]] is topically correct — Henry is a Massiah-line deliberate-elicitation/right-to-counsel progeny per the disclosed opinion — and matches the page's own 'Appears on' render.",
+            "Role 'Key — Progeny / Refinement' is well supported."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "05c44cd47b33506d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is not contradicted by any confirmed negative treatment in the disclosed record.",
+            "scope_note (cabined by Kuhlmann v. Wilson's passive 'listening post' line; Henry itself remains good law) is doctrinally consistent with the opinion's own listening-post reservation (majority note distinguishing an informant who makes no effort to stimulate conversation).",
+            "as_of_content 1980-06-16 is internally consistent with date_decided 1980-06-16."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "999c6a1ab1627333",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Henry is a U.S. Supreme Court decision (447 U.S. 264); 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Jackson.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "2f5538159a9d1c7a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 784 F.3d 1227 and vendor-neutral 2015 U.S. App. LEXIS 7397 / 2015 WL 2048440 all appear in the lake citations[] for cluster 2798587; empty parallel_cite is consistent (no regional reporter).",
+            "Opinion header confirms No. 14-1957, Eighth Circuit, Filed May 5, 2015; court ca8 and year 2015 match. Canonical name 'United States v. A.C. Jackson' is captured via aliases."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "99cf9fe7917cdcce",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Home [[The Good-Faith Exception]] is topically correct: the disclosed opinion applies the Leon good-faith exception to admit evidence despite the warrant's lack of probable cause.",
+            "Role 'Key — Progeny / Refinement' is well supported."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page's '## Appears on' renders [[The Exclusionary Rule]] rather than the front-matter home [[The Good-Faith Exception]] — a homes-vs-render drift (same pattern as Havens/Janis); the assertion's home choice is nonetheless the topically correct, more specific page."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c0c02c30383bdbe5",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored holding field is truncated mid-clause and ends with an ellipsis: '...good faith (affidavit…'. Not a display/length cap (Havens and Janis carry longer holdings in full), so the holding metadata is genuinely incomplete.",
+            "severity": "medium",
+            "proposed_fix": "Complete the holding field, e.g. '...the deputy acted in objectively reasonable good faith (affidavit based on first-hand interviews, prosecutor review, and the judge's questioning), so the Leon good-faith exception admits the evidence.'",
+            "evidence_quote": "holding: \"Although the warrant application failed to supply probable cause, the deputy acted in objectively reasonable good faith (affidavit…\"",
+            "needs_cl": false,
+            "locator_note": "front matter holding: field"
+          },
+          "reasons": [
+            "Visible portion is supported by the opinion: district court found the warrant not supported by probable cause, and the Eighth Circuit found the deputy acted in objectively reasonable good faith so the Leon exception applies (784 F.3d at 1231-1232).",
+            "Defect is completeness, not accuracy — the holding is cut off in both the content page and inventory payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The elided tail cannot be verified verbatim from disclosed evidence, though the opinion supports the evident intended completion."
+          ],
+          "suggested_tightening": "Restore the truncated holding front-matter field to a complete sentence anchored to 784 F.3d 1231-1232."
+        },
+        {
+          "assertion_id": "5576edbb46fbc228",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is not contradicted: the single treatment edge (United States v. Saddler, tagged overruled) is proposed:true lane2_top_cited auto-candidate noise, and lane1_negative reports proposed_negative_events 0 / audit_needed false.",
+            "provenance warning is only a legacy migration note ('good -> good_law')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note is a generic process/migration note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.') rather than a substantive legal scope note; not false, but low-information."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6738b20e43e3bc2f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Jackson is an Eighth Circuit Court of Appeals decision; 'Binding in-circuit — 8th Cir.' is the correct authority weight for a COA opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Janis.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "95c9e475a1449950",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 428 U.S. 433, parallels 96 S. Ct. 3021 and 49 L. Ed. 2d 1046, and vendor-neutral 1976 U.S. LEXIS 162 all appear in the lake citations[] for cluster 109539.",
+            "Opinion header confirms 428 U.S. 433 (1976), No. 74-958, Supreme Court; court scotus and year 1976 match."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7f1db31276ea2236",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Front-matter home is [[The Good-Faith Exception]], but the disclosed opinion shows Janis (1976, pre-Leon) declines to extend the exclusionary rule to a federal civil (tax) proceeding for evidence seized by a different sovereign's officer, on cost-benefit/deterrence grounds — it is not an application of the Leon good-faith exception (Leon is not cited; 'good faith' appears only as a fact describing the officer's reliance). The page's own 'Appears on' lists a different page, [[The Exclusionary Rule]].",
+            "severity": "low",
+            "proposed_fix": "Reassign the home to the exclusionary-rule (cost-benefit / intersovereign limits) topic — matching the 'Appears on' render and the disclosed doctrine — rather than The Good-Faith Exception.",
+            "evidence_quote": "## Appears on\n- [[The Exclusionary Rule]] — *Key — Limiting*",
+            "needs_cl": false,
+            "locator_note": "front matter homes[].page vs '## Appears on' section"
+          },
+          "reasons": [
+            "Role 'Key — Limiting' is correct and supported by the holding.",
+            "Home-page token is doctrinally off and internally inconsistent: Janis is an intersovereign civil-proceeding / cost-benefit limit, not a good-faith-exception case, and 'Appears on' names The Exclusionary Rule."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile front-matter home with the 'Appears on' render and the disclosed holding; Janis limits the exclusionary rule generally rather than illustrating the Leon good-faith exception."
+        },
+        {
+          "assertion_id": "d69d0d7ae9430dbe",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Holding is supported by the opinion's express holding (428 U.S. at 459-460): the judicially created exclusionary rule should not be extended to forbid use, in one sovereign's civil proceeding, of evidence seized by another sovereign's criminal enforcement officer.",
+            "The cost-benefit / marginal-deterrence rationale is grounded in Part IV and in the star-verified pin-454b quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2f216c202823fa30",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is not contradicted: all treatment edges are proposed:true lane1_negative / lane2 auto-candidates (e.g. 'Commonwealth v. Privette' tagged overruled), i.e. retrieval noise, not confirmed negative treatment.",
+            "scope_note accurately restates the disclosed holding (no extension to a federal civil tax proceeding for state-seized evidence)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The opinion header states 'Decided July 6, 1976', confirming treatment.as_of_content 1976-07-06 as the true decision date; the neighboring front-matter date_decided field (1976-10-04) is therefore a disclosed date error, though it is not itself part of any reviewed assertion payload."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5bb7934e9d192b6f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Janis is a U.S. Supreme Court decision (428 U.S. 433); 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
