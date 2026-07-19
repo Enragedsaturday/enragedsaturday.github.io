@@ -1803,3 +1803,35 @@ remaining judgment work — 5 mechanical defect classes cataloged for class-wide
 P4 sweeps (Mermaid/lint/coherence/glossary/Case-Index), P5 release gate, P6 publish-brief.
 Commits this session: 9ce5cfba 60a34ffe b94aecd6 a9fde5d3 b3e0e2aa 2c5b7742 e30723d9 b90939e6
 5e2ca828 cdb2a57e 5ecac82d 2d278937 089bbee7 (+ restart commits).
+
+**OPUS 3RD-LENS COMPLETE 1357/1357 (2026-07-19 ~07:15) — PROMO-SPRINT ARC.** Resumed from the
+weekly-quota pause (wave-32/823 groups) on 2026-07-18 ~05:50 after user-directed pacing analysis.
+Arc: bursts of 4 waves per 5h cron (waves 33-48, +50% promo headroom confirmed via usage meter
+24%/19%/3%), then user-directed acceleration (2026-07-19 ~05:30) to continuous 10-wide rounds
+(waves 49-66). Totals: waves 33-66, ~172 packs, 535 groups, ~5,600 assertions reviewed by fresh
+o2-opus-xhigh reviewers; 0 no_review, 0 unroutable after the wave-33 group_id normalization fix
+(reviewers echoed annotated GROUP headers; prompt fixed + mechanical normalizer added). Doctrine
+tail (77 pages) packed 1-2/pack with size guard; 928KB Miranda mega-page reviewed clean on
+1M-context, no truncation. Comma-named (Lo-Ji) and parenthetical-named (Carpenter remand,
+Robinson en banc) and non-.md (points registry.yaml#shard) group_ids all routed clean.
+DEFECT HARVEST (new-to-panel, P2/P3 classes): home_role mirror class ~15 cases across 3 families
+(Fruits&Attenuation↔ExclusionaryRule: Wolf/Mapp/Walder/James inapt + Silverthorne/Nardone/WongSun/
+Weeks/NYvHarris/Strieff/Kaupp/Taylor mirror-only; QI↔S1983: Hanlon/Hope/Wright/Graham/Harlow/
+Pearson/White/WilsonLayne/Malley/Messerschmidt; GoodFaith↔ExclusionaryRule: LopezMendoza/Scott/
+Calandra inapt + Krull/Leon/DeFillippo/Mathis/Leary/Sheppard mirror); exigency Key-Anchor
+self-conflict 4 cases (King/Schmerber/McNeely/Mitchell — Destruction-of-Evidence vs
+Exigent-Circumstances); high-severity holding errors: Mitcham (independent-source vs inevitable-
+discovery), Perez (Chadwick+Gant misnamed as Gant+Riley), Loera (affirmance-basis misstated),
+Trent (unpublished-6thCir labeled binding); Fla-L-Weekly cite-selector class re-confirmed
+(Rothgery/McNeely/Safford/Salinas/Soldal/Hiibel/Plumhoff/Wearry/White/FloresMontano/Tarantino);
+anachronistic L.Ed.2d parallel dupes x5 (Wolf/Johnson/Walder/Rochin/Trupiano); truncated-holding
+class ~15; date_decided-uses-rehearing-date class ~8; alternate-cluster opinion links ~10
+(Jardines/Dickerson/Barnes/al-Kidd/Tahlequah/Groh/JL/Mitchell/McNeely/NASA); leaked build
+placeholders (Steagald/Kuhlmann/Kyles/Labron/Garrison). Doctrine pages near-spotless (substance);
+their defect signature is link plumbing only.
+LINT-30 GATE at completion: status CHECKED, 3,682 highs — ALL in the two documented P2-pending
+classes (inv1 2,299 findings-without-adjudication = the P2 workload; inv2 1,380 sub-quorum
+findings awaiting orchestrator backfill from panel-results verdict maps; inv5 count gate).
+Zero structural/lane/duplicate-vote failures. Cron 5458d4c9 deleted.
+NEXT: P2 panel-findings adjudication (~2,299 findings; mechanical classes above enable class-wide
+dispositions) -> P3 fixes -> P4 sweeps -> P5 gate -> P6 publish-brief.
