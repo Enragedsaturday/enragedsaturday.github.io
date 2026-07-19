@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e5bca037877308e1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations block lists official '517 U.S. 690', parallels '116 S. Ct. 1657' and '134 L. Ed. 2d 911', and vendor-neutral '1996 U.S. LEXIS 3391' — identical to the asserted payload.",
+          "Cached opinion header: '517 U.S. 690 (1996)' / 'United States Supreme Court' confirms court and year 1996."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9409324855c75e38",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion: 'We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed de novo.' and 'We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed de novo on appeal.'",
+          "Opinion also directs clear-error review of the underlying historical facts, matching the truncated '(historical…' continuation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94d1dcc75040637a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Ornelas refines the appellate standard of review for probable-cause/reasonable-suspicion determinations — a progeny/refinement of the probable-cause line.",
+          "Frontmatter homes and the '## Appears on' body both name '[[Probable Cause]] — Key — Progeny / Refinement' consistently."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8aeeb098101e1916",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Decided May 28, 1996.",
+          "locator_note": "treatment.as_of_content / identity.date_decided vs cached opinion header 'Decided May 28, 1996.'",
+          "needs_cl": false,
+          "problem": "field_i_validity 'good_law' is correct and unrefuted, but the same treatment payload carries as_of_content '1996-06-10', which conflicts with the cached opinion's stated decision date 'Decided May 28, 1996'. Orozco and Pearson in this pack both set as_of_content exactly to their opinion's 'Decided' date, so 1996-06-10 is anomalous by ~13 days.",
+          "proposed_fix": "Set treatment.as_of_content (and identity.date_decided) to 1996-05-28 to match the opinion's stated decision date.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "good_law is unrefuted: all lake treatment edges are proposed:true keyword-triage candidates flagged 'R15 treatment audit required'; no confirmed (proposed:false) negative edge exists.",
+          "as_of_content 1996-06-10 contradicts the disclosed opinion's 'Decided May 28, 1996'; the pack's other dated cases anchor as_of_content to the opinion's Decided date."
+        ],
+        "residual_risks": [
+          "as_of_treatment 2026-06-30 currency cannot be independently re-derived from disclosed evidence, but no disclosed edge confirms a downgrade."
+        ],
+        "suggested_tightening": "Correct as_of_content/date_decided to 1996-05-28 (opinion's stated decision date); good_law is retained.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d20ca7e1e8785a85",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level 'scotus' and opinion 'United States Supreme Court' confirm a U.S. Supreme Court decision; 'Binding — SCOTUS' is the correct weight."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T22:08:18-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-923a60e04c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-58a6271f4e"
+    ],
+    "group_id": "content/cases/Ornelas v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w48-03-449ee0e0",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w48-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ornelas v. United States"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "8aeeb098101e1916": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9409324855c75e38": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94d1dcc75040637a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d20ca7e1e8785a85": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e5bca037877308e1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-923a60e04c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-58a6271f4e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

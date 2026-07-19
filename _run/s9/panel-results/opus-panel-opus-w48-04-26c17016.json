@@ -1,0 +1,182 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "448c92a127ca3f88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations confirm official '524 U.S. 357', parallel '118 S. Ct. 2014', '141 L. Ed. 2d 344', vendor-neutral '1998 U.S. LEXIS 4037' — all match the payload.",
+          "Lake identity: court 'U.S. Supreme Court'/scotus, year 1998; opinion caption confirms 524 U.S. 357 and Justice Thomas for the Court."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "02802c53809334c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion holding verbatim: 'We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights.' — directly supports the stated holding."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "19790f6cc958faee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Limiting*",
+          "locator_note": "frontmatter homes[0].page ('The Good-Faith Exception') vs body '## Appears on' first bullet ('The Exclusionary Rule'); both carry role 'Key — Limiting'",
+          "needs_cl": false,
+          "problem": "The frontmatter lists '[[The Good-Faith Exception]]' as the 'Key — Limiting' home, but the page body '## Appears on' lists '[[The Exclusionary Rule]]' for that same 'Key — Limiting' role — an internal contradiction. Substantively, Scott holds the exclusionary rule does not extend to parole-revocation hearings (an exclusionary-rule-scope/cost-benefit limitation), not a good-faith-exception ruling; the good-faith exception (Leon reasonable reliance) appears only in passing in footnote 4. The frontmatter home is therefore a mis-home.",
+          "proposed_fix": "Change frontmatter homes[0].page from '[[The Good-Faith Exception]]' to '[[The Exclusionary Rule]]' to match the body 'Appears on' and the case's actual doctrine.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Body '## Appears on' contradicts the frontmatter home, naming '[[The Exclusionary Rule]]' rather than '[[The Good-Faith Exception]]' for the Key — Limiting role.",
+          "The opinion's holding is an exclusionary-rule-applicability limitation for parole-revocation hearings; it is not a good-faith-exception decision, so 'The Good-Faith Exception' is the wrong doctrinal home."
+        ],
+        "residual_risks": [
+          "The disclosed pack does not include the taxonomy pages themselves, so I cannot confirm whether an 'Exclusionary Rule' page exists under that exact title — but the page's own body asserts it, making the frontmatter/body mismatch a genuine defect regardless."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce3f86386f359d49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter and body '## Appears on' agree: '[[Special Needs and Administrative Searches]]' with role 'Related (cross-doctrine)'.",
+          "Opinion draws on the parole-supervision line (cites Griffin v. Wisconsin; related list includes Samson v. California), so a soft 'Related (cross-doctrine)' link is reasonable."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6162fed4fe4d0716",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is correct; scope_note 'The federal exclusionary rule does not apply at parole-revocation hearings; good law.' accurately restates the disclosed holding with no negative treatment in the opinion.",
+          "varies_by_point false is consistent with a single, unqualified holding."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afa27cb3f0311738",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity: court_level 'scotus' — 'Binding — SCOTUS' weight label is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T22:08:18-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-af5b8591d2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Pennsylvania Board of Probation and Parole v. Scott.md",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w48-04-26c17016",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w48-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania Board of Probation and Parole v. Scott"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "02802c53809334c0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "19790f6cc958faee": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "448c92a127ca3f88": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6162fed4fe4d0716": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afa27cb3f0311738": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce3f86386f359d49": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-db36a8b600",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-af5b8591d2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

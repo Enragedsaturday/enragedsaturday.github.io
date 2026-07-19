@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "4438f67352db7d54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations[]: official '429 U.S. 492' (U.S., type 1), parallels '97 S. Ct. 711' + '50 L. Ed. 2d 714', vendor_neutral '1977 U.S. LEXIS 38' — match payload.",
+          "Cached opinion header '429 U.S. 492 (1977)', 'Supreme Court of United States', 'No. 76-201', 'Decided January 25, 1977', PER CURIAM corroborates court/year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b4dd9c72041512c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A suspect who comes voluntarily to the station, is told he is not under arrest, and is free to leave is NOT in custody for Miranda —…",
+          "locator_note": "content_page frontmatter `holding:` field; group_inventory payload.holding for 9b4dd9c72041512c",
+          "needs_cl": false,
+          "problem": "The frontmatter `holding` string is truncated: it ends with a dangling em-dash + ellipsis ('... is NOT in custody for Miranda —…'), so the stated holding trails off mid-sentence rather than completing the rule.",
+          "proposed_fix": "Complete the holding, e.g. '... is NOT in custody for Miranda purposes; the noncustodial character is not changed merely because questioning occurs at the station house or in a \"coercive environment.\"'",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Substance is correct and directly supported: opinion holds 'He came voluntarily to the police station, where he was immediately informed that he was not under arrest ... did in fact leave ... without hindrance. It is clear from these facts that Mathiason was not in custody \"or otherwise deprived of his freedom of action in any significant way.\"'",
+          "Only defect is the truncated/dangling holding text ('—…'), a completeness/formatting flaw, not a substantive error — hence stands-modified rather than refuted."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Finish the truncated holding sentence so the frontmatter `holding` reads as a complete rule statement.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e7843f15776a9030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Case defines the Miranda custody threshold (voluntary noncustodial station interview is not custody), so home 'Miranda and Custodial Interrogation' with role 'Key — Progeny / Refinement' is supported.",
+          "Opinion applies Miranda's 'custodial interrogation' definition and holds the coercive-environment gloss does not expand it."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6aa14eae079f183a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "U.S. Supreme Court per curiam decision (court_level 'scotus'); 'Binding — SCOTUS' is the correct weight label.",
+          "Cached opinion is captioned 'Supreme Court of United States' / 'PER CURIAM'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6ecc91c9dd591a75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload matches lake.treatment field-for-field: field_i_validity 'good_law', as_of_content '1977-01-25', as_of_treatment '2026-06-30', composite_basis 'migration-seed', composite_basis_ref 'Oregon v. Mathiason', varies_by_point false, scope_note (per curiam; voluntary station-house interview not custody) matches.",
+          "Negative edges are all 'proposed': true / field_iii 'mentioned' under 'R15 treatment audit required' snippet-first triage — unaudited keyword-match proposals (e.g. 'Berkemer v. McCarty overruled' reflects the citing case's own status, not Mathiason), not confirmed negative treatment."
+        ],
+        "residual_risks": [
+          "Unaudited proposed negative edges (audit_needed:true) remain pending R15 audit before good_law is machine-final."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T22:08:18-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/Oregon v. Mathiason.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w48-02-b81aba18",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w48-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Oregon v. Mathiason"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "4438f67352db7d54": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6aa14eae079f183a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6ecc91c9dd591a75": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b4dd9c72041512c": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e7843f15776a9030": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1ca1169504",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

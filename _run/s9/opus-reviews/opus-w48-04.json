@@ -1,0 +1,330 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/Pembaur v. City of Cincinnati.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "da77b0a5e5d0bdfd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations block confirms official '475 U.S. 469', parallel '106 S. Ct. 1292', '89 L. Ed. 2d 452', '54 U.S.L.W. 4289', and vendor-neutral '1986 U.S. LEXIS 33' — all match the payload verbatim.",
+            "Lake identity gives court 'U.S. Supreme Court'/scotus, year 1986; opinion caption confirms Pembaur v. City of Cincinnati, 475 U.S. 469 (1986)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "51160d649fa1a837",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes and body '## Appears on' agree: '[[Section 1983 Liability and Qualified Immunity]]' with role 'Key — Progeny / Refinement'.",
+            "Opinion frames the case as elaborating Monell's official-policy requirement (single-decision liability), supporting a progeny/refinement role within the section-1983 municipal-liability line."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fcca80367849162e",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion: 'it is plain that municipal liability may be imposed for a single decision by municipal policymakers under appropriate circumstances.'",
+            "Opinion holding: 'We hold that municipal liability under §1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy with respect to the subject matter in question.' — supports the stated holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "398e4e95eb30400f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity: court_level 'scotus', court 'U.S. Supreme Court' — 'Binding — SCOTUS' is the correct weight label."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a8f8b76b29ab62a4",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is correct: no negative treatment in the disclosed opinion, and the single-decision/final-policymaker rule is well settled.",
+            "scope_note's phrase 'Plurality on the single-decision point' is imprecise: the opinion states Justice Brennan 'delivered the opinion of the Court, except as to Part II-B'. The single-decision-can-be-policy holding sits in Part II-A (the opinion of the Court/majority); the plurality was Part II-B, the final-policymaking-authority standard. The note thus mis-attributes the plurality to the wrong point and could understate the precedential strength of the core holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cannot see the full Justice-by-Justice line-up (concurrences/dissents) from the disclosed lead-opinion text, but the 'except as to Part II-B' authorship line is dispositive on which part was plurality."
+          ],
+          "suggested_tightening": "Re-attribute the plurality in the scope_note: the plurality was Part II-B (the final-policymaking-authority standard — 'delivered the opinion of the Court, except as to Part II-B'), while the single-decision-can-be-policy holding (Part II-A) was the opinion of the Court/majority. Something like: 'Part II-A (single decision can be policy) is the opinion of the Court; the final-policymaker standard (Part II-B) drew only a plurality; the rule remains settled law.'"
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Pennsylvania Board of Probation and Parole v. Scott.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "448c92a127ca3f88",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations confirm official '524 U.S. 357', parallel '118 S. Ct. 2014', '141 L. Ed. 2d 344', vendor-neutral '1998 U.S. LEXIS 4037' — all match the payload.",
+            "Lake identity: court 'U.S. Supreme Court'/scotus, year 1998; opinion caption confirms 524 U.S. 357 and Justice Thomas for the Court."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "02802c53809334c0",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion holding verbatim: 'We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights.' — directly supports the stated holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "19790f6cc958faee",
+          "dimension": "support",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The frontmatter lists '[[The Good-Faith Exception]]' as the 'Key — Limiting' home, but the page body '## Appears on' lists '[[The Exclusionary Rule]]' for that same 'Key — Limiting' role — an internal contradiction. Substantively, Scott holds the exclusionary rule does not extend to parole-revocation hearings (an exclusionary-rule-scope/cost-benefit limitation), not a good-faith-exception ruling; the good-faith exception (Leon reasonable reliance) appears only in passing in footnote 4. The frontmatter home is therefore a mis-home.",
+            "severity": "medium",
+            "proposed_fix": "Change frontmatter homes[0].page from '[[The Good-Faith Exception]]' to '[[The Exclusionary Rule]]' to match the body 'Appears on' and the case's actual doctrine.",
+            "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Limiting*",
+            "needs_cl": false,
+            "locator_note": "frontmatter homes[0].page ('The Good-Faith Exception') vs body '## Appears on' first bullet ('The Exclusionary Rule'); both carry role 'Key — Limiting'"
+          },
+          "reasons": [
+            "Body '## Appears on' contradicts the frontmatter home, naming '[[The Exclusionary Rule]]' rather than '[[The Good-Faith Exception]]' for the Key — Limiting role.",
+            "The opinion's holding is an exclusionary-rule-applicability limitation for parole-revocation hearings; it is not a good-faith-exception decision, so 'The Good-Faith Exception' is the wrong doctrinal home."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The disclosed pack does not include the taxonomy pages themselves, so I cannot confirm whether an 'Exclusionary Rule' page exists under that exact title — but the page's own body asserts it, making the frontmatter/body mismatch a genuine defect regardless."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ce3f86386f359d49",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter and body '## Appears on' agree: '[[Special Needs and Administrative Searches]]' with role 'Related (cross-doctrine)'.",
+            "Opinion draws on the parole-supervision line (cites Griffin v. Wisconsin; related list includes Samson v. California), so a soft 'Related (cross-doctrine)' link is reasonable."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6162fed4fe4d0716",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is correct; scope_note 'The federal exclusionary rule does not apply at parole-revocation hearings; good law.' accurately restates the disclosed holding with no negative treatment in the opinion.",
+            "varies_by_point false is consistent with a single, unqualified holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "afa27cb3f0311738",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity: court_level 'scotus' — 'Binding — SCOTUS' weight label is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Pennsylvania v. Bruder.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "fe97ae94d0100937",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations confirm official '488 U.S. 9', parallel '109 S. Ct. 205', '102 L. Ed. 2d 172', vendor-neutral '1988 U.S. LEXIS 4816' — all match the payload.",
+            "Opinion caption confirms Pennsylvania v. Bruder, 488 U.S. 9 (1988), No. 88-161, Decided October 31, 1988, per curiam."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6bf479f33bd77cdc",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion: 'he was not entitled to a recitation of his constitutional rights prior to arrest, and his roadside responses to questioning were admissible.'",
+            "Opinion: 'Berkemer's rule, that ordinary traffic stops do not involve custody for purposes of Miranda, governs this case.' — supports the holding as stated, including the Berkemer application."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a1e1d618ec405694",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter and body '## Appears on' agree: '[[Miranda and Custodial Interrogation]]' with role 'Related (custody)'.",
+            "Case turns on Miranda custody analysis for roadside traffic-stop questioning, consistent with the assigned home and role."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a71f4ee99031cde3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' correct; opinion is per curiam and expressly applies Berkemer v. McCarty, matching the scope_note.",
+            "No negative treatment in the disclosed opinion; varies_by_point false is consistent with the single holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f3fe3823f57c6887",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity: court_level 'scotus'; a per curiam SCOTUS decision is binding — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Pennsylvania v. Labron.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "61cc1119362e93df",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations confirm official '518 U.S. 938', parallel '116 S. Ct. 2485', '135 L. Ed. 2d 1031', vendor-neutral '1996 U.S. LEXIS 4268' — all match the payload.",
+            "Opinion caption confirms Pennsylvania v. Labron, 518 U.S. 938 (1996), No. 95-1691, Decided July 1, 1996, per curiam."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3b7d492667a39e42",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The proposition as far as it reads is well supported: opinion states 'If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more.'",
+            "However the frontmatter 'holding' field (and thus this payload) is truncated mid-clause: '...it contains contraband, the…' — it is cut off with an ellipsis rather than completing the statement, an incompleteness defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Complete the truncated frontmatter 'holding' field to match the opinion and body, e.g. '...if a car is readily mobile and PC exists to believe it contains contraband, the Fourth Amendment permits police to search the vehicle without more (no separate exigency).'"
+        },
+        {
+          "assertion_id": "53a626854c1551c9",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter and body '## Appears on' agree: '[[Automobile Exception]]' with role 'Key — Progeny / Refinement'.",
+            "Opinion applies/refines the automobile exception (ready mobility + probable cause, no separate exigency; tracing Carroll and Carney), fitting a progeny/refinement role on that home."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4e829b3fc76a9f87",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is correct: the ready-mobility rule is settled and the disclosed opinion shows no negative treatment; varies_by_point false is consistent.",
+            "scope_note carries a build-pipeline artifact — 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.' — rather than a substantive doctrinal scope note; this internal-processing comment leaked into the published treatment field and also hedges ('may downgrade') against the asserted good_law status without a doctrinal basis in the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "STANDARDS/STYLE governing scope_note content are not inlined in the pack, so the 'placeholder note' judgment rests on comparison with the substantive scope_notes in the sibling groups; the good_law verdict itself is unaffected."
+          ],
+          "suggested_tightening": "Replace the pipeline-artifact scope_note with a case-specific doctrinal note, e.g. 'Automobile exception requires only ready mobility + probable cause, no separate exigency; good law.'"
+        },
+        {
+          "assertion_id": "e3a803efdfd4e08c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity: court_level 'scotus'; a per curiam SCOTUS decision is binding — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
