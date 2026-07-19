@@ -1,0 +1,146 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c2e9671fb4423768",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion masthead: '435 U.S. 268 (1978) ... UNITED STATES v. CECCOLINI ... No. 76-1151 ... Supreme Court of United States ... Decided March 21, 1978' — confirms official cite, court, and 1978 year.",
+          "Lake carries official '435 U.S. 268', parallels '98 S. Ct. 1054' and '55 L. Ed. 2d 268', and vendor-neutral '1978 U.S. LEXIS 70', matching the payload's citation, parallel_cite, and neutral_cite."
+        ],
+        "residual_risks": [
+          "Frontmatter date_decided '1978-12-05' is wrong: the opinion was decided March 21, 1978 (Dec. 5, 1977 was the argument date). The correct decision date appears instead in the treatment block's as_of_content '1978-03-21'. date_decided is not part of this paneled existence payload (which turns on citation/court/year), so existence stands, but the frontmatter date_decided is a real content bug."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3998ebf19b8d4f5a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion (Rehnquist, J.): 'the exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object' — directly supports the holding text.",
+          "Opinion further reasons live-witness free will and the perpetual-disability cost require 'a closer, more direct link between the illegality and that kind of testimony', matching 'far less readily suppressed ... than inanimate evidence'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8f77770a50af363",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes lists page '[[Fruits & Attenuation]]' role 'Key — Progeny (attenuation)', matching the assertion payload.",
+          "Opinion frames the question via Wong Sun/Nardone attenuation ('so attenuated as to dissipate the taint') and holds on attenuation grounds — a Key attenuation-progeny role is well supported."
+        ],
+        "residual_risks": [
+          "Page body uses the variant wikilink '[[Fruits and Attenuation]]' (with 'and') and the 'Appears on' section lists '[[The Exclusionary Rule]]', not the home '[[Fruits & Attenuation]]' — body/frontmatter naming inconsistency outside the paneled home_role value."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "383317cb846d3b8c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Cached opinion is a U.S. Supreme Court merits opinion (Rehnquist, J.; Burger concurring, Marshall dissenting), so 'Binding — SCOTUS' is correct.",
+          "Lake court_level 'scotus', court_id 'scotus' consistent with the weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e021fd75b9e1ee4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Frontmatter treatment block (field_i_validity good_law, as_of_content 1978-03-21, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref self, varies_by_point false, scope_note) matches the lake treatment block exactly.",
+          "as_of_content 1978-03-21 matches the opinion's 'Decided March 21, 1978'; Ceccolini remains a governing SCOTUS attenuation precedent and nothing disclosed contradicts good_law."
+        ],
+        "residual_risks": [
+          "Lake treatment.edges carry many proposed negative field_ii values (e.g., Awadallah 'overruled', Cantu 'overruled', Ghim 'questioned'), but every edge is 'proposed': true and the lanes are flagged 'R15 treatment audit required'; these are the citing cases' own field_ii status (lane2_top_cited), not adjudicated negative treatment OF Ceccolini, so they do not disturb the good_law derivation on disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:11:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Ceccolini.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w52-02-cf5276d2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w52-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ceccolini"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "383317cb846d3b8c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3998ebf19b8d4f5a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e021fd75b9e1ee4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8f77770a50af363": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2e9671fb4423768": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

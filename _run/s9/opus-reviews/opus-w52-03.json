@@ -1,0 +1,357 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/United States v. Cotterman.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "33229d0d6cc74ada",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official = '709 F.3d 952' and vendor_neutral carries '2013 WL 856292' and '2013 U.S. App. LEXIS 4731', matching payload citation and neutral_cite exactly.",
+            "Cached opinion caption confirms 'UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT', 'Filed March 8, 2013', en banc — consistent with court, year 2013, and title."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b1138187f1458c3b",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (staff summary + McKeown, J.): 'The en banc court held that the forensic examination of the defendant's computer required a showing of reasonable suspicion, a modest requirement' — supports the holding that a forensic/comprehensive border device exam requires reasonable suspicion.",
+            "Opinion: 'it is the comprehensive and intrusive nature of forensic examination – not the location of the examination – that is the key factor triggering the requirement of reasonable suspicion' matches the holding's framing."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "holding string in payload is truncated ('; it is the…'); full-text tail not evaluable from the disclosed truncation but the disclosed head is fully supported."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c3be41032d30f309",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[] and the rendered 'Appears on' agree: '[[Border Searches]] — Illustrates a circuit split'; internally consistent.",
+            "Disclosed opinion establishes Cotterman's reasonable-suspicion rule (one side of the asserted split)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 'circuit split' characterization depends on United States v. Touset (11th Cir.), which is not in the disclosed evidence; the existence of the split cannot be settled from Cotterman's opinion alone.",
+            "Target 'Border Searches' page is not inlined, so the placement itself is not directly confirmable."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2cb5bc869df9515e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level 'coa', circuit '9th', court 'U.S. Court of Appeals, 9th Circuit (en banc)'; opinion is a published en banc Ninth Circuit decision — 'Binding in-circuit — 9th Cir.' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fdf04ae1714c2575",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All treatment fields (field_i_validity good_law, as_of_content 2013-03-08, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note) match the lake treatment block exactly.",
+            "Lake derivation lane1_negative (scotus OR ca9 overrule/abrogate/vacate query) shows proposed_negative_events 0 and audit_needed false — no confirmed negative treatment; good_law is supported."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane2_top_cited edges carry field_ii labels (overruled/questioned/abrogated/superseded_by_statute) that are proposed:true citation-mining noise reflecting the citing cases' own status, not confirmed negative treatment of Cotterman.",
+            "scope_note claims about Cano (narrowing) and the Touset split are not verifiable from the disclosed opinion text (those opinions are not inlined)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Crews.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "2412ab579b992cf0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official '445 U.S. 463', parallel '100 S. Ct. 1244' and '63 L. Ed. 2d 537', vendor_neutral '1980 U.S. LEXIS 1293', docket 78-777 — all match payload citation/parallel_cite/neutral_cite.",
+            "Cached opinion is 'Mr. Justice Brennan delivered the opinion of the Court' at 445 U.S. 463 — SCOTUS, 1980 confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5bda9883eb3b2c41",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Internal page inconsistency about this home. Frontmatter homes[] lists '[[Inevitable Discovery & Independent Source]]' (role 'Key — Progeny (independent source)'), but the rendered 'Appears on' section lists a DIFFERENT page — '[[The Exclusionary Rule]]' — for the same role. Separately, the inline body wikilinks spell the doctrine page '[[Inevitable Discovery and Independent Source|...]]' (with 'and'), which is a different title from the '&' form in the frontmatter home, creating a broken-link risk.",
+            "severity": "medium",
+            "proposed_fix": "Reconcile the home target: make the 'Appears on' line and the inline wikilinks use the same page title as the frontmatter home ('Inevitable Discovery & Independent Source' vs 'The Exclusionary Rule' vs 'Inevitable Discovery and Independent Source').",
+            "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Progeny ([[Inevitable Discovery and Independent Source|independent source]])*",
+            "needs_cl": false,
+            "locator_note": "content page: frontmatter homes[0] vs '## Appears on' first bullet vs '## Rule'/'## Application' inline wikilinks."
+          },
+          "reasons": [
+            "Substance is correct: Crews is a leading independent-source case (in-court identification with an independent source), so a 'Key — Progeny (independent source)' role is well-supported by the holding.",
+            "But the page contradicts itself on which page hosts that role, and uses two spellings of the doctrine page title."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Target home page is not inlined, so the placement cannot be directly confirmed; the disclosed defect is the internal inconsistency."
+          ],
+          "suggested_tightening": "Align the 'Appears on' bullet and inline wikilink titles with the frontmatter home so a single, resolvable page name is used."
+        },
+        {
+          "assertion_id": "5d2096ed8aba3dcc",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion: 'A victim's in-court identification of the accused has three distinct elements ... none of these three elements has been come at by exploitation of the violation of the defendant's Fourth Amendment rights'; victim's presence 'not traceable to any Fourth Amendment violation' because 'the victim's identity was known long before there was any official misconduct'; capacity to identify had an 'independent source' antedating the misconduct — reversed.",
+            "Holding's core (in-court ID not a suppressible fruit where presence and ability to identify have an independent source predating the misconduct) is squarely supported."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c539a6edd25faf08",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[] and 'Appears on' agree: '[[Eyewitness Identification]] — Related (cross-doctrine)'.",
+            "Case turns on an in-court eyewitness identification and its independent-source test (Wade/Stovall discussed), so a cross-doctrine 'Related' role is apt."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Target 'Eyewitness Identification' page is not inlined; placement not directly confirmable."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9b72ef883b60e865",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level 'scotus'; opinion is a U.S. Supreme Court decision — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f0cee190096c8c30",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment fields (good_law, as_of_content 1980-03-25, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note) match the lake treatment block exactly.",
+            "No confirmed negative treatment: all edges are proposed:true and the field_ii labels (superseded_by_statute/abrogated/questioned/overruled/criticized) reflect the citing cases' own status (citation-mining noise), not a holding that Crews is bad law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake derivation flags audit_needed:true with proposed_negative_events lane1=9, lane2=25, lane3=2 and audit_marker 'R15 treatment audit required'; the good_law status is migration-seed and has not been machine-reverified against those proposed events."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Crumble.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "61f335d4346c3344",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official '878 F.3d 656', court '8th Cir.', date_decided 2018-01-02 — match payload citation/court/year.",
+            "Cached opinion caption: 'United States Court of Appeals For the Eighth Circuit', 'Filed: January 2, 2018', 'SHEPHERD, Circuit Judge', appellant 'Prentiss Anthony Crumble' — confirms the cite/court/year."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Docket discrepancy (outside this payload's fields but disclosed): frontmatter/lake docket is '16-4114', but the cached opinion caption reads 'No. 16-4308'. The docket in the page is inconsistent with the disclosed opinion."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1be3da739179ab64",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[] and 'Appears on' agree: '[[Abandonment]] — Key'.",
+            "The opinion resolves the Fourth Amendment challenge entirely on abandonment ('the district court did not clearly err in finding Crumble abandoned the cell phone'), so a 'Key' role on the Abandonment page is strongly supported."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Target 'Abandonment' page is not inlined; placement not directly confirmable."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3c8cddc647864680",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The holding says the '...warrantless seizure and later search of the phone did not violate the Fourth Amendment.' Under the natural parse 'warrantless' modifies only 'seizure' (the officer secured the phone without a warrant), but the phrasing also admits a reading that the SEARCH was warrantless — which contradicts the record: the officer obtained a search warrant the next day, and the court affirmed on abandonment/forfeiture of any expectation of privacy and expressly declined to reach warrant validity.",
+            "severity": "low",
+            "proposed_fix": "Tighten to make clear 'warrantless' describes the seizure only; note the later search was executed under a warrant, though the court's holding rested on abandonment (forfeiture of any reasonable expectation of privacy), making the warrant's validity unnecessary to decide.",
+            "evidence_quote": "The following day, the officer applied for a search warrant to search the cell phone for “information as to the second occupant in the Buick or further information related to the crime.”",
+            "needs_cl": false,
+            "locator_note": "frontmatter 'holding' final clause vs opinion Part I (warrant application/issuance) and 'Because we affirm the district court's holding based on abandonment, we need not consider whether the warrant was valid.'"
+          },
+          "reasons": [
+            "Everything else in the holding is confirmed: Crumble fled the wrecked Buick leaving the phone, then denied any knowledge of the vehicle; abandonment judged on 'the objective facts available to the investigating officers, not ... the owner's subjective intent'; the court declined to categorically exempt cell phones ('We decline to do so') notwithstanding Riley; and it affirmed denial of suppression.",
+            "The core legal proposition (no Fourth Amendment violation because abandonment forfeited any expectation of privacy) is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Clarify that only the seizure was warrantless; the later search proceeded under a warrant, and the holding turned on abandonment."
+        },
+        {
+          "assertion_id": "d765bf8ec5d634db",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level 'coa', circuit 'ca8'; the opinion is a published Eighth Circuit decision (878 F.3d 656) — 'Binding in-circuit — 8th Cir.' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f59aee07aa8eac15",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All treatment fields (field_i_validity 'unverified', as_of_content null, as_of_treatment null, composite_basis 'unverified', composite_basis_ref null, varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion') match the lake treatment block exactly.",
+            "This is an honest non-assertion of treatment (empty edges, empty derivation), consistent with status under_review and the frontier-stub provenance."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/United States v. Drayton.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "642edd8f64eec07c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official '536 U.S. 194', parallel '122 S. Ct. 2105' and '153 L. Ed. 2d 242', vendor_neutral '2002 U.S. LEXIS 4420' — match payload citation/parallel_cite/neutral_cite.",
+            "Cached opinion header: '536 U.S. 194 (2002)', 'UNITED STATES v. DRAYTON et al.', 'United States Supreme Court', 'Decided June 17, 2002' — confirms SCOTUS, 2002."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "01a1c315eca848ef",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[] and 'Appears on' agree: '[[Knock and Talk]] — Key — Progeny / Refinement'.",
+            "Drayton's rule (a request-to-search encounter is not a seizure where a reasonable person would feel free to decline, and officers need not advise of the right to refuse consent) is the consensual-encounter/voluntary-consent doctrine that underlies knock-and-talk, so the role is doctrinally supportable."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "This is a cross-doctrine placement: Drayton is factually a bus interdiction sweep, not a residential knock-and-talk; the connection is doctrinal only.",
+            "Target 'Knock and Talk' page is not inlined; placement not directly confirmable."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d6803dba857516f2",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (Kennedy, J.): 'The respondents, we conclude, were not seized and their consent to the search was voluntary; and we reverse.'",
+            "Opinion at *206-207: 'The Court has rejected in specific terms the suggestion that police officers must always inform citizens of their right to refuse when seeking permission to conduct a warrantless consent search' — supports that consent can be voluntary though officers did not advise passengers of the right to refuse."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "holding string in payload is truncated ('...do not advise passengers…'); disclosed head is fully supported."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "18a7eb3d6d62f0aa",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level 'scotus'; the opinion is a U.S. Supreme Court decision — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a39da738500f12b0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment fields (good_law, as_of_content 2002-06-17, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note) match the lake treatment block exactly.",
+            "No confirmed negative treatment: all edges are proposed:true and the field_ii labels reflect the citing cases' own status (citation-mining noise), not a holding that Drayton is bad law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake derivation flags audit_needed:true with proposed_negative_events lane1=8, lane2=25, lane3=0 and audit_marker 'R15 treatment audit required'; the good_law status is migration-seed and has not been machine-reverified against those proposed events."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

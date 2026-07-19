@@ -1,0 +1,145 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "b38a2f1b2bdd4ca0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official cite '415 U.S. 800' (type 1, selected_official true), parallel '94 S. Ct. 1234' and '39 L. Ed. 2d 771', vendor_neutral '1974 U.S. LEXIS 120' — all match the payload exactly.",
+          "Cached opinion text confirms '415 U.S. 800 (1974)', 'UNITED STATES v. EDWARDS ET AL.', No. 73-88, Supreme Court of United States, Decided March 26, 1974, White, J.",
+          "Court scotus and year 1974 match; official_citation_present true is correct (official slot populated)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "733944b25a31dbcd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes block declares page '[[SIA Persons]]' role 'Progeny'; the 'Appears on' section renders identically ('[[SIA Persons]] — *Progeny*') — internally consistent.",
+          "Edwards is a post-Robinson/Chimel SIA-timing SCOTUS case (opinion builds on Robinson and Chimel), so a 'Progeny' role in the SIA line is substantively apt."
+        ],
+        "residual_risks": [
+          "The target 'SIA Persons' page is not inlined, so the actual listing of Edwards there cannot be independently confirmed from disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cabd5ab3cdceed97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion text (maj., White, J.) directly supports the holding: 'once the accused is lawfully arrested and is in custody, the effects in his possession at the place of detention that were subject to search at the time and place of his arrest may lawfully be searched and seized without a warrant even though a substantial period of time has elapsed between the arrest and subsequent administrative processing... and the taking of the property for use as evidence.'",
+          "Facts (clothing seized ~10 hours after arrest at the jail, held as evidence) and the reasonable-delay rationale in the opinion match the holding's 'even after a substantial, reasonable delay' framing."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87b69847e82142ac",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload field_i_validity good_law, as_of_content 1974-03-26, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note — all match the lake treatment block verbatim.",
+          "All treatment.edges carry 'proposed': true and are lane-derived candidates flagged 'R15 treatment audit required' (audit_needed true); they are unadjudicated snippet classifications, not finalized negative treatment, so good_law is the correct migrated status."
+        ],
+        "residual_risks": [
+          "lane1_negative (8) and lane2_top_cited (25) proposed negative events await R15 audit; several are facially implausible false positives (e.g., Mincey v. Arizona 'overruled', New York v. Belton 'overruled' vs. Edwards) — audit should confirm good_law holds."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9238c299164286b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level scotus / court_id scotus; 'Binding — SCOTUS' is the correct authority-weight label for a U.S. Supreme Court decision.",
+          "Consistent with header and frontmatter weight."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:11:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Edwards.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w52-04-c831b7d1",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w52-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Edwards"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "733944b25a31dbcd": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87b69847e82142ac": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9238c299164286b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b38a2f1b2bdd4ca0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cabd5ab3cdceed97": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": null
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "33229d0d6cc74ada",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official = '709 F.3d 952' and vendor_neutral carries '2013 WL 856292' and '2013 U.S. App. LEXIS 4731', matching payload citation and neutral_cite exactly.",
+          "Cached opinion caption confirms 'UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT', 'Filed March 8, 2013', en banc — consistent with court, year 2013, and title."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1138187f1458c3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion (staff summary + McKeown, J.): 'The en banc court held that the forensic examination of the defendant's computer required a showing of reasonable suspicion, a modest requirement' — supports the holding that a forensic/comprehensive border device exam requires reasonable suspicion.",
+          "Opinion: 'it is the comprehensive and intrusive nature of forensic examination – not the location of the examination – that is the key factor triggering the requirement of reasonable suspicion' matches the holding's framing."
+        ],
+        "residual_risks": [
+          "holding string in payload is truncated ('; it is the…'); full-text tail not evaluable from the disclosed truncation but the disclosed head is fully supported."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3be41032d30f309",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] and the rendered 'Appears on' agree: '[[Border Searches]] — Illustrates a circuit split'; internally consistent.",
+          "Disclosed opinion establishes Cotterman's reasonable-suspicion rule (one side of the asserted split)."
+        ],
+        "residual_risks": [
+          "The 'circuit split' characterization depends on United States v. Touset (11th Cir.), which is not in the disclosed evidence; the existence of the split cannot be settled from Cotterman's opinion alone.",
+          "Target 'Border Searches' page is not inlined, so the placement itself is not directly confirmable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "2cb5bc869df9515e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level 'coa', circuit '9th', court 'U.S. Court of Appeals, 9th Circuit (en banc)'; opinion is a published en banc Ninth Circuit decision — 'Binding in-circuit — 9th Cir.' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdf04ae1714c2575",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All treatment fields (field_i_validity good_law, as_of_content 2013-03-08, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note) match the lake treatment block exactly.",
+          "Lake derivation lane1_negative (scotus OR ca9 overrule/abrogate/vacate query) shows proposed_negative_events 0 and audit_needed false — no confirmed negative treatment; good_law is supported."
+        ],
+        "residual_risks": [
+          "lane2_top_cited edges carry field_ii labels (overruled/questioned/abrogated/superseded_by_statute) that are proposed:true citation-mining noise reflecting the citing cases' own status, not confirmed negative treatment of Cotterman.",
+          "scope_note claims about Cano (narrowing) and the Touset split are not verifiable from the disclosed opinion text (those opinions are not inlined)."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:11:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-17f23b7d73",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Cotterman.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w52-03-6582252e",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w52-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Cotterman"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "2cb5bc869df9515e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "33229d0d6cc74ada": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1138187f1458c3b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c3be41032d30f309": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": false
+      },
+      "fdf04ae1714c2575": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-17f23b7d73",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

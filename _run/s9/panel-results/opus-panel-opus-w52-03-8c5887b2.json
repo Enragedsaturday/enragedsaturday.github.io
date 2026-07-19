@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "61f335d4346c3344",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations.official '878 F.3d 656', court '8th Cir.', date_decided 2018-01-02 — match payload citation/court/year.",
+          "Cached opinion caption: 'United States Court of Appeals For the Eighth Circuit', 'Filed: January 2, 2018', 'SHEPHERD, Circuit Judge', appellant 'Prentiss Anthony Crumble' — confirms the cite/court/year."
+        ],
+        "residual_risks": [
+          "Docket discrepancy (outside this payload's fields but disclosed): frontmatter/lake docket is '16-4114', but the cached opinion caption reads 'No. 16-4308'. The docket in the page is inconsistent with the disclosed opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1be3da739179ab64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[] and 'Appears on' agree: '[[Abandonment]] — Key'.",
+          "The opinion resolves the Fourth Amendment challenge entirely on abandonment ('the district court did not clearly err in finding Crumble abandoned the cell phone'), so a 'Key' role on the Abandonment page is strongly supported."
+        ],
+        "residual_risks": [
+          "Target 'Abandonment' page is not inlined; placement not directly confirmable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c8cddc647864680",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The following day, the officer applied for a search warrant to search the cell phone for “information as to the second occupant in the Buick or further information related to the crime.”",
+          "locator_note": "frontmatter 'holding' final clause vs opinion Part I (warrant application/issuance) and 'Because we affirm the district court's holding based on abandonment, we need not consider whether the warrant was valid.'",
+          "needs_cl": false,
+          "problem": "The holding says the '...warrantless seizure and later search of the phone did not violate the Fourth Amendment.' Under the natural parse 'warrantless' modifies only 'seizure' (the officer secured the phone without a warrant), but the phrasing also admits a reading that the SEARCH was warrantless — which contradicts the record: the officer obtained a search warrant the next day, and the court affirmed on abandonment/forfeiture of any expectation of privacy and expressly declined to reach warrant validity.",
+          "proposed_fix": "Tighten to make clear 'warrantless' describes the seizure only; note the later search was executed under a warrant, though the court's holding rested on abandonment (forfeiture of any reasonable expectation of privacy), making the warrant's validity unnecessary to decide.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Everything else in the holding is confirmed: Crumble fled the wrecked Buick leaving the phone, then denied any knowledge of the vehicle; abandonment judged on 'the objective facts available to the investigating officers, not ... the owner's subjective intent'; the court declined to categorically exempt cell phones ('We decline to do so') notwithstanding Riley; and it affirmed denial of suppression.",
+          "The core legal proposition (no Fourth Amendment violation because abandonment forfeited any expectation of privacy) is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Clarify that only the seizure was warrantless; the later search proceeded under a warrant, and the holding turned on abandonment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d765bf8ec5d634db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_level 'coa', circuit 'ca8'; the opinion is a published Eighth Circuit decision (878 F.3d 656) — 'Binding in-circuit — 8th Cir.' is correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f59aee07aa8eac15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "All treatment fields (field_i_validity 'unverified', as_of_content null, as_of_treatment null, composite_basis 'unverified', composite_basis_ref null, varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion') match the lake treatment block exactly.",
+          "This is an honest non-assertion of treatment (empty edges, empty derivation), consistent with status under_review and the frontier-stub provenance."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:11:25-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Crumble.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w52-03-8c5887b2",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w52-03.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Crumble"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1be3da739179ab64": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3c8cddc647864680": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "61f335d4346c3344": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d765bf8ec5d634db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f59aee07aa8eac15": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0e11e50b13",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

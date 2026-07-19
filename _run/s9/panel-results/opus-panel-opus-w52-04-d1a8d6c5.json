@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "c100df29bc756d10",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The case is real and correctly identified: opinion text shows '541 U.S. 149 (2004)', 'UNITED STATES v. FLORES-MONTANO', No. 02-1794, Supreme Court, Decided March 30, 2004, Rehnquist, C.J. for a unanimous Court — matching court, year, docket.",
+          "All cites in the payload match the lake: parallel_cite '541 U.S. 149; 124 S. Ct. 1582; 158 L. Ed. 2d 311; 72 U.S.L.W. 4263; 17 Fla. L. Weekly Fed. S 207' and neutral_cite '2004 U.S. LEXIS 2548'; no fabrication.",
+          "The payload's citation='' and official_citation_present=false faithfully mirror the lake (citations.official is null), but that state is itself a data-quality artifact: the official U.S. Reports cite (541 U.S. 149, type 1) does exist and is only mis-slotted into the parallel array."
+        ],
+        "residual_risks": [
+          "Reader-facing rendering is unaffected: the header and Sources display '541 U.S. 149 (2004)' correctly."
+        ],
+        "suggested_tightening": "541 U.S. 149 is the official U.S. Reports citation and is present in parallel_cite. Per the provenance warning 'official cite selection failed closed: unlisted_reporter:Fla. L. Weekly Fed. S', the official-selection failed closed on an unrelated unlisted reporter, leaving citation empty and official_citation_present=false. Promote 541 U.S. 149 to the official citation slot (official_citation_present=true).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7ab8bd6c0a5155c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion's conclusion directly supports the holding: 'we conclude that the Government's authority to conduct suspicionless inspections at the border includes the authority to remove, disassemble, and reassemble a vehicle's fuel tank.'",
+          "Facts (37 kg marijuana in the gas tank at Otay Mesa; disassembly/reassembly of the fuel tank) confirm the '...includes disassembling and reassembling a gas [tank]' completion of the truncated holding."
+        ],
+        "residual_risks": [
+          "Holding string is truncated ('...disassembling and reassembling a gas…'); the completing noun ('tank') is directly supported by the opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ccf0150ed52ad022",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes '[[Border Searches]]' role 'Key — Progeny / Refinement' matches the '## Appears on' section verbatim — internally consistent.",
+          "Substantively apt: Flores-Montano is a SCOTUS border-search vehicle case that refines the routine/non-routine distinction from Montoya de Hernandez, fitting a 'Key — Progeny / Refinement' role on a Border Searches home."
+        ],
+        "residual_risks": [
+          "Target 'Border Searches' page is not inlined; the actual listing cannot be independently confirmed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0a99e4b492cb5da4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload field_i_validity good_law, as_of_content 2004-03-30, as_of_treatment 2026-06-30, composite_basis migration-seed, varies_by_point false, scope_note — all match the lake treatment block verbatim.",
+          "treatment.edges are all 'proposed': true; lane1_negative found 6 proposed events (audit_needed false) and lane2_top_cited proposals are pending R15 audit, none finalized, so good_law stands."
+        ],
+        "residual_risks": [
+          "lane2_top_cited proposed negative events (24) await R15 audit; confirmation deferred."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "741908299a89b953",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake court_id scotus / court_level scotus; 'Binding — SCOTUS' is the correct authority-weight label for a U.S. Supreme Court decision."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:11:25-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-52f1cff794",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e2b1795aa1",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-09b7dc9855"
+    ],
+    "group_id": "content/cases/United States v. Flores-Montano.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w52-04-d1a8d6c5",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w52-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Flores-Montano"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0a99e4b492cb5da4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "741908299a89b953": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7ab8bd6c0a5155c2": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c100df29bc756d10": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ccf0150ed52ad022": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-09b7dc9855",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-52f1cff794",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e2b1795aa1",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
