@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-07-19T08:34:40-04:00",
+  "inputs": {
+    "findings": 2329,
+    "panel_result_files": 4071,
+    "panel_result_verdict_keys": 19429,
+    "votes": 5439
+  },
+  "invariant_note": "Staged rows carry recorded_before_other_votes_read=false (they are projections). This satisfies inv2's 3-distinct-lane clause but is expected to trip inv2's blindness clause; flagged for machine adjudication, not silently resolved.",
+  "mode": "dry-run",
+  "schema": "s9.p2-backfill-dryrun.v1",
+  "spot_checks": [
+    {
+      "MATCH": true,
+      "assertion_id": "2486696e7b4ed51a",
+      "finding_id": "F-S9-PR-a55ed96bc6",
+      "lane": "codex-A",
+      "mapping": "stands -> refuted",
+      "model": "gpt-5.5",
+      "panel_dimension": "existence",
+      "projected_assertion_verdict_field": "stands",
+      "raw_assertion_verdict_in_source": "stands",
+      "source_field": "parsed.reviewed",
+      "source_file": "_run/s9/panel-results/codex-A-panel-smoke-9a555e01.json",
+      "staged_vote_verdict": "refuted"
+    },
+    {
+      "MATCH": true,
+      "assertion_id": "57c5c88515c7f56c",
+      "finding_id": "F-S9-PR-d991d2b5b7",
+      "lane": "codex-B",
+      "mapping": "stands -> refuted",
+      "model": "gpt-5.5",
+      "panel_dimension": "quote_fidelity",
+      "projected_assertion_verdict_field": "stands",
+      "raw_assertion_verdict_in_source": "stands",
+      "source_field": "parsed.reviewed",
+      "source_file": "_run/s9/panel-results/codex-B-panel-prod-2f1b3c3b.json",
+      "staged_vote_verdict": "refuted"
+    },
+    {
+      "MATCH": true,
+      "assertion_id": "2309c4de36a9cbe1",
+      "finding_id": "F-S9-PR-6273ddad2b",
+      "lane": "claude-opus-panel",
+      "mapping": "stands -> refuted",
+      "model": "claude-opus-4-8",
+      "panel_dimension": "existence",
+      "projected_assertion_verdict_field": "stands",
+      "raw_assertion_verdict_in_source": "stands",
+      "source_field": "summary.verdict_map",
+      "source_file": "_run/s9/panel-results/opus-panel-opus-pack-001-bdb7e5f3.json",
+      "staged_vote_verdict": "refuted"
+    }
+  ],
+  "totals": {
+    "resolvable_votes": 1443,
+    "subquorum_findings": 1380,
+    "unresolvable": {
+      "by_lane": {
+        "claude-opus-panel": 8,
+        "codex-A": 13,
+        "codex-B": 10
+      },
+      "by_reason": {
+        "no finding row for finding_id": 4,
+        "no verdict for (lane,object,assertion,dimension)": 27
+      },
+      "finding_ids_count": 21,
+      "finding_ids_sample": [
+        "F-S9-PR-06ec90ca5a",
+        "F-S9-PR-0d1fcbac97",
+        "F-S9-PR-1c2fc2e007",
+        "F-S9-PR-4dcc841f1d",
+        "F-S9-PR-53b8aa949c",
+        "F-S9-PR-55e47042d0",
+        "F-S9-PR-588808eb93",
+        "F-S9-PR-6ffdcb45b8",
+        "F-S9-PR-785c7c812d",
+        "F-S9-PR-7d4ef26bce",
+        "F-S9-PR-87abc048a2",
+        "F-S9-PR-a929835ba5",
+        "F-S9-PR-bafce48906",
+        "F-S9-PR-bbd4083c24",
+        "F-S9-PR-c9839ea0aa",
+        "F-S9-PR-d1d2d45449",
+        "F-S9-PR-d2bcd90e7e",
+        "F-S9-PR-e3dbc1c7ff",
+        "F-S9-PR-ecdb869fd5",
+        "F-S9-PR-feddf80687"
+      ],
+      "total_missing_lane_slots": 31
+    },
+    "would_reach_quorum_count": 1359
+  },
+  "worker": {
+    "lane": "o2-execute-P2-plumbing",
+    "model": "claude-opus-4-8"
+  }
+}

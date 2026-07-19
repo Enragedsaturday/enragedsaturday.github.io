@@ -1,0 +1,15 @@
+{
+  "schema": "s9.ruling.v1",
+  "ruling_id": "P2-BACKFILL-BLINDNESS",
+  "at": "2026-07-19T08:55:00-04:00",
+  "adjudicator": {"lane": "claude-fable-5-orchestrator", "model": "claude-fable-5"},
+  "question": "May quorum-backfill votes projected from persisted panel-result verdict maps carry recorded_before_other_votes_read=true?",
+  "ruling": "YES. inv2's blindness clause guards independence of judgment. Each projected verdict was formed during the source lane's isolated review execution and persisted to _run/s9/panel-results/ before any sibling votes or findings were disclosed to that lane (reviewers see only their pack/worklist evidence by design). The projection event is post-hoc plumbing and is stamped separately (backfill:true, blind_at_source:true, projection_event, source). Setting the flag false would misdescribe the verdict's provenance and trip inv2 on 1,443 votes whose judgments were in fact blind.",
+  "precedent": "vote-semantics-cutover.json (2026-07-09): orchestrator ruling recorded, fix applied at data layer with provenance stamps.",
+  "scope": "Applies only to rows staged by scripts/s9/backfill_quorum.py with backfill:true. Live votes remain governed by the plain flag.",
+  "evidence": [
+    {"kind": "design", "ref": "OPUS-LANE-RUNBOOK.md reviewer contract: 'reads ONLY the inlined pack evidence (no filesystem, no CL, no outside knowledge)'"},
+    {"kind": "design", "ref": "run_panel.py codex lanes: isolated per-group executions writing panel-results before any adjudication"},
+    {"kind": "dry-run", "ref": "_run/s9/P2-BACKFILL-DRYRUN.json spot_checks 3/3 PASS incl. independent re-read of raw assertion verdicts"}
+  ]
+}
