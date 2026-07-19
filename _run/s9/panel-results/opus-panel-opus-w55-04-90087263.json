@@ -1,0 +1,154 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "ff2e50f214ee4b19",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header reads '436 U.S. 547 (1978)', 'ZURCHER, CHIEF OF POLICE OF PALO ALTO, ET AL. v. STANFORD DAILY ET AL.', No. 76-1484, Supreme Court of the United States — matches title, court, and year 1978.",
+          "Lake citations block confirms official 436 U.S. 547, parallel 98 S. Ct. 1970 / 56 L. Ed. 2d 525, and vendor-neutral 1978 U.S. LEXIS 98, all matching the payload; official_citation_present true."
+        ],
+        "residual_risks": [
+          "Frontmatter/lake date_decided is 1978-10-02 while the cached opinion states 'Decided May 31, 1978' (also reflected in treatment.as_of_content 1978-05-31); the existence assertion only asserts year 1978 (correct), so the date_decided mismatch is outside this assertion's payload and does not refute it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "926b8366f6104972",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes block lists page '[[Scope Manner and Related Issues]]' with role 'Progeny (third-party premises)' verbatim, matching the payload.",
+          "Substantively apt: the opinion resolves 'the recurring situation where state authorities have probable cause to believe that ... evidence of crime is located on identified property but do not then have probable cause to believe that the owner or possessor ... is himself implicated' — a third-party-premises holding."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd69e31176fc3fbb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Third-party/probable-cause holding supported: 'valid warrants may be issued to search any property, whether or not occupied by a third party, at which there is probable cause to believe that fruits, instrumentalities, or evidence of a crime will be found'; 'The critical element in a reasonable search is not that the owner of the property is suspected of crime but that there is reasonable cause to believe that the specific things ... are located on the property'.",
+          "Newspaper/First Amendment element supported: 'Where the materials sought to be seized may be protected by the First Amendment, the requirements of the Fourth Amendment must be applied with scrupulous exactitude'; and the Court rejected the subpoena-first rule — 'we decline to reinterpret the Amendment to impose a general constitutional barrier against warrants to search newspaper premises, to require resort to subpoenas as a general rule'.",
+          "Disposition supported: 'the judgment of the Court of Appeals is reversed'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "110e6ed219cba624",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload treatment fields (field_i_validity good_law, as_of_content 1978-05-31, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref 'Zurcher v. Stanford Daily', varies_by_point false, and the PPA scope_note) match the lake treatment block field-for-field.",
+          "The good_law determination is defensible from disclosed evidence: every negative-treatment edge in the lake is proposed:true with audit_needed/'R15 treatment audit required' (raw lane1_negative/lane2_top_cited candidates, not adjudicated), and the scope_note correctly frames the Privacy Protection Act of 1980 as a statutory overlay, consistent with the opinion's own note that the Fourth Amendment 'does not prevent ... legislative or executive efforts to establish nonconstitutional protections'."
+        ],
+        "residual_risks": [
+          "Lake treatment.edges list numerous proposed negative labels (e.g., Illinois v. Gates/United States v. Leon 'overruled') that are facially implausible citator noise; they remain unadjudicated (proposed:true) and do not disturb the composite good_law, but a downstream audit is flagged."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "91325e7255614a00",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Record is a U.S. Supreme Court decision (court_id scotus, official cite 436 U.S. 547), so 'Binding — SCOTUS' is the correct authority-weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T05:51:31-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-d5a6c25144",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/Zurcher v. Stanford Daily.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w55-04-90087263",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w55-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Zurcher v. Stanford Daily"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "110e6ed219cba624": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "91325e7255614a00": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "926b8366f6104972": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd69e31176fc3fbb": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ff2e50f214ee4b19": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d5a6c25144",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
