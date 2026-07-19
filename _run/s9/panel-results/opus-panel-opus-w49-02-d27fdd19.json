@@ -1,0 +1,166 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "09c41f2f1d15a9a1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"reason\": \"unlisted_reporter:Fla. L. Weekly Fed. S\"",
+          "locator_note": "lake citations.official (null) & citations.official_selection.reason; parallel[0].cite='554 U.S. 191'; frontmatter citation=''",
+          "needs_cl": false,
+          "problem": "Payload asserts citation '' (empty) and official_citation_present false, but the record's own citations carry '554 U.S. 191' (reporter 'U.S.', type 1) — the official U.S. Reports cite — filed only under parallel[]/all[] with selected_official:false. The lake left citations.official=null and display=null because official_selection aborted with reason 'unlisted_reporter:Fla. L. Weekly Fed. S', dropping a genuinely present official citation.",
+          "proposed_fix": "Select '554 U.S. 191' as the official citation; set frontmatter citation to '554 U.S. 191 (2008)' and official_citation_present true. Harden official_selection to skip/whitelist unlisted reporters (Fla. L. Weekly Fed. S) rather than abort the whole selection.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The official U.S. Reports citation 554 U.S. 191 is plainly present in the disclosed record (parallel[]/all[], reporter 'U.S.', type 1), contradicting official_citation_present:false and the empty citation field.",
+          "official_selection.reason 'unlisted_reporter:Fla. L. Weekly Fed. S' shows the selector failed on an unlisted reporter rather than a true absence of an official cite; cached slip opinion confirms 'Cite as: 554 U. S. ____ (2008)', No. 07-440, decided June 23, 2008."
+        ],
+        "residual_risks": [
+          "User-facing header and Sources still display '554 U.S. 191 (2008)' (pulled from parallel_cite), mitigating reader impact; the defect is confined to the structured citation/official field and its present-flag."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0757daa4c653cb96",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Content page homes and 'Appears on' list [[Sixth Amendment Right to Counsel]] with role 'Key — Progeny / Refinement'; Rothgery fixes Sixth Amendment attachment at the initial appearance, refining the Brewer/Kirby attachment line — consistent with the role."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4262db41eae190d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A criminal defendant's initial appearance before a magistrate, where he learns the charge against him and his liberty is restricted,…",
+          "locator_note": "frontmatter holding field",
+          "needs_cl": false,
+          "problem": "Frontmatter `holding` is truncated: it ends mid-clause with an ellipsis after 'his liberty is restricted,' and never states the operative ruling (that the initial appearance marks the start of adversary judicial proceedings triggering attachment of the Sixth Amendment right to counsel, regardless of a prosecutor's awareness/involvement).",
+          "proposed_fix": "Complete the holding sentence.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "As far as it goes the fragment is supported by the opinion body (554 U.S. at 213): 'a criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel'.",
+          "'magistrate' narrows the opinion's 'judicial officer' but is accurate to Rothgery's facts (art. 15.17 magistrate); the substantive defect is the truncation, not inaccuracy."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Complete the holding, e.g.: 'A criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel — even if no prosecutor was aware of or involved in the arrest or hearing.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50e7d951d2a2a104",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Frontmatter authority_weight 'Binding — SCOTUS' matches; SCOTUS case, good law."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0a4a1c51aca3247",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload treatment fields match the lake treatment block verbatim (field_i_validity 'good_law', as_of_content '2008-06-23', as_of_treatment '2026-06-30', composite_basis 'migration-seed', composite_basis_ref 'Rothgery v. Gillespie County', varies_by_point false, scope_note)."
+        ],
+        "residual_risks": [
+          "Lake carries proposed:true negative edges (e.g., Commonwealth v. Scott 'superseded_by_statute') — unadjudicated candidates that do not disturb the good_law determination."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T01:43:12-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c1d3d14ab7"
+    ],
+    "group_id": "content/cases/Rothgery v. Gillespie County.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w49-02-d27fdd19",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w49-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rothgery v. Gillespie County"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0757daa4c653cb96": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "09c41f2f1d15a9a1": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4262db41eae190d1": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "50e7d951d2a2a104": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d0a4a1c51aca3247": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c1d3d14ab7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b28713e1f8",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
