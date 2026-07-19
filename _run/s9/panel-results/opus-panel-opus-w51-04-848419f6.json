@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "818663b1eca338a6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official cite '629 F.3d 1161', court 'U.S. Court of Appeals, 9th Circuit' (court_id ca9), year 2011, and vendor_neutral '2011 U.S. App. LEXIS 1064' + '2011 WL 167045' all match the payload.",
+          "Cached opinion caption confirms Ninth Circuit, 'Filed January 20, 2011', matching year 2011."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6df6f83eeed8d8cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes lists Curtilage with role 'Related (cross-doctrine)', matching the payload.",
+          "Case squarely concerns whether the area outside the tent is curtilage, so a cross-doctrine relation to Curtilage is supported by the opinion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c7c1bf78325a6b52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes lists Tents with role 'Key — Progeny / Refinement', matching the payload.",
+          "Opinion holds tent interiors private ('A tent is comparable to a house, apartment, or hotel room') while refining that the surrounding campsite is not curtilage — a Key/refinement role for a Tents doctrine page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f45b11ee0d9cbb21",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "authority_weight: \"Binding in-circuit — 9th Cir.\"",
+          "locator_note": "frontmatter holding field vs. authority_weight field on the Basher content page",
+          "needs_cl": false,
+          "problem": "The holding string carries the weight prefix '(Persuasive (outside circuit) — 9th Cir.)', which contradicts the same page's authority_weight 'Binding in-circuit — 9th Cir.' and treatment scope_note 'Good law in-circuit'. Basher is a Ninth Circuit decision; it is binding in-circuit, not merely persuasive.",
+          "proposed_fix": "Correct or drop the parenthetical so the holding's weight tag reads 'Binding in-circuit — 9th Cir.' to match authority_weight; the substantive holding text needs no change.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Substantive holding is fully supported: opinion (internal p.1164) states 'A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing,' and (p.1165) holds 'there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curtilage.'",
+          "But the embedded weight prefix '(Persuasive (outside circuit) — 9th Cir.)' is internally contradicted by authority_weight 'Binding in-circuit — 9th Cir.' and treatment 'good law in-circuit' — a 9th Cir. decision is binding in-circuit, not persuasive/outside-circuit."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace the holding's '(Persuasive (outside circuit) — 9th Cir.)' prefix with 'Binding in-circuit — 9th Cir.' to match authority_weight; leave the substantive holding unchanged.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87218c1e6c7ea707",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Ninth Circuit Court of Appeals decision (court_level coa, circuit 9th); 'Binding in-circuit — 9th Cir.' is the correct weight label."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97333510732e8e73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment block matches payload: field_i_validity good_law, as_of_treatment 2026-06-30, composite_basis migration-seed, scope_note and varies_by_point false all identical.",
+          "Derivation lane1_negative found proposed_negative_events 0 with audit_needed false; the lane2 'overruled/questioned' edges are all proposed:true and reflect the citing cases' own status, not confirmed negatives against Basher, so good_law is consistent with disclosed evidence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-19T02:00:39-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "content/cases/United States v. Basher.md",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w51-04-848419f6",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w51-04.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Basher"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "6df6f83eeed8d8cf": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "818663b1eca338a6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87218c1e6c7ea707": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97333510732e8e73": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c7c1bf78325a6b52": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f45b11ee0d9cbb21": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a82a50a3fc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
