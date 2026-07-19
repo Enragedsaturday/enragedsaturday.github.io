@@ -1,0 +1,163 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "e00f7aa3ac0a1526",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Cached opinion header: '493 U.S. 307 (1990)', 'JAMES v. ILLINOIS', 'No. 88-6075', 'Decided January 10, 1990' — matches title, citation, docket, year.",
+          "Lake citations: official '493 U.S. 307'; parallels '110 S. Ct. 648', '107 L. Ed. 2d 676', '58 U.S.L.W. 4115'; vendor-neutral '1990 U.S. LEXIS 335' — all match payload's citation/parallel_cite/neutral_cite."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "333d2453e5e12f87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Opinion holds: 'we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony' — confining the impeachment exception to the defendant's own testimony.",
+          "Court 'adhere[s] to the line drawn in our previous cases', declining to extend the exception to other defense witnesses; holding statement is an accurate restatement."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9e0f99ed17d119af",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Limiting (impeachment exception)*",
+          "locator_note": "frontmatter homes[0].page ('[[Fruits & Attenuation]]') vs '## Appears on' section ('[[The Exclusionary Rule]]')",
+          "needs_cl": false,
+          "problem": "The home_role assertion binds the case to home '[[Fruits & Attenuation]]' (frontmatter homes[0].page), but the page's own '## Appears on' section lists '[[The Exclusionary Rule]]' for the identical role. The two disclosed homes disagree. James v. Illinois concerns the impeachment exception to the exclusionary rule (exclusionary-rule doctrine per tags 'exclusionary-rule'/'impeachment-exception' and related cases Walder/Havens/Elkins), not fruit-of-the-poisonous-tree/attenuation, so 'Fruits & Attenuation' is the topically ill-fitting side of the mismatch.",
+          "proposed_fix": "Reconcile frontmatter homes[].page with the '## Appears on' section; the topically correct home is '[[The Exclusionary Rule]]' (as Appears-on, tags, and related cases indicate), so update the frontmatter home off '[[Fruits & Attenuation]]'.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[0].page is '[[Fruits & Attenuation]]' but '## Appears on' lists '[[The Exclusionary Rule]]' for the same role string — an internal inconsistency within the disclosed page.",
+          "The asserted role ('Key — Limiting (impeachment exception)') is substantively supported by the holding, but the asserted home page is contradicted by the page itself."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9dedf0859aea49a3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Identity court_level 'scotus' and cached header 'Supreme Court of United States' confirm a U.S. Supreme Court decision; 'Binding — SCOTUS' is the correct weight.",
+          "Frontmatter authority_weight matches the rendered header fallback text 'Binding — SCOTUS'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb47e40fa3b9bda7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "field_i_validity 'good_law' is not contradicted by any confirmed negative treatment; every treatment.edge is proposed:true, and the lane2_top_cited 'overruled' labels (e.g., Payne v. Tennessee, Hudson v. Michigan) are self-evidently mislabeled top-cited progeny, not overrulings of James.",
+          "as_of_content 1990-01-10 equals the decision date; scope_note (caps impeachment exception at defendant's own testimony) accurately tracks the holding."
+        ],
+        "residual_risks": [
+          "Lane2 derivation carries audit_needed:true / 'R15 treatment audit required'; proposed negative edges remain unadjudicated but none are confirmed negative treatment in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T21:43:30-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-8a2c0493c5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [],
+    "group_id": "content/cases/James v. Illinois.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w45-00-f6429b42",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w45-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "James v. Illinois"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "333d2453e5e12f87": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9dedf0859aea49a3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9e0f99ed17d119af": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cb47e40fa3b9bda7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e00f7aa3ac0a1526": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-45e99e9289",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8a2c0493c5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}

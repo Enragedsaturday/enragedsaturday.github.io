@@ -1,0 +1,330 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/James v. Illinois.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "e00f7aa3ac0a1526",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header: '493 U.S. 307 (1990)', 'JAMES v. ILLINOIS', 'No. 88-6075', 'Decided January 10, 1990' — matches title, citation, docket, year.",
+            "Lake citations: official '493 U.S. 307'; parallels '110 S. Ct. 648', '107 L. Ed. 2d 676', '58 U.S.L.W. 4115'; vendor-neutral '1990 U.S. LEXIS 335' — all match payload's citation/parallel_cite/neutral_cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "333d2453e5e12f87",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion holds: 'we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony' — confining the impeachment exception to the defendant's own testimony.",
+            "Court 'adhere[s] to the line drawn in our previous cases', declining to extend the exception to other defense witnesses; holding statement is an accurate restatement."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9e0f99ed17d119af",
+          "dimension": "support",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The home_role assertion binds the case to home '[[Fruits & Attenuation]]' (frontmatter homes[0].page), but the page's own '## Appears on' section lists '[[The Exclusionary Rule]]' for the identical role. The two disclosed homes disagree. James v. Illinois concerns the impeachment exception to the exclusionary rule (exclusionary-rule doctrine per tags 'exclusionary-rule'/'impeachment-exception' and related cases Walder/Havens/Elkins), not fruit-of-the-poisonous-tree/attenuation, so 'Fruits & Attenuation' is the topically ill-fitting side of the mismatch.",
+            "severity": "medium",
+            "proposed_fix": "Reconcile frontmatter homes[].page with the '## Appears on' section; the topically correct home is '[[The Exclusionary Rule]]' (as Appears-on, tags, and related cases indicate), so update the frontmatter home off '[[Fruits & Attenuation]]'.",
+            "evidence_quote": "- [[The Exclusionary Rule]] — *Key — Limiting (impeachment exception)*",
+            "needs_cl": false,
+            "locator_note": "frontmatter homes[0].page ('[[Fruits & Attenuation]]') vs '## Appears on' section ('[[The Exclusionary Rule]]')"
+          },
+          "reasons": [
+            "Frontmatter homes[0].page is '[[Fruits & Attenuation]]' but '## Appears on' lists '[[The Exclusionary Rule]]' for the same role string — an internal inconsistency within the disclosed page.",
+            "The asserted role ('Key — Limiting (impeachment exception)') is substantively supported by the holding, but the asserted home page is contradicted by the page itself."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9dedf0859aea49a3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Identity court_level 'scotus' and cached header 'Supreme Court of United States' confirm a U.S. Supreme Court decision; 'Binding — SCOTUS' is the correct weight.",
+            "Frontmatter authority_weight matches the rendered header fallback text 'Binding — SCOTUS'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cb47e40fa3b9bda7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is not contradicted by any confirmed negative treatment; every treatment.edge is proposed:true, and the lane2_top_cited 'overruled' labels (e.g., Payne v. Tennessee, Hudson v. Michigan) are self-evidently mislabeled top-cited progeny, not overrulings of James.",
+            "as_of_content 1990-01-10 equals the decision date; scope_note (caps impeachment exception at defendant's own testimony) accurately tracks the holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lane2 derivation carries audit_needed:true / 'R15 treatment audit required'; proposed negative edges remain unadjudicated but none are confirmed negative treatment in the disclosed record."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Johnson v. Glick.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "44779f121fe653bd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is 'FRIENDLY, Circuit Judge' (2d Cir.), reporter F.2d, star-pages *1030–*1034; lake official cite '481 F.2d 1028', court_id ca2, year 1973 — match payload.",
+            "Cross-confirmed within this pack: the Kingsley opinion cites 'Johnson v. Glick, 481 F.2d 1028 (C.A.2 1973)'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0bee2037c10601f0",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case announces the foundational multi-factor excessive-force test (the pre-Graham due-process template); a 'Key' role on a 'Use of Force' home is well supported.",
+            "'## Appears on' ('[[Use of Force]] — *Key*') is consistent with frontmatter homes."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4dba6add8992e24f",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion at *1033 states verbatim the four-factor test: 'In determining whether the constitutional line has been crossed, a court must look to such factors as the need for the application of force, the relationship between the need and the amount of force that was used, the extent of injury inflicted, and whether force was applied in a good faith effort to maintain or restore discipline or maliciously and sadistically for the very purpose of causing harm.'",
+            "Opinion grounds the claim in substantive due process (Rochin/Fourteenth Amendment) and states 'Not every push or shove ... violates a prisoner's constitutional rights' — 'pre-Graham due-process test' characterization is accurate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3f29e3a95fd07efc",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment mirrors the assertion exactly: field_i_validity 'unverified', as_of_* null, composite_basis 'unverified', varies_by_point false, frontier-stub scope_note.",
+            "status 'under_review', frontier-identity build; treatment/progeny intentionally not derived until S6/S9 promotion — the assertion faithfully reports that unverified posture."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f917d84fef3d2f36",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Identity court_id 'ca2', court_level 'coa'; a Second Circuit Court of Appeals decision — 'Binding in-circuit — 2d Cir.' is correct.",
+            "Frontmatter authority_weight matches the rendered header fallback text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Kalkines v. United States.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "654b6e40df6114a0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion: 'Davis, Judge, delivered the opinion of the court' (U.S. Court of Claims), star-pages *573–*582, reporter '473 F.2d 1391'; lake parallels '200 Ct. Cl. 570' / '473 F.2d 1391' / '1973 U.S. Ct. Cl. LEXIS 11' match payload's parallel_cite.",
+            "official is null (reason 'unlisted_reporter:Ct. Cl.'), so official_citation_present:false and empty citation faithfully mirror the lake; the case plainly exists at the disclosed parallel cites, year 1973."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "562f179bf9b312c6",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion states verbatim: 'the public servant can be removed for not replying if he is adequately informed both that he is subject to discharge for not answering and that his replies (and their fruits) cannot be employed against him in a criminal case.'",
+            "Holding restatement (the 'Kalkines warning': answer-or-be-discharged plus use-and-derivative-use immunity) accurately captures the rule."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "82ea054f1327420c",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion applies Garrity, Gardner v. Broderick, and the Uniformed Sanitation Men line to fashion the federal warning — a 'Progeny / Refinement' of the Garrity doctrine.",
+            "'## Appears on' ('[[Public-Employee Compelled Statements (Garrity)]] — *Key — Progeny / Refinement*') matches the frontmatter home/role."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "32a0dabddc3c9a16",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is not contradicted by any confirmed negative treatment; all treatment.edges are proposed:true lane2_top_cited 'questioned'/'criticized' noise, and lane1_negative found 0 events.",
+            "as_of_content 1973-02-16 equals the decision date; scope_note's core (the Kalkines warning remains the governing federal advisement) is consistent with the disclosed holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note clause 'its precedent was adopted as binding by the Federal Circuit (South Corp. v. United States)' cannot be confirmed from the disclosed pack (South Corp. is not inlined); it is consistent with, but not verifiable from, the disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b008a5d70d6f6677",
+          "dimension": "treatment",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Frontmatter authority_weight is 'Historical', but the rendered header line and the '## Treatment & subsequent history' section both state '**Binding in-circuit — Fed. Cir.**', and the treatment scope_note states the precedent 'was adopted as binding by the Federal Circuit (South Corp. v. United States)'. 'Historical' contradicts the page's own weight and understates the case's precedential authority; the other three cases in this pack keep frontmatter authority_weight equal to the header weight, so this is an internal inconsistency.",
+            "severity": "medium",
+            "proposed_fix": "Set authority_weight to 'Binding in-circuit — Fed. Cir.' to match the header fallback text, the Treatment section, and the scope_note (or, if 'Historical' is intended, correct the header/Treatment/scope_note to agree).",
+            "evidence_quote": "*473 F.2d 1391 (Ct. Cl. 1973)* · U.S. Court of Claims · **Binding in-circuit — Fed. Cir.** · Treatment: **good** *(as of 2026-06-30)*",
+            "needs_cl": false,
+            "locator_note": "frontmatter authority_weight ('Historical') vs header line + '## Treatment & subsequent history' + treatment.scope_note (all 'Binding in-circuit — Fed. Cir.')"
+          },
+          "reasons": [
+            "authority_weight 'Historical' is contradicted by three other disclosed loci on the same page that assert 'Binding in-circuit — Fed. Cir.', including the scope_note's binding-adoption statement.",
+            "Given good_law status and Court-of-Claims-adopted-by-Fed-Cir precedent (per the page's own scope_note), 'Historical' mislabels/understates the weight."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Kingsley v. Hendrickson.md",
+      "lens": "opus-both",
+      "reviewed": [
+        {
+          "assertion_id": "7cf9a497f3d4d14e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is 'Justice BREYER delivered the opinion of the Court' with S. Ct. page labels *2471–*2479, decided 2015; lake parallels include '576 U.S. 389' and '135 S. Ct. 2466' matching payload's parallel_cite; vendor-neutral '2015 U.S. LEXIS 4073' matches neutral_cite.",
+            "official is null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S'), so official_citation_present:false and empty citation faithfully mirror the lake's failed-closed selection; the case plainly exists at the disclosed cites, year 2015, U.S. Supreme Court."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'576 U.S. 389' is substantively the official U.S. Reports citation but is flagged parallel because official selection failed closed on an unlisted reporter; the page header nonetheless displays '576 U.S. 389 (2015)' correctly."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a81c936ba684375c",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Kingsley is a landmark SCOTUS refinement of the excessive-force standard for pretrial detainees; a 'Key — Progeny / Refinement' role on a 'Use of Force' home is well supported.",
+            "'## Appears on' ('[[Use of Force]] — *Key — Progeny / Refinement*') matches the frontmatter home/role."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ef9e48cdeb40b3d5",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion at *2473 states verbatim: 'we agree with the dissenting appeals court judge, the Seventh Circuit's jury instruction committee, and Kingsley, that a pretrial detainee must show only that the force purposely or knowingly used against him was objectively unreasonable.'",
+            "Holding restatement (objective unreasonableness of purposeful/knowing force; no subjective awareness required) accurately captures the rule."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "46ff909a437c025e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Identity court_level 'scotus'; a 2015 U.S. Supreme Court decision — 'Binding — SCOTUS' is correct.",
+            "Frontmatter authority_weight matches the rendered header fallback text 'Binding — SCOTUS'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "83f91e60e50652b6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is not contradicted by any confirmed negative treatment; every treatment.edge is proposed:true, with lane2_top_cited 'overruled'/'abrogated' labels on progeny (Castro, Darnell, Miranda, etc.) and one lane1_negative 'superseded_by_statute' on a state case (Foster) — all noise, not overrulings of Kingsley.",
+            "as_of_content 2015-06-22 equals the decision date; scope_note (objective-reasonableness for pretrial-detainee excessive force under the Fourteenth Amendment) accurately tracks the holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Multiple proposed negative edges exist but are unadjudicated top-cited/keyword noise; none are confirmed negative treatment in the disclosed record."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
