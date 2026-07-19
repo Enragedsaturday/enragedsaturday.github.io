@@ -1835,3 +1835,22 @@ findings awaiting orchestrator backfill from panel-results verdict maps; inv5 co
 Zero structural/lane/duplicate-vote failures. Cron 5458d4c9 deleted.
 NEXT: P2 panel-findings adjudication (~2,299 findings; mechanical classes above enable class-wide
 dispositions) -> P3 fixes -> P4 sweeps -> P5 gate -> P6 publish-brief.
+
+**P2 PANEL-FINDINGS ADJUDICATION COMPLETE (2026-07-19 ~12:45).** Same-day arc after the lens
+completion, user-directed budget (~17 boosted points, stop 02:30): (1) QUORUM BACKFILL — 1,443
+votes projected from persisted panel-result verdict maps (P2-BACKFILL-RULING: verdicts blind at
+source, projection stamped); inv2 1,380->21. (2) TALLY PASS — 2,003 verdicts under >=2-of-3
+(1,803 DISMISSED / 200 UPHELD->P3). (3) SM PASS — 75 MODIFIED under P2-SM-RULING (>=2 stands-
+modified = adopt tightened framing). (4) INDIVIDUAL PASS — 221 orchestrator-reasoned verdicts
+over the escalate queue (12 evidence packets): 15 UPHELD, ~197 MODIFIED, 9 DISMISSED incl 2 more
+disclosure-induced FPs (Bryan County, Olivier) + role-taxonomy-overreach dismissals; P2-QF-RULING
+formalized the quote-fidelity sub-classes (130 harvest-artifact MODIFIED staged mechanically,
+verified by sample; 14 residue individually incl genuine rendered-quote defects Oliver
+'in rural areas' truncation + Vinton Alton/Aton, and cached-text OCR corruptions Lopez-Mendoza
+'Jams', Stovall 'conductive' where the PAGES are right). Role-sep held: staging/evidence-prep=
+opus workers, all verdicts+rulings=fable orchestrator, spot-checks both directions.
+END STATE: adjudications 32 -> 2,331 (all 2,329 findings adjudicated); gate highs 3,682 -> 512 =
+487 fix-owed (THE P3 QUEUE: ~200 tally-UPHELD + ~75 SM + ~212 individual) + 21 unresolvable
+sub-quorum (adjudicated) + 2 orphan adjudication refs (pre-existing, P5 tidy) + inv5 counts.
+Zero unadjudicated. P3 (content fixes) NOT started — not sanctioned this run; class catalog +
+per-finding proposed fixes ready. Spend: ~10 worker dispatches + orchestration, well under cap.
