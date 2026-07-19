@@ -1,0 +1,165 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "77555bec023c118f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake official = '480 U.S. 79', parallel = '107 S. Ct. 1013', '94 L. Ed. 2d 72', '55 U.S.L.W. 4190', vendor_neutral = '1987 U.S. LEXIS 559' — payload matches exactly; year 1987, date_decided 1987-02-24.",
+          "Opinion is by Justice Stevens for the Court with star pages up to *89, consistent with 480 U.S. 79 (1987)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c0be0009c6df6cef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Frontmatter homes[].page '[[Particularity]]' role 'Key — Progeny / Refinement'; the opinion's Part I-H turns on the Warrant Clause particularity requirement ('particularly describing the place to be searched') and refines it for latent factual mistakes about the premises."
+        ],
+        "residual_risks": [
+          "Home page not inlined; role is editorial but topically consistent with the disclosed opinion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fed950ce998f9e90",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the validity of the search of respondent's apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers' failure to realize the overbreadth of the warrant was objectively understandable and reasonable.",
+          "locator_note": "content_page frontmatter `holding:` field (~line 3323) and group_inventory payload.holding; the page body Conclusion states the full holding, so only the metadata field is truncated.",
+          "needs_cl": false,
+          "problem": "The holding proposition is truncated mid-sentence, ending in an ellipsis ('...a reasonable, good-faith mistake…'); it never states the operative consequence of the reasonable good-faith mistake, leaving the holding incomplete.",
+          "proposed_fix": "Complete the holding string, e.g.: '...a reasonable, good-faith mistake about the premises neither retroactively invalidates a warrant valid when issued nor renders its objectively reasonable execution unconstitutional.'",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The stated portion is substantively supported: 'The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.'",
+          "But the proposition literally cuts off at 'a reasonable, good-faith mistake…', so as framed it is an incomplete holding statement needing completion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Complete the truncated holding so it states that an objectively reasonable, good-faith mistake about the premises neither invalidates a warrant valid when issued nor renders the search unreasonable under the Fourth Amendment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1b683bbbb5843efb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page frontmatter treatment.scope_note (~line 3310); field_i_validity 'good_law' is corroborated by the disclosed lake record (all negative edges proposed:true, none adjudicated).",
+          "needs_cl": false,
+          "problem": "The treatment scope_note is a leaked internal build/migration placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.') rather than a substantive treatment-scope statement; it even flags the treatment as provisional ('may downgrade').",
+          "proposed_fix": "Replace with a substantive scope note, e.g.: 'Good law on warrant particularity and on the objectively reasonable execution of a facially valid warrant later revealed to be overbroad; applies the reasonable-mistake rationale of Hill v. California.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The core determination (field_i_validity = 'good_law') stands: the lake record carries good_law and all treatment edges are proposed:true (none adjudicated negative), and the case remains a settled particularity precedent applying Hill v. California.",
+          "The scope_note itself is a non-substantive pipeline placeholder that leaked into shipped frontmatter, so the assertion survives but needs tightening."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Replace the migration-placeholder scope_note with a substantive statement of Garrison's treatment scope (good law on particularity and objectively reasonable warrant execution).",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98eb07ef54262b06",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "U.S. Supreme Court decision (Justice Stevens delivered the opinion of the Court, reversing the Maryland Court of Appeals); 'Binding — SCOTUS' correct."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T21:51:05-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a700e94779"
+    ],
+    "group_id": "content/cases/Maryland v. Garrison.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w46-00-a6fb0a0b",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w46-00.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Garrison"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "1b683bbbb5843efb": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "77555bec023c118f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98eb07ef54262b06": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c0be0009c6df6cef": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fed950ce998f9e90": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d311752589",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a700e94779",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
