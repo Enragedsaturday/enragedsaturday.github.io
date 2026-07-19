@@ -1,0 +1,202 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "reviewed": [
+      {
+        "assertion_id": "dd26063e4aaaa7db",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"reason\": \"unlisted_reporter:Fla. L. Weekly Fed. S\"",
+          "locator_note": "frontmatter citation/parallel_cite vs lake citations.official=null; page header/Sources both show 569 U.S. 141",
+          "needs_cl": false,
+          "problem": "official_citation_present is flagged false and the citation field is empty, yet a genuine official U.S. Reports cite (569 U.S. 141) is present in parallel_cite and is rendered as the page's display citation and named in Sources as 'the official U.S. Reports citation'.",
+          "proposed_fix": "Populate citation with '569 U.S. 141 (2013)' and set official_citation_present true; the S2 official_selection bailed ('selected': null) on an unlisted trailing reporter rather than because no official cite exists.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Case existence is confirmed: cluster 858288, 'MISSOURI v. MCNEELY', decided April 17, 2013; every listed cite (133 S. Ct. 1552; 185 L. Ed. 2d 696; 569 U.S. 141; 2013 U.S. LEXIS 3160; 2013 WL 1628934) is genuine.",
+          "Substance is correct; only the official-cite slotting/flag is internally inconsistent with the rendered page."
+        ],
+        "residual_risks": [
+          "Downstream citation display could under-report the official cite if consumers key off the empty citation field rather than parallel_cite."
+        ],
+        "suggested_tightening": "Move 569 U.S. 141 into the official citation slot and flip official_citation_present to true.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "47e452643314a7ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "McNeely concerns warrantless DUI blood/alcohol testing, so a 'Related (cross-doctrine)' link to 'SIA Alcohol Tests' is apt.",
+          "This home matches between frontmatter and the body 'Appears on' render."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5793d1d409ed6a3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Holding is supported verbatim by the syllabus: 'in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant.'",
+          "The 'exigency must be [determined case by case]' continuation is supported: exigency 'must be determined case by case based on the totality of the circumstances.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb3f1939565de5a2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "- [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*",
+          "locator_note": "frontmatter homes[0].page ('Destruction of Evidence') vs body '## Appears on' line and all in-text exigency wikilinks",
+          "needs_cl": false,
+          "problem": "The home_role asserts McNeely appears on '[[Destruction of Evidence]]' as 'Key - Progeny / Refinement', but the page's own '## Appears on' render places its Key home on '[[Exigent Circumstances and Hot Pursuit]]' instead; 'Destruction of Evidence' appears nowhere in the body, while every body wikilink (Background, Issue, Rule, Application, Conclusion, Treatment) points to 'Exigent Circumstances and Hot Pursuit'.",
+          "proposed_fix": "Reconcile the frontmatter homes[] page with the body 'Appears on' and doctrinal prose: change the Key home to '[[Exigent Circumstances and Hot Pursuit]]' (matching the render), or otherwise fix whichever side is stale.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Disclosed content page contradicts itself: frontmatter Key home = 'Destruction of Evidence' but rendered 'Appears on' Key home = 'Exigent Circumstances and Hot Pursuit'.",
+          "For sibling records (Minnick, Seibert) the single frontmatter home matches 'Appears on' exactly, confirming these two fields are meant to agree, so the divergence here is a defect.",
+          "Weight of body evidence (all exigency links) indicates the intended home is 'Exigent Circumstances and Hot Pursuit', making the asserted 'Destruction of Evidence' target the outlier."
+        ],
+        "residual_risks": [
+          "If the taxonomy authoritative graph really keys off frontmatter homes[], the bug may instead be in the 'Appears on' render; either way the two must be reconciled."
+        ],
+        "suggested_tightening": null,
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0335f921b4dc8ab5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "SCOTUS decision (court_id scotus, Justice Sotomayor for the Court) supports 'Binding - SCOTUS'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e73ba1fcc9da521e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload matches the lake treatment block field-for-field (good_law, migration-seed, as_of dates, varies_by_point false).",
+          "Disclosed later opinion (Mitchell) treats McNeely as still-standing law that the plurality declines to overturn; the 'overruled' edges are proposed:true candidate signals, not adjudicated negative treatment."
+        ],
+        "residual_risks": [
+          "Thomas has argued McNeely was wrongly decided (dissent), but that is not a majority abrogation; good_law holds on disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": null,
+  "summary": {
+    "at": "2026-07-18T21:59:58-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-120926266a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2007f324ae",
+      "F-S9-PR-54840b457a"
+    ],
+    "group_id": "content/cases/Missouri v. McNeely.md",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "claude-opus-panel",
+    "lane_id": "opus-panel-opus-w47-02-b4228293",
+    "lens": "opus-both",
+    "manifest_ref": "_run/s9/opus-packs/opus-w47-02.manifest.json",
+    "model": "claude-opus-4-8",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Missouri v. McNeely"
+    ],
+    "tokens": null,
+    "verdict_map": {
+      "0335f921b4dc8ab5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "47e452643314a7ec": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5793d1d409ed6a3b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cb3f1939565de5a2": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "dd26063e4aaaa7db": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e73ba1fcc9da521e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2007f324ae",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-120926266a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-54840b457a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": null
+  }
+}
