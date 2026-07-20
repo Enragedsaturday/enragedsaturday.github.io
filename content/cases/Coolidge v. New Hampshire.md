@@ -44,7 +44,7 @@ homes:
 related: ["[[Horton v. California]]", "[[Arizona v. Hicks]]", "[[Texas v. Brown]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "warrant-requirement", "inadvertence", "immediately-apparent"]
-holding: "ORIGIN of the modern plain-view doctrine (Stewart plurality). Plain view justifies a warrantless seizure only where the incriminating…"
+holding: "The Stewart plurality formulated limits on plain-view seizures: plain view supplements a prior lawful intrusion, requires inadvertent discovery under Coolidge's legacy formulation, and requires the incriminating character to be immediately apparent; because police knew the car's description and location in advance and intended to seize it, plain view did not justify the seizure."
 lake:
   record_id: Coolidge v. New Hampshire
   status: verified

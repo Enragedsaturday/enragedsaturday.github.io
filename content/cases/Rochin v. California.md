@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Common Law Origins]]"
-    role: Historical / origin
+    role: "Historical / origin — due-process 'shocks the conscience' source"
 related:
   - "[[Common Law Origins]]"
   - "[[Wolf v. Colorado]]"
@@ -81,7 +81,7 @@ The judgment of the California District Court of Appeal was **reversed**. Frankf
 Teach *Rochin* as the origin point of the "shocks the conscience" doctrine and as a marker of the pre-incorporation era — an antecedent to the modern Fourth Amendment framework, not a current search-and-seizure remedy.
 
 ## Appears on
-- [[Common Law Origins]] — *Historical / origin*
+- [[Common Law Origins]] — *Historical / origin — due-process 'shocks the conscience' source*
 
 ## Sources
 - [*Rochin v. California*, 342 U.S. 165 (1952)](https://www.courtlistener.com/opinion/104943/rochin-v-california/) — pinpoint: 172 (Frankfurter, J., for the Court; the CL opinion text carries the reporter star `*172` immediately before the quoted "shocks the conscience" passage). Rule quote string-matched to the CL opinion text 2026-07-07 (the em-dash in "stomach's contents—this course" is reproduced from the source).

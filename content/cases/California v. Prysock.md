@@ -40,7 +40,7 @@ lake:
 
 # California v. Prysock
 
-*451 U.S. 355 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
+*453 U.S. 355 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
@@ -50,7 +50,7 @@ Randall Prysock, a juvenile murder suspect, was given [[Miranda and Custodial In
 Whether [[Miranda and Custodial Interrogation|Miranda warnings]] are inadequate simply because the advice about the right to appointed counsel was not given in the precise language or sequence used in *[[Miranda v. Arizona|Miranda]]* itself.
 
 ## Rule
-No. [[Miranda and Custodial Interrogation|Miranda warnings]] need not track an exact script; a warning that reasonably conveys the rights suffices. "This Court has never indicated that the 'rigidity' of *Miranda* extends to the precise formulation of the warnings given a criminal defendant." — 451 U.S. at 359. ^pin-359
+No. [[Miranda and Custodial Interrogation|Miranda warnings]] need not track an exact script; a warning that reasonably conveys the rights suffices. "This Court has never indicated that the 'rigidity' of *Miranda* extends to the precise formulation of the warnings given a criminal defendant." — 453 U.S. at 359. ^pin-359
 
 "*Miranda* itself indicated that no talismanic incantation was required to satisfy its strictures." — *Id.* ^pin-359a
 
@@ -70,4 +70,4 @@ The warnings were adequate. The judgment of the California Court of Appeal was r
 - [[Miranda and Custodial Interrogation]] — *Key — Progeny*
 
 ## Sources
-- *California v. Prysock*, 451 U.S. 355 (1981) (per curiam) — https://www.courtlistener.com/opinion/110556/california-v-prysock/ — pinpoint: 359.
+- *California v. Prysock*, 453 U.S. 355 (1981) (per curiam) — https://www.courtlistener.com/opinion/110556/california-v-prysock/ — pinpoint: 359.

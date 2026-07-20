@@ -31,7 +31,7 @@ homes:
 related: ["[[Camara v. Municipal Court]]", "[[City of Indianapolis v. Edmond]]"]
 aliases: ["Los Angeles v. Patel"]
 tags: ["case", "fourth-amendment", "administrative-search", "special-needs", "precompliance-review", "facial-challenge"]
-holding: "A hotel guest-registry inspection ordinance is facially unconstitutional because it gives operators no opportunity for pre-compliance…"
+holding: "The Los Angeles on-demand hotel-registry inspection provision is facially unconstitutional because it penalizes refusal without affording hotel operators an opportunity for precompliance review."
 lake:
   record_id: City of Los Angeles v. Patel
   status: verified

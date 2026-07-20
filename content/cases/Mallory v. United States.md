@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 homes:
   - page: "[[Due-Process Voluntariness of Confessions]]"
-    role: "Key — Anchor"
+    role: "Key — Anchor (federal Rule 5(a) prompt-presentment / McNabb-Mallory)"
 related: ["[[McNabb v. United States]]", "[[Corley v. United States]]", "[[County of Riverside v. McLaughlin]]", "[[Gerstein v. Pugh]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-presentment", "rule-5a", "federal"]
@@ -65,7 +65,7 @@ The confession was obtained during unnecessary presentment delay in violation of
 - *Mallory* is the second half of the **McNabb-Mallory** federal prompt-presentment rule, building on [[McNabb v. United States]]. It is a **federal-court** rule under Rule 5(a), not a constitutional rule binding the States. Congress later **modified** the rule with 18 U.S.C. §3501's six-hour safe harbor; the Court held §3501 "modified *McNabb-Mallory* without supplanting it" in [[Corley v. United States]]. The prompt-presentment concern is the confession-suppression analog to the prompt judicial probable-cause determination of [[Gerstein v. Pugh]] and [[County of Riverside v. McLaughlin]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*
+- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor (federal Rule 5(a) prompt-presentment / McNabb-Mallory)*
 
 ## Sources
 - *Mallory v. United States*, 354 U.S. 449 (1957) — https://www.courtlistener.com/opinion/105545/mallory-v-united-states/ — pinpoints: 454, 455.

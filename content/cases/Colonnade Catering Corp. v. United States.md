@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
-    role: "Key — Foundational (closely-regulated-industry administrative search)"
+    role: "Key — closely-regulated liquor-industry administrative inspection"
 related:
   - "[[United States v. Biswell]]"
   - "[[See v. City of Seattle]]"
@@ -76,7 +76,7 @@ Because of the industry's history of close supervision, the general rule of *[[S
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 108077 + 397 U.S. 72); renders under the ⚪ banner until S9 promotion. *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]* is not yet in the corpus and is named in plain text to avoid a dangling link.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Foundational (closely-regulated-industry administrative search)*
+- [[Special Needs and Administrative Searches]] — *Key — closely-regulated liquor-industry administrative inspection*
 
 ## Sources
 - [*Colonnade Catering Corp. v. United States*, 397 U.S. 72 (1970)](https://www.courtlistener.com/opinion/108077/colonnade-catering-corp-v-united-states/) — pinpoints: 76 (congressional power to inspect the closely regulated liquor industry), 77 (statute authorized a fine, not forcible warrantless entry; Douglas, J.); quotes string-matched to the CL opinion text 2026-07-07.

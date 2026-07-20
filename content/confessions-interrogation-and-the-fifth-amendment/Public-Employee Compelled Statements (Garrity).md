@@ -70,7 +70,7 @@ Circuit/state developments only; **no SCOTUS**. The controlling Supreme Court ca
 | *[[Lefkowitz v. Turley]]*, 414 U.S. 70 (1973) | **Refinement.** The State may compel duty-related answers **only by granting immunity**, never by demanding a **waiver**; answers threatened by loss of employment are "compelled and inadmissible." Extends the rule to independent contractors. | [opinion](https://www.courtlistener.com/opinion/108882/lefkowitz-v-turley/) |
 | *[[Kalkines v. United States]]*, 473 F.2d 1391 (Ct. Cl. 1973) | **Refinement (federal warning).** A federal employee may be discharged for refusing to answer only if **adequately advised both** that refusal risks discharge **and** that his replies (and their fruits) cannot be used criminally (the **Kalkines warning**). | [opinion](https://www.courtlistener.com/opinion/8615714/kalkines-v-united-states/) |
 | *[[LaChance v. Erickson]]*, 522 U.S. 262 (1998) | **Limit.** The privilege protects **silence, not falsehood**: an agency **may** discipline an employee for making **false statements** to investigators in response to an underlying misconduct charge. | [opinion](https://www.courtlistener.com/opinion/118163/lachance-v-erickson/) |
-| *[[NASA v. FLRA]]*, 527 U.S. 229 (1999) | **Statutory companion (not 5A).** Under the **FSLMRS**, 5 U.S.C. § 7114(a)(2)(B), a NASA-OIG investigator is a "representative of the agency," so the employee's **statutory union-representation right** at an investigatory exam that may lead to discipline applies. | [opinion](https://www.courtlistener.com/opinion/9188189/national-aeronautics-space-administration-v-federal-labor-relations-authority/) |
+| *[[NASA v. FLRA]]*, 527 U.S. 229 (1999) | **Statutory companion (not 5A).** Under the **FSLMRS**, 5 U.S.C. § 7114(a)(2)(B), a NASA-OIG investigator is a "representative of the agency," so the employee's **statutory union-representation right** at an investigatory exam that may lead to discipline applies. | [opinion](https://www.courtlistener.com/opinion/118306/nasa-v-flra/) |
 
 ## Related cases across doctrines
 
@@ -106,7 +106,7 @@ flowchart TD
 - [Lefkowitz v. Turley, 414 U.S. 70 (1973)](https://www.courtlistener.com/opinion/108882/lefkowitz-v-turley/) — pinpoints 84, 84–85
 - [Kalkines v. United States, 473 F.2d 1391 (Ct. Cl. 1973)](https://www.courtlistener.com/opinion/8615714/kalkines-v-united-states/) — pinpoint 1393
 - [LaChance v. Erickson, 522 U.S. 262 (1998)](https://www.courtlistener.com/opinion/118163/lachance-v-erickson/) — pinpoints 265, 267, 268
-- [NASA v. FLRA, 527 U.S. 229 (1999)](https://www.courtlistener.com/opinion/9188189/national-aeronautics-space-administration-v-federal-labor-relations-authority/) — pinpoints 231, 233
+- [NASA v. FLRA, 527 U.S. 229 (1999)](https://www.courtlistener.com/opinion/118306/nasa-v-flra/) — pinpoints 231, 233
 - [Kastigar v. United States, 406 U.S. 441 (1972)](https://www.courtlistener.com/opinion/108541/kastigar-v-united-states/) *(immunity family; no case page)*
 - [Uniformed Sanitation Men Assn., Inc. v. Commissioner of Sanitation, 392 U.S. 280 (1968)](https://www.courtlistener.com/opinion/107739/uniformed-sanitation-men-assn-v-commissioner-of-sanitation-of-new-york/) *(immunity family; no case page)*
 - [Lefkowitz v. Cunningham, 431 U.S. 801 (1977)](https://www.courtlistener.com/opinion/109683/lefkowitz-v-cunningham/) *(immunity family; no case page)*

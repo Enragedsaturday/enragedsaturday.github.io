@@ -48,7 +48,7 @@ tags:
   - child-pornography
   - digital-privacy
   - ninth-circuit
-holding: "Under the private-search doctrine of Walter and Jacobsen, the government may repeat a private party's search without a warrant only insofar as it does not exceed the scope of that private search; where Google's automated system flagged four email attachments as matching known child-pornography hashes but no person had actually viewed those images, a government agent's warrantless opening and viewing of them exceeded the antecedent private search — learning new information and expanding the intrusion — so it was not justified by the private-search exception, and Wilson's conviction was reversed."
+holding: "Under the private-search doctrine of Walter and Jacobsen, the government may repeat a private party's search without a warrant only insofar as it does not exceed the scope of that private search; where Google's automated system flagged four email attachments as matching known child-pornography hashes but no person had actually viewed those images, a government agent's warrantless opening and viewing of them exceeded the antecedent private search — learning new information and expanding the intrusion — so it was not justified by the private-search exception; the denial of suppression was reversed and Wilson's conviction was vacated."
 aliases:
   - United States v. Wilson
   - "United States v. Wilson (9th Cir. 2021)"

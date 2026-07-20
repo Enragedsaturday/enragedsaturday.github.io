@@ -31,7 +31,7 @@ homes:
 related: ["[[Rakas v. Illinois]]", "[[United States v. Salvucci]]", "[[Katz v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "suppression", "historical"]
-holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on the…"
+holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on premises where a search occurs may challenge its legality\" when its fruits are offered against him — both standing grounds have since been overruled (Rakas v. Illinois; United States v. Salvucci)."
 lake:
   record_id: Jones v. United States
   status: verified

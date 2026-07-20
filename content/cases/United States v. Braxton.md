@@ -31,7 +31,7 @@ homes:
 related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Riley v. California]]", "[[Nix v. Williams]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "inevitable-discovery"]
-holding: "The government CONCEDED the warrantless search of Braxton's backpack was not a valid search incident to arrest, then relied on…"
+holding: "The government conceded the backpack search was not a valid search incident to arrest, invoked inevitable discovery, and the Tenth Circuit held the government failed to prove lawful impoundment/inventory and ordered suppression."
 lake:
   record_id: United States v. Braxton
   status: verified

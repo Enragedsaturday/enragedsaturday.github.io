@@ -31,7 +31,7 @@ homes:
 related: ["[[Carroll v. United States]]", "[[California v. Carney]]", "[[Chambers v. Maroney]]"]
 aliases: ["Pennsylvania v. Kilgore"]
 tags: ["case", "fourth-amendment", "automobile-exception", "ready-mobility", "per-curiam"]
-holding: "No separate exigency requirement beyond ready mobility: if a car is readily mobile and PC exists to believe it contains contraband, the…"
+holding: "No separate exigency requirement beyond ready mobility; if a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment permits police to search the vehicle without more."
 lake:
   record_id: Pennsylvania v. Labron
   status: verified

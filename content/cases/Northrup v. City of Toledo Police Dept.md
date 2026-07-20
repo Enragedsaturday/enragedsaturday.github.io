@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: Illustrates a circuit split
+    role: "Sixth Circuit open-carry Terry rule"
 related:
   - "[[Terry Stops and Reasonable Suspicion]]"
   - "[[Terry v. Ohio]]"
@@ -75,7 +75,7 @@ The denial of [[Qualified Immunity|qualified immunity]] was **affirmed**. Sutton
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. This is a **circuit-split** entry and must be taught as such. *Northrup* — with the Fourth Circuit's *[[United States v. Black]]* — holds that the lawful open (or otherwise legal) carry of a firearm, standing alone, does not create reasonable suspicion for a *[[Terry v. Ohio|Terry]]* stop. That rule is **binding only in the Sixth Circuit** and persuasive elsewhere; other courts have found reasonable suspicion where firearm possession is combined with additional suspicious circumstances or a specific report of *unlawful* carrying, and the courts are not uniform on how much a bare gun report contributes to reasonable suspicion. Teach *Northrup* as the in-circuit rule that illustrates the split, not a settled national standard.
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Illustrates a circuit split*
+- [[Terry Stops and Reasonable Suspicion]] — *Sixth Circuit open-carry Terry rule*
 
 ## Sources
 - [*Northrup v. City of Toledo Police Dept.*, 785 F.3d 1128 (6th Cir. 2015)](https://www.courtlistener.com/opinion/2800431/northrup-v-city-of-toledo-police-dept/) — pinpoint: 1133 (Sutton, J., for the panel; the CL opinion text carries the reporter star `*1133`, with the quoted sentence falling between `*1132` and `*1134`). Rule quote string-matched to the CL opinion text 2026-07-07.

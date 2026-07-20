@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Suing Federal Officers]]"
-    role: Recent development
+    role: "Related — state-secrets/FISA threshold defense (federal-officer surveillance suits)"
   - page: "[[Electronic Surveillance and Title III]]"
     role: "Related (cross-doctrine)"
 related:
@@ -70,7 +70,7 @@ The judgment of the Ninth Circuit was **reversed** and the case **[[Reading and 
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Fazaga* preserves the state-secrets privilege as a threshold obstacle to civil suits — including constitutional claims against federal agents — challenging foreign-intelligence electronic surveillance; it is a FISA/§ 1806(f) decision and does not itself resolve the merits of the plaintiffs' surveillance claims.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
+- [[Suing Federal Officers]] — *Related — state-secrets/FISA threshold defense (federal-officer surveillance suits)*
 - [[Electronic Surveillance and Title III]] — *Related (cross-doctrine)*
 
 ## Sources

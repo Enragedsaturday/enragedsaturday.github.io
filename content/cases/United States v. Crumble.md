@@ -44,7 +44,7 @@ tags:
   - cell-phone
   - standing
   - eighth-circuit
-holding: "A person who flees a wrecked car and leaves his cell phone behind, then denies any knowledge of the vehicle, abandons the phone and forfeits any reasonable expectation of privacy in it — judged by the objective facts available to officers, not the owner's subjective intent — and the abandonment doctrine applies to cell phones notwithstanding Riley v. California, so the warrantless seizure and later search of the phone did not violate the Fourth Amendment."
+holding: "On clear-error review and under the totality of the circumstances, the Eighth Circuit affirmed the finding that Crumble abandoned the phone by fleeing the accessible wrecked Buick and denying knowledge of it; Riley does not categorically exempt cell phones from abandonment, so Crumble lacked a reasonable expectation of privacy and suppression was properly denied, without deciding warrant validity."
 aliases:
   - United States v. Crumble
   - "United States v. Crumble (8th Cir. 2018)"

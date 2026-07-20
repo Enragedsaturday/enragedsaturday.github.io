@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9433685
   identity_checked: true
 homes:
-  - page: "[[The Good-Faith Exception]]"
+  - page: "[[The Exclusionary Rule]]"
     role: "Key — Limiting"
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Related (cross-doctrine)"

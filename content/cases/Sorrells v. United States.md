@@ -31,7 +31,7 @@ homes:
 related: ["[[Sherman v. United States]]", "[[Hampton v. United States]]", "[[Jacobson v. United States]]", "[[Mathews v. United States]]"]
 aliases: []
 tags: ["case", "entrapment", "predisposition", "prohibition"]
-holding: "Entrapment is a valid defense; it arises when government officials implant the criminal design in the mind of a person who had no…"
+holding: "Entrapment is available when government officials originate the criminal design and implant in an otherwise innocent, non-predisposed person the disposition to commit the offense."
 lake:
   record_id: Sorrells v. United States
   status: under_review

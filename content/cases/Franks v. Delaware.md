@@ -33,7 +33,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[United States v. Leon]]", "[[Groh v. Ramirez]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "affidavit", "franks-hearing", "veracity"]
-holding: "A warrant affidavit containing a knowing/intentional or reckless material falsehood may be challenged at a hearing on a substantial…"
+holding: "A defendant is entitled to a Franks hearing when he makes a substantial preliminary showing that the affiant knowingly, intentionally, or recklessly included a false statement necessary to probable cause; if proven by a preponderance and the corrected affidavit lacks probable cause, the warrant is voided and the fruits suppressed."
 lake:
   record_id: Franks v. Delaware
   status: verified

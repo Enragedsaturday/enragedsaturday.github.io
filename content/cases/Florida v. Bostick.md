@@ -31,7 +31,7 @@ homes:
 related: ["[[California v. Hodari D.]]", "[[United States v. Mendenhall]]", "[[Florida v. Royer]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "consensual-encounter", "bus-sweep"]
-holding: "On a bus (where the passenger isn't free to leave regardless), the seizure question is whether a reasonable person would feel free to…"
+holding: "When movement is restricted by an independent factor, such as being a passenger on a bus scheduled to depart, the seizure inquiry is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter."
 lake:
   record_id: Florida v. Bostick
   status: verified

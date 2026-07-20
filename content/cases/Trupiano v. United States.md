@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[SIA Persons]]"
-    role: Historical / origin
+    role: "Historical / warrant-practicability rule"
 related:
   - "[[Chimel v. California]]"
   - "[[SIA Persons]]"
@@ -43,7 +43,7 @@ tags:
   - seizure
   - overruled
   - historical
-holding: "Even incident to a lawful arrest, officers who had ample time and opportunity to obtain a search warrant must do so before seizing contraband — the 'whenever reasonably practicable' warrant rule, rejected two years later in United States v. Rabinowitz (1950) and superseded by the modern Chimel framework."
+holding: "Where officers knew the existence, nature, and location of the contraband long before a lawful arrest, had abundant time to get a search warrant, and no apparent need for summary seizure existed, Trupiano required them to obtain a warrant before seizing the contraband under its wherever-reasonably-practicable rule."
 ---
 
 # Trupiano v. United States
@@ -74,7 +74,7 @@ The judgment was **reversed** as to the seizure of the contraband; Murphy, J., d
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the subsequent-history above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. *United States v. Rabinowitz* is not yet in the corpus and is named in plain text to avoid a dangling link. Preserved as **history**, never as live law.
 
 ## Appears on
-- [[SIA Persons]] — *Historical / origin*
+- [[SIA Persons]] — *Historical / warrant-practicability rule*
 
 ## Sources
 - [*Trupiano v. United States*, 334 U.S. 699 (1948)](https://www.courtlistener.com/opinion/104576/trupiano-v-united-states/) — pinpoint: 705 (Opinion of the Court; Murphy, J.); Rule quote string-matched to the CL opinion text 2026-07-07. Superseded line: *United States v. Rabinowitz*, 339 U.S. 56 (1950); *Chimel v. California*, 395 U.S. 752 (1969) (successor page: [[Chimel v. California]]).

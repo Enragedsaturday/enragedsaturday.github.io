@@ -31,7 +31,7 @@ homes:
 related: ["[[Brewer v. Williams]]", "[[Patterson v. Illinois]]", "[[Kirby v. Illinois]]", "[[Michigan v. Jackson]]", "[[Montejo v. Louisiana]]"]
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "attachment", "initial-appearance"]
-holding: "A criminal defendant's initial appearance before a magistrate, where he learns the charge against him and his liberty is restricted,…"
+holding: "A criminal defendant’s initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel."
 lake:
   record_id: Rothgery v. Gillespie County
   status: verified

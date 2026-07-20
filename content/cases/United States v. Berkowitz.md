@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Entry to Arrest]]"
-    role: "Key — constructive-entry (7th Cir. narrow side: voice-from-outside arrest OK, warrantless entry before arrest not, 927 F.2d at 1386)"
+    role: "Key — constructive-entry (7th Cir. narrow side: voice-from-outside arrest OK, warrantless entry before arrest not, 927 F.2d at 1386-88)"
   - page: "[[Arrest in the Home]]"
     role: "Related — constructive-entry cross-ref"
 related:

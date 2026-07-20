@@ -31,7 +31,7 @@ homes:
 related: ["[[Vernonia School District 47J v. Acton]]", "[[Safford Unified School District v. Redding]]", "[[National Treasury Employees Union v. Von Raab]]", "[[Terry v. Ohio]]"]
 aliases: ["New Jersey v. TLO"]
 tags: ["case", "fourth-amendment", "school-search", "special-needs", "reasonableness"]
-holding: "A school official's search of a student requires only reasonableness under all the circumstances — justified at inception + reasonably…"
+holding: "A public school official acting alone/on school authority may search a student under a reasonableness-under-all-the-circumstances standard; ordinarily the search must be justified at inception and reasonably related in scope, without a warrant or probable cause."
 lake:
   record_id: New Jersey v. T.L.O.
   status: verified

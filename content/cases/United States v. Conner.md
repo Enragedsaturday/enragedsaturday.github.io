@@ -31,7 +31,7 @@ homes:
 related: ["[[Payton v. New York]]", "[[Schneckloth v. Bustamonte]]", "[[United States v. Drayton]]"]
 aliases: ["United States v. Larry Duane Conner"]
 tags: ["case", "fourth-amendment", "consent", "securing-the-scene"]
-holding: "Where police, under color of authority, demand that occupants of a motel room open the door, and an occupant opens the door not…"
+holding: "Where officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority, the access is an unconstitutional search/intrusion absent consent or exigency."
 lake:
   record_id: United States v. Conner
   status: verified

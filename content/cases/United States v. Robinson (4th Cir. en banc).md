@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: Illustrates a circuit split
+    role: "Fourth Circuit en banc rule (armed suspect friskable without separate dangerousness showing)"
 related:
   - "[[Terry Stops and Reasonable Suspicion]]"
   - "[[Terry v. Ohio]]"
@@ -79,7 +79,7 @@ The denial of Robinson's suppression motion was **affirmed**. Niemeyer, Circuit 
 **Illustrates a circuit split (in-circuit rule).** *Robinson* is the Fourth Circuit's [[Reading and Citing Cases#en-banc|en banc]] answer — binding there, persuasive only elsewhere — that a lawfully stopped person reasonably believed to be *armed* may be frisked without a separate showing of *dangerousness*, even in a right-to-carry jurisdiction. That reading divides the courts: the [[Common Legal Terms#dissenting-opinion|dissent]] and other authorities treat *[[Terry v. Ohio|Terry]]*'s "armed *and* dangerous" formula as requiring an independent basis to believe the person is dangerous, so that lawful gun possession alone cannot justify a frisk. It sits on the opposite side of the split from *[[Northrup v. City of Toledo Police Dept]]* (6th Cir.) and the reasoning of *[[United States v. Black]]*, which hold that lawful firearm possession, standing alone, does not supply the suspicion of dangerousness the Fourth Amendment requires. Teach *Robinson* as one pole of that split, not a nationally settled rule.
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Illustrates a circuit split*
+- [[Terry Stops and Reasonable Suspicion]] — *Fourth Circuit en banc rule (armed suspect friskable without separate dangerousness showing)*
 
 ## Sources
 - [*United States v. Robinson*, 846 F.3d 694 (4th Cir. 2017) (en banc)](https://www.courtlistener.com/opinion/4340460/united-states-v-shaquille-robinson/) — pinpoint: 696 (Niemeyer, J., for the en banc court; the CL opinion text carries the reporter star `*696` immediately before the paragraph containing the quoted holding). Rule quote string-matched to the CL opinion text 2026-07-07.

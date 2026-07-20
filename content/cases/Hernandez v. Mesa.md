@@ -69,7 +69,7 @@ The judgment of the Fifth Circuit was **affirmed**. Alito, J., delivered the opi
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Hernández v. Mesa* is part of the Court's line — with *[[Ziglar v. Abbasi]]* (2017) and *[[Egbert v. Boule]]* (2022) — sharply confining *[[Bivens v. Six Unknown Named Agents|Bivens]]* and refusing to extend implied damages remedies against federal officers into new, sensitive contexts.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
+- [[Suing Federal Officers]] — *Recent development*
 
 ## Sources
 - [*Hernández v. Mesa*, 589 U.S. 93 (2020)](https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/) — pinpoint: 99 (holding, Opinion of the Court); CL text carries S. Ct. star-pagination (140 S. Ct. 735), the holding sitting just before the confirmed *741 page-label; quote string-matched to the CL opinion text 2026-07-07.

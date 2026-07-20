@@ -35,7 +35,7 @@ homes:
 related: ["[[Illinois v. Lidster]]", "[[Delaware v. Prouse]]", "[[Ferguson v. City of Charleston]]"]
 aliases: ["Indianapolis v. Edmond"]
 tags: ["case", "fourth-amendment", "checkpoint", "roadblock", "special-needs", "programmatic-purpose"]
-holding: "A checkpoint program whose primary purpose is to detect ordinary criminal wrongdoing / general crime control (here, drug interdiction)…"
+holding: "Suspicionless vehicle checkpoints whose programmatic primary purpose is ordinary crime control, such as narcotics interdiction, violate the Fourth Amendment absent individualized suspicion; Edmond does not disturb lawful border, sobriety, license/registration, or emergency checkpoints."
 lake:
   record_id: City of Indianapolis v. Edmond
   status: verified

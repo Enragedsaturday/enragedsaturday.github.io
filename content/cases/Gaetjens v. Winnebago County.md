@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-09
 homes:
   - page: "[[Emergency Aid]]"
-    role: "Recent development — expands/illustrates (Binding in-circuit — 7th Cir.)"
+    role: "Recent application — illustrates (Binding in-circuit — 7th Cir.)"
 related:
   - "[[Emergency Aid]]"
   - "[[Brigham City v. Stuart]]"
@@ -70,7 +70,7 @@ The grant of summary judgment to the defendants was **affirmed**; the warrantles
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Gaetjens* is a recent Seventh Circuit application of the emergency-aid exception (*[[Brigham City v. Stuart]]*), reaffirming that a warrantless home entry to render aid turns on an objectively reasonable belief that an occupant needs immediate help, not on the officer's subjective motive.
 
 ## Appears on
-- [[Emergency Aid]] — *Recent development — expands/illustrates (Binding in-circuit — 7th Cir.)*
+- [[Emergency Aid]] — *Recent application — illustrates (Binding in-circuit — 7th Cir.)*
 
 ## Sources
 - [*Gaetjens v. Winnebago County*, 4 F.4th 487 (7th Cir. 2021)](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) — pinpoint: 493–94 (emergency-aid holding); Rule quote string-matched to the CL opinion text 2026-07-07.

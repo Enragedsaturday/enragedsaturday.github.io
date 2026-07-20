@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Qualified Immunity]]"
-    role: "Key — Foundational (clearly-established at the appropriate level of particularity)"
+    role: "Key — clearly-established rights must be defined in a particularized sense"
 related:
   - "[[White v. Pauly]]"
   - "[[Harlow v. Fitzgerald]]"
@@ -76,7 +76,7 @@ The Eighth Circuit erred by pitching the right at too high a level of generality
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 111953 + 483 U.S. 635); renders under the ⚪ banner until S9 promotion. *Mitchell v. Forsyth*, cited in the opinion, is not yet in the corpus and is named in plain text to avoid a dangling link.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Foundational (clearly-established at the appropriate level of [[Particularity|particularity]])*
+- [[Qualified Immunity]] — *Key — clearly-established rights must be defined in a particularized sense*
 
 ## Sources
 - [*Anderson v. Creighton*, 483 U.S. 635 (1987)](https://www.courtlistener.com/opinion/111953/anderson-v-creighton/) — pinpoints: 640 (particularized "clearly established" standard; Scalia, J.), 641 (objective reasonable-officer question); quotes string-matched to the CL opinion text 2026-07-07.

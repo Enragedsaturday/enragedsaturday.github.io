@@ -8,12 +8,12 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
-date_decided: 1990-03-05
+date_decided: 1990-02-28
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
   field_i_validity: good_law
-  as_of_content: 1990-03-05
+  as_of_content: 1990-02-28
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Maryland v. Buie

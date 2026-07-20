@@ -31,7 +31,7 @@ homes:
 related: ["[[Chambers v. Florida]]", "[[Ashcraft v. Tennessee]]", "[[Colorado v. Connelly]]"]
 aliases: []
 tags: ["case", "due-process", "confessions", "voluntariness", "coercion"]
-holding: "A confession extracted by physical torture is involuntary and its use to convict violates Fourteenth Amendment due process."
+holding: "A state conviction resting solely on confessions extorted by state officers through physical torture, and using those confessions as the basis for conviction and sentence, violates Fourteenth Amendment due process."
 lake:
   record_id: Brown v. Mississippi
   status: under_review

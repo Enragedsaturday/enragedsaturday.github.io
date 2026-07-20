@@ -31,7 +31,7 @@ homes:
 related: ["[[Carroll v. United States]]", "[[United States v. Ross]]", "[[California v. Acevedo]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "motor-home", "mobility"]
-holding: "The automobile exception applies to a motor home being used as a vehicle, and articulates the exception's TWO justifications: (1) ready…"
+holding: "The automobile exception applies to a readily mobile motor home objectively being used as a vehicle rather than a residence; the exception rests on ready mobility/exigency and reduced expectations of privacy from pervasive vehicle regulation."
 lake:
   record_id: California v. Carney
   status: verified

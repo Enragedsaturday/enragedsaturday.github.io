@@ -31,7 +31,7 @@ homes:
 related: ["[[Edwards v. Arizona]]", "[[Minnick v. Mississippi]]", "[[Maryland v. Shatzer]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "right-to-counsel", "interrogation"]
-holding: "The Edwards bar is not offense-specific — once a suspect invokes counsel, police may not interrogate him about ANY offense, including an…"
+holding: "The Edwards bar is not offense-specific: after a suspect in custody invokes counsel, police may not initiate further custodial interrogation about any offense while counsel has not been made available, unless the suspect initiates further communication."
 lake:
   record_id: Arizona v. Roberson
   status: verified

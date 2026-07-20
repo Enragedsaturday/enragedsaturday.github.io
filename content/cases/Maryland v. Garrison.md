@@ -31,7 +31,7 @@ homes:
 related: ["[[Hill v. California]]", "[[Groh v. Ramirez]]", "[[Andresen v. Maryland]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "reasonable-mistake", "overbroad-warrant"]
-holding: "A warrant's validity is judged on the information reasonably available to officers when they sought it; a reasonable, good-faith mistake…"
+holding: "A warrant's validity is judged on the information reasonably available when it issued; a search based on a mistaken understanding of the premises is valid only where the officers' failure to realize the overbreadth was objectively understandable and reasonable."
 lake:
   record_id: Maryland v. Garrison
   status: verified

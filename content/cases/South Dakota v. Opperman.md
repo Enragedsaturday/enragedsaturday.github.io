@@ -31,7 +31,7 @@ homes:
 related: ["[[Colorado v. Bertine]]", "[[Florida v. Wells]]", "[[Cady v. Dombrowski]]", "[[Illinois v. Lafayette]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "inventory", "impoundment", "administrative-search"]
-holding: "An inventory search of a lawfully impounded vehicle conducted pursuant to standard police procedures, and not as a pretext concealing an…"
+holding: "On this record, the inventory search of a lawfully impounded automobile, including the unlocked glove compartment, conducted under standard police procedures and without investigatory pretext, was reasonable under the Fourth Amendment."
 lake:
   record_id: South Dakota v. Opperman
   status: verified

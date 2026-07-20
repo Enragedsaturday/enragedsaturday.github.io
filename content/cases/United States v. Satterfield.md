@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Inevitable Discovery & Independent Source]]"
-    role: Illustrates a circuit split
+    role: "States the Eleventh Circuit active-pursuit rule for inevitable discovery"
 related:
   - "[[The Exclusionary Rule]]"
   - "[[Nix v. Williams]]"
@@ -77,7 +77,7 @@ The convictions were **affirmed**; the court held the shotgun was seized unlawfu
 **Illustrates a circuit split (in-circuit rule).** *Satterfield* states the Eleventh Circuit's rule — binding there, persuasive only elsewhere — that the [[Inevitable Discovery and Independent Source|inevitable discovery]] exception applies only when the police *possessed and were actively pursuing* a lawful means of discovery at the moment of the illegality. That reading of *[[Nix v. Williams]]* divides the circuits: several courts of appeals require such an independent, already-underway line of lawful investigation, while others read *[[Nix v. Williams|Nix]]* to impose no "active pursuit" prerequisite at all — asking only whether the evidence *would* inevitably have been discovered by lawful means, regardless of whether an independent investigation was afoot when the violation occurred. Teach *Satterfield* as one side of that split, not as a nationally settled rule, alongside the independent-source line (*[[Wong Sun v. United States]]*, *[[Murray v. United States]]*) and the deterrence rationale (*[[Stone v. Powell]]*).
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Illustrates a circuit split*
+- [[Inevitable Discovery & Independent Source]] — *States the Eleventh Circuit active-pursuit rule for inevitable discovery*
 
 ## Sources
 - [*United States v. Satterfield*, 743 F.2d 827 (11th Cir. 1984)](https://www.courtlistener.com/opinion/8934150/united-states-v-satterfield/) — pinpoint: 846 (Kravitch, J.; the CL opinion text carries the reporter star `*846` immediately before the quoted statement of the inevitable discovery elements; "*prior*" preserves the opinion's original emphasis). Rule quote string-matched to the CL opinion text 2026-07-07.

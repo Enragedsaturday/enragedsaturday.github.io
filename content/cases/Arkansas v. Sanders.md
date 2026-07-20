@@ -10,7 +10,7 @@ circuit: ""
 year: 1979
 date_decided: 1979-06-20
 docket: 77-1497
-authority_weight: "Binding — SCOTUS"
+authority_weight: Historical
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Automobile Exception]]"
-    role: Historical / origin
+    role: Historical / former container limitation
 related:
   - "[[California v. Acevedo]]"
   - "[[United States v. Chadwick]]"
@@ -45,7 +45,7 @@ tags:
   - warrant-requirement
   - overruled
   - historical
-holding: "The Fourth Amendment's warrant requirement applies to personal luggage taken from a lawfully stopped automobile to the same degree it applies to luggage elsewhere, so police may not search a suitcase seized from a car without a warrant absent exigency — a container rule later overruled by California v. Acevedo (1991)."
+holding: "The Fourth Amendment's warrant requirement applies to personal luggage taken from a lawfully stopped automobile to the same degree it applies to luggage elsewhere, so police may not search a suitcase seized from a car without a warrant unless another warrant exception, independent of the automobile exception, applies — a container rule later overruled by California v. Acevedo (1991)."
 ---
 
 # Arkansas v. Sanders
@@ -74,7 +74,7 @@ The judgment of the Supreme Court of Arkansas — suppressing the evidence — w
 *Status note (⚪):* this page was authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not yet completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. It is preserved as **history**, never as live law.
 
 ## Appears on
-- [[Automobile Exception]] — *Historical / origin*
+- [[Automobile Exception]] — *Historical / former container limitation*
 
 ## Sources
 - [*Arkansas v. Sanders*, 442 U.S. 753 (1979)](https://www.courtlistener.com/opinion/110119/arkansas-v-sanders/) — pinpoint: 766 (Opinion of the Court; Powell, J.); Rule quote string-matched to the CL opinion text 2026-07-07. Overruled by *California v. Acevedo*, 500 U.S. 565 (1991) (successor page: [[California v. Acevedo]]).

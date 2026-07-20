@@ -31,7 +31,7 @@ homes:
 related: ["[[Massiah v. United States]]", "[[Brewer v. Williams]]", "[[Kuhlmann v. Wilson]]", "[[Maine v. Moulton]]"]
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "jailhouse-informant", "deliberately-elicited", "massiah"]
-holding: "By intentionally creating a situation likely to induce the indicted defendant to make incriminating statements, the government (through…"
+holding: "By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry's Sixth Amendment right to counsel."
 lake:
   record_id: United States v. Henry
   status: verified

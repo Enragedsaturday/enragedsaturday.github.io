@@ -104,7 +104,7 @@ These are treated in full elsewhere but define the floors of the good-faith exce
 |---|---|---|---|
 | *[[Franks v. Delaware]]*, 438 U.S. 154 (1978) | ***Floor 1.*** A knowing or reckless falsehood in the affidavit voids the warrant and defeats good faith. | [[Franks Challenges]] | [opinion](https://www.courtlistener.com/opinion/109925/franks-v-delaware/) |
 | *[[Lo-Ji Sales, Inc. v. New York]]*, 442 U.S. 319 (1979) | ***Floor 2.*** A magistrate who abandons the neutral-and-detached role is no valid warrant-issuer, so reliance is unreasonable. | [[The Neutral and Detached Magistrate]] | [opinion](https://www.courtlistener.com/opinion/110100/lo-ji-sales-inc-v-new-york/) |
-| *[[Groh v. Ramirez]]*, 540 U.S. 551 (2004) | ***Floor 4.*** A warrant that fails to describe the things to be seized is facially deficient; no reasonable officer could rely on it. | [[Particularity]] | [opinion](https://www.courtlistener.com/opinion/134736/groh-v-ramirez/) |
+| *[[Groh v. Ramirez]]*, 540 U.S. 551 (2004) | ***Floor 4.*** A warrant that fails to describe the things to be seized is facially deficient; no reasonable officer could rely on it. | [[Particularity]] | [opinion](https://www.courtlistener.com/opinion/131161/groh-v-ramirez/) |
 
 ## Visual
 
@@ -132,7 +132,7 @@ flowchart TD
 - [*Pennsylvania Bd. of Probation & Parole v. Scott*, 524 U.S. 357 (1998)](https://www.courtlistener.com/opinion/118235/pennsylvania-bd-of-probation-and-parole-v-scott/) (pinpoint: 364)
 - [*Franks v. Delaware*, 438 U.S. 154 (1978)](https://www.courtlistener.com/opinion/109925/franks-v-delaware/) (home = [[Franks Challenges]])
 - [*Lo-Ji Sales, Inc. v. New York*, 442 U.S. 319 (1979)](https://www.courtlistener.com/opinion/110100/lo-ji-sales-inc-v-new-york/) (pinpoints: 326–27; home = [[The Neutral and Detached Magistrate]])
-- [*Groh v. Ramirez*, 540 U.S. 551 (2004)](https://www.courtlistener.com/opinion/134736/groh-v-ramirez/) (facially deficient warrant; home = [[Particularity]])
+- [*Groh v. Ramirez*, 540 U.S. 551 (2004)](https://www.courtlistener.com/opinion/131161/groh-v-ramirez/) (facially deficient warrant; home = [[Particularity]])
 - [*United States v. Mathis*, 767 F.3d 1264 (11th Cir. 2014)](https://www.courtlistener.com/opinion/2736649/united-states-v-arnold-maurice-mathis/) (pinpoint: 1277) (Binding in-circuit — 11th Cir.; good faith applied)
 - [*United States v. Jackson*, 784 F.3d 1227 (8th Cir. 2015)](https://www.courtlistener.com/opinion/2798587/united-states-v-ac-jackson/) (Binding in-circuit — 8th Cir.; good faith applied)
 - [*United States v. Leary*, 846 F.2d 592 (10th Cir. 1988)](https://www.courtlistener.com/opinion/505922/united-states-v-richard-j-leary-and-fl-kleinberg-co/) (pinpoints: 605–06) (Binding in-circuit — 10th Cir.; good faith unavailable)

@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 homes:
   - page: "[[Knock and Talk]]"
-    role: "Illustrates a circuit split"
+    role: "Illustrates a divide over No Trespassing signage"
 related: ["[[Florida v. Jardines]]", "[[Oliver v. United States]]", "[[United States v. Walker]]", "[[United States v. Lundin]]", "[[French v. Merrill]]"]
 aliases: ["United States v. Ralph Carloss", "United States v. Carloss (10th Cir. 2016)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "no-trespassing", "curtilage", "tenth-circuit"]
@@ -69,7 +69,7 @@ The "No Trespassing" signs did not revoke the implied [[Knock and Talk|knock-and
 - *Carloss* illustrates the **divide** over whether signage revokes the implied license: then-Judge **Gorsuch dissented**, arguing that the posted "No Trespassing" signs (and the officers' purpose) withdrew the implicit license so that the entry was a search of a constitutionally protected space. The majority's objective-officer rule aligns with the Fourth and Eleventh Circuits' post-*[[Florida v. Jardines|Jardines]]* [[Knock and Talk|knock-and-talk]] decisions (see [[United States v. Walker]]) and applies the implied-license framework of [[Florida v. Jardines]]; contrast the time-plus-purpose limit in [[United States v. Lundin]] (9th Cir.).
 
 ## Appears on
-- [[Knock and Talk]] — *Illustrates a circuit split*
+- [[Knock and Talk]] — *Illustrates a divide over No Trespassing signage*
 
 ## Sources
 - *United States v. Carloss*, 818 F.3d 988 (10th Cir. 2016) — https://www.courtlistener.com/opinion/3184928/united-states-v-carloss/ — pinpoints given as slip-opinion pages (slip op., at 1-2, 10-11); CourtListener carries the slip opinion (cluster 3184928 → opinion 3184893). The pinpoints above are to the majority opinion; Gorsuch, J., dissented separately.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Groh v. Ramirez]]", "[[Coolidge v. New Hampshire]]", "[[Warden v. Hayden]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "particularity", "fifth-amendment", "business-records"]
-holding: "A particularized warrant to search for and seize a person's business records, and their introduction in evidence, does not violate the…"
+holding: "The search of an individual's office for pre-existing business records, their seizure, and later introduction into evidence did not offend the Fifth Amendment; the warrant's catch-all clause did not make it a general warrant because context limited it to evidence of the Lot 13T false-pretenses crime."
 lake:
   record_id: Andresen v. Maryland
   status: verified

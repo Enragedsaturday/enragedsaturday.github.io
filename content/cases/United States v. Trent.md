@@ -10,7 +10,7 @@ circuit: ca6
 year: 2026
 date_decided: 2026-05-07
 docket: 25-5770
-authority_weight: "Binding in-circuit — 6th Cir."
+authority_weight: "Persuasive only — unpublished 6th Cir. disposition"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -55,7 +55,7 @@ aliases:
 
 # United States v. Trent
 
-*No. 25-5770, slip op. (6th Cir. 2026)* · U.S. Court of Appeals for the Sixth Circuit · **Binding in-circuit — 6th Cir.** · Treatment: **Unverified**
+*No. 25-5770, slip op. (6th Cir. 2026)* · U.S. Court of Appeals for the Sixth Circuit · **Persuasive only — unpublished 6th Cir. disposition** · Treatment: **Unverified**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 10855903 → per curiam opinion 11323299 (No. 25-5770, NOT RECOMMENDED FOR PUBLICATION 26a0207n.06, decided May 7, 2026). Rule quote string-matched to the CL opinion text 2026-07-07; slip-style pin (unpublished 6th Cir. slip; no reporter cite — S2 A3). S9-REVERIFY: docket hand-reconstructed, then confirmed live against CL cluster 10855903 (caption/date/court/No. 25-5770); the S9 panel should re-verify the docket and holding before certification. -->
 
 ## Background

@@ -31,7 +31,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[Florida v. Jardines]]", "[[District of Columbia v. Wesby]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "drug-dog", "dog-sniff"]
-holding: "Whether a dog's alert furnishes probable cause is a totality-of-the-circumstances question; evidence of a dog's satisfactory performance…"
+holding: "Whether a trained drug-detection dog's alert furnishes probable cause is judged under the totality of the circumstances; satisfactory performance in a certification or training program can provide sufficient reason to trust the alert, subject to the defendant's opportunity to challenge that reliability showing."
 lake:
   record_id: Florida v. Harris
   status: verified

@@ -93,7 +93,7 @@ These cases are treated in full elsewhere but bear on the arrest-in-the-home rul
 | *[[Mincey v. Arizona]]*, 437 U.S. 385 (1978) | ***No "murder scene" exception.*** The gravity of the suspected offense does not by itself manufacture [[Exigent Circumstances and Hot Pursuit\|exigency]] to enter or remain in a home. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/) |
 | *[[Brigham City v. Stuart]]*, 547 U.S. 398 (2006) | ***Aid boundary.*** Police may cross the threshold without a warrant to render [[Emergency Aid\|emergency aid]]; a non-criminal justification distinct from arrest [[Exigent Circumstances and Hot Pursuit\|exigency]]. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/145654/brigham-city-v-stuart/) |
 | *[[Caniglia v. Strom]]*, 593 U.S. 194 (2021) | ***No caretaking end-run.*** There is no freestanding "community caretaking" exception for the home; crossing the threshold still needs a warrant, [[Exigent Circumstances and Hot Pursuit\|exigency]], or true [[Emergency Aid\|emergency aid]]. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/) |
-| *[[Case v. Montana]]*, 607 U.S. ___ (2026) | ***Aid standard.*** A warrantless home entry to render aid needs only *Brigham City*'s "objectively reasonable basis," not investigative probable cause; do not conflate it with arrest [[Exigent Circumstances and Hot Pursuit\|exigency]]. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/10774335/case-v-montana/) |
+| *[[Case v. Montana]]*, No. 24-624 (U.S. Jan. 14, 2026) | ***Aid standard.*** A warrantless home entry to render aid needs only *Brigham City*'s "objectively reasonable basis," not investigative probable cause; do not conflate it with arrest [[Exigent Circumstances and Hot Pursuit\|exigency]]. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/10774335/case-v-montana/) |
 
 ## Visual
 
@@ -128,6 +128,6 @@ flowchart TD
 - [*Mincey v. Arizona*, 437 U.S. 385 (1978)](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/)
 - [*Brigham City v. Stuart*, 547 U.S. 398 (2006)](https://www.courtlistener.com/opinion/145654/brigham-city-v-stuart/)
 - [*Caniglia v. Strom*, 593 U.S. 194 (2021)](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/)
-- [*Case v. Montana*, 607 U.S. ___ (2026) (No. 24-624)](https://www.courtlistener.com/opinion/10774335/case-v-montana/) (pinpoints: slip op. at 7, 8, 9, 10–11)
+- [*Case v. Montana*, No. 24-624 (U.S. Jan. 14, 2026)](https://www.courtlistener.com/opinion/10774335/case-v-montana/) (pinpoints: slip op. at 7, 8, 9, 10–11)
 - [*United States v. Brinkley*, 980 F.3d 377 (4th Cir. 2020)](https://www.courtlistener.com/opinion/4805913/united-states-v-kendrick-brinkley/) (pinpoint: 387)
 - [*United States v. Vasquez-Algarin*, 821 F.3d 467 (3d Cir. 2016)](https://www.courtlistener.com/opinion/3199633/united-states-v-johnny-vasquez-algarin/) (pinpoint: 477)

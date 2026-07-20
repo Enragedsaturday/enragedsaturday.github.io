@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 homes:
   - page: "[[Qualified Immunity]]"
-    role: "Key — Progeny / Refinement"
+    role: "Key — Companion / Application"
 related: ["[[Wilson v. Layne]]", "[[Bivens v. Six Unknown Named Agents]]", "[[Harlow v. Fitzgerald]]"]
 aliases: []
 tags: ["case", "section-1983", "bivens", "qualified-immunity", "media-ride-along", "per-curiam"]
@@ -65,7 +65,7 @@ But the officers were entitled to [[Qualified Immunity|qualified immunity]]: "Pe
 - A [[Common Legal Terms#per-curiam|per curiam]] companion decided the same day as [[Wilson v. Layne]], applying that decision's Fourth Amendment holding and qualified-immunity analysis to a media ride-along onto a ranch under a *[[Bivens v. Six Unknown Named Agents|Bivens]]* claim. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Qualified Immunity]] — *Key — Companion / Application*
 
 ## Sources
 - *Hanlon v. Berger*, 526 U.S. 808 (1999) (per curiam) — https://www.courtlistener.com/opinion/1087699/hanlon-v-berger/ — pinpoint: 810.

@@ -31,7 +31,7 @@ homes:
 related: ["[[United States v. Russell]]", "[[Sorrells v. United States]]", "[[Sherman v. United States]]"]
 aliases: ["Hampton v. US"]
 tags: ["case", "entrapment", "due-process", "predisposition", "outrageous-government-conduct"]
-holding: "Neither the entrapment defense nor the Due Process Clause bars conviction of a PREDISPOSED defendant even where a government agent…"
+holding: "Predisposition foreclosed Hampton's entrapment defense; the Rehnquist plurality also rejected a due-process bar on these facts where the informant allegedly supplied the contraband."
 lake:
   record_id: Hampton v. United States
   status: verified

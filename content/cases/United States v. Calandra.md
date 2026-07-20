@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108898
   identity_checked: true
 homes:
-  - page: "[[The Good-Faith Exception]]"
+  - page: "[[The Exclusionary Rule]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Mapp v. Ohio]]", "[[Herring v. United States]]", "[[Hudson v. Michigan]]", "[[Immigration & Naturalization Service v. Lopez-Mendoza]]"]
 aliases: []

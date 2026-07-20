@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 98094
   identity_checked: true
 homes:
-  - page: "[[Fruits & Attenuation]]"
+  - page: "[[The Exclusionary Rule]]"
     role: "Key — Anchor"
 related: ["[[Mapp v. Ohio]]", "[[Wong Sun v. United States]]", "[[United States v. Leon]]"]
 aliases: ["Weeks"]

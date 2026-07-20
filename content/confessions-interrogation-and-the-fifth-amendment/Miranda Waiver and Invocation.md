@@ -21,7 +21,7 @@ aliases:
 *Did the suspect validly waive, or unambiguously invoke, and what must I do either way?*
 
 > [!rule] Black-letter rule
-> After warnings, a suspect may **waive** (voluntarily, knowingly, and intelligently; express or implied from conduct) and be questioned, or **invoke** and stop it. An unambiguous invocation of **counsel** bars police-initiated interrogation until counsel is present, unless the suspect himself re-initiates ([[Edwards v. Arizona|*Edwards*]]); an invocation of **silence** must be **"scrupulously honored"** ([[Michigan v. Mosley|*Mosley*]]). Silence alone is neither a waiver nor an invocation ([[Berghuis v. Thompkins|*Thompkins*]]); the invocation must be unambiguous ([[Davis v. United States|*Davis*]]).
+> After warnings, a suspect may **waive** (voluntarily, knowingly, and intelligently; express or implied from conduct) and be questioned, or **invoke** and stop it. An unambiguous invocation of **counsel** bars police-initiated interrogation until counsel is present ([[Minnick v. Mississippi|*Minnick*]]), unless the suspect himself re-initiates ([[Edwards v. Arizona|*Edwards*]]); an invocation of **silence** must be **"scrupulously honored"** ([[Michigan v. Mosley|*Mosley*]]). Silence alone is neither a waiver nor an invocation ([[Berghuis v. Thompkins|*Thompkins*]]); the invocation must be unambiguous ([[Davis v. United States|*Davis*]]).
 > ^rule-miranda-waiver
 
 ## The Brief

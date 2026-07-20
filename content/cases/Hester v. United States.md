@@ -32,8 +32,6 @@ homes:
     role: "Key"
   - page: "[[Abandonment]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Abandonment]]"
-    role: "Key — Progeny / Refinement"
 related: ["[[Oliver v. United States]]", "[[United States v. Dunn]]", "[[California v. Greenwood]]", "[[Abel v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "abandonment"]

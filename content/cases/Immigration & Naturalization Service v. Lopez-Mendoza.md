@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9429772
   identity_checked: true
 homes:
-  - page: "[[The Good-Faith Exception]]"
+  - page: "[[The Exclusionary Rule]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Janis]]", "[[United States v. Calandra]]", "[[Mapp v. Ohio]]"]
 aliases: ["INS v. Lopez-Mendoza"]

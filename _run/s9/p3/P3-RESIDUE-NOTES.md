@@ -12,6 +12,21 @@ P3.3 decision owed: registry NOT-FIXED total 15 findings blocked on ~25 under_re
 
 - F-S9-PR-221787ed46 + F-S9-PR-a92730deca — Davis 2011 / Davis 1994 cite-selector: lake already canonical; the stale cites live only in _run build artifacts (s8-link-ledger, assertion-inventory). Fix = inventory rebuild (scripts/s9/build_inventory.py), orchestrator lane, P3.3.
 - F-S9-PR-4a60de1d2c (Chapman) + F-S9-PR-8233ea44e1 (Fisher) — same stale-inventory class (pre-rekey cites only in _run/s9/assertion-inventory.json); same inventory-rebuild fix. Fisher record_id suffix still encodes pre-rekey cluster (rename decision = orchestrator, P5-adjacent).
+- F-S9-PR-a596cf2c08 (Carter) — 5th stale-inventory item (official_citation_present flag lives only in assertion-inventory; page + lake already correct). Same inventory-rebuild fix.
+- F-S9-PR-82877c804a + F-S9-PR-83f328f205 (Davis 2011/1994 page-side dupes) + F-S9-PR-a6ee1850ad (D.C. v. R.W.) — 3 more stale-inventory/seed items (pages already canonical). Inventory-rebuild class now 8 findings.
+- F-S9-PR-4e77f991c3 (GEO Group) — 9th stale-inventory item (official_citation_present in assertion-inventory item 477280eb1de56771; page + lake already slip-only-consistent).
+- F-S9-PR-3cdccf1a78 (Landor) — 10th stale-inventory item (same official_citation_present shape).
+- F-S9-PR-3d0d17e0c0 (Mendoza) + F-S9-PR-ab2d347d66 (Porter) — stale-inventory items 11-12 (official_citation_present derivation; pages + lake already slip-only-correct). NOTE from C06: the derivation computes official_citation_present as citation != "" — the rebuild fix may need a derivation correction, not just a re-run.
+- Touset lake pin-IIIa.quote is harvested content-page markdown (new qf-harvest-artifact instance, NOT an adjudicated finding) — flag for P4 sweeps, not P3.
+- F-S9-PR-b881e64bdc (Trent) — stale-inventory item 13 (C07 confirms derivation: build_inventory.py:569 official_citation_present = bool(fm.citation); fix the derivation then rebuild).
+- F-S9-PR-54d45be839 (Verdugo-Urquidez) — page verbatim-confirmed accurate; remedy = lake pinpoint/holding backfill (S2-style). Joins promotion class.
+- F-S9-PR-95ee95c8da (Youngblood) + F-S9-PR-1c2af33b30 (G.M. Leasing) — frontier-stub currency; needs CL/S6; no page phrase to tighten. Joins promotion/escalation class.
+- F-S9-PR-620c7122bb (Private & Foreign Searches) — Walter anchor sub-fix APPLIED by C08; the Burdeau *475 / Verdugo *265 quote-verification remainder IS cache-resolvable: both leads cached (99820.txt, 112382.txt) — C08 didn't find them. Loop-2 with explicit cache ids.
+- Buie lake record identity.date_decided still 1990-03-05, page corrected to 1990-02-28 by C03 (cache-verified) — residue fixer flips the lake side (mechanical).
+- James roster: verify Fruits and Attenuation.md no longer lists James after HM lands (C03 fixed the case-page home; roster is HM scope).
+- Sanders role relabel (F-S9-PR-b604d87ede): RESOLVED no-mirror-owed — Automobile Exception page has no role cell for Sanders (prose + case-list already say overruled-by-Acevedo).
+- F-S9-PR-e265b5a655 (Retaliatory Arrest page, Nieves/Gonzalez) — page accurate + hedged; defect is frontier-stub verification breadth in the Nieves/Gonzalez lake records. Joins the under_review/frontier promotion decision (P3.3).
+- C09 under_review blockers (4 more, page-side callouts, same shape as registry class): F-S9-PR-f51839133d (Heien official cite, needs_cl), F-S9-PR-7936bdbc34 (Imbler/Briscoe/Rehberg/Buckley), F-S9-PR-624aa3a6c6 (Austin/Bajakajian/Timbs), F-S9-PR-71148ef394 (Thompson/Chiaverini).
 - F-S9-PR-395bcb5628 — Fare pin-724 split: needs content/cases/Fare v. Michael C.md edit (add ^pin-722 anchor, attribution "442 U.S. at 722, 724") + lake pin split; both passages cache-verified. Page NOT in content packets — assign to residue fixer (loop 2) with combined lake+page write scope.
 
 ## Star-marker normalization (mechanical pass at wave-A end; ruling branch: reporter-attribution pins = star-verified + star_marker; slip pins slip-only)

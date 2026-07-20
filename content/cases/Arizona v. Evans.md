@@ -31,7 +31,7 @@ homes:
 related: ["[[United States v. Leon]]", "[[Herring v. United States]]", "[[Illinois v. Krull]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith"]
-holding: "The good-faith exception extends to evidence seized on a mistaken arrest record caused by clerical errors of court employees (here, a…"
+holding: "The good-faith exception applies when an arresting officer reasonably relies on an erroneous warrant record attributable to clerical errors of court employees; suppression is unwarranted because exclusion would not meaningfully deter such court-clerk errors."
 lake:
   record_id: Arizona v. Evans
   status: verified

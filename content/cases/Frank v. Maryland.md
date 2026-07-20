@@ -10,7 +10,7 @@ circuit: ""
 year: 1959
 date_decided: 1959-05-04
 docket: 278
-authority_weight: "Binding — SCOTUS"
+authority_weight: "Historical (formerly Binding — SCOTUS)"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
-    role: Historical / origin
+    role: "Historical administrative-inspection precursor"
 related:
   - "[[Camara v. Municipal Court]]"
   - "[[See v. City of Seattle]]"
@@ -43,7 +43,7 @@ tags:
   - housing-inspection
   - overruled
   - historical
-holding: "A municipal health inspector could demand entry to a home to look for nuisance conditions without a warrant, enforced by a fine for refusal, without violating the Due Process Clause — a rule overruled eight years later by Camara v. Municipal Court (1967), which required warrants for administrative inspections."
+holding: "A municipal health inspector's demand to enter a home to inspect suspected nuisance conditions, backed by a $20 refusal fine and no forced entry, did not deprive the homeowner of due process."
 ---
 
 # Frank v. Maryland
@@ -72,7 +72,7 @@ The conviction was **affirmed** by a 5–4 vote. Frankfurter, J., delivered the 
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Historical / origin*
+- [[Special Needs and Administrative Searches]] — *Historical administrative-inspection precursor*
 
 ## Sources
 - [*Frank v. Maryland*, 359 U.S. 360 (1959)](https://www.courtlistener.com/opinion/105880/frank-v-maryland/) — pinpoint: 373 (Opinion of the Court; Frankfurter, J.); Rule quote string-matched to the CL opinion text 2026-07-07. Overruled by *Camara v. Municipal Court*, 387 U.S. 523 (1967) (successor page: [[Camara v. Municipal Court]]).

@@ -31,7 +31,7 @@ homes:
 related: ["[[Edwards v. Arizona]]", "[[Arizona v. Roberson]]", "[[Maryland v. Shatzer]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "edwards", "right-to-counsel", "invocation"]
-holding: "Once counsel is invoked, Edwards bars police-initiated re-interrogation without counsel PRESENT — and that protection is not satisfied…"
+holding: "Once an in-custody accused requests counsel, Edwards bars police-initiated interrogation unless counsel is present, whether or not the accused has consulted with counsel."
 lake:
   record_id: Minnick v. Mississippi
   status: verified

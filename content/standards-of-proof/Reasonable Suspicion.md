@@ -66,7 +66,7 @@ related:
 | *[[United States v. Cortez]]*, 449 U.S. 411 (1981) | The reasonable-suspicion touchstone: a **particularized and objective basis** for suspecting the person stopped, drawn from **the whole picture**. | [opinion](https://www.courtlistener.com/opinion/110377/united-states-v-cortez/) |
 | *[[United States v. Sokolow]]*, 490 U.S. 1 (1989) | Factors innocent in isolation can **combine** into reasonable suspicion; the totality, not any single fact, controls. | [opinion](https://www.courtlistener.com/opinion/112239/united-states-v-sokolow/) |
 | *[[Alabama v. White]]*, 496 U.S. 325 (1990) | An **anonymous tip** can supply reasonable suspicion when police corroborate its **prediction of future conduct**. | [opinion](https://www.courtlistener.com/opinion/112454/alabama-v-white/) |
-| *[[Florida v. J.L.]]*, 529 U.S. 266 (2000) | A **bare** anonymous tip that a person has a gun, without more, is **not** reasonable suspicion. | [opinion](https://www.courtlistener.com/opinion/118352/florida-v-jl/) |
+| *[[Florida v. J.L.]]*, 529 U.S. 266 (2000) | A **bare** anonymous tip that a person has a gun, without more, is **not** reasonable suspicion. | [opinion](https://www.courtlistener.com/opinion/9189388/florida-v-j-l/) |
 | *[[Navarette v. California]]*, 572 U.S. 393 (2014) | A **reliable, contemporaneous 911 report** of dangerous driving can supply reasonable suspicion. | [opinion](https://www.courtlistener.com/opinion/2670795/prado-navarette-v-california/) |
 | *[[Illinois v. Wardlow]]*, 528 U.S. 119 (2000) | Unprovoked **headlong flight** in a high-crime area can furnish reasonable suspicion for a *[[Terry v. Ohio\|Terry]]* stop. | [opinion](https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/) |
 | *[[United States v. Arvizu]]*, 534 U.S. 266 (2002) | Reasonable suspicion is judged on the **whole picture**; courts may not divide-and-conquer the individual factors. | [opinion](https://www.courtlistener.com/opinion/118474/united-states-v-arvizu/) |
@@ -109,7 +109,7 @@ flowchart TD
 - [*Illinois v. Wardlow*, 528 U.S. 119 (2000)](https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/) (pinpoint: 124)
 - [*Kansas v. Glover*, 589 U.S. 376 (2020)](https://www.courtlistener.com/opinion/9231313/kansas-v-glover/)
 - [*Adams v. Williams*, 407 U.S. 143 (1972)](https://www.courtlistener.com/opinion/108571/adams-v-williams/) (pinpoint: 147)
-- [*Florida v. J.L.*, 529 U.S. 266 (2000)](https://www.courtlistener.com/opinion/118352/florida-v-jl/) (pinpoint: 272)
+- [*Florida v. J.L.*, 529 U.S. 266 (2000)](https://www.courtlistener.com/opinion/9189388/florida-v-j-l/) (pinpoint: 272)
 - [*Alabama v. White*, 496 U.S. 325 (1990)](https://www.courtlistener.com/opinion/112454/alabama-v-white/) (pinpoint: 332)
 - [*Navarette v. California*, 572 U.S. 393 (2014)](https://www.courtlistener.com/opinion/2670795/prado-navarette-v-california/) (pinpoint: 398–99)
 - [*United States v. Hensley*, 469 U.S. 221 (1985)](https://www.courtlistener.com/opinion/111294/united-states-v-hensley/)

@@ -81,7 +81,7 @@ These cases are treated in full on other doctrine pages but bear on the collecti
 | *[[Maryland v. Pringle]]*, 540 U.S. 366 (2003) | ***Distinguished, NOT horizontal pooling.*** Aggregate probable cause **as to a person**: cause must be particularized to the person (at 371), satisfied by the "common enterprise" inference (at 373). It aggregates facts about *suspects*, not knowledge across *officers*, and holds nothing about imputation. Listed only to be expressly distinguished. | [[Probable Cause]] | [opinion](https://www.courtlistener.com/opinion/131150/maryland-v-pringle/) |
 | *[[Arizona v. Evans]]*, 514 U.S. 1 (1995) | ***Wrong records.*** Reliance on a mistaken arrest record in the shared system where the error was a **court clerk's** did not trigger exclusion; the remedy side of imputed-but-wrong information. | [[The Exclusionary Rule]] | [opinion](https://www.courtlistener.com/opinion/117905/arizona-v-evans/) |
 | *[[Utah v. Strieff]]*, 579 U.S. 232 (2016) | ***Warrant in the system.*** Discovery of a valid pre-existing warrant during an unlawful stop **attenuated** the taint; bears on how downstream officers may act on warrants and records issued by others. | [[The Exclusionary Rule]] | [opinion](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) |
-| *[[District of Columbia v. R.W.]]*, No. 25-248 (U.S. 2026) (per curiam) | ***Dispatch factor.*** A reviewing court may not **excise** a radio dispatch from the reasonable-suspicion totality; the dispatch-driven stop is weighed as a whole. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) |
+| *[[District of Columbia v. R.W.]]*, No. 25-248, per curiam (U.S. Apr. 20, 2026) | ***Dispatch factor.*** A reviewing court may not **excise** a radio dispatch from the reasonable-suspicion totality; the dispatch-driven stop is weighed as a whole. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) |
 
 ## Visual
 
@@ -104,7 +104,7 @@ flowchart TD
 - [*Maryland v. Pringle*, 540 U.S. 366 (2003)](https://www.courtlistener.com/opinion/131150/maryland-v-pringle/) (pinpoints: 371, 373) (aggregate/particularized PC, distinguished; home: [[Probable Cause]])
 - [*Arizona v. Evans*, 514 U.S. 1 (1995)](https://www.courtlistener.com/opinion/117905/arizona-v-evans/) (home: [[The Exclusionary Rule]])
 - [*Utah v. Strieff*, 579 U.S. 232 (2016)](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) (home: [[The Exclusionary Rule]])
-- [*District of Columbia v. R.W.*, No. 25-248 (U.S. 2026) (per curiam)](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) (home: [[Terry Stops and Reasonable Suspicion]])
+- [*District of Columbia v. R.W.*, No. 25-248, per curiam (U.S. Apr. 20, 2026)](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) (home: [[Terry Stops and Reasonable Suspicion]])
 - [*Ornelas v. United States*, 517 U.S. 690 (1996)](https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/) (pinpoint: 699)
 - [*United States v. Massenburg*, 654 F.3d 480 (4th Cir. 2011)](https://www.courtlistener.com/opinion/223188/united-states-v-massenburg/) (pinpoint: 493–94)
 - [*United States v. Ramirez*, 473 F.3d 1027 (9th Cir. 2007)](https://www.courtlistener.com/opinion/3040421/united-states-v-ramirez/) (pinpoint: 1032–33)

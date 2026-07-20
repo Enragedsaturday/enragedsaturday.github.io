@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-09
 homes:
-  - page: "[[Suing Federal Officers]]"
+  - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development
 related:
   - "[[Section 1983 Liability and Qualified Immunity]]"

@@ -31,7 +31,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[Spinelli v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informants", "historical"]
-holding: "A magistrate may issue a warrant on an informant's hearsay only if the affidavit shows **(1) the informant's basis of knowledge** (how…"
+holding: "A magistrate may issue a warrant on an informant's hearsay only if the affidavit gives the underlying circumstances showing both (1) the informant's basis of knowledge and (2) the officer's basis for concluding the informant was credible or the information reliable."
 lake:
   record_id: Aguilar v. Texas
   status: verified

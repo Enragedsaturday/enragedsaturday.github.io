@@ -10,7 +10,7 @@ circuit: ""
 year: 1973
 date_decided: 1973-02-16
 docket: ""
-authority_weight: Historical
+authority_weight: "Binding in-circuit — Fed. Cir."
 treatment:
   field_i_validity: good_law
   as_of_content: 1973-02-16

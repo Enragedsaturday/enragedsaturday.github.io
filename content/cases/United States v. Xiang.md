@@ -46,7 +46,7 @@ tags:
   - electronic-devices
   - economic-espionage
   - eighth-circuit
-holding: "The border-search exception applies with equal force to travelers and objects leaving the country, so CBP's warrantless seizure and forensic examination of Haitao Xiang's electronic devices as he departed for China fell within the exception; the court adopted the consensus that a non-routine forensic device search requires reasonable, individualized suspicion but not a warrant or probable cause, and held the officers had reasonable suspicion here, so it affirmed the denial of suppression."
+holding: "The border-search exception applies with equal force to travelers and objects leaving the country, so CBP's warrantless seizure and forensic examination of Haitao Xiang's electronic devices as he departed for China fell within the exception; the court treated reasonable, individualized suspicion for an advanced forensic device search as an appropriate standard but did not decide whether it is required, because CBP had reasonable suspicion on these facts, so the denial of suppression was affirmed."
 aliases:
   - United States v. Xiang
   - "United States v. Xiang (8th Cir. 2023)"

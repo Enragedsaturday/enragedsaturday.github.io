@@ -31,7 +31,7 @@ homes:
 related: ["[[Katz v. United States]]", "[[California v. Ciraolo]]", "[[United States v. Gooch]]"]
 aliases: ["United States v. Sandoval (9th Cir. 2000)", "United States v. Rodrigo Sandoval"]
 tags: ["case", "fourth-amendment", "tents", "expectation-of-privacy", "public-land", "blm", "ninth-circuit"]
-holding: "(Persuasive (outside circuit) — 9th Cir.) A reasonable expectation of privacy in a tent on public (BLM) land does not turn on whether the camper had permission to be there; denial of suppression reversed."
+holding: "(Binding in-circuit — 9th Cir.) A camper may have a reasonable expectation of privacy in a closed, four-sided tent on public BLM land, and the reasonableness of that expectation does not turn on whether he had permission to camp there; denial of suppression reversed."
 lake:
   record_id: United States v. Sandoval
   status: verified

@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Entry to Arrest]]"
-    role: "Key — constructive-entry (10th Cir. recognizing side: SWAT loudspeaker order = warrantless in-home arrest, 872 F.2d at 1451)"
+    role: "Key — constructive-entry (10th Cir. recognizing side: SWAT loudspeaker request under coercive show of force = warrantless in-home arrest, 872 F.2d at 1451)"
   - page: "[[Arrest in the Home]]"
     role: "Related — constructive-entry cross-ref"
 related:

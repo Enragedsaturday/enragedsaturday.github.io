@@ -62,7 +62,7 @@ The confession was the product of inherently coercive interrogation and could no
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Ashcraft* is a foundational due-process voluntariness decision establishing that prolonged, relentless custodial interrogation can be inherently coercive. The voluntariness inquiry later settled into a totality-of-the-circumstances test that requires coercive police activity (see [[Colorado v. Connelly]]), and custodial interrogation acquired separate procedural safeguards under *[[Miranda v. Arizona|Miranda]]*.
+- No confirmed negative treatment in the final lake treatment field; automated derivation lists proposed negative events and an R15 treatment audit is required. *Ashcraft* is a foundational due-process voluntariness decision establishing that prolonged, relentless custodial interrogation can be inherently coercive. The voluntariness inquiry later settled into a totality-of-the-circumstances test that requires coercive police activity (see [[Colorado v. Connelly]]), and custodial interrogation acquired separate procedural safeguards under *[[Miranda v. Arizona|Miranda]]*.
 
 ## Appears on
 - [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*

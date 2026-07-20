@@ -31,7 +31,7 @@ lake:
   projected_at: 2026-07-07
 homes:
   - page: "[[Automobile Exception]]"
-    role: Historical / origin
+    role: Historical / superseded container rule
 related:
   - "[[United States v. Ross]]"
   - "[[California v. Acevedo]]"
@@ -45,7 +45,7 @@ tags:
   - warrant-requirement
   - overruled
   - historical
-holding: "A closed, opaque container found during the lawful search of an automobile may not be opened without a warrant even where police have probable cause — a bright-line container rule the Court overruled one Term later in United States v. Ross (1982)."
+holding: "Absent a valid exception, a closed, opaque container whose contents are not in plain view or otherwise obvious may not be opened without a warrant during a lawful automobile search."
 ---
 
 # Robbins v. California
@@ -74,7 +74,7 @@ The judgment of the California Court of Appeal was **reversed**. Stewart, J., an
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
 
 ## Appears on
-- [[Automobile Exception]] — *Historical / origin*
+- [[Automobile Exception]] — *Historical / superseded container rule*
 
 ## Sources
 - [*Robbins v. California*, 453 U.S. 420 (1981)](https://www.courtlistener.com/opinion/110558/robbins-v-california/) — pinpoint: 428 (plurality; Stewart, J.); Rule quote string-matched to the CL opinion text 2026-07-07. Overruled by *United States v. Ross*, 456 U.S. 798 (1982) (successor page: [[United States v. Ross]]).
