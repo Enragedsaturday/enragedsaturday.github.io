@@ -239,6 +239,11 @@ MDLINK_URL_RE = re.compile(r"\[([^\]]*)\]\((https?://[^)\s]+)\)")
 RULE_CALLOUT_RE = re.compile(r"^>\s*\[!rule\]")
 BLOCK_ANCHOR_RE = re.compile(r"^>\s*\^([A-Za-z0-9][\w-]*)\s*$")
 LISTITEM_RE = re.compile(r"^\s*[-*]\s+")
+# A genuine reporter citation is "<vol> <Reporter> <page>" (e.g. "540 U.S. 544",
+# "997 F.3d 191"): a volume number, a reporter token, then a page number. Slip-/
+# docket-only citation strings ("No. 23-1197, slip op. (U.S. 2026)") carry no
+# reporter page and must NOT be counted as an official citation.
+REPORTER_CITE_RE = re.compile(r"\b\d+\s+[A-Z][.A-Za-z0-9 ]*?\s\d+")
 
 
 def slugify(text):
@@ -547,6 +552,23 @@ def norm_wikilink(val):
     return val.strip()
 
 
+def has_official_citation(cite):
+    """True only for a genuine reporter citation (volume · reporter · page).
+
+    Mirrors the lake's citations.official/slip_only semantics from the
+    frontmatter string alone: slip-/docket-only forms ("No. 23-1197, slip op.
+    (U.S. 2026)") have official==null / slip_only==true and must read False.
+    bool(cite.strip()) overcounted them because any non-empty string passed.
+    """
+    c = (cite or "").strip()
+    if not c:
+        return False
+    low = c.lower()
+    if "slip op" in low or low.startswith("no."):
+        return False
+    return bool(REPORTER_CITE_RE.search(c))
+
+
 def extract_case_page(inv, rel, fm, body):
     oc = "case"
     title = fm.get("title") or os.path.splitext(os.path.basename(rel))[0]
@@ -566,7 +588,7 @@ def extract_case_page(inv, rel, fm, body):
             "neutral_cite": neutral,
             "court": fm.get("court") or "",
             "year": fm.get("year"),
-            "official_citation_present": bool(cite.strip()),
+            "official_citation_present": has_official_citation(cite),
         })
 
     # proposition (the taught holding)

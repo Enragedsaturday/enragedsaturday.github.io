@@ -1,5 +1,10 @@
 # P3 residue notes (orchestrator running log — reconcile in P3.3)
 
+## P5-tidy advisories (out of P3 scope, no open finding)
+- Inventory lake-mirror link_target items still carry pre-rekey identity: Chapman cluster 8428427 (canonical 107359), Fisher cluster 5141053 + case_name "In re Mirsky" (canonical 131160). Orchestrator re-key lane if inventory identity sync wanted (INV worker advisory).
+- Fisher lake record filename suffix still encodes pre-rekey cluster (illinois-v-fisher--5141053.json).
+- 2 orphan adjudication refs (F-S9-PR-d1d2d45449, F-S9-PR-6ffdcb45b8) + inv5 count row (2329 vs 2331) — pre-existing, documented P5 tidy.
+
 ## NOT-FIXED (loop-2 queue)
 - F-S9-PR-f11d96f96f — Katz pin-361 (Harlan concurrence text not cached; needs serial CL lane or concurrence cache).
 - F-S9-PR-f6aa78bbe3 — Kentucky v. King pin-op8 (rendered anchor itself an adjudicated paraphrase). RESOLVABLE loop-2 cache-only: lead 9441559 IS at ~/cssi-lake/cache/text/ (L09 didn't know the path; brief amended).

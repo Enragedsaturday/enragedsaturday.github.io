@@ -52,7 +52,7 @@ aliases:
 
 # United States v. Castillo
 
-*70 F.4th 894 (5th Cir. 2023)* (No. 21-50406) · U.S. Court of Appeals for the Fifth Circuit · **Binding in-circuit — 5th Cir.** · Treatment: **Unverified**
+*70 F.4th 894 (5th Cir. 2023)* (No. 22-50060) · U.S. Court of Appeals for the Fifth Circuit · **Binding in-circuit — 5th Cir.** · Treatment: **Unverified**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 9407477 → majority opinion 9402953 (Ho, J.; 70 F.4th 894, decided June 19, 2023). Re-keyed in the pre-W5 identity audit from a wrong-case namesake (sentencing/plea-breach Castillo) to the intended border-search Castillo; identity re-verified on read 2026-07-07. Rule quote string-matched to the CL opinion text; slip-style pin (the CL text carries only the 5th Cir. slip pagination, not the 70 F.4th star pages) — S9 verifies the reporter pincite. -->
 
 ## Background

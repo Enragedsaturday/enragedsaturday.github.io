@@ -54,7 +54,7 @@ Whether the open-fields doctrine applies even to fields that are fenced, posted 
 ## Rule
 Yes. "[O]pen fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance." — 466 U.S. at 179. ^pin-179
 
-Fencing and posting do not change that: "It is not generally true that fences or 'No Trespassing' signs effectively bar the public from viewing open fields." — *Id.* ^pin-179b
+Fencing and posting do not change that: "It is not generally true that fences or 'No Trespassing' signs effectively bar the public from viewing open fields in rural areas." — *Id.* ^pin-179b
 
 The common law "distinguished 'open fields' from the 'curtilage,' the land immediately surrounding and associated with the home," and "[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home." — *Id.* at 180. ^pin-180
 

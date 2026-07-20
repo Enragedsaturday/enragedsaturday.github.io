@@ -1854,3 +1854,39 @@ END STATE: adjudications 32 -> 2,331 (all 2,329 findings adjudicated); gate high
 sub-quorum (adjudicated) + 2 orphan adjudication refs (pre-existing, P5 tidy) + inv5 counts.
 Zero unadjudicated. P3 (content fixes) NOT started — not sanctioned this run; class catalog +
 per-finding proposed fixes ready. Spend: ~10 worker dispatches + orchestration, well under cap.
+
+**P3 FIX PHASE COMPLETE (2026-07-19 ~17:30) — THIN-ORCHESTRATOR FLEET RUN, GATE RECONCILED.**
+Same-day arc after P2, user-sanctioned ("execute p3 as the thin orchestrator"). BOOTSTRAP: 487
+fix-owed adjudications joined w/ findings + panel-vote extracts -> P3-QUEUE.jsonl; 34 disjoint-write
+packets (20 LAKE / 3 REG serial-by-shard / HM merged home-mirror / 10 CONT); P3-CLASS-RULING (14
+class directives: QF re-harvest from opus-verified rendered anchors + ~/cssi-lake/cache/text
+verification, registry-12a substantiate-from-lake w/ NO registry edits, cache-only, no
+re-adjudication, rekeys unsanctioned); apply_fixes.py validating applier (queue-membership,
+no-double-fix, role-sep, evidence-required). WAVE A (lake+registry, 379 rows): all 20 lake packets
+drained 262/272 FIXED; registry 64/79 substantiated (fix-row verification only, nodes stay draft);
+star-marker convention divergence between lanes RULED mid-wave (star-verified iff star page
+cache-confirmed) + L02's 13 pins normalized post-hoc (10 flipped w/ evidence, 3 kept w/ reasons,
+incl. Brown v. Texas pin-51 straddle flagged as adjudication call). WAVE B (content, 124 rows): HM
+28/28 (Mapp/Wolf/Lopez-Mendoza/Scott/Calandra/Landor home swaps, 13 role narrowings, Appears-on
+reconciles, N6 preserved); C01-C10 96 FIXED incl. high-severity holding corrections (Mitcham
+independent-source->inevitable-discovery, Loera affirmance basis, Perez Chadwick+Gant, Trent
+unpublished downgrade, Xiang reserved-question, Hampton plurality, Oliver 'in rural areas'
+restoration both surfaces). LOOP 2 (residue 42): (i) stale-inventory class 13 — root cause found
+by fleet (build_inventory.py official_citation_present = bool(citation) counts slip cites) ->
+derivation fixed + surgical inventory patch, assertion_ids byte-identical; (ii) cache-resolvable 7
+(R2A) — Katz Harlan concurrence fetched via 2 sanctioned serial-CL calls (9423553/9423554, logged
+p3-cl-calls.log, cached), King pin-op8 rebuilt both surfaces, Fare pin split 722/724 both surfaces,
+Verdugo pinpoints backfilled from cached 112382, al-Kidd/Castillo page fixes, Burdeau/Verdugo
+quotes verbatim-confirmed; plus 12 companion cross-surface mirror completions (Taylor/Brendlin/
+Van Leeuwen treatment bullets, Vinton Alton, Smith slip-3, Johns 483, Connally, Cupp pin-295 split,
+Buie 1990-02-28 both fields); (iii) under_review/frontier promotion class 22 ESCALATED ->
+_review-needed/s9-p3-underreview-promotions.md (15 registry + 7 page-side; workorder: serial-CL
+S2 promotion of ~25 blocking cases, then mechanical loop-3). END STATE: inv5 RECONCILES —
+498 UPHELD/MODIFIED = 476 FIXED + 22 escalations. Gate highs 512 -> 24 = the documented
+pre-existing set only (21 unresolvable sub-quorum adjudicated + 2 orphan refs + inv5 count row,
+all P5 tidy). Orchestrator sample re-review 6/6 PASS (artifact-level). Role-sep held: all fixes
+authored by o2-opus-xhigh lanes (25 dispatches), verdicts/rulings/ledger=fable orchestrator; one
+documented orchestrator mechanical completion (Buie as_of_content, same artifact as its FIXED
+directive). P5-tidy advisories filed in P3-RESIDUE-NOTES (Chapman/Fisher inventory link_target
+pre-rekey identity; Fisher filename; Touset pin-IIIa new qf instance -> P4 sweep).
+NEXT: P4 sweeps (Mermaid/lint/coherence/glossary/Case-Index) -> P5 release gate -> P6 publish-brief.

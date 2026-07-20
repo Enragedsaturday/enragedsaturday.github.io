@@ -68,7 +68,7 @@ The detention of the packages pending the warrant was reasonable; the evidence w
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Van Leeuwen* remains the controlling authority that property (here, mail) may be briefly detained on reasonable suspicion while a warrant is diligently sought, reasoning by analogy to [[Terry v. Ohio]]. It is the direct predecessor of [[United States v. Place]] (luggage-detention duration limit) and runs alongside [[Illinois v. McArthur]] (temporary seizure of premises pending a warrant). No negative treatment.
+- *Van Leeuwen* remains the controlling authority that property (here, mail) may be briefly detained on reasonable suspicion while a warrant is diligently sought, reasoning by analogy to [[Terry v. Ohio]]. It is the direct predecessor of [[United States v. Place]] (luggage-detention duration limit) and runs alongside [[Illinois v. McArthur]] (temporary seizure of premises pending a warrant). No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 30 proposed); the proposed negative and audit-needed edges remain unresolved pending the R15 treatment audit.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*

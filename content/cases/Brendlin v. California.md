@@ -62,7 +62,7 @@ A passenger is seized by a traffic stop and may challenge it; the judgment was r
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Brendlin* applies the seizure framework of [[California v. Hodari D.]] and [[Rakas v. Illinois]] to confirm passenger standing in vehicle stops.
+- No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 28 proposed); the proposed negative and audit-needed edges remain unresolved pending the R15 treatment audit. *Brendlin* applies the seizure framework of [[California v. Hodari D.]] and [[Rakas v. Illinois]] to confirm passenger standing in vehicle stops.
 
 ## Appears on
 - [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*

@@ -54,7 +54,7 @@ Whether an arrest made on a valid material-witness warrant can be challenged as 
 ## Rule
 Fourth Amendment reasonableness is judged objectively, so subjective motive does not invalidate an otherwise-valid arrest. "Fourth Amendment reasonableness 'is predominantly an objective inquiry.' We ask whether 'the circumstances, viewed objectively, justify [the challenged] action.' If so, that action was reasonable 'whatever the subjective intent' motivating the relevant officials." — 563 U.S. at 736. ^pin-736
 
-"We hold that an objectively reasonable arrest and detention of a material witness pursuant to a validly obtained warrant cannot be challenged as unconstitutional on the basis of allegations that the arresting authority had an improper motive." — [*Id.* at 743](https://www.courtlistener.com/opinion/7344719/ashcroft-v-al-kidd/#:~:text=We%20hold%20that%20an%20objectively). ^pin-743
+"We hold that an objectively reasonable arrest and detention of a material witness pursuant to a validly obtained warrant cannot be challenged as unconstitutional on the basis of allegations that the arresting authority had an improper motive." — [563 U.S. at 744](https://www.courtlistener.com/opinion/7344719/ashcroft-v-al-kidd/#:~:text=We%20hold%20that%20an%20objectively). ^pin-743
 
 And [[Qualified Immunity|qualified immunity]] "protects 'all but the plainly incompetent or those who knowingly violate the law.'" — *Id.* (quoting [[Malley v. Briggs]], 475 U.S. at 341).
 
