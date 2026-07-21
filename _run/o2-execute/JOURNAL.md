@@ -1890,3 +1890,30 @@ documented orchestrator mechanical completion (Buie as_of_content, same artifact
 directive). P5-tidy advisories filed in P3-RESIDUE-NOTES (Chapman/Fisher inventory link_target
 pre-rekey identity; Fisher filename; Touset pin-IIIa new qf instance -> P4 sweep).
 NEXT: P4 sweeps (Mermaid/lint/coherence/glossary/Case-Index) -> P5 release gate -> P6 publish-brief.
+
+**P4 SWEEPS — SESSIONS 1-2 (2026-07-20/21, thin orchestrator, user-sanctioned "execute p4").**
+BOOTSTRAP: P4-PLAN/WORKER-BRIEF/RULINGS + queue artifacts (mermaid-blocks 75, pair-list 437,
+absence-claims 181, recency-queries 11 lanes, TOC extracts LaFave-complete + NJLEH-bounded).
+CLEAN SWEEPS: MER 75/75 render+inspect PASS (0 findings); R6 PAIR 437/437 ZERO contradictions;
+S8H-A NUM-03 (0 carat leaks, 287/287 pins) + shingle scoped; S8H-B ledger sample 1419+54 clean,
+188/188 ambiguity re-reviews CONFIRMED, fragments 231/231 cache-traced (7 pin-provenance rows);
+SMP S6 sample all-CONFIRM (pause packets carry user dispositions); I3 dual-TOC 0 doctrinal gaps
+(80/80 registry presence); I2-GAP saturation confirmed (74 relevance-gate rows, off-domain-heavy).
+SIGNAL FINDINGS: marker re-poll 11 UNCHANGED + holcomb-watch FIRED (superseding 9th Cir opinion
+2026-07-17, cluster 10932458, text pending); Brillhart (11th Cir 2026-07-09) two-keyed — hash-split
+permissive side grew; hard-load deep-link landing BROKEN (P4-S8H-001, scroll cancelled during
+hydration, SPA leg fine); Lange T3 bound-pin discrepancy -> T3 class REOPENED (sweep dispatched);
+COH R10: gate-a 0/80 deep-equal (spec-vs-build conflict RULED P4-04 -> 14 content + 3 no-callout
+individual, systemic Q escalates to P5), gate-b 11 missing point-status tables, gate-c LINT-12
+151 highs (136 mechanical class RULED P4-05). **TRIPWIRE FIRED (RULING P4-07): United States v.
+Lowers (4th Cir 2026-03-10, published, PRE-build) joined the hash-match split's strict side,
+absent from every S6 log — a genuine discovery miss. Remedy (P4-08): full 13-category re-run at
+I5 depth; 3 units already ran as I5; 10 codex lanes launched; Claude legs + TW-DIFF next window.**
+MECHANICS: monthly-limit event killed 10 lanes mid-run 2026-07-20 (all resumed from transcript,
+zero work lost); pacing amendment ≤50%/5h window, ≤3 concurrent Claude lanes; serial-CL discipline
+held (builder token: I4 batch 539 reqs + recency 11 reqs, codex-invoked; Claude MCP: markers +
+tripwire verifications, all journaled p4-cl-calls.log); recency q-form bug caught + corrected
+(filed_after must be API param; invalid run preserved; 153 post-build citers to triage).
+WAVE F STAGED: P4-TRIAGE.md (A1-A7 fix-now incl. LINT-12 class + landing fix + split-map update
+w/ Lowers/Brillhart lake stubs; B1-B10 review classes incl. I4 181-claim join; C1-C4 escalations).
+Commits: bf19b6f0, 62fb8a8b, 56d838d4, df3b214a.
