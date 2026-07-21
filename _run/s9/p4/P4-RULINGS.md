@@ -45,3 +45,26 @@ green; A13 REVIEW-rows vacuous — accepted as reported.
 Accepted as built: consolidated per-category cites:(opinion-ids) queries; fixed
 filed_after:2026-07-04 floor; key-case scoring cap 15/category with cuts recorded. Entick
 (no CL record) noted as structurally unmonitorable — goes in the R12 maintenance handoff.
+
+## RULING P4-07 (2026-07-21) — TRIPWIRE VERDICT: FIRED (R7.5, fail-closed)
+Predicate: United States v. Lowers, 4th Cir. 2026-03-10, PUBLISHED (CL cluster 10807484, docket
+24-4546, lead op 11274223) — two-key real (codex web + Claude web independently; CL-confirmed by
+the orchestrator serial lane incl. holding read: hash value does not frustrate REP; warrantless
+opening absent prior human view = unreasonable search; suppression denied on attenuation).
+Gate-passing: a circuit's position in the taught hash-match private-search split is doctrine-
+grain content the corpus states (Private and Foreign Searches.md names the split 9th vs 5th/6th).
+S6's logs account for the split CLASS but the catalog's split map was stale at build time —
+Lowers predates the build by ~4 months and appears in no S6 artifact. That is a discovery miss,
+not currency drift. Fail-closed ⇒ THE FULL 13-CATEGORY RE-RUN FIRES.
+Non-charging dispositions: House (cumulative 7th-Cir authority in a catalogued split — Tuggle
+already fixes the 7th's position; accounted at doctrine grain); Brillhart (post-build currency,
+R7.1 finding already filed); Pung (SCOTUS 2026-06-23, takings/tax-sale + 8A-applied-not-modified
+— relevance-gate referral, not a discovery miss).
+
+## RULING P4-08 (2026-07-21) — tripwire remedy design (paced execution)
+The 13-category frontier re-run executes at I5 depth, dual-model, under the standing pacing
+directive: the 3 I5 units (digital, civil-remedies, foundations) ALREADY ran at exactly this
+depth this phase and count as their categories' re-run legs; the REMAINING 10 categories run now
+(10 codex web_search lanes + Claude-lane coverage batched ~3-4 categories per opus lane), then
+one diff lane vs S6 logs + corpus, then orchestrator serial-CL verification of any two-key
+not-accounted find. Discoveries route S6 R8 born-draft; >10 new pages ⇒ human pause (unchanged).
