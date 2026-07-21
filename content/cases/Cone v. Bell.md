@@ -72,4 +72,4 @@ The Court held the *[[Brady v. Maryland|Brady]]* claim was not procedurally defa
 - [[Brady and Giglio]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Cone v. Bell*, 556 U.S. 449 (2009) — https://www.courtlistener.com/opinion/145883/cone-v-bell/ — pinpoints: 469, 470 (& n.15). (CourtListener carries the slip opinion, paginated "556 U.S. ___"; U.S. Reports pages supplied from the official reporter.)
+- *Cone v. Bell*, 556 U.S. 449 (2009) — https://www.courtlistener.com/opinion/145883/cone-v-bell/ — interior pincite(s) 469, 470 (& n.15) retired T3/P4-12. (CourtListener carries the slip opinion, paginated "556 U.S. ___"; U.S. Reports pages supplied from the official reporter.)

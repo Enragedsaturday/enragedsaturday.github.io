@@ -56,6 +56,18 @@ FIELD_I_ENUM = {"good_law", "history", "caution",
                 "questioned", "superseded", "unverified"}
 LEGACY_ENUM = {"good", "criticized", "limited", "abrogated", "overruled"}
 
+# S1 A4 — legacy `treatment.status` -> Field-I composite. MIRRORS
+# caseHelpers.LEGACY_TO_FIELD_I exactly. Any legacy status NOT in this map resolves
+# to `unverified` (the `?? "unverified"` fallback in resolveTreatment), so an
+# injected/bogus status resolves unverified and therefore banners — fail-visible.
+LEGACY_TO_FIELD_I = {
+    "good": "good_law",
+    "limited": "caution",
+    "criticized": "caution",
+    "overruled": "superseded",
+    "abrogated": "superseded",
+}
+
 GLYPH_FORBIDDEN = "⭘"   # ⭘ HEAVY CIRCLE — forbidden (A6)
 GLYPH_UNVERIFIED = "⚪"  # ⚪ MEDIUM WHITE CIRCLE — canonical unverified glyph
 
@@ -76,26 +88,63 @@ def _is_draft(fm):
     return isinstance(v, str) and v.strip().lower() == "true"
 
 
-# S5 R15 draft-state banner: a case page renders the top-of-content ⚪ unverified
-# banner when its `lake.status` ∈ {draft, under_review} OR the top-level `draft`
-# flag is set (the third R15 driver — Field-I `unverified` — IS the condition
-# guarded by (d), so a SEPARATE banner-state signal is required there as
-# defense-in-depth behind the S2 R12 publish gate). NOTE: the born-draft mint
-# (adjudicated E1) emits `lake.status: under_review`, NOT `draft: true` — the
-# latter would EXCLUDE the page from the Quartz build (hide it), which is not the
-# design; the R15 banner + S2 R12 gate are.
+# S5 R15 draft-state / unverified banner: MIRRORS caseHelpers.shouldDraftBanner
+# EXACTLY. A case page renders the top-of-content ⚪ banner when (1) the top-level
+# `draft` flag is set, OR (2) its `lake.status` ∈ {draft, under_review}, OR (3) its
+# RESOLVED Field-I composite is `unverified`. NOTE: the born-draft mint (adjudicated
+# E1) emits `lake.status: under_review`, NOT `draft: true` — the latter would
+# EXCLUDE the page from the Quartz build (hide it), which is not the design; the R15
+# banner + S2 R12 gate are.
+#
+# P4-14: the 30 verified_identity promotions created the legitimate state
+# {lake.status: verified_identity, treatment.field_i_validity: unverified}. The
+# component banners those via leg (3) (resolveTreatment().fieldI === "unverified"),
+# but the lint's OLD _banner_driven lacked that leg — so leg (d) fired 21 false-
+# positive HIGHs demanding a SEPARATE banner signal the state cannot carry without
+# inventing states. Adding leg (3) mirrors the component: an unverified page is
+# ALWAYS bannered, so the (d) "unverified reaches a reader unbannered" HIGH is now
+# unreachable for a page whose validity resolves to the unverified composite. Leg
+# (d) survives as a belt over legs (a)/(b): a validity string that TEXTUALLY says
+# "unverified" but does NOT resolve to the unverified composite (a malformed/out-of-
+# enum value) still fails visible. Primary defense-in-depth is the S2 R12 publish
+# gate (per RULING P4-14).
 LAKE_BANNER_STATUSES = {"draft", "under_review"}
 
 
+def _norm_field_i(value):
+    """Mirror caseHelpers.normFieldI: lowercase/trim, take the pre-slash segment,
+    strip to [a-z_], return it iff it is a canonical Field-I key, else None."""
+    if not isinstance(value, str):
+        return None
+    s = re.sub(r"[^a-z_]", "", value.lower().strip().split("/")[0])
+    return s if s in FIELD_I_ENUM else None
+
+
+def _resolved_field_i(fm):
+    """Mirror caseHelpers.resolveTreatment().fieldI: the normalized projected
+    `field_i_validity` when present, else the legacy `status` mapped via S1 A4
+    (LEGACY_TO_FIELD_I; any unmapped legacy status -> 'unverified'), else None."""
+    t = _treatment(fm)
+    projected = _norm_field_i(t.get("field_i_validity"))
+    if projected:
+        return projected
+    status = t.get("status")
+    if _blank(status):
+        return None
+    return LEGACY_TO_FIELD_I.get(str(status).strip().lower(), "unverified")
+
+
 def _banner_driven(fm):
-    """True iff the page carries a banner-driving state per S5 R15 (a `draft: true`
-    flag OR a `lake.status` ∈ {draft, under_review})."""
+    """True iff the page carries a banner-driving state per S5 R15, mirroring
+    caseHelpers.shouldDraftBanner: a `draft: true` flag, OR `lake.status` ∈
+    {draft, under_review}, OR a resolved Field-I composite of `unverified`."""
     if _is_draft(fm):
         return True
     lake = fm.get("lake")
-    if isinstance(lake, dict):
-        return str(lake.get("status", "")).strip().lower() in LAKE_BANNER_STATUSES
-    return False
+    if isinstance(lake, dict) and \
+            str(lake.get("status", "")).strip().lower() in LAKE_BANNER_STATUSES:
+        return True
+    return _resolved_field_i(fm) == "unverified"
 
 
 def _blank(v):

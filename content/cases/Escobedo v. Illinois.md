@@ -17,28 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Escobedo v. Illinois
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
-  point_overrides:
-    - point: legacy-limited-escobedo-v-illinois
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Miranda v. Arizona
-          cluster_id: 107252
-          cite: 384 U.S. 436
-          field_ii: limited
-        - name: Kirby v. Illinois
-          cluster_id: 108554
-          cite: 406 U.S. 682
-          field_ii: limited
-        - name: Moran v. Burbine
-          cluster_id: 111614
-          cite: 475 U.S. 412
-          field_ii: limited
-      scope_note: "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106883/escobedo-v-illinois/"
   cluster_id: 106883

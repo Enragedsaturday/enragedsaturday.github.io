@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 110377
   identity_checked: true
 homes:
-  - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: "Key — Progeny / Refinement"
   - page: "[[Reasonable Suspicion]]"
     role: "Key — Anchor"
 related: ["[[Terry v. Ohio]]", "[[United States v. Arvizu]]", "[[Navarette v. California]]", "[[Ornelas v. United States]]"]
@@ -67,7 +65,6 @@ The stop was supported by reasonable suspicion and was upheld. Reasonable suspic
 - *Cortez* refines the reasonable-suspicion standard of [[Terry v. Ohio]] and supplied the "whole picture" / "particularized and objective basis" language later applied in [[United States v. Arvizu]] (no divide-and-conquer), [[Ornelas v. United States]], and [[Navarette v. California]].
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*
 - [[Reasonable Suspicion]] — *Key — Anchor*
 
 ## Sources

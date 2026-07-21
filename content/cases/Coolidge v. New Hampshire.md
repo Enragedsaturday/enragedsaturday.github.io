@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Coolidge v. New Hampshire
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
-  point_overrides:
-    - point: legacy-limited-coolidge-v-new-hampshire
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Horton v. California
-          cluster_id: 112448
-          cite: 496 U.S. 128
-          field_ii: limited
-      scope_note: "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/"
   cluster_id: 108377

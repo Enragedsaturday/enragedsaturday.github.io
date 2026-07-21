@@ -76,4 +76,4 @@ The judgment of the Second Circuit was **reversed in part and [[Reading and Citi
 - [[Section 1983 Liability and Qualified Immunity]] — *Key*
 
 ## Sources
-- [*Ziglar v. Abbasi*, 582 U.S. 120 (2017)](https://www.courtlistener.com/opinion/4403804/ziglar-v-abbasi/) — pinpoint: 135 (Opinion of the Court, separation-of-powers/who-should-decide holding; Kennedy, J.). The CL opinion carries S. Ct. star pagination (137 S. Ct. 1843); the quoted passage sits immediately before the *1858 marker (137 S. Ct. 1857–58 = 582 U.S. 135). Quote string-matched to the CL opinion text 2026-07-07.
+- [*Ziglar v. Abbasi*, 582 U.S. 120 (2017)](https://www.courtlistener.com/opinion/4403804/ziglar-v-abbasi/) — interior pincite(s) 135 retired T3/P4-12 (Opinion of the Court, separation-of-powers/who-should-decide holding; Kennedy, J.). The CL opinion carries S. Ct. star pagination (137 S. Ct. 1843); the quoted passage sits immediately before the *1858 marker (137 S. Ct. 1857–58 = 582 U.S. 135). Quote string-matched to the CL opinion text 2026-07-07.

@@ -72,4 +72,4 @@ The judgment of the Ninth Circuit was **affirmed** and the case **[[Reading and 
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*FBI v. Fikre*, 601 U.S. 234 (2024)](https://www.courtlistener.com/opinion/10600106/fbi-v-fikre/) — pinpoint: 241 (voluntary-cessation standard, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*FBI v. Fikre*, 601 U.S. 234 (2024)](https://www.courtlistener.com/opinion/10600106/fbi-v-fikre/) — interior pincite(s) 241 retired T3/P4-12 (voluntary-cessation standard, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

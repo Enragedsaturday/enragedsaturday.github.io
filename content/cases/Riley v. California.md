@@ -70,4 +70,4 @@ Officers must generally obtain a warrant before searching a cell phone seized in
 - [[Plain View Doctrine]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Riley v. California*, 573 U.S. 373 (2014) — https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/ — pinpoint: 403 (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).
+- *Riley v. California*, 573 U.S. 373 (2014) — https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/ — interior pincite(s) 403 retired T3/P4-12 (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).

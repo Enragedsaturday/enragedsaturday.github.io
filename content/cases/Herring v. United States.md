@@ -52,7 +52,7 @@ Investigator Anderson asked a neighboring county's warrant clerk whether there w
 Whether the exclusionary rule requires suppression of evidence found incident to an arrest made in objectively reasonable reliance on a police recordkeeping error — a warrant that had been recalled but, through isolated negligence, was left listed as active.
 
 ## Rule
-No. Suppression turns on the culpability of the police conduct and the deterrence to be gained, not on the mere fact of a Fourth Amendment violation. "To trigger the exclusionary rule, police conduct must be sufficiently deliberate that exclusion can meaningfully deter it, and sufficiently culpable that such deterrence is worth the price paid by the justice system." — 555 U.S. at 144. ^pin-144
+No. Suppression turns on the culpability of the police conduct and the deterrence to be gained, not on the mere fact of a Fourth Amendment violation. "To trigger the exclusionary rule, police conduct must be sufficiently deliberate that exclusion can meaningfully deter it, and sufficiently culpable that such deterrence is worth the price paid by the justice system." — 129 S. Ct. 695, 702 (S. Ct. star pagination; U.S. Reports interior page retired per T3/P4-12). ^pin-144
 
 "As laid out in our cases, the exclusionary rule serves to deter deliberate, reckless, or grossly negligent conduct, or in some circumstances recurring or systemic negligence." — *Id.* ^pin-144a
 
@@ -70,4 +70,4 @@ The evidence was admissible; the judgment denying suppression was affirmed. Negl
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Herring v. United States*, 555 U.S. 135 (2009) — https://www.courtlistener.com/opinion/145922/herring-v-united-states/ — pinpoint: 144.
+- *Herring v. United States*, 555 U.S. 135 (2009) — https://www.courtlistener.com/opinion/145922/herring-v-united-states/ — pinpoint: 129 S. Ct. at 702 (S. Ct. star pagination; U.S.-reporter interior 144 retired T3/P4-12).

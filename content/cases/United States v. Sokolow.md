@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 112239
   identity_checked: true
 homes:
-  - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: "Key — Progeny / Refinement"
   - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[United States v. Arvizu]]", "[[Illinois v. Wardlow]]"]
@@ -67,7 +65,6 @@ The investigative stop was supported by reasonable suspicion under the [[Common 
 - No negative treatment. *Sokolow* confirms the totality-of-the-circumstances approach to reasonable suspicion drawn from [[United States v. Cortez]] and [[Terry v. Ohio]], and rejects mechanical sorting of factors — an approach reaffirmed in [[United States v. Arvizu]].
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*
 - [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources

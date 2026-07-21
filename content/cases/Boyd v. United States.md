@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Boyd v. United States
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
-  point_overrides:
-    - point: legacy-limited-boyd-v-united-states
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Warden v. Hayden
-          cluster_id: 107465
-          cite: 387 U.S. 294
-          field_ii: limited
-      scope_note: "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/91573/boyd-v-united-states/"
   cluster_id: 91573

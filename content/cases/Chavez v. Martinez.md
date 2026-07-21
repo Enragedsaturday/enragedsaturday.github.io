@@ -76,4 +76,4 @@ Coercive interrogation, standing alone and without use of the statements in a cr
 - [[Due-Process Voluntariness of Confessions]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Chavez v. Martinez*, 538 U.S. 760 (2003) — https://www.courtlistener.com/opinion/127927/chavez-v-martinez/ — pinpoints: 766, 767 (plurality opinion).
+- *Chavez v. Martinez*, 538 U.S. 760 (2003) — https://www.courtlistener.com/opinion/127927/chavez-v-martinez/ — interior pincite(s) 766, 767 retired T3/P4-12 (plurality opinion).

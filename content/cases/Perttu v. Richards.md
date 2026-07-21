@@ -70,4 +70,4 @@ The judgment of the Sixth Circuit was **affirmed**. Roberts, C.J., delivered the
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Perttu v. Richards*, 605 U.S. 460 (2025)](https://www.courtlistener.com/opinion/10776832/perttu-v-richards/) — pinpoint: 468 (Opinion of the Court, holding; Roberts, C.J.); quote string-matched to the CL opinion text 2026-07-07.
+- [*Perttu v. Richards*, 605 U.S. 460 (2025)](https://www.courtlistener.com/opinion/10776832/perttu-v-richards/) — interior pincite(s) 468 retired T3/P4-12 (Opinion of the Court, holding; Roberts, C.J.); quote string-matched to the CL opinion text 2026-07-07.

@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Oregon v. Elstad
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Limited as applied to deliberate 'question-first' two-step interrogations by Missouri v. Seibert (2004); Elstad otherwise governs inadvertent/good-faith failures to warn."
-  point_overrides:
-    - point: legacy-limited-oregon-v-elstad
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Missouri v. Seibert
-          cluster_id: 137002
-          cite: 542 U.S. 600
-          field_ii: limited
-      scope_note: "Limited as applied to deliberate 'question-first' two-step interrogations by Missouri v. Seibert (2004); Elstad otherwise governs inadvertent/good-faith failures to warn."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111364/oregon-v-elstad/"
   cluster_id: 111364

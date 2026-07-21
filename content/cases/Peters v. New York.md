@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 9423756
   identity_checked: true
 homes:
-  - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: "Related (cross-doctrine)"
   - page: "[[SIA Persons]]"
     role: "Related (cross-doctrine)"
 related: ["[[Sibron v. New York]]", "[[Terry v. Ohio]]", "[[Henry v. United States (1959)]]", "[[Brinegar v. United States]]"]
@@ -69,7 +67,6 @@ The search was valid as incident to a lawful arrest founded on probable cause, a
 - No negative treatment. Companion to [[Sibron v. New York]] and [[Terry v. Ohio]]; applies the probable-cause standard of [[Brinegar v. United States]] and [[Henry v. United States (1959)]] (the arrest is dated to the seizure on probable cause) and the search-incident rationale later associated with [[Chimel v. California]].
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
 - [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources

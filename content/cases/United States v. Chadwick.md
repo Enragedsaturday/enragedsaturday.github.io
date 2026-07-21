@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: United States v. Chadwick
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
-  point_overrides:
-    - point: legacy-limited-united-states-v-chadwick
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: California v. Acevedo
-          cluster_id: 112608
-          cite: 500 U.S. 565
-          field_ii: limited
-      scope_note: "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109714/united-states-v-chadwick/"
   cluster_id: 109714

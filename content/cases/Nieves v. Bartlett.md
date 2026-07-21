@@ -71,5 +71,5 @@ The judgment of the Ninth Circuit was **reversed** and the case **[[Reading and 
 - [[Retaliatory Arrest]] — *Key*
 
 ## Sources
-- [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — pinpoint: 406 (exception; Opinion of the Court). Quote string-matched to the CL opinion text (139 S. Ct. 1715, at 1727) 2026-07-07; U.S.-reporter pincite corroborated by *Gonzalez v. Trevino*, 602 U.S. 653 (2024).
+- [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — interior pincite(s) 406 retired T3/P4-12 (exception; Opinion of the Court). Quote string-matched to the CL opinion text (139 S. Ct. 1715, at 1727) 2026-07-07; U.S.-reporter pincite corroborated by *Gonzalez v. Trevino*, 602 U.S. 653 (2024).
 - [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — construing the *Nieves* exception.

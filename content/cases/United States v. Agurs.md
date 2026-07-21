@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: United States v. Agurs
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
-  point_overrides:
-    - point: legacy-limited-united-states-v-agurs
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: United States v. Bagley
-          cluster_id: 111514
-          cite: 473 U.S. 667
-          field_ii: limited
-      scope_note: "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109506/united-states-v-agurs/"
   cluster_id: 109506

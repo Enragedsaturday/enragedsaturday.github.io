@@ -72,5 +72,5 @@ The judgment of the Court of Appeals was **[[Reading and Citing Cases#vacated|va
 - [[Malicious Prosecution under the Fourth Amendment]] — *Key*
 
 ## Sources
-- [*Chiaverini v. City of Napoleon*, 602 U.S. 556 (2024)](https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/) — pinpoint: 562 (charge-by-charge holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Chiaverini v. City of Napoleon*, 602 U.S. 556 (2024)](https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/) — interior pincite(s) 562 retired T3/P4-12 (charge-by-charge holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
 - [*Thompson v. Clark*, 596 U.S. 36 (2022)](https://www.courtlistener.com/opinion/6457347/thompson-v-clark/) — the Fourth Amendment malicious-prosecution claim on which *Chiaverini* builds.

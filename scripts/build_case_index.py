@@ -100,6 +100,26 @@ def page_rows():
     return rows
 
 
+def _split_cells(ln):
+    """Split a table row into cells on COLUMN-DELIMITER pipes only.
+
+    R12-maintenance fix (FIN-INDEX, S9 P4): the old naive `ln.split("|")` broke
+    on any carry-forward row whose Holding cell had picked up an S8 term-link with
+    an escaped display pipe (`[[Reading and Citing Cases#reporter\\|reporter]]`) —
+    the extra `|` inflated the cell count past 5 and the row was silently dropped,
+    violating the "flagged rows never vanish" contract (e.g. the Cruz/West/Jackson
+    UNVERIFIABLE row). Mirror the frozen zones splitter: blank wikilink-internal
+    pipes, ignore escaped `\\|`, then slice on the surviving delimiter pipes."""
+    buf = list(ln)
+    for m in re.finditer(r"\[\[.*?\]\]", ln):
+        for i in range(m.start(), m.end()):
+            if buf[i] == "|":
+                buf[i] = "\x00"
+    masked = "".join(buf)
+    pos = [m.start() for m in re.finditer(r"(?<!\\)\|", masked)]
+    return [ln[a + 1:b].strip() for a, b in zip(pos, pos[1:])]
+
+
 def flagged_rows(existing_lines):
     """Carry forward flagged caption rows from the current table verbatim,
     forcing a non-blank Good-law cell (N13)."""
@@ -107,7 +127,7 @@ def flagged_rows(existing_lines):
     for ln in existing_lines:
         if not ln.startswith("|") or ln.startswith("|---") or HEADER_RE.match(ln):
             continue
-        cells = [x.strip() for x in ln.split("|")[1:-1]]
+        cells = _split_cells(ln)
         if len(cells) != 5:
             continue
         case = cells[0]

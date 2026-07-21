@@ -30,8 +30,6 @@ lake:
   status: under_review
   projected_at: 2026-07-10
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: Key
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
   - page: "[[Third-Party Doctrine & CSLI]]"
@@ -85,7 +83,6 @@ The district court's suppression order was **unanimously reversed** and the case
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Moore-Bush* is best taught as an **open question**, not a settled rule: an [[Reading and Citing Cases#en-banc|en banc]] court split evenly on whether *[[Carpenter v. United States|Carpenter]]*'s aggregation reasoning extends long-term **pole-camera** surveillance of a home's **[[Curtilage|curtilage]]** into "search" territory. Present both [[Common Legal Terms#concurring-opinion|concurrences]] as competing frameworks — the *[[Carpenter v. United States|Carpenter]]*/mosaic view (a search) versus the *[[Katz v. United States|Katz]]*/public-exposure view (no search) — and stress that, because neither drew a majority, the surveillance-is-a-search question remains unresolved in the First Circuit.
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key*
 - [[Curtilage]] — *Related (cross-doctrine)*
 - [[Third-Party Doctrine & CSLI]] — *Related (cross-doctrine)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*

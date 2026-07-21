@@ -71,5 +71,5 @@ The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case *
 - [[Retaliatory Arrest]] — *Key*
 
 ## Sources
-- [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — pinpoint: 658 (per curiam holding); quote string-matched to the CL opinion text 2026-07-07.
+- [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — interior pincite(s) 658 retired T3/P4-12 (per curiam holding); quote string-matched to the CL opinion text 2026-07-07.
 - [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — the general rule (at 402) and the exception (at 406) that *Gonzalez* construes.

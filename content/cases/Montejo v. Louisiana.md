@@ -66,4 +66,4 @@ The Louisiana Supreme Court correctly rejected Montejo's *[[Michigan v. Jackson|
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Montejo v. Louisiana*, 556 U.S. 778 (2009) — https://www.courtlistener.com/opinion/145873/montejo-v-louisiana/ — pinpoint: 797 (CL opinion in slip-opinion format; U.S. Reports page per official citation).
+- *Montejo v. Louisiana*, 556 U.S. 778 (2009) — https://www.courtlistener.com/opinion/145873/montejo-v-louisiana/ — interior pincite(s) 797 retired T3/P4-12 (CL opinion in slip-opinion format; U.S. Reports page per official citation).

@@ -71,4 +71,4 @@ The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case *
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Martin v. United States*, 605 U.S. 395 (2025)](https://www.courtlistener.com/opinion/10776839/martin-v-united-states/) — pinpoint: 409–413 (Supremacy Clause holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Martin v. United States*, 605 U.S. 395 (2025)](https://www.courtlistener.com/opinion/10776839/martin-v-united-states/) — interior pincite(s) 409–413 retired T3/P4-12 (Supremacy Clause holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

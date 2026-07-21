@@ -6,14 +6,14 @@
 
 ## Headline
 
-195 line-items dispositioned = **162 T3-REOPEN findings** + **33 residual (`no-live-star`) rows reconciled within them** + **7 UNRESOLVED cross-cites**, plus the Herring escalation.
+195 line-items dispositioned = **162 T3-REOPEN findings** + **33 residual (`no-live-star`) rows reconciled within them** + **7 UNRESOLVED cross-cites**, incl. the Herring loop-2 resolution.
 
 | action (per finding) | count | keys |
 |---|---|---|
 | **upgraded** → lake pin `star-verified` + refetch provenance; content pin kept as printed | 66 | 29 |
 | **kept-conversion-provenance** → documented S.Ct→U.S. conversion; U.S. pin kept; lake conversion-note | 5 | 5 |
 | **converted** → content interior pin retired to first-page cite; lake stays slip-only; → R12 | 85 | 44 |
-| **escalated** → prior star-verified lake pin vs refetch S.Ct-only, no documented conversion (Herring 144) | 6 | 1 |
+| **converted-sct** (Herring 144, loop-2 ruling) → re-cited to star-verified `129 S. Ct. at 702`; lake re-based; U.S. 144 → R12 | 6 | 1 |
 | **provenanced-no-action** (7 UNRESOLVED) → star page present in cache; not a defect | 7 | 5 |
 | **TOTAL fix rows** | **169** | |
 
@@ -27,7 +27,7 @@ The input `refined_status` is assigned **per finding-row** and is internally inc
 - Identify the **U.S.-reporter run** = the contiguous marker run anchored at the case's official first page (from lake `citations`). This excludes interleaved parallel-reporter markers (S.Ct/L.Ed), which for many post-2000 opinions are the *only* live pagination CL exposes.
 - **live-star** ⟺ pin ∈ U.S. run; **start-page** ⟺ pin is the opinion's landing page (first U.S. marker = pin+1); else **convert**.
 
-Result: **29 upgrade keys** (28 live-star + 1 start-page = Brendlin 251), **44 convert**, **5 documented-conversion keep**, **1 escalate**.
+Result: **29 upgrade keys** (28 live-star + 1 start-page = Brendlin 251), **44 convert**, **5 documented-conversion keep**, **1 escalate→converted-sct (Herring 144, loop-2)**.
 
 ### Reconciliation vs the `refined_status` file — flagged for orchestrator sample-check
 
@@ -35,7 +35,7 @@ Result: **29 upgrade keys** (28 live-star + 1 start-page = Brendlin 251), **44 c
 Arizona v. Johnson 327 · Fernandez 303 · Florida v. Harris 244 · Florida v. Jardines 6/7/8/9/10 · Maryland v. King 465 · Plumhoff 777 · Prado Navarette 398 · Ryburn 477 · Grubbs 99. (Each interleaves S.Ct/L.Ed markers; the U.S. run brackets the first page — e.g. King U.S. run 439–482 vs S.Ct 1966–1990.)
 
 **(B) 4 refined `start-page-covered` rows REFUTED by the html** (the live pagination is S.Ct-only; no U.S. star run, so the U.S. page is not a verifiable landing page):
-- Herring 144 (fl 28, 94) → **escalated** (see below).
+- Herring 144 (fl 28, 94) → **converted-sct** (loop-2 ruling; see below).
 - Los Angeles County v. Rettele 614 (fl 100) → **kept-conversion-provenance** (page documents `127 S. Ct. at 1993–94`, star-verified).
 - Scott v. Harris 386 (fl 115) → **converted** (bare U.S. pin, S.Ct-only markers 1772–1785).
 
@@ -53,13 +53,19 @@ The one genuine start-page upgrade — **Brendlin 251** — is U.S.-reporter (fi
 | Virginia v. Moore | 553 U.S. 168 | 128 S. Ct. 1607 (markers 1601–1609) | pin-1607 |
 | Los Angeles County v. Rettele | 550 U.S. 614 | 127 S. Ct. 1993–94 (markers 1990–1994) | pin-1993 |
 
-## Escalation (do-not-guess) — Herring v. United States 555 U.S. 144 (6 findings)
+## Herring v. United States 555 U.S. 144 — escalated, then RESOLVED loop-2 (orchestrator ruling)
 
-Lake `pin-144` is **already `star-verified` (star_marker "144")** from a prior phase with an **unrecorded basis**, but the refetch `html_with_citations` paginates **S. Ct. only** (129 S. Ct. 697–711) — U.S. page 144 is absent from live star pagination, the second-source harvest is empty, and the content asserts a bare `555 U.S. at 144` with **no documented S.Ct conversion**. Converting would downgrade a prior star-verified pin (overturn a prior verified state); keeping asserts a page the refetch cannot substantiate. **Neither content nor lake was touched** — routed to the orchestrator as 6 `escalated` rows (case page L55 + Collective Knowledge L39/L103 + Good-Faith Exception L33/L41/L127). Contrast Heien 60, the same shape but with an on-page documented conversion → kept.
+Initially escalated: lake `pin-144` was `star-verified (star_marker "144")` from a prior phase with an **unrecorded basis**, but the refetch paginates **S. Ct. only** (129 S. Ct. 697–711), the second-source harvest is empty, and content asserted a bare `555 U.S. at 144` with no on-page documented conversion.
+
+**Orchestrator ruling (loop-2):** a prior star-verified state with an unrecorded basis is **not verified** (P2 no-prior-grade); but the refetch **does** star-verify the S. Ct. pagination, so an S. Ct. pinpoint is fully provenanced. → **convert to the documented-S.Ct form.**
+
+**Derived S. Ct. page = 129 S. Ct. 702** (html evidence): the pinned holding *"To trigger the exclusionary rule, police conduct must be sufficiently deliberate that exclusion can meaningfully deter it, and sufficiently culpable that such deterrence is worth the price paid by the justice system"* sits between star markers **`*702`** (offset 28678) and **`*703`** (offset 37031) in `_run/s9/p4/star-refetch/145922.html`; the second quote (`^pin-144a`) is on the same page. This equals 555 U.S. 144.
+
+**Applied:** (1) **content** — all 7 U.S.-144 occurrences (the 6 filed findings — case page L55, Collective Knowledge L39/L103, Good-Faith Exception L33/L41/L127 — plus the case-page Sources note L73) re-cited to the star-verified `129 S. Ct. at 702` documented-conversion form (mirrors Rettele; quotes/prose intact). Zero bare `555 U.S. 144` assertions remain. (2) **lake** `pin-144` re-based: `star_marker="702"`, `pinpoint_status` stays `star-verified`, conversion note recording the unrecorded U.S. basis + the S.Ct star evidence. (3) **R12** — Herring added (retired value `555 U.S. 144`, S.Ct rebase `129 S. Ct. 702`). (4) fixes.jsonl 6 rows `escalated → converted-sct` (`loop:2`). Contrast Heien 60 — same shape but with an on-page documented conversion, kept as-is.
 
 ## The 33 residual (`no-live-star`) rows — reconciled
 
-These are **sibling content locations** of pins whose case-page finding got a coverage verdict; the refetch pipeline left the sibling rows unrefined. Recomputed against the html oracle they resolve deterministically: **27 upgraded** (siblings of star-verified pins — e.g. Hudson 594, Grubbs 96/99, Randolph 120, Samson 857, Ryburn 476/477, Brigham 400/404), **4 escalated** (Herring 144), **1 kept-conversion** (Moore 168 mirror), **1 converted** (Scott 386). No residual left unclassified.
+These are **sibling content locations** of pins whose case-page finding got a coverage verdict; the refetch pipeline left the sibling rows unrefined. Recomputed against the html oracle they resolve deterministically: **27 upgraded** (siblings of star-verified pins — e.g. Hudson 594, Grubbs 96/99, Randolph 120, Samson 857, Ryburn 476/477, Brigham 400/404), **4 converted-sct** (Herring 144, loop-2), **1 kept-conversion** (Moore 168 mirror), **1 converted** (Scott 386). No residual left unclassified.
 
 ## The 7 UNRESOLVED cross-cites — all PROVENANCED (no defect)
 
@@ -85,6 +91,17 @@ Sole occurrence: `…/Exigent Circumstances and Hot Pursuit.md:133` (Lange, a co
 - **Lake gaps (6, no matching pin — content stays provenanced, noted not fixed):** Carroll v. Carman 18 (no pins), Kansas v. Ventris 594 (no pins), Rehberg v. Paulk 369 (only pin-slip-1), Florida v. Jardines 7 & 10, Florida v. Harris 244. These content pins are html-verified but have no discrete lake pin to flip (lake modeling gap, not a defect).
 
 ## Output files
-- `_run/s9/p4/out/FIX-T3-fixes.jsonl` — 169 rows (66 upgraded / 5 kept-conversion / 85 converted / 6 escalated / 7 provenanced-no-action).
-- `_run/s9/p4/out/R12-pin-upgrade-queue.jsonl` — 85 rows (every converted pin: case, cluster_id, retired printed pin, file:line — for re-verification when official U.S. Reports pagination lands).
+- `_run/s9/p4/out/FIX-T3-fixes.jsonl` — 169 rows (66 upgraded / 5 kept-conversion / 85 converted / 6 converted-sct / 7 provenanced-no-action).
+- `_run/s9/p4/out/R12-pin-upgrade-queue.jsonl` — 86 rows (every converted pin + Herring loop-2 rebase: case, cluster_id, retired printed pin, file:line — for re-verification when official U.S. Reports pagination lands).
 - `_run/s9/p4/out/FIX-T3-summary.md` — this file.
+
+## Loop-3 (codex non-author re-review) — 4 items addressed
+
+1. **Residual interior-pin sweep (INCOMPLETE CONVERSIONS).** Swept all 44 converted keys + Herring for interior-pin assertions in **Sources/reference lines and parentheticals** (not just the filed inline findings). Found **29 residual assertions across 23 case-page Sources lines** (incl. the flagged Florida v. Powell "pinpoints: 60, 62" and Missouri v. McNeely "pinpoint 156") — case-page `## Sources` notes the sweep never filed. All retired to the first-page form consistent with each key's loop-1 conversion (`pinpoint(s): N` → `interior pincite(s) N retired T3/P4-12`), descriptive prose and star-verified S.Ct references preserved. **31 additional retired pins added to R12** (incl. previously-unflagged Chavez 767, Cone 470 n.15, McNabb 347, Mullenix 11, Martin 409–413, Dupree 733–738). Post-sweep residual = **0** except the 2 Kingsley case-page locations (L53 body + L72 Sources), which correctly RETAIN 396–397 as documented `135 S. Ct. at 2473` conversions.
+2. **Brendlin note amended.** The lake `pin-251` provenance note now states the evidence accurately: *derived start page — lead-opinion text preceding the first star marker `*252`; the refetch `145712.html` has NO `*251` marker; opinion begins at 551 U.S. 251.* The upgrade **stands** (per adjudication); `star_marker="251"`, `pinpoint_status=star-verified` unchanged.
+3. **LINT-13 re-homed (29 → 0).** All 29 pinpoint-level `notes` keys (unsanctioned per S2 A3) were folded **verbatim** into `provenance.warnings[]` across 22 lake files — prefixed `[FIX-T3/claude-opus-4-8 2026-07-21 loop-3 re-home; pinpoint <id>]`, matching the PROMO-FIX loop-2 convention — and the `notes` keys deleted. **LINT-13: 29 high → 0 total.** Concurrent sibling edits (e.g. Heien P4-10 promotion) preserved.
+4. **Wilson synthesis trimmed.** `Terry Stops and Reasonable Suspicion.md:76` — the Wilson synthesis claimed the case "supplies neither suspicion of a crime **nor ... a basis to disarm**," exceeding the RULING P4-11 stub-recorded holding (RS-only). Re-scoped to the **stop/RS branch** (visible lawful gun possession alone cannot ground reasonable suspicion for the stop); the disarm/frisk clause removed. Black/Northrup open-carry disarm language (their own holdings) untouched.
+
+**Dismissed (FYI, no action):** codex's LINT-4 complaint on "Binding in-circuit (Nth Cir.); persuasive elsewhere" — LINT-4 green on the page; form matches the S6-era convention.
+
+**Loop-3 fixes.jsonl:** +25 rows (23 residual `converted` loop:3 + 1 `scope-trim` + 1 `schema-rehome`) → 194 total. **R12 queue:** 86 → 117 rows.

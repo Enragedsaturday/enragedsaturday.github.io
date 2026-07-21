@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Monroe v. Pape
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
-  point_overrides:
-    - point: legacy-limited-monroe-v-pape
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Monell v. Department of Social Services
-          cluster_id: 109881
-          cite: 436 U.S. 658
-          field_ii: limited
-      scope_note: "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106170/monroe-v-pape/"
   cluster_id: 106170

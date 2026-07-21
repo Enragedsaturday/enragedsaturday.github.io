@@ -70,4 +70,4 @@ The judgment of the Fourth Circuit was **[[Reading and Citing Cases#vacated|vaca
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Dupree v. Younger*, 598 U.S. 729 (2023)](https://www.courtlistener.com/opinion/10049685/dupree-v-younger/) — pinpoint: 733–738 (Opinion of the Court, holding; anchor at the opinion's first page); quote string-matched to the CL opinion text 2026-07-07.
+- [*Dupree v. Younger*, 598 U.S. 729 (2023)](https://www.courtlistener.com/opinion/10049685/dupree-v-younger/) — interior pincite(s) 733–738 retired T3/P4-12 (Opinion of the Court, holding; anchor at the opinion's first page); quote string-matched to the CL opinion text 2026-07-07.

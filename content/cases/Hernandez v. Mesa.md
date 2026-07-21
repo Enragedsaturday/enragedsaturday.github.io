@@ -72,4 +72,4 @@ The judgment of the Fifth Circuit was **affirmed**. Alito, J., delivered the opi
 - [[Suing Federal Officers]] — *Recent development*
 
 ## Sources
-- [*Hernández v. Mesa*, 589 U.S. 93 (2020)](https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/) — pinpoint: 99 (holding, Opinion of the Court); CL text carries S. Ct. star-pagination (140 S. Ct. 735), the holding sitting just before the confirmed *741 page-label; quote string-matched to the CL opinion text 2026-07-07.
+- [*Hernández v. Mesa*, 589 U.S. 93 (2020)](https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/) — interior pincite(s) 99 retired T3/P4-12 (holding, Opinion of the Court); CL text carries S. Ct. star-pagination (140 S. Ct. 735), the holding sitting just before the confirmed *741 page-label; quote string-matched to the CL opinion text 2026-07-07.

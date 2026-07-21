@@ -71,4 +71,4 @@ The judgment of the Fourth Circuit was **reversed** and the case **[[Reading and
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Lackey v. Stinnie*, 604 U.S. 192 (2025)](https://www.courtlistener.com/opinion/10776869/lackey-v-stinnie/) — pinpoint: 204 (holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Lackey v. Stinnie*, 604 U.S. 192 (2025)](https://www.courtlistener.com/opinion/10776869/lackey-v-stinnie/) — interior pincite(s) 204 retired T3/P4-12 (holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

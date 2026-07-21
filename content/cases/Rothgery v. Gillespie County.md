@@ -65,4 +65,4 @@ The right to counsel attached at Rothgery's initial appearance; the Fifth Circui
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Rothgery v. Gillespie County*, 554 U.S. 191 (2008) — https://www.courtlistener.com/opinion/145785/rothgery-v-gillespie-county/ — pinpoint: 213.
+- *Rothgery v. Gillespie County*, 554 U.S. 191 (2008) — https://www.courtlistener.com/opinion/145785/rothgery-v-gillespie-county/ — interior pincite(s) 213 retired T3/P4-12.

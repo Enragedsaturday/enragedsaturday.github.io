@@ -145,3 +145,25 @@ research annex §11" provenance line in Sources notes is RETIRED as unsanctioned
 pin relied on it. The 33 residual-status rows re-classify under the same ladder. The 41
 STAR-MISS (partial-cache) rows from the sweep are NOT in this class (star-paginated cases) —
 they resolve in pass (b) or convert per (c).
+
+## RULING P4-13 (2026-07-21) — B4 lake hygiene + B5 placement convention
+(a) The 10 migration-seed `varies_by_point:true` records + Gouled flip to `varies_by_point:false`
+(point_overrides already synthetic/empty; matches the Smith v. Maryland sibling; B45's exemplar
+partition is adopted as the R5 convention: table owed ONLY for genuine principal-holding splits
+with bound real points — Belton/Smith 2024 remain the only two). Mechanical lake edits + re-projection.
+(b) Unrendered SECONDARY "Related" homes are ACCEPTED as soft relations — NOT defects at the R13
+gate (P2 home-mirror precedent; no mass narrowing). EXCEPTIONS fixed now: Moore-Bush -> Fourth
+Amendment Framework (narrow: the page structurally hosts no roster; an unrendered KEY declaration
+is a false curricular claim), Cortez + Sokolow -> Terry Stops (narrow the unrendered secondary
+KEY declarations; their RS anchoring lives on Reasonable Suspicion), Van Leeuwen homes[]/Appears-on
+internal mismatch (hygiene sync). The corpus-wide narrow-vs-add convention question goes to the
+P5 handoff with COH-B's registry-notes.
+
+## RULING P4-14 (2026-07-21) — LINT-6 banner-driver model vs verified_identity promotions
+The 21 post-promotion LINT-6 highs are lint-model false positives: rendered behavior verified
+correct on sample (Youngblood/Egbert banner via the component's fieldI leg; Horton correctly
+un-bannered as good_law). The lint's demand for a SEPARATE banner-state signal cannot be
+satisfied for the legitimate state {status: verified_identity, field_i: unverified} without
+inventing states. RULED: amend lint6's _banner_driven to mirror caseHelpers.shouldDraftBanner
+(add the fieldI-unverified leg), with a fixture; defense-in-depth remains via the S2 R12
+publish gate. Alarm-fatigue lesson governs (a permanently-red lint teaches ignoring lints).

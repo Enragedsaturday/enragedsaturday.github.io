@@ -71,4 +71,4 @@ The judgment of the Eleventh Circuit was **affirmed**. Kavanaugh, J., delivered 
 - [[Civil Asset Forfeiture]] — *Recent development*
 
 ## Sources
-- [*Culley v. Marshall*, 601 U.S. 377 (2024)](https://www.courtlistener.com/opinion/10600097/culley-v-marshall/) — pinpoint: 381 (Opinion of the Court, holding); quote string-matched to the CL opinion text 2026-07-07.
+- [*Culley v. Marshall*, 601 U.S. 377 (2024)](https://www.courtlistener.com/opinion/10600097/culley-v-marshall/) — interior pincite(s) 381 retired T3/P4-12 (Opinion of the Court, holding); quote string-matched to the CL opinion text 2026-07-07.

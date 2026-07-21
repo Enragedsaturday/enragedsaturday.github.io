@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Saucier v. Katz
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
-  point_overrides:
-    - point: legacy-limited-saucier-v-katz
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Pearson v. Callahan
-          cluster_id: 145918
-          cite: 555 U.S. 223
-          field_ii: limited
-      scope_note: "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118449/saucier-v-katz-et-al/"
   cluster_id: 118449
@@ -80,4 +69,4 @@ Applying its two-step framework, the Court held that even assuming a constitutio
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Saucier v. Katz*, 533 U.S. 194 (2001) — https://www.courtlistener.com/opinion/118449/saucier-v-katz/ — pinpoint: 201 (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).
+- *Saucier v. Katz*, 533 U.S. 194 (2001) — https://www.courtlistener.com/opinion/118449/saucier-v-katz/ — interior pincite(s) 201 retired T3/P4-12 (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).

@@ -17,20 +17,9 @@ treatment:
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: "Mathis v. United States (1968)"
-  varies_by_point: true
+  varies_by_point: false
   scope_note: "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
-  point_overrides:
-    - point: legacy-limited-mathis-v-united-states-1968
-      point_label: Legacy limited treatment point
-      field_i_validity: caution
-      as_of_treatment: 2026-06-30
-      s3_binding_status: provisional
-      by:
-        - name: Howes v. Fields
-          cluster_id: 623144
-          cite: 565 U.S. 499
-          field_ii: limited
-      scope_note: "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107676/mathis-v-united-states/"
   cluster_id: 107676
