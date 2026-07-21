@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110936/united-states-v-eight-thousand-eight-hundred-fifty-dollars/"
   cluster_id: 110936
-  opinion_id: null
+  opinion_id: 9429199
   identity_checked: true
 lake:
   record_id: "United States v. $8,850 in Currency"
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Civil Asset Forfeiture]]"
     role: Anchor

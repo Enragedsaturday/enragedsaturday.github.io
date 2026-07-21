@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/8934150/united-states-v-satterfield/"
   cluster_id: 8934150
-  opinion_id: null
+  opinion_id: 8924377
   identity_checked: true
 lake:
   record_id: United States v. Satterfield
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Inevitable Discovery & Independent Source]]"
     role: "States the Eleventh Circuit active-pursuit rule for inevitable discovery"

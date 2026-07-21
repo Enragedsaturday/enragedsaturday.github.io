@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10800194/geo-group-inc-v-menocal/"
   cluster_id: 10800194
-  opinion_id: null
+  opinion_id: 11266870
   identity_checked: false
 lake:
   record_id: "The GEO Group, Inc. v. Menocal"
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development

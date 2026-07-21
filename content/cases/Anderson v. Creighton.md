@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111953/anderson-v-creighton/"
   cluster_id: 111953
-  opinion_id: null
+  opinion_id: 9431119
   identity_checked: true
 lake:
   record_id: Anderson v. Creighton
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Qualified Immunity]]"
     role: "Key — clearly-established rights must be defined in a particularized sense"

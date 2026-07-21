@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/"
   cluster_id: 10776824
-  opinion_id: null
+  opinion_id: 11243411
   identity_checked: true
 lake:
   record_id: Gutierrez v. Saenz
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development
@@ -61,7 +61,7 @@ Ruben Gutierrez was sentenced to death in Texas for a 1998 murder. He has long m
 Whether Gutierrez has Article III standing to bring a § 1983 due-process challenge to Texas's postconviction DNA-testing procedures.
 
 ## Rule
-Standing requires an injury that is redressable by a favorable decision, but redressability does not demand that relief guarantee an ultimate favorable outcome; a declaratory judgment satisfies it when it would remove the specific legal barrier the defendant relies on — here, eliminating the prosecutor's reliance on the challenged state law as the reason to deny testing. The Court held: "Gutierrez has standing to bring his §1983 claim challenging Texas's postconviction DNA testing procedures under the Due Process Clause." — 606 U.S. at 314. ^pin-314
+Standing requires an injury that is redressable by a favorable decision, but redressability does not demand that relief guarantee an ultimate favorable outcome; a declaratory judgment satisfies it when it would remove the specific legal barrier the defendant relies on — here, eliminating the prosecutor's reliance on the challenged state law as the reason to deny testing. The Court held: "Gutierrez has standing to bring his §1983 claim challenging Texas's postconviction DNA testing procedures under the Due Process Clause." — 606 U.S. 305. ^pin-314
 
 ## Application
 Gutierrez's injury was the denial of access to DNA testing under an assertedly unconstitutional procedure. A declaration that Texas's scheme violates due process would redress that injury by knocking out the prosecutor's stated legal justification for refusing to test — even if the State might later invoke some other ground, and even though testing might not ultimately exonerate him. The Court analogized to *Reed v. Goertz*, where a nearly identical § 1983 challenge to the same Texas statute cleared the standing bar.
@@ -76,4 +76,4 @@ Gutierrez's injury was the denial of access to DNA testing under an assertedly u
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — pinpoint: 606 U.S. at 314 (standing / redressability holding; syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print) — MCP `read_document` reads `html_with_citations`, which is empty for this opinion — string-matched 2026-07-07.
+- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — first-page cite (interior pincite 314 retired per T3/P4-12: `html_with_citations` empty, no star pagination; standing / redressability holding at syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print) — string-matched 2026-07-07.

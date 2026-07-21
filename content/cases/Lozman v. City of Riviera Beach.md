@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4508137/lozman-v-riviera-beach/"
   cluster_id: 4508137
-  opinion_id: null
+  opinion_id: 4285390
   identity_checked: true
 lake:
   record_id: Lozman v. City of Riviera Beach
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Retaliatory Arrest]]"
     role: Anchor

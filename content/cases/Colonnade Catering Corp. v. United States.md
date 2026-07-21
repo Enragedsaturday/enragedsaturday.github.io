@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108077/colonnade-catering-corp-v-united-states/"
   cluster_id: 108077
-  opinion_id: null
+  opinion_id: 9424185
   identity_checked: true
 lake:
   record_id: Colonnade Catering Corp. v. United States
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — closely-regulated liquor-industry administrative inspection"

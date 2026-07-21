@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109590/weatherford-v-bursey/"
   cluster_id: 109590
-  opinion_id: null
+  opinion_id: 9426656
   identity_checked: true
 lake:
   record_id: Weatherford v. Bursey
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
     role: Anchor

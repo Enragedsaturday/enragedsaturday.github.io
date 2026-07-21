@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4861817/uzuegbunam-v-preczewski/"
   cluster_id: 4861817
-  opinion_id: null
+  opinion_id: 4665596
   identity_checked: true
 lake:
   record_id: Uzuegbunam v. Preczewski
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development

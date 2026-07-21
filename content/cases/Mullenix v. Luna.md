@@ -50,7 +50,7 @@ A fleeing, reportedly intoxicated suspect, Israel Leija, led police on a high-sp
 Whether Mullenix was entitled to [[Qualified Immunity|qualified immunity]] — that is, whether the unlawfulness of his use of deadly force was clearly established at the time he acted.
 
 ## Rule
-[[Qualified Immunity|Qualified immunity]] shields an official unless his conduct violated clearly established law, and that law must be identified with specificity, not at a high level of generality. "We have repeatedly told courts . . . not to define clearly established law at a high level of generality." — 577 U.S. at 12 (quoting *al-Kidd*). ^pin-12
+[[Qualified Immunity|Qualified immunity]] shields an official unless his conduct violated clearly established law, and that law must be identified with specificity, not at a high level of generality. "We have repeatedly told courts . . . not to define clearly established law at a high level of generality." — 577 U.S. 7 (quoting *al-Kidd*). ^pin-12
 
 "The dispositive question is 'whether the violative nature of particular conduct is clearly established.'" — *Id.* The inquiry must be undertaken in light of the specific context of the case, and existing precedent must place the conclusion that the officer acted unlawfully "beyond debate." — *Id.* at 11.
 

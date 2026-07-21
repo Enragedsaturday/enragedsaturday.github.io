@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: United States v. Van Leeuwen
   varies_by_point: false
-  scope_note: "Controlling: a brief detention of mailed packages on reasonable suspicion, while a warrant is diligently sought, is reasonable; mere detention invades no privacy interest until the package is opened under a warrant. A precursor to the property-detention analysis of United States v. Place."
+  scope_note: "Controlling: a brief detention of mailed packages on reasonable suspicion, while a warrant is diligently sought, is reasonable; mere detention invades no privacy interest until the package is opened under a warrant. A precursor to the property-detention analysis of United States v. Place. No confirmed negative treatment in the disclosed lake record; an R15 top-cited treatment audit remains pending on proposed-only negative edges, so treatment remains good_law as of 2026-06-30 pending that audit."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108099/united-states-v-van-leeuwen/"

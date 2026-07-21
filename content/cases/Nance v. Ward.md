@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6480697/nance-v-ward/"
   cluster_id: 6480697
-  opinion_id: null
+  opinion_id: 6352830
   identity_checked: true
 lake:
   record_id: Nance v. Ward
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9397097/united-states-v-haitao-xiang/"
   cluster_id: 9397097
-  opinion_id: null
+  opinion_id: 9392573
   identity_checked: true
 lake:
   record_id: United States v. Xiang
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Border Searches]]"
     role: Key

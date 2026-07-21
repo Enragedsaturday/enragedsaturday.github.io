@@ -18,17 +18,17 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118234/united-states-v-bajakajian/"
   cluster_id: 118234
-  opinion_id: null
+  opinion_id: 9433683
   identity_checked: true
 lake:
   record_id: United States v. Bajakajian
-  status: under_review
-  projected_at: 2026-07-07
+  status: verified_identity
+  projected_at: 2026-07-10
 homes:
   - page: "[[Civil Asset Forfeiture]]"
     role: Anchor

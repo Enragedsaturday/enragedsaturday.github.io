@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110075/bell-v-wolfish/"
   cluster_id: 110075
-  opinion_id: null
+  opinion_id: 9427563
   identity_checked: true
 lake:
   record_id: Bell v. Wolfish
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Foundational (institutional-deference reasonableness balancing)"

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9456060/united-states-v-perez/"
   cluster_id: 9456060
-  opinion_id: null
+  opinion_id: 9913885
   identity_checked: true
 lake:
   record_id: United States v. Perez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[SIA Vehicles]]"
     role: "Lower-court development (role-based)"

@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: United States v. Ramsey
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "good_law is the current lake judgment as of 2026-06-30 (migration-seed basis, not independently re-derived). Currency is audit-pending: lane1_negative flags 10 proposed negative-treatment candidate edges (all proposed/mentioned citator hits) and the R15 treatment audit remains open; no confirmed negative treatment in this record. Do not present 'no negative subsequent treatment' as established until R15 clears."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109675/united-states-v-ramsey/"

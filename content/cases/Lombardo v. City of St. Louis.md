@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4895266/lombardo-v-st-louis/"
   cluster_id: 4895266
-  opinion_id: null
+  opinion_id: 4699045
   identity_checked: true
 lake:
   record_id: Lombardo v. City of St. Louis
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Use of Force]]"
     role: Recent development

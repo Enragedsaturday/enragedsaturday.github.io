@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109540/stone-v-powell/"
   cluster_id: 109540
-  opinion_id: null
+  opinion_id: 9426587
   identity_checked: true
 lake:
   record_id: Stone v. Powell
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[The Exclusionary Rule]]"
     role: Anchor

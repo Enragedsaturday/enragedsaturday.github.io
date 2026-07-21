@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: United States v. Rideau
   varies_by_point: false
-  scope_note: "Good law; en banc. Public-welfare/community-caretaking function applied to an impaired person in the roadway."
+  scope_note: "Good law; en banc. Public-welfare/community-caretaking function applied to an impaired person in the roadway. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. Promoted AS a split-position authority; in-circuit validity asserted only to that breadth. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "public-welfare", "in
 holding: "Police serve a public-welfare/community-caretaking function by removing apparently intoxicated people from the public streets, and an officer is warranted in stopping to check on the condition of an impaired person standing in the roadway; on these facts the en banc court held the stop and protective patdown reasonable under the Fourth Amendment."
 lake:
   record_id: United States v. Rideau
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 ---
 

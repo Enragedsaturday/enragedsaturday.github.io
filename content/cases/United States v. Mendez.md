@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9524074/united-states-v-marcos-mendez/"
   cluster_id: 9524074
-  opinion_id: null
+  opinion_id: 9990687
   identity_checked: true
 lake:
   record_id: United States v. Mendez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Border Searches]]"
     role: Key

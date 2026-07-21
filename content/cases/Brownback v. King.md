@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4858987/brownback-v-king/"
   cluster_id: 4858987
-  opinion_id: null
+  opinion_id: 4662766
   identity_checked: true
 lake:
   record_id: Brownback v. King
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development

@@ -91,3 +91,57 @@ Bright correctly absent; ABA/AI-sanctions material -> R12 handoff.
 (5) Ingestion total from the entire tripwire arc: 4 new lake stubs (Lowers, Brillhart, Johnson,
 Wilson) + split-narrative edits — far below the >10-page human-pause threshold. NO further
 re-run owed: the fail-closed remedy ran once, in full, as specified.
+
+## RULING P4-10 (2026-07-21) — under_review promotion adjudication (user-sanctioned this session)
+The 30-case promotion set (22 escalated findings' blockers + Youngblood/GM Leasing currency
+stubs + Chatrie alias): IDENTITY CONFIRMED for all 29 live clusters — 20 via builder-lane batch
+(PROMO-identity-fetch.json) + 9 via the orchestrator Claude MCP lane (429 spillover; doubles as
+the COH-17 cross-credential slice) + Chatrie reused from the 2026-07-20 marker poll. Every
+cluster's case_name/citations/date matches its lake record.
+GOOD-LAW BASIS (documented, not guessed): (i) the just-completed 13-category dual-model frontier
+re-run (500+ candidate rows, 2024-26 window) surfaced ZERO negative-treatment signals against
+any of the 30; (ii) each case underpins S7-verified registry/point derivations; (iii) case-
+specific notes — Egbert (contracts Bivens; nothing supersedes), Keith (FISA codified the
+domestic-security warrant rule; core holding untouched), Sorrells (entrapment foundation,
+qualified by Mathews line already in corpus), circuit split-illustrators (Rideau/Nora/
+Al-Azzawy/Vaneaton + Whitaker-side cases) promoted AS split-position authorities (in-circuit
+validity asserted only to that breadth — scope_note carries it).
+CITE-SELECTOR RULINGS: Heien — CL cluster 2760668 carries NO official U.S. cite; per the
+established cite-selector convention the CL-verified 135 S. Ct. 530 is the citable form (574
+U.S. 54 may be kept ONLY with whitelist evidence attached; fixer applies whichever the target
+surface already uses consistently). Riley v. California — same shape (official=134 S. Ct. 2473
+on CL). Youngblood — CL date_filed 1989-01-23 is the REHEARING-DENIAL date; decision date
+1988-11-29 (the known P2 date-class); lake/page date fields must carry 1988-11-29.
+DISPOSITION: status under_review -> verified_identity (field_i per existing derivation; the
+four unverified frontier-currency stubs Youngblood/GM Leasing/Nieves/Gonzalez keep breadth-
+marked scope_notes). Pin harvest ONLY where a loop-1 NOT-FIXED row demands pins: cache-first;
+needs_cl residue returns to the orchestrator. Then mechanical loop-3 of the 22 directives.
+
+## RULING P4-11 (2026-07-21) — new frontier stubs (tripwire arc ingestion)
+Born-draft lake stubs sanctioned for: United States v. Lowers (4th Cir 2026-03-10, cluster
+10807484, lead 11274223, docket 24-4546 — hash-match: hash value does not defeat REP; warrant
+required absent prior human view; suppression denied on attenuation); United States v.
+Brillhart (11th Cir 2026-07-09, cluster 10925245, lead 11392782, docket 24-13226 — human-
+seeded hash match = private search, permissive side); United States v. Eric Johnson (4th Cir
+2025-08-05, cluster 10648997, lead 11115584, docket 23-4255 — fact-bound: dog sniff in common
+hallway outside apartment door did not intrude on curtilage; opposite side from 7th Cir
+Whitaker; 'We hold only that on the facts...' narrowness preserved in scope_note); United
+States v. Wilson (5th Cir 2025-07-17, cluster 10636220, lead 11102807, docket 23-30777 —
+post-Bruen: visible lawful gun possession alone cannot ground RS; 'presumptively lawful
+nationwide'). All slip/citation-pending on CL (citations=[] except Lowers TBD). Split-map
+content edits (Private and Foreign Searches + Curtilage/canine surfaces + Terry/RS surface)
+ride the same packet as LCD bullets; case pages NOT created this phase (frontier-stub depth).
+
+## RULING P4-12 (2026-07-21) — T3 unprovenanced-pin class disposition
+Schema is binary (S2 A3): star-verified | slip-only; slip-only does NOT assert a printed page.
+Disposition ladder for the 162 rows: (a) the 22 live-star-covered (incl. start-page-covered)
+pins UPGRADE to star-verified with _run/s9/p4/star-refetch/<opid>.html as recorded provenance;
+(b) SECOND-SOURCE HARVEST: re-fetch xml_harvard/html_lawbox/html_columbia for the remaining
+cases (older reporters carry pagination CL's html_with_citations lacks) — pins covered there
+upgrade likewise; (c) residue after both passes: page-side bound interior pins CONVERT to the
+non-interior presentation (first-page/parallel cite; slip form for slip-era cases) and lake
+pins stay slip-only — no printed page is asserted anywhere CL cannot back; (d) the "S7
+research annex §11" provenance line in Sources notes is RETIRED as unsanctioned wherever a
+pin relied on it. The 33 residual-status rows re-classify under the same ladder. The 41
+STAR-MISS (partial-cache) rows from the sweep are NOT in this class (star-paginated cases) —
+they resolve in pass (b) or convert per (c).

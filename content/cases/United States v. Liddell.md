@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1461978/united-states-v-liddell/"
   cluster_id: 1461978
-  opinion_id: null
+  opinion_id: 9634236
   identity_checked: true
 lake:
   record_id: United States v. Liddell
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
     role: Key

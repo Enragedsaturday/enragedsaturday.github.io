@@ -18,7 +18,7 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10600097/culley-v-marshall/"
@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 lake:
   record_id: Culley v. Marshall
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 homes:
   - page: "[[Civil Asset Forfeiture]]"
@@ -54,7 +54,7 @@ Halima Culley and Lena Sutton each lent a car to someone who was then stopped by
 Whether the Due Process Clause requires a separate preliminary hearing — beyond a timely forfeiture hearing — to determine whether police may retain seized personal property (here, a car) pending the civil forfeiture proceeding.
 
 ## Rule
-When police seize personal property for civil forfeiture, due process is governed by the Court's forfeiture-timing precedents rather than by a new preliminary-hearing requirement. Drawing on *[[United States v. $8,850 in Currency|United States v. $8,850]]* and *[[United States v. Von Neumann]]*, the Court held that "[t]his Court's precedents establish that the answer is no: The Constitution requires a timely forfeiture hearing; the Constitution does not also require a separate preliminary hearing." — 601 U.S. at 381. ^pin-381
+When police seize personal property for civil forfeiture, due process is governed by the Court's forfeiture-timing precedents rather than by a new preliminary-hearing requirement. Drawing on *[[United States v. $8,850 in Currency|United States v. $8,850]]* and *[[United States v. Von Neumann]]*, the Court held that "[t]his Court's precedents establish that the answer is no: The Constitution requires a timely forfeiture hearing; the Constitution does not also require a separate preliminary hearing." — 601 U.S. 377. ^pin-381
 
 The timeliness of the forfeiture hearing itself is measured under the four-factor *[[United States v. $8,850 in Currency|$8,850]]* test, through which a property owner may press for a prompt hearing.
 

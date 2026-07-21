@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10811625/olivier-v-city-of-brandon/"
   cluster_id: 10811625
-  opinion_id: null
+  opinion_id: 11278377
   identity_checked: false
 lake:
   record_id: Olivier v. City of Brandon
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development

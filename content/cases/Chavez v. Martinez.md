@@ -54,7 +54,7 @@ Officer Chavez questioned Martinez, who had been shot during a police encounter 
 Whether coercive police questioning that yields no statement ever used against the suspect in a criminal case violates the Fifth Amendment's Self-Incrimination Clause (or substantive due process) so as to support a § 1983 damages action.
 
 ## Rule
-No completed Self-Incrimination Clause violation occurs from the questioning alone. The Fifth Amendment provides that no person "shall be compelled in any criminal case to be a witness against himself," and a plurality concluded: "We fail to see how, based on the text of the Fifth Amendment, Martinez can allege a violation of this right, since Martinez was never prosecuted for a crime, let alone compelled to be a witness against himself in a criminal case." — 538 U.S. at 766 (plurality opinion). ^pin-766
+No completed Self-Incrimination Clause violation occurs from the questioning alone. The Fifth Amendment provides that no person "shall be compelled in any criminal case to be a witness against himself," and a plurality concluded: "We fail to see how, based on the text of the Fifth Amendment, Martinez can allege a violation of this right, since Martinez was never prosecuted for a crime, let alone compelled to be a witness against himself in a criminal case." — 538 U.S. 760 (plurality opinion). ^pin-766
 
 Statements compelled by interrogation may not be used at trial, "but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs" — the privilege is "a fundamental trial right." — [*Id.* at 767](https://www.courtlistener.com/opinion/127927/chavez-v-martinez/#:~:text=but%20it%20is%20not%20until%20their) (plurality op.) (quoting *United States v. Verdugo-Urquidez*). ^pin-767
 

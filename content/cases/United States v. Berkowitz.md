@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/557342/united-states-v-marvin-berkowitz/"
   cluster_id: 557342
-  opinion_id: null
+  opinion_id: 9481419
   identity_checked: true
 lake:
   record_id: United States v. Berkowitz
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entry to Arrest]]"
     role: "Key — constructive-entry (7th Cir. narrow side: voice-from-outside arrest OK, warrantless entry before arrest not, 927 F.2d at 1386-88)"

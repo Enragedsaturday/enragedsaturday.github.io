@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Kolender v. Lawson
   varies_by_point: false
-  scope_note: "Good law. A stop-and-identify statute requiring a suspect to provide 'credible and reliable' identification is void for vagueness (Fourteenth Amendment Due Process) because it gives police standardless discretion. Hiibel v. Sixth Judicial Dist. Court (2004) distinguished Kolender, upholding a narrower statute that required only that the suspect state his name."
+  scope_note: "Good law. A stop-and-identify statute requiring a suspect to provide 'credible and reliable' identification is void for vagueness (Fourteenth Amendment Due Process) because it gives police standardless discretion. Hiibel v. Sixth Judicial Dist. Court (2004) distinguished Kolender, upholding a narrower statute that required only that the suspect state his name. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110926/kolender-v-lawson/"
@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "fourteenth-amendment", "stop-and-identify", 
 holding: "A stop-and-identify statute that requires a detained suspect to provide 'credible and reliable' identification is unconstitutionally vague, because it vests police with standardless discretion to decide what satisfies it."
 lake:
   record_id: Kolender v. Lawson
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 ---
 

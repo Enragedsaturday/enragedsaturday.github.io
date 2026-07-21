@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6448059/fbi-v-fazaga/"
   cluster_id: 6448059
-  opinion_id: null
+  opinion_id: 6320170
   identity_checked: true
 lake:
   record_id: FBI v. Fazaga
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: "Related — state-secrets/FISA threshold defense (federal-officer surveillance suits)"

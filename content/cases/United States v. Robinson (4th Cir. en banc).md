@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4340460/united-states-v-shaquille-robinson/"
   cluster_id: 4340460
-  opinion_id: null
+  opinion_id: 9871494
   identity_checked: true
 lake:
   record_id: "United States v. Robinson (4th Cir. en banc)"
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Fourth Circuit en banc rule (armed suspect friskable without separate dangerousness showing)"

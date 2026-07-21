@@ -27,7 +27,7 @@ related: ["[[Traffic Stops]]", "[[SIA Vehicles]]", "[[Inventory Searches]]", "[[
 1. **Ready mobility.** The vehicle is capable of being moved, judged at the scene; the Fourth Amendment then "permits police to search the vehicle without more." *[[Pennsylvania v. Labron|Labron]]*, 518 U.S. 938, [940](https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/) (1996) (per curiam).
 2. **Probable cause.** The officer has probable cause to believe the vehicle contains contraband or evidence. *[[United States v. Ross|Ross]]*, 456 U.S. 798, [825](https://www.courtlistener.com/opinion/110719/united-states-v-ross/) (1982). A recent restatement of the two-element formulation is *[[United States v. Morley|Morley]]*, 99 F.4th 1328 (11th Cir. 2024).
 
-**The origin, and why mobility matters.** The exception traces to *[[Carroll v. United States|Carroll]]*, which excused the warrant for a vehicle "where it is not practicable to secure a warrant, because the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought." 267 U.S. 132, 153 (1925). The car's capacity to disappear, not its label as a "car," is what excuses the warrant.
+**The origin, and why mobility matters.** The exception traces to *[[Carroll v. United States|Carroll]]*, which excused the warrant for a vehicle "where it is not practicable to secure a warrant, because the vehicle can be quickly moved out of the locality or jurisdiction in which the warrant must be sought." 267 U.S. 132 (1925). The car's capacity to disappear, not its label as a "car," is what excuses the warrant.
 
 **Two rationales, both load-bearing.** Modern doctrine rests on a pair of justifications, and an officer should be able to articulate both:
 
@@ -122,7 +122,7 @@ flowchart TD
 ```
 
 ## Sources
-- [*Carroll v. United States*, 267 U.S. 132 (1925)](https://www.courtlistener.com/opinion/100567/carroll-v-united-states/) (pinpoint: 153)
+- [*Carroll v. United States*, 267 U.S. 132 (1925)](https://www.courtlistener.com/opinion/100567/carroll-v-united-states/)
 - [*Chambers v. Maroney*, 399 U.S. 42 (1970)](https://www.courtlistener.com/opinion/108184/chambers-v-maroney/) (pinpoint: 52)
 - [*United States v. Ross*, 456 U.S. 798 (1982)](https://www.courtlistener.com/opinion/110719/united-states-v-ross/) (pinpoint: 825)
 - [*California v. Carney*, 471 U.S. 386 (1985)](https://www.courtlistener.com/opinion/111423/california-v-carney/) (pinpoint: 393)

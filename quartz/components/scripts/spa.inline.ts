@@ -211,6 +211,32 @@ function createRouter() {
 createRouter()
 notifyNav(getFullSlug(window))
 
+// S8 — hard-load deep-link landing. On a fresh (non-SPA) page load the browser
+// performs a native anchor jump to `location.hash`, but `scroll-behavior: smooth`
+// (base.scss) turns it into an animated scroll that the hydration layout shifts
+// from the `nav` listeners above cancel — the viewport is left pinned at the top
+// even though `:target` still matches (so the tint shows but the centered landing
+// is lost). The SPA leg's hash handling never runs on a hard load, so re-run the
+// same landing path to give hard loads the same centered flash + persistent tint
+// as SPA navigations. Crucially, the re-scroll must be an ATOMIC jump
+// (behavior: "instant"): an animated scrollIntoView is killed by the same in-flight
+// hydration/layout work that killed the native jump. The SPA / same-page legs stay
+// smooth. Re-centering is idempotent, so this is correct even when the native jump
+// landed; we also re-assert once on `load` for late font/image layout shifts.
+if (window.location.hash) {
+  const landInitialHash = () => {
+    const el = flashTargetBlock(window.location.hash)
+    el?.scrollIntoView({ block: "center", behavior: "instant" })
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", landInitialHash, { once: true })
+  } else {
+    landInitialHash()
+  }
+  window.addEventListener("load", landInitialHash, { once: true })
+}
+
 if (!customElements.get("route-announcer")) {
   const attrs = {
     "aria-live": "assertive",

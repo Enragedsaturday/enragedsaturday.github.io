@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/452994/charles-laduke-v-alan-c-nelson-etc/"
   cluster_id: 452994
-  opinion_id: null
+  opinion_id: 452994
   identity_checked: true
 lake:
   record_id: LaDuke v. Nelson
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Tents]]"
     role: Key

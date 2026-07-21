@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109757/moore-v-illinois/"
   cluster_id: 109757
-  opinion_id: null
+  opinion_id: 9427017
   identity_checked: true
 lake:
   record_id: Moore v. Illinois
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Lineups and the Right to Counsel]]"
     role: Anchor

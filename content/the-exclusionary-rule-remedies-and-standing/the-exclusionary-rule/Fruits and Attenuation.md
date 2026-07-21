@@ -43,7 +43,7 @@ related:
 
 *[[Brown v. Illinois|Brown]]* holds that *[[Miranda v. Arizona|Miranda]]* warnings **alone** do not purge the taint of an illegal arrest; a confession that follows a warrantless, probable-cause-less arrest is ordinarily suppressed. 422 U.S. at 603–04.
 
-**Attenuation applied: the intervening warrant.** A valid, **pre-existing arrest warrant** discovered during an unlawful stop is an intervening circumstance strong enough to purge the taint, at least where the illegality was not purposeful or flagrant. *[[Utah v. Strieff|Strieff]]*, 579 U.S. 232, [241](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) (2016). The discovery of the warrant, not the passage of time, does the work.
+**Attenuation applied: the intervening warrant.** A valid, **pre-existing arrest warrant** discovered during an unlawful stop is an intervening circumstance strong enough to purge the taint, at least where the illegality was not purposeful or flagrant. *[[Utah v. Strieff|Strieff]]*, [579 U.S. 232](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) (2016). The discovery of the warrant, not the passage of time, does the work.
 
 **Live witnesses are treated more leniently than objects.** Testimony from a live witness located through an illegality is suppressed only on a **much closer** connection to the violation than an inanimate object would require, because a witness's willingness to come forward is itself an act of free will that tends to dissipate the taint. *[[United States v. Ceccolini|Ceccolini]]*, 435 U.S. 268, [279–80](https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/) (1978).
 
@@ -122,7 +122,7 @@ flowchart TD
 - [*Nardone v. United States*, 308 U.S. 338 (1939)](https://www.courtlistener.com/opinion/103259/nardone-v-united-states/) (pinpoints: 340–41)
 - [*Wong Sun v. United States*, 371 U.S. 471 (1963)](https://www.courtlistener.com/opinion/106515/wong-sun-v-united-states/) (pinpoints: 487–88, 491)
 - [*Brown v. Illinois*, 422 U.S. 590 (1975)](https://www.courtlistener.com/opinion/109304/brown-v-illinois/) (pinpoints: 603–04)
-- [*Utah v. Strieff*, 579 U.S. 232 (2016)](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) (pinpoint: 241)
+- [*Utah v. Strieff*, 579 U.S. 232 (2016)](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/)
 - [*United States v. Ceccolini*, 435 U.S. 268 (1978)](https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/) (pinpoints: 279–80)
 - [*Taylor v. Alabama*, 457 U.S. 687 (1982)](https://www.courtlistener.com/opinion/110760/taylor-v-alabama/)
 - [*Walder v. United States*, 347 U.S. 62 (1954)](https://www.courtlistener.com/opinion/105188/walder-v-united-states/) (pinpoint: 65)

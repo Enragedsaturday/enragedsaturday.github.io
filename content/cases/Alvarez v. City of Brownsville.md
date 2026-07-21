@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4536189/george-alvarez-v-city-of-brownsville/"
   cluster_id: 4536189
-  opinion_id: null
+  opinion_id: 4313442
   identity_checked: true
 lake:
   record_id: Alvarez v. City of Brownsville
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Brady and Giglio]]"
     role: Key

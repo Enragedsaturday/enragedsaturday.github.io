@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4619076/united-states-v-loera/"
   cluster_id: 4619076
-  opinion_id: null
+  opinion_id: 4396329
   identity_checked: true
 lake:
   record_id: United States v. Loera
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Plain View Doctrine]]"
     role: Key

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10038262/united-states-v-james-hanapel/"
   cluster_id: 10038262
-  opinion_id: null
+  opinion_id: 10504863
   identity_checked: true
 lake:
   record_id: United States v. Hanapel
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entrapment]]"
     role: Key

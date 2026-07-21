@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: United States v. Matlock
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "good_law is the current lake judgment as of 2026-06-30 (migration-seed basis, not independently re-derived). Currency is audit-pending: lane1_negative flags 7 proposed negative-treatment candidate edges and the R15 treatment audit remains open. The rendered page recognizes a point-specific carve-out (Georgia v. Randolph, present and expressly objecting co-occupant; narrowed by Fernandez v. California), which remains an audit candidate, not a bound point_override; treat the categorical 'no negative subsequent treatment' framing as too strong pending R15."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108967/united-states-v-matlock/"

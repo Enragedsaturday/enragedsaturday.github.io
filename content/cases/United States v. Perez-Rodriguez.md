@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/5067201/united-states-v-perez-rodriguez/"
   cluster_id: 5067201
-  opinion_id: null
+  opinion_id: 4882594
   identity_checked: true
 lake:
   record_id: United States v. Perez-Rodriguez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entrapment]]"
     role: Key

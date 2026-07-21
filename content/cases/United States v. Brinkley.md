@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4805913/united-states-v-kendrick-brinkley/"
   cluster_id: 4805913
-  opinion_id: null
+  opinion_id: 4586260
   identity_checked: true
 lake:
   record_id: United States v. Brinkley
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Arrest in the Home]]"
     role: Key

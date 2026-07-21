@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110832/south-dakota-v-neville/"
   cluster_id: 110832
-  opinion_id: null
+  opinion_id: 9429007
   identity_checked: true
 lake:
   record_id: South Dakota v. Neville
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Confessions, Interrogation & the Fifth Amendment]]"
     role: Anchor

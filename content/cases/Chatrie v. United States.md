@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Chatrie v. United States
   varies_by_point: false
-  scope_note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-verified 2026-07-02 (cluster 10881683 → lead opinion 11349205)."
+  scope_note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-verified 2026-07-02 (cluster 10881683 → lead opinion 11349205). — [P4-10 promotion 2026-07-21] under_review->verified_identity via reuse of 2026-07-20 Chatrie marker poll; case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10881683/chatrie-v-united-states/"
@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "loc
 holding: "Acquiring a cell-phone user's Google Location History (geofence) data is a Fourth Amendment search — there is a reasonable expectation of privacy in the record of one's phone's location, even for a short period and even when the data is held by a third party; the Court did not decide whether geofence warrants satisfy probable cause and particularity, vacating and remanding."
 lake:
   record_id: Chatrie v. United States
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-06
 ---
 

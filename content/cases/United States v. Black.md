@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/821235/united-states-v-nathaniel-black/"
   cluster_id: 821235
-  opinion_id: null
+  opinion_id: 9502817
   identity_checked: true
 lake:
   record_id: United States v. Black
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: Key

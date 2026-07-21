@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4628336/united-states-v-timothy-carpenter/"
   cluster_id: 4628336
-  opinion_id: null
+  opinion_id: 4405589
   identity_checked: true
 lake:
   record_id: "United States v. Carpenter (6th Cir. 2019 remand)"
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[The Good-Faith Exception]]"
     role: Key

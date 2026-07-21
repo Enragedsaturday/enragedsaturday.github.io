@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112293/will-v-michigan-department-of-state-police/"
   cluster_id: 112293
-  opinion_id: null
+  opinion_id: 9431737
   identity_checked: true
 lake:
   record_id: Will v. Michigan Department of State Police
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Anchor

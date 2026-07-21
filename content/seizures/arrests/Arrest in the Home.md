@@ -117,7 +117,7 @@ flowchart TD
 - [*Welsh v. Wisconsin*, 466 U.S. 740 (1984)](https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/) (pinpoints: 753, 755)
 - [*Minnesota v. Olson*, 495 U.S. 91 (1990)](https://www.courtlistener.com/opinion/112416/minnesota-v-olson/) (pinpoints: 96–97)
 - [*Kentucky v. King*, 563 U.S. 452 (2011)](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) (pinpoint: 462)
-- [*Lange v. California*, 594 U.S. 295 (2021)](https://www.courtlistener.com/opinion/4894407/lange-v-california/) (pinpoint: 298)
+- [*Lange v. California*, 594 U.S. 295 (2021)](https://www.courtlistener.com/opinion/4894407/lange-v-california/)
 - [*Minnesota v. Carter*, 525 U.S. 83 (1998)](https://www.courtlistener.com/opinion/118249/minnesota-v-carter/)
 - [*Warden v. Hayden*, 387 U.S. 294 (1967)](https://www.courtlistener.com/opinion/107465/warden-maryland-penitentiary-v-hayden/)
 - [*Sabbath v. United States*, 391 U.S. 585 (1968)](https://www.courtlistener.com/opinion/107718/sabbath-v-united-states/) (pinpoints: 585–86, 590)

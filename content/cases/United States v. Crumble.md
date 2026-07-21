@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4456532/united-states-v-prentiss-anthony-crumble/"
   cluster_id: 4456532
-  opinion_id: null
+  opinion_id: 4233785
   identity_checked: true
 lake:
   record_id: United States v. Crumble
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Abandonment]]"
     role: Key

@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Horton v. California
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112448/horton-v-california/"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "seizure", "warrant"]
 holding: "Sets the modern plain-view SEIZURE test and DROPS the inadvertence requirement: a warrantless seizure of an item in plain view is lawful when the officer lawfully reaches the vantage point, the item's incriminating character is immediately apparent, and the officer has a lawful right of access to it — inadvertence is not required."
 lake:
   record_id: Horton v. California
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 ---
 

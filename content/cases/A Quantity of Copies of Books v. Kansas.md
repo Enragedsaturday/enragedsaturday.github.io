@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106878/a-quantity-of-copies-of-books-v-kansas/"
   cluster_id: 106878
-  opinion_id: null
+  opinion_id: 9422858
   identity_checked: true
 lake:
   record_id: A Quantity of Copies of Books v. Kansas
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Particularity]]"
     role: Historical / origin

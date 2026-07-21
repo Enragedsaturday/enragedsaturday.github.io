@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/8443943/united-states-v-lyle/"
   cluster_id: 8443943
-  opinion_id: null
+  opinion_id: 8415374
   identity_checked: true
 lake:
   record_id: United States v. Lyle
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Standing to Challenge a Search]]"
     role: Key

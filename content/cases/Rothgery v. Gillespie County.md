@@ -50,7 +50,7 @@ Rothgery was arrested as a felon in possession of a firearm (the record was mist
 Whether the Sixth Amendment right to counsel attaches at a defendant's initial appearance before a magistrate, even if no prosecutor was aware of or involved in the arrest or hearing.
 
 ## Rule
-Attachment occurs at the initial appearance and does not require a prosecutor's involvement. "[A] criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel." — 554 U.S. at 213. ^pin-213
+Attachment occurs at the initial appearance and does not require a prosecutor's involvement. "[A] criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel." — 554 U.S. 191. ^pin-213
 
 ## Application
 Rothgery's article 15.17 hearing — where he learned the charge and his liberty was restricted by commitment to jail in lieu of bail — marked the initiation of adversary judicial proceedings, so his Sixth Amendment right to counsel attached at that point regardless of whether any prosecutor was aware of or involved in the case. The Fifth Circuit erred in holding that a prosecutor's involvement was required for attachment. (The Court's holding was narrow and did not decide whether the six-month delay caused a remediable violation.)

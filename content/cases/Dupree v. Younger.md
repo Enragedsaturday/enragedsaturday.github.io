@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10049685/dupree-v-younger/"
   cluster_id: 10049685
-  opinion_id: null
+  opinion_id: 10516285
   identity_checked: true
 lake:
   record_id: Dupree v. Younger
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development
@@ -55,7 +55,7 @@ Kevin Younger, a Maryland pretrial detainee, was beaten by corrections officers 
 Whether a party must file a post-trial motion under Rule 50 to preserve for appellate review a purely legal issue that the district court resolved against it at summary judgment.
 
 ## Rule
-Under *Ortiz v. Jordan*, a summary-judgment denial resting on the *sufficiency of the evidence* is not appealable after trial, because the trial record supersedes the summary-judgment record — so a sufficiency challenge must be renewed in a post-trial motion. A purely legal ruling is different: trials "wholly supplant pretrial factual rulings, but they leave pretrial legal rulings undisturbed," and nothing at trial gives the district court reason to reconsider a legal question. Accordingly, "a post-trial motion under Rule 50 is not required to preserve for appellate review a purely legal issue resolved at summary judgment." — 598 U.S. at 733–738. ^pin-733
+Under *Ortiz v. Jordan*, a summary-judgment denial resting on the *sufficiency of the evidence* is not appealable after trial, because the trial record supersedes the summary-judgment record — so a sufficiency challenge must be renewed in a post-trial motion. A purely legal ruling is different: trials "wholly supplant pretrial factual rulings, but they leave pretrial legal rulings undisturbed," and nothing at trial gives the district court reason to reconsider a legal question. Accordingly, "a post-trial motion under Rule 50 is not required to preserve for appellate review a purely legal issue resolved at summary judgment." — 598 U.S. 729. ^pin-733
 
 ## Application
 Because a purely legal question is, by definition, answerable without reference to disputed facts, factual development at trial cannot change the district court's answer, and a renewal requirement would be an empty exercise — for litigants, a copy-and-paste of the summary-judgment motion; for courts, the tedium of denying the same motion twice. The Court declined to resolve whether the exhaustion issue Dupree actually raised was "purely legal," leaving that classification (and any other properly preserved arguments) for the Fourth Circuit [[Reading and Citing Cases#on-remand|on remand]].

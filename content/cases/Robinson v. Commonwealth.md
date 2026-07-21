@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10838748/eddie-eugene-robinson-v-commonwealth-of-virginia/"
   cluster_id: 10838748
-  opinion_id: null
+  opinion_id: 11306090
   identity_checked: false
 lake:
   record_id: Robinson v. Commonwealth
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Lower-court development (ALPR network)"

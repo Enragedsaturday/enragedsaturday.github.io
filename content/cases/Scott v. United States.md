@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109860/scott-v-united-states/"
   cluster_id: 109860
-  opinion_id: null
+  opinion_id: 9427183
   identity_checked: true
 lake:
   record_id: Scott v. United States
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Electronic Surveillance and Title III]]"
     role: Anchor

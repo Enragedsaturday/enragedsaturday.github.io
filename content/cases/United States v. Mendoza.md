@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10771114/united-states-v-ryan-mendoza/"
   cluster_id: 10771114
-  opinion_id: null
+  opinion_id: 11237699
   identity_checked: false
 lake:
   record_id: United States v. Mendoza
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Standing to Challenge a Search]]"
     role: Key

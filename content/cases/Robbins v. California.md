@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110558/robbins-v-california/"
   cluster_id: 110558
-  opinion_id: null
+  opinion_id: 9428483
   identity_checked: true
 lake:
   record_id: Robbins v. California
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Automobile Exception]]"
     role: Historical / superseded container rule

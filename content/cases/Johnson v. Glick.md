@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/8903545/johnson-v-glick/"
   cluster_id: 8903545
-  opinion_id: null
+  opinion_id: 8890588
   identity_checked: true
 lake:
   record_id: Johnson v. Glick
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Use of Force]]"
     role: Key

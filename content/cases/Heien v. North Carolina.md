@@ -1,8 +1,8 @@
 ---
 title: "Heien v. North Carolina"
 type: case
-citation: ""
-parallel_cite: "135 S. Ct. 530; 190 L. Ed. 2d 475; 83 U.S.L.W. 4021; 25 Fla. L. Weekly Fed. S 20"
+citation: "135 S. Ct. 530 (2014)"
+parallel_cite: "135 S. Ct. 530; 190 L. Ed. 2d 475; 83 U.S.L.W. 4021; 25 Fla. L. Weekly Fed. S 20; 574 U.S. 54"
 neutral_cite: 2014 U.S. LEXIS 8306
 court: U.S. Supreme Court
 court_level: scotus
@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Heien v. North Carolina
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "No audited negative treatment in this record; lake treatment remains good_law as of 2026-06-30, with proposed treatment edges flagged for audit. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "mist
 holding: "A traffic stop is valid if based on an officer's objectively reasonable mistake of law (as well as a reasonable mistake of fact); a…"
 lake:
   record_id: Heien v. North Carolina
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-06
 ---
 

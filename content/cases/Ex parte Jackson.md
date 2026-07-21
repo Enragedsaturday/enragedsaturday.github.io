@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/89759/ex-parte-jackson/"
   cluster_id: 89759
-  opinion_id: null
+  opinion_id: 89759
   identity_checked: true
 lake:
   record_id: Ex parte Jackson
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Common Law Origins]]"
     role: Historical / origin

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4887958/united-states-v-cooley/"
   cluster_id: 4887958
-  opinion_id: null
+  opinion_id: 4691737
   identity_checked: true
 lake:
   record_id: United States v. Cooley
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: Recent development

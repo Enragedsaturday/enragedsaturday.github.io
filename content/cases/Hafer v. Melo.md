@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112657/hafer-v-melo/"
   cluster_id: 112657
-  opinion_id: null
+  opinion_id: 112657
   identity_checked: true
 lake:
   record_id: Hafer v. Melo
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Anchor

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2789928/grady-v-north-carolina/"
   cluster_id: 2789928
-  opinion_id: null
+  opinion_id: 2789928
   identity_checked: true
 lake:
   record_id: Grady v. North Carolina
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Trespass]]"
     role: Anchor

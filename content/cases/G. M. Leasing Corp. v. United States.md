@@ -18,17 +18,17 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. Frontier-currency stub: identity verified only; treatment/currency breadth remains frontier-marked (field_i unverified) pending S6 derivation. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109579/g-m-leasing-corp-v-united-states/"
   cluster_id: 109579
-  opinion_id: null
+  opinion_id: 9426638
   identity_checked: true
 lake:
   record_id: G. M. Leasing Corp. v. United States
-  status: under_review
-  projected_at: 2026-07-07
+  status: verified_identity
+  projected_at: 2026-07-10
 homes:
   - page: "[[Curtilage]]"
     role: Key

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/521939/united-states-v-arthur-maez/"
   cluster_id: 521939
-  opinion_id: null
+  opinion_id: 9478941
   identity_checked: true
 lake:
   record_id: United States v. Maez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entry to Arrest]]"
     role: "Key — constructive-entry (10th Cir. recognizing side: SWAT loudspeaker request under coercive show of force = warrantless in-home arrest, 872 F.2d at 1451)"

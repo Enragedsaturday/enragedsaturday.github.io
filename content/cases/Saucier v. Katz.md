@@ -61,7 +61,7 @@ Saucier, a military police officer providing security at a base where Vice Presi
 How a court must analyze [[Qualified Immunity|qualified immunity]] in an excessive-force case, and whether that inquiry collapses into the Fourth Amendment merits.
 
 ## Rule
-A court analyzes [[Qualified Immunity|qualified immunity]] in a fixed sequence. "A court required to rule upon the qualified immunity issue must consider, then, this threshold question: Taken in the light most favorable to the party asserting the injury, do the facts alleged show the officer's conduct violated a constitutional right? This must be the initial inquiry." — *Saucier v. Katz*, 533 U.S. at 201. ^pin-201
+A court analyzes [[Qualified Immunity|qualified immunity]] in a fixed sequence. "A court required to rule upon the qualified immunity issue must consider, then, this threshold question: Taken in the light most favorable to the party asserting the injury, do the facts alleged show the officer's conduct violated a constitutional right? This must be the initial inquiry." — *Saucier v. Katz*, 533 U.S. 194. ^pin-201
 
 "[I]f a violation could be made out on a favorable view of the parties' submissions, the next, sequential step is to ask whether the right was clearly established. . . . [in] light of the specific context of the case, not as a broad general proposition." — *Id.* ^pin-201a
 

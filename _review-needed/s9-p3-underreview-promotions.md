@@ -50,3 +50,49 @@ scope — escalated rather than improvised.
 2. Pin/treatment harvest for the pinpoints=[] stubs named above.
 3. Loop-3 mechanical re-run of the 22 stored fix directives; every one is expected to flip FIXED
    with no new judgment.
+
+---
+
+## RESOLUTION — 2026-07-21 (P4 fix packet PROMO-FIX; RULINGS P4-10 + P4-11)
+
+**Adjudicator sanction:** RULING P4-10 (user-sanctioned this session) adjudicated the 30-case
+promotion set; RULING P4-11 sanctioned the 4 tripwire-arc frontier stubs. Fix authorship:
+`{lane: PROMO-FIX, model: claude-opus-4-8}`. Non-author re-review remains the machine's to run.
+
+### Promotions applied (30 records)
+- **29 primary records** flipped `under_review -> verified_identity` (field_i unchanged per
+  existing derivation). Identity source recorded per record: 20 builder-lane batch
+  (`PROMO-identity-fetch.json`) + 8 orchestrator Claude-MCP lane (429 spillover) + 1 Chatrie
+  reuse (2026-07-20 marker poll). Each carries a `provenance.promotion` block + scope_note
+  good-law-basis line (13-category frontier re-run: zero negative-treatment signals; underpins
+  S7-verified derivations).
+- **Chatrie folded-alias** (`united-states-v-chatrie--10881683.json`) annotated (canonical target
+  promoted); status `folded-alias` unchanged.
+- **Breadth-marked** (identity-only, field_i unverified): Youngblood, G.M. Leasing, Nieves,
+  Gonzalez (currency stubs); Rideau, Nora, Al-Azzawy, Vaneaton (split-position authorities).
+- **Cite-selector (P4-10):** Heien official set to CL-verified `135 S. Ct. 530`; `574 U.S. 54`
+  whitelisted (kept on the page surface). Riley confirmed `134 S. Ct. 2473`. Youngblood
+  `date_decided` corrected `1989-01-23 -> 1988-11-29` + year `1989 -> 1988` (rehearing-denial vs
+  decision date).
+
+### Pin harvest (cache-only; 12 pins across 11 records; 0 needs_cl)
+Star-verified (U.S.-Reports-matched): Imbler *431, Briscoe *328, Buckley *274, Austin *604,
+Bajakajian *334. Slip-only (0-star opinions or S.Ct.-reporter stars or slip page-proofs):
+Rehberg, Timbs, Thompson, Chiaverini (page-proof watermark normalized), Nieves (rule + comparator),
+Gonzalez. All quotes verbatim from `~/cssi-lake/cache/text/<lead_opinion_id>.txt`.
+
+### Loop-3 outcome — all 22 findings FIXED
+22/22 stored directives re-ran mechanically to FIXED (`_run/s9/fixes.jsonl`, loop:3, lane
+PROMO-FIX); `apply_fixes.py` reports `queue_outstanding: 0`. No registry edits (registry
+read-only, substantiate-from-lake). No content-page prose edits were required by these 22
+findings (Heien page kept 574 U.S. 54; Brady/Curtilage pages already accurate).
+
+### New frontier stubs (P4-11) + LCD content edits (separate from the 22)
+4 born-draft stubs created: Lowers (10807484), Brillhart (10925245), Eric Johnson (10648997),
+Wilson (10636220). Split-map LCD bullets added: Private and Foreign Searches.md (Lowers strict /
+Brillhart permissive; "Supreme Court has not resolved it" kept); Curtilage.md (Eric Johnson as the
+4th Cir. multi-unit data point beside May-Shaw; Whitaker absent from corpus, so cited alone with a
+lower-court split note); Terry Stops and Reasonable Suspicion.md (Wilson post-Bruen frisk/RS
+bullet, in-circuit weight). All plain-italic brief-mentions (no page-less wikilinks).
+
+**Status: RESOLVED.** All 22 escalations closed; no residue returned to the orchestrator.

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110236/owen-v-city-of-independence/"
   cluster_id: 110236
-  opinion_id: null
+  opinion_id: 9427858
   identity_checked: true
 lake:
   record_id: Owen v. City of Independence
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Anchor

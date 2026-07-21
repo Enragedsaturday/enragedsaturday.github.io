@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10776815/goldey-v-fields/"
   cluster_id: 10776815
-  opinion_id: null
+  opinion_id: 11243402
   identity_checked: true
 lake:
   record_id: Goldey v. Fields
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development

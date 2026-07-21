@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Brendlin v. California
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "No confirmed negative treatment in the lake judgment; proposed negative-treatment edges/audit-needed signals remain disclosed."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145712/brendlin-v-california/"

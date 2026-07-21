@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2759861/united-states-v-chad-camou/"
   cluster_id: 2759861
-  opinion_id: null
+  opinion_id: 2759861
   identity_checked: true
 lake:
   record_id: United States v. Camou
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Automobile Exception]]"
     role: Key

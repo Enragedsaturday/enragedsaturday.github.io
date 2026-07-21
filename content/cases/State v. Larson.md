@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1187724/state-v-larson/"
   cluster_id: 1187724
-  opinion_id: null
+  opinion_id: 1187724
   identity_checked: true
 lake:
   record_id: State v. Larson
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Curtilage]]"
     role: Key

@@ -1,14 +1,14 @@
 ---
 title: Arizona v. Youngblood
 type: case
-citation: "488 U.S. 51 (1989)"
+citation: "488 U.S. 51 (1988)"
 parallel_cite: "109 S. Ct. 333; 102 L. Ed. 2d 281"
 neutral_cite: 1988 U.S. LEXIS 5404
 court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
-year: 1989
-date_decided: 1989-01-23
+year: 1988
+date_decided: 1988-11-29
 docket: No. 86-1904
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -18,17 +18,17 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. Frontier-currency stub: identity verified only; treatment/currency breadth remains frontier-marked (field_i unverified) pending S6 derivation. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112156/arizona-v-youngblood/"
   cluster_id: 112156
-  opinion_id: null
+  opinion_id: 9431483
   identity_checked: true
 lake:
   record_id: Arizona v. Youngblood
-  status: under_review
-  projected_at: 2026-07-07
+  status: verified_identity
+  projected_at: 2026-07-10
 homes:
   - page: "[[Brady and Giglio]]"
     role: Anchor

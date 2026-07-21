@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4396951/people-of-michigan-v-michael-christopher-frederick/"
   cluster_id: 4396951
-  opinion_id: null
+  opinion_id: 4174204
   identity_checked: false
 lake:
   record_id: People v. Frederick
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Knock and Talk]]"
     role: Key

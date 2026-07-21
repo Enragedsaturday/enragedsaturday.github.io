@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4527853/united-states-v-henry-reddick/"
   cluster_id: 4527853
-  opinion_id: null
+  opinion_id: 4305106
   identity_checked: true
 lake:
   record_id: United States v. Reddick
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Private and Foreign Searches]]"
     role: "Key — hash-match private-search rule (5th Cir.)"

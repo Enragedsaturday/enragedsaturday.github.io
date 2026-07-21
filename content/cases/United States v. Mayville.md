@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4742862/united-states-v-mayville/"
   cluster_id: 4742862
-  opinion_id: null
+  opinion_id: 4523209
   identity_checked: true
 lake:
   record_id: United States v. Mayville
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Traffic Stops]]"
     role: Key

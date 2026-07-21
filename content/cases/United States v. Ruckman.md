@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/480405/united-states-v-frank-william-ruckman/"
   cluster_id: 480405
-  opinion_id: null
+  opinion_id: 9475634
   identity_checked: true
 lake:
   record_id: United States v. Ruckman
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Tents]]"
     role: Key

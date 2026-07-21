@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9484364/united-states-v-oliveras/"
   cluster_id: 9484364
-  opinion_id: null
+  opinion_id: 9950977
   identity_checked: true
 lake:
   record_id: United States v. Oliveras
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: Key

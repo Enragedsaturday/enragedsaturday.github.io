@@ -18,7 +18,7 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/"
@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 lake:
   record_id: Chiaverini v. City of Napoleon
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 homes:
   - page: "[[Malicious Prosecution under the Fourth Amendment]]"
@@ -57,7 +57,7 @@ Jascha Chiaverini, who ran a jewelry store in Napoleon, Ohio, was charged by loc
 Whether the presence of probable cause for one charge in a criminal proceeding categorically defeats a Fourth Amendment malicious-prosecution claim under § 1983 that is based on a separate charge lacking probable cause.
 
 ## Rule
-A Fourth Amendment malicious-prosecution claim under § 1983 — the claim recognized in *[[Thompson v. Clark]]* — requires a plaintiff to show that an official brought a charge without probable cause that caused an unreasonable seizure of his person. The existence of probable cause for one charge does not categorically defeat that claim as to another, baseless charge. Drawing on both Fourth Amendment law (an invalid charge that starts or prolongs a detention is an unreasonable seizure even when a valid charge is also brought) and the common-law malicious-prosecution tort as it stood in 1871 (which assessed probable cause charge by charge), the Court held that "[c]onsistent with both the Fourth Amendment and traditional common-law practice, courts should evaluate suits like Chiaverini's charge by charge." — 602 U.S. at 562. ^pin-562
+A Fourth Amendment malicious-prosecution claim under § 1983 — the claim recognized in *[[Thompson v. Clark]]* — requires a plaintiff to show that an official brought a charge without probable cause that caused an unreasonable seizure of his person. The existence of probable cause for one charge does not categorically defeat that claim as to another, baseless charge. Drawing on both Fourth Amendment law (an invalid charge that starts or prolongs a detention is an unreasonable seizure even when a valid charge is also brought) and the common-law malicious-prosecution tort as it stood in 1871 (which assessed probable cause charge by charge), the Court held that "[c]onsistent with both the Fourth Amendment and traditional common-law practice, courts should evaluate suits like Chiaverini's charge by charge." — 602 U.S. 556. ^pin-562
 
 ## Application
 The Sixth Circuit's categorical rule — that a single valid charge insulates officers from a malicious-prosecution claim based on any other charge, however baseless — drew support from neither half of the claim's name, and even the defendant officers and the United States agreed it was wrong. The Court did not, however, resolve the separate **causation** element: whether the assertedly invalid felony charge actually caused Chiaverini's three-day detention given the concededly valid misdemeanor charges. Because the parties advanced competing causation tests (a taint theory, a but-for test, and a stricter "could-have-authorized" test) that the court below had not addressed, the Court left that question for the Sixth Circuit [[Reading and Citing Cases#on-remand|on remand]].

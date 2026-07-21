@@ -52,7 +52,7 @@ After Jerry Bowen assaulted his former girlfriend with "a black sawed-off shotgu
 Whether officers are entitled to [[Qualified Immunity|qualified immunity]] from a § 1983 damages suit for obtaining and executing a warrant later alleged to be overbroad, where a neutral magistrate approved the warrant.
 
 ## Rule
-Officers are immune unless the warrant was so obviously deficient that no reasonable officer could have relied on it. A magistrate's approval is strong evidence of objective reasonableness, but it does not end the inquiry: "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness." — 565 U.S. at 547. ^pin-547
+Officers are immune unless the warrant was so obviously deficient that no reasonable officer could have relied on it. A magistrate's approval is strong evidence of objective reasonableness, but it does not end the inquiry: "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness." — 565 U.S. 535. ^pin-547
 
 The exception, drawn from [[Malley v. Briggs]] and [[United States v. Leon]], applies only where the affidavit is "so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable." — *Id.* (quoting *Leon*, 468 U.S. at 923). But "the threshold for establishing this exception is a high one, and it should be." — [*Id.*](https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/#:~:text=so%20lacking%20in%20indicia%20of) ^pin-547b
 

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4680725/united-states-v-raymond-aigbekaen/"
   cluster_id: 4680725
-  opinion_id: null
+  opinion_id: 4457978
   identity_checked: true
 lake:
   record_id: United States v. Aigbekaen
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Border Searches]]"
     role: Key

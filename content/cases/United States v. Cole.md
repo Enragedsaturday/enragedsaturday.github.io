@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/5307612/united-states-v-janhoi-cole/"
   cluster_id: 5307612
-  opinion_id: null
+  opinion_id: 5136163
   identity_checked: true
 lake:
   record_id: United States v. Cole
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Traffic Stops]]"
     role: Key

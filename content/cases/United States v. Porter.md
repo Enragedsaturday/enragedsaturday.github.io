@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10810059/united-states-v-porter/"
   cluster_id: 10810059
-  opinion_id: null
+  opinion_id: 11276804
   identity_checked: false
 lake:
   record_id: United States v. Porter
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Lower-court development (ALPR)"

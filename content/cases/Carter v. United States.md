@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10662535/carter-v-united-states/"
   cluster_id: 10662535
-  opinion_id: null
+  opinion_id: 11129122
   identity_checked: false
 lake:
   record_id: Carter v. United States
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Seizure of the Person]]"
     role: Key

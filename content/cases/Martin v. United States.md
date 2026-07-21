@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10776839/martin-v-united-states/"
   cluster_id: 10776839
-  opinion_id: null
+  opinion_id: 11243426
   identity_checked: true
 lake:
   record_id: Martin v. United States
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development
@@ -56,7 +56,7 @@ An FBI SWAT team executing a warrant raided the wrong Atlanta house — the home
 Whether the FTCA's § 2680(h) law-enforcement proviso overrides the discretionary-function exception (so that intentional-tort claims automatically proceed), and whether the Supremacy Clause affords the United States a defense in FTCA suits.
 
 ## Rule
-The § 2680(h) law-enforcement proviso is textually confined: it overrides only the intentional-tort exception within that same subsection, not the discretionary-function exception or the other § 2680 exceptions — so a proviso claim must still clear those other bars. And the Supremacy Clause supplies no separate defense: because the FTCA makes the United States liable under the "law of the place" on the same terms as a private party, "in most cases there is no conflict for the Supremacy Clause to resolve." The Court held that "we find the government's concession commendable and correct: The FTCA does not permit the Eleventh Circuit's Supremacy Clause defense." — 605 U.S. at 409. ^pin-409
+The § 2680(h) law-enforcement proviso is textually confined: it overrides only the intentional-tort exception within that same subsection, not the discretionary-function exception or the other § 2680 exceptions — so a proviso claim must still clear those other bars. And the Supremacy Clause supplies no separate defense: because the FTCA makes the United States liable under the "law of the place" on the same terms as a private party, "in most cases there is no conflict for the Supremacy Clause to resolve." The Court held that "we find the government's concession commendable and correct: The FTCA does not permit the Eleventh Circuit's Supremacy Clause defense." — 605 U.S. 395. ^pin-409
 
 ## Application
 The Eleventh Circuit had inverted the statute — treating the proviso as automatically defeating the discretionary-function exception, then offsetting that plaintiff-friendly reading with a novel Supremacy Clause defense found nowhere in § 2674's enumerated defenses. Both moves were wrong. Georgia law (the "law of the place") would let a homeowner sue a private person who mistakenly raided and assaulted him, and no federal statute or constitutional text displaced that liability rule. [[Reading and Citing Cases#on-remand|On remand]] the Eleventh Circuit must decide whether the discretionary-function exception bars any of the claims — without the mistaken premise that the proviso overrides it — and, for surviving claims, apply Georgia's private-analog standard subject only to the § 2674 defenses.

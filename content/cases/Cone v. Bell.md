@@ -50,13 +50,13 @@ Gary Cone was convicted of the 1980 murders of an elderly Memphis couple and sen
 Whether Cone's *[[Brady v. Maryland|Brady]]* claim was procedurally barred from federal [[Common Legal Terms#habeas-corpus|habeas]] review, and whether the suppressed evidence — even if not material to guilt — had to be assessed for materiality to his death sentence.
 
 ## Rule
-*[[Brady v. Maryland|Brady]]* reaches evidence material to punishment. "[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment." — 556 U.S. at 469. ^pin-469
+*[[Brady v. Maryland|Brady]]* reaches evidence material to punishment. "[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment." — 556 U.S. 449. ^pin-469
 
-Materiality follows the unified *[[United States v. Bagley|Bagley]]* test: "evidence is 'material' within the meaning of *Brady* when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different." — 556 U.S. at 470. ^pin-470
+Materiality follows the unified *[[United States v. Bagley|Bagley]]* test: "evidence is 'material' within the meaning of *Brady* when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different." — 556 U.S. 449. ^pin-470
 
-The Court added that disclosure obligations may run broader than the constitutional floor: "the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor's ethical or statutory obligations." — 556 U.S. at 470 n.15. ^pin-470b
+The Court added that disclosure obligations may run broader than the constitutional floor: "the obligation to disclose evidence favorable to the defense may arise more broadly under a prosecutor's ethical or statutory obligations." — 556 U.S. 449. ^pin-470b
 
-A mistaken state procedural ruling does not bar review. Because Cone "properly preserved and exhausted his *Brady* claim in the state court," it was "not defaulted," and the state courts' erroneous belief that the claim had been "previously determined" created no obstacle to federal merits review. — 556 U.S. at 469.
+A mistaken state procedural ruling does not bar review. Because Cone "properly preserved and exhausted his *Brady* claim in the state court," it was "not defaulted," and the state courts' erroneous belief that the claim had been "previously determined" created no obstacle to federal merits review. — 556 U.S. 449.
 
 ## Application
 The Court held the *[[Brady v. Maryland|Brady]]* claim was not procedurally defaulted: Cone raised it in state court, and the state courts' "previously determined" disposition rested on a mistaken premise, so it did not bar federal review. On the merits, the suppressed witnesses' statements and documents all "strengthen[ed] the inference that Cone was impaired by his use of drugs." While that evidence was not material to whether Cone committed murder with the requisite mental state, the District Court and Court of Appeals never separately assessed whether the same evidence was material to his *sentence* — i.e., whether it might have led at least one juror to choose life over death. Because the suppressed evidence "may well have been material to the jury's assessment of the proper punishment," a full review was required.

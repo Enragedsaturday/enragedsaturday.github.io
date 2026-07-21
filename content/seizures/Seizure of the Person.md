@@ -161,7 +161,7 @@ flowchart TD
 - [*Brown v. Texas*, 443 U.S. 47 (1979)](https://www.courtlistener.com/opinion/110128/brown-v-texas/) (home = [[Terry Stops and Reasonable Suspicion]])
 - [*Soldal v. Cook County*, 506 U.S. 56 (1992)](https://www.courtlistener.com/opinion/112795/soldal-v-cook-county/) (home = [[Seizure of Property]])
 - [*Ashcroft v. al-Kidd*, 563 U.S. 731 (2011)](https://www.courtlistener.com/opinion/217703/ashcroft-v-al-kidd/) (home = [[Section 1983 Liability and Qualified Immunity]])
-- [*Taylor v. Alabama*, 457 U.S. 687 (1982)](https://www.courtlistener.com/opinion/110760/taylor-v-alabama/) (pinpoints: 217–218; home = [[The Exclusionary Rule]])
+- [*Taylor v. Alabama*, 457 U.S. 687 (1982)](https://www.courtlistener.com/opinion/110760/taylor-v-alabama/) (pinpoints: 690, 691, 692–693; home = [[The Exclusionary Rule]])
 - [*Graham v. Connor*, 490 U.S. 386 (1989)](https://www.courtlistener.com/opinion/112257/graham-v-connor/) (reasonableness step; home = [[Use of Force]])
 - [*Barnes v. Felix*, 605 U.S. 73 (2025)](https://www.courtlistener.com/opinion/10584846/barnes-v-felix/) (reasonableness step; home = [[Use of Force]])
 - [*Terry v. Ohio*, 392 U.S. 1 (1968)](https://www.courtlistener.com/opinion/107729/terry-v-ohio/) (reasonable-suspicion predicate; see [[Terry Stops and Reasonable Suspicion]])

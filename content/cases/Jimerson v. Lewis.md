@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9475670/jimerson-v-lewis/"
   cluster_id: 9475670
-  opinion_id: null
+  opinion_id: 9941201
   identity_checked: false
 lake:
   record_id: Jimerson v. Lewis
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Qualified Immunity]]"
     role: Key

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/"
   cluster_id: 9231296
-  opinion_id: null
+  opinion_id: 9226104
   identity_checked: true
 lake:
   record_id: Hernandez v. Mesa
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development
@@ -57,7 +57,7 @@ Sergio Adrián Hernández Güereca, a fifteen-year-old Mexican national, was pla
 Whether *[[Bivens v. Six Unknown Named Agents|Bivens]]* should be extended to provide a damages remedy against a federal officer for a cross-border shooting.
 
 ## Rule
-Recognizing an implied *[[Bivens v. Six Unknown Named Agents|Bivens]]* cause of action is disfavored, and separation-of-powers principles require caution before extending it to any "new context" — one that differs meaningfully from the three settings in which the Court has recognized a *[[Bivens v. Six Unknown Named Agents|Bivens]]* remedy. A cross-border shooting is such a new context, and it carries foreign-relations and national-security implications that a court is ill-suited to weigh. The Court accordingly held: "Because of the distinctive characteristics of cross-border shooting claims, we refuse to extend *Bivens* into this new field." — 589 U.S. at 99. ^pin-99
+Recognizing an implied *[[Bivens v. Six Unknown Named Agents|Bivens]]* cause of action is disfavored, and separation-of-powers principles require caution before extending it to any "new context" — one that differs meaningfully from the three settings in which the Court has recognized a *[[Bivens v. Six Unknown Named Agents|Bivens]]* remedy. A cross-border shooting is such a new context, and it carries foreign-relations and national-security implications that a court is ill-suited to weigh. The Court accordingly held: "Because of the distinctive characteristics of cross-border shooting claims, we refuse to extend *Bivens* into this new field." — 589 U.S. 93. ^pin-99
 
 ## Application
 A cross-border shooting is "by definition an international incident" affecting the interests of two nations, and such incidents are addressed through diplomatic channels (here, the U.S.–Mexico Border Violence Prevention Council and bilateral Human Rights Dialogue) that a judicially created damages remedy could disrupt. Congress, moreover, has been "notably hesitant" to create causes of action for tortious conduct abroad — declining, for instance, to make the Federal Tort Claims Act reach injuries in foreign countries. Because these special factors counsel hesitation, and no equally strong reason favors a judicial remedy, the Court refused to imply a *[[Bivens v. Six Unknown Named Agents|Bivens]]* action; it declined to decide the antecedent Fourth Amendment question.

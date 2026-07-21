@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4403804/ziglar-v-abbasi/"
   cluster_id: 4403804
-  opinion_id: null
+  opinion_id: 4181057
   identity_checked: true
 lake:
   record_id: Ziglar v. Abbasi
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Key
@@ -59,7 +59,7 @@ In the weeks after the September 11, 2001 attacks, federal officials detained hu
 Whether a *[[Bivens v. Six Unknown Named Agents|Bivens]]* damages remedy is available against federal officials for the detention-policy and confinement-conditions claims arising out of the post-9/11 roundup.
 
 ## Rule
-Expanding *[[Bivens v. Six Unknown Named Agents|Bivens]]* beyond the three contexts the Court has recognized is "a disfavored judicial activity." A court asks first whether a claim presents a "new context" and, if so, whether "special factors" counsel hesitation before inferring a damages remedy. Separation of powers is central: "When a party seeks to assert an implied cause of action under the Constitution itself ... separation-of-powers principles are or should be central to the analysis. The question is 'who should decide' whether to provide for a damages remedy, Congress or the courts?" — 582 U.S. at 135. ^pin-135
+Expanding *[[Bivens v. Six Unknown Named Agents|Bivens]]* beyond the three contexts the Court has recognized is "a disfavored judicial activity." A court asks first whether a claim presents a "new context" and, if so, whether "special factors" counsel hesitation before inferring a damages remedy. Separation of powers is central: "When a party seeks to assert an implied cause of action under the Constitution itself ... separation-of-powers principles are or should be central to the analysis. The question is 'who should decide' whether to provide for a damages remedy, Congress or the courts?" — 582 U.S. 120. ^pin-135
 
 The answer will most often be Congress, and a *[[Bivens v. Six Unknown Named Agents|Bivens]]* remedy is unavailable where "special factors counselling hesitation in the absence of affirmative action by Congress" are present.
 

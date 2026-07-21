@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107238/united-states-v-blue/"
   cluster_id: 107238
-  opinion_id: null
+  opinion_id: 107238
   identity_checked: true
 lake:
   record_id: United States v. Blue
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[The Exclusionary Rule]]"
     role: Anchor

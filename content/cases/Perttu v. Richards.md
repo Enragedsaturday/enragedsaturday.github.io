@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10776832/perttu-v-richards/"
   cluster_id: 10776832
-  opinion_id: null
+  opinion_id: 11243419
   identity_checked: true
 lake:
   record_id: Perttu v. Richards
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development
@@ -55,7 +55,7 @@ Kyle Richards, a Michigan prisoner, sued prison employee Thomas Perttu under 42 
 Whether a party has a right to a jury trial on PLRA exhaustion when that dispute is intertwined with the merits of a claim that requires a jury trial under the Seventh Amendment.
 
 ## Rule
-PLRA exhaustion is an ordinary [[Common Legal Terms#affirmative-defense|affirmative defense]], and the PLRA is silent on whether a judge or a jury resolves exhaustion disputes. Congress legislates against a background of common-law adjudicatory principles under which factual disputes intertwined with jury-triable legal claims go to the jury (*Beacon Theatres*; *Smithers*), and that silence is "strong evidence that the usual practice should be followed." The Court therefore held: "For those reasons, we hold as a matter of statutory interpretation that parties have a right to a jury trial on PLRA exhaustion when that issue is intertwined with the merits of a claim that falls under the Seventh Amendment." — 605 U.S. at 468. ^pin-468
+PLRA exhaustion is an ordinary [[Common Legal Terms#affirmative-defense|affirmative defense]], and the PLRA is silent on whether a judge or a jury resolves exhaustion disputes. Congress legislates against a background of common-law adjudicatory principles under which factual disputes intertwined with jury-triable legal claims go to the jury (*Beacon Theatres*; *Smithers*), and that silence is "strong evidence that the usual practice should be followed." The Court therefore held: "For those reasons, we hold as a matter of statutory interpretation that parties have a right to a jury trial on PLRA exhaustion when that issue is intertwined with the merits of a claim that falls under the Seventh Amendment." — 605 U.S. 460. ^pin-468
 
 ## Application
 Whether Perttu destroyed Richards's grievances decided both the exhaustion defense and the First Amendment retaliation claim — a legal claim triable to a jury. Because those questions were intertwined, the district court could not resolve the shared fact at a bench hearing and then dismiss for non-exhaustion; the intertwined factual dispute had to be tried to a jury. The Court construed the PLRA to require that result and so did not reach whether the Seventh Amendment would independently compel it.

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10661637/united-states-v-hunt/"
   cluster_id: 10661637
-  opinion_id: null
+  opinion_id: 11128224
   identity_checked: false
 lake:
   record_id: United States v. Hunt
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Abandonment]]"
     role: Key

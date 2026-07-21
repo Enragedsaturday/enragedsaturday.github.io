@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4395246/county-of-los-angeles-v-mendez/"
   cluster_id: 4395246
-  opinion_id: null
+  opinion_id: 4172499
   identity_checked: true
 lake:
   record_id: County of Los Angeles v. Mendez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Use of Force]]"
     role: Anchor

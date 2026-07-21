@@ -52,7 +52,7 @@ McNeely was stopped for speeding, showed signs of intoxication, and refused a br
 Whether the natural metabolization of alcohol in the bloodstream categorically creates an [[Exigent Circumstances and Hot Pursuit|exigency]] that justifies a warrantless blood draw in every drunk-driving case.
 
 ## Rule
-No. "We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant." — 569 U.S. at 156. ^pin-156
+No. "We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant." — 569 U.S. 141. ^pin-156
 
 Whether a warrantless blood draw is justified by [[Exigent Circumstances and Hot Pursuit|exigency]] must instead be determined case by case on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 

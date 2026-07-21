@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Jacobson v. United States
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "Migration-seeded good_law: no confirmed negative treatment (0 confirmed negative edges; all 37 proposed). Proposed negative edges await R15 treatment audit; S2 re-derivation may downgrade. Old as_of seeds as_of_treatment."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112720/jacobson-v-united-states/"

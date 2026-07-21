@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/101118/united-states-v-lee/"
   cluster_id: 101118
-  opinion_id: null
+  opinion_id: 101118
   identity_checked: true
 lake:
   record_id: United States v. Lee
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Fourth Amendment Recalibration]]"
     role: Key

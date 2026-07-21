@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4837663/tanzin-v-tanvir/"
   cluster_id: 4837663
-  opinion_id: null
+  opinion_id: 4641442
   identity_checked: true
 lake:
   record_id: Tanzin v. Tanvir
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development

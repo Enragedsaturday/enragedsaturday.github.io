@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/3207604/united-states-v-ganias/"
   cluster_id: 3207604
-  opinion_id: null
+  opinion_id: 9823643
   identity_checked: true
 lake:
   record_id: United States v. Ganias
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Plain View Doctrine]]"
     role: Key

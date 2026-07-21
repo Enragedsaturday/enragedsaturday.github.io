@@ -18,17 +18,17 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. Promoted AS a split-position authority; in-circuit validity asserted only to that breadth. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/691388/united-states-v-jack-palmer-vaneaton/"
   cluster_id: 691388
-  opinion_id: null
+  opinion_id: 9487908
   identity_checked: true
 lake:
   record_id: United States v. Vaneaton
-  status: under_review
-  projected_at: 2026-07-08
+  status: verified_identity
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entry to Arrest]]"
     role: "Key — voluntary-exposure pole (voluntary doorway exposure = no Payton violation, 49 F.3d at 1426-27)"

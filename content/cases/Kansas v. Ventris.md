@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145880/kansas-v-ventris/"
   cluster_id: 145880
-  opinion_id: null
+  opinion_id: 145880
   identity_checked: true
 lake:
   record_id: Kansas v. Ventris
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
     role: Anchor

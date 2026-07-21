@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2800431/shawn-northrup-v-city-of-toledo-police-dept/"
   cluster_id: 2800431
-  opinion_id: null
+  opinion_id: 2800431
   identity_checked: true
 lake:
   record_id: Northrup v. City of Toledo Police Dept
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Sixth Circuit open-carry Terry rule"

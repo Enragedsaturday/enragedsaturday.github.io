@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/181032/united-states-v-warshak/"
   cluster_id: 181032
-  opinion_id: null
+  opinion_id: 9438755
   identity_checked: true
 lake:
   record_id: United States v. Warshak
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Lower-court development (content/metadata line)"

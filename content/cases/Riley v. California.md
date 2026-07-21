@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Riley v. California
   varies_by_point: false
-  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade. — [P4-10 promotion 2026-07-21] under_review->verified_identity via orchestrator Claude MCP lane (429 spillover; doubles as COH-17 cross-credential slice); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/"
@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "cell-phone", "d
 holding: "The Robinson bright-line search-incident rule does NOT extend to the digital contents of a cell phone seized incident to arrest.…"
 lake:
   record_id: Riley v. California
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 ---
 
@@ -52,7 +52,7 @@ In two consolidated cases, police searched the digital contents of arrestees' ce
 Whether police may, without a warrant, search the digital contents of a cell phone seized from an individual incident to arrest.
 
 ## Rule
-A warrant is generally required. "Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple — get a warrant." — *Riley v. California*, 573 U.S. at 403. ^pin-403
+A warrant is generally required. "Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple — get a warrant." — *Riley v. California*, 573 U.S. 373. ^pin-403
 
 The categorical search-incident-to-arrest authority of *[[United States v. Robinson]]* does not extend to the vast store of digital data on a modern cell phone: the officer-safety and evidence-preservation rationales of *[[Chimel v. California|Chimel]]* do not justify searching data, and cell phones implicate privacy interests far greater than any physical item.
 

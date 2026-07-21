@@ -18,17 +18,17 @@ treatment:
   composite_basis: unverified
   composite_basis_ref: null
   varies_by_point: false
-  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. Promoted AS a split-position authority; in-circuit validity asserted only to that breadth. field_i unchanged (unverified)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/465254/united-states-v-riad-abed-al-azzawy/"
   cluster_id: 465254
-  opinion_id: null
+  opinion_id: 465254
   identity_checked: true
 lake:
   record_id: United States v. Al-Azzawy
-  status: under_review
-  projected_at: 2026-07-08
+  status: verified_identity
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entry to Arrest]]"
     role: "Key — coerced-emergence pole (arrest location = suspect's position; exit at gunpoint = in-home arrest, 784 F.2d at 893-95)"

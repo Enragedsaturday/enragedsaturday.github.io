@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108853/heller-v-new-york/"
   cluster_id: 108853
-  opinion_id: null
+  opinion_id: 9425413
   identity_checked: true
 lake:
   record_id: Heller v. New York
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Particularity]]"
     role: Key

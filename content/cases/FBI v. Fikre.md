@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10600106/fbi-v-fikre/"
   cluster_id: 10600106
-  opinion_id: null
+  opinion_id: 11066694
   identity_checked: true
 lake:
   record_id: FBI v. Fikre
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: Recent development
@@ -55,7 +55,7 @@ Yonas Fikre, a U.S. citizen, was placed on the No Fly List while traveling abroa
 Whether the government's voluntary removal of Fikre from the No Fly List, together with its declaration about his future status, rendered his challenge to that placement moot.
 
 ## Rule
-A federal court has a "virtually unflagging obligation" to decide cases within its jurisdiction, and a defendant cannot "automatically moot a case" simply by suspending the challenged conduct after being sued. Under the voluntary-cessation doctrine, "a defendant's 'voluntary cessation of a challenged practice' will moot a case only if the defendant can show that the practice cannot 'reasonably be expected to recur.'" — 601 U.S. at 241. ^pin-241
+A federal court has a "virtually unflagging obligation" to decide cases within its jurisdiction, and a defendant cannot "automatically moot a case" simply by suspending the challenged conduct after being sued. Under the voluntary-cessation doctrine, "a defendant's 'voluntary cessation of a challenged practice' will moot a case only if the defendant can show that the practice cannot 'reasonably be expected to recur.'" — 601 U.S. 234. ^pin-241
 
 That is a "formidable burden," because otherwise a defendant could suspend its conduct, win dismissal, and later resume where it left off.
 

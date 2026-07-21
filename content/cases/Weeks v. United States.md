@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Weeks v. United States
   varies_by_point: false
-  scope_note: "Origin of the federal exclusionary rule; extended to the States by Mapp v. Ohio (1961). Good law."
+  scope_note: "Origin of the federal exclusionary rule; extended to the States by Mapp v. Ohio (1961). Good law. — [P4-10 promotion 2026-07-21] under_review->verified_identity via builder-lane batch (PROMO-identity-fetch.json); case_name+citations+date confirmed. 13-category dual-model frontier re-run (2024-26 window) surfaced zero negative-treatment signals against this case; it underpins S7-verified registry/point derivations. field_i unchanged (good_law)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/98094/weeks-v-united-states/"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "warrantless-search", "o
 holding: "Origin of the federal exclusionary rule: evidence obtained in violation of the Fourth Amendment is inadmissible against a defendant in…"
 lake:
   record_id: Weeks v. United States
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-06
 ---
 

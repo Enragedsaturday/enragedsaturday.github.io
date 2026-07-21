@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109584/united-states-v-donovan/"
   cluster_id: 109584
-  opinion_id: null
+  opinion_id: 9426645
   identity_checked: true
 lake:
   record_id: United States v. Donovan
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Electronic Surveillance and Title III]]"
     role: Anchor

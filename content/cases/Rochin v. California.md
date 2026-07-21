@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/104943/rochin-v-california/"
   cluster_id: 104943
-  opinion_id: null
+  opinion_id: 9420649
   identity_checked: true
 lake:
   record_id: Rochin v. California
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Common Law Origins]]"
     role: "Historical / origin — due-process 'shocks the conscience' source"

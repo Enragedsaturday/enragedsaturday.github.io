@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4766220/united-states-v-young/"
   cluster_id: 4766220
-  opinion_id: null
+  opinion_id: 4546567
   identity_checked: true
 lake:
   record_id: United States v. Young
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Due-Process Voluntariness of Confessions]]"
     role: Key

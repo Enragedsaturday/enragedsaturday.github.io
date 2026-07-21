@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6476395/united-states-v-moore-bush/"
   cluster_id: 6476395
-  opinion_id: null
+  opinion_id: 6348506
   identity_checked: true
 lake:
   record_id: United States v. Moore-Bush
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: Key

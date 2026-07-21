@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9231241/mcdonough-v-smith/"
   cluster_id: 9231241
-  opinion_id: null
+  opinion_id: 9226046
   identity_checked: true
 lake:
   record_id: McDonough v. Smith
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Malicious Prosecution under the Fourth Amendment]]"
     role: Illustrates a circuit split

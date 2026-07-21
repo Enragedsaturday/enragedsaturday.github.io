@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Taylor v. Riojas
   varies_by_point: false
-  scope_note: "Per curiam; good law on the 'obvious case' route to defeating qualified immunity without a case directly on point."
+  scope_note: "Per curiam; good law on the 'obvious case' route to defeating qualified immunity without a case directly on point. No confirmed negative treatment in the disclosed lake record; top-cited progeny lane remains audit-flagged (R15 treatment audit required)."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4802501/taylor-v-riojas/"

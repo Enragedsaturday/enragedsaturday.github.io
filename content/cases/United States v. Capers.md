@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/180156/united-states-v-capers/"
   cluster_id: 180156
-  opinion_id: null
+  opinion_id: 9438686
   identity_checked: true
 lake:
   record_id: United States v. Capers
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: Key

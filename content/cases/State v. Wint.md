@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/8267547/state-v-wint/"
   cluster_id: 8267547
-  opinion_id: null
+  opinion_id: 8232868
   identity_checked: true
 lake:
   record_id: State v. Wint
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: Key

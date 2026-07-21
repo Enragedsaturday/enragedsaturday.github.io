@@ -1,8 +1,8 @@
 ---
 title: State v. Weaver
 type: case
-citation: "2011 Tex. Crim. App. LEXIS 1320 (2011)"
-parallel_cite: 349 S.W.3d 521
+citation: "349 S.W.3d 521 (2011)"
+parallel_cite: 2011 Tex. Crim. App. LEXIS 1320
 neutral_cite: 2011 WL 4715178
 court: Tex. Crim. App.
 court_level: state
@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2546485/state-v-weaver/"
   cluster_id: 2546485
-  opinion_id: null
+  opinion_id: 9784480
   identity_checked: true
 lake:
   record_id: State v. Weaver
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Curtilage]]"
     role: Key

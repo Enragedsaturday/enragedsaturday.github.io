@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/5035127/state-v-demesme/"
   cluster_id: 5035127
-  opinion_id: null
+  opinion_id: 4848796
   identity_checked: true
 lake:
   record_id: State v. Demesme
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: Key

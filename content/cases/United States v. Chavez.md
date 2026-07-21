@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/171034/united-states-v-chavez/"
   cluster_id: 171034
-  opinion_id: null
+  opinion_id: 171034
   identity_checked: true
 lake:
   record_id: United States v. Chavez
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"
     role: Key

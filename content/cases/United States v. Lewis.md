@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9424185/united-states-v-edward-leonidas-lewis/"
   cluster_id: 9424185
-  opinion_id: null
+  opinion_id: 9829122
   identity_checked: false
 lake:
   record_id: United States v. Lewis
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Consent Searches]]"
     role: Key

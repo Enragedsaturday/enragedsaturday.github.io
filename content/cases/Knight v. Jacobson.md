@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/778847/arthur-knight-v-jacobson-officer-badge-3359-individual/"
   cluster_id: 778847
-  opinion_id: null
+  opinion_id: 778847
   identity_checked: true
 lake:
   record_id: Knight v. Jacobson
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Entry to Arrest]]"
     role: "Key — constructive-entry (11th Cir. narrow side: officer's body, not his voice, stays outside the threshold, 300 F.3d at 1277)"
