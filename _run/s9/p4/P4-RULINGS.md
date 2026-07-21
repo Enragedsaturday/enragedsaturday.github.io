@@ -68,3 +68,26 @@ depth this phase and count as their categories' re-run legs; the REMAINING 10 ca
 (10 codex web_search lanes + Claude-lane coverage batched ~3-4 categories per opus lane), then
 one diff lane vs S6 logs + corpus, then orchestrator serial-CL verification of any two-key
 not-accounted find. Discoveries route S6 R8 born-draft; >10 new pages ⇒ human pause (unchanged).
+
+## RULING P4-09 (2026-07-21) — tripwire CLOSURE
+The P4-07 remedy is EXECUTED: all 13 categories re-ran at I5 depth, dual-model (3 I5 units +
+10 TW units; 270 raw rows -> 220 distinct; diff artifacts TW-DIFF.json / I5-DIFF.json).
+Closure dispositions:
+(1) ADDITIONAL PRE-BUILD DISCOVERY MISSES (2): United States v. Eric Johnson (4th Cir.
+2025-08-05, Published, docket 23-4255 — canine sniff at apartment common hallway; the FEDERAL
+Whitaker-vs-Johnson split is in no S6 log; corpus flags only the state-case curtilage split +
+May-Shaw) and United States v. Wilson (5th Cir. 2025-07-17, Published, 23-30777 — post-Bruen
+gun-possession-as-RS question uncatalogued). Both verified via credential-less public REST
+(Claude CL MCP token EXPIRED mid-phase — re-auth owed by user; journaled). Both join the A4
+coverage-fix class: LCD bullets on their split/question narratives + born-draft lake stubs.
+(2) FLOORED (2, with reasons): Williams (4th 2025, knock-and-announce Hudson reaffirmance —
+doctrine fully covered, below the S6 R6 floor); Gonzalez-Arocho (1st 2025/26, fact-bound
+good-faith suppression win — good-faith uniform per S6 stop). Logged dispositions, no findings.
+(3) Currency-watch: the 31 post-build circuit citers (recency triage) + companion Brillhart
+24-13232 route to R7.1/R12 watch — NOT discovery misses (P4-07 currency logic).
+(4) Single-key flags: Klein v. Martin (AEDPA posture, likely out-of-remit), Gonzalez v. United
+States cert-statement (doctrine-ferment note candidate) — relevance-gate referrals; Loper
+Bright correctly absent; ABA/AI-sanctions material -> R12 handoff.
+(5) Ingestion total from the entire tripwire arc: 4 new lake stubs (Lowers, Brillhart, Johnson,
+Wilson) + split-narrative edits — far below the >10-page human-pause threshold. NO further
+re-run owed: the fail-closed remedy ran once, in full, as specified.
