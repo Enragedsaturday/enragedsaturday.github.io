@@ -1917,3 +1917,30 @@ tripwire verifications, all journaled p4-cl-calls.log); recency q-form bug caugh
 WAVE F STAGED: P4-TRIAGE.md (A1-A7 fix-now incl. LINT-12 class + landing fix + split-map update
 w/ Lowers/Brillhart lake stubs; B1-B10 review classes incl. I4 181-claim join; C1-C4 escalations).
 Commits: bf19b6f0, 62fb8a8b, 56d838d4, df3b214a.
+
+**P4 COMPLETE (2026-07-21) — WAVE F CLOSED, ALL SWEEPS TERMINAL.** Session-3 arc (post
+CL-re-auth; user sanctioned the promotion workorder "adjudicate ... yourself"): FIX packets
+A1 (LINT-12 151->0 net incl. loop-2s; 136 reprojections + 10 substantive + 5 escalations +
+serializer-FP diagnosed), A2 (hard-load deep-link landing FIXED loop-2 instant-scroll,
+browser-verified both directions), A3567 (Smith mislink x9, Holcomb note, 7 fragment pins,
+Taylor pincite), PROMO-FIX (30 promotions w/ P4-10 evidence; 12 pins harvested; LOOP-3 OF THE
+22 P3-ESCALATED FINDINGS ALL FIXED, queue_outstanding=0, escalation file RESOLVED; loop-2
+schema-conform LINT-13 45->0; 4 tripwire stubs + 3 LCD split-map surfaces), FIX-T3 (169+25
+rows: 66 star-upgrades incl. 13 rescued, 85+29 conversions -> R12 upgrade queue 117, Herring
+adjudicated to star-verified 129 S. Ct. 702, annex-§11 retired), FIN-MINI (varies_by_point
+hygiene 11, placement narrowings P4-13, lint6 banner-leg P4-14: 21 FP -> 0), FIN-INDEX (Case
+Index regen + S8 relink; Mitcham independent-source error was STILL READER-FACING in the
+committed index — now fixed; 563 cells byte-identical fidelity proof; generator R12 fix),
+COH-B (78/78; exclusionary callout added then loop-2-corrected — fruits mis-pin caught by the
+codex re-review, re-anchored; 62 registry-notes to P5). I4-TRIAGE: 181/181 — ZERO stale
+absence claims. RE-REVIEW (writer≠checker, non-author MODEL): codex round-1 31 rows (6 refutes
+-> all resolved, 1 refuted-back w/ lint evidence), round-2 3/3 CONFIRM. Ledger: P4-LEDGER-
+BRIDGE.jsonl (725 candidates, every one dispositioned via rulings P4-01..14 + packet
+artifacts; panel-ledger R4 invariants untouched by design). Build clean 724/2873. Residue =
+documented escalations only: deep-equal systemic (C1), lint-baseline campaign (~3.2k LINT-10
++ 405 LINT-11 + 74 LINT-3 + 52 LINT-7 + 622 LINT-16 standalone; P4 added ~60 LINT-10 rows via
+retirement notes — folded into the campaign), LINT-30 P5-tidy set, R9(c) visual-fragment leg
+deferred to R15, NJLEH capture tail. Serial-lane ledger: p4-cl-calls.log complete (Claude MCP
+~30 calls; builder token I4 539 + recency 11 + star-refetch 59 + second-source 53 + promo 20).
+Commits: 50022e25, 210842b6 (+ session-2's bf19b6f0..a2e0b813). NEXT: P5 release gate (needs
+the two C-decisions + the lint campaign sanction) -> P6 publish pause.
