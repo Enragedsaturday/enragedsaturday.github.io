@@ -1,0 +1,235 @@
+{
+  "packet": "S8H-A",
+  "ws": "S8H",
+  "scope": "S9 R9 items (a) NUM-03 verification + (d) shingle scope check (R8 #29)",
+  "coverage": {
+    "items_assigned": 2,
+    "items_examined": 2,
+    "items_skipped": 0,
+    "corpus_files_scanned": 724,
+    "note": "content/**/*.md count via `find content -name '*.md' | wc -l` = 724 at time of run; both lints + the independent script iterate the identical glob (scripts/lint/_common.py::iter_markdown_files default) so file counts agree by construction."
+  },
+  "task_a_num03": {
+    "description": "NUM-03 verification: LINT-9 (visible mid-line ^pin-N carats) + LINT-5 (wikilink/anchor resolution, incl. pin anchors) run against the corpus, cross-checked with an independently written grep/parse script (not a re-run of the lint code).",
+    "lint9_carat_leak": {
+      "command": "python3 scripts/lint/lint9_carat_leak.py content",
+      "self_test_command": "python3 scripts/lint/lint9_carat_leak.py --self-test",
+      "self_test_result": "PASS (2/2 fixtures: lint-9-anchor-wikilink-fail.md expect=fail OK 1 viol; lint-9-endline-pass.md expect=pass OK 0 viol)",
+      "corpus_result": "0 violations (0 high, 0 medium, 0 low)",
+      "cross_check_no_args": "python3 scripts/lint/lint9_carat_leak.py (no path arg, default content/**/*.md) -> also 0 violations, identical to scoped run",
+      "raw_stdout_file": "_run/s9/p4/out/S8H-A-lint9-stdout.jsonl (empty)",
+      "raw_stderr_file": "_run/s9/p4/out/S8H-A-lint9-stderr.txt"
+    },
+    "lint5_link_every_case": {
+      "command": "python3 scripts/lint/lint5_link_every_case.py content",
+      "self_test_command": "python3 scripts/lint/lint5_link_every_case.py --self-test",
+      "self_test_result": "PASS (7/7 checks incl. anchor+deadlink+badembed-HIGH=3, pass-clean=[])",
+      "corpus_result": "23 violations, all severity=medium, 0 high, 0 low",
+      "interpretation": "All 23 rows are LINT-5's ledger-aware BARE-CAPTION class ('bare page-backed case name ... is not a [[wikilink]] [S8 R1/R13a]') -- a different lint concern (missing wikilinking of a page-backed case caption), NOT a NUM-03 pin/anchor defect. LINT-5's own broken-anchor / dead-wikilink / bad-embed checks (which DO cover pin anchors, escalate to HIGH, fail-closed) produced ZERO hits corpus-wide. Included verbatim below per instruction since they are the only non-empty lint output in this packet.",
+      "raw_stdout_file": "_run/s9/p4/out/S8H-A-lint5-stdout.jsonl",
+      "raw_stderr_file": "_run/s9/p4/out/S8H-A-lint5-stderr.txt",
+      "rows_verbatim": [
+        {
+          "lint": "LINT-5",
+          "file": "content/cases/Smith v. Illinois.md",
+          "line": 61,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Davis v. United States' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 40,
+          "severity": "medium",
+          "message": "bare page-backed case name 'California v. Acevedo' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 46,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Michigan v. Summers' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 63,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Entick v. Carrington' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 173,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Camara v. Municipal Court' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 199,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Wilson v. Layne' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 301,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Montejo v. Louisiana' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 348,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Heck v. Humphrey' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 361,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Berkemer v. McCarty' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 381,
+          "severity": "medium",
+          "message": "bare page-backed case name 'United States v. Ross' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 417,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Illinois v. Gates'' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 429,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Maryland v. Shatzer' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 476,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Riley v. California' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 478,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Missouri v. Seibert' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 481,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Carpenter v. United States' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 493,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Riley v. California' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 535,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Byrd v. United States' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 536,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Payton v. New York' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 542,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Rodriguez v. United States' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 592,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Michigan v. Long' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/legal-system-research-and-reference/Case Index.md",
+          "line": 623,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Mapp v. Ohio.' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/seizures/Terry Stops and Reasonable Suspicion.md",
+          "line": 73,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Northrup v. City of Toledo Police Dep't' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        },
+        {
+          "lint": "LINT-5",
+          "file": "content/warrant-exceptions/Knock and Talk.md",
+          "line": 69,
+          "severity": "medium",
+          "message": "bare page-backed case name 'Carman v. Carroll' is not a [[wikilink]] to its case page [S8 R1/R13a]"
+        }
+      ]
+    },
+    "independent_grep_verification": {
+      "script": "_run/s9/p4/out/S8H-A-independent-check.py (this packet's own read-only script, written from scratch -- separate mask/scan logic from LINT-9/LINT-5, used as a cross-check not a re-run)",
+      "command": "python3 _run/s9/p4/out/S8H-A-independent-check.py",
+      "raw_output_file": "_run/s9/p4/out/S8H-A-independent-check-out.json",
+      "check_1_midline_carat_count": {
+        "method": "Per content/**/*.md: skip frontmatter + fenced code blocks; blank HTML comments; mask [[wikilinks]] / ![[embeds]] / `inline code` to non-word filler; scan remaining text for '^token' matches (a caret-pin anchor NOT literally preceded by a wikilink-opening '['); a match is a LEAK iff it does NOT end at end-of-line (after rstrip).",
+        "result": 0,
+        "agrees_with_lint9": true,
+        "cross_check_raw_grep": "grep -rnoE '^pin-[A-Za-z0-9]+' content --include='*.md' | wc -l = 1403 total ^pin-N tokens anywhere in the corpus (end-of-line legal anchors + inside wikilinks + any leaks); of these, independent masking found 0 that are both outside a wikilink/embed AND not at end-of-line."
+      },
+      "check_2_broken_pin_wikilinks": {
+        "method": "Every [[Target#^pin-N]] / ![[Target#^pin-N]] (pipe-display stripped per the R11 `\\|` convention) resolved to a content/**/*.md page by relative-stem / basename match; target page's body then scanned for a line ending in that exact ^pin-N token (the Obsidian block-anchor DEFINITION rule) -- resolves iff both the page AND the anchor exist.",
+        "pin_wikilink_total": 287,
+        "pin_wikilink_resolved": 287,
+        "pin_wikilink_broken_count": 0,
+        "broken_list": [],
+        "cross_check_raw_grep": "grep -rno '#^pin-[A-Za-z0-9]*' content --include='*.md' | wc -l = 287, exactly matching the script's pin_wikilink_total (287) -- confirms the parser is not over/under-counting refs before resolving them."
+      }
+    }
+  },
+  "task_d_shingle_scope": {
+    "description": "R8 #29 shingle-boundary scope check: LINT-29 wraps scripts/s8/shingles.py (the frozen S1 A3 detector). Verified via (1) LINT-29's own fixture self-test, (2) the deeper shingles.py unit self-test (embed-exclusion is asserted there directly), (3) a full corpus run.",
+    "lint29_self_test": {
+      "command": "python3 scripts/lint/lint29_shingle_boundary.py --self-test",
+      "result": "PASS (8/8 checks): classify_hit unit checks (rule-hit HIGH, pin-blockquote HIGH, pin-para/listitem exempt=None) + fixture sweep over scripts/lint/fixtures/lint-29/content producing exactly 2 HIGH (one rule-node restatement, one re-typed blockquote-pin) and 0 for the inline-woven pin fixture (Pin Inline.md) -- confirms raw restatements FIRE and the sanctioned inline/list-quote carve-out does NOT."
+    },
+    "shingles_py_self_test": {
+      "command": "python3 scripts/s8/shingles.py --self-test",
+      "result": "PASS: normalize + lcr units; above/below threshold, embed-excluded, same-page-excluded, quote-zone handling. Fixture scripts/s8/fixtures/shingles/already_embed.md is the dedicated embed-exclusion case: an `![[...]]` transclusion of foreign rule/pin prose yields ZERO tokens (normalize_inplace blanks embeds BY CONSTRUCTION before tokenizing), so an embedded block can never itself trigger a hit."
+    },
+    "corpus_run": {
+      "command": "python3 scripts/lint/lint29_shingle_boundary.py",
+      "result": "0 violations (0 high, 0 medium, 0 low) -- no real-corpus rule-restatement or re-typed-blockquote-pin hits at time of this sweep",
+      "raw_stdout_file": "_run/s9/p4/out/S8H-A-lint29-stdout.jsonl (empty)",
+      "raw_stderr_file": "_run/s9/p4/out/S8H-A-lint29-stderr.txt"
+    }
+  },
+  "adjudication_check": "grep -ic 'carat|shingle|pin-leak|num-03|num03' _run/s9/adjudications.jsonl = 0 -- nothing in this scope carries a prior P2/P3 verdict; no adjudication-regression risk.",
+  "candidates_filed": 0,
+  "model": "claude-sonnet-5"
+}

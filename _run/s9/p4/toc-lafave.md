@@ -1,0 +1,683 @@
+# LaFave, *Search and Seizure: A Treatise on the Fourth Amendment* — Table of Contents
+
+Source (LOCAL-ONLY, not committed): `.orca/drops/SSTOC.pdf`, 19 pp.
+Two front-matter TOCs are present:
+- pp. xxi–xxiv "Summary of Contents by Section" (section grain, no subsections)
+- pp. xxv–xxxix "Table of Contents" (section + subsection grain, with page numbers)
+
+This file transcribes the fuller **detailed** TOC (subsection grain). Trailing numbers = printed page numbers. Case names shown in the source in italics are rendered here in *italics*. Six volumes, 11 chapters.
+
+Volume→chapter map: Vol 1 = Ch 1–2 · Vol 2 = Ch 3–4 · Vol 3 = Ch 5–7 · Vol 4 = Ch 8–9 · Vol 5 = Ch 10 · Vol 6 = Ch 11.
+
+---
+
+## Volume 1
+
+### CHAPTER 1 — THE EXCLUSIONARY RULE AND OTHER REMEDIES
+
+- **§ 1.1 Origins and purposes of the exclusionary rule — 3**
+  - § 1.1(a) Origins of the Fourth Amendment — 3
+  - § 1.1(b) The *Boyd* case — 11
+  - § 1.1(c) The *Weeks* case — 13
+  - § 1.1(d) The *Wolf* case — 15
+  - § 1.1(e) The *Mapp* decision — 20
+  - § 1.1(f) Purposes — 23
+- **§ 1.2 The exclusionary rule under attack — 30**
+  - § 1.2(a) Clearing the underbrush — 31
+  - § 1.2(b) The matter of deterrence — 36
+  - § 1.2(c) Replacing the exclusionary rule — 46
+  - § 1.2(d) Limiting the exclusionary rule to "substantial" or other than "good faith" violations — 51
+  - § 1.2(e) Limiting the exclusionary rule to other than "serious cases" — 61
+  - § 1.2(f) Limiting the exclusionary rule to institutional failures — 65
+- **§ 1.3 The *Leon* "good faith" exception — 67**
+  - § 1.3(a) The *Leon* decision — 69
+  - § 1.3(b) Should "costs" and "benefits" be balanced? — 71
+  - § 1.3(c) Overstated "costs" — 74
+  - § 1.3(d) Understated "benefits" — 76
+  - § 1.3(e) "Good faith": generally — 83
+  - § 1.3(f) Scope of *Leon* exception in warrant cases — 88
+  - § 1.3(g) "Good faith" in without warrant cases — 128
+  - § 1.3(h) "Good faith" and unconstitutional legislation or overruled precedents — 132
+  - § 1.3(i) "Good faith" and unconstitutional police regulations — 146
+- **§ 1.4 The *Scott* "bad faith" doctrine — 149**
+  - § 1.4(a) The *Scott* case — 150
+  - § 1.4(b) Unexpected intent to act unlawfully — 152
+  - § 1.4(c) Mistaken belief grounds for action lacking — 155
+  - § 1.4(d) Wrong legal theory relied upon — 156
+  - § 1.4(e) "Pretext" arrests and searches before *Whren* — 164
+  - § 1.4(f) More on "pretext": the effects of *Whren* — 176
+- **§ 1.5 Federal vs. state standards; constitutional vs. other violations — 199**
+  - § 1.5(a) Federal vs. state standards — 200
+  - § 1.5(b) Violation of state constitution, state or federal statute, court rule, or administrative regulation — 206
+  - § 1.5(c) The remaining "silver platter" — 226
+- **§ 1.6 The exclusionary rule in criminal proceedings — 240**
+  - § 1.6(a) Subpoena to testify before grand jury — 241
+  - § 1.6(b) Grand jury subpoena duces tecum — 247
+  - § 1.6(c) Challenge of indictment — 248
+  - § 1.6(d) Preliminary hearing; extradition hearing — 253
+  - § 1.6(e) Bail hearing — 257
+  - § 1.6(f) Sentencing — 258
+  - § 1.6(g) Revocation of conditional release — 265
+  - § 1.6(h) Deterrence/cost balancing as to specific kinds of violations: the *Hudson* approach — 277
+  - § 1.6(i) Deterrence/cost balancing as to specific kinds of violations: the *Herring* approach — 284
+- **§ 1.7 The exclusionary rule in quasi-criminal, civil and administrative proceedings — 313**
+  - § 1.7(a) Forfeiture proceedings — 314
+  - § 1.7(b) Juvenile delinquency proceedings — 320
+  - § 1.7(c) Commitment and related proceedings — 323
+  - § 1.7(d) Civil tax proceedings — 326
+  - § 1.7(e) Child protection proceedings — 333
+  - § 1.7(f) Administrative hearings — 335
+  - § 1.7(g) Legislative hearings — 348
+  - § 1.7(h) Private litigation — 352
+- **§ 1.8 The exclusionary rule and "private" or nonpolice searches — 357**
+  - § 1.8(a) The *Burdeau* rule — 359
+  - § 1.8(b) Government participation or specific instigation — 370
+  - § 1.8(c) Other pre-search government encouragement — 397
+  - § 1.8(d) The "public function" approach — 408
+  - § 1.8(e) Applicability of exclusionary rule to nonprivate-nonpolice actors — 424
+  - § 1.8(f) The "ratified intent" approach — 438
+  - § 1.8(g) The "judicial action" approach — 441
+  - § 1.8(h) Foreign police and the international "silver platter" — 443
+- **§ 1.9 Challenge of jurisdiction — 457**
+  - § 1.9(a) Illegality in bringing the defendant into the jurisdiction — 457
+  - § 1.9(b) Illegal arrest within the jurisdiction — 466
+  - § 1.9(c) Extradition proceedings — 469
+- **§ 1.10 Civil suit; criminal prosecution; disciplinary proceedings — 483**
+  - § 1.10(a) The "constitutional tort" by state officers — 484
+  - § 1.10(b) The "constitutional tort" by federal officers — 502
+  - § 1.10(c) Criminal prosecution — 512
+  - § 1.10(d) Disciplinary proceedings — 514
+  - § 1.10(e) Takings Clause litigation — 517
+- **§ 1.11 Expungement of arrest records — 520**
+  - § 1.11(a) Constitutional basis — 522
+  - § 1.11(b) Conflicting interests — 527
+  - § 1.11(c) Balancing the interests; alternative remedies — 532
+- **§ 1.12 Injunction — 535**
+  - § 1.12(a) Absence of adequate remedy at law — 536
+  - § 1.12(b) Threat of imminent harm — 537
+  - § 1.12(c) Practical limitations on injunctive remedy — 544
+- **§ 1.13 Self-help — 549**
+  - § 1.13(a) Resistance to illegal arrest — 549
+  - § 1.13(b) Other forms of self-help — 555
+
+### CHAPTER 2 — PROTECTED AREAS AND INTERESTS
+
+- **§ 2.1 The *Katz* expectation of privacy test — 562**
+  - § 2.1(a) Definition of "searches" and "seizures" — 563
+  - § 2.1(b) The *Katz* case — 576
+  - § 2.1(c) An "actual (subjective) expectation of privacy" — 582
+  - § 2.1(d) An expectation "that society is prepared to recognize as 'reasonable'" — 585
+  - § 2.1(e) Trespass as an alternate theory — 593
+- **§ 2.2 Plain view, smell, hearing, and touch; aiding the senses — 596**
+  - § 2.2(a) Plain view, smell, hearing or touch — 597
+  - § 2.2(b) Use of flashlight or other means of illumination — 614
+  - § 2.2(c) Use of binoculars or telescope; photo enlargement — 625
+  - § 2.2(d) Use of magnetometer, x-ray, weapons detector, etc., to "see" what the naked eye cannot see — 636
+  - § 2.2(e) Use of thermal imager to detect and measure heat — 652
+  - § 2.2(f) Use of electronic surveillance to discover and decrypt communications — 662
+  - § 2.2(g) Use of canine to detect drugs, etc. — 688
+  - § 2.2(h) Use of "electronic canine" to detect explosives, alcohol, etc. — 712
+- **§ 2.3 Residential premises — 724**
+  - § 2.3(a) Abandoned premises — 725
+  - § 2.3(b) Entry of residence — 739
+  - § 2.3(c) Looking in or listening at the residence — 749
+  - § 2.3(d) Entry of related structures — 767
+  - § 2.3(e) Looking into or listening at related structures — 771
+  - § 2.3(f) Entry of adjoining lands — 780
+  - § 2.3(g) Looking into or listening at adjoining lands — 792
+- **§ 2.4 Other premises and places — 803**
+  - § 2.4(a) "Open fields" — 804
+  - § 2.4(b) Business and commercial premises — 816
+  - § 2.4(c) Private areas in public places: rest rooms and fitting rooms — 832
+  - § 2.4(d) Detention facilities — 838
+- **§ 2.5 Vehicles — 839**
+  - § 2.5(a) Abandoned vehicles — 840
+  - § 2.5(b) Examination of exterior of vehicle — 846
+  - § 2.5(c) Determination of contents of vehicle without physical intrusion — 850
+  - § 2.5(d) Examination of vehicle identification numbers — 856
+- **§ 2.6 Persons and effects — 863**
+  - § 2.6(a) Personal characteristics — 864
+  - § 2.6(b) Abandoned effects generally — 871
+  - § 2.6(c) Garbage in particular — 895
+  - § 2.6(d) Effects that are "mere evidence" — 912
+  - § 2.6(e) Private papers — 916
+  - § 2.6(f) Computer data — 925
+- **§ 2.7 Surveillance of relationships and movements — 944**
+  - § 2.7(a) Mail covers — 945
+  - § 2.7(b) Pen registers — 950
+  - § 2.7(c) Examination of financial and other business records — 966
+  - § 2.7(d) Examination of medical records — 983
+  - § 2.7(e) Data aggregation and mining — 986
+  - § 2.7(f) Electronic tracking devices — 996
+  - § 2.7(g) Ongoing surveillance of public movements and relationships — 1015
+
+---
+
+## Volume 2
+
+### CHAPTER 3 — PROBABLE CAUSE
+
+- **§ 3.1 General considerations — 2**
+  - § 3.1(a) The "probable cause" requirement — 3
+  - § 3.1(b) Probable cause as to what?—arrest vs. search — 6
+  - § 3.1(c) Significance of the fact a warrant was obtained — 18
+  - § 3.1(d) When and how probable cause determination made — 23
+- **§ 3.2 The nature of probable cause — 28**
+  - § 3.2(a) Fixed or variable test — 30
+  - § 3.2(b) Subjective or objective test — 42
+  - § 3.2(c) Experience and expertise of the officer — 47
+  - § 3.2(d) Information to be considered — 57
+  - § 3.2(e) The degree of probability — 83
+  - § 3.2(f) Effect of substantive provision later determined to be unconstitutional — 113
+- **§ 3.3 Information from an informant — 122**
+  - § 3.3(a) An overview — 123
+  - § 3.3(b) Past performance by the informant — 138
+  - § 3.3(c) Admissions against interest and the like — 160
+  - § 3.3(d) Disclosure of basis of knowledge — 185
+  - § 3.3(e) Self-verifying detail — 203
+  - § 3.3(f) Partial corroboration of the informant's tale — 212
+  - § 3.3(g) The informer's privilege and police credibility — 246
+- **§ 3.4 Information from a victim or witness — 264**
+  - § 3.4(a) The veracity of a crime victim or witness — 265
+  - § 3.4(b) Basis of knowledge — 293
+  - § 3.4(c) Sufficiency of information supplied — 303
+- **§ 3.5 Information from or held by other police — 330**
+  - § 3.5(a) The police officer as a reliable source — 331
+  - § 3.5(b) Directive or request without underlying facts — 335
+  - § 3.5(c) No directive or request, other police have probable cause — 351
+  - § 3.5(d) Police records and the problem of updating — 358
+  - § 3.5(e) Police investigations and conclusory assertions — 365
+- **§ 3.6 First-hand information — 371**
+  - § 3.6(a) Possible possession of stolen property — 373
+  - § 3.6(b) Possible possession of illegal substance — 379
+  - § 3.6(c) Association with another person or with a place — 410
+  - § 3.6(d) Furtive gestures — 438
+  - § 3.6(e) Flight — 444
+  - § 3.6(f) Response to questioning — 448
+  - § 3.6(g) Nature of the area — 456
+- **§ 3.7 Special problems in search cases — 461**
+  - § 3.7(a) Stale information — 462
+  - § 3.7(b) Time of information unknown or uncertain — 488
+  - § 3.7(c) Information as to prospective events — 496
+  - § 3.7(d) Nexus between crime, objects and place — 517
+
+### CHAPTER 4 — SEARCH WARRANTS
+
+- **§ 4.1 When must or may warrant be utilized — 559**
+  - § 4.1(a) The benefits of the warrant process — 559
+  - § 4.1(b) Warrantless searches and seizures — 566
+  - § 4.1(c) Warrants for "mere evidence" — 573
+  - § 4.1(d) Warrants for obscene materials — 575
+  - § 4.1(e) Intrusions into the body — 578
+  - § 4.1(f) Warrants directed at nonsuspects — 595
+  - § 4.1(g) Warrants directed at newsgathering organizations, libraries, bookstores and video stores — 600
+  - § 4.1(h) Warrants directed at attorneys' offices — 604
+  - § 4.1(i) Warrants directed at congressional offices — 609
+- **§ 4.2 The "neutral and detached magistrate" requirement — 611**
+  - § 4.2(a) Law enforcement personnel — 613
+  - § 4.2(b) The fee system and other indicia of partiality — 617
+  - § 4.2(c) Court clerks and other nonlawyers — 620
+  - § 4.2(d) Conduct of magistrate relating to issuance — 625
+  - § 4.2(e) Prior refusal to issue — 631
+  - § 4.2(f) Limits imposed by statute or court rule — 633
+- **§ 4.3 Oath or affirmation; record — 638**
+  - § 4.3(a) Information not presented to the magistrate — 639
+  - § 4.3(b) Oral statements to the magistrate — 643
+  - § 4.3(c) Oral search warrants — 648
+  - § 4.3(d) Multiple documents — 654
+  - § 4.3(e) The requirement of swearing — 658
+  - § 4.3(f) False-name affidavits — 663
+  - § 4.3(g) Sealing documents — 666
+- **§ 4.4 Probable cause: the facially-sufficient affidavit — 671**
+  - § 4.4(a) Whether challenge must be permitted — 672
+  - § 4.4(b) What inaccuracies jeopardize the warrant — 676
+  - § 4.4(c) Consequence of inaccuracies — 691
+  - § 4.4(d) Procedural matters — 698
+- **§ 4.5 Particular description of place to be searched — 709**
+  - § 4.5(a) Premises generally — 711
+  - § 4.5(b) Multiple-occupancy structure — 731
+  - § 4.5(c) Description of more than one place or building — 743
+  - § 4.5(d) Vehicles — 749
+  - § 4.5(e) Persons — 755
+- **§ 4.6 Particular description of things to be seized — 763**
+  - § 4.6(a) General considerations — 764
+  - § 4.6(b) Contraband — 785
+  - § 4.6(c) Stolen goods — 787
+  - § 4.6(d) Instrumentalities and evidence — 792
+  - § 4.6(e) Literature, pictures, films and recordings — 810
+  - § 4.6(f) Partial invalidity — 814
+- **§ 4.7 Time of execution — 818**
+  - § 4.7(a) Delay in execution — 819
+  - § 4.7(b) Execution in the nighttime — 826
+  - § 4.7(c) Execution in absence of occupant — 834
+- **§ 4.8 Entry without notice or by force — 840**
+  - § 4.8(a) Sources and purposes of the notice requirement — 841
+  - § 4.8(b) Manner of entry for which notice ordinarily required — 845
+  - § 4.8(c) Compliance with the requirement of notice — 852
+  - § 4.8(d) The destruction-of-evidence exception — 863
+  - § 4.8(e) The danger-to-person exception — 871
+  - § 4.8(f) The "useless gesture" exception — 879
+  - § 4.8(g) No-knock search warrants — 881
+  - § 4.8(h) Use of extraordinary force — 888
+- **§ 4.9 Detention and search of persons — 892**
+  - § 4.9(a) Person described in warrant — 892
+  - § 4.9(b) Person arrested — 894
+  - § 4.9(c) Search of person not arrested or described in warrant for items described — 895
+  - § 4.9(d) Frisk for self-protection — 902
+  - § 4.9(e) Detention of person not arrested — 912
+- **§ 4.10 Scope and intensity of the search — 931**
+  - § 4.10(a) The described place and adjacent areas — 932
+  - § 4.10(b) Personal effects in described premises — 946
+  - § 4.10(c) Vehicles on or near described premises — 953
+  - § 4.10(d) Intensity and duration — 958
+  - § 4.10(e) Examination of seized objects — 988
+- **§ 4.11 What may be seized — 992**
+  - § 4.11(a) Objects named in the warrant — 993
+  - § 4.11(b) Objects not named in the warrant: From *Marron* to *Coolidge* — 1003
+  - § 4.11(c) Probable cause — 1008
+  - § 4.11(d) The "immediately apparent" requirement — 1019
+  - § 4.11(e) The "inadvertent discovery" limitation — 1032
+  - § 4.11(f) Subterfuge search — 1037
+- **§ 4.12 Miscellaneous requirements — 1042**
+  - § 4.12(a) Exhibiting or delivering warrant — 1043
+  - § 4.12(b) Notice of seizure; receipt for property taken — 1049
+  - § 4.12(c) Return — 1053
+- **§ 4.13 Subpoenas duces tecum compared — 1056**
+  - § 4.13(a) The *Boyd* and *Walling* cases — 1059
+  - § 4.13(b) Authorized purpose of investigation — 1062
+  - § 4.13(c) The relevance requirement — 1065
+  - § 4.13(d) The adequate specification requirement — 1073
+  - § 4.13(e) The justification for Fourth Amendment protection against compulsory production — 1079
+
+---
+
+## Volume 3
+
+### CHAPTER 5 — SEIZURE AND SEARCH OF PERSONS AND PERSONAL EFFECTS
+
+- **§ 5.1 Arrest — 1**
+  - § 5.1(a) What constitutes an "arrest" — 2
+  - § 5.1(b) Arrest without a warrant — 15
+  - § 5.1(c) What constitutes "in the presence" — 34
+  - § 5.1(d) Use of force — 44
+  - § 5.1(e) The significance of "booking" — 60
+  - § 5.1(f) Display of arrestee to media — 66
+  - § 5.1(g) Prompt judicial review of warrantless arrests — 69
+  - § 5.1(h) Arrest warrants — 84
+  - § 5.1(i) Need for custody and the citation alternative — 102
+- **§ 5.2 Search of the person at scene of prior arrest — 127**
+  - § 5.2(a) The *Robinson* and *Gustafson* cases — 128
+  - § 5.2(b) The "general authority" to search incident to arrest — 131
+  - § 5.2(c) Rationale: search for evidence — 137
+  - § 5.2(d) Rationale: search for weapons — 150
+  - § 5.2(e) Minor offenses and the pretext problem — 154
+  - § 5.2(f) Broadening the exclusionary rule — 160
+  - § 5.2(g) Limiting searches by limiting "custodial arrest" — 162
+  - § 5.2(h) Search where no "custodial arrest" — 166
+  - § 5.2(i) Use of force — 179
+  - § 5.2(j) What may be seized — 185
+- **§ 5.3 Search of the person during post-arrest detention — 188**
+  - § 5.3(a) Search upon arrival at place of detention — 189
+  - § 5.3(b) The delayed search and the second look — 202
+  - § 5.3(c) Inspections and intrusions into the body — 215
+  - § 5.3(d) Validity of continued custody — 240
+- **§ 5.4 Other search of the person — 247**
+  - § 5.4(a) Search for evidence prior to arrest — 248
+  - § 5.4(b) Search for evidence without arrest — 253
+  - § 5.4(c) Search for purposes other than finding evidence — 263
+  - § 5.4(d) Search pursuant to defense discovery — 278
+- **§ 5.5 Seizure and search of containers and other personal effects — 283**
+  - § 5.5(a) Search incident to arrest — 284
+  - § 5.5(b) Inventory — 297
+  - § 5.5(c) Exigent circumstances — 308
+  - § 5.5(d) Search for purposes other than obtaining evidence — 322
+  - § 5.5(e) Search following "controlled delivery" — 325
+  - § 5.5(f) Containers permitting view or inference of contents — 332
+
+### CHAPTER 6 — ENTRY AND SEARCH OF PREMISES
+
+- **§ 6.1 Basis for entry to arrest — 349**
+  - § 6.1(a) Grounds for entry — 350
+  - § 6.1(b) The warrant requirement — 367
+  - § 6.1(c) The other-lawful-basis exception — 382
+  - § 6.1(d) The "hot pursuit" exception — 390
+  - § 6.1(e) Location of the arrestee: "at," "on" and past the threshold — 396
+  - § 6.1(f) The exigent circumstances exception — 409
+- **§ 6.2 Entry without notice to arrest — 435**
+  - § 6.2(a) Sources and purposes of the notice requirement — 435
+  - § 6.2(b) Manner of entry for which notice ordinarily required — 439
+  - § 6.2(c) Compliance with the requirement of notice — 442
+  - § 6.2(d) The emergency exceptions — 445
+  - § 6.2(e) The "useless gesture" exception — 451
+  - § 6.2(f) No-knock warrants — 453
+- **§ 6.3 Search before and incident to arrest — 453**
+  - § 6.3(a) Pre-arrest search — 454
+  - § 6.3(b) The *Chimel* case — 458
+  - § 6.3(c) The "immediate control" test — 462
+- **§ 6.4 Search and exploration after arrest — 476**
+  - § 6.4(a) Post-arrest movements by the arrestee — 476
+  - § 6.4(b) Search for "potential accomplices" — 484
+  - § 6.4(c) The "protective sweep" — 488
+- **§ 6.5 Warrantless entry and search for evidence — 510**
+  - § 6.5(a) The Supreme Court cases — 511
+  - § 6.5(b) Exigent circumstances: destruction or removal of evidence — 517
+  - § 6.5(c) The impoundment alternative — 554
+  - § 6.5(d) Exigent circumstances: risk of death or bodily harm — 575
+  - § 6.5(e) Death scene investigation — 579
+- **§ 6.6 Warrantless entry and search for other purposes — 594**
+  - § 6.6(a) To aid person in need of assistance — 596
+  - § 6.6(b) To protect property — 623
+  - § 6.6(c) For other purposes — 630
+- **§ 6.7 What may be seized — 636**
+  - § 6.7(a) Probable cause — 637
+  - § 6.7(b) The "immediately apparent" requirement — 643
+  - § 6.7(c) The "inadvertent discovery" limitation — 654
+  - § 6.7(d) Subterfuge entry — 655
+  - § 6.7(e) Seizure of obscene materials — 659
+
+### CHAPTER 7 — SEARCH AND SEIZURE OF VEHICLES
+
+- **§ 7.1 Search incident to arrest — 663**
+  - § 7.1(a) Pre-*Belton* approaches — 665
+  - § 7.1(b) The *Belton/Thornton* "bright line" — 673
+  - § 7.1(c) *Gant* and "possibility of access" — 697
+  - § 7.1(d) *Gant* and "offense-related evidence" — 707
+- **§ 7.2 Search and seizure to search for evidence — 721**
+  - § 7.2(a) The *Carroll-Chambers* "movable" vehicle exception — 722
+  - § 7.2(b) The *Carney* "readily mobile"-"reduced expectation of privacy" doctrine — 731
+  - § 7.2(c) Probable cause; particularity — 749
+  - § 7.2(d) Search of containers within vehicle — 758
+  - § 7.2(e) Search of persons within vehicle — 789
+- **§ 7.3 Seizure for other purposes — 791**
+  - § 7.3(a) Vehicle as evidence of crime — 791
+  - § 7.3(b) Vehicle subject to forfeiture or levy — 798
+  - § 7.3(c) Impoundment of vehicle for safekeeping — 808
+  - § 7.3(d) Impoundment of illegally parked vehicle — 827
+  - § 7.3(e) Impoundment of unsafe vehicle — 830
+- **§ 7.4 Search for other purposes — 831**
+  - § 7.4(a) Inventory of impounded vehicle — 834
+  - § 7.4(b) Safeguarding property in vehicle not seized — 865
+  - § 7.4(c) Protecting public from weapon — 868
+  - § 7.4(d) Determining ownership of car — 870
+  - § 7.4(e) Investigating vehicle believed to have been target of a crime — 872
+  - § 7.4(f) Entry of vehicle to aid person in distress — 874
+  - § 7.4(g) Examination of vehicle to see if unsafe condition can be remedied — 876
+  - § 7.4(h) Examination of vehicle to determine cause of accident — 877
+  - § 7.4(i) Protective sweep — 880
+- **§ 7.5 Plain view, subterfuge and related matters — 881**
+  - § 7.5(a) The "plain view" doctrine — 881
+  - § 7.5(b) The "immediately apparent" requirement — 887
+  - § 7.5(c) Delayed or renewed examination of objects in police custody — 892
+  - § 7.5(d) The "inadvertent discovery" limitation; good faith — 898
+  - § 7.5(e) Pretext arrest, detention, impoundment or inventory — 902
+
+---
+
+## Volume 4
+
+### CHAPTER 8 — CONSENT SEARCHES
+
+- **§ 8.1 Nature and scope of consent — 2**
+  - § 8.1(a) Voluntariness vs. waiver of right — 10
+  - § 8.1(b) Voluntariness vs. reasonable belief by the police — 17
+  - § 8.1(c) Scope of consent — 22
+- **§ 8.2 Factors bearing upon validity of consent — 65**
+  - § 8.2(a) Claim of authority — 71
+  - § 8.2(b) Show of force and other coercive surroundings — 81
+  - § 8.2(c) Threat to seek or obtain search warrant — 92
+  - § 8.2(d) Prior illegal police action — 101
+  - § 8.2(e) Maturity, sophistication, physical, mental or emotional state — 121
+  - § 8.2(f) Prior or subsequent refusal to consent — 131
+  - § 8.2(g) Confession or other cooperation — 134
+  - § 8.2(h) Denial of guilt — 143
+  - § 8.2(i) Warning or awareness of Fourth Amendment rights — 148
+  - § 8.2(j) *Miranda* warnings — 155
+  - § 8.2(k) Right to counsel — 158
+  - § 8.2(l) "Implied" consent by engaging in certain activity — 162
+  - § 8.2(m) Deception as to identity — 166
+  - § 8.2(n) Deception as to purpose — 176
+- **§ 8.3 Third party consent — 187**
+  - § 8.3(a) Theoretical bases — 190
+  - § 8.3(b) Significance of antagonism between defendant and third party — 197
+  - § 8.3(c) Significance of defendant's specific instructions to third party — 200
+  - § 8.3(d) Significance of defendant's prior or contemporaneous refusal to consent to search — 203
+  - § 8.3(e) Significance of police failure to seek consent from occupant under suspicion — 218
+  - § 8.3(f) Significance of fact exclusive control maintained as to certain areas or effects within shared premises — 227
+  - § 8.3(g) Significance of reasonable but mistaken belief by police that third party has authority over place searched — 232
+  - § 8.3(h) Significance of reasonable mistake by defendant as to extent of risk involved — 252
+- **§ 8.4 Family relationships — 255**
+  - § 8.4(a) Consent by spouse — 256
+  - § 8.4(b) Consent by parent — 265
+  - § 8.4(c) Consent by child — 274
+- **§ 8.5 Real property relationships — 278**
+  - § 8.5(a) Consent by lessor — 279
+  - § 8.5(b) Consent by lessee — 292
+  - § 8.5(c) Consent by co-tenant or other joint occupant — 293
+  - § 8.5(d) Consent by host — 303
+  - § 8.5(e) Consent by guest — 311
+- **§ 8.6 Other relationships — 313**
+  - § 8.6(a) Consent by bailee — 314
+  - § 8.6(b) Consent by bailor — 325
+  - § 8.6(c) Consent by employee — 328
+  - § 8.6(d) Consent by employer — 335
+  - § 8.6(e) Consent by educational institution — 341
+  - § 8.6(f) Consent by computer owner/operator or user — 345
+
+### CHAPTER 9 — STOP AND FRISK AND SIMILAR LESSER INTRUSIONS
+
+- **§ 9.1 Stop and frisk and Fourth Amendment theory — 352**
+  - § 9.1(a) The road to *Terry* — 354
+  - § 9.1(b) The Supreme Court decisions — 357
+  - § 9.1(c) In or out of the Fourth Amendment? — 359
+  - § 9.1(d) Is probable cause required? — 361
+  - § 9.1(e) Stop and frisk and the hard realities — 365
+- **§ 9.2 Dimensions of a permissible "stop" — 369**
+  - § 9.2(a) Prevention vs. detection — 369
+  - § 9.2(b) Suspects vs. witnesses and others — 377
+  - § 9.2(c) Nature of the suspected offense — 392
+  - § 9.2(d) Use of force; show of force — 398
+  - § 9.2(e) Claim of greater authority — 418
+  - § 9.2(f) Time and investigative method limits — 424
+  - § 9.2(g) Place of detention limits — 457
+- **§ 9.3 Routine traffic stops distinguished — 470**
+  - § 9.3(a) Grounds for stop — 472
+  - § 9.3(b) Applicability of the *Terry* limitations — 483
+  - § 9.3(c) Investigative techniques: records check — 507
+  - § 9.3(d) Investigative techniques: questioning vehicle occupants — 526
+  - § 9.3(e) Investigative techniques: obtaining consent to search — 536
+  - § 9.3(f) Investigative techniques: drug sniffing — 540
+  - § 9.3(g) From seizure to "consensual encounter" — 549
+- **§ 9.4 Action short of a "stop" — 559**
+  - § 9.4(a) The *Mendenhall-Royer* "free to leave" test — 563
+  - § 9.4(b) Factory surveys — 601
+  - § 9.4(c) Bus sweeps and the "free to * * * terminate the encounter" test — 604
+  - § 9.4(d) Flight and the "force * * * or * * * submission" test — 620
+  - § 9.4(e) A four-tier approach? — 640
+- **§ 9.5 Grounds for a permissible "stop" — 643**
+  - § 9.5(a) Of vagueness and subjectivity — 644
+  - § 9.5(b) The *Terry* standard in general — 654
+  - § 9.5(c) Suspicion of particular crime or of criminality generally? — 671
+  - § 9.5(d) Case-by-case balancing — 675
+  - § 9.5(e) Police observation of suspicious conduct re property, premises and persons — 681
+  - § 9.5(f) Police observation of suspected drug couriers — 694
+  - § 9.5(g) Police observation of other suspicious circumstances — 707
+  - § 9.5(h) Location near scene of recent crime — 750
+  - § 9.5(i) Information from an informant — 782
+  - § 9.5(j) Information via police channels — 816
+  - § 9.5(k) Stops "pursuant to a plan embodying explicit, neutral limitations" — 830
+- **§ 9.6 "Frisk" for weapons — 837**
+  - § 9.6(a) Basis for initiating a "frisk" — 838
+  - § 9.6(b) Need for and extent of pat-down of person — 896
+  - § 9.6(c) Grounds for search after pat-down — 906
+  - § 9.6(d) Extent of search of person after pat-down — 914
+  - § 9.6(e) Protective search beyond the person — 918
+  - § 9.6(f) Subterfuge and the exclusionary rule — 938
+  - § 9.6(g) Identification searches distinguished — 940
+- **§ 9.7 Roadblocks — 950**
+  - § 9.7(a) Roadblock near recent serious crime — 950
+  - § 9.7(b) Random roadblocks for general enforcement — 960
+  - § 9.7(c) Barricade to stop fleeing offender — 965
+- **§ 9.8 Other brief detentions to obtain evidence — 966**
+  - § 9.8(a) Grand jury subpoena — 967
+  - § 9.8(b) Appearance at the station absent grounds to arrest — 974
+  - § 9.8(c) Appearance at the station after charge and/or arrest and release on bail — 997
+  - § 9.8(d) Delayed release of arrestee in order to investigate other offenses — 1000
+  - § 9.8(e) Brief seizure of objects — 1006
+
+---
+
+## Volume 5
+
+### CHAPTER 10 — INSPECTIONS AND REGULATORY SEARCHES
+
+- **§ 10.1 Inspection of housing — 2**
+  - § 10.1(a) From *Frank* to *Camara* and *See* — 5
+  - § 10.1(b) Balancing the need against the invasion — 9
+  - § 10.1(c) The search warrant requirement — 17
+  - § 10.1(d) Why an ex parte determination? — 26
+  - § 10.1(e) Execution of the warrant — 30
+  - § 10.1(f) Exceptions to the warrant requirement: consent and emergency — 32
+  - § 10.1(g) Why not advance notice? — 36
+  - § 10.1(h) Inspection upon complaint — 39
+- **§ 10.2 Inspections of businesses — 41**
+  - § 10.2(a) From *Davis* to *Burger* — 44
+  - § 10.2(b) Consent to inspection — 51
+  - § 10.2(c) The implied consent and conditional privilege theories — 53
+  - § 10.2(d) Grounds for inspection — 59
+  - § 10.2(e) Need for warrantless inspection — 75
+  - § 10.2(f) "Carefully limited in time, place and scope" — 84
+  - § 10.2(g) Drug testing of employees — 96
+  - § 10.2(h) Toward a restructured analysis — 105
+- **§ 10.3 Inspections related to government benefits and services — 111**
+  - § 10.3(a) Inspections concerning welfare and other benefits — 112
+  - § 10.3(b) Inspection of mail — 136
+  - § 10.3(c) Military preparedness inspections — 143
+  - § 10.3(d) Employer inspections of government workplaces — 151
+  - § 10.3(e) Drug testing of government personnel — 165
+  - § 10.3(f) Other seizures and searches directed at government personnel — 190
+- **§ 10.4 Inspections at fire scenes — 195**
+  - § 10.4(a) Protected areas and interests — 198
+  - § 10.4(b) Grounds for inspection — 201
+  - § 10.4(c) Need for a warrant — 205
+  - § 10.4(d) Significance of focus on arson as cause — 213
+- **§ 10.5 Border searches — 220**
+  - § 10.5(a) Routine searches upon entry — 221
+  - § 10.5(b) Extended detention — 232
+  - § 10.5(c) Strip searches — 243
+  - § 10.5(d) Intermediate searches — 249
+  - § 10.5(e) Intrusions into the body — 251
+  - § 10.5(f) Nonroutine search of inanimate objects — 260
+  - § 10.5(g) Post-entry searches of persons or things known to have recently entered the country — 265
+  - § 10.5(h) Searches near the border of persons or things not known to have crossed the border — 273
+  - § 10.5(i) Roving patrols in the interior — 277
+  - § 10.5(j) Fixed checkpoints in the interior — 291
+  - § 10.5(k) Inspections of incoming international mail — 306
+  - § 10.5(l) Stops and searches at sea — 312
+- **§ 10.6 Airport searches — 326**
+  - § 10.6(a) The hijacker/terrorist detection system — 328
+  - § 10.6(b) Profiling, selectivity and the *Terry* approach — 331
+  - § 10.6(c) Scrutiny of all passengers and the administrative search approach — 339
+  - § 10.6(d) Magnetometer and other screening of the person — 347
+  - § 10.6(e) Inspection of carry-on items — 354
+  - § 10.6(f) The remaining utility of the *Terry* approach in special circumstances — 356
+  - § 10.6(g) Consent and implied consent — 359
+  - § 10.6(h) Subterfuge and the exclusionary rule — 361
+- **§ 10.7 Other area-entry searches — 366**
+  - § 10.7(a) Courthouses and other public-use facilities — 367
+  - § 10.7(b) Jails and prisons — 380
+  - § 10.7(c) Military installations — 386
+  - § 10.7(d) Area blockade in emergency — 390
+- **§ 10.8 Vehicle use regulation — 394**
+  - § 10.8(a) Driver's license and vehicle registration checks — 395
+  - § 10.8(b) Safety inspections of vehicle equipment — 418
+  - § 10.8(c) Weighing and cargo inspections — 423
+  - § 10.8(d) Sobriety checkpoints — 427
+  - § 10.8(e) Game violation inspections — 455
+  - § 10.8(f) Safety and documentation inspections of vessels — 464
+- **§ 10.9 Searches directed at prisoners — 478**
+  - § 10.9(a) Search of cells and effects — 479
+  - § 10.9(b) Search of the person — 487
+  - § 10.9(c) Examination of mail — 500
+  - § 10.9(d) Eavesdropping — 509
+- **§ 10.10 Searches directed at parolees and probationers — 516**
+  - § 10.10(a) The "constructive custody" theory — 522
+  - § 10.10(b) The "act of grace" and "waiver" theories — 525
+  - § 10.10(c) The "administrative search"—balancing theory — 533
+  - § 10.10(d) Permissible surveillance techniques — 550
+  - § 10.10(e) Police involvement; purpose — 575
+  - § 10.10(f) Presentence search of prospective probationer — 589
+- **§ 10.11 Searches directed at students — 591**
+  - § 10.11(a) In loco parentis — 593
+  - § 10.11(b) The balancing test and public school physical searches — 597
+  - § 10.11(c) The balancing test and public school drug testing — 629
+  - § 10.11(d) The balancing test and college searches — 651
+  - § 10.11(e) Need for search warrant — 659
+  - § 10.11(f) Consent and implied consent — 660
+
+---
+
+## Volume 6
+
+### CHAPTER 11 — ADMINISTRATION OF THE EXCLUSIONARY RULE
+
+- **§ 11.1 Waiver or forfeiture of objection — 2**
+  - § 11.1(a) Failure to make timely objection — 3
+  - § 11.1(b) Failure to renew objection — 18
+  - § 11.1(c) Testimony by defendant concerning objects sought to be suppressed — 22
+  - § 11.1(d) Plea of guilty or nolo contendere — 28
+  - § 11.1(e) Conviction on stipulated facts — 38
+- **§ 11.2 The motion to suppress — 41**
+  - § 11.2(a) Making the motion; alleging grounds and facts — 42
+  - § 11.2(b) Burden of proof — 49
+  - § 11.2(c) Standard of proof — 73
+  - § 11.2(d) Hearing; receipt of evidence — 78
+  - § 11.2(e) Ruling on the motion — 100
+  - § 11.2(f) Effect of ruling in that case — 110
+  - § 11.2(g) Effect of ruling in another case — 123
+  - § 11.2(h) Pre-charge motions distinguished — 141
+  - § 11.2(i) Post-trial motions distinguished — 152
+- **§ 11.3 Standing — 159**
+  - § 11.3(a) Residential premises: owners, tenants, family members and the like — 167
+  - § 11.3(b) Residential premises: other persons then lawfully present — 183
+  - § 11.3(c) Residential premises: other invitees and guests and persons with effects on the premises — 207
+  - § 11.3(d) Business premises — 226
+  - § 11.3(e) Vehicles — 243
+  - § 11.3(f) Other storage places; containers and effects in transit — 281
+  - § 11.3(g) Automatic standing — 295
+  - § 11.3(h) Target standing — 301
+  - § 11.3(i) Derivative standing — 308
+  - § 11.3(j) Abolition of standing — 317
+- **§ 11.4 The "fruit of the poisonous tree" — 321**
+  - § 11.4(a) Extent of the taint: "but for"; "attenuated connection"; "independent source"; and "inevitable discovery" — 326
+  - § 11.4(b) Confession as fruit of illegal arrest — 373
+  - § 11.4(c) Confession as fruit of illegal search — 399
+  - § 11.4(d) Search as fruit of prior illegal arrest or detention — 407
+  - § 11.4(e) Arrest as fruit of prior illegal search — 419
+  - § 11.4(f) Search as fruit of prior illegal search — 422
+  - § 11.4(g) Identification of person as fruit of prior illegal arrest — 449
+  - § 11.4(h) Identification of property as fruit of prior illegal search — 469
+  - § 11.4(i) Testimony of witness as a fruit — 470
+  - § 11.4(j) Crime committed in response to illegal arrest or search as a fruit — 483
+- **§ 11.5 Prospective or retroactive application of new rules — 491**
+  - § 11.5(a) Reasons for nonretroactivity — 493
+  - § 11.5(b) The limits of nonretroactivity — 498
+  - § 11.5(c) What is a "new" rule for nonretroactivity purposes? — 503
+  - § 11.5(d) Effect of decision narrowing Fourth Amendment rights — 507
+- **§ 11.6 Permissible use of illegally seized evidence at trial — 508**
+  - § 11.6(a) Impeachment — 509
+  - § 11.6(b) Defense tactics which "open the door" — 524
+  - § 11.6(c) Prosecution for perjury or other "new" offense — 526
+- **§ 11.7 Appeal and collateral attack — 534**
+  - § 11.7(a) Appeal by the defendant — 535
+  - § 11.7(b) Appeal by the prosecution — 541
+  - § 11.7(c) Standards of appellate review — 554
+  - § 11.7(d) Consideration on appeal of facts adduced at trial — 579
+  - § 11.7(e) The plain error rule — 582
+  - § 11.7(f) The harmless error rule — 596
+  - § 11.7(g) Collateral attack — 615
+
+### Back matter
+- Table of Cases — Tbl of Cases-1
+- Table of Laws and Rules — Tbl of L&R-1
+- Table of Secondary Authorities — Tbl of Sec Auth-1
+- Index — Index-1
