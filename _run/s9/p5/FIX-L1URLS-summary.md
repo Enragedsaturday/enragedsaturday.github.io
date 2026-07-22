@@ -80,8 +80,51 @@ machine to adjudicate whether a follow-up packet should correct these four
 table-row URLs to the same MCP-confirmed canonical ids
 (882802->858288, 4218101->9231242, 2094497->856347, 112879->112873).
 
+## 5. ADDENDUM — table-row twins corrected (coordinator adjudication)
+
+The §4 escalation was adjudicated: SAME ruling, SAME canonical ids — the COH17
+slice's MCP confirmations cover the CASE IDENTITY, not the surface. The four
+Case Index table-row twins were corrected to the identical canonical clusters
+(id + slug only, no other text on the line):
+
+| Case | File:line (table row) | old cluster | new cluster |
+|------|-----------------------|-------------|-------------|
+| *Missouri v. McNeely* | SIA Alcohol Tests.md:60 | 882802 | **858288** |
+| *Mitchell v. Wisconsin* | SIA Alcohol Tests.md:61 | 4218101 | **9231242** |
+| *Florida v. Jardines* | Aerial and Enhanced Surveillance.md:75 | 2094497 | **856347** |
+| *Minnesota v. Dickerson* | Terry Stops and Reasonable Suspicion.md:119 | 112879 | **112873** |
+
+No LINT-1 ledger action for these four: they were null pass-rows (not
+violations), so there was no violation key to remove. Each case now carries the
+canonical cluster on BOTH its table-row and Sources-line URL.
+
+**Corpus-wide sweep (post-fix):** `grep -rn` over all of `content/` for every
+old id — both URL-form (`opinion/<id>/`) and bare-number — returns ZERO hits.
+No further twins exist anywhere in the corpus; nothing else to fix or report.
+
+### Handoff note — LINT-1 lint-heuristic backlog (3 items)
+The wikilink-masked-caption blind spot in LINT-1's pairing (this packet's
+diagnosis) JOINS the two COH17 lint-heuristic items. Full backlog for a future
+lint-hardening pass:
+1. **(COH17)** nearest-name pairing grabs a DIFFERENT case named on the same
+   line — pairing should prefer the row's `[[wikilink]]` subject / skip
+   *Id.*-links.
+2. **(COH17)** tokenizer digit-truncation ("District 47J v. Acton" -> want-tokens
+   lose 'acton') — tokenizer should not truncate at digits mid-caption.
+3. **(FIX-L1URLS, new)** `mask_links_and_code` masks a `[[wikilink]]` case
+   caption entirely, so Case Index table rows yield an EMPTY expected-name and
+   pass the identity check trivially (false-negative: a wrong-cluster URL on a
+   wikilink-captioned row is never surfaced). The pairing should read the
+   `[[wikilink]]` target as the expected case name for such rows (dovetails with
+   item 1's "prefer the row's [[wikilink]] subject"). Empirically this hid four
+   real wrong-cluster URLs (SIA:60/61, Aerial:75, Terry:119) that only the
+   Sources-line twins exposed.
+
 ## Outputs
-- `_run/s9/p5/FIX-L1URLS-fixes.jsonl` (5 rows)
+- `_run/s9/p5/FIX-L1URLS-fixes.jsonl` (9 rows: 5 Sources/roster + 4 table-row followup)
 - `_run/s9/p5/FIX-L1URLS-summary.md` (this file)
 - `_run/s9/p5/lint1-ledger.json` (5 violation rows removed)
 - `_run/s9/p5/lint1-ledger.pre-FIX-L1URLS.bak.json` (pre-edit backup)
+- Edited content: SIA Alcohol Tests.md (lines 60, 61, 78, 79), Aerial and
+  Enhanced Surveillance.md (lines 75, 97), Third-Party Doctrine and CSLI.md
+  (line 120), Terry Stops and Reasonable Suspicion.md (lines 119, 156)
