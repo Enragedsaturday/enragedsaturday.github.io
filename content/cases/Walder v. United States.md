@@ -55,7 +55,7 @@ Yes. "It is one thing to say that the Government cannot make an affirmative use 
 A defendant "must be free to deny all the elements of the case against him without thereby giving leave to the Government to introduce by way of rebuttal evidence illegally secured by it"; but "there is hardly justification for letting the defendant affirmatively resort to perjurious testimony in reliance on the Government's disability to challenge his credibility." — [*Id.*](https://www.courtlistener.com/opinion/105188/walder-v-united-states/#:~:text=must%20be%20free%20to%20deny) ^pin-65b
 
 ## Application
-Walder "went beyond a mere denial of complicity in the crimes of which he was charged and made the sweeping claim that he had never dealt in or possessed any narcotics." That volunteered, perjurious assertion on his own direct examination opened the door, so the Government could use the unlawfully seized heroin to impeach his credibility — but only for impeachment, not as substantive proof of the charged offenses (hence the limiting instruction). The Court "sharply contrasted" this with *[[Agnello v. United States]]*, where the Government, after the defendant said nothing about the evidence on direct, tried to smuggle suppressed evidence in through its own cross-examination — which is impermissible.
+Walder "went beyond a mere denial of complicity in the crimes of which he was charged and made the sweeping claim that he had never dealt in or possessed any narcotics." That volunteered, perjurious assertion on his own direct examination opened the door, so the Government could use the unlawfully seized heroin to impeach his credibility, but only for impeachment, not as substantive proof of the charged offenses (hence the limiting instruction). The Court "sharply contrasted" this with *[[Agnello v. United States]]*, where the Government, after the defendant said nothing about the evidence on direct, tried to smuggle suppressed evidence in through its own cross-examination — which is impermissible.
 
 ## Conclusion
 Because Walder himself opened the door with a sweeping false claim, the impeachment use of the suppressed evidence was proper; the conviction was affirmed.
@@ -65,7 +65,7 @@ Because Walder himself opened the door with a sweeping false claim, the impeachm
 - No negative treatment. *Walder* is the origin of the **impeachment exception** to the exclusionary rule, built on [[Weeks v. United States]] and distinguishing [[Agnello v. United States]]. It was later extended to statements taken in violation of *[[Miranda v. Arizona|Miranda]]* ([[Harris v. New York]]) and to cross-examination reasonably suggested by direct in [[United States v. Havens]], and cabined to the defendant himself (no other defense witnesses) in [[James v. Illinois]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Anchor (impeachment exception)*
+- [[The Exclusionary Rule]] — *Key: Anchor (impeachment exception)*
 
 ## Sources
-- *Walder v. United States*, 347 U.S. 62 (1954) — https://www.courtlistener.com/opinion/105188/walder-v-united-states/ — pinpoints: 65, 66.
+- [*Walder v. United States*, 347 U.S. 62 (1954)](https://www.courtlistener.com/opinion/105188/walder-v-united-states/) — pinpoints: 65, 66.

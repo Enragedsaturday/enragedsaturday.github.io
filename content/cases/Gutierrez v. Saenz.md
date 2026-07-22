@@ -61,7 +61,7 @@ Ruben Gutierrez was sentenced to death in Texas for a 1998 murder. He has long m
 Whether Gutierrez has Article III standing to bring a § 1983 due-process challenge to Texas's postconviction DNA-testing procedures.
 
 ## Rule
-Standing requires an injury that is redressable by a favorable decision, but redressability does not demand that relief guarantee an ultimate favorable outcome; a declaratory judgment satisfies it when it would remove the specific legal barrier the defendant relies on — here, eliminating the prosecutor's reliance on the challenged state law as the reason to deny testing. The Court held: "Gutierrez has standing to bring his §1983 claim challenging Texas's postconviction DNA testing procedures under the Due Process Clause." — 606 U.S. 305. ^pin-314
+Standing requires an injury that is redressable by a favorable decision, but redressability does not demand that relief guarantee an ultimate favorable outcome; a declaratory judgment satisfies it when it would remove the specific legal barrier the defendant relies on, here eliminating the prosecutor's reliance on the challenged state law as the reason to deny testing. The Court held: "Gutierrez has standing to bring his §1983 claim challenging Texas's postconviction DNA testing procedures under the Due Process Clause." — 606 U.S. 305. ^pin-314
 
 ## Application
 Gutierrez's injury was the denial of access to DNA testing under an assertedly unconstitutional procedure. A declaration that Texas's scheme violates due process would redress that injury by knocking out the prosecutor's stated legal justification for refusing to test — even if the State might later invoke some other ground, and even though testing might not ultimately exonerate him. The Court analogized to *Reed v. Goertz*, where a nearly identical § 1983 challenge to the same Texas statute cleared the standing bar.
@@ -70,10 +70,10 @@ Gutierrez's injury was the denial of access to DNA testing under an assertedly u
 **Reversed and [[Reading and Citing Cases#on-remand|remanded]]** (93 F.4th 267). Justice Sotomayor wrote for the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Gutierrez* extends *Reed v. Goertz* and reinforces that a § 1983 procedural-due-process plaintiff challenging a postconviction evidence scheme need only show that a favorable declaration would clear away the challenged barrier — a redressability point of general importance to standing under the civil-rights statute.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Gutierrez* extends *Reed v. Goertz* and reinforces that a § 1983 procedural-due-process plaintiff challenging a postconviction evidence scheme need only show that a favorable declaration would clear away the challenged barrier, a redressability point of general importance to standing under the civil-rights statute.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — first-page cite (interior pincite 314 retired pending official-reporter pagination: `html_with_citations` empty, no star pagination; standing / redressability holding at syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print) — string-matched 2026-07-07.
+- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — first-page cite (interior pincite 314 retired pending official-reporter pagination: `html_with_citations` empty, no star pagination; standing / redressability holding at syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print), string-matched 2026-07-07.

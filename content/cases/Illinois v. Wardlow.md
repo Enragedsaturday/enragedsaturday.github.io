@@ -57,7 +57,7 @@ Yes. "Our cases have also recognized that nervous, evasive behavior is a pertine
 Location is also a relevant consideration: "An individual's presence in an area of expected criminal activity, standing alone, is not enough to support a reasonable, particularized suspicion that the person is committing a crime. But officers are not required to ignore the relevant characteristics of a location in determining whether the circumstances are sufficiently suspicious to warrant further investigation." — *Id.* ^pin-124b
 
 ## Application
-Wardlow was present in an area of heavy narcotics trafficking and engaged in unprovoked, headlong flight the moment he noticed the police. Taking those facts together — the high-crime location as context plus the evasive flight — Officer Nolan had reasonable suspicion that Wardlow was involved in criminal activity, justifying the *[[Terry v. Ohio|Terry]]* stop and the protective pat-down that uncovered the handgun.
+Wardlow was present in an area of heavy narcotics trafficking and engaged in unprovoked, headlong flight the moment he noticed the police. Taking those facts together (the high-crime location as context plus the evasive flight), Officer Nolan had reasonable suspicion that Wardlow was involved in criminal activity, justifying the *[[Terry v. Ohio|Terry]]* stop and the protective pat-down that uncovered the handgun.
 
 ## Conclusion
 The stop was supported by reasonable suspicion; the judgment suppressing the handgun was reversed.
@@ -67,7 +67,7 @@ The stop was supported by reasonable suspicion; the judgment suppressing the han
 - No negative treatment. *Wardlow* applies the reasonable-suspicion standard of [[Terry v. Ohio]], treating unprovoked flight in a high-crime area as supplying reasonable suspicion under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Appears on
-- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Wardlow*, 528 U.S. 119 (2000) — https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/ — pinpoint: 124.
+- *Illinois v. Wardlow*, 528 U.S. 119 (2000) — https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/. Pinpoint: 124.

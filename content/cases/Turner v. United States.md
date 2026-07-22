@@ -65,7 +65,7 @@ The convictions were affirmed: the suppression, though it occurred, was not mate
 - *Turner* applies the unified materiality standard of [[United States v. Bagley]] and the cumulative, whole-record approach of [[Kyles v. Whitley]] to the disclosure duty of [[Brady v. Maryland]]; compare [[Strickler v. Greene]] (materiality not shown) and [[Smith v. Cain]] (materiality shown).
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Turner v. United States*, 582 U.S. 313 (2017) — https://www.courtlistener.com/opinion/4403802/turner-v-united-states/ — pinpoints: 137 S. Ct. 1893, 1894 (CL text carries S. Ct. page-labels; U.S. Reports interior pages not embedded; cluster 4403802 → opinion 4181055).
+- *Turner v. United States*, 582 U.S. 313 (2017) — https://www.courtlistener.com/opinion/4403802/turner-v-united-states/. Pinpoints: 137 S. Ct. 1893, 1894 (CL text carries S. Ct. page-labels; U.S. Reports interior pages not embedded; cluster 4403802 → opinion 4181055).

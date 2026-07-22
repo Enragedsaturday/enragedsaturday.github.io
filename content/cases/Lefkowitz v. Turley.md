@@ -65,7 +65,7 @@ The statutes were unconstitutional, and the judgment was affirmed. *Lefkowitz* c
 - *Lefkowitz* is good law; it extends [[Garrity v. New Jersey]] and [[Gardner v. Broderick]] beyond employees to independent contractors and states the controlling immunity-not-waiver rule that the federal [[Kalkines v. United States]] warning implements.
 
 ## Appears on
-- [[Public-Employee Compelled Statements (Garrity)]] — *Key — Progeny / Refinement*
+- [[Public-Employee Compelled Statements (Garrity)]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Lefkowitz v. Turley*, 414 U.S. 70 (1973) — https://www.courtlistener.com/opinion/108882/lefkowitz-v-turley/ — pinpoints: 84–85.
+- *Lefkowitz v. Turley*, 414 U.S. 70 (1973) — https://www.courtlistener.com/opinion/108882/lefkowitz-v-turley/. Pinpoints: 84–85.

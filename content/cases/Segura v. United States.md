@@ -47,7 +47,7 @@ lake:
 DEA agents, suspecting Segura and Colon of cocaine trafficking, arrested Segura in his apartment building, entered the apartment without a warrant, and secured it from within for roughly 19 hours until a search warrant arrived. The warrant rested entirely on information the agents knew before the entry. Evidence found during the later warranted search was challenged as fruit of the illegal entry.
 
 ## Issue
-Whether evidence discovered during a later search under a valid warrant—issued on information wholly independent of an earlier illegal entry—must be suppressed as fruit of that entry.
+Whether evidence discovered during a later search under a valid warrant (issued on information wholly independent of an earlier illegal entry) must be suppressed as fruit of that entry.
 
 ## Rule
 Evidence obtained under a genuinely independent warrant is not tainted by a prior illegal entry. "Whether the initial entry was illegal or not is irrelevant to the admissibility of the challenged evidence because there was an independent source for the warrant under which that evidence was seized." — 468 U.S. at 814. ^pin-814
@@ -65,7 +65,7 @@ The evidence seized under the independent warrant was admissible and should not 
 - The independent-source doctrine was elaborated four years later in [[Murray v. United States]]; *Segura* sits alongside [[Nix v. Williams]] ([[Inevitable Discovery and Independent Source|inevitable discovery]]) and [[Illinois v. McArthur]] (securing premises pending a warrant), and applies the "fruit"/taint framework of [[Wong Sun v. United States]].
 
 ## Appears on
-- [[Securing the Scene]] — *Key — Anchor*
+- [[Securing the Scene]] — *Key: Anchor*
 
 ## Sources
-- *Segura v. United States*, 468 U.S. 796 (1984) — https://www.courtlistener.com/opinion/111259/segura-v-united-states/ — pinpoint: 814.
+- [*Segura v. United States*, 468 U.S. 796 (1984)](https://www.courtlistener.com/opinion/111259/segura-v-united-states/) — pinpoint: 814.

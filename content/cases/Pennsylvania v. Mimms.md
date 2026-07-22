@@ -64,7 +64,7 @@ An officer may routinely order a lawfully stopped driver out of the vehicle; the
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Mimms*'s order-out rule was extended to passengers in [[Maryland v. Wilson]].
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Anchor*
+- [[Traffic Stops]] — *Key: Anchor*
 
 ## Sources
-- *Pennsylvania v. Mimms*, 434 U.S. 106 (1977) (per curiam) — https://www.courtlistener.com/opinion/109751/pennsylvania-v-mimms/ — pinpoints: 111, 111 n.6.
+- *Pennsylvania v. Mimms*, 434 U.S. 106 (1977) (per curiam) — https://www.courtlistener.com/opinion/109751/pennsylvania-v-mimms/. Pinpoints: 111, 111 n.6.

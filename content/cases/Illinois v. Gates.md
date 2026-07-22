@@ -69,9 +69,9 @@ The warrant was valid under the totality-of-the-circumstances test; the suppress
 - No negative treatment of *Gates*. *Gates* itself **abandoned** the rigid two-pronged framework of [[Aguilar v. Texas]] and [[Spinelli v. United States]], replacing it with the flexible totality-of-the-circumstances standard.
 
 ## Appears on
-- [[Probable Cause]] — *Key — Anchor*
+- [[Probable Cause]] — *Key: Anchor*
 - [[Probable Cause in the Affidavit]] — *Related (cross-doctrine)*
-- [[The Proof Ladder]] — *Key — rung anchor*
+- [[The Proof Ladder]] — *Key: rung anchor*
 
 ## Sources
-- *Illinois v. Gates*, 462 U.S. 213 (1983) — https://www.courtlistener.com/opinion/110959/illinois-v-gates/ — pinpoint: 238.
+- *Illinois v. Gates*, 462 U.S. 213 (1983) — https://www.courtlistener.com/opinion/110959/illinois-v-gates/ (pinpoint: 238).

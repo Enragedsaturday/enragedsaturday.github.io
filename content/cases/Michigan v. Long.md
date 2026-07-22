@@ -65,7 +65,7 @@ The protective vehicle search was valid; reversed and [[Reading and Citing Cases
 - No negative treatment. *Long* extends the *[[Terry v. Ohio|Terry]]* protective-frisk rationale ([[Terry v. Ohio]]) from the person to the passenger compartment of a vehicle.
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Progeny / Refinement*
+- [[Traffic Stops]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan v. Long*, 463 U.S. 1032 (1983) — https://www.courtlistener.com/opinion/111020/michigan-v-long/ — pinpoint: 1049.
+- *Michigan v. Long*, 463 U.S. 1032 (1983) — https://www.courtlistener.com/opinion/111020/michigan-v-long/. Pinpoint: 1049.

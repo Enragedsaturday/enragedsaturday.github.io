@@ -62,10 +62,10 @@ Automatic standing is overruled; a defendant charged with a possessory crime mus
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Salvucci* — decided the same day as *[[Rawlings v. Kentucky]]* — completes the absorption of "standing" into substantive Fourth Amendment analysis begun in [[Rakas v. Illinois]]: possession of the seized goods alone no longer confers standing. It **overrules** the automatic-standing rule of [[Jones v. United States]] (1960).
+- No negative treatment. *Salvucci*, decided the same day as *[[Rawlings v. Kentucky]]*, completes the absorption of "standing" into substantive Fourth Amendment analysis begun in [[Rakas v. Illinois]]: possession of the seized goods alone no longer confers standing. It **overrules** the automatic-standing rule of [[Jones v. United States]] (1960).
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *United States v. Salvucci*, 448 U.S. 83 (1980) — https://www.courtlistener.com/opinion/110325/united-states-v-salvucci/ — pinpoint: 85 (parallel 100 S. Ct. 2547).
+- *United States v. Salvucci*, 448 U.S. 83 (1980) — https://www.courtlistener.com/opinion/110325/united-states-v-salvucci/; pinpoint: 85 (parallel 100 S. Ct. 2547).

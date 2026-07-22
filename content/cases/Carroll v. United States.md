@@ -55,7 +55,7 @@ Yes. The Court distinguished fixed premises from vehicles: there is "a necessary
 The exception rests on probable cause plus the vehicle's ready mobility; a warrantless search of a vehicle on probable cause to believe it carries contraband is reasonable.
 
 ## Application
-The officers had probable cause — built on prior dealings and recognition of the car and its occupants — to believe Carroll's automobile was carrying contraband liquor. Because the car was readily movable and a warrant could not practicably be obtained before it left the area, the warrantless search of the vehicle on these facts was reasonable under the Fourth Amendment.
+The officers had probable cause (built on prior dealings and recognition of the car and its occupants) to believe Carroll's automobile was carrying contraband liquor. Because the car was readily movable and a warrant could not practicably be obtained before it left the area, the warrantless search of the vehicle on these facts was reasonable under the Fourth Amendment.
 
 ## Conclusion
 The warrantless search of the moving automobile on probable cause was lawful; the conviction was affirmed. *Carroll* is the origin of the automobile exception.
@@ -65,7 +65,7 @@ The warrantless search of the moving automobile on probable cause was lawful; th
 - No negative treatment. *Carroll*'s rule has been repeatedly reaffirmed and elaborated — extended to delayed station-house searches in [[Chambers v. Maroney]], grounded in ready mobility and pervasive regulation in [[California v. Carney]], and unified for containers in [[California v. Acevedo]]; its reach was bounded at the home's [[Curtilage|curtilage]] in [[Collins v. Virginia]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Anchor*
+- [[Automobile Exception]] — *Key: Anchor*
 
 ## Sources
-- *Carroll v. United States*, 267 U.S. 132 (1925) — https://www.courtlistener.com/opinion/100567/carroll-v-united-states/ — pinpoint given as CourtListener paragraph number (¶ 37); CL's text of this 1925 opinion is paragraph-numbered without U.S. Reports star pagination at the quoted passage.
+- [*Carroll v. United States*, 267 U.S. 132 (1925)](https://www.courtlistener.com/opinion/100567/carroll-v-united-states/) — pinpoint given as CourtListener paragraph number (¶ 37); CL's text of this 1925 opinion is paragraph-numbered without U.S. Reports star pagination at the quoted passage.

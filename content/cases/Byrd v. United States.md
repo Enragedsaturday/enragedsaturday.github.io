@@ -53,7 +53,7 @@ Whether a driver in otherwise lawful possession and control of a rental car has 
 "The Court now holds that, as a general rule, someone in otherwise lawful possession and control of a rental car has a reasonable expectation of privacy in it even if the rental agreement does not list him or her as an authorized driver." — *Byrd v. United States*, 584 U.S. 395 (2018) (slip op., at 2). ^pin-op2
 
 ## Application
-Byrd was the sole occupant in possession and control of the rental car, a situation the Court likened to one who is lent an apartment and can exclude others; not being listed on the agreement did not, by itself, defeat his expectation of privacy. The Court did not finally resolve his case, remanding to address the Government's argument that he was no better than a car thief — who would lack any legitimate expectation of privacy — and whether probable cause justified the search in any event.
+Byrd was the sole occupant in possession and control of the rental car, a situation the Court likened to one who is lent an apartment and can exclude others; not being listed on the agreement did not, by itself, defeat his expectation of privacy. The Court did not finally resolve his case, remanding to address the Government's argument that he was no better than a car thief (who would lack any legitimate expectation of privacy) and whether probable cause justified the search in any event.
 
 ## Conclusion
 An unlisted but lawful driver generally has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a rental car; the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -63,7 +63,7 @@ An unlisted but lawful driver generally has a [[Reasonable Expectation of Privac
 - No negative treatment. *Byrd* refines the standing framework of [[Rakas v. Illinois]] and [[Jones v. United States]] for the rental-car context.
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Byrd v. United States*, 584 U.S. 395 (2018) — https://www.courtlistener.com/opinion/4497658/byrd-v-united-states/ — pinpoint: slip op., at 2 (CL carries the slip opinion; cluster 4497658 → opinion 4274911).
+- *Byrd v. United States*, 584 U.S. 395 (2018) — https://www.courtlistener.com/opinion/4497658/byrd-v-united-states/. Pinpoint: slip op., at 2 (CL carries the slip opinion; cluster 4497658 → opinion 4274911).

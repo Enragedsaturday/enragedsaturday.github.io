@@ -68,4 +68,4 @@ The 20-minute detention was reasonable; the Court of Appeals erred in adopting a
 - [[Terry Stops and Reasonable Suspicion]] — *Progeny (duration)*
 
 ## Sources
-- *United States v. Sharpe*, 470 U.S. 675 (1985) — https://www.courtlistener.com/opinion/111378/united-states-v-sharpe/ — pinpoints: 685, 686.
+- *United States v. Sharpe*, 470 U.S. 675 (1985) — https://www.courtlistener.com/opinion/111378/united-states-v-sharpe/. Pinpoints: 685, 686.

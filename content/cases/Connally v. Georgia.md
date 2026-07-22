@@ -50,7 +50,7 @@ A Georgia justice of the peace issued a search warrant for Connally's premises. 
 Is a search warrant valid under the Fourth Amendment when issued by a magistrate who is compensated for issuing the warrant but receives nothing for denying it?
 
 ## Rule
-No. Applying the principle of *Tumey* and *Ward*, the justice's "financial welfare . . . is enhanced by positive action and is not enhanced by negative action" — a system offering "'a possible temptation to the average man as a judge . . . or which might lead him not to hold the balance nice, clear and true between the State and the accused.'" — 429 U.S. at 250. ^pin-250
+No. Applying the principle of *Tumey* and *Ward*, the justice's "financial welfare . . . is enhanced by positive action and is not enhanced by negative action", a system offering "'a possible temptation to the average man as a judge . . . or which might lead him not to hold the balance nice, clear and true between the State and the accused.'" — 429 U.S. at 250. ^pin-250
 
 The defendant is thus "subjected to what surely is judicial action by an officer of a court who has 'a direct, personal, substantial, pecuniary interest' in his conclusion to issue or to deny the warrant." — *Id.* ^pin-250b
 
@@ -70,4 +70,4 @@ The warrant violated the Fourth and Fourteenth Amendments; the judgment of the G
 - [[The Neutral and Detached Magistrate]] — *Progeny*
 
 ## Sources
-- *Connally v. Georgia*, 429 U.S. 245 (1977) (per curiam) — https://www.courtlistener.com/opinion/109572/connally-v-georgia/ — pinpoints: 250, 251.
+- *Connally v. Georgia*, 429 U.S. 245 (1977) (per curiam) — https://www.courtlistener.com/opinion/109572/connally-v-georgia/. Pinpoints: 250, 251.

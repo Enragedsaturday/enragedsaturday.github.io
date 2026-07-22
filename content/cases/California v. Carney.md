@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Acting on information that Carney was exchanging marijuana for sex inside his motor home, agents watched a youth enter and leave it, stopped the youth, and then — without a warrant, on probable cause — entered the motor home parked in a downtown lot and found marijuana. Carney argued his motor home was more like a home than a vehicle.
+Acting on information that Carney was exchanging marijuana for sex inside his motor home, agents watched a youth enter and leave it, stopped the youth, and then (without a warrant, on probable cause) entered the motor home parked in a downtown lot and found marijuana. Carney argued his motor home was more like a home than a vehicle.
 
 ## Issue
 Whether the automobile exception to the warrant requirement applies to a motor home that is readily mobile.
@@ -55,7 +55,7 @@ The vehicle exception rests on two justifications: "the pervasive schemes of reg
 Both come into play for a readily mobile vehicle: "First, the vehicle is obviously readily mobile by the turn of an ignition key, if not actually moving. Second, there is a reduced expectation of privacy stemming from its use as a licensed motor vehicle subject to a range of police regulation inapplicable to a fixed dwelling." — [*Id.* at 393](https://www.courtlistener.com/opinion/111423/california-v-carney/#:~:text=First%2C%20the%20vehicle%20is%20obviously). ^pin-393
 
 ## Application
-Carney's motor home was readily mobile — licensed, on the public roads, and parked in a lot rather than set up as a residence — and was subject to the pervasive regulation that reduces privacy expectations in vehicles. Both justifications applied, so the warrantless search on probable cause fell within the automobile exception despite the vehicle's homelike attributes.
+Carney's motor home was readily mobile (licensed, on the public roads, and parked in a lot rather than set up as a residence) and was subject to the pervasive regulation that reduces privacy expectations in vehicles. Both justifications applied, so the warrantless search on probable cause fell within the automobile exception despite the vehicle's homelike attributes.
 
 ## Conclusion
 The automobile exception applied to the motor home; the judgment suppressing the marijuana was reversed.
@@ -65,7 +65,7 @@ The automobile exception applied to the motor home; the judgment suppressing the
 - No negative treatment. *Carney* states the modern two-justification rationale for the automobile exception rooted in [[Carroll v. United States]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *California v. Carney*, 471 U.S. 386 (1985) — https://www.courtlistener.com/opinion/111423/california-v-carney/ — pinpoints: 392, 393.
+- [*California v. Carney*, 471 U.S. 386 (1985)](https://www.courtlistener.com/opinion/111423/california-v-carney/) — pinpoints: 392, 393.

@@ -55,7 +55,7 @@ No. [[Particularity]] is a requirement of the warrant itself, not of the support
 Because the warrant "did not describe the items to be seized at all," it "was so obviously deficient that we must regard the search as 'warrantless'." — *Id.* at 558. ^pin-558
 
 ## Application
-Groh's warrant described only the house, not the firearms and explosives that were its object, and nothing cured the defect — no incorporation by reference, no affidavit accompanying the warrant, no copy of the items left with the family. Because the warrant failed the [[Particularity|particularity]] requirement on its face, and so plainly that any reasonable officer who prepared it would have recognized the defect, the search was effectively warrantless and Groh — who drafted and led it — was not entitled to [[Qualified Immunity|qualified immunity]].
+Groh's warrant described only the house, not the firearms and explosives that were its object, and nothing cured the defect — no incorporation by reference, no affidavit accompanying the warrant, no copy of the items left with the family. Because the warrant failed the [[Particularity|particularity]] requirement on its face, and so plainly that any reasonable officer who prepared it would have recognized the defect, the search was effectively warrantless and Groh (who drafted and led it) was not entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
 The facially deficient warrant rendered the search unconstitutional, and the officer who prepared and executed it was denied [[Qualified Immunity|qualified immunity]]; the judgment in his favor was reversed.
@@ -65,7 +65,7 @@ The facially deficient warrant rendered the search unconstitutional, and the off
 - No negative treatment. *Groh* is a leading [[Particularity|particularity]]-clause decision and a marker for when a warrant is so facially deficient that good-faith reliance on it is unreasonable.
 
 ## Appears on
-- [[Particularity]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Groh v. Ramirez*, 540 U.S. 551 (2004) — https://www.courtlistener.com/opinion/131161/groh-v-ramirez/ — pinpoints: 557, 558.
+- *Groh v. Ramirez*, 540 U.S. 551 (2004) — https://www.courtlistener.com/opinion/131161/groh-v-ramirez/. Pinpoints: 557, 558.

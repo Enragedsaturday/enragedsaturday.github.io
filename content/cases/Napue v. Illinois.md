@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-At Napue's murder trial, the State's key witness — an accomplice already convicted of the same murder — falsely testified that he had received no promise of consideration in exchange for his testimony, when in fact the prosecutor had promised to help him. The prosecutor knew the testimony was false and did nothing to correct it.
+At Napue's murder trial, the State's key witness, an accomplice already convicted of the same murder, falsely testified that he had received no promise of consideration in exchange for his testimony, when in fact the prosecutor had promised to help him. The prosecutor knew the testimony was false and did nothing to correct it.
 
 ## Issue
 Whether the knowing use of false testimony violates due process even when the falsehood goes only to the witness's credibility rather than directly to the defendant's guilt.
@@ -67,7 +67,7 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]: the prosecution's 
 - No negative treatment. *Napue* is foundational to the prosecutorial-duty line later developed in [[Giglio v. United States]] and synthesized with [[Brady v. Maryland]]'s disclosure rule.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Napue v. Illinois*, 360 U.S. 264 (1959) — https://www.courtlistener.com/opinion/105912/napue-v-illinois/ — pinpoint: 269.
+- *Napue v. Illinois*, 360 U.S. 264 (1959) — https://www.courtlistener.com/opinion/105912/napue-v-illinois/; pinpoint: 269.

@@ -50,7 +50,7 @@ Hampton was convicted of selling heroin to undercover federal agents. He claimed
 Whether the Government's supplying the contraband that a predisposed defendant then sells bars his conviction — either under the entrapment defense or under the Due Process Clause.
 
 ## Rule
-No. A predisposed defendant cannot claim entrapment, and — in the plurality's view — due process does not bar his conviction even where a government agent supplied the contraband. "The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment." — 425 U.S. at 490. ^pin-490
+No. A predisposed defendant cannot claim entrapment, and, in the plurality's view, due process does not bar his conviction even where a government agent supplied the contraband. "The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment." — 425 U.S. at 490. ^pin-490
 
 "If the police engage in illegal activity in concert with a defendant beyond the scope of their duties the remedy lies, not in freeing the equally culpable defendant, but in prosecuting the police under the applicable provisions of state or federal law." — *Id.* ^pin-490a
 
@@ -65,7 +65,7 @@ The conviction was affirmed; the defendant's predisposition foreclosed the entra
 - No negative treatment. *Hampton* is a plurality decision; its judgment forecloses entrapment for a predisposed defendant, while the broader due-process holding (no bar even when the Government supplies contraband) commanded only three votes, with Powell and Blackmun reserving the possibility of an outrageous-government-conduct due-process defense in a future case.
 
 ## Appears on
-- [[Entrapment]] — *Key — Progeny / Refinement*
+- [[Entrapment]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Hampton v. United States*, 425 U.S. 484 (1976) — https://www.courtlistener.com/opinion/109437/hampton-v-united-states/ — pinpoint: 490.
+- *Hampton v. United States*, 425 U.S. 484 (1976) — https://www.courtlistener.com/opinion/109437/hampton-v-united-states/. Pinpoint: 490.

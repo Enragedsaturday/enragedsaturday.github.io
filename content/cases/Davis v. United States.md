@@ -52,7 +52,7 @@ Whether an ambiguous or equivocal reference to counsel during custodial interrog
 ## Rule
 No; the invocation of counsel must be unambiguous. "[T]he suspect must unambiguously request counsel. . . . [H]e must articulate his desire to have counsel present sufficiently clearly that a reasonable police officer in the circumstances would understand the statement to be a request for an attorney. If the statement fails to meet the requisite level of clarity, *Edwards* does not require that the officers stop questioning the suspect." — 512 U.S. 452, 459. ^pin-459
 
-A merely ambiguous reference to a lawyer — one that a reasonable officer would understand only as a possible invocation — does not trigger the *[[Edwards v. Arizona|Edwards]]* bar, and officers are not required (though it may be good practice) to ask clarifying questions.
+A merely ambiguous reference to a lawyer (one that a reasonable officer would understand only as a possible invocation) does not trigger the *[[Edwards v. Arizona|Edwards]]* bar, and officers are not required (though it may be good practice) to ask clarifying questions.
 
 ## Application
 Davis's remark that maybe he should talk to a lawyer was, on these facts, not a clear request for counsel a reasonable officer would have understood as an invocation; indeed, when the agents sought clarification, Davis disclaimed wanting a lawyer. Because his reference was ambiguous and not an unambiguous request, the agents were not required to cease questioning, and his subsequent statements were admissible.
@@ -65,7 +65,7 @@ The ambiguous reference did not invoke the right to counsel; the conviction was 
 - No negative treatment. *Davis* refines [[Edwards v. Arizona]] by setting the clarity threshold for invoking counsel; [[Berghuis v. Thompkins]] later applied the same unambiguous-invocation logic to the right to remain silent.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Davis v. United States*, 512 U.S. 452 (1994) — https://www.courtlistener.com/opinion/117863/davis-v-united-states/ — pinpoint: 459.
+- *Davis v. United States*, 512 U.S. 452 (1994) — https://www.courtlistener.com/opinion/117863/davis-v-united-states/. Pinpoint: 459.

@@ -62,7 +62,7 @@ A *[[Miranda v. Arizona|Miranda]]*-warned waiver was a valid waiver of the Sixth
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Patterson* remains good law; [[Montejo v. Louisiana]] later relied on it in overruling [[Michigan v. Jackson]], leaving *Patterson*'s waiver rule intact.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Patterson v. Illinois*, 487 U.S. 285 (1988) — https://www.courtlistener.com/opinion/112127/patterson-v-illinois/ — pinpoint: 296.
+- [*Patterson v. Illinois*, 487 U.S. 285 (1988)](https://www.courtlistener.com/opinion/112127/patterson-v-illinois/) — pinpoint: 296.

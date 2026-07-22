@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A federal tax investigator obtained a warrant to search Harris's premises for nontaxpaid liquor. The affidavit recited the affiant's knowledge of Harris's longstanding reputation as a trafficker in illicit whiskey and a tip from a confidential informant — who feared for his safety — stating that he had repeatedly, and recently, purchased illicit whiskey at the premises over the past two years. The Court of Appeals held the affidavit insufficient under *[[Aguilar v. Texas]]* and *[[Spinelli v. United States]]*.
+A federal tax investigator obtained a warrant to search Harris's premises for nontaxpaid liquor. The affidavit recited the affiant's knowledge of Harris's longstanding reputation as a trafficker in illicit whiskey and a tip from a confidential informant (who feared for his safety) stating that he had repeatedly, and recently, purchased illicit whiskey at the premises over the past two years. The Court of Appeals held the affidavit insufficient under *[[Aguilar v. Texas]]* and *[[Spinelli v. United States]]*.
 
 ## Issue
-May an informant's tip support probable cause for a warrant where it is corroborated by the affiant's knowledge of the suspect's reputation and by the informant's own admission — against his penal interest — of buying illicit whiskey at the premises?
+May an informant's tip support probable cause for a warrant where it is corroborated by the affiant's knowledge of the suspect's reputation and by the informant's own admission (against his penal interest) of buying illicit whiskey at the premises?
 
 ## Rule
 Yes. The informant's statements "were against the informant's penal interest, for he thereby admitted major elements of an offense." Because "[p]eople do not lightly admit a crime and place critical evidence in the hands of the police in the form of their own admissions," such "[a]dmissions of crime, like admissions against proprietary interests, carry their own indicia of credibility — sufficient at least to support a finding of probable cause to search." — 403 U.S. at 583. ^pin-583
@@ -61,7 +61,7 @@ The admission of long-running illicit purchases "itself and without more, implic
 A magistrate may likewise rely on an officer's knowledge of a suspect's reputation as a "practical consideration of everyday life." — *Id.* at 583. ^pin-583b
 
 ## Application
-The informant admitted repeatedly buying unstamped whiskey from Harris — major elements of a federal offense — so his tip carried its own credibility, undiminished by any payment or promised leniency, and standing alone furnished probable cause to search the premises. The affiant's knowledge of Harris's reputation as a bootlegger added further support. Read commonsensically rather than under a rigid two-pronged formula, the affidavit established probable cause.
+The informant admitted repeatedly buying unstamped whiskey from Harris (major elements of a federal offense), so his tip carried its own credibility, undiminished by any payment or promised leniency, and standing alone furnished probable cause to search the premises. The affiant's knowledge of Harris's reputation as a bootlegger added further support. Read commonsensically rather than under a rigid two-pronged formula, the affidavit established probable cause.
 
 ## Conclusion
 The affidavit established probable cause and the warrant was valid; the judgment below was reversed. (The Chief Justice's opinion was fractured, but a majority agreed with Part III's penal-interest rationale.)
@@ -75,4 +75,4 @@ The affidavit established probable cause and the warrant was valid; the judgment
 - [[Probable Cause in the Affidavit]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Harris*, 403 U.S. 573 (1971) — https://www.courtlistener.com/opinion/108379/united-states-v-harris/ — pinpoints: 583, 584.
+- *United States v. Harris*, 403 U.S. 573 (1971) — https://www.courtlistener.com/opinion/108379/united-states-v-harris/. Pinpoints: 583, 584.

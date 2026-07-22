@@ -55,17 +55,17 @@ No. Under *[[Edwards v. Arizona]]*, once an accused invokes the right to counsel
 "We hold only that, under the clear logical force of settled precedent, an accused's *postrequest* responses to further interrogation may not be used to cast retrospective doubt on the clarity of the initial request itself. Such subsequent statements are relevant only to the distinct question of waiver." — 469 U.S. at 100. ^pin-100
 
 ## Application
-Smith's statement — "Uh, yeah. I'd like to do that" — was, in context, a request for counsel, and questioning should have stopped. The state courts erred by mining his *later* equivocal answers (made only because interrogation wrongly continued) to recharacterize the initial request as ambiguous. Those later answers could bear only on whether Smith waived a right he had already invoked, not on whether he invoked it.
+Smith's statement ("Uh, yeah. I'd like to do that") was, in context, a request for counsel, and questioning should have stopped. The state courts erred by mining his *later* equivocal answers (made only because interrogation wrongly continued) to recharacterize the initial request as ambiguous. Those later answers could bear only on whether Smith waived a right he had already invoked, not on whether he invoked it.
 
 ## Conclusion
 Postrequest responses cannot be used to make an otherwise clear invocation ambiguous. The judgment of the Illinois Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. (The Court expressly left open how to treat a request that is ambiguous from the outset — later answered in *Davis v. United States*.)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Smith*'s narrow holding stands. The threshold question it reserved — what counts as an unambiguous invocation, and whether officers must clarify an ambiguous one — was decided by [[Davis v. United States]] (no duty to clarify; the request must itself be unambiguous).
+- *Smith*'s narrow holding stands. The threshold question it reserved (what counts as an unambiguous invocation, and whether officers must clarify an ambiguous one) was decided by [[Davis v. United States]] (no duty to clarify; the request must itself be unambiguous).
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Smith v. Illinois*, 469 U.S. 91 (1984) (per curiam) — https://www.courtlistener.com/opinion/111288/smith-v-illinois/ — pinpoint: 100.
+- *Smith v. Illinois*, 469 U.S. 91 (1984) (per curiam) — https://www.courtlistener.com/opinion/111288/smith-v-illinois/. Pinpoint: 100.

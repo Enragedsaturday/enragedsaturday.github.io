@@ -10,7 +10,7 @@ circuit: ""
 year: 1959
 date_decided: 1959-05-04
 docket: 278
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105880/frank-v-maryland/"
   cluster_id: 105880
-  opinion_id: null
+  opinion_id: 9421796
   identity_checked: true
 lake:
   record_id: Frank v. Maryland
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Historical administrative-inspection precursor"

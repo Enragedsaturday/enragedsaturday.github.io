@@ -54,7 +54,7 @@ Whether a district attorney's office may be held liable under § 1983 for failur
 ## Rule
 A pattern of violations is ordinarily required. "A pattern of similar constitutional violations by untrained employees is 'ordinarily necessary' to demonstrate deliberate indifference for purposes of failure to train." — 563 U.S. at 62. ^pin-62
 
-*[[City of Canton v. Harris|Canton]]* recognized a "narrow range" of single-incident liability where the need for training is so obvious and the violation so predictable that a pattern is unnecessary — but that exception is confined. "Failure to train prosecutors in their *Brady* obligations does not fall within the narrow range of *Canton's* hypothesized single-incident liability." — [*Id.* at 64](https://www.courtlistener.com/opinion/7343085/connick-v-thompson/#:~:text=a-,narrow%20range). ^pin-64
+*[[City of Canton v. Harris|Canton]]* recognized a "narrow range" of single-incident liability where the need for training is so obvious and the violation so predictable that a pattern is unnecessary. But that exception is confined. "Failure to train prosecutors in their *Brady* obligations does not fall within the narrow range of *Canton's* hypothesized single-incident liability." — [*Id.* at 64](https://www.courtlistener.com/opinion/7343085/connick-v-thompson/#:~:text=a-,narrow%20range). ^pin-64
 
 ## Application
 Thompson did not prove a pattern of similar *[[Brady v. Maryland|Brady]]* violations: the four earlier reversals in Connick's office involved different kinds of suppressed evidence and could not have put the office on notice that training on this type of *[[Brady v. Maryland|Brady]]* violation was deficient. Nor did the single-incident theory apply: unlike the untrained-officer-with-a-gun hypothetical in *[[City of Canton v. Harris|Canton]]*, prosecutors are trained lawyers who are expected to know and apply *[[Brady v. Maryland|Brady]]*, so the need to train them on it is not the kind of "patently obvious" need that supports liability without a pattern.
@@ -67,8 +67,8 @@ Reversed. A single *[[Brady v. Maryland|Brady]]* violation, without a pattern of
 - *Connick* applies and tightens the deliberate-indifference / single-incident framework of [[City of Canton v. Harris]] within the [[Monell v. Department of Social Services]] municipal-liability line, at the intersection with the prosecutor's duty under [[Brady v. Maryland]]. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]]: *Key — Progeny / Refinement*
 - [[Brady and Giglio]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Connick v. Thompson*, 563 U.S. 51 (2011) — https://www.courtlistener.com/opinion/213505/connick-v-thompson/ — pinpoints: 62, 64 (lead opinion id 9441299).
+- *Connick v. Thompson*, 563 U.S. 51 (2011) — https://www.courtlistener.com/opinion/213505/connick-v-thompson/; pinpoints: 62, 64 (lead opinion id 9441299).

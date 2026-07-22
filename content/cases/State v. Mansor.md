@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating the death of Kaliq Mansor's infant son, police obtained a warrant—limited by its supporting affidavit to specified search terms—to search his home computers. The forensic examination produced voluminous additional data (browsing history and other files) beyond those terms, which the State sought to use at trial. Mansor moved to suppress.
+Investigating the death of Kaliq Mansor's infant son, police obtained a warrant, limited by its supporting affidavit to specified search terms, to search his home computers. The forensic examination produced voluminous additional data (browsing history and other files) beyond those terms, which the State sought to use at trial. Mansor moved to suppress.
 
 ## Issue
 Under Article I, section 9 of the Oregon Constitution, what [[Particularity|particularity]] a computer-search warrant must satisfy, and whether the State may use data found on the computer that the warrant did not authorize the police to search for.

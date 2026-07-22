@@ -65,7 +65,7 @@ No *[[Miranda v. Arizona|Miranda]]* warnings were required; the statements were 
 - No negative treatment. *Perkins* limits [[Miranda v. Arizona]] to its coercion rationale and aligns with [[Hoffa v. United States]] on the use of undercover agents; the holding governs the Fifth Amendment only, leaving the Sixth Amendment deliberate-elicitation rule untouched once charges are filed.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Perkins*, 496 U.S. 292 (1990) — https://www.courtlistener.com/opinion/112452/illinois-v-perkins/ — pinpoints: 296, 300.
+- *Illinois v. Perkins*, 496 U.S. 292 (1990) — https://www.courtlistener.com/opinion/112452/illinois-v-perkins/. Pinpoints: 296, 300.

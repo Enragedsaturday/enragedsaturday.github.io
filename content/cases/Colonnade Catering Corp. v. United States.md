@@ -65,7 +65,7 @@ Writing for the Court, Justice Douglas held that the liquor industry's long regu
 But that power must be exercised by statute: "Where Congress has authorized inspection but made no rules governing the procedure that inspectors must follow, the Fourth Amendment and its various restrictive rules apply." Dealing "here with the liquor industry long subject to close supervision and inspection," the Court found that "Congress selected a standard that does not include forcible entries without a warrant." — 397 U.S. at 77. ^pin-77
 
 ## Application
-Because of the industry's history of close supervision, the general rule of *[[See v. City of Seattle|See]]* — that a warrant is required to compel an administrative entry on non-public commercial premises — did not automatically control. But the specific scheme Congress enacted resolved a refusal of entry by imposing a fine, not by authorizing a forcible, warrantless break-in. The agents who broke the storeroom lock therefore exceeded what Congress had authorized, and the seizure was unlawful.
+Because of the industry's history of close supervision, the general rule of *[[See v. City of Seattle|See]]* (that a warrant is required to compel an administrative entry on non-public commercial premises) did not automatically control. But the specific scheme Congress enacted resolved a refusal of entry by imposing a fine, not by authorizing a forcible, warrantless break-in. The agents who broke the storeroom lock therefore exceeded what Congress had authorized, and the seizure was unlawful.
 
 ## Conclusion
 **Reversed.** Douglas, J., wrote for the Court; Burger, C.J. (joined by Black and Stewart, JJ.), dissented. The forcible warrantless entry was not authorized by the statutory inspection scheme.
@@ -76,7 +76,7 @@ Because of the industry's history of close supervision, the general rule of *[[S
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 108077 + 397 U.S. 72); renders under the ⚪ banner until machine verification is complete. *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]* is not yet in the corpus and is named in plain text to avoid a dangling link.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — closely-regulated liquor-industry administrative inspection*
+- [[Special Needs and Administrative Searches]] — *Key: closely-regulated liquor-industry administrative inspection*
 
 ## Sources
 - [*Colonnade Catering Corp. v. United States*, 397 U.S. 72 (1970)](https://www.courtlistener.com/opinion/108077/colonnade-catering-corp-v-united-states/) — pinpoints: 76 (congressional power to inspect the closely regulated liquor industry), 77 (statute authorized a fine, not forcible warrantless entry; Douglas, J.); quotes string-matched to the CL opinion text 2026-07-07.

@@ -67,7 +67,7 @@ The detention and the questioning were reasonable under the Fourth Amendment; th
 - No negative treatment. *Mena* applies and extends [[Michigan v. Summers]]' categorical authority to detain occupants during a warranted search, confirming that reasonable force and incidental questioning fall within it.
 
 ## Appears on
-- [[Securing the Scene]] — *Key — Progeny / Refinement*
+- [[Securing the Scene]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Muehler v. Mena*, 544 U.S. 93 (2005) — https://www.courtlistener.com/opinion/142878/muehler-v-mena/ — pinpoints: 98, 101.
+- *Muehler v. Mena*, 544 U.S. 93 (2005) — https://www.courtlistener.com/opinion/142878/muehler-v-mena/. Pinpoints: 98, 101.

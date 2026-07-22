@@ -65,7 +65,7 @@ The stationhouse search of the shoulder bag was reasonable; the suppression was 
 - No negative treatment. *Lafayette* applies the inventory-search rationale of [[South Dakota v. Opperman]] to the booking of an arrested person, alongside [[Colorado v. Bertine]] and [[Florida v. Wells]] on inventory searches generally.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Lafayette*, 462 U.S. 640 (1983) — https://www.courtlistener.com/opinion/110976/illinois-v-lafayette/ — pinpoint: 648.
+- *Illinois v. Lafayette*, 462 U.S. 640 (1983) — https://www.courtlistener.com/opinion/110976/illinois-v-lafayette/. Pinpoint: 648.

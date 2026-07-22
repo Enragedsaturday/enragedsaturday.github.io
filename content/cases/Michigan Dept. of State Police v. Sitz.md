@@ -63,7 +63,7 @@ Reversed; the suspicionless sobriety-checkpoint program is consistent with the F
 - *Sitz* remains good law for sobriety checkpoints but is **distinguished by** [[City of Indianapolis v. Edmond]], which held unconstitutional checkpoints whose **primary purpose** is detecting ordinary criminal wrongdoing (general crime control) rather than highway safety.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan Dept. of State Police v. Sitz*, 496 U.S. 444 (1990) — https://www.courtlistener.com/opinion/112459/michigan-department-of-state-police-v-sitz/ — pinpoint: 455.
+- *Michigan Dept. of State Police v. Sitz*, 496 U.S. 444 (1990) — https://www.courtlistener.com/opinion/112459/michigan-department-of-state-police-v-sitz/. Pinpoint: 455.

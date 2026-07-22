@@ -65,7 +65,7 @@ The evidence was admissible under the [[The Good-Faith Exception|good-faith exce
 - No negative treatment. *Krull* extends the [[The Good-Faith Exception|good-faith exception]] of [[United States v. Leon]] and [[Massachusetts v. Sheppard]] from reasonable reliance on a warrant to reasonable reliance on a statute later declared unconstitutional.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Krull*, 480 U.S. 340 (1987) — https://www.courtlistener.com/opinion/111835/illinois-v-krull/ — pinpoints: 349, 350.
+- *Illinois v. Krull*, 480 U.S. 340 (1987) — https://www.courtlistener.com/opinion/111835/illinois-v-krull/; pinpoints: 349, 350.

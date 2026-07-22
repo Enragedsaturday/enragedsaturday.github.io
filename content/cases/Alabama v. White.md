@@ -57,7 +57,7 @@ A bare anonymous tip is normally insufficient, but police corroboration of the t
 "Although it is a close case, we conclude that under the totality of the circumstances the anonymous tip, as corroborated, exhibited sufficient indicia of reliability to justify the investigatory stop of respondent's car." — *Id.* at 332. ^pin-332a
 
 ## Application
-The anonymous tip here, standing alone, gave no basis to think the caller was honest or well informed. But the police corroborated significant details — most importantly the caller's accurate prediction of White's *future* conduct (the time she left, the described car, the route toward Dobey's Motel) — which showed the tipster had inside knowledge and made it reasonable to credit the tip's assertion about criminal activity. On the totality of these facts, the corroborated tip carried enough indicia of reliability to justify the stop, "[a]lthough it is a close case."
+The anonymous tip here, standing alone, gave no basis to think the caller was honest or well informed. But the police corroborated significant details, most importantly the caller's accurate prediction of White's *future* conduct (the time she left, the described car, the route toward Dobey's Motel), which showed the tipster had inside knowledge and made it reasonable to credit the tip's assertion about criminal activity. On the totality of these facts, the corroborated tip carried enough indicia of reliability to justify the stop, "[a]lthough it is a close case."
 
 ## Conclusion
 The investigatory stop was supported by reasonable suspicion; the Alabama Court of Criminal Appeals' suppression judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -67,7 +67,7 @@ The investigatory stop was supported by reasonable suspicion; the Alabama Court 
 - No negative treatment. *White* anchors the rule that police corroboration of an anonymous tip's predictive detail can supply reasonable suspicion. The line was refined by [[Florida v. J.L.]] (a bare anonymous tip of a concealed gun, lacking predictive corroboration, is **not** reasonable suspicion) and applied in [[Navarette v. California]] (a contemporaneous, reliable 911 report can supply reasonable suspicion).
 
 ## Appears on
-- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Alabama v. White*, 496 U.S. 325 (1990) — https://www.courtlistener.com/opinion/112454/alabama-v-white/ — pinpoints: 330, 332.
+- *Alabama v. White*, 496 U.S. 325 (1990) — https://www.courtlistener.com/opinion/112454/alabama-v-white/. Pinpoints: 330, 332.

@@ -50,14 +50,14 @@ After Cooper's arrest for a narcotics offense, officers impounded his car under 
 Whether a warrantless search of an automobile that the police are required by state law to seize and hold in custody pending forfeiture is reasonable under the Fourth Amendment.
 
 ## Rule
-Reasonableness — not state-law authorization — is the test, and it turns on the facts: "whether a search and seizure is unreasonable within the meaning of the Fourth Amendment depends upon the facts and circumstances of each case." — 386 U.S. at 59. ^pin-59
+Reasonableness (not state-law authorization) is the test, and it turns on the facts: "whether a search and seizure is unreasonable within the meaning of the Fourth Amendment depends upon the facts and circumstances of each case." — 386 U.S. at 59. ^pin-59
 
 A custodial search tied to the reason for the impoundment is reasonable: the "subsequent search of the car — whether the State had 'legal title' to it or not — was closely related to the reason petitioner was arrested, the reason his car had been impounded, and the reason it was being retained." — *Id.* at 61. ^pin-61
 
 Thus: "Under the circumstances of this case, we cannot hold unreasonable under the Fourth Amendment the examination or search of a car validly held by officers for use as evidence in a forfeiture proceeding." — [*Id.* at 62](https://www.courtlistener.com/opinion/107360/cooper-v-california/#:~:text=Under%20the%20circumstances%20of%20this). ^pin-62
 
 ## Application
-Unlike *[[Preston v. United States|Preston]]* — where the car's custody (after a vagrancy arrest) was "totally unrelated" to the charge — here the statute required officers to seize and retain Cooper's car as evidence pending forfeiture, and they had to keep it for months. The search was closely connected to the reason for that custody, and "[i]t would be unreasonable to hold that the police, having to retain the car in their custody for such a length of time, had no right, even for their own protection, to search it." That the police could have obtained a warrant was no answer, because the test is whether the search was reasonable, not whether a warrant could have been procured.
+Unlike *[[Preston v. United States|Preston]]*, where the car's custody (after a vagrancy arrest) was "totally unrelated" to the charge, here the statute required officers to seize and retain Cooper's car as evidence pending forfeiture, and they had to keep it for months. The search was closely connected to the reason for that custody, and "[i]t would be unreasonable to hold that the police, having to retain the car in their custody for such a length of time, had no right, even for their own protection, to search it." That the police could have obtained a warrant was no answer, because the test is whether the search was reasonable, not whether a warrant could have been procured.
 
 ## Conclusion
 Affirmed. The warrantless search of a car lawfully held in police custody for forfeiture, closely related to the reason for that custody, was reasonable under the Fourth Amendment.
@@ -70,4 +70,4 @@ Affirmed. The warrantless search of a car lawfully held in police custody for fo
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Cooper v. California*, 386 U.S. 58 (1967) — https://www.courtlistener.com/opinion/107360/cooper-v-california/ — pinpoints: 59, 61, 62.
+- *Cooper v. California*, 386 U.S. 58 (1967) — https://www.courtlistener.com/opinion/107360/cooper-v-california/ (pinpoints: 59, 61, 62).

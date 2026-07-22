@@ -67,7 +67,7 @@ The nonconsensual drug-testing policy was an unreasonable search; the judgment u
 - No negative treatment. *Ferguson* applies the programmatic-purpose analysis of [[City of Indianapolis v. Edmond]]: a search program whose immediate purpose is ordinary law enforcement cannot be recharacterized as a "special need."
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Ferguson v. City of Charleston*, 532 U.S. 67 (2001) — https://www.courtlistener.com/opinion/118414/ferguson-v-city-of-charleston/ — pinpoints: 70, 83.
+- *Ferguson v. City of Charleston*, 532 U.S. 67 (2001) — https://www.courtlistener.com/opinion/118414/ferguson-v-city-of-charleston/. Pinpoints: 70, 83.

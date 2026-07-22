@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A police officer stopped a car for burned-out lights. When the driver could not produce a license, the officer asked a passenger — Joe Alcala, brother of the car's owner — for permission to search the car. Alcala said "Sure, go ahead," and helped open the trunk, where stolen checks were found. Bustamonte, another occupant, was convicted; he argued the consent was invalid because no one had been told of a right to refuse.
+A police officer stopped a car for burned-out lights. When the driver could not produce a license, the officer asked a passenger (Joe Alcala, brother of the car's owner) for permission to search the car. Alcala said "Sure, go ahead," and helped open the trunk, where stolen checks were found. Bustamonte, another occupant, was convicted; he argued the consent was invalid because no one had been told of a right to refuse.
 
 ## Issue
 Whether, to establish that consent to a search was voluntary, the State must prove that the person consenting knew he had a right to refuse.
@@ -64,7 +64,7 @@ Consent voluntariness is determined from the totality of all the circumstances, 
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Schneckloth* is the foundational consent-search voluntariness standard, applied in later consent cases such as [[Florida v. Bostick]] and [[United States v. Drayton]].
 
 ## Appears on
-- [[Consent Searches]] — *Key — Anchor*
+- [[Consent Searches]] — *Key: Anchor*
 
 ## Sources
-- *Schneckloth v. Bustamonte*, 412 U.S. 218 (1973) — https://www.courtlistener.com/opinion/108800/schneckloth-v-bustamonte/ — pinpoint: 227.
+- *Schneckloth v. Bustamonte*, 412 U.S. 218 (1973) — https://www.courtlistener.com/opinion/108800/schneckloth-v-bustamonte/. Pinpoint: 227.

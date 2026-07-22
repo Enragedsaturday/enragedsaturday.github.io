@@ -55,7 +55,7 @@ Not every consequence of police illegality is suppressed; "but for" causation is
 Where the link between the illegality and the evidence is sufficiently weakened, the taint dissipates: evidence is admissible when "the connection between the arrest and the statement had 'become so attenuated as to dissipate the taint.'" — *Id.* at 491. ^pin-491
 
 ## Application
-Applying that test to each defendant's evidence, the Court reached different results. Toy's bedroom statements were come at by exploitation of the agents' unlawful entry — they followed immediately on the illegal break-in and were not purged of the primary taint — so they were suppressed; and the heroin Yee surrendered, traced through Toy's tainted statements, was inadmissible against Toy for the same reason. Wong Sun's statement was different: he had been released on his own recognizance after arraignment and returned voluntarily several days later, so the connection between his unlawful arrest and his statement had become so attenuated as to dissipate the taint, and the statement was admissible. (Wong Sun's conviction was nonetheless reversed because of corroboration concerns.)
+Applying that test to each defendant's evidence, the Court reached different results. Toy's bedroom statements were come at by exploitation of the agents' unlawful entry (they followed immediately on the illegal break-in and were not purged of the primary taint), so they were suppressed; and the heroin Yee surrendered, traced through Toy's tainted statements, was inadmissible against Toy for the same reason. Wong Sun's statement was different: he had been released on his own recognizance after arraignment and returned voluntarily several days later, so the connection between his unlawful arrest and his statement had become so attenuated as to dissipate the taint, and the statement was admissible. (Wong Sun's conviction was nonetheless reversed because of corroboration concerns.)
 
 ## Conclusion
 Evidence obtained by exploiting an unlawful arrest is suppressed as [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]], but evidence sufficiently attenuated from the illegality is admissible. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ Evidence obtained by exploiting an unlawful arrest is suppressed as [[Common Leg
 - No negative treatment. *Wong Sun* is the foundational fruit-of-the-poisonous-tree case; its [[Fruits and Attenuation|attenuation]] inquiry was given concrete factors in [[Brown v. Illinois]] and applied to an intervening arrest warrant in [[Utah v. Strieff]]. The related independent-source and inevitable discovery limits appear in [[Nix v. Williams]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Anchor*
+- [[The Exclusionary Rule]] — *Key: Anchor*
 
 ## Sources
-- *Wong Sun v. United States*, 371 U.S. 471 (1963) — https://www.courtlistener.com/opinion/106515/wong-sun-v-united-states/ — pinpoints: 487–488, 491.
+- *Wong Sun v. United States*, 371 U.S. 471 (1963) — https://www.courtlistener.com/opinion/106515/wong-sun-v-united-states/. Pinpoints: 487–488, 491.

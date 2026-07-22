@@ -67,7 +67,7 @@ The properly warned confession was admissible despite the earlier unwarned admis
 - **Limited as applied by [[Missouri v. Seibert]] (2004)**: where officers deliberately use a "question-first, warn-later" two-step technique to undermine *[[Miranda v. Arizona|Miranda]]*, the midstream warnings may be ineffective and the second statement inadmissible. *Elstad* continues to govern the ordinary case of an inadvertent or good-faith failure to warn followed by a properly warned statement. *Elstad* also relies on [[Miranda v. Arizona]] as a prophylactic, not constitutional, rule — a characterization later qualified by [[Dickerson v. United States]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Oregon v. Elstad*, 470 U.S. 298 (1985) — https://www.courtlistener.com/opinion/111364/oregon-v-elstad/ — pinpoints: 314, 318.
+- *Oregon v. Elstad*, 470 U.S. 298 (1985) — https://www.courtlistener.com/opinion/111364/oregon-v-elstad/. Pinpoints: 314, 318.

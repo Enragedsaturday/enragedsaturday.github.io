@@ -50,12 +50,12 @@ After Beheler and several acquaintances tried to steal hashish from a dealer, hi
 Whether [[Miranda and Custodial Interrogation|Miranda warnings]] are required when a suspect, not placed under arrest, voluntarily comes to the police station and is allowed to leave unhindered after a brief interview.
 
 ## Rule
-No. The question "has already been settled clearly by past decisions of this Court." — 463 U.S. at 1121. Beheler "was neither taken into custody nor significantly deprived of his freedom of action. Indeed, Beheler's freedom was not restricted in any way whatsoever." — *Id.* at 1123. ^pin-1123
+No. The question "has already been settled clearly by past decisions of this Court." (463 U.S. at 1121). Beheler "was neither taken into custody nor significantly deprived of his freedom of action. Indeed, Beheler's freedom was not restricted in any way whatsoever." — *Id.* at 1123. ^pin-1123
 
-The custody test is restraint equivalent to arrest: "Although the circumstances of each case must certainly influence a determination of whether a suspect is 'in custody' . . . , the ultimate inquiry is simply whether there is a 'formal arrest or restraint on freedom of movement' of the degree associated with a formal arrest." — *Id.* at 1125 (quoting *Oregon v. Mathiason*, 429 U.S. 492, 495 (1977)). [[Miranda and Custodial Interrogation|Miranda warnings]] are not required "simply because the questioning takes place in the station house, or because the questioned person is one whom the police suspect." — *Id.* (quoting *Mathiason*). ^pin-1125
+The custody test is restraint equivalent to arrest: "Although the circumstances of each case must certainly influence a determination of whether a suspect is 'in custody' . . . , the ultimate inquiry is simply whether there is a 'formal arrest or restraint on freedom of movement' of the degree associated with a formal arrest." — *Id.* at 1125 (quoting *Oregon v. Mathiason*, 429 U.S. 492, 495 (1977)). [[Miranda and Custodial Interrogation|Miranda warnings]] are not required "simply because the questioning takes place in the station house, or because the questioned person is one whom the police suspect." (*Id.*, quoting *Mathiason*). ^pin-1125
 
 ## Application
-The factors the California court emphasized — that the interview occurred at the station and that Beheler was already a suspect because he had spoken to police earlier — do not, by themselves, establish custody. Beheler came voluntarily, was told he was not under arrest, and left to go home afterward; his freedom of movement was never restrained to the degree of a formal arrest. That the police knew more about Beheler than the officers knew in *[[Oregon v. Mathiason|Mathiason]]*, and the time elapsed since the crime, were irrelevant. He was therefore not in custody, and no [[Miranda and Custodial Interrogation|Miranda warnings]] were required before the first interview.
+The factors the California court emphasized (that the interview occurred at the station and that Beheler was already a suspect because he had spoken to police earlier) do not, by themselves, establish custody. Beheler came voluntarily, was told he was not under arrest, and left to go home afterward; his freedom of movement was never restrained to the degree of a formal arrest. That the police knew more about Beheler than the officers knew in *[[Oregon v. Mathiason|Mathiason]]*, and the time elapsed since the crime, were irrelevant. He was therefore not in custody, and no [[Miranda and Custodial Interrogation|Miranda warnings]] were required before the first interview.
 
 ## Conclusion
 A voluntary, non-arrest, free-to-leave station-house interview is not custodial; no [[Miranda and Custodial Interrogation|Miranda warnings]] were required. The judgment of the California Court of Appeal was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ A voluntary, non-arrest, free-to-leave station-house interview is not custodial;
 - No negative treatment. *Beheler* restates and applies [[Oregon v. Mathiason]] in the [[Miranda v. Arizona]] custody line; its "degree associated with a formal arrest" formulation is the standard custody test, later applied to traffic stops in [[Berkemer v. McCarty]] and framed objectively in [[Stansbury v. California]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *California v. Beheler*, 463 U.S. 1121 (1983) (per curiam) — https://www.courtlistener.com/opinion/111023/california-v-beheler/ — pinpoints: 1121, 1123, 1125.
+- *California v. Beheler*, 463 U.S. 1121 (1983) (per curiam) — https://www.courtlistener.com/opinion/111023/california-v-beheler/. Pinpoints: 1121, 1123, 1125.

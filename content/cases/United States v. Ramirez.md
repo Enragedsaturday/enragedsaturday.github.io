@@ -72,4 +72,4 @@ No Fourth Amendment or § 3109 violation occurred; the judgment suppressing the 
 - [[Knock-and-Announce]] — *Progeny*
 
 ## Sources
-- *United States v. Ramirez*, 523 U.S. 65 (1998) — https://www.courtlistener.com/opinion/118180/united-states-v-ramirez/ — pinpoints: 68, 71.
+- *United States v. Ramirez*, 523 U.S. 65 (1998) — https://www.courtlistener.com/opinion/118180/united-states-v-ramirez/; pinpoints: 68, 71.

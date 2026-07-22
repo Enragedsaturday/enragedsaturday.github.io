@@ -75,4 +75,4 @@ The warrantless search of the house was unconstitutional, and admitting its frui
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Vale v. Louisiana*, 399 U.S. 30 (1970) — https://www.courtlistener.com/opinion/108183/vale-v-louisiana/ — pinpoints: 33, 34, 35.
+- [*Vale v. Louisiana*, 399 U.S. 30 (1970)](https://www.courtlistener.com/opinion/108183/vale-v-louisiana/) — pinpoints: 33, 34, 35.

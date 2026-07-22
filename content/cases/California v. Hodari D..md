@@ -65,7 +65,7 @@ No seizure had occurred when Hodari abandoned the cocaine; the judgment suppress
 - No negative treatment. *Hodari D.* refines the seizure framework of [[Terry v. Ohio]] and [[United States v. Mendenhall]] by adding the submission requirement for show-of-authority seizures.
 
 ## Appears on
-- [[Seizure of the Person]] — *Key — Progeny / Refinement*
+- [[Seizure of the Person]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *California v. Hodari D.*, 499 U.S. 621 (1991) — https://www.courtlistener.com/opinion/112579/california-v-hodari-d/ — pinpoint: 626.
+- *California v. Hodari D.*, 499 U.S. 621 (1991) — https://www.courtlistener.com/opinion/112579/california-v-hodari-d/; pinpoint: 626.

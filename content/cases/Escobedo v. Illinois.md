@@ -49,7 +49,7 @@ lake:
 Escobedo was arrested for the murder of his brother-in-law. During interrogation he repeatedly asked to speak with his retained lawyer, who had come to the station and was himself trying to see Escobedo; police refused to let them meet and did not warn Escobedo of his right to remain silent. Escobedo made incriminating statements that were used to convict him.
 
 ## Issue
-Whether the refusal, during a custodial interrogation that had focused on the suspect, to honor his request to consult his retained counsel — coupled with the failure to warn him of his right to remain silent — denied him the Sixth Amendment right to counsel and rendered his statements inadmissible.
+Whether the refusal, during a custodial interrogation that had focused on the suspect, to honor his request to consult his retained counsel (coupled with the failure to warn him of his right to remain silent) denied him the Sixth Amendment right to counsel and rendered his statements inadmissible.
 
 ## Rule
 Yes. "We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect has been taken into police custody, the police carry out a process of interrogations that lends itself to eliciting incriminating statements, the suspect has requested and been denied an opportunity to consult with his lawyer, and the police have not effectively warned him of his absolute constitutional right to remain silent, the accused has been denied 'the Assistance of Counsel' in violation of the Sixth Amendment ... and ... no statement elicited by the police during the interrogation may be used against him at a criminal trial." — 378 U.S. at 490–491. ^pin-490
@@ -65,8 +65,8 @@ The statements were inadmissible; the conviction was reversed. *Escobedo* was th
 - Two years later [[Miranda v. Arizona]] recast the concern as a **Fifth Amendment** matter, and [[Kirby v. Illinois]] (and *[[Moran v. Burbine]]*) confined *Escobedo* "to its own facts." The modern rule is that the **Sixth Amendment** right to counsel attaches only at the initiation of adversary judicial proceedings ([[United States v. Gouveia]]), while custodial interrogation is governed by *[[Miranda v. Arizona|Miranda]]*. *Escobedo* is taught as the historical precursor, not as a freestanding test.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Historical*
+- [[Sixth Amendment Right to Counsel]] — *Key: Historical*
 - [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Escobedo v. Illinois*, 378 U.S. 478 (1964) — https://www.courtlistener.com/opinion/106883/escobedo-v-illinois/ — pinpoint: 490–491.
+- *Escobedo v. Illinois*, 378 U.S. 478 (1964) — https://www.courtlistener.com/opinion/106883/escobedo-v-illinois/ (pinpoint: 490–491).

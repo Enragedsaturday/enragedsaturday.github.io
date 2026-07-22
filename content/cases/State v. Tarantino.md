@@ -57,17 +57,17 @@ Small gaps do not by themselves defeat a [[Reasonable Expectation of Privacy|rea
 And because "the cracks near the porch floor required him to make a probing examination in order to see inside[,] ... defendant's reasonable expectation of privacy remained intact." — *Id.* at 592. ^pin-592
 
 ## Application
-Tarantino had sealed the building—padlocked front door, nailed back doors, boarded windows—so he retained a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in its interior. Because Detective Baker had to bend down and make a probing examination through tiny floor-level cracks, rather than view the interior from an ordinary vantage point, his observation was a warrantless search, and the trial court properly suppressed it.
+Tarantino had sealed the building (padlocked front door, nailed back doors, boarded windows), so he retained a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in its interior. Because Detective Baker had to bend down and make a probing examination through tiny floor-level cracks, rather than view the interior from an ordinary vantage point, his observation was a warrantless search, and the trial court properly suppressed it.
 
 ## Conclusion
 The defendant's expectation of privacy survived the small cracks; the warrantless observation was an unlawful search, and the suppression order was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Persuasive — state, illustrative**.
-- Marks the open-view boundary of the [[Plain View Doctrine|plain-view doctrine]]—an officer's lawful vantage point ([[California v. Ciraolo]]) versus a probing intrusion to see inside—and complements the rule that even a minimal manipulation to observe can itself be a search ([[Arizona v. Hicks]]); applies the expectation-of-privacy test of [[Katz v. United States]].
+- Marks the open-view boundary of the [[Plain View Doctrine|plain-view doctrine]], an officer's lawful vantage point ([[California v. Ciraolo]]) versus a probing intrusion to see inside, and complements the rule that even a minimal manipulation to observe can itself be a search ([[Arizona v. Hicks]]); applies the expectation-of-privacy test of [[Katz v. United States]].
 
 ## Appears on
-- [[Plain View Doctrine]] — *Key — Progeny / Refinement*
+- [[Plain View Doctrine]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *State v. Tarantino*, 322 N.C. 386, 368 S.E.2d 588 (1988) — https://www.courtlistener.com/opinion/1294594/state-v-tarantino/ — pinpoints: 591, 592 (S.E.2d).
+- *State v. Tarantino*, 322 N.C. 386, 368 S.E.2d 588 (1988) — https://www.courtlistener.com/opinion/1294594/state-v-tarantino/. Pinpoints: 591, 592 (S.E.2d).

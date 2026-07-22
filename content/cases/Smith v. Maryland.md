@@ -47,7 +47,7 @@ lake:
 After a robbery victim received threatening and obscene phone calls, police identified Smith as a suspect and, without a warrant, asked the telephone company to install a pen register at its central office to record the numbers dialed from Smith's home phone. The register showed a call placed to the victim. That information helped secure a search warrant for Smith's home, and he moved to suppress the fruits, arguing the pen register was an unconstitutional warrantless search.
 
 ## Issue
-Whether the installation and use of a pen register — a device that records the telephone numbers dialed from a particular line — constitutes a "search" within the meaning of the Fourth Amendment.
+Whether the installation and use of a pen register (a device that records the telephone numbers dialed from a particular line) constitutes a "search" within the meaning of the Fourth Amendment.
 
 ## Rule
 No. A caller has no legitimate expectation of privacy in the numbers he dials, because he voluntarily conveys them to the phone company. "This Court consistently has held that a person has no legitimate expectation of privacy in information he voluntarily turns over to third parties." — 442 U.S. at 743–744. ^pin-743
@@ -65,7 +65,7 @@ Installation and use of the pen register was not a search; the Fourth Amendment 
 - *Smith* remains good law. [[Carpenter v. United States]] (2018) held the third-party doctrine does **not** extend to historical cell-site location information given its uniquely revealing, comprehensive nature, but **expressly declined to overrule** *Smith* or [[United States v. Miller]]; the pen-register/short-term-conveyance holding stands.
 
 ## Appears on
-- [[Third-Party Doctrine & CSLI]] — *Key — Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Key: Anchor*
 
 ## Sources
-- *Smith v. Maryland*, 442 U.S. 735 (1979) — https://www.courtlistener.com/opinion/110118/smith-v-maryland/ — pinpoints: 743–744.
+- *Smith v. Maryland*, 442 U.S. 735 (1979) — https://www.courtlistener.com/opinion/110118/smith-v-maryland/ (pinpoints: 743–744).

@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Armed with an arrest warrant for fugitive Ricky Lyons, DEA agents entered and searched Steagald's home—where they believed Lyons might be found—without a search warrant and without Steagald's consent. They did not find Lyons but found cocaine, and Steagald, who was not named in the arrest warrant, was convicted.
+Armed with an arrest warrant for fugitive Ricky Lyons, DEA agents entered and searched Steagald's home (where they believed Lyons might be found) without a search warrant and without Steagald's consent. They did not find Lyons but found cocaine, and Steagald, who was not named in the arrest warrant, was convicted.
 
 ## Issue
 Whether an arrest warrant for one person justifies entering and searching a third party's home, without that person's consent and absent [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], to look for the subject of the arrest warrant.
@@ -67,9 +67,9 @@ A search warrant was required to search the third party's home for the subject o
 - Companion to [[Payton v. New York]] (an arrest warrant suffices to enter the suspect's own home to arrest him); the related authority to detain occupants incident to a premises search is bounded in [[Bailey v. United States]].
 
 ## Appears on
-- [[Arrest in the Home]] — *Key — Progeny / Refinement*
-- [[Entry to Arrest]] — *Key — Progeny / Refinement*
+- [[Arrest in the Home]] — *Key: Progeny / Refinement*
+- [[Entry to Arrest]] — *Key: Progeny / Refinement*
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Steagald v. United States*, 451 U.S. 204 (1981) — https://www.courtlistener.com/opinion/110464/steagald-v-united-states/ — pinpoint: 205–206.
+- *Steagald v. United States*, 451 U.S. 204 (1981) — https://www.courtlistener.com/opinion/110464/steagald-v-united-states/. Pinpoint: 205–206.

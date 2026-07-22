@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A United States Commissioner issued a search warrant for the Bouckville Hotel on July 6, 1926, based on an affidavit that the proprietor, Sgro, had sold beer. The warrant was not executed within the ten days the governing statute allowed. On July 27, 1926 — after the warrant had expired — the prohibition agents returned it to the Commissioner, who simply changed the date from July 6 to July 27 and "thus reissued" it on the strength of the original July 6 affidavit. Agents searched the hotel under the redated warrant and found liquor, which was introduced at trial over Sgro's objection.
+A United States Commissioner issued a search warrant for the Bouckville Hotel on July 6, 1926, based on an affidavit that the proprietor, Sgro, had sold beer. The warrant was not executed within the ten days the governing statute allowed. On July 27, 1926, after the warrant had expired, the prohibition agents returned it to the Commissioner, who simply changed the date from July 6 to July 27 and "thus reissued" it on the strength of the original July 6 affidavit. Agents searched the hotel under the redated warrant and found liquor, which was introduced at trial over Sgro's objection.
 
 ## Issue
 Whether a search warrant that has become void for non-execution within its statutory period may be revived and made valid simply by redating ("reissuing") it on the original affidavit, without a fresh probable-cause determination at the time of reissue.
@@ -54,7 +54,7 @@ No. The statute made the unexecuted warrant void after ten days, and "[t]here is
 
 "The issue of a second warrant is essentially a new proceeding which must have adequate support. The fact that it is a second warrant gives the commissioner no privilege to dispense with the statutory conditions. These cannot be escaped by describing the action as a reissue." — [*Id.* at 211](https://www.courtlistener.com/opinion/101970/sgro-v-united-states/#:~:text=The%20issue%20of%20a%20second). ^pin-211
 
-The supporting proof "must speak as of the time of the issue of that warrant," and "[t]he new warrant must rest upon a proper finding and statement by the commissioner that probable cause then exists." — *Id.* Because probable cause must appear current when the warrant issues, "[t]he purpose of the statute would be thwarted if by the simple expedient of redating, without more, the time for the execution of a warrant could be extended." — *Id.* ^pin-211b
+The supporting proof "must speak as of the time of the issue of that warrant," and "[t]he new warrant must rest upon a proper finding and statement by the commissioner that probable cause then exists." (*Id.*) Because probable cause must appear current when the warrant issues, "[t]he purpose of the statute would be thwarted if by the simple expedient of redating, without more, the time for the execution of a warrant could be extended." — *Id.* ^pin-211b
 
 ## Application
 The proceeding on the July 6 warrant had terminated and that warrant "was dead." On the July 27 application "the commissioner took no proof to show that probable cause then existed and he made no finding of probable cause at that time"; he "simply changed the date of the old warrant and it was 'thus reissued.'" That action was unauthorized, so the redated warrant could not support the search. — 287 U.S. at 212. ^pin-212
@@ -70,4 +70,4 @@ The redated warrant was invalid and the search unlawful; the judgment of convict
 - [[Scope Manner and Related Issues]] — *Progeny (staleness)*
 
 ## Sources
-- *Sgro v. United States*, 287 U.S. 206 (1932) — https://www.courtlistener.com/opinion/101970/sgro-v-united-states/ — pinpoints: 210, 211, 212.
+- *Sgro v. United States*, 287 U.S. 206 (1932) — https://www.courtlistener.com/opinion/101970/sgro-v-united-states/. Pinpoints: 210, 211, 212.

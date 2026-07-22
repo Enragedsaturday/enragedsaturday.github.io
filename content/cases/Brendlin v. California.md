@@ -65,7 +65,7 @@ A passenger is seized by a traffic stop and may challenge it; the judgment was r
 - No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 28 proposed); the proposed negative and audit-needed edges remain unresolved pending a treatment-history audit. *Brendlin* applies the seizure framework of [[California v. Hodari D.]] and [[Rakas v. Illinois]] to confirm passenger standing in vehicle stops.
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Brendlin v. California*, 551 U.S. 249 (2007) — https://www.courtlistener.com/opinion/145712/brendlin-v-california/ — pinpoint: 251.
+- *Brendlin v. California*, 551 U.S. 249 (2007) — https://www.courtlistener.com/opinion/145712/brendlin-v-california/. Pinpoint: 251.

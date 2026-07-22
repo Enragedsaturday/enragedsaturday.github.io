@@ -65,7 +65,7 @@ No "free to go" warning is constitutionally required; the [[Common Legal Terms#p
 - No negative treatment. *Robinette* applies the totality-of-the-circumstances voluntariness standard of [[Schneckloth v. Bustamonte]] and parallels [[Florida v. Bostick]]'s rejection of bright-line advisory requirements.
 
 ## Appears on
-- [[Consent Searches]] — *Key — Progeny / Refinement*
+- [[Consent Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Ohio v. Robinette*, 519 U.S. 33 (1996) — https://www.courtlistener.com/opinion/118066/ohio-v-robinette/ — pinpoints: 39–40, 40.
+- *Ohio v. Robinette*, 519 U.S. 33 (1996) — https://www.courtlistener.com/opinion/118066/ohio-v-robinette/ (pinpoints: 39–40, 40).

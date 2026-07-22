@@ -55,17 +55,17 @@ Where special needs make individualized suspicion impracticable, a search may be
 The Court treated railroad-safety regulation as presenting "special needs, beyond the normal need for law enforcement," that justified departing from the warrant and probable-cause requirements.
 
 ## Application
-The Court found the intrusion of blood and breath tests minimal and the urine-collection procedures regulated to limit intrusiveness, while the government's interest in railroad safety—where an impaired employee's momentary lapse could be catastrophic—was compelling. On that balance, the suspicionless post-accident testing was reasonable without a warrant or individualized suspicion.
+The Court found the intrusion of blood and breath tests minimal and the urine-collection procedures regulated to limit intrusiveness, while the government's interest in railroad safety (where an impaired employee's momentary lapse could be catastrophic) was compelling. On that balance, the suspicionless post-accident testing was reasonable without a warrant or individualized suspicion.
 
 ## Conclusion
 The post-accident toxicological testing program was a reasonable special-needs search and was upheld.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Decided with its companion [[National Treasury Employees Union v. Von Raab]]; the special-needs framework was applied to schools in [[Vernonia School District 47J v. Acton]] and [[Board of Education v. Earls]] (and to probation in [[Griffin v. Wisconsin]]), and its limit—a programmatic law-enforcement purpose defeats the exception—was drawn in [[Ferguson v. City of Charleston]].
+- Decided with its companion [[National Treasury Employees Union v. Von Raab]]; the special-needs framework was applied to schools in [[Vernonia School District 47J v. Acton]] and [[Board of Education v. Earls]] (and to probation in [[Griffin v. Wisconsin]]), and its limit (a programmatic law-enforcement purpose defeats the exception) was drawn in [[Ferguson v. City of Charleston]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Anchor*
+- [[Special Needs and Administrative Searches]] — *Key: Anchor*
 
 ## Sources
-- *Skinner v. Railway Labor Executives' Ass'n*, 489 U.S. 602 (1989) — https://www.courtlistener.com/opinion/112219/skinner-v-railway-labor-executives-assn/ — pinpoint: 624.
+- *Skinner v. Railway Labor Executives' Ass'n*, 489 U.S. 602 (1989) — https://www.courtlistener.com/opinion/112219/skinner-v-railway-labor-executives-assn/ (pinpoint: 624).

@@ -70,4 +70,4 @@ The warrantless mine inspections under the Act were constitutional; the judgment
 - [[Special Needs and Administrative Searches]] — *Progeny (pervasively-regulated industry)*
 
 ## Sources
-- *Donovan v. Dewey*, 452 U.S. 594 (1981) — https://www.courtlistener.com/opinion/110530/donovan-v-dewey/ — pinpoints: 598–599, 602, 603.
+- *Donovan v. Dewey*, 452 U.S. 594 (1981) — https://www.courtlistener.com/opinion/110530/donovan-v-dewey/. Pinpoints: 598–599, 602, 603.

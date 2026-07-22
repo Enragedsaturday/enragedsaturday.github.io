@@ -48,7 +48,7 @@ lake:
 > **Identity / disambiguation:** this is the 1968 [[Common Legal Terms#per-curiam|per curiam]] (plain-view seizure from a lawfully impounded car). It is a **different case** from *Harris v. United States*, 331 U.S. 145 (1947) (a sweeping search-incident-to-arrest holding **overruled** by [[Chimel v. California]]), and from *[[United States v. Harris (1971)|United States v. Harris]]*, 401 U.S. 1027 (1971) (reversed party). The year-suffix filename and bare-name `alias` keep the links from colliding.
 
 ## Background
-Harris's car was seen leaving a robbery; it was traced and he was arrested entering it near his home. Police impounded the car as evidence and towed it to the precinct lot. Because it had begun to rain and the windows were open and a door unlocked, the arresting officer — following a department regulation to secure impounded vehicles — went to the lot to tag the car, roll up the windows, and lock the doors. Opening the passenger door to secure that window, he saw the robbery victim's automobile registration card lying face up on the door sill in plain view, and later seized it. The card was admitted at trial.
+Harris's car was seen leaving a robbery; it was traced and he was arrested entering it near his home. Police impounded the car as evidence and towed it to the precinct lot. Because it had begun to rain and the windows were open and a door unlocked, the arresting officer (following a department regulation to secure impounded vehicles) went to the lot to tag the car, roll up the windows, and lock the doors. Opening the passenger door to secure that window, he saw the robbery victim's automobile registration card lying face up on the door sill in plain view, and later seized it. The card was admitted at trial.
 
 ## Issue
 Whether the officer discovered the registration card by means of an illegal search when he saw it in plain view while securing a lawfully impounded car.
@@ -69,8 +69,8 @@ Affirmed (per curiam). The card was lawfully seen and seized in plain view durin
 - The plain-view-seizure articulation is settled and was later given its structure by [[Coolidge v. New Hampshire]] and [[Horton v. California]] (which dropped the inadvertence requirement). The inventory-search question *Harris* reserved was answered separately in [[South Dakota v. Opperman]].
 
 ## Appears on
-- [[Plain View Doctrine]] — *Key — Progeny / Refinement*
+- [[Plain View Doctrine]] — *Key: Progeny / Refinement*
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Harris v. United States*, 390 U.S. 234 (1968) — https://www.courtlistener.com/opinion/107625/harris-v-united-states/ — pinpoint: 236.
+- *Harris v. United States*, 390 U.S. 234 (1968) — https://www.courtlistener.com/opinion/107625/harris-v-united-states/. Pinpoint: 236.

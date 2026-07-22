@@ -231,3 +231,19 @@ Wilson caption-collision + ledger regen-durability -> P5 handoff (R12 data-hygie
 component; added to lint11-allowlist.json adjudicated_hits (orchestrator entry, in-design).
 LINT-11 content-scope -> 0. WB1's Haynes scope_note variant + Satterfield L80 medium ride
 the P5 handoff notes.
+
+## RULING P4-20 (2026-07-22) — Trent projector gap + the §3.1/SD9 latent conflict
+(a) TRENT: unpublished/non-precedential is an identity-grade fact (CL precedential_status)
+on a DIFFERENT axis from treatment; court_level-only weight derivation (S2 SD9) presumed
+published dispositions and is factually wrong for a non-precedential COA decision. SANCTIONED
+(signed-tool amendment practice, cf. S9 R8 lint rebuilds + FIN-INDEX generator fix): extend
+the lake schema identity with optional `precedential_status` (enum incl. Published/
+Unpublished), set Trent's from the P4 marker-poll evidence (cluster 10855903 Unpublished),
+teach scripts/s2/project.py authority_weight() the tier-5 'Persuasive only — non-precedential'
+derivation on that signal, re-project Trent (also sweeping its mechanical drift), fixture +
+self-tests. LINT-12 -> 0 expected.
+(b) The latent S1 §3.1 (overruled -> Historical label) vs S2 SD9 (court-level-only weights)
+conflict: the BUILT, lint-enforced convention stands — weight labels derive from court level;
+overruled/abrogated status lives in field_i + treatment badges + Historical PROSE rendering
+(verified corpus-wide by the R6 sweep). No mass change. Filed as a spec-clarification note
+for the P5 handoff (S1-side).

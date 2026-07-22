@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Abdullah al-Kidd, a U.S. citizen, was arrested in 2003 on a federal material-witness warrant — ostensibly to secure his testimony in a terrorism prosecution — but was never called to testify. He sued former Attorney General John Ashcroft under *[[Bivens v. Six Unknown Named Agents|Bivens]]*, alleging that Ashcroft had adopted a policy of using the material-witness statute as a **pretext** to detain terrorism suspects whom the government lacked probable cause to charge, in violation of the Fourth Amendment. Ashcroft asserted [[Qualified Immunity|qualified immunity]].
+Abdullah al-Kidd, a U.S. citizen, was arrested in 2003 on a federal material-witness warrant (ostensibly to secure his testimony in a terrorism prosecution) but was never called to testify. He sued former Attorney General John Ashcroft under *[[Bivens v. Six Unknown Named Agents|Bivens]]*, alleging that Ashcroft had adopted a policy of using the material-witness statute as a **pretext** to detain terrorism suspects whom the government lacked probable cause to charge, in violation of the Fourth Amendment. Ashcroft asserted [[Qualified Immunity|qualified immunity]].
 
 ## Issue
 Whether an arrest made on a valid material-witness warrant can be challenged as unconstitutional based on the officer's alleged improper subjective motive — and, if the theory is doubtful, whether Ashcroft violated clearly established law.
@@ -59,7 +59,7 @@ Fourth Amendment reasonableness is judged objectively, so subjective motive does
 And [[Qualified Immunity|qualified immunity]] "protects 'all but the plainly incompetent or those who knowingly violate the law.'" — *Id.* (quoting [[Malley v. Briggs]], 475 U.S. at 341).
 
 ## Application
-A warrant naming only al-Kidd, supported by individualized reasons to believe he was a material witness who might disappear, took the case outside the narrow special-needs/administrative-search exceptions where subjective purpose matters; the general rule that motive is irrelevant therefore governed. Even assuming the pretextual-material-witness theory could state a Fourth Amendment violation, it was not clearly established at the time — eight court-of-appeals judges had agreed with Ashcroft's position in a case of first impression — so he was entitled to [[Qualified Immunity|qualified immunity]], and the Court did not reach whether he also had absolute immunity.
+A warrant naming only al-Kidd, supported by individualized reasons to believe he was a material witness who might disappear, took the case outside the narrow special-needs/administrative-search exceptions where subjective purpose matters; the general rule that motive is irrelevant therefore governed. Even assuming the pretextual-material-witness theory could state a Fourth Amendment violation, it was not clearly established at the time (eight court-of-appeals judges had agreed with Ashcroft's position in a case of first impression), so he was entitled to [[Qualified Immunity|qualified immunity]], and the Court did not reach whether he also had absolute immunity.
 
 ## Conclusion
 Reversed and [[Reading and Citing Cases#on-remand|remanded]]. Subjective intent does not defeat an objectively reasonable, warrant-based arrest, and Ashcroft did not violate clearly established law; he was entitled to [[Qualified Immunity|qualified immunity]].
@@ -69,8 +69,8 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]. Subjective intent 
 - *al-Kidd* extends the objective-reasonableness / motive-irrelevance principle of [[Whren v. United States]] beyond the traffic-stop context and is a leading modern statement of the "clearly established" standard within the [[Harlow v. Fitzgerald]] / [[Malley v. Briggs]] qualified-immunity line (its "high level of generality" admonition is quoted in [[Mullenix v. Luna]] and [[Messerschmidt v. Millender]]). No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Ashcroft v. al-Kidd*, 563 U.S. 731 (2011) — https://www.courtlistener.com/opinion/217703/ashcroft-v-al-kidd/ — pinpoints: 736, 743 (CL stores the slip opinion "563 U. S. ____ (2011)"; pins keyed to the official U.S. Reports pages — objective inquiry slip op. 3–4, holding/QI slip op. 12).
+- *Ashcroft v. al-Kidd*, 563 U.S. 731 (2011) — https://www.courtlistener.com/opinion/217703/ashcroft-v-al-kidd/. Pinpoints: 736, 743 (CL stores the slip opinion "563 U. S. ____ (2011)"; pins keyed to the official U.S. Reports pages: objective inquiry slip op. 3–4, holding/QI slip op. 12).

@@ -73,4 +73,4 @@ Because the stop was not supported by reasonable suspicion, applying the statute
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Brown v. Texas*, 443 U.S. 47 (1979) — https://www.courtlistener.com/opinion/110128/brown-v-texas/ — pinpoints: 51, 52, 53.
+- *Brown v. Texas*, 443 U.S. 47 (1979) — https://www.courtlistener.com/opinion/110128/brown-v-texas/; pinpoints: 51, 52, 53.

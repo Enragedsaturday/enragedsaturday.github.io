@@ -65,7 +65,7 @@ Brown's first statement came less than two hours after the illegal arrest, with 
 - No negative treatment. The *Brown* [[Fruits and Attenuation|attenuation]] factors remain the governing framework and were applied in [[Utah v. Strieff]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Brown v. Illinois*, 422 U.S. 590 (1975) — https://www.courtlistener.com/opinion/109304/brown-v-illinois/ — pinpoints: 603, 604.
+- *Brown v. Illinois*, 422 U.S. 590 (1975) — https://www.courtlistener.com/opinion/109304/brown-v-illinois/. Pinpoints: 603, 604.

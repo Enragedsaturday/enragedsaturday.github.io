@@ -65,7 +65,7 @@ The shooting was a seizure even though Torres temporarily eluded capture; the ju
 - *Torres* distinguishes [[California v. Hodari D.]], where an unsubmitting suspect chased but not touched was not seized; the force/intent rule traces to the deadly-force seizure framework of [[Tennessee v. Garner]], with reasonableness governed by [[Graham v. Connor]].
 
 ## Appears on
-- [[Seizure of the Person]] — *Key — Progeny / Refinement*
+- [[Seizure of the Person]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Torres v. Madrid*, 592 U.S. 306 (2021) — https://www.courtlistener.com/opinion/4867542/torres-v-madrid/ — pinpoint: slip op., at 1 (CL carries the slip opinion; cluster 4867542 → opinion 4671321).
+- *Torres v. Madrid*, 592 U.S. 306 (2021) — https://www.courtlistener.com/opinion/4867542/torres-v-madrid/; pinpoint: slip op., at 1 (CL carries the slip opinion; cluster 4867542 → opinion 4671321).

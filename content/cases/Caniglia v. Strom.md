@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a marital argument in which Caniglia melodramatically suggested his wife shoot him, she spent the night elsewhere and, unable to reach him the next day, asked police for a welfare check. Officers, concerned he was suicidal, persuaded him to go for a psychiatric evaluation and then — without a warrant or his consent — entered his home and seized his firearms. The First Circuit upheld the entry under a freestanding "community caretaking" exception drawn from *[[Cady v. Dombrowski]]*.
+After a marital argument in which Caniglia melodramatically suggested his wife shoot him, she spent the night elsewhere and, unable to reach him the next day, asked police for a welfare check. Officers, concerned he was suicidal, persuaded him to go for a psychiatric evaluation and then, without a warrant or his consent, entered his home and seized his firearms. The First Circuit upheld the entry under a freestanding "community caretaking" exception drawn from *[[Cady v. Dombrowski]]*.
 
 ## Issue
 Whether the community-caretaking rationale of *[[Cady v. Dombrowski]]* creates a standalone exception authorizing warrantless entry into and seizures within the home.
@@ -55,7 +55,7 @@ There is no such freestanding exception: "The First Circuit's 'community caretak
 *[[Cady v. Dombrowski|Cady]]* does not support extending caretaking to the home: "Neither the holding nor logic of *Cady* justified that approach. True, *Cady* also involved a warrantless search for a firearm. But the location of that search was an impounded vehicle — not a home — 'a constitutional difference' that the opinion repeatedly stressed." — *Id.* (slip op., at 4). ^pin-op4
 
 ## Application
-The officers entered Caniglia's home and seized his firearms with no warrant, no consent, and — as the case came up — no recognized [[Exigent Circumstances and Hot Pursuit|exigency]], relying solely on a freestanding caretaking theory. Because *[[Cady v. Dombrowski|Cady]]* concerned an impounded vehicle rather than a home, its caretaking rationale did not authorize this warrantless entry into Caniglia's house.
+The officers entered Caniglia's home and seized his firearms with no warrant, no consent, and (as the case came up) no recognized [[Exigent Circumstances and Hot Pursuit|exigency]], relying solely on a freestanding caretaking theory. Because *[[Cady v. Dombrowski|Cady]]* concerned an impounded vehicle rather than a home, its caretaking rationale did not authorize this warrantless entry into Caniglia's house.
 
 ## Conclusion
 There is no standalone community-caretaking exception for the home; the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ There is no standalone community-caretaking exception for the home; the judgment
 - No negative treatment. *Caniglia* **cabins** [[Cady v. Dombrowski]] to the vehicle context and leaves intact the home-entry exceptions of [[Emergency Aid|emergency aid]] and [[Exigent Circumstances and Hot Pursuit|exigency]] ([[Brigham City v. Stuart]]; [[Kentucky v. King]]).
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Caniglia v. Strom*, 593 U.S. 194 (2021) — https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/ — pinpoints: slip op., at 3, 4 (CL carries the slip opinion; cluster 4883694 → opinion 4687473).
+- *Caniglia v. Strom*, 593 U.S. 194 (2021) — https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/. Pinpoints: slip op., at 3, 4 (CL carries the slip opinion; cluster 4883694 → opinion 4687473).

@@ -67,8 +67,8 @@ Probable cause supported the search; the conviction was affirmed.
 - No negative treatment. *Brinegar*'s "reasonable and prudent" formulation remains the bedrock statement of probable cause, carried forward through [[Illinois v. Gates]] and applied in cases such as [[Maryland v. Pringle]].
 
 ## Appears on
-- [[Probable Cause]] — *Key — Anchor*
-- [[The Proof Ladder]] — *Key — rung anchor*
+- [[Probable Cause]]: *Key — Anchor*
+- [[The Proof Ladder]]: *Key — rung anchor*
 
 ## Sources
-- *Brinegar v. United States*, 338 U.S. 160 (1949) — https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/ — pinpoints: 175, 176.
+- *Brinegar v. United States*, 338 U.S. 160 (1949) — https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/; pinpoints: 175, 176.

@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a series of armed robberies, the FBI obtained 127 days of Carpenter's historical cell-site location information (CSLI) from his wireless carriers under the Stored Communications Act, which required only "specific and articulable facts" — a showing short of probable cause — rather than a warrant. The records (nearly 12,900 location points) placed his phone near the robbery sites. He moved to suppress the CSLI as the product of a warrantless search.
+Investigating a series of armed robberies, the FBI obtained 127 days of Carpenter's historical cell-site location information (CSLI) from his wireless carriers under the Stored Communications Act, which required only "specific and articulable facts" (a showing short of probable cause) rather than a warrant. The records (nearly 12,900 location points) placed his phone near the robbery sites. He moved to suppress the CSLI as the product of a warrantless search.
 
 ## Issue
 Whether the Government's acquisition of historical cell-site records that chronicle a person's past movements is a search under the Fourth Amendment.
@@ -57,7 +57,7 @@ Yes. "Whether the Government employs its own surveillance technology as in *Jone
 Because that acquisition is a search, the Government must generally obtain a warrant supported by probable cause before acquiring such records. The Court declined to extend the third-party doctrine of *[[Smith v. Maryland]]* and *[[United States v. Miller]]* to the "qualitatively different category of cell-site records."
 
 ## Application
-The Government accessed 127 days of Carpenter's CSLI without a warrant, relying instead on a court order issued on less than probable cause. Because that data provided an all-encompassing, retrospective record of his whereabouts — "an intimate window into a person's life" — its acquisition invaded a legitimate expectation of privacy and was a search; on these facts the warrantless acquisition could not be justified by the third-party doctrine.
+The Government accessed 127 days of Carpenter's CSLI without a warrant, relying instead on a court order issued on less than probable cause. Because that data provided an all-encompassing, retrospective record of his whereabouts ("an intimate window into a person's life"), its acquisition invaded a legitimate expectation of privacy and was a search; on these facts the warrantless acquisition could not be justified by the third-party doctrine.
 
 ## Conclusion
 Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. The Court's holding was expressly narrow, declining to disturb conventional surveillance techniques or other business records.
@@ -65,11 +65,11 @@ Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgmen
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - No negative treatment. *Carpenter* itself **narrows** the third-party doctrine ([[Smith v. Maryland]]) for digital-age location data and builds on the mosaic concern voiced in the [[United States v. Jones]] [[Common Legal Terms#concurring-opinion|concurrences]].
-- **Extended (2026):** *[[Chatrie v. United States]]*, 609 U.S. ___ (2026), **applies and extends *Carpenter*** to bulk **geofence / Google Location History** data — holding its acquisition is a Fourth Amendment search even for a short (~2-hour) window and even though held by a third party (rejecting the opt-in/third-party rationale) — and leaves geofence-warrant probable cause/[[Particularity|particularity]] for remand. *Carpenter* remains good law and anchors that ruling.
+- **Extended (2026):** *[[Chatrie v. United States]]*, 609 U.S. ___ (2026), **applies and extends *Carpenter*** to bulk **geofence / Google Location History** data, holding its acquisition is a Fourth Amendment search even for a short (~2-hour) window and even though held by a third party (rejecting the opt-in/third-party rationale), and leaves geofence-warrant probable cause/[[Particularity|particularity]] for remand. *Carpenter* remains good law and anchors that ruling.
 
 ## Appears on
-- [[Reasonable Expectation of Privacy]] — *Key — Progeny / Refinement*
-- [[Third-Party Doctrine & CSLI]] — *Key — CSLI dividing line (co-home)*
+- [[Reasonable Expectation of Privacy]] — *Key: Progeny / Refinement*
+- [[Third-Party Doctrine & CSLI]] — *Key: CSLI dividing line (co-home)*
 
 ## Sources
-- *Carpenter v. United States*, 585 U.S. 296 (2018) — https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/ — pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4510032 → opinion 4287285).
+- *Carpenter v. United States*, 585 U.S. 296 (2018) — https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/. Pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4510032 → opinion 4287285).

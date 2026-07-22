@@ -58,7 +58,7 @@ The Court also reaffirmed that action "under color of" state law includes the mi
 Because the trial court had not instructed the jury that the defendants must have acted with the specific intent to deprive Hall of a federal constitutional right, the convictions could not stand under the proper construction of "willfully," and the Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for a new trial under that standard.
 
 ## Conclusion
-Section 242 is not void for vagueness when read to require a willful—specific-intent—deprivation; the convictions were reversed for the faulty jury instruction and the case [[Reading and Citing Cases#on-remand|remanded]].
+Section 242 is not void for vagueness when read to require a willful (specific-intent) deprivation; the convictions were reversed for the faulty jury instruction and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (plurality; Douglas, J., announced the judgment).
@@ -68,4 +68,4 @@ Section 242 is not void for vagueness when read to require a willful—specific-
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Screws v. United States*, 325 U.S. 91 (1945) — https://www.courtlistener.com/opinion/104135/screws-v-united-states/ — pinpoint: 103.
+- *Screws v. United States*, 325 U.S. 91 (1945) — https://www.courtlistener.com/opinion/104135/screws-v-united-states/. Pinpoint: 103.

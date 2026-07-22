@@ -68,4 +68,4 @@ The inventory search, including the closed containers, was constitutional; the C
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Colorado v. Bertine*, 479 U.S. 367 (1987) — https://www.courtlistener.com/opinion/111788/colorado-v-bertine/ — pinpoints: 374, 375.
+- *Colorado v. Bertine*, 479 U.S. 367 (1987) — https://www.courtlistener.com/opinion/111788/colorado-v-bertine/. Pinpoints: 374, 375.

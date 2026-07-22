@@ -63,7 +63,7 @@ The Court declined to limit the rule to "intimate" details, because "[i]n the ho
 It therefore held: "Where, as here, the Government uses a device that is not in general public use, to explore details of the home that would previously have been unknowable without physical intrusion, the surveillance is a 'search' and is presumptively unreasonable without a warrant." — *Id.* at 40. ^pin-40
 
 ## Application
-The agent used a thermal imager — a device not in general public use — to learn about the relative warmth of areas inside Kyllo's home, information that could not have been obtained without physically entering. That the device measured only heat radiating from exterior surfaces did not save it, any more than the eavesdropping in *[[Katz v. United States|Katz]]* was permissible because it captured only sound at the booth's exterior; and because the target was a home, the relative warmth of its rooms counted as an intimate detail. The thermal scan was thus a search, and being warrantless it was presumptively unreasonable.
+The agent used a thermal imager (a device not in general public use) to learn about the relative warmth of areas inside Kyllo's home, information that could not have been obtained without physically entering. That the device measured only heat radiating from exterior surfaces did not save it, any more than the eavesdropping in *[[Katz v. United States|Katz]]* was permissible because it captured only sound at the booth's exterior; and because the target was a home, the relative warmth of its rooms counted as an intimate detail. The thermal scan was thus a search, and being warrantless it was presumptively unreasonable.
 
 ## Conclusion
 The thermal imaging was an unlawful warrantless search; the case was [[Reading and Citing Cases#on-remand|remanded]] to determine whether, without the thermal evidence, the warrant was supported by probable cause. *Kyllo* anchors the rule that technological surveillance revealing a home's interior is a Fourth Amendment search.
@@ -74,9 +74,9 @@ The thermal imaging was an unlawful warrantless search; the case was [[Reading a
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Key*
-- [[Aerial and Enhanced Surveillance]] — *Key — enhanced-sensor limit*
+- [[Aerial and Enhanced Surveillance]] — *Key: enhanced-sensor limit*
 - [[Curtilage]] — *Related (cross-doctrine)*
 - [[Third-Party Doctrine & CSLI]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kyllo v. United States*, 533 U.S. 27 (2001) — https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/ — pinpoints: 34, 37, 40.
+- *Kyllo v. United States*, 533 U.S. 27 (2001) — https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/. Pinpoints: 34, 37, 40.

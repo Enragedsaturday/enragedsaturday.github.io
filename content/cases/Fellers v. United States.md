@@ -50,7 +50,7 @@ After a grand jury indicted Fellers, officers went to his home to arrest him and
 Whether the Sixth Amendment is violated when, after indictment, officers deliberately elicit incriminating statements from a defendant outside counsel's presence even though there was no Miranda-style "interrogation."
 
 ## Rule
-Yes — the Sixth Amendment standard is *deliberate elicitation*, not interrogation. Under *[[Massiah v. United States|Massiah]]*, an accused is denied the Sixth Amendment's protection when the government uses against him "evidence of his own incriminating words, which federal agents ... deliberately elicited from him after he had been indicted and in the absence of his counsel." — *[[Massiah v. United States]]*, 377 U.S. at 206 (quoted).
+Yes. The Sixth Amendment standard is *deliberate elicitation*, not interrogation. Under *[[Massiah v. United States|Massiah]]*, an accused is denied the Sixth Amendment's protection when the government uses against him "evidence of his own incriminating words, which federal agents ... deliberately elicited from him after he had been indicted and in the absence of his counsel." — *[[Massiah v. United States]]*, 377 U.S. at 206 (quoted).
 
 "We have consistently applied the deliberate-elicitation standard in subsequent Sixth Amendment cases ... and we have expressly distinguished this standard from the Fifth Amendment custodial-interrogation standard." — 540 U.S. at 524. ^pin-524
 
@@ -67,7 +67,7 @@ The home statements were obtained in violation of the Sixth Amendment (deliberat
 - *Fellers* reaffirms the [[Massiah v. United States]] / [[Brewer v. Williams]] deliberate-elicitation line and keeps the Sixth Amendment analysis separate from *[[Miranda v. Arizona|Miranda]]* custody/interrogation; the open fruits question turns on [[Oregon v. Elstad]].
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny*
 
 ## Sources
-- *Fellers v. United States*, 540 U.S. 519 (2004) — https://www.courtlistener.com/opinion/131158/fellers-v-united-states/ — pinpoint: 524 (quoting *Massiah*, 377 U.S. at 206).
+- *Fellers v. United States*, 540 U.S. 519 (2004) — https://www.courtlistener.com/opinion/131158/fellers-v-united-states/. Pinpoint: 524 (quoting *Massiah*, 377 U.S. at 206).

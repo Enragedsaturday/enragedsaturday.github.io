@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Memphis officer Elton Hymon shot 15-year-old Edward Garner in the back of the head as Garner—an apparently unarmed suspect whom Hymon was "reasonably sure" was unarmed—climbed a fence to flee a nighttime house burglary. A Tennessee statute authorized deadly force against any fleeing felon. Garner's father sued under 42 U.S.C. § 1983.
+Memphis officer Elton Hymon shot 15-year-old Edward Garner in the back of the head as Garner (an apparently unarmed suspect whom Hymon was "reasonably sure" was unarmed) climbed a fence to flee a nighttime house burglary. A Tennessee statute authorized deadly force against any fleeing felon. Garner's father sued under 42 U.S.C. § 1983.
 
 ## Issue
 Whether the Fourth Amendment permits the use of deadly force to prevent the escape of an apparently unarmed, non-dangerous fleeing felon.
@@ -67,7 +67,7 @@ The use of deadly force against the unarmed, non-dangerous Garner was an unreaso
 - [[Scott v. Harris]] later clarified that *Garner* "did not establish a magical on/off switch" but is an application of the [[Graham v. Connor]] objective-reasonableness standard. This is a clarification, not negative treatment; *Garner* remains binding.
 
 ## Appears on
-- [[Use of Force]] — *Key — Anchor*
+- [[Use of Force]] — *Key: Anchor*
 
 ## Sources
-- *Tennessee v. Garner*, 471 U.S. 1 (1985) — https://www.courtlistener.com/opinion/111397/tennessee-v-garner/ — pinpoints: 3, 11.
+- *Tennessee v. Garner*, 471 U.S. 1 (1985) — https://www.courtlistener.com/opinion/111397/tennessee-v-garner/. Pinpoints: 3, 11.

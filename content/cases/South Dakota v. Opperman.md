@@ -65,7 +65,7 @@ The routine inventory under standard procedures was reasonable; the South Dakota
 - The inventory doctrine was refined by [[Colorado v. Bertine]] (closed containers, opened under standardized criteria) and [[Florida v. Wells]] (no inventory used as a ruse for general rummaging); it draws on the vehicle-caretaking roots of [[Cady v. Dombrowski]] and parallels the booking inventory of an arrestee's effects in [[Illinois v. Lafayette]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Anchor*
+- [[Special Needs and Administrative Searches]] — *Key: Anchor*
 
 ## Sources
-- *South Dakota v. Opperman*, 428 U.S. 364 (1976) — https://www.courtlistener.com/opinion/109537/south-dakota-v-opperman/ — pinpoint: 376.
+- [*South Dakota v. Opperman*, 428 U.S. 364 (1976)](https://www.courtlistener.com/opinion/109537/south-dakota-v-opperman/) — pinpoint: 376.

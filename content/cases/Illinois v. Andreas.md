@@ -47,7 +47,7 @@ lake:
 Customs officers lawfully opened a shipped metal container and found marijuana inside a wooden table. They resealed it and made a controlled delivery to Andreas. After he took the container inside his apartment and, some 30–45 minutes later, brought it back out, police reopened it without a warrant and re-confirmed the contraband. Andreas moved to suppress, arguing the warrantless reopening was a new search.
 
 ## Issue
-Whether reopening, without a warrant, a container whose contents were previously discovered in a lawful customs inspection — after a controlled delivery and a gap in surveillance — constitutes a Fourth Amendment "search."
+Whether reopening, without a warrant, a container whose contents were previously discovered in a lawful customs inspection (after a controlled delivery and a gap in surveillance) constitutes a Fourth Amendment "search."
 
 ## Rule
 No, where the contents have not likely changed. "No protected privacy interest remains in contraband in a container once government officers lawfully have opened that container and identified its contents as illegal. The simple act of resealing the container to enable the police to make a controlled delivery does not operate to revive or restore the lawfully invaded privacy rights." — 463 U.S. at 771. ^pin-771
@@ -68,4 +68,4 @@ The warrantless reopening was not a search; suppression was unwarranted. The cas
 - [[Plain View Doctrine]] — *Related*
 
 ## Sources
-- *Illinois v. Andreas*, 463 U.S. 765 (1983) — https://www.courtlistener.com/opinion/111013/illinois-v-andreas/ — pinpoints: 771, 773.
+- *Illinois v. Andreas*, 463 U.S. 765 (1983) — https://www.courtlistener.com/opinion/111013/illinois-v-andreas/ (pinpoints: 771, 773).

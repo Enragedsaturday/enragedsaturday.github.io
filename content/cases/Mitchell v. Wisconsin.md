@@ -65,8 +65,8 @@ Mitchell was unconscious and so could not take a breath test, and his condition 
 - No negative treatment. *Mitchell* builds on the [[Exigent Circumstances and Hot Pursuit|exigency]] analysis of [[Missouri v. McNeely]] and [[Schmerber v. California]] for the unconscious-driver context.
 
 ## Appears on
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*
+- [[Exigent Circumstances and Hot Pursuit]] — *Key: Progeny / Refinement*
 - [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Mitchell v. Wisconsin*, 588 U.S. 840 (2019) — https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/ — pinpoint: 139 S. Ct. 2539 (plurality, Part IV). (CL carries the official reporter text; cluster 9231242 → lead opinion 9226047. The pinpoint uses the S. Ct. reporter page carried in the CL text.)
+- *Mitchell v. Wisconsin*, 588 U.S. 840 (2019) — https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/. Pinpoint: 139 S. Ct. 2539 (plurality, Part IV). (CL carries the official reporter text; cluster 9231242 → lead opinion 9226047. The pinpoint uses the S. Ct. reporter page carried in the CL text.)

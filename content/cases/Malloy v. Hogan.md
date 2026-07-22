@@ -69,8 +69,8 @@ The Fifth Amendment privilege is enforceable against the States through the Four
 - No negative treatment. *Malloy* is a foundational incorporation decision: it harmonized the confession-voluntariness standard (rooted in [[Brown v. Mississippi]]) with the Fifth Amendment privilege and supplied the constitutional predicate for [[Miranda v. Arizona]] two years later. It draws on [[Mapp v. Ohio]] (which overruled [[Wolf v. Colorado]]) for the parallel incorporation of the Fourth Amendment.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Anchor*
 - [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Malloy v. Hogan*, 378 U.S. 1 (1964) — https://www.courtlistener.com/opinion/106862/malloy-v-hogan/ — pinpoints: 6, 8, 10–11.
+- *Malloy v. Hogan*, 378 U.S. 1 (1964) — https://www.courtlistener.com/opinion/106862/malloy-v-hogan/. Pinpoints: 6, 8, 10–11.

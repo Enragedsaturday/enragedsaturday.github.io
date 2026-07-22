@@ -65,7 +65,7 @@ Reversed; suppression of the evidence was unwarranted.
 - No negative treatment. *DeFillippo* anticipates the good-faith line of [[United States v. Leon]] and the reliance-on-a-statute analysis of [[Illinois v. Krull]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan v. DeFillippo*, 443 U.S. 31 (1979) — https://www.courtlistener.com/opinion/110127/michigan-v-defillippo/ — pinpoint: 40.
+- [*Michigan v. DeFillippo*, 443 U.S. 31 (1979)](https://www.courtlistener.com/opinion/110127/michigan-v-defillippo/) — pinpoint: 40.

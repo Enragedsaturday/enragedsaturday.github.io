@@ -47,7 +47,7 @@ lake:
 Giglio was convicted of passing forged money orders almost entirely on the testimony of an accomplice, Robert Taliento, who had not been indicted. After trial, the defense learned that a prosecutor had promised Taliento he would not be prosecuted if he cooperated and testified — a promise the trial prosecutor never disclosed, and which had been denied at trial.
 
 ## Issue
-Whether the Government's failure to disclose a promise of leniency made to its key witness — evidence going only to the witness's credibility — violates due process and requires a new trial.
+Whether the Government's failure to disclose a promise of leniency made to its key witness (evidence going only to the witness's credibility) violates due process and requires a new trial.
 
 ## Rule
 Impeachment evidence is governed by the Brady disclosure rule when the witness's credibility is central to the case. "When the 'reliability of a given witness may well be determinative of guilt or innocence,' nondisclosure of evidence affecting credibility falls within this general rule." — 405 U.S. at 154. ^pin-154
@@ -65,7 +65,7 @@ The failure to disclose the leniency promise to a key witness required a new tri
 - No negative treatment. *Giglio* extends [[Brady v. Maryland]] to impeachment evidence and charges the prosecution with knowledge held by any of its attorneys; the framework is applied in [[Benn v. Lambert]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Anchor*
+- [[Brady and Giglio]] — *Key: Anchor*
 
 ## Sources
-- *Giglio v. United States*, 405 U.S. 150 (1972) — https://www.courtlistener.com/opinion/108471/giglio-v-united-states/ — pinpoint: 154.
+- *Giglio v. United States*, 405 U.S. 150 (1972) — https://www.courtlistener.com/opinion/108471/giglio-v-united-states/ (pinpoint: 154).

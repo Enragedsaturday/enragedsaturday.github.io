@@ -67,7 +67,7 @@ A trained dog's alert can furnish probable cause under the [[Common Legal Terms#
 - No negative treatment. *Harris* governs the reliability side of a dog sniff; the separate question whether bringing a drug dog onto a home's [[Curtilage|curtilage]] is itself a search is answered in [[Florida v. Jardines]].
 
 ## Appears on
-- [[Probable Cause]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Florida v. Harris*, 568 U.S. 237 (2013) — https://www.courtlistener.com/opinion/820744/florida-v-harris/ — pinpoints: 247, 248.
+- [*Florida v. Harris*, 568 U.S. 237 (2013)](https://www.courtlistener.com/opinion/820744/florida-v-harris/) — pinpoints: 247, 248.

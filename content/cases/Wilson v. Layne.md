@@ -57,7 +57,7 @@ Such a media intrusion violates the Fourth Amendment: "We hold that it is a viol
 But [[Qualified Immunity|qualified immunity]] still protects the officers unless the right was clearly established at the time. "We hold that it was not unreasonable for a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful." — *Id.* at 615. ^pin-615
 
 ## Application
-Inviting the journalists served no purpose in executing the arrest warrant — they did not aid the search for Dominic — so their presence inside the home exceeded what the warrant authorized and violated the Fourth Amendment. On immunity, however, in 1992 the constitutional question was not "open and shut": no judicial decision had held that a media ride-along became unlawful when it entered a home, and the practice was common. Because the contours of the right were not sufficiently clear that a reasonable officer would have understood the entry to be unlawful, the officers were entitled to [[Qualified Immunity|qualified immunity]].
+Inviting the journalists served no purpose in executing the arrest warrant (they did not aid the search for Dominic), so their presence inside the home exceeded what the warrant authorized and violated the Fourth Amendment. On immunity, however, in 1992 the constitutional question was not "open and shut": no judicial decision had held that a media ride-along became unlawful when it entered a home, and the practice was common. Because the contours of the right were not sufficiently clear that a reasonable officer would have understood the entry to be unlawful, the officers were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
 Affirmed. The media's presence in the home violated the Fourth Amendment, but the officers received [[Qualified Immunity|qualified immunity]] because the right was not clearly established in April 1992.
@@ -67,8 +67,8 @@ Affirmed. The media's presence in the home violated the Fourth Amendment, but th
 - Decided the same day as its [[Common Legal Terms#per-curiam|per curiam]] companion [[Hanlon v. Berger]], which applied the same Fourth Amendment holding and [[Qualified Immunity|qualified immunity]] to a media ride-along onto a ranch. *Wilson* is a leading application of the [[Harlow v. Fitzgerald]] "clearly established" standard. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 - [[Scope Manner and Related Issues]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Wilson v. Layne*, 526 U.S. 603 (1999) — https://www.courtlistener.com/opinion/118289/wilson-v-layne/ — pinpoints: 614, 615.
+- *Wilson v. Layne*, 526 U.S. 603 (1999) — https://www.courtlistener.com/opinion/118289/wilson-v-layne/. Pinpoints: 614, 615.

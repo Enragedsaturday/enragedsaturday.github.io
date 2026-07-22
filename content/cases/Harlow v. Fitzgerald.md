@@ -65,7 +65,7 @@ Because the governing inquiry is objective, resolving the aides' immunity did no
 - No negative treatment. *Harlow*'s objective standard remains the foundation of qualified-immunity doctrine; later cases refine the "clearly established" inquiry (e.g., the level of generality and case-specificity stressed in [[City of Tahlequah v. Bond]]) without disturbing *Harlow*'s objective test.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Anchor*
 
 ## Sources
-- *Harlow v. Fitzgerald*, 457 U.S. 800 (1982) — https://www.courtlistener.com/opinion/110763/harlow-v-fitzgerald/ — pinpoint: 818.
+- *Harlow v. Fitzgerald*, 457 U.S. 800 (1982) — https://www.courtlistener.com/opinion/110763/harlow-v-fitzgerald/. Pinpoint: 818.

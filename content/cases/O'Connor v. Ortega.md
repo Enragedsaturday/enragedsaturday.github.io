@@ -68,4 +68,4 @@ Ortega had a Fourth Amendment privacy interest in his office, but the employer's
 - [[Special Needs and Administrative Searches]] — *Anchor (workplace REP)*
 
 ## Sources
-- *O'Connor v. Ortega*, 480 U.S. 709 (1987) — https://www.courtlistener.com/opinion/111851/oconnor-v-ortega/ — pinpoints: 717, 725–726.
+- *O'Connor v. Ortega*, 480 U.S. 709 (1987) — https://www.courtlistener.com/opinion/111851/oconnor-v-ortega/. Pinpoints: 717, 725–726.

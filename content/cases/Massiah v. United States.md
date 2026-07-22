@@ -50,7 +50,7 @@ Massiah was indicted on federal narcotics charges, retained counsel, and was rel
 Whether the government may use against a defendant at trial his own incriminating statements, deliberately elicited by government agents after indictment and outside the presence of his counsel.
 
 ## Rule
-No — such deliberate post-indictment elicitation violates the Sixth Amendment. "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel." — 377 U.S. at 206. ^pin-206
+No. Such deliberate post-indictment elicitation violates the Sixth Amendment. "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel." — 377 U.S. at 206. ^pin-206
 
 The rule reaches indirect and surreptitious interrogations, not just questioning in a police station.
 
@@ -65,7 +65,7 @@ Reversed: incriminating statements deliberately elicited from an indicted, repre
 - *Massiah* is the foundation of the Sixth Amendment "deliberate elicitation" doctrine, later refined by [[Maine v. Moulton]] (knowing exploitation) and [[Kuhlmann v. Wilson]] (action beyond mere listening), and applied in [[Brewer v. Williams]] and [[United States v. Henry]]. It remains good law.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Anchor*
+- [[Sixth Amendment Right to Counsel]]: *Key — Anchor*
 
 ## Sources
-- *Massiah v. United States*, 377 U.S. 201 (1964) — https://www.courtlistener.com/opinion/106822/massiah-v-united-states/ — pinpoint: 206.
+- *Massiah v. United States*, 377 U.S. 201 (1964) — https://www.courtlistener.com/opinion/106822/massiah-v-united-states/; pinpoint: 206.

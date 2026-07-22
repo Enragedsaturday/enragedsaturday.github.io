@@ -67,7 +67,7 @@ The warnings were adequate. The judgment of the California Court of Appeal was r
 - No negative treatment. The "reasonably conveys" rule was reaffirmed and applied in [[Duckworth v. Eagan]] (warnings adequate despite "if and when you go to court" language) and [[Florida v. Powell]] (warnings need not be verbatim).
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny*
 
 ## Sources
-- *California v. Prysock*, 453 U.S. 355 (1981) (per curiam) — https://www.courtlistener.com/opinion/110556/california-v-prysock/ — pinpoint: 359.
+- *California v. Prysock*, 453 U.S. 355 (1981) (per curiam) — https://www.courtlistener.com/opinion/110556/california-v-prysock/. Pinpoint: 359.

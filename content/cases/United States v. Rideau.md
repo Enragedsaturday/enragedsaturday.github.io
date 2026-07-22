@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Around 10:30 p.m. in a high-crime area of Beaumont, Texas, Officer Ellison saw a man wearing dark clothing standing in the road. Ellison flashed his bright lights to encourage the man to leave the street; the man turned, stepped toward the shoulder, and stumbled, leading Ellison to suspect he was drunk. Ellison pulled over and approached to investigate and check on him. When Ellison asked the man's name, he appeared nervous, did not answer, and began to back away; Ellison closed the gap and patted the man's outer pants pocket, where he felt a firearm. The man — Izeal Rideau, a convicted felon — was arrested and charged with being a felon in possession (18 U.S.C. § 922(g)(1)). A panel had reversed his conviction, and the Fifth Circuit reheard the case [[Reading and Citing Cases#en-banc|en banc]].
+Around 10:30 p.m. in a high-crime area of Beaumont, Texas, Officer Ellison saw a man wearing dark clothing standing in the road. Ellison flashed his bright lights to encourage the man to leave the street; the man turned, stepped toward the shoulder, and stumbled, leading Ellison to suspect he was drunk. Ellison pulled over and approached to investigate and check on him. When Ellison asked the man's name, he appeared nervous, did not answer, and began to back away; Ellison closed the gap and patted the man's outer pants pocket, where he felt a firearm. The man (Izeal Rideau, a convicted felon) was arrested and charged with being a felon in possession (18 U.S.C. § 922(g)(1)). A panel had reversed his conviction, and the Fifth Circuit reheard the case [[Reading and Citing Cases#en-banc|en banc]].
 
 ## Issue
 Whether an officer acted reasonably under the Fourth Amendment in stopping an apparently intoxicated man standing in a roadway at night to check on his condition, and then conducting a limited protective pat-down when the man backed away.
@@ -70,7 +70,7 @@ The [[Reading and Citing Cases#en-banc|en banc]] court held the officer's action
 - [[Caniglia v. Strom]] (2021) barred a *freestanding* community-caretaking entry into the **home**; that home-limited holding does not disturb *Rideau*'s rule for an impaired person in public.
 
 ## Appears on
-- [[Community Caretaking]] — *Key — Progeny*
+- [[Community Caretaking]] — *Key: Progeny*
 
 ## Sources
-- *United States v. Rideau*, 969 F.2d 1572 (5th Cir. 1992) (en banc) — https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/ — pinpoints: 1574, 1576.
+- *United States v. Rideau*, 969 F.2d 1572 (5th Cir. 1992) (en banc) — https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/ (pinpoints: 1574, 1576).

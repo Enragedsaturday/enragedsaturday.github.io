@@ -82,7 +82,7 @@ Judgment for Entick. The general warrant was illegal and afforded the messengers
 - *Entick* is one of the two great English general-warrant cases (with [[Wilkes v. Wood]]) that the Fourth Amendment was written to enshrine. The U.S. Supreme Court has repeatedly treated it as authoritative on the original meaning of the Amendment — most famously in [[Boyd v. United States]], and it continues to be invoked in modern search-and-seizure decisions (e.g. the property-trespass theory revived in *[[United States v. Jones]]* and discussed alongside [[Katz v. United States]]). Its core principle remains good law.
 
 ## Appears on
-- [[Common Law Origins]] — *Key — Anchor (foundational origin)*
+- [[Common Law Origins]] — *Key: Anchor (foundational origin)*
 
 ## Sources
 - *Entick v. Carrington*, 19 How. St. Tr. 1029 (C.P. 1765); 95 Eng. Rep. 807; 2 Wils. K.B. 275 — pinpoints: 19 How. St. Tr. at 1066 (95 Eng. Rep. at 817). No CourtListener record (English King's-era case); identity and quotations confirmed against Howell's State Trials and the English Reports. *(Decided in the Court of Common Pleas, Lord Camden, C.J.; the "Wils. K.B." citation is the Wilson's King's Bench Reports series, not the deciding court.)*

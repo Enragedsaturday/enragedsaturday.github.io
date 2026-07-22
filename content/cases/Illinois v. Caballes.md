@@ -59,7 +59,7 @@ But a non-prolonging sniff invades no protected interest: "the use of a well-tra
 The holding: "A dog sniff conducted during a concededly lawful traffic stop that reveals no information other than the location of a substance that no individual has any right to possess does not violate the Fourth Amendment." — [*Id.* at 410](https://www.courtlistener.com/opinion/137742/illinois-v-caballes/#:~:text=A%20dog%20sniff%20conducted%20during). ^pin-410
 
 ## Application
-The traffic stop was lawful at its inception and was not extended by the dog sniff, which occurred while the warning ticket was being written. Because a reliable narcotics dog discloses only the presence or absence of contraband — in which no person has a legitimate privacy interest — the sniff of the car's exterior implicated no constitutionally cognizable privacy interest and required no independent reasonable suspicion. The alert then supplied probable cause for the trunk search.
+The traffic stop was lawful at its inception and was not extended by the dog sniff, which occurred while the warning ticket was being written. Because a reliable narcotics dog discloses only the presence or absence of contraband, in which no person has a legitimate privacy interest, the sniff of the car's exterior implicated no constitutionally cognizable privacy interest and required no independent reasonable suspicion. The alert then supplied probable cause for the trunk search.
 
 ## Conclusion
 A dog sniff during an unprolonged, lawful traffic stop is not a Fourth Amendment search and needs no separate suspicion; the marijuana was admissible. *Caballes* anchors the vehicle dog-sniff rule while preserving the limit that the stop may not be extended to conduct it.
@@ -69,8 +69,8 @@ A dog sniff during an unprolonged, lawful traffic stop is not a Fourth Amendment
 - Applies the dog-sniff reasoning of [[United States v. Place]] and contrasts the home-interior technology case [[Kyllo v. United States]]. The no-prolongation limit is enforced by [[Rodriguez v. United States]]; the home-[[Curtilage|curtilage]] boundary is set by [[Florida v. Jardines]]; dog-reliability/probable-cause questions are addressed in [[Florida v. Harris]].
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Anchor*
+- [[Traffic Stops]]: *Key — Anchor*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Illinois v. Caballes*, 543 U.S. 405 (2005) — https://www.courtlistener.com/opinion/137742/illinois-v-caballes/ — pinpoints: 407, 409, 410.
+- *Illinois v. Caballes*, 543 U.S. 405 (2005) — https://www.courtlistener.com/opinion/137742/illinois-v-caballes/; pinpoints: 407, 409, 410.

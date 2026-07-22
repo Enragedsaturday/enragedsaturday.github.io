@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-An undercover federal agent offered to supply Russell with phenyl-2-propanone — a scarce but legal chemical essential to manufacture methamphetamine — in exchange for half the drug produced and a look at the laboratory. Russell and his associates were already manufacturing methamphetamine before the agent appeared and continued after he left; the propanone could have been, and in part was, obtained without the agent. Russell was convicted, but the Court of Appeals reversed, finding entrapment as a matter of law because the agent had supplied an essential ingredient.
+An undercover federal agent offered to supply Russell with phenyl-2-propanone (a scarce but legal chemical essential to manufacture methamphetamine) in exchange for half the drug produced and a look at the laboratory. Russell and his associates were already manufacturing methamphetamine before the agent appeared and continued after he left; the propanone could have been, and in part was, obtained without the agent. Russell was convicted, but the Court of Appeals reversed, finding entrapment as a matter of law because the agent had supplied an essential ingredient.
 
 ## Issue
 Whether a predisposed defendant may establish the entrapment defense merely because a government agent supplied an essential (though legal) ingredient for the crime — or whether such government participation independently bars conviction.
@@ -65,7 +65,7 @@ A predisposed defendant cannot claim entrapment merely because an agent supplied
 - No negative treatment. *Russell* reaffirms the subjective predisposition test rooted in [[Sorrells v. United States]] and [[Sherman v. United States]], and is the origin of the (rarely successful) due-process "outrageous government conduct" bar, revisited in [[Hampton v. United States]].
 
 ## Appears on
-- [[Entrapment]] — *Key — Anchor*
+- [[Entrapment]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Russell*, 411 U.S. 423 (1973) — https://www.courtlistener.com/opinion/108768/united-states-v-russell/ — pinpoints: 431–432, 436 (parallel 93 S. Ct. 1637).
+- *United States v. Russell*, 411 U.S. 423 (1973) — https://www.courtlistener.com/opinion/108768/united-states-v-russell/. Pinpoints: 431–432, 436 (parallel 93 S. Ct. 1637).

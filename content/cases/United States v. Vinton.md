@@ -65,7 +65,7 @@ The protective search of the passenger compartment was valid under *[[Michigan v
 - No negative treatment. *Vinton* confirms that [[Arizona v. Gant]]'s limits on vehicle [[Search Incident to Arrest|searches incident to arrest]] do not displace the independent protective-search authority of [[Michigan v. Long]]: an officer with reasonable suspicion that the driver is armed and dangerous may search the passenger compartment for weapons even after the driver is secured.
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Progeny / Refinement*
+- [[Traffic Stops]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Vinton*, 594 F.3d 14 (D.C. Cir. 2010) — https://www.courtlistener.com/opinion/187527/united-states-v-vinton/ — pinpoints: 20, 21 (parallel 389 U.S. App. D.C. 199).
+- *United States v. Vinton*, 594 F.3d 14 (D.C. Cir. 2010) — https://www.courtlistener.com/opinion/187527/united-states-v-vinton/ (pinpoints: 20, 21; parallel 389 U.S. App. D.C. 199).

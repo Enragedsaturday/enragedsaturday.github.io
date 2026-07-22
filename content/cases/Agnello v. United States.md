@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Federal revenue agents watched a cocaine sale at Alba's house and, when it was consummated, rushed in and arrested the defendants there, seizing cocaine on the table and on Frank Agnello's person. While some agents took the defendants to the station, others went — without a search warrant — to Frank Agnello's home several blocks away, searched his bedroom, and found a can of cocaine. That can was ultimately admitted against him.
+Federal revenue agents watched a cocaine sale at Alba's house and, when it was consummated, rushed in and arrested the defendants there, seizing cocaine on the table and on Frank Agnello's person. While some agents took the defendants to the station, others went (without a search warrant) to Frank Agnello's home several blocks away, searched his bedroom, and found a can of cocaine. That can was ultimately admitted against him.
 
 ## Issue
 Whether the warrantless search of the arrestee's home, several blocks from the place of arrest and after he was in custody elsewhere, can be justified as a [[Search Incident to Arrest|search incident to arrest]].
@@ -55,7 +55,7 @@ A [[Search Incident to Arrest|search incident to arrest]] is real but bounded to
 But it does not reach a separate home: "But the right does not extend to other places. Frank Agnello's house was several blocks distant from Alba's house, where the arrest was made. When it was entered and searched, the conspiracy was ended and the defendants were under arrest and in custody elsewhere. That search cannot be sustained as an incident of the arrests." — *Id.* at 30–31. ^pin-30a
 
 ## Application
-The arrests and the searches and seizures at Alba's house — where the arrests occurred — were not questioned. But Agnello's house was blocks away; by the time agents entered and searched it without a warrant, the sale was over and the defendants were already in custody at or en route to the station. Nothing about the arrest justified that separate, later search, so the can of cocaine found in his bedroom was the product of an unreasonable warrantless search.
+The arrests and the searches and seizures at Alba's house (where the arrests occurred) were not questioned. But Agnello's house was blocks away; by the time agents entered and searched it without a warrant, the sale was over and the defendants were already in custody at or en route to the station. Nothing about the arrest justified that separate, later search, so the can of cocaine found in his bedroom was the product of an unreasonable warrantless search.
 
 ## Conclusion
 Reversed. The warrantless search of Agnello's distant home could not be sustained as incident to the arrest; the evidence should have been excluded. *Agnello* fixes an early geographic and temporal limit on [[Search Incident to Arrest|search incident to arrest]].
@@ -65,7 +65,7 @@ Reversed. The warrantless search of Agnello's distant home could not be sustaine
 - The limit survives and is consistent with the modern boundary drawn in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Go-Bart Importing Co. v. United States]] (no general exploratory search) and builds on [[Weeks v. United States]].
 
 ## Appears on
-- [[SIA Persons]] — *Key — Historical / Foundational*
+- [[SIA Persons]] — *Key: Historical / Foundational*
 
 ## Sources
-- *Agnello v. United States*, 269 U.S. 20 (1925) — https://www.courtlistener.com/opinion/100711/agnello-v-united-states/ — pinpoints: 30, 31.
+- *Agnello v. United States*, 269 U.S. 20 (1925) — https://www.courtlistener.com/opinion/100711/agnello-v-united-states/. Pinpoints: 30, 31.

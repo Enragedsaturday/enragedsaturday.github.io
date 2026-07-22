@@ -59,7 +59,7 @@ The statute was unconstitutional for overbreadth: "We have concluded that the la
 It failed the Fourth Amendment's [[Particularity|particularity]] command: "New York's statute lacks this particularization. It merely says that a warrant may issue on reasonable ground to believe that evidence of crime may be obtained by the eavesdrop. It lays down no requirement for particularity in the warrant as to what specific crime has been or is being committed, nor 'the place to be searched,' or 'the persons or things to be seized' as specifically required by the Fourth Amendment." — *Id.* at 56. ^pin-56
 
 ## Application
-The eavesdrop orders that captured Berger's conversations issued under a statute that named no particular crime, identified no particular conversations to be seized, and authorized continuous 60-day surveillance (extendable) on a single showing, with no requirement of prompt termination once the sought conversation was obtained and no return or notice. Because that scheme permitted exactly the kind of broad, exploratory rummaging the Fourth Amendment's [[Particularity|particularity]] requirement forbids, the surveillance — and the statute authorizing it — were unreasonable, and the recordings could not stand.
+The eavesdrop orders that captured Berger's conversations issued under a statute that named no particular crime, identified no particular conversations to be seized, and authorized continuous 60-day surveillance (extendable) on a single showing, with no requirement of prompt termination once the sought conversation was obtained and no return or notice. Because that scheme permitted exactly the kind of broad, exploratory rummaging the Fourth Amendment's [[Particularity|particularity]] requirement forbids, the surveillance (and the statute authorizing it) were unreasonable, and the recordings could not stand.
 
 ## Conclusion
 New York's eavesdropping statute violated the Fourth and Fourteenth Amendments; the conviction was reversed. *Berger* (with [[Katz v. United States]], decided the same Term) established the [[Particularity|particularity]] and procedural safeguards electronic-surveillance authorizations must contain.
@@ -69,9 +69,9 @@ New York's eavesdropping statute violated the Fourth and Fourteenth Amendments; 
 - Marks the transition from the property-trespass approach of [[Olmstead v. United States]] toward the privacy framework completed in [[Katz v. United States]]; its standards shaped Title III of the Omnibus Crime Control Act of 1968 and the interior-monitoring analysis of [[United States v. Karo]].
 
 ## Appears on
-- [[Electronic Surveillance and Title III]] — *Key — Anchor*
-- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — electronic-surveillance floor)*
+- [[Electronic Surveillance and Title III]] — *Key: Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref: electronic-surveillance floor)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Berger v. New York*, 388 U.S. 41 (1967) — https://www.courtlistener.com/opinion/107483/berger-v-new-york/ — pinpoints: 44, 56.
+- *Berger v. New York*, 388 U.S. 41 (1967) — https://www.courtlistener.com/opinion/107483/berger-v-new-york/. Pinpoints: 44, 56.

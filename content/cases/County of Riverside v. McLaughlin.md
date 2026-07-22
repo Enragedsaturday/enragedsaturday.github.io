@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Riverside County, California, combined the *[[Gerstein v. Pugh|Gerstein]]* probable-cause determination for warrantless arrestees with its arraignment proceedings, which were provided within two days of arrest but excluding weekends and holidays. As a result, a person arrested late in the week (for example, on a Thursday) could be held until the following Monday — longer with an intervening holiday — before any judicial probable-cause determination. McLaughlin and others brought a class action challenging the practice as a violation of the promptness requirement of *[[Gerstein v. Pugh]]*.
+Riverside County, California, combined the *[[Gerstein v. Pugh|Gerstein]]* probable-cause determination for warrantless arrestees with its arraignment proceedings, which were provided within two days of arrest but excluding weekends and holidays. As a result, a person arrested late in the week (for example, on a Thursday) could be held until the following Monday (longer with an intervening holiday) before any judicial probable-cause determination. McLaughlin and others brought a class action challenging the practice as a violation of the promptness requirement of *[[Gerstein v. Pugh]]*.
 
 ## Issue
 What time period satisfies *[[Gerstein v. Pugh|Gerstein]]*'s requirement that a warrantless arrestee receive a "prompt" judicial determination of probable cause — and whether Riverside County's weekend- and holiday-excluding schedule met it.
@@ -59,7 +59,7 @@ But timeliness within 48 hours is not automatically sufficient: "This is not to 
 Past 48 hours, the burden flips: "Where an arrested individual does not receive a probable cause determination within 48 hours, the calculus changes. . . . [T]he burden shifts to the government to demonstrate the existence of a bona fide emergency or other extraordinary circumstance. . . . Nor, for that matter, do intervening weekends [qualify as such a circumstance]." — *Id.* at 57. ^pin-57
 
 ## Application
-Riverside's practice — combined probable-cause/arraignment proceedings within two days but excluding Saturdays, Sundays, and holidays — meant a Thursday arrestee might wait until Monday, exceeding the 48-hour period the Court deemed presumptively permissible. Because its regular practice ran past 48 hours, the County was not immune from a systemic (class-action) challenge. The Court left to the lower courts [[Reading and Citing Cases#on-remand|on remand]] whether the County's habit of holding arraignments on "the last day" possible reflected legitimate reasons or impermissible "delay for delay's sake."
+Riverside's practice (combined probable-cause/arraignment proceedings within two days but excluding Saturdays, Sundays, and holidays) meant a Thursday arrestee might wait until Monday, exceeding the 48-hour period the Court deemed presumptively permissible. Because its regular practice ran past 48 hours, the County was not immune from a systemic (class-action) challenge. The Court left to the lower courts [[Reading and Citing Cases#on-remand|on remand]] whether the County's habit of holding arraignments on "the last day" possible reflected legitimate reasons or impermissible "delay for delay's sake."
 
 ## Conclusion
 A judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *[[Gerstein v. Pugh|Gerstein]]*; delay beyond that shifts the burden to the government, and weekends and holidays do not excuse it. Riverside's schedule exceeded the window, so the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -73,4 +73,4 @@ A judicial probable-cause determination within 48 hours of a warrantless arrest 
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *County of Riverside v. McLaughlin*, 500 U.S. 44 (1991) — https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/ — pinpoints: 56, 57.
+- *County of Riverside v. McLaughlin*, 500 U.S. 44 (1991) — https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/. Pinpoints: 56, 57.

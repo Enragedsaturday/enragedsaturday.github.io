@@ -69,7 +69,7 @@ Because the field was an open field outside the [[Curtilage|curtilage]], no Four
 - No negative treatment. *Oliver* reaffirms the open-fields rule of [[Hester v. United States]] and frames the open-fields/[[Curtilage|curtilage]] line later refined by the four-factor test of [[United States v. Dunn]]; [[Curtilage|curtilage]]'s protection at the home's entrance was reinforced in [[Florida v. Jardines]].
 
 ## Appears on
-- [[Curtilage]] — *Key — Progeny / Refinement*
+- [[Curtilage]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Oliver v. United States*, 466 U.S. 170 (1984) — https://www.courtlistener.com/opinion/111146/oliver-v-united-states/ — pinpoints: 179, 180.
+- *Oliver v. United States*, 466 U.S. 170 (1984) — https://www.courtlistener.com/opinion/111146/oliver-v-united-states/; pinpoints: 179, 180.

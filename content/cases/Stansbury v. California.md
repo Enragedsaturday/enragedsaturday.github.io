@@ -55,7 +55,7 @@ Custody is an objective inquiry. "We hold, not for the first time, that an offic
 "[T]he initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned." — *Id.* at 323. ^pin-323
 
 ## Application
-Because the state court had relied on whether the officers subjectively regarded Stansbury as a suspect, it applied the wrong standard. The Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] so that the custody question could be decided on the objective circumstances of the interrogation—whether a reasonable person would have felt restraint of the degree associated with a formal arrest—not on the officers' undisclosed suspicions.
+Because the state court had relied on whether the officers subjectively regarded Stansbury as a suspect, it applied the wrong standard. The Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] so that the custody question could be decided on the objective circumstances of the interrogation (whether a reasonable person would have felt restraint of the degree associated with a formal arrest), not on the officers' undisclosed suspicions.
 
 ## Conclusion
 An officer's subjective, undisclosed suspicion is irrelevant to custody; the judgment was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ An officer's subjective, undisclosed suspicion is irrelevant to custody; the jud
 - Coheres with the objective custody analysis of [[Berkemer v. McCarty]] and [[Howes v. Fields]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Stansbury v. California*, 511 U.S. 318 (1994) — https://www.courtlistener.com/opinion/117843/stansbury-v-california/ — pinpoints: 318, 323.
+- *Stansbury v. California*, 511 U.S. 318 (1994) — https://www.courtlistener.com/opinion/117843/stansbury-v-california/. Pinpoints: 318, 323.

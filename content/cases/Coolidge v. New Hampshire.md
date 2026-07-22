@@ -69,8 +69,8 @@ The warrantless seizure of the car could not be justified as plain view; the evi
 - **Inadvertence requirement abandoned by** [[Horton v. California]] (1990): a plain-view seizure need not be inadvertent so long as the officer is lawfully present and the incriminating character is immediately apparent. *Coolidge*'s prior-justification and immediately-apparent requirements continue to govern; [[Arizona v. Hicks]] confirmed that "immediately apparent" requires probable cause.
 
 ## Appears on
-- [[Plain View Doctrine]] — *Key — Anchor*
+- [[Plain View Doctrine]] — *Key: Anchor*
 - [[The Neutral and Detached Magistrate]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Coolidge v. New Hampshire*, 403 U.S. 443 (1971) — https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/ — pinpoint: 466.
+- [*Coolidge v. New Hampshire*, 403 U.S. 443 (1971)](https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/) — pinpoint: 466.

@@ -63,7 +63,7 @@ The warrantless station-house search was reasonable; the conviction was upheld. 
 - No negative treatment. *Chambers* elaborates the [[Carroll v. United States]] rule and is part of the line later unified for containers in [[California v. Acevedo]] and grounded in the exception's two justifications in [[California v. Carney]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Chambers v. Maroney*, 399 U.S. 42 (1970) — https://www.courtlistener.com/opinion/108184/chambers-v-maroney/ — pinpoint: 52.
+- *Chambers v. Maroney*, 399 U.S. 42 (1970) — https://www.courtlistener.com/opinion/108184/chambers-v-maroney/. Pinpoint: 52.

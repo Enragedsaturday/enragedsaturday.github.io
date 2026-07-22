@@ -69,8 +69,8 @@ The impeachment use of the un-Mirandized but voluntary statements was proper; th
 - The exception is bounded: it does not permit impeachment by **post-arrest silence** ([[Doyle v. Ohio]]) and does not extend to **defense witnesses** other than the defendant ([[James v. Illinois]]); the Fourth Amendment analog runs through [[United States v. Havens]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Limiting*
+- [[Miranda Waiver and Invocation]] — *Key: Limiting*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Harris v. New York*, 401 U.S. 222 (1971) — https://www.courtlistener.com/opinion/108272/harris-v-new-york/ — pinpoints: 225, 226.
+- [*Harris v. New York*, 401 U.S. 222 (1971)](https://www.courtlistener.com/opinion/108272/harris-v-new-york/) — pinpoints: 225, 226.

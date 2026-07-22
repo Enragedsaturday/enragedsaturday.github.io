@@ -65,7 +65,7 @@ Affirmed; the statements were admissible.
 - *McNeil*'s offense-specific holding remains good law. It relied in part on [[Michigan v. Jackson]] (since **overruled** by [[Montejo v. Louisiana]]), but that later development does not disturb *McNeil*'s distinct holding that the Sixth Amendment right is offense-specific and separate from the *[[Miranda v. Arizona|Miranda]]* right.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *McNeil v. Wisconsin*, 501 U.S. 171 (1991) — https://www.courtlistener.com/opinion/112622/mcneil-v-wisconsin/ — pinpoint: 175.
+- *McNeil v. Wisconsin*, 501 U.S. 171 (1991) — https://www.courtlistener.com/opinion/112622/mcneil-v-wisconsin/; pinpoint: 175.

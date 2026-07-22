@@ -44,18 +44,18 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a series of burglary-rapes, officers without probable cause or a warrant went to Hayes's home, and — when he balked — effectively told him he would be arrested if he did not accompany them. They transported him to the station and fingerprinted him; the prints matched those at a crime scene and were used to convict him. Hayes moved to suppress, relying on *[[Davis v. Mississippi]]*.
+Investigating a series of burglary-rapes, officers without probable cause or a warrant went to Hayes's home, and, when he balked, effectively told him he would be arrested if he did not accompany them. They transported him to the station and fingerprinted him; the prints matched those at a crime scene and were used to convict him. Hayes moved to suppress, relying on *[[Davis v. Mississippi]]*.
 
 ## Issue
 Whether the Fourth Amendment permits police, without probable cause or judicial authorization, to transport a suspect from his home to the station and detain him there for fingerprinting.
 
 ## Rule
-No — such a station-house detention is an arrest requiring probable cause: "the line is crossed when the police, without probable cause or a warrant, forcibly remove a person from his home or other place in which he is entitled to be and transport him to the police station, where he is detained, although briefly, for investigative purposes. We adhere to the view that such seizures, at least where not under judicial supervision, are sufficiently like arrests to invoke the traditional rule that arrests may constitutionally be made only on probable cause." — 470 U.S. at 816. ^pin-816
+No. Such a station-house detention is an arrest requiring probable cause: "the line is crossed when the police, without probable cause or a warrant, forcibly remove a person from his home or other place in which he is entitled to be and transport him to the police station, where he is detained, although briefly, for investigative purposes. We adhere to the view that such seizures, at least where not under judicial supervision, are sufficiently like arrests to invoke the traditional rule that arrests may constitutionally be made only on probable cause." — 470 U.S. at 816. ^pin-816
 
 The Court reserved a narrower field practice: "There is thus support in our cases for the view that the Fourth Amendment would permit seizures for the purpose of fingerprinting, if there is reasonable suspicion that the suspect has committed a criminal act, if there is a reasonable basis for believing that fingerprinting will establish or negate the suspect's connection with that crime, and if the procedure is carried out with dispatch." — *Id.* at 817. ^pin-817
 
 ## Application
-Officers had neither probable cause nor a warrant nor judicial authorization, yet — under threat of arrest — removed Hayes from his home, transported him to the station, and detained him to take his prints. That conduct crossed the line into a [[Common Legal Terms#de-facto|de facto]] arrest requiring probable cause, so the fingerprints were the fruit of an unlawful seizure and had to be suppressed. The Court emphasized that its holding did not foreclose a brief *field* detention to take fingerprints where officers have reasonable suspicion and proceed with dispatch — but no such limited, on-site procedure occurred here.
+Officers had neither probable cause nor a warrant nor judicial authorization, yet, under threat of arrest, removed Hayes from his home, transported him to the station, and detained him to take his prints. That conduct crossed the line into a [[Common Legal Terms#de-facto|de facto]] arrest requiring probable cause, so the fingerprints were the fruit of an unlawful seizure and had to be suppressed. The Court emphasized that its holding did not foreclose a brief *field* detention to take fingerprints where officers have reasonable suspicion and proceed with dispatch — but no such limited, on-site procedure occurred here.
 
 ## Conclusion
 The warrantless station-house fingerprinting detention was an arrest without probable cause; the fingerprints were suppressed and the conviction reversed. *Hayes* reaffirms [[Davis v. Mississippi]] and marks the transport-to-the-station line while flagging the open question of brief field fingerprinting on reasonable suspicion.
@@ -68,4 +68,4 @@ The warrantless station-house fingerprinting detention was an arrest without pro
 - [[Seizure of the Person]] — *Limiting*
 
 ## Sources
-- *Hayes v. Florida*, 470 U.S. 811 (1985) — https://www.courtlistener.com/opinion/111382/hayes-v-florida/ — pinpoints: 816, 817.
+- *Hayes v. Florida*, 470 U.S. 811 (1985) — https://www.courtlistener.com/opinion/111382/hayes-v-florida/; pinpoints: 816, 817.

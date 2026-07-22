@@ -55,7 +55,7 @@ The probable-cause inference must be drawn by a neutral magistrate, not the inve
 "Any assumption that evidence sufficient to support a magistrate's disinterested determination to issue a search warrant will justify the officers in making a search without a warrant would reduce the Amendment to a nullity and leave the people's homes secure only in the discretion of police officers." — *Id.* at 14. ^pin-14
 
 ## Application
-The opium odor may well have furnished probable cause, but the officers — not a magistrate — made that judgment and searched the room without a warrant. No exceptional circumstances excused the failure to obtain a warrant: there was no consent, no search incident to a valid arrest (the arrest itself depended on the entry), and no risk of evidence destruction shown. Because the officers, rather than a neutral magistrate, drew the probable-cause inference, the warrantless search was unreasonable.
+The opium odor may well have furnished probable cause, but the officers (not a magistrate) made that judgment and searched the room without a warrant. No exceptional circumstances excused the failure to obtain a warrant: there was no consent, no search incident to a valid arrest (the arrest itself depended on the entry), and no risk of evidence destruction shown. Because the officers, rather than a neutral magistrate, drew the probable-cause inference, the warrantless search was unreasonable.
 
 ## Conclusion
 The warrantless search was invalid; the conviction resting on the seized evidence was reversed.
@@ -65,7 +65,7 @@ The warrantless search was invalid; the conviction resting on the seized evidenc
 - No negative treatment. *Johnson*'s neutral-and-detached-magistrate principle remains a cornerstone of the warrant requirement and is invoked across the modern Fourth Amendment cases, including [[Katz v. United States]] and [[Coolidge v. New Hampshire]].
 
 ## Appears on
-- [[The Neutral and Detached Magistrate]] — *Key — Anchor*
+- [[The Neutral and Detached Magistrate]] — *Key: Anchor*
 
 ## Sources
-- *Johnson v. United States*, 333 U.S. 10 (1948) — https://www.courtlistener.com/opinion/104504/johnson-v-united-states/ — pinpoints: 13, 14.
+- *Johnson v. United States*, 333 U.S. 10 (1948) — https://www.courtlistener.com/opinion/104504/johnson-v-united-states/. Pinpoints: 13, 14.

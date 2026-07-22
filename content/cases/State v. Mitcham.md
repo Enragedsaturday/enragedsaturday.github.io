@@ -70,4 +70,4 @@ The DNA evidence was admissible under the inevitable discovery exception; suppre
 - [[The Exclusionary Rule]] — *Recent development (role-based)*
 
 ## Sources
-- *State v. Mitcham*, 258 Ariz. 435, 559 P.3d 1099 (Ariz. 2024) — https://www.courtlistener.com/opinion/10293607/state-of-arizona-v-ian-mitcham/ (lead opinion id 10760195) — pinpoints: ¶¶ 34, 36, 37.
+- *State v. Mitcham*, 258 Ariz. 435, 559 P.3d 1099 (Ariz. 2024) — https://www.courtlistener.com/opinion/10293607/state-of-arizona-v-ian-mitcham/ (lead opinion id 10760195). Pinpoints: ¶¶ 34, 36, 37.

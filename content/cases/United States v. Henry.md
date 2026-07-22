@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Henry was indicted for armed robbery and held in jail awaiting trial. Government agents had a paid informant, Nichols — a fellow inmate in Henry's cellblock — report on Henry, instructing him not to question Henry but to be alert to statements. Nichols engaged Henry in conversation, and Henry made incriminating remarks about the robbery that were used at trial. Nichols was paid on a contingent-fee basis for producing useful information.
+Henry was indicted for armed robbery and held in jail awaiting trial. Government agents had a paid informant, Nichols (a fellow inmate in Henry's cellblock), report on Henry, instructing him not to question Henry but to be alert to statements. Nichols engaged Henry in conversation, and Henry made incriminating remarks about the robbery that were used at trial. Nichols was paid on a contingent-fee basis for producing useful information.
 
 ## Issue
 Whether the government "deliberately elicited" incriminating statements from an indicted, incarcerated defendant, in violation of his Sixth Amendment right to counsel under *[[Massiah v. United States|Massiah]]*, when it used a paid jailhouse informant posing as a fellow inmate.
@@ -55,7 +55,7 @@ Yes. The Sixth Amendment, as construed in [[Massiah v. United States]], bars the
 Applying those factors, the Court held: "By intentionally creating a situation likely to induce Henry to make incriminating statements without the assistance of counsel, the Government violated Henry's Sixth Amendment right to counsel." — *Id.* at 274. ^pin-274
 
 ## Application
-On these facts the government deliberately elicited the statements even without express interrogation. Nichols was a paid government agent acting under instructions, not a mere private citizen; his pose as an ordinary cellmate exploited Henry's confidence; and Henry was already indicted and in custody, when the right to counsel had attached. Although Nichols was told only to listen, the agent "must have known that such propinquity likely would lead to" incriminating disclosures, and the contingent-fee arrangement gave Nichols every incentive to draw Henry out. The government thus "intentionally creat[ed] a situation likely to induce" the statements — an impermissible circumvention of counsel — so the statements should have been excluded. The Court emphasized this was not a case where "the constable . . . blundered," but one where the government "planned an impermissible interference with the right to the assistance of counsel."
+On these facts the government deliberately elicited the statements even without express interrogation. Nichols was a paid government agent acting under instructions, not a mere private citizen; his pose as an ordinary cellmate exploited Henry's confidence; and Henry was already indicted and in custody, when the right to counsel had attached. Although Nichols was told only to listen, the agent "must have known that such propinquity likely would lead to" incriminating disclosures, and the contingent-fee arrangement gave Nichols every incentive to draw Henry out. The government thus "intentionally creat[ed] a situation likely to induce" the statements (an impermissible circumvention of counsel), so the statements should have been excluded. The Court emphasized this was not a case where "the constable . . . blundered," but one where the government "planned an impermissible interference with the right to the assistance of counsel."
 
 ## Conclusion
 The use of the paid jailhouse informant violated Henry's Sixth Amendment right to counsel; the Fourth Circuit's judgment that the statements should have been excluded was affirmed.
@@ -66,7 +66,7 @@ The use of the paid jailhouse informant violated Henry's Sixth Amendment right t
 - Part of the [[Massiah v. United States]] / [[Brewer v. Williams]] / [[Maine v. Moulton]] line on the post-attachment Sixth Amendment right to counsel.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Henry*, 447 U.S. 264 (1980) — https://www.courtlistener.com/opinion/110300/united-states-v-henry/ — pinpoints: 270, 274.
+- [*United States v. Henry*, 447 U.S. 264 (1980)](https://www.courtlistener.com/opinion/110300/united-states-v-henry/) — pinpoints: 270, 274.

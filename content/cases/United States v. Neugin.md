@@ -68,4 +68,4 @@ Opening the camper was an unconstitutional search that neither the community-car
 - [[The Exclusionary Rule]] — *Recent development (role-based)*
 
 ## Sources
-- *United States v. Neugin*, 958 F.3d 924 (10th Cir. 2020) — https://www.courtlistener.com/opinion/4750564/united-states-v-neugin/ — pinpoints given as slip-opinion pages (CourtListener carries the slip opinion; cluster 4750564 → opinion 4530911).
+- *United States v. Neugin*, 958 F.3d 924 (10th Cir. 2020) — https://www.courtlistener.com/opinion/4750564/united-states-v-neugin/. Pinpoints given as slip-opinion pages (CourtListener carries the slip opinion; cluster 4750564 → opinion 4530911).

@@ -50,7 +50,7 @@ Faced with a sharp rise in student drug use led by the school's athletes, the Ve
 Whether a public school district's policy of random, suspicionless urinalysis drug testing of student athletes is a reasonable search under the Fourth Amendment.
 
 ## Rule
-State-compelled urinalysis is a search, and "the ultimate measure of the constitutionality of a governmental search is 'reasonableness'" — judged, where there was no clear founding-era practice, by "balancing its intrusion on the individual's Fourth Amendment interests against its promotion of legitimate governmental interests." — 515 U.S. at 652–653. ^pin-652
+State-compelled urinalysis is a search, and "the ultimate measure of the constitutionality of a governmental search is 'reasonableness'", judged, where there was no clear founding-era practice, by "balancing its intrusion on the individual's Fourth Amendment interests against its promotion of legitimate governmental interests." — 515 U.S. at 652–653. ^pin-652
 
 A school search may proceed without individualized suspicion under the "special needs" doctrine, and the relevant privacy expectation is reduced in the school setting and reduced further for athletes: "Legitimate privacy expectations are even less with regard to student athletes." — [*Id.* at 657](https://www.courtlistener.com/opinion/117964/vernonia-school-district-47j-v-acton/#:~:text=%E2%80%9Cwhen-,special%20needs). ^pin-657
 
@@ -67,7 +67,7 @@ The Policy was a reasonable search; the judgment of the Ninth Circuit invalidati
 - No negative treatment. *Vernonia* was **extended** by [[Board of Education v. Earls]] (2002), which upheld suspicionless testing of students in all competitive extracurricular activities, not just athletics. It builds on the school-search framework of [[New Jersey v. T.L.O.]] and the drug-testing balancing of [[Skinner v. Railway Labor Executives' Ass'n]] and [[National Treasury Employees Union v. Von Raab]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Anchor*
+- [[Special Needs and Administrative Searches]]: *Key — Anchor*
 
 ## Sources
-- *Vernonia School District 47J v. Acton*, 515 U.S. 646 (1995) — https://www.courtlistener.com/opinion/117964/vernonia-school-district-47j-v-acton/ — pinpoints: 652–653, 657, 664–665.
+- *Vernonia School District 47J v. Acton*, 515 U.S. 646 (1995) — https://www.courtlistener.com/opinion/117964/vernonia-school-district-47j-v-acton/; pinpoints: 652–653, 657, 664–665.

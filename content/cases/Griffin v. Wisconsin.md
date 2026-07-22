@@ -65,7 +65,7 @@ The warrantless probation search was reasonable; the conviction and the denial o
 - No negative treatment. *Griffin*'s special-needs rationale for supervising probationers was carried forward in later probation/parole-search cases such as [[United States v. Knights]] and [[Samson v. California]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Griffin v. Wisconsin*, 483 U.S. 868 (1987) — https://www.courtlistener.com/opinion/111959/griffin-v-wisconsin/ — pinpoints: 873, 876.
+- *Griffin v. Wisconsin*, 483 U.S. 868 (1987) — https://www.courtlistener.com/opinion/111959/griffin-v-wisconsin/. Pinpoints: 873, 876.

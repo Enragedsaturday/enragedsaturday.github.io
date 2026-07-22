@@ -54,7 +54,7 @@ Suppressed favorable evidence violates due process when it is material, and mate
 
 The defendant's burden is confidence-based, not preponderance-based: "He must show only that the new evidence is sufficient to 'undermine confidence' in the verdict." — *Id.* ^pin-1006a
 
-And materiality must be assessed collectively — the court must conduct a "cumulative evaluation" of the suppressed evidence rather than gauge each piece "in isolation." — [*Id.* at 1007](https://www.courtlistener.com/opinion/3183098/wearry-v-cain/#:~:text=cumulative%20evaluation). ^pin-1007
+And materiality must be assessed collectively: the court must conduct a "cumulative evaluation" of the suppressed evidence rather than gauge each piece "in isolation." — [*Id.* at 1007](https://www.courtlistener.com/opinion/3183098/wearry-v-cain/#:~:text=cumulative%20evaluation). ^pin-1007
 
 ## Application
 On these facts the prosecution's case "resemble[d] a house of cards, built on the jury crediting Scott's account rather than Wearry's alibi." — 136 S. Ct. at 1006. ^pin-1006b
@@ -69,7 +69,7 @@ The suppressed impeachment evidence was material; its cumulative weight undermin
 - No negative treatment. *Wearry* applies the materiality standard of [[Brady v. Maryland]] and [[Giglio v. United States]], reaffirms the "cumulative evaluation" command of [[Kyles v. Whitley]], and tracks the confidence-in-the-verdict analysis of [[Smith v. Cain]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Wearry v. Cain*, 577 U.S. 385 (2016) — https://www.courtlistener.com/opinion/3183098/wearry-v-cain/ — pinpoints given to the parallel S. Ct. reporter (CourtListener star-paginates *Wearry* by 136 S. Ct.): 1006, 1007. Cluster 3183098 → opinion 3183080.
+- *Wearry v. Cain*, 577 U.S. 385 (2016) — https://www.courtlistener.com/opinion/3183098/wearry-v-cain/. Pinpoints given to the parallel S. Ct. reporter (CourtListener star-paginates *Wearry* by 136 S. Ct.): 1006, 1007. Cluster 3183098 → opinion 3183080.

@@ -65,7 +65,7 @@ A reasonable, even if mistaken, belief in a third party's common authority can v
 - No negative treatment. *Rodriguez* supplements the actual-common-authority rule of [[United States v. Matlock]] with an apparent-authority doctrine; [[Georgia v. Randolph]] and [[Fernandez v. California]] later address a physically present co-occupant's refusal.
 
 ## Appears on
-- [[Consent Searches]] — *Key — Progeny / Refinement*
+- [[Consent Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Rodriguez*, 497 U.S. 177 (1990) — https://www.courtlistener.com/opinion/112475/illinois-v-rodriguez/ — pinpoints: 188, 189.
+- [*Illinois v. Rodriguez*, 497 U.S. 177 (1990)](https://www.courtlistener.com/opinion/112475/illinois-v-rodriguez/) — pinpoints: 188, 189.

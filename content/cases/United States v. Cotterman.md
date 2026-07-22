@@ -52,13 +52,13 @@ Whether a comprehensive forensic examination of an electronic device seized at t
 ## Rule
 A forensic examination of a device requires reasonable suspicion, triggered by the search's intrusiveness rather than its location: "It is the comprehensive and intrusive nature of a forensic examination—not the location of the examination—that is the key factor triggering the requirement of reasonable suspicion here." — slip op., at 17. ^pin-op17
 
-The [[Reading and Citing Cases#en-banc|en banc]] court accordingly held that the forensic examination of Cotterman's computer required a showing of reasonable suspicion — a modest requirement — distinguishing such a search from the routine, suspicionless manual inspection permitted at the border. (The follow-on examination was not an "extended border search," because the laptop never cleared customs.)
+The [[Reading and Citing Cases#en-banc|en banc]] court accordingly held that the forensic examination of Cotterman's computer required a showing of reasonable suspicion (a modest requirement) distinguishing such a search from the routine, suspicionless manual inspection permitted at the border. (The follow-on examination was not an "extended border search," because the laptop never cleared customs.)
 
 ## Application
-The forensic imaging and analysis of Cotterman's laptop — recovering hidden, encrypted, and deleted files and exposing the most intimate details of his digital life — was so comprehensive and intrusive that it required reasonable suspicion, regardless of being performed 170 miles inland. On the facts, the agents had reasonable suspicion (the prior conviction, a border-alert hit, and password-protected files), so the forensic search was reasonable and the child-pornography evidence was admissible; the suppression order was reversed.
+The forensic imaging and analysis of Cotterman's laptop (recovering hidden, encrypted, and deleted files and exposing the most intimate details of his digital life) was so comprehensive and intrusive that it required reasonable suspicion, regardless of being performed 170 miles inland. On the facts, the agents had reasonable suspicion (the prior conviction, a border-alert hit, and password-protected files), so the forensic search was reasonable and the child-pornography evidence was admissible; the suppression order was reversed.
 
 ## Conclusion
-Forensic examination of a device seized at the border requires reasonable suspicion, which the agents had here; the suppression was reversed. The intrusiveness of a comprehensive forensic search — not where it occurs — is what triggers the reasonable-suspicion requirement.
+Forensic examination of a device seized at the border requires reasonable suspicion, which the agents had here; the suppression was reversed. The intrusiveness of a comprehensive forensic search (not where it occurs) is what triggers the reasonable-suspicion requirement.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.** Clarified by [[United States v. Cano]], which held that the "reasonable suspicion" *Cotterman* requires means suspicion that the device contains digital contraband and confined such searches to that purpose.
@@ -68,4 +68,4 @@ Forensic examination of a device seized at the border requires reasonable suspic
 - [[Border Searches]] — *Illustrates a circuit split*
 
 ## Sources
-- *United States v. Cotterman*, 709 F.3d 952 (9th Cir. 2013) (en banc) — https://www.courtlistener.com/opinion/854692/united-states-v-howard-cotterman/ — pinpoint: slip op., at 17 (CL carries the slip opinion; cluster 854692).
+- *United States v. Cotterman*, 709 F.3d 952 (9th Cir. 2013) (en banc) — https://www.courtlistener.com/opinion/854692/united-states-v-howard-cotterman/. Pinpoint: slip op., at 17 (CL carries the slip opinion; cluster 854692).

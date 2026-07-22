@@ -47,7 +47,7 @@ lake:
 A Maryland trooper stopped a speeding car with three occupants. While the driver produced his license, the front-seat passenger, Wilson, was sweating and nervous; when ordered out of the car, he dropped a quantity of crack cocaine. Wilson argued the order to exit was an unreasonable seizure because, unlike the driver in *[[Pennsylvania v. Mimms]]*, he was a mere passenger.
 
 ## Issue
-Whether the rule of *[[Pennsylvania v. Mimms]]* — that an officer may order the driver out of a lawfully stopped vehicle — extends to passengers.
+Whether the rule of *[[Pennsylvania v. Mimms]]*, that an officer may order the driver out of a lawfully stopped vehicle, extends to passengers.
 
 ## Rule
 Yes. "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop." — 519 U.S. at 415. ^pin-415
@@ -65,7 +65,7 @@ Reversed: an officer making a lawful traffic stop may order passengers, as well 
 - *Wilson* extends [[Pennsylvania v. Mimms]] from drivers to passengers and sits alongside later traffic-stop authority recognizing that passengers are seized by the stop ([[Brendlin v. California]]) and may be subject to safety measures ([[Arizona v. Johnson]]); it remains good law.
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Progeny / Refinement*
+- [[Traffic Stops]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Maryland v. Wilson*, 519 U.S. 408 (1997) — https://www.courtlistener.com/opinion/118086/maryland-v-wilson/ — pinpoint: 415.
+- *Maryland v. Wilson*, 519 U.S. 408 (1997) — https://www.courtlistener.com/opinion/118086/maryland-v-wilson/; pinpoint: 415.

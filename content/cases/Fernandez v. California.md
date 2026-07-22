@@ -47,7 +47,7 @@ lake:
 Officers investigating a robbery followed a suspect to an apartment and heard sounds of a fight inside. Roxanne Rojas answered the door appearing battered. Fernandez stepped forward and told the officers they had no right to enter. The officers arrested him for assaulting Rojas and removed him from the scene; about an hour later they returned and obtained Rojas's consent to search the apartment, where they found gang paraphernalia, a knife, and ammunition tying Fernandez to the robbery.
 
 ## Issue
-Whether the rule of [[Georgia v. Randolph]] — that a physically present co-occupant's express objection defeats another occupant's consent — bars a search later consented to by the remaining occupant after the objecting occupant has been lawfully removed from the premises by arrest.
+Whether the rule of [[Georgia v. Randolph]] (that a physically present co-occupant's express objection defeats another occupant's consent) bars a search later consented to by the remaining occupant after the objecting occupant has been lawfully removed from the premises by arrest.
 
 ## Rule
 No. *[[Georgia v. Randolph|Randolph]]*'s objecting-occupant rule operates only while the objector is physically present; once he has been lawfully removed, the consent of the remaining occupant controls. "We therefore hold that an occupant who is absent due to a lawful detention or arrest stands in the same shoes as an occupant who is absent for any other reason." — 571 U.S. at 303. ^pin-303
@@ -65,7 +65,7 @@ The warrantless search was reasonable; with the objecting occupant lawfully remo
 - *Fernandez* confines [[Georgia v. Randolph]] to a **physically present** objector — it limits *[[Georgia v. Randolph|Randolph]]*'s reach but does not disturb its core rule that a present, objecting co-occupant defeats a co-tenant's consent.
 
 ## Appears on
-- [[Consent Searches]] — *Key — Progeny / Refinement*
+- [[Consent Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Fernandez v. California*, 571 U.S. 292 (2014) — https://www.courtlistener.com/opinion/2654534/fernandez-v-california/ — pinpoint: 303 (cluster 2654534 → lead opinion 9798884).
+- *Fernandez v. California*, 571 U.S. 292 (2014) — https://www.courtlistener.com/opinion/2654534/fernandez-v-california/. Pinpoint: 303 (cluster 2654534 → lead opinion 9798884).

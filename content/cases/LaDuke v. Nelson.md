@@ -57,7 +57,7 @@ A class of migrant and seasonal farmworkers in Washington's Spokane Sector chall
 Whether the INS's warrantless entries into migrant farmworker dwellings and its suspicionless detentive stops of residents violate the Fourth Amendment, and whether the district court's injunction was proper.
 
 ## Rule
-The Ninth Circuit affirmed. It held that the humble, often temporary dwellings of migrant farmworkers are fully protected by the Fourth Amendment and that the injunction's first component — barring warrantless entries of farm dwellings to search or arrest absent clear consent or probable cause — was sound: "we think the plain language of the first component provides ample flexibility for INS searches while preserving class members' reasonable expectations of privacy." — 762 F.2d at 1331. The court agreed that the INS "farm checks, as described by the witnesses, run afoul of the Fourth Amendment." — *Id.* at 1332.
+The Ninth Circuit affirmed. It held that the humble, often temporary dwellings of migrant farmworkers are fully protected by the Fourth Amendment and that the injunction's first component (barring warrantless entries of farm dwellings to search or arrest absent clear consent or probable cause) was sound: "we think the plain language of the first component provides ample flexibility for INS searches while preserving class members' reasonable expectations of privacy." — 762 F.2d at 1331. The court agreed that the INS "farm checks, as described by the witnesses, run afoul of the Fourth Amendment." *Id.* at 1332.
 
 ## Application
 The injunction had three parts: no warrantless entries of farm dwellings to search or arrest absent consent or probable cause; no warrantless arrests or searches of residents without probable cause; and no detentive stops without articulable suspicion of both alienage and unlawful presence. The court sustained each, rejecting the INS's overbreadth arguments and stressing that the modest character of migrant housing does not diminish its occupants' constitutional protection; the injunction still left ample room for consensual encounters and legitimate, warrant-based enforcement.
@@ -66,7 +66,7 @@ The injunction had three parts: no warrantless entries of farm dwellings to sear
 The judgment and injunction were **affirmed** (with a modification to the fee award); the INS's area-control entries and suspicionless stops violated the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *LaDuke* stands for the proposition that a dwelling's protection does not depend on its permanence or grandeur: temporary and makeshift homes — farmworker cabins, shacks, and tents — remain within the Fourth Amendment's shelter against warrantless government entry.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *LaDuke* stands for the proposition that a dwelling's protection does not depend on its permanence or grandeur: temporary and makeshift homes (farmworker cabins, shacks, and tents) remain within the Fourth Amendment's shelter against warrantless government entry.
 
 ## Appears on
 - [[Tents]] — *Key*

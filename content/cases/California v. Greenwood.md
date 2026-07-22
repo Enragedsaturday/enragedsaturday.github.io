@@ -65,7 +65,7 @@ There was no Fourth Amendment violation; the judgment suppressing the evidence w
 - No negative treatment. *Greenwood* applies the exposure/abandonment principle alongside [[Abel v. United States]] and the knowing-exposure logic of [[Katz v. United States]].
 
 ## Appears on
-- [[Abandonment]] — *Key — Progeny / Refinement*
+- [[Abandonment]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *California v. Greenwood*, 486 U.S. 35 (1988) — https://www.courtlistener.com/opinion/112067/california-v-greenwood/ — pinpoint: 40.
+- *California v. Greenwood*, 486 U.S. 35 (1988) — https://www.courtlistener.com/opinion/112067/california-v-greenwood/ (pinpoint: 40).

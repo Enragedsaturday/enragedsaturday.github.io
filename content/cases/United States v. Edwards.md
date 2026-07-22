@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Edwards was lawfully arrested shortly after 11 p.m. for attempting to break into a post office and was jailed. Investigation at the scene revealed the entry had been pried open, leaving paint chips. The next morning, substitute clothing was purchased for Edwards; his own clothing — worn at and since the arrest, about 10 hours earlier — was then taken and held as evidence. Laboratory examination revealed paint chips matching the window. Edwards objected that the warrantless seizure of his clothing violated the Fourth Amendment.
+Edwards was lawfully arrested shortly after 11 p.m. for attempting to break into a post office and was jailed. Investigation at the scene revealed the entry had been pried open, leaving paint chips. The next morning, substitute clothing was purchased for Edwards; his own clothing (worn at and since the arrest, about 10 hours earlier) was then taken and held as evidence. Laboratory examination revealed paint chips matching the window. Edwards objected that the warrantless seizure of his clothing violated the Fourth Amendment.
 
 ## Issue
 Does the Fourth Amendment bar the warrantless seizure of an arrestee's clothing at the jail roughly 10 hours after his arrest, once the administrative mechanics of arrest are complete and the prisoner is incarcerated?
@@ -70,4 +70,4 @@ The warrantless seizure and examination of Edwards' clothing were valid; the Cou
 - [[SIA Persons]] — *Progeny*
 
 ## Sources
-- *United States v. Edwards*, 415 U.S. 800 (1974) — https://www.courtlistener.com/opinion/108995/united-states-v-edwards/ — pinpoints: 803, 807, 808–809.
+- *United States v. Edwards*, 415 U.S. 800 (1974) — https://www.courtlistener.com/opinion/108995/united-states-v-edwards/; pinpoints: 803, 807, 808–809.

@@ -55,7 +55,7 @@ Suppressed impeachment evidence is material when it could reasonably undermine c
 But here "Boatner's undisclosed statements were plainly material." — *Id.* (slip op., at 3). ^pin-3
 
 ## Application
-Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements—that he "could not ID anyone because [he] couldn't see faces"—directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *[[Brady v. Maryland|Brady]]*, and the conviction was reversed.
+Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements (that he "could not ID anyone because [he] couldn't see faces") directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *[[Brady v. Maryland|Brady]]*, and the conviction was reversed.
 
 ## Conclusion
 The undisclosed impeachment of the sole eyewitness was material; the conviction was reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ The undisclosed impeachment of the sole eyewitness was material; the conviction 
 - A modern application of the materiality standard of [[Brady v. Maryland]] and [[Strickler v. Greene]] to impeachment evidence ([[Giglio v. United States]]); see the cumulative-materiality analysis of [[Kyles v. Whitley]] and [[United States v. Bagley]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Smith v. Cain*, 565 U.S. 73 (2012) — https://www.courtlistener.com/opinion/620666/smith-v-cain/ — pinpoints: slip op. 2, 3.
+- *Smith v. Cain*, 565 U.S. 73 (2012) — https://www.courtlistener.com/opinion/620666/smith-v-cain/; pinpoints: slip op. 2, 3.

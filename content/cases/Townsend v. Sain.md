@@ -66,7 +66,7 @@ A confession caused by a "truth serum" drug, not the product of a free intellect
 - The voluntariness holding extends the coercion-not-reliability principle of [[Rogers v. Richmond]] and the overborne-will test of [[Lynumn v. Illinois]] to drug-induced statements, paralleling the drugged-confession branch of [[Beecher v. Alabama]] in the due-process line anchored by [[Brown v. Mississippi]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Townsend v. Sain*, 372 U.S. 293 (1963) — https://www.courtlistener.com/opinion/106544/townsend-v-sain/ — pinpoints: 307–308.
+- *Townsend v. Sain*, 372 U.S. 293 (1963) — https://www.courtlistener.com/opinion/106544/townsend-v-sain/. Pinpoints: 307–308.

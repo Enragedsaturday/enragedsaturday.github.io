@@ -70,4 +70,4 @@ The judgment of the Second Circuit was **affirmed**. Thomas, J., delivered the o
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Tanzin v. Tanvir*, 592 U.S. 43 (2020)](https://www.courtlistener.com/opinion/4837663/tanzin-v-tanvir/) — pinpoint: slip op., at 1 (Opinion of the Court, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2020)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.
+- [*Tanzin v. Tanvir*, 592 U.S. 43 (2020)](https://www.courtlistener.com/opinion/4837663/tanzin-v-tanvir/). Pinpoint: slip op., at 1 (Opinion of the Court, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2020)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.

@@ -70,4 +70,4 @@ The hotel clerk could not consent to the search of Stoner's room; the search was
 - [[Consent Searches]] — *Progeny ([[Consent Searches|third-party consent]] / [[Consent Searches|apparent authority]])*
 
 ## Sources
-- *Stoner v. California*, 376 U.S. 483 (1964) — https://www.courtlistener.com/opinion/106777/stoner-v-california/ — pinpoints: 488, 489, 490.
+- *Stoner v. California*, 376 U.S. 483 (1964) — https://www.courtlistener.com/opinion/106777/stoner-v-california/. Pinpoints: 488, 489, 490.

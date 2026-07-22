@@ -67,7 +67,7 @@ The bus passengers were not seized, and their consent to search was voluntary de
 - *Drayton* applies the free-to-decline test of [[Florida v. Bostick]] and the totality-of-circumstances voluntariness rule of [[Schneckloth v. Bustamonte]] and [[Ohio v. Robinette]] (no warning of the right to refuse required); on when a show of authority becomes a seizure, compare [[California v. Hodari D.]].
 
 ## Appears on
-- [[Knock and Talk]] — *Key — Progeny / Refinement*
+- [[Knock and Talk]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Drayton*, 536 U.S. 194 (2002) — https://www.courtlistener.com/opinion/121153/united-states-v-drayton/ — pinpoints: 202, 203, 206.
+- *United States v. Drayton*, 536 U.S. 194 (2002) — https://www.courtlistener.com/opinion/121153/united-states-v-drayton/ (pinpoints: 202, 203, 206).

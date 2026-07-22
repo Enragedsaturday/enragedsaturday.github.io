@@ -5,8 +5,8 @@ citation: ""
 parallel_cite: "200 Ct. Cl. 570; 473 F.2d 1391; 1973 U.S. Ct. Cl. LEXIS 11"
 neutral_cite: ""
 court: U.S. Court of Claims
-court_level: other
-circuit: ""
+court_level: coa
+circuit: fed
 year: 1973
 date_decided: 1973-02-16
 docket: ""

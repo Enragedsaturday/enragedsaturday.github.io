@@ -67,7 +67,7 @@ The Sixth Amendment right to counsel had not attached during preindictment segre
 - The attachment rule stated here is settled and was reaffirmed in *[[Rothgery v. Gillespie County]]* (2008). It marks the dividing line between the Fifth Amendment *[[Miranda v. Arizona|Miranda]]* world (custody) and the Sixth Amendment world (post-charge), and confines the pre-charge attachment suggested by [[Escobedo v. Illinois]].
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny*
 
 ## Sources
-- *United States v. Gouveia*, 467 U.S. 180 (1984) — https://www.courtlistener.com/opinion/111193/united-states-v-gouveia/ — pinpoints: 187, 188.
+- [*United States v. Gouveia*, 467 U.S. 180 (1984)](https://www.courtlistener.com/opinion/111193/united-states-v-gouveia/) — pinpoints: 187, 188.

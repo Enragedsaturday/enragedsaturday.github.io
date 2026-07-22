@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Stovall was brought, handcuffed, to the hospital room of a stabbing victim (Mrs. Behrendt)—who was the only person who could identify her attacker and might not survive—where she identified him in a one-on-one showup. He challenged the identification as unnecessarily suggestive and as a denial of due process, independent of any right-to-counsel claim.
+Stovall was brought, handcuffed, to the hospital room of a stabbing victim (Mrs. Behrendt), who was the only person who could identify her attacker and might not survive, where she identified him in a one-on-one showup. He challenged the identification as unnecessarily suggestive and as a denial of due process, independent of any right-to-counsel claim.
 
 ## Issue
 Whether an unnecessarily suggestive identification procedure can violate due process, and how that claim is judged.
@@ -65,7 +65,7 @@ On these facts the suggestive hospital showup did not violate due process; the j
 - The origin of the due-process attack on suggestive identifications; the reliability-focused "linchpin" test was later developed in [[Neil v. Biggers]] and [[Manson v. Brathwaite]]. *Stovall*'s separate holding that the [[United States v. Wade]] / [[Gilbert v. California]] counsel rules were non-retroactive has been superseded by later retroactivity doctrine, but its due-process identification holding remains good law.
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Anchor*
+- [[Eyewitness Identification]] — *Key: Anchor*
 
 ## Sources
-- *Stovall v. Denno*, 388 U.S. 293 (1967) — https://www.courtlistener.com/opinion/107488/stovall-v-denno/ — pinpoint: 302.
+- [*Stovall v. Denno*, 388 U.S. 293 (1967)](https://www.courtlistener.com/opinion/107488/stovall-v-denno/) — pinpoint: 302.

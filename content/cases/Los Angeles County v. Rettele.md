@@ -48,10 +48,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Sheriff's deputies obtained a valid warrant to search a house in a fraud/identity-theft investigation; the suspects were African-American and one was believed to own a handgun. Unknown to the deputies, the house had recently been sold to Rettele and Sadler, who were white. Executing the warrant in the early morning, deputies entered the bedroom and ordered Rettele and Sadler — naked in bed — to get up and stand, holding them at gunpoint for a couple of minutes while securing the room before letting them dress. Realizing the suspects were not there, the deputies left within 15 minutes. The Retteles sued under § 1983.
+Sheriff's deputies obtained a valid warrant to search a house in a fraud/identity-theft investigation; the suspects were African-American and one was believed to own a handgun. Unknown to the deputies, the house had recently been sold to Rettele and Sadler, who were white. Executing the warrant in the early morning, deputies entered the bedroom and ordered Rettele and Sadler (naked in bed) to get up and stand, holding them at gunpoint for a couple of minutes while securing the room before letting them dress. Realizing the suspects were not there, the deputies left within 15 minutes. The Retteles sued under § 1983.
 
 ## Issue
-Do deputies executing a valid search warrant violate the Fourth Amendment by briefly detaining the home's occupants at gunpoint — including ordering them, unclothed, out of bed — while securing the residence?
+Do deputies executing a valid search warrant violate the Fourth Amendment by briefly detaining the home's occupants at gunpoint (including ordering them, unclothed, out of bed) while securing the residence?
 
 ## Rule
 No. "The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger," and "[d]eputies were not required to turn their backs to allow Rettele and Sadler to retrieve clothing or to cover themselves with the sheets[;] [r]ather, '[t]he risk of harm to both the police and the occupants is minimized if the officers routinely exercise unquestioned command of the situation.'" — 127 S. Ct. at 1993 (quoting *Michigan v. Summers*). ^pin-1993
@@ -77,4 +77,4 @@ The deputies' conduct in executing the valid warrant did not violate the Fourth 
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Los Angeles County v. Rettele*, 550 U.S. 609 (2007) (per curiam) — https://www.courtlistener.com/opinion/145728/los-angeles-county-california-v-rettele/ — pinpoints (S. Ct. reporter, per CL copy): 1993, 1994.
+- [*Los Angeles County v. Rettele*, 550 U.S. 609 (2007) (per curiam)](https://www.courtlistener.com/opinion/145728/los-angeles-county-california-v-rettele/) — pinpoints (S. Ct. reporter, per CL copy): 1993, 1994.

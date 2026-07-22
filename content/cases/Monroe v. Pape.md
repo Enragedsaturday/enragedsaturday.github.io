@@ -62,10 +62,10 @@ Reversed as to the individual officers; § 1983 reached their misuse of authorit
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Overruled in part by** [[Monell v. Department of Social Services]] (1978), which held that municipalities ARE suable "persons" under § 1983, rejecting *Monroe*'s contrary municipal-immunity holding. *Monroe*'s core "under color of" state-law holding — reviving § 1983 as a federal remedy for the misuse of official authority — remains good law.
+- **Overruled in part by** [[Monell v. Department of Social Services]] (1978), which held that municipalities ARE suable "persons" under § 1983, rejecting *Monroe*'s contrary municipal-immunity holding. *Monroe*'s core "under color of" state-law holding (reviving § 1983 as a federal remedy for the misuse of official authority) remains good law.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Anchor*
 
 ## Sources
-- *Monroe v. Pape*, 365 U.S. 167 (1961) — https://www.courtlistener.com/opinion/106170/monroe-v-pape/ — pinpoint: 184.
+- *Monroe v. Pape*, 365 U.S. 167 (1961) — https://www.courtlistener.com/opinion/106170/monroe-v-pape/. Pinpoint: 184.

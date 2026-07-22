@@ -52,7 +52,7 @@ Whether the warrantless opening of an arrestee's locked carry-on bag at the arre
 ## Rule
 An inventory search conducted pursuant to standardized department procedures, and not as a ruse for general investigatory rummaging, is a lawful exception to the warrant requirement. The Tenth Circuit held: "we hold the search conducted at the bus station of the carry-on bag was a lawful inventory search, and the evidence discovered subsequently (pursuant to valid search warrants) was not the fruit of an illegality, but was lawfully obtained." — 937 F.2d at 1539. ^pin-1539
 
-The validity turns on adherence to a governing policy rather than the officer's location: "Section 239.29 of the Oklahoma City Police Department policy does not require officers to conduct their inventory at a particular place." — *Id.* The court read [[Florida v. Wells]] as cautioning only "against inventory searches being used as a ruse for investigatory purposes," and distinguished it because *[[Florida v. Wells|Wells]]* "dealt with the specific problem of the absence of a department policy or standardized criteria governing such searches." — *Id.* ^pin-1539a
+The validity turns on adherence to a governing policy rather than the officer's location: "Section 239.29 of the Oklahoma City Police Department policy does not require officers to conduct their inventory at a particular place." (*Id.*) The court read [[Florida v. Wells]] as cautioning only "against inventory searches being used as a ruse for investigatory purposes," and distinguished it because *[[Florida v. Wells|Wells]]* "dealt with the specific problem of the absence of a department policy or standardized criteria governing such searches." — *Id.* ^pin-1539a
 
 ## Application
 On these facts the search satisfied the inventory exception. A written policy (Section 239.29) directed that locked containers "must be opened and the contents inventoried before booking," and the court found no probable cause to believe contraband was inside when Sergeant Ring first opened the bag, so the policy's competing "obtain a warrant" directive was not triggered. Conducting the inventory at the bus station rather than the station house did not invalidate it, because the policy did not fix a location; and the officer's failure to take notes and his cessation of the search after the first bundle did not show a ruse, given that he was "at the very outset of the inventory" and stopped out of caution when Evans demanded a warrant. Because Sergeant Ring adhered to the standardized procedure and there was no evidence he intended any purpose other than inventory, the search was lawful and the later warranted openings were not fruit of an illegality.
@@ -62,10 +62,10 @@ The bus-station opening of the carry-on bag was a valid inventory search; the de
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- No negative subsequent treatment identified. The decision applies the SCOTUS inventory-search line — [[South Dakota v. Opperman]], [[Illinois v. Lafayette]], [[Colorado v. Bertine]], and [[Florida v. Wells]] — to a locked carry-on bag opened under standardized policy.
+- No negative subsequent treatment identified. The decision applies the SCOTUS inventory-search line ([[South Dakota v. Opperman]], [[Illinois v. Lafayette]], [[Colorado v. Bertine]], and [[Florida v. Wells]]) to a locked carry-on bag opened under standardized policy.
 
 ## Appears on
 - [[Inventory Searches]] — *Application of standardized inventory-search procedure*
 
 ## Sources
-- *United States v. Evans*, 937 F.2d 1534 (10th Cir. 1991) — https://www.courtlistener.com/opinion/564407/united-states-v-daryl-lee-evans/ — pinpoint: 1539.
+- *United States v. Evans*, 937 F.2d 1534 (10th Cir. 1991) — https://www.courtlistener.com/opinion/564407/united-states-v-daryl-lee-evans/. Pinpoint: 1539.

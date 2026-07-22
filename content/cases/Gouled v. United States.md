@@ -71,4 +71,4 @@ The clandestine taking and the use of the evidentiary papers violated Gouled's F
 - [[Trespass]] — *Historical (foil)*
 
 ## Sources
-- *Gouled v. United States*, 255 U.S. 298 (1921) — https://www.courtlistener.com/opinion/99745/gouled-v-united-states/ — pinpoints: 306, 309.
+- *Gouled v. United States*, 255 U.S. 298 (1921) — https://www.courtlistener.com/opinion/99745/gouled-v-united-states/. Pinpoints: 306, 309.

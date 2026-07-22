@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-While vacationing at a state-park cabin, the petitioner called 911 to report that he and his wife had been attacked. Police found him outside, injured, and found his wife dead inside with fatal head wounds. Officers secured the area, took the petitioner to the hospital, and — after a photographer arrived — reentered and "processed the crime scene" for over 16 hours, photographing, collecting evidence, and opening a closed briefcase from which they seized incriminating photographs. The trial court denied suppression, reasoning that officers who secure a homicide crime scene may thoroughly search "anything and everything found within the crime scene area."
+While vacationing at a state-park cabin, the petitioner called 911 to report that he and his wife had been attacked. Police found him outside, injured, and found his wife dead inside with fatal head wounds. Officers secured the area, took the petitioner to the hospital, and (after a photographer arrived) reentered and "processed the crime scene" for over 16 hours, photographing, collecting evidence, and opening a closed briefcase from which they seized incriminating photographs. The trial court denied suppression, reasoning that officers who secure a homicide crime scene may thoroughly search "anything and everything found within the crime scene area."
 
 ## Issue
 Whether police who have secured a homicide crime scene may conduct a warrantless general search of the premises and its contents under a "crime-scene exception" to the warrant requirement.
@@ -68,4 +68,4 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). There
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Flippo v. West Virginia*, 528 U.S. 11 (1999) — https://www.courtlistener.com/opinion/1854815/flippo-v-west-virginia/ — pinpoints: 13, 14.
+- *Flippo v. West Virginia*, 528 U.S. 11 (1999) — https://www.courtlistener.com/opinion/1854815/flippo-v-west-virginia/. Pinpoints: 13, 14.

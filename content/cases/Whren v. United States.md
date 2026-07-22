@@ -67,7 +67,7 @@ The traffic stop was constitutional because it was supported by probable cause o
 - No negative treatment. *Whren* anchors the rule that traffic stops are judged objectively, building on [[Delaware v. Prouse]] and [[Pennsylvania v. Mimms]]; the objective-reasonableness approach extends to an officer's reasonable mistake of law in [[Heien v. North Carolina]].
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Anchor*
+- [[Traffic Stops]] — *Key: Anchor*
 
 ## Sources
-- *Whren v. United States*, 517 U.S. 806 (1996) — https://www.courtlistener.com/opinion/118036/whren-v-united-states/ — pinpoints: 810, 813.
+- *Whren v. United States*, 517 U.S. 806 (1996) — https://www.courtlistener.com/opinion/118036/whren-v-united-states/. Pinpoints: 810, 813.

@@ -67,7 +67,7 @@ No reasonable suspicion was required; the Ninth Circuit's judgment suppressing t
 - No negative subsequent treatment. *Flores-Montano* confines the "routine vs. non-routine" distinction drawn for *person* searches in [[United States v. Montoya de Hernandez]] and instead applies the plenary suspicionless-search rule to vehicles; it expressly leaves open only searches so destructive as to require a different result.
 
 ## Appears on
-- [[Border Searches]] — *Key — Progeny / Refinement*
+- [[Border Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Flores-Montano*, 541 U.S. 149 (2004) — https://www.courtlistener.com/opinion/134729/united-states-v-flores-montano/ — pinpoints: 150, 152–53, 155.
+- *United States v. Flores-Montano*, 541 U.S. 149 (2004) — https://www.courtlistener.com/opinion/134729/united-states-v-flores-montano/. Pinpoints: 150, 152–53, 155.

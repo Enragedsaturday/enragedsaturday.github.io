@@ -65,7 +65,7 @@ A limited invocation is honored as made; Barrett's oral statements were admissib
 - *Barrett* complements [[Edwards v. Arizona]] and [[Smith v. Illinois]]: an invocation must be respected, but its **scope** is set by the suspect's own words; a partial invocation does not automatically bar all questioning.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Connecticut v. Barrett*, 479 U.S. 523 (1987) — https://www.courtlistener.com/opinion/111796/connecticut-v-barrett/ — pinpoints: 528, 529.
+- *Connecticut v. Barrett*, 479 U.S. 523 (1987) — https://www.courtlistener.com/opinion/111796/connecticut-v-barrett/. Pinpoints: 528, 529.

@@ -68,4 +68,4 @@ The nighttime narcotics search was authorized under § 879(a) on the showing mad
 - [[Scope Manner and Related Issues]] — *Related (nighttime execution)*
 
 ## Sources
-- *Gooding v. United States*, 416 U.S. 430 (1974) — https://www.courtlistener.com/opinion/109017/gooding-v-united-states/ — pinpoints: 439, 458.
+- *Gooding v. United States*, 416 U.S. 430 (1974) — https://www.courtlistener.com/opinion/109017/gooding-v-united-states/. Pinpoints: 439, 458.

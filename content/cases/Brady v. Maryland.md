@@ -63,7 +63,7 @@ The suppression of the favorable, material confession violated due process; the 
 - No negative treatment. The rule was **extended** to impeachment evidence by [[Giglio v. United States]] and its materiality standard elaborated by [[United States v. Bagley]] and [[Kyles v. Whitley]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Anchor*
+- [[Brady and Giglio]]: *Key — Anchor*
 
 ## Sources
-- *Brady v. Maryland*, 373 U.S. 83 (1963) — https://www.courtlistener.com/opinion/106598/brady-v-maryland/ — pinpoint: 87.
+- *Brady v. Maryland*, 373 U.S. 83 (1963) — https://www.courtlistener.com/opinion/106598/brady-v-maryland/; pinpoint: 87.

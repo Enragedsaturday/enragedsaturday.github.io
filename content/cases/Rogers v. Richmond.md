@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Rogers was convicted of first-degree murder in Connecticut, his conviction resting in significant part on confessions obtained during sustained police interrogation — questioning during which officers told Rogers they were about to bring his wife in for questioning. In ruling the confessions admissible, the state trial judge (affirmed by the Supreme Court of Errors) applied a voluntariness standard that took into account the probable truth or falsity — the reliability — of the confessions. Rogers sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]].
+Rogers was convicted of first-degree murder in Connecticut, his conviction resting in significant part on confessions obtained during sustained police interrogation — questioning during which officers told Rogers they were about to bring his wife in for questioning. In ruling the confessions admissible, the state trial judge (affirmed by the Supreme Court of Errors) applied a voluntariness standard that took into account the probable truth or falsity (the reliability) of the confessions. Rogers sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]].
 
 ## Issue
 Whether a confession's admissibility under the Due Process Clause may be judged by a standard that takes into account the probable truth or reliability of the confession.
@@ -65,7 +65,7 @@ A voluntariness standard that takes the confession's reliability into account is
 - No negative treatment. *Rogers* refines the due-process confession line rooted in [[Brown v. Mississippi]] and [[Chambers v. Florida]], isolating coercion (not reliability) as the constitutional test — the same psychological-coercion concern later developed in [[Spano v. New York]]. The requirement that there be coercive police activity at all was later underscored in [[Colorado v. Connelly]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Rogers v. Richmond*, 365 U.S. 534 (1961) — https://www.courtlistener.com/opinion/106192/rogers-v-richmond/ — pinpoints: 540–541, 544.
+- *Rogers v. Richmond*, 365 U.S. 534 (1961) — https://www.courtlistener.com/opinion/106192/rogers-v-richmond/ (pinpoints: 540–541, 544).

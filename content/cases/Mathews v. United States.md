@@ -65,7 +65,7 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]; a defendant's refu
 - No negative treatment. *Mathews* remains the governing rule on the availability of the entrapment instruction to a defendant who denies the offense.
 
 ## Appears on
-- [[Entrapment]] — *Key — Progeny / Refinement*
+- [[Entrapment]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Mathews v. United States*, 485 U.S. 58 (1988) — https://www.courtlistener.com/opinion/112012/mathews-v-united-states/ — pinpoint: 62.
+- *Mathews v. United States*, 485 U.S. 58 (1988) — https://www.courtlistener.com/opinion/112012/mathews-v-united-states/ (pinpoint: 62).

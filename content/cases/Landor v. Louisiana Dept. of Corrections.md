@@ -55,7 +55,7 @@ aliases:
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 10878535 → majority opinion 11346052 (Gorsuch, J.; No. 23-1197, decided June 23, 2026). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07; slip-style pin (current-Term slip opinion, no reporter cite assigned — S2 A3). S9 promotes. -->
 
 ## Background
-Damon Landor, a Rastafarian whose faith forbids cutting his hair, alleged that Louisiana Department of Corrections officers — aware of his religious beliefs — forcibly shaved his head. He sued LDOC and several officers in their personal capacities under the Religious Land Use and Institutionalized Persons Act (RLUIPA), which Congress enacted under its Spending Clause power and which conditions federal prison funds on the recipient system's agreement to answer certain religious-exercise suits. The district court dismissed the RLUIPA claims; the Fifth Circuit declined to revive the claim against the individual officers, holding RLUIPA does not authorize personal-capacity suits.
+Damon Landor, a Rastafarian whose faith forbids cutting his hair, alleged that Louisiana Department of Corrections officers (aware of his religious beliefs) forcibly shaved his head. He sued LDOC and several officers in their personal capacities under the Religious Land Use and Institutionalized Persons Act (RLUIPA), which Congress enacted under its Spending Clause power and which conditions federal prison funds on the recipient system's agreement to answer certain religious-exercise suits. The district court dismissed the RLUIPA claims; the Fifth Circuit declined to revive the claim against the individual officers, holding RLUIPA does not authorize personal-capacity suits.
 
 ## Issue
 Whether RLUIPA, a Spending Clause statute, permits damages suits against individual state officials in their personal capacities.
@@ -70,7 +70,7 @@ LDOC, as the funding recipient, agreed to answer certain RLUIPA suits — but th
 **Affirmed** as to the individual-capacity claims. Justice Gorsuch wrote for the Court (6–3).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Landor* marks the ceiling of Spending Clause remedies against individuals: unlike § 1983, which reaches state officers sued in their personal capacities by force of statute, a funding-condition statute like RLUIPA binds only the consenting recipient — leaving injured plaintiffs to look elsewhere for personal-capacity damages.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Landor* marks the ceiling of Spending Clause remedies against individuals: unlike § 1983, which reaches state officers sued in their personal capacities by force of statute, a funding-condition statute like RLUIPA binds only the consenting recipient, leaving injured plaintiffs to look elsewhere for personal-capacity damages.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*

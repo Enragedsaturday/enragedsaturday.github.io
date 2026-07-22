@@ -62,10 +62,10 @@ Reversed. Probable cause supports a warrantless search of an impounded car under
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).
-- No negative treatment. *Thomas* is part of the line — [[Chambers v. Maroney]] forward — that the Court later distilled into the flat rule that the automobile exception "has no separate exigency requirement" in [[Maryland v. Dyson]].
+- No negative treatment. *Thomas* is part of the line ([[Chambers v. Maroney]] forward) that the Court later distilled into the flat rule that the automobile exception "has no separate exigency requirement" in [[Maryland v. Dyson]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan v. Thomas*, 458 U.S. 259 (1982) — https://www.courtlistener.com/opinion/110776/michigan-v-thomas/ — pinpoint: 261.
+- *Michigan v. Thomas*, 458 U.S. 259 (1982) — https://www.courtlistener.com/opinion/110776/michigan-v-thomas/. Pinpoint: 261.

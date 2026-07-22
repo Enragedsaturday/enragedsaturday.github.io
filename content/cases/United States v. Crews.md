@@ -52,7 +52,7 @@ A woman was robbed at gunpoint; she immediately notified police, gave a full des
 Whether a crime victim's in-court identification of the accused must be suppressed as a fruit of the defendant's unlawful arrest.
 
 ## Rule
-No, where the identification's components have an [[Inevitable Discovery and Independent Source|independent source]] that antedates the illegality. "A victim's in-court identification of the accused has three distinct elements" — the victim's presence to testify, her ability to reconstruct the crime and identify the defendant, and the defendant's own physical presence in the courtroom — and on these facts "none of these three elements 'has been come at by exploitation' of the violation of the defendant's Fourth Amendment rights." — 445 U.S. at 471 (quoting *Wong Sun v. United States*, 371 U.S. 471, 488). ^pin-471
+No, where the identification's components have an [[Inevitable Discovery and Independent Source|independent source]] that antedates the illegality. "A victim's in-court identification of the accused has three distinct elements" (the victim's presence to testify, her ability to reconstruct the crime and identify the defendant, and the defendant's own physical presence in the courtroom) and on these facts "none of these three elements 'has been come at by exploitation' of the violation of the defendant's Fourth Amendment rights." — 445 U.S. at 471 (quoting *Wong Sun v. United States*, 371 U.S. 471, 488). ^pin-471
 
 ## Application
 Each element traced to a source independent of the illegal arrest. The victim's presence was "not traceable to any Fourth Amendment violation," because "the victim's identity was known long before there was any official misconduct." — *Id.* at 472. ^pin-472
@@ -69,8 +69,8 @@ Because the in-court identification was not the product of the Fourth Amendment 
 - No negative treatment. *Crews* applies the [[Wong Sun v. United States]] / [[Silverthorne Lumber Co. v. United States]] independent-source principle to identification evidence, and dovetails with the [[United States v. Wade]] / [[Stovall v. Denno]] independent-source test for an in-court identification following a tainted pretrial procedure.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny ([[Inevitable Discovery and Independent Source|independent source]])*
+- [[The Exclusionary Rule]] — *Key: Progeny ([[Inevitable Discovery and Independent Source|independent source]])*
 - [[Eyewitness Identification]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Crews*, 445 U.S. 463 (1980) — https://www.courtlistener.com/opinion/110230/united-states-v-crews/ — pinpoints: 471, 472, 473, 474.
+- [*United States v. Crews*, 445 U.S. 463 (1980)](https://www.courtlistener.com/opinion/110230/united-states-v-crews/) — pinpoints: 471, 472, 473, 474.

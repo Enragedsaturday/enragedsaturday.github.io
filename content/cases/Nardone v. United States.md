@@ -72,4 +72,4 @@ The defendants were entitled to test whether the Government's proof was a fruit 
 - [[The Exclusionary Rule]] — *Anchor ([[Fruits and Attenuation|attenuation]]; '[[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]]')*
 
 ## Sources
-- *Nardone v. United States*, 308 U.S. 338 (1939) — https://www.courtlistener.com/opinion/103259/nardone-v-united-states/ — pinpoints: 340–341.
+- *Nardone v. United States*, 308 U.S. 338 (1939) — https://www.courtlistener.com/opinion/103259/nardone-v-united-states/. Pinpoints: 340–341.

@@ -67,8 +67,8 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]] for entry of judgme
 - No negative treatment. *Ryburn* applies the emergency-aid/[[Exigent Circumstances and Hot Pursuit|exigency]] line of [[Brigham City v. Stuart]] and [[Michigan v. Fisher]] and the qualified-immunity "reasonable officer on the scene" standard of [[Graham v. Connor]]; it is consistent with the later home-entry caretaking limit of [[Caniglia v. Strom]] (welfare entries must route through [[Emergency Aid|emergency aid]] / [[Exigent Circumstances and Hot Pursuit|exigency]]).
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]]: *Key — Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Ryburn v. Huff*, 565 U.S. 469 (2012) — https://www.courtlistener.com/opinion/622303/ryburn-v-huff/ — pinpoints: 476, 477.
+- *Ryburn v. Huff*, 565 U.S. 469 (2012) — https://www.courtlistener.com/opinion/622303/ryburn-v-huff/; pinpoints: 476, 477.

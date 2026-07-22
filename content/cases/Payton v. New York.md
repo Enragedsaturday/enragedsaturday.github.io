@@ -68,9 +68,9 @@ Warrantless, nonconsensual home entry to make a routine felony arrest is presump
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. An arrest warrant founded on probable cause implicitly carries the limited authority to enter a suspect's *own* dwelling to arrest when there is reason to believe he is within; entry to arrest in a *third party's* home additionally requires a search warrant ([[Steagald v. United States]]).
 
 ## Appears on
-- [[Arrest in the Home]] — *Key — Anchor*
-- [[Entry to Arrest]] — *Key — Anchor*
+- [[Arrest in the Home]] — *Key: Anchor*
+- [[Entry to Arrest]] — *Key: Anchor*
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Payton v. New York*, 445 U.S. 573 (1980) — https://www.courtlistener.com/opinion/110235/payton-v-new-york/ — pinpoints: 576, 590.
+- *Payton v. New York*, 445 U.S. 573 (1980) — https://www.courtlistener.com/opinion/110235/payton-v-new-york/. Pinpoints: 576, 590.

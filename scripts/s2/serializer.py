@@ -349,6 +349,30 @@ def self_test():
     # matching how the empty flow list is already narrowed to a real list
     assert split_frontmatter("---\nk: {}\n---\n")[0]["k"] == {}
     assert split_frontmatter("---\nk: []\n---\n")[0]["k"] == []
+
+    # Serializer<->reader round-trip for managed strings carrying a literal
+    # double-quote. yaml_scalar emits the json.dumps escaped form (\" for a quote,
+    # \\ for a backslash); _common._unquote / _strip_inline_comment reverse it
+    # exactly. Without that, an embedded-quote scope_note (the Arizona v. Roberson
+    # class) can never converge -> a LINT-12 false positive and a project.py
+    # idempotence failure. The probes cover: a plain embedded quote, an embedded
+    # quote followed by a '#' (which must NOT read as an inline comment), and an
+    # embedded backslash.
+    for probe in (
+        'flagged audit_needed ("R15 treatment audit required"); none accepted.',
+        'a literal " quote, then a # hash, then a back\\slash tail',
+        'plain value with no special characters',
+    ):
+        rt = OrderedDict([("treatment", OrderedDict([("scope_note", probe)]))])
+        rt_parsed, _rb, _rs = split_frontmatter(dumps_frontmatter(rt))
+        assert rt_parsed["treatment"]["scope_note"] == probe, (
+            probe, rt_parsed["treatment"]["scope_note"])
+    # And the value-level idempotence the projector relies on (managed_subset of a
+    # round-tripped doc must diff-clean against the source mapping).
+    rt_doc = OrderedDict([("treatment", OrderedDict([
+        ("scope_note", 'edge flagged audit_needed ("R15 treatment audit required")')]))])
+    assert diff_paths(managed_subset(split_frontmatter(dumps_frontmatter(rt_doc))[0]), rt_doc) == []
+
     print("serializer self-test passed")
 
 

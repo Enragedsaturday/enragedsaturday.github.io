@@ -55,7 +55,7 @@ Officials who abuse power held by virtue of their state office act under [[Secti
 The Court also held that the constitutionally protected right to choose a Representative includes the right to vote in a primary that is an integral part of the election machinery, so the commissioners' fraud deprived voters of a federally secured right.
 
 ## Application
-The commissioners' acts — altering and falsely certifying the ballot count — were done "in the course of their performance of duties under the Louisiana statute requiring them to count the ballots, to record the result of the count, and to certify the result of the election." Because they could commit the fraud only because they were clothed with the authority of state election law, their misuse of that authority was action "under color of" state law, and it deprived the voters of a right secured by the Constitution.
+The commissioners' acts (altering and falsely certifying the ballot count) were done "in the course of their performance of duties under the Louisiana statute requiring them to count the ballots, to record the result of the count, and to certify the result of the election." Because they could commit the fraud only because they were clothed with the authority of state election law, their misuse of that authority was action "under color of" state law, and it deprived the voters of a right secured by the Constitution.
 
 ## Conclusion
 Reversed in relevant part. Misuse of state-conferred power is action under [[Section 1983 Liability and Qualified Immunity|color of state law]], and the indictment stated an offense; the color-of-law definition announced here became the foundational test for state action under the civil-rights statutes.
@@ -65,7 +65,7 @@ Reversed in relevant part. Misuse of state-conferred power is action under [[Sec
 - *Classic*'s "under color of" definition is the anchor later carried into criminal civil-rights enforcement in [[Screws v. United States]] and expressly adopted for civil § 1983 liability in [[Monroe v. Pape]]; it remains the governing color-of-law formulation. (*Classic* also overruled *Grovey v. Townsend* on the primary-voting question.) No negative treatment of the color-of-law holding.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Classic*, 313 U.S. 299 (1941) — https://www.courtlistener.com/opinion/103531/united-states-v-classic/ — interior pincite(s) 326 retired pending official-reporter pagination (CL stores a paragraph-numbered format without star pages; page per official U.S. Reports citation).
+- *United States v. Classic*, 313 U.S. 299 (1941) — https://www.courtlistener.com/opinion/103531/united-states-v-classic/. Interior pincite(s) 326 retired pending official-reporter pagination (CL stores a paragraph-numbered format without star pages; page per official U.S. Reports citation).

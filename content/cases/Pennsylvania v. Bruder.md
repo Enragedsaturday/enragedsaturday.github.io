@@ -47,10 +47,10 @@ lake:
 Officer Shallis observed Bruder driving erratically and running a red light, and stopped him. Smelling alcohol and seeing Bruder's stumbling movements, the officer administered field sobriety tests and asked whether he had been drinking; Bruder admitted he had and recited the alphabet. He was then arrested for driving under the influence. The Pennsylvania Superior Court held that his roadside statements were the product of un-warned custodial interrogation and suppressed them for lack of [[Miranda and Custodial Interrogation|Miranda warnings]].
 
 ## Issue
-Whether roadside questioning of a motorist during an ordinary traffic stop — here, DUI sobriety questioning before arrest — is custodial interrogation requiring [[Miranda and Custodial Interrogation|Miranda warnings]].
+Whether roadside questioning of a motorist during an ordinary traffic stop (here, DUI sobriety questioning before arrest) is custodial interrogation requiring [[Miranda and Custodial Interrogation|Miranda warnings]].
 
 ## Rule
-No. The decision was "contrary to [[Berkemer v. McCarty]]," which held that the "'noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not "in custody" for the purposes of *Miranda*.'" — 488 U.S. at 10 (quoting *Berkemer*, 468 U.S. 420, 440 (1984)). Because such a motorist's freedom is not curtailed "to a degree associated with formal arrest," "he was not entitled to a recitation of his constitutional rights prior to arrest, and his roadside responses to questioning were admissible." — *Id.* ^pin-10
+No. The decision was "contrary to [[Berkemer v. McCarty]]," which held that the "'noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not "in custody" for the purposes of *Miranda*.'" — 488 U.S. at 10 (quoting *Berkemer*, 468 U.S. 420, 440 (1984)). Because such a motorist's freedom is not curtailed "to a degree associated with formal arrest," "he was not entitled to a recitation of his constitutional rights prior to arrest, and his roadside responses to questioning were admissible." (*Id.*) ^pin-10
 
 "*Berkemer*'s rule, that ordinary traffic stops do not involve custody for purposes of *Miranda*, governs this case." — *Id.* at 11. ^pin-11
 
@@ -68,4 +68,4 @@ Ordinary traffic stops are non-custodial for Miranda purposes; Bruder's pre-arre
 - [[Miranda and Custodial Interrogation]] — *Related (custody)*
 
 ## Sources
-- *Pennsylvania v. Bruder*, 488 U.S. 9 (1988) (per curiam) — https://www.courtlistener.com/opinion/112152/pennsylvania-v-bruder/ — pinpoints: 10, 11.
+- *Pennsylvania v. Bruder*, 488 U.S. 9 (1988) (per curiam) — https://www.courtlistener.com/opinion/112152/pennsylvania-v-bruder/ (pinpoints: 10, 11).

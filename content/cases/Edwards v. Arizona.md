@@ -55,7 +55,7 @@ No; once counsel is invoked, police may not reinitiate interrogation. "[W]hen an
 "[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police." — *Id.* at 484–85. ^pin-484a
 
 ## Application
-Edwards invoked counsel, yet the police — not Edwards — reopened the interrogation the next morning before any lawyer was provided. Because he had not himself initiated the renewed contact, the statement obtained through that police-initiated interrogation could not rest on a valid waiver and had to be suppressed on these facts.
+Edwards invoked counsel, yet the police, not Edwards, reopened the interrogation the next morning before any lawyer was provided. Because he had not himself initiated the renewed contact, the statement obtained through that police-initiated interrogation could not rest on a valid waiver and had to be suppressed on these facts.
 
 ## Conclusion
 The police-initiated interrogation after Edwards invoked counsel violated his rights; the judgment was reversed. *Edwards* establishes the bright-line bar on reinitiating interrogation after a suspect invokes counsel.
@@ -65,7 +65,7 @@ The police-initiated interrogation after Edwards invoked counsel violated his ri
 - No negative treatment. *Edwards* anchors the invocation-of-counsel rule; [[Arizona v. Roberson]] held the bar is not offense-specific, and [[Davis v. United States]] held the initial invocation must be unambiguous.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Anchor*
+- [[Miranda Waiver and Invocation]]: *Key — Anchor*
 
 ## Sources
-- *Edwards v. Arizona*, 451 U.S. 477 (1981) — https://www.courtlistener.com/opinion/110475/edwards-v-arizona/ — pinpoints: 484, 485.
+- *Edwards v. Arizona*, 451 U.S. 477 (1981) — https://www.courtlistener.com/opinion/110475/edwards-v-arizona/; pinpoints: 484, 485.

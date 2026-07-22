@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10855903/united-states-v-mark-anthony-trent/"
   cluster_id: 10855903
-  opinion_id: null
+  opinion_id: 11323299
   identity_checked: false
 lake:
   record_id: United States v. Trent
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-22
 homes:
   - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"
     role: Key

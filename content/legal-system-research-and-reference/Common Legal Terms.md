@@ -27,18 +27,18 @@ The guilty *act*; the physical conduct (or unlawful omission) that makes up the 
 
 ### Corpus delicti
 The "body of the crime"; proof that a crime actually occurred, separate from who did it. A confession alone usually isn't enough without it.
-*Example:* Before a murder conviction, the state must show a death caused by a criminal act — the corpus delicti — not just the defendant's admission.
+*Example:* Before a murder conviction, the state must show a death caused by a criminal act (the corpus delicti), not just the defendant's admission.
 
 ### Modus operandi
 A person's characteristic *method* of committing crimes (abbreviated **M.O.**); the recognizable pattern in how it's done.
 *Example:* A burglar who always enters through a rear basement window and disables the same alarm model has a distinctive modus operandi linking the cases.
 
 ### Probable cause
-A fair probability — judged on the totality of the circumstances — that a crime has occurred or that evidence is present. It is the standard for arrests and most warrants: more than reasonable suspicion, well short of proof beyond a reasonable doubt. Full doctrine: [[Probable Cause and Reasonable Suspicion]].
+A fair probability (judged on the totality of the circumstances) that a crime has occurred or that evidence is present. It is the standard for arrests and most warrants: more than reasonable suspicion, well short of proof beyond a reasonable doubt. Full doctrine: [[Probable Cause and Reasonable Suspicion]].
 *Example:* Finding the reported stolen items in a suspect's bag gives probable cause to arrest.
 
 ### Reasonable suspicion
-A lower, *articulable* belief — more than a hunch — that criminal activity is afoot, justifying a brief investigative stop (and, where danger is articulable, a frisk). Full doctrine: [[Probable Cause and Reasonable Suspicion]] and [[Terry Stops and Reasonable Suspicion]].
+A lower, *articulable* belief, more than a hunch, that criminal activity is afoot, justifying a brief investigative stop (and, where danger is articulable, a frisk). Full doctrine: [[Probable Cause and Reasonable Suspicion]] and [[Terry Stops and Reasonable Suspicion]].
 *Example:* Watching someone repeatedly case parked cars can supply reasonable suspicion to stop and ask questions.
 
 ## Evidence & procedure
@@ -81,14 +81,14 @@ The deadline by which a charge or claim must be brought; once it runs, the case 
 
 ### Totality of the circumstances
 A standard that weighs *all* the facts together, in context, rather than applying a rigid checklist or letting any single factor decide. It is the default lens for judging probable cause, reasonable suspicion, consent, and the voluntariness of a statement.
-*Example:* No one fact was enough, but the late hour, the high-crime block, the suspect's flight, and the bulge at his waistband — taken together, under the totality of the circumstances — added up to reasonable suspicion.
+*Example:* No one fact was enough, but the late hour, the high-crime block, the suspect's flight, and the bulge at his waistband (taken together, under the totality of the circumstances) added up to reasonable suspicion.
 
 ### Preponderance of the evidence
 The **more-likely-than-not** standard of proof (greater than a 50% likelihood); the burden a party ordinarily carries in civil cases and on many pre-trial sub-issues, such as whether a consent to search was voluntary. It sits above reasonable suspicion and probable cause on the certainty scale but below *clear and convincing evidence*, and far below *beyond a reasonable doubt*.
-*Example:* At a suppression hearing the government must show by a preponderance of the evidence — more likely than not — that the defendant freely consented to the search.
+*Example:* At a suppression hearing the government must show by a preponderance of the evidence (more likely than not) that the defendant freely consented to the search.
 
 ### Clear and convincing evidence
-An **intermediate** standard of proof — more demanding than a preponderance, less demanding than beyond a reasonable doubt — requiring the factfinder to reach a **firm belief** that a contested fact is highly probable. It governs a handful of heightened findings.
+An **intermediate** standard of proof (more demanding than a preponderance, less demanding than beyond a reasonable doubt) requiring the factfinder to reach a **firm belief** that a contested fact is highly probable. It governs a handful of heightened findings.
 *Example:* Where a jurisdiction requires clear and convincing evidence for a particular finding, a bare more-likely-than-not showing is not enough; the proof must leave a firm conviction that the fact is true.
 
 ### Beyond a reasonable doubt

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Around 3 a.m., police responding to a report of a man breaking into cars took a description from a witness, Nubia Blandon, who — pointing out her apartment window — identified Perry, who was then standing in the parking lot beside an officer. The witness later could not pick Perry out of a photo array. Perry moved to suppress the identification as the product of unnecessarily suggestive circumstances, even though the police had not orchestrated the showup-like confrontation.
+Around 3 a.m., police responding to a report of a man breaking into cars took a description from a witness, Nubia Blandon, who (pointing out her apartment window) identified Perry, who was then standing in the parking lot beside an officer. The witness later could not pick Perry out of a photo array. Perry moved to suppress the identification as the product of unnecessarily suggestive circumstances, even though the police had not orchestrated the showup-like confrontation.
 
 ## Issue
 Whether the Due Process Clause requires a preliminary judicial assessment of an eyewitness identification's reliability when the suggestive circumstances were not arranged by law enforcement.
@@ -55,7 +55,7 @@ No. Pretrial reliability screening applies only to police-arranged suggestion. "
 "[T]he Due Process Clause does not require a preliminary judicial inquiry into the reliability of an eyewitness identification when the identification was not procured under unnecessarily suggestive circumstances arranged by law enforcement." — *Id.* (slip op., at 18–19). ^pin-op18
 
 ## Application
-The suggestive circumstance here — the witness spontaneously pointing out her window to Perry as he stood beside an officer — was not arranged by the police; an officer had merely asked her for a description. Because there was no improper police arrangement, no preliminary judicial reliability screening was required, and admitting the identification did not render Perry's trial fundamentally unfair; its reliability was for the jury to weigh after cross-examination and instructions.
+The suggestive circumstance here (the witness spontaneously pointing out her window to Perry as he stood beside an officer) was not arranged by the police; an officer had merely asked her for a description. Because there was no improper police arrangement, no preliminary judicial reliability screening was required, and admitting the identification did not render Perry's trial fundamentally unfair; its reliability was for the jury to weigh after cross-examination and instructions.
 
 ## Conclusion
 Absent police-arranged suggestion, due process requires no pretrial reliability screening of an eyewitness identification; the New Hampshire Supreme Court's judgment was affirmed.
@@ -64,7 +64,7 @@ Absent police-arranged suggestion, due process requires no pretrial reliability 
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Perry* fixes the threshold for the [[Neil v. Biggers]]/[[Manson v. Brathwaite]] reliability inquiry at improper police arrangement.
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Progeny / Refinement*
+- [[Eyewitness Identification]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Perry v. New Hampshire*, 565 U.S. 228 (2012) — https://www.courtlistener.com/opinion/620671/perry-v-new-hampshire/ — pinpoints: slip op., at 2, 18–19 (CL carries the slip opinion).
+- *Perry v. New Hampshire*, 565 U.S. 228 (2012) — https://www.courtlistener.com/opinion/620671/perry-v-new-hampshire/. Pinpoints: slip op., at 2, 18–19 (CL carries the slip opinion).

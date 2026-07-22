@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Mallory, a nineteen-year-old of limited intelligence, was arrested in the early afternoon as a suspect in a rape and detained at police headquarters, within the vicinity of numerous committing magistrates. The police — who already had ample evidence treating him as the chief suspect — questioned him for about a half hour, then asked him to submit to a lie-detector test, without telling him of his rights to counsel or a preliminary examination or that he could remain silent. After roughly four more hours of detention and a polygraph examination, his story began to waver and he confessed in the evening. Only then, the next morning, was he arraigned. The confession was admitted and he was convicted of rape and sentenced to death.
+Mallory, a nineteen-year-old of limited intelligence, was arrested in the early afternoon as a suspect in a rape and detained at police headquarters, within the vicinity of numerous committing magistrates. The police, who already had ample evidence treating him as the chief suspect, questioned him for about a half hour, then asked him to submit to a lie-detector test, without telling him of his rights to counsel or a preliminary examination or that he could remain silent. After roughly four more hours of detention and a polygraph examination, his story began to waver and he confessed in the evening. Only then, the next morning, was he arraigned. The confession was admitted and he was convicted of rape and sentenced to death.
 
 ## Issue
 Whether a confession obtained during a period of unnecessary delay in bringing a federal arrestee before a committing magistrate, contrary to Federal Rule of Criminal Procedure 5(a), is admissible.
@@ -65,7 +65,7 @@ The confession was obtained during unnecessary presentment delay in violation of
 - *Mallory* is the second half of the **McNabb-Mallory** federal prompt-presentment rule, building on [[McNabb v. United States]]. It is a **federal-court** rule under Rule 5(a), not a constitutional rule binding the States. Congress later **modified** the rule with 18 U.S.C. §3501's six-hour safe harbor; the Court held §3501 "modified *McNabb-Mallory* without supplanting it" in [[Corley v. United States]]. The prompt-presentment concern is the confession-suppression analog to the prompt judicial probable-cause determination of [[Gerstein v. Pugh]] and [[County of Riverside v. McLaughlin]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor (federal Rule 5(a) prompt-presentment / McNabb-Mallory)*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Anchor (federal Rule 5(a) prompt-presentment / McNabb-Mallory)*
 
 ## Sources
-- *Mallory v. United States*, 354 U.S. 449 (1957) — https://www.courtlistener.com/opinion/105545/mallory-v-united-states/ — pinpoints: 454, 455.
+- *Mallory v. United States*, 354 U.S. 449 (1957) — https://www.courtlistener.com/opinion/105545/mallory-v-united-states/. Pinpoints: 454, 455.

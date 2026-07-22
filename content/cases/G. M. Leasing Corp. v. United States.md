@@ -52,7 +52,7 @@ holding: "Warrantless seizure of a taxpayer's automobiles from public streets an
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 109579 → lead opinion 109579; quote string-matched to the CL opinion text 2026-07-07. S9 promotes. -->
 
 ## Background
-After assessing jeopardy income-tax deficiencies against Norman Chreske, IRS agents — acting without a warrant — seized several automobiles held in the name of G. M. Leasing Corp. (found to be Chreske's alter ego) from public streets and parking lots to satisfy the levy, and separately entered the corporation's business offices and seized books and records. G. M. Leasing sued, contending that both the seizure of the cars and the entry into and search of its offices violated the Fourth Amendment.
+After assessing jeopardy income-tax deficiencies against Norman Chreske, IRS agents, acting without a warrant, seized several automobiles held in the name of G. M. Leasing Corp. (found to be Chreske's alter ego) from public streets and parking lots to satisfy the levy, and separately entered the corporation's business offices and seized books and records. G. M. Leasing sued, contending that both the seizure of the cars and the entry into and search of its offices violated the Fourth Amendment.
 
 ## Issue
 Whether the Fourth Amendment required a warrant (1) to seize the taxpayer's automobiles from public places to enforce a tax levy, and (2) to enter the corporation's private business offices to seize its books and records.
@@ -71,7 +71,7 @@ Because the automobiles were seized from public streets and lots, the levy invad
 The judgment was **affirmed in part and reversed in part**, and the case **[[Reading and Citing Cases#on-remand|remanded]]**: the warrantless seizure of the automobiles was upheld, while the warrantless entry into the offices and seizure of the books and records was held unconstitutional. Blackmun, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *G. M. Leasing* remains a foundational statement that business premises enjoy Fourth Amendment protection and that an administrative or tax-collection objective does not relax the warrant requirement for entering them — while property seized from public places to satisfy a levy implicates no privacy interest at all.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *G. M. Leasing* remains a foundational statement that business premises enjoy Fourth Amendment protection and that an administrative or tax-collection objective does not relax the warrant requirement for entering them, while property seized from public places to satisfy a levy implicates no privacy interest at all.
 
 ## Appears on
 - [[Curtilage]] — *Key*

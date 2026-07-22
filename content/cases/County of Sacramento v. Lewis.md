@@ -55,7 +55,7 @@ Such a claim is judged under substantive due process, and only a purpose to harm
 "Accordingly, we hold that high-speed chases with no intent to harm suspects physically or to worsen their legal plight do not give rise to liability under the Fourteenth Amendment, redressible by an action under § 1983." — [*Id.* at 854](https://www.courtlistener.com/opinion/118214/county-of-sacramento-v-lewis/#:~:text=Accordingly%2C%20we%20hold%20that%20high%2Dspeed). ^pin-854
 
 ## Application
-Because no Fourth Amendment "seizure" occurred — Lewis's death resulted from the pursuit itself, not from a means intentionally applied to stop him — the claim fell under Fourteenth Amendment substantive due process rather than the Fourth Amendment. In the high-speed-pursuit setting, where officers must make instant judgments without time to deliberate, the deliberate-indifference standard used for unhurried custodial decisions does not apply; only an intent to harm unrelated to legitimate law enforcement shocks the conscience. Deputy Smith's conduct, even if reckless, did not meet that standard, so there was no due-process violation.
+Because no Fourth Amendment "seizure" occurred (Lewis's death resulted from the pursuit itself, not from a means intentionally applied to stop him), the claim fell under Fourteenth Amendment substantive due process rather than the Fourth Amendment. In the high-speed-pursuit setting, where officers must make instant judgments without time to deliberate, the deliberate-indifference standard used for unhurried custodial decisions does not apply; only an intent to harm unrelated to legitimate law enforcement shocks the conscience. Deputy Smith's conduct, even if reckless, did not meet that standard, so there was no due-process violation.
 
 ## Conclusion
 Reversed. A high-speed-pursuit death without a seizure is governed by the Fourteenth Amendment's "shocks the conscience" standard, which in the pursuit context requires a purpose to cause harm; deliberate or reckless indifference is insufficient.
@@ -65,8 +65,8 @@ Reversed. A high-speed-pursuit death without a seizure is governed by the Fourte
 - *Lewis* marks the boundary between the [[Graham v. Connor]] Fourth Amendment standard (which applies only when a seizure occurs) and substantive due process; where a pursuit ends in an intentional seizure, the Fourth Amendment governs instead (see [[Scott v. Harris]]). Its culpability analysis is contrasted in the pretrial-detainee context by [[Kingsley v. Hendrickson]]. No negative treatment.
 
 ## Appears on
-- [[Use of Force]] — *Key — Progeny / Refinement*
+- [[Use of Force]] — *Key: Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *County of Sacramento v. Lewis*, 523 U.S. 833 (1998) — https://www.courtlistener.com/opinion/118214/county-of-sacramento-v-lewis/ — pinpoints: 836, 854.
+- *County of Sacramento v. Lewis*, 523 U.S. 833 (1998) — https://www.courtlistener.com/opinion/118214/county-of-sacramento-v-lewis/. Pinpoints: 836, 854.

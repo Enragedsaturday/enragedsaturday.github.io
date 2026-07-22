@@ -52,12 +52,12 @@ Police obtained a warrant to search Jerome Franks's home in a rape investigation
 Whether a defendant ever has the right, after a warrant issues, to challenge the truthfulness of factual statements in the supporting affidavit — and to suppress the evidence if a deliberate or reckless falsehood necessary to probable cause is shown.
 
 ## Rule
-Yes — on a substantial preliminary showing, the defendant is entitled to a veracity hearing, and a proven falsehood essential to probable cause voids the warrant. "[W]here the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request." — 438 U.S. at 155–156. ^pin-155
+Yes. On a substantial preliminary showing, the defendant is entitled to a veracity hearing, and a proven falsehood essential to probable cause voids the warrant. "[W]here the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request." — 438 U.S. at 155–156. ^pin-155
 
 "In the event that at that hearing the allegation of perjury or reckless disregard is established by the defendant by a preponderance of the evidence, and, with the affidavit's false material set to one side, the affidavit's remaining content is insufficient to establish probable cause, the search warrant must be voided and the fruits of the search excluded." — *Id.* at 156. ^pin-156
 
 ## Application
-Franks made specific allegations — backed by an offer of proof — that the affiants had fabricated the statements they attributed to his acquaintances, and those statements bore on probable cause. Because that was the kind of substantial preliminary showing of deliberate or reckless falsehood that entitles a defendant to go behind the affidavit, the Delaware courts erred in treating such a challenge as categorically barred.
+Franks made specific allegations (backed by an offer of proof) that the affiants had fabricated the statements they attributed to his acquaintances, and those statements bore on probable cause. Because that was the kind of substantial preliminary showing of deliberate or reckless falsehood that entitles a defendant to go behind the affidavit, the Delaware courts erred in treating such a challenge as categorically barred.
 
 ## Conclusion
 A defendant may challenge a warrant affidavit's veracity on a substantial preliminary showing; the Delaware Supreme Court's categorical bar was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -67,8 +67,8 @@ A defendant may challenge a warrant affidavit's veracity on a substantial prelim
 - No negative treatment. The "Franks hearing" remains the standard mechanism for attacking deliberate or reckless falsehoods in a warrant affidavit.
 
 ## Appears on
-- [[Franks Challenges]] — *Key — Anchor*
+- [[Franks Challenges]] — *Key: Anchor*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Franks v. Delaware*, 438 U.S. 154 (1978) — https://www.courtlistener.com/opinion/109925/franks-v-delaware/ — pinpoints: 155, 156.
+- *Franks v. Delaware*, 438 U.S. 154 (1978) — https://www.courtlistener.com/opinion/109925/franks-v-delaware/ (pinpoints: 155, 156).

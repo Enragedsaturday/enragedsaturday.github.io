@@ -65,7 +65,7 @@ The confession was not constitutionally involuntary; the Colorado Supreme Court'
 - No negative treatment. *Connelly* cabins the voluntariness line of [[Brown v. Mississippi]], [[Chambers v. Florida]], and [[Ashcraft v. Tennessee]] by requiring state coercion; [[Arizona v. Fulminante]] later subjected an erroneously admitted coerced confession to harmless-error review.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Colorado v. Connelly*, 479 U.S. 157 (1986) — https://www.courtlistener.com/opinion/111779/colorado-v-connelly/ — pinpoint: 167.
+- *Colorado v. Connelly*, 479 U.S. 157 (1986) — https://www.courtlistener.com/opinion/111779/colorado-v-connelly/; pinpoint: 167.

@@ -65,7 +65,7 @@ The government failed to prove predisposition predating its inducement; the conv
 - No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 37 proposed); the proposed negative and audit-needed edges remain unresolved pending a treatment-history audit. *Jacobson* refines the subjective entrapment test of [[Sorrells v. United States]] and [[Sherman v. United States]] by requiring that predisposition exist before the government's first approach.
 
 ## Appears on
-- [[Entrapment]] — *Key — Progeny / Refinement*
+- [[Entrapment]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Jacobson v. United States*, 503 U.S. 540 (1992) — https://www.courtlistener.com/opinion/112720/jacobson-v-united-states/ — pinpoints: 548, 549.
+- *Jacobson v. United States*, 503 U.S. 540 (1992) — https://www.courtlistener.com/opinion/112720/jacobson-v-united-states/. Pinpoints: 548, 549.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Muniz was arrested for driving under the influence and taken to a booking center, where the proceedings were videotaped. Without [[Miranda and Custodial Interrogation|Miranda warnings]], an officer asked him seven biographical questions — name, address, height, weight, eye color, date of birth, and current age — during which he stumbled over his address and age. The officer then asked, "Do you know what the date was of your sixth birthday?" and Muniz answered that he did not. His slurred speech and confused answers were used as evidence of intoxication. The Pennsylvania Superior Court held that the sixth-birthday answer (and other statements) should have been suppressed for lack of [[Miranda and Custodial Interrogation|Miranda warnings]].
+Muniz was arrested for driving under the influence and taken to a booking center, where the proceedings were videotaped. Without [[Miranda and Custodial Interrogation|Miranda warnings]], an officer asked him seven biographical questions (name, address, height, weight, eye color, date of birth, and current age) during which he stumbled over his address and age. The officer then asked, "Do you know what the date was of your sixth birthday?" and Muniz answered that he did not. His slurred speech and confused answers were used as evidence of intoxication. The Pennsylvania Superior Court held that the sixth-birthday answer (and other statements) should have been suppressed for lack of [[Miranda and Custodial Interrogation|Miranda warnings]].
 
 ## Issue
 Whether, for a custodial DUI suspect questioned without [[Miranda and Custodial Interrogation|Miranda warnings]], (1) the slurred manner of his speech, (2) his answer to the "sixth birthday" question, and (3) his answers to routine biographical booking questions were testimonial and required suppression.
@@ -52,7 +52,7 @@ Whether, for a custodial DUI suspect questioned without [[Miranda and Custodial 
 ## Rule
 **Slurring is non-testimonial.** "[A]ny slurring of speech and other evidence of lack of muscular coordination revealed by Muniz's responses . . . constitute nontestimonial components of those responses. Requiring a suspect to reveal the physical manner in which he articulates words . . . does not, without more, compel him to provide a 'testimonial' response for purposes of the privilege." — 496 U.S. at 592. ^pin-591
 
-**The "sixth birthday" answer is testimonial.** Its content forced the trilemma of truth, falsity, or silence: "the incriminating inference of impaired mental faculties stemmed, not just from the fact that Muniz slurred his response, but also from a testimonial aspect of that response." — [*Id.* at 599](https://www.courtlistener.com/opinion/112464/pennsylvania-v-muniz/#:~:text=your-,sixth%20birthday). "[B]ecause we conclude that Muniz's response to the sixth birthday question was testimonial, the response should have been suppressed." — *Id.* at 600. ^pin-599
+**The "sixth birthday" answer is testimonial.** Its content forced the trilemma of truth, falsity, or silence: "the incriminating inference of impaired mental faculties stemmed, not just from the fact that Muniz slurred his response, but also from a testimonial aspect of that response." — [*Id.* at 599](https://www.courtlistener.com/opinion/112464/pennsylvania-v-muniz/#:~:text=your-,sixth%20birthday). "[B]ecause we conclude that Muniz's response to the sixth birthday question was testimonial, the response should have been suppressed." (*Id.* at 600). ^pin-599
 
 **Routine booking questions are exempt.** Muniz's "answers to th[e] first seven questions are . . . admissible because the questions fall within a 'routine booking question' exception which exempts from *Miranda*'s coverage questions to secure the 'biographical data necessary to complete booking or pretrial services.'" — *Id.* at 601. ^pin-601
 
@@ -67,7 +67,7 @@ The slurring evidence and the biographical booking answers were admissible; the 
 - Lake marks *Muniz* good law as of 2026-06-30; proposed negative-treatment signals in the derivation are unaudited and no point override is recorded. *Muniz* applies the testimonial/physical-evidence distinction of [[Schmerber v. California]] to custodial DUI questioning, defines interrogation through [[Rhode Island v. Innis]], and recognizes the routine-booking-question exception within the [[Miranda v. Arizona]] framework (decided the same Term as the [[Illinois v. Perkins]] undercover-questioning exception).
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Pennsylvania v. Muniz*, 496 U.S. 582 (1990) — https://www.courtlistener.com/opinion/112464/pennsylvania-v-muniz/ — pinpoints: 592, 599, 600, 601.
+- *Pennsylvania v. Muniz*, 496 U.S. 582 (1990) — https://www.courtlistener.com/opinion/112464/pennsylvania-v-muniz/. Pinpoints: 592, 599, 600, 601.

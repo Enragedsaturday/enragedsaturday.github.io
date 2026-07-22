@@ -55,7 +55,7 @@ No separate [[Exigent Circumstances and Hot Pursuit|exigency]] is required. "If 
 A vehicle's "ready mobility" is itself "an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear." — [*Id.*](https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/#:~:text=ready%20mobility) ^pin-940a
 
 ## Application
-Police had seen Labron place drugs in the trunk of the car they searched — supplying probable cause — and the car was readily mobile. Because ready mobility plus probable cause is all the automobile exception requires, the warrantless search of the trunk did not violate the Fourth Amendment, and the Pennsylvania Supreme Court's contrary rule (demanding separate [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]) rested on an incorrect reading of the exception.
+Police had seen Labron place drugs in the trunk of the car they searched (supplying probable cause) and the car was readily mobile. Because ready mobility plus probable cause is all the automobile exception requires, the warrantless search of the trunk did not violate the Fourth Amendment, and the Pennsylvania Supreme Court's contrary rule (demanding separate [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]) rested on an incorrect reading of the exception.
 
 ## Conclusion
 The automobile exception requires only ready mobility and probable cause, not a separate [[Exigent Circumstances and Hot Pursuit|exigency]]; the Pennsylvania judgments were reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -64,7 +64,7 @@ The automobile exception requires only ready mobility and probable cause, not a 
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Labron* confirms the "ready-mobility" rationale traced from [[Carroll v. United States]] through [[California v. Carney]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Pennsylvania v. Labron*, 518 U.S. 938 (1996) (per curiam) — https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/ — pinpoint: 940.
+- *Pennsylvania v. Labron*, 518 U.S. 938 (1996) (per curiam) — https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/. Pinpoint: 940.

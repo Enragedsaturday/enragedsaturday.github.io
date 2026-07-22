@@ -65,7 +65,7 @@ The warrantless entry and search in [[Exigent Circumstances and Hot Pursuit|hot 
 - No negative treatment. *Hayden* anchors the hot-pursuit branch of the [[Exigent Circumstances and Hot Pursuit|exigency]] doctrine, applied to a suspect fleeing into her own home in [[United States v. Santana]] and framed within the [[Exigent Circumstances and Hot Pursuit|exigency]] framework reaffirmed in [[Kentucky v. King]]; the gravity-of-offense limit on home-entry [[Exigent Circumstances and Hot Pursuit|exigencies]] is drawn in [[Welsh v. Wisconsin]]. Its separate holding abolishing the "mere evidence" rule remains good law.
 
 ## Appears on
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*
+- [[Exigent Circumstances and Hot Pursuit]]: *Key — Anchor*
 
 ## Sources
-- *Warden v. Hayden*, 387 U.S. 294 (1967) — https://www.courtlistener.com/opinion/107465/warden-maryland-penitentiary-v-hayden/ — pinpoints: 298, 298–299.
+- *Warden v. Hayden*, 387 U.S. 294 (1967) — https://www.courtlistener.com/opinion/107465/warden-maryland-penitentiary-v-hayden/; pinpoints: 298, 298–299.

@@ -50,7 +50,7 @@ Paul and Erma Berger lived on a 75,000-acre ranch near Jordan, Montana. In 1993 
 Whether the media's accompaniment during execution of the warrant stated a Fourth Amendment violation, and whether the officers were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
-The case is governed by its same-day companion, [[Wilson v. Layne]]. The Court treated the allegations as stating a Fourth Amendment violation under *[[Wilson v. Layne|Wilson]]* — "respondents alleged a Fourth Amendment violation under our decision today in *Wilson v. Layne.*" — 526 U.S. at 810. ^pin-810
+The case is governed by its same-day companion, [[Wilson v. Layne]]. The Court treated the allegations as stating a Fourth Amendment violation under *[[Wilson v. Layne|Wilson]]*: "respondents alleged a Fourth Amendment violation under our decision today in *Wilson v. Layne.*" — 526 U.S. at 810. ^pin-810
 
 But the officers were entitled to [[Qualified Immunity|qualified immunity]]: "Petitioners maintain that even though they may have violated the Fourth Amendment rights of respondents, they are entitled to the defense of qualified immunity. We agree. Our holding in *Wilson* makes clear that this right was not clearly established in 1992." — *Id.* ^pin-810b
 
@@ -65,7 +65,7 @@ But the officers were entitled to [[Qualified Immunity|qualified immunity]]: "Pe
 - A [[Common Legal Terms#per-curiam|per curiam]] companion decided the same day as [[Wilson v. Layne]], applying that decision's Fourth Amendment holding and qualified-immunity analysis to a media ride-along onto a ranch under a *[[Bivens v. Six Unknown Named Agents|Bivens]]* claim. No negative treatment.
 
 ## Appears on
-- [[Qualified Immunity]] — *Key — Companion / Application*
+- [[Qualified Immunity]] — *Key: Companion / Application*
 
 ## Sources
-- *Hanlon v. Berger*, 526 U.S. 808 (1999) (per curiam) — https://www.courtlistener.com/opinion/1087699/hanlon-v-berger/ — pinpoint: 810.
+- [*Hanlon v. Berger*, 526 U.S. 808 (1999) (per curiam)](https://www.courtlistener.com/opinion/1087699/hanlon-v-berger/) — pinpoint: 810.

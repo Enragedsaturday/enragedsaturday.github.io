@@ -47,7 +47,7 @@ lake:
 A Holly Springs, North Carolina officer stopped Howard Davis's car for a window-tint violation and arrested him. While Davis was handcuffed with his hands behind his back and lying on his stomach, police searched his nearby backpack and found contraband. The district court denied suppression; Davis appealed, arguing that [[Arizona v. Gant]]'s "reaching distance" limit on [[Search Incident to Arrest|searches incident to arrest]] applied to his backpack, not just to vehicles.
 
 ## Issue
-Whether the first holding of [[Arizona v. Gant]] — that a [[Search Incident to Arrest|search incident to arrest]] is justified only where the arrestee is unsecured and within reaching distance of the area searched — applies outside the automobile context, to a non-vehicular container such as a backpack.
+Whether the first holding of [[Arizona v. Gant]] (that a [[Search Incident to Arrest|search incident to arrest]] is justified only where the arrestee is unsecured and within reaching distance of the area searched) applies outside the automobile context, to a non-vehicular container such as a backpack.
 
 ## Rule
 Yes. The officer-safety/evidence-preservation limit of *[[Arizona v. Gant|Gant]]*'s first holding is not confined to vehicles, because it rests on the rationale of [[Chimel v. California]], a non-vehicle case. The Fourth Circuit held: "Accordingly, we conclude that the first *Gant* holding applies to searches of non-vehicular containers and conclude that police officers can conduct warrantless searches of non-vehicular containers incident to a lawful arrest 'only when the arrestee is unsecured and within reaching distance of the [container] at the time of the search.'" — 997 F.3d at 196 (quoting *Gant*, 556 U.S. at 343). ^pin-196
@@ -62,10 +62,10 @@ On these facts the search could not be sustained as a [[Search Incident to Arres
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 4th Cir.**
-- No negative subsequent treatment identified. The decision extends the first holding of [[Arizona v. Gant]] — rooted in [[Chimel v. California]] — beyond vehicles to non-vehicular containers, joining sister circuits on that question.
+- No negative subsequent treatment identified. The decision extends the first holding of [[Arizona v. Gant]] (rooted in [[Chimel v. California]]) beyond vehicles to non-vehicular containers, joining sister circuits on that question.
 
 ## Appears on
 - [[SIA Vehicles]] — *Lower-court development (role-based)*
 
 ## Sources
-- *United States v. Howard Davis*, 997 F.3d 191 (4th Cir. 2021) — https://www.courtlistener.com/opinion/4881258/united-states-v-howard-davis/ — pinpoint: 196. (CL's copy is the court's slip-opinion PDF without F.3d star-pagination; the 196 pinpoint is the standard reporter pinpoint for the holding — quotes verbatim-verified against the opinion text; lead opinion id 4685037.)
+- [*United States v. Howard Davis*, 997 F.3d 191 (4th Cir. 2021)](https://www.courtlistener.com/opinion/4881258/united-states-v-howard-davis/) — pinpoint: 196. (CL's copy is the court's slip-opinion PDF without F.3d star-pagination; the 196 pinpoint is the standard reporter pinpoint for the holding; quotes verbatim-verified against the opinion text; lead opinion id 4685037.)

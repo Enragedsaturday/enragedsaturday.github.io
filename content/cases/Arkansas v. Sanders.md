@@ -10,7 +10,7 @@ circuit: ""
 year: 1979
 date_decided: 1979-06-20
 docket: 77-1497
-authority_weight: Historical
+authority_weight: "Binding — SCOTUS"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110119/arkansas-v-sanders/"
   cluster_id: 110119
-  opinion_id: null
+  opinion_id: 9427641
   identity_checked: true
 lake:
   record_id: Arkansas v. Sanders
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-10
 homes:
   - page: "[[Automobile Exception]]"
     role: Historical / former container limitation
@@ -50,7 +50,7 @@ holding: "The Fourth Amendment's warrant requirement applies to personal luggage
 
 # Arkansas v. Sanders
 
-*442 U.S. 753 (1979)* (No. 77-1497) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[California v. Acevedo]] (1991)
+*442 U.S. 753 (1979)* (No. 77-1497) · Supreme Court of the United States · **Historical** · Treatment: **Overruled: rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[California v. Acevedo]] (1991)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 110119 → 442 U.S. 753, decided 1979-06-20; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -66,7 +66,7 @@ Extending *[[United States v. Chadwick|Chadwick]]*, the Court held that the auto
 The Arkansas Supreme Court had found ample probable cause to believe the suitcase held contraband, but no [[Exigent Circumstances and Hot Pursuit|exigency]]: with the police in control of the taxi and its occupants, there was no risk the suitcase would disappear before a warrant could issue. Because the luggage was already secured, the reasons that excuse a warrant for a moving vehicle did not apply, and the officers should have taken the suitcase to the station and obtained a warrant.
 
 ## Conclusion
-The judgment of the Supreme Court of Arkansas — suppressing the evidence — was **affirmed**. Powell, J., delivered the opinion of the Court.
+The judgment of the Supreme Court of Arkansas, suppressing the evidence, was **affirmed**. Powell, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
 **Overruled by [[California v. Acevedo]] (1991).** *Sanders* drew a line between the car (searchable on probable cause) and closed containers within it (protected). The Court abandoned that line: *[[United States v. Ross]]* (1982) held that probable cause to search a vehicle extends to containers inside that might hold the object of the search, and *[[California v. Acevedo|Acevedo]]* then unified the rule, expressly overruling *Sanders* so that police with probable cause may search a container found in a car without a warrant.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A woman told officers she had just been raped by an armed man who had entered a supermarket. An officer chased and apprehended Quarles inside the store, found he was wearing an empty shoulder holster, handcuffed him, and — before giving *[[Miranda v. Arizona|Miranda]]* warnings — asked where the gun was. Quarles nodded toward some cartons and said "the gun is over there"; the officer retrieved a loaded revolver.
+A woman told officers she had just been raped by an armed man who had entered a supermarket. An officer chased and apprehended Quarles inside the store, found he was wearing an empty shoulder holster, handcuffed him, and (before giving *[[Miranda v. Arizona|Miranda]]* warnings) asked where the gun was. Quarles nodded toward some cartons and said "the gun is over there"; the officer retrieved a loaded revolver.
 
 ## Issue
 Whether there is an exception to *[[Miranda v. Arizona|Miranda]]* for questions reasonably prompted by a concern for public safety.
@@ -65,7 +65,7 @@ The statement and the gun were admissible under the public-safety exception; the
 - No negative treatment. *Quarles* carves a public-safety exception out of [[Miranda v. Arizona]], turning on the objective existence of a public-safety concern rather than the officer's subjective motive.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *New York v. Quarles*, 467 U.S. 649 (1984) — https://www.courtlistener.com/opinion/111214/new-york-v-quarles/ — pinpoints: 655–56, 657.
+- *New York v. Quarles*, 467 U.S. 649 (1984) — https://www.courtlistener.com/opinion/111214/new-york-v-quarles/. Pinpoints: 655–56, 657.

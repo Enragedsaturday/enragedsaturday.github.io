@@ -59,7 +59,7 @@ A prompt judicial probable-cause determination is required. An officer's on-scen
 The hearing may be informal and need not be adversarial, but it must be prompt: "it must provide a fair and reliable determination of probable cause as a condition for any significant pretrial restraint of liberty, and this determination must be made by a judicial officer either before or promptly after arrest." — *Id.* at 125. ^pin-125
 
 ## Application
-Florida's reliance on the prosecutor's information could not satisfy the Fourth Amendment, because a prosecutor — charged with law enforcement — is not the "neutral and detached" magistrate the Constitution requires (per *[[Coolidge v. New Hampshire|Coolidge]]* and *Shadwick*). A warrantless arrestee held only on an information therefore received no constitutionally adequate probable-cause check. The Court required a prompt judicial determination but rejected the District Court's decree to the extent it demanded a full adversary hearing, holding the probable-cause determination need not afford counsel, confrontation, or cross-examination.
+Florida's reliance on the prosecutor's information could not satisfy the Fourth Amendment, because a prosecutor, charged with law enforcement, is not the "neutral and detached" magistrate the Constitution requires (per *[[Coolidge v. New Hampshire|Coolidge]]* and *Shadwick*). A warrantless arrestee held only on an information therefore received no constitutionally adequate probable-cause check. The Court required a prompt judicial determination but rejected the District Court's decree to the extent it demanded a full adversary hearing, holding the probable-cause determination need not afford counsel, confrontation, or cross-examination.
 
 ## Conclusion
 The Fourth Amendment requires a timely judicial determination of probable cause as a prerequisite to extended pretrial detention of a warrantless arrestee, so Florida's information-only procedure was invalid; but because the determination need not be adversarial, the judgment was affirmed in part and reversed in part. This requirement is the "Gerstein hearing."
@@ -69,8 +69,8 @@ The Fourth Amendment requires a timely judicial determination of probable cause 
 - No negative treatment. *Gerstein*'s "promptly after arrest" requirement is implemented by [[County of Riverside v. McLaughlin]], which set a presumptive 48-hour window for the judicial probable-cause determination. The neutral-magistrate principle traces to [[Coolidge v. New Hampshire]]; *Gerstein* concerns post-arrest detention and is distinct from the in-home arrest-warrant rule of [[Payton v. New York]].
 
 ## Appears on
-- [[Prompt Probable-Cause Determination]] — *Key — Anchor*
+- [[Prompt Probable-Cause Determination]]: *Key — Anchor*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Gerstein v. Pugh*, 420 U.S. 103 (1975) — https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/ — pinpoints: 113–114, 125.
+- *Gerstein v. Pugh*, 420 U.S. 103 (1975) — https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/; pinpoints: 113–114, 125.

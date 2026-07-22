@@ -47,7 +47,7 @@ lake:
 Maryland investigators probing a real-estate false-pretenses scheme involving the sale of "Lot 13T" obtained warrants and searched the offices of Andresen, an attorney, seizing his business records — some of which contained statements he had written. The records were introduced at trial and he was convicted of false pretenses and fraudulent misappropriation.
 
 ## Issue
-(1) Whether seizing an individual's own business records under a search warrant, and introducing them at his trial, violates the Fifth Amendment privilege against self-incrimination; and (2) whether a warrant's catch-all phrase — "together with other fruits, instrumentalities and evidence of crime at this [time] unknown" — rendered it an impermissibly general warrant.
+(1) Whether seizing an individual's own business records under a search warrant, and introducing them at his trial, violates the Fifth Amendment privilege against self-incrimination; and (2) whether a warrant's catch-all phrase ("together with other fruits, instrumentalities and evidence of crime at this [time] unknown") rendered it an impermissibly general warrant.
 
 ## Rule
 No Fifth Amendment violation: records voluntarily created before the search are not compelled testimony. "[P]etitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing." — 427 U.S. at 473. ^pin-473
@@ -67,7 +67,7 @@ Neither the Fifth Amendment nor the [[Particularity|particularity]] requirement 
 - No negative treatment. *Andresen* remains the leading authority that pre-existing, voluntarily prepared business records seized under a valid warrant are not "compelled" testimony, and that a particular list of items is not made "general" by a contextually limited catch-all phrase. Compare [[Groh v. Ramirez]] (a warrant that fails altogether to describe the things to be seized is facially invalid).
 
 ## Appears on
-- [[Particularity]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Andresen v. Maryland*, 427 U.S. 463 (1976) — https://www.courtlistener.com/opinion/109522/andresen-v-maryland/ — pinpoints: 473, 477, 480.
+- [*Andresen v. Maryland*, 427 U.S. 463 (1976)](https://www.courtlistener.com/opinion/109522/andresen-v-maryland/) — pinpoints: 473, 477, 480.

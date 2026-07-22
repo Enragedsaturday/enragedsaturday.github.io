@@ -64,7 +64,7 @@ The unwarned, in-custody bedroom questioning violated the Self-Incrimination Cla
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Orozco* remains a leading illustration that Miranda custody is not confined to the station house.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Orozco v. Texas*, 394 U.S. 324 (1969) — https://www.courtlistener.com/opinion/107883/orozco-v-texas/ — pinpoints: 326, 327.
+- *Orozco v. Texas*, 394 U.S. 324 (1969) — https://www.courtlistener.com/opinion/107883/orozco-v-texas/. Pinpoints: 326, 327.

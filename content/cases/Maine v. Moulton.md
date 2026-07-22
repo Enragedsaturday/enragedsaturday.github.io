@@ -65,7 +65,7 @@ The use of the deliberately elicited statements on the pending charges violated 
 - *Moulton* extends [[Massiah v. United States]] from intentional creation of a confrontation to **knowing exploitation** of one, and supplies the "luck or happenstance" / passive-listening boundary that [[Kuhlmann v. Wilson]] applied the next Term.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Maine v. Moulton*, 474 U.S. 159 (1985) — https://www.courtlistener.com/opinion/111546/maine-v-moulton/ — pinpoint: 176.
+- [*Maine v. Moulton*, 474 U.S. 159 (1985)](https://www.courtlistener.com/opinion/111546/maine-v-moulton/) — pinpoint: 176.

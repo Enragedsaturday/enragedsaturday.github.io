@@ -69,8 +69,8 @@ The warrantless entry and arrest were valid; the Supreme Court reversed the supp
 - No negative treatment. *Santana* establishes the doorway-as-public-place rule and the hot-pursuit entry. [[Payton v. New York]] (1980) later held that a warrantless arrest **inside** the home requires a warrant absent [[Exigent Circumstances and Hot Pursuit|exigency]], and [[Lange v. California]] (2021) held that pursuit of a fleeing **misdemeanant** is not a categorical [[Exigent Circumstances and Hot Pursuit|exigency]] — but neither disturbs *Santana*'s threshold/felony hot-pursuit holding.
 
 ## Appears on
-- [[Arrest in the Home]] — *Key — Anchor*
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*
+- [[Arrest in the Home]] — *Key: Anchor*
+- [[Exigent Circumstances and Hot Pursuit]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Santana*, 427 U.S. 38 (1976) — https://www.courtlistener.com/opinion/109504/united-states-v-santana/ — pinpoints: 42, 43 (parallel 96 S. Ct. 2406).
+- *United States v. Santana*, 427 U.S. 38 (1976) — https://www.courtlistener.com/opinion/109504/united-states-v-santana/. Pinpoints: 42, 43 (parallel 96 S. Ct. 2406).

@@ -57,7 +57,7 @@ It answered no: "Inasmuch as the Government was entitled to seize the packages a
 A defendant who would invalidate such a delayed search must show prejudice to a protected interest: here "respondents have not even alleged, much less proved, that the delay in the search of packages adversely affected legitimate interests protected by the Fourth Amendment." — [*Id.*](https://www.courtlistener.com/opinion/111305/united-states-v-johns/#:~:text=respondents%20have%20not%20even%20alleged%2C) ^pin-487a
 
 ## Application
-On these facts the three-day delay did not defeat the search. The Customs officers conducted a vehicle search "at least to the extent of entering the trucks and removing the packages," and there was probable cause — the plain odor of marihuana — to believe the packages held contraband. Because the Government could have opened the packages immediately without a warrant, it did not lose that authority by waiting: the respondents did not challenge the seizure of the trucks or packages, never sought their return, and never alleged that the delay harmed any Fourth Amendment interest. The delayed warehouse search was therefore reasonable, by analogy to the Court's impounded-vehicle cases.
+On these facts the three-day delay did not defeat the search. The Customs officers conducted a vehicle search "at least to the extent of entering the trucks and removing the packages," and there was probable cause, the plain odor of marihuana, to believe the packages held contraband. Because the Government could have opened the packages immediately without a warrant, it did not lose that authority by waiting: the respondents did not challenge the seizure of the trucks or packages, never sought their return, and never alleged that the delay harmed any Fourth Amendment interest. The delayed warehouse search was therefore reasonable, by analogy to the Court's impounded-vehicle cases.
 
 ## Conclusion
 The warrantless search of the packages three days after their removal from the trucks was reasonable under the automobile exception; the Ninth Circuit's suppression order was reversed.
@@ -67,7 +67,7 @@ The warrantless search of the packages three days after their removal from the t
 - No negative subsequent treatment identified. *Johns* extends the [[Carroll v. United States]] / *[[United States v. Ross|Ross]]* automobile-exception rule (later unified for containers in [[California v. Acevedo]]) to delayed container searches, and is relied on by lower courts rejecting any "temporal limit" on the exception (e.g., [[United States v. Gastiaburo]]).
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *United States v. Johns*, 469 U.S. 478 (1985) — https://www.courtlistener.com/opinion/111305/united-states-v-johns/ — pinpoints: 483, 487.
+- *United States v. Johns*, 469 U.S. 478 (1985) — https://www.courtlistener.com/opinion/111305/united-states-v-johns/; pinpoints: 483, 487.

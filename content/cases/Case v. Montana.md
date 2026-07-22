@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Montana officers responded to the home of William Trevor Case after his ex-girlfriend called 911 to report that Case — whom the officers knew had mental-health and alcohol problems and had spoken of suicide — was threatening suicide, had spoken of a suicide note, and may have cocked or shot a gun before the call cut off. Officers knocked and yelled into an open window with no response; through the windows they saw empty beer cans, an empty handgun holster, and a notepad. After roughly 40 minutes, they entered to render [[Emergency Aid|emergency aid]]. When an officer approached a closet where Case was hiding, Case threw open the curtain holding what looked like a gun, and the officer shot and injured him; a handgun was found where he had stood. Charged with assaulting an officer, Case moved to suppress, arguing the warrantless entry was unlawful. The Montana Supreme Court upheld the entry under the State's "community caretaker" doctrine.
+Montana officers responded to the home of William Trevor Case after his ex-girlfriend called 911 to report that Case (whom the officers knew had mental-health and alcohol problems and had spoken of suicide) was threatening suicide, had spoken of a suicide note, and may have cocked or shot a gun before the call cut off. Officers knocked and yelled into an open window with no response; through the windows they saw empty beer cans, an empty handgun holster, and a notepad. After roughly 40 minutes, they entered to render [[Emergency Aid|emergency aid]]. When an officer approached a closet where Case was hiding, Case threw open the curtain holding what looked like a gun, and the officer shot and injured him; a handgun was found where he had stood. Charged with assaulting an officer, Case moved to suppress, arguing the warrantless entry was unlawful. The Montana Supreme Court upheld the entry under the State's "community caretaker" doctrine.
 
 ## Issue
 Whether the warrantless home entry to render [[Emergency Aid|emergency aid]] satisfied the Fourth Amendment, and what standard governs such an entry — Brigham City's objective reasonableness, a lower reasonable-suspicion test, or a higher probable-cause test.
@@ -69,7 +69,7 @@ Affirmed (the judgment, though not all the reasoning, of the Montana Supreme Cou
 - *Case* reaffirms and clarifies [[Brigham City v. Stuart]], rejecting both a *[[Terry v. Ohio|Terry]]*-style reasonable-suspicion gloss and a probable-cause gloss on the emergency-aid standard. It is consistent with [[Caniglia v. Strom]] (no freestanding community-caretaking home entry — welfare entries must route through [[Emergency Aid|emergency aid]]) and applies the totality-of-the-circumstances approach reaffirmed in [[Ohio v. Robinette]].
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Case v. Montana*, 607 U.S. ___ (2026) (No. 24-624) — https://www.courtlistener.com/opinion/10774335/case-v-montana/ — pinpoints: slip op. at 7, 8, 9, 10–11. Below: *State v. Case*, 417 Mont. 354, 553 P.3d 985 (2024), affirmed.
+- *Case v. Montana*, 607 U.S. ___ (2026) (No. 24-624) — https://www.courtlistener.com/opinion/10774335/case-v-montana/. Pinpoints: slip op. at 7, 8, 9, 10–11. Below: *State v. Case*, 417 Mont. 354, 553 P.3d 985 (2024), affirmed.

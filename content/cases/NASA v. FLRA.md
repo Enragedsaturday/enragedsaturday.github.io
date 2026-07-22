@@ -62,10 +62,10 @@ A NASA-OIG investigator is a "representative of the agency" under § 7114(a)(2)(
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *NASA v. FLRA* is good law. It is a **statutory** (FSLMRS) representation-rights holding — the federal-sector analog of private-sector *Weingarten* rights — rather than a Fifth Amendment ruling. It is grouped with [[Garrity v. New Jersey]], [[Lefkowitz v. Turley]], and [[Kalkines v. United States]] because it governs the same setting: the public employee facing a compelled investigatory interview.
+- *NASA v. FLRA* is good law. It is a **statutory** (FSLMRS) representation-rights holding (the federal-sector analog of private-sector *Weingarten* rights) rather than a Fifth Amendment ruling. It is grouped with [[Garrity v. New Jersey]], [[Lefkowitz v. Turley]], and [[Kalkines v. United States]] because it governs the same setting: the public employee facing a compelled investigatory interview.
 
 ## Appears on
 - [[Public-Employee Compelled Statements (Garrity)]] — *Related (cross-doctrine)*
 
 ## Sources
-- *National Aeronautics & Space Administration v. Federal Labor Relations Authority*, 527 U.S. 229 (1999) — https://www.courtlistener.com/opinion/9188189/national-aeronautics-space-administration-v-federal-labor-relations-authority/ — pinpoints: 231, 233.
+- [*National Aeronautics & Space Administration v. Federal Labor Relations Authority*, 527 U.S. 229 (1999)](https://www.courtlistener.com/opinion/9188189/national-aeronautics-space-administration-v-federal-labor-relations-authority/) — pinpoints: 231, 233.

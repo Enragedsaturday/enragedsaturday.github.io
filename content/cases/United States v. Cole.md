@@ -73,7 +73,7 @@ Because travel-plan questions ordinarily belong to the stop's mission, the troop
 **Affirmed.** The [[Reading and Citing Cases#en-banc|en banc]] court affirmed the denial of Cole's motion to suppress. Judge St. Eve wrote for the court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Cole* is a leading [[Reading and Citing Cases#en-banc|en banc]] statement placing routine travel-plan questioning inside the *[[Rodriguez v. United States|Rodriguez]]* mission, consistent with *[[Illinois v. Caballes|Caballes]]* on dog sniffs that do not add time — while cautioning that such questions must still be reasonable in the circumstances.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Cole* is a leading [[Reading and Citing Cases#en-banc|en banc]] statement placing routine travel-plan questioning inside the *[[Rodriguez v. United States|Rodriguez]]* mission, consistent with *[[Illinois v. Caballes|Caballes]]* on dog sniffs that do not add time, while cautioning that such questions must still be reasonable in the circumstances.
 
 ## Appears on
 - [[Traffic Stops]] — *Key*

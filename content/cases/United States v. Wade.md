@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Wade was indicted for bank robbery and counsel was appointed. Without notifying counsel, an FBI agent had Wade and other prisoners stand in a lineup — wearing strips of tape on their faces and repeating words used by the robber — so two bank employees could identify him. At trial, the two employees identified Wade in the courtroom, and on cross-examination it emerged that they had also identified him at the lineup. Wade argued that the uncounseled lineup violated his Fifth and Sixth Amendment rights.
+Wade was indicted for bank robbery and counsel was appointed. Without notifying counsel, an FBI agent had Wade and other prisoners stand in a lineup (wearing strips of tape on their faces and repeating words used by the robber) so two bank employees could identify him. At trial, the two employees identified Wade in the courtroom, and on cross-examination it emerged that they had also identified him at the lineup. Wade argued that the uncounseled lineup violated his Fifth and Sixth Amendment rights.
 
 ## Issue
 Whether a post-indictment lineup is a critical stage of the prosecution at which the accused has a Sixth Amendment right to counsel, and what remedy applies to an in-court identification that followed an uncounseled lineup.
@@ -62,10 +62,10 @@ The post-indictment lineup was a critical stage requiring counsel; the judgment 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The right recognized in *Wade* was later **limited** by [[Kirby v. Illinois]] (the right to counsel attaches only after the initiation of adversary judicial proceedings — no counsel at pre-charge lineups) and by [[United States v. Ash]] (no right to counsel at a photographic array). Within its domain — post-charge corporeal lineups — *Wade* remains good law, alongside its companion [[Gilbert v. California]].
+- The right recognized in *Wade* was later **limited** by [[Kirby v. Illinois]] (the right to counsel attaches only after the initiation of adversary judicial proceedings — no counsel at pre-charge lineups) and by [[United States v. Ash]] (no right to counsel at a photographic array). Within its domain (post-charge corporeal lineups), *Wade* remains good law, alongside its companion [[Gilbert v. California]].
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Anchor*
+- [[Eyewitness Identification]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Wade*, 388 U.S. 218 (1967) — https://www.courtlistener.com/opinion/107486/united-states-v-wade/ — pinpoints: 237, 242 (parallel 87 S. Ct. 1926).
+- [*United States v. Wade*, 388 U.S. 218 (1967)](https://www.courtlistener.com/opinion/107486/united-states-v-wade/) — pinpoints: 237, 242 (parallel 87 S. Ct. 1926).

@@ -50,7 +50,7 @@ A teacher found a 14-year-old student, T.L.O., smoking in a school bathroom. An 
 What standard governs a search of a student by a public school official under the Fourth Amendment.
 
 ## Rule
-The Fourth Amendment applies to public school officials, but a school search requires only reasonableness under all the circumstances — not a warrant or probable cause. "[T]he legality of a search of a student should depend simply on the reasonableness, under all the circumstances, of the search." — 469 U.S. at 341. ^pin-341
+The Fourth Amendment applies to public school officials, but a school search requires only reasonableness under all the circumstances, not a warrant or probable cause. "[T]he legality of a search of a student should depend simply on the reasonableness, under all the circumstances, of the search." — 469 U.S. at 341. ^pin-341
 
 "Determining the reasonableness of any search involves a twofold inquiry: first, one must consider 'whether the . . . action was justified at its inception,' . . . second, one must determine whether the search as actually conducted 'was reasonably related in scope to the circumstances which justified the interference in the first place.'" — *Id.* ^pin-341b
 
@@ -67,7 +67,7 @@ The search was reasonable; the evidence was admissible, and the New Jersey Supre
 - No negative treatment. *T.L.O.* established the reasonableness standard for school searches (and the "special needs" rationale articulated in Justice Blackmun's [[Common Legal Terms#concurring-opinion|concurrence]]), later applied to student drug testing ([[Vernonia School District 47J v. Acton]]) and to the scope of an intrusive school search ([[Safford Unified School District v. Redding]]).
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Anchor*
+- [[Special Needs and Administrative Searches]] — *Key: Anchor*
 
 ## Sources
-- *New Jersey v. T.L.O.*, 469 U.S. 325 (1985) — https://www.courtlistener.com/opinion/111301/new-jersey-v-t-l-o/ — pinpoints: 341, 341–42.
+- [*New Jersey v. T.L.O.*, 469 U.S. 325 (1985)](https://www.courtlistener.com/opinion/111301/new-jersey-v-t-l-o/) — pinpoints: 341, 341–42.

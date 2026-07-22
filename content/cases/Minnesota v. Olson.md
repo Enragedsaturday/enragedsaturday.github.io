@@ -55,7 +55,7 @@ Yes. "we think that society recognizes that a houseguest has a legitimate expect
 An overnight guest's status is alone enough to establish an expectation of privacy in the host's home that society is prepared to recognize as reasonable.
 
 ## Application
-Olson was staying as an overnight guest in the women's home when police entered without a warrant to arrest him. Because his status as an overnight guest gave him a legitimate expectation of privacy in that home, he could challenge the warrantless entry, which — absent consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] — was unlawful.
+Olson was staying as an overnight guest in the women's home when police entered without a warrant to arrest him. Because his status as an overnight guest gave him a legitimate expectation of privacy in that home, he could challenge the warrantless entry, which (absent consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]) was unlawful.
 
 ## Conclusion
 Affirmed; Olson had [[Standing to Challenge a Search|standing to challenge]] the entry, and the warrantless arrest in the home was unconstitutional.
@@ -65,7 +65,7 @@ Affirmed; Olson had [[Standing to Challenge a Search|standing to challenge]] the
 - No negative treatment. *Olson* refines the standing framework of [[Rakas v. Illinois]]; its overnight-guest rule is bounded by [[Minnesota v. Carter]], which denied protection to a short-term commercial visitor.
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Minnesota v. Olson*, 495 U.S. 91 (1990) — https://www.courtlistener.com/opinion/112416/minnesota-v-olson/ — pinpoint: 98.
+- [*Minnesota v. Olson*, 495 U.S. 91 (1990)](https://www.courtlistener.com/opinion/112416/minnesota-v-olson/) — pinpoint: 98.

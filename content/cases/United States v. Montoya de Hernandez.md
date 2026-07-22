@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Rosa Elvira Montoya de Hernandez arrived at Los Angeles International Airport on a flight from Bogotá, Colombia. Customs inspectors found her travel story implausible — frequent short trips, about $5,000 cash but no checks or credit cards, no hotel reservations, and minimal luggage — and a strip search revealed a firm fullness in her abdomen and two pairs of underpants lined with a paper towel. Suspecting she was a "balloon swallower," inspectors detained her for roughly 16 hours awaiting a monitored bowel movement after she declined an x-ray; a court order eventually authorized an examination that produced 88 cocaine-filled balloons from her alimentary canal. The Ninth Circuit reversed her conviction, requiring a "clear indication" of smuggling.
+Rosa Elvira Montoya de Hernandez arrived at Los Angeles International Airport on a flight from Bogotá, Colombia. Customs inspectors found her travel story implausible (frequent short trips, about $5,000 cash but no checks or credit cards, no hotel reservations, and minimal luggage), and a strip search revealed a firm fullness in her abdomen and two pairs of underpants lined with a paper towel. Suspecting she was a "balloon swallower," inspectors detained her for roughly 16 hours awaiting a monitored bowel movement after she declined an x-ray; a court order eventually authorized an examination that produced 88 cocaine-filled balloons from her alimentary canal. The Ninth Circuit reversed her conviction, requiring a "clear indication" of smuggling.
 
 ## Issue
 What level of suspicion justifies detaining an incoming international traveler at the border, beyond a routine customs search, on suspicion of alimentary-canal smuggling — and whether the prolonged detention here was reasonable.
@@ -67,7 +67,7 @@ Reasonable suspicion justified the nonroutine border detention, and its duration
 - No negative subsequent treatment identified. *Montoya de Hernandez* sets the reasonable-suspicion standard for nonroutine border *detentions of persons*; [[United States v. Flores-Montano]] later confined that "routine vs. non-routine" analysis to person searches and held it inapplicable to *vehicle* searches at the border. It draws the reasonable-suspicion standard from the [[Terry v. Ohio]] / [[United States v. Cortez]] line.
 
 ## Appears on
-- [[Border Searches]] — *Key — Progeny / Refinement*
+- [[Border Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Montoya de Hernandez*, 473 U.S. 531 (1985) — https://www.courtlistener.com/opinion/111509/united-states-v-montoya-de-hernandez/ — pinpoints: 541, 544.
+- [*United States v. Montoya de Hernandez*, 473 U.S. 531 (1985)](https://www.courtlistener.com/opinion/111509/united-states-v-montoya-de-hernandez/) — pinpoints: 541, 544.

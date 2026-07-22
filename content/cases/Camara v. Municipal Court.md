@@ -65,7 +65,7 @@ A warrant was required for the administrative inspection; Camara's conviction fo
 - *Camara* **overruled** *[[Frank v. Maryland]]*, was extended to commercial premises in [[See v. City of Seattle]], and its pre-compliance-review principle was applied in [[City of Los Angeles v. Patel]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Anchor*
+- [[Special Needs and Administrative Searches]] — *Key: Anchor*
 
 ## Sources
-- *Camara v. Municipal Court*, 387 U.S. 523 (1967) — https://www.courtlistener.com/opinion/107473/camara-v-municipal-court-of-city-and-county-of-san-francisco/ — pinpoints: 534, 538.
+- [*Camara v. Municipal Court*, 387 U.S. 523 (1967)](https://www.courtlistener.com/opinion/107473/camara-v-municipal-court-of-city-and-county-of-san-francisco/) — pinpoints: 534, 538.

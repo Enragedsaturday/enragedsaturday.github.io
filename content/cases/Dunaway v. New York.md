@@ -73,9 +73,9 @@ The seizure was unconstitutional and the confession was its unattenuated fruit; 
 - No negative treatment. *Dunaway* is the anchor for the rule that a custodial transport for interrogation requires probable cause, applied [[Common Legal Terms#per-curiam|per curiam]] in [[Kaupp v. Texas]], and it adopts the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors built on [[Wong Sun v. United States]]. It distinguishes the brief, limited intrusion permitted under [[Terry v. Ohio]].
 
 ## Appears on
-- [[Seizure of the Person]] — *Key — Progeny*
+- [[Seizure of the Person]] — *Key: Progeny*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 - [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Dunaway v. New York*, 442 U.S. 200 (1979) — https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/ — pinpoints: 216, 217, 218.
+- *Dunaway v. New York*, 442 U.S. 200 (1979) — https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/ (pinpoints: 216, 217, 218).

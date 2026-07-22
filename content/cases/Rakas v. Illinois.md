@@ -60,14 +60,14 @@ The standing question is subsumed into the substantive inquiry: "capacity to cla
 Rakas and his co-passengers asserted neither ownership of the car nor of the rifle and shells, and they showed no legitimate expectation of privacy in the glove compartment or the area under the seat — places in which a mere passenger would not normally have such an expectation. Because the Fourth Amendment right is personal and they had no privacy interest in the areas searched, they could not contest the search, and suppression was properly denied.
 
 ## Conclusion
-The passengers lacked standing — i.e., any legitimate expectation of privacy in the places searched — to challenge the search; the conviction was affirmed.
+The passengers lacked standing (i.e., any legitimate expectation of privacy in the places searched) to challenge the search; the conviction was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Rakas* merged "standing" into the substantive expectation-of-privacy inquiry; it was applied to owned-but-bailed property in [[Rawlings v. Kentucky]] and to rental cars in [[Byrd v. United States]].
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Anchor*
+- [[Standing to Challenge a Search]]: *Key — Anchor*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Rakas v. Illinois*, 439 U.S. 128 (1978) — https://www.courtlistener.com/opinion/109953/rakas-v-illinois/ — pinpoints: 133–134, 143.
+- *Rakas v. Illinois*, 439 U.S. 128 (1978) — https://www.courtlistener.com/opinion/109953/rakas-v-illinois/; pinpoints: 133–134, 143.

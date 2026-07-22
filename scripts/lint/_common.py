@@ -114,6 +114,15 @@ def _strip_inline_comment(value):
     i = 0
     while i < len(value):
         c = value[i]
+        if c == "\\" and in_d and i + 1 < len(value):
+            # Inside a double-quoted scalar a backslash escapes the next char
+            # (serializer emits \" and \\ via json.dumps). Keep the pair intact so
+            # an escaped quote does not flip in_d and wrongly expose a later '#' as
+            # an inline comment — preserving the round-trip for quote+hash values.
+            out.append(c)
+            out.append(value[i + 1])
+            i += 2
+            continue
         if c == "'" and not in_d:
             in_s = not in_s
         elif c == '"' and not in_s:
@@ -173,6 +182,20 @@ def _split_flow(inner):
 def _unquote(s):
     s = s.strip()
     if len(s) >= 2 and s[0] == s[-1] and s[0] in "\"'":
+        if s[0] == '"':
+            # Double-quoted managed scalars are emitted by
+            # scripts/s2/serializer.yaml_scalar via json.dumps: a literal quote is
+            # written as \", a backslash as \\, plus \n, \t, \uXXXX, ... Reverse
+            # that escaping EXACTLY with json.loads so a value carrying a literal
+            # double-quote round-trips to equality — otherwise a bare strip leaves
+            # the \" in place and the string can never converge, producing a
+            # LINT-12 false positive AND a project.py idempotence failure (the
+            # Arizona v. Roberson scope_note class). Fall back to a plain strip for
+            # any hand-authored double-quoted scalar that is not valid JSON.
+            try:
+                return json.loads(s)
+            except (ValueError, TypeError):
+                return s[1:-1]
         return s[1:-1]
     return s
 

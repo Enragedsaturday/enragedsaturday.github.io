@@ -55,7 +55,7 @@ A search may validly precede the arrest it is incident to: "A warrantless search
 Applying that rule, the court held that "the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest." — *Id.* at 1046. ^pin-1046
 
 ## Application
-Because the officers had a legitimate basis to arrest Anchondo before they searched him, and the arrest followed shortly after, the search of his person was a lawful [[Search Incident to Arrest|search incident to arrest]] even though it came first; the cocaine found on his body was admissible. The court resolved the case on the search-incident-to-arrest exception — not the automobile exception — making *Anchondo* a frequently miscategorized authority.
+Because the officers had a legitimate basis to arrest Anchondo before they searched him, and the arrest followed shortly after, the search of his person was a lawful [[Search Incident to Arrest|search incident to arrest]] even though it came first; the cocaine found on his body was admissible. The court resolved the case on the search-incident-to-arrest exception (not the automobile exception), making *Anchondo* a frequently miscategorized authority.
 
 ## Conclusion
 The search of Anchondo's person was a lawful [[Search Incident to Arrest|search incident to arrest]] and the cocaine was admissible; the conviction was affirmed. A [[Search Incident to Arrest|search incident to arrest]] may precede the arrest when probable cause already exists and the arrest follows promptly.
@@ -68,4 +68,4 @@ The search of Anchondo's person was a lawful [[Search Incident to Arrest|search 
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Anchondo*, 156 F.3d 1043 (10th Cir. 1998) — https://www.courtlistener.com/opinion/758111/united-states-v-erick-anchondo/ — pinpoints: 1045, 1046.
+- *United States v. Anchondo*, 156 F.3d 1043 (10th Cir. 1998) — https://www.courtlistener.com/opinion/758111/united-states-v-erick-anchondo/. Pinpoints: 1045, 1046.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-During an investigation into untaxed-whiskey offenses, federal agents obtained Miller's bank records — microfilmed checks, deposit slips, and financial statements — from two banks through grand-jury subpoenas. Miller moved to suppress the records, arguing the government's acquisition of his financial records from the banks was an unreasonable search and seizure of materials in which he had a Fourth Amendment interest.
+During an investigation into untaxed-whiskey offenses, federal agents obtained Miller's bank records (microfilmed checks, deposit slips, and financial statements) from two banks through grand-jury subpoenas. Miller moved to suppress the records, arguing the government's acquisition of his financial records from the banks was an unreasonable search and seizure of materials in which he had a Fourth Amendment interest.
 
 ## Issue
 Whether a bank depositor has a Fourth Amendment-protected expectation of privacy in financial records (cancelled checks, deposit slips, and statements) maintained by his bank, so that the government's acquisition of them constitutes a search or seizure as to the depositor.
@@ -65,7 +65,7 @@ Miller had no protectable Fourth Amendment interest in the bank records; obtaini
 - *Miller* remains good law. [[Carpenter v. United States]] (2018) declined to extend the third-party doctrine to historical cell-site location information, but **expressly declined to overrule** *Miller* or [[Smith v. Maryland]]; the bank-records holding stands. (The result also prompted the statutory Right to Financial Privacy Act, a non-constitutional check.)
 
 ## Appears on
-- [[Third-Party Doctrine & CSLI]] — *Key — Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Miller*, 425 U.S. 435 (1976) — https://www.courtlistener.com/opinion/109433/united-states-v-miller/ — pinpoints: 442, 443.
+- *United States v. Miller*, 425 U.S. 435 (1976) — https://www.courtlistener.com/opinion/109433/united-states-v-miller/. Pinpoints: 442, 443.

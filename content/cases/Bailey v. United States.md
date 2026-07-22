@@ -52,7 +52,7 @@ Officers had a warrant to search a basement apartment for a handgun. Before exec
 Whether the *[[Michigan v. Summers|Summers]]* authority to detain occupants incident to the execution of a search warrant extends to a former occupant who has already left and is stopped away from the immediate vicinity of the premises.
 
 ## Rule
-No — the *[[Michigan v. Summers|Summers]]* detention authority is spatially limited. "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a search warrant." — 568 U.S. at 201 (slip op., at 13). ^pin-201
+No. The *[[Michigan v. Summers|Summers]]* detention authority is spatially limited. "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a search warrant." — 568 U.S. at 201 (slip op., at 13). ^pin-201
 
 The interests *[[Michigan v. Summers|Summers]]* serves (officer safety, orderly completion of the search, preventing flight) do not reach a former occupant who has departed: that flight-prevention interest "does not independently justify detention of an occupant beyond the immediate vicinity of the premises to be searched." — [*Id.* at 199](https://www.courtlistener.com/opinion/820749/bailey-v-united-states/#:~:text=does%20not%20independently%20justify%20detention) (slip op., at 11). ^pin-199
 
@@ -67,7 +67,7 @@ The detention was not authorized by *[[Michigan v. Summers|Summers]]*; the judgm
 - No negative treatment of *Bailey*. *Bailey* **limits** [[Michigan v. Summers]] by confining the categorical, suspicionless detention authority to the immediate vicinity of the premises being searched.
 
 ## Appears on
-- [[Securing the Scene]] — *Key — Progeny / Refinement*
+- [[Securing the Scene]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Bailey v. United States*, 568 U.S. 186 (2013) — https://www.courtlistener.com/opinion/820749/bailey-v-united-states/ — pinpoints: 199, 201 (CL carries the slip opinion; cited at slip op. 11, 13).
+- *Bailey v. United States*, 568 U.S. 186 (2013) — https://www.courtlistener.com/opinion/820749/bailey-v-united-states/; pinpoints: 199, 201 (CL carries the slip opinion; cited at slip op. 11, 13).

@@ -50,7 +50,7 @@ A Dade County officer overheard Enio Jimeno apparently arranging a drug deal on 
 Whether a suspect's general consent to search his car for narcotics authorizes an officer to open a closed container found inside the car that might hold the drugs.
 
 ## Rule
-Yes — the scope of consent is measured objectively. "The standard for measuring the scope of a suspect's consent under the Fourth Amendment is that of 'objective' reasonableness—what would the typical reasonable person have understood by the exchange between the officer and the suspect?" — 500 U.S. at 251. ^pin-251
+Yes. The scope of consent is measured objectively. "The standard for measuring the scope of a suspect's consent under the Fourth Amendment is that of 'objective' reasonableness—what would the typical reasonable person have understood by the exchange between the officer and the suspect?" — 500 U.S. at 251. ^pin-251
 
 And "[t]he scope of a search is generally defined by its expressed object." — *Id.* ^pin-251a
 
@@ -67,7 +67,7 @@ The officer's opening of the paper bag was within the scope of Jimeno's general 
 - No negative treatment. *Jimeno*'s objective-reasonableness scope standard builds on the voluntary-consent framework of [[Schneckloth v. Bustamonte]] and the expressed-object principle of [[United States v. Ross]].
 
 ## Appears on
-- [[Consent Searches]] — *Key — Progeny / Refinement*
+- [[Consent Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Florida v. Jimeno*, 500 U.S. 248 (1991) — https://www.courtlistener.com/opinion/112595/florida-v-jimeno/ — pinpoint: 251.
+- [*Florida v. Jimeno*, 500 U.S. 248 (1991)](https://www.courtlistener.com/opinion/112595/florida-v-jimeno/) — pinpoint: 251.

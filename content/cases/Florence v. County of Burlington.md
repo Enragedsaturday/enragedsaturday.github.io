@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Florence was a passenger in a car stopped by a state trooper; he was arrested on a bench warrant for an unpaid fine that he had in fact already paid. He was held for about six days across two county jails and, at intake to each, was subjected to a close visual strip search — directed to disrobe and submit to a visual inspection while undressed — without any suspicion that he was carrying contraband. He sued under § 1983, claiming that suspicionless strip searches of a person arrested for a minor offense violated the Fourth Amendment.
+Florence was a passenger in a car stopped by a state trooper; he was arrested on a bench warrant for an unpaid fine that he had in fact already paid. He was held for about six days across two county jails and, at intake to each, was subjected to a close visual strip search (directed to disrobe and submit to a visual inspection while undressed) without any suspicion that he was carrying contraband. He sued under § 1983, claiming that suspicionless strip searches of a person arrested for a minor offense violated the Fourth Amendment.
 
 ## Issue
 May jail officials, consistent with the Fourth Amendment, conduct a close visual strip search of every arrestee being admitted to the general population without reasonable suspicion, regardless of the minor nature of the offense of arrest?
@@ -59,7 +59,7 @@ There is a "substantial interest in preventing any new inmate, either of his own
 Weighing those interests, the intake "search procedures . . . struck a reasonable balance between inmate privacy and the needs of the institutions[;] [t]he Fourth and Fourteenth Amendments do not require adoption of the framework of rules petitioner proposes." — *Id.* at 339. ^pin-339
 
 ## Application
-The two jails' intake procedures — requiring detainees to disrobe, shower, and submit to a visual inspection without physical contact — addressed the genuine and substantial dangers of admitting new inmates to the general population: smuggled weapons, drugs, and contraband; communicable disease and lice; and gang affiliation that can spark violence. Because there is no reliable way to identify in advance which arrestees, including those held for minor offenses, pose these risks, the Court deferred to the officials' judgment rather than impose a reasonable-suspicion requirement for minor offenders. The searches were reasonable.
+The two jails' intake procedures (requiring detainees to disrobe, shower, and submit to a visual inspection without physical contact) addressed the genuine and substantial dangers of admitting new inmates to the general population: smuggled weapons, drugs, and contraband; communicable disease and lice; and gang affiliation that can spark violence. Because there is no reliable way to identify in advance which arrestees, including those held for minor offenses, pose these risks, the Court deferred to the officials' judgment rather than impose a reasonable-suspicion requirement for minor offenders. The searches were reasonable.
 
 ## Conclusion
 The suspicionless visual strip searches at intake were constitutional; the judgment of the Third Circuit upholding the procedures was affirmed. (Chief Justice Roberts and Justice Alito concurred to emphasize that the holding governs detainees admitted to the general population and may not reach arrestees who are not.)
@@ -72,4 +72,4 @@ The suspicionless visual strip searches at intake were constitutional; the judgm
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Florence v. Board of Chosen Freeholders of County of Burlington*, 566 U.S. 318 (2012) — https://www.courtlistener.com/opinion/626454/florence-v-board-of-chosen-freeholders-of-county-of-burlington/ — pinpoints to published U.S. Reports (the CL copy is the slip opinion, 566 U.S. ___, without embedded reporter pagination): 326, 339, plus Part IV.
+- *Florence v. Board of Chosen Freeholders of County of Burlington*, 566 U.S. 318 (2012) — https://www.courtlistener.com/opinion/626454/florence-v-board-of-chosen-freeholders-of-county-of-burlington/. Pinpoints to published U.S. Reports (the CL copy is the slip opinion, 566 U.S. ___, without embedded reporter pagination): 326, 339, plus Part IV.

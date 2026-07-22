@@ -52,7 +52,7 @@ Whether customs officials may open incoming international mail at the border wit
 ## Rule
 Border searches are reasonable simply because they occur at the border. "That searches made at the border, pursuant to the longstanding right of the sovereign to protect itself by stopping and examining persons and property crossing into this country, are reasonable simply by virtue of the fact that they occur at the border, should, by now, require no extended demonstration." — 431 U.S. at 616. ^pin-616
 
-The governing statute permits opening such mail on "reasonable cause to suspect" contraband — a standard less demanding than probable cause: "The 'reasonable cause to suspect' test adopted by the statute is, we think, a practical test which imposes a less stringent requirement than that of 'probable cause' imposed by the Fourth Amendment as a requirement for the issuance of warrants." — [431 U.S. at 612–613](https://www.courtlistener.com/opinion/109675/united-states-v-ramsey/#:~:text=with%20%22-,reasonable%20cause%20to%20suspect). ^pin-612
+The governing statute permits opening such mail on "reasonable cause to suspect" contraband, a standard less demanding than probable cause: "The 'reasonable cause to suspect' test adopted by the statute is, we think, a practical test which imposes a less stringent requirement than that of 'probable cause' imposed by the Fourth Amendment as a requirement for the issuance of warrants." — [431 U.S. at 612–613](https://www.courtlistener.com/opinion/109675/united-states-v-ramsey/#:~:text=with%20%22-,reasonable%20cause%20to%20suspect). ^pin-612
 
 ## Application
 The inspector knew the letters were from Thailand, were bulky, were many times the weight of a normal airmail letter, and felt as though they held something — facts giving reasonable cause to suspect they contained merchandise or contraband. The search was authorized by statute, and because it was a border search it required neither a warrant nor probable cause; opening the envelopes therefore did not violate the Fourth Amendment.
@@ -65,7 +65,7 @@ The warrantless opening of the international mail was a constitutional border se
 - No negative treatment. *Ramsey* anchors the border-search exception and extends it to incoming international mail: routine border searches need neither a warrant nor probable cause, and the statutory "reasonable cause to suspect" standard for opening mail is less demanding than probable cause.
 
 ## Appears on
-- [[Border Searches]] — *Key — Anchor*
+- [[Border Searches]]: *Key — Anchor*
 
 ## Sources
-- *United States v. Ramsey*, 431 U.S. 606 (1977) — https://www.courtlistener.com/opinion/109675/united-states-v-ramsey/ — pinpoints: 612–613, 616 (parallel 97 S. Ct. 1972).
+- *United States v. Ramsey*, 431 U.S. 606 (1977) — https://www.courtlistener.com/opinion/109675/united-states-v-ramsey/; pinpoints: 612–613, 616 (parallel 97 S. Ct. 1972).

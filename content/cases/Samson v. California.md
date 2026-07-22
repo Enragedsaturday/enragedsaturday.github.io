@@ -55,7 +55,7 @@ No. Parolees have sharply reduced privacy expectations: "The extent and reach of
 Weighed against the State's substantial interests in supervising parolees and reducing recidivism, "we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee." — [547 U.S. at 857](https://www.courtlistener.com/opinion/145640/samson-v-california/#:~:text=we%20conclude%20that%20the%20Fourth). ^pin-857
 
 ## Application
-Samson was a California parolee subject to the State's clearly expressed, signed suspicionless-search condition, giving him severely diminished privacy expectations; the State's strong interests in closely supervising parolees (who reoffend at high rates) and reintegrating them justified the search. Because the search was not arbitrary, capricious, or harassing — conduct California law independently forbids — the suspicionless street search of Samson was reasonable.
+Samson was a California parolee subject to the State's clearly expressed, signed suspicionless-search condition, giving him severely diminished privacy expectations; the State's strong interests in closely supervising parolees (who reoffend at high rates) and reintegrating them justified the search. Because the search was not arbitrary, capricious, or harassing (conduct California law independently forbids), the suspicionless street search of Samson was reasonable.
 
 ## Conclusion
 The suspicionless search of a parolee subject to a search condition is reasonable; the California Court of Appeal's judgment was affirmed.
@@ -64,7 +64,7 @@ The suspicionless search of a parolee subject to a search condition is reasonabl
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Samson* extends the diminished-privacy reasoning of [[United States v. Knights]] from probationers (searched on reasonable suspicion) to parolees (searched suspicionlessly).
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Samson v. California*, 547 U.S. 843 (2006) — https://www.courtlistener.com/opinion/145640/samson-v-california/ — pinpoints: 852, 857.
+- *Samson v. California*, 547 U.S. 843 (2006) — https://www.courtlistener.com/opinion/145640/samson-v-california/. Pinpoints: 852, 857.

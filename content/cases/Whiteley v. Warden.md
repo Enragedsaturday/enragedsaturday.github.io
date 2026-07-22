@@ -65,7 +65,7 @@ The arrest was unconstitutional and the evidence inadmissible; the writ of [[Com
 - No negative treatment of the collective-knowledge principle, which was applied to investigative stops in [[United States v. Hensley]] (1985). [[Herring v. United States]] (2009) later addressed the separate question of suppression when officers reasonably rely on another agency's erroneous records, declining to suppress where the error was isolated negligence — a good-faith refinement of the *Whiteley/Mapp* exclusionary remedy rather than a change to the probable-cause rule.
 
 ## Appears on
-- [[Collective Knowledge and the Fellow-Officer Rule]] — *Key — Anchor*
+- [[Collective Knowledge and the Fellow-Officer Rule]] — *Key: Anchor*
 
 ## Sources
-- *Whiteley v. Warden*, 401 U.S. 560 (1971) — https://www.courtlistener.com/opinion/108297/whiteley-v-warden-wyoming-state-penitentiary/ — pinpoints: 568, 568–569.
+- *Whiteley v. Warden*, 401 U.S. 560 (1971) — https://www.courtlistener.com/opinion/108297/whiteley-v-warden-wyoming-state-penitentiary/. Pinpoints: 568, 568–569.

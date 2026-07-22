@@ -48,7 +48,7 @@ holding: "Where officers knew the existence, nature, and location of the contrab
 
 # Trupiano v. United States
 
-*334 U.S. 699 (1948)* (No. 427) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — superseded by [[Chimel v. California]] (1969)
+*334 U.S. 699 (1948)* (No. 427) · Supreme Court of the United States · **Historical** · Treatment: **Overruled, rendered as history (⚪ unverified, awaiting machine verification)** — superseded by [[Chimel v. California]] (1969)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 104576 → 334 U.S. 699, decided 1948-06-14; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -69,7 +69,7 @@ Because the agents had known the facts for weeks and had every chance to present
 The judgment was **reversed** as to the seizure of the contraband; Murphy, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Overruled — the framework has twice been remade.** *Trupiano*'s "whenever reasonably practicable" warrant rule was rejected just two years later in *United States v. Rabinowitz*, 339 U.S. 56 (1950), which held that the test is whether a [[Search Incident to Arrest|search incident to arrest]] is *reasonable*, not whether it was practicable to get a warrant. The Court then reversed course again in *[[Chimel v. California]]* (1969), overruling *Rabinowitz* and confining a [[Search Incident to Arrest|search incident to arrest]] to the arrestee's person and the area within his immediate control — the rule that governs today.
+**Overruled — the framework has twice been remade.** *Trupiano*'s "whenever reasonably practicable" warrant rule was rejected just two years later in *United States v. Rabinowitz*, 339 U.S. 56 (1950), which held that the test is whether a [[Search Incident to Arrest|search incident to arrest]] is *reasonable*, not whether it was practicable to get a warrant. The Court then reversed course again in *[[Chimel v. California]]* (1969), overruling *Rabinowitz* and confining a [[Search Incident to Arrest|search incident to arrest]] to the arrestee's person and the area within his immediate control, the rule that governs today.
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the subsequent-history above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until machine verification is complete. *United States v. Rabinowitz* is not yet in the corpus and is named in plain text to avoid a dangling link. Preserved as **history**, never as live law.
 

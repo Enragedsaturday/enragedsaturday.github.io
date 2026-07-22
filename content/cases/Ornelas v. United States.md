@@ -57,7 +57,7 @@ The ultimate determinations are reviewed [[Common Legal Terms#de-novo|de novo]].
 At the same time, "a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers." — [*Id.* at 699–700](https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/#:~:text=a%20reviewing%20court%20should%20take). ^pin-699a
 
 ## Application
-The Seventh Circuit had reviewed the reasonable-suspicion and probable-cause rulings only for [[Common Legal Terms#clear-error|clear error]]. Because the ultimate mixed questions of reasonable suspicion and probable cause must instead be reviewed [[Common Legal Terms#de-novo|de novo]] — while the historical facts (here, the officer's observations and the loose panel) are reviewed for [[Common Legal Terms#clear-error|clear error]] with due weight to his experience-based inferences — the Court [[Reading and Citing Cases#vacated|vacated]] the judgment and [[Reading and Citing Cases#on-remand|remanded]] for the Court of Appeals to review those determinations [[Common Legal Terms#de-novo|de novo]].
+The Seventh Circuit had reviewed the reasonable-suspicion and probable-cause rulings only for [[Common Legal Terms#clear-error|clear error]]. Because the ultimate mixed questions of reasonable suspicion and probable cause must instead be reviewed [[Common Legal Terms#de-novo|de novo]], while the historical facts (here, the officer's observations and the loose panel) are reviewed for [[Common Legal Terms#clear-error|clear error]] with due weight to his experience-based inferences, the Court [[Reading and Citing Cases#vacated|vacated]] the judgment and [[Reading and Citing Cases#on-remand|remanded]] for the Court of Appeals to review those determinations [[Common Legal Terms#de-novo|de novo]].
 
 ## Conclusion
 Reasonable-suspicion and probable-cause determinations get independent, [[Common Legal Terms#de-novo|de novo]] appellate review (with clear-error review of the underlying historical facts); the judgment was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]].
@@ -66,7 +66,7 @@ Reasonable-suspicion and probable-cause determinations get independent, [[Common
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. The [[Common Legal Terms#de-novo|de novo]] standard for reviewing reasonable suspicion and probable cause remains controlling.
 
 ## Appears on
-- [[Probable Cause]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Ornelas v. United States*, 517 U.S. 690 (1996) — https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/ — pinpoints: 691, 699–700.
+- *Ornelas v. United States*, 517 U.S. 690 (1996) — https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/. Pinpoints: 691, 699–700.

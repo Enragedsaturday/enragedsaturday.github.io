@@ -55,7 +55,7 @@ When a person's movement is constrained by something other than the police, the 
 That objective standard governs all such encounters: "in order to determine whether a particular encounter constitutes a seizure, a court must consider all the circumstances surrounding the encounter to determine whether the police conduct would have communicated to a reasonable person that the person was not free to decline the officers' requests or otherwise terminate the encounter." — [*Id.* at 439](https://www.courtlistener.com/opinion/112631/florida-v-bostick/#:~:text=in%20order%20to%20determine%20whether). ^pin-439
 
 ## Application
-Because Bostick's freedom to leave was limited by his being a passenger on a bus about to depart — not by any show of police authority — the Florida court erred in treating the encounter as a [[Common Legal Terms#per-se|per se]] seizure. Whether he was seized turned on whether a reasonable person in his position would have felt free to decline the officers' requests; the Court [[Reading and Citing Cases#on-remand|remanded]] for that totality-of-the-circumstances assessment rather than resolving the seizure question categorically.
+Because Bostick's freedom to leave was limited by his being a passenger on a bus about to depart (not by any show of police authority), the Florida court erred in treating the encounter as a [[Common Legal Terms#per-se|per se]] seizure. Whether he was seized turned on whether a reasonable person in his position would have felt free to decline the officers' requests; the Court [[Reading and Citing Cases#on-remand|remanded]] for that totality-of-the-circumstances assessment rather than resolving the seizure question categorically.
 
 ## Conclusion
 The Florida Supreme Court's [[Common Legal Terms#per-se|per se]] rule was reversed; whether a bus-sweep encounter is a seizure is judged by the free-to-decline-or-terminate standard on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], and the case was [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ The Florida Supreme Court's [[Common Legal Terms#per-se|per se]] rule was revers
 - No negative treatment. *Bostick*'s free-to-decline-or-terminate formulation remains the governing test for distinguishing a consensual encounter from a seizure.
 
 ## Appears on
-- [[Knock and Talk]] — *Key — Progeny / Refinement*
+- [[Knock and Talk]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Florida v. Bostick*, 501 U.S. 429 (1991) — https://www.courtlistener.com/opinion/112631/florida-v-bostick/ — pinpoints: 436, 439.
+- [*Florida v. Bostick*, 501 U.S. 429 (1991)](https://www.courtlistener.com/opinion/112631/florida-v-bostick/) — pinpoints: 436, 439.

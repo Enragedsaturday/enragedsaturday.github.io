@@ -55,7 +55,7 @@ No. "Thus, an overnight guest in a home may claim the protection of the Fourth A
 Whether a visitor has a legitimate expectation of privacy turns on factors such as the purely commercial nature of the visit, its short duration, and the absence of any prior connection to the home.
 
 ## Application
-Carter was not an overnight guest; he was present essentially for a business transaction — bagging cocaine — for only a matter of hours, with no prior relationship to the householder. Given the purely commercial purpose, the brief stay, and the lack of any connection to the home, he had no legitimate expectation of privacy there and could not challenge the officer's observation.
+Carter was not an overnight guest; he was present essentially for a business transaction (bagging cocaine) for only a matter of hours, with no prior relationship to the householder. Given the purely commercial purpose, the brief stay, and the lack of any connection to the home, he had no legitimate expectation of privacy there and could not challenge the officer's observation.
 
 ## Conclusion
 Reversed; Carter lacked a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] and so could not contest the search.
@@ -65,7 +65,7 @@ Reversed; Carter lacked a [[Reasonable Expectation of Privacy|reasonable expecta
 - No negative treatment. *Carter* refines the standing framework of [[Rakas v. Illinois]] and marks the boundary of the overnight-guest rule of [[Minnesota v. Olson]].
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Minnesota v. Carter*, 525 U.S. 83 (1998) — https://www.courtlistener.com/opinion/118249/minnesota-v-carter/ — pinpoint: 90.
+- *Minnesota v. Carter*, 525 U.S. 83 (1998) — https://www.courtlistener.com/opinion/118249/minnesota-v-carter/. Pinpoint: 90.

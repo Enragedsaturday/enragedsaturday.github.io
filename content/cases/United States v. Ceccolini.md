@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-While lawfully in Ceccolini's flower shop on an unrelated matter, a police officer (Biro) idly picked up an envelope and found gambling policy slips inside; he then learned from the shop employee, Lois Hennessey, that the slips belonged to Ceccolini. Months later, FBI agents — without mentioning the slips — interviewed Hennessey, who later testified against Ceccolini at his perjury trial. He moved to suppress her testimony as the fruit of the illegal search of the envelope.
+While lawfully in Ceccolini's flower shop on an unrelated matter, a police officer (Biro) idly picked up an envelope and found gambling policy slips inside; he then learned from the shop employee, Lois Hennessey, that the slips belonged to Ceccolini. Months later, FBI agents (without mentioning the slips) interviewed Hennessey, who later testified against Ceccolini at his perjury trial. He moved to suppress her testimony as the fruit of the illegal search of the envelope.
 
 ## Issue
 Whether the testimony of a live witness whose identity or willingness to testify is discovered through an illegal search must be suppressed as a [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]] under the same standard applied to inanimate evidence.
 
 ## Rule
-No — exclusion of live-witness testimony demands a closer connection to the illegality than suppression of an object. "[T]he exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object." — 435 U.S. at 280. ^pin-280
+No. Exclusion of live-witness testimony demands a closer connection to the illegality than suppression of an object. "[T]he exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object." — 435 U.S. at 280. ^pin-280
 
 Because a witness's willingness to come forward of her own volition attenuates the taint, and because permanently disabling a witness exacts a far higher cost than excluding an object, courts weigh the witness's free will, whether the illegally obtained evidence was used in the questioning, the time elapsed, and the officer's purpose.
 
@@ -67,7 +67,7 @@ The degree of [[Fruits and Attenuation|attenuation]] was sufficient to dissipate
 - No negative treatment. *Ceccolini* builds on the [[Fruits and Attenuation|attenuation]] principle of [[Nardone v. United States]] and [[Wong Sun v. United States]], holding that live-witness testimony is suppressed as a fruit only with "much greater reluctance"; the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors govern the closely related confession context.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny ([[Fruits and Attenuation|attenuation]])*
+- [[The Exclusionary Rule]] — *Key: Progeny ([[Fruits and Attenuation|attenuation]])*
 
 ## Sources
-- *United States v. Ceccolini*, 435 U.S. 268 (1978) — https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/ — pinpoints: 279–280, 280.
+- *United States v. Ceccolini*, 435 U.S. 268 (1978) — https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/. Pinpoints: 279–280, 280.

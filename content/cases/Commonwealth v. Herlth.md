@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A state trooper entered Herlth's residence in a community-caretaking capacity while EMS treated Herlth for a drug overdose. Inside, the trooper saw a closed, opaque shoebox bearing a one-inch manufacturer's hole and shined a flashlight through the hole to view the contents — "scramble pills" — which became the basis for charges. Herlth moved to suppress; the trial court denied the motion and Herlth appealed.
+A state trooper entered Herlth's residence in a community-caretaking capacity while EMS treated Herlth for a drug overdose. Inside, the trooper saw a closed, opaque shoebox bearing a one-inch manufacturer's hole and shined a flashlight through the hole to view the contents ("scramble pills"), which became the basis for charges. Herlth moved to suppress; the trial court denied the motion and Herlth appealed.
 
 ## Issue
 Whether the [[Plain View Doctrine|plain-view doctrine]] permitted the trooper to illuminate and view the interior of a closed, opaque container through a small hole, where the container's contents were not visible from a lawful vantage point.
@@ -66,7 +66,7 @@ The flashlight-aided search of the closed shoebox exceeded the plain-view except
 - **Status:** good *(as of 2026-06-30)* — **Persuasive — state, illustrative** (Pennsylvania Superior Court, [[Reading and Citing Cases#en-banc|en banc]]). A recent state decision applying the immediately-apparent and lawful-access prongs of [[Horton v. California]] / [[Arizona v. Hicks]] to a closed container.
 
 ## Appears on
-- [[Plain View Doctrine]] — *Key — Progeny / Refinement*
+- [[Plain View Doctrine]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Commonwealth v. Herlth*, 2026 PA Super 114 (Pa. Super. Ct. June 5, 2026) (en banc) — https://www.courtlistener.com/opinion/10870804/com-v-herlth-j/ — pinpoints: slip op., at 26, 29, 31 (CL carries the slip opinion, paginated as the Superior Court slip; cluster 10870804 → lead opinion 11338267).
+- *Commonwealth v. Herlth*, 2026 PA Super 114 (Pa. Super. Ct. June 5, 2026) (en banc) — https://www.courtlistener.com/opinion/10870804/com-v-herlth-j/; pinpoints: slip op., at 26, 29, 31 (CL carries the slip opinion, paginated as the Superior Court slip; cluster 10870804 → lead opinion 11338267).

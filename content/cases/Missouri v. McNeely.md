@@ -67,8 +67,8 @@ Affirmed; on these facts the warrantless blood draw was not justified by a [[Com
 - No negative treatment. *McNeely* rejects a [[Common Legal Terms#per-se|per se]] [[Exigent Circumstances and Hot Pursuit|exigency]] rule and was later **refined by** [[Mitchell v. Wisconsin]], which addressed the distinct unconscious-driver scenario.
 
 ## Appears on
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*
+- [[Exigent Circumstances and Hot Pursuit]] — *Key: Progeny / Refinement*
 - [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Missouri v. McNeely*, 569 U.S. 141 (2013) — https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/ — interior pincite(s) 156 retired pending official-reporter pagination (per the official U.S. Reports citation; CL carries the reporter text without inline star pagination).
+- *Missouri v. McNeely*, 569 U.S. 141 (2013) — https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/. Interior pincite(s) 156 retired pending official-reporter pagination (per the official U.S. Reports citation; CL carries the reporter text without inline star pagination).

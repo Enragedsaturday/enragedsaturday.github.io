@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Lego was convicted of armed robbery on evidence that included his confession, which he claimed the police had beaten out of him. At a pretrial [[Common Legal Terms#suppression-hearing|suppression hearing]] the trial judge — applying the then-prevailing practice — found the confession voluntary by a [[Common Legal Terms#preponderance-of-the-evidence|preponderance of the evidence]] and admitted it. Lego argued that the Constitution required the prosecution to prove voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and that he was entitled to have the jury decide voluntariness anew. He sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]] (Twomey was the prison warden).
+Lego was convicted of armed robbery on evidence that included his confession, which he claimed the police had beaten out of him. At a pretrial [[Common Legal Terms#suppression-hearing|suppression hearing]] the trial judge (applying the then-prevailing practice) found the confession voluntary by a [[Common Legal Terms#preponderance-of-the-evidence|preponderance of the evidence]] and admitted it. Lego argued that the Constitution required the prosecution to prove voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and that he was entitled to have the jury decide voluntariness anew. He sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]] (Twomey was the prison warden).
 
 ## Issue
 Whether the prosecution must prove a confession's voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and whether a defendant is entitled to have the jury redetermine voluntariness after the judge has ruled it admissible.
@@ -65,7 +65,7 @@ The prosecution need prove voluntariness only by a [[Common Legal Terms#preponde
 - No negative treatment. *Lego* sets the burden of proof for the voluntariness inquiry developed in the due-process line ([[Brown v. Mississippi]], [[Rogers v. Richmond]]) and for the *Jackson v. Denno* requirement of a separate judicial voluntariness determination. The Court extended the same preponderance standard to proof of a [[Miranda v. Arizona]] waiver and to voluntariness generally in [[Colorado v. Connelly]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Lego v. Twomey*, 404 U.S. 477 (1972) — https://www.courtlistener.com/opinion/108429/lego-v-twomey/ — pinpoint: 489.
+- *Lego v. Twomey*, 404 U.S. 477 (1972) — https://www.courtlistener.com/opinion/108429/lego-v-twomey/. Pinpoint: 489.

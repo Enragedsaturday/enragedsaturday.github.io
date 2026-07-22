@@ -55,7 +55,7 @@ No. A bare anonymous tip that merely identifies a person is not enough; the tip 
 The Court refused to recognize a "firearm exception" that would permit a stop-and-frisk on a gun tip that failed standard reliability testing: "We decline to adopt this position." — [*Id.*](https://www.courtlistener.com/opinion/9189388/florida-v-j-l/#:~:text=justifies%20a%20%E2%80%9C-,firearm%20exception) ^pin-272a
 
 ## Application
-All the police had was an unknown caller's bare assertion that J.L. had a gun; the tip offered no predictive detail and nothing showing the caller knew of concealed criminal activity. That the description of J.L.'s appearance proved accurate showed only that the caller could identify him — not that he was breaking the law — so the officers lacked reasonable suspicion and the frisk was unlawful.
+All the police had was an unknown caller's bare assertion that J.L. had a gun; the tip offered no predictive detail and nothing showing the caller knew of concealed criminal activity. That the description of J.L.'s appearance proved accurate showed only that the caller could identify him (not that he was breaking the law), so the officers lacked reasonable suspicion and the frisk was unlawful.
 
 ## Conclusion
 The anonymous gun tip did not supply reasonable suspicion; the firearm seized in the frisk should have been suppressed, and the Florida Supreme Court's judgment was affirmed.
@@ -65,7 +65,7 @@ The anonymous gun tip did not supply reasonable suspicion; the firearm seized in
 - No negative treatment. *J.L.* refines the anonymous-tip analysis of [[Alabama v. White]]: an accurate description of a suspect's appearance, without indicia that the tipster knows of criminal activity, does not establish reasonable suspicion.
 
 ## Appears on
-- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Florida v. J.L.*, 529 U.S. 266 (2000) — https://www.courtlistener.com/opinion/118352/florida-v-jl/ — pinpoint: 272.
+- *Florida v. J.L.*, 529 U.S. 266 (2000) — https://www.courtlistener.com/opinion/118352/florida-v-jl/. Pinpoint: 272.

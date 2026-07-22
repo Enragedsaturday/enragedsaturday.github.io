@@ -48,10 +48,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Van Leeuwen mailed two 12-pound insured first-class packages — declared to contain coins — at a Washington post office near the Canadian border, addressed to post-office boxes in California and Tennessee. A suspicious postal clerk alerted an officer, who noticed the return address was a vacant area of a nearby junior college and that Van Leeuwen's car bore British Columbia plates. Investigation revealed that both addressees were under investigation for trafficking in illegal coins. The packages were detained while a warrant was sought; because of a time difference in reaching Tennessee, the warrant did not issue and reach the post office until about 29 hours after mailing. The packages were then opened (revealing illegally imported gold coins), resealed, and promptly sent on. The Ninth Circuit reversed Van Leeuwen's conviction for want of a timely warrant.
+Van Leeuwen mailed two 12-pound insured first-class packages (declared to contain coins) at a Washington post office near the Canadian border, addressed to post-office boxes in California and Tennessee. A suspicious postal clerk alerted an officer, who noticed the return address was a vacant area of a nearby junior college and that Van Leeuwen's car bore British Columbia plates. Investigation revealed that both addressees were under investigation for trafficking in illegal coins. The packages were detained while a warrant was sought; because of a time difference in reaching Tennessee, the warrant did not issue and reach the post office until about 29 hours after mailing. The packages were then opened (revealing illegally imported gold coins), resealed, and promptly sent on. The Ninth Circuit reversed Van Leeuwen's conviction for want of a timely warrant.
 
 ## Issue
-Did the warrantless detention of first-class mail packages — on reasonable suspicion, while officers diligently pursued a search warrant — violate the Fourth Amendment?
+Did the warrantless detention of first-class mail packages (on reasonable suspicion, while officers diligently pursued a search warrant) violate the Fourth Amendment?
 
 ## Rule
 No. While first-class mail may be opened only under a warrant, the suspicious circumstances "certainly justified detention, without a warrant, while an investigation was made." — 397 U.S. at 252. ^pin-252
@@ -71,9 +71,9 @@ The detention of the packages pending the warrant was reasonable; the evidence w
 - *Van Leeuwen* remains the controlling authority that property (here, mail) may be briefly detained on reasonable suspicion while a warrant is diligently sought, reasoning by analogy to [[Terry v. Ohio]]. It is the direct predecessor of [[United States v. Place]] (luggage-detention duration limit) and runs alongside [[Illinois v. McArthur]] (temporary seizure of premises pending a warrant). No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 30 proposed); the proposed negative and audit-needed edges remain unresolved pending a treatment-history audit.
 
 ## Appears on
-- [[Seizure of Property]] — *Key — package / mail detention*
+- [[Seizure of Property]] — *Key: package / mail detention*
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Van Leeuwen*, 397 U.S. 249 (1970) — https://www.courtlistener.com/opinion/108099/united-states-v-van-leeuwen/ — pinpoints: 252, 253.
+- *United States v. Van Leeuwen*, 397 U.S. 249 (1970) — https://www.courtlistener.com/opinion/108099/united-states-v-van-leeuwen/. Pinpoints: 252, 253.

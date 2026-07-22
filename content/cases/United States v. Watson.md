@@ -46,15 +46,15 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Acting on a reliable informant's tip — corroborated when the informant showed the inspector stolen credit cards Watson had supplied — a postal inspector arrested Watson without a warrant in a restaurant. After the arrest and *[[Miranda v. Arizona|Miranda]]* warnings, the inspector asked to search Watson's nearby car; Watson said "Go ahead," and stolen credit cards were found inside. Watson moved to suppress. The Ninth Circuit held the warrantless arrest invalid and the consent therefore tainted.
+Acting on a reliable informant's tip, corroborated when the informant showed the inspector stolen credit cards Watson had supplied, a postal inspector arrested Watson without a warrant in a restaurant. After the arrest and *[[Miranda v. Arizona|Miranda]]* warnings, the inspector asked to search Watson's nearby car; Watson said "Go ahead," and stolen credit cards were found inside. Watson moved to suppress. The Ninth Circuit held the warrantless arrest invalid and the consent therefore tainted.
 
 ## Issue
 Whether Watson's consent to search, given after a custodial arrest, was voluntary — and whether the fact of being in custody renders consent involuntary.
 
 ## Rule
-First, the warrantless arrest was lawful — a warrantless felony arrest in public on probable cause does not violate the Fourth Amendment — so the consent was not the product of an illegal arrest. Second, consent given in custody is judged by the *[[Schneckloth v. Bustamonte|Schneckloth]]* [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], and custody alone does not make it involuntary: "He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search." — 423 U.S. at 424. ^pin-424
+First, the warrantless arrest was lawful (a warrantless felony arrest in public on probable cause does not violate the Fourth Amendment), so the consent was not the product of an illegal arrest. Second, consent given in custody is judged by the *[[Schneckloth v. Bustamonte|Schneckloth]]* [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], and custody alone does not make it involuntary: "He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search." — 423 U.S. at 424. ^pin-424
 
-Nor is the suspect's ignorance of the right to refuse controlling — the absence of such proof "may be a factor in the overall judgment," but "is not to be given controlling significance." — [*Id.*](https://www.courtlistener.com/opinion/109352/united-states-v-watson/#:~:text=may%20be%20a%20factor%20in) ^pin-424a
+Nor is the suspect's ignorance of the right to refuse controlling. The absence of such proof "may be a factor in the overall judgment," but "is not to be given controlling significance." — [*Id.*](https://www.courtlistener.com/opinion/109352/united-states-v-watson/#:~:text=may%20be%20a%20factor%20in) ^pin-424a
 
 ## Application
 Because Watson's arrest was valid, his consent was not tainted by any illegality. There was no overt act or threat of force, no promises, and no subtle coercion; Watson consented on a public street rather than at the station house. That he was under arrest, and any lack of proof that he knew he could refuse, did not by themselves overbear his will. Under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] his consent was his own free choice, and the stolen credit cards found in the car were admissible.
@@ -64,11 +64,11 @@ The warrantless public arrest was lawful and Watson's consent to the search was 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Watson* applies the [[Schneckloth v. Bustamonte]] totality-of-the-circumstances voluntariness test to a custodial setting: being under arrest is one factor, not a disqualifier, and the suspect need not be told he may refuse. *Watson*'s separate holding — that a warrantless felony arrest in public on probable cause is reasonable — also remains good law and informs [[United States v. Santana]].
+- No negative treatment. *Watson* applies the [[Schneckloth v. Bustamonte]] totality-of-the-circumstances voluntariness test to a custodial setting: being under arrest is one factor, not a disqualifier, and the suspect need not be told he may refuse. *Watson*'s separate holding, that a warrantless felony arrest in public on probable cause is reasonable, also remains good law and informs [[United States v. Santana]].
 
 ## Appears on
-- [[Arrest and Arrest Warrants]] — *Key — Anchor*
-- [[Consent Searches]] — *Key — Progeny / Refinement*
+- [[Arrest and Arrest Warrants]]: *Key — Anchor*
+- [[Consent Searches]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *United States v. Watson*, 423 U.S. 411 (1976) — https://www.courtlistener.com/opinion/109352/united-states-v-watson/ — pinpoint: 424 (parallel 96 S. Ct. 820).
+- *United States v. Watson*, 423 U.S. 411 (1976) — https://www.courtlistener.com/opinion/109352/united-states-v-watson/; pinpoint: 424 (parallel 96 S. Ct. 820).

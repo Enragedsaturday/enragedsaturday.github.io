@@ -47,7 +47,7 @@ lake:
 Sheriff's deputies tried to serve capiases on two employees of Dr. Bernard Pembaur's medical clinic who had failed to appear before a grand jury. When Pembaur barred the deputies from entering, they telephoned the County Prosecutor, who instructed them to "go in and get" the witnesses. The deputies chopped down the door with an axe and entered. Pembaur sued the county and city under § 1983, claiming the warrantless entry was an official policy.
 
 ## Issue
-Whether a municipality may be held liable under § 1983 for a single decision — here, the County Prosecutor's instruction to enter — made by an official with final authority to establish policy on that subject, even though the municipality had no pre-existing rule directing the conduct.
+Whether a municipality may be held liable under § 1983 for a single decision (here, the County Prosecutor's instruction to enter) made by an official with final authority to establish policy on that subject, even though the municipality had no pre-existing rule directing the conduct.
 
 ## Rule
 Yes. *[[Monell v. Department of Social Services|Monell]]* liability does not require a rule applied in many cases; a single decision by an authorized policymaker is enough. "municipal liability under § 1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy with respect to the subject matter in question." — 475 U.S. at 483-484. ^pin-483
@@ -65,7 +65,7 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]. A municipality can
 - *Pembaur* elaborates the policy-or-custom requirement of [[Monell v. Department of Social Services]] by recognizing single-decision liability, and sits alongside the failure-to-train branch developed in [[City of Canton v. Harris]]. The "final policymaking authority" inquiry it framed remains the governing test (later refined in *City of St. Louis v. Praprotnik* and *McMillian v. Monroe County*).
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Pembaur v. City of Cincinnati*, 475 U.S. 469 (1986) — https://www.courtlistener.com/opinion/111615/pembaur-v-city-of-cincinnati/ — pinpoint: 483-484.
+- [*Pembaur v. City of Cincinnati*, 475 U.S. 469 (1986)](https://www.courtlistener.com/opinion/111615/pembaur-v-city-of-cincinnati/) — pinpoint: 483-484.

@@ -64,7 +64,7 @@ Whether a district court order denying a federal contractor's *Yearsley* defense
 The courts of appeals may hear appeals only from "final decisions," 28 U.S.C. § 1291, subject to a narrow collateral-order exception for rulings that (1) conclusively determine the disputed question, (2) resolve an important issue completely separate from the merits, and (3) are effectively unreviewable on appeal from a final judgment. The Court held: "Because *Yearsley* provides federal contractors a potential merits defense rather than an immunity from suit, a pretrial order denying *Yearsley* protection is not immediately appealable." — slip op. at 1. ^pin-slip1
 
 ## Application
-Unlike qualified or sovereign immunity — which confer a right *not to stand trial* and so justify immediate review — *Yearsley* supplies only a defense to liability on the merits. An order rejecting it therefore does not resolve a question "completely separate from the merits," and any error can be corrected on appeal from final judgment; the ruling flunks the collateral-order test. The interest in avoiding piecemeal appeals controls.
+Unlike qualified or sovereign immunity (which confer a right *not to stand trial* and so justify immediate review), *Yearsley* supplies only a defense to liability on the merits. An order rejecting it therefore does not resolve a question "completely separate from the merits," and any error can be corrected on appeal from final judgment; the ruling flunks the collateral-order test. The interest in avoiding piecemeal appeals controls.
 
 ## Conclusion
 **Affirmed.** Justice Kagan wrote for a unanimous Court (9–0); the Tenth Circuit's dismissal for lack of jurisdiction was upheld.

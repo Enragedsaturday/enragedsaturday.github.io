@@ -47,7 +47,7 @@ lake:
 Officers in a patrol car on routine patrol saw Chesternut standing on a corner; when he saw the cruiser approach, he ran. The officers drove alongside him for a short distance "to see where he was going." They did not activate a siren or flashers, command him to halt, display weapons, or drive aggressively to block his path. As the cruiser drove parallel to him, Chesternut discarded several packets, which the officers retrieved and (believing them to be narcotics) seized; he was then arrested. He moved to suppress the packets as the fruit of an unlawful seizure.
 
 ## Issue
-Whether the officers' pursuit — driving alongside a fleeing pedestrian — was a Fourth Amendment "seizure," such that the packets Chesternut discarded during the pursuit were the fruit of that seizure.
+Whether the officers' pursuit (driving alongside a fleeing pedestrian) was a Fourth Amendment "seizure," such that the packets Chesternut discarded during the pursuit were the fruit of that seizure.
 
 ## Rule
 Whether police conduct is a seizure is governed by the objective Mendenhall test: "The test provides that the police can be said to have seized an individual 'only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.'" — 486 U.S. at 573 (quoting *United States v. Mendenhall*). ^pin-573
@@ -74,4 +74,4 @@ The pursuit was not a seizure under the Mendenhall test, so the abandoned packet
 - [[Seizure of the Person]] — *Progeny*
 
 ## Sources
-- *Michigan v. Chesternut*, 486 U.S. 567 (1988) — https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/ — pinpoints: 573, 574, 575–576.
+- *Michigan v. Chesternut*, 486 U.S. 567 (1988) — https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/. Pinpoints: 573, 574, 575–576.

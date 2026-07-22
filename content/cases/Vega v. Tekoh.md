@@ -59,7 +59,7 @@ No. "A violation of the *Miranda* rules does not provide a basis for a § 1983 c
 Concluding: "Because a violation of *Miranda* is not itself a violation of the Fifth Amendment, and because we see no justification for expanding *Miranda* to confer a right to sue under § 1983, the judgment of the Court of Appeals is reversed." — *Id.* (Alito, J., for the Court) (concluding paragraph). ^pin-134a
 
 ## Application
-Tekoh's § 1983 theory rested entirely on the admission of his un-Mirandized statement. Because a *[[Miranda v. Arizona|Miranda]]* violation is not equivalent to a Fifth Amendment violation, that admission — even assuming it was error — did not deprive Tekoh of a right secured by the Constitution and laws within the meaning of § 1983. The proper remedy for a *[[Miranda v. Arizona|Miranda]]* violation is suppression of the statement in the criminal case, not a § 1983 damages action against the interrogating officer.
+Tekoh's § 1983 theory rested entirely on the admission of his un-Mirandized statement. Because a *[[Miranda v. Arizona|Miranda]]* violation is not equivalent to a Fifth Amendment violation, that admission (even assuming it was error) did not deprive Tekoh of a right secured by the Constitution and laws within the meaning of § 1983. The proper remedy for a *[[Miranda v. Arizona|Miranda]]* violation is suppression of the statement in the criminal case, not a § 1983 damages action against the interrogating officer.
 
 ## Conclusion
 A *[[Miranda v. Arizona|Miranda]]* violation is not itself a constitutional violation and cannot ground a § 1983 suit. The Ninth Circuit's judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -69,8 +69,8 @@ A *[[Miranda v. Arizona|Miranda]]* violation is not itself a constitutional viol
 - *Vega* extends the logic of [[Chavez v. Martinez]] (the Self-Incrimination Clause is a trial right) and reaffirms that *[[Miranda v. Arizona|Miranda]]*'s rules, though constitutionally based (see [[Dickerson v. United States]]), are prophylactic and do not by themselves create § 1983 liability.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny*
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny*
 
 ## Sources
-- *Vega v. Tekoh*, 597 U.S. 134 (2022) — https://www.courtlistener.com/opinion/6480695/vega-v-tekoh/ — pinpoints: 134 (Held); conclusion at end of opinion (Alito, J.). (CourtListener's copy is the slip opinion; official U.S. Reports internal pagination shown as "597 U.S. ____".)
+- *Vega v. Tekoh*, 597 U.S. 134 (2022) — https://www.courtlistener.com/opinion/6480695/vega-v-tekoh/. Pinpoints: 134 (Held); conclusion at end of opinion (Alito, J.). (CourtListener's copy is the slip opinion; official U.S. Reports internal pagination shown as "597 U.S. ____".)

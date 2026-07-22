@@ -190,6 +190,13 @@ def derive_slip_cite(record):
 def authority_weight(record):
     identity = record.get("identity", {})
     level = identity.get("court_level")
+    # RULING P4-20(a): a non-precedential (Unpublished) COA/district disposition is
+    # persuasive-only regardless of court level. precedential_status is an OPTIONAL
+    # identity-grade CL fact on a different axis from treatment; SD9's court-level-
+    # only derivation presumed published dispositions and is factually wrong for a
+    # non-precedential COA decision. Absent signal => every path below is unchanged.
+    if level in ("coa", "district") and identity.get("precedential_status") == "Unpublished":
+        return "Persuasive only \u2014 non-precedential"
     if level == "scotus":
         return "Binding \u2014 SCOTUS"
     if level == "coa":
@@ -689,9 +696,29 @@ def self_test():
     unmarked_proj = project_record(unmarked).get("citation")
     slip_ok = (slip_proj == "No. 23-1197, slip op. (U.S. 2026)" and unmarked_proj == "")
 
-    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok and slip_ok
+    # RULING P4-20(a): authority_weight honors an OPTIONAL non-precedential signal.
+    # A coa/district record with identity.precedential_status == "Unpublished" derives
+    # the tier-5 A8 label 'Persuasive only — non-precedential'; an ABSENT signal leaves
+    # every court-level path byte-identical (regression guard); the guard is scoped to
+    # coa/district so a stray scotus flag never demotes 'Binding — SCOTUS'.
+    def _weight(level, **ident):
+        return authority_weight({"record_id": "prec", "identity": dict(court_level=level, **ident)})
+    prec_unpub_coa = _weight("coa", circuit="ca6", precedential_status="Unpublished")
+    prec_pub_coa = _weight("coa", circuit="ca6")
+    prec_unpub_dist = _weight("district", precedential_status="Unpublished")
+    prec_scotus_flag = _weight("scotus", precedential_status="Unpublished")
+    prec_ok = (
+        prec_unpub_coa == "Persuasive only — non-precedential"
+        and prec_pub_coa == "Binding in-circuit — 6th Cir."
+        and prec_unpub_dist == "Persuasive only — non-precedential"
+        and prec_scotus_flag == "Binding — SCOTUS"
+    )
+
+    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok and slip_ok and prec_ok
     sys.stderr.write("[self-test] slip-only projection single-source (S2 A3) -> %s (slip=%r unmarked=%r)\n"
                      % ("OK" if slip_ok else "FAIL", slip_proj, unmarked_proj))
+    sys.stderr.write("[self-test] P4-20(a) precedential_status weight derivation -> %s (coa/unpub=%r coa/pub=%r)\n"
+                     % ("OK" if prec_ok else "FAIL", prec_unpub_coa, prec_pub_coa))
     sys.stderr.write("[self-test] project idempotence -> %s\n" % ("OK" if once == twice else "FAIL"))
     sys.stderr.write("[self-test] verified_off_cl off_cl_links projection -> %s\n" % ("OK" if off_cl_ok else "FAIL"))
     sys.stderr.write("[self-test] preserved raw frontmatter bytes -> %s\n" % ("OK" if preserve_ok else "FAIL"))

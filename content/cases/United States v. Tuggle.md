@@ -54,10 +54,10 @@ Whether the warrantless use of pole cameras to observe the exterior of a home on
 ## Rule
 No, under current doctrine: "we hold that the extensive pole camera surveillance in this case did not constitute a search under the current understanding of the Fourth Amendment." — *United States v. Tuggle*, 4 F.4th 505 (7th Cir. 2021) (slip op., at 5). ^pin-op5
 
-The cameras captured only what was exposed to public view from a place the government was lawfully entitled to occupy. The court declined to adopt the "mosaic theory" — that aggregated long-term surveillance becomes a search — holding current Supreme Court precedent did not support it.
+The cameras captured only what was exposed to public view from a place the government was lawfully entitled to occupy. The court declined to adopt the "mosaic theory" (that aggregated long-term surveillance becomes a search), holding current Supreme Court precedent did not support it.
 
 ## Application
-The three pole cameras recorded only the outside of Tuggle's home — areas exposed to public view — from public property where officers were lawfully entitled to be. Even aggregated over eighteen months, that surveillance was not a search under existing Supreme Court precedent, and the court would not treat the accumulated footage as a search under a mosaic theory. The footage was therefore admissible against Tuggle.
+The three pole cameras recorded only the outside of Tuggle's home (areas exposed to public view) from public property where officers were lawfully entitled to be. Even aggregated over eighteen months, that surveillance was not a search under existing Supreme Court precedent, and the court would not treat the accumulated footage as a search under a mosaic theory. The footage was therefore admissible against Tuggle.
 
 ## Conclusion
 The warrantless long-term pole-camera surveillance of the home's exterior did not constitute a Fourth Amendment search; the Seventh Circuit affirmed. The court nonetheless flagged at length the privacy dangers of pervasive aggregated surveillance, inviting legislative and further judicial attention.
@@ -68,7 +68,7 @@ The warrantless long-term pole-camera surveillance of the home's exterior did no
 
 ## Appears on
 - [[Plain View Doctrine]] — *Recent development (role-based)*
-- [[Aerial and Enhanced Surveillance]] — *Related (cross-doctrine — pole camera)*
+- [[Aerial and Enhanced Surveillance]] — *Related (cross-doctrine: pole camera)*
 
 ## Sources
-- *United States v. Tuggle*, 4 F.4th 505 (7th Cir. 2021) — https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/ — pinpoint given as slip-opinion page (CourtListener carries the slip opinion; cluster 4899735 → opinion 4703514).
+- *United States v. Tuggle*, 4 F.4th 505 (7th Cir. 2021) — https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/. Pinpoint given as slip-opinion page (CourtListener carries the slip opinion; cluster 4899735 → opinion 4703514).

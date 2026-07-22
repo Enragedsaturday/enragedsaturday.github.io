@@ -51,7 +51,7 @@ holding: "In civil forfeiture cases involving personal property, the Due Process
 Halima Culley and Lena Sutton each lent a car to someone who was then stopped by Alabama police and found with drugs; the State seized both cars and initiated civil forfeiture proceedings. The owners sued under 42 U.S.C. § 1983, contending that the Due Process Clause required a prompt post-seizure hearing to decide whether the police could retain their cars while the forfeiture cases proceeded. The federal district courts and, on consolidated appeal, the Eleventh Circuit rejected the claims, holding that a timely forfeiture hearing affords due process and that no separate preliminary retention hearing is constitutionally required.
 
 ## Issue
-Whether the Due Process Clause requires a separate preliminary hearing — beyond a timely forfeiture hearing — to determine whether police may retain seized personal property (here, a car) pending the civil forfeiture proceeding.
+Whether the Due Process Clause requires a separate preliminary hearing (beyond a timely forfeiture hearing) to determine whether police may retain seized personal property (here, a car) pending the civil forfeiture proceeding.
 
 ## Rule
 When police seize personal property for civil forfeiture, due process is governed by the Court's forfeiture-timing precedents rather than by a new preliminary-hearing requirement. Drawing on *[[United States v. $8,850 in Currency|United States v. $8,850]]* and *[[United States v. Von Neumann]]*, the Court held that "[t]his Court's precedents establish that the answer is no: The Constitution requires a timely forfeiture hearing; the Constitution does not also require a separate preliminary hearing." — 601 U.S. 377. ^pin-381

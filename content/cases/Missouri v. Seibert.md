@@ -65,7 +65,7 @@ Affirmed; the postwarning statement was suppressed.
 - No negative treatment. *Seibert* is distinguished from the good-faith, non-deliberate two-step sequence approved in [[Oregon v. Elstad]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]]: *Key — Progeny / Refinement*
 
 ## Sources
-- *Missouri v. Seibert*, 542 U.S. 600 (2004) — https://www.courtlistener.com/opinion/137002/missouri-v-seibert/ — pinpoint: 604 (plurality opinion).
+- *Missouri v. Seibert*, 542 U.S. 600 (2004) — https://www.courtlistener.com/opinion/137002/missouri-v-seibert/; pinpoint: 604 (plurality opinion).

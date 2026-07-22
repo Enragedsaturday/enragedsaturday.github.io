@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Prohibition agents, acting on an invalid warrant issued by a commissioner who lacked authority, entered the petitioners' import-company office, arrested Gowen and Bartels, and — under a false claim of having a warrant and by threat of force — compelled Gowen to open his desk and safe. The agents then ransacked the desk, safe, filing cabinets, and other parts of the office, seizing papers, even though they had ample information and time to obtain a valid warrant.
+Prohibition agents, acting on an invalid warrant issued by a commissioner who lacked authority, entered the petitioners' import-company office, arrested Gowen and Bartels, and (under a false claim of having a warrant and by threat of force) compelled Gowen to open his desk and safe. The agents then ransacked the desk, safe, filing cabinets, and other parts of the office, seizing papers, even though they had ample information and time to obtain a valid warrant.
 
 ## Issue
 Whether a warrantless general search and seizure of papers throughout an office, conducted incident to an arrest, is a reasonable [[Search Incident to Arrest|search incident to arrest]] or an unconstitutional general search.
@@ -55,7 +55,7 @@ Reasonableness is fact-specific: "There is no formula for the determination of r
 A [[Search Incident to Arrest|search incident to arrest]] may not become a general rummaging of the premises: by "pretension of right and threat of force he compelled Gowen to open the desk and the safe and with the others made a general and apparently unlimited search, ransacking the desk, safe, filing cases and other parts of the office. It was a lawless invasion of the premises and a general exploratory search in the hope that evidence of crime might be found." — *Id.* at 358. ^pin-358
 
 ## Application
-Unlike *Marron v. United States* — where officers executing a valid warrant seized a ledger and bills that were "visible and accessible and in the offender's immediate custody," with "no threat of force or general search or rummaging" — the agents here arrested the men without seeing any crime, then forced open the desk and safe and ransacked the entire office for evidence under a false claim of authority. That was a general exploratory search, not a permissible incident of the arrest, and was unreasonable.
+Unlike *Marron v. United States* (where officers executing a valid warrant seized a ledger and bills that were "visible and accessible and in the offender's immediate custody," with "no threat of force or general search or rummaging"), the agents here arrested the men without seeing any crime, then forced open the desk and safe and ransacked the entire office for evidence under a false claim of authority. That was a general exploratory search, not a permissible incident of the arrest, and was unreasonable.
 
 ## Conclusion
 Reversed. The general search of the office was unreasonable; the papers had to be suppressed and returned. *Go-Bart* fixes an early outer limit on [[Search Incident to Arrest|search incident to arrest]] — it cannot be converted into a general exploratory search.
@@ -65,7 +65,7 @@ Reversed. The general search of the office was unreasonable; the papers had to b
 - The general-exploratory-search limit survives and was given its modern structure in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Agnello v. United States]]. (The Court's contemporaneous "mere evidence" assumptions, drawn from *[[Gouled v. United States|Gouled]]*, were later changed by *[[Warden v. Hayden]]* — but that does not disturb *Go-Bart*'s search-incident-to-arrest holding.)
 
 ## Appears on
-- [[SIA Persons]] — *Key — Historical / Foundational*
+- [[SIA Persons]] — *Key: Historical / Foundational*
 
 ## Sources
-- *Go-Bart Importing Co. v. United States*, 282 U.S. 344 (1931) — https://www.courtlistener.com/opinion/101643/go-bart-importing-co-v-united-states/ — pinpoints: 357, 358.
+- *Go-Bart Importing Co. v. United States*, 282 U.S. 344 (1931) — https://www.courtlistener.com/opinion/101643/go-bart-importing-co-v-united-states/. Pinpoints: 357, 358.

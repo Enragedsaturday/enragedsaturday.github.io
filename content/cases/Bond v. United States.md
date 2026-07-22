@@ -67,8 +67,8 @@ The agent's exploratory squeezing of the bag was a Fourth Amendment search; the 
 - Distinguishes the visual-observation line ([[California v. Ciraolo]], [[Florida v. Riley]]) and confirms that a traveler's bag is an "effect" with retained privacy (cf. [[United States v. Place]]).
 
 ## Appears on
-- [[Reasonable Expectation of Privacy]] — *Key — Progeny*
+- [[Reasonable Expectation of Privacy]] — *Key: Progeny*
 - [[Abandonment]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Bond v. United States*, 529 U.S. 334 (2000) — https://www.courtlistener.com/opinion/118354/bond-v-united-states/ — pinpoints: 337, 338–339.
+- *Bond v. United States*, 529 U.S. 334 (2000) — https://www.courtlistener.com/opinion/118354/bond-v-united-states/ (pinpoints: 337, 338–339).

@@ -63,7 +63,7 @@ The warrantless search was unreasonable as to the present, objecting co-occupant
 - **Confined to a physically present objector** by [[Fernandez v. California]]: once the objecting occupant is lawfully removed (e.g., by arrest), the remaining occupant's consent again controls. *Randolph*'s core present-objector rule is otherwise undisturbed.
 
 ## Appears on
-- [[Consent Searches]] — *Key — Anchor*
+- [[Consent Searches]] — *Key: Anchor*
 
 ## Sources
-- *Georgia v. Randolph*, 547 U.S. 103 (2006) — https://www.courtlistener.com/opinion/145669/georgia-v-randolph/ — pinpoint: 120.
+- *Georgia v. Randolph*, 547 U.S. 103 (2006) — https://www.courtlistener.com/opinion/145669/georgia-v-randolph/ (pinpoint: 120).

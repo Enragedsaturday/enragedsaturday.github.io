@@ -64,10 +64,10 @@ The conviction was affirmed: the Fourteenth Amendment incorporated the substance
 
 ## Treatment & subsequent history
 - **Status:** overruled *(as of 2026-06-30)* — **Historical** (tier 6). **Overruled on the remedy holding by [[Mapp v. Ohio]], 367 U.S. 643 (1961)**, which held the exclusionary rule applicable to the States.
-- *Wolf*'s incorporation holding — that the Fourth Amendment's core binds the States through the Fourteenth — **survived** and was reaffirmed in *[[Mapp v. Ohio|Mapp]]*. *Wolf* is taught as the foil for the modern rule: it is the case instructors name to explain how *[[Mapp v. Ohio|Mapp]]* came to require state exclusion. Compare [[Elkins v. United States]] (abolishing the silver-platter doctrine the year before *[[Mapp v. Ohio|Mapp]]*).
+- *Wolf*'s incorporation holding (that the Fourth Amendment's core binds the States through the Fourteenth) **survived** and was reaffirmed in *[[Mapp v. Ohio|Mapp]]*. *Wolf* is taught as the foil for the modern rule: it is the case instructors name to explain how *[[Mapp v. Ohio|Mapp]]* came to require state exclusion. Compare [[Elkins v. United States]] (abolishing the silver-platter doctrine the year before *[[Mapp v. Ohio|Mapp]]*).
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Historical (overruled by Mapp on remedy)*
+- [[The Exclusionary Rule]] — *Key: Historical (overruled by Mapp on remedy)*
 
 ## Sources
-- *Wolf v. Colorado*, 338 U.S. 25 (1949) — https://www.courtlistener.com/opinion/104709/wolf-v-colorado/ — pinpoints: 27–28, 33.
+- [*Wolf v. Colorado*, 338 U.S. 25 (1949)](https://www.courtlistener.com/opinion/104709/wolf-v-colorado/) — pinpoints: 27–28, 33.
