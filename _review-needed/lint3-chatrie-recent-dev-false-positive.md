@@ -25,3 +25,8 @@ This is the same false-positive class already accepted for LINT-4 (the anti-patt
 
 ## Release-gate disposition
 Gate box **"No SCOTUS in Recent-developments (N5/LINT-3)"** → **PASS-with-logged-escalation**. No silent gap; content re-verified correct via the Chatrie serial-CL/L2 adjudication (`_run/s9-adjudications.md` §1).
+
+---
+## CLOSED 2026-07-22 (P5, RULING P5-02(b))
+Measured-subsumed: the S9 R8 lake-driven LINT-3 rebuild + the P4 lint campaign leave zero
+chatrie/SCOTUS N5 flags (the token-window heuristic this file complained about is dead).

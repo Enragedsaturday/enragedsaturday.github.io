@@ -1,0 +1,1572 @@
+{
+  "_schema": {
+    "artifact": "s9.maintenance-handoff.v1",
+    "spec": "S9 R12 (user D6); PRACTICES §6.10 (dual as-of dating + re-verification cadence)",
+    "generated_at": "2026-07-22",
+    "generated_by": {
+      "packet": "P5-R12",
+      "lane": "P5-R12",
+      "model": "claude-opus-4-8"
+    },
+    "write_scope": "_run/s9/p5/",
+    "self_description": "A compiled, self-describing index of the six R12 maintenance-handoff sections. Source of truth is the named JSONL/lake artifacts (see each section's `source`); this file is a machine-readable roll-up filed to GH#2 at publish. Findings-only: gate adjudication and closure are the orchestrator's.",
+    "sections_index": {
+      "citator_alert_seed": "every watch/pending row + the negative-treatment census (CL citator seed)",
+      "decay_schedule": "dual-date (as_of_content G3/G4 · as_of_treatment G6) re-verification cadence",
+      "fragment_revalidation_queue": "231 traced fragments + 117-row pin-upgrade queue + Entick unmonitorable",
+      "deck_rebuild_attestation": "LINT-25 measured — deck stems resolve against current pages",
+      "review_needed_register": "every _review-needed/ file, stamped state, one-line what-remains",
+      "p5_handoff_notes": "notes accumulated this phase, routed to maintenance"
+    },
+    "provenance": {
+      "_run/s9/p4/marker-poll-p4.jsonl": 12,
+      "_run/s9/p4/out/I4-TRIAGE-watch.jsonl": 3,
+      "_run/s9/p4/out/TW-DIFF.json#recency_triage.survivors": 31,
+      "_overhaul2/lake/cases/*.json#treatment": 672,
+      "_run/s9/p4/out/S8H-B-fragment-trace.jsonl": 231,
+      "_run/s9/p4/out/R12-pin-upgrade-queue.jsonl": 117,
+      "_run/s9/p4/out/COH-B-registry-notes.jsonl": 62,
+      "_review-needed/": 9
+    }
+  },
+  "gh2_filing_block": {
+    "_note": "Intended filing block for GH#2 — recorded here at P5; the actual issue post/attach happens at PUBLISH (P6), on gate pass + user go-ahead (R12/R15).",
+    "repo": "Enragedsaturday/cssi (the FORK)",
+    "issue": 2,
+    "title": "CSSI maintenance loop — CL citator alerts, dual-date decay, fragment re-validation, deck-rebuild precondition, open review-needed register",
+    "attach": [
+      "_run/s9/p5/MAINTENANCE-HANDOFF.json",
+      "_run/s9/p5/MAINTENANCE-HANDOFF.md"
+    ],
+    "filing_status": "PENDING (files it references at P6 publish; S9 R12 check: GH#2 references it)",
+    "action_labels": [
+      "citator-alert",
+      "decay-recheck",
+      "fragment-drift",
+      "deck-rebuild",
+      "review-needed",
+      "data-hygiene"
+    ]
+  },
+  "sections": {
+    "citator_alert_seed": {
+      "_note": "The CL citator-alert seed. Feed each cluster_id/docket into a CourtListener citation/docket alert. Carter/Noem/Lange live in marker_poll; Chatrie/Zorn/Case v. Montana appear in BOTH marker_poll and cite_pending_clusters (same watch, two lenses); companion Brillhart is row 14 of post_build_recency.",
+      "marker_poll": {
+        "count": 12,
+        "includes": [
+          "carter-cert-25-885",
+          "noem-v-vasquez-perdomo",
+          "lange-felony-reservation-594us303",
+          "holcomb-watch (superseding-text)"
+        ],
+        "rows": [
+          {
+            "marker": "carter-cert-25-885",
+            "status": "UNCHANGED (no SCOTUS action indexed)",
+            "corpus_action": "none (cert-watch language stands; recommend non-CL SCOTUS-docket check at the gate, R14.8)",
+            "evidence": "SCOTUS opinion search q='Carter \"United States\"' filed_after=2025-10-01 (query 06e59d9a) -> 11 results, none Carter/25-885. Same LIMITATION as P1 poll: CL cannot evidence an order-list cert denial.",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "noem-v-vasquez-perdomo",
+            "status": "UNCHANGED (no SCOTUS merits opinion)",
+            "corpus_action": "none",
+            "evidence": "All-court search q='Vasquez Perdomo' order_by=dateFiled desc (query 71c3c073): no SCOTUS cluster; latest direct posture remains 9th Cir. cluster 10646417 (2025-08-01); newest hit is citing decision Hicks v. State (Md. App. 2026-06-04, cluster 10883594).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "lange-felony-reservation-594us303",
+            "status": "UNCHANGED (reservation still open)",
+            "corpus_action": "none",
+            "evidence": "SCOTUS search q='\"hot pursuit\" OR \"Fourth Amendment\"' filed_after=2026-06-01 (query 3d7ac74a) -> same 4 clusters as P1 poll (Chatrie 10881683, Wolford 10880241, Trump v. Barbara 10882239/10883542); none addresses the Lange felony-categorical question.",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "saco-unmapped-ca1",
+            "status": "UNCHANGED (circuit still unmapped)",
+            "corpus_action": "none",
+            "evidence": "ca1 published search q='\"community caretaking\" AND seizure' filed_after=2026-06-01 -> 0 results (query 01ec7c51).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "saco-unmapped-ca3",
+            "status": "UNCHANGED (circuit still unmapped)",
+            "corpus_action": "none",
+            "evidence": "ca3 published search q='\"community caretaking\" AND seizure' filed_after=2026-06-01 -> 0 results (query c6a3117f).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "saco-unmapped-ca4",
+            "status": "UNCHANGED (circuit still unmapped)",
+            "corpus_action": "none",
+            "evidence": "ca4 published search q='\"community caretaking\" AND seizure' filed_after=2026-06-01 -> 0 results (query 15456e8a).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "saco-unmapped-ca8",
+            "status": "UNCHANGED (circuit still unmapped)",
+            "corpus_action": "none",
+            "evidence": "ca8 published search q='\"community caretaking\" AND seizure' filed_after=2026-06-01 -> 0 results (query 11bbf711).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "case-v-montana-citeless",
+            "status": "UNCHANGED (still no reporter/parallel citation)",
+            "corpus_action": "none (slip-op sourcing stands)",
+            "evidence": "clusters/10774335: citations=[], date_modified=2026-01-14 (unchanged).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "chatrie-2026-citeless",
+            "status": "UNCHANGED (still no reporter/parallel citation)",
+            "corpus_action": "none (slip-op sourcing stands; also blocks _review-needed/s9-p3-underreview-promotions.md row F-S9-PR-23503e4d56 the same way)",
+            "evidence": "clusters/10881683: citations=[], date_modified=2026-06-29 (unchanged).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "zorn-watch",
+            "status": "UNCHANGED (no post-filing modification; still cite-less)",
+            "corpus_action": "none (S6-carried off-CL escalation remains the open thread)",
+            "evidence": "clusters/10813527: citations=[], date_modified=2026-03-23T07:02:05 (same as capture).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "holcomb-watch",
+            "status": "CHANGED — SUPERSEDING OPINION ISSUED 2026-07-17",
+            "corpus_action": "FINDING FILED (P4 candidate, class currency-marker-fired): update lake stub united-states-v-holcomb--10670143 (slip_only_provenance note says 'no superseding published cite exists now' — now false: a superseding PUBLISHED opinion exists, cite-less, text pending) + seed the R12 maintenance watch with cluster 10932458. Zero content/ prose cites Holcomb (grep-verified), so no page edits owed. Re-check text availability at the R14.8 gate re-poll.",
+            "evidence": "ca9 search case_name=Holcomb filed_after=2025-09-01 (query 92b7a2dd) -> NEW cluster 10932458 (Published, filed 2026-07-17) on the SAME docket 23-469 (dockets/69103806), alongside the watched withdrawn-opinion cluster 10670143 (unchanged). New cluster: citations=[], sub_opinions=[opinions/11400001]; read_document(11400001) -> 'No text is available' (CL text extraction pending as of poll).",
+            "polled_at": "2026-07-20"
+          },
+          {
+            "marker": "trent-unpublished-6th",
+            "status": "UNCHANGED (still Unpublished; no citation; no modification)",
+            "corpus_action": "none (S2 A3 slip-precedent treatment + the P3 Trent downgrade both stand)",
+            "evidence": "clusters/10855903: citations=[], date_modified=2026-05-07T13:09:40 (unchanged), precedential_status=Unpublished.",
+            "polled_at": "2026-07-20"
+          }
+        ]
+      },
+      "i4_triage_watch": {
+        "count": 3,
+        "rows": [
+          {
+            "item": "digital-data-retention frontier (post-Ganias)",
+            "claim_ids": [
+              "ABS-0114"
+            ],
+            "movers": [
+              "Asinor v. District of Columbia, 111 F.4th 1249 (D.C. Cir. 2024)",
+              "Richman v. United States (D.D.C. 2025)",
+              "US ex rel. Kyer v. He (4th Cir. 2026, CL-only)",
+              "Armendariz v. City of Colorado Springs (10th Cir. 2026, CL-only)"
+            ],
+            "why": "Ganias-scoped ABS-0114 claim holds, but an active multi-circuit retention line (incl. CL-only 2026 movers the web lane missed) is unreflected in the corpus. Within the S6 floor (published-circuit). Monitor for a doctrine-shaping resolution worth an anchor/LCD note.",
+            "file": "content/legal-system-research-and-reference/Case Index.md:502; content/searches/the-third-party-doctrine-and-digital-surveillance/... ; content/warrant-exceptions/... [[Plain View Doctrine]]",
+            "needs_cl": true
+          },
+          {
+            "item": "unmapped-circuit constructive-entry authority",
+            "claim_ids": [
+              "ABS-0177"
+            ],
+            "movers": [
+              "Sharrar v. Felsing, 128 F.3d 810 (3d Cir. 1997)",
+              "United States v. Curzi, 867 F.2d 36 (1st Cir. 1989)",
+              "Duncan v. Storie, 869 F.2d 1100 (8th Cir. 1989)"
+            ],
+            "why": "Build-coverage hedge for the First/Third/Fourth/Eighth Circuits is accurate as written, but web surfaced candidate representative authority (1st/3d/8th). needs_cl to confirm each is on-point coerced/constructive-entry authority before mapping; no 4th Cir candidate surfaced.",
+            "file": "content/warrant-exceptions/home-entry-and-search/Entry to Arrest.md:60",
+            "needs_cl": true
+          },
+          {
+            "item": "CSLI through-line phrasing post-Chatrie",
+            "claim_ids": [
+              "ABS-0144"
+            ],
+            "movers": [
+              "Chatrie v. United States, 609 U.S. ___ (2026) — already in corpus"
+            ],
+            "why": "Corpus already carries Chatrie (geofence section, pitfalls, Key cases). The closing through-line 'scale-and-mosaic ... is the live frontier across EVERY technology in this family' is contextually the pole-camera/ALPR summary but reads as over-broad post-Chatrie (which removed the duration-grace question for Google Location History). Optional copy-tighten only; no stale fact.",
+            "file": "content/searches/the-third-party-doctrine-and-digital-surveillance/Third-Party Doctrine and CSLI.md:65",
+            "needs_cl": false
+          }
+        ]
+      },
+      "post_build_recency": {
+        "count": 31,
+        "window": "dateFiled 2026-07-06..2026-07-21 (all postdate the S6 frontier run 2026-07-06)",
+        "classification": "R7.1 currency-watch, NOT pre-build discovery misses (P4-07/P4-09(3))",
+        "rows": [
+          {
+            "caption": "Jeffrey Hineman v. Daisy Chase",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-20",
+            "docket": "25-2000",
+            "cluster_id": 10932927,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Eric Kendrick",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-20",
+            "docket": "25-2067",
+            "cluster_id": 10932915,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Jacqueline Agee v. Paige Hickenbottom",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-20",
+            "docket": "25-1737",
+            "cluster_id": 10932929,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Jacqueline Agee v. Paige Hickenbottom",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-20",
+            "docket": "25-2180",
+            "cluster_id": 10932928,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Lindsay Dyda v. Michigan Sec'y of State",
+            "court": "Court of Appeals for the Sixth Circuit",
+            "date": "2026-07-20",
+            "docket": "26-1228",
+            "cluster_id": 10933053,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Tyler Denby",
+            "court": "Court of Appeals for the Eighth Circuit",
+            "date": "2026-07-17",
+            "docket": "24-3483",
+            "cluster_id": 10932452,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Thompson v. McGehee",
+            "court": "Court of Appeals for the Fifth Circuit",
+            "date": "2026-07-17",
+            "docket": "25-10196",
+            "cluster_id": 10932639,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Samuel Arellio Hernandez",
+            "court": "Court of Appeals for the Sixth Circuit",
+            "date": "2026-07-16",
+            "docket": "25-1517",
+            "cluster_id": 10932264,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Harden v. Hedgecock",
+            "court": "Court of Appeals for the Tenth Circuit",
+            "date": "2026-07-14",
+            "docket": "25-7052",
+            "cluster_id": 10927684,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "McClarin v. City of New York",
+            "court": "Court of Appeals for the Second Circuit",
+            "date": "2026-07-13",
+            "docket": "23-7310",
+            "cluster_id": 10927182,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Estate of Lane Caviness v. Atlas Air, Inc.",
+            "court": "Court of Appeals for the Eleventh Circuit",
+            "date": "2026-07-10",
+            "docket": "24-11033",
+            "cluster_id": 10925376,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Jonathan Giannone",
+            "court": "Court of Appeals for the Fourth Circuit",
+            "date": "2026-07-09",
+            "docket": "25-6132",
+            "cluster_id": 10925622,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Baling Dat",
+            "court": "Court of Appeals for the Eighth Circuit",
+            "date": "2026-07-09",
+            "docket": "25-1131, 25-1198",
+            "cluster_id": 10925055,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Richard Brillhart",
+            "court": "Court of Appeals for the Eleventh Circuit",
+            "date": "2026-07-09",
+            "docket": "24-13232",
+            "cluster_id": 10925245,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Randle Jackson v. Gerald Bush",
+            "court": "Court of Appeals for the Fourth Circuit",
+            "date": "2026-07-09",
+            "docket": "25-1449",
+            "cluster_id": 10925625,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Estate of Jason Thomson v. Thomas Behn",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-09",
+            "docket": "25-2827",
+            "cluster_id": 10925054,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Searles v. City of Houston",
+            "court": "Court of Appeals for the Fifth Circuit",
+            "date": "2026-07-09",
+            "docket": "25-20383",
+            "cluster_id": 10925182,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Ausencio Martinez",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-08",
+            "docket": "24-1890",
+            "cluster_id": 10919795,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Jermaine Carson, Jr.",
+            "court": "Court of Appeals for the Fourth Circuit",
+            "date": "2026-07-08",
+            "docket": "25-4200",
+            "cluster_id": 10925627,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Keith Carnes v. Robert Blehm",
+            "court": "Court of Appeals for the Eighth Circuit",
+            "date": "2026-07-07",
+            "docket": "25-1490, 25-1515",
+            "cluster_id": 10917118,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Ausencio Martinez",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-07",
+            "docket": "24-1890",
+            "cluster_id": 10919805,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Johnson",
+            "court": "Court of Appeals for the First Circuit",
+            "date": "2026-07-07",
+            "docket": "24-1467",
+            "cluster_id": 10917415,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Kevin Williams",
+            "court": "Court of Appeals for the Fourth Circuit",
+            "date": "2026-07-07",
+            "docket": "24-4512",
+            "cluster_id": 10920236,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Deangelo Banks",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-07",
+            "docket": "24-2227",
+            "cluster_id": 10916903,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Norman Wang v. University of Pittsburgh",
+            "court": "Court of Appeals for the Third Circuit",
+            "date": "2026-07-07",
+            "docket": "25-1816",
+            "cluster_id": 10917269,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Lakey v. Bryant",
+            "court": "Court of Appeals for the Tenth Circuit",
+            "date": "2026-07-07",
+            "docket": "25-7068",
+            "cluster_id": 10917124,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Nyra Miller-Fields v. Ryan Londregan",
+            "court": "Court of Appeals for the Eighth Circuit",
+            "date": "2026-07-07",
+            "docket": "24-3412, 25-1170",
+            "cluster_id": 10917116,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "M. C. C.-G. v. Todd W. Blanche",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-07",
+            "docket": "25-2268",
+            "cluster_id": 10916909,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "United States v. Fulcar",
+            "court": "Court of Appeals for the First Circuit",
+            "date": "2026-07-06",
+            "docket": "24-1524",
+            "cluster_id": 10915172,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "E. E. V. v. Todd W. Blanche",
+            "court": "Court of Appeals for the Seventh Circuit",
+            "date": "2026-07-06",
+            "docket": "25-2256",
+            "cluster_id": 10915596,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          },
+          {
+            "caption": "Colorado Montana Wyoming State v. Smith",
+            "court": "Court of Appeals for the Tenth Circuit",
+            "date": "2026-07-06",
+            "docket": "24-1328",
+            "cluster_id": 10915088,
+            "citation": [],
+            "disposition": "POST-BUILD CURRENCY (not a discovery miss)"
+          }
+        ]
+      },
+      "companion_brillhart": {
+        "caption": "United States v. Richard Brillhart",
+        "court": "11th Cir.",
+        "date": "2026-07-09",
+        "docket": "24-13232",
+        "cluster_id": 10925245,
+        "note": "companion/co-defendant appeal in the same CSAM/private-search matter as the tripwire Brillhart (docket 24-13226, RULING P4-11 stub); CL indexes both dockets under one cluster 10925245. Cite-pending; post-build currency-watch (P4-09(3)). Also present as row 14 of the 31 post-build recency survivors above."
+      },
+      "cite_pending_clusters": {
+        "count": 7,
+        "rows": [
+          {
+            "record_id": "Case v. Montana",
+            "status": "under_review",
+            "cluster_id": 10774335,
+            "lead_opinion_id": 11240920,
+            "docket": "24-624",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "Chatrie v. United States",
+            "status": "verified_identity",
+            "cluster_id": 10881683,
+            "lead_opinion_id": 11349205,
+            "docket": "25-112",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "united-states-v-brillhart--10925245",
+            "status": "verified_identity",
+            "cluster_id": 10925245,
+            "lead_opinion_id": 11392782,
+            "docket": "24-13226",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "united-states-v-eric-johnson--10648997",
+            "status": "verified_identity",
+            "cluster_id": 10648997,
+            "lead_opinion_id": 11115584,
+            "docket": "23-4255",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "united-states-v-lowers--10807484",
+            "status": "verified_identity",
+            "cluster_id": 10807484,
+            "lead_opinion_id": 11274223,
+            "docket": "24-4546",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "united-states-v-wilson--10636220",
+            "status": "verified_identity",
+            "cluster_id": 10636220,
+            "lead_opinion_id": 11102807,
+            "docket": "23-30777",
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          },
+          {
+            "record_id": "zorn-v-linton--10813527",
+            "status": "verified_identity",
+            "cluster_id": 10813527,
+            "lead_opinion_id": 11280281,
+            "docket": null,
+            "official_cite": null,
+            "n_citations": 0,
+            "watch": "poll CL for reporter/parallel citation assignment; upgrade slip-op sourcing when a printed cite lands"
+          }
+        ]
+      },
+      "negative_treatment_census": {
+        "count": 18,
+        "by_status": {
+          "caution": 11,
+          "superseded": 7
+        },
+        "_note": "Every lake record whose field_i_validity is not good_law/unverified. The reversal-of-fortune watch: monitor each limiting case's line for further erosion or an overrule that reaches the still-good half.",
+        "rows": [
+          {
+            "case": "Boyd v. United States",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Warden v. Hayden",
+                "cite": "387 U.S. 294",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
+          },
+          {
+            "case": "Coolidge v. New Hampshire",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Horton v. California",
+                "cite": "496 U.S. 128",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
+          },
+          {
+            "case": "Escobedo v. Illinois",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Miranda v. Arizona",
+                "cite": "384 U.S. 436",
+                "field_ii": "limited"
+              },
+              {
+                "name": "Kirby v. Illinois",
+                "cite": "406 U.S. 682",
+                "field_ii": "limited"
+              },
+              {
+                "name": "Moran v. Burbine",
+                "cite": "475 U.S. 412",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
+          },
+          {
+            "case": "Mathis v. United States (1968)",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Howes v. Fields",
+                "cite": "565 U.S. 499",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
+          },
+          {
+            "case": "Monroe v. Pape",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Monell v. Department of Social Services",
+                "cite": "436 U.S. 658",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
+          },
+          {
+            "case": "New York v. Belton",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "principal-holding",
+            "limiting_cases": [
+              {
+                "name": "Arizona v. Gant",
+                "cite": "556 U.S. 332",
+                "field_ii": "limited",
+                "source": "scope_note (composite_basis=principal-holding; no migration edge)"
+              }
+            ],
+            "scope_note": "Composite reflects the principal holding; the vehicle-search point is superseded by Arizona v. Gant (2009) — Belton's container rule survives within Gant's narrowed framework."
+          },
+          {
+            "case": "Oregon v. Elstad",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Missouri v. Seibert",
+                "cite": "542 U.S. 600",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Limited as applied to deliberate 'question-first' two-step interrogations by Missouri v. Seibert (2004); Elstad otherwise governs inadvertent/good-faith failures to warn."
+          },
+          {
+            "case": "Saucier v. Katz",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Pearson v. Callahan",
+                "cite": "555 U.S. 223",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
+          },
+          {
+            "case": "Thornton v. United States",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Arizona v. Gant",
+                "cite": "556 U.S. 332",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Extended Belton to 'recent occupants'; its automatic-search rule was cabined by Arizona v. Gant (2009), which replaced it with a two-justification test (arrestee unsecured and within reach, or reason to believe the vehicle contains evidence of the offense of arrest)."
+          },
+          {
+            "case": "United States v. Agurs",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "United States v. Bagley",
+                "cite": "473 U.S. 667",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
+          },
+          {
+            "case": "United States v. Chadwick",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "California v. Acevedo",
+                "cite": "500 U.S. 565",
+                "field_ii": "limited"
+              }
+            ],
+            "scope_note": "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
+          },
+          {
+            "case": "Aguilar v. Texas",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Illinois v. Gates",
+                "cite": "462 U.S. 213",
+                "field_ii": "abrogated"
+              }
+            ],
+            "scope_note": "Two-prong Aguilar-Spinelli test for informant tips abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
+          },
+          {
+            "case": "Gouled v. United States",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Warden v. Hayden",
+                "cite": "387 U.S. 294",
+                "field_ii": "overruled"
+              }
+            ],
+            "scope_note": "The mere-evidence rule was overruled/abandoned by Warden v. Hayden (1967), which held the Fourth Amendment does not bar the seizure of items of solely evidentiary value. The separate Gouled holding — that entry obtained by stealth, ruse, or social pretext can render a subsequent search unreasonable — retains vitality."
+          },
+          {
+            "case": "Jones v. United States",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Rakas v. Illinois",
+                "cite": "439 U.S. 128",
+                "field_ii": "overruled"
+              },
+              {
+                "name": "United States v. Salvucci",
+                "cite": "448 U.S. 83",
+                "field_ii": "overruled"
+              }
+            ],
+            "scope_note": "The 'automatic standing' rule was overruled by United States v. Salvucci (1980); the broad 'legitimately on premises' standing test was disavowed by Rakas v. Illinois (1978), which refocused standing on whether the defendant's own reasonable expectation of privacy was invaded."
+          },
+          {
+            "case": "Michigan v. Jackson",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Montejo v. Louisiana",
+                "cite": "556 U.S. 778",
+                "field_ii": "overruled"
+              }
+            ],
+            "scope_note": "Overruled by Montejo v. Louisiana, 556 U.S. 778 (2009); survives only as history."
+          },
+          {
+            "case": "Olmstead v. United States",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Katz v. United States",
+                "cite": "389 U.S. 347",
+                "field_ii": "overruled"
+              }
+            ],
+            "scope_note": "Overruled on the privacy point by Katz v. United States (1967); survives only as history. The property-trespass approach was later revived as an alternative test in United States v. Jones (2012)."
+          },
+          {
+            "case": "Spinelli v. United States",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Illinois v. Gates",
+                "cite": "462 U.S. 213",
+                "field_ii": "abrogated"
+              }
+            ],
+            "scope_note": "Refined the Aguilar two-prong informant-tip test; the rigid Aguilar-Spinelli framework was abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
+          },
+          {
+            "case": "Wolf v. Colorado",
+            "field_i_validity": "superseded",
+            "as_of_treatment": "2026-06-30",
+            "composite_basis": "migration-seed",
+            "limiting_cases": [
+              {
+                "name": "Mapp v. Ohio",
+                "cite": "367 U.S. 643",
+                "field_ii": "overruled"
+              }
+            ],
+            "scope_note": "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp."
+          }
+        ]
+      }
+    },
+    "decay_schedule": {
+      "_basis": "PRACTICES §6.10 (§6 item 10): dual as-of dating + re-verification cadence — re-run G3/G4 (cite existence + quote fidelity, keyed to as_of_content) and G6 (treatment/currency, keyed to as_of_treatment) on a schedule. The two dates decay independently (S1 PRACTICES §7).",
+      "as_of_treatment_distribution": {
+        "2026-06-30": 457,
+        "2026-07-03": 1,
+        "None": 214
+      },
+      "as_of_content_distribution": {
+        "1763-12-06": 1,
+        "1765-11-02": 1,
+        "1803-02-24": 1,
+        "1886-02-01": 1,
+        "1914-02-24": 1,
+        "1920-01-26": 1,
+        "1921-02-28": 1,
+        "1924-05-05": 1,
+        "1925-03-02": 1,
+        "1925-04-13": 1,
+        "1925-10-12": 1,
+        "1927-01-03": 1,
+        "1928-06-04": 1,
+        "1931-01-05": 1,
+        "1932-12-05": 1,
+        "1932-12-19": 1,
+        "1935-01-21": 1,
+        "1936-02-17": 1,
+        "1939-12-11": 1,
+        "1940-02-12": 1,
+        "1941-05-26": 1,
+        "1943-06-07": 1,
+        "1944-05-01": 1,
+        "1945-05-07": 1,
+        "1948-02-02": 1,
+        "1949-06-27": 2,
+        "1954-02-01": 1,
+        "1957-06-24": 1,
+        "1958-05-19": 1,
+        "1959-01-26": 1,
+        "1959-06-15": 1,
+        "1959-06-22": 1,
+        "1959-11-23": 1,
+        "1960-03-28": 2,
+        "1960-06-27": 1,
+        "1961-02-20": 1,
+        "1961-03-06": 1,
+        "1961-03-20": 1,
+        "1961-04-03": 1,
+        "1961-06-19": 1,
+        "1963-01-14": 1,
+        "1963-03-18": 1,
+        "1963-03-25": 1,
+        "1963-05-13": 1,
+        "1963-05-27": 1,
+        "1964-03-23": 2,
+        "1964-05-18": 1,
+        "1964-06-15": 2,
+        "1964-06-22": 1,
+        "1965-03-01": 2,
+        "1966-06-13": 1,
+        "1966-06-20": 1,
+        "1966-12-12": 2,
+        "1967-01-16": 1,
+        "1967-02-20": 1,
+        "1967-05-29": 1,
+        "1967-06-05": 2,
+        "1967-06-12": 4,
+        "1967-10-23": 1,
+        "1967-12-18": 1,
+        "1968-03-05": 1,
+        "1968-03-18": 1,
+        "1968-05-06": 1,
+        "1968-06-03": 2,
+        "1968-06-10": 4,
+        "1968-06-17": 1,
+        "1969-01-27": 1,
+        "1969-03-10": 1,
+        "1969-03-25": 1,
+        "1969-04-01": 1,
+        "1969-04-22": 1,
+        "1969-04-23": 1,
+        "1969-06-23": 2,
+        "1970-04-27": 1,
+        "1970-06-22": 2,
+        "1971-02-24": 1,
+        "1971-03-29": 1,
+        "1971-04-05": 1,
+        "1971-06-21": 2,
+        "1971-06-28": 1,
+        "1972-01-12": 1,
+        "1972-02-24": 1,
+        "1972-05-15": 1,
+        "1972-06-07": 1,
+        "1972-06-12": 1,
+        "1972-12-06": 1,
+        "1973-02-16": 1,
+        "1973-04-24": 1,
+        "1973-05-29": 2,
+        "1973-06-21": 3,
+        "1973-11-19": 1,
+        "1973-12-11": 1,
+        "1974-01-08": 1,
+        "1974-02-20": 1,
+        "1974-03-26": 1,
+        "1974-04-29": 1,
+        "1974-06-10": 1,
+        "1974-06-17": 1,
+        "1975-02-18": 1,
+        "1975-06-26": 1,
+        "1975-06-30": 1,
+        "1975-12-09": 1,
+        "1976-01-26": 1,
+        "1976-04-21": 2,
+        "1976-04-27": 1,
+        "1976-06-17": 1,
+        "1976-06-24": 2,
+        "1976-06-29": 1,
+        "1976-07-06": 3,
+        "1977-01-10": 1,
+        "1977-01-25": 1,
+        "1977-05-16": 1,
+        "1977-06-06": 1,
+        "1977-06-16": 1,
+        "1977-06-21": 1,
+        "1977-12-05": 1,
+        "1978-03-21": 1,
+        "1978-05-23": 1,
+        "1978-05-31": 2,
+        "1978-06-06": 1,
+        "1978-06-21": 1,
+        "1978-06-26": 1,
+        "1978-12-05": 1,
+        "1979-03-27": 1,
+        "1979-04-18": 1,
+        "1979-04-24": 1,
+        "1979-06-05": 1,
+        "1979-06-11": 1,
+        "1979-06-20": 2,
+        "1979-06-25": 2,
+        "1979-11-28": 1,
+        "1980-03-25": 1,
+        "1980-04-15": 1,
+        "1980-05-12": 1,
+        "1980-05-27": 2,
+        "1980-06-16": 1,
+        "1980-06-20": 1,
+        "1980-06-23": 1,
+        "1980-06-25": 2,
+        "1981-01-21": 1,
+        "1981-04-21": 1,
+        "1981-05-18": 1,
+        "1981-06-17": 1,
+        "1981-06-22": 1,
+        "1981-06-23": 1,
+        "1982-06-01": 1,
+        "1982-06-23": 1,
+        "1982-06-24": 1,
+        "1982-06-28": 1,
+        "1983-03-02": 1,
+        "1983-03-23": 1,
+        "1983-04-19": 1,
+        "1983-05-02": 1,
+        "1983-06-08": 1,
+        "1983-06-20": 2,
+        "1983-06-23": 1,
+        "1983-07-05": 1,
+        "1983-07-06": 2,
+        "1984-01-11": 1,
+        "1984-04-02": 1,
+        "1984-04-17": 1,
+        "1984-04-23": 1,
+        "1984-05-15": 1,
+        "1984-05-29": 1,
+        "1984-06-11": 1,
+        "1984-06-12": 1,
+        "1984-07-02": 1,
+        "1984-07-03": 1,
+        "1984-07-05": 4,
+        "1984-12-10": 1,
+        "1985-01-08": 1,
+        "1985-01-15": 1,
+        "1985-01-21": 2,
+        "1985-03-04": 1,
+        "1985-03-20": 3,
+        "1985-03-27": 1,
+        "1985-05-13": 1,
+        "1985-06-17": 1,
+        "1985-07-01": 1,
+        "1985-07-02": 1,
+        "1985-12-10": 1,
+        "1986-02-25": 1,
+        "1986-03-05": 1,
+        "1986-03-10": 1,
+        "1986-03-25": 1,
+        "1986-04-01": 1,
+        "1986-05-19": 2,
+        "1986-06-26": 1,
+        "1986-12-10": 1,
+        "1987-01-13": 1,
+        "1987-01-27": 2,
+        "1987-02-24": 1,
+        "1987-03-03": 2,
+        "1987-03-09": 1,
+        "1987-03-31": 1,
+        "1987-06-19": 1,
+        "1987-06-26": 2,
+        "1988-02-24": 1,
+        "1988-05-16": 1,
+        "1988-06-02": 1,
+        "1988-06-13": 1,
+        "1988-06-15": 1,
+        "1988-06-24": 1,
+        "1988-06-27": 1,
+        "1988-10-31": 1,
+        "1989-02-28": 1,
+        "1989-03-21": 3,
+        "1989-04-03": 1,
+        "1989-05-15": 1,
+        "1989-06-26": 1,
+        "1990-01-10": 1,
+        "1990-02-28": 1,
+        "1990-04-18": 3,
+        "1990-06-04": 2,
+        "1990-06-11": 1,
+        "1990-06-14": 1,
+        "1990-06-18": 1,
+        "1990-06-21": 1,
+        "1990-12-03": 1,
+        "1991-04-23": 1,
+        "1991-05-20": 1,
+        "1991-05-23": 1,
+        "1991-05-30": 1,
+        "1991-06-13": 1,
+        "1991-06-20": 1,
+        "1991-07-08": 1,
+        "1992-04-06": 1,
+        "1992-08-14": 1,
+        "1992-12-08": 1,
+        "1993-05-03": 1,
+        "1993-06-07": 1,
+        "1993-09-23": 1,
+        "1994-02-08": 1,
+        "1994-04-26": 1,
+        "1994-06-24": 2,
+        "1995-03-01": 1,
+        "1995-04-19": 1,
+        "1995-05-22": 1,
+        "1995-06-26": 1,
+        "1995-11-29": 1,
+        "1996-06-10": 2,
+        "1996-07-01": 1,
+        "1996-11-18": 1,
+        "1997-02-19": 1,
+        "1997-04-15": 1,
+        "1997-04-28": 1,
+        "1998-01-21": 1,
+        "1998-03-04": 1,
+        "1998-05-26": 1,
+        "1998-06-22": 1,
+        "1998-12-01": 1,
+        "1998-12-08": 1,
+        "1999-04-05": 1,
+        "1999-05-17": 1,
+        "1999-05-24": 2,
+        "1999-06-17": 2,
+        "1999-06-21": 1,
+        "1999-10-18": 1,
+        "2000-01-12": 1,
+        "2000-01-24": 1,
+        "2000-03-28": 1,
+        "2000-04-17": 1,
+        "2000-06-26": 1,
+        "2000-11-28": 1,
+        "2000-12-15": 1,
+        "2001-02-20": 1,
+        "2001-03-21": 1,
+        "2001-04-02": 1,
+        "2001-04-24": 1,
+        "2001-05-29": 1,
+        "2001-06-11": 1,
+        "2001-06-18": 1,
+        "2001-12-10": 1,
+        "2002-01-15": 1,
+        "2002-02-26": 1,
+        "2002-06-17": 1,
+        "2002-06-24": 1,
+        "2002-06-27": 2,
+        "2003-05-05": 1,
+        "2003-05-27": 1,
+        "2003-12-02": 1,
+        "2003-12-15": 1,
+        "2004-01-13": 1,
+        "2004-01-26": 1,
+        "2004-02-24": 2,
+        "2004-03-30": 1,
+        "2004-05-24": 1,
+        "2004-06-01": 1,
+        "2004-06-21": 1,
+        "2004-06-28": 2,
+        "2004-12-13": 2,
+        "2005-01-24": 1,
+        "2005-03-22": 1,
+        "2005-07-27": 1,
+        "2006-03-21": 1,
+        "2006-03-22": 1,
+        "2006-05-22": 1,
+        "2006-06-15": 1,
+        "2006-06-19": 1,
+        "2007-04-30": 1,
+        "2007-05-21": 1,
+        "2007-06-18": 1,
+        "2008-04-23": 1,
+        "2008-06-23": 1,
+        "2009-01-14": 1,
+        "2009-01-21": 1,
+        "2009-01-26": 1,
+        "2009-04-06": 1,
+        "2009-04-21": 1,
+        "2009-04-28": 1,
+        "2009-05-26": 1,
+        "2009-06-25": 1,
+        "2009-12-07": 1,
+        "2010-02-05": 1,
+        "2010-02-23": 1,
+        "2010-02-24": 1,
+        "2010-06-01": 1,
+        "2010-06-17": 1,
+        "2011-03-29": 1,
+        "2011-05-16": 1,
+        "2011-05-31": 1,
+        "2011-06-16": 2,
+        "2011-11-07": 1,
+        "2012-01-10": 1,
+        "2012-01-11": 1,
+        "2012-01-23": 2,
+        "2012-02-21": 1,
+        "2012-02-22": 1,
+        "2012-04-02": 1,
+        "2013-02-19": 2,
+        "2013-03-08": 1,
+        "2013-03-26": 1,
+        "2013-04-17": 1,
+        "2013-06-03": 1,
+        "2013-06-17": 1,
+        "2014-02-25": 1,
+        "2014-04-22": 1,
+        "2014-05-27": 1,
+        "2014-06-25": 1,
+        "2014-12-15": 1,
+        "2015-04-21": 1,
+        "2015-05-05": 1,
+        "2015-05-18": 1,
+        "2015-06-22": 2,
+        "2015-09-03": 1,
+        "2015-11-09": 1,
+        "2016-03-07": 1,
+        "2016-03-11": 1,
+        "2016-03-22": 1,
+        "2016-06-20": 1,
+        "2016-06-23": 1,
+        "2017-01-09": 1,
+        "2017-06-22": 1,
+        "2018-01-22": 1,
+        "2018-04-02": 1,
+        "2018-05-14": 1,
+        "2018-05-23": 1,
+        "2018-05-29": 1,
+        "2018-06-22": 1,
+        "2018-06-28": 1,
+        "2019-06-27": 1,
+        "2019-08-16": 1,
+        "2020-04-06": 1,
+        "2020-05-01": 1,
+        "2020-06-18": 1,
+        "2020-10-19": 1,
+        "2020-11-02": 1,
+        "2020-12-28": 1,
+        "2021-03-25": 1,
+        "2021-05-07": 1,
+        "2021-05-17": 1,
+        "2021-06-23": 1,
+        "2021-07-14": 1,
+        "2021-07-16": 1,
+        "2021-10-01": 1,
+        "2021-10-18": 2,
+        "2022-06-23": 1,
+        "2022-08-23": 1,
+        "2023-03-07": 1,
+        "2024-04-30": 1,
+        "2024-12-17": 1,
+        "2025-02-25": 1,
+        "2025-04-23": 1,
+        "2025-05-08": 1,
+        "2025-05-15": 1,
+        "2025-12-12": 1,
+        "2026-01-14": 1,
+        "2026-06-05": 1,
+        "2026-06-29": 1,
+        "2026-06-30": 1,
+        "2026-07-03": 1,
+        "None": 222
+      },
+      "field_i_distribution": {
+        "good_law": 440,
+        "unverified": 214,
+        "caution": 11,
+        "superseded": 7
+      },
+      "cadence_table": [
+        {
+          "bucket": "A. negative-treatment (caution/superseded/limited/questioned/overruled)",
+          "gate": "G6 treatment/currency",
+          "records": 18,
+          "as_of_treatment_seed": "2026-06-30",
+          "cadence_days": 90,
+          "next_recheck": "2026-09-28",
+          "rationale": "highest priority — these can erode further or lose their still-good half; == the negative_treatment_census watch set"
+        },
+        {
+          "bucket": "B. good_law, treatment-dated",
+          "gate": "G6 treatment/currency",
+          "records": 440,
+          "as_of_treatment_seed": "2026-06-30 (457 recs) / 2026-07-03 (1 rec)",
+          "cadence_days": 180,
+          "next_recheck": "2026-12-27",
+          "rationale": "settled law; semiannual currency re-poll (COH-27 markers ride bucket A)"
+        },
+        {
+          "bucket": "C. content re-verification (all treatment-dated records)",
+          "gate": "G3/G4 cite-existence + quote-fidelity",
+          "records": 458,
+          "as_of_content_seed": "see as_of_content_distribution",
+          "cadence_days": 365,
+          "next_recheck": "2027-06-30",
+          "rationale": "cites/quotes drift slowly; CL-markup drift on fragments handled separately by the fragment_revalidation_queue"
+        },
+        {
+          "bucket": "D. null-treatment stubs (as_of_treatment = null)",
+          "gate": "n/a — no scheduled decay",
+          "records": 214,
+          "as_of_treatment_seed": null,
+          "cadence_days": null,
+          "next_recheck": null,
+          "rationale": "frontier/under_review stubs; not presented as settled — re-derive at S6 promotion, not on a decay clock"
+        }
+      ]
+    },
+    "fragment_revalidation_queue": {
+      "_note": "Re-validate on CourtListener markup drift (S8 §9): fragments are external #:~:text= deep-links whose landing depends on CL's rendered opinion HTML; a CL re-render can break the highlight. Pin-upgrade rows re-verify when official U.S. Reports star-pagination lands.",
+      "s8hb_fragment_trace": {
+        "fragments_total": 231,
+        "status_counts": {
+          "MATCH": 230,
+          "MATCH-VARIANT": 1
+        },
+        "g3_passed": 226,
+        "g3_mismatch_pin": 2,
+        "g3_no_pin": 3,
+        "no_record": 0,
+        "source": "_run/s9/p4/out/S8H-B-fragment-trace.jsonl",
+        "attention_rows": {
+          "count": 5,
+          "_note": "the non-clean trace rows to re-check first on any CL re-render",
+          "rows": [
+            {
+              "file": "content/cases/Florida v. Jardines.md",
+              "line": 57,
+              "status": "MATCH-VARIANT",
+              "g3": false,
+              "pin_matched": "pin-9",
+              "pin_fidelity": "mismatch",
+              "opinion_id": 856347
+            },
+            {
+              "file": "content/cases/United States v. Walker.md",
+              "line": 55,
+              "status": "MATCH",
+              "g3": false,
+              "pin_matched": "pin-1364",
+              "pin_fidelity": "mismatch",
+              "opinion_id": 2844024
+            },
+            {
+              "file": "content/warrant-exceptions/Knock and Talk.md",
+              "line": 19,
+              "status": "MATCH",
+              "g3": null,
+              "pin_matched": null,
+              "pin_fidelity": null,
+              "opinion_id": 856347
+            },
+            {
+              "file": "content/warrant-exceptions/Knock and Talk.md",
+              "line": 19,
+              "status": "MATCH",
+              "g3": null,
+              "pin_matched": null,
+              "pin_fidelity": null,
+              "opinion_id": 856347
+            },
+            {
+              "file": "content/warrant-exceptions/Knock and Talk.md",
+              "line": 19,
+              "status": "MATCH",
+              "g3": null,
+              "pin_matched": null,
+              "pin_fidelity": null,
+              "opinion_id": 216733
+            }
+          ]
+        }
+      },
+      "pin_upgrade_queue": {
+        "count": 117,
+        "distinct_cases": 37,
+        "reasons": {
+          "no_star_pagination_in_cache/html/2nd-source": 85,
+          "other": 1,
+          "loop3_residual_interior_pin": 31
+        },
+        "recheck_trigger": "official U.S. Reports pagination lands on CL / a paginated 2nd source",
+        "source": "_run/s9/p4/out/R12-pin-upgrade-queue.jsonl",
+        "top_cases": [
+          {
+            "case": "Riley v. California",
+            "pins": 14
+          },
+          {
+            "case": "Cone v. Bell",
+            "pins": 7
+          },
+          {
+            "case": "Missouri v. McNeely",
+            "pins": 6
+          },
+          {
+            "case": "Lange v. California",
+            "pins": 6
+          },
+          {
+            "case": "Messerschmidt v. Millender",
+            "pins": 5
+          },
+          {
+            "case": "Carroll v. United States",
+            "pins": 5
+          },
+          {
+            "case": "Chavez v. Martinez",
+            "pins": 4
+          },
+          {
+            "case": "Florida v. Powell",
+            "pins": 4
+          },
+          {
+            "case": "Montejo v. Louisiana",
+            "pins": 4
+          },
+          {
+            "case": "Mullenix v. Luna",
+            "pins": 4
+          },
+          {
+            "case": "Rothgery v. Gillespie County",
+            "pins": 4
+          },
+          {
+            "case": "Dupree v. Younger",
+            "pins": 3
+          }
+        ]
+      },
+      "entick_unmonitorable": {
+        "case": "Entick v. Carrington",
+        "official_cite": "19 How. St. Tr. 1029",
+        "lake_status": "verified_off_cl",
+        "cluster_id": null,
+        "note": "18th-c. English case; no CourtListener cluster/opinion id exists, so it is STRUCTURALLY UNMONITORABLE by the CL citator-alert loop (RULING P4-06). No CL alert can be seeded; treatment is fixed historically. Flagged so the maintenance loop does not mistake its absence from alerts for a gap."
+      }
+    },
+    "deck_rebuild_attestation": {
+      "_basis": "S9 R8 roster row 25 (LINT-25 deck-stem preservation, S3 A2); S9 §2.2 — deck rebuild is deferred-run-#2, S9 only confirms stems still resolve.",
+      "method": "ran scripts/lint/lint25_deck.py against the current (moved/de-numbered) content tree",
+      "lint25_exit": 0,
+      "lint25_stdout": "",
+      "decks": 57,
+      "distinct_stems": 44,
+      "cards_with_page": 1773,
+      "measured_result": "0 unresolved stems — all 44 deck stems resolve against current pages (final-slug or bare-stem alias)",
+      "attestation": "PASS (measured; writer≠checker — orchestrator adjudicates the gate box)"
+    },
+    "review_needed_register": {
+      "count": 9,
+      "rows": [
+        {
+          "file": "_review-needed/chatrie-scotus-2026-correction.md",
+          "stamped_state": "RESOLVED",
+          "what_remains": "Chatrie v. United States (SCOTUS No. 25-112, 609 U.S. ___ (2026)) is real+web-verified; page created slip-op sourced. CL still carries NO clean SCOTUS object (cluster 10881683 cite-less, and its text is corrupted=Harmon v. ABC 2 News). Residual = the cite-pending watch (section 1) until a reporter cite lands."
+        },
+        {
+          "file": "_review-needed/lint3-chatrie-recent-dev-false-positive.md",
+          "stamped_state": "OPEN (tool-precision ticket; content verified correct)",
+          "what_remains": "MEASURED-SUBSUMED: current lint3_structure.py emits ZERO chatrie/SCOTUS N5 flags (the campaign LINT-3 rebuild cleared them); file references stale pre-denumbering paths. Confirm and close; no content defect."
+        },
+        {
+          "file": "_review-needed/s9-p2-delgado-inbox.md",
+          "stamped_state": "OPEN",
+          "what_remains": "INS v. Delgado (466 U.S. 210, cluster 111148) coverage gap confirmed; NOT ingested (absent from lake+content). Route through S6 R8 (two-key → relevance gate → LCD mention or draft page). Recommendation on file: INGEST."
+        },
+        {
+          "file": "_review-needed/s9-p2-entrap2-r7-routing.md",
+          "stamped_state": "OPEN",
+          "what_remains": "R7 absence-sweep on freestanding outrageous-government-conduct due-process defense viability/circuit treatment (Entrapment page :40); spawn a content finding only if a grounded circuit divide emerges."
+        },
+        {
+          "file": "_review-needed/s9-p3-underreview-promotions.md",
+          "stamped_state": "RESOLVED (2026-07-21)",
+          "what_remains": "None — 22/22 escalations closed via PROMO-FIX (RULINGS P4-10/P4-11); queue_outstanding=0; no residue."
+        },
+        {
+          "file": "_review-needed/s9-p4-callout-registry-deepequal.md",
+          "stamped_state": "CLOSED (2026-07-21)",
+          "what_remains": "Resolved as S9 spec Amendment A2 (semantic equivalence + citation consistency). Residual = the 62 registry-notes (informational; see p5_handoff_notes)."
+        },
+        {
+          "file": "_review-needed/s9-p4-lint-baseline-campaign.md",
+          "stamped_state": "CLOSED (2026-07-22)",
+          "what_remains": "Campaign ran to completion (RULINGS P4-15..21). Content-scope roster residue = LINT-30's 25 (documented P5 ledger-tidy set, RULING P5-01) + LINT-1 at the serial gate — the stated closure condition."
+        },
+        {
+          "file": "_review-needed/threadN-lyle-unread.md",
+          "stamped_state": "OPEN (ESCALATE; R5 no-regression floor — carried, not lost)",
+          "what_remains": "United States v. Lyle (2d Cir., lead 8415374) unread on all 3 blind-re-derivation sweeps (AUTH-CLASS failures; 2/1218 pairs = 0.16%). Single-lane retry in a quiet window should clear it."
+        },
+        {
+          "file": "_review-needed/coverage/_ESCALATION-batch4-duplicate-CL-lane.md",
+          "stamped_state": "STALE / no explicit closure stamp (historical, 2026-06-30)",
+          "what_remains": "Orchestration incident: two concurrent CL lanes on S5 Phase-B batch 4. The 9 pages were written complete-to-spec; incident long past. Confirm closure (informational data-hygiene; not a content gap)."
+        }
+      ]
+    },
+    "p5_handoff_notes": {
+      "count": 9,
+      "notes": [
+        {
+          "note": "COH-B registry-notes (callout↔registry cite-divergence, A2)",
+          "count": 62,
+          "breakdown": "16 pincite_drop + 45 different_authority + 1 miranda-waiver scope-divergence",
+          "disposition": "INFORMATIONAL — registry cites are poorer-not-wrong; zero registry edits owed. For P5/maintenance reconciliation only.",
+          "source": "_run/s9/p4/out/COH-B-registry-notes.jsonl",
+          "observed_subclasses": {
+            "pincite_drop": 16,
+            "different_authority": 45,
+            "scope-divergence": 1
+          }
+        },
+        {
+          "note": "Secondary-home placement-convention full-set question",
+          "ruling": "RULING P4-13(b) / S9 Amendment A3",
+          "disposition": "Soft relations (unrendered secondary 'Related' homes) ACCEPTED, not gate defects. 3 unrendered KEY declarations narrowed on sight (Moore-Bush, Cortez, Sokolow). OPEN question for maintenance: whether to sweep the corpus-wide narrow-vs-add convention (add rendering vs narrow declaration) or leave soft relations as-is."
+        },
+        {
+          "note": "S1 §3.1 / S2 SD9 weight-vs-treatment latent conflict",
+          "ruling": "RULING P4-20(b)",
+          "disposition": "S1 §3.1 (overruled → Historical label) vs S2 SD9 (weights derive from court level only). Built, lint-enforced convention STANDS: weight labels derive from court level; overruled/abrogated status lives in field_i + treatment badges + Historical prose (R6-verified corpus-wide). No mass change. Filed as an S1-side spec-clarification note for the spec editors to reconcile the text."
+        },
+        {
+          "note": "+36 LINT-7 register-coverage mediums from de-hyphenation",
+          "count": 36,
+          "ruling": "RULING P4-17(e)",
+          "disposition": "Routed to the P5 handoff as an S8 coverage-linker lane class (NOT campaign scope). Register-coverage review flags — non-blocking (medium). Owed to the S8-linker maintenance lane."
+        },
+        {
+          "note": "Haynes v. Washington scope_note variant + Satterfield L80 medium",
+          "ruling": "RULING P4-19 / WB1",
+          "disposition": "WB1's Haynes scope_note variant and the Satterfield L80 medium ride the P5 handoff (data-hygiene; not gate-blocking). Normalize the Haynes scope_note variant."
+        },
+        {
+          "note": "5th-Cir Wilson caption-collision",
+          "ruling": "RULING P4-18(iii)",
+          "disposition": "Multiple 'United States v. Wilson' records collide: 9th Cir. 2021 (13 F.4th 961, hash-match, cluster 5296785) vs the new 5th Cir. 2025 post-Bruen stub (23-30777, cluster 10636220). Caption/slug disambiguation owed (R12 data-hygiene) to prevent page-name accounting collisions (TW-DIFF flagged 15 such name collisions)."
+        },
+        {
+          "note": "Ledger regen-durability",
+          "ruling": "RULING P4-18(iii) / P5-01",
+          "disposition": "The ledger's reconstruct/regen path must survive vote-semantics cutovers (P5-01 reconstructed 2 orphan findings + committed a 21-row documented-exception file for sub-quorum paneled findings). Maintenance note: keep ledger-exceptions.jsonl and the reconstruction provenance durable across future regens."
+        },
+        {
+          "note": "LINT-2 mediums census (block-quotation without nearby pincite)",
+          "count": 683,
+          "disposition": "Non-blocking backlog (all medium, 0 high — does not gate publish). De-quote or add a reporter pincite. Documented census for the maintenance editorial loop.",
+          "source": "scripts/lint/lint2_quote_pinpoint.py (re-measured at P5)",
+          "distinct_files": 207
+        },
+        {
+          "note": "Out-of-remit / instructor-reference referrals (tripwire arc)",
+          "ruling": "RULING P4-09(4)",
+          "disposition": "Loper Bright (Chevron overruling — correctly absent), ABA Formal Op. 512, AI-citation-sanctions material, Klein v. Martin (AEDPA posture), and the Gonzalez v. United States cert-statement (doctrine-ferment node) were routed to the R12 maintenance handoff, NOT S6 R8 born-draft. Track as optional instructor-reference candidates."
+        }
+      ]
+    }
+  },
+  "coverage": {
+    "1_citator_alert_seed": {
+      "marker_poll": 12,
+      "i4_triage_watch": 3,
+      "post_build_recency": 31,
+      "companion_brillhart": 1,
+      "cite_pending_clusters": 7,
+      "negative_treatment_census": 18,
+      "negative_census_by_status": {
+        "caution": 11,
+        "superseded": 7
+      }
+    },
+    "2_decay_schedule_buckets": 4,
+    "3_fragment_revalidation": {
+      "fragments_traced": 231,
+      "fragment_attention_rows": 5,
+      "pin_upgrade_queue": 117,
+      "entick_unmonitorable": 1
+    },
+    "4_deck_attestation": {
+      "stems": 44,
+      "lint25_violations": 0
+    },
+    "5_review_needed_register": 9,
+    "6_p5_handoff_notes": 9
+  }
+}

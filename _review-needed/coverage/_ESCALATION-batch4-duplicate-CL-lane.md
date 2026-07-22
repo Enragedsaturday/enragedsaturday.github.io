@@ -49,3 +49,8 @@ or the call log, and stopped issuing CL calls. The other lane was left as the so
    2026-01-14; holds Brigham City's objective-reasonableness emergency-aid standard applies **without a
    probable-cause gloss**; affirmed. Home **[[Community Caretaking and Emergency Aid]]** (SCOTUS ⇒ Key per
    N5, though the queue hint says "Progeny").
+
+---
+## RESOLVED-BY-COMPLETION (stamped 2026-07-22, P5, RULING P5-02(b))
+S5-era stand-down note; the 9 affected pages measured complete-to-spec (P5-R12 register
+review). No open work remains under this escalation.

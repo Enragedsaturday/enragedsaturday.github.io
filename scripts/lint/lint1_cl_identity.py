@@ -79,6 +79,13 @@ def collect_references(paths=None):
             oid = c.fm_get(fm, "courtlistener", "opinion_id")
             url = c.fm_get(fm, "courtlistener", "opinion_url")
             title = fm.get("title") if isinstance(fm.get("title"), str) else ""
+            # YAML-null guard (P5, orchestrator-mechanical): the naive frontmatter
+            # reader yields the STRING 'null' for `opinion_id: null` (the sanctioned
+            # no-CL-opinion state — Entick/Wilkes). Treat it as absent, not a crash.
+            if isinstance(oid, str) and oid.strip().lower() in ("null", "~", "none", ""):
+                oid = None
+            if isinstance(url, str) and url.strip().lower() in ("null", "~", "none", ""):
+                url = None
             if oid or url:
                 if not oid and url:
                     m = c.CL_OPINION_URL_RE.search(str(url))
@@ -200,13 +207,25 @@ def run(paths=None, ledger_path=None, confirmed=False):
             done = json.load(fh)
 
     violations = []
+    # P5 memo (orchestrator-mechanical): identical (opinion_id, expected-token)
+    # pairs yield identical verdicts — verify once per pair, replay per ref
+    # (violations still reported per file/line). Cuts the serial batch ~4x with
+    # zero fidelity loss; the per-ref ledger keys are unchanged.
+    memo = {}
     for n, ref in enumerate(refs):
         key = "%s::%s::%s" % (ref["file"], ref["line"], ref.get("opinion_id"))
         if key in done:
             if done[key]:
                 violations.append(done[key])
             continue
-        v = verify_reference(ref)
+        mkey = (ref.get("opinion_id"),
+                tuple(sorted(_name_tokens(ref.get("expected_name") or ""))))
+        if mkey in memo:
+            base = memo[mkey]
+            v = dict(base, file=ref["file"], line=ref["line"]) if base else None
+        else:
+            v = verify_reference(ref)
+            memo[mkey] = v
         done[key] = v
         if v:
             violations.append(v)

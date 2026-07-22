@@ -256,3 +256,38 @@ em-dashes (Self-help, Cruz captions/holdings incl. CI_HEAD override source) rewo
 standard budget doctrine — the earlier 'preserve' directive protected CONTENT, not
 punctuation. No index carve-out: holding-string budgets stay enforced through the render.
 Expected: LINT-10 -> 0 corpus-wide.
+
+## RULING P5-01 (2026-07-22) — LINT-30 ledger tidy (user-sanctioned P5)
+(i) The 2 orphan adjudications (F-S9-PR-d1d2d45449 Gates, F-S9-PR-6ffdcb45b8 Brinegar — both
+DISMISSED disclosure-induced FPs from the vote-semantics cutover): RECONSTRUCT their missing
+finding rows from votes.jsonl + the adjudication content, provenance-marked
+"reconstructed-at-P5-tidy (vote-semantics cutover gap)". Preserves the R14.1 FP-accounting
+record; counts reconcile honestly (2331=2331).
+(ii) The 21 sub-quorum paneled findings (P2-adjudicated on evidence; the panel era is over and
+re-paneling post-adjudication is theater): a committed documented-exception mechanism —
+_run/s9/ledger-exceptions.jsonl carrying the 21 ids + the P2 adjudication basis + this ruling;
+check_ledger reads it and reports those exact rows as documented (non-high), FAIL-CLOSED for
+any id not in the file. Mirrors the lint11 adjudicated-allowlist design.
+(iii) inv5 reconciliation refinement: an escalation whose finding later carries a FIXED fix
+(the loop-3 resolution path) is ABSORBED — counted once as fixed, not double-counted as open
+escalation. check_ledger logic amendment + fixture (the resolution is recorded in
+_review-needed/s9-p3-underreview-promotions.md and the loop-3 rows).
+Expected end state: LINT-30 -> 0 high.
+
+## RULING P5-02 (2026-07-22) — gate-table adjudications (first pass)
+(a) BRIEF composite 3 FLAGs: the section-parent index.md landings (two-definitions-of-search,
+third-party-doctrine, the-exclusionary-rule) are CONVENTION-EXEMPT hubs — rules live on their
+paneled registry-home children (COH-B precedent: "the map, not a rule"; the exclusionary index
+additionally now carries its non-author-confirmed callout). Composite box -> PASS with the
+exemption documented per page.
+(b) Register hygiene: _review-needed/lint3-chatrie-recent-dev-false-positive.md -> CLOSED
+(measured-subsumed: the campaign's rebuilt LINT-3 emits zero chatrie/SCOTUS N5 flags — the
+defect class no longer exists); _review-needed/coverage/_ESCALATION-batch4-duplicate-CL-lane.md
+-> stamped RESOLVED-BY-COMPLETION (S5-era stand-down note; the 9 pages measured
+complete-to-spec by P5-R12's register review). delgado / entrap2 / threadN-lyle remain OPEN
+ESCALATED (gate-compatible logged issues for the user).
+(c) Thread-P sidecar: add a clarification note + a second file-bytes sidecar
+(thread-P.file-sha256) so future auditors aren't misled; freeze integrity already proven.
+(d) R2 completeness ruling DEFERRED to R14-A's item->group join: implicit-group-PASS
+satisfies R2 iff every inventory item maps to a reviewed panel group (else the unmapped
+residue is genuinely verdict-less and gets individual disposition).

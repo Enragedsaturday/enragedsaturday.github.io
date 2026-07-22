@@ -26,12 +26,22 @@ The five invariants (spec R4 / LEDGER-SCHEMA):
      adjudication has a fix whose FINAL loop verdict is FIXED, or an escalation.
   2. Every paneled finding's tally has all three lane votes; >=2 refuted ⟹ the
      verdict is DISMISSED / MODIFIED / ESCALATE (never plain UPHELD-as-framed).
+     [P5-01(ii)] Sub-quorum findings listed in _run/s9/ledger-exceptions.jsonl
+     (panel-era findings the 2026-07-10 vote-semantics cutover left with <3
+     distinct votes, each adjudicated on evidence at P2) report as MEDIUM with a
+     "[documented exception P5-01]" suffix; any UNlisted sub-quorum id stays HIGH
+     (fail-closed). Mirrors the lint11 adjudicated-allowlist design.
   3. Lane-identity: found_by.lane != adjudicator.lane; fix author ∉ its re-review
      lanes; no lane closes its own row.
   4. Every DISMISSED carries a reason (the false-positive log).
   5. Counts reconcile: findings == adjudications; UPHELD+MODIFIED == fixes +
      escalations; every referenced assertion_id exists in the inventory;
      (completeness) zero inventory items without a verdict.
+     [P5-01(iii)] An ESCALATE-path finding whose fix rows include a terminal
+     FIXED (the loop-3 resolution path) is ABSORBED — counted once as fixed, not
+     double-counted as an open escalation. Only escalations WITHOUT a FIXED fix
+     reconcile as (open) escalations; a distinct resolved-escalations counter is
+     surfaced in the summary line.
 
 Usage:
   python3 check_ledger.py [--dir DIR] [--demo] [--completeness] [--quiet]
@@ -80,6 +90,7 @@ def _read_jsonl(path):
 def load_ledger(dirpath):
     data = {"findings": [], "votes": [], "adjudications": [], "fixes": [],
             "inventory": None, "escalations": set(), "malformed": [],
+            "ledger_exceptions": set(),
             "dir": dirpath, "dir_exists": os.path.isdir(dirpath)}
     jsonl = {"findings": "findings.jsonl", "votes": "votes.jsonl",
              "adjudications": "adjudications.jsonl", "fixes": "fixes.jsonl"}
@@ -118,6 +129,21 @@ def load_ledger(dirpath):
             data["inventory"] = d.get("items") if isinstance(d, dict) else d
         except ValueError as e:
             data["malformed"].append("%s %s" % (inv, e))
+    # documented sub-quorum exceptions (RULING P5-01(ii)): finding ids that were
+    # paneled but carry <3 distinct lane votes because the 2026-07-10 vote-
+    # semantics cutover dropped sibling votes, yet were adjudicated on evidence
+    # at P2 (panel era closed). Loaded from the ledger dir so fixtures carry
+    # their own. A listed id downgrades its inv2 breach to medium; any UNlisted
+    # sub-quorum id stays HIGH (fail-closed). Mirrors the lint11 adjudicated-
+    # allowlist design (the checker never suppresses; the orchestrator lists in).
+    exc_path = os.path.join(dirpath, "ledger-exceptions.jsonl")
+    if os.path.exists(exc_path):
+        rows, errs = _read_jsonl(exc_path)
+        data["malformed"].extend(errs)
+        for r in rows:
+            fid = r.get("finding_id")
+            if fid:
+                data["ledger_exceptions"].add(fid)
     # escalations: finding ids named in _review-needed/*.md (ledger-local + repo)
     for base in (os.path.join(dirpath, "_review-needed"),
                  os.path.join(REPO_ROOT, "_review-needed")):
@@ -150,8 +176,13 @@ def _final_loop_verdict(fix):
 # the five invariants
 # --------------------------------------------------------------------------
 
-def check_ledger(dirpath, completeness=False):
-    """Return (violations, status). status ∈ {NO-ROWS-YET, CHECKED}."""
+def check_ledger(dirpath, completeness=False, stats=None):
+    """Return (violations, status). status ∈ {NO-ROWS-YET, CHECKED}.
+
+    Optional `stats` dict (out-param) is populated with reconciliation counters
+    (need_fix / fixed / resolved_escalations / open_escalations) for the summary
+    line; callers that don't need them pass nothing.
+    """
     data = load_ledger(dirpath)
     v = []
 
@@ -219,8 +250,16 @@ def check_ledger(dirpath, completeness=False):
                 % (fid, lanes))
         panel_lanes = {l for l in lanes if l and not l.endswith("-confirm")}
         if panel_lanes and len(panel_lanes) < 3:
-            add("[inv2] paneled finding %s has %d distinct lane votes (want 3)"
-                % (fid, len(panel_lanes)))
+            if fid in data["ledger_exceptions"]:
+                # RULING P5-01(ii): documented sub-quorum exception — reported,
+                # not a gate breach. FAIL-CLOSED: only ids listed in
+                # ledger-exceptions.jsonl are downgraded; unlisted stay HIGH.
+                add("[inv2] paneled finding %s has %d distinct lane votes (want "
+                    "3) [documented exception P5-01]"
+                    % (fid, len(panel_lanes)), sev=c.MEDIUM)
+            else:
+                add("[inv2] paneled finding %s has %d distinct lane votes (want 3)"
+                    % (fid, len(panel_lanes)))
         for x in vs:
             if x.get("recorded_before_other_votes_read") is False:
                 add("[inv2] vote by %s on %s recorded AFTER seeing sibling votes "
@@ -273,13 +312,29 @@ def check_ledger(dirpath, completeness=False):
         add("[inv5] count mismatch: %d findings != %d adjudications"
             % (len(findings), len(adjs)))
     need_fix_n = sum(1 for a in adjs if a.get("verdict") in NEED_FIX)
-    escal_fix = sum(1 for a in adjs if a.get("verdict") in NEED_FIX
-                    and a.get("finding_id") in data["escalations"])
-    fixed_n = sum(1 for fx in fixes
-                  if _final_loop_verdict(fx) == "FIXED")
-    if need_fix_n != fixed_n + escal_fix:
+    need_fix_ids = {a.get("finding_id") for a in adjs
+                    if a.get("verdict") in NEED_FIX}
+    # distinct NEED_FIX findings closed by a terminal FIXED fix (any loop).
+    fixed_ids = {fx.get("finding_id") for fx in fixes
+                 if _final_loop_verdict(fx) == "FIXED"}
+    fixed_n = len(need_fix_ids & fixed_ids)
+    # RULING P5-01(iii): an ESCALATE-path finding whose fix rows include a
+    # terminal FIXED (the loop-3 resolution path) is ABSORBED — counted once as
+    # fixed, NOT double-counted as an open escalation. Only escalations WITHOUT
+    # a FIXED fix remain open and reconcile as escalations. A distinct
+    # resolved-escalations counter is surfaced in the summary line.
+    escal_needfix = {fid for fid in need_fix_ids if fid in data["escalations"]}
+    resolved_escalations = len(escal_needfix & fixed_ids)
+    open_escalations = len(escal_needfix - fixed_ids)
+    if need_fix_n != fixed_n + open_escalations:
         add("[inv5] reconciliation: %d UPHELD/MODIFIED != %d FIXED fixes + %d "
-            "escalations" % (need_fix_n, fixed_n, escal_fix))
+            "open escalations (%d resolved-escalations absorbed as fixed)"
+            % (need_fix_n, fixed_n, open_escalations, resolved_escalations))
+    if stats is not None:
+        stats["need_fix"] = need_fix_n
+        stats["fixed"] = fixed_n
+        stats["resolved_escalations"] = resolved_escalations
+        stats["open_escalations"] = open_escalations
     inv = data["inventory"]
     if inv is not None:
         inv_ids = {it.get("assertion_id") for it in inv}
@@ -314,12 +369,16 @@ def run(paths=None, dirpath=None, completeness=False):
 def self_test():
     errs = []
 
-    def expect(dirpath, want_status, want_high, label, completeness=False):
+    def expect(dirpath, want_status, want_high, label, completeness=False,
+               want_medium=None, want_resolved_esc=None):
         if not os.path.isdir(dirpath):
             errs.append("%s: fixture dir missing (%s)" % (label, dirpath))
             return
-        viols, status = check_ledger(dirpath, completeness=completeness)
+        stats = {}
+        viols, status = check_ledger(dirpath, completeness=completeness,
+                                     stats=stats)
         nh = sum(1 for x in viols if x["severity"] == c.HIGH)
+        nm = sum(1 for x in viols if x["severity"] == c.MEDIUM)
         if want_status and status != want_status:
             errs.append("%s: status %s (want %s)" % (label, status, want_status))
         if want_high == 0 and nh != 0:
@@ -327,6 +386,15 @@ def self_test():
                         % (label, nh, [x["message"][:50] for x in viols][:4]))
         if want_high == "some" and nh == 0:
             errs.append("%s: 0 HIGH (want >=1 breach)" % label)
+        if want_medium is not None and nm != want_medium:
+            errs.append("%s: %d MEDIUM (want %d): %s"
+                        % (label, nm, want_medium,
+                           [x["message"][:60] for x in viols][:4]))
+        if (want_resolved_esc is not None
+                and stats.get("resolved_escalations") != want_resolved_esc):
+            errs.append("%s: resolved-escalations=%s (want %s)"
+                        % (label, stats.get("resolved_escalations"),
+                           want_resolved_esc))
 
     # bootstrap fixture -> NO-ROWS-YET green
     expect(os.path.join(FIXTURE_DIR, "bootstrap"), "NO-ROWS-YET", 0, "bootstrap")
@@ -334,6 +402,21 @@ def self_test():
     expect(os.path.join(FIXTURE_DIR, "pass"), "CHECKED", 0, "pass")
     # fail fixture -> at least one invariant breach
     expect(os.path.join(FIXTURE_DIR, "fail"), "CHECKED", "some", "fail")
+    # --- RULING P5-01(ii)/(iii) fixtures ---
+    # (ii)+(iii) PASS: a listed sub-quorum id downgrades to MEDIUM (not HIGH),
+    # and an escalation-path finding WITH a terminal FIXED is absorbed as a
+    # resolved-escalation (reconciliation green; counter == 1).
+    expect(os.path.join(FIXTURE_DIR, "p5_pass"), "CHECKED", 0, "p5_pass",
+           want_medium=1, want_resolved_esc=1)
+    # (ii) FAIL-CLOSED: a sub-quorum id NOT in ledger-exceptions.jsonl stays
+    # HIGH even though the exceptions file exists (it lists a different id).
+    expect(os.path.join(FIXTURE_DIR, "p5_fail_exception"), "CHECKED", "some",
+           "p5_fail_exception")
+    # (iii) FAIL-CLOSED: an escalation-path (loop-3) finding whose fix never
+    # reached a terminal FIXED and which carries no escalation file stays HIGH
+    # (absorption is gated on a real FIXED / real escalation).
+    expect(os.path.join(FIXTURE_DIR, "p5_fail_escalation"), "CHECKED", "some",
+           "p5_fail_escalation")
     # THE acceptance test: the worked F-DEMO-001 demo validates clean
     if os.path.isdir(DEMO_DIR):
         viols, status = check_ledger(DEMO_DIR)
@@ -360,12 +443,16 @@ def main():
     dirpath = DEMO_DIR if "--demo" in args else LEDGER_DIR
     if "--dir" in args:
         dirpath = args[args.index("--dir") + 1]
-    viols, status = check_ledger(dirpath, completeness=completeness)
+    stats = {}
+    viols, status = check_ledger(dirpath, completeness=completeness, stats=stats)
     if not quiet:
         c.emit(viols)
     nh = sum(1 for x in viols if x["severity"] == c.HIGH)
-    sys.stderr.write("LINT-30 ledger reconciliation: dir=%s status=%s HIGH=%d\n"
-                     % (os.path.relpath(dirpath, REPO_ROOT), status, nh))
+    sys.stderr.write("LINT-30 ledger reconciliation: dir=%s status=%s HIGH=%d "
+                     "resolved-escalations=%d open-escalations=%d\n"
+                     % (os.path.relpath(dirpath, REPO_ROOT), status, nh,
+                        stats.get("resolved_escalations", 0),
+                        stats.get("open_escalations", 0)))
     if status == "NO-ROWS-YET":
         sys.stderr.write("  NO-ROWS-YET (bootstrap): ledger initialized, 0 rows — "
                          "green; fail-closes once rows exist.\n")
