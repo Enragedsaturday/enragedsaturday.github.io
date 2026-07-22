@@ -1944,3 +1944,32 @@ deferred to R15, NJLEH capture tail. Serial-lane ledger: p4-cl-calls.log complet
 ~30 calls; builder token I4 539 + recency 11 + star-refetch 59 + second-source 53 + promo 20).
 Commits: 50022e25, 210842b6 (+ session-2's bf19b6f0..a2e0b813). NEXT: P5 release gate (needs
 the two C-decisions + the lint campaign sanction) -> P6 publish pause.
+
+**P4 THREE-ESCALATION CLOSEOUT + LINT CAMPAIGN COMPLETE (2026-07-21/22, user-approved).**
+User accepted the brief's recommendations; executed: (1) S9 spec Amendment A2 — R10(a)
+deep-equals -> semantic equivalence + citation consistency (deep-equal escalation CLOSED);
+(2) Amendment A3 — soft-relation placement convention (closed with A2); (3) the KNOWN-RED
+lint-baseline campaign, SANCTIONED and EXECUTED TO GREEN. Campaign arc (rulings P4-15..21):
+Wave A small classes (LINT-4/6/7/16/17 all -> 0; LINT-16 via the generated-Case-Index
+carve-out; LINT-14's verified-flip BLOCKED by CAMP-A1 on schema/two-key grounds — ruling
+P4-16(a) superseded by P4-18 hybrid: party-name leg EARNED from cache where possible (Riley
+flipped w/ evidence), 28 honest residue + publish-gate amendment; LINT-6 banner-leg alignment
+P4-14). LINT-11 405 -> 0 (P4-authored token rewords + retirement-note template, legacy B1-B4
+rewords/relocations, pending-Clause regex fix, adjudicated allowlist incl. Christensen docket
+FP P4-19). LINT-12 151 -> 0 (FIX-A1 projector re-runs; CAMP-L12 serializer round-trip
+_unquote fix + convention re-projections + Kalkines Fed-Cl taxonomy; CAMP-TRENT P4-20:
+identity.precedential_status schema signal + projector tier-5 derivation — Trent converges
+without regressing the adjudicated downgrade). LINT-3 74 -> 0 (72 case-walls -> labeled
+bullets, word-multiset fidelity proven; 2 N5 SCOTUS relocations; Community Caretaking leaked
+</content>/</invoke> trailer removed — pre-existing HEAD defect). LINT-10 ~3,306 -> 0
+(12 balanced packets C01-C12 ~263 rows each + CIDX source-fix: 169 frontmatter holding:
+strings drained, FIN-INDEX regen fixed-point md5-stable, P4-21 generator en-dash placeholder
++ flagged carry-forward rewords; techniques catalogued per-block in campaign/*.jsonl; quotes
+byte-preserved throughout; role-compound style normalized to the colon precedent).
+VERIFICATION: non-author codex sample re-review 34/34 CONFIRM vs baseline 210842b6 (zero
+semantic drift); full builds clean; per-packet no-regression diffs on all 29 lints. END
+STATE: content-scope roster = LINT-30 25 highs ONLY (the documented P5 ledger-tidy set:
+21 sub-quorum adjudicated + 2 orphan refs + inv5 counts); LINT-16 standalone 0; LINT-1 =
+serial gate at P5. All three P4 escalations CLOSED. Commits: 3f7c1396, b644df8b, af0f5467
+(+ session's earlier 50022e25/210842b6 fix-wave commits). NEXT: P5 release gate (R13
+object-by-object + R14 self-audit + LINT-30 tidy + LINT-1 serial batch) -> G8 publish pause.
