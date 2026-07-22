@@ -291,3 +291,21 @@ ESCALATED (gate-compatible logged issues for the user).
 (d) R2 completeness ruling DEFERRED to R14-A's item->group join: implicit-group-PASS
 satisfies R2 iff every inventory item maps to a reviewed panel group (else the unmapped
 residue is genuinely verdict-less and gets individual disposition).
+
+## RULING P5-03 (2026-07-22) — R2 completeness box
+R14-A check (5) resolves the deferred question: the inventory decomposes exactly — panel-scoped
+items 7,459/7,459 covered by reviewed groups (zero verdict-less), finding-referenced items all
+adjudicated, and the 154 non-panel structural residuals (glossary defs + section-nav links) are
+lint-roster surfaces by design (their verdicts ARE the green LINT rows; confirmed as R14(6)'s
+domain). Implicit-group-PASS + lint-roster coverage satisfies R2's "zero verdict-less" —
+R2 gate box -> PASS with this decomposition documented.
+
+## RULING P5-04 (2026-07-22) — COH-17 gate slice scope + LINT-1 auth event
+(a) The ≥1-in-10 Claude-lane identity obligation over the BUILD was satisfied at P1
+(identity-slice.jsonl: 75 of ~668 records) and reinforced at P4 (promo cross-credential
+fetches). The GATE slice is defined as: the Claude MCP lane independently re-judges EVERY
+violation the LINT-1 batch surfaces + a 20-row sample of its passes (deterministic draw).
+(b) The 401 auth event is journaled: CL v4 now refuses unauthenticated requests; the batch
+runs under the builder credential per Amendment A1(3) (which prescribed exactly that); the
+lint's no-auth docstring is superseded by the in-file P5 note; the 803 false-401 rows are
+preserved as evidence (lint1-ledger.INVALID-401s.json), not counted.

@@ -1,0 +1,61 @@
+{
+  "check": "R14(5) inventory completeness (zero verdict-less items)",
+  "method": "join assertion-inventory.json (24619 items) against verdict sources. Object->assertion reconstruction per build_worklists.py PANEL_DIM map: the 9 legal-assertion kinds (case_cite/proposition/home_role/quote_pinpoint/link_pincite/treatment/treatment_override/weight_label/registry_callout_pair) are the 3-lane-panel scope; other kinds are editorial/structural -> D3 (1 reviewer + lints), not the panel. Panel-scoped coverage = worklist panel-assigned assertion_ids UNION reviewed_assertion_ids (attestations+opus+codex manifests) UNION finding assertion_ids. Non-panel coverage = home-file membership in the verdicted-file universe (panel objects + finding objects + P4 bridge files + all p4/out sweep artifact files + absence ledger + lint ledger).",
+  "counts": {
+    "inventory_items": 24619,
+    "duplicate_assertion_ids": 0,
+    "panel_scoped_items": 7459,
+    "worklist_panel_assigned_ids": 7459,
+    "panel_scoped_covered": 7459,
+    "panel_scoped_verdictless": 0,
+    "non_panel_items": 17160,
+    "non_panel_home_file_covered": 17006,
+    "non_panel_residual_lint_governed": 154,
+    "non_panel_residual_by_object_class": {
+      "ledger-row": 28,
+      "nav": 84,
+      "glossary": 42
+    },
+    "non_panel_residual_by_kind": {
+      "link_mention": 28,
+      "link_target": 84,
+      "definition": 42
+    }
+  },
+  "result": "PASS",
+  "exceptions": [
+    {
+      "class": "lint-governed-structural-deferred-to-R14.6",
+      "count": 154,
+      "note": "154 structural items (42 glossary definitions on Common Legal Terms.md + 112 section-index nav link_target/link_mention) route to the R8 corpus-wide LINT roster by design (build_worklists.py: 'kinds NOT in this map are editorial/structural -> 1 reviewer + lints (D3)'), NOT the 3-lane panel. They join to no panel-vote/adjudication/P4-bridge row because they never go to the panel; their verdict is the green lint status, verified by the sibling R14(6) lint spot-verification packet. Not silent drops: every residual maps to an existing content page. Enumerated below.",
+      "files": {
+        "content/legal-system-research-and-reference/Common Legal Terms.md": 42,
+        "content/use-of-force-and-liability/index.md": 10,
+        "content/searches/index.md": 9,
+        "content/warrant-exceptions/home-entry-and-search/index.md": 8,
+        "content/legal-system-research-and-reference/index.md": 8,
+        "content/seizures/index.md": 7,
+        "content/warrant-exceptions/index.md": 6,
+        "content/warrant-exceptions/searching-a-vehicle/index.md": 5,
+        "content/confessions-interrogation-and-the-fifth-amendment/index.md": 5,
+        "content/the-warrant/getting-a-warrant/index.md": 5,
+        "content/foundations-and-the-fourth-amendment/index.md": 5,
+        "content/fair-trial-and-reliability-doctrines/index.md": 4,
+        "content/instructor-craft-and-study/index.md": 4,
+        "content/standards-of-proof/index.md": 4,
+        "content/the-warrant/executing-a-warrant/index.md": 4,
+        "content/warrant-exceptions/searching-a-person/index.md": 4,
+        "content/seizures/arrests/index.md": 4,
+        "content/warrant-exceptions/programmatic-and-special-needs-searches/index.md": 3,
+        "content/the-right-to-counsel/index.md": 3,
+        "content/about.md": 3,
+        "content/the-exclusionary-rule-remedies-and-standing/index.md": 3,
+        "content/legal-system-research-and-reference/Legal Research Tools.md": 2,
+        "content/instructor-craft-and-study/Instructor Development.md": 2,
+        "content/foundations-and-the-fourth-amendment/Fourth Amendment Analysis Checklist.md": 2,
+        "content/cases/index.md": 1,
+        "content/legal-system-research-and-reference/Verifying Good Law.md": 1
+      }
+    }
+  ]
+}

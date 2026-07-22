@@ -57,7 +57,7 @@ API_BASE = "https://www.courtlistener.com/api/rest/v4"
 USER_AGENT = "CSSI-LINT-1/1.0 (serial CL lane; +https://courtlistener.com)"
 
 # --- serial pacing (L4) ---------------------------------------------------
-MAX_CALLS_PER_MIN = 15            # target rate; keep well under 20/min
+MAX_CALLS_PER_MIN = 13            # target rate; keep well under 20/min AND under the ~1,000/hr token budget (P5 tune)
 MIN_INTERVAL_SECONDS = 60.0 / MAX_CALLS_PER_MIN
 REQUEST_TIMEOUT = 30
 
@@ -119,9 +119,27 @@ def collect_references(paths=None):
 # CL fetch (network — serial lane only)
 # --------------------------------------------------------------------------
 
+def _cl_token():
+    """Builder-credential token (S1 A1/L4' + S9 Amendment A1(3): the full-roster
+    LINT-1 batch executes under the builder credential). Optional: falls back to
+    no-auth if the token file is absent. Added at P5 when CL's v4 API began
+    returning 401 to unauthenticated requests (2026-07-22)."""
+    path = os.path.expanduser("~/.config/cssi/cl-token")
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            return fh.read().strip() or None
+    except OSError:
+        return None
+
+
+_TOKEN = _cl_token()
+
+
 def _get_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
-                                               "Accept": "application/json"})
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+    if _TOKEN:
+        headers["Authorization"] = "Token " + _TOKEN
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
         return resp.getcode(), json.loads(resp.read().decode("utf-8"))
 

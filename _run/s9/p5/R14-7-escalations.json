@@ -1,0 +1,36 @@
+{
+  "check": "R14(7) escalation audit (nothing dropped at loop cap)",
+  "method": "group fixes.jsonl by finding_id; a chain hitting loop-cap (loop>=3) or a NOT-FIXED terminal must resolve to a later FIXED row or a _review-needed reference. Reconcile UPHELD/MODIFIED adjudications (owed-fix) against fix chains for bijectivity; verify ESCALATE adjudications carry _review-needed files; confirm loop-cap chains are enumerated in the _review-needed register.",
+  "counts": {
+    "distinct_fix_chains": 498,
+    "terminal_status_distribution": {
+      "FIXED": 498
+    },
+    "max_loop_distribution": {
+      "1": 455,
+      "2": 21,
+      "3": 22
+    },
+    "UPHELD_MODIFIED_adjudications": 498,
+    "owed_fix_without_any_fix_row": [],
+    "fix_rows_without_owed_adjudication": [],
+    "NOT_FIXED_rows": 42,
+    "NOT_FIXED_rows_without_later_FIXED": [],
+    "loop_cap_chains": 22,
+    "loop_cap_chains_without_a_FIXED": [],
+    "loop_cap_chains_undocumented_in_review_needed": [],
+    "ESCALATE_adjudications": [
+      "F-S9-P2-DELGADO",
+      "F-S9-P2-ENTRAP2"
+    ],
+    "ESCALATE_without_review_needed_file": [],
+    "P4_lane_escalations(FIX-A1-escalations.jsonl)": 6
+  },
+  "result": "PASS",
+  "exceptions": [
+    {
+      "class": "escalation-resolved",
+      "note": "42 NOT-FIXED rows are all loop-1 P3.1 residue, each superseded by a higher-loop FIXED (22 at loop-3 = the under_review-blocked promotions documented in _review-needed/s9-p3-underreview-promotions.md; 20 at loop-2). 0 NOT-FIXED terminals. 22/22 loop-cap chains terminate FIXED and are all enumerated in the promotions register. 498 UPHELD/MODIFIED <-> 498 FIXED chains bijective. 2 ESCALATE adjudications (Delgado, Entrap2) both carry _review-needed routing files. 6 P4-lane authority-weight escalations dispositioned via P4-RULINGS.md. Nothing silently dropped."
+    }
+  ]
+}

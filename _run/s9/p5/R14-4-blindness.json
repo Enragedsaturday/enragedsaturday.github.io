@@ -1,0 +1,81 @@
+{
+  "check": "R14(4) blindness audit (manifest diffs; SD1/R1/R5)",
+  "method": "verify thread-P.sha256 vs thread-P.json content_hash (recompute items[] canonical sha256 per build_thread_p) and vs the freeze hash attested in P1 manifests; compare thread-P.generated against the earliest thread-N read; scan P1 input manifests (panel-attestations + opus-pack + codex manifests + worklists) for disclosed sibling votes / in-progress adjudications / judgment fields; confirm each attestation asserts its exclusions and records recorded_before_reconciliation.",
+  "counts": {
+    "thread_p": {
+      "sidecar_value": "8e51d0c84d3be45d7de7bbe06ef6fe22291d187b5e77c5bf6452d15c4d6433c8",
+      "header_content_hash": "8e51d0c84d3be45d7de7bbe06ef6fe22291d187b5e77c5bf6452d15c4d6433c8",
+      "recomputed_items_hash": "8e51d0c84d3be45d7de7bbe06ef6fe22291d187b5e77c5bf6452d15c4d6433c8",
+      "opus_pack_attested_hash": "8e51d0c84d3be45d7de7bbe06ef6fe22291d187b5e77c5bf6452d15c4d6433c8",
+      "hash_match(sidecar==header==recomputed==attested)": true,
+      "raw_file_sha256": "45904bc51e26822c13ea5a0da034a60f419c11bcd9b200f65de184cf9a421fcb",
+      "note": "sidecar stores content_hash (items[] canonical, excludes header/generated per build_thread_p docstring) — DESIGNED; raw-file sha differs by design, not a violation",
+      "thread_p_generated": "2026-07-09T19:51:56+00:00",
+      "earliest_thread_n_read": "2026-07-09T22:19:25+00:00",
+      "frozen_before_thread_n": true,
+      "delta_seconds": 8849.0
+    },
+    "attestations": {
+      "total": 2121,
+      "independent_values": {
+        "isolated review; no sibling votes/adjudications disclosed": 2121
+      },
+      "recorded_before_reconciliation": {
+        "True": 2121
+      },
+      "contamination_fields": 0
+    },
+    "opus_pack_groups": {
+      "total": 1357,
+      "fields_excluded_both_markers": 1357,
+      "blindness_violations": 0,
+      "thread_p_hash_eq_freeze": 1357
+    },
+    "codex_manifests": {
+      "total": 3956,
+      "panel_fields_excluded_both_markers": 2721,
+      "thread_p_hash_eq_freeze": 3945,
+      "hash_field_absent": 11,
+      "hash_field_absent_files": [
+        "doctrine-D-7.json",
+        "doctrine-D-6.json",
+        "doctrine-D-1.json",
+        "doctrine-D-3.json",
+        "o2-opus-xhigh-pilot-vote.json",
+        "doctrine-D-2.json",
+        "doctrine-D-9.json",
+        "doctrine-D-5.json",
+        "doctrine-D-4.json",
+        "doctrine-D-10.json",
+        "doctrine-D-8.json"
+      ],
+      "contamination_hits": 0
+    },
+    "thread_n_reads": {
+      "total": 1947,
+      "recorded_before_reconciliation": {
+        "True": 1947
+      }
+    },
+    "panel_votes_recorded_before_other_votes_read": {
+      "True": 6881
+    },
+    "worklist_contamination_keys": {
+      "panel-review.jsonl": [],
+      "thread-n-cases.jsonl": [],
+      "doctrine-rederive.jsonl": []
+    }
+  },
+  "result": "PASS",
+  "exceptions": [
+    {
+      "class": "hash-form-note",
+      "note": "thread-P.sha256 is a content-hash anchor (items[] canonical), not a raw-file checksum; `shasum -c thread-P.sha256` would fail by design. Freeze integrity proven: content_hash recomputes to 8e51...9c8, equal in sidecar+header+all 1357 opus + 3945 codex manifest thread_p_hash_at_issue."
+    },
+    {
+      "class": "hash-field-absent-benign",
+      "note": "11 manifests lack thread_p_hash_at_issue: 10 doctrine-rederive (Fable lane; fields_excluded explicitly names _run/s9/thread-P.json + lake JUDGMENT fields treatment/progeny) + 1 o2-opus-xhigh pilot-vote. Case-read lanes (1214) carry a STRONGER exclusion set (content_page, lake.treatment/homes/point_overrides, thread_p). No contamination."
+    }
+  ],
+  "contaminated_manifests": []
+}

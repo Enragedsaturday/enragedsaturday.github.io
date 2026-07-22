@@ -1,0 +1,65 @@
+{
+  "check": "R14(1) false-positive accounting",
+  "method": "over _run/s9/adjudications.jsonl (2331 rows, incl. 2 P5-reconstructed): every DISMISSED must carry a non-empty reason (adjudicated_holding|reason|dismiss_reason). Per-lane refute/dismiss signal = join votes.jsonl panel-lane verdict x final adjudication verdict; refute-precision = fraction of a lane's 'refuted' votes whose finding was finally DISMISSED; stands-precision = fraction of 'stands'/'stands-modified' votes finally UPHELD/MODIFIED. Prompt-tuning signal only (spec: never auto-suppression).",
+  "counts": {
+    "adjudications_total": 2331,
+    "verdict_distribution": {
+      "UPHELD": 227,
+      "MODIFIED": 271,
+      "DISMISSED": 1831,
+      "ESCALATE": 2
+    },
+    "DISMISSED_total": 1831,
+    "DISMISSED_without_reason": 0,
+    "false_positive_rate": 0.7855,
+    "DISMISSED_reason_carrier": "adjudicated_holding(list) for all 1831",
+    "per_lane_signal": {
+      "codex-A": {
+        "votes": 2291,
+        "refute_votes": 746,
+        "refute_rate": 0.3256,
+        "refuted_to_DISMISSED_sustained": 729,
+        "refuted_to_UPHELD_MODIFIED_overruled": 17,
+        "refute_precision": 0.9772,
+        "stands_votes": 1545,
+        "stands_to_DISMISSED_overruled": 1086,
+        "stands_to_UPHELD_MODIFIED_sustained": 459,
+        "stands_precision": 0.2971,
+        "votes_without_adjudication": 0
+      },
+      "codex-B": {
+        "votes": 2294,
+        "refute_votes": 1462,
+        "refute_rate": 0.6373,
+        "refuted_to_DISMISSED_sustained": 1160,
+        "refuted_to_UPHELD_MODIFIED_overruled": 302,
+        "refute_precision": 0.7934,
+        "stands_votes": 832,
+        "stands_to_DISMISSED_overruled": 655,
+        "stands_to_UPHELD_MODIFIED_sustained": 177,
+        "stands_precision": 0.2127,
+        "votes_without_adjudication": 0
+      },
+      "claude-opus-panel": {
+        "votes": 2296,
+        "refute_votes": 1875,
+        "refute_rate": 0.8166,
+        "refuted_to_DISMISSED_sustained": 1732,
+        "refuted_to_UPHELD_MODIFIED_overruled": 143,
+        "refute_precision": 0.9237,
+        "stands_votes": 421,
+        "stands_to_DISMISSED_overruled": 85,
+        "stands_to_UPHELD_MODIFIED_sustained": 336,
+        "stands_precision": 0.7981,
+        "votes_without_adjudication": 0
+      }
+    }
+  },
+  "result": "PASS",
+  "exceptions": [
+    {
+      "class": "signal-note",
+      "note": "codex-A is the conservative refuter (refute-rate 32.6%, refute-precision 97.7%) but stands-precision only 29.7% — most findings it lets 'stand' are dismissed by the 2-of-3 quorum; under-sensitive to false positives. codex-B most trigger-happy false-refuter (79.3% refute-precision, 302 refutes overruled). claude-opus-panel is the designed adversarial refuter (refute-rate 81.7%) and best-calibrated on both axes (92.4% / 79.8%). Tuning signal, not a defect."
+    }
+  ]
+}
