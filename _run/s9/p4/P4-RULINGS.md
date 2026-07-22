@@ -309,3 +309,16 @@ violation the LINT-1 batch surfaces + a 20-row sample of its passes (determinist
 runs under the builder credential per Amendment A1(3) (which prescribed exactly that); the
 lint's no-auth docstring is superseded by the in-file P5 note; the 803 false-401 rows are
 preserved as evidence (lint1-ledger.INVALID-401s.json), not counted.
+
+## RULING P5-05 (2026-07-22) — LINT-1 verify semantics defect (LAW-02 in the lint itself)
+Diagnosis (probed live, batch paused per L4): CL /opinion/<id>/<slug>/ URLs embed the CLUSTER
+id; the collector's URL-fallback treats it as an OPINION id, /opinions/<cluster_id>/ resolves
+to an unrelated record, and the check reports a phantom identity mismatch (Byrd: cluster
+4497658 = Byrd ✓, opinion 4497658 = Guggenheim). Old records "pass" by numeric coincidence
+(Lawbox-era opinion id == cluster id). The corpus data is CORRECT (Byrd frontmatter carries
+cluster_id 4497658 + opinion_id 4274911 properly). REMEDY: rewrite the verify path
+CLUSTER-FIRST — URL-derived ids are cluster ids: fetch /clusters/<id>/?fields=case_name,
+sub_opinions and name-match (1 call, not 2); frontmatter refs use cluster_id and additionally
+assert opinion_id ∈ sub_opinions when both present (the true binding check). Wipe the ledger
+(both prior semantics invalid), full clean re-run (~2h at 13/min with the halved calls).
+The 803 false-401 and the phantom-mismatch ledgers are preserved as evidence.

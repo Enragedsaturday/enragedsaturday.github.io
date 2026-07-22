@@ -13,7 +13,7 @@ docket: ""
 authority_weight: "Binding in-circuit — 8th Cir."
 treatment:
   field_i_validity: good_law
-  as_of_content: null
+  as_of_content: 1997-10-08
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: United States v. Conner

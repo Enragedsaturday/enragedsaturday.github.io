@@ -286,6 +286,25 @@ def fm_get(fm, *path, default=None):
 
 
 # --------------------------------------------------------------------------
+# null-token normalization (P5) — the stdlib YAML-subset parser above yields the
+# STRING 'null' (or '~' / 'none' / '') for a YAML null scalar (`key: null`), NOT
+# a Python None. A lint that must treat a null scalar as ABSENT has to fold these
+# spellings to blank itself. This is the ONE shared home for the recognized null
+# spellings, mirroring the lint1_cl_identity P5 opinion_id/opinion_url guard.
+# --------------------------------------------------------------------------
+
+NULL_TOKENS = frozenset({"null", "none", "~", ""})
+
+
+def is_null_token(value):
+    """True iff `value` is a YAML-null scalar as parse_yaml_subset leaves it — the
+    STRING 'null' / 'none' / '~' (any case) or the empty string. A genuine None is
+    already absent; this only catches the string spellings the subset parser
+    preserves, so callers can treat `key: null` the same as a missing key."""
+    return isinstance(value, str) and value.strip().lower() in NULL_TOKENS
+
+
+# --------------------------------------------------------------------------
 # regexes shared across lints
 # --------------------------------------------------------------------------
 

@@ -13,7 +13,7 @@ docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
   field_i_validity: good_law
-  as_of_content: null
+  as_of_content: 2011-01-20
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: United States v. Basher

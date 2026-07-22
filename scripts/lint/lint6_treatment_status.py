@@ -8,10 +8,20 @@ treatment.status + treatment.as_of; the S2 projector re-stamps them with the
 
   (a) NEW-schema page (frontmatter carries a `lake:` block): must carry
       treatment.field_i_validity in
-      {good_law, history, caution, questioned, superseded, unverified} AND both
-      treatment.as_of_content AND treatment.as_of_treatment non-blank. A legacy
+      {good_law, history, caution, questioned, superseded, unverified}. A legacy
       treatment.status key still present on a projected page = HIGH. Missing
-      field_i (or out-of-enum value) or either date = HIGH.
+      field_i (or out-of-enum value) = HIGH.
+      DUAL DATES (R3): both treatment.as_of_content AND treatment.as_of_treatment
+      must be non-blank on a page that REACHES A READER as settled — i.e. a page
+      that is NOT banner-driven (see _banner_driven / S5 R15). A blank date is
+      HIGH there. A `null` / `~` / `none` / empty placeholder is TREATED AS BLANK
+      (the stdlib YAML-subset parser yields the literal string 'null' for
+      `as_of_content: null`, which is non-blank as a raw scalar; c.is_null_token
+      folds it back — the P5 LINT-6 null-token precision fix, mirroring lint1's
+      opinion_id/opinion_url guard). On a BANNER-DRIVEN page (draft / lake.status
+      ∈ {draft, under_review} / validity resolves to `unverified`) the dual-date
+      requirement is DEFERRED to S6 promotion — the ⚪ banner already discloses
+      that treatment/currency are pending — so a null/blank date is NOT flagged.
 
   (b) LEGACY page (no `lake:` block, type: case): missing treatment.status or
       treatment.as_of = HIGH; a status NOT in the legacy enum
@@ -151,13 +161,26 @@ def _blank(v):
     return v is None or (isinstance(v, str) and not v.strip())
 
 
+def _blank_date(v):
+    """A treatment date counts as BLANK when it is missing/empty (`_blank`) OR a
+    YAML-null placeholder ('null' / '~' / 'none' / '') — the stdlib subset parser
+    leaves `as_of_content: null` as the literal string 'null', which would
+    otherwise pass the non-blank date sub-check (P5 R14-B null-token gap)."""
+    return _blank(v) or c.is_null_token(v)
+
+
 def _treatment(fm):
     t = fm.get("treatment")
     return t if isinstance(t, dict) else {}
 
 
-def _check_new_schema(path, fm, start, out):
-    """(a) projected page. Returns the Field-I validity value (for the R2 gate)."""
+def _check_new_schema(path, fm, start, out, banner_driven):
+    """(a) projected page. Returns the Field-I validity value (for the R2 gate).
+
+    The dual-date (R3) sub-checks fire ONLY on a page that reaches a reader as
+    settled (`not banner_driven`): a banner-driven page (draft / under_review /
+    resolved-unverified) legitimately DEFERS its currency dates to S6 promotion
+    behind the ⚪ banner, so a null/blank date there is by-design, not a defect."""
     t = _treatment(fm)
     field_i = t.get("field_i_validity")
 
@@ -177,14 +200,19 @@ def _check_new_schema(path, fm, start, out):
             "treatment.field_i_validity '%s' not in {good_law, history, caution, "
             "questioned, superseded, unverified} [R2]" % field_i))
 
-    if _blank(t.get("as_of_content")):
-        out.append(c.make_violation(
-            LINT, path, start, c.HIGH,
-            "projected page missing treatment.as_of_content date [R3]"))
-    if _blank(t.get("as_of_treatment")):
-        out.append(c.make_violation(
-            LINT, path, start, c.HIGH,
-            "projected page missing treatment.as_of_treatment date [R3]"))
+    if not banner_driven:
+        if _blank_date(t.get("as_of_content")):
+            out.append(c.make_violation(
+                LINT, path, start, c.HIGH,
+                "reader-facing projected page missing treatment.as_of_content "
+                "date — a 'null'/'~'/'none'/empty placeholder counts as blank "
+                "[R3]"))
+        if _blank_date(t.get("as_of_treatment")):
+            out.append(c.make_violation(
+                LINT, path, start, c.HIGH,
+                "reader-facing projected page missing treatment.as_of_treatment "
+                "date — a 'null'/'~'/'none'/empty placeholder counts as blank "
+                "[R3]"))
     return field_i
 
 
@@ -295,7 +323,7 @@ def check_file(path):
 
     validity = None
     if has_lake:
-        validity = _check_new_schema(path, fm, start, out)      # (a)
+        validity = _check_new_schema(path, fm, start, out, banner_driven)  # (a)
     elif fm.get("type") == "case":
         validity = _check_legacy(path, fm, start, out)          # (b)
 
