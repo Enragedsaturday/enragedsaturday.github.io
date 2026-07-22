@@ -1973,3 +1973,25 @@ STATE: content-scope roster = LINT-30 25 highs ONLY (the documented P5 ledger-ti
 serial gate at P5. All three P4 escalations CLOSED. Commits: 3f7c1396, b644df8b, af0f5467
 (+ session's earlier 50022e25/210842b6 fix-wave commits). NEXT: P5 release gate (R13
 object-by-object + R14 self-audit + LINT-30 tidy + LINT-1 serial batch) -> G8 publish pause.
+
+**P5 COMPLETE (2026-07-22) — RELEASE GATE: 14/15 PASS + G8 SCHEDULED, 0 BLOCKED.** Arc:
+LINT-30 -> 0 (P5-01: 2 findings reconstructed, 21 documented exceptions fail-closed, inv5
+absorption; check_ledger self-tests). R13 gate table assembled + adjudicated (P5-02/03:
+brief-composite 76 PASS + 3 hubs convention-exempt; R2 PASS via the exact 7,459/7,459
+panel-item join + 154 structural->lint decomposition). R12 MAINTENANCE-HANDOFF emitted (72
+citator seeds, negative-treatment census 18, decay schedule, fragment+pin queues, deck
+attestation PASS, register + 9 notes; GH#2 files at P6). R14 self-audit 1-7 PASS (R14-2
+20/20 vs primary text, R14-3 10/10, R14-6 17/18 — the LINT-6 null-token gap FOUND->RESOLVED
+via P5-DATES: 7 as_of_content backfills + lint tightening w/ 152-page bannered-exemption
+verification); R14.8 at publish. THE LINT-1 SAGA: (1) CL v4 went 401-unauthenticated ->
+builder-credential auth per A1(3); (2) the identity lint itself committed LAW-02 (URL ids
+are CLUSTER ids; phantom mismatches on modern records, coincidence-passes on Lawbox-era)
+-> P5-05 cluster-first rewrite (1 call/ref + free opinion-binding leg, fetch-failure
+distinguished, fixtures + smoke); (3) clean batch 4,425 refs -> 5 REAL wrong-cluster URLs
+(McNeely/Mitchell/Jardines/Gratkowski/Dickerson roster+table rows, 9 surfaces total incl.
+wikilink-masked twins) FIXED w/ MCP-confirmed canonical ids; 40 FP rows adjudicated
+(COH17-GATE-SLICE); pass sample 10/10. Three invalid ledgers preserved as evidence. Gate
+moment: roster ZERO highs / ledger exit 0 / build clean. Commits: 65533566, 8f244253,
+4455cd78 + this. NEXT: G8 PUBLISH PAUSE (user go-ahead) -> P6: push main -> Vercel ->
+verify live (incl. R14.8 re-poll + R9c visual fragments + dogfood sweep) -> S4 R8
+retirement -> GH#2 handoff filing -> final brief.
