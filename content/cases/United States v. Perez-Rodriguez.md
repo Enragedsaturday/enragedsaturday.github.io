@@ -72,10 +72,10 @@ Although the court found the evidence sufficient to convict, it held that Pérez
 The conviction was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]] for a new trial**: the district court committed plain error in failing to instruct the jury on entrapment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Perez-Rodriguez* is a clean statement of the **two-prong** entrapment framework from *[[Jacobson v. United States|Jacobson]]* and *[[Sherman v. United States|Sherman]]* — improper inducement plus lack of predisposition — and of the **modest burden of production** that entitles a defendant to the instruction. Teach it for the inducement/predisposition split and for the rule that ambiguous entrapment evidence goes to the jury.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Perez-Rodriguez* is a clean statement of the **two-prong** entrapment framework from *[[Jacobson v. United States|Jacobson]]* and *[[Sherman v. United States|Sherman]]* — improper inducement plus lack of predisposition — and of the **modest burden of production** that entitles a defendant to the instruction. Teach it for the inducement/predisposition split and for the rule that ambiguous entrapment evidence goes to the jury.
 
 ## Appears on
 - [[Entrapment]] — *Key*
 
 ## Sources
-- [*United States v. Perez-Rodriguez*, 13 F.4th 1 (1st Cir. 2021)](https://www.courtlistener.com/opinion/5067201/united-states-v-perez-rodriguez/) — pinpoint: slip op. at 21 (two-prong entrapment framework and burden of production; the CL opinion text carries slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Perez-Rodriguez*, 13 F.4th 1 (1st Cir. 2021)](https://www.courtlistener.com/opinion/5067201/united-states-v-perez-rodriguez/) — pinpoint: slip op. at 21 (two-prong entrapment framework and burden of production; the CL opinion text carries slip pagination, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

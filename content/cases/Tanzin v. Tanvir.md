@@ -64,10 +64,10 @@ When RFRA was enacted its definition of "government" included state and local of
 The judgment of the Second Circuit was **affirmed**. Thomas, J., delivered the opinion of the Court, in which all other Members joined, except Barrett, J., who took no part in the consideration or decision of the case.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Tanzin* establishes a money-damages remedy against federal officers personally under RFRA, paralleling the individual-capacity exposure long recognized under § 1983 and sharpening the stakes of official conduct that substantially burdens religious exercise.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Tanzin* establishes a money-damages remedy against federal officers personally under RFRA, paralleling the individual-capacity exposure long recognized under § 1983 and sharpening the stakes of official conduct that substantially burdens religious exercise.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Tanzin v. Tanvir*, 592 U.S. 43 (2020)](https://www.courtlistener.com/opinion/4837663/tanzin-v-tanvir/) — pinpoint: slip op., at 1 (Opinion of the Court, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2020)"; cluster 4837663 → opinion 4641442); slip-only per S2 A3 — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.
+- [*Tanzin v. Tanvir*, 592 U.S. 43 (2020)](https://www.courtlistener.com/opinion/4837663/tanzin-v-tanvir/) — pinpoint: slip op., at 1 (Opinion of the Court, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2020)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.

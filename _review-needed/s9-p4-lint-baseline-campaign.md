@@ -21,3 +21,9 @@ after P4's fix waves:
 paced fleet work: script-assisted LINT-10 conversion with S1 A7 exemption logic + opus review;
 LINT-3/11 editorial packets; LINT-16 triage) — or adjudicate documented thresholds/waivers for
 specific classes at the gate. R13 cannot tick "roster 1–30 green" until one of these happens.
+
+---
+## SANCTIONED 2026-07-21
+User approved. The campaign executes as paced fleet waves under RULING P4-15 / P4-CAMPAIGN.md.
+This file closes when the content-scope roster residue = the documented P5 rows only
+(LINT-30 tidy set + LINT-1 serial gate).

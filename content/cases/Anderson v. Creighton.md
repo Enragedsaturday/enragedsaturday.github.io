@@ -73,7 +73,7 @@ The Eighth Circuit erred by pitching the right at too high a level of generality
 ## Treatment & subsequent history
 **Good law — foundational.** *Anderson* is the decision that fixed [[Qualified Immunity|qualified immunity]]'s "clearly established" inquiry at a particularized level of generality, and it is the direct antecedent the corpus reaches through *[[White v. Pauly]]* — where the Court again warned that clearly established law must not be defined "at a high level of generality." The particularization principle runs through *[[Ashcroft v. al-Kidd]]* and *[[Mullenix v. Luna]]* and remains the governing frame today.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 111953 + 483 U.S. 635); renders under the ⚪ banner until S9 promotion. *Mitchell v. Forsyth*, cited in the opinion, is not yet in the corpus and is named in plain text to avoid a dangling link.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 111953 + 483 U.S. 635); renders under the ⚪ banner until machine verification is complete. *Mitchell v. Forsyth*, cited in the opinion, is not yet in the corpus and is named in plain text to avoid a dangling link.
 
 ## Appears on
 - [[Qualified Immunity]] — *Key — clearly-established rights must be defined in a particularized sense*

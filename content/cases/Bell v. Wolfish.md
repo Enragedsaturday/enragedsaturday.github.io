@@ -74,7 +74,7 @@ Applying that balance, the Court sustained the body-cavity inspections. However 
 ## Treatment & subsequent history
 **Good law — foundational.** *Bell v. Wolfish* is the root of the institutional-deference / reasonableness-balancing line for custodial searches. *[[Florence v. County of Burlington]]* extends it to jail-intake strip searches of arrestees entering the general population, and the *Wolfish* four-factor balance remains the frame for weighing the intrusion of an institutional search against the security need — the same custodial-intake reasoning that runs through *[[Maryland v. King]]*.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 110075 + 441 U.S. 520); renders under the ⚪ banner until S9 promotion.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 110075 + 441 U.S. 520); renders under the ⚪ banner until machine verification is complete.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Foundational (institutional-deference reasonableness balancing)*

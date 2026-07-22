@@ -70,4 +70,4 @@ The heroin was the product of a search that exceeded the scope of a lawful *[[Te
 - [[Terry Stops and Reasonable Suspicion]] — *Limiting*
 
 ## Sources
-- *Sibron v. New York*, 392 U.S. 40 (1968) — https://www.courtlistener.com/opinion/107730/sibron-v-new-york/ — pinpoints: 64, 65–66.
+- *Sibron v. New York*, 392 U.S. 40 (1968) — https://www.courtlistener.com/opinion/107730/sibron-v-new-york/. Pinpoints: 64, 65–66.

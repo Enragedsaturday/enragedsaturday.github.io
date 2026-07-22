@@ -167,3 +167,67 @@ satisfied for the legitimate state {status: verified_identity, field_i: unverifi
 inventing states. RULED: amend lint6's _banner_driven to mirror caseHelpers.shouldDraftBanner
 (add the fieldI-unverified leg), with a fixture; defense-in-depth remains via the S2 R12
 publish gate. Alarm-fatigue lesson governs (a permanently-red lint teaches ignoring lints).
+
+## RULING P4-15 (2026-07-21) — three P4 escalations: user approval + execution
+User approved the brief's recommendations verbatim ("Your suggestions ... are accepted").
+(1) Deep-equals -> S9 spec Amendment A2 (built convention adopted); escalation file CLOSED.
+(2) Lint-baseline campaign SANCTIONED — executes now as paced fleet waves (see
+    P4-CAMPAIGN.md); escalation file closes when the roster residue = documented P5 rows only.
+(3) Placement convention -> S9 spec Amendment A3 (soft relations accepted; unrendered Key
+    narrowed on sight; Appears-on sync required). Closed alongside (1).
+
+## RULING P4-16 (2026-07-21) — campaign rulings (user-sanctioned baseline campaign)
+(a) LINT-14/publish-gate: the 29 page-backed promoted records flip verified_identity ->
+`verified` (gate-legal; evidence basis = two-key identity + documented good-law + S7
+derivation trails; the 8 breadth-marked keep field_i unverified -> reader banner via the
+P4-14 fieldI leg). Page-less stubs (Lowers/Brillhart/Eric-Johnson/Wilson/Chatrie-alias etc.)
+stay verified_identity.
+(b) LINT-16: extend the F-S5-04 Case-Index carve-out to the treatment-token check — the
+index's Good-law cells are GENERATED (build_case_index.py) from frontmatter, not authored,
+and S4-R10 REQUIRES them printed ("no blank treatment cell"). Lint amendment + fixture;
+the ~10 non-index rows are real fixes.
+(c) LINT-17: the 3 P4 LCD captions (Lowers/Brillhart/Luke Wilson) get coverage-ledger
+terminal rows (deliberate LCD-mention, stub-backed) per S6 R12.
+(d) LINT-11: the 165 P4-authored pipeline tokens in rendered Sources notes reword to plain
+English (no S-/P-/T- identifiers in reader-facing prose); the retirement-note template is
+amended accordingly. The 240 legacy rows follow the lint's committed exclusion-list design
+where that design already intended the surface excluded; otherwise reword (Wave B).
+(e) LINT-10: corpus style renovation per S1 A7/A8 (max 1 em-dash/block, <2/sentence; quotes
++ controlled labels exempt): opus packets by file batch; quoted text NEVER edited; legal
+meaning preserved; Case-Index rows fix at the SOURCE (frontmatter holding:) then FIN-INDEX
+regen. LINT-3 case-walls -> labeled bullets per S1 A9 (editorial packets).
+
+## RULING P4-17 (2026-07-22) — CAMP-A2/A3 adjudications
+(a) Anchondo A16 normalization APPROVED as applied (de-hyphenated + grammar noun kept +
+linked per the line's existing pattern). (b) The 5 out-of-scope frontmatter holding: variants
+(Carroll v. Carman, French v. Merrill, US v. Meyer, Haynes v. Washington, US v. Satterfield)
+are SANCTIONED for frontmatter fix in Wave-B packet WB1; FIN-INDEX regen re-runs at campaign
+end regardless. (c) CAMP-A3's whole-sentence rewording of 13 co-located legacy tokens on
+P4-authored lines ACCEPTED (no half-stripped prose). (d) The lint-owner recommendations
+(pending-Clause word-boundary regex fix + lint11-allowlist.json seed for the 14 semantic FPs)
+are SANCTIONED for WB1 (lint code + fixture; the 14 FP rows then drop as designed, not waived).
+(e) +36 LINT-7 MEDIUM coverage flags from de-hyphenation: routed to the P5 handoff (S8
+coverage-linker lane class, not campaign scope).
+
+## RULING P4-18 (2026-07-22) — LINT-14/status: CAMP-A1 block SUSTAINED; hybrid remedy
+CAMP-A1 correctly refused P4-16(a): flipping to `verified` without party_name_in_text
+evidence would fabricate a two-key leg (S2 R2; schema allOf). P4-16(a) is SUPERSEDED:
+(i) EARN the missing leg where possible — for each of the 29, check the cached lead-opinion
+text (~/cssi-lake/cache/text/<lead_opinion_id>.txt) for the party names (the S2 identity
+assertion, run mechanically); where BOTH parties appear and field_i != unverified, set
+identity.party_name_in_text=true + identity_method="p4-cache-text-check" + clear reason_code,
+then flip status -> verified (schema-legal, evidence-real) + re-project.
+(ii) The residue (cache-miss, party-name-miss, or field_i unverified) STAYS verified_identity
+and the publish gate is amended to accept it: S2-side amendment note + lint14 update
+(mirroring A16's verified_off_cl addition) — reader safety = the P4-14 fieldI banner (models
+{verified_identity, unverified} exactly) + every content assertion's own pin/quote discipline.
+(iii) A1's other escalations: Luke-Wilson folded-alias deviation ACCEPTED; August/Sandoval
+holding: label leaks SANCTIONED for frontmatter fix; Standing 'Historical foil.' FP -> guard
+in _common.py weight-label detector w/ fixture (lint-owner change, sanctioned); 5th-Cir
+Wilson caption-collision + ledger regen-durability -> P5 handoff (R12 data-hygiene).
+
+## RULING P4-19 (2026-07-22) — Christensen R11 docket FP
+'R11' inside Tennessee docket No. W2014-00931-SC-R11-CD adjudicated as a docket-string
+component; added to lint11-allowlist.json adjudicated_hits (orchestrator entry, in-design).
+LINT-11 content-scope -> 0. WB1's Haynes scope_note variant + Satterfield L80 medium ride
+the P5 handoff notes.

@@ -681,6 +681,15 @@ WEIGHT_LABEL_LEADS = (
     "Historical",
 )
 _HISTORICAL_WORD_RE = re.compile(r"\bHistorical\b")
+# RULING P4-18(iii): 'Historical' is the A8 tier-6 weight LABEL only when it stands
+# alone as the label — bare 'Historical', or 'Historical' followed by a dash/period/
+# paren annotation (e.g. the em-dash 'Historical — …' leak fixture). A lowercase word
+# immediately after it makes it a descriptive role phrase, NOT a leaked weight label:
+# 'Historical foil.' (the Standing Key-cases role prefix — the CAMP-A1 false positive),
+# 'Historical facts', 'Historical origin', 'Historical sources'. Guarding on a lowercase
+# continuation keeps this drift-killer firing on the real leak forms while sparing the
+# role-prefix FP.
+_HISTORICAL_DESCRIPTIVE_TAIL_RE = re.compile(r"\s+[a-z]")
 # CR-06: fold every dash variant (hyphen-minus, unicode hyphens, en/em dashes,
 # minus sign) to one form before matching, so a leaked label written with `-` or
 # `–` instead of the canonical `—` can't slip past LINT-16 as clean. Both the cell
@@ -693,14 +702,29 @@ def _normalize_dashes(s):
     return _DASH_NORM_RE.sub("-", s)
 
 
+def _historical_label_leak(cell):
+    """True iff `cell` carries 'Historical' used as a standalone A8 weight LABEL
+    (RULING P4-18(iii)). Every occurrence that is immediately followed by a
+    lowercase word ('Historical foil', 'Historical facts') is a descriptive role
+    phrase and is skipped; a bare or dash/period/paren-annotated 'Historical'
+    still counts as a leak."""
+    for m in _HISTORICAL_WORD_RE.finditer(cell):
+        if _HISTORICAL_DESCRIPTIVE_TAIL_RE.match(cell, m.end()):
+            continue
+        return True
+    return False
+
+
 def weight_label_in_cell(cell):
     """Return the S1 A8 authority-weight label authored into a table cell
     (LINT-16 R7), or None. Covers all six tiers including 'Historical'. Dash
-    variants are normalized (CR-06) so a wrong-dash leak still matches."""
+    variants are normalized (CR-06) so a wrong-dash leak still matches. The
+    'Historical' tier fires only as a standalone label, not as a descriptive
+    'Historical <lowercase-word>' role phrase (RULING P4-18(iii))."""
     norm_cell = _normalize_dashes(cell)
     for lead in WEIGHT_LABEL_LEADS:
         if lead == "Historical":
-            if _HISTORICAL_WORD_RE.search(cell):
+            if _historical_label_leak(cell):
                 return "Historical"
         elif _normalize_dashes(lead) in norm_cell:
             return lead

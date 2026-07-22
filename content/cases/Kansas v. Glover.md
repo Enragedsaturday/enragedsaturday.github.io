@@ -54,11 +54,11 @@ Whether a police officer has reasonable suspicion to initiate an investigative t
 ## Rule
 Yes. "We hold that when the officer lacks information negating an inference that the owner is the driver of the vehicle, the stop is reasonable." — 140 S. Ct. at 1186. ^pin-1186
 
-Reasonable suspicion is a "less demanding" standard that lets officers make "commonsense judgments and inferences about human behavior," so the everyday inference that a vehicle's registered owner is its driver — combined with the fact that the owner's license is revoked — supplies reasonable suspicion to stop.
+Reasonable suspicion is a "less demanding" standard that lets officers make "commonsense judgments and inferences about human behavior," so the everyday inference that a vehicle's registered owner is its driver (combined with the fact that the owner's license is revoked) supplies reasonable suspicion to stop.
 
 The Court cabined the rule. "We emphasize the narrow scope of our holding." — *Id.* at 1191. ^pin-1191
 
-Because the stop must be "justified at its inception," "the presence of additional facts might dispel reasonable suspicion" — for example, if the officer knows the registered owner is in his mid-sixties but observes that the driver is in her mid-twenties, the inference dissolves. — *Id.* ^pin-1191b
+Because the stop must be "justified at its inception," "the presence of additional facts might dispel reasonable suspicion": for example, if the officer knows the registered owner is in his mid-sixties but observes that the driver is in her mid-twenties, the inference dissolves. — *Id.* ^pin-1191b
 
 ## Application
 On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — [*Id.* at 1188](https://www.courtlistener.com/opinion/9231313/kansas-v-glover/#:~:text=From%20these%20three%20facts%2C%20Deputy). ^pin-1188
@@ -77,4 +77,4 @@ The traffic stop was supported by reasonable suspicion; the Kansas Supreme Court
 - [[Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kansas v. Glover*, 589 U.S. 376 (2020) — https://www.courtlistener.com/opinion/9231313/kansas-v-glover/ — pinpoints (S. Ct.): 1186, 1188, 1191.
+- *Kansas v. Glover*, 589 U.S. 376 (2020) — https://www.courtlistener.com/opinion/9231313/kansas-v-glover/. Pinpoints (S. Ct.): 1186, 1188, 1191.

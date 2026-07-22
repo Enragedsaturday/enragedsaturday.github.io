@@ -68,7 +68,7 @@ Without an underlying constitutional violation, there could be no municipal liab
 The Fifth Circuit **reversed** and rendered judgment of dismissal for the City of Brownsville.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Alvarez* anchors the Fifth Circuit's position that *[[Brady v. Maryland|Brady]]* is a trial right that does not guarantee [[Brady and Giglio|exculpatory]] disclosure before a guilty plea — a question on which the Supreme Court (in *[[United States v. Ruiz]]*, on impeachment evidence) and the circuits remain divided.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Alvarez* anchors the Fifth Circuit's position that *[[Brady v. Maryland|Brady]]* is a trial right that does not guarantee [[Brady and Giglio|exculpatory]] disclosure before a guilty plea — a question on which the Supreme Court (in *[[United States v. Ruiz]]*, on impeachment evidence) and the circuits remain divided.
 
 ## Appears on
 - [[Brady and Giglio]] — *Key*

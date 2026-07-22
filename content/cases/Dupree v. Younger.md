@@ -64,10 +64,10 @@ Because a purely legal question is, by definition, answerable without reference 
 The judgment of the Fourth Circuit was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Barrett, J., delivered the opinion for a unanimous Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Dupree* is a civil-procedure decision that arises in the § 1983 setting; it governs how a defendant official preserves a legal defense (such as PLRA exhaustion) for appeal after losing it at summary judgment and then going to trial.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Dupree* is a civil-procedure decision that arises in the § 1983 setting; it governs how a defendant official preserves a legal defense (such as PLRA exhaustion) for appeal after losing it at summary judgment and then going to trial.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Dupree v. Younger*, 598 U.S. 729 (2023)](https://www.courtlistener.com/opinion/10049685/dupree-v-younger/) — interior pincite(s) 733–738 retired T3/P4-12 (Opinion of the Court, holding; anchor at the opinion's first page); quote string-matched to the CL opinion text 2026-07-07.
+- [*Dupree v. Younger*, 598 U.S. 729 (2023)](https://www.courtlistener.com/opinion/10049685/dupree-v-younger/) — interior pincite(s) 733–738 retired pending official-reporter pagination (Opinion of the Court, holding; anchor at the opinion's first page); quote string-matched to the CL opinion text 2026-07-07.

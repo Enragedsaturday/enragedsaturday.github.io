@@ -67,10 +67,10 @@ The court weighed the officers' coercive show of authority — the number of off
 Carter's convictions were **[[Reading and Citing Cases#vacated|vacated]]** and the case [[Reading and Citing Cases#on-remand|remanded]]. McLeese, Associate Judge, concurred in the judgment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Carter* illustrates the objective "free to terminate the encounter" test for when a *[[Seizure of the Person|seizure of the person]]* occurs and applies the D.C. rule (*Dozier v. United States*) that a suspect's race is relevant to that objective inquiry — a development the Supreme Court has not addressed. It is a published decision of the District of Columbia Court of Appeals, cited here for its reasoning.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Carter* illustrates the objective "free to terminate the encounter" test for when a *[[Seizure of the Person|seizure of the person]]* occurs and applies the D.C. rule (*Dozier v. United States*) that a suspect's race is relevant to that objective inquiry — a development the Supreme Court has not addressed. It is a published decision of the District of Columbia Court of Appeals, cited here for its reasoning.
 
 ## Appears on
 - [[Seizure of the Person]] — *Key*
 
 ## Sources
-- [*Carter v. United States*, No. 23-CF-0388 (D.C. Aug. 28, 2025)](https://www.courtlistener.com/opinion/10662535/carter-v-united-states/) — pinpoint: slip op. at 30 (opinion of the court; III. Conclusion); Rule quote string-matched to the CL opinion text 2026-07-07. No A.3d reporter cite has issued; the slip form is per S2 A3.
+- [*Carter v. United States*, No. 23-CF-0388 (D.C. Aug. 28, 2025)](https://www.courtlistener.com/opinion/10662535/carter-v-united-states/) — pinpoint: slip op. at 30 (opinion of the court; III. Conclusion); Rule quote string-matched to the CL opinion text 2026-07-07. No A.3d reporter cite has issued, so the pin cites the slip opinion.

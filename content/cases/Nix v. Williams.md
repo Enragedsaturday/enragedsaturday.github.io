@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After his arrest for the murder of a 10-year-old girl, Williams was subjected to the "Christian burial speech" that led him to direct police to the body — interrogation later held to have violated his right to counsel (*[[Brewer v. Williams]]*). At the same time, a large organized volunteer search party was systematically searching the area and was within a few miles of the body. At Williams's retrial, the body-related evidence was admitted on an inevitable-discovery theory.
+After his arrest for the murder of a 10-year-old girl, Williams was subjected to the "Christian burial speech" that led him to direct police to the body — interrogation later held to have violated his right to counsel (*[[Brewer v. Williams]]*). At the same time, a large organized volunteer search party was systematically searching the area and was within a few miles of the body. At Williams's retrial, the body-related evidence was admitted on an inevitable discovery theory.
 
 ## Issue
 Whether evidence obtained as the fruit of a constitutional violation is nevertheless admissible if it would inevitably have been discovered by lawful means.
@@ -58,7 +58,7 @@ The prosecution need not also prove the absence of police bad faith.
 The volunteer search party was conducting an organized, systematic search and, in the normal course, would have discovered the body in essentially the same condition; the State proved by a preponderance that the body and related evidence would inevitably have been found by lawful means. The evidence was therefore admissible despite the antecedent right-to-counsel violation.
 
 ## Conclusion
-The body-related evidence was admissible under the inevitable-discovery doctrine; the grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
+The body-related evidence was admissible under the inevitable discovery doctrine; the grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -68,10 +68,10 @@ The court dismantled each proffered factor. Troupe's idling at a gas pump was no
 The judgment was **reversed and [[Reading and Citing Cases#vacated|vacated]]**: the district court erred in denying suppression, and Black's conviction and sentence were [[Reading and Citing Cases#vacated|vacated]]. Gregory, J., wrote for the court (Gregory, Davis, JJ.); Traxler, C.J., concurred in the result.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Black* is a leading Fourth Circuit statement that *[[Terry v. Ohio|Terry]]*'s reasonable-suspicion standard cannot be satisfied by stacking innocent facts or by association, and that lawfully carrying a firearm where state law permits open carry is not itself a basis to detain — a rationale the court tied to its 2011 line of cases including *[[United States v. Massenburg]]*.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Black* is a leading Fourth Circuit statement that *[[Terry v. Ohio|Terry]]*'s reasonable-suspicion standard cannot be satisfied by stacking innocent facts or by association, and that lawfully carrying a firearm where state law permits open carry is not itself a basis to detain — a rationale the court tied to its 2011 line of cases including *[[United States v. Massenburg]]*.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key*
 
 ## Sources
-- [*United States v. Black*, 707 F.3d 531 (4th Cir. 2013)](https://www.courtlistener.com/opinion/821235/united-states-v-nathaniel-black/) — pinpoint: slip op. at 11 (patchwork-of-innocent-facts holding); the CL opinion text carries the slip-opinion page numbers rather than 707 F.3d star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Black*, 707 F.3d 531 (4th Cir. 2013)](https://www.courtlistener.com/opinion/821235/united-states-v-nathaniel-black/) — pinpoint: slip op. at 11 (patchwork-of-innocent-facts holding); the CL opinion text carries the slip-opinion page numbers rather than 707 F.3d star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

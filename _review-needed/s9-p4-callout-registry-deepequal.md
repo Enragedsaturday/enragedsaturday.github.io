@@ -18,3 +18,10 @@ built convention (semantic equivalence + citation consistency, paraphrase allowe
 spec amendment? P4 did NOT rewrite verified content to satisfy a gate the build never
 implemented (P3 rekey-unsanctioned precedent). Recommendation: adopt the built convention via
 spec amendment; the P4 review of the 17 substantive rows covers the real risk.
+
+---
+## RESOLVED 2026-07-21
+User approved the recommendation. Executed as **S9 spec Amendment A2** (semantic equivalence +
+citation consistency; paraphrase permitted). The 78 COH rows carry terminal dispositions
+(COH-B artifacts); the 62 registry-notes remain a P5-handoff informational set (registry cites
+poorer-not-wrong — no action owed). This escalation is CLOSED.

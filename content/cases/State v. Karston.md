@@ -67,7 +67,7 @@ The detectives conceded they had neither probable cause nor reasonable suspicion
 Writ **denied**; the trial court's suppression order was affirmed. Becker, J., wrote for the panel (Byrnes, Armstrong, Becker, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Karston* illustrates that the [[Curtilage|curtilage]]-style protection recognized in *[[Florida v. Jardines|Jardines]]* reaches the enclosed common areas of a multi-unit dwelling: a fenced, gated apartment courtyard is not a public vantage point, and an officer may not cross a closed gate without justification to build a surveillance post against a resident.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Karston* illustrates that the [[Curtilage|curtilage]]-style protection recognized in *[[Florida v. Jardines|Jardines]]* reaches the enclosed common areas of a multi-unit dwelling: a fenced, gated apartment courtyard is not a public vantage point, and an officer may not cross a closed gate without justification to build a surveillance post against a resident.
 
 ## Appears on
 - [[Curtilage]] — *Key*

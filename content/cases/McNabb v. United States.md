@@ -68,4 +68,4 @@ The confessions were inadmissible and the convictions could not stand; the judgm
 - [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*
 
 ## Sources
-- *McNabb v. United States*, 318 U.S. 332 (1943) — https://www.courtlistener.com/opinion/103791/mcnabb-v-united-states/ — interior pincite(s) 345, 347 retired T3/P4-12.
+- *McNabb v. United States*, 318 U.S. 332 (1943) — https://www.courtlistener.com/opinion/103791/mcnabb-v-united-states/ — interior pincite(s) 345, 347 retired pending official-reporter pagination.

@@ -70,4 +70,4 @@ The warrantless search of the impounded car was reasonable under the automobile 
 - [[Automobile Exception]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *United States v. Gastiaburo*, 16 F.3d 582 (4th Cir. 1994) — https://www.courtlistener.com/opinion/7027957/united-states-v-gastiaburo/ — pinpoints: 585, 586, 587. (Lead opinion id 6929715; the cluster-URL integer 7027957 is, separately, an unrelated opinion id — see SR-5 note.)
+- *United States v. Gastiaburo*, 16 F.3d 582 (4th Cir. 1994) — https://www.courtlistener.com/opinion/7027957/united-states-v-gastiaburo/ — pinpoints: 585, 586, 587. <!-- provenance: lead opinion id 6929715; the cluster-URL integer 7027957 is separately an unrelated opinion id (SR-5 note) -->

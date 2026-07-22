@@ -71,7 +71,7 @@ Because Officer Jacobson never crossed the threshold and Knight was arrested jus
 The denial of summary judgment was **reversed**; Officer Jacobson was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Knight v. Jacobson* marks the boundary of the *[[Payton v. New York|Payton]]* rule: the constitutional protection attaches to physical entry across the threshold, so an officer's summons to a suspect to come outside — followed by a warrantless arrest supported by probable cause under *[[United States v. Watson]]* — does not offend the Fourth Amendment.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Knight v. Jacobson* marks the boundary of the *[[Payton v. New York|Payton]]* rule: the constitutional protection attaches to physical entry across the threshold, so an officer's summons to a suspect to come outside — followed by a warrantless arrest supported by probable cause under *[[United States v. Watson]]* — does not offend the Fourth Amendment.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

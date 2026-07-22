@@ -66,10 +66,10 @@ A cross-border shooting is "by definition an international incident" affecting t
 The judgment of the Fifth Circuit was **affirmed**. Alito, J., delivered the opinion of the Court; Thomas, J., joined by Gorsuch, J., concurred (urging reconsideration of *[[Bivens v. Six Unknown Named Agents|Bivens]]* itself); Ginsburg, J., joined by Breyer, Sotomayor, and Kagan, JJ., dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Hernández v. Mesa* is part of the Court's line — with *[[Ziglar v. Abbasi]]* (2017) and *[[Egbert v. Boule]]* (2022) — sharply confining *[[Bivens v. Six Unknown Named Agents|Bivens]]* and refusing to extend implied damages remedies against federal officers into new, sensitive contexts.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Hernández v. Mesa* is part of the Court's line — with *[[Ziglar v. Abbasi]]* (2017) and *[[Egbert v. Boule]]* (2022) — sharply confining *[[Bivens v. Six Unknown Named Agents|Bivens]]* and refusing to extend implied damages remedies against federal officers into new, sensitive contexts.
 
 ## Appears on
 - [[Suing Federal Officers]] — *Recent development*
 
 ## Sources
-- [*Hernández v. Mesa*, 589 U.S. 93 (2020)](https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/) — interior pincite(s) 99 retired T3/P4-12 (holding, Opinion of the Court); CL text carries S. Ct. star-pagination (140 S. Ct. 735), the holding sitting just before the confirmed *741 page-label; quote string-matched to the CL opinion text 2026-07-07.
+- [*Hernández v. Mesa*, 589 U.S. 93 (2020)](https://www.courtlistener.com/opinion/9231296/hernandez-v-mesa/) — interior pincite(s) 99 retired pending official-reporter pagination (holding, Opinion of the Court); CL text carries S. Ct. star-pagination (140 S. Ct. 735), the holding sitting just before the confirmed *741 page-label; quote string-matched to the CL opinion text 2026-07-07.

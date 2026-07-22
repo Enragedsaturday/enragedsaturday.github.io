@@ -65,7 +65,7 @@ The home visit was both rehabilitative and, in a limited sense, investigative, b
 The judgment of the District Court, which had held the home-visit requirement unconstitutional, was **reversed**; the requirement was upheld. Blackmun, J., delivered the opinion of the Court; Douglas, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]]; Marshall, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Brennan, J.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Wyman* is an early precursor of the special-needs and administrative-search line: it treats a benefits-conditioned home visit as outside the criminal warrant model, upholding it on a reasonableness rationale rather than requiring probable cause or a warrant.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Wyman* is an early precursor of the special-needs and administrative-search line: it treats a benefits-conditioned home visit as outside the criminal warrant model, upholding it on a reasonableness rationale rather than requiring probable cause or a warrant.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key*

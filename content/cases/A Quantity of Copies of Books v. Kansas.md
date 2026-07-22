@@ -49,7 +49,7 @@ holding: "Seizing every copy of allegedly obscene books under a warrant issued o
 
 # A Quantity of Copies of Books v. Kansas
 
-*378 U.S. 205 (1964)* (No. 449) · Supreme Court of the United States · **Historical** · Treatment: **Historical — foundational origin (⚪ unverified, pending S9)**
+*378 U.S. 205 (1964)* (No. 449) · Supreme Court of the United States · **Historical** · Treatment: **Historical — foundational origin (⚪ unverified, awaiting machine verification)**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the treatment framing below is authored orientation, not machine-certified. Identity cluster 106878 → 378 U.S. 205, decided 1964-06-22; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -70,7 +70,7 @@ The judgment of the Supreme Court of Kansas was **reversed**; the seizure proced
 ## Treatment & subsequent history
 **Historical — a foundational origin, not overruled.** *A Quantity of Books* is an early anchor of the rule that seizing expressive material requires a warrant procedure more protective than the ordinary probable-cause showing — a prior adversary hearing or prompt judicial superintendence rather than a discretionary sweep. The doctrine it helped originate was refined the same decade and after in the *[[Marcus v. Search Warrant|Marcus]]*–*[[Stanford v. Texas|Stanford]]*–*[[Heller v. New York|Heller]]*–*[[Roaden v. Kentucky|Roaden]]* line, which governs today. It is rendered here as **history** — a doctrinal antecedent — because its treatment has not been machine-verified.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub; renders under the ⚪ banner until S9 promotion. The successor pages *[[Marcus v. Search Warrant]]* and *[[Roaden v. Kentucky]]* are not yet in the corpus (queued in later authoring waves); they are named in plain text here to avoid dangling links.
+*Status note (⚪):* authored from a CourtListener-verified identity stub; renders under the ⚪ banner until machine verification is complete. The successor pages *[[Marcus v. Search Warrant]]* and *[[Roaden v. Kentucky]]* are not yet in the corpus (queued in later authoring waves); they are named in plain text here to avoid dangling links.
 
 ## Appears on
 - [[Particularity]] — *Historical / origin*

@@ -73,7 +73,7 @@ The officers had no arrest warrant, yet they surrounded Maez's trailer with a SW
 **Reversed.** Chief Judge Holloway wrote for the panel (Holloway, C.J.; Brorby, Circuit Judge; and Anderson, District Judge, sitting by designation).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Maez* is a leading Tenth Circuit statement of **constructive entry** under *[[Payton v. New York|Payton]]*: police who mount a coercive show of force to draw a suspect out of his home and arrest him have made a warrantless arrest "in the home," even without crossing the threshold — the arrestee's location, not the officers', controls. Pair it with *[[Payton v. New York|Payton]]*'s firm line at the entrance to the house and with the fruit-of-the-poisonous-tree consequences for evidence and consent obtained afterward.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Maez* is a leading Tenth Circuit statement of **constructive entry** under *[[Payton v. New York|Payton]]*: police who mount a coercive show of force to draw a suspect out of his home and arrest him have made a warrantless arrest "in the home," even without crossing the threshold — the arrestee's location, not the officers', controls. Pair it with *[[Payton v. New York|Payton]]*'s firm line at the entrance to the house and with the fruit-of-the-poisonous-tree consequences for evidence and consent obtained afterward.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

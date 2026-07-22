@@ -65,10 +65,10 @@ The Eleventh Circuit had inverted the statute — treating the proviso as automa
 The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Gorsuch, J., delivered the opinion of a unanimous Court; Sotomayor, J., joined by Jackson, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Martin* is an FTCA decision rather than a *[[Bivens v. Six Unknown Named Agents|Bivens]]* or § 1983 case, but it is central to the remedies available against federal officers for wrong-house raids: it removes two barriers the Eleventh Circuit had erected and returns the wrong-house-raid liability question to the lower courts.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Martin* is an FTCA decision rather than a *[[Bivens v. Six Unknown Named Agents|Bivens]]* or § 1983 case, but it is central to the remedies available against federal officers for wrong-house raids: it removes two barriers the Eleventh Circuit had erected and returns the wrong-house-raid liability question to the lower courts.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Martin v. United States*, 605 U.S. 395 (2025)](https://www.courtlistener.com/opinion/10776839/martin-v-united-states/) — interior pincite(s) 409–413 retired T3/P4-12 (Supremacy Clause holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Martin v. United States*, 605 U.S. 395 (2025)](https://www.courtlistener.com/opinion/10776839/martin-v-united-states/) — interior pincite(s) 409–413 retired pending official-reporter pagination (Supremacy Clause holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

@@ -43,7 +43,7 @@ lake:
 *526 U.S. 559 (1999)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
-> **Identity note:** distinct stem from *[[Alabama v. White]]*, 496 U.S. 325 (1990), and from the page-less, UNVERIFIABLE "United States v. White" stolen-vehicle caption (S4 collisions ledger, Tier C). No year-suffix needed; `[[Florida v. White]]` resolves here.
+> **Identity note:** distinct stem from *[[Alabama v. White]]*, 496 U.S. 325 (1990), and from the page-less, UNVERIFIABLE "United States v. White" stolen-vehicle caption. No year-suffix needed; `[[Florida v. White]]` resolves here.
 
 ## Background
 Police developed probable cause that Tyvessel White was using his car to deliver cocaine, making the car subject to forfeiture under the Florida Contraband Forfeiture Act. Months later, after arresting White at work on an unrelated charge and obtaining his keys, officers seized the car from his employer's parking lot without a warrant. An inventory search of the seized car turned up cocaine. The Florida Supreme Court held the warrantless seizure invalid.

@@ -66,10 +66,10 @@ The government's showing fell short of that formidable burden. Its declaration s
 The judgment of the Ninth Circuit was **affirmed** and the case **[[Reading and Citing Cases#on-remand|remanded]]** for further proceedings. Gorsuch, J., delivered the opinion for a unanimous Court; Alito, J., joined by Kavanaugh, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Fikre* is a mootness decision that constrains the government's ability to defeat civil-rights and constitutional suits through strategic, unexplained voluntary cessation; it does not reach the merits of Fikre's challenge to his No Fly List placement.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Fikre* is a mootness decision that constrains the government's ability to defeat civil-rights and constitutional suits through strategic, unexplained voluntary cessation; it does not reach the merits of Fikre's challenge to his No Fly List placement.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*FBI v. Fikre*, 601 U.S. 234 (2024)](https://www.courtlistener.com/opinion/10600106/fbi-v-fikre/) — interior pincite(s) 241 retired T3/P4-12 (voluntary-cessation standard, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*FBI v. Fikre*, 601 U.S. 234 (2024)](https://www.courtlistener.com/opinion/10600106/fbi-v-fikre/) — interior pincite(s) 241 retired pending official-reporter pagination (voluntary-cessation standard, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

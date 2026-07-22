@@ -61,10 +61,10 @@ Al-Azzawy thus establishes *both* poles of the analysis: coerced emergence from 
 Reversed. A suspect who emerges from his surrounded home only under overwhelming coercion is arrested inside it; here, [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] arising from the armed threats justified the warrantless in-home arrest.
 
 ## Treatment & subsequent history
-- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
+- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until machine verification is complete.
 - *Al-Azzawy* is the coerced-emergence pole of the Ninth-Circuit surround-and-call-out line. It is the anchor *[[United States v. Nora]]* distinguishes at 894 (Nora had no comparable "agitated and violent state," and the perimeter defeated any flight [[Exigent Circumstances and Hot Pursuit|exigency]]), and the coercion counterpoint to the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995).
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 465254 + 784 F.2d 890); renders under the ⚪ banner until S9 promotion.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 465254 + 784 F.2d 890); renders under the ⚪ banner until machine verification is complete.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

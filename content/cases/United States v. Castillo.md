@@ -71,7 +71,7 @@ The agent's search was a manual one — scrolling by hand through apps on the un
 **Affirmed.** Judge Ho wrote for the panel (Jones, Southwick, Ho, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Castillo* places the Fifth Circuit with the consensus that manual cell-phone searches at the border need no suspicion, while deliberately leaving open the *forensic*-search question that divides the circuits after *[[Riley v. California|Riley]]* and *[[Carpenter v. United States|Carpenter]]* — a live frontier of the *[[Border Searches]]* doctrine.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Castillo* places the Fifth Circuit with the consensus that manual cell-phone searches at the border need no suspicion, while deliberately leaving open the *forensic*-search question that divides the circuits after *[[Riley v. California|Riley]]* and *[[Carpenter v. United States|Carpenter]]* — a live frontier of the *[[Border Searches]]* doctrine.
 
 ## Appears on
 - [[Border Searches]] — *Key*

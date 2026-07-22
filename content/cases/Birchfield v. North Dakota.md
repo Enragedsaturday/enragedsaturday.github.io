@@ -57,7 +57,7 @@ The intrusiveness of the test controls. "Because breath tests are significantly 
 A State may not criminalize refusal of the more intrusive (blood) test: "It is another matter, however, for a State not only to insist upon an intrusive blood test, but also to impose criminal penalties on the refusal to submit to such a test. There must be a limit to the consequences to which motorists may be deemed to have consented by virtue of a decision to drive on public roads." — *Id.* at 2185–2186. ^pin-2185a
 
 ## Application
-Because a warrantless blood test cannot be justified as a [[Search Incident to Arrest|search incident to arrest]], Birchfield could not be criminally punished for refusing one, and implied consent could not be stretched to support that criminal penalty — his conviction was reversed. Bernard's refusal was of a **breath** test, which is a valid search incident to a DUI arrest, so Minnesota could criminalize his refusal — that judgment was affirmed. Beylund had submitted to a blood test under the partly inaccurate advice that refusal was itself a crime, so his case was [[Reading and Citing Cases#on-remand|remanded]] to reassess the voluntariness of his consent in light of the correct legal rule.
+Because a warrantless blood test cannot be justified as a [[Search Incident to Arrest|search incident to arrest]], Birchfield could not be criminally punished for refusing one, and implied consent could not be stretched to support that criminal penalty. His conviction was reversed. Bernard's refusal was of a **breath** test, which is a valid search incident to a DUI arrest, so Minnesota could criminalize his refusal — that judgment was affirmed. Beylund had submitted to a blood test under the partly inaccurate advice that refusal was itself a crime, so his case was [[Reading and Citing Cases#on-remand|remanded]] to reassess the voluntariness of his consent in light of the correct legal rule.
 
 ## Conclusion
 Warrantless breath tests are permissible as searches incident to a DUI arrest; warrantless blood tests are not (absent a warrant or [[Exigent Circumstances and Hot Pursuit|exigency]]); and a State cannot impose criminal penalties for refusing a warrantless blood test. *Birchfield* refines the bodily-intrusion line of [[Schmerber v. California]] and [[Missouri v. McNeely]] for the specific context of DUI chemical testing.
@@ -67,8 +67,8 @@ Warrantless breath tests are permissible as searches incident to a DUI arrest; w
 - *Birchfield* is good law and itself refines [[Schmerber v. California]] and [[Missouri v. McNeely]]; it draws the controlling breath-vs-blood line for searches incident to a drunk-driving arrest.
 
 ## Appears on
-- [[SIA Alcohol Tests]] — *Key — Anchor*
+- [[SIA Alcohol Tests]] — *Key: Anchor*
 - [[Exigent Circumstances and Hot Pursuit]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Birchfield v. North Dakota*, 579 U.S. 438 (2016) (136 S. Ct. 2160) — https://www.courtlistener.com/opinion/3216497/birchfield-v-north-dakota/ — pinpoints: 136 S. Ct. 2185–2186. (CourtListener copy carries S. Ct. pagination.)
+- *Birchfield v. North Dakota*, 579 U.S. 438 (2016) (136 S. Ct. 2160) — https://www.courtlistener.com/opinion/3216497/birchfield-v-north-dakota/. Pinpoints: 136 S. Ct. 2185–2186. (CourtListener copy carries S. Ct. pagination.)

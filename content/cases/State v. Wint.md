@@ -67,7 +67,7 @@ Wint invoked counsel twice, never initiated the Bucks County interrogation, and 
 The Appellate Division's judgment was **reversed** and the case [[Reading and Citing Cases#on-remand|remanded]] for a new trial at which the incriminating statements must be suppressed. Albin, J., wrote for the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Wint* applies the *[[Edwards v. Arizona|Edwards]]*–*[[Maryland v. Shatzer|Shatzer]]* invocation rule to a pretrial detainee: continuous pre-indictment custody is not a "break in custody," so a fresh set of *[[Miranda v. Arizona|Miranda]]* warnings and a subsequent waiver cannot rehabilitate a police-initiated reinterrogation conducted after the accused invoked his right to counsel.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Wint* applies the *[[Edwards v. Arizona|Edwards]]*–*[[Maryland v. Shatzer|Shatzer]]* invocation rule to a pretrial detainee: continuous pre-indictment custody is not a "break in custody," so a fresh set of *[[Miranda v. Arizona|Miranda]]* warnings and a subsequent waiver cannot rehabilitate a police-initiated reinterrogation conducted after the accused invoked his right to counsel.
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key*

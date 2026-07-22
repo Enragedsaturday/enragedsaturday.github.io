@@ -130,9 +130,9 @@ flowchart TD
 
 - [*Warden v. Hayden*, 387 U.S. 294 (1967)](https://www.courtlistener.com/opinion/107465/warden-maryland-penitentiary-v-hayden/) (pinpoints: 298, 298–99)
 - [*United States v. Santana*, 427 U.S. 38 (1976)](https://www.courtlistener.com/opinion/109504/united-states-v-santana/) (pinpoints: 42, 43)
-- [*Lange v. California*, 594 U.S. 295 (2021)](https://www.courtlistener.com/opinion/4894407/lange-v-california/) (first-page cite; interior bound-volume pincites retired per T3/P4-12 — lead opinion 4698186 is a slip opinion with no star pagination; body holding paraphrased, T3)
+- [*Lange v. California*, 594 U.S. 295 (2021)](https://www.courtlistener.com/opinion/4894407/lange-v-california/) (first-page cite; interior bound-volume pincites retired pending official-reporter pagination — lead opinion 4698186 is a slip opinion with no star pagination; body holding paraphrased)
 - [*Welsh v. Wisconsin*, 466 U.S. 740 (1984)](https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/) (pinpoints: 749–50, 753, 755)
-- [*Kentucky v. King*, 563 U.S. 452 (2011)](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) (pinpoint: 462 — CAP star page verified, S7 R5 T1; full treatment on [[Destruction of Evidence]])
+- [*Kentucky v. King*, 563 U.S. 452 (2011)](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) (pinpoint: 462 — CAP star page verified; full treatment on [[Destruction of Evidence]])
 - [*Brigham City v. Stuart*, 547 U.S. 398 (2006)](https://www.courtlistener.com/opinion/145654/brigham-city-v-stuart/) (pinpoints: 400, 404)
 - [*Caniglia v. Strom*, 593 U.S. 194 (2021)](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/)
 - [*Mincey v. Arizona*, 437 U.S. 385 (1978)](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/) (pinpoints: 390–91)
@@ -140,5 +140,5 @@ flowchart TD
 - [*Segura v. United States*, 468 U.S. 796 (1984)](https://www.courtlistener.com/opinion/111259/segura-v-united-states/)
 - [*Payton v. New York*, 445 U.S. 573 (1980)](https://www.courtlistener.com/opinion/110235/payton-v-new-york/)
 - [*Steagald v. United States*, 451 U.S. 204 (1981)](https://www.courtlistener.com/opinion/110464/steagald-v-united-states/)
-- [*Newman v. Underhill*, 134 F.4th 1025 (9th Cir. 2025)](https://www.courtlistener.com/opinion/10382777/newman-v-underhill/) (F.4th reporter cite; post-2020 slip pins paraphrased per S7 R5 T3)
+- [*Newman v. Underhill*, 134 F.4th 1025 (9th Cir. 2025)](https://www.courtlistener.com/opinion/10382777/newman-v-underhill/) (F.4th reporter cite; post-2020 slip pins paraphrased rather than page-cited)
 </content>

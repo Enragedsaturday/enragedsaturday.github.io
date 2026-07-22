@@ -57,7 +57,7 @@ Reasonableness is judged "on the basis of the individual circumstances." — [*I
 Applying the gravity of the public concern, the degree to which the stop advances it, and the severity of the interference with liberty, the Court held: "We hold that the stop was constitutional." — [*Id.* at 427](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/#:~:text=We%20hold%20that%20the%20stop). ^pin-427
 
 ## Application
-The checkpoint served a grave public concern — investigating a fatal hit-and-run — and was tailored to advance it, set up about a week later at the same place and time to reach motorists who might have witnessed the accident. The stops interfered only minimally with liberty: a brief wait, a few seconds of contact, a request for information and a flyer, applied systematically to all cars. Because the *[[City of Indianapolis v. Edmond|Edmond]]* [[Common Legal Terms#per-se|per se]] rule did not apply and the balance favored the stop, the checkpoint was reasonable.
+The checkpoint served a grave public concern (investigating a fatal hit-and-run) and was tailored to advance it, set up about a week later at the same place and time to reach motorists who might have witnessed the accident. The stops interfered only minimally with liberty: a brief wait, a few seconds of contact, a request for information and a flyer, applied systematically to all cars. Because the *[[City of Indianapolis v. Edmond|Edmond]]* [[Common Legal Terms#per-se|per se]] rule did not apply and the balance favored the stop, the checkpoint was reasonable.
 
 ## Conclusion
 The information-seeking checkpoint was constitutional; the judgment suppressing the evidence was reversed.
@@ -67,7 +67,7 @@ The information-seeking checkpoint was constitutional; the judgment suppressing 
 - No negative treatment. *Lidster* distinguishes [[City of Indianapolis v. Edmond]] (general crime-control checkpoints barred) and applies the [[Brown v. Texas]] balancing factors used in [[Michigan Dept. of State Police v. Sitz]] to information-seeking stops.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Illinois v. Lidster*, 540 U.S. 419 (2004) — https://www.courtlistener.com/opinion/131154/illinois-v-lidster/ — pinpoints: 423, 426, 427.
+- *Illinois v. Lidster*, 540 U.S. 419 (2004) — https://www.courtlistener.com/opinion/131154/illinois-v-lidster/. Pinpoints: 423, 426, 427.

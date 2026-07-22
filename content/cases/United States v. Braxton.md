@@ -47,7 +47,7 @@ lake:
 Officers arrested Braxton on a public sidewalk and, without a warrant, searched a backpack associated with him, finding a firearm. He was charged with firearm and drug offenses and moved to suppress the gun. Under the circuit's recent decision in *United States v. Knapp* — which held that a search of an arrestee's bag is not a valid [[Search Incident to Arrest|search incident to arrest]] where the arrestee cannot reach weapons or evidence in the bag at the time — the government conceded the backpack search was not a lawful [[Search Incident to Arrest|search incident to arrest]] and instead relied on [[Inevitable Discovery and Independent Source|inevitable discovery]].
 
 ## Issue
-Whether evidence from a backpack search that was not a valid [[Search Incident to Arrest|search incident to arrest]] is nonetheless admissible under the inevitable-discovery exception, on the theory that officers would have lawfully impounded the backpack ([[Community Caretaking|community caretaking]]) and discovered the gun in an inventory search.
+Whether evidence from a backpack search that was not a valid [[Search Incident to Arrest|search incident to arrest]] is nonetheless admissible under the inevitable discovery exception, on the theory that officers would have lawfully impounded the backpack ([[Community Caretaking|community caretaking]]) and discovered the gun in an inventory search.
 
 ## Rule
 The search-incident-to-arrest point was conceded: "the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest." — slip op., at 7. ^pin-op7
@@ -62,7 +62,7 @@ The backpack search was an invalid [[Search Incident to Arrest|search incident t
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- *Braxton* applies the reaching-distance limit on [[Search Incident to Arrest|searches incident to arrest]] from [[Chimel v. California]] and [[Arizona v. Gant]] (and the circuit's *Knapp* rule for bags), and the inevitable-discovery doctrine of [[Nix v. Williams]]; on digital/container limits compare [[Riley v. California]].
+- *Braxton* applies the reaching-distance limit on [[Search Incident to Arrest|searches incident to arrest]] from [[Chimel v. California]] and [[Arizona v. Gant]] (and the circuit's *Knapp* rule for bags), and the inevitable discovery doctrine of [[Nix v. Williams]]; on digital/container limits compare [[Riley v. California]].
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Recent development (role-based)*

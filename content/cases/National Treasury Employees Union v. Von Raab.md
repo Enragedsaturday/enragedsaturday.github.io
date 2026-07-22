@@ -65,7 +65,7 @@ Suspicionless testing of applicants for drug-interdiction and firearms positions
 - No negative treatment. Decided with [[Skinner v. Railway Labor Executives' Association]], *Von Raab* is a leading special-needs precedent later applied in the school-testing context ([[Vernonia School District 47J v. Acton]]) and distinguished where the asserted need was not substantial ([[Chandler v. Miller]]).
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *National Treasury Employees Union v. Von Raab*, 489 U.S. 656 (1989) — https://www.courtlistener.com/opinion/112220/national-treasury-employees-union-v-von-raab/ — pinpoints: 665–66, 672.
+- *National Treasury Employees Union v. Von Raab*, 489 U.S. 656 (1989) — https://www.courtlistener.com/opinion/112220/national-treasury-employees-union-v-von-raab/. Pinpoints: 665–66, 672.

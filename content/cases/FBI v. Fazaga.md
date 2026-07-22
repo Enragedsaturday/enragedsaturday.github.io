@@ -67,7 +67,7 @@ Even accepting the respondents' broad reading of § 1806(f), the Court found no 
 The judgment of the Ninth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Alito, J., delivered the opinion for a unanimous Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Fazaga* preserves the state-secrets privilege as a threshold obstacle to civil suits — including constitutional claims against federal agents — challenging foreign-intelligence electronic surveillance; it is a FISA/§ 1806(f) decision and does not itself resolve the merits of the plaintiffs' surveillance claims.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Fazaga* preserves the state-secrets privilege as a threshold obstacle to civil suits — including constitutional claims against federal agents — challenging foreign-intelligence electronic surveillance; it is a FISA/§ 1806(f) decision and does not itself resolve the merits of the plaintiffs' surveillance claims.
 
 ## Appears on
 - [[Suing Federal Officers]] — *Related — state-secrets/FISA threshold defense (federal-officer surveillance suits)*

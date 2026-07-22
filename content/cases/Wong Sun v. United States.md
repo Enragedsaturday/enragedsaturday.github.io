@@ -62,7 +62,7 @@ Evidence obtained by exploiting an unlawful arrest is suppressed as [[Common Leg
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Wong Sun* is the foundational fruit-of-the-poisonous-tree case; its [[Fruits and Attenuation|attenuation]] inquiry was given concrete factors in [[Brown v. Illinois]] and applied to an intervening arrest warrant in [[Utah v. Strieff]]. The related independent-source and inevitable-discovery limits appear in [[Nix v. Williams]].
+- No negative treatment. *Wong Sun* is the foundational fruit-of-the-poisonous-tree case; its [[Fruits and Attenuation|attenuation]] inquiry was given concrete factors in [[Brown v. Illinois]] and applied to an intervening arrest warrant in [[Utah v. Strieff]]. The related independent-source and inevitable discovery limits appear in [[Nix v. Williams]].
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*

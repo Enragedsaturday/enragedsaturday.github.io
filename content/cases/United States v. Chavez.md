@@ -71,7 +71,7 @@ The DEA had probable cause built from a controlled buy, monitored calls, and con
 **Affirmed.** Judge Ebel wrote for the panel.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Chavez* is a leading circuit statement of the *[[Collective Knowledge and the Fellow-Officer Rule]]*: an investigating team's probable cause is imputed to the officer it instructs to make the stop, so the acting officer need not personally possess the facts — the vertical-imputation branch of the doctrine.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Chavez* is a leading circuit statement of the *[[Collective Knowledge and the Fellow-Officer Rule]]*: an investigating team's probable cause is imputed to the officer it instructs to make the stop, so the acting officer need not personally possess the facts — the vertical-imputation branch of the doctrine.
 
 ## Appears on
 - [[Collective Knowledge and the Fellow-Officer Rule]] — *Key*

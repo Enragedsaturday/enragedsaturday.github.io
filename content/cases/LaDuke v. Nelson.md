@@ -66,7 +66,7 @@ The injunction had three parts: no warrantless entries of farm dwellings to sear
 The judgment and injunction were **affirmed** (with a modification to the fee award); the INS's area-control entries and suspicionless stops violated the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *LaDuke* stands for the proposition that a dwelling's protection does not depend on its permanence or grandeur: temporary and makeshift homes — farmworker cabins, shacks, and tents — remain within the Fourth Amendment's shelter against warrantless government entry.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *LaDuke* stands for the proposition that a dwelling's protection does not depend on its permanence or grandeur: temporary and makeshift homes — farmworker cabins, shacks, and tents — remain within the Fourth Amendment's shelter against warrantless government entry.
 
 ## Appears on
 - [[Tents]] — *Key*

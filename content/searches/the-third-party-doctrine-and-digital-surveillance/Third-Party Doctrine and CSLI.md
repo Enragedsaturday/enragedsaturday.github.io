@@ -105,7 +105,7 @@ flowchart TD
 
 - [*Smith v. Maryland*, 442 U.S. 735 (1979)](https://www.courtlistener.com/opinion/110118/smith-v-maryland/) (pinpoints: 743–44)
 - [*United States v. Miller*, 425 U.S. 435 (1976)](https://www.courtlistener.com/opinion/109433/united-states-v-miller/) (pinpoints: 442, 443)
-- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite; the "whole of one's physical movements" and "intimate window" language is paraphrased — the CL opinion text carries slip-opinion pagination only: R5 T3)
+- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite; the "whole of one's physical movements" and "intimate window" language is paraphrased — the CL opinion text carries slip-opinion pagination only)
 - [*Chatrie v. United States*, 609 U.S. ___ (2026) (No. 25-112)](https://www.courtlistener.com/opinion/10881683/chatrie-v-united-states/) (slip op.; full treatment on [[Reverse-Keyword and Geofence Warrants]])
 - [*United States v. Knotts*, 460 U.S. 276 (1983)](https://www.courtlistener.com/opinion/110882/united-states-v-knotts/) (pinpoints: 281, 282)
 - [*United States v. Karo*, 468 U.S. 705 (1984)](https://www.courtlistener.com/opinion/111257/united-states-v-karo/) (pinpoints: 714, 715)

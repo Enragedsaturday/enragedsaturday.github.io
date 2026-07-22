@@ -122,7 +122,7 @@ flowchart TD
 - [*Rawlings v. Kentucky*, 448 U.S. 98 (1980)](https://www.courtlistener.com/opinion/110326/rawlings-v-kentucky/) (pinpoints: 104–05, 105–06)
 - [*Minnesota v. Olson*, 495 U.S. 91 (1990)](https://www.courtlistener.com/opinion/112416/minnesota-v-olson/) (pinpoint: 98)
 - [*Minnesota v. Carter*, 525 U.S. 83 (1998)](https://www.courtlistener.com/opinion/118249/minnesota-v-carter/) (pinpoint: 90)
-- [*Byrd v. United States*, 584 U.S. 395 (2018)](https://www.courtlistener.com/opinion/4497658/byrd-v-united-states/) (rental-driver REP; the CourtListener text is the slip opinion, so no reporter star page is located for the pinpoint; paraphrased per the four-tier conversion, T3)
+- [*Byrd v. United States*, 584 U.S. 395 (2018)](https://www.courtlistener.com/opinion/4497658/byrd-v-united-states/) (rental-driver REP; the CourtListener text is the slip opinion, so no reporter star page is located for the pinpoint; paraphrased per the four-tier conversion)
 - [*Brendlin v. California*, 551 U.S. 249 (2007)](https://www.courtlistener.com/opinion/145712/brendlin-v-california/) (pinpoint: 251; home = [[Traffic Stops]])
 - [*Mancusi v. DeForte*, 392 U.S. 364 (1968)](https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/) (pinpoints: 368, 369)
 - [*Simmons v. United States*, 390 U.S. 377 (1968)](https://www.courtlistener.com/opinion/107636/simmons-v-united-states/) (pinpoint: 394)

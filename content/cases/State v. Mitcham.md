@@ -31,7 +31,7 @@ homes:
 related: ["[[Nix v. Williams]]", "[[Murray v. United States]]", "[[Segura v. United States]]", "[[Herring v. United States]]", "[[Utah v. Strieff]]"]
 aliases: ["State of Arizona v. Ian Mitcham"]
 tags: ["case", "exclusionary-rule", "inevitable-discovery", "independent-source", "dna", "arizona"]
-holding: "Arizona Supreme Court held that, although warrantless DNA sequencing violated the Fourth Amendment, the DNA profile was admissible under the inevitable-discovery exception because the State would have inevitably obtained it through an independent, untainted statutory DNA-collection process after Mitcham’s unrelated 2022 felony convictions."
+holding: "Arizona Supreme Court held that, although warrantless DNA sequencing violated the Fourth Amendment, the DNA profile was admissible under the inevitable discovery exception because the State would have inevitably obtained it through an independent, untainted statutory DNA-collection process after Mitcham’s unrelated 2022 felony convictions."
 lake:
   record_id: State v. Mitcham
   status: under_review
@@ -57,14 +57,14 @@ The two exceptions differ in that the distinction "rests on whether the evidence
 Applying [[Inevitable Discovery and Independent Source|inevitable discovery]], the Court held the State "would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood ...." — *Id.* ¶ 37. ^pin-37
 
 ## Application
-Mitcham's unrelated 2022 felony convictions and prison sentence triggered Arizona's statutory requirement (A.R.S. § 13-610) that the Department of Corrections collect his DNA for profiling. That lawful, untainted process would inevitably have produced the same DNA profile independent of the illegal 2018 search; the only reason it did not was that police already held a sample from the illegal search. Suppression would put the prosecution in a worse position than if the violation had never occurred, so the inevitable-discovery exception applied.
+Mitcham's unrelated 2022 felony convictions and prison sentence triggered Arizona's statutory requirement (A.R.S. § 13-610) that the Department of Corrections collect his DNA for profiling. That lawful, untainted process would inevitably have produced the same DNA profile independent of the illegal 2018 search; the only reason it did not was that police already held a sample from the illegal search. Suppression would put the prosecution in a worse position than if the violation had never occurred, so the inevitable discovery exception applied.
 
 ## Conclusion
-The DNA evidence was admissible under the inevitable-discovery exception; suppression was denied.
+The DNA evidence was admissible under the inevitable discovery exception; suppression was denied.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Persuasive — state, illustrative**.
-- Applies the inevitable-discovery exception of [[Nix v. Williams]] and its independent-source roots ([[Murray v. United States]], [[Segura v. United States]]) within the deterrence-focused exclusionary framework of [[Herring v. United States]] and [[Utah v. Strieff]].
+- Applies the inevitable discovery exception of [[Nix v. Williams]] and its independent-source roots ([[Murray v. United States]], [[Segura v. United States]]) within the deterrence-focused exclusionary framework of [[Herring v. United States]] and [[Utah v. Strieff]].
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Recent development (role-based)*

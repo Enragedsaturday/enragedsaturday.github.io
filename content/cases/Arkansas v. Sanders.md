@@ -50,7 +50,7 @@ holding: "The Fourth Amendment's warrant requirement applies to personal luggage
 
 # Arkansas v. Sanders
 
-*442 U.S. 753 (1979)* (No. 77-1497) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, pending S9)** — overruled by [[California v. Acevedo]] (1991)
+*442 U.S. 753 (1979)* (No. 77-1497) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[California v. Acevedo]] (1991)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 110119 → 442 U.S. 753, decided 1979-06-20; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -71,7 +71,7 @@ The judgment of the Supreme Court of Arkansas — suppressing the evidence — w
 ## Treatment & subsequent history
 **Overruled by [[California v. Acevedo]] (1991).** *Sanders* drew a line between the car (searchable on probable cause) and closed containers within it (protected). The Court abandoned that line: *[[United States v. Ross]]* (1982) held that probable cause to search a vehicle extends to containers inside that might hold the object of the search, and *[[California v. Acevedo|Acevedo]]* then unified the rule, expressly overruling *Sanders* so that police with probable cause may search a container found in a car without a warrant.
 
-*Status note (⚪):* this page was authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not yet completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. It is preserved as **history**, never as live law.
+*Status note (⚪):* this page was authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not yet completed the project's two-key certification, so the page renders under the ⚪ banner until machine verification is complete. It is preserved as **history**, never as live law.
 
 ## Appears on
 - [[Automobile Exception]] — *Historical / former container limitation*

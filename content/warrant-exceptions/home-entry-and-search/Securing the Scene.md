@@ -134,6 +134,6 @@ flowchart TD
 - [*Mincey v. Arizona*, 437 U.S. 385 (1978)](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/) (pinpoints: 392, 393; no murder-scene exception; home = [[Emergency Aid]])
 - [*Thompson v. Louisiana*, 469 U.S. 17 (1984) (per curiam)](https://www.courtlistener.com/opinion/111282/thompson-v-louisiana/) (pinpoint: 21; home = [[Emergency Aid]])
 - [*Flippo v. West Virginia*, 528 U.S. 11 (1999) (per curiam)](https://www.courtlistener.com/opinion/1854815/flippo-v-west-virginia/) (pinpoints: 13, 14; home = [[Emergency Aid]])
-- [*United States v. August*, 136 F.4th 595 (5th Cir. 2025)](https://www.courtlistener.com/opinion/10574922/united-states-v-august/) (F.4th reporter cite; post-2020 slip pins paraphrased per S7 R5 T3)
+- [*United States v. August*, 136 F.4th 595 (5th Cir. 2025)](https://www.courtlistener.com/opinion/10574922/united-states-v-august/) (F.4th reporter cite; post-2020 slip pins paraphrased rather than page-cited)
 - [*United States v. Conner*, 127 F.3d 663 (8th Cir. 1997)](https://www.courtlistener.com/opinion/747208/united-states-v-larry-duane-conner-united-states-of-america-v-john/) (pinpoint: 666)
 </content>

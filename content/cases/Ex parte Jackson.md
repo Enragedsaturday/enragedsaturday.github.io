@@ -52,7 +52,7 @@ aliases:
 
 # Ex parte Jackson
 
-*96 U.S. 727 (1878)* · Supreme Court of the United States · **Binding — SCOTUS** · Treatment: **Historical origin — good law, rendered as history (⚪ unverified, pending S9)**
+*96 U.S. 727 (1878)* · Supreme Court of the United States · **Binding — SCOTUS** · Treatment: **Historical origin — good law, rendered as history (⚪ unverified, awaiting machine verification)**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the historical framing below is authored orientation, not machine-certified. special: history-render — rendered as a foundational ORIGIN (role: Historical / origin), and it remains good law (NOT overruled). Identity cluster 89759 → opinion 89759 (Field, J.; 96 U.S. 727, decided 1878, October Term 1877). Rule quote string-matched to the CL opinion text 2026-07-07 (reporter star `*733`); the CL scan carries minor OCR artifacts (stray marks in "searches' and seizures" and "can only 'be opened"), normalized to the U.S. Reports text and flagged in Sources. S9 promotes. -->
 
 ## Background
@@ -71,7 +71,7 @@ Because a citizen's sealed correspondence in the mail is as guarded from inspect
 The writ of [[Common Legal Terms#habeas-corpus|habeas corpus]] was **denied**; the conviction stood. Field, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — rendered as history; still good law.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Ex parte Jackson* is preserved here as a **historical origin**, not as superseded law — its sealed-mail principle has never been overruled and remains foundational. It is the Court's earliest holding that the Fourth Amendment follows a person's sealed papers into the hands of a third party (the Post Office), a principle carried forward across more than a century: *[[United States v. Van Leeuwen]]* (1970) (mailed packages), *[[United States v. Jacobsen]]* (1984), and echoed in the digital-privacy line, *[[Carpenter v. United States]]* (2018). Teach it as the origin point of the warrant requirement for sealed communications entrusted to others — an antecedent, not an artifact.
+**Status: Unverified — rendered as history; still good law.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Ex parte Jackson* is preserved here as a **historical origin**, not as superseded law — its sealed-mail principle has never been overruled and remains foundational. It is the Court's earliest holding that the Fourth Amendment follows a person's sealed papers into the hands of a third party (the Post Office), a principle carried forward across more than a century: *[[United States v. Van Leeuwen]]* (1970) (mailed packages), *[[United States v. Jacobsen]]* (1984), and echoed in the digital-privacy line, *[[Carpenter v. United States]]* (2018). Teach it as the origin point of the warrant requirement for sealed communications entrusted to others — an antecedent, not an artifact.
 
 ## Appears on
 - [[Common Law Origins]] — *Historical / origin*

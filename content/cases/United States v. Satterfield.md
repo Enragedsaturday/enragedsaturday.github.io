@@ -45,7 +45,7 @@ tags:
   - inevitable-discovery
   - circuit-split
   - warrantless-search
-holding: "For the inevitable-discovery exception to the exclusionary rule to admit illegally seized evidence, the Eleventh Circuit requires not only a reasonable probability that the evidence would have been found by lawful means, but also that the lawful means were possessed by the police and were being actively pursued before the illegal conduct occurred; because officers obtained the search warrant only hours after the warrantless search, the shotgun was not admissible under inevitable discovery — though its erroneous admission was harmless in light of the overwhelming other evidence."
+holding: "For the inevitable discovery exception to the exclusionary rule to admit illegally seized evidence, the Eleventh Circuit requires not only a reasonable probability that the evidence would have been found by lawful means, but also that the lawful means were possessed by the police and were being actively pursued before the illegal conduct occurred; because officers obtained the search warrant only hours after the warrantless search, the shotgun was not admissible under inevitable discovery — though its erroneous admission was harmless in light of the overwhelming other evidence."
 aliases:
   - United States v. Satterfield
   - "United States v. Satterfield (11th Cir. 1984)"
@@ -72,7 +72,7 @@ Because the officers had not yet initiated — indeed did not yet possess — th
 The convictions were **affirmed**; the court held the shotgun was seized unlawfully and should have been excluded, but that its admission was harmless error. Kravitch, Circuit Judge, wrote for the panel.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until machine verification is complete.
 
 **Illustrates a circuit split (in-circuit rule).** *Satterfield* states the Eleventh Circuit's rule — binding there, persuasive only elsewhere — that the [[Inevitable Discovery and Independent Source|inevitable discovery]] exception applies only when the police *possessed and were actively pursuing* a lawful means of discovery at the moment of the illegality. That reading of *[[Nix v. Williams]]* divides the circuits: several courts of appeals require such an independent, already-underway line of lawful investigation, while others read *[[Nix v. Williams|Nix]]* to impose no "active pursuit" prerequisite at all — asking only whether the evidence *would* inevitably have been discovered by lawful means, regardless of whether an independent investigation was afoot when the violation occurred. Teach *Satterfield* as one side of that split, not as a nationally settled rule, alongside the independent-source line (*[[Wong Sun v. United States]]*, *[[Murray v. United States]]*) and the deterrence rationale (*[[Stone v. Powell]]*).
 

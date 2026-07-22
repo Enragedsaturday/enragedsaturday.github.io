@@ -70,10 +70,10 @@ A criminal-history check is a permissible, "negligibly burdensome" safety precau
 **Affirmed.** Judge Baldock wrote for the panel (Bacharach, Baldock, and Murphy, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Mayville* is a representative Tenth Circuit application of *[[Rodriguez v. United States|Rodriguez]]*'s **mission-and-diligence** limit on traffic-stop duration: a dog sniff that rides along with the officer's reasonable, diligent completion of records and safety tasks — and finishes before those tasks do — does not "prolong" the stop, because reasonableness, not efficiency, controls. Teach it as the diligence-side counterpart to *[[Rodriguez v. United States|Rodriguez]]*'s prohibition on adding time for an unrelated investigation.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Mayville* is a representative Tenth Circuit application of *[[Rodriguez v. United States|Rodriguez]]*'s **mission-and-diligence** limit on traffic-stop duration: a dog sniff that rides along with the officer's reasonable, diligent completion of records and safety tasks — and finishes before those tasks do — does not "prolong" the stop, because reasonableness, not efficiency, controls. Teach it as the diligence-side counterpart to *[[Rodriguez v. United States|Rodriguez]]*'s prohibition on adding time for an unrelated investigation.
 
 ## Appears on
 - [[Traffic Stops]] — *Key*
 
 ## Sources
-- [*United States v. Mayville*, 955 F.3d 825 (10th Cir. 2020)](https://www.courtlistener.com/opinion/4742862/united-states-v-mayville/) — pinpoint: slip op. at 1 (the *Rodriguez* reasonableness-not-efficiency holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Mayville*, 955 F.3d 825 (10th Cir. 2020)](https://www.courtlistener.com/opinion/4742862/united-states-v-mayville/) — pinpoint: slip op. at 1 (the *Rodriguez* reasonableness-not-efficiency holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

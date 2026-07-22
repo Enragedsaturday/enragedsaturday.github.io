@@ -47,7 +47,7 @@ tags:
   - destruction-of-evidence
   - warrantless-entry
   - eighth-circuit
-holding: "A 'knock and talk' — approaching a home and knocking to ask questions — is a valid investigative technique, and where a suspect's evasive answers during such an encounter give officers an objectively reasonable basis to believe he will destroy digital evidence if left alone, the resulting exigency justifies a warrantless entry and seizure, provided the officers did not manufacture the exigency by threatening to violate the Fourth Amendment."
+holding: "A 'knock-and-talk' — approaching a home and knocking to ask questions — is a valid investigative technique, and where a suspect's evasive answers during such an encounter give officers an objectively reasonable basis to believe he will destroy digital evidence if left alone, the resulting exigency justifies a warrantless entry and seizure, provided the officers did not manufacture the exigency by threatening to violate the Fourth Amendment."
 aliases:
   - United States v. Meyer
   - "United States v. Meyer (8th Cir. 2021)"
@@ -74,11 +74,11 @@ Meyer's own answers — professing constant need for a computer he was willing t
 **Affirmed.** Judge Stras wrote for the panel (Gruender, Benton, and Stras, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Meyer* sits at the junction of the **[[Knock and Talk|knock-and-talk]]** and **exigent-circumstances** doctrines: it reaffirms that a [[Knock and Talk|knock-and-talk]] is a valid, consensual technique, and applies *[[Kentucky v. King|Kentucky v. King]]*'s rule that police may not rely on an [[Exigent Circumstances and Hot Pursuit|exigency]] they created by threatening to violate the Fourth Amendment — holding these agents did not, because the suspect's own evasive conduct generated the risk that digital evidence would be destroyed. Teach it for the destruction-of-evidence [[Exigent Circumstances and Hot Pursuit|exigency]] in the digital context and the police-created-[[Exigent Circumstances and Hot Pursuit|exigency]] limit.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Meyer* sits at the junction of the **[[Knock and Talk|knock-and-talk]]** and **exigent-circumstances** doctrines: it reaffirms that a [[Knock and Talk|knock-and-talk]] is a valid, consensual technique, and applies *[[Kentucky v. King|Kentucky v. King]]*'s rule that police may not rely on an [[Exigent Circumstances and Hot Pursuit|exigency]] they created by threatening to violate the Fourth Amendment — holding these agents did not, because the suspect's own evasive conduct generated the risk that digital evidence would be destroyed. Teach it for the destruction-of-evidence [[Exigent Circumstances and Hot Pursuit|exigency]] in the digital context and the police-created-[[Exigent Circumstances and Hot Pursuit|exigency]] limit.
 
 ## Appears on
 - [[Knock and Talk]] — *Key*
 - [[Exigent Circumstances and Hot Pursuit]] — *Related (cross-doctrine)*
 
 ## Sources
-- [*United States v. Meyer*, 19 F.4th 1028 (8th Cir. 2021)](https://www.courtlistener.com/opinion/5302394/united-states-v-william-meyer/) — pinpoint: slip op. at 6 (knock-and-talk validity, en route to the destruction-of-evidence exigency holding; the CL opinion text carries slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Meyer*, 19 F.4th 1028 (8th Cir. 2021)](https://www.courtlistener.com/opinion/5302394/united-states-v-william-meyer/) — pinpoint: slip op. at 6 (knock-and-talk validity, en route to the destruction-of-evidence exigency holding; the CL opinion text carries slip pagination, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

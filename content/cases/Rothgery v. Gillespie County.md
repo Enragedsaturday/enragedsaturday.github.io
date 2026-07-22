@@ -53,7 +53,7 @@ Whether the Sixth Amendment right to counsel attaches at a defendant's initial a
 Attachment occurs at the initial appearance and does not require a prosecutor's involvement. "[A] criminal defendant's initial appearance before a judicial officer, where he learns the charge against him and his liberty is subject to restriction, marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel." — 554 U.S. 191. ^pin-213
 
 ## Application
-Rothgery's article 15.17 hearing — where he learned the charge and his liberty was restricted by commitment to jail in lieu of bail — marked the initiation of adversary judicial proceedings, so his Sixth Amendment right to counsel attached at that point regardless of whether any prosecutor was aware of or involved in the case. The Fifth Circuit erred in holding that a prosecutor's involvement was required for attachment. (The Court's holding was narrow and did not decide whether the six-month delay caused a remediable violation.)
+Rothgery's article 15.17 hearing (where he learned the charge and his liberty was restricted by commitment to jail in lieu of bail) marked the initiation of adversary judicial proceedings, so his Sixth Amendment right to counsel attached at that point regardless of whether any prosecutor was aware of or involved in the case. The Fifth Circuit erred in holding that a prosecutor's involvement was required for attachment. (The Court's holding was narrow and did not decide whether the six-month delay caused a remediable violation.)
 
 ## Conclusion
 The right to counsel attached at Rothgery's initial appearance; the Fifth Circuit's judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -62,7 +62,7 @@ The right to counsel attached at Rothgery's initial appearance; the Fifth Circui
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Rothgery* reaffirms the attachment rule of [[Brewer v. Williams]]/[[Kirby v. Illinois]] and fixes attachment at the initial appearance.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Rothgery v. Gillespie County*, 554 U.S. 191 (2008) — https://www.courtlistener.com/opinion/145785/rothgery-v-gillespie-county/ — interior pincite(s) 213 retired T3/P4-12.
+- *Rothgery v. Gillespie County*, 554 U.S. 191 (2008) — https://www.courtlistener.com/opinion/145785/rothgery-v-gillespie-county/. Interior pincite(s) 213 retired pending official-reporter pagination.

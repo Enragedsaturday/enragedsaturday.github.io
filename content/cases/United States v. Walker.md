@@ -31,7 +31,7 @@ homes:
 related: ["[[Florida v. Jardines]]", "[[French v. Merrill]]", "[[United States v. Lundin]]", "[[United States v. Carloss]]", "[[Kentucky v. King]]"]
 aliases: ["United States v. Wayne Walker", "United States v. Walker (11th Cir. 2015)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtilage", "eleventh-circuit"]
-holding: "A 'small departure' from the front door — here, approaching the occupant's car parked in an open-sided carport beside the house when seeking to contact him — stays within the geographic scope of the knock-and-talk implied license, and a pre-dawn (5:04 a.m.) knock and talk is not a search and needs no exigent circumstances where the surrounding circumstances make the approach reasonable."
+holding: "A 'small departure' from the front door — here, approaching the occupant's car parked in an open-sided carport beside the house when seeking to contact him — stays within the geographic scope of the knock-and-talk implied license, and a pre-dawn (5:04 a.m.) knock-and-talk is not a search and needs no exigent circumstances where the surrounding circumstances make the approach reasonable."
 lake:
   record_id: United States v. Walker
   status: verified
@@ -54,10 +54,10 @@ The [[Knock and Talk|knock-and-talk]] exception rests on the implied license to 
 
 A small movement from the front door to reach the occupant stays within that geographic limit: "approaching Walker's vehicle parked inside of his open-sided carport, instead of going to his front door, did not exceed the geographic limit on the knock and talk exception. A 'small departure from the front door . . . when seeking to contact the occupants' is permissible." — [799 F.3d at 1364](https://www.courtlistener.com/opinion/2844024/united-states-v-wayne-walker/#:~:text=did%20not%20exceed%20the%20geographic%20limit%20on%20the%20knock%20and%20talk%20exception) (quoting *United States v. Taylor*, 458 F.3d 1201, 1205 (11th Cir. 2006)). ^pin-1364
 
-The court also held that a pre-dawn knock and talk is reasonable on these circumstances and that an early-morning knock and talk "is not considered a search," so it requires no [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]. — *Id.* (& n.1). ^pin-1364a
+The court also held that a pre-dawn knock-and-talk is reasonable on these circumstances and that an early-morning knock-and-talk "is not considered a search," so it requires no [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]. — *Id.* (& n.1). ^pin-1364a
 
 ## Application
-On these facts the officers did not exceed the exception. Their purpose was investigatory only in the sense of finding someone to talk to about Upshaw, not to "discover[] incriminating evidence," so their conduct did not objectively reveal a search. And approaching the open-sided carport — located right next to the house, where the lit dome light gave them reason to believe the occupant was sitting in the car — was a permissible small departure from the front door, not an intrusion into a constitutionally protected enclosed space. The 5:04 a.m. timing was reasonable given the two earlier visits and the lights indicating someone was inside; because a knock and talk is not a search, no [[Exigent Circumstances and Hot Pursuit|exigency]] was required.
+On these facts the officers did not exceed the exception. Their purpose was investigatory only in the sense of finding someone to talk to about Upshaw, not to "discover[] incriminating evidence," so their conduct did not objectively reveal a search. And approaching the open-sided carport — located right next to the house, where the lit dome light gave them reason to believe the occupant was sitting in the car — was a permissible small departure from the front door, not an intrusion into a constitutionally protected enclosed space. The 5:04 a.m. timing was reasonable given the two earlier visits and the lights indicating someone was inside; because a knock-and-talk is not a search, no [[Exigent Circumstances and Hot Pursuit|exigency]] was required.
 
 ## Conclusion
 The officers' approach fell within the [[Knock and Talk|knock-and-talk]] exception and was reasonable; the Eleventh Circuit affirmed the denial of Walker's motion to suppress the counterfeit currency.

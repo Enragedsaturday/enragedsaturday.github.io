@@ -66,4 +66,4 @@ Affirmed; the suppression of the confessions was upheld under the now-overruled 
 - [[Sixth Amendment Right to Counsel]] — *Historical / origin*
 
 ## Sources
-- *Michigan v. Jackson*, 475 U.S. 625 (1986) — https://www.courtlistener.com/opinion/111622/michigan-v-jackson/ — pinpoint: 636. (Cluster/opinion located via the L6 ladder from reporter cite 475 U.S. 625; identity and proposition confirmed in the returned text.)
+- *Michigan v. Jackson*, 475 U.S. 625 (1986) — https://www.courtlistener.com/opinion/111622/michigan-v-jackson/ — pinpoint: 636. <!-- provenance: cluster/opinion located via the L6 ladder from reporter cite 475 U.S. 625; identity and proposition confirmed in the returned text -->

@@ -10,7 +10,7 @@ circuit: ca6
 year: 2026
 date_decided: 2026-05-07
 docket: 25-5770
-authority_weight: "Persuasive only — unpublished 6th Cir. disposition"
+authority_weight: "Persuasive only — non-precedential"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -55,7 +55,7 @@ aliases:
 
 # United States v. Trent
 
-*No. 25-5770, slip op. (6th Cir. 2026)* · U.S. Court of Appeals for the Sixth Circuit · **Persuasive only — unpublished 6th Cir. disposition** · Treatment: **Unverified**
+*No. 25-5770, slip op. (6th Cir. 2026)* · U.S. Court of Appeals for the Sixth Circuit · **Persuasive only — non-precedential** · Treatment: **Unverified**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 10855903 → per curiam opinion 11323299 (No. 25-5770, NOT RECOMMENDED FOR PUBLICATION 26a0207n.06, decided May 7, 2026). Rule quote string-matched to the CL opinion text 2026-07-07; slip-style pin (unpublished 6th Cir. slip; no reporter cite — S2 A3). S9-REVERIFY: docket hand-reconstructed, then confirmed live against CL cluster 10855903 (caption/date/court/No. 25-5770); the S9 panel should re-verify the docket and holding before certification. -->
 
 ## Background
@@ -74,10 +74,10 @@ Although Lieutenant Ford himself may not have known every detail, the investigat
 **Affirmed.** [[Common Legal Terms#per-curiam|Per curiam]] (McKeague, Readler, Bloomekatz, JJ.); the denial of suppression was upheld.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. **This is an unpublished, [[Common Legal Terms#per-curiam|per curiam]] disposition** ("NOT RECOMMENDED FOR PUBLICATION," 26a0207n.06) and is therefore non-precedential under Sixth Circuit I.O.P. 32.1(b) — persuasive only, notwithstanding the projected in-circuit authority weight. It is a clean illustration of the *[[Collective Knowledge and the Fellow-Officer Rule]]*: reasonable suspicion to extend a *[[Rodriguez v. United States|Rodriguez]]* stop may be supplied by the investigating team's collective knowledge, imputed to the officer on the scene.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. **This is an unpublished, [[Common Legal Terms#per-curiam|per curiam]] disposition** ("NOT RECOMMENDED FOR PUBLICATION," 26a0207n.06) and is therefore non-precedential under Sixth Circuit I.O.P. 32.1(b) — persuasive only, notwithstanding the projected in-circuit authority weight. It is a clean illustration of the *[[Collective Knowledge and the Fellow-Officer Rule]]*: reasonable suspicion to extend a *[[Rodriguez v. United States|Rodriguez]]* stop may be supplied by the investigating team's collective knowledge, imputed to the officer on the scene.
 
 ## Appears on
 - [[Collective Knowledge and the Fellow-Officer Rule]] — *Key*
 
 ## Sources
-- [*United States v. Mark Anthony Trent*, No. 25-5770, slip op. (6th Cir. 2026)](https://www.courtlistener.com/opinion/10855903/united-states-v-mark-anthony-trent/) — pinpoint: slip op. at 4 (collective-knowledge doctrine imputes reasonable suspicion to the responding officer). Rule quote string-matched to the CL opinion text 2026-07-07. Unpublished 6th Cir. slip (26a0207n.06), non-precedential; no reporter cite (S2 A3 slip precedent).
+- [*United States v. Mark Anthony Trent*, No. 25-5770, slip op. (6th Cir. 2026)](https://www.courtlistener.com/opinion/10855903/united-states-v-mark-anthony-trent/) — pinpoint: slip op. at 4 (collective-knowledge doctrine imputes reasonable suspicion to the responding officer). Rule quote string-matched to the CL opinion text 2026-07-07. Unpublished 6th Cir. slip (26a0207n.06), non-precedential; no reporter cite.

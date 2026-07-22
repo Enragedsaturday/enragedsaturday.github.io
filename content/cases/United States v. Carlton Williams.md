@@ -66,10 +66,10 @@ Williams's consent was concededly voluntary, so it was his burden to show an une
 The denial of suppression was **affirmed**. Roth, J., wrote for the court (Hardiman, Roth, Fisher, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Carlton Williams* is the Third Circuit's adoption of the withdrawal-of-consent rule: consent voluntarily given under *[[Schneckloth v. Bustamonte|Schneckloth]]* remains valid until the suspect withdraws it by an unambiguous act or unequivocal statement, judged by the *[[Florida v. Jimeno|Jimeno]]* standard of objective reasonableness — mere impatience or ambiguous protest is not enough.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Carlton Williams* is the Third Circuit's adoption of the withdrawal-of-consent rule: consent voluntarily given under *[[Schneckloth v. Bustamonte|Schneckloth]]* remains valid until the suspect withdraws it by an unambiguous act or unequivocal statement, judged by the *[[Florida v. Jimeno|Jimeno]]* standard of objective reasonableness — mere impatience or ambiguous protest is not enough.
 
 ## Appears on
 - [[Consent Searches]] — *Key*
 
 ## Sources
-- [*United States v. Carlton Williams*, 898 F.3d 323 (3d Cir. 2018)](https://www.courtlistener.com/opinion/4522771/united-states-v-carlton-williams/) — pinpoint: slip op. at 11 (withdrawal-of-consent standard); the CL opinion text carries the slip-opinion page numbers rather than 898 F.3d star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Carlton Williams*, 898 F.3d 323 (3d Cir. 2018)](https://www.courtlistener.com/opinion/4522771/united-states-v-carlton-williams/) — pinpoint: slip op. at 11 (withdrawal-of-consent standard); the CL opinion text carries the slip-opinion page numbers rather than 898 F.3d star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

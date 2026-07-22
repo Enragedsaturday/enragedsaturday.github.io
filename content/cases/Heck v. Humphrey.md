@@ -65,7 +65,7 @@ Affirmed. A § 1983 damages action that would necessarily imply the invalidity o
 - The "Heck bar" / favorable-termination requirement remains the controlling rule for § 1983 claims that would impugn a conviction, refining the [[Monroe v. Pape]] § 1983 cause of action; it has been elaborated (not overruled) by later decisions on accrual and the boundary with [[Common Legal Terms#habeas-corpus|habeas]] (e.g., *Spencer v. Kemna*; *Wallace v. Kato*). No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Heck v. Humphrey*, 512 U.S. 477 (1994) — https://www.courtlistener.com/opinion/117864/heck-v-humphrey/ — pinpoint: 486-487.
+- *Heck v. Humphrey*, 512 U.S. 477 (1994) — https://www.courtlistener.com/opinion/117864/heck-v-humphrey/. Pinpoint: 486-487.

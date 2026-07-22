@@ -65,7 +65,7 @@ Reversed; the warrantless entry was reasonable under the emergency-aid exception
 - *Fisher* (per curiam) **applies** [[Brigham City v. Stuart]], confirming that the emergency-aid inquiry is objective and does not require ironclad proof of injury. The home-entry caretaking limit of [[Caniglia v. Strom]] does not disturb it.
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan v. Fisher*, 558 U.S. 45 (2009) — https://www.courtlistener.com/opinion/1755/michigan-v-fisher/ — pinpoint: 48. (CL carries the per curiam slip opinion; the "ironclad proof" passage is at 558 U.S. 48 / slip op. at 4.)
+- *Michigan v. Fisher*, 558 U.S. 45 (2009) — https://www.courtlistener.com/opinion/1755/michigan-v-fisher/. Pinpoint: 48. (CL carries the per curiam slip opinion; the "ironclad proof" passage is at 558 U.S. 48 / slip op. at 4.)

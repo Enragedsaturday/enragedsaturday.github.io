@@ -100,7 +100,7 @@ flowchart TD
 
 - [*Whiteley v. Warden*, 401 U.S. 560 (1971)](https://www.courtlistener.com/opinion/108297/whiteley-v-warden-wyoming-state-penitentiary/) (pinpoint: 568)
 - [*United States v. Hensley*, 469 U.S. 221 (1985)](https://www.courtlistener.com/opinion/111294/united-states-v-hensley/) (pinpoints: 232–33, 233)
-- [*Herring v. United States*, 555 U.S. 135 (2009)](https://www.courtlistener.com/opinion/145922/herring-v-united-states/) (pinpoint: 129 S. Ct. at 702 — S. Ct. star pagination; U.S.-reporter interior 144 retired T3/P4-12)
+- [*Herring v. United States*, 555 U.S. 135 (2009)](https://www.courtlistener.com/opinion/145922/herring-v-united-states/) (pinpoint: 129 S. Ct. at 702 — S. Ct. star pagination; U.S.-reporter interior 144 retired pending official-reporter pagination)
 - [*Maryland v. Pringle*, 540 U.S. 366 (2003)](https://www.courtlistener.com/opinion/131150/maryland-v-pringle/) (pinpoints: 371, 373) (aggregate/particularized PC, distinguished; home: [[Probable Cause]])
 - [*Arizona v. Evans*, 514 U.S. 1 (1995)](https://www.courtlistener.com/opinion/117905/arizona-v-evans/) (home: [[The Exclusionary Rule]])
 - [*Utah v. Strieff*, 579 U.S. 232 (2016)](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/) (home: [[The Exclusionary Rule]])

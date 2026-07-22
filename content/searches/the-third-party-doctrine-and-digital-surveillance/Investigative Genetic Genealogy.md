@@ -70,6 +70,6 @@ flowchart TD
 ## Sources
 
 - [*Maryland v. King*, 569 U.S. 435 (2013)](https://www.courtlistener.com/opinion/873669/maryland-v-king/)
-- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite: R5 T3)
+- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite; interior pinpoints paraphrased rather than page-cited)
 - [*Smith v. Maryland*, 442 U.S. 735 (1979)](https://www.courtlistener.com/opinion/110118/smith-v-maryland/)
 - U.S. Dep't of Justice, Interim Policy: Forensic Genetic Genealogical DNA Analysis and Searching (Nov. 1, 2019).

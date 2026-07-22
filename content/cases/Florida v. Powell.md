@@ -70,4 +70,4 @@ The warnings reasonably conveyed Powell's right to counsel and satisfied Miranda
 - [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Florida v. Powell*, 559 U.S. 50 (2010) — https://www.courtlistener.com/opinion/1736/florida-v-powell/ — interior pincite(s) 60, 62 retired T3/P4-12.
+- *Florida v. Powell*, 559 U.S. 50 (2010) — https://www.courtlistener.com/opinion/1736/florida-v-powell/ — interior pincite(s) 60, 62 retired pending official-reporter pagination.

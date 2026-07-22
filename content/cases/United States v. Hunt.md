@@ -70,10 +70,10 @@ On this record, Hunt abandoned neither. The court could not infer an intent to a
 **Affirmed** (conviction and sentence). Judge Lee wrote for the panel (Christen and Lee, Circuit Judges; Bencivengo, District Judge, sitting by designation).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hunt* is a leading digital-age refinement of **abandonment**: the doctrine survives for cellphones, but a *[[Riley v. California|Riley]]*-informed court must ask separately whether the suspect meant to abandon the **device** and whether he meant to abandon its **data** — so involuntarily dropping a phone while fleeing injury does not surrender the privacy interest in its contents. Cite it as a published [[Reading and Citing Cases#slip-opinion|slip opinion]]; the [[Reading and Citing Cases#reporter|reporter]] (F.4th) citation is pending.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Hunt* is a leading digital-age refinement of **abandonment**: the doctrine survives for cellphones, but a *[[Riley v. California|Riley]]*-informed court must ask separately whether the suspect meant to abandon the **device** and whether he meant to abandon its **data** — so involuntarily dropping a phone while fleeing injury does not surrender the privacy interest in its contents. Cite it as a published [[Reading and Citing Cases#slip-opinion|slip opinion]]; the [[Reading and Citing Cases#reporter|reporter]] (F.4th) citation is pending.
 
 ## Appears on
 - [[Abandonment]] — *Key*
 
 ## Sources
-- [*United States v. Hunt*, No. 23-2342, slip op. (9th Cir. Aug. 27, 2025)](https://www.courtlistener.com/opinion/10661637/united-states-v-hunt/) — pinpoint: slip op. at 4 (device-vs-data separate-intent holding; FOR PUBLICATION slip opinion, no reporter pagination yet, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Hunt*, No. 23-2342, slip op. (9th Cir. Aug. 27, 2025)](https://www.courtlistener.com/opinion/10661637/united-states-v-hunt/) — pinpoint: slip op. at 4 (device-vs-data separate-intent holding; FOR PUBLICATION slip opinion, no reporter pagination yet, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

@@ -70,7 +70,7 @@ The strip behind the building was adjacent to the residence and partly enclosed 
 **Affirmed.** The Court of Appeals upheld the suppression order. Chief Judge Deits wrote for the court. (Decided under Article I, section 9, of the Oregon Constitution.)
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Larson* is a useful, illustrative state-court treatment of [[Curtilage|curtilage]] in the multi-family context: it rejects a mechanical single-home [[Curtilage|curtilage]] test for apartments and asks instead about physical layout and resident use. It is persuasive authority decided under the Oregon Constitution, illustrative for the federal *[[Curtilage]]* analysis rather than binding on it.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Larson* is a useful, illustrative state-court treatment of [[Curtilage|curtilage]] in the multi-family context: it rejects a mechanical single-home [[Curtilage|curtilage]] test for apartments and asks instead about physical layout and resident use. It is persuasive authority decided under the Oregon Constitution, illustrative for the federal *[[Curtilage]]* analysis rather than binding on it.
 
 ## Appears on
 - [[Curtilage]] — *Key*

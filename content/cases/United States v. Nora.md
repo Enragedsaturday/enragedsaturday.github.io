@@ -63,10 +63,10 @@ The evidence derived from the ensuing search was fruit of the unlawful arrest an
 The Ninth Circuit reversed the denial of suppression and [[Reading and Citing Cases#on-remand|remanded]]. Officers who surround a home and order a suspect out cannot rely on flight-based [[Exigent Circumstances and Hot Pursuit|exigency]] to avoid the warrant requirement when the perimeter already forecloses escape.
 
 ## Treatment & subsequent history
-- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
+- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until machine verification is complete.
 - *Nora* is the modern Ninth-Circuit spine of the surround-and-call-out (SACO) line: it applies the containment-vs-exit-command rule of *[[United States v. Al-Azzawy]]* (coerced emergence from a surrounded home is an in-home arrest) and marks the outer boundary of the flight-[[Exigent Circumstances and Hot Pursuit|exigency]] exception (perimeter defeats flight). It contrasts with the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995), and with the armed-standoff [[Exigent Circumstances and Hot Pursuit|exigency]] of *Fisher v. City of San Jose*, 558 F.3d 1069 (9th Cir. 2009) (en banc).
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 2722177 + 765 F.3d 1049); renders under the ⚪ banner until S9 promotion.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 2722177 + 765 F.3d 1049); renders under the ⚪ banner until machine verification is complete.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

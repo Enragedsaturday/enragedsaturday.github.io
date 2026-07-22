@@ -55,7 +55,7 @@ Yes. "A custodial arrest of a suspect based on probable cause is a reasonable in
 The authority to search the person is automatic upon a lawful custodial arrest; it does not depend on a case-by-case judgment that weapons or evidence would in fact be found in the particular situation.
 
 ## Application
-The officer made a lawful full-custody arrest of Robinson for driving after revocation of his license. Searching him incident to that arrest, the officer found a crumpled cigarette package, opened it, and discovered heroin. Because the arrest was lawful and custodial, the full search of Robinson's person — including opening the cigarette package — required no further justification and was reasonable; that the search was unlikely to yield weapons or evidence of the license offense was immaterial.
+The officer made a lawful full-custody arrest of Robinson for driving after revocation of his license. Searching him incident to that arrest, the officer found a crumpled cigarette package, opened it, and discovered heroin. Because the arrest was lawful and custodial, the full search of Robinson's person (including opening the cigarette package) required no further justification and was reasonable; that the search was unlikely to yield weapons or evidence of the license offense was immaterial.
 
 ## Conclusion
 The search of Robinson's person and the seizure of the heroin were valid as incident to a lawful custodial arrest; the Supreme Court reversed the Court of Appeals.
@@ -65,7 +65,7 @@ The search of Robinson's person and the seizure of the heroin were valid as inci
 - No negative treatment. *Robinson* states the [[Common Legal Terms#bright-line-rule|bright-line rule]] for searches of the person incident to a custodial arrest. [[Riley v. California]] later declined to extend that automatic-search authority to the **digital contents of a cell phone** (those require a warrant), and [[Arizona v. Gant]] cabined vehicle [[Search Incident to Arrest|searches incident to arrest]] — but neither disturbs *Robinson*'s rule for a full search of the arrestee's person and physical effects.
 
 ## Appears on
-- [[SIA Persons]] — *Key — Anchor*
+- [[SIA Persons]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Robinson*, 414 U.S. 218 (1973) — https://www.courtlistener.com/opinion/108893/united-states-v-robinson/ — pinpoint: 235 (parallel 94 S. Ct. 467).
+- *United States v. Robinson*, 414 U.S. 218 (1973) — https://www.courtlistener.com/opinion/108893/united-states-v-robinson/. Pinpoint: 235 (parallel 94 S. Ct. 467).

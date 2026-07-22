@@ -55,7 +55,7 @@ An express waiver is not required. "An express written or oral statement of waiv
 "The courts must presume that a defendant did not waive his rights; the prosecution's burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated." — *Id.* ^pin-373b
 
 ## Application
-Butler's refusal to sign the waiver form did not, by itself, defeat waiver. His statement that he would talk — made after he acknowledged understanding his rights and without invoking counsel — could support a finding that he waived his rights through his words and conduct. The Court rejected the North Carolina Supreme Court's [[Common Legal Terms#per-se|per se]] rule requiring an explicit waiver and [[Reading and Citing Cases#on-remand|remanded]] for a determination under the proper standard.
+Butler's refusal to sign the waiver form did not, by itself, defeat waiver. His statement that he would talk (made after he acknowledged understanding his rights and without invoking counsel) could support a finding that he waived his rights through his words and conduct. The Court rejected the North Carolina Supreme Court's [[Common Legal Terms#per-se|per se]] rule requiring an explicit waiver and [[Reading and Citing Cases#on-remand|remanded]] for a determination under the proper standard.
 
 ## Conclusion
 The state court's [[Common Legal Terms#per-se|per se]] rule requiring an express waiver was rejected; reversed and [[Reading and Citing Cases#on-remand|remanded]] to assess waiver from the totality of Butler's words and conduct.
@@ -65,7 +65,7 @@ The state court's [[Common Legal Terms#per-se|per se]] rule requiring an express
 - No negative treatment. *Butler*'s implied-waiver principle was reaffirmed and extended in [[Berghuis v. Thompkins]], and operates within the voluntary/knowing-and-intelligent framework of [[Moran v. Burbine]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *North Carolina v. Butler*, 441 U.S. 369 (1979) — https://www.courtlistener.com/opinion/110065/north-carolina-v-butler/ — pinpoint: 373.
+- *North Carolina v. Butler*, 441 U.S. 369 (1979) — https://www.courtlistener.com/opinion/110065/north-carolina-v-butler/. Pinpoint: 373.

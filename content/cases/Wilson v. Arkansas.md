@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Sharlene Wilson sold narcotics to a police informant; at one buy she waved a semiautomatic pistol in the informant's face and threatened to kill her. Police obtained warrants to search Wilson's home and to arrest her and her cohabitant Jacobs (who had a record of arson and firebombing). Executing the search warrant, officers found the main door open, opened an unlocked screen door, and entered while identifying themselves as police and announcing the warrant. They seized drugs, paraphernalia, a gun, and ammunition. Wilson moved to suppress, arguing the officers had failed to knock and announce before entering; the Arkansas Supreme Court held the Fourth Amendment imposes no such requirement.
+Sharlene Wilson sold narcotics to a police informant; at one buy she waved a semiautomatic pistol in the informant's face and threatened to kill her. Police obtained warrants to search Wilson's home and to arrest her and her cohabitant Jacobs (who had a record of arson and firebombing). Executing the search warrant, officers found the main door open, opened an unlocked screen door, and entered while identifying themselves as police and announcing the warrant. They seized drugs, paraphernalia, a gun, and ammunition. Wilson moved to suppress, arguing the officers had failed to knock-and-announce before entering; the Arkansas Supreme Court held the Fourth Amendment imposes no such requirement.
 
 ## Issue
 Whether the common-law "knock and announce" principle — that officers ordinarily must announce their presence and authority before entering a dwelling — forms part of the Fourth Amendment reasonableness inquiry.

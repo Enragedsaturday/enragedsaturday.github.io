@@ -67,10 +67,10 @@ Amos raised his hands only partway and paused for "maybe a second" before fleein
 The denial of the motion to suppress was **affirmed**; the court [[Reading and Citing Cases#on-remand|remanded]] for resentencing because Amos's prior Pennsylvania aggravated-assault conviction did not qualify as a "crime of violence." Nygaard, J., wrote for the court (Bibas, Nygaard, Fuentes, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Amos* illustrates the submission requirement of *[[California v. Hodari D.|Hodari D.]]* and *[[Brendlin v. California|Brendlin]]*: a moving suspect who only momentarily pauses before running has not submitted to a show of authority, so the Fourth Amendment clock does not start until physical restraint — the point at which reasonable suspicion is measured.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Amos* illustrates the submission requirement of *[[California v. Hodari D.|Hodari D.]]* and *[[Brendlin v. California|Brendlin]]*: a moving suspect who only momentarily pauses before running has not submitted to a show of authority, so the Fourth Amendment clock does not start until physical restraint — the point at which reasonable suspicion is measured.
 
 ## Appears on
 - [[Seizure of the Person]] — *Key*
 
 ## Sources
-- [*United States v. Amos*, 88 F.4th 446 (3d Cir. 2023)](https://www.courtlistener.com/opinion/9452158/united-states-v-shiheem-amos/) — pinpoint: slip op. at 10 (show-of-authority holding); the CL opinion text carries the slip-opinion page numbers rather than 88 F.4th star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Amos*, 88 F.4th 446 (3d Cir. 2023)](https://www.courtlistener.com/opinion/9452158/united-states-v-shiheem-amos/) — pinpoint: slip op. at 10 (show-of-authority holding); the CL opinion text carries the slip-opinion page numbers rather than 88 F.4th star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

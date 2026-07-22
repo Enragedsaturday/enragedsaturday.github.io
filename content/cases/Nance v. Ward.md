@@ -65,10 +65,10 @@ Nance's requested relief left his execution in Georgia's control: if the State w
 The judgment of the Eleventh Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Kagan, J., delivered the opinion of the Court, joined by Roberts, C.J., and Breyer, Sotomayor, and Kavanaugh, JJ.; Barrett, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Thomas, Alito, and Gorsuch, JJ.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Nance* is a vehicle-selection decision at the § 1983/[[Common Legal Terms#habeas-corpus|habeas]] boundary rather than a liability-standard case: it confirms that § 1983 reaches claims whose remedy would compel a change in state law, so long as the relief does not necessarily bar the sentence's enforcement.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Nance* is a vehicle-selection decision at the § 1983/[[Common Legal Terms#habeas-corpus|habeas]] boundary rather than a liability-standard case: it confirms that § 1983 reaches claims whose remedy would compel a change in state law, so long as the relief does not necessarily bar the sentence's enforcement.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Nance v. Ward*, 597 U.S. 159 (2022)](https://www.courtlistener.com/opinion/6480697/nance-v-ward/) — pinpoint: slip op., at 1 (Opinion of the Court, holding; Kagan, J.). CL carries the slip opinion ("597 U. S. ____ (2022)"; cluster 6480697 → opinion 6352830); slip-only per S2 A3 — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.
+- [*Nance v. Ward*, 597 U.S. 159 (2022)](https://www.courtlistener.com/opinion/6480697/nance-v-ward/) — pinpoint: slip op., at 1 (Opinion of the Court, holding; Kagan, J.). CL carries the slip opinion ("597 U. S. ____ (2022)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.

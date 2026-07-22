@@ -68,4 +68,4 @@ Reversed in relevant part. Misuse of state-conferred power is action under [[Sec
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*
 
 ## Sources
-- *United States v. Classic*, 313 U.S. 299 (1941) — https://www.courtlistener.com/opinion/103531/united-states-v-classic/ — interior pincite(s) 326 retired T3/P4-12 (CL stores a paragraph-numbered format without star pages; page per official U.S. Reports citation).
+- *United States v. Classic*, 313 U.S. 299 (1941) — https://www.courtlistener.com/opinion/103531/united-states-v-classic/ — interior pincite(s) 326 retired pending official-reporter pagination (CL stores a paragraph-numbered format without star pages; page per official U.S. Reports citation).

@@ -69,7 +69,7 @@ Weaver's consent authorized only a search for "Bear"; once that search produced 
 The suppression order was **affirmed**. Cochran, J., wrote for the majority (Meyers, Price, Womack, Johnson, Alcala, JJ.). Keller, P.J., and Keasler, J., dissented, arguing the dog sniff was not a search and that under *State v. Elias* the case should be [[Reading and Citing Cases#on-remand|remanded]] for a finding on whether the parking area was public or private.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Weaver* marks the private-premises limit on suspicionless canine sniffs: because the dog-sniff-is-not-a-search rule of *[[Illinois v. Caballes|Caballes]]* and *[[United States v. Place|Place]]* presupposes the officer's lawful presence, it does not reach a sniff conducted on private, non-public business [[Curtilage|curtilage]] after the owner's limited consent has ended.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Weaver* marks the private-premises limit on suspicionless canine sniffs: because the dog-sniff-is-not-a-search rule of *[[Illinois v. Caballes|Caballes]]* and *[[United States v. Place|Place]]* presupposes the officer's lawful presence, it does not reach a sniff conducted on private, non-public business [[Curtilage|curtilage]] after the owner's limited consent has ended.
 
 ## Appears on
 - [[Curtilage]] — *Key*

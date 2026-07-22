@@ -49,7 +49,7 @@ lake:
 A fire damaged the Cliffords' home in the early morning while they were away. Hours after the blaze was out and firefighters had left, an arson investigator and his partner arrived, entered the secured, uninhabitable house without a warrant or consent, and searched the basement (finding evidence of arson) and then the upstairs living areas. The Cliffords had arranged to have the house boarded up, and personal belongings remained inside.
 
 ## Issue
-Whether a warrantless, nonconsensual post-fire investigative search of a private home — conducted after the fire is extinguished and officials have left the scene — violates the Fourth Amendment, and what kind of warrant such a search requires.
+Whether a warrantless, nonconsensual post-fire investigative search of a private home (conducted after the fire is extinguished and officials have left the scene) violates the Fourth Amendment, and what kind of warrant such a search requires.
 
 ## Rule
 If reasonable privacy interests remain, a warrant is required: "If reasonable privacy interests remain in the fire-damaged property, the warrant requirement applies, and any official entry must be made pursuant to a warrant in the absence of consent or exigent circumstances." — 464 U.S. at 293 (plurality). ^pin-293
@@ -69,8 +69,8 @@ The post-fire warrantless searches violated the Fourth Amendment. *Clifford* ref
 - **Refines** [[Michigan v. Tyler]] by drawing the line at the end of the fire-fighting [[Exigent Circumstances and Hot Pursuit|exigency]] and dividing post-fire searches into administrative (cause/origin) and criminal (evidence) warrant tracks. Parallels the no-crime-scene-exception rule of [[Mincey v. Arizona]]; the administrative-warrant standard traces to [[Camara v. Municipal Court]].
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Limiting*
+- [[Emergency Aid]] — *Key: Limiting*
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Michigan v. Clifford*, 464 U.S. 287 (1984) — https://www.courtlistener.com/opinion/111057/michigan-v-clifford/ — pinpoints: 293, 294, 295.
+- *Michigan v. Clifford*, 464 U.S. 287 (1984) — https://www.courtlistener.com/opinion/111057/michigan-v-clifford/. Pinpoints: 293, 294, 295.

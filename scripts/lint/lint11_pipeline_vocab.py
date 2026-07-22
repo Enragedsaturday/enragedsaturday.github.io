@@ -59,7 +59,12 @@ CLASS2_RE = re.compile(r"\b(?:re-homed|moved|merged|split|migrated) from\b",
                        re.IGNORECASE)
 CLASS3_RES = [
     re.compile(r"CL-confirm pending", re.IGNORECASE),
-    re.compile(r"pending CL", re.IGNORECASE),
+    # left word-boundary guard (P4-17(d)): the bare `pending CL` fired inside
+    # "S|pending Cl|ause" (a load-bearing legal term on RLUIPA/§1983 pages), an
+    # 8-hit false positive. The negative lookbehind requires the status marker to
+    # begin at a non-letter (start, space, punctuation) so "Spending Clause" is
+    # skipped while a genuine "… pending CL confirmation" still fires.
+    re.compile(r"(?<![A-Za-z])pending CL", re.IGNORECASE),
     re.compile(r"annotate-only", re.IGNORECASE),
     re.compile(r"deferred to EXECUTE", re.IGNORECASE),
     re.compile(r"pending verification", re.IGNORECASE),

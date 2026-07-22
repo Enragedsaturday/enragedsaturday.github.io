@@ -71,7 +71,7 @@ Because the automobiles were seized from public streets and lots, the levy invad
 The judgment was **affirmed in part and reversed in part**, and the case **[[Reading and Citing Cases#on-remand|remanded]]**: the warrantless seizure of the automobiles was upheld, while the warrantless entry into the offices and seizure of the books and records was held unconstitutional. Blackmun, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *G. M. Leasing* remains a foundational statement that business premises enjoy Fourth Amendment protection and that an administrative or tax-collection objective does not relax the warrant requirement for entering them — while property seized from public places to satisfy a levy implicates no privacy interest at all.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *G. M. Leasing* remains a foundational statement that business premises enjoy Fourth Amendment protection and that an administrative or tax-collection objective does not relax the warrant requirement for entering them — while property seized from public places to satisfy a levy implicates no privacy interest at all.
 
 ## Appears on
 - [[Curtilage]] — *Key*

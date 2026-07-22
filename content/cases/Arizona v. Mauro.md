@@ -67,7 +67,7 @@ Mauro was not interrogated; his statements to his wife were admissible. The judg
 - No negative treatment. *Mauro* applies the functional-equivalent-of-interrogation test of [[Rhode Island v. Innis]] (the "words or actions . . . reasonably likely to elicit an incriminating response" standard) within the [[Miranda v. Arizona]] / [[Edwards v. Arizona]] framework, and reflects the volunteered-statements principle echoed in [[Oregon v. Elstad]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Arizona v. Mauro*, 481 U.S. 520 (1987) — https://www.courtlistener.com/opinion/111878/arizona-v-mauro/ — pinpoints: 527–530.
+- *Arizona v. Mauro*, 481 U.S. 520 (1987) — https://www.courtlistener.com/opinion/111878/arizona-v-mauro/. Pinpoints: 527–530.

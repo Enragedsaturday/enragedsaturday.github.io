@@ -62,7 +62,7 @@ The *Saucier* two-step sequence is no longer mandatory; reversing on the clearly
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Pearson* freed lower courts to address the qualified-immunity prongs in either order; it **limited** [[Saucier v. Katz]] by removing the mandatory sequencing while preserving *Saucier*'s two-part test.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Pearson v. Callahan*, 555 U.S. 223 (2009) — https://www.courtlistener.com/opinion/145918/pearson-v-callahan/ — pinpoint: 236.
+- *Pearson v. Callahan*, 555 U.S. 223 (2009) — https://www.courtlistener.com/opinion/145918/pearson-v-callahan/. Pinpoint: 236.

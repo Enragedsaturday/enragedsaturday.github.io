@@ -66,7 +66,7 @@ The officers exceeded the implied license, so the porch knock was an unlawful se
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.**
-- *Lundin* applies [[Florida v. Jardines]] to hold the implied license is limited by **time** and **purpose**, and that an officer's intent to arrest takes the approach outside the [[Knock and Talk|knock-and-talk]] exception — making the officer's subjective purpose relevant, an approach that divides the circuits. It also invokes [[Kentucky v. King]]'s rule that police may not rely on [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] they create through their own Fourth Amendment violation. Contrast [[United States v. Walker]] (11th Cir.), upholding a pre-dawn knock and talk on its facts, and [[United States v. Carloss]] (10th Cir.) on what conduct withdraws the license.
+- *Lundin* applies [[Florida v. Jardines]] to hold the implied license is limited by **time** and **purpose**, and that an officer's intent to arrest takes the approach outside the [[Knock and Talk|knock-and-talk]] exception — making the officer's subjective purpose relevant, an approach that divides the circuits. It also invokes [[Kentucky v. King]]'s rule that police may not rely on [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] they create through their own Fourth Amendment violation. Contrast [[United States v. Walker]] (11th Cir.), upholding a pre-dawn knock-and-talk on its facts, and [[United States v. Carloss]] (10th Cir.) on what conduct withdraws the license.
 
 ## Appears on
 - [[Knock and Talk]] — *Illustrates a circuit split*

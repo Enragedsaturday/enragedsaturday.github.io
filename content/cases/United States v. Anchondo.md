@@ -62,7 +62,7 @@ The search of Anchondo's person was a lawful [[Search Incident to Arrest|search 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- *Anchondo* applies the search-incident-to-arrest doctrine of [[Chimel v. California]] and the search-may-precede-arrest principle of [[Rawlings v. Kentucky]]. It is listed here on the **Automobile Exception** page as a cautionary cross-reference: despite frequent miscitation, its holding rests on [[Search Incident to Arrest|search incident to arrest]], not the automobile exception (compare [[Arizona v. Gant]] on vehicle [[Search Incident to Arrest|searches incident to arrest]]).
+- *Anchondo* applies the [[Search Incident to Arrest|search incident to arrest]] doctrine of [[Chimel v. California]] and the search-may-precede-arrest principle of [[Rawlings v. Kentucky]]. It is listed here on the **Automobile Exception** page as a cautionary cross-reference: despite frequent miscitation, its holding rests on [[Search Incident to Arrest|search incident to arrest]], not the automobile exception (compare [[Arizona v. Gant]] on vehicle [[Search Incident to Arrest|searches incident to arrest]]).
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*

@@ -54,7 +54,7 @@ aliases:
 
 # Rochin v. California
 
-*342 U.S. 165 (1952)* (No. 83) · Supreme Court of the United States · **Binding — SCOTUS** · Treatment: **Historical origin (⚪ unverified, pending S9)**
+*342 U.S. 165 (1952)* (No. 83) · Supreme Court of the United States · **Binding — SCOTUS** · Treatment: **Historical origin (⚪ unverified, awaiting machine verification)**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the historical framing below is authored orientation, not machine-certified. special: history-render — rendered as a foundational ORIGIN (role: Historical / origin) per PRACTICES §7: the "shocks the conscience" due-process principle is NOT overruled, but Rochin's function as the vehicle for excluding physical evidence from state prosecutions was a pre-incorporation stopgap later overtaken by Mapp v. Ohio. Identity cluster 104943 → combined opinion 104943 (Frankfurter, J.; 342 U.S. 165, decided Jan. 2, 1952). Rule quote string-matched to the CL opinion text 2026-07-07 (reporter star `*172`). S9 promotes. -->
 
 ## Background
@@ -73,7 +73,7 @@ The Court treated coerced physical evidence like a coerced confession: due proce
 The judgment of the California District Court of Appeal was **reversed**. Frankfurter, J., delivered the opinion of the Court; Black and Douglas, JJ., concurred separately, objecting that the "shocks the conscience" standard was too subjective and that the Self-Incrimination Clause supplied a firmer ground.
 
 ## Treatment & subsequent history
-**Status: Unverified — rendered as a historical origin.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Rochin* is preserved here as a **historical origin**, and it is neither overruled nor disguised — but its role has two distinct threads that must be kept apart:
+**Status: Unverified — rendered as a historical origin.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Rochin* is preserved here as a **historical origin**, and it is neither overruled nor disguised — but its role has two distinct threads that must be kept apart:
 
 - **Still good law (the due-process principle).** The "shocks the conscience" test for egregious executive conduct survives as the standard for substantive due process, expressly **reaffirmed** in *[[County of Sacramento v. Lewis]]* (1998). On that point *Rochin* remains live authority.
 - **Superseded in function (as a search-and-seizure remedy).** *Rochin* arose in the narrow window after *[[Wolf v. Colorado]]* (1949) applied the Fourth Amendment to the States but declined to impose the exclusionary rule; due process was then the only lever against the worst police intrusions. That stopgap was **overtaken** when *[[Mapp v. Ohio]]* (1961) incorporated the Fourth Amendment exclusionary rule against the States, and forced bodily intrusions were thereafter analyzed under the Fourth Amendment in *[[Schmerber v. California]]* (1966). Modern suppression of such evidence runs through the Fourth Amendment, not *Rochin*'s due-process route.

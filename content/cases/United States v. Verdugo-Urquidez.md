@@ -67,7 +67,7 @@ Verdugo-Urquidez was a citizen and resident of Mexico with no voluntary attachme
 The judgment of the Ninth Circuit was **reversed**. Rehnquist, C.J., delivered the opinion of the Court; Kennedy, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]]; Stevens, J., concurred in the judgment; Brennan, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Marshall, J.; Blackmun, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Verdugo-Urquidez* fixes the personal scope of the Fourth Amendment — defining who counts as "the people" — and remains the framework anchor for questions about the Amendment's reach over nonresident aliens and conduct abroad.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Verdugo-Urquidez* fixes the personal scope of the Fourth Amendment — defining who counts as "the people" — and remains the framework anchor for questions about the Amendment's reach over nonresident aliens and conduct abroad.
 
 ## Appears on
 - [[Private and Foreign Searches]] — *Key — Anchor (foreign search)*

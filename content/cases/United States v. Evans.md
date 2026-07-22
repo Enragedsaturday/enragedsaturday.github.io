@@ -58,7 +58,7 @@ The validity turns on adherence to a governing policy rather than the officer's 
 On these facts the search satisfied the inventory exception. A written policy (Section 239.29) directed that locked containers "must be opened and the contents inventoried before booking," and the court found no probable cause to believe contraband was inside when Sergeant Ring first opened the bag, so the policy's competing "obtain a warrant" directive was not triggered. Conducting the inventory at the bus station rather than the station house did not invalidate it, because the policy did not fix a location; and the officer's failure to take notes and his cessation of the search after the first bundle did not show a ruse, given that he was "at the very outset of the inventory" and stopped out of caution when Evans demanded a warrant. Because Sergeant Ring adhered to the standardized procedure and there was no evidence he intended any purpose other than inventory, the search was lawful and the later warranted openings were not fruit of an illegality.
 
 ## Conclusion
-The bus-station opening of the carry-on bag was a valid inventory search; the denial of the motion to suppress was affirmed. The court did not reach the district court's alternative inevitable-discovery ground.
+The bus-station opening of the carry-on bag was a valid inventory search; the denial of the motion to suppress was affirmed. The court did not reach the district court's alternative inevitable discovery ground.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**

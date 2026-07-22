@@ -69,10 +69,10 @@ The court reasoned that the government's interest is at its zenith at the border
 The First Circuit **reversed in part**, holding that the CBP and ICE policies do not violate the Fourth or First Amendments and rejecting the district court's contraband-only limitation.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Alasaad* is a leading circuit statement that the border-search exception reaches electronic devices without a warrant or probable cause, deepening a circuit consensus (with the Ninth and Eleventh Circuits) while leaving open the precise suspicion standard for advanced forensic searches — the open question *[[Riley v. California|Riley]]* pressed but did not resolve at the border.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Alasaad* is a leading circuit statement that the border-search exception reaches electronic devices without a warrant or probable cause, deepening a circuit consensus (with the Ninth and Eleventh Circuits) while leaving open the precise suspicion standard for advanced forensic searches — the open question *[[Riley v. California|Riley]]* pressed but did not resolve at the border.
 
 ## Appears on
 - [[Border Searches]] — *Key*
 
 ## Sources
-- [*Alasaad v. Wolf*, 988 F.3d 8 (1st Cir. 2021)](https://www.courtlistener.com/opinion/4855246/alasaad-v-wolf/) — pinpoint: slip op. at 16 (holding on warrant/probable cause); the CL opinion text carries the slip-opinion page numbers rather than 988 F.3d star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*Alasaad v. Wolf*, 988 F.3d 8 (1st Cir. 2021)](https://www.courtlistener.com/opinion/4855246/alasaad-v-wolf/) — pinpoint: slip op. at 16 (holding on warrant/probable cause); the CL opinion text carries the slip-opinion page numbers rather than 988 F.3d star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

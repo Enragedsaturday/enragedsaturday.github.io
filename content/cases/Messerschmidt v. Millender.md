@@ -71,4 +71,4 @@ Reversed. The officers were entitled to [[Qualified Immunity|qualified immunity]
 - [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Messerschmidt v. Millender*, 565 U.S. 535 (2012) — https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/ — interior pincite(s) 547 retired T3/P4-12 (lead opinion id 9485385).
+- *Messerschmidt v. Millender*, 565 U.S. 535 (2012) — https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/ — interior pincite(s) 547 retired pending official-reporter pagination (lead opinion id 9485385).

@@ -71,4 +71,4 @@ The undercover purchase was neither a search nor a seizure; the magazines were p
 - [[Consent Searches]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Maryland v. Macon*, 472 U.S. 463 (1985) — https://www.courtlistener.com/opinion/111477/maryland-v-macon/ — pinpoint: 469.
+- *Maryland v. Macon*, 472 U.S. 463 (1985) — https://www.courtlistener.com/opinion/111477/maryland-v-macon/. Pinpoint: 469.

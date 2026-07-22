@@ -73,7 +73,7 @@ Because of the industry's history of close supervision, the general rule of *[[S
 ## Treatment & subsequent history
 **Good law — foundational.** *Colonnade*, together with *[[United States v. Biswell]]* (firearms dealers, 1972), is one of the two foundational closely-regulated-industry cases: it establishes that a long history of pervasive regulation can support a statutory warrantless-inspection regime. The doctrine matured through *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]* and *[[Donovan v. Dewey]]* and was organized into the three-part test of *[[New York v. Burger]]* (1987).
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 108077 + 397 U.S. 72); renders under the ⚪ banner until S9 promotion. *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]* is not yet in the corpus and is named in plain text to avoid a dangling link.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 108077 + 397 U.S. 72); renders under the ⚪ banner until machine verification is complete. *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]* is not yet in the corpus and is named in plain text to avoid a dangling link.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — closely-regulated liquor-industry administrative inspection*

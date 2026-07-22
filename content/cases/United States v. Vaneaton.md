@@ -61,10 +61,10 @@ Because voluntariness is a factual finding reviewed only for [[Common Legal Term
 Affirmed. A suspect who voluntarily opens his door to a noncoercive knock and is arrested at the doorway has exposed himself to a lawful warrantless arrest; *[[Payton v. New York|Payton]]* is not offended. (Tashima, J., dissented, reading the result as contrary to *[[Payton v. New York|Payton]]*.)
 
 ## Treatment & subsequent history
-- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
+- **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until machine verification is complete.
 - *Vaneaton* is the voluntary-exposure pole of the Ninth-Circuit surround-and-call-out line — the containment-vs-exit-command contrast to *[[United States v. Al-Azzawy]]* (coerced emergence) and *[[United States v. Nora]]* (surround-and-summon under overwhelming force). The line turns on voluntariness: a free response to a noncoercive knock forfeits *[[Payton v. New York|Payton]]*'s protection; a coerced emergence under a show of force does not.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 691388 + 49 F.3d 1423); renders under the ⚪ banner until S9 promotion.
+*Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 691388 + 49 F.3d 1423); renders under the ⚪ banner until machine verification is complete.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

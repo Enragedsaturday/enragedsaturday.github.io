@@ -69,4 +69,4 @@ Applying its two-step framework, the Court held that even assuming a constitutio
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Saucier v. Katz*, 533 U.S. 194 (2001) — https://www.courtlistener.com/opinion/118449/saucier-v-katz/ — interior pincite(s) 201 retired T3/P4-12 (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).
+- *Saucier v. Katz*, 533 U.S. 194 (2001) — https://www.courtlistener.com/opinion/118449/saucier-v-katz/ — interior pincite(s) 201 retired pending official-reporter pagination (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).

@@ -66,7 +66,7 @@ Thompson's charges were dismissed before trial without any explanation, which is
 The judgment of the Second Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Kavanaugh, J., delivered the opinion of the Court; Alito, J., joined by Thomas, Gorsuch, and Barrett, JJ., dissented, disputing that the Fourth Amendment houses a malicious-prosecution claim at all.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Thompson* supplies the favorable-termination rule for Fourth Amendment malicious-prosecution claims; the Court applied and built on it in *[[Chiaverini v. City of Napoleon]]* (2024), which held that such claims are assessed charge by charge.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Thompson* supplies the favorable-termination rule for Fourth Amendment malicious-prosecution claims; the Court applied and built on it in *[[Chiaverini v. City of Napoleon]]* (2024), which held that such claims are assessed charge by charge.
 
 ## Appears on
 - [[Malicious Prosecution under the Fourth Amendment]] — *Key*

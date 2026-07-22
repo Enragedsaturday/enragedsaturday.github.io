@@ -31,7 +31,7 @@ homes:
 related: ["[[Alabama v. White]]", "[[Terry v. Ohio]]", "[[Illinois v. Gates]]"]
 aliases: ["Florida v. JL"]
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "anonymous-tip", "stop-and-frisk"]
-holding: "A bare anonymous tip that a person is carrying a gun, without more, is NOT reasonable suspicion for a stop and frisk; an accurate description of observable location and appearance identifies the suspect but does not show reliability as to concealed criminal activity or illegality."
+holding: "A bare anonymous tip that a person is carrying a gun, without more, is NOT reasonable suspicion for a stop-and-frisk; an accurate description of observable location and appearance identifies the suspect but does not show reliability as to concealed criminal activity or illegality."
 lake:
   record_id: Florida v. J.L.
   status: verified
@@ -52,7 +52,7 @@ Whether an anonymous tip that a person is carrying a gun, without more, furnishe
 ## Rule
 No. A bare anonymous tip that merely identifies a person is not enough; the tip must be reliable about the alleged wrongdoing, not just about who the suspect is. "The reasonable suspicion here at issue requires that a tip be reliable in its assertion of illegality, not just in its tendency to identify a determinate person." — 529 U.S. at 272. ^pin-272
 
-The Court refused to recognize a "firearm exception" that would permit a stop and frisk on a gun tip that failed standard reliability testing: "We decline to adopt this position." — [*Id.*](https://www.courtlistener.com/opinion/9189388/florida-v-j-l/#:~:text=justifies%20a%20%E2%80%9C-,firearm%20exception) ^pin-272a
+The Court refused to recognize a "firearm exception" that would permit a stop-and-frisk on a gun tip that failed standard reliability testing: "We decline to adopt this position." — [*Id.*](https://www.courtlistener.com/opinion/9189388/florida-v-j-l/#:~:text=justifies%20a%20%E2%80%9C-,firearm%20exception) ^pin-272a
 
 ## Application
 All the police had was an unknown caller's bare assertion that J.L. had a gun; the tip offered no predictive detail and nothing showing the caller knew of concealed criminal activity. That the description of J.L.'s appearance proved accurate showed only that the caller could identify him — not that he was breaking the law — so the officers lacked reasonable suspicion and the frisk was unlawful.

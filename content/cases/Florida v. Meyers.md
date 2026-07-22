@@ -43,7 +43,7 @@ lake:
 *466 U.S. 380 (1984)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
-> **Caption / identity note:** the official caption (and CourtListener) spell the respondent's name **"Meyers"** ("Florida v. Meyers, aka Weyers"). The ingest-queue spelling "Florida v. Myers" is carried as an `alias` so bare `[[Florida v. Myers]]` links resolve here (L6 identity correction; SR-5/N1 caption fix).
+> **Caption / identity note:** the official caption (and CourtListener) spell the respondent's name **"Meyers"** ("Florida v. Meyers, aka Weyers"). The ingest-queue spelling "Florida v. Myers" is carried as an `alias` so bare `[[Florida v. Myers]]` links resolve here.
 
 ## Background
 The respondent was arrested for sexual battery. Officers searched his car at the scene and seized items, then towed the car to a wrecker yard, where it was impounded in a locked, secure area. About eight hours later an officer returned to the compound and, without a warrant, searched the car a second time, seizing additional evidence. The Florida District Court of Appeal reversed the conviction, holding that although the first search was conceded valid, the second warrantless search violated the Fourth Amendment because impoundment had removed the car's mobility.
@@ -57,7 +57,7 @@ Yes. The automobile exception is not defeated by the car's prior impoundment or 
 The Court reiterated, quoting *[[Michigan v. Thomas|Thomas]]*, that "the justification to conduct such a warrantless search does not vanish once the car has been immobilized." — [*Id.*](https://www.courtlistener.com/opinion/111157/florida-v-meyers/#:~:text=the%20justification%20to%20conduct%20such) (quoting 458 U.S. at 261). ^pin-382a
 
 ## Application
-The state appellate court's ground — that impoundment removed mobility and therefore required a warrant for the second search — was "clearly inconsistent" with *[[Michigan v. Thomas]]* and *[[Chambers v. Maroney]]*. Because the justification for the warrantless search did not disappear once the car was impounded, the second search of the secured vehicle was valid.
+The state appellate court's ground (that impoundment removed mobility and therefore required a warrant for the second search) was "clearly inconsistent" with *[[Michigan v. Thomas]]* and *[[Chambers v. Maroney]]*. Because the justification for the warrantless search did not disappear once the car was impounded, the second search of the secured vehicle was valid.
 
 ## Conclusion
 Reversed (per curiam). A second warrantless search of an already-impounded car is permissible under the automobile exception; immobilization in police custody does not require a warrant.
@@ -70,4 +70,4 @@ Reversed (per curiam). A second warrantless search of an already-impounded car i
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Florida v. Meyers*, 466 U.S. 380 (1984) — https://www.courtlistener.com/opinion/111157/florida-v-meyers/ — pinpoint: 382.
+- *Florida v. Meyers*, 466 U.S. 380 (1984) — https://www.courtlistener.com/opinion/111157/florida-v-meyers/. Pinpoint: 382.

@@ -64,10 +64,10 @@ Whether Perttu destroyed Richards's grievances decided both the exhaustion defen
 The judgment of the Sixth Circuit was **affirmed**. Roberts, C.J., delivered the opinion of the Court, joined by Sotomayor, Kagan, Gorsuch, and Jackson, JJ.; Barrett, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Thomas, Alito, and Kavanaugh, JJ.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Perttu* is a procedural decision at the § 1983 prisoner-litigation gate: it keeps a jury, not the judge, as the factfinder when a PLRA exhaustion dispute and a jury-triable constitutional claim rise or fall on the same disputed fact.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Perttu* is a procedural decision at the § 1983 prisoner-litigation gate: it keeps a jury, not the judge, as the factfinder when a PLRA exhaustion dispute and a jury-triable constitutional claim rise or fall on the same disputed fact.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Perttu v. Richards*, 605 U.S. 460 (2025)](https://www.courtlistener.com/opinion/10776832/perttu-v-richards/) — interior pincite(s) 468 retired T3/P4-12 (Opinion of the Court, holding; Roberts, C.J.); quote string-matched to the CL opinion text 2026-07-07.
+- [*Perttu v. Richards*, 605 U.S. 460 (2025)](https://www.courtlistener.com/opinion/10776832/perttu-v-richards/) — interior pincite(s) 468 retired pending official-reporter pagination (Opinion of the Court, holding; Roberts, C.J.); quote string-matched to the CL opinion text 2026-07-07.

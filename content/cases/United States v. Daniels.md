@@ -69,11 +69,11 @@ Each factor fell short. The non-emergency "area watch" tip alleged no illegality
 **Affirmed**: the district court properly suppressed Daniels's name as the fruit of an unlawful detention. Seymour, J., wrote for the court (Eid, Seymour, Kelly, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Daniels* reinforces that reasonable suspicion must be particularized to the person seized: a suspect who does not match a tip's description, and whose only connection is proximity to a described vehicle in a high-crime area at night, cannot be detained on the tip or by association — echoing *[[United States v. Black]]* on lawful firearm activity and suspicion by association.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Daniels* reinforces that reasonable suspicion must be particularized to the person seized: a suspect who does not match a tip's description, and whose only connection is proximity to a described vehicle in a high-crime area at night, cannot be detained on the tip or by association — echoing *[[United States v. Black]]* on lawful firearm activity and suspicion by association.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key*
 - [[Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
-- [*United States v. Daniels*, 101 F.4th 770 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/) — pinpoint: slip op. at 6 (totality / no-reasonable-suspicion holding); the CL opinion text carries the slip-opinion page numbers rather than 101 F.4th star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Daniels*, 101 F.4th 770 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/) — pinpoint: slip op. at 6 (totality / no-reasonable-suspicion holding); the CL opinion text carries the slip-opinion page numbers rather than 101 F.4th star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

@@ -70,10 +70,10 @@ Hay's argument that sixty-eight days of continuous recording "painted an intimat
 **Affirmed.** Judge Tymkovich wrote for the panel (Tymkovich, Murphy, and Carson, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hay* is a leading data point on the **unsettled pole-camera question**: the Tenth Circuit (like the Fifth, Sixth, and Seventh) declines to extend *[[Carpenter v. United States|Carpenter]]*'s mosaic theory to fixed exterior camera surveillance of a home, while a First Circuit [[Reading and Citing Cases#en-banc|en banc]] court deadlocked and the Fourth Circuit found aerial city-wide tracking a search. Teach it as circuit-split / unsettled authority — never as a settled nationwide rule that pole cameras are categorically permissible.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Hay* is a leading data point on the **unsettled pole-camera question**: the Tenth Circuit (like the Fifth, Sixth, and Seventh) declines to extend *[[Carpenter v. United States|Carpenter]]*'s mosaic theory to fixed exterior camera surveillance of a home, while a First Circuit [[Reading and Citing Cases#en-banc|en banc]] court deadlocked and the Fourth Circuit found aerial city-wide tracking a search. Teach it as circuit-split / unsettled authority — never as a settled nationwide rule that pole cameras are categorically permissible.
 
 ## Appears on
 - [[Third-Party Doctrine & CSLI]] — *Lower-court development (pole cameras)*
 
 ## Sources
-- [*United States v. Hay*, 95 F.4th 1304 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9485331/united-states-v-hay/) — pinpoint: slip op. at 18 (the *Jackson*-binding / *Carpenter*-does-not-disturb holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Hay*, 95 F.4th 1304 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9485331/united-states-v-hay/) — pinpoint: slip op. at 18 (the *Jackson*-binding / *Carpenter*-does-not-disturb holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

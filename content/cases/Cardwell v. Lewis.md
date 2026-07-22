@@ -49,7 +49,7 @@ lake:
 Police investigating a murder had probable cause to believe the respondent's car had been used in the crime. After the respondent came to the station and was arrested, police impounded his car from a public commercial lot, towed it to an impound area, and there took paint scrapings from the exterior and made a cast of a tire tread. That exterior evidence was introduced at his murder trial.
 
 ## Issue
-Whether the warrantless examination of an automobile's exterior — paint scrapings and tire tread — on probable cause, after the car was impounded from a public lot, is a search that violates the Fourth Amendment.
+Whether the warrantless examination of an automobile's exterior (paint scrapings and tire tread) on probable cause, after the car was impounded from a public lot, is a search that violates the Fourth Amendment.
 
 ## Rule
 No. A vehicle, and especially its exterior, carries a reduced expectation of privacy: "One has a lesser expectation of privacy in a motor vehicle because its function is transportation and it seldom serves as one's residence or as the repository of personal effects. A car has little capacity for escaping public scrutiny. It travels public thoroughfares where both its occupants and its contents are in plain view." — 417 U.S. at 590 (plurality opinion). ^pin-590
@@ -73,4 +73,4 @@ The exterior examination was reasonable; the seizure and examination did not vio
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Cardwell v. Lewis*, 417 U.S. 583 (1974) — https://www.courtlistener.com/opinion/109069/cardwell-v-lewis/ — pinpoints: 590, 591, 592.
+- *Cardwell v. Lewis*, 417 U.S. 583 (1974) — https://www.courtlistener.com/opinion/109069/cardwell-v-lewis/. Pinpoints: 590, 591, 592.

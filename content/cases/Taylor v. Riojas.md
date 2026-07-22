@@ -62,7 +62,7 @@ The egregiousness of the conditions — cells teeming with human waste, with no 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Taylor* is a leading modern application of the *[[Hope v. Pelzer]]* "obvious case" route to defeating [[Qualified Immunity|qualified immunity]], a counterweight to the high-specificity decisions like [[Mullenix v. Luna]] and [[White v. Pauly]]. The same Term, the Court relied on it to GVR a related Fifth Circuit case (*McCoy v. Alamu*). No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 23 proposed); the proposed negative and audit-flagged top-cited progeny edges remain unresolved pending the R15 treatment audit.
+- *Taylor* is a leading modern application of the *[[Hope v. Pelzer]]* "obvious case" route to defeating [[Qualified Immunity|qualified immunity]], a counterweight to the high-specificity decisions like [[Mullenix v. Luna]] and [[White v. Pauly]]. The same Term, the Court relied on it to GVR a related Fifth Circuit case (*McCoy v. Alamu*). No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 23 proposed); the proposed negative and audit-flagged top-cited progeny edges remain unresolved pending a treatment-history audit.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Limiting*

@@ -72,7 +72,7 @@ Objectively, Crumble fled the crash, left the phone on the seat of a wrecked car
 **Affirmed.** Judge Shepherd wrote for the panel; the district court's abandonment finding was not [[Common Legal Terms#clear-error|clearly erroneous]], and the phone evidence was admissible.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Crumble* is a clean circuit application of the *[[Abandonment]]* doctrine to a modern device: fleeing and disclaiming ownership objectively forfeits the [[Reasonable Expectation of Privacy|reasonable expectation of privacy]], and *[[Riley v. California|Riley]]*'s special solicitude for phones does not exempt them from abandonment. Read it against the standing threshold of *[[Minnesota v. Carter]]*.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Crumble* is a clean circuit application of the *[[Abandonment]]* doctrine to a modern device: fleeing and disclaiming ownership objectively forfeits the [[Reasonable Expectation of Privacy|reasonable expectation of privacy]], and *[[Riley v. California|Riley]]*'s special solicitude for phones does not exempt them from abandonment. Read it against the standing threshold of *[[Minnesota v. Carter]]*.
 
 ## Appears on
 - [[Abandonment]] — *Key*

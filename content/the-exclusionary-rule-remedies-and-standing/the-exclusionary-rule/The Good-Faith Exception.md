@@ -124,7 +124,7 @@ flowchart TD
 - [*Illinois v. Krull*, 480 U.S. 340 (1987)](https://www.courtlistener.com/opinion/111835/illinois-v-krull/) (pinpoints: 349–50)
 - [*Michigan v. DeFillippo*, 443 U.S. 31 (1979)](https://www.courtlistener.com/opinion/110127/michigan-v-defillippo/) (pinpoint: 40)
 - [*Arizona v. Evans*, 514 U.S. 1 (1995)](https://www.courtlistener.com/opinion/117905/arizona-v-evans/) (pinpoints: 14, 16)
-- [*Herring v. United States*, 555 U.S. 135 (2009)](https://www.courtlistener.com/opinion/145922/herring-v-united-states/) (pinpoint: 129 S. Ct. at 702 — U.S.-reporter interior 144 retired T3/P4-12; also keyed on [[Collective Knowledge and the Fellow-Officer Rule|Collective Knowledge]])
+- [*Herring v. United States*, 555 U.S. 135 (2009)](https://www.courtlistener.com/opinion/145922/herring-v-united-states/) (pinpoint: 129 S. Ct. at 702 — U.S.-reporter interior 144 retired pending official-reporter pagination; also keyed on [[Collective Knowledge and the Fellow-Officer Rule|Collective Knowledge]])
 - [*Davis v. United States*, 564 U.S. 229 (2011)](https://www.courtlistener.com/opinion/218926/davis-v-united-states/) (pinpoints: 232, 249–50)
 - [*United States v. Calandra*, 414 U.S. 338 (1974)](https://www.courtlistener.com/opinion/108898/united-states-v-calandra/) (pinpoint: 348)
 - [*United States v. Janis*, 428 U.S. 433 (1976)](https://www.courtlistener.com/opinion/109539/united-states-v-janis/) (pinpoint: 454)

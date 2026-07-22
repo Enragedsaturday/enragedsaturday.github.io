@@ -67,7 +67,7 @@ Officers with probable cause to search a vehicle may search a passenger's belong
 - No negative treatment. *Houghton* extends the container rule of [[United States v. Ross]] (reaffirmed in [[California v. Acevedo]]) to a passenger's belongings. It governs property in the car, not the passenger's person; the related question of probable cause as to passengers themselves is addressed in [[Maryland v. Pringle]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Wyoming v. Houghton*, 526 U.S. 295 (1999) — https://www.courtlistener.com/opinion/118277/wyoming-v-houghton/ — pinpoints: 300, 307.
+- *Wyoming v. Houghton*, 526 U.S. 295 (1999) — https://www.courtlistener.com/opinion/118277/wyoming-v-houghton/. Pinpoints: 300, 307.

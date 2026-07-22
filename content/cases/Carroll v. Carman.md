@@ -42,7 +42,7 @@ tags:
   - curtilage
   - qualified-immunity
   - per-curiam
-holding: "It is not clearly established that the 'knock and talk' exception requires officers to approach only the front door; an officer who went to a side sliding-glass door that visitors could use was therefore entitled to qualified immunity, and the Supreme Court left open whether such an approach is constitutional."
+holding: "It is not clearly established that the 'knock-and-talk' exception requires officers to approach only the front door; an officer who went to a side sliding-glass door that visitors could use was therefore entitled to qualified immunity, and the Supreme Court left open whether such an approach is constitutional."
 aliases:
   - Carman v. Carroll
 ---
@@ -68,7 +68,7 @@ The Supreme Court, [[Common Legal Terms#per-curiam|per curiam]], reversed. It he
 [[Reading and Citing Cases#certiorari-cert|Certiorari]] granted; the judgment of the Third Circuit was **reversed** and the case [[Reading and Citing Cases#on-remand|remanded]] — Officer Carroll was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Carroll v. Carman* is a qualified-immunity decision that deliberately left the front-door question open: it neither adopted nor rejected the view that a lawful "knock and talk" (cf. *[[Florida v. Jardines]]*'s implied-license analysis) is confined to the front door, holding only that the contrary rule was not clearly established.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Carroll v. Carman* is a qualified-immunity decision that deliberately left the front-door question open: it neither adopted nor rejected the view that a lawful "knock and talk" (cf. *[[Florida v. Jardines]]*'s implied-license analysis) is confined to the front door, holding only that the contrary rule was not clearly established.
 
 ## Appears on
 - [[Knock and Talk]] — *Key*

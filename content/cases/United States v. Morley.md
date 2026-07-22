@@ -68,4 +68,4 @@ Both elements of the automobile exception were satisfied, so the warrantless sea
 - [[Automobile Exception]] — *Recent development (role-based)*
 
 ## Sources
-- *United States v. Morley*, 99 F.4th 1328 (11th Cir. 2024) — https://www.courtlistener.com/opinion/9498175/united-states-v-derrick-alfondso-morley/ — pinpoints given as slip-opinion pages (CourtListener carries the slip opinion; cluster 9498175 → opinion 9964788).
+- *United States v. Morley*, 99 F.4th 1328 (11th Cir. 2024) — https://www.courtlistener.com/opinion/9498175/united-states-v-derrick-alfondso-morley/. Pinpoints given as slip-opinion pages (CourtListener carries the slip opinion; cluster 9498175 → opinion 9964788).

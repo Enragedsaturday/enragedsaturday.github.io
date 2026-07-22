@@ -47,10 +47,10 @@ lake:
 During a domestic-dispute stop, officers let Neugin's wife retrieve her belongings from a truck. Deputy Clinton opened the camper shell on the back of the truck and looked inside without consent, saw a bucket of ammunition, and arrested Neugin, a felon. The truck was later impounded and a shotgun was found. Neugin moved to suppress the ammunition and firearm. The district court denied the motion under the community-caretaking exception, and Neugin appealed.
 
 ## Issue
-Whether the warrantless opening of the camper was justified by the community-caretaking exception, and, if not, whether the evidence was admissible under the inevitable-discovery exception to the exclusionary rule.
+Whether the warrantless opening of the camper was justified by the community-caretaking exception, and, if not, whether the evidence was admissible under the inevitable discovery exception to the exclusionary rule.
 
 ## Rule
-The inevitable-discovery exception lets the government avoid suppression only by showing the evidence would have been discovered by lawful means independent of the violation; it cannot rest on speculation. The court reiterated that "the inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'" — *United States v. Neugin*, 958 F.3d 924 (10th Cir. 2020) (slip op., at 15) (quoting *United States v. Owens*, 782 F.2d 146, 153 (10th Cir. 1986)). ^pin-op15
+The inevitable discovery exception lets the government avoid suppression only by showing the evidence would have been discovered by lawful means independent of the violation; it cannot rest on speculation. The court reiterated that "the inevitable discovery exception to the exclusionary rule cannot be invoked because of [a] highly speculative assumption of 'inevitability.'" — *United States v. Neugin*, 958 F.3d 924 (10th Cir. 2020) (slip op., at 15) (quoting *United States v. Owens*, 782 F.2d 146, 153 (10th Cir. 1986)). ^pin-op15
 
 ## Application
 Each link in the asserted chain of inevitability was too speculative. The court reasoned: "Without the violation, therefore, Mr. Neugin would not inevitably have been arrested. And without the arrest, the truck would not inevitably have been impounded and searched." — [*Id.*](https://www.courtlistener.com/opinion/4750564/united-states-v-neugin/#:~:text=Without%20the%20violation%2C%20therefore%2C%20Mr.) ^pin-op15a
@@ -58,7 +58,7 @@ Each link in the asserted chain of inevitability was too speculative. The court 
 The truck sat in a restaurant parking lot, and Neugin could have called his own towing company or a mechanic, so impoundment and an inventory search were not inevitable. Because the unconstitutional opening of the camper is what caused the discovery, the ammunition and shotgun were [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]]: "the police would not have inevitably discovered the evidence absent the Fourth Amendment violation . . . that evidence is fruit of the poisonous tree and should have been suppressed." — *Id.* (slip op., at 17). ^pin-op17
 
 ## Conclusion
-Opening the camper was an unconstitutional search that neither the community-caretaking nor the inevitable-discovery exception saved; the evidence should have been suppressed, and the Tenth Circuit reversed.
+Opening the camper was an unconstitutional search that neither the community-caretaking nor the inevitable discovery exception saved; the evidence should have been suppressed, and the Tenth Circuit reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**

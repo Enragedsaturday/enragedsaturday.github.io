@@ -66,7 +66,7 @@ The District Court had "passed on the substance" of King's FTCA claims and found
 The judgment of the Sixth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Thomas, J., delivered the opinion for a unanimous Court; Sotomayor, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]] questioning whether the judgment bar reaches claims resolved within the same suit.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Brownback* is a procedural decision about the interaction of the FTCA and *[[Bivens v. Six Unknown Named Agents|Bivens]]* remedies against federal officers; it holds only that an FTCA merits dismissal *can* trigger the § 2676 judgment bar, leaving the same-suit question open [[Reading and Citing Cases#on-remand|on remand]].
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Brownback* is a procedural decision about the interaction of the FTCA and *[[Bivens v. Six Unknown Named Agents|Bivens]]* remedies against federal officers; it holds only that an FTCA merits dismissal *can* trigger the § 2676 judgment bar, leaving the same-suit question open [[Reading and Citing Cases#on-remand|on remand]].
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*

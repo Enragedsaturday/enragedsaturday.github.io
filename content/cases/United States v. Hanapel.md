@@ -68,10 +68,10 @@ Neither element was established as a matter of law. On inducement, the governmen
 **Affirmed.** Chief Judge Colloton wrote for the panel (Colloton, C.J.; Erickson and Kobes, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hanapel* is a clean recent application of the federal **subjective** entrapment test: the controlling fact is **predisposition**, not the fact of inducement, so a sting that merely furnishes the opportunity — and a defendant's momentary hesitation before seizing it — leaves the jury's rejection of the defense intact.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Hanapel* is a clean recent application of the federal **subjective** entrapment test: the controlling fact is **predisposition**, not the fact of inducement, so a sting that merely furnishes the opportunity — and a defendant's momentary hesitation before seizing it — leaves the jury's rejection of the defense intact.
 
 ## Appears on
 - [[Entrapment]] — *Key*
 
 ## Sources
-- [*United States v. Hanapel*, 112 F.4th 539 (8th Cir. 2024)](https://www.courtlistener.com/opinion/10038262/united-states-v-james-hanapel/) — pinpoint: slip op. at 8 (predisposition / no-inducement-as-a-matter-of-law holding; the CL opinion text is slip-paginated, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. Hanapel*, 112 F.4th 539 (8th Cir. 2024)](https://www.courtlistener.com/opinion/10038262/united-states-v-james-hanapel/) — pinpoint: slip op. at 8 (predisposition / no-inducement-as-a-matter-of-law holding; the CL opinion text is slip-paginated, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

@@ -71,10 +71,10 @@ By the time officers entered, checkout had long passed, Mendoza had not extended
 **Affirmed.** Judge Ambro wrote for the panel (Restrepo, McKee, Ambro, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Mendoza* is a clean precedential illustration of the threshold standing inquiry (*[[Standing to Challenge a Search]]*): the *[[Katz v. United States|Katz]]* reasonable-expectation-of-privacy question is answered against a guest whose rental period has expired and whose room has reverted to the hotel — no privacy interest, no standing to suppress.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Mendoza* is a clean precedential illustration of the threshold standing inquiry (*[[Standing to Challenge a Search]]*): the *[[Katz v. United States|Katz]]* reasonable-expectation-of-privacy question is answered against a guest whose rental period has expired and whose room has reverted to the hotel — no privacy interest, no standing to suppress.
 
 ## Appears on
 - [[Standing to Challenge a Search]] — *Key*
 
 ## Sources
-- [*United States v. Ryan Mendoza*, No. 25-1154, slip op. (3d Cir. 2026)](https://www.courtlistener.com/opinion/10771114/united-states-v-ryan-mendoza/) — pinpoint: slip op. at 2 (no reasonable expectation of privacy in a hotel room five hours after checkout). Rule quote string-matched to the CL opinion text 2026-07-07. Precedential 3d Cir. slip; no F.4th cite assigned yet (S2 A3 slip precedent).
+- [*United States v. Ryan Mendoza*, No. 25-1154, slip op. (3d Cir. 2026)](https://www.courtlistener.com/opinion/10771114/united-states-v-ryan-mendoza/) — pinpoint: slip op. at 2 (no reasonable expectation of privacy in a hotel room five hours after checkout). Rule quote string-matched to the CL opinion text 2026-07-07. Precedential 3d Cir. slip; no F.4th cite assigned yet.

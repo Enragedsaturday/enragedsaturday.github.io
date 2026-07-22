@@ -66,7 +66,7 @@ A federal prisoner's Eighth Amendment excessive-force claim is a new *[[Bivens v
 The judgment of the Fourth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. The opinion was **[[Common Legal Terms#per-curiam|per curiam]]**.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Goldey* continues the Court's post-*[[Ziglar v. Abbasi]]* / *[[Egbert v. Boule]]* trajectory of confining *[[Bivens v. Six Unknown Named Agents|Bivens]]* to its three recognized contexts and refusing new implied damages remedies against federal officers — here, foreclosing Eighth Amendment excessive-force claims by federal prisoners.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Goldey* continues the Court's post-*[[Ziglar v. Abbasi]]* / *[[Egbert v. Boule]]* trajectory of confining *[[Bivens v. Six Unknown Named Agents|Bivens]]* to its three recognized contexts and refusing new implied damages remedies against federal officers — here, foreclosing Eighth Amendment excessive-force claims by federal prisoners.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*

@@ -62,7 +62,7 @@ The Sixth Amendment right to counsel was violated; the grant of [[Common Legal T
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of the Sixth Amendment holding. [[Reading and Citing Cases#on-remand|On remand]] the same evidence was later held admissible under the inevitable-discovery exception in [[Nix v. Williams]] (Williams II) — a ruling about the *exclusionary remedy*, not about *Brewer*'s right-to-counsel rule.
+- No negative treatment of the Sixth Amendment holding. [[Reading and Citing Cases#on-remand|On remand]] the same evidence was later held admissible under the inevitable discovery exception in [[Nix v. Williams]] (Williams II) — a ruling about the *exclusionary remedy*, not about *Brewer*'s right-to-counsel rule.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*

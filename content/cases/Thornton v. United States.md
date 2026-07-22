@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officer Nichols, in an unmarked car, noticed Marcus Thornton slow down to avoid driving next to him, and a license check showed the tags did not match the vehicle. Before Nichols could pull him over, Thornton parked and got out of his car. Nichols stopped him, obtained consent to a patdown, and found drugs in Thornton's pockets. Nichols arrested Thornton, handcuffed him, placed him in the patrol car, and then searched the passenger compartment of Thornton's vehicle, finding a handgun under the driver's seat. Thornton argued [[New York v. Belton]] did not apply because he was already outside the car when the officer first made contact.
+Officer Nichols, in an unmarked car, noticed Marcus Thornton slow down to avoid driving next to him, and a license check showed the tags did not match the vehicle. Before Nichols could pull him over, Thornton parked and got out of his car. Nichols stopped him, obtained consent to a pat-down, and found drugs in Thornton's pockets. Nichols arrested Thornton, handcuffed him, placed him in the patrol car, and then searched the passenger compartment of Thornton's vehicle, finding a handgun under the driver's seat. Thornton argued [[New York v. Belton]] did not apply because he was already outside the car when the officer first made contact.
 
 ## Issue
 Whether *[[New York v. Belton|Belton]]*'s rule — allowing a search of a vehicle's passenger compartment incident to the lawful custodial arrest of an occupant — applies when the officer does not initiate contact until after the arrestee has stepped out of the vehicle (a "recent occupant").

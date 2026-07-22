@@ -63,7 +63,7 @@ The confession was involuntary under the [[Common Legal Terms#totality-of-the-ci
 - Part of the due-process voluntariness line ([[Brown v. Mississippi]], [[Chambers v. Florida]], [[Ashcraft v. Tennessee]]); [[Colorado v. Connelly]] later held that coercive police activity is a necessary predicate to an involuntariness finding.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Spano v. New York*, 360 U.S. 315 (1959) — https://www.courtlistener.com/opinion/105917/spano-v-new-york/ — pinpoint: 323.
+- *Spano v. New York*, 360 U.S. 315 (1959) — https://www.courtlistener.com/opinion/105917/spano-v-new-york/. Pinpoint: 323.

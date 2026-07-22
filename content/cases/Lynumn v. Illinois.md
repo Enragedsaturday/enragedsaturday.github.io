@@ -55,7 +55,7 @@ No — such a confession is coerced. "It is thus abundantly clear that the petit
 If the will was overborne, "the confession cannot be deemed 'the product of a rational intellect and a free will.'" — *Id.* (quoting *Blackburn v. Alabama*, 361 U.S. 199, 208 (1960)). ^pin-534a
 
 ## Application
-On these facts the totality of circumstances overbore Lynumn's will: the threat to terminate aid for and remove her children, made by three officers and the informer who had framed her, to a person with no criminal-law experience and no adviser present, who had no reason to doubt the police could carry out the threats. The State conceded the circumstances had an "impellingly coercive" effect. Because her conviction rested in part on that coerced confession, it could not stand.
+On these facts the totality of the circumstances overbore Lynumn's will: the threat to terminate aid for and remove her children, made by three officers and the informer who had framed her, to a person with no criminal-law experience and no adviser present, who had no reason to doubt the police could carry out the threats. The State conceded the circumstances had an "impellingly coercive" effect. Because her conviction rested in part on that coerced confession, it could not stand.
 
 ## Conclusion
 The confession was coerced and involuntary; the judgment of conviction was reversed.

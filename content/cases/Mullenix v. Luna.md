@@ -68,4 +68,4 @@ Reversed (per curiam): Mullenix was entitled to [[Qualified Immunity|qualified i
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
 
 ## Sources
-- *Mullenix v. Luna*, 577 U.S. 7 (2015) (per curiam) — https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/ — interior pincite(s) 11, 12 retired T3/P4-12 (CL opinion in slip-opinion format; U.S. Reports pages per official citation).
+- *Mullenix v. Luna*, 577 U.S. 7 (2015) (per curiam) — https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/ — interior pincite(s) 11, 12 retired pending official-reporter pagination (CL opinion in slip-opinion format; U.S. Reports pages per official citation).

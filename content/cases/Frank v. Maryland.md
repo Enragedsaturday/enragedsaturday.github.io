@@ -10,7 +10,7 @@ circuit: ""
 year: 1959
 date_decided: 1959-05-04
 docket: 278
-authority_weight: "Historical (formerly Binding — SCOTUS)"
+authority_weight: "Historical"
 treatment:
   field_i_validity: unverified
   as_of_content: null
@@ -48,7 +48,7 @@ holding: "A municipal health inspector's demand to enter a home to inspect suspe
 
 # Frank v. Maryland
 
-*359 U.S. 360 (1959)* (No. 278) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, pending S9)** — overruled by [[Camara v. Municipal Court]] (1967)
+*359 U.S. 360 (1959)* (No. 278) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[Camara v. Municipal Court]] (1967)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 105880 → 359 U.S. 360, decided 1959-05-04; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -69,7 +69,7 @@ The conviction was **affirmed** by a 5–4 vote. Frankfurter, J., delivered the 
 ## Treatment & subsequent history
 **Overruled by [[Camara v. Municipal Court]] (1967).** *Frank* held that administrative inspections of the home fall outside the warrant requirement. Eight years later *[[Camara v. Municipal Court|Camara]]* rejected that view, holding that administrative searches are significant Fourth Amendment intrusions and generally require a warrant — though one issued on area-based "administrative probable cause" rather than individualized suspicion. Its companion case, *[[See v. City of Seattle]]*, applied the same rule to commercial premises.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
+*Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until machine verification is complete. Preserved as **history**, never as live law.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Historical administrative-inspection precursor*

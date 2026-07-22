@@ -65,11 +65,11 @@ Bartlett's claim failed at the threshold. Probable cause supported his arrest fo
 The judgment of the Ninth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Roberts, C.J., delivered the opinion of the Court; Justices Thomas, Gorsuch, and Ginsburg concurred in part and/or dissented in part, and Justice Sotomayor dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Nieves* remains the controlling framework for retaliatory-arrest claims; the Supreme Court construed its exception in *[[Gonzalez v. Trevino]]* (2024), rejecting a demand for narrow comparator evidence.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Nieves* remains the controlling framework for retaliatory-arrest claims; the Supreme Court construed its exception in *[[Gonzalez v. Trevino]]* (2024), rejecting a demand for narrow comparator evidence.
 
 ## Appears on
 - [[Retaliatory Arrest]] — *Key*
 
 ## Sources
-- [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — interior pincite(s) 406 retired T3/P4-12 (exception; Opinion of the Court). Quote string-matched to the CL opinion text (139 S. Ct. 1715, at 1727) 2026-07-07; U.S.-reporter pincite corroborated by *Gonzalez v. Trevino*, 602 U.S. 653 (2024).
+- [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — interior pincite(s) 406 retired pending official-reporter pagination (exception; Opinion of the Court). Quote string-matched to the CL opinion text (139 S. Ct. 1715, at 1727) 2026-07-07; U.S.-reporter pincite corroborated by *Gonzalez v. Trevino*, 602 U.S. 653 (2024).
 - [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — construing the *Nieves* exception.

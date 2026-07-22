@@ -65,11 +65,11 @@ Although the *[[Nieves v. Bartlett|Nieves]]* exception is "slim," the court belo
 The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]]** for the lower courts to assess whether Gonzalez's evidence suffices to satisfy the *[[Nieves v. Bartlett|Nieves]]* exception. The opinion was **[[Common Legal Terms#per-curiam|per curiam]]**; Justices Alito, Kavanaugh, and Jackson (joined by Sotomayor) filed [[Common Legal Terms#concurring-opinion|concurrences]], and Justice Thomas dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Gonzalez* clarifies rather than displaces *[[Nieves v. Bartlett|Nieves]]*: the decision [[Reading and Citing Cases#vacated|vacated]] the Fifth Circuit's judgment and left the sufficiency of Gonzalez's evidence — and the scope of the no-probable-cause rule for deliberative arrests — open [[Reading and Citing Cases#on-remand|on remand]].
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Gonzalez* clarifies rather than displaces *[[Nieves v. Bartlett|Nieves]]*: the decision [[Reading and Citing Cases#vacated|vacated]] the Fifth Circuit's judgment and left the sufficiency of Gonzalez's evidence — and the scope of the no-probable-cause rule for deliberative arrests — open [[Reading and Citing Cases#on-remand|on remand]].
 
 ## Appears on
 - [[Retaliatory Arrest]] — *Key*
 
 ## Sources
-- [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — interior pincite(s) 658 retired T3/P4-12 (per curiam holding); quote string-matched to the CL opinion text 2026-07-07.
+- [*Gonzalez v. Trevino*, 602 U.S. 653 (2024)](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) — interior pincite(s) 658 retired pending official-reporter pagination (per curiam holding); quote string-matched to the CL opinion text 2026-07-07.
 - [*Nieves v. Bartlett*, 587 U.S. 391 (2019)](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) — the general rule (at 402) and the exception (at 406) that *Gonzalez* construes.

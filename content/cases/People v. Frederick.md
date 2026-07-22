@@ -72,7 +72,7 @@ Because the officers approached the homes during predawn hours — outside the h
 **Reversed and [[Reading and Citing Cases#on-remand|remanded]]** for the trial court to determine whether the consents were attenuated from the officers' illegal searches. Justice McCormack wrote for a unanimous court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Frederick* is a widely taught state-court application of *[[Florida v. Jardines|Jardines]]*: the implied license to knock has temporal limits, and a predawn approach converts a [[Knock and Talk|knock-and-talk]] into a trespassory search. It is persuasive, illustrative authority (Michigan Supreme Court) for the federal *[[Knock and Talk|knock-and-talk]]* doctrine, not binding federal precedent.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Frederick* is a widely taught state-court application of *[[Florida v. Jardines|Jardines]]*: the implied license to knock has temporal limits, and a predawn approach converts a [[Knock and Talk|knock-and-talk]] into a trespassory search. It is persuasive, illustrative authority (Michigan Supreme Court) for the federal *[[Knock and Talk|knock-and-talk]]* doctrine, not binding federal precedent.
 
 ## Appears on
 - [[Knock and Talk]] — *Key*

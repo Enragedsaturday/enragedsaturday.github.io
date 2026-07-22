@@ -54,7 +54,7 @@ Whether police may make a warrantless, nighttime entry into a suspect's home to 
 ## Rule
 The seriousness of the crime bears directly on whether an [[Exigent Circumstances and Hot Pursuit|exigency]] justifies a warrantless home entry: the Court "hold[s] that an important factor to be considered when determining whether any exigency exists is the gravity of the underlying offense for which the arrest is being made." — 466 U.S. at 753. ^pin-753
 
-For minor offenses, [[Exigent Circumstances and Hot Pursuit|exigency]] will seldom suffice: "application of the exigent-circumstances exception in the context of a home entry should rarely be sanctioned when there is probable cause to believe that only a minor offense, such as the kind at issue in this case, has been committed." — *Id.* And a warrantless home arrest for such an offense is "clearly prohibited by the special protection afforded the individual in his home by the Fourth Amendment." — [*Id.* at 755](https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/#:~:text=application%20of%20the%20exigent%2Dcircumstances%20exception%20in). ^pin-755
+For minor offenses, [[Exigent Circumstances and Hot Pursuit|exigency]] will seldom suffice: "application of the exigent-circumstances exception in the context of a home entry should rarely be sanctioned when there is probable cause to believe that only a minor offense, such as the kind at issue in this case, has been committed." (*Id.*) And a warrantless home arrest for such an offense is "clearly prohibited by the special protection afforded the individual in his home by the Fourth Amendment." — [*Id.* at 755](https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/#:~:text=application%20of%20the%20exigent%2Dcircumstances%20exception%20in). ^pin-755
 
 ## Application
 On these facts no [[Exigent Circumstances and Hot Pursuit|exigency]] justified the entry. [[Exigent Circumstances and Hot Pursuit|Hot pursuit]] did not apply because there was no immediate or continuous pursuit from the scene. With Welsh already home and his car abandoned at the scene, there was little remaining threat to public safety. The only claimed emergency was the dissipation of his blood-alcohol level — but because Wisconsin had classified a first DWI offense as a noncriminal civil forfeiture with no jail, the State's minimal interest could not justify a warrantless entry into the home. The arrest was therefore unreasonable.
@@ -68,7 +68,7 @@ The warrantless, nighttime home entry to arrest Welsh for a civil traffic offens
 
 ## Appears on
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*
+- [[Exigent Circumstances and Hot Pursuit]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Welsh v. Wisconsin*, 466 U.S. 740 (1984) — https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/ — pinpoints: 753, 755.
+- *Welsh v. Wisconsin*, 466 U.S. 740 (1984) — https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/. Pinpoints: 753, 755.

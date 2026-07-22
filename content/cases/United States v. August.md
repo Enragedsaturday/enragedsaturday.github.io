@@ -31,7 +31,7 @@ homes:
 related: ["[[Maryland v. Buie]]", "[[United States v. Conner]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "protective-sweep", "securing-the-scene"]
-holding: "(Binding in-circuit — 5th Cir.; Persuasive (outside circuit)) Articulates a four-part protective-sweep test and extends *Buie*'s officer-safety rationale to curtilage and to a non-arrest, investigatory entry."
+holding: "Articulates a four-part protective-sweep test and extends *Buie*'s officer-safety rationale to curtilage and to a non-arrest, investigatory entry."
 lake:
   record_id: United States v. August
   status: verified

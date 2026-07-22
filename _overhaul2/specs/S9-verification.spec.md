@@ -461,6 +461,26 @@ relitigation, no deck work, no content redesign).
    pattern); the **Claude MCP lane** carries the ≥1-in-10 judgment slice (COH-17). Two lanes,
    two credentials, never crossed.
 
+### A2 — R10(a) callout↔registry equivalence standard (2026-07-21, P4 execution; USER-APPROVED)
+**Supersedes the words "deep-equals its registry `statement`" in R10(a).** The P4 COH gate
+measured 0/80 verbatim matches: the corpus as built (S3→S5→S7) carries hand-edited registry
+paraphrases with the page callout as the authoritative prose. The gate standard is now
+**semantic equivalence + citation consistency** — a callout and its registry statement must
+state the same rule at the same breadth on the same authorities; paraphrase is permitted;
+divergence in SUBSTANCE or in cited authority set remains a defect. Executed at P4: the 17
+substantive divergences individually adjudicated (COH-B: 15 dismissed within tolerance, 1
+callout added, 1 registry-note); the 61 cite-divergences recorded as registry-notes
+(`_run/s9/p4/out/COH-B-registry-notes.jsonl` — registry cites poorer-not-wrong; no page defect).
+Evidence: `_run/s9/p4/out/COH-report.json` · RULING P4-04 · user approval 2026-07-21.
+
+### A3 — Secondary-home placement convention (2026-07-21, P4 execution; USER-APPROVED)
+A case's `homes[]` may declare a secondary home page that does not render the case (a "soft
+relation"): NOT a defect at the R13 gate. Requirements that survive: treatment identity + N4
+tags apply wherever a case IS rendered (R6, unchanged); an unrendered **Key** declaration is a
+false curricular claim and is narrowed on sight (P4 executed: Moore-Bush, Cortez, Sokolow);
+`## Appears on` must stay in sync with `homes[]`. Basis: P2 home-mirror precedent (class
+dismissed), RULING P4-13(b), B45 analysis; user approval 2026-07-21.
+
 ---
 
 ## Cross-spec notes filed with this spec

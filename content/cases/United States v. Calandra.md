@@ -55,7 +55,7 @@ The exclusionary rule is a judicial deterrent, not a personal right of the aggri
 Because applying the rule to grand jury questioning would achieve little additional deterrence while unduly impeding the grand jury's investigative role, the Court declined to extend it there; a grand jury witness may not refuse to answer questions merely because they are based on illegally obtained evidence.
 
 ## Application
-The Fourth Amendment wrong against Calandra — the unlawful seizure — was already complete; grand jury questions drawing on that evidence inflicted no fresh invasion of his person, house, papers, or effects. Suppressing such questions would extend the exclusionary rule's costs to the grand jury for only speculative incremental deterrence. The Court therefore held Calandra could not refuse to answer, and reversed the order suppressing the grand jury questions.
+The Fourth Amendment wrong against Calandra (the unlawful seizure) was already complete; grand jury questions drawing on that evidence inflicted no fresh invasion of his person, house, papers, or effects. Suppressing such questions would extend the exclusionary rule's costs to the grand jury for only speculative incremental deterrence. The Court therefore held Calandra could not refuse to answer, and reversed the order suppressing the grand jury questions.
 
 ## Conclusion
 The exclusionary rule does not apply to grand jury proceedings, and Calandra had to answer; the suppression order was reversed. Exclusion is a deterrence-driven judicial remedy whose reach is set by weighing its costs against its deterrent benefits, not a personal constitutional entitlement.
@@ -65,7 +65,7 @@ The exclusionary rule does not apply to grand jury proceedings, and Calandra had
 - *Calandra*'s deterrence rationale qualifies the suppression remedy of [[Mapp v. Ohio]] and anchors the cost-benefit analysis later used to narrow exclusion in [[Hudson v. Michigan]], [[Herring v. United States]], and [[Immigration & Naturalization Service v. Lopez-Mendoza]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Calandra*, 414 U.S. 338 (1974) — https://www.courtlistener.com/opinion/108898/united-states-v-calandra/ — pinpoint: 348.
+- *United States v. Calandra*, 414 U.S. 338 (1974) — https://www.courtlistener.com/opinion/108898/united-states-v-calandra/. Pinpoint: 348.

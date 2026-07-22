@@ -105,12 +105,12 @@ flowchart TD
 ## Sources
 
 - [*Brigham City v. Stuart*, 547 U.S. 398 (2006)](https://www.courtlistener.com/opinion/145654/brigham-city-v-stuart/) (pinpoints: 400, 404)
-- [*Case v. Montana*, 607 U.S. ___ (2026) (No. 24-624)](https://www.courtlistener.com/opinion/10774335/case-v-montana/) (pinpoints: slip op. at 7, 8, 9 — current-Term slip pins stand, S1 R14 / S7 R5 T4)
+- [*Case v. Montana*, 607 U.S. ___ (2026) (No. 24-624)](https://www.courtlistener.com/opinion/10774335/case-v-montana/) (pinpoints: slip op. at 7, 8, 9 — current-Term slip pins stand)
 - [*Michigan v. Fisher*, 558 U.S. 45 (2009) (per curiam)](https://www.courtlistener.com/opinion/1755/michigan-v-fisher/) (pinpoint: 48)
 - [*Ryburn v. Huff*, 565 U.S. 469 (2012) (per curiam)](https://www.courtlistener.com/opinion/622303/ryburn-v-huff/) (pinpoints: 476, 477)
 - [*Mincey v. Arizona*, 437 U.S. 385 (1978)](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/) (pinpoints: 392, 393)
-- [*Caniglia v. Strom*, 593 U.S. 194 (2021)](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/) (home-bar holding paraphrased; 2021 slip pins downgraded to case cite per S7 R5)
+- [*Caniglia v. Strom*, 593 U.S. 194 (2021)](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/) (home-bar holding paraphrased; 2021 slip pins downgraded to case cite)
 - [*Michigan v. Tyler*, 436 U.S. 499 (1978)](https://www.courtlistener.com/opinion/109874/michigan-v-tyler/) (pinpoints: 509, 510, 511)
 - [*Michigan v. Clifford*, 464 U.S. 287 (1984) (plurality)](https://www.courtlistener.com/opinion/111057/michigan-v-clifford/) (pinpoint: 294)
-- [*Gaetjens v. Winnebago County*, 4 F.4th 487 (7th Cir. 2021)](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) (owed S6 home_row discharged; F.4th reporter cite, post-2020 slip pins paraphrased per S7 R5 T3)
+- [*Gaetjens v. Winnebago County*, 4 F.4th 487 (7th Cir. 2021)](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) (F.4th reporter cite; post-2020 slip pins paraphrased rather than page-cited)
 </content>

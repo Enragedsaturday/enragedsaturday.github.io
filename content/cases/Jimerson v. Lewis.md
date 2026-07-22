@@ -67,10 +67,10 @@ The court accepted that Lewis's identification of the house was objectively defi
 The denial of [[Qualified Immunity|qualified immunity]] was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]] for dismissal**. Southwick, J., wrote for the majority; Dennis, J., dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Jimerson* is a recent, sharply divided illustration of [[Qualified Immunity|qualified immunity]]'s "clearly established law" prong operating in the wrong-house-raid context: even a deficient effort to identify the place to be searched (*[[Maryland v. Garrison|Garrison]]*) does not defeat immunity without precedent squarely on point.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Jimerson* is a recent, sharply divided illustration of [[Qualified Immunity|qualified immunity]]'s "clearly established law" prong operating in the wrong-house-raid context: even a deficient effort to identify the place to be searched (*[[Maryland v. Garrison|Garrison]]*) does not defeat immunity without precedent squarely on point.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key*
 
 ## Sources
-- [*Jimerson v. Lewis*, 94 F.4th 423 (5th Cir. 2024)](https://www.courtlistener.com/opinion/9475670/jimerson-v-lewis/) — pinpoint: slip op. at 1–2 (holding on qualified immunity / clearly established law); the CL opinion text carries the slip-opinion page numbers rather than 94 F.4th star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*Jimerson v. Lewis*, 94 F.4th 423 (5th Cir. 2024)](https://www.courtlistener.com/opinion/9475670/jimerson-v-lewis/) — pinpoint: slip op. at 1–2 (holding on qualified immunity / clearly established law); the CL opinion text carries the slip-opinion page numbers rather than 94 F.4th star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

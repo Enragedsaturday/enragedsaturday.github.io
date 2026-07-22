@@ -23,7 +23,16 @@ if REPO_ROOT not in sys.path:
 from scripts.s2 import serializer  # noqa: E402
 
 LINT = "LINT-14"
-ACCEPTED = {"verified", "under_review", "verified_off_cl"}
+# RULING P4-18(ii) (2026-07-22) — verified_identity JOINS the publish gate, mirroring
+# A16's verified_off_cl addition. `verified_identity` is a legitimate S2 R1 listed status:
+# the identity two-key is confirmed, but either the party-name-in-text half is not earnable
+# from the lead-opinion cache text (party-name-miss / cache-miss) or field_i_validity is
+# still `unverified` (breadth-marked promotions), so the record cannot reach `verified`
+# without fabricating a two-key leg (schema allOf[1]; S2 R2). Reader safety is the P4-14
+# fieldI reader banner, which models exactly {status: verified_identity, field_i: unverified},
+# plus every content assertion carrying its own pin/quote discipline. The stronger `verified`
+# state is still EARNED per P4-18(i) wherever the cache text supplies the missing leg.
+ACCEPTED = {"verified", "under_review", "verified_off_cl", "verified_identity"}
 
 
 def load_records(cases_dir=None):
@@ -114,7 +123,8 @@ def check_page(path, records):
             1,
             c.HIGH,
             "case page record %s has status=%r; publish gate accepts only "
-            "verified, under_review, or verified_off_cl [R12/A16]"
+            "verified, under_review, verified_off_cl, or verified_identity "
+            "[R12/A16/P4-18]"
             % (c.relpath(record_path), status),
         ))
     return out
@@ -140,6 +150,9 @@ def self_test():
         # empty record_id masked to this (clean) record; after the fix the empty
         # override is flagged instead of silently resolving here.
         "lint-14-page-emptyid-fail": ("fixtures/lint-14-emptyid.json", {"record_id": "lint-14-page-emptyid-fail", "status": "verified", "stub": False}),
+        # RULING P4-18(ii): a page-backed record at status=verified_identity is
+        # publish-eligible (the P4-14 fieldI reader banner carries reader safety).
+        "lint-14-page-vident-pass": ("fixtures/lint-14-vident.json", {"record_id": "lint-14-page-vident-pass", "status": "verified_identity", "stub": False}),
     }
     ok = True
     with tempfile.TemporaryDirectory(prefix="lint14-load-records-self-test-") as tmp:

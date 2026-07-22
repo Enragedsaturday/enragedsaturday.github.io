@@ -51,7 +51,7 @@ lake:
 A trailer-park owner, without an eviction order, forcibly towed the Soldals' mobile home off its lot two weeks before the scheduled eviction hearing. Cook County sheriff's deputies stood by to prevent Soldal from interfering and declined to take his trespass complaint, knowing the eviction was unlawful. Soldal sued under § 1983, claiming an unreasonable seizure. The Seventh Circuit held there was no Fourth Amendment "seizure" because only possessory (not privacy or liberty) interests were affected.
 
 ## Issue
-Whether a meaningful interference with a person's possessory interest in property — here, the towing of a home — is a "seizure" under the Fourth Amendment even though no privacy or liberty interest was invaded.
+Whether a meaningful interference with a person's possessory interest in property (here, the towing of a home) is a "seizure" under the Fourth Amendment even though no privacy or liberty interest was invaded.
 
 ## Rule
 Yes. "A 'seizure' of property, we have explained, occurs when 'there is some meaningful interference with an individual's possessory interests in that property.'" — 506 U.S. at 61 (quoting [[United States v. Jacobsen]]). ^pin-61
@@ -69,9 +69,9 @@ The towing of the Soldals' home was a Fourth Amendment seizure; the Seventh Circ
 - Applies the seizure definition of [[United States v. Jacobsen]] to possessory interests and complements the plain-view seizure analysis of [[Horton v. California]]; the Court cautioned the Amendment does not protect possessory interests in *all* property (cf. [[Oliver v. United States]], open fields).
 
 ## Appears on
-- [[Seizure of Property]] — *Key — Anchor (seizure of property)*
+- [[Seizure of Property]] — *Key: Anchor (seizure of property)*
 - [[Trespass]] — *Related (cross-doctrine)*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Soldal v. Cook County*, 506 U.S. 56 (1992) — https://www.courtlistener.com/opinion/112795/soldal-v-cook-county/ — pinpoints: 61, 62.
+- *Soldal v. Cook County*, 506 U.S. 56 (1992) — https://www.courtlistener.com/opinion/112795/soldal-v-cook-county/. Pinpoints: 61, 62.

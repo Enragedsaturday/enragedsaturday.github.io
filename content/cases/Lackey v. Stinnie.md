@@ -65,10 +65,10 @@ The drivers' preliminary injunction gave them only temporary success at an inter
 The judgment of the Fourth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Roberts, C.J., delivered the opinion of the Court, joined by Thomas, Alito, Kagan, Gorsuch, Kavanaugh, and Barrett, JJ.; Jackson, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Sotomayor, J.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Lackey* narrows the availability of § 1988(b) fee awards in § 1983 civil-rights litigation: a preliminary-injunction winner whose case is mooted before final judgment cannot recover fees, which may affect the incentives to bring and settle such suits.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Lackey* narrows the availability of § 1988(b) fee awards in § 1983 civil-rights litigation: a preliminary-injunction winner whose case is mooted before final judgment cannot recover fees, which may affect the incentives to bring and settle such suits.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Lackey v. Stinnie*, 604 U.S. 192 (2025)](https://www.courtlistener.com/opinion/10776869/lackey-v-stinnie/) — interior pincite(s) 204 retired T3/P4-12 (holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Lackey v. Stinnie*, 604 U.S. 192 (2025)](https://www.courtlistener.com/opinion/10776869/lackey-v-stinnie/) — interior pincite(s) 204 retired pending official-reporter pagination (holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.

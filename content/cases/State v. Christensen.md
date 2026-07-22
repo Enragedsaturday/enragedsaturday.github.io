@@ -68,10 +68,10 @@ The court reasoned that a "No Trespassing" sign merely makes explicit the ordina
 The defendant was **not entitled to relief** on the implied-license theory; the [[Knock and Talk|knock-and-talk]] did not violate the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Christensen* is a leading state-high-court application of *[[Florida v. Jardines]]*'s implied-license framework to the recurring "No Trespassing" problem, holding that ordinary signage does not, by itself, defeat the customary license underlying the [[Knock and Talk|knock-and-talk]].
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Christensen* is a leading state-high-court application of *[[Florida v. Jardines]]*'s implied-license framework to the recurring "No Trespassing" problem, holding that ordinary signage does not, by itself, defeat the customary license underlying the [[Knock and Talk|knock-and-talk]].
 
 ## Appears on
 - [[Knock and Talk]] — *Key*
 
 ## Sources
-- [*State v. Christensen*, 517 S.W.3d 60 (Tenn. 2017)](https://www.courtlistener.com/opinion/4381703/state-of-tennessee-v-james-robert-christensen-jr/) — pinpoint: slip op. at 18 (implied-license holding); the CL opinion text carries the slip-opinion page numbers rather than 517 S.W.3d star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*State v. Christensen*, 517 S.W.3d 60 (Tenn. 2017)](https://www.courtlistener.com/opinion/4381703/state-of-tennessee-v-james-robert-christensen-jr/) — pinpoint: slip op. at 18 (implied-license holding); the CL opinion text carries the slip-opinion page numbers rather than 517 S.W.3d star pagination, so the pin is slip-style. Rule quote string-matched to the CL opinion text 2026-07-07.

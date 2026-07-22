@@ -80,6 +80,23 @@ ISO_DATE_RE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 # the R5 carve-out table header (skipped)
 R5_CARVEOUT = ["point of law", "status", "controlling authority"]
 
+# F-S5-04 carve-out (RULING P4-16(b)) — the GENERATED master Case Index.
+# `scripts/build_case_index.py` emits a richer 5-column index than the bare
+# `| Case | Primary home | Opinion |` reference schema: it prints the projected
+# one-line holding, the projected Good-law status glyph/token (S4-R10 REQUIRES a
+# non-blank Good-law cell — "no blank treatment cell"), the home doctrine page(s),
+# and the CourtListener opinion link. These cells are a projection of case-page
+# frontmatter + the S8 term-linker, NOT authored data, so on the Case Index page
+# (and ONLY there) this generated header is accepted, the authored-data-cell
+# checks (treatment token / weight label / ISO date) do not apply to the generated
+# columns, and a no-CL case may carry the generated "—" opinion sentinel (pre-CL
+# English cases like Entick/Wilkes, page-less flagged-omit rows, and the index
+# self-row all legitimately have no CourtListener opinion).
+GENERATED_INDEX_HEADER = ["Case", "Holding", "Good law", "Home page(s)", "CourtListener"]
+# the generated no-opinion sentinel: an Opinion cell that is empty or only dash
+# characters (em/en dash, hyphen, minus) after markdown-stripping.
+_NO_CL_SENTINEL_RE = re.compile(r"^[\s—–‒‐‑−-]*$")
+
 
 def _host(url):
     """Extract the real host of an opinion link. Uses urllib.parse.urlsplit so
@@ -169,7 +186,12 @@ def check_file(path):
         required = c.section_schema_kind(sec_title)  # 'related'|'key'|'index'|None
         actual = c.schema_of_header(header_cells)     # exact schema key or None
         sec_label = sec_title.strip() if sec_title else "(no section)"
-        if actual is None:
+        # F-S5-04 (RULING P4-16(b)): the generated 5-column master-index header is
+        # accepted on the Case Index page only (S4-R10 mandates the Good-law column).
+        is_generated_index = is_index_page and header_cells == GENERATED_INDEX_HEADER
+        if is_generated_index:
+            pass  # generated master-index schema — no authored-header defect
+        elif actual is None:
             if required is not None:
                 want = c.CASE_TABLE_SCHEMAS[required][0]
                 out.append(c.make_violation(
@@ -208,8 +230,13 @@ def check_file(path):
             rline = start + ridx
             cells = c.split_table_row(body_lines[ridx])
 
-            # (2) authored-data tokens (R7/R13)
-            for cell in cells:
+            # (2) authored-data tokens (R7/R13).
+            # F-S5-04 (RULING P4-16(b)): skip on the generated Case Index — its
+            # Good-law / Holding cells are projected (build_case_index.py) from
+            # frontmatter, not authored. A leaked weight-label or ISO-date prefix
+            # inside a projected holding is a source-frontmatter matter (fix the
+            # case-page `holding:`, then regenerate), never an index-authoring defect.
+            for cell in ([] if is_index_page else cells):
                 wlbl = c.weight_label_in_cell(cell)  # full A8 allowlist incl. Historical
                 if wlbl:
                     out.append(c.make_violation(
@@ -246,7 +273,14 @@ def check_file(path):
             elif opinion_col is not None:
                 ocell = cells[opinion_col]
                 links = list(c.MDLINK_URL_RE.finditer(ocell))
-                if len(links) != 1:
+                # F-S5-04 (RULING P4-16(b)): on the generated Case Index a no-CL case
+                # renders the "—" opinion sentinel (pre-CL English cases, page-less
+                # flagged-omit rows, the index self-row). Accept 0 links iff the cell
+                # is that generated sentinel; a real link is still anchor/host-checked
+                # below, and a double-linked cell still fails.
+                sentinel_ok = (is_index_page and len(links) == 0
+                               and _NO_CL_SENTINEL_RE.match(_strip_md(ocell)))
+                if len(links) != 1 and not sentinel_ok:
                     out.append(c.make_violation(
                         LINT, path, rline, c.HIGH,
                         "Opinion column must carry exactly one non-empty opinion "

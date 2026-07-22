@@ -65,7 +65,7 @@ The unlawfully seized evidence was admissible in the federal civil tax proceedin
 - No negative treatment. *Janis* is a foundational cost-benefit limit on the exclusionary rule, applied alongside [[United States v. Calandra]] (grand jury) and later relied on by [[United States v. Leon]] (good faith) and [[Pennsylvania Board of Probation and Parole v. Scott]] (parole hearings). It draws on the deterrence rationale of [[Elkins v. United States]] and [[Mapp v. Ohio]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Limiting*
+- [[The Exclusionary Rule]] — *Key: Limiting*
 
 ## Sources
-- *United States v. Janis*, 428 U.S. 433 (1976) — https://www.courtlistener.com/opinion/109539/united-states-v-janis/ — pinpoint: 454.
+- *United States v. Janis*, 428 U.S. 433 (1976) — https://www.courtlistener.com/opinion/109539/united-states-v-janis/. Pinpoint: 454.

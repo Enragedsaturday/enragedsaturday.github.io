@@ -70,10 +70,10 @@ LDOC, as the funding recipient, agreed to answer certain RLUIPA suits — but th
 **Affirmed** as to the individual-capacity claims. Justice Gorsuch wrote for the Court (6–3).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Landor* marks the ceiling of Spending Clause remedies against individuals: unlike § 1983, which reaches state officers sued in their personal capacities by force of statute, a funding-condition statute like RLUIPA binds only the consenting recipient — leaving injured plaintiffs to look elsewhere for personal-capacity damages.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Landor* marks the ceiling of Spending Clause remedies against individuals: unlike § 1983, which reaches state officers sued in their personal capacities by force of statute, a funding-condition statute like RLUIPA binds only the consenting recipient — leaving injured plaintiffs to look elsewhere for personal-capacity damages.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Landor v. Louisiana Dept. of Corrections and Public Safety*, No. 23-1197, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10878535/landor-v-louisiana-dept-of-corrections-and-public-safety/) — pinpoint: slip op. at 1 (Spending Clause individual-capacity consent rule). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet (S2 A3 slip precedent).
+- [*Landor v. Louisiana Dept. of Corrections and Public Safety*, No. 23-1197, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10878535/landor-v-louisiana-dept-of-corrections-and-public-safety/) — pinpoint: slip op. at 1 (Spending Clause individual-capacity consent rule). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet.

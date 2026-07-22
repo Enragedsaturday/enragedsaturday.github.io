@@ -50,7 +50,7 @@ holding: "Absent a valid exception, a closed, opaque container whose contents ar
 
 # Robbins v. California
 
-*453 U.S. 420 (1981)* (No. 80-148) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, pending S9)** — overruled by [[United States v. Ross]] (1982)
+*453 U.S. 420 (1981)* (No. 80-148) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[United States v. Ross]] (1982)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 110558 → 453 U.S. 420, decided 1981-07-01; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
@@ -71,7 +71,7 @@ The judgment of the California Court of Appeal was **reversed**. Stewart, J., an
 ## Treatment & subsequent history
 **Overruled by [[United States v. Ross]] (1982).** *Robbins*'s bright-line container rule survived barely a year. In *[[United States v. Ross|Ross]]* the Court held that when police have probable cause to search a lawfully stopped vehicle, that authority extends to every part of the car and any container within it that might conceal the object of the search — rejecting *Robbins*. *[[California v. Acevedo]]* (1991) then completed the shift, unifying the container rule and overruling *[[Arkansas v. Sanders]]* as well.
 
-*Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
+*Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until machine verification is complete. Preserved as **history**, never as live law.
 
 ## Appears on
 - [[Automobile Exception]] — *Historical / superseded container rule*

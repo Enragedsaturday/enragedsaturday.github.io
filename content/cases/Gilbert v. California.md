@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Gilbert was convicted of armed robbery and the murder of a police officer. Sixteen days after his indictment and the appointment of counsel, police conducted a lineup in a Los Angeles auditorium — without notice to his counsel — before roughly 100 eyewitnesses to various robberies. At trial, several witnesses identified Gilbert in court, and the State also elicited testimony that they had identified him at the uncounseled lineup.
+Gilbert was convicted of armed robbery and the murder of a police officer. Sixteen days after his indictment and the appointment of counsel, police conducted a lineup in a Los Angeles auditorium (without notice to his counsel) before roughly 100 eyewitnesses to various robberies. At trial, several witnesses identified Gilbert in court, and the State also elicited testimony that they had identified him at the uncounseled lineup.
 
 ## Issue
 What relief is required when the State introduces (1) in-court identifications by witnesses who viewed an uncounseled post-indictment lineup and (2) testimony that those witnesses identified the accused at that lineup.
@@ -63,7 +63,7 @@ Admission of the witnesses' testimony about their uncounseled-lineup identificat
 - No negative treatment of *Gilbert*'s holding. The *[[United States v. Wade|Wade]]*-*Gilbert* right to counsel attaches only at or after the initiation of adversary judicial proceedings ([[Kirby v. Illinois]]); *Gilbert*'s own lineup was post-indictment and remains within the rule.
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Anchor*
+- [[Eyewitness Identification]] — *Key: Anchor*
 
 ## Sources
-- *Gilbert v. California*, 388 U.S. 263 (1967) — https://www.courtlistener.com/opinion/107487/gilbert-v-california/ — pinpoint: 273.
+- *Gilbert v. California*, 388 U.S. 263 (1967) — https://www.courtlistener.com/opinion/107487/gilbert-v-california/. Pinpoint: 273.

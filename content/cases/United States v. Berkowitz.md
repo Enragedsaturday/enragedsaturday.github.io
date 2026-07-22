@@ -71,7 +71,7 @@ The legality of Berkowitz's arrest turned on a fact the record did not resolve. 
 Berkowitz's assistance-of-counsel and sentencing challenges were rejected, but the case was **[[Reading and Citing Cases#on-remand|remanded]]** for an evidentiary hearing on the motion to suppress. Manion, J., wrote for the court (Coffey, Ripple, Manion, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Berkowitz* is the Seventh Circuit's framework for the "knock and arrest" at the doorway: *[[Payton v. New York|Payton]]* is not offended when officers announce an arrest from outside and the suspect surrenders at the threshold, but it is violated by a warrantless, nonexigent entry made before the arrest is effected — the same line later drawn in *[[Knight v. Jacobson]]* between the officer's body and his voice.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Berkowitz* is the Seventh Circuit's framework for the "knock and arrest" at the doorway: *[[Payton v. New York|Payton]]* is not offended when officers announce an arrest from outside and the suspect surrenders at the threshold, but it is violated by a warrantless, nonexigent entry made before the arrest is effected — the same line later drawn in *[[Knight v. Jacobson]]* between the officer's body and his voice.
 
 ## Appears on
 - [[Entry to Arrest]] — *Key*

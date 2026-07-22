@@ -72,10 +72,10 @@ The District of Columbia Court of Appeals committed the very error the totality 
 **Reversed.** [[Common Legal Terms#per-curiam|Per curiam]]. Because the court below departed from those principles and Officer Vanterpool clearly had reasonable suspicion to stop R.W., the Supreme Court summarily reversed the suppression ruling.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *R.W.* is a recent, error-correcting [[Common Legal Terms#per-curiam|per curiam]] reaffirming that the reasonable-suspicion inquiry is holistic — a rebuke of "divide-and-conquer" review that recurs whenever a lower court discounts individually innocent factors (compare *[[Kansas v. Glover]]* and the totality method of *[[Terry v. Ohio|Terry]]*).
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *R.W.* is a recent, error-correcting [[Common Legal Terms#per-curiam|per curiam]] reaffirming that the reasonable-suspicion inquiry is holistic — a rebuke of "divide-and-conquer" review that recurs whenever a lower court discounts individually innocent factors (compare *[[Kansas v. Glover]]* and the totality method of *[[Terry v. Ohio|Terry]]*).
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Recent development*
 
 ## Sources
-- [*District of Columbia v. R.W.*, No. 25-248, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) — pinpoint: slip op. at 2 (totality-of-the-circumstances rule; no divide-and-conquer). Rule quote string-matched to the CL opinion text 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet (S2 A3 slip precedent).
+- [*District of Columbia v. R.W.*, No. 25-248, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/) — pinpoint: slip op. at 2 (totality-of-the-circumstances rule; no divide-and-conquer). Rule quote string-matched to the CL opinion text 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet.

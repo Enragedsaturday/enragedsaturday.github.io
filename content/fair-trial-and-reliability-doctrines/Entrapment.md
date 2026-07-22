@@ -97,5 +97,5 @@ flowchart TD
 - [Hampton v. United States, 425 U.S. 484 (1976)](https://www.courtlistener.com/opinion/109437/hampton-v-united-states/) — pinpoint 490
 - [Illinois v. Perkins, 496 U.S. 292 (1990)](https://www.courtlistener.com/opinion/112452/illinois-v-perkins/) (Related; home = [[Miranda and Custodial Interrogation]])
 - [United States v. Henry, 447 U.S. 264 (1980)](https://www.courtlistener.com/opinion/110300/united-states-v-henry/) (Related; home = [[Sixth Amendment Right to Counsel]])
-- [United States v. Hanapel (8th Cir. 2024)](https://www.courtlistener.com/opinion/10038262/united-states-v-james-hanapel/) (Binding in-circuit — 8th Cir.; no standalone case page)
-- [United States v. Perez-Rodriguez (1st Cir. 2021)](https://www.courtlistener.com/opinion/5067201/united-states-v-perez-rodriguez/) (Binding in-circuit — 1st Cir.; no standalone case page)
+- [United States v. Hanapel (8th Cir. 2024)](https://www.courtlistener.com/opinion/10038262/united-states-v-james-hanapel/) (Binding in-circuit — 8th Cir.)
+- [United States v. Perez-Rodriguez (1st Cir. 2021)](https://www.courtlistener.com/opinion/5067201/united-states-v-perez-rodriguez/) (Binding in-circuit — 1st Cir.)

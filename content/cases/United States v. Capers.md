@@ -69,7 +69,7 @@ The same inspector conducted both rounds, on the same theft, under materially si
 **Affirmed.** Judge Hall wrote for the panel; Judge Trager dissented. The suppression order was upheld.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Capers* is a leading circuit application of the *[[Miranda Waiver and Invocation|Miranda]]* two-step doctrine, adopting Justice Kennedy's *[[Missouri v. Seibert|Seibert]]* [[Common Legal Terms#concurring-opinion|concurrence]]: a deliberate question-first strategy voids a later warned confession unless curative measures restore the warning's meaning.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Capers* is a leading circuit application of the *[[Miranda Waiver and Invocation|Miranda]]* two-step doctrine, adopting Justice Kennedy's *[[Missouri v. Seibert|Seibert]]* [[Common Legal Terms#concurring-opinion|concurrence]]: a deliberate question-first strategy voids a later warned confession unless curative measures restore the warning's meaning.
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key*

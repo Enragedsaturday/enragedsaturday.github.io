@@ -79,6 +79,6 @@ flowchart TD
 
 - [*United States v. Karo*, 468 U.S. 705 (1984)](https://www.courtlistener.com/opinion/111257/united-states-v-karo/) (pinpoints: 714, 715)
 - [*Kyllo v. United States*, 533 U.S. 27 (2001)](https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/) (pinpoints: 34, 40)
-- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite: R5 T3)
+- [*Carpenter v. United States*, 585 U.S. 296 (2018)](https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/) (case-level cite; interior pinpoints paraphrased rather than page-cited)
 - *State v. Andrews* (Md. Ct. Spec. App. 2016) — cell-site-simulator warrant requirement; coverage-ledger brief-mention (no standalone page).
 - U.S. Dep't of Justice, Policy Guidance: Use of Cell-Site Simulator Technology (Sept. 3, 2015); U.S. Dep't of Homeland Security, Policy Directive 047-02 (Oct. 19, 2015).

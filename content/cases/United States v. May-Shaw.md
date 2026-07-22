@@ -70,10 +70,10 @@ None of the *[[United States v. Dunn|Dunn]]* factors carried May-Shaw's burden. 
 **Affirmed.** Judge Bush wrote for the panel (Merritt, Clay, and Bush, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *May-Shaw* is a useful *[[United States v. Dunn|Dunn]]*-factors application at the **[[Curtilage|curtilage]] / open-view boundary**: a partially enclosed but **communal** carport that the resident cannot exclude others from, and that is plainly visible from a public street, falls outside the [[Curtilage|curtilage]] — so a dog sniff there is not a search, and *[[Collins v. Virginia|Collins]]* (a walled-off driveway the owner shielded) does not compel the opposite result.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *May-Shaw* is a useful *[[United States v. Dunn|Dunn]]*-factors application at the **[[Curtilage|curtilage]] / open-view boundary**: a partially enclosed but **communal** carport that the resident cannot exclude others from, and that is plainly visible from a public street, falls outside the [[Curtilage|curtilage]] — so a dog sniff there is not a search, and *[[Collins v. Virginia|Collins]]* (a walled-off driveway the owner shielded) does not compel the opposite result.
 
 ## Appears on
 - [[Curtilage]] — *Key*
 
 ## Sources
-- [*United States v. May-Shaw*, 955 F.3d 563 (6th Cir. 2020)](https://www.courtlistener.com/opinion/4743325/united-states-v-christopher-may-shaw/) — pinpoint: slip op. at 12 (carport-not-curtilage / dog-sniff-not-a-search holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*United States v. May-Shaw*, 955 F.3d 563 (6th Cir. 2020)](https://www.courtlistener.com/opinion/4743325/united-states-v-christopher-may-shaw/) — pinpoint: slip op. at 12 (carport-not-curtilage / dog-sniff-not-a-search holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

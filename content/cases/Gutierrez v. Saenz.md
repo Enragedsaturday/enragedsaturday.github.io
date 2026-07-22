@@ -70,10 +70,10 @@ Gutierrez's injury was the denial of access to DNA testing under an assertedly u
 **Reversed and [[Reading and Citing Cases#on-remand|remanded]]** (93 F.4th 267). Justice Sotomayor wrote for the Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Gutierrez* extends *Reed v. Goertz* and reinforces that a § 1983 procedural-due-process plaintiff challenging a postconviction evidence scheme need only show that a favorable declaration would clear away the challenged barrier — a redressability point of general importance to standing under the civil-rights statute.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Gutierrez* extends *Reed v. Goertz* and reinforces that a § 1983 procedural-due-process plaintiff challenging a postconviction evidence scheme need only show that a favorable declaration would clear away the challenged barrier — a redressability point of general importance to standing under the civil-rights statute.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — first-page cite (interior pincite 314 retired per T3/P4-12: `html_with_citations` empty, no star pagination; standing / redressability holding at syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print) — string-matched 2026-07-07.
+- [*Gutierrez v. Saenz*, 606 U.S. 305 (2025)](https://www.courtlistener.com/opinion/10776824/gutierrez-v-saenz/) — first-page cite (interior pincite 314 retired pending official-reporter pagination: `html_with_citations` empty, no star pagination; standing / redressability holding at syllabus "Pp. 314–321"). Rule quote sourced from opinion 11243411 `plain_text` (U.S. Reports preliminary print) — string-matched 2026-07-07.

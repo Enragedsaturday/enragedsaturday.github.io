@@ -67,8 +67,8 @@ Section 3501 modified McNabb-Mallory without supplanting it. The judgment of the
 - No negative treatment. *Corley* is the controlling modern statement of the federal prompt-presentment rule, applying [[McNabb v. United States]] and [[Mallory v. United States]] as modified by 18 U.S.C. §3501. It is a **federal-court** evidentiary rule (Federal Rule of Criminal Procedure 5(a) / §3501), not a constitutional rule binding the States. It draws on [[Dickerson v. United States]] for the background that §3501 was Congress's response to [[Miranda v. Arizona]] and McNabb-Mallory.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 - [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Corley v. United States*, 556 U.S. 303 (2009) — https://www.courtlistener.com/opinion/145888/corley-v-united-states/ — pinpoints: 309, 322.
+- *Corley v. United States*, 556 U.S. 303 (2009) — https://www.courtlistener.com/opinion/145888/corley-v-united-states/. Pinpoints: 309, 322.

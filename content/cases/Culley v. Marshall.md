@@ -65,10 +65,10 @@ The petitioners' demand for a separate preliminary hearing was, in substance, a 
 The judgment of the Eleventh Circuit was **affirmed**. Kavanaugh, J., delivered the opinion of the Court; Gorsuch, J., joined by Thomas, J., concurred; Sotomayor, J., joined by Kagan and Jackson, JJ., dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Culley* is a due-process/timing decision that sets the federal floor for civil forfeiture of personal property; it leaves state-law innovations and the *[[United States v. $8,850 in Currency|$8,850]]* timeliness inquiry undisturbed.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Culley* is a due-process/timing decision that sets the federal floor for civil forfeiture of personal property; it leaves state-law innovations and the *[[United States v. $8,850 in Currency|$8,850]]* timeliness inquiry undisturbed.
 
 ## Appears on
 - [[Civil Asset Forfeiture]] — *Recent development*
 
 ## Sources
-- [*Culley v. Marshall*, 601 U.S. 377 (2024)](https://www.courtlistener.com/opinion/10600097/culley-v-marshall/) — interior pincite(s) 381 retired T3/P4-12 (Opinion of the Court, holding); quote string-matched to the CL opinion text 2026-07-07.
+- [*Culley v. Marshall*, 601 U.S. 377 (2024)](https://www.courtlistener.com/opinion/10600097/culley-v-marshall/) — interior pincite(s) 381 retired pending official-reporter pagination (Opinion of the Court, holding); quote string-matched to the CL opinion text 2026-07-07.

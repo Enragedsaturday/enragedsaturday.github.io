@@ -71,10 +71,10 @@ Olivier sought neither the reversal of his conviction nor damages for it — onl
 **Reversed and [[Reading and Citing Cases#on-remand|remanded]].** Justice Kagan wrote for a unanimous Court (9–0).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Olivier* cabins *[[Heck v. Humphrey|Heck]]*'s favorable-termination rule to claims that would undermine a conviction or seek release/damages, confirming that prospective injunctive relief against future enforcement remains available under § 1983 even to a previously convicted plaintiff.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Olivier* cabins *[[Heck v. Humphrey|Heck]]*'s favorable-termination rule to claims that would undermine a conviction or seek release/damages, confirming that prospective injunctive relief against future enforcement remains available under § 1983 even to a previously convicted plaintiff.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Olivier v. City of Brandon*, No. 24-993, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10811625/olivier-v-city-of-brandon/) — pinpoint: slip op. at 1 (Heck does not bar prospective-relief § 1983 suits). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet (S2 A3 slip precedent).
+- [*Olivier v. City of Brandon*, No. 24-993, slip op. (U.S. 2026)](https://www.courtlistener.com/opinion/10811625/olivier-v-city-of-brandon/) — pinpoint: slip op. at 1 (Heck does not bar prospective-relief § 1983 suits). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07. Current-Term slip opinion; no U.S. Reports cite assigned yet.

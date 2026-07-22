@@ -67,7 +67,7 @@ An officer knew that Gaetjens's doctor and emergency contact could not reach her
 The grant of summary judgment to the defendants was **affirmed**; the warrantless entry, condemnation, and animal seizures were each justified by [[Exigent Circumstances and Hot Pursuit|exigent circumstances]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Gaetjens* is a recent Seventh Circuit application of the emergency-aid exception (*[[Brigham City v. Stuart]]*), reaffirming that a warrantless home entry to render aid turns on an objectively reasonable belief that an occupant needs immediate help, not on the officer's subjective motive.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Gaetjens* is a recent Seventh Circuit application of the emergency-aid exception (*[[Brigham City v. Stuart]]*), reaffirming that a warrantless home entry to render aid turns on an objectively reasonable belief that an occupant needs immediate help, not on the officer's subjective motive.
 
 ## Appears on
 - [[Emergency Aid]] — *Recent application — illustrates (Binding in-circuit — 7th Cir.)*

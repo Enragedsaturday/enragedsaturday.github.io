@@ -64,10 +64,10 @@ Uzuegbunam experienced a completed violation of his constitutional rights when t
 The judgment of the Eleventh Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Thomas, J., delivered the opinion of the Court, joined by Breyer, Alito, Sotomayor, Kagan, Gorsuch, Kavanaugh, and Barrett, JJ.; Kavanaugh, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]]; Roberts, C.J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Uzuegbunam* is a standing decision that keeps § 1983 and other constitutional-tort suits for completed violations alive when only nominal damages remain, so a defendant cannot moot accountability by discontinuing the challenged conduct after the injury.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Uzuegbunam* is a standing decision that keeps § 1983 and other constitutional-tort suits for completed violations alive when only nominal damages remain, so a defendant cannot moot accountability by discontinuing the challenged conduct after the injury.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Uzuegbunam v. Preczewski*, 592 U.S. 279 (2021)](https://www.courtlistener.com/opinion/4861817/uzuegbunam-v-preczewski/) — pinpoint: slip op., at 11 (Opinion of the Court, Part III, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2021)"; cluster 4861817 → opinion 4665596); slip-only per S2 A3 — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.
+- [*Uzuegbunam v. Preczewski*, 592 U.S. 279 (2021)](https://www.courtlistener.com/opinion/4861817/uzuegbunam-v-preczewski/) — pinpoint: slip op., at 11 (Opinion of the Court, Part III, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2021)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.

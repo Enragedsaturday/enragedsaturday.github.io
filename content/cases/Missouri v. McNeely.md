@@ -71,4 +71,4 @@ Affirmed; on these facts the warrantless blood draw was not justified by a [[Com
 - [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Missouri v. McNeely*, 569 U.S. 141 (2013) — https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/ — interior pincite(s) 156 retired T3/P4-12 (per the official U.S. Reports citation; CL carries the reporter text without inline star pagination).
+- *Missouri v. McNeely*, 569 U.S. 141 (2013) — https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/ — interior pincite(s) 156 retired pending official-reporter pagination (per the official U.S. Reports citation; CL carries the reporter text without inline star pagination).

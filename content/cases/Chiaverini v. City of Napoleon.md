@@ -66,11 +66,11 @@ The Sixth Circuit's categorical rule — that a single valid charge insulates of
 The judgment of the Court of Appeals was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]]** for further proceedings on the causation question. Kagan, J., delivered the opinion of the Court; Thomas, J., joined by Alito, J., dissented, adhering to the view that a malicious-prosecution claim cannot be based on the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. The decision [[Reading and Citing Cases#vacated|vacated]] the Sixth Circuit's judgment and [[Reading and Citing Cases#on-remand|remanded]]; the Fourth Amendment causation standard for multi-charge malicious-prosecution claims remains open in the lower courts.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. The decision [[Reading and Citing Cases#vacated|vacated]] the Sixth Circuit's judgment and [[Reading and Citing Cases#on-remand|remanded]]; the Fourth Amendment causation standard for multi-charge malicious-prosecution claims remains open in the lower courts.
 
 ## Appears on
 - [[Malicious Prosecution under the Fourth Amendment]] — *Key*
 
 ## Sources
-- [*Chiaverini v. City of Napoleon*, 602 U.S. 556 (2024)](https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/) — interior pincite(s) 562 retired T3/P4-12 (charge-by-charge holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
+- [*Chiaverini v. City of Napoleon*, 602 U.S. 556 (2024)](https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/) — interior pincite(s) 562 retired pending official-reporter pagination (charge-by-charge holding, Opinion of the Court); quote string-matched to the CL opinion text 2026-07-07.
 - [*Thompson v. Clark*, 596 U.S. 36 (2022)](https://www.courtlistener.com/opinion/6457347/thompson-v-clark/) — the Fourth Amendment malicious-prosecution claim on which *Chiaverini* builds.

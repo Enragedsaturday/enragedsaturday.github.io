@@ -33,7 +33,7 @@ homes:
 related: ["[[Florida v. Jardines]]", "[[Kentucky v. King]]"]
 aliases: ["French v. Merrill (1st Cir. 2021)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "curtilage", "implied-license", "first-circuit", "qualified-immunity"]
-holding: "The scope of the 'knock and talk' exception to the warrant requirement is controlled by the implied social license to enter the…"
+holding: "The scope of the 'knock-and-talk' exception to the warrant requirement is controlled by the implied social license to enter the…"
 lake:
   record_id: French v. Merrill
   status: verified

@@ -69,8 +69,8 @@ Affirmed in part and [[Reading and Citing Cases#on-remand|remanded]]. Officers w
 - *Malley* supplies the warrant-application immunity standard later applied in [[Messerschmidt v. Millender]] and paired with the good-faith analysis of [[United States v. Leon]]; the "plainly incompetent or those who knowingly violate the law" formulation is a staple of the [[Harlow v. Fitzgerald]] qualified-immunity line. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 - [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Malley v. Briggs*, 475 U.S. 335 (1986) — https://www.courtlistener.com/opinion/111611/malley-v-briggs/ — pinpoints: 341, 345.
+- *Malley v. Briggs*, 475 U.S. 335 (1986) — https://www.courtlistener.com/opinion/111611/malley-v-briggs/. Pinpoints: 341, 345.
