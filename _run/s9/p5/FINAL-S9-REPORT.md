@@ -211,7 +211,7 @@ table `_run/s9/p4/campaign/R13-GATE-TABLE.md`.
 | **R5 — concordance** | PASS | Freeze hash reproduces + git-immutable + frozen-before-N; no-regression floor 724/724; 0 silent absences. (Benign sidecar nit, §9.) |
 | **R6 — checklist sweep** | PASS | 437/437 shared-point pairs examined, **0 contradiction hits.** |
 | **R7 — completeness** | PASS | 5 instruments ran dual-model; tripwire fired → executed → closed (§4); >10-page pause not triggered. |
-| **R8 — lint roster** | **PASS** | `run_all.py` 09:25:59 (exit 0): TOTAL 895 / **HIGH 0** / 884 med / 11 low; LINT-2..30 all 0 HIGH; 14 self-test gates PASS. **LINT-1 (CL identity) = [PENDING-SPLICE — serial batch running]** — serial-CL gate only, under the builder credential (§6/§9). |
+| **R8 — lint roster** | **PASS** | `run_all.py` 09:25:59 (exit 0): TOTAL 895 / **HIGH 0** / 884 med / 11 low; LINT-2..30 all 0 HIGH; 14 self-test gates PASS. **LINT-1 (CL identity) = PASS — 4,425 refs verified cluster-first under the builder credential; 5 wrong-cluster URLs found+fixed (MCP-confirmed canonical ids); 40 adjudicated false-positive rows documented (COH17-GATE-SLICE.md); pass-sample 10/10 CONFIRM** — serial-CL gate only, under the builder credential (§6/§9). |
 | **R9 — S8 handoff** | PASS | Carat-leak 0; shingle scope proven; 188/188 ambiguity re-reviews; 231/231 fragments traced; deep-link landing PASS in real Chrome. |
 | **R10 — coherence** | PASS | Callout↔registry deep-equal conflict resolved as **Amendment A2**; 80/80 nodes measured; override slugs 13/13; LINT-12 = 0, LINT-14 = 0. |
 | **R11 — per-spec samples** | PASS | 75/75 mermaid rendered + inspected; the one failed sample (Lange T3) re-opened its class → FIX-T3 swept and resolved. |

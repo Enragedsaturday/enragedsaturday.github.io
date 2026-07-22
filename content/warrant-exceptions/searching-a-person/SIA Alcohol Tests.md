@@ -57,8 +57,8 @@ These cases are treated in full elsewhere but frame the chemical-testing rule he
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[Schmerber v. California]]*, 384 U.S. 757 (1966) | ***[[Exigent Circumstances and Hot Pursuit\|Exigency]] baseline.*** A warrantless **blood** draw on probable cause is reasonable where dissipating BAC leaves no time for a warrant; the theory that fills the gap *[[Birchfield v. North Dakota\|Birchfield]]* leaves for blood. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/107262/schmerber-v-california/) |
-| *[[Missouri v. McNeely]]*, 569 U.S. 141 (2013) | ***No per-se [[Exigent Circumstances and Hot Pursuit\|exigency]].*** The natural dissipation of blood alcohol does not create a categorical [[Exigent Circumstances and Hot Pursuit\|exigency]]; the question is judged on the [[Common Legal Terms#totality-of-the-circumstances\|totality of the circumstances]]. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/882802/missouri-v-mcneely/) |
-| *[[Mitchell v. Wisconsin]]*, 588 U.S. 840 (2019) | ***Unconscious driver.*** When a DUI suspect is unconscious and cannot take a breath test, [[Exigent Circumstances and Hot Pursuit\|exigency]] will "almost always" permit a warrantless blood draw. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/4218101/mitchell-v-wisconsin/) |
+| *[[Missouri v. McNeely]]*, 569 U.S. 141 (2013) | ***No per-se [[Exigent Circumstances and Hot Pursuit\|exigency]].*** The natural dissipation of blood alcohol does not create a categorical [[Exigent Circumstances and Hot Pursuit\|exigency]]; the question is judged on the [[Common Legal Terms#totality-of-the-circumstances\|totality of the circumstances]]. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/) |
+| *[[Mitchell v. Wisconsin]]*, 588 U.S. 840 (2019) | ***Unconscious driver.*** When a DUI suspect is unconscious and cannot take a breath test, [[Exigent Circumstances and Hot Pursuit\|exigency]] will "almost always" permit a warrantless blood draw. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/) |
 
 ## Visual
 
@@ -75,5 +75,5 @@ flowchart TD
 ## Sources
 - [*Birchfield v. North Dakota*, 579 U.S. 438 (2016)](https://www.courtlistener.com/opinion/3216497/birchfield-v-n-dakota-william-robert-bernard/)
 - [*Schmerber v. California*, 384 U.S. 757 (1966)](https://www.courtlistener.com/opinion/107262/schmerber-v-california/) (pinpoint: 770)
-- [*Missouri v. McNeely*, 569 U.S. 141 (2013)](https://www.courtlistener.com/opinion/882802/missouri-v-mcneely/)
-- [*Mitchell v. Wisconsin*, 588 U.S. 840 (2019)](https://www.courtlistener.com/opinion/4218101/mitchell-v-wisconsin/)
+- [*Missouri v. McNeely*, 569 U.S. 141 (2013)](https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/)
+- [*Mitchell v. Wisconsin*, 588 U.S. 840 (2019)](https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/)

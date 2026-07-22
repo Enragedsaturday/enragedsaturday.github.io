@@ -72,7 +72,7 @@ The Supreme Court's aerial cases predate today's persistent and automated survei
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[United States v. Tuggle]]*, 4 F.4th 505 (7th Cir. 2021) | Long-term fixed pole-camera surveillance of a home's exterior held not a search under current doctrine; the persistent-surveillance frontier for enhanced observation. | [[Plain View Doctrine]] | [opinion](https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/) |
-| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The trespass counterpoint: looking at the [[Curtilage\|curtilage]] from lawful airspace is not a search, but physically entering it to gather evidence (a drug dog at the door) is. | [[Knock and Talk]] | [opinion](https://www.courtlistener.com/opinion/2094497/florida-v-jardines/) |
+| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The trespass counterpoint: looking at the [[Curtilage\|curtilage]] from lawful airspace is not a search, but physically entering it to gather evidence (a drug dog at the door) is. | [[Knock and Talk]] | [opinion](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) |
 
 ## Visual
 
@@ -94,4 +94,4 @@ flowchart TD
 - [*Dow Chemical Co. v. United States*, 476 U.S. 227 (1986)](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/) (pinpoint: 239)
 - [*Kyllo v. United States*, 533 U.S. 27 (2001)](https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/) (pinpoints: 34, 37, 40)
 - [*United States v. Tuggle*, 4 F.4th 505 (7th Cir. 2021)](https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/) (pinpoint: slip op. 5)
-- [*Florida v. Jardines*, 569 U.S. 1 (2013)](https://www.courtlistener.com/opinion/2094497/florida-v-jardines/) *(primary home [[Knock and Talk]])*
+- [*Florida v. Jardines*, 569 U.S. 1 (2013)](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) *(primary home [[Knock and Talk]])*

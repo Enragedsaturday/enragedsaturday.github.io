@@ -163,3 +163,15 @@ Open files appear as ESCALATED gate rows (gate-compatible). **Open = 5** (4 mark
 | `_review-needed/threadN-lyle-unread.md` | OPEN | ESCALATED | OPEN escalation — US v. Lyle both Thread-N lenses unread (loop cap 3); carried per R5 no-regression floor (2/1218 = 0.16%); single-lane retry owed in a quiet window. |
 | `_review-needed/coverage/_ESCALATION-batch4-duplicate-CL-lane.md` | OPEN-unmarked | ESCALATED | S5-era (2026-06-30) coordination stand-down note (duplicate CL lane on S5 Phase-B batch 4); the standing-down lane made no writes; no RESOLVED marker — likely stale/resolved-by-completion (corpus has 610 case pages). Flag for orchestrator disposition. |
 
+
+## FINAL SPLICE (orchestrator, 2026-07-22, post-batch)
+- **R8/LINT-1:** PASS — serial batch complete under cluster-first semantics (RULING P5-05):
+  4,425 refs verified (builder credential, 13/min); 5 real wrong-cluster URLs found and FIXED
+  (FIX-L1URLS, canonical ids MCP-confirmed); 40 residual ledger rows = adjudicated false
+  positives (COH17-GATE-SLICE.md: nearest-name pairing + digit-truncation classes -> lint-
+  heuristic handoff items); COH-17 slice: 10/10 pass sample CONFIRM.
+- **R2:** PASS per RULING P5-03. **R12:** PASS (MAINTENANCE-HANDOFF on disk; GH#2 files at P6).
+- **BRIEF composite:** PASS per RULING P5-02(a).
+- **FINAL: 14/15 PASS · G8 SCHEDULED (the publish pause — user go-ahead required) · 0 BLOCKED.**
+- R14 self-audit: checks 1-7 PASS (R14-2 20/20, R14-3 10/10, R14-6 17/18 with the one
+  discrepancy FOUND->RESOLVED via P5-DATES); check 8 (drift re-poll) executes at publish.
