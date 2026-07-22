@@ -50,7 +50,7 @@ Salinas voluntarily went to the police station and answered questions about a do
 Whether the Fifth Amendment bars the prosecution from using, as evidence of guilt, a suspect's silence during voluntary, noncustodial police questioning where the suspect did not expressly invoke the privilege against self-incrimination.
 
 ## Rule
-No — absent an express invocation, the silence is not protected. The privilege is generally not self-executing: a witness who wants its protection ordinarily must claim it. "A witness does not expressly invoke the privilege by standing mute." — 133 S. Ct. at 2179 (plurality opinion). ^pin-2179
+No. Absent an express invocation, the silence is not protected. The privilege is generally not self-executing: a witness who wants its protection ordinarily must claim it. "A witness does not expressly invoke the privilege by standing mute." — 133 S. Ct. at 2179 (plurality opinion). ^pin-2179
 
 The plurality held that Salinas's "Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination" in response to the officer's question. — 133 S. Ct. at 2178 (plurality opinion). ^pin-2178
 
@@ -67,7 +67,7 @@ A suspect must expressly invoke the Fifth Amendment to keep his precustodial, pr
 - Consistent with [[Berghuis v. Thompkins]] (a suspect must unambiguously invoke even the right to remain silent). Distinguish [[Doyle v. Ohio]], which protects **post**-arrest, **post**-*[[Miranda v. Arizona|Miranda]]* silence; *Salinas* concerns **pre**-custody silence with no invocation.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Salinas v. Texas*, 570 U.S. 178 (2013) — https://www.courtlistener.com/opinion/903977/salinas-v-texas/ — pinpoints: 133 S. Ct. at 2178–2179 (plurality opinion). (CourtListener's plurality text carries S. Ct. star-pagination; U.S. Reports cite 570 U.S. 178.)
+- *Salinas v. Texas*, 570 U.S. 178 (2013) — https://www.courtlistener.com/opinion/903977/salinas-v-texas/. Pinpoints: 133 S. Ct. at 2178–2179 (plurality opinion). (CourtListener's plurality text carries S. Ct. star-pagination; U.S. Reports cite 570 U.S. 178.)

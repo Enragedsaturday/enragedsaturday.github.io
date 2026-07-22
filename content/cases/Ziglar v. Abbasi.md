@@ -44,7 +44,7 @@ tags:
   - section-1983
   - special-factors
   - national-security
-holding: "A Bivens damages remedy does not extend to claims challenging the post-9/11 detention-policy decisions of high-level executive officials, because those claims arise in a new Bivens context in which special factors — including national-security and separation-of-powers concerns — counsel hesitation against a judicially inferred remedy."
+holding: "A Bivens damages remedy does not extend to claims challenging the post-9/11 detention-policy decisions of high-level executive officials, because those claims arise in a new Bivens context in which special factors (including national-security and separation-of-powers concerns) counsel hesitation against a judicially inferred remedy."
 ---
 
 # Ziglar v. Abbasi

@@ -47,7 +47,7 @@ tags:
   - plain-view
   - scope-of-search
   - tenth-circuit
-holding: "The Tenth Circuit held that the Fourth Amendment does not require officers executing an electronic-search warrant to stop when they discover evidence of a different, out-of-scope crime, so long as their search remains directed at uncovering the evidence the warrant specifies; the agents' first search of Loera's devices for computer-fraud evidence was therefore lawful even after they found child pornography. The court agreed with Loera, however, that the remaining searches — the November 27 reopening of the CDs and the searches under the second, pornography-specific warrant — were unlawful (the second warrant was not supported by probable cause and the good-faith exception did not apply), but it nonetheless affirmed the denial of suppression under the inevitable discovery doctrine."
+holding: "The Tenth Circuit held that the Fourth Amendment does not require officers executing an electronic-search warrant to stop when they discover evidence of a different, out-of-scope crime, so long as their search remains directed at uncovering the evidence the warrant specifies; the agents' first search of Loera's devices for computer-fraud evidence was therefore lawful even after they found child pornography. The court agreed with Loera, however, that the remaining searches (the November 27 reopening of the CDs and the searches under the second, pornography-specific warrant) were unlawful (the second warrant was not supported by probable cause and the good-faith exception did not apply), but it nonetheless affirmed the denial of suppression under the inevitable discovery doctrine."
 ---
 
 # United States v. Loera

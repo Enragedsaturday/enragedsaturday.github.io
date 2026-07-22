@@ -31,7 +31,7 @@ homes:
 related: ["[[Miranda v. Arizona]]", "[[Orozco v. Texas]]", "[[Mathis v. United States (1968)]]", "[[Oregon v. Mathiason]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "focus", "irs", "noncustodial-interrogation"]
-holding: "Miranda warnings are required by custody, not by the fact that an investigation has 'focused' on the suspect; a noncustodial interview by IRS special agents — even of a person who is the target of a criminal tax investigation, conducted in a private home — does not trigger Miranda."
+holding: "Miranda warnings are required by custody, not by the fact that an investigation has 'focused' on the suspect; a noncustodial interview by IRS special agents (even of a person who is the target of a criminal tax investigation, conducted in a private home) does not trigger Miranda."
 lake:
   record_id: Beckwith v. United States
   status: verified
@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Two special agents of the IRS Intelligence Division — the unit assigned only when there is some indication of criminal tax fraud — met Beckwith at about 8 a.m. in a private home where he occasionally stayed. They were invited in, identified themselves, said they investigate criminal tax violations, and told him they were investigating his income-tax liability for 1966–71. The senior agent read a partial advisement (that the Fifth Amendment barred compelling his answers, that anything he said could be used against him, and that he could seek an attorney before responding) but not full [[Miranda and Custodial Interrogation|Miranda warnings]]. The roughly three-hour interview was "friendly" and "relaxed," and Beckwith was neither arrested nor detained; he later supplied records. He moved to suppress, arguing that because he was the "focus" of a criminal investigation the encounter was the functional equivalent of custody.
+Two special agents of the IRS Intelligence Division (the unit assigned only when there is some indication of criminal tax fraud) met Beckwith at about 8 a.m. in a private home where he occasionally stayed. They were invited in, identified themselves, said they investigate criminal tax violations, and told him they were investigating his income-tax liability for 1966–71. The senior agent read a partial advisement (that the Fifth Amendment barred compelling his answers, that anything he said could be used against him, and that he could seek an attorney before responding) but not full [[Miranda and Custodial Interrogation|Miranda warnings]]. The roughly three-hour interview was "friendly" and "relaxed," and Beckwith was neither arrested nor detained; he later supplied records. He moved to suppress, arguing that because he was the "focus" of a criminal investigation the encounter was the functional equivalent of custody.
 
 ## Issue
 Whether a noncustodial interview by IRS special agents investigating potential criminal tax violations requires [[Miranda and Custodial Interrogation|Miranda warnings]] because the taxpayer is the "focus" of the investigation.
 
 ## Rule
-No — Miranda turns on custody, not investigative focus. In its decisions after *[[Miranda v. Arizona|Miranda]]* "the Court specifically stressed that it was the *custodial* nature of the interrogation which triggered the necessity for adherence to the specific requirements of its *Miranda* holding." — 425 U.S. at 346 (citing [[Orozco v. Texas]] and [[Mathis v. United States (1968)]]). ^pin-346
+No. Miranda turns on custody, not investigative focus. In its decisions after *[[Miranda v. Arizona|Miranda]]* "the Court specifically stressed that it was the *custodial* nature of the interrogation which triggered the necessity for adherence to the specific requirements of its *Miranda* holding." — 425 U.S. at 346 (citing [[Orozco v. Texas]] and [[Mathis v. United States (1968)]]). ^pin-346
 
 "'It was the compulsive aspect of custodial interrogation, and not the strength or content of the government's suspicions at the time the questioning was conducted, which led the court to impose the *Miranda* requirements with regard to custodial questioning.'" — *Id.* at 346–347 (quoting *United States v. Caiello*, 420 F.2d 471, 473 (CA2 1969)). ^pin-347
 
@@ -67,7 +67,7 @@ A noncustodial interview does not require [[Miranda and Custodial Interrogation|
 - No negative treatment. *Beckwith* fixes **custody** (not focus) as the Miranda trigger in the [[Miranda v. Arizona]] line, distinguishing [[Mathis v. United States (1968)]] (Miranda applies to an IRS interview of a person *in custody*) and harmonizing with the noncustodial station-house interview in [[Oregon v. Mathiason]] and the in-home custody of [[Orozco v. Texas]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Beckwith v. United States*, 425 U.S. 341 (1976) — https://www.courtlistener.com/opinion/109430/beckwith-v-united-states/ — pinpoints: 346, 347.
+- *Beckwith v. United States*, 425 U.S. 341 (1976) — https://www.courtlistener.com/opinion/109430/beckwith-v-united-states/. Pinpoints: 346, 347.

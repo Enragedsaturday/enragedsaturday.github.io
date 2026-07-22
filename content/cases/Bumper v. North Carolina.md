@@ -31,7 +31,7 @@ homes:
 related: ["[[Schneckloth v. Bustamonte]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "voluntariness", "claim-of-authority", "warrant"]
-holding: "Consent to search is involuntary, and cannot justify a search, when it is given only in acquiescence to an officer's claim of lawful authority — including a false or unsubstantiated assertion that the officer holds a warrant; the State bears the burden of proving voluntary consent."
+holding: "Consent to search is involuntary, and cannot justify a search, when it is given only in acquiescence to an officer's claim of lawful authority, including a false or unsubstantiated assertion that the officer holds a warrant; the State bears the burden of proving voluntary consent."
 lake:
   record_id: Bumper v. North Carolina
   status: verified
@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers investigating a rape went to the home where the suspect, Bumper, lived with his grandmother, Mrs. Leath. They told her they had a search warrant, and she replied "Go ahead" and let them in. They found a rifle later admitted at trial to convict Bumper. At the [[Common Legal Terms#suppression-hearing|suppression hearing]] the prosecution did not rely on — or even produce — any warrant; it sought to justify the search solely as consensual.
+Officers investigating a rape went to the home where the suspect, Bumper, lived with his grandmother, Mrs. Leath. They told her they had a search warrant, and she replied "Go ahead" and let them in. They found a rifle later admitted at trial to convict Bumper. At the [[Common Legal Terms#suppression-hearing|suppression hearing]] the prosecution did not rely on (or even produce) any warrant; it sought to justify the search solely as consensual.
 
 ## Issue
 Whether a homeowner's permission to search, given after officers assert that they have a search warrant, constitutes valid voluntary consent under the Fourth Amendment when the warrant's validity is not established.
@@ -68,4 +68,4 @@ There was no valid consent; admitting the rifle was constitutional error. The ju
 - [[Consent Searches]] — *Limiting (voluntariness)*
 
 ## Sources
-- *Bumper v. North Carolina*, 391 U.S. 543 (1968) — https://www.courtlistener.com/opinion/107716/bumper-v-north-carolina/ — pinpoints: 548–549, 550.
+- *Bumper v. North Carolina*, 391 U.S. 543 (1968) — https://www.courtlistener.com/opinion/107716/bumper-v-north-carolina/ (pinpoints: 548–549, 550).

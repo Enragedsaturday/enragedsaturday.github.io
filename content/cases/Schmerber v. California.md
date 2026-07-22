@@ -33,7 +33,7 @@ homes:
 related: ["[[Missouri v. McNeely]]", "[[Birchfield v. North Dakota]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "fifth-amendment", "exigent-circumstances", "blood-draw", "dui", "bodily-intrusion"]
-holding: "Compelled blood/BAC evidence is physical, not testimonial, so it does not violate the Fifth Amendment; and a warrantless blood draw on probable cause is reasonable where exigency — dissipating alcohol plus time already lost — leaves no time to obtain a warrant."
+holding: "Compelled blood/BAC evidence is physical, not testimonial, so it does not violate the Fifth Amendment; and a warrantless blood draw on probable cause is reasonable where exigency (dissipating alcohol plus time already lost) leaves no time to obtain a warrant."
 lake:
   record_id: Schmerber v. California
   status: verified

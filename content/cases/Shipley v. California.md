@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police, informed that Shipley was involved in a robbery, went to his home while he was out; a 15-year-old who said she was his wife let them in, and they found stolen rings. The officers staked out the house and arrested Shipley as he stepped from his car — parked 15 to 20 feet from the house — late that night. After searching him and the car, they re-entered the house without a warrant and found a stolen jewelry case under a couch. The state courts upheld the second search as incident to the arrest.
+Police, informed that Shipley was involved in a robbery, went to his home while he was out; a 15-year-old who said she was his wife let them in, and they found stolen rings. The officers staked out the house and arrested Shipley as he stepped from his car (parked 15 to 20 feet from the house) late that night. After searching him and the car, they re-entered the house without a warrant and found a stolen jewelry case under a couch. The state courts upheld the second search as incident to the arrest.
 
 ## Issue
 Whether police may search a person's home as incident to an arrest made outside the home, without a warrant.
@@ -65,7 +65,7 @@ Reversed (per curiam). A warrantless search of the home, incident to an arrest m
 - Decided the same day as [[Chimel v. California]] and applying its limits; consistent with [[Agnello v. United States]] (SITA does not reach a separate home) and [[Go-Bart Importing Co. v. United States]] (no general exploratory search).
 
 ## Appears on
-- [[SIA Persons]] — *Key — Limiting (contemporaneity)*
+- [[SIA Persons]] — *Key: Limiting (contemporaneity)*
 
 ## Sources
-- *Shipley v. California*, 395 U.S. 818 (1969) — https://www.courtlistener.com/opinion/107982/shipley-v-california/ — pinpoints: 819, 820.
+- *Shipley v. California*, 395 U.S. 818 (1969) — https://www.courtlistener.com/opinion/107982/shipley-v-california/ (pinpoints: 819, 820).

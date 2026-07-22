@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Responding to a reckless-driving report, New Mexico State Police officers Truesdale and Mariscal approached the Pauly brothers' rural home and (the brothers say without adequately identifying themselves) shouted "Come out or we're coming in." Believing intruders had arrived, the Paulys armed themselves and yelled "We have guns." Officer White arrived late, took cover behind a stone wall, and — without first shouting a warning — shot and killed Samuel Pauly when Samuel pointed a handgun out a window. Samuel's estate sued under § 1983 for excessive force; the district court and a divided Tenth Circuit denied White [[Qualified Immunity|qualified immunity]].
+Responding to a reckless-driving report, New Mexico State Police officers Truesdale and Mariscal approached the Pauly brothers' rural home and (the brothers say without adequately identifying themselves) shouted "Come out or we're coming in." Believing intruders had arrived, the Paulys armed themselves and yelled "We have guns." Officer White arrived late, took cover behind a stone wall, and (without first shouting a warning) shot and killed Samuel Pauly when Samuel pointed a handgun out a window. Samuel's estate sued under § 1983 for excessive force; the district court and a divided Tenth Circuit denied White [[Qualified Immunity|qualified immunity]].
 
 ## Issue
 Whether Officer White, who arrived late to an ongoing armed confrontation, violated clearly established law by using deadly force without first giving a warning.
@@ -67,8 +67,8 @@ The Tenth Circuit "failed to identify a case where an officer acting under simil
 - *White* is part of the run of [[Common Legal Terms#per-curiam|per curiam]] qualified-immunity summary reversals applying the high-specificity requirement of [[Ashcroft v. al-Kidd]] and [[Mullenix v. Luna]] to excessive-force claims, holding that [[Graham v. Connor]] and [[Tennessee v. Garner]] supply only general principles. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 - [[Use of Force]] — *Related (cross-doctrine)*
 
 ## Sources
-- *White v. Pauly*, 580 U.S. 73 (2017) (per curiam) — https://www.courtlistener.com/opinion/4374579/white-v-pauly/ — pinpoints: slip op., at 6–7 (CL stores the slip opinion "580 U. S. ____ (2017)"; pins keyed to the official case-start page 73).
+- *White v. Pauly*, 580 U.S. 73 (2017) (per curiam) — https://www.courtlistener.com/opinion/4374579/white-v-pauly/. Pinpoints: slip op., at 6–7 (CL stores the slip opinion "580 U. S. ____ (2017)"; pins keyed to the official case-start page 73).

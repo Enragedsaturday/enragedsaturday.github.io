@@ -33,7 +33,7 @@ homes:
 related: ["[[Hester v. United States]]", "[[United States v. Dunn]]", "[[Florida v. Jardines]]", "[[California v. Ciraolo]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "search"]
-holding: "Reaffirms that open fields get no Fourth Amendment protection — even fenced, posted 'No Trespassing' land; only curtilage carries the home's protection."
+holding: "Reaffirms that open fields get no Fourth Amendment protection: even fenced, posted 'No Trespassing' land; only curtilage carries the home's protection."
 lake:
   record_id: Oliver v. United States
   status: verified

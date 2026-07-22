@@ -31,7 +31,7 @@ homes:
 related: ["[[Miranda v. Arizona]]", "[[California v. Beheler]]", "[[Stansbury v. California]]", "[[Yarborough v. Alvarado]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "objective-test", "habeas", "standard-of-review"]
-holding: "The Miranda 'in custody' determination involves two inquiries — the circumstances of the interrogation (factual) and whether, given those circumstances, a reasonable person would have felt free to terminate the interrogation and leave (objective). The ultimate custody determination is a mixed question of law and fact qualifying for independent federal review."
+holding: "The Miranda 'in custody' determination involves two inquiries: the circumstances of the interrogation (factual) and whether, given those circumstances, a reasonable person would have felt free to terminate the interrogation and leave (objective). The ultimate custody determination is a mixed question of law and fact qualifying for independent federal review."
 lake:
   record_id: Thompson v. Keohane
   status: verified
@@ -55,7 +55,7 @@ The custody inquiry is objective and two-part. "Two discrete inquiries are essen
 The first inquiry is factual and presumed correct under §2254(d), but the ultimate custody determination is legal: "This ultimate determination, we hold, presents a 'mixed question of law and fact' qualifying for independent review." — *Id.* at 112–113. ^pin-113
 
 ## Application
-The "scene-setting" facts of Thompson's interrogation — where it occurred, what was said and done — are factual findings entitled to deference. But whether those circumstances amounted to custody turns on applying the objective reasonable-person standard, a task on which the state court is not "in an appreciably better position than the federal habeas court." Because the courts below had deferred to the state custody finding rather than reviewing it independently, the Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for that independent determination.
+The "scene-setting" facts of Thompson's interrogation (where it occurred, what was said and done) are factual findings entitled to deference. But whether those circumstances amounted to custody turns on applying the objective reasonable-person standard, a task on which the state court is not "in an appreciably better position than the federal habeas court." Because the courts below had deferred to the state custody finding rather than reviewing it independently, the Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for that independent determination.
 
 ## Conclusion
 The Miranda custody determination is an objective, mixed question of law and fact warranting independent federal review; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ The Miranda custody determination is an objective, mixed question of law and fac
 - *Thompson* fixes the **objective** custody standard (reasonable person free to terminate and leave) in the [[Miranda v. Arizona]] line, building on [[California v. Beheler]] and the reasonable-person framing later confirmed in [[Stansbury v. California]]. The §2254(d) [[Common Legal Terms#habeas-corpus|habeas]]-review framework it applied was **later changed by AEDPA (1996)**; [[Yarborough v. Alvarado]] subsequently addressed a custody determination under AEDPA's deferential standard.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Thompson v. Keohane*, 516 U.S. 99 (1995) — https://www.courtlistener.com/opinion/117982/thompson-v-keohane/ — pinpoints: 112, 113.
+- *Thompson v. Keohane*, 516 U.S. 99 (1995). https://www.courtlistener.com/opinion/117982/thompson-v-keohane/ — pinpoints: 112, 113.

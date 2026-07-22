@@ -46,7 +46,7 @@ tags:
   - rodriguez-mission
   - seventh-circuit
   - en-banc
-holding: "Travel-plan questions ordinarily fall within the mission of a traffic stop and so do not, by themselves, measurably prolong it; like any inquiry during a stop, however, they must be reasonable under the circumstances — and here the trooper's follow-up questions were justified by the driver's evasive answers, and reasonable suspicion of drug trafficking developed before the stop was extended for a dog sniff, so suppression was properly denied."
+holding: "Travel-plan questions ordinarily fall within the mission of a traffic stop and so do not, by themselves, measurably prolong it; like any inquiry during a stop, however, they must be reasonable under the circumstances. Here the trooper's follow-up questions were justified by the driver's evasive answers, and reasonable suspicion of drug trafficking developed before the stop was extended for a dog sniff, so suppression was properly denied."
 aliases:
   - United States v. Cole
   - "United States v. Cole (7th Cir. 2021)"

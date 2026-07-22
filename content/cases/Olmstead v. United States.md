@@ -33,7 +33,7 @@ homes:
 related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Berger v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "wiretap", "trespass", "overruled", "historical"]
-holding: "Wiretapping with no physical entry was not a search — pure property/trespass framing; overruled on the privacy point by *Katz* (property instinct later revived by *Jones*)."
+holding: "Wiretapping with no physical entry was not a search: pure property/trespass framing; overruled on the privacy point by *Katz* (property instinct later revived by *Jones*)."
 lake:
   record_id: Olmstead v. United States
   status: verified
@@ -52,12 +52,12 @@ Federal Prohibition agents gathered evidence against a large bootlegging operati
 Whether wiretapping a person's telephone conversations, accomplished without physical entry into a constitutionally protected area, is a "search and seizure" within the Fourth Amendment.
 
 ## Rule
-*(Historical — this holding has been overruled; see Treatment.)* The Court tied Fourth Amendment protection to physical trespass and tangible things: "The Amendment itself shows that the search is to be of material things — the person, the house, his papers or his effects." — 277 U.S. at 464. ^pin-464
+*(Historical: this holding has been overruled; see Treatment.)* The Court tied Fourth Amendment protection to physical trespass and tangible things: "The Amendment itself shows that the search is to be of material things — the person, the house, his papers or his effects." — 277 U.S. at 464. ^pin-464
 
 Because the wiretaps involved no physical entry, the Court held there was no search or seizure: "There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only." — [*Id.*](https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/#:~:text=There%20was%20no%20searching.%20There) ^pin-464b
 
 ## Application
-Because the wiretaps involved no physical entry into the defendants' premises and seized no tangible "material things" — only overheard conversations — the Court held there had been no search or seizure, and the wiretap evidence was admissible against Olmstead.
+Because the wiretaps involved no physical entry into the defendants' premises and seized no tangible "material things" (only overheard conversations), the Court held there had been no search or seizure, and the wiretap evidence was admissible against Olmstead.
 
 ## Conclusion
 On these facts the warrantless wiretapping was held not to be a Fourth Amendment search, and the convictions were affirmed. *(This holding no longer states the law — see Treatment.)*
@@ -68,7 +68,7 @@ On these facts the warrantless wiretapping was held not to be a Fourth Amendment
 
 ## Appears on
 - [[Trespass]] — *Historical / origin*
-- [[Electronic Surveillance and Title III]] — *Key — Historical (overruled by Katz)*
+- [[Electronic Surveillance and Title III]] — *Key: Historical (overruled by Katz)*
 
 ## Sources
-- *Olmstead v. United States*, 277 U.S. 438 (1928) — https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/ — pinpoint: 464.
+- *Olmstead v. United States*, 277 U.S. 438 (1928) — https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/. Pinpoint: 464.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[Florida v. J.L.]]", "[[Terry v. Ohio]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "informants", "terry-stop"]
-holding: "An anonymous tip can supply reasonable suspicion when sufficiently corroborated by police observation — especially of the tipster's…"
+holding: "An anonymous tip can supply reasonable suspicion when sufficiently corroborated by police observation, especially of the tipster's…"
 lake:
   record_id: Alabama v. White
   status: verified

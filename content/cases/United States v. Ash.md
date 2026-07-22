@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Ash was indicted for a bank robbery, the prosecutor, preparing for trial, showed witnesses a set of color photographs — including Ash's — to confirm their identifications. Defense counsel was not present at this post-indictment photographic display. Ash argued the procedure was a critical stage at which he was entitled to counsel under the Sixth Amendment.
+After Ash was indicted for a bank robbery, the prosecutor, preparing for trial, showed witnesses a set of color photographs (including Ash's) to confirm their identifications. Defense counsel was not present at this post-indictment photographic display. Ash argued the procedure was a critical stage at which he was entitled to counsel under the Sixth Amendment.
 
 ## Issue
 Whether a defendant has a Sixth Amendment right to have counsel present when the government conducts a post-indictment photographic display of the accused to witnesses for identification purposes.
@@ -55,7 +55,7 @@ No. The Court held that "the Sixth Amendment does not grant the right to counsel
 A photographic display is not a trial-like confrontation: the accused is not present and need not confront witnesses or the prosecution, so the presence of counsel is not required to preserve a fair trial.
 
 ## Application
-Because Ash was not present when the prosecutor showed the photo array to witnesses, the display was not a trial-like confrontation triggering the right to counsel. The risks of suggestive photographic identification could be exposed through ordinary trial tools — cross-examination of the witnesses and the officers — rather than by counsel's attendance at the display. The absence of defense counsel from the photo identification therefore did not violate the Sixth Amendment.
+Because Ash was not present when the prosecutor showed the photo array to witnesses, the display was not a trial-like confrontation triggering the right to counsel. The risks of suggestive photographic identification could be exposed through ordinary trial tools (cross-examination of the witnesses and the officers) rather than by counsel's attendance at the display. The absence of defense counsel from the photo identification therefore did not violate the Sixth Amendment.
 
 ## Conclusion
 There was no Sixth Amendment right to counsel at the post-indictment photographic display; the Court of Appeals' contrary judgment was reversed. The right to counsel attaches to trial-like confrontations at which the accused is present, not to photo arrays shown to witnesses.
@@ -65,7 +65,7 @@ There was no Sixth Amendment right to counsel at the post-indictment photographi
 - *Ash* distinguishes the live-lineup right to counsel of [[Gilbert v. California]] and is consistent with [[Kirby v. Illinois]] (right attaches at the initiation of adversary proceedings); suggestive photo identifications are policed instead through the due-process reliability test of [[Neil v. Biggers]] and [[Manson v. Brathwaite]].
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Progeny / Refinement*
+- [[Eyewitness Identification]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Ash*, 413 U.S. 300 (1973) — https://www.courtlistener.com/opinion/108846/united-states-v-ash/ — pinpoint: 321.
+- *United States v. Ash*, 413 U.S. 300 (1973) — https://www.courtlistener.com/opinion/108846/united-states-v-ash/. Pinpoint: 321.

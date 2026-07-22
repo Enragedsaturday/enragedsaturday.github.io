@@ -70,4 +70,4 @@ The silver-platter doctrine was rejected; the unconstitutionally state-seized ev
 - [[The Exclusionary Rule]] — *Anchor (silver-platter abolition; deterrence rationale)*
 
 ## Sources
-- *Elkins v. United States*, 364 U.S. 206 (1960) — https://www.courtlistener.com/opinion/106107/elkins-v-united-states/ — pinpoints: 208, 217, 223.
+- *Elkins v. United States*, 364 U.S. 206 (1960). https://www.courtlistener.com/opinion/106107/elkins-v-united-states/ — pinpoints: 208, 217, 223.

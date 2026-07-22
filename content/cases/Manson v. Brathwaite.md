@@ -65,7 +65,7 @@ Reversed in favor of admissibility: identification evidence from a suggestive pr
 - *Manson* (with [[Neil v. Biggers]]) sets the governing due-process test for suggestive identifications. [[Perry v. New Hampshire]] (2012) later clarified that this due-process screen is triggered only when the suggestive circumstances were **arranged by law enforcement**, without disturbing *Manson*'s reliability framework.
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Anchor*
+- [[Eyewitness Identification]] — *Key: Anchor*
 
 ## Sources
-- *Manson v. Brathwaite*, 432 U.S. 98 (1977) — https://www.courtlistener.com/opinion/109693/manson-v-brathwaite/ — pinpoint: 114.
+- *Manson v. Brathwaite*, 432 U.S. 98 (1977) — https://www.courtlistener.com/opinion/109693/manson-v-brathwaite/ (pinpoint: 114).

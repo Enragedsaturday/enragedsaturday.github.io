@@ -67,7 +67,7 @@ On these facts the validity of the consent turned on whether Mrs. Graff had comm
 - No negative subsequent treatment identified. *Matlock* is the anchor for [[Consent Searches|third-party consent]]: [[Illinois v. Rodriguez]] extends it to officers' reasonable mistakes about *apparent* authority; [[Georgia v. Randolph]] carves out the *physically present, expressly objecting* co-occupant; and [[Fernandez v. California]] limits *[[Georgia v. Randolph|Randolph]]* to a present objector.
 
 ## Appears on
-- [[Consent Searches]] — *Key — Anchor*
+- [[Consent Searches]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Matlock*, 415 U.S. 164 (1974) — https://www.courtlistener.com/opinion/108967/united-states-v-matlock/ — pinpoints: 170, 171, 171 n.7.
+- *United States v. Matlock*, 415 U.S. 164 (1974) — https://www.courtlistener.com/opinion/108967/united-states-v-matlock/. Pinpoints: 170, 171, 171 n.7.

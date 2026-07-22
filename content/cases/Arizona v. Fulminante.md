@@ -50,24 +50,24 @@ Fulminante was suspected of murdering his stepdaughter. While later incarcerated
 (1) Whether a confession given out of fear of violence from other inmates, in exchange for an informant's protection, was coerced in violation of due process; and (2) whether the erroneous admission of a coerced confession is subject to harmless-error analysis or instead requires automatic reversal.
 
 ## Rule
-A credible threat of violence can render a confession involuntary — coercion may be mental, not only physical: "Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent; a credible threat is sufficient." — 499 U.S. at 287. ^pin-287
+A credible threat of violence can render a confession involuntary. Coercion may be mental, not only physical: "Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent; a credible threat is sufficient." — 499 U.S. at 287. ^pin-287
 
 The Court then overruled the prior automatic-reversal rule for coerced confessions: "The Court today properly concludes that the admission of an 'involuntary' confession at trial is subject to harmless-error analysis." — *Id.* at 303. ^pin-303
 
 A coerced confession is a "trial error," not a structural defect: "The admission of an involuntary confession—a classic 'trial error'—is markedly different from the other two constitutional violations referred to in the *Chapman* footnote as not being subject to harmless-error analysis." — [*Id.* at 309](https://www.courtlistener.com/opinion/112566/arizona-v-fulminante/#:~:text=though%20a%20%22-,trial%20error%2C). ^pin-309
 
 ## Application
-On these facts the Court accepted the finding that Fulminante confessed out of fear of physical violence from other inmates — violence Sarivola, a government agent, offered to prevent only if Fulminante confessed — a credible threat that overbore his will and made the confession coerced. And although harmless-error review now applies to such confessions, the Court held that admitting *this* confession was not harmless [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], because the State could not show the jury would have convicted without it.
+On these facts the Court accepted the finding that Fulminante confessed out of fear of physical violence from other inmates (violence Sarivola, a government agent, offered to prevent only if Fulminante confessed) — a credible threat that overbore his will and made the confession coerced. And although harmless-error review now applies to such confessions, the Court held that admitting *this* confession was not harmless [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], because the State could not show the jury would have convicted without it.
 
 ## Conclusion
-The confession was coerced; harmless-error analysis applies to coerced confessions, but the error here was not harmless. The judgment of the Arizona Supreme Court — reversing the conviction and ordering a retrial without the confession — was affirmed.
+The confession was coerced; harmless-error analysis applies to coerced confessions, but the error here was not harmless. The judgment of the Arizona Supreme Court (reversing the conviction and ordering a retrial without the confession) was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - No negative treatment. *Fulminante* is the seminal modern statement that (a) a credible threat of violence can coerce a confession (mental coercion suffices), and (b) the erroneous admission of a coerced confession is "trial error" reviewable for harmlessness under *Chapman v. California*, in contrast to "structural defects" that defy harmless-error analysis.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Arizona v. Fulminante*, 499 U.S. 279 (1991) — https://www.courtlistener.com/opinion/112566/arizona-v-fulminante/ — pinpoints: 287, 303, 309.
+- *Arizona v. Fulminante*, 499 U.S. 279 (1991) — https://www.courtlistener.com/opinion/112566/arizona-v-fulminante/. Pinpoints: 287, 303, 309.

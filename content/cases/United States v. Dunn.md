@@ -33,7 +33,7 @@ homes:
 related: ["[[Oliver v. United States]]", "[[California v. Ciraolo]]", "[[Hester v. United States]]", "[[Florida v. Jardines]]", "[[Collins v. Virginia]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "curtilage", "open-fields", "home"]
-holding: "Curtilage is determined by four factors — proximity to the home, whether the area is within an enclosure surrounding the home, the nature of its use, and steps taken to shield it from observation — all bearing on whether the area is so intimately tied to the home as to fall under the home's Fourth Amendment umbrella."
+holding: "Curtilage is determined by four factors (proximity to the home, whether the area is within an enclosure surrounding the home, the nature of its use, and steps taken to shield it from observation), all bearing on whether the area is so intimately tied to the home as to fall under the home's Fourth Amendment umbrella."
 lake:
   record_id: United States v. Dunn
   status: verified
@@ -49,7 +49,7 @@ lake:
 Federal agents, investigating a drug-manufacturing operation, crossed perimeter fences onto Dunn's ranch and approached a barn standing about 50 yards beyond the fence surrounding the ranch house. Without entering the barn, agents stood outside it, smelled chemicals associated with drug manufacture, and shined a flashlight inside to observe a suspected drug lab. That observation supported a warrant; Dunn moved to suppress, arguing the barn was within the home's [[Curtilage|curtilage]] and thus protected.
 
 ## Issue
-Whether the area near the barn — located approximately 50 yards from the fence surrounding the ranch house — was within the [[Curtilage|curtilage]] of the house for Fourth Amendment purposes, such that the agents' warrantless observation invaded a protected area.
+Whether the area near the barn, located approximately 50 yards from the fence surrounding the ranch house, was within the [[Curtilage|curtilage]] of the house for Fourth Amendment purposes, such that the agents' warrantless observation invaded a protected area.
 
 ## Rule
 [[Curtilage]] is determined by reference to four factors: "curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by." — 480 U.S. at 301. ^pin-301
@@ -67,7 +67,7 @@ The barn and its surrounding area lay outside the [[Curtilage|curtilage]] of the
 - *Dunn*'s four-factor test remains the governing [[Curtilage|curtilage]] analysis and is applied in later home-privacy cases, including [[Florida v. Jardines]] (front-porch [[Curtilage|curtilage]]) and [[Collins v. Virginia]] (driveway/[[Curtilage|curtilage]] and the automobile exception).
 
 ## Appears on
-- [[Curtilage]] — *Key — Anchor*
+- [[Curtilage]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Dunn*, 480 U.S. 294 (1987) — https://www.courtlistener.com/opinion/111833/united-states-v-dunn/ — pinpoints: 301.
+- *United States v. Dunn*, 480 U.S. 294 (1987). https://www.courtlistener.com/opinion/111833/united-states-v-dunn/ — pinpoints: 301.

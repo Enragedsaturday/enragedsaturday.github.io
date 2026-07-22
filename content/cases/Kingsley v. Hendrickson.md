@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Michael Kingsley, a pretrial detainee in a Wisconsin jail, refused to remove paper covering the light fixture in his cell. Officers forcibly removed him to a receiving cell, where — Kingsley alleged — they slammed his head against a concrete bunk and used a Taser on him. He sued under § 1983 for excessive force. The jury was instructed that he had to prove the officers "recklessly" disregarded his safety (a subjective element) and returned a verdict for the officers; the Seventh Circuit affirmed.
+Michael Kingsley, a pretrial detainee in a Wisconsin jail, refused to remove paper covering the light fixture in his cell. Officers forcibly removed him to a receiving cell, where (Kingsley alleged) they slammed his head against a concrete bunk and used a Taser on him. He sued under § 1983 for excessive force. The jury was instructed that he had to prove the officers "recklessly" disregarded his safety (a subjective element) and returned a verdict for the officers; the Seventh Circuit affirmed.
 
 ## Issue
 Whether a pretrial detainee's excessive-force claim under the Fourteenth Amendment requires proof that the officers were subjectively aware that their use of force was unreasonable, or only that the force was objectively unreasonable.
@@ -65,8 +65,8 @@ Because the jury had been told to apply a subjective standard, asking whether th
 - *Kingsley* extends an objective-reasonableness approach akin to [[Graham v. Connor]] to the pretrial-detention setting and distinguishes the [[County of Sacramento v. Lewis]] line on substantive-due-process culpability. Several circuits have since extended its objective framework to pretrial-detainee conditions and medical-care claims. No negative treatment.
 
 ## Appears on
-- [[Use of Force]] — *Key — Progeny / Refinement*
+- [[Use of Force]] — *Key: Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kingsley v. Hendrickson*, 576 U.S. 389 (2015) — https://www.courtlistener.com/opinion/2811847/kingsley-v-hendrickson/ — pinpoint: 396-397 (135 S. Ct. at 2473, CL page-label confirmed; lead opinion id 9808641).
+- *Kingsley v. Hendrickson*, 576 U.S. 389 (2015) — https://www.courtlistener.com/opinion/2811847/kingsley-v-hendrickson/. Pinpoint: 396-397 (135 S. Ct. at 2473, CL page-label confirmed; lead opinion id 9808641).

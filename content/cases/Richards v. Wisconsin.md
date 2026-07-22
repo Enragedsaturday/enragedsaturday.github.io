@@ -64,7 +64,7 @@ There is no blanket [[Knock-and-Announce|knock-and-announce]] exception for drug
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Richards* refines the [[Knock-and-Announce|knock-and-announce]] rule of [[Wilson v. Arkansas]]; suppression for a [[Knock-and-Announce|knock-and-announce]] violation was later denied in [[Hudson v. Michigan]].
 
 ## Appears on
-- [[Knock-and-Announce]] — *Key — Progeny / Refinement*
+- [[Knock-and-Announce]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Richards v. Wisconsin*, 520 U.S. 385 (1997) — https://www.courtlistener.com/opinion/118103/richards-v-wisconsin/ — pinpoint: 394.
+- *Richards v. Wisconsin*, 520 U.S. 385 (1997) — https://www.courtlistener.com/opinion/118103/richards-v-wisconsin/. Pinpoint: 394.

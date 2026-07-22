@@ -31,7 +31,7 @@ homes:
 related: ["[[Lynumn v. Illinois]]", "[[Spano v. New York]]", "[[Ashcraft v. Tennessee]]", "[[Brown v. Mississippi]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "incommunicado", "coercion"]
-holding: "A written confession obtained in an atmosphere of substantial coercion and inducement — incommunicado detention plus the express threat of continued isolation and the promise of contact with family conditioned on signing a confession — is involuntary under the totality of the circumstances and inadmissible under the Fourteenth Amendment."
+holding: "A written confession obtained in an atmosphere of substantial coercion and inducement (incommunicado detention plus the express threat of continued isolation and the promise of contact with family conditioned on signing a confession) is involuntary under the totality of the circumstances and inadmissible under the Fourteenth Amendment."
 lake:
   record_id: Haynes v. Washington
   status: verified
@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Haynes was arrested for robbery and held in police custody. He repeatedly asked to call his wife and to contact a lawyer, and the police repeatedly refused — telling him he could make a call only after he cooperated and gave a written, signed confession. Held incommunicado and confronted with that condition, Haynes — who at first resisted a written statement — gave in and signed a written confession, which was admitted against him at trial.
+Haynes was arrested for robbery and held in police custody. He repeatedly asked to call his wife and to contact a lawyer, and the police repeatedly refused — telling him he could make a call only after he cooperated and gave a written, signed confession. Held incommunicado and confronted with that condition, Haynes (who at first resisted a written statement) gave in and signed a written confession, which was admitted against him at trial.
 
 ## Issue
 Whether a written confession obtained during incommunicado detention, after police conditioned the suspect's contact with his family on his signing the confession, was voluntary under the Due Process Clause.
 
 ## Rule
-No — it was the product of substantial coercion and inducement. "The uncontroverted portions of the record thus disclose that the petitioner's written confession was obtained in an atmosphere of substantial coercion and inducement created by statements and actions of state authorities." — 373 U.S. at 513. ^pin-513
+No, it was the product of substantial coercion and inducement. "The uncontroverted portions of the record thus disclose that the petitioner's written confession was obtained in an atmosphere of substantial coercion and inducement created by statements and actions of state authorities." — 373 U.S. at 513. ^pin-513
 
 The express threat and conditioned promise made the choice involuntary: "Confronted with the express threat of continued incommunicado detention and induced by the promise of communication with and access to family, Haynes understandably chose to make and sign the damning written statement; given the unfair and inherently coercive context in which made, that choice cannot be said to be the voluntary product of a free and unconstrained will, as required by the Fourteenth Amendment." — [*Id.* at 514](https://www.courtlistener.com/opinion/106625/haynes-v-washington/#:~:text=Confronted%20with%20the%20express%20threat). ^pin-514
 
@@ -67,7 +67,7 @@ The written confession was involuntary; admitting it violated the Fourteenth Ame
 - No negative treatment. *Haynes* applies the overborne-will test of [[Lynumn v. Illinois]] to incommunicado detention plus a conditioned promise, in the due-process line anchored by [[Brown v. Mississippi]] and developed in [[Spano v. New York]] and [[Ashcraft v. Tennessee]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Haynes v. Washington*, 373 U.S. 503 (1963) — https://www.courtlistener.com/opinion/106625/haynes-v-washington/ — pinpoints: 513–515.
+- *Haynes v. Washington*, 373 U.S. 503 (1963) — https://www.courtlistener.com/opinion/106625/haynes-v-washington/ (pinpoints: 513–515).

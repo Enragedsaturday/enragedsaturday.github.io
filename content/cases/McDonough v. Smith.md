@@ -43,7 +43,7 @@ tags:
   - accrual
   - malicious-prosecution
   - circuit-split
-holding: "The statute of limitations on a § 1983 claim that the plaintiff was prosecuted using fabricated evidence does not begin to run until the criminal proceedings against him terminate in his favor — for McDonough, when he was acquitted at his second trial; the Court did not decide the elements or constitutional source of a fabricated-evidence claim."
+holding: "The statute of limitations on a § 1983 claim that the plaintiff was prosecuted using fabricated evidence does not begin to run until the criminal proceedings against him terminate in his favor: for McDonough, when he was acquitted at his second trial; the Court did not decide the elements or constitutional source of a fabricated-evidence claim."
 aliases:
   - McDonough v. Smith
   - "McDonough v. Smith (2019)"

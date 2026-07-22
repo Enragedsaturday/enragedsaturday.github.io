@@ -45,7 +45,7 @@ tags:
   - terry-stop
   - reasonable-suspicion
   - anonymous-tip
-holding: "The totality of the circumstances did not establish reasonable suspicion to detain Daniels: a near-anonymous, non-emergency tip that alleged no illegality and described men in dark clothing — which Daniels, in a bright orange jumpsuit, did not match — plus his mere proximity to the described SUV in a high-crime area late at night amounted only to an arbitrary hunch, so suppressing his name as the fruit of the unlawful detention was proper."
+holding: "The totality of the circumstances did not establish reasonable suspicion to detain Daniels: a near-anonymous, non-emergency tip that alleged no illegality and described men in dark clothing (which Daniels, in a bright orange jumpsuit, did not match) plus his mere proximity to the described SUV in a high-crime area late at night amounted only to an arbitrary hunch, so suppressing his name as the fruit of the unlawful detention was proper."
 ---
 
 # United States v. Daniels

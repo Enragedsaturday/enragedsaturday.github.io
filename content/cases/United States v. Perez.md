@@ -45,7 +45,7 @@ tags:
   - container-search
   - backpack
   - first-circuit
-holding: "The search-incident-to-arrest exception permits a warrantless search of a physical container the arrestee carried or wore at the time of arrest, and the First Circuit's decision in United States v. Eatherton — upholding such a search of a bag carried at arrest — remained binding on the panel notwithstanding the Supreme Court's intervening decisions in Chadwick and Gant; the court invoked Riley only as context showing its rule excluded a cell phone's digital contents, not physical containers, so the warrantless search of the backpack Perez was wearing at his arrest did not violate the Fourth Amendment and his conviction was affirmed."
+holding: "The search-incident-to-arrest exception permits a warrantless search of a physical container the arrestee carried or wore at the time of arrest, and the First Circuit's decision in United States v. Eatherton (upholding such a search of a bag carried at arrest) remained binding on the panel notwithstanding the Supreme Court's intervening decisions in Chadwick and Gant; the court invoked Riley only as context showing its rule excluded a cell phone's digital contents, not physical containers, so the warrantless search of the backpack Perez was wearing at his arrest did not violate the Fourth Amendment and his conviction was affirmed."
 aliases:
   - United States v. Perez
   - "United States v. Perez (1st Cir. 2023)"
@@ -57,7 +57,7 @@ aliases:
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 9456060 → lead opinion 9913885 (Barron, C.J.; 89 F.4th 247, decided 2023-12-28); Rule quote string-matched to the CL opinion text 2026-07-07 (slip-style pin per S2 A3 — CL text is slip-paginated). S9 promotes. -->
 
 ## Background
-Gilbert Perez was convicted of a federal drug offense in the District of Maine after the district court denied his motion to suppress the fruits of a warrantless search of his backpack, which officers searched incident to his arrest. The district court rested its ruling on *United States v. Eatherton*, a First Circuit decision upholding a similar warrantless search of a bag within an arrestee's reach under the search-incident-to-arrest exception. On appeal, Perez argued that intervening Supreme Court decisions — *[[United States v. Chadwick|Chadwick]]* and *[[Arizona v. Gant]]* — had stripped *Eatherton* of its controlling force.
+Gilbert Perez was convicted of a federal drug offense in the District of Maine after the district court denied his motion to suppress the fruits of a warrantless search of his backpack, which officers searched incident to his arrest. The district court rested its ruling on *United States v. Eatherton*, a First Circuit decision upholding a similar warrantless search of a bag within an arrestee's reach under the search-incident-to-arrest exception. On appeal, Perez argued that intervening Supreme Court decisions (*[[United States v. Chadwick|Chadwick]]* and *[[Arizona v. Gant]]*) had stripped *Eatherton* of its controlling force.
 
 ## Issue
 Whether the First Circuit's search-incident-to-arrest rule permitting the warrantless search of a bag the arrestee carried or wore at the time of arrest, as applied in *Eatherton*, survives the Supreme Court's decisions in *[[United States v. Chadwick|Chadwick]]* and *[[Arizona v. Gant|Gant]]*.

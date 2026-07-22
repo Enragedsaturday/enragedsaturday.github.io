@@ -55,17 +55,17 @@ A person is seized only when a reasonable person would not feel free to leave. "
 The inquiry is objective and totality-based. "Examples of circumstances that might indicate a seizure, even where the person did not attempt to leave, would be the threatening presence of several officers, the display of a weapon by an officer, some physical touching of the person of the citizen, or the use of language or tone of voice indicating that compliance with the officer's request might be compelled." — *Id.* ^pin-554a
 
 ## Application
-On these facts the initial encounter was not a seizure. The agents approached Mendenhall in a public airport concourse, identified themselves, and *asked* — rather than demanded — to see her ticket and identification; they did not display weapons, touch her, or use a commanding tone. Under all those circumstances, a reasonable person would have believed she was free to leave, so no seizure occurred when she was approached and questioned. Her later agreement to accompany the agents to the office, and her consent to the search there, were voluntary. Because there was no seizure at the outset and the search was consensual, the heroin was not the product of an unlawful seizure.
+On these facts the initial encounter was not a seizure. The agents approached Mendenhall in a public airport concourse, identified themselves, and *asked*, rather than demanded, to see her ticket and identification; they did not display weapons, touch her, or use a commanding tone. Under all those circumstances, a reasonable person would have believed she was free to leave, so no seizure occurred when she was approached and questioned. Her later agreement to accompany the agents to the office, and her consent to the search there, were voluntary. Because there was no seizure at the outset and the search was consensual, the heroin was not the product of an unlawful seizure.
 
 ## Conclusion
 No Fourth Amendment seizure occurred when the agents approached and questioned Mendenhall, and her consent to the ensuing search was voluntary; the Sixth Circuit's suppression order was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The "free to leave" formulation appeared in Justice Stewart's opinion (joined on the seizure point only by Justice Rehnquist) but was **later adopted by the full Court** and is the governing test. It was refined in [[Florida v. Bostick]] and [[United States v. Drayton]] (where a person would not want to leave regardless — e.g., a bus passenger — the question is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter), and in [[California v. Hodari D.]] (a show-of-authority seizure is not complete until the suspect submits).
+- The "free to leave" formulation appeared in Justice Stewart's opinion (joined on the seizure point only by Justice Rehnquist) but was **later adopted by the full Court** and is the governing test. It was refined in [[Florida v. Bostick]] and [[United States v. Drayton]] (where a person would not want to leave regardless, e.g., a bus passenger, the question is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter), and in [[California v. Hodari D.]] (a show-of-authority seizure is not complete until the suspect submits).
 
 ## Appears on
-- [[Seizure of the Person]] — *Key — Anchor*
+- [[Seizure of the Person]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Mendenhall*, 446 U.S. 544 (1980) — https://www.courtlistener.com/opinion/110264/united-states-v-mendenhall/ — pinpoint: 554.
+- *United States v. Mendenhall*, 446 U.S. 544 (1980) — https://www.courtlistener.com/opinion/110264/united-states-v-mendenhall/. Pinpoint: 554.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Olmstead v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "trespass", "electronic-surveillance"]
-holding: "A 'spike mike' physically penetrating the wall into the house was a search — an unauthorized physical intrusion into a constitutionally protected area, not measured by 'technical trespass' niceties."
+holding: "A 'spike mike' physically penetrating the wall into the house was a search: an unauthorized physical intrusion into a constitutionally protected area, not measured by 'technical trespass' niceties."
 lake:
   record_id: Silverman v. United States
   status: verified
@@ -57,7 +57,7 @@ The Court distinguished its earlier electronic-surveillance decisions because th
 And the result did not depend on property-law technicalities: "In these circumstances we need not pause to consider whether or not there was a technical trespass under the local property law .... Inherent Fourth Amendment rights are not inevitably measurable in terms of ancient niceties of tort or real property law." — *Id.* at 511. ^pin-511
 
 ## Application
-The officers heard the petitioners' conversations only by usurping part of the home's heating system—a physical intrusion into the house itself—so the surveillance was a search regardless of whether it amounted to a technical trespass. The evidence should have been suppressed, and the convictions were reversed.
+The officers heard the petitioners' conversations only by usurping part of the home's heating system (a physical intrusion into the house itself), so the surveillance was a search regardless of whether it amounted to a technical trespass. The evidence should have been suppressed, and the convictions were reversed.
 
 ## Conclusion
 The spike-mike intrusion into the home was an unconstitutional search; the judgment was reversed.
@@ -67,7 +67,7 @@ The spike-mike intrusion into the home was an unconstitutional search; the judgm
 - *Silverman*'s actual-intrusion holding predates [[Katz v. United States]], which supplemented it with the reasonable-expectation-of-privacy test; the property-based trespass approach *Silverman* exemplifies was reaffirmed as an independent test in [[United States v. Jones]], and it marks the boundary of the wiretap rule of [[Olmstead v. United States]].
 
 ## Appears on
-- [[Trespass]] — *Key — Progeny / Refinement*
+- [[Trespass]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Silverman v. United States*, 365 U.S. 505 (1961) — https://www.courtlistener.com/opinion/106187/silverman-v-united-states/ — pinpoints: 509, 510, 511.
+- *Silverman v. United States*, 365 U.S. 505 (1961) — https://www.courtlistener.com/opinion/106187/silverman-v-united-states/. Pinpoints: 509, 510, 511.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Edwards v. Arizona]]", "[[Smith v. Illinois]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel"]
-holding: "A suspect may make a limited invocation of counsel; where he refuses to give a written statement without a lawyer but affirmatively agrees to talk orally, that limited request does not bar oral interrogation — courts honor the scope of the invocation as the suspect framed it."
+holding: "A suspect may make a limited invocation of counsel; where he refuses to give a written statement without a lawyer but affirmatively agrees to talk orally, that limited request does not bar oral interrogation. Courts honor the scope of the invocation as the suspect framed it."
 lake:
   record_id: Connecticut v. Barrett
   status: verified

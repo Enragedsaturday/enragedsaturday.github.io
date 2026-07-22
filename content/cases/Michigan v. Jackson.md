@@ -31,7 +31,7 @@ homes:
 related: ["[[Montejo v. Louisiana]]", "[[Edwards v. Arizona]]", "[[McNeil v. Wisconsin]]"]
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "waiver", "overruled", "historical"]
-holding: "Held that if police initiate interrogation after a defendant asserts, at an arraignment or similar proceeding, the Sixth Amendment right to counsel, any waiver for that police-initiated interrogation is invalid — **overruled by *Montejo v. Louisiana* (2009)**; survives only as history."
+holding: "Held that if police initiate interrogation after a defendant asserts, at an arraignment or similar proceeding, the Sixth Amendment right to counsel, any waiver for that police-initiated interrogation is invalid: **overruled by *Montejo v. Louisiana* (2009)**; survives only as history."
 lake:
   record_id: Michigan v. Jackson
   status: verified

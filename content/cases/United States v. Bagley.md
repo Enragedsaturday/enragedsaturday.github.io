@@ -65,7 +65,7 @@ A uniform reasonable-probability materiality standard governs *[[Brady v. Maryla
 - *Bagley* supplies the materiality standard for [[Brady v. Maryland]] and extends it to the impeachment evidence of [[Giglio v. United States]]; it was elaborated in [[Kyles v. Whitley]] (cumulative, whole-record review) and applied in [[Strickler v. Greene]] and [[Turner v. United States]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Bagley*, 473 U.S. 667 (1985) — https://www.courtlistener.com/opinion/111514/united-states-v-bagley/ — pinpoint: 682.
+- *United States v. Bagley*, 473 U.S. 667 (1985). https://www.courtlistener.com/opinion/111514/united-states-v-bagley/ — pinpoint: 682.

@@ -44,7 +44,7 @@ tags:
   - warrantless-arrest
   - payton
   - probable-cause
-holding: "To enter a home to execute an arrest warrant, officers must have reason to believe — which in the Fourth Circuit means probable cause — both that the home is the suspect's residence and that the suspect is present; an entry supported only by an arrest warrant and uncorroborated hunches about residence and presence is unlawful, so the evidence obtained must be suppressed."
+holding: "To enter a home to execute an arrest warrant, officers must have reason to believe (which in the Fourth Circuit means probable cause) both that the home is the suspect's residence and that the suspect is present; an entry supported only by an arrest warrant and uncorroborated hunches about residence and presence is unlawful, so the evidence obtained must be suppressed."
 ---
 
 # United States v. Brinkley

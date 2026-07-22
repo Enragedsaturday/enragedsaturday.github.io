@@ -47,7 +47,7 @@ tags:
   - particularity
   - good-faith-exception
   - second-circuit
-holding: "Sitting en banc, the Second Circuit affirmed Ganias's tax-evasion conviction on good-faith grounds — the agents' reliance on the 2006 warrant to search forensic mirror images retained from a 2003 search was objectively reasonable under Leon — and therefore expressly declined to decide whether the Government's years-long retention of non-responsive mirrored computer data beyond the 2003 warrant's scope violated the Fourth Amendment, displacing the panel's contrary holding."
+holding: "Sitting en banc, the Second Circuit affirmed Ganias's tax-evasion conviction on good-faith grounds (the agents' reliance on the 2006 warrant to search forensic mirror images retained from a 2003 search was objectively reasonable under Leon) and therefore expressly declined to decide whether the Government's years-long retention of non-responsive mirrored computer data beyond the 2003 warrant's scope violated the Fourth Amendment, displacing the panel's contrary holding."
 ---
 
 # United States v. Ganias
@@ -71,7 +71,7 @@ The court assumed without deciding that the prolonged retention of non-responsiv
 **Affirmed.** Judges Livingston and Lynch wrote for the [[Reading and Citing Cases#en-banc|en banc]] majority; Judge Lohier (joined by Judge Pooler) concurred, and Judge Chin dissented. The [[Reading and Citing Cases#en-banc|en banc]] court's good-faith disposition displaced the 2014 panel decision, which had held that the retention of the non-responsive mirror data violated the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Ganias* is the Second Circuit's marquee statement on the **digital over-seizure / over-retention** problem, but it decides the issue only through the *[[United States v. Leon|Leon]]* good-faith exit — the [[Reading and Citing Cases#en-banc|en banc]] court expressly declined to hold whether keeping non-responsive computer-mirror data beyond a warrant's scope is itself a Fourth Amendment violation, leaving the [[Particularity|particularity]]/retention question open in the circuit. Frame it as an unresolved-scope authority, paired with the plain-view anti-exploratory-search principle.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Ganias* is the Second Circuit's marquee statement on the **digital over-seizure / over-retention** problem, but it decides the issue only through the *[[United States v. Leon|Leon]]* good-faith exit. The [[Reading and Citing Cases#en-banc|en banc]] court expressly declined to hold whether keeping non-responsive computer-mirror data beyond a warrant's scope is itself a Fourth Amendment violation, leaving the [[Particularity|particularity]]/retention question open in the circuit. Frame it as an unresolved-scope authority, paired with the plain-view anti-exploratory-search principle.
 
 ## Appears on
 - [[Plain View Doctrine]] — *Key*

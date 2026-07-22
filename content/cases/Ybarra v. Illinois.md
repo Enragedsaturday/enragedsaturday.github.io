@@ -35,7 +35,7 @@ homes:
 related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Terry v. Ohio]]", "[[Maryland v. Buie]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrants", "search-of-persons", "terry-frisk", "probable-cause"]
-holding: "A warrant to search premises does not authorize searching persons who merely happen to be present; a search or frisk of a person requires cause particularized to that person — probable cause to search, or for a Terry frisk reasonable suspicion that the person is armed and dangerous."
+holding: "A warrant to search premises does not authorize searching persons who merely happen to be present; a search or frisk of a person requires cause particularized to that person: probable cause to search, or for a Terry frisk reasonable suspicion that the person is armed and dangerous."
 lake:
   record_id: Ybarra v. Illinois
   status: verified
@@ -75,4 +75,4 @@ The search of Ybarra violated the Fourth Amendment and the heroin should have be
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Ybarra v. Illinois*, 444 U.S. 85 (1979) — https://www.courtlistener.com/opinion/110158/ybarra-v-illinois/ — pinpoints: 91, 92–93.
+- *Ybarra v. Illinois*, 444 U.S. 85 (1979). https://www.courtlistener.com/opinion/110158/ybarra-v-illinois/ — pinpoints: 91, 92–93.

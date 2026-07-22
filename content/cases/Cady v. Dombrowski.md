@@ -67,7 +67,7 @@ The warrantless caretaking search of the vehicle was reasonable; the judgment gr
 - No negative treatment of the vehicle holding. [[Caniglia v. Strom]] (2021) **declined to extend** *Cady*'s community-caretaking rationale to warrantless entry of the home, stressing the "constitutional difference" between a vehicle and a home; *Cady*'s own holding remains good law.
 
 ## Appears on
-- [[Community Caretaking]] — *Key — Anchor*
+- [[Community Caretaking]] — *Key: Anchor*
 
 ## Sources
-- *Cady v. Dombrowski*, 413 U.S. 433 (1973) — https://www.courtlistener.com/opinion/108850/cady-v-dombrowski/ — pinpoints: 441, 448.
+- *Cady v. Dombrowski*, 413 U.S. 433 (1973) — https://www.courtlistener.com/opinion/108850/cady-v-dombrowski/. Pinpoints: 441, 448.

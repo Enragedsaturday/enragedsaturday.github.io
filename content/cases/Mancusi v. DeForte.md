@@ -67,7 +67,7 @@ DeForte had [[Standing to Challenge a Search|Fourth Amendment standing]] and the
 - No negative treatment of the result. *Mancusi* applies [[Katz v. United States]] to the standing question and relies on [[Jones v. United States]]'s loosening of the ownership requirement. [[Rakas v. Illinois]] (1978) abandoned the broad "legitimately on premises" formula and recast standing as a substantive expectation-of-privacy inquiry, but *Mancusi*'s holding that an employee can have a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a shared workplace endures and underlies [[O'Connor v. Ortega]]; cf. [[Minnesota v. Carter]].
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny*
+- [[Standing to Challenge a Search]] — *Key: Progeny*
 
 ## Sources
-- *Mancusi v. DeForte*, 392 U.S. 364 (1968) — https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/ — pinpoints: 368, 369.
+- *Mancusi v. DeForte*, 392 U.S. 364 (1968). https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/ — pinpoints: 368, 369.

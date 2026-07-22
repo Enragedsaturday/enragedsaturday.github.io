@@ -31,7 +31,7 @@ homes:
 related: ["[[Richards v. Wisconsin]]", "[[Hudson v. Michigan]]"]
 aliases: ["Wilson"]
 tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-execution", "reasonableness"]
-holding: "The common-law **knock-and-announce** principle — that officers must announce their presence and authority before forcibly entering a…"
+holding: "The common-law **knock-and-announce** principle: that officers must announce their presence and authority before forcibly entering a…"
 lake:
   record_id: Wilson v. Arkansas
   status: verified
@@ -47,7 +47,7 @@ lake:
 Sharlene Wilson sold narcotics to a police informant; at one buy she waved a semiautomatic pistol in the informant's face and threatened to kill her. Police obtained warrants to search Wilson's home and to arrest her and her cohabitant Jacobs (who had a record of arson and firebombing). Executing the search warrant, officers found the main door open, opened an unlocked screen door, and entered while identifying themselves as police and announcing the warrant. They seized drugs, paraphernalia, a gun, and ammunition. Wilson moved to suppress, arguing the officers had failed to knock-and-announce before entering; the Arkansas Supreme Court held the Fourth Amendment imposes no such requirement.
 
 ## Issue
-Whether the common-law "knock and announce" principle — that officers ordinarily must announce their presence and authority before entering a dwelling — forms part of the Fourth Amendment reasonableness inquiry.
+Whether the common-law "knock and announce" principle (that officers ordinarily must announce their presence and authority before entering a dwelling) forms part of the Fourth Amendment reasonableness inquiry.
 
 ## Rule
 Yes. "[W]e hold that this common-law 'knock and announce' principle forms a part of the reasonableness inquiry under the Fourth Amendment." — 514 U.S. at 929. ^pin-929
@@ -59,7 +59,7 @@ The requirement is flexible, not absolute: "This is not to say, of course, that 
 Threats of violence, risk of escape, or likely destruction of evidence may make an unannounced entry reasonable.
 
 ## Application
-On these facts the Court announced that [[Knock-and-Announce|knock-and-announce]] is part of the reasonableness inquiry but did not itself decide whether the officers' entry was reasonable; it reversed and [[Reading and Citing Cases#on-remand|remanded]] because the state courts had wrongly held the principle irrelevant and so never weighed the countervailing circumstances. The Court flagged the facts the lower courts should consider — that Wilson had brandished a pistol and threatened to kill the informant, and that her cohabitant had a record of arson and firebombing — as potentially supporting law-enforcement interests in an unannounced entry.
+On these facts the Court announced that [[Knock-and-Announce|knock-and-announce]] is part of the reasonableness inquiry but did not itself decide whether the officers' entry was reasonable; it reversed and [[Reading and Citing Cases#on-remand|remanded]] because the state courts had wrongly held the principle irrelevant and so never weighed the countervailing circumstances. The Court flagged the facts the lower courts should consider (that Wilson had brandished a pistol and threatened to kill the informant, and that her cohabitant had a record of arson and firebombing) as potentially supporting law-enforcement interests in an unannounced entry.
 
 ## Conclusion
 The [[Knock-and-Announce|knock-and-announce]] principle is part of Fourth Amendment reasonableness; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to determine whether the unannounced entry was reasonable under the circumstances.
@@ -69,7 +69,7 @@ The [[Knock-and-Announce|knock-and-announce]] principle is part of Fourth Amendm
 - No negative treatment. *Wilson* was refined by [[Richards v. Wisconsin]] (1997), which set the "reasonable suspicion" standard for dispensing with announcement (danger, futility, or destruction of evidence). [[Hudson v. Michigan]] (2006) held that a [[Knock-and-Announce|knock-and-announce]] violation does not by itself trigger the exclusionary rule — limiting the remedy, not the underlying requirement.
 
 ## Appears on
-- [[Knock-and-Announce]] — *Key — Anchor*
+- [[Knock-and-Announce]] — *Key: Anchor*
 
 ## Sources
-- *Wilson v. Arkansas*, 514 U.S. 927 (1995) — https://www.courtlistener.com/opinion/117936/wilson-v-arkansas/ — pinpoints: 929, 934.
+- *Wilson v. Arkansas*, 514 U.S. 927 (1995). https://www.courtlistener.com/opinion/117936/wilson-v-arkansas/ — pinpoints: 929, 934.

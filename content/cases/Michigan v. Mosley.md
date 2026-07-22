@@ -31,7 +31,7 @@ homes:
 related: ["[[Miranda v. Arizona]]", "[[Edwards v. Arizona]]", "[[Berghuis v. Thompkins]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "right-to-silence", "invocation"]
-holding: "After a suspect invokes the right to SILENCE, later statements are admissible if police \"scrupulously honored\" the invocation — here,…"
+holding: "After a suspect invokes the right to SILENCE, later statements are admissible if police \"scrupulously honored\" the invocation: here,…"
 lake:
   record_id: Michigan v. Mosley
   status: verified
@@ -63,7 +63,7 @@ Reversed; the statements obtained at the second interrogation were admissible.
 - No negative treatment. *Mosley* supplies the "scrupulously honored" standard for resuming questioning after an invocation of the right to silence, distinct from the counsel-invocation rule of [[Edwards v. Arizona]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Michigan v. Mosley*, 423 U.S. 96 (1975) — https://www.courtlistener.com/opinion/109336/michigan-v-mosley/ — pinpoint: 104.
+- *Michigan v. Mosley*, 423 U.S. 96 (1975). https://www.courtlistener.com/opinion/109336/michigan-v-mosley/ — pinpoint: 104.

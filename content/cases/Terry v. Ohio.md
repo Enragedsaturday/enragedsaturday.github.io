@@ -61,7 +61,7 @@ A protective frisk is permitted where the officer reasonably fears for safety: "
 The Court held that "where a police officer observes unusual conduct which leads him reasonably to conclude in light of his experience that criminal activity may be afoot and that the persons with whom he is dealing may be armed and presently dangerous, where in the course of investigating this behavior he identifies himself as a policeman and makes reasonable inquiries, and where nothing in the initial stages of the encounter serves to dispel his reasonable fear for his own or others' safety, he is entitled for the protection of himself and others in the area to conduct a carefully limited search of the outer clothing of such persons in an attempt to discover weapons which might be used to assault him." — *Id.* at 30. ^pin-30
 
 ## Application
-On these facts the detective's observations — two men taking turns walking the same route and staring into the store window roughly a dozen times, then conferring — supplied specific, articulable facts warranting a brief stop and supporting a reasonable belief the men were contemplating a daylight robbery and were armed. Because that belief was reasonable, the limited pat-down of the outer clothing that produced Terry's pistol was a reasonable search, and the weapon was properly admitted.
+On these facts the detective's observations (two men taking turns walking the same route and staring into the store window roughly a dozen times, then conferring) supplied specific, articulable facts warranting a brief stop and supporting a reasonable belief the men were contemplating a daylight robbery and were armed. Because that belief was reasonable, the limited pat-down of the outer clothing that produced Terry's pistol was a reasonable search, and the weapon was properly admitted.
 
 ## Conclusion
 The stop and protective frisk were reasonable under the Fourth Amendment; Terry's conviction was affirmed. A weapons pat-down on reasonable suspicion is permissible without probable cause to arrest.
@@ -71,9 +71,9 @@ The stop and protective frisk were reasonable under the Fourth Amendment; Terry'
 - The reasonable-suspicion standard was elaborated in [[United States v. Cortez]] ("particularized and objective basis"; "whole picture") and [[United States v. Arvizu]] ([[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]; no "divide-and-conquer"), and applied to flight in [[Illinois v. Wardlow]] and anonymous tips in [[Florida v. J.L.]].
 
 ## Appears on
-- [[Reasonable Suspicion]] — *Key — Anchor*
+- [[Reasonable Suspicion]] — *Key: Anchor*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
-- [[The Proof Ladder]] — *Key — rung anchor*
+- [[The Proof Ladder]] — *Key: rung anchor*
 
 ## Sources
-- *Terry v. Ohio*, 392 U.S. 1 (1968) — https://www.courtlistener.com/opinion/107729/terry-v-ohio/ — pinpoints: 21, 27, 30.
+- *Terry v. Ohio*, 392 U.S. 1 (1968) — https://www.courtlistener.com/opinion/107729/terry-v-ohio/. Pinpoints: 21, 27, 30.

@@ -33,7 +33,7 @@ homes:
 related: ["[[Hanlon v. Berger]]", "[[Harlow v. Fitzgerald]]", "[[Graham v. Connor]]"]
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "media-ride-along", "warrant-execution", "clearly-established"]
-holding: "Bringing the media or other third parties into a home during the execution of a warrant, when not in aid of the warrant, violates the Fourth Amendment — but the officers had qualified immunity because that right was not clearly established."
+holding: "Bringing the media or other third parties into a home during the execution of a warrant, when not in aid of the warrant, violates the Fourth Amendment, but the officers had qualified immunity because that right was not clearly established."
 lake:
   record_id: Wilson v. Layne
   status: verified

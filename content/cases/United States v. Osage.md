@@ -47,12 +47,12 @@ lake:
 On an Amtrak train passing through Albuquerque, Officer Salazar asked David Blake Osage for permission to search his luggage; Osage answered "yeah, I guess," nodded, and gestured toward a black bag. Inside the bag the officer found four 28-ounce cans labeled "tamales in gravy." Noticing that one can's label appeared re-glued and that the can felt and sounded like it held salt rather than tamales in liquid, the officer used a Leatherman tool to cut the can open, discovering methamphetamine inside. Osage was charged with possession with intent to distribute methamphetamine (21 U.S.C. § 841); the district court denied suppression, reasoning that Osage's consent was voluntary and that he never limited its scope or objected as the can was opened. Osage pleaded guilty, reserving his right to appeal the suppression ruling.
 
 ## Issue
-Whether a suspect's general consent to search his luggage authorized the officer to cut open — and thereby destroy — a sealed can found inside.
+Whether a suspect's general consent to search his luggage authorized the officer to cut open (and thereby destroy) a sealed can found inside.
 
 ## Rule
 The scope of a consent search is bounded by the consent given, "measured by objective reasonableness: 'what would the typical reasonable person have understood by the exchange between the officer and the suspect?'" — 235 F.3d at 520 (quoting *Florida v. Jimeno*, 500 U.S. 248, 251 (1991)). ^pin-520
 
-General consent to search an area reaches containers within it that could hold contraband — but it does not reach destroying them: "We acknowledge that the Supreme Court and this court have previously stated that a general consent to search a particular area is reasonably understood to extend to a search of containers within that area that could contain contraband . . . . However, we do not read that authority to permit the destruction of such containers." — *Id.* at 521. ^pin-521
+General consent to search an area reaches containers within it that could hold contraband, but it does not reach destroying them: "We acknowledge that the Supreme Court and this court have previously stated that a general consent to search a particular area is reasonably understood to extend to a search of containers within that area that could contain contraband . . . . However, we do not read that authority to permit the destruction of such containers." — *Id.* at 521. ^pin-521
 
 The court therefore held: "before an officer may actually destroy or render completely useless a container which would otherwise be within the scope of a permissive search, the officer must obtain explicit authorization, or have some other, lawful, basis upon which to proceed." — [235 F.3d at 522](https://www.courtlistener.com/opinion/160502/united-states-v-osage/#:~:text=before%20an%20officer%20may%20actually). ^pin-522
 
@@ -70,4 +70,4 @@ The search exceeded the scope of consent; the Tenth Circuit reversed the denial 
 - [[Consent Searches]] — *Limiting*
 
 ## Sources
-- *United States v. Osage*, 235 F.3d 518 (10th Cir. 2000) — https://www.courtlistener.com/opinion/160502/united-states-v-osage/ — pinpoints: 520, 521, 522.
+- *United States v. Osage*, 235 F.3d 518 (10th Cir. 2000). https://www.courtlistener.com/opinion/160502/united-states-v-osage/ — pinpoints: 520, 521, 522.

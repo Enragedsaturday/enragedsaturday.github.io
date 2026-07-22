@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Gary Cone was convicted of the 1980 murders of an elderly Memphis couple and sentenced to death. His defense was that chronic amphetamine addiction — which he traced to combat service in Vietnam — left him impaired or insane. Years later, after gaining access to the prosecutor's file, Cone discovered witness statements and documents the State had suppressed that corroborated his drug impairment around the time of the crimes. The Tennessee courts treated his *[[Brady v. Maryland|Brady]]* claim as "previously determined," and the federal courts found it defaulted and, in any event, not material to guilt.
+Gary Cone was convicted of the 1980 murders of an elderly Memphis couple and sentenced to death. His defense was that chronic amphetamine addiction (which he traced to combat service in Vietnam) left him impaired or insane. Years later, after gaining access to the prosecutor's file, Cone discovered witness statements and documents the State had suppressed that corroborated his drug impairment around the time of the crimes. The Tennessee courts treated his *[[Brady v. Maryland|Brady]]* claim as "previously determined," and the federal courts found it defaulted and, in any event, not material to guilt.
 
 ## Issue
-Whether Cone's *[[Brady v. Maryland|Brady]]* claim was procedurally barred from federal [[Common Legal Terms#habeas-corpus|habeas]] review, and whether the suppressed evidence — even if not material to guilt — had to be assessed for materiality to his death sentence.
+Whether Cone's *[[Brady v. Maryland|Brady]]* claim was procedurally barred from federal [[Common Legal Terms#habeas-corpus|habeas]] review, and whether the suppressed evidence (even if not material to guilt) had to be assessed for materiality to his death sentence.
 
 ## Rule
 *[[Brady v. Maryland|Brady]]* reaches evidence material to punishment. "[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment." — 556 U.S. 449. ^pin-469
@@ -69,7 +69,7 @@ The Court held the *[[Brady v. Maryland|Brady]]* claim was not procedurally defa
 - *Cone* applies the [[Brady v. Maryland]] rule and the unified materiality standard of [[United States v. Bagley]] / [[Kyles v. Whitley]] / [[Strickler v. Greene]] to the sentencing phase, and cites [[Banks v. Dretke]] for the "put the whole case in such a different light" formulation. No negative treatment.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Cone v. Bell*, 556 U.S. 449 (2009) — https://www.courtlistener.com/opinion/145883/cone-v-bell/ — interior pincite(s) 469, 470 (& n.15) retired pending official-reporter pagination. (CourtListener carries the slip opinion, paginated "556 U.S. ___"; U.S. Reports pages supplied from the official reporter.)
+- *Cone v. Bell*, 556 U.S. 449 (2009) — https://www.courtlistener.com/opinion/145883/cone-v-bell/. Interior pincite(s) 469, 470 (& n.15) retired pending official-reporter pagination. (CourtListener carries the slip opinion, paginated "556 U.S. ___"; U.S. Reports pages supplied from the official reporter.)

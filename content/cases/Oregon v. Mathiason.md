@@ -47,7 +47,7 @@ lake:
 A parolee, Mathiason, came voluntarily to a state police office after an officer left a note asking him to call. The officer told him he was not under arrest, falsely said that his fingerprints had been found at a burglary scene, and questioned him behind a closed door. Mathiason confessed and then left the office freely. ([[Common Legal Terms#per-curiam|Per curiam]].)
 
 ## Issue
-Whether a suspect questioned at a police station — who came voluntarily, was told he was not under arrest, and was free to leave — is "in custody" for *[[Miranda v. Arizona|Miranda]]* purposes.
+Whether a suspect questioned at a police station (who came voluntarily, was told he was not under arrest, and was free to leave) is "in custody" for *[[Miranda v. Arizona|Miranda]]* purposes.
 
 ## Rule
 *[[Miranda v. Arizona|Miranda]]* applies only to custodial interrogation; a station-house setting or a "coercive environment" does not by itself trigger it. "[P]olice officers are not required to administer *Miranda* warnings to everyone whom they question. Nor is the requirement of warnings to be imposed simply because the questioning takes place in the station house, or because the questioned person is one whom the police suspect." — 429 U.S. at 495. ^pin-495
@@ -65,7 +65,7 @@ Mathiason was not in custody; *[[Miranda v. Arizona|Miranda]]* did not apply and
 - No negative treatment. *Mathiason* applies [[Miranda v. Arizona]]'s custody threshold and was reaffirmed in [[California v. Beheler]]; the custody inquiry is objective ([[Stansbury v. California]]) and turns on a formal-arrest-or-equivalent restraint on freedom of movement ([[Howes v. Fields]]).
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Oregon v. Mathiason*, 429 U.S. 492 (1977) (per curiam) — https://www.courtlistener.com/opinion/109587/oregon-v-mathiason/ — pinpoint: 495.
+- *Oregon v. Mathiason*, 429 U.S. 492 (1977) (per curiam) — https://www.courtlistener.com/opinion/109587/oregon-v-mathiason/. Pinpoint: 495.

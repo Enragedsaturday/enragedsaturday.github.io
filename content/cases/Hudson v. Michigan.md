@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police executing a valid search warrant at Hudson's home announced their presence but waited only a short time — about three to five seconds — before entering. They found drugs and a firearm. Hudson moved to suppress, arguing the premature entry violated the Fourth Amendment's [[Knock-and-Announce|knock-and-announce]] requirement.
+Police executing a valid search warrant at Hudson's home announced their presence but waited only a short time (about three to five seconds) before entering. They found drugs and a firearm. Hudson moved to suppress, arguing the premature entry violated the Fourth Amendment's [[Knock-and-Announce|knock-and-announce]] requirement.
 
 ## Issue
 Whether a violation of the [[Knock-and-Announce|knock-and-announce]] rule requires suppression of the evidence found in the ensuing search.
@@ -65,7 +65,7 @@ A [[Knock-and-Announce|knock-and-announce]] violation does not trigger the exclu
 - No negative treatment. *Hudson* leaves the [[Knock-and-Announce|knock-and-announce]] requirement of [[Wilson v. Arkansas]] and [[Richards v. Wisconsin]] intact but withholds the exclusionary remedy for its violation, applying the cost-benefit, deterrence-focused approach of the modern exclusionary-rule cases.
 
 ## Appears on
-- [[Knock-and-Announce]] — *Key — Progeny / Refinement*
+- [[Knock-and-Announce]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Hudson v. Michigan*, 547 U.S. 586 (2006) — https://www.courtlistener.com/opinion/145646/hudson-v-michigan/ — pinpoint: 594.
+- *Hudson v. Michigan*, 547 U.S. 586 (2006) — https://www.courtlistener.com/opinion/145646/hudson-v-michigan/. Pinpoint: 594.

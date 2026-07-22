@@ -33,7 +33,7 @@ homes:
 related: ["[[Florida v. Harris]]", "[[United States v. Jones]]", "[[California v. Ciraolo]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "knock-and-talk", "dog-sniff", "trespass"]
-holding: "Bringing a drug dog onto the home's curtilage (the front porch) to investigate exceeded the implied license to approach and knock — a…"
+holding: "Bringing a drug dog onto the home's curtilage (the front porch) to investigate exceeded the implied license to approach and knock, a…"
 lake:
   record_id: Florida v. Jardines
   status: verified
@@ -57,7 +57,7 @@ Yes. Bringing a drug dog onto the [[Curtilage|curtilage]] to gather evidence is 
 The implied license that lets a visitor (or officer) walk up and knock does not extend to canine investigation: "But introducing a trained police dog to explore the area around the home in hopes of discovering incriminating evidence is something else. There is no customary invitation to do that." — [*Id.* at 9](https://www.courtlistener.com/opinion/856347/florida-v-jardines/#:~:text=There%20is%20no%20customary%20invitation%20to%20do%20that). ^pin-9
 
 ## Application
-The officer entered the porch — part of the home's [[Curtilage|curtilage]] — and used a trained dog to detect what was inside, a purpose well outside the customary invitation extended to anyone who walks up to knock. Because the officer physically occupied protected ground to gather evidence beyond the scope of any implied license, the front-door dog sniff was a search; the warrant that followed rested on that unlawful sniff.
+The officer entered the porch, part of the home's [[Curtilage|curtilage]], and used a trained dog to detect what was inside, a purpose well outside the customary invitation extended to anyone who walks up to knock. Because the officer physically occupied protected ground to gather evidence beyond the scope of any implied license, the front-door dog sniff was a search; the warrant that followed rested on that unlawful sniff.
 
 ## Conclusion
 The front-porch dog sniff was an unlicensed physical intrusion and thus a Fourth Amendment search; the Florida Supreme Court's suppression order was affirmed.
@@ -67,8 +67,8 @@ The front-porch dog sniff was an unlicensed physical intrusion and thus a Fourth
 - No negative treatment. *Jardines* fixes the [[Curtilage|curtilage]] / implied-license boundary that governs the [[Knock and Talk|knock-and-talk]]; the separate question of a dog's reliability once it alerts is addressed in [[Florida v. Harris]].
 
 ## Appears on
-- [[Knock and Talk]] — *Key — Anchor*
+- [[Knock and Talk]] — *Key: Anchor*
 - [[Trespass]] — *Key*
 
 ## Sources
-- *Florida v. Jardines*, 569 U.S. 1 (2013) — https://www.courtlistener.com/opinion/856347/florida-v-jardines/ — pinpoints: 6, 9.
+- *Florida v. Jardines*, 569 U.S. 1 (2013). https://www.courtlistener.com/opinion/856347/florida-v-jardines/ — pinpoints: 6, 9.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a series of escalating 911 calls on May 25, 2017 — including an anonymous caller claiming to be Teresa Graham's cousin who requested a "welfare check" and referenced a possible mental-health history — Sergeant Barnette ordered Minneapolis officers to take Graham into custody for an emergency mental-health evaluation under Minnesota's civil-commitment statute. The officers entered Graham's home, seized her, and transported her to a hospital, all without a warrant. Graham sued the officers and the City under 42 U.S.C. § 1983. The district court granted the officers summary judgment; the Eighth Circuit affirmed in 2020 (970 F.3d 1075), and the Supreme Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for reconsideration in light of [[Caniglia v. Strom]].
+After a series of escalating 911 calls on May 25, 2017 (including an anonymous caller claiming to be Teresa Graham's cousin who requested a "welfare check" and referenced a possible mental-health history), Sergeant Barnette ordered Minneapolis officers to take Graham into custody for an emergency mental-health evaluation under Minnesota's civil-commitment statute. The officers entered Graham's home, seized her, and transported her to a hospital, all without a warrant. Graham sued the officers and the City under 42 U.S.C. § 1983. The district court granted the officers summary judgment; the Eighth Circuit affirmed in 2020 (970 F.3d 1075), and the Supreme Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for reconsideration in light of [[Caniglia v. Strom]].
 
 ## Issue
 [[Reading and Citing Cases#on-remand|On remand]] after *[[Caniglia v. Strom|Caniglia]]*, whether the "community caretaking" framing supports a warrantless seizure of a person for a mental-health evaluation, and what Fourth Amendment standard governs such a seizure.
@@ -57,17 +57,17 @@ The governing standard is probable cause of dangerousness: "we again conclude th
 The court noted that "[a]t least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable." — *Id.* (slip op., at 10-11). ^pin-op10b
 
 ## Application
-On these facts, the court reaffirmed (prong one) that the officers needed probable cause that Graham was mentally ill and dangerous to herself or others to seize her for a mental-health evaluation, and it rejected the "community caretaking" label as the analytic frame. *[[Caniglia v. Strom|Caniglia]]* did not disturb that reasoning, because the Supreme Court there "refrain[ed]" from addressing the standards for "emergency seizures for psychiatric treatment, observation, or stabilization." But because Eighth Circuit case law had previously been ambiguous — some precedents suggesting a lower "reasonable belief" standard — the probable-cause-of-dangerousness rule was not clearly established at the time of Graham's seizure, so the officers were entitled to [[Qualified Immunity|qualified immunity]] on that claim.
+On these facts, the court reaffirmed (prong one) that the officers needed probable cause that Graham was mentally ill and dangerous to herself or others to seize her for a mental-health evaluation, and it rejected the "community caretaking" label as the analytic frame. *[[Caniglia v. Strom|Caniglia]]* did not disturb that reasoning, because the Supreme Court there "refrain[ed]" from addressing the standards for "emergency seizures for psychiatric treatment, observation, or stabilization." But because Eighth Circuit case law had previously been ambiguous (some precedents suggesting a lower "reasonable belief" standard), the probable-cause-of-dangerousness rule was not clearly established at the time of Graham's seizure, so the officers were entitled to [[Qualified Immunity|qualified immunity]] on that claim.
 
 ## Conclusion
-The Eighth Circuit again affirmed summary judgment for the officers on qualified-immunity grounds, while holding that probable cause of dangerousness — not a "community caretaking" rationale — is the standard a warrantless mental-health seizure must satisfy under the Fourth Amendment.
+The Eighth Circuit again affirmed summary judgment for the officers on qualified-immunity grounds, while holding that probable cause of dangerousness (not a "community caretaking" rationale) is the standard a warrantless mental-health seizure must satisfy under the Fourth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 8th Cir.**
 - *Graham* is the Eighth Circuit's post-*[[Caniglia v. Strom|Caniglia]]* **limit** on the caretaking framing: it treats the "community caretaking" label for psychiatric seizures as a category error and routes such seizures through **probable cause of dangerousness**. It builds on [[Caniglia v. Strom]] (no freestanding community-caretaking entry into the home) and stands alongside the persons-in-public caretaking-detention line of [[United States v. Garner]] (10th Cir.) and [[United States v. Rideau]] (5th Cir.), which address brief caretaking detentions rather than full psychiatric seizures.
 
 ## Appears on
-- [[Community Caretaking]] — *Key — Progeny / Limit*
+- [[Community Caretaking]] — *Key: Progeny / Limit*
 
 ## Sources
-- *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) — https://www.courtlistener.com/opinion/4900401/teresa-graham-v-shannon-barnette/ — pinpoints given as slip-opinion pages (slip op., at 10-11); CourtListener carries the slip opinion (cluster 4900401 → opinion 4704180).
+- *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) — https://www.courtlistener.com/opinion/4900401/teresa-graham-v-shannon-barnette/. Pinpoints given as slip-opinion pages (slip op., at 10-11); CourtListener carries the slip opinion (cluster 4900401 → opinion 4704180).

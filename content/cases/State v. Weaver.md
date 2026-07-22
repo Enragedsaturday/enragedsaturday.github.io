@@ -45,7 +45,7 @@ tags:
   - consent
   - dog-sniff
   - state-court
-holding: "A canine sniff of a vehicle on private, non-public business premises exceeds the scope of a limited consent and is unlawful once the owner's consent to be there for a particular purpose has ended — the rule that a dog sniff is not itself a Fourth Amendment search presupposes that the officer, and therefore the dog, has a lawful right to be where the sniff occurs, so suppression was proper where officers lingered and deployed a drug dog after their consented-to search for a person came up empty."
+holding: "A canine sniff of a vehicle on private, non-public business premises exceeds the scope of a limited consent and is unlawful once the owner's consent to be there for a particular purpose has ended. The rule that a dog sniff is not itself a Fourth Amendment search presupposes that the officer, and therefore the dog, has a lawful right to be where the sniff occurs, so suppression was proper where officers lingered and deployed a drug dog after their consented-to search for a person came up empty."
 ---
 
 # State v. Weaver

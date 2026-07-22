@@ -31,7 +31,7 @@ homes:
 related: ["[[Massiah v. United States]]", "[[Brewer v. Williams]]", "[[Oregon v. Elstad]]"]
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "massiah", "deliberate-elicitation"]
-holding: "After indictment, officers who deliberately elicit incriminating statements from a defendant outside the presence of counsel and without a waiver violate the Sixth Amendment under Massiah — and the Sixth Amendment standard is deliberate elicitation, not Miranda 'interrogation,' so the absence of interrogation does not defeat the claim."
+holding: "After indictment, officers who deliberately elicit incriminating statements from a defendant outside the presence of counsel and without a waiver violate the Sixth Amendment under Massiah. The Sixth Amendment standard is deliberate elicitation, not Miranda 'interrogation,' so the absence of interrogation does not defeat the claim."
 lake:
   record_id: Fellers v. United States
   status: verified

@@ -31,7 +31,7 @@ homes:
 related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[Illinois v. Wardlow]]", "[[Ornelas v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion"]
-holding: "Reasonable suspicion is judged on the totality of the circumstances — the \"whole picture\" — and reviewing courts may NOT use a…"
+holding: "Reasonable suspicion is judged on the totality of the circumstances (the \"whole picture\") and reviewing courts may NOT use a…"
 lake:
   record_id: United States v. Arvizu
   status: verified
@@ -55,7 +55,7 @@ Reasonable suspicion is judged on the whole picture, not factor-by-factor: revie
 The Court rejected the appellate court's approach of evaluating each factor in isolation: "*Terry*, however, precludes this sort of divide-and-conquer analysis." — *Id.* at 274. ^pin-274
 
 ## Application
-Viewing the agent's observations together — and giving due weight to his specialized training and experience with the area's smuggling patterns — the combination of the avoided checkpoint, the suspicious timing, the driver's stiff demeanor, and the children's choreographed waving with their feet propped on the cargo supplied a particularized and objective basis to suspect criminal activity. The Ninth Circuit erred by dismissing factors individually; assessed as a whole, the stop was supported by reasonable suspicion.
+Viewing the agent's observations together, and giving due weight to his specialized training and experience with the area's smuggling patterns, the combination of the avoided checkpoint, the suspicious timing, the driver's stiff demeanor, and the children's choreographed waving with their feet propped on the cargo supplied a particularized and objective basis to suspect criminal activity. The Ninth Circuit erred by dismissing factors individually; assessed as a whole, the stop was supported by reasonable suspicion.
 
 ## Conclusion
 The stop was supported by reasonable suspicion; the Ninth Circuit's reversal was itself reversed. Courts must assess reasonable suspicion under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], not by isolating and discounting individual factors.
@@ -65,7 +65,7 @@ The stop was supported by reasonable suspicion; the Ninth Circuit's reversal was
 - *Arvizu* applies the reasonable-suspicion standard of [[Terry v. Ohio]] and the "whole picture"/"particularized and objective basis" formulation of [[United States v. Cortez]]; it parallels the totality approach approved in [[Illinois v. Wardlow]] and the deference to officer inferences in [[Ornelas v. United States]].
 
 ## Appears on
-- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Arvizu*, 534 U.S. 266 (2002) — https://www.courtlistener.com/opinion/118474/united-states-v-arvizu/ — pinpoints: 273, 274.
+- *United States v. Arvizu*, 534 U.S. 266 (2002) — https://www.courtlistener.com/opinion/118474/united-states-v-arvizu/. Pinpoints: 273, 274.

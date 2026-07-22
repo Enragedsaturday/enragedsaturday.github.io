@@ -64,10 +64,10 @@ The warrantless search of the containers found in the trunk was valid under the 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Ross* overruled *[[Robbins v. California]]* and supplies the foundational scope rule for vehicle searches. [[California v. Acevedo]] later unified the container doctrine — where police have probable cause to search a specific container placed in a car, they may search that container without a warrant — building on, not disturbing, *Ross*.
+- No negative treatment. *Ross* overruled *[[Robbins v. California]]* and supplies the foundational scope rule for vehicle searches. [[California v. Acevedo]] later unified the container doctrine (where police have probable cause to search a specific container placed in a car, they may search that container without a warrant), building on, not disturbing, *Ross*.
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Anchor*
+- [[Automobile Exception]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Ross*, 456 U.S. 798 (1982) — https://www.courtlistener.com/opinion/110719/united-states-v-ross/ — pinpoints: 824, 825 (parallel 102 S. Ct. 2157).
+- *United States v. Ross*, 456 U.S. 798 (1982) — https://www.courtlistener.com/opinion/110719/united-states-v-ross/. Pinpoints: 824, 825 (parallel 102 S. Ct. 2157).

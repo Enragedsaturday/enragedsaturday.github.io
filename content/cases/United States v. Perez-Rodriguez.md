@@ -44,7 +44,7 @@ tags:
   - jury-instruction
   - plain-error
   - first-circuit
-holding: "The entrapment defense has two prongs — improper government inducement and the defendant's lack of predisposition — and a defendant who makes a modest production showing on both is entitled to have the jury instructed on entrapment; where an undercover agent posing on a dating app steered a target toward a sexual encounter with a fictitious minor, the district court's refusal to give the entrapment instruction was plain error, and the conviction was vacated and remanded for a new trial."
+holding: "The entrapment defense has two prongs (improper government inducement and the defendant's lack of predisposition) and a defendant who makes a modest production showing on both is entitled to have the jury instructed on entrapment; where an undercover agent posing on a dating app steered a target toward a sexual encounter with a fictitious minor, the district court's refusal to give the entrapment instruction was plain error, and the conviction was vacated and remanded for a new trial."
 aliases:
   - United States v. Perez-Rodriguez
   - "United States v. Pérez-Rodríguez"

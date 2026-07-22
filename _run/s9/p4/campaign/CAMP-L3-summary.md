@@ -76,3 +76,30 @@ or reordered.** Execution: 2 paragraphs authored by the lane directly; 70 fanned
 
 ## Determinism
 72 case-wall paragraphs in, 72 out; lint3 case-wall 72 → 0; harness 72 → 0; fidelity 38/38 OK.
+
+## Addendum — 2 orchestrator-sanctioned adjacent micro-fixes (coordinator directive)
+Both files are within the packet's stated write-scope ("content/ — the 39 files LINT-3 flags");
+`CAMP-L3-fixes.jsonl` gains 3 rows (total **75**). No case-wall row changed.
+
+**(1) N5 relocation — `content/seizures/arrests/Arrest and Arrest Warrants.md` (the 2 residual LINT-3
+N5 highs, lines 53–54).** *Nieves v. Bartlett* (587 U.S. 391 (2019)) and *District of Columbia v.
+Wesby* (583 U.S. 48 (2018)) — both **SCOTUS, "Binding — SCOTUS"** — sat in *Lower-court
+developments*, where N5 forbids SCOTUS holdings. Checked Key cases: **neither was present**, so both
+were **relocated into the Key cases table** in its exact 3-column `| Case | Holding | Opinion |`
+format (date-ascending, after *Moore* 2008). Every holding word, the `[[Retaliatory Arrest]]`
+wikilink, the pincites, and the opinion URLs (already in Sources) are intact. The literal
+**"Binding — SCOTUS"** label is deliberately **not** written into the Holding cells: S5 R7 renders
+authority weight by **injection**, both case pages carry `authority_weight: "Binding — SCOTUS"`, and
+**LINT-16 forbids a weight label in a Holding cell** (writing it in-cell would be a regression) — so
+the label is preserved exactly as it is for the table's existing 4 SCOTUS rows. The frontier-section
+intro received a one-clause pointer to Key cases so it does not dangle after both bullets moved out
+(navigation only; asserts no legal proposition; revertable if strict-minimal is preferred).
+Result: **lint3 on the file 0 highs** (was 2 N5); full 29-lint harness on the file **0 highs** (no
+LINT-10/16/23/5 regression).
+
+**(2) Trailer cleanup — `content/warrant-exceptions/home-entry-and-search/Community Caretaking.md`.**
+Deleted the two stray leaked-markup EOF lines `</content>` / `</invoke>` (pre-existing in HEAD, a
+prior tool-call artifact). File now ends cleanly on the last Sources bullet (*Colorado v. Bertine*).
+Fidelity delta vs HEAD = **only `{removed: content, invoke}`** (confirming the batch-F case-wall
+bullets on this page were untouched by the cleanup and still preserve every word); full harness **0
+highs**. lint3 + lint10 `--self-test` still PASS.

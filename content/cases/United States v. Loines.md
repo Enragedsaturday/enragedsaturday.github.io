@@ -46,7 +46,7 @@ tags:
   - immediately-apparent
   - automobile-exception
   - sixth-circuit
-holding: "The Sixth Circuit reversed the denial of suppression and vacated the conviction, holding that the plain-view doctrine did not supply probable cause to search Loines's car: a detective's claim to have seen a 'bag of dope' through a tinted window was not plausible on the record, and in any event the objects — a plastic bag near a cigar wrapper and a lottery ticket — were not immediately and apparently incriminating from outside the car, their criminal character emerging only after officers entered and closely inspected the console, itself a further search unsupported by probable cause."
+holding: "The Sixth Circuit reversed the denial of suppression and vacated the conviction, holding that the plain-view doctrine did not supply probable cause to search Loines's car: a detective's claim to have seen a 'bag of dope' through a tinted window was not plausible on the record, and in any event the objects (a plastic bag near a cigar wrapper and a lottery ticket) were not immediately and apparently incriminating from outside the car, their criminal character emerging only after officers entered and closely inspected the console, itself a further search unsupported by probable cause."
 ---
 
 # United States v. Loines

@@ -67,7 +67,7 @@ The officers' repeated, intrusive entries exceeded the implied social license an
 - No negative treatment. *French* applies [[Florida v. Jardines]] to the [[Knock and Talk|knock-and-talk]]: the implied license is limited by area and purpose, and repeated or intrusive police conduct on the [[Curtilage|curtilage]] exceeds it even without a drug-sniffing dog.
 
 ## Appears on
-- [[Knock and Talk]] — *Key — Progeny / Refinement*
+- [[Knock and Talk]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *French v. Merrill*, 15 F.4th 116 (1st Cir. 2021) — https://www.courtlistener.com/opinion/5273192/french-v-merrill/ — pinpoints given as slip-opinion pages (slip op., at 39); CourtListener carries the slip opinion, paginated by slip page (cluster 5273192 → opinion 5100775).
+- *French v. Merrill*, 15 F.4th 116 (1st Cir. 2021) — https://www.courtlistener.com/opinion/5273192/french-v-merrill/. Pinpoints given as slip-opinion pages (slip op., at 39); CourtListener carries the slip opinion, paginated by slip page (cluster 5273192 → opinion 5100775).

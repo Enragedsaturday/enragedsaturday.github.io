@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-At the San Clemente, California fixed immigration checkpoint on Interstate 5 — a permanent, clearly marked installation well inside the border — Border Patrol agents stopped passing vehicles for brief questioning about citizenship and referred some cars to a secondary inspection area. Martinez-Fuerte and other defendants were prosecuted for transporting illegal aliens found through these stops. They challenged the checkpoint stops and the secondary referrals as unreasonable seizures.
+At the San Clemente, California fixed immigration checkpoint on Interstate 5 (a permanent, clearly marked installation well inside the border), Border Patrol agents stopped passing vehicles for brief questioning about citizenship and referred some cars to a secondary inspection area. Martinez-Fuerte and other defendants were prosecuted for transporting illegal aliens found through these stops. They challenged the checkpoint stops and the secondary referrals as unreasonable seizures.
 
 ## Issue
 Whether routine stops for brief questioning at a permanent immigration checkpoint, and selective referral of motorists to a secondary inspection area, are consistent with the Fourth Amendment when conducted without individualized suspicion or a warrant.
@@ -69,7 +69,7 @@ Routine stops and secondary referrals at permanent immigration checkpoints are r
 - No negative subsequent treatment identified. *Martinez-Fuerte* is the foundational fixed-checkpoint case, distinguished from roving patrols ([[United States v. Brignoni-Ponce]], [[Almeida-Sanchez v. United States]]) and later defining the suspicionless-checkpoint line applied in [[Michigan Dept. of State Police v. Sitz]] (sobriety checkpoints upheld) and limited in [[City of Indianapolis v. Edmond]] (general crime-control checkpoints struck down).
 
 ## Appears on
-- [[Border Searches]] — *Key — Anchor*
+- [[Border Searches]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Martinez-Fuerte*, 428 U.S. 543 (1976) — https://www.courtlistener.com/opinion/109541/united-states-v-martinez-fuerte/ — pinpoints: 562, 563, 566.
+- *United States v. Martinez-Fuerte*, 428 U.S. 543 (1976) — https://www.courtlistener.com/opinion/109541/united-states-v-martinez-fuerte/. Pinpoints: 562, 563, 566.

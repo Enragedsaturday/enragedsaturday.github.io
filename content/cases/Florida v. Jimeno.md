@@ -31,7 +31,7 @@ homes:
 related: ["[[Schneckloth v. Bustamonte]]", "[[Illinois v. Rodriguez]]", "[[United States v. Ross]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "scope-of-consent", "containers", "automobile"]
-holding: "The SCOPE of a consent search is measured by OBJECTIVE REASONABLENESS — what the typical reasonable person would have understood by the…"
+holding: "The SCOPE of a consent search is measured by OBJECTIVE REASONABLENESS: what the typical reasonable person would have understood by the…"
 lake:
   record_id: Florida v. Jimeno
   status: verified

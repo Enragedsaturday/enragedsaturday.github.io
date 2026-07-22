@@ -67,7 +67,7 @@ The judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 - No negative treatment. *James* **limits** the impeachment exception of [[Walder v. United States]] and [[United States v. Havens]] to the defendant's own testimony, invoking the deterrence rationale of [[Elkins v. United States]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Limiting (impeachment exception)*
+- [[The Exclusionary Rule]] — *Key: Limiting (impeachment exception)*
 
 ## Sources
-- *James v. Illinois*, 493 U.S. 307 (1990) — https://www.courtlistener.com/opinion/112350/james-v-illinois/ — pinpoints: 313–314, 317, 320.
+- *James v. Illinois*, 493 U.S. 307 (1990). https://www.courtlistener.com/opinion/112350/james-v-illinois/ — pinpoints: 313–314, 317, 320.

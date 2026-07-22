@@ -31,7 +31,7 @@ homes:
 related: ["[[Chimel v. California]]", "[[Schmerber v. California]]", "[[Davis v. Mississippi]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "exigency", "destruction-of-evidence", "probable-cause"]
-holding: "Where probable cause exists and evidence is readily destructible, the very limited search needed to preserve highly evanescent evidence (fingernail scrapings) is reasonable on the Chimel rationale, even without a formal arrest — though a full Chimel search would not be."
+holding: "Where probable cause exists and evidence is readily destructible, the very limited search needed to preserve highly evanescent evidence (fingernail scrapings) is reasonable on the Chimel rationale, even without a formal arrest, though a full Chimel search would not be."
 lake:
   record_id: Cupp v. Murphy
   status: verified

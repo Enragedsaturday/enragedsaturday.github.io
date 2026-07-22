@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A government informant, Kalchinian, met Sherman at a doctor's office where both were being treated for narcotics addiction and repeatedly asked Sherman to obtain drugs, appealing to sympathy until Sherman—a recovering addict—relented and supplied narcotics. Sherman was convicted and raised the defense of entrapment.
+A government informant, Kalchinian, met Sherman at a doctor's office where both were being treated for narcotics addiction and repeatedly asked Sherman to obtain drugs, appealing to sympathy until Sherman, a recovering addict, relented and supplied narcotics. Sherman was convicted and raised the defense of entrapment.
 
 ## Issue
 Whether entrapment was established as a matter of law where a government informant induced a recovering addict to obtain narcotics.
@@ -65,7 +65,7 @@ Entrapment was established as a matter of law; the conviction was reversed.
 - Applies the subjective (predisposition) entrapment test of [[Sorrells v. United States]]; the predisposition focus was reaffirmed in [[Jacobson v. United States]] and [[Mathews v. United States]], and the due-process outer limit addressed in [[Hampton v. United States]].
 
 ## Appears on
-- [[Entrapment]] — *Key — Progeny / Refinement*
+- [[Entrapment]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Sherman v. United States*, 356 U.S. 369 (1958) — https://www.courtlistener.com/opinion/105681/sherman-v-united-states/ — pinpoint: 372.
+- *Sherman v. United States*, 356 U.S. 369 (1958). https://www.courtlistener.com/opinion/105681/sherman-v-united-states/ — pinpoint: 372.

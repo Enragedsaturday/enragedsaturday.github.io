@@ -64,7 +64,7 @@ Owning the seized drugs did not give Rawlings a privacy interest in Cox's purse;
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Rawlings* applies [[Rakas v. Illinois]]: privacy in the *[[United States v. Place|place]]* searched, not ownership of the items, governs the ability to challenge a search.
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*
+- [[Standing to Challenge a Search]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Rawlings v. Kentucky*, 448 U.S. 98 (1980) — https://www.courtlistener.com/opinion/110326/rawlings-v-kentucky/ — pinpoints: 105, 106.
+- *Rawlings v. Kentucky*, 448 U.S. 98 (1980). https://www.courtlistener.com/opinion/110326/rawlings-v-kentucky/ — pinpoints: 105, 106.

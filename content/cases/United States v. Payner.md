@@ -55,7 +55,7 @@ No. "We conclude that the supervisory power does not authorize a federal court t
 The label does not matter: "The values assigned to the competing interests do not change because a court has elected to analyze the question under the supervisory power instead of the Fourth Amendment." — [*Id.* at 736](https://www.courtlistener.com/opinion/110317/united-states-v-payner/#:~:text=The%20values%20assigned%20to%20the). ^pin-736
 
 ## Application
-However egregious the IRS conduct, Payner was not the victim of the unlawful search — it invaded the banker's rights, not his — so he had no standing, and the same deterrence-versus-cost balance the standing rule already strikes governed. The District Court's contrary weighing "amounts to a substitution of individual judgment for the controlling decisions of this Court." To let a court suppress on that basis "would confer on the judiciary discretionary power to disregard the considered limitations of the law it is charged with enforcing." — [*Id.* at 737](https://www.courtlistener.com/opinion/110317/united-states-v-payner/#:~:text=amounts%20to%20a%20substitution%20of). ^pin-737
+However egregious the IRS conduct, Payner was not the victim of the unlawful search (it invaded the banker's rights, not his), so he had no standing, and the same deterrence-versus-cost balance the standing rule already strikes governed. The District Court's contrary weighing "amounts to a substitution of individual judgment for the controlling decisions of this Court." To let a court suppress on that basis "would confer on the judiciary discretionary power to disregard the considered limitations of the law it is charged with enforcing." — [*Id.* at 737](https://www.courtlistener.com/opinion/110317/united-states-v-payner/#:~:text=amounts%20to%20a%20substitution%20of). ^pin-737
 
 ## Conclusion
 The supervisory power "does not extend so far"; the suppression order was reversed. A defendant who lacks [[Standing to Challenge a Search|Fourth Amendment standing]] cannot obtain exclusion through the supervisory power.
@@ -65,7 +65,7 @@ The supervisory power "does not extend so far"; the suppression order was revers
 - No negative treatment. *Payner* enforces the personal-rights standing rule of [[Alderman v. United States]] and [[Rakas v. Illinois]], holding the supervisory power cannot be used to evade it; it draws on the restrained-supervisory-power and deterrence rationale of [[Elkins v. United States]].
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny*
+- [[Standing to Challenge a Search]] — *Key: Progeny*
 
 ## Sources
-- *United States v. Payner*, 447 U.S. 727 (1980) — https://www.courtlistener.com/opinion/110317/united-states-v-payner/ — pinpoints: 735, 736, 737.
+- *United States v. Payner*, 447 U.S. 727 (1980) — https://www.courtlistener.com/opinion/110317/united-states-v-payner/. Pinpoints: 735, 736, 737.

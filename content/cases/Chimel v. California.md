@@ -31,7 +31,7 @@ homes:
 related: ["[[Arizona v. Gant]]", "[[New York v. Belton]]", "[[Riley v. California]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "immediate-control", "warrantless-search"]
-holding: "Foundational scope of search incident to arrest: the arrestee's person and the area 'within his immediate control' — meaning the area…"
+holding: "Foundational scope of search incident to arrest: the arrestee's person and the area 'within his immediate control', meaning the area…"
 lake:
   record_id: Chimel v. California
   status: verified
@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers arrested Chimel in his home on a burglary warrant, then — over his objection and without a search warrant — searched the entire three-bedroom house, including drawers, directing his wife to open them so they could view the contents. Coins and other items seized in the search were admitted at his burglary trial.
+Officers arrested Chimel in his home on a burglary warrant, then, over his objection and without a search warrant, searched the entire three-bedroom house, including drawers, directing his wife to open them so they could view the contents. Coins and other items seized in the search were admitted at his burglary trial.
 
 ## Issue
 Whether, incident to a lawful arrest, officers may search the arrestee's entire home without a warrant.
@@ -55,7 +55,7 @@ No; the [[Search Incident to Arrest|search incident to arrest]] is limited to th
 "There is no comparable justification, however, for routinely searching any room other than that in which an arrest occurs — or, for that matter, for searching through all the desk drawers or other closed or concealed areas in that room itself." — [*Id.*](https://www.courtlistener.com/opinion/107979/chimel-v-california/#:~:text=There%20is%20no%20comparable%20justification%2C) ^pin-763a
 
 ## Application
-The search of Chimel's entire house — every room, drawers opened on command — reached far beyond his person and the area from which he could have grabbed a weapon or destroyed evidence while under arrest. Because nothing justified that house-wide search as incident to the arrest, and the officers had no search warrant, the seizure of items throughout the home was unconstitutional.
+The search of Chimel's entire house (every room, drawers opened on command) reached far beyond his person and the area from which he could have grabbed a weapon or destroyed evidence while under arrest. Because nothing justified that house-wide search as incident to the arrest, and the officers had no search warrant, the seizure of items throughout the home was unconstitutional.
 
 ## Conclusion
 The warrantless, house-wide [[Search Incident to Arrest|search incident to arrest]] was unreasonable; the conviction was reversed. *Chimel* fixed the officer-safety/evidence-preservation rationale and the "immediate control" scope of [[Search Incident to Arrest|search incident to arrest]].
@@ -65,7 +65,7 @@ The warrantless, house-wide [[Search Incident to Arrest|search incident to arres
 - No negative treatment of *Chimel* itself. [[Arizona v. Gant]] **relied on** *Chimel*'s reaching-distance rationale to **narrow** the broad reading of [[New York v. Belton]] for vehicle searches; *Chimel*'s core person-and-immediate-control rule remains controlling.
 
 ## Appears on
-- [[SIA Persons]] — *Key — Anchor*
+- [[SIA Persons]] — *Key: Anchor*
 
 ## Sources
-- *Chimel v. California*, 395 U.S. 752 (1969) — https://www.courtlistener.com/opinion/107979/chimel-v-california/ — pinpoint: 763.
+- *Chimel v. California*, 395 U.S. 752 (1969). https://www.courtlistener.com/opinion/107979/chimel-v-california/ — pinpoint: 763.

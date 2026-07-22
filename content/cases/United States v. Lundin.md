@@ -33,7 +33,7 @@ homes:
 related: ["[[Florida v. Jardines]]", "[[Kentucky v. King]]", "[[Oliver v. United States]]", "[[United States v. Carloss]]", "[[United States v. Walker]]"]
 aliases: ["United States v. Eric Lundin", "United States v. Lundin (9th Cir. 2016)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtilage", "arrest", "ninth-circuit"]
-holding: "The knock-and-talk implied license is bounded by both time and purpose: a pre-dawn (around 4:00 a.m.) knock, undertaken with the intent to arrest the occupant rather than to ask questions, exceeds the customary license — so the exception does not apply and the porch knock (and the search it precipitated) violated the Fourth Amendment."
+holding: "The knock-and-talk implied license is bounded by both time and purpose: a pre-dawn (around 4:00 a.m.) knock, undertaken with the intent to arrest the occupant rather than to ask questions, exceeds the customary license, so the exception does not apply and the porch knock (and the search it precipitated) violated the Fourth Amendment."
 lake:
   record_id: United States v. Lundin
   status: verified
@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Susan Hinds reported that Eric Lundin had assaulted and briefly kidnapped her, deputies issued a be-on-the-lookout and a request for Lundin's warrantless arrest. Around 4:00 a.m. on April 23, 2013, three officers approached Lundin's home — without an arrest warrant or a search warrant — came onto his front porch, and knocked with the intent of arresting him. From the porch they heard crashing noises from the backyard, ran to the back, ordered Lundin out of the fenced-in yard, and arrested him. Officers then searched the home and patio and found two handguns in open view. The district court suppressed the handguns as the fruit of an illegal search, and the United States appealed.
+After Susan Hinds reported that Eric Lundin had assaulted and briefly kidnapped her, deputies issued a be-on-the-lookout and a request for Lundin's warrantless arrest. Around 4:00 a.m. on April 23, 2013, three officers approached Lundin's home (without an arrest warrant or a search warrant), came onto his front porch, and knocked with the intent of arresting him. From the porch they heard crashing noises from the backyard, ran to the back, ordered Lundin out of the fenced-in yard, and arrested him. Officers then searched the home and patio and found two handguns in open view. The district court suppressed the handguns as the fruit of an illegal search, and the United States appealed.
 
 ## Issue
 Whether the "knock and talk" exception authorized officers to enter the [[Curtilage|curtilage]] and knock on the front door at 4:00 a.m. with the intent to arrest the occupant, where the knock precipitated the noises the officers then used to justify a warrantless search.
@@ -73,4 +73,4 @@ The officers exceeded the implied license, so the porch knock was an unlawful se
 - [[Curtilage]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Lundin*, 817 F.3d 1151 (9th Cir. 2016) — https://www.courtlistener.com/opinion/3187682/united-states-v-eric-lundin/ — pinpoints: 1159, 1160.
+- *United States v. Lundin*, 817 F.3d 1151 (9th Cir. 2016). https://www.courtlistener.com/opinion/3187682/united-states-v-eric-lundin/ — pinpoints: 1159, 1160.

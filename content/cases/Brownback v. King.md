@@ -42,7 +42,7 @@ tags:
   - judgment-bar
   - federal-officer-liability
   - section-1983
-holding: "A district court's Rule 12(b)(6) dismissal of a plaintiff's FTCA claims — even one that simultaneously deprives the court of subject-matter jurisdiction — is a judgment 'on the merits' that can trigger the FTCA judgment bar in 28 U.S.C. § 2676; whether that bar reaches Bivens claims brought in the same suit was left open on remand."
+holding: "A district court's Rule 12(b)(6) dismissal of a plaintiff's FTCA claims (even one that simultaneously deprives the court of subject-matter jurisdiction) is a judgment 'on the merits' that can trigger the FTCA judgment bar in 28 U.S.C. § 2676; whether that bar reaches Bivens claims brought in the same suit was left open on remand."
 ---
 
 # Brownback v. King

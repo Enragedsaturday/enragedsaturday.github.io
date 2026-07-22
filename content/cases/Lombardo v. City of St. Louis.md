@@ -41,7 +41,7 @@ tags:
   - use-of-force
   - section-1983
   - fourteenth-amendment
-holding: "A § 1983 excessive-force challenge to a fatal prone restraint of a handcuffed, leg-shackled detainee must be analyzed under the fact-specific Kingsley reasonableness factors — including the force's kind, intensity, and duration — rather than treated as per se constitutional whenever a detainee appears to resist; summary judgment for the officers was vacated and remanded."
+holding: "A § 1983 excessive-force challenge to a fatal prone restraint of a handcuffed, leg-shackled detainee must be analyzed under the fact-specific Kingsley reasonableness factors (including the force's kind, intensity, and duration) rather than treated as per se constitutional whenever a detainee appears to resist; summary judgment for the officers was vacated and remanded."
 ---
 
 # Lombardo v. City of St. Louis

@@ -65,7 +65,7 @@ The warnings were adequate and the statements properly admitted. The Seventh Cir
 - No negative treatment. *Duckworth* applies the [[California v. Prysock]] "reasonably conveys" standard and was reaffirmed in [[Florida v. Powell]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny*
 
 ## Sources
-- *Duckworth v. Eagan*, 492 U.S. 195 (1989) — https://www.courtlistener.com/opinion/112322/duckworth-v-eagan/ — pinpoints: 203, 204, 205.
+- *Duckworth v. Eagan*, 492 U.S. 195 (1989) — https://www.courtlistener.com/opinion/112322/duckworth-v-eagan/. Pinpoints: 203, 204, 205.

@@ -65,7 +65,7 @@ The automobile exception did not authorize the warrantless [[Curtilage|curtilage
 - No negative treatment. *Collins* bounds the [[Carroll v. United States]] / [[California v. Carney]] automobile exception at the home's [[Curtilage|curtilage]], applying the [[Curtilage|curtilage]] protection recognized in [[Florida v. Jardines]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Collins v. Virginia*, 584 U.S. 586 (2018) — https://www.courtlistener.com/opinion/4501697/collins-v-virginia/ — pinpoint: slip op., at 14 (CL carries the slip opinion; cluster 4501697 → opinion 4278950).
+- *Collins v. Virginia*, 584 U.S. 586 (2018) — https://www.courtlistener.com/opinion/4501697/collins-v-virginia/. Pinpoint: slip op., at 14 (CL carries the slip opinion; cluster 4501697 → opinion 4278950).

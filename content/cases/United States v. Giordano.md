@@ -44,7 +44,7 @@ tags:
   - wiretap
   - suppression
   - attorney-general-authorization
-holding: "Under 18 U.S.C. § 2516(1), only the Attorney General or an Assistant Attorney General specially designated by him may authorize a Title III wiretap application; where an application was in fact approved by the Attorney General's Executive Assistant rather than a statutorily designated official, the interception was 'unlawfully intercepted' and the evidence — including evidence derived under a later extension order — must be suppressed, because the senior-approval requirement directly and substantially implements Congress's purpose of confining wiretaps to situations that clearly warrant them."
+holding: "Under 18 U.S.C. § 2516(1), only the Attorney General or an Assistant Attorney General specially designated by him may authorize a Title III wiretap application; where an application was in fact approved by the Attorney General's Executive Assistant rather than a statutorily designated official, the interception was 'unlawfully intercepted' and the evidence (including evidence derived under a later extension order) must be suppressed, because the senior-approval requirement directly and substantially implements Congress's purpose of confining wiretaps to situations that clearly warrant them."
 aliases:
   - United States v. Giordano
   - "United States v. Giordano (1974)"

@@ -31,7 +31,7 @@ homes:
 related: ["[[City of Ontario v. Quon]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "special-needs", "workplace", "public-employee", "reasonable-expectation-of-privacy"]
-holding: "Public employees may have a reasonable expectation of privacy in their offices, desks, and files, subject to the operational realities of the workplace; but a public employer's work-related search — whether to retrieve work materials or to investigate work-related misconduct — is judged by reasonableness under all the circumstances, without a warrant or probable cause."
+holding: "Public employees may have a reasonable expectation of privacy in their offices, desks, and files, subject to the operational realities of the workplace; but a public employer's work-related search (whether to retrieve work materials or to investigate work-related misconduct) is judged by reasonableness under all the circumstances, without a warrant or probable cause."
 lake:
   record_id: "O'Connor v. Ortega"
   status: under_review

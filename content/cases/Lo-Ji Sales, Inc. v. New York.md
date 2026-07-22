@@ -33,7 +33,7 @@ homes:
 related: ["[[Coolidge v. New Hampshire]]", "[[Groh v. Ramirez]]", "[[United States v. Leon]]"]
 aliases: ["Lo-Ji Sales", "Lo-Ji"]
 tags: ["case", "fourth-amendment", "warrant-requirement", "neutral-and-detached-magistrate", "general-warrant", "particularity"]
-holding: "A magistrate who abandons the neutral-and-detached role — here the Town Justice joined and effectively led the search party, conducting…"
+holding: "A magistrate who abandons the neutral-and-detached role: here the Town Justice joined and effectively led the search party, conducting…"
 lake:
   record_id: "Lo-Ji Sales, Inc. v. New York"
   status: verified

@@ -46,7 +46,7 @@ tags:
   - pole-camera
   - apartment
   - sixth-circuit
-holding: "The Sixth Circuit affirmed, holding that a covered carport in a communal apartment parking lot — where May-Shaw regularly parked but had no right to exclude others, and which was easily viewable from a public street — was not within the curtilage of his apartment under the Dunn factors, so a drug-dog sniff of his car parked there was not a Fourth Amendment search; nor did the twenty-three-day pole-camera surveillance of the lot violate any reasonable expectation of privacy."
+holding: "The Sixth Circuit affirmed, holding that a covered carport in a communal apartment parking lot (where May-Shaw regularly parked but had no right to exclude others, and which was easily viewable from a public street) was not within the curtilage of his apartment under the Dunn factors, so a drug-dog sniff of his car parked there was not a Fourth Amendment search; nor did the twenty-three-day pole-camera surveillance of the lot violate any reasonable expectation of privacy."
 ---
 
 # United States v. May-Shaw

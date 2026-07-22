@@ -48,10 +48,7 @@ related:
 
 ## Lower-court developments
 
-The arrest-standard core is settled at the Supreme Court, so the live questions are refinements rather than a circuit split on the basic rule.
-
-- **Retaliatory-arrest overlay.** An arrest supported by probable cause generally defeats a First Amendment retaliatory-arrest claim, subject to a narrow exception for otherwise-unarrested comparators. *[[Nieves v. Bartlett|Nieves v. Bartlett]]*, 587 U.S. 391 (2019). This is a §1983 overlay on an otherwise-valid arrest, treated at [[Retaliatory Arrest]]. **Binding — SCOTUS.**
-- **Totality restated.** The Court has reaffirmed that probable cause is assessed on the **totality** of the known facts, rejecting a divide-and-conquer approach that dismisses innocent explanations for each fact in isolation. *[[District of Columbia v. Wesby|District of Columbia v. Wesby]]*, 583 U.S. 48 (2018). **Binding — SCOTUS.**
+The arrest-standard core is settled at the Supreme Court, so the live questions are refinements rather than a circuit split on the basic rule; the SCOTUS refinements themselves are collected under Key cases below.
 
 ## Key cases
 
@@ -61,6 +58,8 @@ The arrest-standard core is settled at the Supreme Court, so the live questions 
 | *[[Atwater v. City of Lago Vista]]*, 532 U.S. 318 (2001) | Probable cause governs all arrests without case-by-case balancing; a warrantless custodial arrest for a fine-only misdemeanor on probable cause does not violate the Fourth Amendment. | [opinion](https://www.courtlistener.com/opinion/2620702/atwater-v-city-of-lago-vista/) |
 | *[[Devenpeck v. Alford]]*, 543 U.S. 146 (2004) | An arrest is lawful if the known facts give probable cause for **some** offense; the offense need not be the one the officer invoked or "closely related" to it, and the officer's subjective motive is irrelevant. | [opinion](https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/) |
 | *[[Virginia v. Moore]]*, 553 U.S. 164 (2008) | A warrantless arrest on probable cause is reasonable even if state law forbade it (requiring a summons); a state-law-only violation does not trigger exclusion, and the search incident follows. | [opinion](https://www.courtlistener.com/opinion/145814/virginia-v-moore/) |
+| *[[District of Columbia v. Wesby]]*, 583 U.S. 48 (2018) | **Totality restated.** The Court has reaffirmed that probable cause is assessed on the **totality** of the known facts, rejecting a divide-and-conquer approach that dismisses innocent explanations for each fact in isolation. | [opinion](https://www.courtlistener.com/opinion/4460854/district-of-columbia-v-wesby/) |
+| *[[Nieves v. Bartlett]]*, 587 U.S. 391 (2019) | **Retaliatory-arrest overlay.** An arrest supported by probable cause generally defeats a First Amendment retaliatory-arrest claim, subject to a narrow exception for otherwise-unarrested comparators. This is a §1983 overlay on an otherwise-valid arrest, treated at [[Retaliatory Arrest]]. | [opinion](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) |
 
 ## Related cases across doctrines
 

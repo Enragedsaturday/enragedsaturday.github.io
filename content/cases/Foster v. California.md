@@ -31,7 +31,7 @@ homes:
 related: ["[[Stovall v. Denno]]", "[[Neil v. Biggers]]", "[[Manson v. Brathwaite]]", "[[Perry v. New Hampshire]]"]
 aliases: []
 tags: ["case", "due-process", "eyewitness-identification", "lineup", "suggestive"]
-holding: "An identification procedure may be so unnecessarily suggestive that it denies due process; here a lineup that made the suspect stand out, followed by a one-on-one showup and a repeat lineup in which he was the only carryover, made identification all but inevitable and violated due process — the rare such reversal."
+holding: "An identification procedure may be so unnecessarily suggestive that it denies due process; here a lineup that made the suspect stand out, followed by a one-on-one showup and a repeat lineup in which he was the only carryover, made identification all but inevitable and violated due process: the rare such reversal."
 lake:
   record_id: Foster v. California
   status: verified
@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-The only eyewitness to a Western Union armed robbery, manager Joseph David, viewed a police lineup of three men in which Foster — close to six feet tall — stood between two men five-foot-five or -six, and Foster wore a leather jacket like the robber's. David was unsure. Police then staged a one-to-one confrontation between David and Foster; David was still uncertain. About a week later police arranged a second lineup of five men in which Foster was the only person carried over from the first lineup. David was then "convinced."
+The only eyewitness to a Western Union armed robbery, manager Joseph David, viewed a police lineup of three men in which Foster (close to six feet tall) stood between two men five-foot-five or -six, and Foster wore a leather jacket like the robber's. David was unsure. Police then staged a one-to-one confrontation between David and Foster; David was still uncertain. About a week later police arranged a second lineup of five men in which Foster was the only person carried over from the first lineup. David was then "convinced."
 
 ## Issue
 Whether a pretrial identification procedure can be so unnecessarily suggestive and conducive to mistaken identification that admitting the resulting identification denies the defendant due process of law.
@@ -65,7 +65,7 @@ The identification procedure violated due process; the judgment was reversed and
 - The "unnecessarily suggestive" inquiry was later refined into a reliability test by [[Neil v. Biggers]] and [[Manson v. Brathwaite]], and the due-process screen was confined to police-arranged suggestiveness in [[Perry v. New Hampshire]]. *Foster* remains the paradigm of a procedure suggestive enough to require exclusion.
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Progeny*
+- [[Eyewitness Identification]] — *Key: Progeny*
 
 ## Sources
-- *Foster v. California*, 394 U.S. 440 (1969) — https://www.courtlistener.com/opinion/107890/foster-v-california/ — pinpoints: 442, 443.
+- *Foster v. California*, 394 U.S. 440 (1969) — https://www.courtlistener.com/opinion/107890/foster-v-california/. Pinpoints: 442, 443.

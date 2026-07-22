@@ -70,4 +70,4 @@ The judgment of the Eleventh Circuit was **reversed** and the case **[[Reading a
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
 
 ## Sources
-- [*Uzuegbunam v. Preczewski*, 592 U.S. 279 (2021)](https://www.courtlistener.com/opinion/4861817/uzuegbunam-v-preczewski/) — pinpoint: slip op., at 11 (Opinion of the Court, Part III, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2021)"); slip-only — quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.
+- [*Uzuegbunam v. Preczewski*, 592 U.S. 279 (2021)](https://www.courtlistener.com/opinion/4861817/uzuegbunam-v-preczewski/) — pinpoint: slip op., at 11 (Opinion of the Court, Part III, holding; Thomas, J.). CL carries the slip opinion ("592 U. S. ____ (2021)"); slip-only. Quote string-matched to the CL opinion text 2026-07-07, U.S.-reporter page equality not asserted.

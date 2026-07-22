@@ -71,8 +71,8 @@ Reversed. Kisela was entitled to [[Qualified Immunity|qualified immunity]] becau
 - *Kisela* applies the specificity principle of [[Brosseau v. Haugen]] and [[Mullenix v. Luna]] and the "beyond debate" standard of [[White v. Pauly]] and [[City and County of San Francisco v. Sheehan]] to excessive-force [[Qualified Immunity|qualified immunity]]. It is frequently cited for the rule that officers get immunity "unless existing precedent 'squarely governs' the specific facts." No negative treatment.
 
 ## Appears on
-- [[Use of Force]] — *Key — Progeny / Refinement*
+- [[Use of Force]] — *Key: Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kisela v. Hughes*, 584 U.S. 100 (2018) (per curiam) — https://www.courtlistener.com/opinion/4482892/kisela-v-hughes/ — pinpoints: 138 S. Ct. at 1152, 1153.
+- *Kisela v. Hughes*, 584 U.S. 100 (2018) (per curiam) — https://www.courtlistener.com/opinion/4482892/kisela-v-hughes/. Pinpoints: 138 S. Ct. at 1152, 1153.

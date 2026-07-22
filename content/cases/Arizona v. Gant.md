@@ -67,8 +67,8 @@ The vehicle search was unconstitutional; the judgment of the Arizona Supreme Cou
 - No negative treatment of *Gant*. *Gant* itself **narrowed** the expansive reading of [[New York v. Belton]] (and [[Thornton v. United States]]) for vehicle [[Search Incident to Arrest|searches incident to arrest]], replacing automatic passenger-compartment searches with its two-justification test.
 
 ## Appears on
-- [[SIA Vehicles]] — *Key — Anchor*
+- [[SIA Vehicles]] — *Key: Anchor*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Arizona v. Gant*, 556 U.S. 332 (2009) — https://www.courtlistener.com/opinion/145887/arizona-v-gant/ — pinpoint: 351 (parallel 129 S. Ct. 1723).
+- *Arizona v. Gant*, 556 U.S. 332 (2009) — https://www.courtlistener.com/opinion/145887/arizona-v-gant/ (pinpoint: 351, parallel 129 S. Ct. 1723).

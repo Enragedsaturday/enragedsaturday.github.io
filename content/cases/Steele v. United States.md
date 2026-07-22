@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A prohibition agent saw cases marked "whiskey" being unloaded at a building at 611 W. 46th Street and confirmed there was no permit to store liquor there. A warrant issued to search the building — described as a garage used for business purposes — and any rooms, basement, or sub-cellar connected with the garage, for "cases of whiskey." Executing it, agents seized large quantities of liquor across multiple floors. Steele sought return of the property, arguing the warrant failed to describe the place to be searched with sufficient [[Particularity|particularity]].
+A prohibition agent saw cases marked "whiskey" being unloaded at a building at 611 W. 46th Street and confirmed there was no permit to store liquor there. A warrant issued to search the building, described as a garage used for business purposes, and any rooms, basement, or sub-cellar connected with the garage, for "cases of whiskey." Executing it, agents seized large quantities of liquor across multiple floors. Steele sought return of the property, arguing the warrant failed to describe the place to be searched with sufficient [[Particularity|particularity]].
 
 ## Issue
 Did the warrant's description of the place to be searched satisfy the Fourth Amendment's [[Particularity|particularity]] requirement?
@@ -55,17 +55,17 @@ Yes. "It is enough if the description is such that the officer with a search war
 A description identifying the building by its address and character, reaching the rooms and spaces connected with it, suffices.
 
 ## Application
-The warrant described the building at 611 W. 46th Street as a garage for business purposes and reached the rooms and basement connected with it. "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched," — *Id.* — and the garage's elevator connected it with every floor. An officer could, with reasonable effort, identify the premises. The search did not exceed the warrant, the description "cases of whiskey" was specific enough, and probable cause supported issuance. The warrant therefore satisfied constitutional requirements. ^pin-503b
+The warrant described the building at 611 W. 46th Street as a garage for business purposes and reached the rooms and basement connected with it. "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched," (*Id.*) and the garage's elevator connected it with every floor. An officer could, with reasonable effort, identify the premises. The search did not exceed the warrant, the description "cases of whiskey" was specific enough, and probable cause supported issuance. The warrant therefore satisfied constitutional requirements. ^pin-503b
 
 ## Conclusion
 The warrant complied with the Fourth Amendment; the liquor was lawfully seized and need not be returned. The decree was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Steele* remains the canonical statement of the [[Particularity|particularity]]-of-place standard — reasonable-effort identification of the premises — and is regularly cited in the line that includes [[Maryland v. Garrison]] and [[Groh v. Ramirez]]. No negative treatment.
+- *Steele* remains the canonical statement of the [[Particularity|particularity]]-of-place standard (reasonable-effort identification of the premises) and is regularly cited in the line that includes [[Maryland v. Garrison]] and [[Groh v. Ramirez]]. No negative treatment.
 
 ## Appears on
 - [[Particularity]] — *Progeny*
 
 ## Sources
-- *Steele v. United States No. 1*, 267 U.S. 498 (1925) — https://www.courtlistener.com/opinion/100621/steele-v-united-states-no-1/ — pinpoint: 503.
+- *Steele v. United States No. 1*, 267 U.S. 498 (1925). https://www.courtlistener.com/opinion/100621/steele-v-united-states-no-1/ — pinpoint: 503.

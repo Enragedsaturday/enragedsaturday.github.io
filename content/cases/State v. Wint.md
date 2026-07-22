@@ -43,7 +43,7 @@ tags:
   - right-to-counsel
   - custodial-interrogation
   - state-court
-holding: "A suspect's six months of continuous pre-indictment custody is not a 'break in custody' under Maryland v. Shatzer, so the Edwards bar on police-initiated reinterrogation after an invocation of counsel remained in force; because none of the three exceptions — counsel provided, defendant-initiated communication, or a break in custody — applied, a later Mirandized waiver could not validate the interrogation and the incriminating statements had to be suppressed."
+holding: "A suspect's six months of continuous pre-indictment custody is not a 'break in custody' under Maryland v. Shatzer, so the Edwards bar on police-initiated reinterrogation after an invocation of counsel remained in force; because none of the three exceptions (counsel provided, defendant-initiated communication, or a break in custody) applied, a later Mirandized waiver could not validate the interrogation and the incriminating statements had to be suppressed."
 ---
 
 # State v. Wint

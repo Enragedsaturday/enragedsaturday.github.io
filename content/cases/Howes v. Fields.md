@@ -31,7 +31,7 @@ homes:
 related: ["[[Maryland v. Shatzer]]", "[[Berkemer v. McCarty]]", "[[Miranda v. Arizona]]", "[[Mathis v. United States]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "prisoners"]
-holding: "Imprisonment alone does not make questioning custodial for Miranda; whether an inmate is \"in custody\" depends on the totality — here,…"
+holding: "Imprisonment alone does not make questioning custodial for Miranda; whether an inmate is \"in custody\" depends on the totality: here,…"
 lake:
   record_id: Howes v. Fields
   status: verified

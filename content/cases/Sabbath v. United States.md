@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After customs agents arrested William Jones at the border with cocaine, Jones implicated "Johnny" (Sabbath) and agreed to a controlled delivery. Wired for sound, Jones entered Sabbath's apartment while agents waited outside. A few minutes later the agents went to the door, knocked, waited only a few seconds, and — receiving no response — opened the closed but unlocked door and entered with guns drawn, arresting Sabbath and finding cocaine under a cushion. The Ninth Circuit held that opening an unlocked door was not a "break[ing]" under 18 U.S.C. § 3109.
+After customs agents arrested William Jones at the border with cocaine, Jones implicated "Johnny" (Sabbath) and agreed to a controlled delivery. Wired for sound, Jones entered Sabbath's apartment while agents waited outside. A few minutes later the agents went to the door, knocked, waited only a few seconds, and (receiving no response) opened the closed but unlocked door and entered with guns drawn, arresting Sabbath and finding cocaine under a cushion. The Ninth Circuit held that opening an unlocked door was not a "break[ing]" under 18 U.S.C. § 3109.
 
 ## Issue
 Does opening a closed but unlocked door to enter and arrest, without first announcing authority and purpose, constitute a "breaking" subject to the announcement requirement of § 3109 (codifying the common-law [[Knock-and-Announce|knock-and-announce]] rule)?
@@ -66,11 +66,11 @@ The entry violated § 3109; the evidence should have been suppressed, and the ju
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Sabbath*'s definition of an unannounced "breaking" — reaching the opening of a closed but unlocked door — remains sound and feeds the constitutional [[Knock-and-Announce|knock-and-announce]] rule recognized in [[Wilson v. Arkansas]] and refined in [[Richards v. Wisconsin]]. The suppression remedy *Sabbath* applied for such violations was later curtailed for Fourth Amendment [[Knock-and-Announce|knock-and-announce]] violations by [[Hudson v. Michigan]] (2006), which does not disturb *Sabbath*'s substantive holding about what counts as an unannounced entry.
+- *Sabbath*'s definition of an unannounced "breaking" (reaching the opening of a closed but unlocked door) remains sound and feeds the constitutional [[Knock-and-Announce|knock-and-announce]] rule recognized in [[Wilson v. Arkansas]] and refined in [[Richards v. Wisconsin]]. The suppression remedy *Sabbath* applied for such violations was later curtailed for Fourth Amendment [[Knock-and-Announce|knock-and-announce]] violations by [[Hudson v. Michigan]] (2006), which does not disturb *Sabbath*'s substantive holding about what counts as an unannounced entry.
 
 ## Appears on
 - [[Knock-and-Announce]] — *Progeny*
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Sabbath v. United States*, 391 U.S. 585 (1968) — https://www.courtlistener.com/opinion/107718/sabbath-v-united-states/ — pinpoints: 585–586, 590.
+- *Sabbath v. United States*, 391 U.S. 585 (1968) — https://www.courtlistener.com/opinion/107718/sabbath-v-united-states/. Pinpoints: 585–586, 590.

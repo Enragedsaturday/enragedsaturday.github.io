@@ -46,7 +46,7 @@ tags:
   - historical
   - bodily-intrusion
   - origin
-holding: "Where police unlawfully broke into the defendant's home and, to recover capsules he had swallowed, forcibly pumped his stomach against his will, admitting the resulting evidence violated the Due Process Clause of the Fourteenth Amendment: government methods that 'shock the conscience' — conduct too close to the rack and the screw — offend fundamental fairness, and a state conviction obtained by them cannot stand."
+holding: "Where police unlawfully broke into the defendant's home and, to recover capsules he had swallowed, forcibly pumped his stomach against his will, admitting the resulting evidence violated the Due Process Clause of the Fourteenth Amendment: government methods that 'shock the conscience' (conduct too close to the rack and the screw) offend fundamental fairness, and a state conviction obtained by them cannot stand."
 aliases:
   - Rochin v. California
   - "Rochin v. California (1952)"
@@ -73,7 +73,7 @@ The Court treated coerced physical evidence like a coerced confession: due proce
 The judgment of the California District Court of Appeal was **reversed**. Frankfurter, J., delivered the opinion of the Court; Black and Douglas, JJ., concurred separately, objecting that the "shocks the conscience" standard was too subjective and that the Self-Incrimination Clause supplied a firmer ground.
 
 ## Treatment & subsequent history
-**Status: Unverified — rendered as a historical origin.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Rochin* is preserved here as a **historical origin**, and it is neither overruled nor disguised — but its role has two distinct threads that must be kept apart:
+**Status: Unverified. Rendered as a historical origin.** This page is authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Rochin* is preserved here as a **historical origin**, and it is neither overruled nor disguised — but its role has two distinct threads that must be kept apart:
 
 - **Still good law (the due-process principle).** The "shocks the conscience" test for egregious executive conduct survives as the standard for substantive due process, expressly **reaffirmed** in *[[County of Sacramento v. Lewis]]* (1998). On that point *Rochin* remains live authority.
 - **Superseded in function (as a search-and-seizure remedy).** *Rochin* arose in the narrow window after *[[Wolf v. Colorado]]* (1949) applied the Fourth Amendment to the States but declined to impose the exclusionary rule; due process was then the only lever against the worst police intrusions. That stopgap was **overtaken** when *[[Mapp v. Ohio]]* (1961) incorporated the Fourth Amendment exclusionary rule against the States, and forced bodily intrusions were thereafter analyzed under the Fourth Amendment in *[[Schmerber v. California]]* (1966). Modern suppression of such evidence runs through the Fourth Amendment, not *Rochin*'s due-process route.
@@ -81,7 +81,7 @@ The judgment of the California District Court of Appeal was **reversed**. Frankf
 Teach *Rochin* as the origin point of the "shocks the conscience" doctrine and as a marker of the pre-incorporation era — an antecedent to the modern Fourth Amendment framework, not a current search-and-seizure remedy.
 
 ## Appears on
-- [[Common Law Origins]] — *Historical / origin — due-process 'shocks the conscience' source*
+- [[Common Law Origins]] — *Historical / origin: due-process 'shocks the conscience' source*
 
 ## Sources
 - [*Rochin v. California*, 342 U.S. 165 (1952)](https://www.courtlistener.com/opinion/104943/rochin-v-california/) — pinpoint: 172 (Frankfurter, J., for the Court; the CL opinion text carries the reporter star `*172` immediately before the quoted "shocks the conscience" passage). Rule quote string-matched to the CL opinion text 2026-07-07 (the em-dash in "stomach's contents—this course" is reproduced from the source).

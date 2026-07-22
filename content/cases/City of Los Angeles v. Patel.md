@@ -55,7 +55,7 @@ Yes. An administrative search regime must afford the subject a chance to contest
 "[W]e hold only that a hotel owner must be afforded an opportunity to have a neutral decisionmaker review an officer's demand to search the registry before he or she faces penalties for failing to comply." — *Id.* (slip op., at 11). ^pin-op11
 
 ## Application
-The ordinance let an officer demand a hotel's registry on the spot and arrest the operator for any refusal, with no mechanism — administrative subpoena or otherwise — to obtain review before penalties attached. Because it provided no opportunity whatsoever for pre-compliance review, the inspection provision was facially invalid on these terms.
+The ordinance let an officer demand a hotel's registry on the spot and arrest the operator for any refusal, with no mechanism (administrative subpoena or otherwise) to obtain review before penalties attached. Because it provided no opportunity whatsoever for pre-compliance review, the inspection provision was facially invalid on these terms.
 
 ## Conclusion
 The registry-inspection provision was facially unconstitutional; the judgment striking it down was affirmed.
@@ -65,7 +65,7 @@ The registry-inspection provision was facially unconstitutional; the judgment st
 - No negative treatment. *Patel* applies the administrative-search precompliance-review principle of [[Camara v. Municipal Court]] and complements the special-needs purpose analysis of [[City of Indianapolis v. Edmond]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *City of Los Angeles v. Patel*, 576 U.S. 409 (2015) — https://www.courtlistener.com/opinion/2810524/los-angeles-v-patel/ — pinpoints: slip op., at 10, 11 (CL carries the slip opinion under the cluster name "Los Angeles v. Patel").
+- *City of Los Angeles v. Patel*, 576 U.S. 409 (2015) — https://www.courtlistener.com/opinion/2810524/los-angeles-v-patel/. Pinpoints: slip op., at 10, 11 (CL carries the slip opinion under the cluster name "Los Angeles v. Patel").

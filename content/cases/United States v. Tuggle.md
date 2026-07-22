@@ -33,7 +33,7 @@ homes:
 related: ["[[California v. Ciraolo]]", "[[California v. Greenwood]]", "[[Carpenter v. United States]]", "[[United States v. Jones]]"]
 aliases: ["United States v. Tuggle (7th Cir. 2021)", "United States v. Travis Tuggle"]
 tags: ["case", "fourth-amendment", "plain-view", "pole-camera", "surveillance", "mosaic-theory", "seventh-circuit"]
-holding: "Under current doctrine, the eighteen-month pole-camera surveillance in this case — conducted from public property and lawful vantage points and limited to plainly visible exterior activity — did not constitute a Fourth Amendment search; the court declined to adopt the mosaic theory, but nonetheless expressed serious concern about pervasive aggregated surveillance and left any change to higher courts or Congress."
+holding: "Under current doctrine, the eighteen-month pole-camera surveillance in this case (conducted from public property and lawful vantage points and limited to plainly visible exterior activity) did not constitute a Fourth Amendment search; the court declined to adopt the mosaic theory, but nonetheless expressed serious concern about pervasive aggregated surveillance and left any change to higher courts or Congress."
 lake:
   record_id: United States v. Tuggle
   status: verified

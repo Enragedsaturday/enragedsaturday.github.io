@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Benn was convicted in Washington state court of two premeditated murders and sentenced to death. The prosecution's theory was that he killed to cover up an arson-insurance-fraud scheme, and it relied heavily on jailhouse informant Roy Patrick's account of Benn's alleged admissions and on circumstantial arson evidence. On federal [[Common Legal Terms#habeas-corpus|habeas]] review, Benn showed that the State had suppressed (1) expert/agency evidence indicating the fire may have been accidental — undermining the arson motive — and (2) impeachment evidence about Patrick's own criminal misconduct and repeated lies to police while serving as an informant. The district court granted [[Common Legal Terms#habeas-corpus|habeas]] relief and the State appealed.
+Benn was convicted in Washington state court of two premeditated murders and sentenced to death. The prosecution's theory was that he killed to cover up an arson-insurance-fraud scheme, and it relied heavily on jailhouse informant Roy Patrick's account of Benn's alleged admissions and on circumstantial arson evidence. On federal [[Common Legal Terms#habeas-corpus|habeas]] review, Benn showed that the State had suppressed (1) expert/agency evidence indicating the fire may have been accidental (undermining the arson motive) and (2) impeachment evidence about Patrick's own criminal misconduct and repeated lies to police while serving as an informant. The district court granted [[Common Legal Terms#habeas-corpus|habeas]] relief and the State appealed.
 
 ## Issue
 Whether the state court's conclusion that no *[[Brady v. Maryland|Brady]]* violation occurred was an unreasonable application of clearly established federal law, given the State's suppression of [[Brady and Giglio|exculpatory]] arson evidence and informant-impeachment evidence.
 
 ## Rule
-A *[[Brady v. Maryland|Brady]]* violation has three elements — the evidence must be favorable to the accused ([[Brady and Giglio|exculpatory]] or impeaching), it must have been suppressed by the State (willfully or inadvertently), and prejudice must have ensued (a reasonable probability that disclosure would have changed the result, undermining confidence in the verdict). Applying that standard, the court held: "Because we hold that the state court's decision that there was no *Brady* violation in Benn's case constitutes an unreasonable application of clearly established Supreme Court law, we affirm." — 283 F.3d 1040, ¶ 1. ^pin-p1
+A *[[Brady v. Maryland|Brady]]* violation has three elements: the evidence must be favorable to the accused ([[Brady and Giglio|exculpatory]] or impeaching), it must have been suppressed by the State (willfully or inadvertently), and prejudice must have ensued (a reasonable probability that disclosure would have changed the result, undermining confidence in the verdict). Applying that standard, the court held: "Because we hold that the state court's decision that there was no *Brady* violation in Benn's case constitutes an unreasonable application of clearly established Supreme Court law, we affirm." — 283 F.3d 1040, ¶ 1. ^pin-p1
 
 Suppressed impeachment of a key informant can itself be material even where some impeachment was introduced: "Were there no other pieces of withheld evidence in this case, we would hold that the suppression of impeachment evidence about Patrick's criminal misconduct and repeated lies to the police, while acting as an informant, is, standing alone, sufficiently prejudicial to establish a *Brady* violation." — *Id.* ¶ 58. ^pin-p58
 
@@ -65,7 +65,7 @@ The Ninth Circuit affirmed the grant of [[Common Legal Terms#habeas-corpus|habea
 - No negative treatment. *Benn* applies the [[Brady v. Maryland]] / [[Giglio v. United States]] framework (with the three-element formulation from *[[Strickler v. Greene]]*), holding that suppressed [[Brady and Giglio|exculpatory]] **and** impeachment evidence, evaluated cumulatively, can establish a *[[Brady v. Maryland|Brady]]* violation warranting [[Common Legal Terms#habeas-corpus|habeas]] relief.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Benn v. Lambert*, 283 F.3d 1040 (9th Cir. 2002) — https://www.courtlistener.com/opinion/776954/gary-benn-v-john-lambert-superintendent-of-the-washington-state/ — pinpoints given as paragraph numbers (¶ 1, ¶ 58); CourtListener's text is paragraph-numbered without F.3d star pagination.
+- *Benn v. Lambert*, 283 F.3d 1040 (9th Cir. 2002) — https://www.courtlistener.com/opinion/776954/gary-benn-v-john-lambert-superintendent-of-the-washington-state/. Pinpoints given as paragraph numbers (¶ 1, ¶ 58); CourtListener's text is paragraph-numbered without F.3d star pagination.

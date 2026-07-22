@@ -65,7 +65,7 @@ The confession was the product of inherently coercive interrogation and could no
 - No confirmed negative treatment in the final lake treatment field; automated derivation lists proposed negative events and a treatment-history audit is required. *Ashcraft* is a foundational due-process voluntariness decision establishing that prolonged, relentless custodial interrogation can be inherently coercive. The voluntariness inquiry later settled into a totality-of-the-circumstances test that requires coercive police activity (see [[Colorado v. Connelly]]), and custodial interrogation acquired separate procedural safeguards under *[[Miranda v. Arizona|Miranda]]*.
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Anchor*
 
 ## Sources
-- *Ashcraft v. Tennessee*, 322 U.S. 143 (1944) — https://www.courtlistener.com/opinion/103981/ashcraft-v-tennessee/ — pinpoints: 154, 155.
+- *Ashcraft v. Tennessee*, 322 U.S. 143 (1944). https://www.courtlistener.com/opinion/103981/ashcraft-v-tennessee/ — pinpoints: 154, 155.

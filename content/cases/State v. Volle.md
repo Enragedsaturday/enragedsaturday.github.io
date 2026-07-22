@@ -55,7 +55,7 @@ A digital warrant need not dictate the search method, but must limit the seizure
 As to what may be seized, "even though investigators may need to review broad portions of a device's contents to locate relevant material, the warrant must still include a meaningful limiting principle tying the authorized seizure to evidence of a specified offense." — *Id.* ^pin-13a
 
 ## Application
-The warrant satisfied both aspects of [[Particularity|particularity]]: it authorized a full forensic image of the phone—a breadth recognized as practically necessary for digital searches—while expressly limiting the authorized seizure to data related to first-degree murder or identifying the phone's owner. That limiting principle kept the search anchored to the probable-cause showing and prevented the kind of exploratory rummaging the Fourth Amendment forbids, so Volle's overbreadth challenge failed.
+The warrant satisfied both aspects of [[Particularity|particularity]]: it authorized a full forensic image of the phone (a breadth recognized as practically necessary for digital searches) while expressly limiting the authorized seizure to data related to first-degree murder or identifying the phone's owner. That limiting principle kept the search anchored to the probable-cause showing and prevented the kind of exploratory rummaging the Fourth Amendment forbids, so Volle's overbreadth challenge failed.
 
 ## Conclusion
 The digital warrant was sufficiently particular; the district court properly rejected Volle's overbreadth claim.
@@ -68,4 +68,4 @@ The digital warrant was sufficiently particular; the district court properly rej
 - [[Plain View Doctrine]] — *Recent development (role-based)*
 
 ## Sources
-- *State v. Volle*, 580 P.3d 1223 (Kan. 2025) — https://www.courtlistener.com/opinion/10811858/state-v-volle/ (lead opinion id 11278610) — pinpoint: slip op. 13.
+- *State v. Volle*, 580 P.3d 1223 (Kan. 2025). https://www.courtlistener.com/opinion/10811858/state-v-volle/ (lead opinion id 11278610) — pinpoint: slip op. 13.

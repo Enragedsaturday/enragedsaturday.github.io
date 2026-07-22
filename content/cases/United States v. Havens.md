@@ -55,7 +55,7 @@ Yes. For impeachment, "we see no difference of constitutional magnitude between 
 "We reaffirm this assessment of the competing interests, and hold that a defendant's statements made in response to proper cross-examination reasonably suggested by the defendant's direct examination are subject to otherwise proper impeachment by the government, albeit by evidence that has been illegally obtained and that is inadmissible on the government's direct case, or otherwise, as substantive evidence of guilt." — *Id.* at 627–628. ^pin-627b
 
 ## Application
-Havens's direct testimony — denying that he had "ever engage[d] in that kind of activity with Mr. McLeroth" — could reasonably be understood as denying any connection with the T-shirt and contradicting McLeroth. The Government's cross-examination about sewing the cotton swatches "grow[ing] out of Havens' direct testimony" was therefore proper, and the suppressed T-shirt could be used to impeach his false denial — though not as substantive evidence of guilt. The Fifth Circuit's narrower rule (impeachment only of statements made on direct) was rejected.
+Havens's direct testimony (denying that he had "ever engage[d] in that kind of activity with Mr. McLeroth") could reasonably be understood as denying any connection with the T-shirt and contradicting McLeroth. The Government's cross-examination about sewing the cotton swatches "grow[ing] out of Havens' direct testimony" was therefore proper, and the suppressed T-shirt could be used to impeach his false denial — though not as substantive evidence of guilt. The Fifth Circuit's narrower rule (impeachment only of statements made on direct) was rejected.
 
 ## Conclusion
 Because the impeachment followed proper cross-examination reasonably suggested by the direct, it did not violate Havens's constitutional rights; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -65,7 +65,7 @@ Because the impeachment followed proper cross-examination reasonably suggested b
 - No negative treatment. *Havens* extends the impeachment exception of [[Walder v. United States]] (distinguishing [[Agnello v. United States]]) from direct examination to cross-examination reasonably suggested by direct. The Court later declined to extend the exception to other defense witnesses in [[James v. Illinois]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny (impeachment exception)*
+- [[The Exclusionary Rule]] — *Key: Progeny (impeachment exception)*
 
 ## Sources
-- *United States v. Havens*, 446 U.S. 620 (1980) — https://www.courtlistener.com/opinion/110267/united-states-v-havens/ — pinpoints: 627–628.
+- *United States v. Havens*, 446 U.S. 620 (1980) — https://www.courtlistener.com/opinion/110267/united-states-v-havens/. Pinpoints: 627–628.

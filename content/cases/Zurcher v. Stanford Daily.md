@@ -31,7 +31,7 @@ homes:
 related: ["[[Stanford v. Texas]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "search-warrant", "third-party-premises", "first-amendment", "press"]
-holding: "A warrant may authorize the search of premises held by a third party not suspected of crime — including a newspaper — whenever there is probable cause to believe evidence is located there; the First Amendment requires only that the warrant requirements be applied with scrupulous exactitude, not a subpoena-first rule."
+holding: "A warrant may authorize the search of premises held by a third party not suspected of crime (including a newspaper) whenever there is probable cause to believe evidence is located there; the First Amendment requires only that the warrant requirements be applied with scrupulous exactitude, not a subpoena-first rule."
 lake:
   record_id: Zurcher v. Stanford Daily
   status: verified
@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a clash between police and demonstrators at Stanford University Hospital, police obtained a warrant to search the offices of the *Stanford Daily*, a student newspaper, for photographs that might identify assailants. The newspaper itself was not suspected of any crime. The *Daily* sued, claiming the search of a non-suspect third party — and of a newspaper in particular — violated the Fourth and First Amendments and that police should have been required to proceed by subpoena.
+After a clash between police and demonstrators at Stanford University Hospital, police obtained a warrant to search the offices of the *Stanford Daily*, a student newspaper, for photographs that might identify assailants. The newspaper itself was not suspected of any crime. The *Daily* sued, claiming the search of a non-suspect third party (and of a newspaper in particular) violated the Fourth and First Amendments and that police should have been required to proceed by subpoena.
 
 ## Issue
 Whether the Fourth Amendment bars a warranted search of premises occupied by a third party not suspected of crime, and whether the First Amendment requires that searches of a newspaper proceed only by subpoena rather than search warrant.
@@ -68,4 +68,4 @@ The warranted search of the newspaper's offices did not violate the Fourth or Fi
 - [[Scope Manner and Related Issues]] — *Progeny (third-party premises)*
 
 ## Sources
-- *Zurcher v. Stanford Daily*, 436 U.S. 547 (1978) — https://www.courtlistener.com/opinion/109876/zurcher-v-stanford-daily/ — pinpoints: 556, 564.
+- *Zurcher v. Stanford Daily*, 436 U.S. 547 (1978). https://www.courtlistener.com/opinion/109876/zurcher-v-stanford-daily/ — pinpoints: 556, 564.

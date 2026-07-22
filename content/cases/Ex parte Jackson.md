@@ -44,7 +44,7 @@ tags:
   - warrant-requirement
   - papers
   - origin
-holding: "Sealed letters and packages committed to the mail are within the Fourth Amendment's protection to the same extent as papers kept in one's own home, and may be opened and examined only under a warrant issued on oath and particularly describing the thing to be seized — though Congress may constitutionally exclude certain matter, such as lottery circulars, from the mails."
+holding: "Sealed letters and packages committed to the mail are within the Fourth Amendment's protection to the same extent as papers kept in one's own home, and may be opened and examined only under a warrant issued on oath and particularly describing the thing to be seized, though Congress may constitutionally exclude certain matter, such as lottery circulars, from the mails."
 aliases:
   - Ex parte Jackson
   - "Ex parte Jackson (1878)"

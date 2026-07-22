@@ -43,7 +43,7 @@ tags:
   - malicious-prosecution
   - fabricated-evidence
   - section-1983
-holding: "The Fourth Amendment governs a § 1983 claim for unlawful pretrial detention, including detention that continues after the start of legal process, where the legal process — here a judge's probable-cause determination resting on fabricated evidence — did not rest on genuine probable cause."
+holding: "The Fourth Amendment governs a § 1983 claim for unlawful pretrial detention, including detention that continues after the start of legal process, where the legal process (here a judge's probable-cause determination resting on fabricated evidence) did not rest on genuine probable cause."
 aliases:
   - Manuel v. City of Joliet
   - "Manuel v. City of Joliet (2017)"
@@ -64,7 +64,7 @@ Whether the Fourth Amendment governs a claim for unlawful pretrial detention tha
 The Court held that the Fourth Amendment's protection against detention absent probable cause is not switched off when legal process begins: "Our holding — that the Fourth Amendment governs a claim for unlawful pretrial detention even beyond the start of legal process — does not exhaust the disputed legal issues in this case." — 137 S. Ct. at 920. ^pin-920
 
 ## Application
-Pretrial detention is a "seizure," and the Fourth Amendment requires that a seizure rest on probable cause both before and after the onset of legal process. Where the legal process itself is corrupted — a judge's probable-cause finding is procured by fabricated evidence — it cannot cleanse the ensuing detention of its Fourth Amendment defect. Manuel could therefore pursue a Fourth Amendment claim for the detention that followed the judge's tainted probable-cause ruling. The Court [[Reading and Citing Cases#on-remand|remanded]], leaving to the Seventh Circuit the questions of the claim's precise contours and, in particular, when it accrues for limitations purposes.
+Pretrial detention is a "seizure," and the Fourth Amendment requires that a seizure rest on probable cause both before and after the onset of legal process. Where the legal process itself is corrupted (a judge's probable-cause finding is procured by fabricated evidence), it cannot cleanse the ensuing detention of its Fourth Amendment defect. Manuel could therefore pursue a Fourth Amendment claim for the detention that followed the judge's tainted probable-cause ruling. The Court [[Reading and Citing Cases#on-remand|remanded]], leaving to the Seventh Circuit the questions of the claim's precise contours and, in particular, when it accrues for limitations purposes.
 
 ## Conclusion
 The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case [[Reading and Citing Cases#on-remand|remanded]]. Kagan, J., delivered the opinion of the Court; Alito, J. (joined by Thomas, J.), and Thomas, J., dissented.
@@ -76,4 +76,4 @@ The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case [
 - [[Malicious Prosecution under the Fourth Amendment]] — *Anchor*
 
 ## Sources
-- [*Manuel v. City of Joliet*, 580 U.S. 357 (2017)](https://www.courtlistener.com/opinion/4376986/manuel-v-city-of-joliet/) — pinpoint: 137 S. Ct. 911, 920 (Kagan, J., for the Court; the CL opinion text is paginated to the parallel S. Ct. reporter, with the page-label `*920` immediately preceding the "Our holding" sentence — the U.S. Reports star-pagination is not present in the CL text). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*Manuel v. City of Joliet*, 580 U.S. 357 (2017)](https://www.courtlistener.com/opinion/4376986/manuel-v-city-of-joliet/) — pinpoint: 137 S. Ct. 911, 920 (Kagan, J., for the Court; the CL opinion text is paginated to the parallel S. Ct. reporter, with the page-label `*920` immediately preceding the "Our holding" sentence; the U.S. Reports star-pagination is not present in the CL text). Rule quote string-matched to the CL opinion text 2026-07-07.

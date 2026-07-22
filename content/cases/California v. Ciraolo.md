@@ -31,7 +31,7 @@ homes:
 related: ["[[Florida v. Riley]]", "[[California v. Greenwood]]", "[[Kyllo v. United States]]", "[[Florida v. Jardines]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "aerial-surveillance", "expectation-of-privacy"]
-holding: "Warrantless naked-eye aerial observation of a fenced curtilage from navigable airspace (1,000 ft) is not a search — no reasonable expectation of privacy from the air."
+holding: "Warrantless naked-eye aerial observation of a fenced curtilage from navigable airspace (1,000 ft) is not a search: no reasonable expectation of privacy from the air."
 lake:
   record_id: California v. Ciraolo
   status: verified
@@ -63,7 +63,7 @@ The aerial observation was not a Fourth Amendment search; the judgment suppressi
 - No negative treatment. *Ciraolo* was **followed** by [[Florida v. Riley]] (helicopter at 400 feet) and is **distinguished** from sense-enhancing-technology cases such as [[Kyllo v. United States]] and the physical-intrusion analysis of [[Florida v. Jardines]].
 
 ## Appears on
-- [[Aerial and Enhanced Surveillance]] — *Key — Anchor*
+- [[Aerial and Enhanced Surveillance]] — *Key: Anchor*
 
 ## Sources
-- *California v. Ciraolo*, 476 U.S. 207 (1986) — https://www.courtlistener.com/opinion/111666/california-v-ciraolo/ — pinpoint: 215.
+- *California v. Ciraolo*, 476 U.S. 207 (1986) — https://www.courtlistener.com/opinion/111666/california-v-ciraolo/. Pinpoint: 215.

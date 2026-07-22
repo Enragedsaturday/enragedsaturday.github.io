@@ -65,7 +65,7 @@ The policy was a reasonable special-needs search; the judgment of the Tenth Circ
 - No negative treatment. *Earls* **extends** [[Vernonia School District 47J v. Acton]] beyond student athletes to all participants in competitive extracurricular activities.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Board of Education v. Earls*, 536 U.S. 822 (2002) — https://www.courtlistener.com/opinion/121171/board-of-education-of-independent-school-district-no-92-of-pottawatomie/ — pinpoints: 837, 838.
+- *Board of Education v. Earls*, 536 U.S. 822 (2002) — https://www.courtlistener.com/opinion/121171/board-of-education-of-independent-school-district-no-92-of-pottawatomie/. Pinpoints: 837, 838.

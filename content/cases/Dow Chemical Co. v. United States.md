@@ -57,7 +57,7 @@ No. The open areas of a large industrial complex are not the constitutional equi
 Accordingly, "the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment." — [*Id.*](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/#:~:text=the%20taking%20of%20aerial%20photographs) ^pin-239a
 
 ## Application
-Dow's exposed manufacturing facilities, though enclosed against ground-level intrusion, were open to observation from the air. Because the photographs were taken from lawful navigable airspace using a conventional (if precise) mapping camera, and because the open areas of the complex resembled open fields rather than the intimate [[Curtilage|curtilage]] of a dwelling, Dow had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] against the overflight. The Court noted only that surveillance revealing intimate, enclosed details — or use of highly sophisticated equipment not generally available — might raise different questions, but the mapping photography here did not.
+Dow's exposed manufacturing facilities, though enclosed against ground-level intrusion, were open to observation from the air. Because the photographs were taken from lawful navigable airspace using a conventional (if precise) mapping camera, and because the open areas of the complex resembled open fields rather than the intimate [[Curtilage|curtilage]] of a dwelling, Dow had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] against the overflight. The Court noted only that surveillance revealing intimate, enclosed details (or use of highly sophisticated equipment not generally available) might raise different questions, but the mapping photography here did not.
 
 ## Conclusion
 The aerial photography was not a Fourth Amendment search. The judgment for the United States was affirmed on the constitutional question.
@@ -67,8 +67,8 @@ The aerial photography was not a Fourth Amendment search. The judgment for the U
 - Decided the same day as [[California v. Ciraolo]] (naked-eye aerial view of a home's [[Curtilage|curtilage]]) and reinforced by [[Florida v. Riley]] (helicopter observation). [[Kyllo v. United States]] (2001) later cabined *sense-enhancing technology* directed at the *home's* interior, distinguishing the open-area/commercial setting here.
 
 ## Appears on
-- [[Aerial and Enhanced Surveillance]] — *Key — Anchor*
+- [[Aerial and Enhanced Surveillance]] — *Key: Anchor*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Dow Chemical Co. v. United States*, 476 U.S. 227 (1986) — https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/ — pinpoint: 239.
+- *Dow Chemical Co. v. United States*, 476 U.S. 227 (1986) — https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/. Pinpoint: 239.

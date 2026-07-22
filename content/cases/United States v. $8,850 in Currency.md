@@ -42,7 +42,7 @@ tags:
   - delay
   - customs
   - currency-reporting
-holding: "An 18-month delay between the customs seizure of currency and the Government's filing of a civil forfeiture action did not deny the claimant due process; whether a delay in instituting a forfeiture proceeding is reasonable is measured by the four-factor balancing test of Barker v. Wingo — the length of the delay, the reason for it, the claimant's assertion of the right to a hearing, and prejudice to the claimant."
+holding: "An 18-month delay between the customs seizure of currency and the Government's filing of a civil forfeiture action did not deny the claimant due process; whether a delay in instituting a forfeiture proceeding is reasonable is measured by the four-factor balancing test of Barker v. Wingo: the length of the delay, the reason for it, the claimant's assertion of the right to a hearing, and prejudice to the claimant."
 aliases:
   - "United States v. $8,850 in Currency"
   - "United States v. $8,850"

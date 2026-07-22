@@ -45,7 +45,7 @@ tags:
   - probable-cause
   - reason-to-believe
   - third-circuit
-holding: "To force entry into a dwelling to execute an arrest warrant, officers must have probable cause — not a lesser 'reasonable belief' — that the suspect both resides at and is present within the home; joining the Fifth, Sixth, Seventh, and Ninth Circuits, the Third Circuit held that Payton's 'reason to believe' language means probable cause, and because the officers here forced entry into a residence that was not shown to be the arrestee's home on that standard, the denial of suppression was reversed."
+holding: "To force entry into a dwelling to execute an arrest warrant, officers must have probable cause (not a lesser 'reasonable belief') that the suspect both resides at and is present within the home; joining the Fifth, Sixth, Seventh, and Ninth Circuits, the Third Circuit held that Payton's 'reason to believe' language means probable cause, and because the officers here forced entry into a residence that was not shown to be the arrestee's home on that standard, the denial of suppression was reversed."
 aliases:
   - United States v. Vasquez-Algarin
   - "United States v. Vasquez-Algarin (3d Cir. 2016)"

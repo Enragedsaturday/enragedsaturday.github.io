@@ -31,7 +31,7 @@ homes:
 related: ["[[Rakas v. Illinois]]", "[[United States v. Salvucci]]", "[[Katz v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "suppression", "historical"]
-holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on premises where a search occurs may challenge its legality\" when its fruits are offered against him — both standing grounds have since been overruled (Rakas v. Illinois; United States v. Salvucci)."
+holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on premises where a search occurs may challenge its legality\" when its fruits are offered against him. Both standing grounds have since been overruled (Rakas v. Illinois; United States v. Salvucci)."
 lake:
   record_id: Jones v. United States
   status: verified
@@ -55,7 +55,7 @@ Yes, on two independent grounds. First, automatic standing for those charged wit
 Second, broader possessory-interest standing: "anyone legitimately on premises where a search occurs may challenge its legality by way of a motion to suppress, when its fruits are proposed to be used against him." — [*Id.* at 267](https://www.courtlistener.com/opinion/106022/jones-v-united-states/#:~:text=anyone%20legitimately%20on%20premises%20where). ^pin-267
 
 ## Application
-Jones was charged with a possessory narcotics offense and was, by his own testimony, present in Evans's apartment with Evans's consent at the time of the search. Under either ground — the automatic standing flowing from the possessory charge, or his legitimate presence on the premises — Jones was a "person aggrieved" entitled to litigate the search, so he was entitled to have his motion to suppress adjudicated on the merits (the Court then sustained the warrant as adequately supported by corroborated hearsay).
+Jones was charged with a possessory narcotics offense and was, by his own testimony, present in Evans's apartment with Evans's consent at the time of the search. Under either ground (the automatic standing flowing from the possessory charge, or his legitimate presence on the premises), Jones was a "person aggrieved" entitled to litigate the search, so he was entitled to have his motion to suppress adjudicated on the merits (the Court then sustained the warrant as adequately supported by corroborated hearsay).
 
 ## Conclusion
 Jones had standing to contest the search; the lower courts erred in denying it. (On the merits the warrant was upheld and the conviction affirmed.) Both standing grounds announced here have since been overruled.
@@ -69,4 +69,4 @@ Jones had standing to contest the search; the lower courts erred in denying it. 
 - [[Standing to Challenge a Search]] — *Historical / origin*
 
 ## Sources
-- *Jones v. United States*, 362 U.S. 257 (1960) — https://www.courtlistener.com/opinion/106022/jones-v-united-states/ — pinpoints: 264, 267.
+- *Jones v. United States*, 362 U.S. 257 (1960) — https://www.courtlistener.com/opinion/106022/jones-v-united-states/ (pinpoints: 264, 267).

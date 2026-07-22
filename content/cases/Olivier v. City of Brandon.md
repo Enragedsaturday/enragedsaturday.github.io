@@ -43,7 +43,7 @@ tags:
   - first-amendment
   - favorable-termination
   - supreme-court
-holding: "Heck v. Humphrey does not bar a § 1983 suit seeking purely prospective relief — here an injunction against future enforcement of a protest-permit ordinance — even where the plaintiff was previously convicted of violating that same ordinance, because such a suit is not designed to annul the prior conviction and falls within § 1983's heartland."
+holding: "Heck v. Humphrey does not bar a § 1983 suit seeking purely prospective relief (here an injunction against future enforcement of a protest-permit ordinance) even where the plaintiff was previously convicted of violating that same ordinance, because such a suit is not designed to annul the prior conviction and falls within § 1983's heartland."
 aliases:
   - Olivier v. City of Brandon
   - "Olivier v. City of Brandon, Mississippi"

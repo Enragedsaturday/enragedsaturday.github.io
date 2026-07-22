@@ -43,7 +43,7 @@ tags:
   - hotel-room
   - checkout
   - third-circuit
-holding: "A hotel guest's reasonable expectation of privacy in his room ends when his rental period lapses and possession reverts to the hotel; because police searched the room roughly five hours after the noon checkout time — after the guest had failed to check out, his keycard had been deactivated, and the room had been marked vacant — Mendoza lacked a legitimate expectation of privacy and therefore had no standing to challenge the warrantless search."
+holding: "A hotel guest's reasonable expectation of privacy in his room ends when his rental period lapses and possession reverts to the hotel; because police searched the room roughly five hours after the noon checkout time (after the guest had failed to check out, his keycard had been deactivated, and the room had been marked vacant), Mendoza lacked a legitimate expectation of privacy and therefore had no standing to challenge the warrantless search."
 aliases:
   - United States v. Mendoza
   - "United States v. Mendoza (3d Cir. 2026)"
@@ -56,10 +56,10 @@ aliases:
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 10771114 → precedential opinion 11237699 (Ambro, J.; No. 25-1154, decided Jan. 8, 2026). Rule quote string-matched to the CL opinion text 2026-07-07; slip-style pin (precedential 3d Cir. slip; no F.4th reporter cite assigned yet — S2 A3). S9 promotes. -->
 
 ## Background
-Ryan Mendoza checked into a Pittsburgh hotel for a two-night stay ending February 25, with a posted noon checkout and keycards set to deactivate two hours after checkout. By noon on the departure day he had not checked out, so the hotel placed his room on a "due-out" list. A manager's check found personal items but no luggage; a later check turned up a backpack of white-powder packages, and staff called police. Officers arrived around 5:20 p.m. — some five hours after checkout — confirmed with the manager that the room was vacant and possession had reverted to the hotel, and searched it without a warrant. Mendoza, arrested that night, moved to suppress; the district court denied the motion for lack of a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]].
+Ryan Mendoza checked into a Pittsburgh hotel for a two-night stay ending February 25, with a posted noon checkout and keycards set to deactivate two hours after checkout. By noon on the departure day he had not checked out, so the hotel placed his room on a "due-out" list. A manager's check found personal items but no luggage; a later check turned up a backpack of white-powder packages, and staff called police. Officers arrived around 5:20 p.m. (some five hours after checkout), confirmed with the manager that the room was vacant and possession had reverted to the hotel, and searched it without a warrant. Mendoza, arrested that night, moved to suppress; the district court denied the motion for lack of a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]].
 
 ## Issue
-Whether Mendoza retained a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the hotel room — and thus [[Standing to Challenge a Search|standing to challenge]] its search — several hours after the checkout time had passed.
+Whether Mendoza retained a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the hotel room (and thus [[Standing to Challenge a Search|standing to challenge]] its search) several hours after the checkout time had passed.
 
 ## Rule
 [[Standing to Challenge a Search|Fourth Amendment standing]] turns on whether the person "had 'a legitimate expectation of privacy in the invaded place.'" A guest's privacy interest in a rented room is tied to the rental period; once the period ends and control returns to the hotel, that interest dissolves. Applying this rule, the court held: "Five hours after checkout time, any expectation of privacy Mendoza had was not objectively reasonable." — slip op. at 2. ^pin-slip2
@@ -71,7 +71,7 @@ By the time officers entered, checkout had long passed, Mendoza had not extended
 **Affirmed.** Judge Ambro wrote for the panel (Restrepo, McKee, Ambro, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Mendoza* is a clean precedential illustration of the threshold standing inquiry (*[[Standing to Challenge a Search]]*): the *[[Katz v. United States|Katz]]* reasonable-expectation-of-privacy question is answered against a guest whose rental period has expired and whose room has reverted to the hotel — no privacy interest, no standing to suppress.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Mendoza* is a clean precedential illustration of the threshold standing inquiry (*[[Standing to Challenge a Search]]*): the *[[Katz v. United States|Katz]]* reasonable-expectation-of-privacy question is answered against a guest whose rental period has expired and whose room has reverted to the hotel: no privacy interest, no standing to suppress.
 
 ## Appears on
 - [[Standing to Challenge a Search]] — *Key*

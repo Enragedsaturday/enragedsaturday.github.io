@@ -44,7 +44,7 @@ tags:
   - terry-stop
   - reasonable-suspicion
   - high-crime-area
-holding: "Reasonable suspicion for a Terry stop cannot be built by patching together a set of innocent, suspicion-free facts; a companion's lawful open carry of a firearm, another person's arrest history, presence in a high-crime area at night, and cooperative behavior — none particularized to the defendant — do not add up to reasonable suspicion, and there is no reasonable suspicion merely by association."
+holding: "Reasonable suspicion for a Terry stop cannot be built by patching together a set of innocent, suspicion-free facts; a companion's lawful open carry of a firearm, another person's arrest history, presence in a high-crime area at night, and cooperative behavior (none particularized to the defendant) do not add up to reasonable suspicion, and there is no reasonable suspicion merely by association."
 ---
 
 # United States v. Black
@@ -53,10 +53,10 @@ holding: "Reasonable suspicion for a Terry stop cannot be built by patching toge
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 821235 → opinion 821235 (707 F.3d 531, decided 2013-02-25); Rule quote string-matched to the CL opinion text 2026-07-07. S9 promotes. -->
 
 ## Background
-Late one night, Charlotte-Mecklenburg officers patrolling a high-crime division watched a car idle at a gas pump without the driver pumping gas — behavior Officer Zastrow deemed "unusual" and indicative of drug activity. They followed the car to a parking lot between apartment complexes, where the driver, Dior Troupe, joined a group of men that included Nathaniel Black. The officers recognized one man, Charles Gates, as having a prior record, and saw that Troupe was openly carrying a firearm. Several officers converged and began frisking members of the group. Black handed over his identification, which showed an out-of-district address, then walked away; an officer grabbed him, and a search revealed that Black — a convicted felon — was carrying a firearm. The district court denied his motion to suppress, and Black entered a conditional guilty plea.
+Late one night, Charlotte-Mecklenburg officers patrolling a high-crime division watched a car idle at a gas pump without the driver pumping gas — behavior Officer Zastrow deemed "unusual" and indicative of drug activity. They followed the car to a parking lot between apartment complexes, where the driver, Dior Troupe, joined a group of men that included Nathaniel Black. The officers recognized one man, Charles Gates, as having a prior record, and saw that Troupe was openly carrying a firearm. Several officers converged and began frisking members of the group. Black handed over his identification, which showed an out-of-district address, then walked away; an officer grabbed him, and a search revealed that Black, a convicted felon, was carrying a firearm. The district court denied his motion to suppress, and Black entered a conditional guilty plea.
 
 ## Issue
-Whether the totality of the factors the government identified — a companion's lawful open carry of a firearm, another man's arrest history, presence in a high-crime area at night, and Black's cooperation — amounted to reasonable suspicion justifying Black's seizure under *[[Terry v. Ohio]]*.
+Whether the totality of the factors the government identified (a companion's lawful open carry of a firearm, another man's arrest history, presence in a high-crime area at night, and Black's cooperation) amounted to reasonable suspicion justifying Black's seizure under *[[Terry v. Ohio]]*.
 
 ## Rule
 *[[Terry v. Ohio|Terry]]* requires specific and articulable facts, particular to the person seized, that reasonably warrant the intrusion; innocent facts can combine into reasonable suspicion, but not here: "we encounter yet another situation where the Government attempts to meet its Terry burden by patching together a set of innocent, suspicion-free facts, which cannot rationally be relied on to establish reasonable suspicion." — slip op. at 11. The court added two limits central to the stop's illegality: where a state permits open carry, "the exercise of this right, without more, cannot justify an investigatory detention," and "there is no reasonable suspicion merely by association."
@@ -68,7 +68,7 @@ The court dismantled each proffered factor. Troupe's idling at a gas pump was no
 The judgment was **reversed and [[Reading and Citing Cases#vacated|vacated]]**: the district court erred in denying suppression, and Black's conviction and sentence were [[Reading and Citing Cases#vacated|vacated]]. Gregory, J., wrote for the court (Gregory, Davis, JJ.); Traxler, C.J., concurred in the result.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Black* is a leading Fourth Circuit statement that *[[Terry v. Ohio|Terry]]*'s reasonable-suspicion standard cannot be satisfied by stacking innocent facts or by association, and that lawfully carrying a firearm where state law permits open carry is not itself a basis to detain — a rationale the court tied to its 2011 line of cases including *[[United States v. Massenburg]]*.
+**Status: Unverified. Subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Black* is a leading Fourth Circuit statement that *[[Terry v. Ohio|Terry]]*'s reasonable-suspicion standard cannot be satisfied by stacking innocent facts or by association, and that lawfully carrying a firearm where state law permits open carry is not itself a basis to detain — a rationale the court tied to its 2011 line of cases including *[[United States v. Massenburg]]*.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key*

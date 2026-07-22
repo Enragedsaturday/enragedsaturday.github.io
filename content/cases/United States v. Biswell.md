@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A city policeman and a federal Treasury agent entered the gun shop of Biswell, a federally licensed firearms dealer, and — under § 923(g) of the Gun Control Act — inspected a locked storeroom, finding two sawed-off rifles he was not licensed to possess. Biswell was convicted of dealing in firearms without paying the special occupational tax. He moved to suppress, arguing the warrantless inspection violated the Fourth Amendment.
+A city policeman and a federal Treasury agent entered the gun shop of Biswell, a federally licensed firearms dealer, and, under § 923(g) of the Gun Control Act, inspected a locked storeroom, finding two sawed-off rifles he was not licensed to possess. Biswell was convicted of dealing in firearms without paying the special occupational tax. He moved to suppress, arguing the warrantless inspection violated the Fourth Amendment.
 
 ## Issue
 Whether a warrantless inspection of a licensed firearms dealer's premises, as authorized by the Gun Control Act, is reasonable under the Fourth Amendment.
@@ -70,4 +70,4 @@ The warrantless inspection and seizure were reasonable under the Fourth Amendmen
 - [[Special Needs and Administrative Searches]] — *Progeny (pervasively-regulated industry)*
 
 ## Sources
-- *United States v. Biswell*, 406 U.S. 311 (1972) — https://www.courtlistener.com/opinion/108533/united-states-v-biswell/ — pinpoints: 316, 317.
+- *United States v. Biswell*, 406 U.S. 311 (1972) — https://www.courtlistener.com/opinion/108533/united-states-v-biswell/. Pinpoints: 316, 317.

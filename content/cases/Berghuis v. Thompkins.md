@@ -65,7 +65,7 @@ Thompkins did not invoke his right to remain silent and waived it through his un
 - No negative treatment. *Berghuis* extends the [[Davis v. United States]] unambiguous-invocation rule (originally about the right to counsel) to the right to remain silent, and confirms implied waiver under [[North Carolina v. Butler]] from an uncoerced statement by a suspect who understood the warnings.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Anchor*
+- [[Miranda Waiver and Invocation]] — *Key: Anchor*
 
 ## Sources
-- *Berghuis v. Thompkins*, 560 U.S. 370 (2010) — https://www.courtlistener.com/opinion/147529/berghuis-v-thompkins/ — pinpoints: 382, 388 (CL carries the slip opinion; waiver holding at slip op. 17).
+- *Berghuis v. Thompkins*, 560 U.S. 370 (2010) — https://www.courtlistener.com/opinion/147529/berghuis-v-thompkins/ (pinpoints: 382, 388; CL carries the slip opinion; waiver holding at slip op. 17).

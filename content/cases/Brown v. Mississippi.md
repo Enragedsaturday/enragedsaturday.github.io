@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Three Black tenant farmers were convicted of murder in Mississippi on the strength of confessions extracted by brutal physical torture — repeated whippings and a mock hanging — administered by a deputy and others. The torture was openly described at trial, yet the confessions were admitted and were the only real evidence of guilt.
+Three Black tenant farmers were convicted of murder in Mississippi on the strength of confessions extracted by brutal physical torture (repeated whippings and a mock hanging) administered by a deputy and others. The torture was openly described at trial, yet the confessions were admitted and were the only real evidence of guilt.
 
 ## Issue
 Whether a state criminal conviction resting solely on confessions extracted by physical torture violates the Due Process Clause of the Fourteenth Amendment.
@@ -65,7 +65,7 @@ The convictions violated Fourteenth Amendment due process and were reversed.
 - No negative treatment. *Brown* is the foundational due-process voluntariness case; the doctrine was developed in [[Chambers v. Florida]] and [[Ashcraft v. Tennessee]] and later cabined to coercive *police* conduct in [[Colorado v. Connelly]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Anchor*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Anchor*
 
 ## Sources
-- *Brown v. Mississippi*, 297 U.S. 278 (1936) — https://www.courtlistener.com/opinion/102604/brown-v-mississippi/ — pinpoint: 286.
+- *Brown v. Mississippi*, 297 U.S. 278 (1936) — https://www.courtlistener.com/opinion/102604/brown-v-mississippi/. Pinpoint: 286.

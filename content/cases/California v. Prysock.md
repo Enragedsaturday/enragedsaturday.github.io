@@ -31,7 +31,7 @@ homes:
 related: ["[[Duckworth v. Eagan]]", "[[Florida v. Powell]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "warning-adequacy"]
-holding: "Miranda warnings need not be a verbatim recital of the language in Miranda; a warning that reasonably conveys the suspect's rights is adequate — no talismanic incantation is required."
+holding: "Miranda warnings need not be a verbatim recital of the language in Miranda; a warning that reasonably conveys the suspect's rights is adequate. No talismanic incantation is required."
 lake:
   record_id: California v. Prysock
   status: under_review

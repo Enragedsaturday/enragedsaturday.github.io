@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A Prohibition agent, posing as a fellow World War I veteran, visited Sorrells's home and—after bonding over their shared war service—repeatedly asked Sorrells to obtain liquor. Sorrells twice refused, then eventually procured a half-gallon of whiskey. He was convicted of possessing and selling liquor and asserted entrapment.
+A Prohibition agent, posing as a fellow World War I veteran, visited Sorrells's home and, after bonding over their shared war service, repeatedly asked Sorrells to obtain liquor. Sorrells twice refused, then eventually procured a half-gallon of whiskey. He was convicted of possessing and selling liquor and asserted entrapment.
 
 ## Issue
 Whether entrapment is a valid defense, and on what basis, when government agents induce an otherwise law-abiding person to commit a crime.
@@ -65,7 +65,7 @@ Entrapment is a valid defense resting on the inference that Congress did not int
 - The origin of the federal entrapment defense and its subjective (predisposition) test, applied in [[Sherman v. United States]] and reaffirmed in [[Jacobson v. United States]] and [[Mathews v. United States]]; the due-process outer boundary was addressed in [[Hampton v. United States]].
 
 ## Appears on
-- [[Entrapment]] — *Key — Anchor*
+- [[Entrapment]] — *Key: Anchor*
 
 ## Sources
-- *Sorrells v. United States*, 287 U.S. 435 (1932) — https://www.courtlistener.com/opinion/101997/sorrells-v-united-states/ — pinpoint: 454.
+- *Sorrells v. United States*, 287 U.S. 435 (1932) — https://www.courtlistener.com/opinion/101997/sorrells-v-united-states/. Pinpoint: 454.

@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Jerry Bowen assaulted his former girlfriend with "a black sawed-off shotgun with a pistol grip" and fired at her as she fled, Detective Messerschmidt prepared a warrant to search Augusta Millender's home — where Bowen was thought to live — for **all firearms** and **all gang-related material**. The warrant was reviewed and approved by a supervisor, a deputy district attorney, and a magistrate before execution. The Millenders sued the officers under § 1983, alleging the warrant was unconstitutionally overbroad.
+After Jerry Bowen assaulted his former girlfriend with "a black sawed-off shotgun with a pistol grip" and fired at her as she fled, Detective Messerschmidt prepared a warrant to search Augusta Millender's home (where Bowen was thought to live) for **all firearms** and **all gang-related material**. The warrant was reviewed and approved by a supervisor, a deputy district attorney, and a magistrate before execution. The Millenders sued the officers under § 1983, alleging the warrant was unconstitutionally overbroad.
 
 ## Issue
 Whether officers are entitled to [[Qualified Immunity|qualified immunity]] from a § 1983 damages suit for obtaining and executing a warrant later alleged to be overbroad, where a neutral magistrate approved the warrant.
@@ -54,7 +54,7 @@ Whether officers are entitled to [[Qualified Immunity|qualified immunity]] from 
 ## Rule
 Officers are immune unless the warrant was so obviously deficient that no reasonable officer could have relied on it. A magistrate's approval is strong evidence of objective reasonableness, but it does not end the inquiry: "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness." — 565 U.S. 535. ^pin-547
 
-The exception, drawn from [[Malley v. Briggs]] and [[United States v. Leon]], applies only where the affidavit is "so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable." — *Id.* (quoting *Leon*, 468 U.S. at 923). But "the threshold for establishing this exception is a high one, and it should be." — [*Id.*](https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/#:~:text=so%20lacking%20in%20indicia%20of) ^pin-547b
+The exception, drawn from [[Malley v. Briggs]] and [[United States v. Leon]], applies only where the affidavit is "so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable." (*Id.*, quoting *Leon*, 468 U.S. at 923). But "the threshold for establishing this exception is a high one, and it should be." — [*Id.*](https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/#:~:text=so%20lacking%20in%20indicia%20of) ^pin-547b
 
 ## Application
 The warrant's authorization to seize all firearms and gang material was at least arguably supported: Bowen had used a firearm in the assault and was a known gang member, so an officer could reasonably believe the broad categories were tied to evidence of the crime and of Bowen's dangerousness and gang ties. Even if the warrant was in fact overbroad, the question was only whether reliance on it was objectively reasonable — and the additional review by a supervisor, a prosecutor, and the magistrate confirmed that this was not the rare case where every reasonable officer would have known the warrant should not issue.
@@ -67,8 +67,8 @@ Reversed. The officers were entitled to [[Qualified Immunity|qualified immunity]
 - *Messerschmidt* applies the [[Malley v. Briggs]] / [[United States v. Leon]] standard to the warrant-immunity question and sits within the qualified-immunity framework of [[Harlow v. Fitzgerald]] and [[Pearson v. Callahan]]. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 - [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Messerschmidt v. Millender*, 565 U.S. 535 (2012) — https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/ — interior pincite(s) 547 retired pending official-reporter pagination (lead opinion id 9485385).
+- *Messerschmidt v. Millender*, 565 U.S. 535 (2012) — https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/. Interior pincite(s) 547 retired pending official-reporter pagination (lead opinion id 9485385).

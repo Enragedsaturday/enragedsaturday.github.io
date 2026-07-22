@@ -55,7 +55,7 @@ Yes; probable cause is a totality inquiry and courts may not divide and conquer 
 The panel erred by "view[ing] each fact 'in isolation, rather than as a factor in the totality of the circumstances.'" — *Id.* ^pin-op11a
 
 ## Application
-Viewed as a whole — a vacant-looking house, a chaotic party, guests scattering and giving evasive, inconsistent stories about permission, and the supposed host conceding she had none — the circumstances gave a reasonable officer probable cause to believe the partygoers knew they were there unlawfully. Assessing each fact in isolation, as the panel did, was the wrong method; on the totality, probable cause existed (and the officers also had [[Qualified Immunity|qualified immunity]]).
+Viewed as a whole (a vacant-looking house, a chaotic party, guests scattering and giving evasive, inconsistent stories about permission, and the supposed host conceding she had none), the circumstances gave a reasonable officer probable cause to believe the partygoers knew they were there unlawfully. Assessing each fact in isolation, as the panel did, was the wrong method; on the totality, probable cause existed (and the officers also had [[Qualified Immunity|qualified immunity]]).
 
 ## Conclusion
 The officers had probable cause to arrest, and were in any event entitled to [[Qualified Immunity|qualified immunity]]; the judgment against them was reversed.
@@ -65,7 +65,7 @@ The officers had probable cause to arrest, and were in any event entitled to [[Q
 - No negative treatment. *Wesby* reaffirms the totality-of-the-circumstances standard of [[Illinois v. Gates]] and [[Maryland v. Pringle]], rejecting divide-and-conquer analysis of probable cause.
 
 ## Appears on
-- [[Probable Cause]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *District of Columbia v. Wesby*, 583 U.S. 48 (2018) — https://www.courtlistener.com/opinion/4460854/district-of-columbia-v-wesby/ — pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4460854 → opinion 4238107).
+- *District of Columbia v. Wesby*, 583 U.S. 48 (2018) — https://www.courtlistener.com/opinion/4460854/district-of-columbia-v-wesby/ (pinpoint: slip op., at 11; CL carries the slip opinion; cluster 4460854 → opinion 4238107).

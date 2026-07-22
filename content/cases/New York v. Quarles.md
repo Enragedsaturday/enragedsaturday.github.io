@@ -31,7 +31,7 @@ homes:
 related: ["[[Miranda v. Arizona]]", "[[Berkemer v. McCarty]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "public-safety-exception", "interrogation"]
-holding: "There is a \"public safety\" exception to Miranda — when officers ask questions reasonably prompted by an immediate threat to public…"
+holding: "There is a \"public safety\" exception to Miranda: when officers ask questions reasonably prompted by an immediate threat to public…"
 lake:
   record_id: New York v. Quarles
   status: verified

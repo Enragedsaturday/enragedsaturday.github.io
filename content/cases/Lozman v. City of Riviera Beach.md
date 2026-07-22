@@ -76,4 +76,4 @@ The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case [
 - [[Retaliatory Arrest]] — *Anchor*
 
 ## Sources
-- [*Lozman v. City of Riviera Beach*, 585 U.S. 87 (2018)](https://www.courtlistener.com/opinion/4508137/lozman-v-riviera-beach/) — pinpoint: slip op. at 12 (Kennedy, J., for the Court; the CL opinion text is the slip opinion, 585 U.S. ___, with the holding on slip page 12 — the U.S. Reports pagination is not present in the CL text, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.
+- [*Lozman v. City of Riviera Beach*, 585 U.S. 87 (2018)](https://www.courtlistener.com/opinion/4508137/lozman-v-riviera-beach/) — pinpoint: slip op. at 12 (Kennedy, J., for the Court; the CL opinion text is the slip opinion, 585 U.S. ___, with the holding on slip page 12; the U.S. Reports pagination is not present in the CL text, so the pin is slip-style). Rule quote string-matched to the CL opinion text 2026-07-07.

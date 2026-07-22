@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Federal agents, suspecting drug trafficking, illegally entered a warehouse without a warrant and saw bales of marijuana. They left without disturbing the bales, then obtained a search warrant based on information they had known before the illegal entry — without mentioning the entry or what they had seen — and re-entered to seize the marijuana under the warrant.
+Federal agents, suspecting drug trafficking, illegally entered a warehouse without a warrant and saw bales of marijuana. They left without disturbing the bales, then obtained a search warrant based on information they had known before the illegal entry, without mentioning the entry or what they had seen, and re-entered to seize the marijuana under the warrant.
 
 ## Issue
 Whether the independent-source doctrine permits admission of evidence that was first observed during an unlawful entry but later seized under a warrant obtained from genuinely independent information.
 
 ## Rule
-Yes — so long as the later acquisition is genuinely independent of the unlawful entry. "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here." — 487 U.S. at 542. ^pin-542
+Yes, so long as the later acquisition is genuinely independent of the unlawful entry. "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here." — 487 U.S. at 542. ^pin-542
 
 The later seizure is **not** genuinely independent if "the agents' decision to seek the warrant was prompted by what they had seen during the initial entry, . . . or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant." — *Id.* ^pin-542b
 
@@ -65,7 +65,7 @@ The marijuana would be admissible only if the agents' decision to seek the warra
 - No negative treatment. *Murray* extends the independent-source doctrine (rooted in [[Silverthorne Lumber Co. v. United States]] and restated in [[Nix v. Williams]]) to evidence first seen during an illegal entry and later seized under a genuinely independent warrant.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Murray v. United States*, 487 U.S. 533 (1988) — https://www.courtlistener.com/opinion/112136/murray-v-united-states/ — pinpoint: 542.
+- *Murray v. United States*, 487 U.S. 533 (1988) — https://www.courtlistener.com/opinion/112136/murray-v-united-states/. Pinpoint: 542.

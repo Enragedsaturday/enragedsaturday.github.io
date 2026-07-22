@@ -44,7 +44,7 @@ tags:
   - public-safety-exception
   - quarles
   - eighth-circuit
-holding: "The Eighth Circuit held that an un-Mirandized, in-custody question to a secured arrestee — 'Is there anything else in there we need to know about?' after officers found a concealed revolver in his car — fell within New York v. Quarles's public-safety exception to Miranda, because the risk that officers might mishandle other unknown weapons while searching a vehicle incident to a late-night arrest is an objectively reasonable public-safety concern; the incriminating statement was admissible and the felon-in-possession conviction affirmed."
+holding: "The Eighth Circuit held that an un-Mirandized, in-custody question to a secured arrestee ('Is there anything else in there we need to know about?' after officers found a concealed revolver in his car) fell within New York v. Quarles's public-safety exception to Miranda, because the risk that officers might mishandle other unknown weapons while searching a vehicle incident to a late-night arrest is an objectively reasonable public-safety concern; the incriminating statement was admissible and the felon-in-possession conviction affirmed."
 ---
 
 # United States v. Liddell
@@ -68,7 +68,7 @@ Liddell argued the exception could not apply because the revolver had been found
 **Affirmed.** Chief Judge Loken wrote for the court (Loken, C.J.; Gruender and Benton, JJ.). Judge Gruender concurred separately, questioning whether the circuit's public-safety cases had drifted from *[[New York v. Quarles|Quarles]]*'s tethering of the exception to genuine [[Exigent Circumstances and Hot Pursuit|exigent circumstances]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Liddell* is a workhorse Eighth Circuit application of the *[[New York v. Quarles|Quarles]]* **public-safety exception** to *[[Miranda v. Arizona|Miranda]]*: after finding one weapon, officers may ask a secured suspect about other weapons or contraband in a space they are about to search, because mishandling an unknown firearm is an objectively reasonable safety risk. Note the internal tension flagged by Judge Gruender's [[Common Legal Terms#concurring-opinion|concurrence]] — whether that application still requires the [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] *[[New York v. Quarles|Quarles]]* demanded.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Liddell* is a workhorse Eighth Circuit application of the *[[New York v. Quarles|Quarles]]* **public-safety exception** to *[[Miranda v. Arizona|Miranda]]*: after finding one weapon, officers may ask a secured suspect about other weapons or contraband in a space they are about to search, because mishandling an unknown firearm is an objectively reasonable safety risk. Note the internal tension flagged by Judge Gruender's [[Common Legal Terms#concurring-opinion|concurrence]]: whether that application still requires the [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] *[[New York v. Quarles|Quarles]]* demanded.
 
 ## Appears on
 - [[Miranda and Custodial Interrogation]] — *Key*

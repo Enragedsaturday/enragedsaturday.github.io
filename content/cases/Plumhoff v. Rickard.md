@@ -57,7 +57,7 @@ And the number of shots was not excessive: "if police officers are justified in 
 Alternatively, the officers had [[Qualified Immunity|qualified immunity]]: "We have held that petitioners' conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity." — *Id.* at 778. ^pin-778
 
 ## Application
-Judged from the perspective of a reasonable officer at the moment force was used, Rickard's continued effort to flee — engine revving, wheels spinning against a cruiser — showed he was intent on resuming a chase that had already endangered many motorists, so deadly force to stop him was reasonable as in [[Scott v. Harris]]. Because Rickard never gave up during the roughly ten-second span of fire and in fact drove off afterward, the 15 shots did not make the force excessive. The passenger Kelly Allen's presence did not enhance Rickard's own Fourth Amendment rights. And even assuming a violation, no clearly established law (per *[[Brosseau v. Haugen]]*) precluded the officers' conduct, so [[Qualified Immunity|qualified immunity]] applied.
+Judged from the perspective of a reasonable officer at the moment force was used, Rickard's continued effort to flee (engine revving, wheels spinning against a cruiser) showed he was intent on resuming a chase that had already endangered many motorists, so deadly force to stop him was reasonable as in [[Scott v. Harris]]. Because Rickard never gave up during the roughly ten-second span of fire and in fact drove off afterward, the 15 shots did not make the force excessive. The passenger Kelly Allen's presence did not enhance Rickard's own Fourth Amendment rights. And even assuming a violation, no clearly established law (per *[[Brosseau v. Haugen]]*) precluded the officers' conduct, so [[Qualified Immunity|qualified immunity]] applied.
 
 ## Conclusion
 Reversed. The use of deadly force to end the chase was reasonable and the 15 shots were not excessive; in any event the officers were entitled to [[Qualified Immunity|qualified immunity]].
@@ -67,8 +67,8 @@ Reversed. The use of deadly force to end the chase was reasonable and the 15 sho
 - *Plumhoff* applies the dangerous-flight deadly-force rule of [[Scott v. Harris]] and the [[Graham v. Connor]] reasonableness standard, and pairs with the high-specificity qualified-immunity cases like [[Mullenix v. Luna]]. Its totality-based reasonableness analysis is consistent with the later clarification in [[Barnes v. Felix]] (2025) that there is no "moment of the threat" rule cutting off the surrounding circumstances. No negative treatment.
 
 ## Appears on
-- [[Use of Force]] — *Key — Progeny / Refinement*
+- [[Use of Force]] — *Key: Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Plumhoff v. Rickard*, 572 U.S. 765 (2014) — https://www.courtlistener.com/opinion/2675750/plumhoff-v-rickard/ — pinpoints: 777, 778.
+- *Plumhoff v. Rickard*, 572 U.S. 765 (2014) — https://www.courtlistener.com/opinion/2675750/plumhoff-v-rickard/. Pinpoints: 777, 778.

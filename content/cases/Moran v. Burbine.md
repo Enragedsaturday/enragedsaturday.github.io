@@ -55,7 +55,7 @@ No. A waiver is valid if it is voluntary, knowing, and intelligent, judged by a 
 Information withheld from the suspect cannot bear on that inquiry: "Events occurring outside of the presence of the suspect and entirely unknown to him surely can have no bearing on the capacity to comprehend and knowingly relinquish a constitutional right." — [*Id.* at 422](https://www.courtlistener.com/opinion/111614/moran-v-burbine/#:~:text=Events%20occurring%20outside%20of%20the). ^pin-422
 
 ## Application
-Burbine's waiver was voluntary — there was no coercion — and knowing and intelligent, because he was repeatedly advised of and understood his rights. The police failure to tell him of the attorney's call, and any deception of the attorney, occurred outside his presence and were unknown to him, so they could not undermine his comprehension or the validity of his waiver. The Court also held that the Sixth Amendment had not attached because adversary judicial proceedings had not begun, and the police conduct did not violate due process on these facts. The confession was admissible.
+Burbine's waiver was voluntary (there was no coercion) and knowing and intelligent, because he was repeatedly advised of and understood his rights. The police failure to tell him of the attorney's call, and any deception of the attorney, occurred outside his presence and were unknown to him, so they could not undermine his comprehension or the validity of his waiver. The Court also held that the Sixth Amendment had not attached because adversary judicial proceedings had not begun, and the police conduct did not violate due process on these facts. The confession was admissible.
 
 ## Conclusion
 The waiver was valid and the confession admissible; the First Circuit's grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
@@ -65,7 +65,7 @@ The waiver was valid and the confession admissible; the First Circuit's grant of
 - No negative treatment. *Moran* supplies the canonical two-dimensional (voluntary + knowing/intelligent) standard for a valid *[[Miranda v. Arizona|Miranda]]* waiver, applied in cases such as [[North Carolina v. Butler]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Moran v. Burbine*, 475 U.S. 412 (1986) — https://www.courtlistener.com/opinion/111614/moran-v-burbine/ — pinpoints: 421, 422.
+- *Moran v. Burbine*, 475 U.S. 412 (1986) — https://www.courtlistener.com/opinion/111614/moran-v-burbine/. Pinpoints: 421, 422.

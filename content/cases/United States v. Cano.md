@@ -68,4 +68,4 @@ Manual border phone searches need no suspicion and forensic ones require reasona
 - [[Border Searches]] — *Illustrates a circuit split*
 
 ## Sources
-- *United States v. Cano*, 934 F.3d 1002 (9th Cir. 2019) — https://www.courtlistener.com/opinion/4649091/united-states-v-miguel-cano/ — pinpoints: slip op., at 5, 29 (CL carries the slip opinion; cluster 4649091 → opinion 4426344).
+- *United States v. Cano*, 934 F.3d 1002 (9th Cir. 2019) — https://www.courtlistener.com/opinion/4649091/united-states-v-miguel-cano/. Pinpoints: slip op., at 5, 29 (CL carries the slip opinion; cluster 4649091 → opinion 4426344).

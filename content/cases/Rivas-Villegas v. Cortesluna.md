@@ -64,7 +64,7 @@ Because no precedent clearly established that Rivas-Villegas's specific conduct 
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. Decided the same day as the companion qualified-immunity [[Common Legal Terms#per-curiam|per curiam]] [[City of Tahlequah v. Bond]], reinforcing that "clearly established" law must be defined with specificity.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Rivas-Villegas v. Cortesluna*, 595 U.S. 1 (2021) (per curiam) — https://www.courtlistener.com/opinion/5290447/rivas-villegas-v-cortesluna/ — pinpoints: slip op., at 4, 5 (CL carries the slip opinion; cluster 5290447 → opinion 5118993).
+- *Rivas-Villegas v. Cortesluna*, 595 U.S. 1 (2021) (per curiam) — https://www.courtlistener.com/opinion/5290447/rivas-villegas-v-cortesluna/. Pinpoints: slip op., at 4, 5 (CL carries the slip opinion; cluster 5290447 → opinion 5118993).

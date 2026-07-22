@@ -50,20 +50,20 @@ An officer stopped a car with three occupants at 3:16 a.m. and, with consent, fo
 Whether an officer has probable cause to arrest a vehicle's occupant for possession of drugs found in the car when no occupant admits ownership and the drugs are accessible to all.
 
 ## Rule
-Yes — the circumstances support a reasonable inference of common possession. "We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly." — 540 U.S. at 372. ^pin-372
+Yes. The circumstances support a reasonable inference of common possession. "We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly." — 540 U.S. at 372. ^pin-372
 
 ## Application
 Three men were riding together at night in a relatively small space with cash in front of Pringle and cocaine accessible to all of them, and none offered any information about who owned the drugs or money. From these facts an officer could reasonably infer that any or all of the occupants knowingly possessed the cocaine in a common enterprise. That inference supplied probable cause to arrest Pringle, distinguishing the case from mere guilt by association (as in *[[Ybarra v. Illinois|Ybarra]]*) where the suspect was a bystander in a public place.
 
 ## Conclusion
-Reversed: the officer had probable cause to arrest Pringle for possession of the cocaine, so his arrest — and the confession that followed — were lawful.
+Reversed: the officer had probable cause to arrest Pringle for possession of the cocaine, so his arrest (and the confession that followed) were lawful.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - *Pringle* applies the totality-of-the-circumstances probable-cause standard ([[Illinois v. Gates]]; [[Brinegar v. United States]]) to a confined common-enterprise setting and distinguishes the bystander situation of [[Ybarra v. Illinois]]; it remains good law.
 
 ## Appears on
-- [[Probable Cause]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Maryland v. Pringle*, 540 U.S. 366 (2003) — https://www.courtlistener.com/opinion/131150/maryland-v-pringle/ — pinpoint: 372.
+- *Maryland v. Pringle*, 540 U.S. 366 (2003) — https://www.courtlistener.com/opinion/131150/maryland-v-pringle/. Pinpoint: 372.

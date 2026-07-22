@@ -31,7 +31,7 @@ homes:
 related: ["[[Weeks v. United States]]", "[[Nardone v. United States]]"]
 aliases: ["Silverthorne Lumber Co v United States"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "independent-source"]
-holding: "Evidence obtained through an unconstitutional search may not be used at all — directly or indirectly — and the government may not exploit knowledge gained from its own illegal seizure; but facts learned from a genuinely independent source may still be proved (the independent-source exception)."
+holding: "Evidence obtained through an unconstitutional search may not be used at all (directly or indirectly) and the government may not exploit knowledge gained from its own illegal seizure; but facts learned from a genuinely independent source may still be proved (the independent-source exception)."
 lake:
   record_id: Silverthorne Lumber Co. v. United States
   status: verified

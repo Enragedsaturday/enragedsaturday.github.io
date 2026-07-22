@@ -65,7 +65,7 @@ The Court of Appeals erred in finding a Sixth Amendment violation; absent delibe
 - No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 37 proposed); the proposed negative and audit-needed edges remain unresolved pending a treatment-history audit. *Kuhlmann* refines the [[Massiah v. United States]] / [[United States v. Henry]] line by drawing the line between a passive "listening post" (permissible) and active "deliberate elicitation" (a violation), consistent with [[Maine v. Moulton]].
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Kuhlmann v. Wilson*, 477 U.S. 436 (1986) — https://www.courtlistener.com/opinion/111726/kuhlmann-v-wilson/ — pinpoint: 459.
+- *Kuhlmann v. Wilson*, 477 U.S. 436 (1986) — https://www.courtlistener.com/opinion/111726/kuhlmann-v-wilson/. Pinpoint: 459.

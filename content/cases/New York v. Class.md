@@ -51,7 +51,7 @@ lake:
 Officers stopped Class for two traffic violations. When Class exited the car, an officer reached into the passenger compartment to move papers on the dashboard that obscured the Vehicle Identification Number (VIN). In doing so he saw the handle of a gun protruding from under the seat. Class moved to suppress the gun, arguing the reach-in was an unconstitutional search.
 
 ## Issue
-Whether an officer's entry into the passenger compartment of a lawfully stopped car to move papers obscuring the VIN — a number required by law to be visible — violates the Fourth Amendment.
+Whether an officer's entry into the passenger compartment of a lawfully stopped car to move papers obscuring the VIN (a number required by law to be visible) violates the Fourth Amendment.
 
 ## Rule
 There is no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the VIN itself: "because of the important role played by the VIN in the pervasive governmental regulation of the automobile and the efforts by the Federal Government to ensure that the VIN is placed in plain view, we hold that there was no reasonable expectation of privacy in the VIN." — 475 U.S. at 114. ^pin-114
@@ -74,4 +74,4 @@ Reading the obscured VIN by a brief reach into the car was a reasonable, minimal
 - [[Plain View Doctrine]] — *Related (cross-doctrine)*
 
 ## Sources
-- *New York v. Class*, 475 U.S. 106 (1986) — https://www.courtlistener.com/opinion/111600/new-york-v-class/ — pinpoints: 114, 119.
+- *New York v. Class*, 475 U.S. 106 (1986) — https://www.courtlistener.com/opinion/111600/new-york-v-class/. Pinpoints: 114, 119.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Brady v. Maryland]]", "[[Strickler v. Greene]]", "[[Giglio v. United States]]", "[[Kyles v. Whitley]]", "[[United States v. Bagley]]", "[[Napue v. Illinois]]"]
 aliases: []
 tags: ["case", "brady", "giglio", "impeachment-evidence", "informant", "prosecutorial-misconduct", "due-process"]
-holding: "A Brady violation occurred where the State withheld that a key prosecution witness was a paid police informant and affirmatively represented it had disclosed everything; a defendant who reasonably relies on the prosecution's representations does not forfeit the claim by failing to discover the concealed evidence — 'prosecutor may hide, defendant must seek' is not tenable."
+holding: "A Brady violation occurred where the State withheld that a key prosecution witness was a paid police informant and affirmatively represented it had disclosed everything; a defendant who reasonably relies on the prosecution's representations does not forfeit the claim by failing to discover the concealed evidence: 'prosecutor may hide, defendant must seek' is not tenable."
 lake:
   record_id: Banks v. Dretke
   status: verified
@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Delma Banks was convicted of capital murder and sentenced to death in Texas. Two key prosecution witnesses, Robert Farr and Charles Cook, helped secure the conviction and death sentence. Farr — who supplied much of the evidence that Banks would commit future violence — was in fact a paid police informant, and the State had also withheld a transcript of a pretrial interview in which Cook's testimony was coached. Throughout trial and state postconviction proceedings the prosecution represented that it had disclosed everything and even denied that Farr was an informant. Banks raised the suppressed-evidence claims on federal [[Common Legal Terms#habeas-corpus|habeas]].
+Delma Banks was convicted of capital murder and sentenced to death in Texas. Two key prosecution witnesses, Robert Farr and Charles Cook, helped secure the conviction and death sentence. Farr, who supplied much of the evidence that Banks would commit future violence, was in fact a paid police informant, and the State had also withheld a transcript of a pretrial interview in which Cook's testimony was coached. Throughout trial and state postconviction proceedings the prosecution represented that it had disclosed everything and even denied that Farr was an informant. Banks raised the suppressed-evidence claims on federal [[Common Legal Terms#habeas-corpus|habeas]].
 
 ## Issue
 Whether Banks established a Brady violation as to Farr's concealed informant status — and whether his failure, in state proceedings, to prove what the State had hidden barred federal [[Common Legal Terms#habeas-corpus|habeas]] relief.
 
 ## Rule
-The Court reiterated *[[Brady v. Maryland|Brady]]*'s rule and the three-part test from [[Strickler v. Greene]]: a *[[Brady v. Maryland|Brady]]* "prosecutorial misconduct claim" has three essential components — "The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued." — 540 U.S. at 691 (quoting *Strickler*, 527 U.S. at 281–282). ^pin-691
+The Court reiterated *[[Brady v. Maryland|Brady]]*'s rule and the three-part test from [[Strickler v. Greene]]: a *[[Brady v. Maryland|Brady]]* "prosecutorial misconduct claim" has three essential components: "The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued." — 540 U.S. at 691 (quoting *Strickler*, 527 U.S. at 281–282). ^pin-691
 
 A defendant need not police the prosecution's honesty. "A rule thus declaring 'prosecutor may hide, defendant must seek,' is not tenable in a system constitutionally bound to accord defendants due process." — 540 U.S. at 696. ^pin-696
 
@@ -67,7 +67,7 @@ Reversed in relevant part. Banks established (or was entitled to develop) a *[[B
 - *Banks* sits in the [[Brady v. Maryland]] / [[Giglio v. United States]] impeachment-disclosure line and applies the [[Strickler v. Greene]] three-component framework and the materiality logic of [[Kyles v. Whitley]] and [[United States v. Bagley]]. It is the leading rejection of a "due diligence" defense to suppression. No negative treatment.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Banks v. Dretke*, 540 U.S. 668 (2004) — https://www.courtlistener.com/opinion/131165/banks-v-dretke/ — pinpoints: 691, 696, 698.
+- *Banks v. Dretke*, 540 U.S. 668 (2004). https://www.courtlistener.com/opinion/131165/banks-v-dretke/ — pinpoints: 691, 696, 698.

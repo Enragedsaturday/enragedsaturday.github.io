@@ -65,7 +65,7 @@ The three-component *[[Brady v. Maryland|Brady]]* standard governs, but because 
 - The canonical statement of the [[Brady v. Maryland]] elements, incorporating impeachment evidence ([[Giglio v. United States]]) and the reasonable-probability materiality standard of [[United States v. Bagley]] / [[Kyles v. Whitley]]; applied in [[Smith v. Cain]].
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Strickler v. Greene*, 527 U.S. 263 (1999) — https://www.courtlistener.com/opinion/118307/strickler-v-greene/ — pinpoints: 281, 282.
+- *Strickler v. Greene*, 527 U.S. 263 (1999) — https://www.courtlistener.com/opinion/118307/strickler-v-greene/ (pinpoints: 281, 282).

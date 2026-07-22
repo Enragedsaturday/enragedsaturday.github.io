@@ -31,7 +31,7 @@ homes:
 related: ["[[Silverthorne Lumber Co. v. United States]]", "[[Wong Sun v. United States]]", "[[Brown v. Illinois]]"]
 aliases: ["Nardone v. United States (1939)"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "attenuation", "wiretap"]
-holding: "Illegally obtained evidence may not be used derivatively: a defendant who proves an unlawful search/wiretap may show that a substantial part of the case against him is a 'fruit of the poisonous tree,' which must be excluded — unless the Government shows an independent origin, or the connection has become so attenuated as to dissipate the taint."
+holding: "Illegally obtained evidence may not be used derivatively: a defendant who proves an unlawful search/wiretap may show that a substantial part of the case against him is a 'fruit of the poisonous tree,' which must be excluded, unless the Government shows an independent origin, or the connection has become so attenuated as to dissipate the taint."
 lake:
   record_id: Nardone v. United States
   status: verified

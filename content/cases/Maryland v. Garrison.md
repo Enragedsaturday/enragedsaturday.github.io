@@ -55,7 +55,7 @@ Warrant validity is judged on the information reasonably available when it issue
 And execution is judged for objective reasonableness in light of the facts then known: "the validity of the search of respondent's apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers' failure to realize the overbreadth of the warrant was objectively understandable and reasonable." — *Id.* at 88. ^pin-88
 
 ## Application
-When the officers applied for the warrant, the information available to them — and reasonably discoverable — indicated a single third-floor apartment, so the warrant was valid when issued despite the later-revealed ambiguity. As the officers executed it, the objective facts (a single doorbell, mailbox, and the like) gave them no reason to know the floor was divided; their failure to appreciate the overbreadth was objectively understandable and reasonable, and they limited the search once they recognized the error. The entry into Garrison's apartment was therefore constitutional.
+When the officers applied for the warrant, the information available to them (and reasonably discoverable) indicated a single third-floor apartment, so the warrant was valid when issued despite the later-revealed ambiguity. As the officers executed it, the objective facts (a single doorbell, mailbox, and the like) gave them no reason to know the floor was divided; their failure to appreciate the overbreadth was objectively understandable and reasonable, and they limited the search once they recognized the error. The entry into Garrison's apartment was therefore constitutional.
 
 ## Conclusion
 Affirmed: a warrant valid when issued is not retroactively invalidated by a latent factual mistake, and a search executed on an objectively reasonable, honest mistake about the premises does not violate the Fourth Amendment.
@@ -65,7 +65,7 @@ Affirmed: a warrant valid when issued is not retroactively invalidated by a late
 - *Garrison* applies the reasonable-mistake logic of [[Hill v. California]] to warrant execution and remains good law on warrant [[Particularity|particularity]] and objectively reasonable execution; compare the facial-[[Particularity|particularity]] failure in [[Groh v. Ramirez]].
 
 ## Appears on
-- [[Particularity]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Maryland v. Garrison*, 480 U.S. 79 (1987) — https://www.courtlistener.com/opinion/111823/maryland-v-garrison/ — pinpoints: 85, 88.
+- *Maryland v. Garrison*, 480 U.S. 79 (1987) — https://www.courtlistener.com/opinion/111823/maryland-v-garrison/ (pinpoints: 85, 88).

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Weeks was arrested at his place of business for using the mails to transport lottery tickets. While he was in custody, police officers and a United States Marshal entered his home without a warrant — twice — and seized letters and private papers, which were turned over to the federal prosecutor. Before trial, Weeks petitioned for the return of his property; the court returned some items but kept the letters, which were admitted over his objection and used to convict him.
+Weeks was arrested at his place of business for using the mails to transport lottery tickets. While he was in custody, police officers and a United States Marshal entered his home without a warrant (twice) and seized letters and private papers, which were turned over to the federal prosecutor. Before trial, Weeks petitioned for the return of his property; the court returned some items but kept the letters, which were admitted over his objection and used to convict him.
 
 ## Issue
 Whether evidence seized by federal officers from a defendant's home without a warrant, in violation of the Fourth Amendment, may be retained and used against him at his federal criminal trial.
@@ -62,10 +62,10 @@ The warrantless federal seizure violated the Fourth Amendment; admitting the sei
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of its core holding. *Weeks* originally bound only federal officers; its exclusionary rule was **extended to the States** by [[Mapp v. Ohio]] (1961). The rule was later elaborated and qualified — derivative evidence in [[Wong Sun v. United States]] and the [[The Good-Faith Exception|good-faith exception]] in [[United States v. Leon]] — but *Weeks* remains the foundational authority.
+- No negative treatment of its core holding. *Weeks* originally bound only federal officers; its exclusionary rule was **extended to the States** by [[Mapp v. Ohio]] (1961). The rule was later elaborated and qualified (derivative evidence in [[Wong Sun v. United States]] and the [[The Good-Faith Exception|good-faith exception]] in [[United States v. Leon]]), but *Weeks* remains the foundational authority.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Anchor*
+- [[The Exclusionary Rule]] — *Key: Anchor*
 
 ## Sources
-- *Weeks v. United States*, 232 U.S. 383 (1914) — https://www.courtlistener.com/opinion/98094/weeks-v-united-states/ — pinpoints: 393, 398.
+- *Weeks v. United States*, 232 U.S. 383 (1914) — https://www.courtlistener.com/opinion/98094/weeks-v-united-states/. Pinpoints: 393, 398.

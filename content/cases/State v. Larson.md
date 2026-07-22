@@ -43,7 +43,7 @@ tags:
   - common-area
   - reasonable-expectation-of-privacy
   - oregon-court-of-appeals
-holding: "An apartment dweller can hold a protected privacy interest in a shared common area outside the unit; rather than mechanically applying single-family curtilage factors, a court evaluates the physical layout and the residents' use of the area — and because officers entered a partially enclosed strip behind the building to smell marijuana from the defendant's window, they invaded his protected privacy interest, so the resulting warrant evidence was suppressed."
+holding: "An apartment dweller can hold a protected privacy interest in a shared common area outside the unit; rather than mechanically applying single-family curtilage factors, a court evaluates the physical layout and the residents' use of the area. Because officers entered a partially enclosed strip behind the building to smell marijuana from the defendant's window, they invaded his protected privacy interest, so the resulting warrant evidence was suppressed."
 aliases:
   - State v. Larson
   - "State v. Larson (Or. Ct. App. 1999)"

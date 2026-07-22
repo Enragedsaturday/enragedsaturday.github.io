@@ -31,7 +31,7 @@ homes:
 related: ["[[City of Indianapolis v. Edmond]]", "[[Ferguson v. City of Charleston]]", "[[Board of Education v. Earls]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "suspicionless-search"]
-holding: "Georgia's suspicionless drug-testing requirement for candidates for state office is unconstitutional — there was no concrete, special…"
+holding: "Georgia's suspicionless drug-testing requirement for candidates for state office is unconstitutional. There was no concrete, special…"
 lake:
   record_id: Chandler v. Miller
   status: verified
@@ -65,7 +65,7 @@ Georgia's candidate drug-testing statute violated the Fourth Amendment; the judg
 - No negative treatment. *Chandler* marks the outer limit of the special-needs doctrine, distinguishing the safety-justified testing upheld in earlier cases and foreshadowing the law-enforcement-purpose limits of [[Ferguson v. City of Charleston]] and [[City of Indianapolis v. Edmond]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Chandler v. Miller*, 520 U.S. 305 (1997) — https://www.courtlistener.com/opinion/118100/chandler-v-miller/ — pinpoints: 322, 323.
+- *Chandler v. Miller*, 520 U.S. 305 (1997). https://www.courtlistener.com/opinion/118100/chandler-v-miller/ — pinpoints: 322, 323.

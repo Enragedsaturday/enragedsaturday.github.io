@@ -55,7 +55,7 @@ No; *[[Miranda v. Arizona|Miranda]]* is a constitutional rule beyond Congress's 
 Because § 3501 sought to reinstate a voluntariness-only standard in place of *[[Miranda v. Arizona|Miranda]]*'s warnings, it could not govern the admissibility of statements obtained in custodial interrogation.
 
 ## Application
-Section 3501 was Congress's attempt to substitute a voluntariness test for *[[Miranda v. Arizona|Miranda]]*'s warning requirement. Because *[[Miranda v. Arizona|Miranda]]* is constitutionally based, that statute could not displace it, and *[[Miranda v. Arizona|Miranda]]* — not § 3501 — governed the admissibility of Dickerson's statement; the Fourth Circuit's contrary holding was reversed.
+Section 3501 was Congress's attempt to substitute a voluntariness test for *[[Miranda v. Arizona|Miranda]]*'s warning requirement. Because *[[Miranda v. Arizona|Miranda]]* is constitutionally based, that statute could not displace it, and *[[Miranda v. Arizona|Miranda]]*, not § 3501, governed the admissibility of Dickerson's statement; the Fourth Circuit's contrary holding was reversed.
 
 ## Conclusion
 *[[Miranda v. Arizona|Miranda]]* is a constitutional decision that Congress cannot legislatively overrule; § 3501 could not displace it. The judgment was reversed.
@@ -65,7 +65,7 @@ Section 3501 was Congress's attempt to substitute a voluntariness test for *[[Mi
 - No negative treatment. *Dickerson* reaffirms the constitutional status of [[Miranda v. Arizona]]; later cases such as [[Berghuis v. Thompkins]] continue to apply the *[[Miranda v. Arizona|Miranda]]* framework it preserved.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Dickerson v. United States*, 530 U.S. 428 (2000) — https://www.courtlistener.com/opinion/118380/dickerson-v-united-states/ — pinpoint: 444.
+- *Dickerson v. United States*, 530 U.S. 428 (2000). https://www.courtlistener.com/opinion/118380/dickerson-v-united-states/ — pinpoint: 444.

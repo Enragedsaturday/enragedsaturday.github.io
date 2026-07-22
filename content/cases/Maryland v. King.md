@@ -67,8 +67,8 @@ Reversed: DNA cheek-swabbing of arrestees held for serious offenses is a reasona
 - *King* extends the diminished-privacy / reasonable-booking logic seen in [[Florence v. Board of Chosen Freeholders]] to DNA identification and remains the controlling authority on arrestee DNA collection.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
-- [[Investigative Genetic Genealogy]] — *Key — cross-ref (nearest DNA anchor)*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
+- [[Investigative Genetic Genealogy]] — *Key: cross-ref (nearest DNA anchor)*
 
 ## Sources
-- *Maryland v. King*, 569 U.S. 435 (2013) — https://www.courtlistener.com/opinion/873669/maryland-v-king/ — pinpoint: 465–466.
+- *Maryland v. King*, 569 U.S. 435 (2013) — https://www.courtlistener.com/opinion/873669/maryland-v-king/. Pinpoint: 465–466.

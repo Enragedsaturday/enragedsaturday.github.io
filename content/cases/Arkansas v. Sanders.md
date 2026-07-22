@@ -45,7 +45,7 @@ tags:
   - warrant-requirement
   - overruled
   - historical
-holding: "The Fourth Amendment's warrant requirement applies to personal luggage taken from a lawfully stopped automobile to the same degree it applies to luggage elsewhere, so police may not search a suitcase seized from a car without a warrant unless another warrant exception, independent of the automobile exception, applies — a container rule later overruled by California v. Acevedo (1991)."
+holding: "The Fourth Amendment's warrant requirement applies to personal luggage taken from a lawfully stopped automobile to the same degree it applies to luggage elsewhere, so police may not search a suitcase seized from a car without a warrant unless another warrant exception, independent of the automobile exception, applies, a container rule later overruled by California v. Acevedo (1991)."
 ---
 
 # Arkansas v. Sanders

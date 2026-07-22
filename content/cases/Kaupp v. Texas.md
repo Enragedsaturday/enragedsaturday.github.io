@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a 14-year-old girl's murder, detectives suspected the 17-year-old Kaupp but lacked probable cause. About 3 a.m., at least three officers went to his home, were let in by his father, woke him with "we need to go and talk," handcuffed him, and took him — shoeless and in his underwear in January — to a patrol car, then to the crime scene and the sheriff's office. After [[Miranda and Custodial Interrogation|Miranda warnings]] and confrontation with a co-suspect's statement, he admitted some involvement. The Texas courts treated the encounter as consensual and admitted the confession.
+Investigating a 14-year-old girl's murder, detectives suspected the 17-year-old Kaupp but lacked probable cause. About 3 a.m., at least three officers went to his home, were let in by his father, woke him with "we need to go and talk," handcuffed him, and took him (shoeless and in his underwear in January) to a patrol car, then to the crime scene and the sheriff's office. After [[Miranda and Custodial Interrogation|Miranda warnings]] and confrontation with a co-suspect's statement, he admitted some involvement. The Texas courts treated the encounter as consensual and admitted the confession.
 
 ## Issue
 Whether removing a suspect from his home and transporting him to the station for interrogation, without probable cause, was an arrest requiring probable cause — and, if so, whether his confession must be suppressed as the fruit of that illegal arrest.
@@ -71,9 +71,9 @@ Kaupp's "'Okay'" was "no showing of consent" but "a mere submission to a claim o
 - No negative treatment. *Kaupp* is a [[Common Legal Terms#per-curiam|per curiam]] application of [[Dunaway v. New York]] and the [[Brown v. Illinois]] / [[Wong Sun v. United States]] [[Fruits and Attenuation|attenuation]] line, mirroring [[Taylor v. Alabama]], and it relies on [[Hayes v. Florida]] for the "sufficiently like arrest" standard.
 
 ## Appears on
-- [[Seizure of the Person]] — *Key — Progeny*
+- [[Seizure of the Person]] — *Key: Progeny*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 - [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kaupp v. Texas*, 538 U.S. 626 (2003) — https://www.courtlistener.com/opinion/127919/kaupp-v-texas/ — pinpoints: 630, 631, 632–633.
+- *Kaupp v. Texas*, 538 U.S. 626 (2003) — https://www.courtlistener.com/opinion/127919/kaupp-v-texas/ (pinpoints: 630, 631, 632–633).

@@ -43,7 +43,7 @@ tags:
   - border-search
   - digital-privacy
   - good-faith-exception
-holding: "The border-search exception does not authorize a warrantless, nonroutine forensic search of a returning traveler's electronic devices unless the government's individualized suspicion bears some nexus to the exception's historic purposes — protecting national security, collecting duties, blocking unwanted entrants, or intercepting contraband; suspicion of purely domestic crimes is not enough, so the forensic searches of Aigbekaen's devices violated the Fourth Amendment, though the good-faith exception barred suppression."
+holding: "The border-search exception does not authorize a warrantless, nonroutine forensic search of a returning traveler's electronic devices unless the government's individualized suspicion bears some nexus to the exception's historic purposes: protecting national security, collecting duties, blocking unwanted entrants, or intercepting contraband; suspicion of purely domestic crimes is not enough, so the forensic searches of Aigbekaen's devices violated the Fourth Amendment, though the good-faith exception barred suppression."
 ---
 
 # United States v. Aigbekaen

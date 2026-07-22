@@ -48,7 +48,7 @@ homes:
 related: ["[[Chatrie v. United States]]", "[[Carpenter v. United States]]", "[[United States v. Leon]]", "[[The Warrant Requirement]]", "[[The Exclusionary Rule]]"]
 aliases: ["United States v. Smith", "United States v. Smith (5th Cir. 2024)"]
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "location-history", "good-faith-exception"]
-holding: "Acquiring Google Location History through a geofence warrant is a Fourth Amendment search under Carpenter, and geofence warrants — which identify everyone in an area rather than a particularized suspect — are modern-day general warrants, unconstitutional under the Fourth Amendment; suppression was nonetheless denied under the Leon good-faith exception given the technology's novelty."
+holding: "Acquiring Google Location History through a geofence warrant is a Fourth Amendment search under Carpenter, and geofence warrants (which identify everyone in an area rather than a particularized suspect) are modern-day general warrants, unconstitutional under the Fourth Amendment; suppression was nonetheless denied under the Leon good-faith exception given the technology's novelty."
 ---
 
 # United States v. Smith (2024)

@@ -68,7 +68,7 @@ The "closely related offense" requirement was rejected; the judgment was reverse
 
 ## Appears on
 - [[Arrest and Arrest Warrants]] — *Key*
-- [[Probable Cause]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Devenpeck v. Alford*, 543 U.S. 146 (2004) — https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/ — pinpoint: 153 (verbatim passage confirmed on CourtListener; reporter page per the verified 543 U.S. 153–55 cite).
+- *Devenpeck v. Alford*, 543 U.S. 146 (2004) — https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/. Pinpoint: 153 (verbatim passage confirmed on CourtListener; reporter page per the verified 543 U.S. 153–55 cite).

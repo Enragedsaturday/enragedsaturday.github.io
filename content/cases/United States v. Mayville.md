@@ -46,7 +46,7 @@ tags:
   - prolonged-detention
   - reasonable-suspicion
   - tenth-circuit
-holding: "The Tenth Circuit affirmed, holding that a nineteen-minute traffic stop that ended with a drug-dog alert did not violate Rodriguez v. United States: an officer may run a criminal-history (Triple I) check through dispatch as a negligibly burdensome safety precaution, and because the troopers diligently pursued the stop's mission and the dog sniff was contemporaneous with that pursuit — the alert coming just before the records check returned — the stop was not unreasonably prolonged, since reasonableness, not efficiency, is the touchstone of the Fourth Amendment."
+holding: "The Tenth Circuit affirmed, holding that a nineteen-minute traffic stop that ended with a drug-dog alert did not violate Rodriguez v. United States: an officer may run a criminal-history (Triple I) check through dispatch as a negligibly burdensome safety precaution, and because the troopers diligently pursued the stop's mission and the dog sniff was contemporaneous with that pursuit (the alert coming just before the records check returned), the stop was not unreasonably prolonged, since reasonableness, not efficiency, is the touchstone of the Fourth Amendment."
 ---
 
 # United States v. Mayville

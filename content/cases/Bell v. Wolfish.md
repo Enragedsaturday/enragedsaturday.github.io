@@ -48,7 +48,7 @@ tags:
   - institutional-search
   - strip-search
   - reasonableness-balancing
-holding: "Pretrial detainees retain Fourth Amendment protection, but the reasonableness of an institutional search is judged by balancing the need for the search against the intrusion it entails — weighing the scope of the intrusion, the manner in which it is conducted, the justification for initiating it, and the place in which it is conducted; on that test, and with deference to jail administrators, the Court upheld the Metropolitan Correctional Center's visual body-cavity inspections after contact visits and its other challenged conditions of pretrial confinement."
+holding: "Pretrial detainees retain Fourth Amendment protection, but the reasonableness of an institutional search is judged by balancing the need for the search against the intrusion it entails: weighing the scope of the intrusion, the manner in which it is conducted, the justification for initiating it, and the place in which it is conducted; on that test, and with deference to jail administrators, the Court upheld the Metropolitan Correctional Center's visual body-cavity inspections after contact visits and its other challenged conditions of pretrial confinement."
 ---
 
 # Bell v. Wolfish

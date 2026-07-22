@@ -35,7 +35,7 @@ homes:
 related: ["[[Vega v. Tekoh]]", "[[Dickerson v. United States]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "section-1983", "qualified-immunity"]
-holding: "The Self-Incrimination Clause is a trial right: coercive police questioning that produces no statement used against the suspect in a criminal case is not, by itself, a completed Fifth Amendment violation, so it cannot ground a § 1983 claim. Any remedy for the coercion lies (if at all) in substantive due process — remanded."
+holding: "The Self-Incrimination Clause is a trial right: coercive police questioning that produces no statement used against the suspect in a criminal case is not, by itself, a completed Fifth Amendment violation, so it cannot ground a § 1983 claim. Any remedy for the coercion lies (if at all) in substantive due process. Remanded."
 lake:
   record_id: Chavez v. Martinez
   status: verified
@@ -56,9 +56,9 @@ Whether coercive police questioning that yields no statement ever used against t
 ## Rule
 No completed Self-Incrimination Clause violation occurs from the questioning alone. The Fifth Amendment provides that no person "shall be compelled in any criminal case to be a witness against himself," and a plurality concluded: "We fail to see how, based on the text of the Fifth Amendment, Martinez can allege a violation of this right, since Martinez was never prosecuted for a crime, let alone compelled to be a witness against himself in a criminal case." — 538 U.S. 760 (plurality opinion). ^pin-766
 
-Statements compelled by interrogation may not be used at trial, "but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs" — the privilege is "a fundamental trial right." — [*Id.* at 767](https://www.courtlistener.com/opinion/127927/chavez-v-martinez/#:~:text=but%20it%20is%20not%20until%20their) (plurality op.) (quoting *United States v. Verdugo-Urquidez*). ^pin-767
+Statements compelled by interrogation may not be used at trial, "but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs"; the privilege is "a fundamental trial right." — [*Id.* at 767](https://www.courtlistener.com/opinion/127927/chavez-v-martinez/#:~:text=but%20it%20is%20not%20until%20their) (plurality op.) (quoting *United States v. Verdugo-Urquidez*). ^pin-767
 
-Because the constitutional self-incrimination claim failed, the officer could not be liable under § 1983 on that theory. A separate question — whether the coercive interrogation independently violated **substantive due process** ("shocks the conscience") — was left open and [[Reading and Citing Cases#on-remand|remanded]].
+Because the constitutional self-incrimination claim failed, the officer could not be liable under § 1983 on that theory. A separate question, whether the coercive interrogation independently violated **substantive due process** ("shocks the conscience"), was left open and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Application
 On Martinez's own facts the Self-Incrimination Clause was never triggered: he was never prosecuted and his answers were never admitted as testimony against him in a criminal case, so he "was never made to be a 'witness' against himself." Accordingly his § 1983 claim premised on a Fifth Amendment self-incrimination violation could not proceed, and Chavez was entitled to [[Qualified Immunity|qualified immunity]] on that claim. The Court [[Reading and Citing Cases#on-remand|remanded]] Martinez's substantive-due-process claim for the lower courts to address in the first instance.
@@ -71,9 +71,9 @@ Coercive interrogation, standing alone and without use of the statements in a cr
 - The Self-Incrimination-as-trial-right holding was carried forward and sharpened in [[Vega v. Tekoh]] (a Miranda violation is not itself a § 1983-actionable constitutional deprivation). *Chavez* remains the anchor for "no § 1983 self-incrimination claim absent use of the statement in a criminal case."
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny*
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny*
 - [[Due-Process Voluntariness of Confessions]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Chavez v. Martinez*, 538 U.S. 760 (2003) — https://www.courtlistener.com/opinion/127927/chavez-v-martinez/ — interior pincite(s) 766, 767 retired pending official-reporter pagination (plurality opinion).
+- *Chavez v. Martinez*, 538 U.S. 760 (2003) — https://www.courtlistener.com/opinion/127927/chavez-v-martinez/. Interior pincite(s) 766, 767 retired pending official-reporter pagination (plurality opinion).

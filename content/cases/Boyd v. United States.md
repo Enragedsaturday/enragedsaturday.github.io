@@ -65,10 +65,10 @@ The compelled production violated the Fourth and Fifth Amendments. As a matter o
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - **Limited by** *Fisher v. United States* (compelled production of papers analyzed under act-of-production doctrine, not Boyd's broad Fourth/Fifth Amendment convertibility) and **abandoned in part by** [[Warden v. Hayden]] (rejecting the "mere evidence" rule).
-- The portion for which this page cites *Boyd* — its adoption of [[Entick v. Carrington]] as the historical expression of the Fourth Amendment — remains good law and is regularly invoked.
+- The portion for which this page cites *Boyd* (its adoption of [[Entick v. Carrington]] as the historical expression of the Fourth Amendment) remains good law and is regularly invoked.
 
 ## Appears on
-- [[Common Law Origins]] — *Key — Anchor*
+- [[Common Law Origins]] — *Key: Anchor*
 
 ## Sources
-- *Boyd v. United States*, 116 U.S. 616 (1886) — https://www.courtlistener.com/opinion/91573/boyd-v-united-states/ — pinpoints: 626, 627.
+- *Boyd v. United States*, 116 U.S. 616 (1886) — https://www.courtlistener.com/opinion/91573/boyd-v-united-states/. Pinpoints: 626, 627.

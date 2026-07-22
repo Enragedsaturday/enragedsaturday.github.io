@@ -33,7 +33,7 @@ homes:
 related: ["[[Aguilar v. Texas]]", "[[Illinois v. Gates]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informants", "warrants", "historical"]
-holding: "Refined Aguilar's two-prong informant-tip test: a tip is first measured against the basis-of-knowledge and veracity prongs, and innocent corroboration cannot cure a deficient tip — later abandoned by Illinois v. Gates' totality test."
+holding: "Refined Aguilar's two-prong informant-tip test: a tip is first measured against the basis-of-knowledge and veracity prongs, and innocent corroboration cannot cure a deficient tip: later abandoned by Illinois v. Gates' totality test."
 lake:
   record_id: Spinelli v. United States
   status: verified

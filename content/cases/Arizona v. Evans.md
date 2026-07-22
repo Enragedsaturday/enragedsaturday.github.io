@@ -65,7 +65,7 @@ The exclusionary rule did not require suppression; the judgment of the Arizona S
 - No negative treatment. *Evans* applies the [[United States v. Leon]] good-faith / deterrence analysis to court-clerk recordkeeping errors. The same cost-benefit reasoning was later extended to isolated **negligent police** recordkeeping errors in [[Herring v. United States]] (2009).
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Arizona v. Evans*, 514 U.S. 1 (1995) — https://www.courtlistener.com/opinion/117905/arizona-v-evans/ — pinpoints: 14, 16.
+- *Arizona v. Evans*, 514 U.S. 1 (1995). https://www.courtlistener.com/opinion/117905/arizona-v-evans/ — pinpoints: 14, 16.

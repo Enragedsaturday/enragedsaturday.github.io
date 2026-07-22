@@ -43,7 +43,7 @@ tags:
   - self-incrimination
   - indictment
   - remedy
-holding: "Dismissal of an indictment is not the remedy for the Government's allegedly unconstitutional acquisition of evidence; even assuming the Government obtained incriminating evidence in violation of the Fifth Amendment privilege against self-incrimination, the defendant is entitled at most to suppress that evidence and its fruits if the Government seeks to use them at trial — the exclusionary remedy does not extend to barring the prosecution altogether."
+holding: "Dismissal of an indictment is not the remedy for the Government's allegedly unconstitutional acquisition of evidence; even assuming the Government obtained incriminating evidence in violation of the Fifth Amendment privilege against self-incrimination, the defendant is entitled at most to suppress that evidence and its fruits if the Government seeks to use them at trial. The exclusionary remedy does not extend to barring the prosecution altogether."
 aliases:
   - United States v. Blue
   - "United States v. Blue (1966)"

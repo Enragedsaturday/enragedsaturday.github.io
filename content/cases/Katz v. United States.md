@@ -70,9 +70,9 @@ The warrantless electronic eavesdropping violated the Fourth Amendment; the conv
 - The property/trespass approach was later **revived as an additional, alternative basis** (not a replacement) in [[United States v. Jones]] (2012) and [[Carpenter v. United States]] (2018), leaving *Katz* intact.
 
 ## Appears on
-- [[Reasonable Expectation of Privacy]] — *Key — Anchor*
+- [[Reasonable Expectation of Privacy]] — *Key: Anchor*
 - [[Standing to Challenge a Search]] — *Related (cross-doctrine)*
-- [[Electronic Surveillance and Title III]] — *Key — cross-ref (overruled Olmstead; wiretap is a search)*
+- [[Electronic Surveillance and Title III]] — *Key: cross-ref (overruled Olmstead; wiretap is a search)*
 
 ## Sources
-- *Katz v. United States*, 389 U.S. 347 (1967) — https://www.courtlistener.com/opinion/107564/katz-v-united-states/ — pinpoints: 351, 361 (Harlan, J., concurring).
+- *Katz v. United States*, 389 U.S. 347 (1967). https://www.courtlistener.com/opinion/107564/katz-v-united-states/ — pinpoints: 351, 361 (Harlan, J., concurring).

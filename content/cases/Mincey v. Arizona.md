@@ -67,7 +67,7 @@ Reversed in relevant part; the warrantless four-day "murder scene" search was un
 - No negative treatment. The emergency-aid principle recognized in *Mincey* was later restated and applied as an objective inquiry in [[Brigham City v. Stuart]] and [[Michigan v. Fisher]].
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Mincey v. Arizona*, 437 U.S. 385 (1978) — https://www.courtlistener.com/opinion/109905/mincey-v-arizona/ — pinpoints: 392, 393.
+- *Mincey v. Arizona*, 437 U.S. 385 (1978) — https://www.courtlistener.com/opinion/109905/mincey-v-arizona/. Pinpoints: 392, 393.

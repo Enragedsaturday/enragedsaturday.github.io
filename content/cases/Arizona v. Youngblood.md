@@ -42,7 +42,7 @@ tags:
   - preservation-of-evidence
   - bad-faith
   - brady
-holding: "The government's failure to preserve evidence that is only potentially useful to the defense — as opposed to evidence whose exculpatory value was apparent before it was destroyed — does not deny the defendant due process unless he shows bad faith on the part of the police."
+holding: "The government's failure to preserve evidence that is only potentially useful to the defense (as opposed to evidence whose exculpatory value was apparent before it was destroyed) does not deny the defendant due process unless he shows bad faith on the part of the police."
 aliases:
   - Arizona v. Youngblood
   - "Arizona v. Youngblood (1988)"

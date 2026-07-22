@@ -59,7 +59,7 @@ Juvenile waiver is governed by totality: "This totality-of-the-circumstances app
 The inquiry weighs the juvenile's age, experience, education, background, and intelligence, and whether he understood the warnings and the consequences of waiving.
 
 ## Application
-Michael's request for his probation officer was not, by itself, an invocation of counsel or silence that required questioning to cease; courts could instead consider that request as one factor in the totality. Looking to all the circumstances — his age, his prior experience with the justice system, the warnings he received and acknowledged, and his decision to talk after asking for the officer — the record supported a finding that he knowingly and voluntarily waived his Fifth Amendment rights, so his statements were admissible.
+Michael's request for his probation officer was not, by itself, an invocation of counsel or silence that required questioning to cease; courts could instead consider that request as one factor in the totality. Looking to all the circumstances (his age, his prior experience with the justice system, the warnings he received and acknowledged, and his decision to talk after asking for the officer), the record supported a finding that he knowingly and voluntarily waived his Fifth Amendment rights, so his statements were admissible.
 
 ## Conclusion
 A probation-officer request is not a [[Common Legal Terms#per-se|per se]] invocation; juvenile waivers are assessed under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]. The California Supreme Court's [[Common Legal Terms#per-se|per se]] rule was rejected and its judgment reversed.
@@ -69,7 +69,7 @@ A probation-officer request is not a [[Common Legal Terms#per-se|per se]] invoca
 - The totality test for juvenile waiver remains the rule. Later cases address the juvenile's status in the related **custody** inquiry: [[J.D.B. v. North Carolina]] (a child's age is part of the objective custody analysis), distinguishing [[Yarborough v. Alvarado]].
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Fare v. Michael C.*, 442 U.S. 707 (1979) — https://www.courtlistener.com/opinion/110117/fare-v-michael-c/ — pinpoints: 724, 725.
+- *Fare v. Michael C.*, 442 U.S. 707 (1979) — https://www.courtlistener.com/opinion/110117/fare-v-michael-c/. Pinpoints: 724, 725.

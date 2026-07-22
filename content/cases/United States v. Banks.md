@@ -70,4 +70,4 @@ The 15-to-20-second wait and forcible entry were reasonable under the Fourth Ame
 - [[Knock-and-Announce]] — *Progeny*
 
 ## Sources
-- *United States v. Banks*, 540 U.S. 31 (2003) — https://www.courtlistener.com/opinion/131146/united-states-v-banks/ — pinpoints: 38, 40.
+- *United States v. Banks*, 540 U.S. 31 (2003). https://www.courtlistener.com/opinion/131146/united-states-v-banks/ — pinpoints: 38, 40.

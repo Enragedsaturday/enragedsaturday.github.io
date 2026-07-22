@@ -67,7 +67,7 @@ The area outside Basher's tent at the dispersed public-land campsite was not [[C
 - *Basher* applies the open-and-exposed-land logic of [[Oliver v. United States]] and [[California v. Ciraolo]] to camping, while preserving the [[Katz v. United States]] expectation-of-privacy interest in the tent's interior.
 
 ## Appears on
-- [[Tents]] — *Key — Progeny / Refinement*
+- [[Tents]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Basher*, 629 F.3d 1161 (9th Cir. 2011) — https://www.courtlistener.com/opinion/183144/united-states-v-basher/ — pinpoint: 1169.
+- *United States v. Basher*, 629 F.3d 1161 (9th Cir. 2011) — https://www.courtlistener.com/opinion/183144/united-states-v-basher/ (pinpoint: 1169).

@@ -27,3 +27,15 @@ specific classes at the gate. R13 cannot tick "roster 1–30 green" until one of
 User approved. The campaign executes as paced fleet waves under RULING P4-15 / P4-CAMPAIGN.md.
 This file closes when the content-scope roster residue = the documented P5 rows only
 (LINT-30 tidy set + LINT-1 serial gate).
+
+---
+## CLOSED 2026-07-22
+Campaign executed to completion (RULINGS P4-15..21; artifacts _run/s9/p4/campaign/):
+LINT-3 74->0 · LINT-4 4->0 · LINT-6 21->0 · LINT-7 52->0 · LINT-10 3,233+->0 (12 packets +
+index source-fix + generator en-dash placeholder) · LINT-11 405->0 (incl. regex fix +
+adjudicated allowlist) · LINT-12 151->0 (serializer round-trip fix + Trent precedential_status
+signal) · LINT-13 45->0 · LINT-14 29->0 (evidence-earned flip + gate amendment) · LINT-16
+620->0 (generated-index carve-out) · LINT-17 3->0. Non-author codex sample re-review of the
+mass edits: 34/34 CONFIRM. Full build clean. Content-scope roster residue = LINT-30's 25
+(the documented P5 ledger-tidy set) + LINT-1 at the serial gate — exactly the closure
+condition. This escalation is CLOSED.

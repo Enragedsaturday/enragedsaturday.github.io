@@ -46,7 +46,7 @@ tags:
   - cell-phone
   - biometric-unlock
   - ninth-circuit
-holding: "A California parolee is subject to a valid suspicionless search condition, and because parole searches require no probable cause as to the place or thing searched, CHP officers who stopped Payne for a traffic violation and, learning he was a parolee, searched his cell phone acted reasonably; the court declined to extend Riley — a search-incident-to-arrest case — to parole searches of a cell phone, and separately held that compelling Payne to unlock the phone with his thumbprint did not violate the Fifth Amendment because the act was non-testimonial."
+holding: "A California parolee is subject to a valid suspicionless search condition, and because parole searches require no probable cause as to the place or thing searched, CHP officers who stopped Payne for a traffic violation and, learning he was a parolee, searched his cell phone acted reasonably; the court declined to extend Riley (a search-incident-to-arrest case) to parole searches of a cell phone, and separately held that compelling Payne to unlock the phone with his thumbprint did not violate the Fifth Amendment because the act was non-testimonial."
 aliases:
   - United States v. Payne
   - "United States v. Payne (9th Cir. 2024)"

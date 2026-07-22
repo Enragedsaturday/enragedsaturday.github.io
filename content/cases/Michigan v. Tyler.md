@@ -59,7 +59,7 @@ They may also stay to investigate cause: "officials need no warrant to remain in
 But later entries need a warrant: "we hold that an entry to fight a fire requires no warrant, and that once in the building, officials may remain there for a reasonable time to investigate the cause of the blaze. Thereafter, additional entries to investigate the cause of the fire must be made pursuant to the warrant procedures governing administrative searches." — [*Id.* at 511](https://www.courtlistener.com/opinion/109874/michigan-v-tyler/#:~:text=we%20hold%20that%20an%20entry). ^pin-511
 
 ## Application
-The midnight entry to fight the fire, and the early-morning re-entries the same day (hindered only by darkness and smoke), were treated as a continuation of the initial [[Exigent Circumstances and Hot Pursuit|exigency]] and needed no warrant; evidence from them was admissible. The later entries — days and weeks afterward — were "clearly detached from the initial exigency," made without warrants or consent, and so were invalid; evidence from them had to be excluded. If investigators find probable cause of arson and need further access to gather evidence for prosecution, they must obtain a criminal warrant on a traditional probable-cause showing.
+The midnight entry to fight the fire, and the early-morning re-entries the same day (hindered only by darkness and smoke), were treated as a continuation of the initial [[Exigent Circumstances and Hot Pursuit|exigency]] and needed no warrant; evidence from them was admissible. The later entries, days and weeks afterward, were "clearly detached from the initial exigency," made without warrants or consent, and so were invalid; evidence from them had to be excluded. If investigators find probable cause of arson and need further access to gather evidence for prosecution, they must obtain a criminal warrant on a traditional probable-cause showing.
 
 ## Conclusion
 Affirmed. The fire-fighting entry and same-morning continuation were lawful; the later warrantless entries were not, and their fruits are inadmissible.
@@ -69,8 +69,8 @@ Affirmed. The fire-fighting entry and same-morning continuation were lawful; the
 - **Refined by** [[Michigan v. Clifford]] — once the blaze is out and the scene secured, a later investigative search requires an administrative warrant (or, on probable cause of arson, a criminal warrant). *Tyler* draws the administrative-warrant standard from [[Camara v. Municipal Court]] and runs parallel to the homicide-scene rule of [[Mincey v. Arizona]].
 
 ## Appears on
-- [[Emergency Aid]] — *Key — Progeny / Refinement*
+- [[Emergency Aid]] — *Key: Progeny / Refinement*
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Michigan v. Tyler*, 436 U.S. 499 (1978) — https://www.courtlistener.com/opinion/109874/michigan-v-tyler/ — pinpoints: 509, 510, 511.
+- *Michigan v. Tyler*, 436 U.S. 499 (1978) — https://www.courtlistener.com/opinion/109874/michigan-v-tyler/. Pinpoints: 509, 510, 511.

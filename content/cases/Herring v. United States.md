@@ -67,7 +67,7 @@ The evidence was admissible; the judgment denying suppression was affirmed. Negl
 - No negative treatment. *Herring* extends the cost-benefit, deterrence-focused approach of [[United States v. Leon]] and [[Arizona v. Evans]], tying exclusion to the culpability of the police conduct.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Herring v. United States*, 555 U.S. 135 (2009) — https://www.courtlistener.com/opinion/145922/herring-v-united-states/ — pinpoint: 129 S. Ct. at 702 (S. Ct. star pagination; U.S.-reporter interior 144 retired pending official-reporter pagination).
+- *Herring v. United States*, 555 U.S. 135 (2009). https://www.courtlistener.com/opinion/145922/herring-v-united-states/ — pinpoint: 129 S. Ct. at 702 (S. Ct. star pagination; U.S.-reporter interior 144 retired pending official-reporter pagination).

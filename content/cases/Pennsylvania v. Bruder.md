@@ -31,7 +31,7 @@ homes:
 related: ["[[Berkemer v. McCarty]]", "[[Miranda v. Arizona]]", "[[California v. Beheler]]", "[[Oregon v. Mathiason]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "traffic-stop", "dui", "per-curiam"]
-holding: "Ordinary roadside questioning of a motorist detained during a routine traffic stop — including DUI field-sobriety questioning before arrest — is not custodial interrogation, so Miranda warnings are not required and the roadside responses are admissible (applying Berkemer v. McCarty)."
+holding: "Ordinary roadside questioning of a motorist detained during a routine traffic stop (including DUI field-sobriety questioning before arrest) is not custodial interrogation, so Miranda warnings are not required and the roadside responses are admissible (applying Berkemer v. McCarty)."
 lake:
   record_id: Pennsylvania v. Bruder
   status: verified

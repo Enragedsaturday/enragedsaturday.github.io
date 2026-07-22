@@ -31,7 +31,7 @@ homes:
 related: ["[[Garrity v. New Jersey]]", "[[Gardner v. Broderick]]", "[[Lefkowitz v. Turley]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garrity", "kalkines-warning", "federal-employee"]
-holding: "A federal employee may be discharged for refusing to answer narrowly job-related questions only if first adequately advised both that refusal subjects him to discharge and that his answers (and their fruits) cannot be used against him in a criminal case — the 'Kalkines warning.'"
+holding: "A federal employee may be discharged for refusing to answer narrowly job-related questions only if first adequately advised both that refusal subjects him to discharge and that his answers (and their fruits) cannot be used against him in a criminal case: the 'Kalkines warning.'"
 lake:
   record_id: Kalkines v. United States
   status: verified
@@ -65,7 +65,7 @@ Kalkines's removal could not stand, because he was discharged for refusing to an
 - *Kalkines* is good law; the "Kalkines warning" it articulates is the standard federal-employer advisement when compelling job-related answers. It implements [[Garrity v. New Jersey]] and [[Gardner v. Broderick]] (and parallels [[Lefkowitz v. Turley]]). As a U.S. Court of Claims decision, its precedent binds in the Federal Circuit.
 
 ## Appears on
-- [[Public-Employee Compelled Statements (Garrity)]] — *Key — Progeny / Refinement*
+- [[Public-Employee Compelled Statements (Garrity)]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Kalkines v. United States*, 473 F.2d 1391 (Ct. Cl. 1973) (200 Ct. Cl. 570) — https://www.courtlistener.com/opinion/8615714/kalkines-v-united-states/ — pinpoints: 473 F.2d 1393 (200 Ct. Cl. 574). (CourtListener copy carries Ct. Cl. star-pagination.)
+- *Kalkines v. United States*, 473 F.2d 1391 (Ct. Cl. 1973) (200 Ct. Cl. 570) — https://www.courtlistener.com/opinion/8615714/kalkines-v-united-states/. Pinpoints: 473 F.2d 1393 (200 Ct. Cl. 574). (CourtListener copy carries Ct. Cl. star-pagination.)

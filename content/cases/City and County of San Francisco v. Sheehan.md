@@ -55,7 +55,7 @@ The Court declined to resolve the ADA question and held the officers immune. "we
 Even assuming the second entry could be found unreasonable, "no precedent clearly established that there was not 'an objective need for immediate entry' here," and "[w]ithout that 'fair notice,' an officer is entitled to qualified immunity." "In sum, we hold that qualified immunity applies because these officers had no 'fair and clear warning of what the Constitution requires.'" — 135 S. Ct. at 1778. ^pin-1778
 
 ## Application
-The Ninth Circuit had relied on general circuit precedent to deny immunity, but no decision clearly established that reopening the door of an armed, violent, mentally ill suspect — to keep her from escaping or arming herself further — was unlawful. That the officers may have departed from their training in handling the mentally ill did not negate immunity, because an expert's view that a confrontation could have been handled differently cannot defeat immunity where a reasonable officer could have believed the conduct justified. The ADA question, whether accommodation duties apply when officers arrest an armed and dangerous suspect, was left unresolved as improvidently granted.
+The Ninth Circuit had relied on general circuit precedent to deny immunity, but no decision clearly established that reopening the door of an armed, violent, mentally ill suspect (to keep her from escaping or arming herself further) was unlawful. That the officers may have departed from their training in handling the mentally ill did not negate immunity, because an expert's view that a confrontation could have been handled differently cannot defeat immunity where a reasonable officer could have believed the conduct justified. The ADA question, whether accommodation duties apply when officers arrest an armed and dangerous suspect, was left unresolved as improvidently granted.
 
 ## Conclusion
 Reversed in part; the first (ADA) question dismissed as improvidently granted. The officers were entitled to [[Qualified Immunity|qualified immunity]] on the Fourth Amendment claim because they violated no clearly established law.
@@ -65,8 +65,8 @@ Reversed in part; the first (ADA) question dismissed as improvidently granted. T
 - *Sheehan* applies the [[Graham v. Connor]] reasonableness standard and the high-specificity qualified-immunity approach of [[Mullenix v. Luna]] and [[Plumhoff v. Rickard]] to force against a mentally ill suspect, while expressly leaving open whether the ADA requires accommodation during an arrest. No negative treatment.
 
 ## Appears on
-- [[Use of Force]] — *Key — Progeny / Refinement*
+- [[Use of Force]] — *Key: Progeny / Refinement*
 - [[Section 1983 Liability and Qualified Immunity]] — *Related (cross-doctrine)*
 
 ## Sources
-- *City and County of San Francisco v. Sheehan*, 575 U.S. 600 (2015) — https://www.courtlistener.com/opinion/2801435/city-and-county-of-san-francisco-v-sheehan/ — pinpoints: 600 (U.S. Reports, opening holding); 135 S. Ct. at 1778 (parallel reporter page-label confirmed in CL for the QI conclusion).
+- *City and County of San Francisco v. Sheehan*, 575 U.S. 600 (2015) — https://www.courtlistener.com/opinion/2801435/city-and-county-of-san-francisco-v-sheehan/. Pinpoints: 600 (U.S. Reports, opening holding); 135 S. Ct. at 1778 (parallel reporter page-label confirmed in CL for the QI conclusion).

@@ -65,7 +65,7 @@ The identification was reliable and admissible; the judgment granting relief on 
 - No negative treatment. The five *Biggers* reliability factors were carried forward and made the governing test for suggestive identifications in [[Manson v. Brathwaite]].
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Progeny / Refinement*
+- [[Eyewitness Identification]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Neil v. Biggers*, 409 U.S. 188 (1972) — https://www.courtlistener.com/opinion/108639/neil-v-biggers/ — pinpoints: 199, 199–200.
+- *Neil v. Biggers*, 409 U.S. 188 (1972). https://www.courtlistener.com/opinion/108639/neil-v-biggers/ — pinpoints: 199, 199–200.

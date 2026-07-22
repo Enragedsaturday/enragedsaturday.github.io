@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Four Black tenant farmers were arrested without warrants after a robbery-murder and held incommunicado, without counsel, friends, or formal charges. Over five days they were subjected to protracted, repeated interrogation — culminating in an all-night session — amid an atmosphere of mob hostility, until they confessed. The confessions were the basis of their death sentences, affirmed by the Florida courts.
+Four Black tenant farmers were arrested without warrants after a robbery-murder and held incommunicado, without counsel, friends, or formal charges. Over five days they were subjected to protracted, repeated interrogation (culminating in an all-night session) amid an atmosphere of mob hostility, until they confessed. The confessions were the basis of their death sentences, affirmed by the Florida courts.
 
 ## Issue
 Whether confessions extracted by sustained, coercive incommunicado interrogation may be used to convict consistent with the Due Process Clause of the Fourteenth Amendment.
@@ -65,7 +65,7 @@ The coerced confessions could not support the convictions; the judgments of the 
 - No negative treatment. *Chambers* applies the due-process voluntariness rule of [[Brown v. Mississippi]] to psychological/incommunicado coercion, a line later extended in [[Ashcraft v. Tennessee]] and cabined to require state coercion in [[Colorado v. Connelly]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Chambers v. Florida*, 309 U.S. 227 (1940) — https://www.courtlistener.com/opinion/103301/chambers-v-florida/ — pinpoints: 240, 241.
+- *Chambers v. Florida*, 309 U.S. 227 (1940). https://www.courtlistener.com/opinion/103301/chambers-v-florida/ — pinpoints: 240, 241.

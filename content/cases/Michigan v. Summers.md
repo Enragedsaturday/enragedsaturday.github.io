@@ -65,7 +65,7 @@ Reversed; the detention of Summers during execution of the warrant was constitut
 - *Summers* remains good law, but its detention authority was **spatially limited by** [[Bailey v. United States]], which held that the authority to detain occupants extends only to the **immediate vicinity** of the premises being searched.
 
 ## Appears on
-- [[Securing the Scene]] — *Key — Anchor*
+- [[Securing the Scene]] — *Key: Anchor*
 
 ## Sources
-- *Michigan v. Summers*, 452 U.S. 692 (1981) — https://www.courtlistener.com/opinion/110534/michigan-v-summers/ — pinpoint: 705.
+- *Michigan v. Summers*, 452 U.S. 692 (1981) — https://www.courtlistener.com/opinion/110534/michigan-v-summers/ (pinpoint: 705).

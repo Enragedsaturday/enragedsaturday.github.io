@@ -57,7 +57,7 @@ That high standard is met where "the need for more or different training is so o
 Only then does the training failure represent a municipal "policy" for which the city is responsible under *[[Monell v. Department of Social Services|Monell]]*.
 
 ## Application
-Because the trial court's instructions had permitted liability on a theory closer to [[Common Legal Terms#respondeat-superior|respondeat superior]] than [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], the Court could not sustain the verdict and [[Reading and Citing Cases#on-remand|remanded]]. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice — a policy of inaction in the face of an obvious need — and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.
+Because the trial court's instructions had permitted liability on a theory closer to [[Common Legal Terms#respondeat-superior|respondeat superior]] than [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], the Court could not sustain the verdict and [[Reading and Citing Cases#on-remand|remanded]]. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice (a policy of inaction in the face of an obvious need) and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.
 
 ## Conclusion
 [[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]. Inadequate training supports municipal § 1983 liability only on a showing of [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], applied to the specific training deficiency that caused the constitutional injury.
@@ -67,7 +67,7 @@ Because the trial court's instructions had permitted liability on a theory close
 - *Canton* builds on [[Monell v. Department of Social Services]] (policy-or-custom) and [[Pembaur v. City of Cincinnati]] (policymaker decisions) by defining the fault standard for inaction. Its "deliberate indifference" rule and the difficulty of proving it without a pattern were later underscored in [[Connick v. Thompson]]. No negative treatment.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *City of Canton v. Harris*, 489 U.S. 378 (1989) — https://www.courtlistener.com/opinion/112209/city-of-canton-v-harris/ — pinpoints: 388, 390.
+- *City of Canton v. Harris*, 489 U.S. 378 (1989) — https://www.courtlistener.com/opinion/112209/city-of-canton-v-harris/. Pinpoints: 388, 390.

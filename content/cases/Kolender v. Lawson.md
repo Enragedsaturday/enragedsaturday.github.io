@@ -72,4 +72,4 @@ Section 647(e) was unconstitutionally vague on its face, and the judgment invali
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kolender v. Lawson*, 461 U.S. 352 (1983) — https://www.courtlistener.com/opinion/110926/kolender-v-lawson/ — pinpoints: 353–354, 357, 358.
+- *Kolender v. Lawson*, 461 U.S. 352 (1983) — https://www.courtlistener.com/opinion/110926/kolender-v-lawson/. Pinpoints: 353–354, 357, 358.

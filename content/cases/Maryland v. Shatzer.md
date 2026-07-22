@@ -55,7 +55,7 @@ The *[[Edwards v. Arizona|Edwards]]* presumption is not eternal; a sufficient br
 The Court further held that release back into the general prison population constitutes a break in *[[Miranda v. Arizona|Miranda]]* custody, because lawful imprisonment on a conviction does not impose the coercive pressures of investigative custody that justify *[[Edwards v. Arizona|Edwards]]*.
 
 ## Application
-After Shatzer invoked counsel, he was returned to the general prison population — his accustomed surroundings and routine — which the Court treated as a break in *[[Miranda v. Arizona|Miranda]]* custody that dissipated the coercive pressures *[[Edwards v. Arizona|Edwards]]* guards against. Because far more than 14 days (about two and a half years) elapsed before the second, separately *Mirandized* interrogation, the *[[Edwards v. Arizona|Edwards]]* presumption no longer applied, and Shatzer's later waiver and statements were admissible.
+After Shatzer invoked counsel, he was returned to the general prison population (his accustomed surroundings and routine), which the Court treated as a break in *[[Miranda v. Arizona|Miranda]]* custody that dissipated the coercive pressures *[[Edwards v. Arizona|Edwards]]* guards against. Because far more than 14 days (about two and a half years) elapsed before the second, separately *Mirandized* interrogation, the *[[Edwards v. Arizona|Edwards]]* presumption no longer applied, and Shatzer's later waiver and statements were admissible.
 
 ## Conclusion
 Reversed: a 14-day break in *[[Miranda v. Arizona|Miranda]]* custody ends the *[[Edwards v. Arizona|Edwards]]* bar, and return to the general prison population is such a break; Shatzer's statements were not subject to suppression under *[[Edwards v. Arizona|Edwards]]*.
@@ -65,7 +65,7 @@ Reversed: a 14-day break in *[[Miranda v. Arizona|Miranda]]* custody ends the *[
 - *Shatzer* refines [[Edwards v. Arizona]] (and its companions [[Arizona v. Roberson]] and [[Minnick v. Mississippi]]) by adding a break-in-custody limit and a bright-line 14-day period; it remains good law.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Maryland v. Shatzer*, 559 U.S. 98 (2010) — https://www.courtlistener.com/opinion/1734/maryland-v-shatzer/ — pinpoint given as slip-opinion page (slip op., at 11); CourtListener carries the slip opinion, paginated by slip page (opinion 1734).
+- *Maryland v. Shatzer*, 559 U.S. 98 (2010) — https://www.courtlistener.com/opinion/1734/maryland-v-shatzer/. Pinpoint given as slip-opinion page (slip op., at 11); CourtListener carries the slip opinion, paginated by slip page (opinion 1734).

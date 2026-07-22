@@ -69,7 +69,7 @@ Hiibel's conviction did not violate the Fourth Amendment; the judgment was affir
 - No negative treatment. *Hiibel* builds on [[Terry v. Ohio]], confirming that identity questions are a routine and permissible part of a *[[Terry v. Ohio|Terry]]* stop and that a state may attach a criminal sanction to a refusal, so long as the request is reasonably related to the circumstances justifying the stop.
 
 ## Appears on
-- [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Terry Stops and Reasonable Suspicion]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Hiibel v. Sixth Judicial Dist. Court of Nev., Humboldt Cty.*, 542 U.S. 177 (2004) — https://www.courtlistener.com/opinion/136990/hiibel-v-sixth-judicial-dist-court-of-nev-humboldt-cty/ — pinpoints: 186, 187, 188.
+- *Hiibel v. Sixth Judicial Dist. Court of Nev., Humboldt Cty.*, 542 U.S. 177 (2004) — https://www.courtlistener.com/opinion/136990/hiibel-v-sixth-judicial-dist-court-of-nev-humboldt-cty/ (pinpoints: 186, 187, 188).

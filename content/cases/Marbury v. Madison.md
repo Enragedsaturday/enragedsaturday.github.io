@@ -65,7 +65,7 @@ The Court denied the writ for want of jurisdiction, holding the jurisdiction-exp
 - *Marbury* is the foundational source of judicial review and remains undisturbed; it anchors the structure of the federal court system and the courts' authority to measure statutes against the Constitution.
 
 ## Appears on
-- [[The Federal Court System]] — *Key — Anchor*
+- [[The Federal Court System]] — *Key: Anchor*
 
 ## Sources
-- *Marbury v. Madison*, 5 U.S. (1 Cranch) 137 (1803) — https://www.courtlistener.com/opinion/84759/marbury-v-madison/ — pinpoint: 177.
+- *Marbury v. Madison*, 5 U.S. (1 Cranch) 137 (1803) — https://www.courtlistener.com/opinion/84759/marbury-v-madison/. Pinpoint: 177.

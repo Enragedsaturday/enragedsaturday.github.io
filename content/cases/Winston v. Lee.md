@@ -31,7 +31,7 @@ homes:
 related: ["[[Schmerber v. California]]", "[[Cupp v. Murphy]]", "[[Missouri v. McNeely]]"]
 aliases: ["Lee v. Winston"]
 tags: ["case", "fourth-amendment", "bodily-intrusion", "warrant-requirement", "reasonableness", "surgery"]
-holding: "Court-ordered surgery under general anesthesia to recover a bullet for use as evidence is an unreasonable search where, under the Schmerber balance, the severe intrusion on bodily integrity and safety outweighs the State's need for the evidence — even with probable cause and a judicial order."
+holding: "Court-ordered surgery under general anesthesia to recover a bullet for use as evidence is an unreasonable search where, under the Schmerber balance, the severe intrusion on bodily integrity and safety outweighs the State's need for the evidence, even with probable cause and a judicial order."
 lake:
   record_id: Winston v. Lee
   status: verified

@@ -35,7 +35,7 @@ homes:
 related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[Florida v. Jardines]]", "[[Olmstead v. United States]]", "[[United States v. Jacobsen]]"]
 aliases: ["United States v. Jones (2012)", "United States v. Antoine Jones"]
 tags: ["case", "fourth-amendment", "search-definition", "trespass-theory", "gps-tracking", "physical-intrusion"]
-holding: "Installing a GPS tracker on a vehicle and monitoring it was a search under the revived trespass theory — physical intrusion on an 'effect' to obtain information; the controlling modern trespass-search case."
+holding: "Installing a GPS tracker on a vehicle and monitoring it was a search under the revived trespass theory: physical intrusion on an 'effect' to obtain information; the controlling modern trespass-search case."
 lake:
   record_id: United States v. Jones
   status: verified
@@ -54,14 +54,14 @@ Investigating Antoine Jones for drug trafficking, agents installed a GPS trackin
 Whether the government's attachment of a GPS tracking device to a vehicle, and its use of that device to monitor the vehicle's movements on public roads, constitutes a "search" within the meaning of the Fourth Amendment.
 
 ## Rule
-Yes — under a trespass-based theory of the Fourth Amendment. "We hold that the Government's installation of a GPS device on a target's vehicle, and its use of that device to monitor the vehicle's movements, constitutes a 'search.'" — 565 U.S. at 404. ^pin-404
+Yes, under a trespass-based theory of the Fourth Amendment. "We hold that the Government's installation of a GPS device on a target's vehicle, and its use of that device to monitor the vehicle's movements, constitutes a 'search.'" — 565 U.S. at 404. ^pin-404
 
 The basis is physical intrusion on a constitutionally protected "effect": "The Government physically occupied private property for the purpose of obtaining information. We have no doubt that such a physical intrusion would have been considered a 'search' within the meaning of the Fourth Amendment when it was adopted." — *Id.* at 404–05. ^pin-404a
 
 The trespass test survives alongside *[[Katz v. United States|Katz]]*: "the *Katz* reasonable-expectation-of-privacy test has been *added to*, not *substituted for*, the common-law trespassory test." — *Id.* at 409. ^pin-409
 
 ## Application
-On these facts the GPS surveillance was a search. The agents physically attached the device to the Jeep — an "effect" — and did so "for the purpose of obtaining information" about its movements; that trespassory intrusion onto a protected area to gather information was itself a search, without regard to whether Jones had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in his movements on public roads. The Court did not need to reach the *[[Katz v. United States|Katz]]* expectation-of-privacy question (or the *[[United States v. Knotts|Knotts]]* beeper line, which involved no trespass), because the common-law trespass theory independently resolved the case: installing and monitoring the device on Jones's vehicle was a Fourth Amendment search.
+On these facts the GPS surveillance was a search. The agents physically attached the device to the Jeep (an "effect") and did so "for the purpose of obtaining information" about its movements; that trespassory intrusion onto a protected area to gather information was itself a search, without regard to whether Jones had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in his movements on public roads. The Court did not need to reach the *[[Katz v. United States|Katz]]* expectation-of-privacy question (or the *[[United States v. Knotts|Knotts]]* beeper line, which involved no trespass), because the common-law trespass theory independently resolved the case: installing and monitoring the device on Jones's vehicle was a Fourth Amendment search.
 
 ## Conclusion
 Attaching and using the GPS device was a search; the D.C. Circuit's judgment reversing the conviction was affirmed. The Court left the reasonableness (warrant/exception) question for remand.
@@ -71,9 +71,9 @@ Attaching and using the GPS device was a search; the D.C. Circuit's judgment rev
 - No negative subsequent treatment identified. *Jones* revives the common-law trespass test as one of the "two definitions of search" alongside the [[Katz v. United States]] privacy test; it anchors the property-based line later applied to the [[Curtilage|curtilage]] in [[Florida v. Jardines]] and informs the digital-privacy analysis of [[Carpenter v. United States]].
 
 ## Appears on
-- [[Trespass]] — *Key — Anchor*
-- [[Real-Time Tracking]] — *Key — cross-ref (GPS trespass; mosaic [[Common Legal Terms#concurring-opinion|concurrences]])*
-- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — mosaic seed for Carpenter)*
+- [[Trespass]] — *Key: Anchor*
+- [[Real-Time Tracking]] — *Key: cross-ref (GPS trespass; mosaic [[Common Legal Terms#concurring-opinion|concurrences]])*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref, mosaic seed for Carpenter)*
 
 ## Sources
-- *United States v. Jones*, 565 U.S. 400 (2012) — https://www.courtlistener.com/opinion/7350871/united-states-v-jones/ — pinpoints: 404, 409. (Lead majority opinion id 7268856.)
+- *United States v. Jones*, 565 U.S. 400 (2012) — https://www.courtlistener.com/opinion/7350871/united-states-v-jones/ (pinpoints: 404, 409). (Lead majority opinion id 7268856.)

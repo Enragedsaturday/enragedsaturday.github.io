@@ -66,7 +66,7 @@ The impeachment use of post-arrest, post-*[[Miranda v. Arizona|Miranda]]* silenc
 - Contrast [[Harris v. New York]]: a voluntary statement taken in violation of Miranda may impeach, but *Doyle* bars impeachment by the silence itself.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Doyle v. Ohio*, 426 U.S. 610 (1976) — https://www.courtlistener.com/opinion/109491/doyle-v-ohio/ — pinpoints: 617, 618.
+- *Doyle v. Ohio*, 426 U.S. 610 (1976) — https://www.courtlistener.com/opinion/109491/doyle-v-ohio/. Pinpoints: 617, 618.

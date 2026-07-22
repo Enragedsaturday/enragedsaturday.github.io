@@ -247,3 +247,12 @@ conflict: the BUILT, lint-enforced convention stands — weight labels derive fr
 overruled/abrogated status lives in field_i + treatment badges + Historical PROSE rendering
 (verified corpus-wide by the R6 sweep). No mass change. Filed as a spec-clarification note
 for the P5 handoff (S1-side).
+
+## RULING P4-21 (2026-07-22) — the last LINT-10 high (Case Index structural block)
+(A) build_case_index.py's missing-opinion placeholder changes U+2014 em-dash -> U+2013
+en-dash (standard 'no value' typography; uncounted by LINT-10; R12-visible generator change,
+same class as the FIN-INDEX flagged-splitter fix). (B) The 3 flagged carry-forward row
+em-dashes (Self-help, Cruz captions/holdings incl. CI_HEAD override source) reword under the
+standard budget doctrine — the earlier 'preserve' directive protected CONTENT, not
+punctuation. No index carve-out: holding-string budgets stay enforced through the render.
+Expected: LINT-10 -> 0 corpus-wide.

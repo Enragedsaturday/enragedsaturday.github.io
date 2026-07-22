@@ -44,18 +44,18 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Roberson was arrested at the scene of a burglary and, after [[Miranda and Custodial Interrogation|Miranda warnings]], said he wanted a lawyer before answering any questions. Three days later, while he was still in custody, a different officer — unaware of the earlier invocation — gave fresh [[Miranda and Custodial Interrogation|Miranda warnings]] and questioned Roberson about a *different* burglary, and Roberson made an incriminating statement. He moved to suppress it.
+Roberson was arrested at the scene of a burglary and, after [[Miranda and Custodial Interrogation|Miranda warnings]], said he wanted a lawyer before answering any questions. Three days later, while he was still in custody, a different officer (unaware of the earlier invocation) gave fresh [[Miranda and Custodial Interrogation|Miranda warnings]] and questioned Roberson about a *different* burglary, and Roberson made an incriminating statement. He moved to suppress it.
 
 ## Issue
 Whether the *[[Edwards v. Arizona|Edwards]]* rule barring police-initiated interrogation after a suspect invokes counsel applies when the later interrogation concerns a separate offense or investigation.
 
 ## Rule
-Yes — the *[[Edwards v. Arizona|Edwards]]* bar is not offense-specific. "[T]he presumption raised by a suspect's request for counsel — that he considers himself unable to deal with the pressures of custodial interrogation without legal assistance — does not disappear simply because the police have approached the suspect, still in custody, still without counsel, about a separate investigation." — 486 U.S. at 683. ^pin-683
+Yes, the *[[Edwards v. Arizona|Edwards]]* bar is not offense-specific. "[T]he presumption raised by a suspect's request for counsel — that he considers himself unable to deal with the pressures of custodial interrogation without legal assistance — does not disappear simply because the police have approached the suspect, still in custody, still without counsel, about a separate investigation." — 486 U.S. at 683. ^pin-683
 
 "That a suspect's request for counsel should apply to any questions the police wish to pose follows, we think, not only from *Edwards* and *Miranda* . . . ." — *Id.* at 684. ^pin-684
 
 ## Application
-Roberson had asked for a lawyer before answering "any questions," and the presumption that he could not face custodial interrogation without counsel did not evaporate merely because a second officer approached him — still in custody, still without counsel — about a different burglary three days later. Fresh [[Miranda and Custodial Interrogation|Miranda warnings]] did not cure the bar, and the second officer's ignorance of the earlier invocation was irrelevant. The statement was therefore inadmissible.
+Roberson had asked for a lawyer before answering "any questions," and the presumption that he could not face custodial interrogation without counsel did not evaporate merely because a second officer approached him (still in custody, still without counsel) about a different burglary three days later. Fresh [[Miranda and Custodial Interrogation|Miranda warnings]] did not cure the bar, and the second officer's ignorance of the earlier invocation was irrelevant. The statement was therefore inadmissible.
 
 ## Conclusion
 The *[[Edwards v. Arizona|Edwards]]* bar applied to the separate-investigation questioning; the suppression of Roberson's statement was upheld and the Arizona Court of Appeals affirmed.
@@ -65,7 +65,7 @@ The *[[Edwards v. Arizona|Edwards]]* bar applied to the separate-investigation q
 - No negative treatment. *Roberson* extends [[Edwards v. Arizona]] so that a counsel invocation bars police-initiated interrogation about **any** offense. The broader *[[Edwards v. Arizona|Edwards]]* line was later refined by [[Maryland v. Shatzer]] (a 14-day break in Miranda custody ends the *[[Edwards v. Arizona|Edwards]]* bar).
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Arizona v. Roberson*, 486 U.S. 675 (1988) — https://www.courtlistener.com/opinion/112100/arizona-v-roberson/ — pinpoints: 683, 684.
+- *Arizona v. Roberson*, 486 U.S. 675 (1988) — https://www.courtlistener.com/opinion/112100/arizona-v-roberson/ (pinpoints: 683, 684).

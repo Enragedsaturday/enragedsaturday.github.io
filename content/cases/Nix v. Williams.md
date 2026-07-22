@@ -65,7 +65,7 @@ The body-related evidence was admissible under the inevitable discovery doctrine
 - No negative treatment. *Nix* establishes [[Inevitable Discovery and Independent Source|inevitable discovery]] as a sibling of the independent-source doctrine ([[Murray v. United States]]), both grounded in restoring the police to the position they would have occupied absent the illegality.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Nix v. Williams*, 467 U.S. 431 (1984) — https://www.courtlistener.com/opinion/111204/nix-v-williams/ — pinpoint: 444.
+- *Nix v. Williams*, 467 U.S. 431 (1984) — https://www.courtlistener.com/opinion/111204/nix-v-williams/. Pinpoint: 444.

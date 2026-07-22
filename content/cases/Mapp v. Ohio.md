@@ -65,7 +65,7 @@ The conviction, resting on unconstitutionally seized evidence, was reversed. The
 - *Mapp* extended the [[Weeks v. United States]] exclusionary rule to the States and overruled the contrary portion of [[Wolf v. Colorado]]. The exclusionary rule remains good law, though later cases have narrowed its **scope** through the [[The Good-Faith Exception|good-faith exception]] ([[United States v. Leon]]) and a culpability requirement for deterrence ([[Herring v. United States]]) — refinements of the remedy, not abrogations of *Mapp*.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Anchor*
+- [[The Exclusionary Rule]] — *Key: Anchor*
 
 ## Sources
-- *Mapp v. Ohio*, 367 U.S. 643 (1961) — https://www.courtlistener.com/opinion/106285/mapp-v-ohio/ — pinpoint: 655.
+- *Mapp v. Ohio*, 367 U.S. 643 (1961) — https://www.courtlistener.com/opinion/106285/mapp-v-ohio/. Pinpoint: 655.

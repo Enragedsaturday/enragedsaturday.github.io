@@ -41,7 +41,7 @@ tags:
   - postal-exception
   - statutory-interpretation
   - supreme-court
-holding: "The Federal Tort Claims Act's postal exception, which preserves the United States' sovereign immunity for claims 'arising out of the loss, miscarriage, or negligent transmission of letters or postal matter,' bars claims for the intentional nondelivery of mail, because both 'miscarriage' and 'loss' of mail — as ordinarily understood when the FTCA was enacted — can result from the Postal Service's intentional failure to deliver it."
+holding: "The Federal Tort Claims Act's postal exception, which preserves the United States' sovereign immunity for claims 'arising out of the loss, miscarriage, or negligent transmission of letters or postal matter,' bars claims for the intentional nondelivery of mail, because both 'miscarriage' and 'loss' of mail (as ordinarily understood when the FTCA was enacted) can result from the Postal Service's intentional failure to deliver it."
 aliases:
   - Postal Service v. Konan
   - United States Postal Service v. Konan

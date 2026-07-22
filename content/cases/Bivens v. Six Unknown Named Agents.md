@@ -31,7 +31,7 @@ homes:
 related: ["[[Monroe v. Pape]]", "[[Hanlon v. Berger]]", "[[Harlow v. Fitzgerald]]"]
 aliases: ["Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics", "Bivens v. Six Unknown Fed. Narcotics Agents"]
 tags: ["case", "section-1983", "bivens", "federal-officer-liability", "fourth-amendment", "damages-remedy"]
-holding: "A victim of a Fourth Amendment violation by federal officers acting under color of federal authority may recover money damages directly under the Constitution — the implied federal-officer analog to § 1983."
+holding: "A victim of a Fourth Amendment violation by federal officers acting under color of federal authority may recover money damages directly under the Constitution: the implied federal-officer analog to § 1983."
 lake:
   record_id: Bivens v. Six Unknown Named Agents
   status: verified
@@ -65,7 +65,7 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]. A damages action l
 - *Bivens* remains the foundational federal-officer damages remedy and the analog to the state-actor remedy recognized in [[Monroe v. Pape]]; it was the vehicle for the *Bivens* claim in [[Hanlon v. Berger]], and federal officers sued under it raise the same qualified-immunity defense framed in [[Harlow v. Fitzgerald]]. The Court has not overruled *Bivens*, but in recent decades it has sharply **limited** the remedy by declining to extend it to new contexts (e.g., *[[Ziglar v. Abbasi]]* (2017); *[[Egbert v. Boule]]* (2022)) — the implied cause of action is essentially confined to contexts like the one in *Bivens* itself.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Anchor*
 
 ## Sources
-- *Bivens v. Six Unknown Named Agents*, 403 U.S. 388 (1971) — https://www.courtlistener.com/opinion/108375/bivens-v-six-unknown-named-agents-of-federal-bureau-of-narcotics/ — pinpoints: 392, 397.
+- *Bivens v. Six Unknown Named Agents*, 403 U.S. 388 (1971) — https://www.courtlistener.com/opinion/108375/bivens-v-six-unknown-named-agents-of-federal-bureau-of-narcotics/. Pinpoints: 392, 397.

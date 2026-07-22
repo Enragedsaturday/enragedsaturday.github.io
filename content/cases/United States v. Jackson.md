@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A.C. Jackson reported a stolen firearm to a Wayne County, Missouri deputy; investigating, the deputy concluded the report was false and developed information that Jackson — a felon — possessed firearms. The deputy prepared an affidavit (reviewed and approved by the prosecutor), and a judge issued a search warrant after questioning him; the search of Jackson's home produced a firearm. The district court found the warrant was *not* supported by a substantial basis for probable cause, but denied suppression under the [[United States v. Leon]] [[The Good-Faith Exception|good-faith exception]]. Jackson, convicted of felon-in-possession, appealed.
+A.C. Jackson reported a stolen firearm to a Wayne County, Missouri deputy; investigating, the deputy concluded the report was false and developed information that Jackson, a felon, possessed firearms. The deputy prepared an affidavit (reviewed and approved by the prosecutor), and a judge issued a search warrant after questioning him; the search of Jackson's home produced a firearm. The district court found the warrant was *not* supported by a substantial basis for probable cause, but denied suppression under the [[United States v. Leon]] [[The Good-Faith Exception|good-faith exception]]. Jackson, convicted of felon-in-possession, appealed.
 
 ## Issue
 Whether the *[[United States v. Leon|Leon]]* [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule allows admission of evidence seized under a search warrant that the district court found was not supported by probable cause, where the officer's reliance on the warrant was objectively reasonable.
@@ -64,10 +64,10 @@ The *[[United States v. Leon|Leon]]* [[The Good-Faith Exception|good-faith excep
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 8th Cir.**
-- No negative subsequent treatment identified. The decision applies [[United States v. Leon]] / [[Massachusetts v. Sheppard]] good-faith reliance — good faith was *applied* to save the evidence (not held unavailable) — making it unnecessary to resolve the underlying probable-cause question.
+- No negative subsequent treatment identified. The decision applies [[United States v. Leon]] / [[Massachusetts v. Sheppard]] good-faith reliance: good faith was *applied* to save the evidence (not held unavailable), making it unnecessary to resolve the underlying probable-cause question.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. A.C. Jackson*, 784 F.3d 1227 (8th Cir. 2015) — https://www.courtlistener.com/opinion/2798587/united-states-v-ac-jackson/ — pinpoints: 1231, 1232.
+- *United States v. A.C. Jackson*, 784 F.3d 1227 (8th Cir. 2015). https://www.courtlistener.com/opinion/2798587/united-states-v-ac-jackson/ — pinpoints: 1231, 1232.

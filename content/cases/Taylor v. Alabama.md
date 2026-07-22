@@ -69,8 +69,8 @@ The confession was the unattenuated fruit of the illegal arrest and should have 
 - No negative treatment. *Taylor* applies the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors and follows [[Dunaway v. New York]], reaffirming that a Fifth Amendment–voluntary confession can still be a suppressible Fourth Amendment fruit; the tainted fingerprints trace to [[Davis v. Mississippi]]. [[Kaupp v. Texas]] later applied the same analysis [[Common Legal Terms#per-curiam|per curiam]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny ([[Fruits and Attenuation|attenuation]])*
+- [[The Exclusionary Rule]] — *Key: Progeny ([[Fruits and Attenuation|attenuation]])*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Taylor v. Alabama*, 457 U.S. 687 (1982) — https://www.courtlistener.com/opinion/110760/taylor-v-alabama/ — pinpoints: 690, 691, 692–693.
+- *Taylor v. Alabama*, 457 U.S. 687 (1982) — https://www.courtlistener.com/opinion/110760/taylor-v-alabama/. Pinpoints: 690, 691, 692–693.

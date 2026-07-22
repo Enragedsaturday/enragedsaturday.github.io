@@ -67,7 +67,7 @@ The suppression of the marijuana was affirmed; absent a standardized policy on o
 - No negative treatment. *Wells* refines the inventory-search rule of [[Colorado v. Bertine]] and [[Illinois v. Lafayette]]: standardized criteria must channel an officer's discretion, though the policy need not be rigidly all-or-nothing.
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Florida v. Wells*, 495 U.S. 1 (1990) — https://www.courtlistener.com/opinion/112412/florida-v-wells/ — pinpoint: 4.
+- *Florida v. Wells*, 495 U.S. 1 (1990). https://www.courtlistener.com/opinion/112412/florida-v-wells/ — pinpoint: 4.

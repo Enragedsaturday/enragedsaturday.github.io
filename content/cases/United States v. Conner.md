@@ -68,4 +68,4 @@ The motel-room entry was an unconstitutional search because the door was opened 
 - [[Securing the Scene]] — *Recent development (role-based)*
 
 ## Sources
-- *United States v. Conner*, 127 F.3d 663 (8th Cir. 1997) — https://www.courtlistener.com/opinion/747208/united-states-v-larry-duane-conner-united-states-of-america-v-john/ — pinpoint: 666 (CL carries the opinion without star pagination; pinpoint per the published reporter).
+- *United States v. Conner*, 127 F.3d 663 (8th Cir. 1997) — https://www.courtlistener.com/opinion/747208/united-states-v-larry-duane-conner-united-states-of-america-v-john/. Pinpoint: 666 (CL carries the opinion without star pagination; pinpoint per the published reporter).

@@ -67,7 +67,7 @@ Saylor's stop and limited search fit the *Montana* second exception: a highway d
 The judgment of the Ninth Circuit was **[[Reading and Citing Cases#vacated|vacated]]** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Breyer, J., delivered the opinion of a unanimous Court; Alito, J., filed a [[Common Legal Terms#concurring-opinion|concurring opinion]].
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Cooley* is primarily a tribal-sovereignty decision; its Fourth Amendment relevance here is its use of the temporary-detention framework — reasonable suspicion to stop, a safety search, and detention limited to what is reasonably necessary — to define a tribal officer's authority over non-Indians.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Cooley* is primarily a tribal-sovereignty decision; its Fourth Amendment relevance here is its use of the temporary-detention framework (reasonable suspicion to stop, a safety search, and detention limited to what is reasonably necessary) to define a tribal officer's authority over non-Indians.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Recent development*

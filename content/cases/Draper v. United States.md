@@ -47,7 +47,7 @@ lake:
 A reliable paid informant, Hereford, told federal narcotics agent Marsh that James Draper had gone to Chicago and would return by train on one of two specified mornings carrying three ounces of heroin. Hereford described Draper's exact physical appearance, the precise clothing he would wear, the tan zipper bag he would carry, and his habit of walking fast. On the second morning Marsh watched a man matching every detail alight from the Chicago train and walk quickly toward the exit. Marsh arrested him without a warrant; a search incident to the arrest produced heroin and a syringe. Draper moved to suppress, arguing the agents lacked probable cause.
 
 ## Issue
-Whether a reliable informant's detailed tip — the innocent details of which police personally corroborate before acting — furnishes probable cause for a warrantless arrest, even though the corroborated facts are innocent and the informant's information was hearsay to the arresting officer.
+Whether a reliable informant's detailed tip (the innocent details of which police personally corroborate before acting) furnishes probable cause for a warrantless arrest, even though the corroborated facts are innocent and the informant's information was hearsay to the arresting officer.
 
 ## Rule
 Yes. Where police corroborate the verifiable details of a reliable informant's tip, they may reasonably infer that the remaining, incriminating detail is also true. "[W]ith every other bit of Hereford's information being thus personally verified, Marsh had 'reasonable grounds' to believe that the remaining unverified bit of Hereford's information — that Draper would have the heroin with him — was likewise true." — 358 U.S. at 313. ^pin-313
@@ -55,7 +55,7 @@ Yes. Where police corroborate the verifiable details of a reliable informant's t
 Probable cause is a practical, non-technical standard: "In dealing with probable cause, . . . as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act." — [*Id.* at 313](https://www.courtlistener.com/opinion/105820/draper-v-united-states/#:~:text=In%20dealing%20with%20probable%20cause%2C) (quoting *Brinegar v. United States*). ^pin-313b
 
 ## Application
-Hereford was a "special employee" whose information had always proved accurate and reliable, so Marsh would have been "derelict in his duties had he not pursued it." When Marsh personally observed a man with Draper's exact attributes, clothing, and bag step off the very train from the place Hereford named and walk fast toward the exit, he had verified every facet of the tip except the heroin itself. That corroboration of the innocent details gave Marsh reasonable grounds to credit the one unverified, incriminating detail — that Draper was carrying heroin — supplying probable cause for the arrest and the search incident to it.
+Hereford was a "special employee" whose information had always proved accurate and reliable, so Marsh would have been "derelict in his duties had he not pursued it." When Marsh personally observed a man with Draper's exact attributes, clothing, and bag step off the very train from the place Hereford named and walk fast toward the exit, he had verified every facet of the tip except the heroin itself. That corroboration of the innocent details gave Marsh reasonable grounds to credit the one unverified, incriminating detail (that Draper was carrying heroin), supplying probable cause for the arrest and the search incident to it.
 
 ## Conclusion
 Probable cause existed; the warrantless arrest and the search incident to it were lawful and the heroin was admissible. The conviction was affirmed. A reliable, detailed tip corroborated by police observation can establish probable cause even when the corroborated conduct is innocent.
@@ -68,4 +68,4 @@ Probable cause existed; the warrantless arrest and the search incident to it wer
 - [[Probable Cause]] — *Progeny*
 
 ## Sources
-- *Draper v. United States*, 358 U.S. 307 (1959) — https://www.courtlistener.com/opinion/105820/draper-v-united-states/ — pinpoint: 313.
+- *Draper v. United States*, 358 U.S. 307 (1959) — https://www.courtlistener.com/opinion/105820/draper-v-united-states/. Pinpoint: 313.

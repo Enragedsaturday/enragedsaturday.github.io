@@ -43,7 +43,7 @@ tags:
   - show-of-authority
   - free-to-leave
   - reasonable-suspicion
-holding: "A man was seized under the Fourth Amendment when an officer, backed by a show of authority and after disbelieving his response, directed him to hike up his pants; on the objective free-to-terminate inquiry — which properly accounts for the reasonable apprehension of a Black man in a heavily policed encounter — that request occurred before reasonable suspicion arose, making the seizure and its fruits unlawful."
+holding: "A man was seized under the Fourth Amendment when an officer, backed by a show of authority and after disbelieving his response, directed him to hike up his pants; on the objective free-to-terminate inquiry (which properly accounts for the reasonable apprehension of a Black man in a heavily policed encounter), that request occurred before reasonable suspicion arose, making the seizure and its fruits unlawful."
 ---
 
 # Carter v. United States

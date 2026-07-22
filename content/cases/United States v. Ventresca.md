@@ -33,7 +33,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[Aguilar v. Texas]]", "[[Brinegar v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "affidavit", "probable-cause"]
-holding: "A search-warrant affidavit must be read in a commonsense and realistic — not hypertechnical — manner, and doubtful or marginal probable-cause questions are resolved by the preference accorded to warrants; an affidavit that recites detailed underlying circumstances (even hearsay with a substantial basis) establishes probable cause."
+holding: "A search-warrant affidavit must be read in a commonsense and realistic (not hypertechnical) manner, and doubtful or marginal probable-cause questions are resolved by the preference accorded to warrants; an affidavit that recites detailed underlying circumstances (even hearsay with a substantial basis) establishes probable cause."
 lake:
   record_id: United States v. Ventresca
   status: verified
@@ -49,7 +49,7 @@ lake:
 Federal investigators suspected Ventresca of operating an illegal still. An investigator's affidavit, drawing on his own observations and the corroborating reports of fellow investigators, detailed numerous facts — the odor of fermenting mash, deliveries of sugar and metal cans, and related activity at the premises. A United States Commissioner issued a search warrant, and the ensuing search uncovered an illegal distillery. The Court of Appeals held the affidavit insufficient because it did not clearly separate which facts were hearsay and which were within the affiant's personal knowledge.
 
 ## Issue
-Did a detailed search-warrant affidavit — combining the affiant's own observations with corroborating reports of fellow officers — establish probable cause when read in a commonsense manner?
+Did a detailed search-warrant affidavit (combining the affiant's own observations with corroborating reports of fellow officers) establish probable cause when read in a commonsense manner?
 
 ## Rule
 Yes. "[A]ffidavits for search warrants . . . must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion. They are normally drafted by nonlawyers in the midst and haste of a criminal investigation. Technical requirements of elaborate specificity once exacted under common law pleadings have no proper place in this area." — 380 U.S. at 108. ^pin-108
@@ -75,4 +75,4 @@ The affidavit established probable cause and the warrant was valid; the judgment
 - [[Probable Cause]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Ventresca*, 380 U.S. 102 (1965) — https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/ — pinpoints: 106–107, 108, 109.
+- *United States v. Ventresca*, 380 U.S. 102 (1965) — https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/. Pinpoints: 106–107, 108, 109.

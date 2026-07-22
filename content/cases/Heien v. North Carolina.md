@@ -57,7 +57,7 @@ Yes. Reasonable suspicion can rest on a reasonable mistake of law, as well as a 
 The mistake, however, must itself be objectively reasonable.
 
 ## Application
-North Carolina's vehicle code was genuinely ambiguous about whether a car needed two working brake lights — a nearby provision required that "all originally equipped rear lamps" be functional — so Sergeant Darisse's belief that one broken brake light violated the law was objectively reasonable even though the statute did not in fact require it. Because that reasonable mistake of law supplied reasonable suspicion, the stop, and the consent search that followed, were valid.
+North Carolina's vehicle code was genuinely ambiguous about whether a car needed two working brake lights (a nearby provision required that "all originally equipped rear lamps" be functional), so Sergeant Darisse's belief that one broken brake light violated the law was objectively reasonable even though the statute did not in fact require it. Because that reasonable mistake of law supplied reasonable suspicion, the stop, and the consent search that followed, were valid.
 
 ## Conclusion
 The traffic stop was valid because it rested on the officer's objectively reasonable mistake of law; the judgment upholding the stop was affirmed.
@@ -67,7 +67,7 @@ The traffic stop was valid because it rested on the officer's objectively reason
 - No negative treatment. *Heien* holds that objectively reasonable mistakes of law, like reasonable mistakes of fact, can support reasonable suspicion for a stop — but the analysis is objective, so an officer's sloppiness or a misreading of an unambiguous statute will not qualify.
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Progeny / Refinement*
+- [[Traffic Stops]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Heien v. North Carolina*, 574 U.S. 54 (2014) — https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/ — pinpoint: 60 (135 S. Ct. at 536); cluster 2760668 → lead opinion 9805193.
+- *Heien v. North Carolina*, 574 U.S. 54 (2014). https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/ — pinpoint: 60 (135 S. Ct. at 536); cluster 2760668 → lead opinion 9805193.

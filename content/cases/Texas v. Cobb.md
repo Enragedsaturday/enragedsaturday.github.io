@@ -65,7 +65,7 @@ The Sixth Amendment right to counsel did not extend to the uncharged murders; th
 - *Cobb* applies and confines the offense-specific rule of [[McNeil v. Wisconsin]]; it is read alongside [[Massiah v. United States]] and [[Brewer v. Williams]] (deliberate elicitation after attachment) and [[Montejo v. Louisiana]] (waiver of the attached right).
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Texas v. Cobb*, 532 U.S. 162 (2001) — https://www.courtlistener.com/opinion/118417/texas-v-cobb/ — pinpoints: 164, 173.
+- *Texas v. Cobb*, 532 U.S. 162 (2001) — https://www.courtlistener.com/opinion/118417/texas-v-cobb/. Pinpoints: 164, 173.

@@ -60,7 +60,7 @@ Whether the exigent-circumstances exception is forfeited under the "police-creat
 ## Rule
 The test keys on whether the police acted lawfully before the [[Exigent Circumstances and Hot Pursuit|exigency]] arose: "Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment, warrantless entry to prevent the destruction of evidence is reasonable and thus allowed." — 563 U.S. at ___ (slip op., at 8). ^pin-op8
 
-Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the [[Exigent Circumstances and Hot Pursuit|exigency]].
+Conduct such as knocking on a door and announcing one's presence (which any private citizen may do) does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the [[Exigent Circumstances and Hot Pursuit|exigency]].
 
 ## Application
 The officers' decision to knock loudly on the apartment door and announce "police" was lawful conduct that any occupant was free to ignore; the officers did not demand entry or otherwise threaten a Fourth Amendment violation before the sounds of evidence destruction began. Because the police thus did not create the [[Exigent Circumstances and Hot Pursuit|exigency]] by unlawful or threatened-unlawful conduct, their reliance on the destruction-of-evidence [[Exigent Circumstances and Hot Pursuit|exigency]] was permissible (the Court [[Reading and Citing Cases#on-remand|remanded]] for the state courts to determine whether an [[Exigent Circumstances and Hot Pursuit|exigency]] in fact existed).
@@ -73,9 +73,9 @@ The judgment suppressing the evidence was reversed and the case [[Reading and Ci
 - No negative treatment. [[Lange v. California]] (2021) later addressed a different [[Exigent Circumstances and Hot Pursuit|exigency]] question (categorical [[Exigent Circumstances and Hot Pursuit|hot pursuit]] of fleeing misdemeanants) and cited *King* for the case-specific "compelling need" standard, leaving *King*'s police-created-[[Exigent Circumstances and Hot Pursuit|exigency]] holding intact.
 
 ## Appears on
-- [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*
+- [[Exigent Circumstances and Hot Pursuit]] — *Key: Anchor*
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
 - [[Knock and Talk]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Kentucky v. King*, 563 U.S. 452 (2011) — https://www.courtlistener.com/opinion/216733/kentucky-v-king/ — pinpoint given as slip-opinion page (slip op., at 8); CourtListener carries the slip opinion, paginated by slip page (opinion 216733).
+- *Kentucky v. King*, 563 U.S. 452 (2011) — https://www.courtlistener.com/opinion/216733/kentucky-v-king/. Pinpoint given as slip-opinion page (slip op., at 8); CourtListener carries the slip opinion, paginated by slip page (opinion 216733).

@@ -41,7 +41,7 @@ tags:
   - section-1988
   - prevailing-party
   - preliminary-injunction
-holding: "A party who obtains only a preliminary injunction — with no final judgment on the merits before the case becomes moot — is not a 'prevailing party' eligible for attorney's fees under 42 U.S.C. § 1988(b), because a preliminary injunction does not conclusively resolve the merits or create a judicially sanctioned, enduring change in the parties' legal relationship."
+holding: "A party who obtains only a preliminary injunction (with no final judgment on the merits before the case becomes moot) is not a 'prevailing party' eligible for attorney's fees under 42 U.S.C. § 1988(b), because a preliminary injunction does not conclusively resolve the merits or create a judicially sanctioned, enduring change in the parties' legal relationship."
 ---
 
 # Lackey v. Stinnie

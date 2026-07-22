@@ -31,7 +31,7 @@ homes:
 related: ["[[United States v. Mendenhall]]", "[[California v. Hodari D.]]", "[[Florida v. Bostick]]", "[[United States v. Knotts]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "pursuit", "free-to-leave", "abandonment"]
-holding: "Police pursuit, standing alone, is not a Fourth Amendment seizure; whether police conduct is a seizure is determined by the Mendenhall objective test — whether, in all the circumstances, a reasonable person would have believed he was not free to leave."
+holding: "Police pursuit, standing alone, is not a Fourth Amendment seizure; whether police conduct is a seizure is determined by the Mendenhall objective test: whether, in all the circumstances, a reasonable person would have believed he was not free to leave."
 lake:
   record_id: Michigan v. Chesternut
   status: verified

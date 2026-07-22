@@ -47,7 +47,7 @@ lake:
 Houston officers obtained a warrant to search for narcotics on an affidavit that recited only that the affiants "have received reliable information from a credible person and do believe" that narcotics were being kept at the premises. The affidavit gave no underlying facts — neither how the informant knew nor why he was believed. The warrant issued and evidence was seized and used to convict.
 
 ## Issue
-Whether an affidavit resting solely on an informant's tip — stated as a conclusion, without underlying facts showing the informant's basis of knowledge or his credibility — can support a magistrate's finding of probable cause.
+Whether an affidavit resting solely on an informant's tip (stated as a conclusion, without underlying facts showing the informant's basis of knowledge or his credibility) can support a magistrate's finding of probable cause.
 
 ## Rule
 No. An affidavit may rest on hearsay, but the magistrate must be given the underlying facts behind both the informant's knowledge and his reliability. The "magistrate must be informed of some of the underlying circumstances from which the informant concluded that the narcotics were where he claimed they were, and some of the underlying circumstances from which the officer concluded that the informant . . . was 'credible' or his information 'reliable.'" — 378 U.S. at 114. ^pin-114
@@ -65,7 +65,7 @@ The search warrant was invalid for want of probable cause; the judgment resting 
 - The rigid two-prong "basis of knowledge" + "veracity" framework of *Aguilar* (with [[Spinelli v. United States]]) was **abandoned by [[Illinois v. Gates]]** (1983) in favor of a **totality-of-the-circumstances** test. Under *[[Illinois v. Gates|Gates]]*, the informant's basis of knowledge and veracity remain relevant considerations but are no longer independent, dispositive requirements.
 
 ## Appears on
-- [[Probable Cause]] — *Key — Anchor*
+- [[Probable Cause]] — *Key: Anchor*
 
 ## Sources
-- *Aguilar v. Texas*, 378 U.S. 108 (1964) — https://www.courtlistener.com/opinion/106865/aguilar-v-texas/ — pinpoints: 114, 115.
+- *Aguilar v. Texas*, 378 U.S. 108 (1964) — https://www.courtlistener.com/opinion/106865/aguilar-v-texas/. Pinpoints: 114, 115.

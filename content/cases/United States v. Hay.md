@@ -46,7 +46,7 @@ tags:
   - video-surveillance
   - carpenter
   - tenth-circuit
-holding: "The Tenth Circuit affirmed, holding that a fixed pole camera trained on the exterior of Hay's home — recording roughly fifteen hours a day for sixty-eight days but capturing only what was visible to passersby in public view — was not a Fourth Amendment search under the circuit's Jackson rule, and that Carpenter's mosaic theory of the 'whole of physical movements' does not disturb that rule for conventional, single-location camera surveillance of a home's exterior."
+holding: "The Tenth Circuit affirmed, holding that a fixed pole camera trained on the exterior of Hay's home (recording roughly fifteen hours a day for sixty-eight days but capturing only what was visible to passersby in public view) was not a Fourth Amendment search under the circuit's Jackson rule, and that Carpenter's mosaic theory of the 'whole of physical movements' does not disturb that rule for conventional, single-location camera surveillance of a home's exterior."
 ---
 
 # United States v. Hay

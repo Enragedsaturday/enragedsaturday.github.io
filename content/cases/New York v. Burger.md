@@ -31,7 +31,7 @@ homes:
 related: ["[[Donovan v. Dewey]]", "[[Marshall v. Barlow's, Inc.]]", "[[United States v. Biswell]]", "[[Camara v. Municipal Court]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "closely-regulated-business", "inspection"]
-holding: "A warrantless administrative inspection of a closely (pervasively) regulated business — here, an automobile junkyard — is reasonable if…"
+holding: "A warrantless administrative inspection of a closely (pervasively) regulated business (here, an automobile junkyard) is reasonable if…"
 lake:
   record_id: New York v. Burger
   status: verified
@@ -65,7 +65,7 @@ The warrantless inspection was constitutional; the New York Court of Appeals' su
 - No negative treatment. *Burger* synthesizes the closely-regulated-business inspection line ([[United States v. Biswell]]; [[Donovan v. Dewey]]) into a three-part test, distinct from the warrant-based regime for ordinary commercial premises in [[Marshall v. Barlow's, Inc.]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *New York v. Burger*, 482 U.S. 691 (1987) — https://www.courtlistener.com/opinion/111927/new-york-v-burger/ — pinpoints: 702, 703.
+- *New York v. Burger*, 482 U.S. 691 (1987) — https://www.courtlistener.com/opinion/111927/new-york-v-burger/. Pinpoints: 702, 703.

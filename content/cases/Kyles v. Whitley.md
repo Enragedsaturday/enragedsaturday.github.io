@@ -31,7 +31,7 @@ homes:
 related: ["[[Brady v. Maryland]]", "[[Giglio v. United States]]", "[[United States v. Bagley]]", "[[Smith v. Cain]]"]
 aliases: []
 tags: ["case", "brady", "exculpatory-evidence", "materiality", "disclosure"]
-holding: "Two load-bearing points: (1) materiality is assessed CUMULATIVELY — all suppressed evidence considered collectively, not item by item;…"
+holding: "Two load-bearing points: (1) materiality is assessed CUMULATIVELY, all suppressed evidence considered collectively, not item by item;…"
 lake:
   record_id: Kyles v. Whitley
   status: verified
@@ -55,7 +55,7 @@ Materiality is cumulative, and the prosecutor's duty reaches the police: the Sta
 The materiality standard is confidence-based, not a sufficiency or more-likely-than-not test: "The question is not whether the defendant would more likely than not have received a different verdict with the evidence, but whether in its absence he received a fair trial, understood as a trial resulting in a verdict worthy of confidence." — [*Id.* at 434](https://www.courtlistener.com/opinion/117923/kyles-v-whitley/#:~:text=The%20question%20is%20not%20whether). ^pin-434
 
 ## Application
-The favorable evidence the State withheld in Kyles's case — the inconsistent and evolving statements of the eyewitnesses and the informant, and impeachment material some of which was known only to the investigating police — had to be considered collectively, with the prosecutor charged with knowledge of what the police knew. Viewed cumulatively, the suppressed evidence put the whole case in such a different light as to undermine confidence in the verdict, so its nondisclosure was material and Kyles was entitled to a new trial.
+The favorable evidence the State withheld in Kyles's case (the inconsistent and evolving statements of the eyewitnesses and the informant, and impeachment material some of which was known only to the investigating police) had to be considered collectively, with the prosecutor charged with knowledge of what the police knew. Viewed cumulatively, the suppressed evidence put the whole case in such a different light as to undermine confidence in the verdict, so its nondisclosure was material and Kyles was entitled to a new trial.
 
 ## Conclusion
 The suppression of the cumulative favorable evidence violated *[[Brady v. Maryland|Brady]]*; the conviction and death sentence were reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for a new trial.
@@ -65,7 +65,7 @@ The suppression of the cumulative favorable evidence violated *[[Brady v. Maryla
 - *Kyles* refines [[Brady v. Maryland]] and [[United States v. Bagley]]: materiality is judged by the **cumulative** effect of all suppressed favorable evidence, and the individual prosecutor bears responsibility for favorable evidence known to others "acting on the government's behalf," including the police.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Progeny / Refinement*
+- [[Brady and Giglio]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Kyles v. Whitley*, 514 U.S. 419 (1995) — https://www.courtlistener.com/opinion/117923/kyles-v-whitley/ — pinpoints: 421, 434.
+- *Kyles v. Whitley*, 514 U.S. 419 (1995) — https://www.courtlistener.com/opinion/117923/kyles-v-whitley/. Pinpoints: 421, 434.

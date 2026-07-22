@@ -64,7 +64,7 @@ The officers' conversation was not interrogation under *[[Miranda v. Arizona|Mir
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Innis* supplies the controlling definition of "interrogation" (express questioning or its functional equivalent) for *[[Miranda v. Arizona|Miranda]]* purposes.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Anchor*
+- [[Miranda and Custodial Interrogation]] — *Key: Anchor*
 
 ## Sources
-- *Rhode Island v. Innis*, 446 U.S. 291 (1980) — https://www.courtlistener.com/opinion/110254/rhode-island-v-innis/ — pinpoints: 300–301.
+- *Rhode Island v. Innis*, 446 U.S. 291 (1980) — https://www.courtlistener.com/opinion/110254/rhode-island-v-innis/ (pinpoints: 300–301).

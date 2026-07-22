@@ -57,7 +57,7 @@ Investigative seizures are subject to the Fourth Amendment regardless of the lab
 That protection reaches detentions for fingerprinting: "Detentions for the sole purpose of obtaining fingerprints are no less subject to the constraints of the Fourth Amendment." — [*Id.* at 727](https://www.courtlistener.com/opinion/107912/davis-v-mississippi/#:~:text=Detentions%20for%20the%20sole%20purpose). ^pin-727
 
 ## Application
-Davis was seized in a dragnet — taken to police headquarters and fingerprinted without probable cause to arrest, without a warrant, and without any judicial authorization for the detention. Because that station-house detention was an unreasonable seizure, the fingerprints obtained during it were its fruit and had to be suppressed. The Court added a caveat: because fingerprinting is a brief, reliable, non-coercive process, a narrowly circumscribed procedure conducted under judicial authorization might in some future case satisfy the Fourth Amendment even on less than probable cause — but no such procedure was used here.
+Davis was seized in a dragnet: taken to police headquarters and fingerprinted without probable cause to arrest, without a warrant, and without any judicial authorization for the detention. Because that station-house detention was an unreasonable seizure, the fingerprints obtained during it were its fruit and had to be suppressed. The Court added a caveat: because fingerprinting is a brief, reliable, non-coercive process, a narrowly circumscribed procedure conducted under judicial authorization might in some future case satisfy the Fourth Amendment even on less than probable cause — but no such procedure was used here.
 
 ## Conclusion
 The dragnet fingerprinting detention was unreasonable and the fingerprints were inadmissible; the conviction was reversed. *Davis* establishes that investigatory detentions, including for fingerprinting, are full Fourth Amendment seizures requiring justification.
@@ -71,4 +71,4 @@ The dragnet fingerprinting detention was unreasonable and the fingerprints were 
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Davis v. Mississippi*, 394 U.S. 721 (1969) — https://www.courtlistener.com/opinion/107912/davis-v-mississippi/ — pinpoints: 726–727.
+- *Davis v. Mississippi*, 394 U.S. 721 (1969) — https://www.courtlistener.com/opinion/107912/davis-v-mississippi/. Pinpoints: 726–727.

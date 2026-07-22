@@ -44,7 +44,7 @@ tags:
   - automobile-exception
   - digital-privacy
   - warrant-requirement
-holding: "A cell phone found in a vehicle is not a 'container' for purposes of the automobile (vehicle) exception, so probable cause to search the vehicle does not authorize a warrantless search of the phone's data; extending Riley v. California, the search of Camou's phone — untimely as a search incident to arrest, unsupported by exigency, and outside the vehicle exception — was unconstitutional and was not saved by inevitable discovery or good faith."
+holding: "A cell phone found in a vehicle is not a 'container' for purposes of the automobile (vehicle) exception, so probable cause to search the vehicle does not authorize a warrantless search of the phone's data; extending Riley v. California, the search of Camou's phone (untimely as a search incident to arrest, unsupported by exigency, and outside the vehicle exception) was unconstitutional and was not saved by inevitable discovery or good faith."
 ---
 
 # United States v. Camou
@@ -53,10 +53,10 @@ holding: "A cell phone found in a vehicle is not a 'container' for purposes of t
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 2759861 → opinion 2759861 (773 F.3d 932, decided 2014-12-11); Rule quote string-matched to the CL opinion text 2026-07-07. S9 promotes. -->
 
 ## Background
-Border Patrol agents stopped Chad Camou's truck at a Highway 86 checkpoint in Westmorland, California, and found an undocumented immigrant hiding behind the front seats. At 10:40 p.m. the agents arrested Camou and seized both the truck and a cell phone from the cab. One hour and twenty minutes later, after booking and interviews, an agent searched the phone — scrolling through its call logs, then videos, then photographs — and discovered images of child pornography. Camou was charged with possession of child pornography and moved to suppress the images. The district court denied the motion, ruling the search was a valid [[Search Incident to Arrest|search incident to arrest]] and, alternatively, that the good-faith and inevitable discovery exceptions applied. Camou entered a conditional guilty plea and appealed.
+Border Patrol agents stopped Chad Camou's truck at a Highway 86 checkpoint in Westmorland, California, and found an undocumented immigrant hiding behind the front seats. At 10:40 p.m. the agents arrested Camou and seized both the truck and a cell phone from the cab. One hour and twenty minutes later, after booking and interviews, an agent searched the phone (scrolling through its call logs, then videos, then photographs) and discovered images of child pornography. Camou was charged with possession of child pornography and moved to suppress the images. The district court denied the motion, ruling the search was a valid [[Search Incident to Arrest|search incident to arrest]] and, alternatively, that the good-faith and inevitable discovery exceptions applied. Camou entered a conditional guilty plea and appealed.
 
 ## Issue
-Whether the warrantless search of Camou's cell phone — conducted an hour and twenty minutes after his arrest, on a phone taken from his truck — could be justified as a [[Search Incident to Arrest|search incident to arrest]], under the [[Exigent Circumstances and Hot Pursuit|exigency]] exception, or under the automobile (vehicle) exception.
+Whether the warrantless search of Camou's cell phone (conducted an hour and twenty minutes after his arrest, on a phone taken from his truck) could be justified as a [[Search Incident to Arrest|search incident to arrest]], under the [[Exigent Circumstances and Hot Pursuit|exigency]] exception, or under the automobile (vehicle) exception.
 
 ## Rule
 Under the vehicle exception, officers with probable cause may search a vehicle and any containers found in it without a warrant. But a cell phone is not such a container. Extending *[[Riley v. California|Riley]]* from the search-incident-to-arrest context, the court reasoned that the vast and qualitatively different privacy interest in a phone's data cannot be swept into a doctrine built for glove compartments, luggage, boxes, and bags, and held: "We hold, however, that cell phones are not containers for purposes of the vehicle exception." — 773 F.3d at 944. ^pin-944

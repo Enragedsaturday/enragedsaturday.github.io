@@ -72,4 +72,4 @@ OSHA's warrantless-inspection provision was unconstitutional; the declaratory ju
 - [[Special Needs and Administrative Searches]] — *Progeny (workplace inspections)*
 
 ## Sources
-- *Marshall v. Barlow's, Inc.*, 436 U.S. 307 (1978) — https://www.courtlistener.com/opinion/109866/marshall-v-barlows-inc/ — pinpoints: 311, 313, 324, 325.
+- *Marshall v. Barlow's, Inc.*, 436 U.S. 307 (1978) — https://www.courtlistener.com/opinion/109866/marshall-v-barlows-inc/. Pinpoints: 311, 313, 324, 325.

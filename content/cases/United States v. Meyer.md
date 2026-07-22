@@ -47,7 +47,7 @@ tags:
   - destruction-of-evidence
   - warrantless-entry
   - eighth-circuit
-holding: "A 'knock-and-talk' — approaching a home and knocking to ask questions — is a valid investigative technique, and where a suspect's evasive answers during such an encounter give officers an objectively reasonable basis to believe he will destroy digital evidence if left alone, the resulting exigency justifies a warrantless entry and seizure, provided the officers did not manufacture the exigency by threatening to violate the Fourth Amendment."
+holding: "A 'knock-and-talk' (approaching a home and knocking to ask questions) is a valid investigative technique, and where a suspect's evasive answers during such an encounter give officers an objectively reasonable basis to believe he will destroy digital evidence if left alone, the resulting exigency justifies a warrantless entry and seizure, provided the officers did not manufacture the exigency by threatening to violate the Fourth Amendment."
 aliases:
   - United States v. Meyer
   - "United States v. Meyer (8th Cir. 2021)"

@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-The petitioner shot her husband, then attempted suicide, then changed her mind and telephoned her daughter, who called the police. Police arrived, found the husband dead and the petitioner injured, transported her to the hospital, and conducted a brief "victim-or-suspect" search. Homicide investigators then arrived and conducted a two-hour general, warrantless search of the home — the same day as the killing — seizing evidence used against her. The Louisiana courts upheld the search, distinguishing *[[Mincey v. Arizona|Mincey]]* and finding a diminished expectation of privacy.
+The petitioner shot her husband, then attempted suicide, then changed her mind and telephoned her daughter, who called the police. Police arrived, found the husband dead and the petitioner injured, transported her to the hospital, and conducted a brief "victim-or-suspect" search. Homicide investigators then arrived and conducted a two-hour general, warrantless search of the home (the same day as the killing), seizing evidence used against her. The Louisiana courts upheld the search, distinguishing *[[Mincey v. Arizona|Mincey]]* and finding a diminished expectation of privacy.
 
 ## Issue
 Whether a warrantless two-hour general search of a private home that is a recent homicide scene falls within an exception to the warrant requirement.
 
 ## Rule
-No — there is no murder-scene exception: in *[[Mincey v. Arizona|Mincey]]* "we unanimously rejected the contention that one of the exceptions to the Warrant Clause is a 'murder scene exception,'" and "we held that 'the "murder scene exception" . . . is inconsistent with the Fourth and Fourteenth Amendments — that the warrantless search of Mincey's apartment was not constitutionally permissible simply because a homicide had recently occurred there.' . . . *Mincey* is squarely on point in the instant case." — 469 U.S. at 21. ^pin-21
+No, there is no murder-scene exception: in *[[Mincey v. Arizona|Mincey]]* "we unanimously rejected the contention that one of the exceptions to the Warrant Clause is a 'murder scene exception,'" and "we held that 'the "murder scene exception" . . . is inconsistent with the Fourth and Fourteenth Amendments — that the warrantless search of Mincey's apartment was not constitutionally permissible simply because a homicide had recently occurred there.' . . . *Mincey* is squarely on point in the instant case." — 469 U.S. at 21. ^pin-21
 
 The brevity of the search did not save it: "A 2-hour general search remains a significant intrusion on petitioner's privacy and therefore may only be conducted subject to the constraints — including the warrant requirement — of the Fourth Amendment." — *Id.* ^pin-21a
 
@@ -68,4 +68,4 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). A rec
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Thompson v. Louisiana*, 469 U.S. 17 (1984) — https://www.courtlistener.com/opinion/111282/thompson-v-louisiana/ — pinpoint: 21.
+- *Thompson v. Louisiana*, 469 U.S. 17 (1984) — https://www.courtlistener.com/opinion/111282/thompson-v-louisiana/. Pinpoint: 21.

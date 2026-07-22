@@ -65,7 +65,7 @@ The convictions were affirmed. There is no Sixth Amendment violation where an in
 - No negative treatment. *Hoffa* fixes the pre-attachment boundary that frames the deliberate-elicitation rule of [[Massiah v. United States]]; the Sixth Amendment is offense-specific and attaches only at the initiation of adversary judicial proceedings.
 
 ## Appears on
-- [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*
+- [[Sixth Amendment Right to Counsel]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Hoffa v. United States*, 385 U.S. 293 (1966) — https://www.courtlistener.com/opinion/107318/hoffa-v-united-states/ — pinpoint: 310.
+- *Hoffa v. United States*, 385 U.S. 293 (1966) — https://www.courtlistener.com/opinion/107318/hoffa-v-united-states/. Pinpoint: 310.

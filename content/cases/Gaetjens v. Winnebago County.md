@@ -55,7 +55,7 @@ holding: "Officers who had an objectively reasonable basis to believe a missing 
 Sally Gaetjens, who bred cats in her home, was told by her doctor to go to the hospital and then could not be reached. Her doctor and a neighbor (her listed emergency contact) grew alarmed, and the neighbor called police reporting a possible medical emergency. Officers found packages, untended garbage, and a full mailbox; entering with the neighbor's key, they found the home so noxious it was deemed a public-safety hazard. The county condemned the home and animal-services officers removed dozens of cats. Gaetjens sued under § 1983, and the district court granted the defendants summary judgment.
 
 ## Issue
-Whether officers' warrantless entry into the home of a missing person believed to be in medical distress — and the ensuing condemnation and removal of animals — violated the Fourth Amendment.
+Whether officers' warrantless entry into the home of a missing person believed to be in medical distress (and the ensuing condemnation and removal of animals) violated the Fourth Amendment.
 
 ## Rule
 The Seventh Circuit affirmed, holding that each intrusion fell within an [[Exigent Circumstances and Hot Pursuit|exigency]] exception governed by an objective-reasonableness standard. The entry to look for Gaetjens fit the emergency-aid exception squarely: "The home entry in this case likewise falls into the heartland of emergency-aid situations. ... His warrantless entry of the Loves Park home thus did not violate the Fourth Amendment." — 4 F.4th at 493–94. The touchstone is whether officers had an objectively reasonable basis to believe someone inside needed immediate aid.
@@ -70,7 +70,7 @@ The grant of summary judgment to the defendants was **affirmed**; the warrantles
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Gaetjens* is a recent Seventh Circuit application of the emergency-aid exception (*[[Brigham City v. Stuart]]*), reaffirming that a warrantless home entry to render aid turns on an objectively reasonable belief that an occupant needs immediate help, not on the officer's subjective motive.
 
 ## Appears on
-- [[Emergency Aid]] — *Recent application — illustrates (Binding in-circuit — 7th Cir.)*
+- [[Emergency Aid]] — *Recent application: illustrates (Binding in-circuit — 7th Cir.)*
 
 ## Sources
 - [*Gaetjens v. Winnebago County*, 4 F.4th 487 (7th Cir. 2021)](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) — pinpoint: 493–94 (emergency-aid holding); Rule quote string-matched to the CL opinion text 2026-07-07.

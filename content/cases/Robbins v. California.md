@@ -50,7 +50,7 @@ holding: "Absent a valid exception, a closed, opaque container whose contents ar
 
 # Robbins v. California
 
-*453 U.S. 420 (1981)* (No. 80-148) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)** — overruled by [[United States v. Ross]] (1982)
+*453 U.S. 420 (1981)* (No. 80-148) · Supreme Court of the United States · **Historical** · Treatment: **Overruled — rendered as history (⚪ unverified, awaiting machine verification)**, overruled by [[United States v. Ross]] (1982)
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the subsequent-history treatment below is authored orientation, not machine-certified. Identity cluster 110558 → 453 U.S. 420, decided 1981-07-01; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background

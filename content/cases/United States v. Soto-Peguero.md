@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-While securing Soto-Peguero's apartment, Task Force members exceeded the scope of a [[Securing the Scene|protective sweep]] — manipulating an object in a vent and opening a black bag — and found heroin and a gun. The District Court agreed the search went beyond a lawful [[Securing the Scene|protective sweep]], but denied suppression under the inevitable discovery exception, crediting Special Agent Rideout's testimony that he would have sought and obtained a search warrant regardless. Soto-Peguero appealed.
+While securing Soto-Peguero's apartment, Task Force members exceeded the scope of a [[Securing the Scene|protective sweep]] (manipulating an object in a vent and opening a black bag) and found heroin and a gun. The District Court agreed the search went beyond a lawful [[Securing the Scene|protective sweep]], but denied suppression under the inevitable discovery exception, crediting Special Agent Rideout's testimony that he would have sought and obtained a search warrant regardless. Soto-Peguero appealed.
 
 ## Issue
 Whether evidence found during a search that exceeded a lawful [[Securing the Scene|protective sweep]] was nonetheless admissible under the inevitable discovery exception to the exclusionary rule.
@@ -60,10 +60,10 @@ The inevitable discovery exception applied; the First Circuit affirmed the denia
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 1st Cir.**
-- No negative treatment. *Soto-Peguero* is an illustrative application in which [[Inevitable Discovery and Independent Source|inevitable discovery]] **succeeded** — the government showed a warrant would have been sought and obtained — the mirror image of [[United States v. Neugin]] (10th Cir.), where the chain to discovery was too speculative.
+- No negative treatment. *Soto-Peguero* is an illustrative application in which [[Inevitable Discovery and Independent Source|inevitable discovery]] **succeeded** (the government showed a warrant would have been sought and obtained), the mirror image of [[United States v. Neugin]] (10th Cir.), where the chain to discovery was too speculative.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Recent development (role-based)*
 
 ## Sources
-- *United States v. Soto-Peguero*, 978 F.3d 13 (1st Cir. 2020) — https://www.courtlistener.com/opinion/4798028/united-states-v-soto-peguero/ — pinpoint given as slip-opinion page (CourtListener carries the slip opinion; cluster 4798028 → opinion 4578375).
+- *United States v. Soto-Peguero*, 978 F.3d 13 (1st Cir. 2020). https://www.courtlistener.com/opinion/4798028/united-states-v-soto-peguero/ — pinpoint given as slip-opinion page (CourtListener carries the slip opinion; cluster 4798028 → opinion 4578375).

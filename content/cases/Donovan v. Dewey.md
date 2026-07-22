@@ -31,7 +31,7 @@ homes:
 related: ["[[United States v. Biswell]]", "[[Marshall v. Barlow's Inc.]]", "[[See v. City of Seattle]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "pervasively-regulated", "mines", "warrant"]
-holding: "Warrantless inspections of a pervasively regulated industry (mines) are reasonable where a comprehensive statutory scheme — defining the certainty, regularity, frequency, and scope of inspection — provides a constitutionally adequate substitute for a warrant."
+holding: "Warrantless inspections of a pervasively regulated industry (mines) are reasonable where a comprehensive statutory scheme (defining the certainty, regularity, frequency, and scope of inspection) provides a constitutionally adequate substitute for a warrant."
 lake:
   record_id: Donovan v. Dewey
   status: under_review

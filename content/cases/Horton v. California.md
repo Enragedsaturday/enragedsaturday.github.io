@@ -31,7 +31,7 @@ homes:
 related: ["[[Coolidge v. New Hampshire]]", "[[Arizona v. Hicks]]", "[[Texas v. Brown]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "seizure", "warrant"]
-holding: "Sets the modern plain-view SEIZURE test and DROPS the inadvertence requirement: a warrantless seizure of an item in plain view is lawful when the officer lawfully reaches the vantage point, the item's incriminating character is immediately apparent, and the officer has a lawful right of access to it — inadvertence is not required."
+holding: "Sets the modern plain-view SEIZURE test and DROPS the inadvertence requirement: a warrantless seizure of an item in plain view is lawful when the officer lawfully reaches the vantage point, the item's incriminating character is immediately apparent, and the officer has a lawful right of access to it. Inadvertence is not required."
 lake:
   record_id: Horton v. California
   status: verified_identity
@@ -59,7 +59,7 @@ A lawful plain-view seizure requires a lawful vantage plus two further condition
 "Second, not only must the officer be lawfully located in a place from which the object can be plainly seen, but he or she must also have a lawful right of access to the object itself." — [*Id.* at 137](https://www.courtlistener.com/opinion/112448/horton-v-california/#:~:text=Second%2C%20not%20only%20must%20the). ^pin-137
 
 ## Application
-The officer was lawfully in Horton's home executing a valid warrant; the weapons were in plain view, their incriminating character was immediately apparent, and the officer had lawful access to them. That the officer expected — and thus did not inadvertently discover — the weapons did not invalidate the seizure, because inadvertence is not a condition of a lawful plain-view seizure. The seizure was therefore constitutional.
+The officer was lawfully in Horton's home executing a valid warrant; the weapons were in plain view, their incriminating character was immediately apparent, and the officer had lawful access to them. That the officer expected (and thus did not inadvertently discover) the weapons did not invalidate the seizure, because inadvertence is not a condition of a lawful plain-view seizure. The seizure was therefore constitutional.
 
 ## Conclusion
 The warrantless seizure of the weapons was lawful; the judgment was affirmed. Inadvertence is not required for a plain-view seizure.
@@ -69,7 +69,7 @@ The warrantless seizure of the weapons was lawful; the judgment was affirmed. In
 - No negative treatment. *Horton* states the modern plain-view seizure test and drops the inadvertence element suggested by the [[Coolidge v. New Hampshire]] plurality, building on [[Arizona v. Hicks]]'s "immediately apparent" requirement.
 
 ## Appears on
-- [[Plain View Doctrine]] — *Key — Anchor*
+- [[Plain View Doctrine]] — *Key: Anchor*
 
 ## Sources
-- *Horton v. California*, 496 U.S. 128 (1990) — https://www.courtlistener.com/opinion/112448/horton-v-california/ — pinpoints: 130, 136, 137.
+- *Horton v. California*, 496 U.S. 128 (1990) — https://www.courtlistener.com/opinion/112448/horton-v-california/. Pinpoints: 130, 136, 137.

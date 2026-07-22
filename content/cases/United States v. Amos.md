@@ -43,7 +43,7 @@ tags:
   - seizure
   - show-of-authority
   - terry-stop
-holding: "A show of authority does not effect a Fourth Amendment seizure unless the suspect actually submits to it; a suspect already in motion who raises his hands only partway and pauses momentarily before fleeing has not submitted, so no seizure occurs until he is physically restrained — meaning a handgun that falls at that point is not the fruit of any earlier, unsupported seizure."
+holding: "A show of authority does not effect a Fourth Amendment seizure unless the suspect actually submits to it; a suspect already in motion who raises his hands only partway and pauses momentarily before fleeing has not submitted, so no seizure occurs until he is physically restrained, meaning a handgun that falls at that point is not the fruit of any earlier, unsupported seizure."
 ---
 
 # United States v. Amos

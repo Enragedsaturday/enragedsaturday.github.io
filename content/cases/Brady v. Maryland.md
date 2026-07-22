@@ -31,7 +31,7 @@ homes:
 related: ["[[Giglio v. United States]]", "[[United States v. Bagley]]", "[[Kyles v. Whitley]]"]
 aliases: ["Brady v. MD"]
 tags: ["case", "due-process", "brady", "disclosure", "exculpatory-evidence"]
-holding: "The prosecution's suppression of evidence favorable to the accused that is material to guilt or punishment violates due process —…"
+holding: "The prosecution's suppression of evidence favorable to the accused that is material to guilt or punishment violates due process…"
 lake:
   record_id: Brady v. Maryland
   status: verified

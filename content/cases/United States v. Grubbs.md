@@ -31,7 +31,7 @@ homes:
 related: ["[[Illinois v. Gates]]", "[[Groh v. Ramirez]]", "[[Massachusetts v. Sheppard]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "anticipatory-warrant", "triggering-condition", "particularity"]
-holding: "**Anticipatory warrants** — warrants that take effect only upon a future 'triggering condition' — are not categorically…"
+holding: "**Anticipatory warrants** (warrants that take effect only upon a future 'triggering condition') are not categorically…"
 lake:
   record_id: United States v. Grubbs
   status: verified
@@ -50,14 +50,14 @@ Jeffrey Grubbs bought a child-pornography videotape from a website run by an und
 (1) Whether anticipatory search warrants are categorically unconstitutional under the Fourth Amendment's probable-cause requirement; and (2) whether the Fourth Amendment requires the triggering condition to be set forth in the warrant itself.
 
 ## Rule
-No to both. An anticipatory warrant — one "based upon an affidavit showing probable cause that at some future time (but not presently) certain evidence of crime will be located at a specified place" — is constitutional. "Anticipatory warrants are, therefore, no different in principle from ordinary warrants. They require the magistrate to determine (1) that it is *now probable* that (2) contraband, evidence of a crime, or a fugitive *will be* on the described premises (3) when the warrant is executed." — 547 U.S. at 96. ^pin-96
+No to both. An anticipatory warrant (one "based upon an affidavit showing probable cause that at some future time (but not presently) certain evidence of crime will be located at a specified place") is constitutional. "Anticipatory warrants are, therefore, no different in principle from ordinary warrants. They require the magistrate to determine (1) that it is *now probable* that (2) contraband, evidence of a crime, or a fugitive *will be* on the described premises (3) when the warrant is executed." — 547 U.S. at 96. ^pin-96
 
 For a conditioned anticipatory warrant, "two prerequisites of probability must be satisfied": it must be probable both that the triggering condition will occur and that, if it does, the object of the search will be found at the place. — [*Id.* at 96–97](https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/#:~:text=two%20prerequisites%20of%20probability%20must). ^pin-96a
 
 The triggering condition need not appear on the warrant: "Because the Fourth Amendment does not require that the triggering condition for an anticipatory search warrant be set forth in the warrant itself, the Court of Appeals erred in invalidating the warrant at issue here." — [*Id.* at 99](https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/#:~:text=Because%20the%20Fourth%20Amendment%20does). ^pin-99
 
 ## Application
-On these facts the warrant was valid. The affidavit's triggering condition — controlled delivery and movement of the package into the residence — established that it was then probable both that the delivery would occur and that, once it did, the contraband would be in the home; the supporting probable cause therefore existed when the warrant issued. The Court rejected Grubbs' [[Particularity|particularity]] argument: the Fourth Amendment's [[Particularity|particularity]] requirement reaches only the place to be searched and the persons or things to be seized, and "does not include the conditions precedent to execution of the warrant." Because probable cause itself — "the quintessential 'precondition to the valid exercise of executive power'" — need not be recited on the warrant, neither must the triggering condition. The controlled delivery satisfied the condition, and the search was lawful.
+On these facts the warrant was valid. The affidavit's triggering condition (controlled delivery and movement of the package into the residence) established that it was then probable both that the delivery would occur and that, once it did, the contraband would be in the home; the supporting probable cause therefore existed when the warrant issued. The Court rejected Grubbs' [[Particularity|particularity]] argument: the Fourth Amendment's [[Particularity|particularity]] requirement reaches only the place to be searched and the persons or things to be seized, and "does not include the conditions precedent to execution of the warrant." Because probable cause itself ("the quintessential 'precondition to the valid exercise of executive power'") need not be recited on the warrant, neither must the triggering condition. The controlled delivery satisfied the condition, and the search was lawful.
 
 ## Conclusion
 Anticipatory warrants are constitutional, and the triggering condition need not be stated on the warrant's face; the Ninth Circuit's judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -67,7 +67,7 @@ Anticipatory warrants are constitutional, and the triggering condition need not 
 - No negative subsequent treatment identified. *Grubbs* applies the totality probable-cause standard of [[Illinois v. Gates]] to anticipatory warrants and distinguishes the [[Particularity|particularity]] defect of [[Groh v. Ramirez]] (which concerned the place/things-to-be-seized [[Particularity|particularity]] that the Fourth Amendment's text *does* require).
 
 ## Appears on
-- [[Probable Cause in the Affidavit]] — *Key — Progeny / Refinement*
+- [[Probable Cause in the Affidavit]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Grubbs*, 547 U.S. 90 (2006) — https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/ — pinpoints: 96, 99.
+- *United States v. Grubbs*, 547 U.S. 90 (2006) — https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/ (pinpoints: 96, 99).

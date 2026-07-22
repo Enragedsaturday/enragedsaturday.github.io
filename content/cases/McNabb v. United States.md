@@ -31,7 +31,7 @@ homes:
 related: ["[[Mallory v. United States]]", "[[Corley v. United States]]", "[[Gerstein v. Pugh]]", "[[County of Riverside v. McLaughlin]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-presentment", "supervisory-power", "federal"]
-holding: "Under the Court's supervisory power over the federal courts, confessions obtained from federal arrestees during a prolonged detention conducted in flagrant disregard of the statutory duty to bring them promptly before a committing magistrate are inadmissible — independent of the Constitution."
+holding: "Under the Court's supervisory power over the federal courts, confessions obtained from federal arrestees during a prolonged detention conducted in flagrant disregard of the statutory duty to bring them promptly before a committing magistrate are inadmissible: independent of the Constitution."
 lake:
   record_id: McNabb v. United States
   status: verified

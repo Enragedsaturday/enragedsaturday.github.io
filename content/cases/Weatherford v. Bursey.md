@@ -45,7 +45,7 @@ tags:
   - undercover-informant
   - attorney-client
   - section-1983
-holding: "The presence of a government undercover agent at defense meetings does not per se violate the Sixth Amendment right to counsel; there is no violation absent tainted evidence, communication of defense strategy to the prosecution (creating a realistic possibility of injury to the defendant or benefit to the State), or purposeful intrusion — none of which occurred where the agent attended at the defense's own invitation, sought no information, and conveyed nothing about the defense to the prosecutors."
+holding: "The presence of a government undercover agent at defense meetings does not per se violate the Sixth Amendment right to counsel; there is no violation absent tainted evidence, communication of defense strategy to the prosecution (creating a realistic possibility of injury to the defendant or benefit to the State), or purposeful intrusion, none of which occurred where the agent attended at the defense's own invitation, sought no information, and conveyed nothing about the defense to the prosecutors."
 aliases:
   - Weatherford v. Bursey
   - "Weatherford v. Bursey (1977)"

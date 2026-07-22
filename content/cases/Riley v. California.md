@@ -66,8 +66,8 @@ Officers must generally obtain a warrant before searching a cell phone seized in
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Riley* cabins the [[Common Legal Terms#bright-line-rule|bright-line rule]] of [[United States v. Robinson]] for digital data and anchors the digital-privacy reasoning later extended in [[Carpenter v. United States]].
 
 ## Appears on
-- [[SIA Cell Phones]] — *Key — Anchor*
+- [[SIA Cell Phones]] — *Key: Anchor*
 - [[Plain View Doctrine]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Riley v. California*, 573 U.S. 373 (2014) — https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/ — interior pincite(s) 403 retired pending official-reporter pagination (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).
+- *Riley v. California*, 573 U.S. 373 (2014) — https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/. Interior pincite(s) 403 retired pending official-reporter pagination (CL carries an unpaginated case-text import; pinpoint per the U.S. Reports).

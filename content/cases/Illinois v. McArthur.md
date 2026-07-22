@@ -31,7 +31,7 @@ homes:
 related: ["[[Michigan v. Summers]]", "[[Segura v. United States]]", "[[Bailey v. United States]]", "[[Welsh v. Wisconsin]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "securing-the-scene", "temporary-seizure", "exigent-circumstances", "warrant"]
-holding: "Where police have probable cause to believe a home contains contraband, they may reasonably impose a temporary restraint on a resident —…"
+holding: "Where police have probable cause to believe a home contains contraband, they may reasonably impose a temporary restraint on a resident…"
 lake:
   record_id: Illinois v. McArthur
   status: verified
@@ -57,7 +57,7 @@ The Court considered: probable cause to believe the home held contraband; good r
 "We have found no case in which this Court has held unlawful a temporary seizure that was supported by probable cause and was designed to prevent the loss of evidence while the police diligently obtained a warrant in a reasonable period of time." — [*Id.* at 334](https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/#:~:text=We%20have%20found%20no%20case). ^pin-334
 
 ## Application
-The officers had probable cause from Tera McArthur's reliable, firsthand report; good reason to fear McArthur would destroy the marijuana if left alone inside; and they imposed only a limited restraint — keeping him from entering unaccompanied — rather than searching without a warrant. The restraint lasted only about two hours while an officer diligently obtained the warrant. Considered together, these circumstances made the temporary restriction reasonable.
+The officers had probable cause from Tera McArthur's reliable, firsthand report; good reason to fear McArthur would destroy the marijuana if left alone inside; and they imposed only a limited restraint, keeping him from entering unaccompanied, rather than searching without a warrant. The restraint lasted only about two hours while an officer diligently obtained the warrant. Considered together, these circumstances made the temporary restriction reasonable.
 
 ## Conclusion
 The temporary restraint pending the warrant was reasonable; the evidence was admissible and the suppression reversed.
@@ -67,7 +67,7 @@ The temporary restraint pending the warrant was reasonable; the evidence was adm
 - No negative treatment. *McArthur* extends the scene-securing logic of [[Michigan v. Summers]] and [[Segura v. United States]] to a brief, probable-cause-based restraint on a resident pending a warrant; it is distinguished from [[Welsh v. Wisconsin]] (warrantless home entry for a nonjailable offense).
 
 ## Appears on
-- [[Securing the Scene]] — *Key — Anchor*
+- [[Securing the Scene]] — *Key: Anchor*
 
 ## Sources
-- *Illinois v. McArthur*, 531 U.S. 326 (2001) — https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/ — pinpoints: 331, 334.
+- *Illinois v. McArthur*, 531 U.S. 326 (2001) — https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/. Pinpoints: 331, 334.

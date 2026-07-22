@@ -31,7 +31,7 @@ homes:
 related: ["[[Napue v. Illinois]]", "[[Giglio v. United States]]", "[[Brady v. Maryland]]", "[[Banks v. Dretke]]", "[[Glossip v. Oklahoma]]"]
 aliases: []
 tags: ["case", "brady", "giglio", "napue", "perjured-testimony", "prosecutorial-misconduct", "due-process", "historical"]
-holding: "The knowing use of perjured testimony by the prosecution to obtain a conviction violates Fourteenth Amendment due process — a 'deliberate deception of court and jury' is as inconsistent with justice as obtaining a conviction by intimidation. (Leave to file the original habeas petition was denied for failure to exhaust state remedies.)"
+holding: "The knowing use of perjured testimony by the prosecution to obtain a conviction violates Fourteenth Amendment due process. A 'deliberate deception of court and jury' is as inconsistent with justice as obtaining a conviction by intimidation. (Leave to file the original habeas petition was denied for failure to exhaust state remedies.)"
 lake:
   record_id: Mooney v. Holohan
   status: under_review
@@ -55,7 +55,7 @@ Knowing use of perjured testimony violates due process. The Fourteenth Amendment
 The Court also confirmed that prosecutorial conduct counts as state action: "the action of prosecuting officers on behalf of the State … may constitute state action within the purview of the Fourteenth Amendment." — *Id.*
 
 ## Application
-The Court accepted that the alleged conduct — if proven — would violate due process, articulating the principle that a conviction obtained through testimony the State knows to be perjured cannot stand. But it did not reach the truth of Mooney's allegations. Because relief by [[Common Legal Terms#habeas-corpus|habeas corpus]] appeared to be available in the California courts and Mooney had not shown that the State afforded no corrective judicial process, the Court held it should not entertain an original petition; leave to file was denied without prejudice to an application to the state courts.
+The Court accepted that the alleged conduct (if proven) would violate due process, articulating the principle that a conviction obtained through testimony the State knows to be perjured cannot stand. But it did not reach the truth of Mooney's allegations. Because relief by [[Common Legal Terms#habeas-corpus|habeas corpus]] appeared to be available in the California courts and Mooney had not shown that the State afforded no corrective judicial process, the Court held it should not entertain an original petition; leave to file was denied without prejudice to an application to the state courts.
 
 ## Conclusion
 Leave to file the original [[Common Legal Terms#habeas-corpus|habeas]] petition was denied for failure to exhaust available state remedies. The decision is foundational not for its procedural disposition but for its due-process holding: a state may not knowingly use perjured testimony to obtain a conviction.
@@ -65,7 +65,7 @@ Leave to file the original [[Common Legal Terms#habeas-corpus|habeas]] petition 
 - *Mooney* is the **historical origin** of the prosecutorial-honesty line in due process. Its knowing-perjury rule was extended and refined by [[Napue v. Illinois]] (duty to correct false testimony) and [[Giglio v. United States]] (applies to impeachment of cooperating witnesses), applied most recently in [[Glossip v. Oklahoma]] (2025), and runs alongside the affirmative-disclosure duty of [[Brady v. Maryland]] and [[Banks v. Dretke]]. The core principle remains good law.
 
 ## Appears on
-- [[Brady and Giglio]] — *Key — Anchor (historical origin)*
+- [[Brady and Giglio]] — *Key: Anchor (historical origin)*
 
 ## Sources
-- *Mooney v. Holohan*, 294 U.S. 103 (1935) (per curiam) — https://www.courtlistener.com/opinion/102372/mooney-v-holohan/ — pinpoint: 112.
+- *Mooney v. Holohan*, 294 U.S. 103 (1935) (per curiam) — https://www.courtlistener.com/opinion/102372/mooney-v-holohan/ (pinpoint: 112).

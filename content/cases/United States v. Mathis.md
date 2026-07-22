@@ -65,7 +65,7 @@ Even assuming the warrant lacked probable cause, the *[[United States v. Leon|Le
 - No negative subsequent treatment identified. The decision applies [[United States v. Leon]] / [[Massachusetts v. Sheppard]] objective good-faith reliance to a phone-search warrant, paralleling [[United States v. Jackson]] (8th Cir.); the underlying warrant requirement for cell phones is governed by [[Riley v. California]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Mathis*, 767 F.3d 1264 (11th Cir. 2014) — https://www.courtlistener.com/opinion/2736649/united-states-v-arnold-maurice-mathis/ — pinpoints: 1276, 1277.
+- *United States v. Mathis*, 767 F.3d 1264 (11th Cir. 2014) — https://www.courtlistener.com/opinion/2736649/united-states-v-arnold-maurice-mathis/. Pinpoints: 1276, 1277.

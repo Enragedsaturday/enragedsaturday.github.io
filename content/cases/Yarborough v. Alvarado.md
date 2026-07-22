@@ -47,7 +47,7 @@ lake:
 Seventeen-year-old Michael Alvarado was questioned by a sheriff's detective about a murder committed during an attempted carjacking by his older companion. Alvarado's parents brought him to the station and waited outside while the detective interviewed him for about two hours without [[Miranda and Custodial Interrogation|Miranda warnings]]; she appealed to his interest in being truthful, twice offered breaks, and let him go home afterward. He made incriminating statements and was later charged. The California courts held he had not been in custody. On federal [[Common Legal Terms#habeas-corpus|habeas]], the Ninth Circuit granted relief, reasoning that Alvarado's youth and inexperience should have been weighed in the custody analysis.
 
 ## Issue
-Whether the state court's determination that Alvarado was not "in custody" — made without considering his age and inexperience — was an unreasonable application of clearly established federal law warranting [[Common Legal Terms#habeas-corpus|habeas]] relief under AEDPA.
+Whether the state court's determination that Alvarado was not "in custody" (made without considering his age and inexperience) was an unreasonable application of clearly established federal law warranting [[Common Legal Terms#habeas-corpus|habeas]] relief under AEDPA.
 
 ## Rule
 No. Under AEDPA, "[w]e cannot grant relief . . . by conducting our own independent inquiry into whether the state court was correct as a *de novo* matter. . . . Relief is available under §2254(d)(1) only if the state court's decision is objectively unreasonable. . . . Under that standard, relief cannot be granted." — 541 U.S. at 665–666. ^pin-665
@@ -68,7 +68,7 @@ The state court reasonably applied clearly established law; AEDPA barred relief.
 - The objective custody framework appears in [[California v. Beheler]] and [[Thompson v. Keohane]], in the [[Miranda v. Arizona]] line.
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*
+- [[Miranda and Custodial Interrogation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Yarborough v. Alvarado*, 541 U.S. 652 (2004) — https://www.courtlistener.com/opinion/134748/yarborough-v-alvarado/ — pinpoints: 665, 666, 668.
+- *Yarborough v. Alvarado*, 541 U.S. 652 (2004) — https://www.courtlistener.com/opinion/134748/yarborough-v-alvarado/ (pinpoints: 665, 666, 668).

@@ -42,7 +42,7 @@ tags:
   - impeachment
   - jailhouse-informant
   - massiah
-holding: "A statement obtained from a defendant in violation of the Sixth Amendment right to counsel — here, by a jailhouse informant — is inadmissible in the prosecution's case-in-chief but may be used to impeach the defendant's conflicting testimony if he takes the stand at trial."
+holding: "A statement obtained from a defendant in violation of the Sixth Amendment right to counsel (here, by a jailhouse informant) is inadmissible in the prosecution's case-in-chief but may be used to impeach the defendant's conflicting testimony if he takes the stand at trial."
 aliases:
   - Kansas v. Ventris
   - "Kansas v. Ventris (2009)"
@@ -63,7 +63,7 @@ Whether a statement taken from a defendant in violation of his Sixth Amendment r
 Analogizing to the impeachment exceptions the Court has recognized for other unlawfully obtained evidence, the Court held: "We hold that the informant's testimony, concededly elicited in violation of the Sixth Amendment, was admissible to challenge Ventris's inconsistent testimony at trial." — 556 U.S. at 594. ^pin-594
 
 ## Application
-The Court reasoned that the Sixth Amendment violation was complete at the time of the uncounseled interrogation; suppression from the prosecution's case-in-chief is the remedy for that wrong. Excluding the statement even for impeachment would add little deterrence — officers gain little by planting an informant on the off chance the defendant later testifies inconsistently — while handing the defendant a shield behind which to commit perjury unchallenged. Weighing those interests as it had with evidence tainted under *[[Miranda v. Arizona|Miranda]]* and the Fourth Amendment, the Court allowed impeachment use.
+The Court reasoned that the Sixth Amendment violation was complete at the time of the uncounseled interrogation; suppression from the prosecution's case-in-chief is the remedy for that wrong. Excluding the statement even for impeachment would add little deterrence (officers gain little by planting an informant on the off chance the defendant later testifies inconsistently) while handing the defendant a shield behind which to commit perjury unchallenged. Weighing those interests as it had with evidence tainted under *[[Miranda v. Arizona|Miranda]]* and the Fourth Amendment, the Court allowed impeachment use.
 
 ## Conclusion
 The judgment of the Kansas Supreme Court was **reversed** and the case [[Reading and Citing Cases#on-remand|remanded]]. Scalia, J., delivered the opinion of the Court; Stevens, J. (joined by Ginsburg, J.), dissented.

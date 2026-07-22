@@ -31,7 +31,7 @@ homes:
 related: ["[[United States v. Jacobsen]]", "[[United States v. Place]]", "[[Texas v. Brown]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "controlled-delivery", "container", "plain-view"]
-holding: "Reopening a container after a lawful controlled delivery is not a new search where no substantial likelihood exists that the contents changed during a gap in surveillance — the earlier lawful inspection already extinguished any privacy interest."
+holding: "Reopening a container after a lawful controlled delivery is not a new search where no substantial likelihood exists that the contents changed during a gap in surveillance. The earlier lawful inspection already extinguished any privacy interest."
 lake:
   record_id: Illinois v. Andreas
   status: verified

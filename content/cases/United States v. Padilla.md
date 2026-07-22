@@ -31,7 +31,7 @@ homes:
 related: ["[[Alderman v. United States]]", "[[Rakas v. Illinois]]", "[[Rawlings v. Kentucky]]", "[[Soldal v. Cook County]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "conspiracy", "expectation-of-privacy"]
-holding: "There is no 'coconspirator exception' to Fourth Amendment standing; a defendant's supervisory role in or joint control over a conspiracy does not by itself confer standing — only a personal privacy or property interest invaded by the search does."
+holding: "There is no 'coconspirator exception' to Fourth Amendment standing; a defendant's supervisory role in or joint control over a conspiracy does not by itself confer standing. Only a personal privacy or property interest invaded by the search does."
 lake:
   record_id: United States v. Padilla
   status: verified
@@ -55,7 +55,7 @@ No; standing is personal and the conspiracy adds nothing to it. Quoting *[[Alder
 "Expectations of privacy and property interests govern the analysis of Fourth Amendment search and seizure claims. Participants in a criminal conspiracy may have such expectations or interests, but the conspiracy itself neither adds to nor detracts from them." — [*Id.* at 82](https://www.courtlistener.com/opinion/112856/united-states-v-padilla/#:~:text=Expectations%20of%20privacy%20and%20property). ^pin-82b
 
 ## Application
-The respondents' positions in the conspiracy — one serving as the "communication link," others "in charge of transportation" — had "no bearing on their respective Fourth Amendment rights." Whether any of them could suppress the cocaine turned, case by case, on whether that respondent personally held a property interest interfered with by the stop or a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] invaded by the search of the car — not on his conspiratorial role. The Ninth Circuit's exception both contradicted *[[Alderman v. United States|Alderman]]* and was at odds with the personal-rights principle.
+The respondents' positions in the conspiracy (one serving as the "communication link," others "in charge of transportation") had "no bearing on their respective Fourth Amendment rights." Whether any of them could suppress the cocaine turned, case by case, on whether that respondent personally held a property interest interfered with by the stop or a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] invaded by the search of the car, not on his conspiratorial role. The Ninth Circuit's exception both contradicted *[[Alderman v. United States|Alderman]]* and was at odds with the personal-rights principle.
 
 ## Conclusion
 [[Common Legal Terms#per-curiam|Per curiam]]: the "coconspirator exception" was rejected; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]] for individualized determinations of each respondent's personal Fourth Amendment interest.
@@ -65,7 +65,7 @@ The respondents' positions in the conspiracy — one serving as the "communicati
 - No negative treatment. *Padilla* reaffirms the personal-rights standing rule of [[Alderman v. United States]] and [[Rakas v. Illinois]], rooted in the privacy/property interests of [[Rawlings v. Kentucky]] and [[Soldal v. Cook County]].
 
 ## Appears on
-- [[Standing to Challenge a Search]] — *Key — Progeny*
+- [[Standing to Challenge a Search]] — *Key: Progeny*
 
 ## Sources
-- *United States v. Padilla*, 508 U.S. 77 (1993) — https://www.courtlistener.com/opinion/112856/united-states-v-padilla/ — pinpoint: 82.
+- *United States v. Padilla*, 508 U.S. 77 (1993) — https://www.courtlistener.com/opinion/112856/united-states-v-padilla/ (pinpoint: 82).

@@ -67,7 +67,7 @@ The random, suspicionless license-check stop violated the Fourth Amendment; the 
 - No negative treatment. *Prouse* requires individualized suspicion for discretionary traffic stops while preserving non-discretionary checkpoints — a line developed in [[City of Indianapolis v. Edmond]] and complemented by the reasonable-mistake rule of [[Heien v. North Carolina]].
 
 ## Appears on
-- [[Traffic Stops]] — *Key — Progeny / Refinement*
+- [[Traffic Stops]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Delaware v. Prouse*, 440 U.S. 648 (1979) — https://www.courtlistener.com/opinion/110045/delaware-v-prouse/ — pinpoint: 663.
+- *Delaware v. Prouse*, 440 U.S. 648 (1979) — https://www.courtlistener.com/opinion/110045/delaware-v-prouse/ (pinpoint: 663).

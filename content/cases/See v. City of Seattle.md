@@ -70,4 +70,4 @@ See could not be convicted for refusing the warrantless inspection; his convicti
 - [[Special Needs and Administrative Searches]] — *Anchor (commercial inspections)*
 
 ## Sources
-- *See v. City of Seattle*, 387 U.S. 541 (1967) — https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/ — pinpoints: 543, 545.
+- *See v. City of Seattle*, 387 U.S. 541 (1967) — https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/. Pinpoints: 543, 545.

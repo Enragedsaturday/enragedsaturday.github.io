@@ -35,7 +35,7 @@ homes:
 related: ["[[United States v. Knotts]]", "[[Kyllo v. United States]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "beeper", "tracking", "surveillance", "home"]
-holding: "Monitoring a beeper inside a private residence — a location not open to visual surveillance — is a Fourth Amendment search requiring a warrant, because it reveals a critical fact about the interior of the home."
+holding: "Monitoring a beeper inside a private residence (a location not open to visual surveillance) is a Fourth Amendment search requiring a warrant, because it reveals a critical fact about the interior of the home."
 lake:
   record_id: United States v. Karo
   status: verified
@@ -51,7 +51,7 @@ lake:
 With the informant-seller's consent, agents placed a beeper in a can of ether that Karo and others bought to extract cocaine. Agents monitored the beeper as the ether moved among vehicles and houses, including while it was inside a private residence, and used the in-house signal to confirm the ether's location and obtain a search warrant. Karo challenged the warrantless monitoring of the beeper while it was inside the home.
 
 ## Issue
-Whether the warrantless monitoring of a beeper inside a private residence — a location not open to visual surveillance — violates the Fourth Amendment rights of those with a justifiable privacy interest in the residence.
+Whether the warrantless monitoring of a beeper inside a private residence (a location not open to visual surveillance) violates the Fourth Amendment rights of those with a justifiable privacy interest in the residence.
 
 ## Rule
 Yes. "This case . . . presents the question whether the monitoring of a beeper in a private residence, a location not open to visual surveillance, violates the Fourth Amendment rights of those who have a justifiable interest in the privacy of the residence. Contrary to the submission of the United States, we think that it does." — 468 U.S. at 714. ^pin-714
@@ -69,9 +69,9 @@ Warrantless monitoring of the beeper inside the residence violated the Fourth Am
 - Companion to [[United States v. Knotts]]. Its interior-of-the-home reasoning anticipates [[Kyllo v. United States]] (sense-enhancing technology and the home) and the modern location-tracking cases [[United States v. Jones]] (trespassory GPS installation) and [[Carpenter v. United States]] (long-term cell-site aggregation).
 
 ## Appears on
-- [[Real-Time Tracking]] — *Key — Anchor (interior context-flip)*
-- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — umbrella)*
+- [[Real-Time Tracking]] — *Key: Anchor (interior context-flip)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref, umbrella)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
-- *United States v. Karo*, 468 U.S. 705 (1984) — https://www.courtlistener.com/opinion/111257/united-states-v-karo/ — pinpoints: 714, 715.
+- *United States v. Karo*, 468 U.S. 705 (1984) — https://www.courtlistener.com/opinion/111257/united-states-v-karo/ (pinpoints: 714, 715).

@@ -44,7 +44,7 @@ tags:
   - jardines
   - trespass
   - michigan-supreme-court
-holding: "The implied license that lets an officer approach a home and knock is time-sensitive and generally does not extend to predawn approaches; when officers conducted 4:00 and 5:30 a.m. 'knock and talks' at the defendants' homes, they exceeded that license and trespassed on Fourth-Amendment-protected property, and because the trespass was joined to information-gathering it was a search — so the consents that followed had to be analyzed for taint from the illegal search."
+holding: "The implied license that lets an officer approach a home and knock is time-sensitive and generally does not extend to predawn approaches; when officers conducted 4:00 and 5:30 a.m. 'knock and talks' at the defendants' homes, they exceeded that license and trespassed on Fourth-Amendment-protected property, and because the trespass was joined to information-gathering it was a search, so the consents that followed had to be analyzed for taint from the illegal search."
 aliases:
   - People v. Frederick
   - "People v. Frederick (Mich. 2017)"

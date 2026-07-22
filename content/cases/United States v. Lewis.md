@@ -45,7 +45,7 @@ tags:
   - bare-bones-affidavit
   - good-faith-exception
   - sixth-circuit
-holding: "A homeowner's consent to an on-site 'preview' of his laptop and cell phone authorized only that limited search; the later seizure and full forensic examination of the devices required a warrant, and because the supporting affidavit was a bare-bones, conclusory statement that recited only that a consented search had 'become apparent' incriminating — without any facts a magistrate could independently weigh — it failed to establish probable cause, and the good-faith exception could not save so deficient a warrant."
+holding: "A homeowner's consent to an on-site 'preview' of his laptop and cell phone authorized only that limited search; the later seizure and full forensic examination of the devices required a warrant, and because the supporting affidavit was a bare-bones, conclusory statement that recited only that a consented search had 'become apparent' incriminating (without any facts a magistrate could independently weigh) it failed to establish probable cause, and the good-faith exception could not save so deficient a warrant."
 aliases:
   - United States v. Lewis
   - "United States v. Lewis (6th Cir. 2023)"

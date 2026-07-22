@@ -63,7 +63,7 @@ Reversed; the statements were obtained in violation of *[[Edwards v. Arizona|Edw
 - No negative treatment. *Minnick* strengthens [[Edwards v. Arizona]] by holding that mere consultation with counsel does not end the bar; [[Maryland v. Shatzer]] later supplied a break-in-custody endpoint to the *[[Edwards v. Arizona|Edwards]]* protection.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Minnick v. Mississippi*, 498 U.S. 146 (1990) — https://www.courtlistener.com/opinion/112513/minnick-v-mississippi/ — pinpoint: 153.
+- *Minnick v. Mississippi*, 498 U.S. 146 (1990) — https://www.courtlistener.com/opinion/112513/minnick-v-mississippi/. Pinpoint: 153.

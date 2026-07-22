@@ -69,7 +69,7 @@ The narcotics checkpoint program violated the Fourth Amendment; the injunction a
 - No negative treatment. *Edmond*'s primary-purpose test was distinguished in [[Illinois v. Lidster]] (information-seeking checkpoint about a crime committed by someone else) and applied to invalidate law-enforcement-purpose programs in [[Ferguson v. City of Charleston]].
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *City of Indianapolis v. Edmond*, 531 U.S. 32 (2000) — https://www.courtlistener.com/opinion/118391/city-of-indianapolis-v-edmond/ — pinpoints: 41, 42.
+- *City of Indianapolis v. Edmond*, 531 U.S. 32 (2000) — https://www.courtlistener.com/opinion/118391/city-of-indianapolis-v-edmond/ (pinpoints: 41, 42).

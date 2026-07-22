@@ -50,7 +50,7 @@ Spring was arrested by federal agents on firearms charges. After [[Miranda and C
 Whether a suspect's waiver of his [[Miranda and Custodial Interrogation|Miranda rights]] is rendered invalid (not knowing and intelligent) because the police did not inform him beforehand of all the subjects or offenses the interrogation would cover.
 
 ## Rule
-No. A valid waiver requires that it be voluntary and that it be made with full awareness of the *nature* of the right abandoned and the consequences of doing so — not awareness of every tactical detail. "[A] suspect's awareness of all the possible subjects of questioning in advance of interrogation is not relevant to determining whether the suspect voluntarily, knowingly, and intelligently waived his Fifth Amendment privilege." — 479 U.S. at 577. ^pin-577
+No. A valid waiver requires that it be voluntary and that it be made with full awareness of the *nature* of the right abandoned and the consequences of doing so, not awareness of every tactical detail. "[A] suspect's awareness of all the possible subjects of questioning in advance of interrogation is not relevant to determining whether the suspect voluntarily, knowingly, and intelligently waived his Fifth Amendment privilege." — 479 U.S. at 577. ^pin-577
 
 The *[[Miranda v. Arizona|Miranda]]* warnings themselves convey the nature of the privilege and the consequences of abandoning it (anything he says may be used against him), so a suspect need not also be told *which* crimes will be discussed. Mere police silence about the subject matter of the interrogation is not the kind of trickery or deception that would invalidate an otherwise valid waiver.
 
@@ -65,7 +65,7 @@ The waiver was knowing and intelligent despite the suspect's ignorance of all th
 - Consistent with [[Moran v. Burbine]] (a waiver is not invalidated by the police withholding information — there, that an attorney was trying to reach the suspect): the validity of a *[[Miranda v. Arizona|Miranda]]* waiver turns on the suspect's understanding of the right itself, not on full information about the investigation.
 
 ## Appears on
-- [[Miranda Waiver and Invocation]] — *Key — Progeny*
+- [[Miranda Waiver and Invocation]] — *Key: Progeny*
 
 ## Sources
-- *Colorado v. Spring*, 479 U.S. 564 (1987) — https://www.courtlistener.com/opinion/111798/colorado-v-spring/ — pinpoint: 577.
+- *Colorado v. Spring*, 479 U.S. 564 (1987) — https://www.courtlistener.com/opinion/111798/colorado-v-spring/. Pinpoint: 577.

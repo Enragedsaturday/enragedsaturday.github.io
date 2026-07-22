@@ -74,7 +74,7 @@ The warrant's "computer records" clause, illuminated by an affidavit describing 
 **Affirmed.** Judge O'Brien wrote for the panel.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Burgess* is a leading circuit statement on the outer edge of the *[[Plain View Doctrine]]* in the digital context: because a computer intermingles vast private data, warrants must confine the search to specified crimes or material, and the reasonableness of a scope-limited forensic search — not an open-ended plain-view rummage — governs what officers may lawfully view. It also informs device searches at the border (see *[[Border Searches]]*).
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Burgess* is a leading circuit statement on the outer edge of the *[[Plain View Doctrine]]* in the digital context: because a computer intermingles vast private data, warrants must confine the search to specified crimes or material, and the reasonableness of a scope-limited forensic search (not an open-ended plain-view rummage) governs what officers may lawfully view. It also informs device searches at the border (see *[[Border Searches]]*).
 
 ## Appears on
 - [[Plain View Doctrine]] — *Key*

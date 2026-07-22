@@ -33,7 +33,7 @@ homes:
 related: ["[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v. Maryland]]", "[[Riley v. California]]", "[[Chatrie v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "cell-site", "third-party-doctrine"]
-holding: "Acquiring extended historical cell-site location information is a search — a reasonable expectation of privacy in 'the whole of [one's] physical movements'; narrows the third-party doctrine for digital-age data."
+holding: "Acquiring extended historical cell-site location information is a search: a reasonable expectation of privacy in 'the whole of [one's] physical movements'; narrows the third-party doctrine for digital-age data."
 lake:
   record_id: Carpenter v. United States
   status: verified

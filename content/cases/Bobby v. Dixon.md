@@ -31,7 +31,7 @@ homes:
 related: ["[[Oregon v. Elstad]]", "[[Missouri v. Seibert]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "two-step", "elstad", "seibert", "aedpa"]
-holding: "A later Mirandized confession is admissible under Elstad — and Seibert's question-first bar does not apply — where there was no deliberate two-step strategy and no nexus between the earlier unwarned statement and the later warned confession; the Sixth Circuit's contrary habeas grant unreasonably applied clearly established law."
+holding: "A later Mirandized confession is admissible under Elstad (and Seibert's question-first bar does not apply) where there was no deliberate two-step strategy and no nexus between the earlier unwarned statement and the later warned confession; the Sixth Circuit's contrary habeas grant unreasonably applied clearly established law."
 lake:
   record_id: Bobby v. Dixon
   status: verified
@@ -50,7 +50,7 @@ Dixon was suspected in the disappearance and murder of Christopher Hammer. In a 
 Whether, on AEDPA review, the state court unreasonably applied clearly established federal law in admitting Dixon's warned murder confession given his earlier unwarned interrogation about a related forgery.
 
 ## Rule
-No — admission was reasonable; *[[Missouri v. Seibert|Seibert]]*'s concern was absent and *[[Oregon v. Elstad|Elstad]]* governs. "[U]nlike in *Seibert*, there is no concern here that police gave Dixon *Miranda* warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat." — 565 U.S. at 31. ^pin-31
+No. Admission was reasonable; *[[Missouri v. Seibert|Seibert]]*'s concern was absent and *[[Oregon v. Elstad|Elstad]]* governs. "[U]nlike in *Seibert*, there is no concern here that police gave Dixon *Miranda* warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat." — 565 U.S. at 31. ^pin-31
 
 There was "simply 'no nexus' between Dixon's unwarned admission to forgery and his later, warned confession to murder," and a four-hour break separated the two interrogations, so the warned confession was not the tainted product of the earlier questioning. — *Id.* ^pin-31a
 
@@ -70,4 +70,4 @@ The state court's admission of the confession was not contrary to, or an unreaso
 - [[Miranda Waiver and Invocation]] — *Related*
 
 ## Sources
-- *Bobby v. Dixon*, 565 U.S. 23 (2011) (per curiam) — https://www.courtlistener.com/opinion/616807/bobby-v-dixon/ — pinpoint: 31.
+- *Bobby v. Dixon*, 565 U.S. 23 (2011) (per curiam) — https://www.courtlistener.com/opinion/616807/bobby-v-dixon/. Pinpoint: 31.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Cady v. Dombrowski]]", "[[United States v. Rideau]]", "[[Graham v. Barnette]]", "[[Caniglia v. Strom]]", "[[Terry v. Ohio]]"]
 aliases: ["United States v. Garner (10th Cir. 2005)", "United States v. Mark James Garner"]
 tags: ["case", "fourth-amendment", "community-caretaking", "investigative-detention", "persons-in-public", "tenth-circuit"]
-holding: "A community-caretaking detention of a person is valid under a three-part test — (1) specific and articulable facts warranting the intrusion, (2) the government's caretaking interest outweighing the individual's liberty interest, and (3) scope and duration tailored to the caretaking purpose; once that purpose is satisfied, continued detention requires independent reasonable suspicion."
+holding: "A community-caretaking detention of a person is valid under a three-part test: (1) specific and articulable facts warranting the intrusion, (2) the government's caretaking interest outweighing the individual's liberty interest, and (3) scope and duration tailored to the caretaking purpose; once that purpose is satisfied, continued detention requires independent reasonable suspicion."
 lake:
   record_id: United States v. Garner
   status: verified
@@ -59,7 +59,7 @@ A police officer exercising community-caretaking functions "may ... properly det
 Once the caretaking purpose is satisfied, any further detention needs an independent justification: "Once the officer has completed the inquiry necessary to satisfy the purpose of the initial detention, he or she must allow the person to proceed unless the officer has a reasonable suspicion of criminal conduct." — *Id.* ^pin-1213c
 
 ## Application
-On these facts, Officer Boyd was acting in a community-caretaking role when he directed Garner — reported unconscious in a field for hours — to return so the fire department could examine him; that supplied the articulable facts of need, and the government's interest in protecting a man who "might well have needed medical assistance" outweighed Garner's liberty interest. When the medical examination ended, the detention did not become unlawful: Garner's continuing nervous, evasive behavior and hand movements furnished reasonable suspicion to extend the stop, and the limited questions (name, date of birth) and warrant check were reasonably tailored to the encounter's purpose. The caretaking detention and its continuation were therefore reasonable.
+On these facts, Officer Boyd was acting in a community-caretaking role when he directed Garner (reported unconscious in a field for hours) to return so the fire department could examine him; that supplied the articulable facts of need, and the government's interest in protecting a man who "might well have needed medical assistance" outweighed Garner's liberty interest. When the medical examination ended, the detention did not become unlawful: Garner's continuing nervous, evasive behavior and hand movements furnished reasonable suspicion to extend the stop, and the limited questions (name, date of birth) and warrant check were reasonably tailored to the encounter's purpose. The caretaking detention and its continuation were therefore reasonable.
 
 ## Conclusion
 The detention did not violate the Fourth Amendment; the Tenth Circuit affirmed the denial of Garner's motion to suppress the handgun and burglary tools.
@@ -70,7 +70,7 @@ The detention did not violate the Fourth Amendment; the Tenth Circuit affirmed t
 - [[Caniglia v. Strom]] (2021) held there is no *freestanding* community-caretaking exception authorizing a warrantless entry into a **home**; that holding is confined to the home and does **not** disturb *Garner*'s rule for caretaking detentions of persons in public.
 
 ## Appears on
-- [[Community Caretaking]] — *Key — Anchor*
+- [[Community Caretaking]] — *Key: Anchor*
 
 ## Sources
-- *United States v. Garner*, 416 F.3d 1208 (10th Cir. 2005) — https://www.courtlistener.com/opinion/166206/united-states-v-garner/ — pinpoints: 1213.
+- *United States v. Garner*, 416 F.3d 1208 (10th Cir. 2005) — https://www.courtlistener.com/opinion/166206/united-states-v-garner/ (pinpoints: 1213).

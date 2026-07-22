@@ -65,7 +65,7 @@ The statements were coerced and inadmissible in the criminal prosecutions; the c
 - *Garrity* is good law and anchors the public-employee compelled-statement line, refined by [[Gardner v. Broderick]] and [[Lefkowitz v. Turley]] (a public employee may be compelled to answer narrowly job-related questions only under a grant of use immunity, and may not be fired merely for asserting the privilege) and the federal [[Kalkines v. United States]] warning.
 
 ## Appears on
-- [[Public-Employee Compelled Statements (Garrity)]] — *Key — Anchor*
+- [[Public-Employee Compelled Statements (Garrity)]] — *Key: Anchor*
 
 ## Sources
-- *Garrity v. New Jersey*, 385 U.S. 493 (1967) — https://www.courtlistener.com/opinion/107336/garrity-v-new-jersey/ — pinpoints: 497, 500.
+- *Garrity v. New Jersey*, 385 U.S. 493 (1967) — https://www.courtlistener.com/opinion/107336/garrity-v-new-jersey/. Pinpoints: 497, 500.

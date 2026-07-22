@@ -63,7 +63,7 @@ A prison cell is outside the Fourth Amendment's protection against unreasonable 
 - Defines a boundary of the [[Katz v. United States]] reasonable-expectation-of-privacy test; the diminished privacy of those in custody also informs arrestee-search cases such as [[Maryland v. King]].
 
 ## Appears on
-- [[Reasonable Expectation of Privacy]] — *Key — REP boundary*
+- [[Reasonable Expectation of Privacy]] — *Key: REP boundary*
 
 ## Sources
-- *Hudson v. Palmer*, 468 U.S. 517 (1984) — https://www.courtlistener.com/opinion/111252/hudson-v-palmer/ — pinpoint: 526.
+- *Hudson v. Palmer*, 468 U.S. 517 (1984) — https://www.courtlistener.com/opinion/111252/hudson-v-palmer/. Pinpoint: 526.

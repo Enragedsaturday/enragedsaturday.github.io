@@ -31,7 +31,7 @@ homes:
 related: ["[[Rakas v. Illinois]]", "[[Jones v. United States]]", "[[Mancusi v. DeForte]]", "[[Simmons v. United States]]", "[[United States v. Payner]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "exclusionary-rule", "electronic-surveillance", "personal-rights"]
-holding: "Fourth Amendment rights are personal and may not be vicariously asserted; only a defendant whose own rights were violated by the search or surveillance — not a co-defendant or co-conspirator aggrieved solely by the evidence — may move to suppress."
+holding: "Fourth Amendment rights are personal and may not be vicariously asserted; only a defendant whose own rights were violated by the search or surveillance (not a co-defendant or co-conspirator aggrieved solely by the evidence) may move to suppress."
 lake:
   record_id: Alderman v. United States
   status: verified

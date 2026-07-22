@@ -47,7 +47,7 @@ tags:
   - warrantless-arrest
   - payton
   - home
-holding: "Payton's warrant requirement for in-home arrests bars only a warrantless, nonexigent physical entry into the home, not an officer's announcement of an arrest from outside the threshold; a warrantless arrest is therefore valid where police announce it from outside and the suspect surrenders at the doorway, but unlawful where police enter the home before effecting the arrest — so a suppression claim turning on which occurred requires an evidentiary hearing."
+holding: "Payton's warrant requirement for in-home arrests bars only a warrantless, nonexigent physical entry into the home, not an officer's announcement of an arrest from outside the threshold; a warrantless arrest is therefore valid where police announce it from outside and the suspect surrenders at the doorway, but unlawful where police enter the home before effecting the arrest, so a suppression claim turning on which occurred requires an evidentiary hearing."
 ---
 
 # United States v. Berkowitz

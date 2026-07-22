@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Knights was on probation for a drug offense under a condition that he submit his person, property, residence, vehicle, and effects "to search at anytime, with or without a search warrant, warrant of arrest or reasonable cause by any probation officer or law enforcement officer." After a PG&E transformer was set on fire — the latest of many vandalism incidents for which Knights was a suspect — a detective searched his apartment, with reasonable suspicion, and found incendiary materials, bolt cutters, and a PG&E padlock. The District Court found reasonable suspicion but suppressed the evidence because the search was "investigatory" rather than "probationary"; the Ninth Circuit affirmed.
+Knights was on probation for a drug offense under a condition that he submit his person, property, residence, vehicle, and effects "to search at anytime, with or without a search warrant, warrant of arrest or reasonable cause by any probation officer or law enforcement officer." After a PG&E transformer was set on fire (the latest of many vandalism incidents for which Knights was a suspect), a detective searched his apartment, with reasonable suspicion, and found incendiary materials, bolt cutters, and a PG&E padlock. The District Court found reasonable suspicion but suppressed the evidence because the search was "investigatory" rather than "probationary"; the Ninth Circuit affirmed.
 
 ## Issue
 Whether a warrantless search of a probationer's residence, authorized by a probation search condition and supported by reasonable suspicion, is reasonable under the Fourth Amendment — even where the officer's purpose was investigatory rather than probationary.
@@ -59,7 +59,7 @@ The Court's ultimate holding: "We therefore hold that the warrantless search of 
 It expressly reserved the question whether a *suspicionless* search would be reasonable, "because the search in this case was supported by reasonable suspicion." — [*Id.* at 120](https://www.courtlistener.com/opinion/118468/united-states-v-knights/#:~:text=because%20the%20search%20in%20this) n.6. ^pin-120
 
 ## Application
-On these facts the apartment search was reasonable. Knights's probation order "significantly diminished" his expectation of privacy, while the State's heightened interest in apprehending probationer-recidivists justified a lesser-than-probable-cause standard. The investigatory purpose did not matter, because the Court rested its holding on "ordinary Fourth Amendment analysis," under which "[s]ubjective intentions play no role." Since the District Court found — and Knights conceded — that the search was supported by reasonable suspicion, and the probation condition authorized it, the warrantless search of his apartment satisfied the Fourth Amendment. The Court did not decide whether the same search would have been reasonable with no individualized suspicion at all.
+On these facts the apartment search was reasonable. Knights's probation order "significantly diminished" his expectation of privacy, while the State's heightened interest in apprehending probationer-recidivists justified a lesser-than-probable-cause standard. The investigatory purpose did not matter, because the Court rested its holding on "ordinary Fourth Amendment analysis," under which "[s]ubjective intentions play no role." Since the District Court found (and Knights conceded) that the search was supported by reasonable suspicion, and the probation condition authorized it, the warrantless search of his apartment satisfied the Fourth Amendment. The Court did not decide whether the same search would have been reasonable with no individualized suspicion at all.
 
 ## Conclusion
 A probation-condition search of Knights's home, supported by reasonable suspicion, was reasonable under the Fourth Amendment regardless of the officer's investigatory motive; the Ninth Circuit's judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
@@ -69,7 +69,7 @@ A probation-condition search of Knights's home, supported by reasonable suspicio
 - No negative subsequent treatment identified. *Knights* rests on general Fourth Amendment balancing rather than the special-needs rationale of [[Griffin v. Wisconsin]], and it expressly left open the suspicionless-search question — which [[Samson v. California]] later answered for *parolees* (suspicionless searches reasonable given parolees' even more diminished privacy).
 
 ## Appears on
-- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Knights*, 534 U.S. 112 (2001) — https://www.courtlistener.com/opinion/118468/united-states-v-knights/ — pinpoints: 120 n.6, 121, 122.
+- *United States v. Knights*, 534 U.S. 112 (2001) — https://www.courtlistener.com/opinion/118468/united-states-v-knights/. Pinpoints: 120 n.6, 121, 122.

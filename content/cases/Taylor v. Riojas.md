@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Trent Taylor, a Texas inmate, alleged that for six days correctional officers confined him in two "shockingly unsanitary cells": the first covered nearly floor to ceiling in massive amounts of feces, and the second a frigid cell with only a clogged floor drain, where — left naked and without a bunk — he was forced to sleep in raw sewage that overflowed the drain. The Fifth Circuit held these conditions violated the Eighth Amendment but granted the officers [[Qualified Immunity|qualified immunity]] because no prior case had clearly established that such conditions, for "only six days," were unconstitutional.
+Trent Taylor, a Texas inmate, alleged that for six days correctional officers confined him in two "shockingly unsanitary cells": the first covered nearly floor to ceiling in massive amounts of feces, and the second a frigid cell with only a clogged floor drain, where (left naked and without a bunk) he was forced to sleep in raw sewage that overflowed the drain. The Fifth Circuit held these conditions violated the Eighth Amendment but granted the officers [[Qualified Immunity|qualified immunity]] because no prior case had clearly established that such conditions, for "only six days," were unconstitutional.
 
 ## Issue
 Whether officers were entitled to [[Qualified Immunity|qualified immunity]] for these conditions of confinement merely because no prior decision had specifically addressed materially similar facts.
@@ -55,7 +55,7 @@ No. Where the unconstitutionality of conduct is obvious, [[Qualified Immunity|qu
 Invoking *[[Hope v. Pelzer]]*, the Court reiterated that "a general constitutional rule already identified in the decisional law may apply with obvious clarity to the specific conduct in question." "Confronted with the particularly egregious facts of this case, any reasonable officer should have realized that Taylor's conditions of confinement offended the Constitution." — *Id.* (slip op., at 3). ^pin-7b
 
 ## Application
-The egregiousness of the conditions — cells teeming with human waste, with no necessity or [[Exigent Circumstances and Hot Pursuit|exigency]] shown and no reason the conditions could not have been mitigated — made the violation obvious, so the absence of a factually identical precedent did not entitle the officers to immunity. The Fifth Circuit's lone contrary case was "too dissimilar, in terms of both conditions and duration of confinement, to create any doubt about the obviousness of Taylor's right." The Court noted that an officer-by-officer analysis would still be required [[Reading and Citing Cases#on-remand|on remand]].
+The egregiousness of the conditions (cells teeming with human waste, with no necessity or [[Exigent Circumstances and Hot Pursuit|exigency]] shown and no reason the conditions could not have been mitigated) made the violation obvious, so the absence of a factually identical precedent did not entitle the officers to immunity. The Fifth Circuit's lone contrary case was "too dissimilar, in terms of both conditions and duration of confinement, to create any doubt about the obviousness of Taylor's right." The Court noted that an officer-by-officer analysis would still be required [[Reading and Citing Cases#on-remand|on remand]].
 
 ## Conclusion
 [[Reading and Citing Cases#certiorari-cert|Certiorari]] granted, judgment [[Reading and Citing Cases#vacated|vacated]], and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). [[Qualified Immunity|Qualified immunity]] was wrongly granted; the obvious unconstitutionality of the conditions provided the officers fair warning even without a case directly on point.
@@ -65,7 +65,7 @@ The egregiousness of the conditions — cells teeming with human waste, with no 
 - *Taylor* is a leading modern application of the *[[Hope v. Pelzer]]* "obvious case" route to defeating [[Qualified Immunity|qualified immunity]], a counterweight to the high-specificity decisions like [[Mullenix v. Luna]] and [[White v. Pauly]]. The same Term, the Court relied on it to GVR a related Fifth Circuit case (*McCoy v. Alamu*). No validated negative treatment is recorded in the lake (0 confirmed negative edges; all 23 proposed); the proposed negative and audit-flagged top-cited progeny edges remain unresolved pending a treatment-history audit.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Limiting*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Limiting*
 
 ## Sources
-- *Taylor v. Riojas*, 592 U.S. 7 (2020) (per curiam) — https://www.courtlistener.com/opinion/4802501/taylor-v-riojas/ — pinpoint: slip op., at 2–3 (CL stores the slip opinion "592 U. S. ____ (2020)"; pin keyed to the official case-start page 7).
+- *Taylor v. Riojas*, 592 U.S. 7 (2020) (per curiam) — https://www.courtlistener.com/opinion/4802501/taylor-v-riojas/ (pinpoint: slip op., at 2–3; CL stores the slip opinion "592 U. S. ____ (2020)"; pin keyed to the official case-start page 7).

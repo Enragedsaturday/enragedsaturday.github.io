@@ -66,7 +66,7 @@ The Eleventh Circuit's refusal to suppress was affirmed.
 - **Disambiguation:** this is the **2011 good-faith** decision; the bare wikilink [[Davis v. United States]] resolves to the distinct **1994** Miranda ambiguous-invocation case.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny (good faith)*
+- [[The Exclusionary Rule]] — *Key: Progeny (good faith)*
 
 ## Sources
-- *Davis v. United States*, 564 U.S. 229 (2011) — https://www.courtlistener.com/opinion/218926/davis-v-united-states/ — pinpoints: 232, 249–250.
+- *Davis v. United States*, 564 U.S. 229 (2011). https://www.courtlistener.com/opinion/218926/davis-v-united-states/ — pinpoints: 232, 249–250.

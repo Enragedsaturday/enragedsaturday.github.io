@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police received a 3 a.m. complaint about three suspicious men who had been sitting in a parked car for hours in a business district. Officers questioned the men, found their answers evasive, learned all three were unemployed with 25 cents among them, and arrested them for vagrancy. The men were searched for weapons and taken to the station; the car, unsearched at the scene, was driven to the station and then towed to a garage. After the men were booked, officers searched the car at the garage, finding loaded revolvers in the glove compartment and — after forcing into the trunk — robbery paraphernalia (a stocking mask, rope, a fake license plate). The items were used to convict petitioner of conspiracy to rob a bank.
+Police received a 3 a.m. complaint about three suspicious men who had been sitting in a parked car for hours in a business district. Officers questioned the men, found their answers evasive, learned all three were unemployed with 25 cents among them, and arrested them for vagrancy. The men were searched for weapons and taken to the station; the car, unsearched at the scene, was driven to the station and then towed to a garage. After the men were booked, officers searched the car at the garage, finding loaded revolvers in the glove compartment and, after forcing into the trunk, robbery paraphernalia (a stocking mask, rope, a fake license plate). The items were used to convict petitioner of conspiracy to rob a bank.
 
 ## Issue
-May a warrantless search of a car at a garage — conducted after the arrestees were in custody at the station and the car had been towed — be justified as a search incident to the arrest?
+May a warrantless search of a car at a garage (conducted after the arrestees were in custody at the station and the car had been towed) be justified as a search incident to the arrest?
 
 ## Rule
 No. A [[Search Incident to Arrest|search incident to arrest]] must be contemporaneous, and "[o]nce an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest." — 376 U.S. at 367. ^pin-367
@@ -73,4 +73,4 @@ The warrantless garage search of the car was unreasonable and its fruits inadmis
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Preston v. United States*, 376 U.S. 364 (1964) — https://www.courtlistener.com/opinion/106771/preston-v-united-states/ — pinpoints: 367, 368.
+- *Preston v. United States*, 376 U.S. 364 (1964) — https://www.courtlistener.com/opinion/106771/preston-v-united-states/. Pinpoints: 367, 368.

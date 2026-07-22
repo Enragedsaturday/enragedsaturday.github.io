@@ -49,7 +49,7 @@ tags:
   - warrantless-arrest
   - show-of-force
   - tenth-circuit
-holding: "The Tenth Circuit held that police effected an unlawful warrantless arrest in the home in violation of Payton v. New York when, without an arrest warrant, a SWAT team surrounded Maez's mobile home and ordered the occupants out over loudspeakers, coercing him from the home into custody — physical entry across the threshold is not required, because such a show of force that makes a suspect come out under coercion is a Payton violation — so the evidence obtained after the tainted arrest required suppression, and the court reversed."
+holding: "The Tenth Circuit held that police effected an unlawful warrantless arrest in the home in violation of Payton v. New York when, without an arrest warrant, a SWAT team surrounded Maez's mobile home and ordered the occupants out over loudspeakers, coercing him from the home into custody (physical entry across the threshold is not required, because such a show of force that makes a suspect come out under coercion is a Payton violation), so the evidence obtained after the tainted arrest required suppression, and the court reversed."
 ---
 
 # United States v. Maez

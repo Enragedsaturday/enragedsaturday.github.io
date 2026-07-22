@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officer Taylor stopped Kenneth Sullivan for speeding and arrested him for traffic offenses, including a fine-only speeding violation. A search of the vehicle turned up drug-related evidence. Sullivan moved to suppress, arguing that his arrest was "merely a 'pretext and sham to search' him" and therefore violated the Fourth Amendment. The trial court suppressed the evidence and the Arkansas Supreme Court affirmed on rehearing, holding that an arrest — even one supported by probable cause — violates the Fourth Amendment if the officer's true motivation was to conduct a search, and that Arkansas could in any event read the Constitution to provide such protection. The State sought [[Reading and Citing Cases#certiorari-cert|certiorari]], and the Court decided the case [[Common Legal Terms#per-curiam|per curiam]].
+Officer Taylor stopped Kenneth Sullivan for speeding and arrested him for traffic offenses, including a fine-only speeding violation. A search of the vehicle turned up drug-related evidence. Sullivan moved to suppress, arguing that his arrest was "merely a 'pretext and sham to search' him" and therefore violated the Fourth Amendment. The trial court suppressed the evidence and the Arkansas Supreme Court affirmed on rehearing, holding that an arrest, even one supported by probable cause, violates the Fourth Amendment if the officer's true motivation was to conduct a search, and that Arkansas could in any event read the Constitution to provide such protection. The State sought [[Reading and Citing Cases#certiorari-cert|certiorari]], and the Court decided the case [[Common Legal Terms#per-curiam|per curiam]].
 
 ## Issue
 Whether an arrest supported by probable cause violates the Fourth Amendment because the arresting officer had a pretextual or improper subjective motivation, and whether a state may interpret the Federal Constitution to forbid such pretextual arrests.
@@ -52,7 +52,7 @@ Whether an arrest supported by probable cause violates the Fourth Amendment beca
 ## Rule
 No to both. The officer's subjective motive is irrelevant to an objectively justified, probable-cause arrest: the Court "held unanimously that '[s]ubjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis.'" — 532 U.S. at 772 (quoting *Whren v. United States*). ^pin-772
 
-The Arkansas court's contrary view — that a probable-cause arrest can nevertheless be invalid because of improper motive — "cannot be squared with our decision in *Whren*, in which we noted our 'unwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers.'" — *Id.* ^pin-772b
+The Arkansas court's contrary view (that a probable-cause arrest can nevertheless be invalid because of improper motive) "cannot be squared with our decision in *Whren*, in which we noted our 'unwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers.'" — *Id.* ^pin-772b
 
 A state also may not use the *federal* Constitution to impose greater restrictions than this Court requires: while a State is free "as a matter of its own law to impose greater restrictions on police activity," it "may not impose such greater restrictions as a matter of *federal constitutional law* when this Court specifically refrains from imposing them." — *Id.* at 772 (quoting *Oregon v. Hass*). ^pin-772c
 
@@ -70,4 +70,4 @@ A probable-cause arrest is reasonable regardless of the officer's pretextual or 
 - [[Traffic Stops]] — *Progeny*
 
 ## Sources
-- *Arkansas v. Sullivan*, 532 U.S. 769 (2001) (per curiam) — https://www.courtlistener.com/opinion/2620699/arkansas-v-sullivan/ — pinpoint: 772.
+- *Arkansas v. Sullivan*, 532 U.S. 769 (2001) (per curiam). https://www.courtlistener.com/opinion/2620699/arkansas-v-sullivan/ — pinpoint: 772.

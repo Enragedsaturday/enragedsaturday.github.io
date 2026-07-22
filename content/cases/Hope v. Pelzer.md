@@ -31,7 +31,7 @@ homes:
 related: ["[[Harlow v. Fitzgerald]]", "[[Saucier v. Katz]]", "[[City of Tahlequah v. Bond]]"]
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "clearly-established-law", "fair-warning"]
-holding: "A right can be clearly established **without a factually identical case** — in an 'obvious case,' officials have fair warning even in novel circumstances (the QI 'obvious case' escape hatch)."
+holding: "A right can be clearly established **without a factually identical case**: in an 'obvious case,' officials have fair warning even in novel circumstances (the QI 'obvious case' escape hatch)."
 lake:
   record_id: Hope v. Pelzer
   status: verified
@@ -65,7 +65,7 @@ The guards were not entitled to [[Qualified Immunity|qualified immunity]]; the E
 - No negative treatment. *Hope* refines the "clearly established law" prong of [[Harlow v. Fitzgerald]] and [[Saucier v. Katz]], supplying the "fair warning" / obvious-case route to overcoming [[Qualified Immunity|qualified immunity]] even without a factually identical precedent.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Hope v. Pelzer*, 536 U.S. 730 (2002) — https://www.courtlistener.com/opinion/121169/hope-v-pelzer/ — pinpoint: 741.
+- *Hope v. Pelzer*, 536 U.S. 730 (2002) — https://www.courtlistener.com/opinion/121169/hope-v-pelzer/. Pinpoint: 741.

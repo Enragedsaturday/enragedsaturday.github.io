@@ -65,7 +65,7 @@ The officers were entitled to [[Qualified Immunity|qualified immunity]]; the Ten
 - No negative treatment. *Tahlequah* reaffirms the particularized "clearly established law" standard of [[District of Columbia v. Wesby]] and the objective qualified-immunity framework of [[Harlow v. Fitzgerald]], cautioning against the high-generality approach the "obvious case" exception of [[Hope v. Pelzer]] permits only rarely.
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *City of Tahlequah v. Bond*, 595 U.S. 9 (2021) (per curiam) — https://www.courtlistener.com/opinion/5290448/city-of-tahlequah-v-bond/ — pinpoint: slip op., at 3 (CL carries the slip opinion; cluster 5290448 → opinion 5118994).
+- *City of Tahlequah v. Bond*, 595 U.S. 9 (2021) (per curiam) — https://www.courtlistener.com/opinion/5290448/city-of-tahlequah-v-bond/. Pinpoint: slip op., at 3 (CL carries the slip opinion; cluster 5290448 → opinion 5118994).

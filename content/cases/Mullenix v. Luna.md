@@ -31,7 +31,7 @@ homes:
 related: ["[[Tennessee v. Garner]]", "[[Scott v. Harris]]", "[[Kisela v. Hughes]]", "[[White v. Pauly]]"]
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "clearly-established"]
-holding: "'Clearly established' law must be particularized to the specific context — 'the dispositive question is whether the violative nature of particular conduct is clearly established.'"
+holding: "'Clearly established' law must be particularized to the specific context: 'the dispositive question is whether the violative nature of particular conduct is clearly established.'"
 lake:
   record_id: Mullenix v. Luna
   status: verified
@@ -52,7 +52,7 @@ Whether Mullenix was entitled to [[Qualified Immunity|qualified immunity]] — t
 ## Rule
 [[Qualified Immunity|Qualified immunity]] shields an official unless his conduct violated clearly established law, and that law must be identified with specificity, not at a high level of generality. "We have repeatedly told courts . . . not to define clearly established law at a high level of generality." — 577 U.S. 7 (quoting *al-Kidd*). ^pin-12
 
-"The dispositive question is 'whether the violative nature of particular conduct is clearly established.'" — *Id.* The inquiry must be undertaken in light of the specific context of the case, and existing precedent must place the conclusion that the officer acted unlawfully "beyond debate." — *Id.* at 11.
+"The dispositive question is 'whether the violative nature of particular conduct is clearly established.'" (*Id.*) The inquiry must be undertaken in light of the specific context of the case, and existing precedent must place the conclusion that the officer acted unlawfully "beyond debate." — *Id.* at 11.
 
 ## Application
 The relevant question was not whether deadly force against a fleeing felon is generally permissible, but whether it was clearly established that Mullenix acted unreasonably in the specific situation he confronted — a reportedly intoxicated fugitive who had twice threatened to shoot officers and was fleeing at high speed toward an officer's position. Because existing precedent did not place the unreasonableness of his conduct "beyond debate" in that situation, Mullenix was entitled to [[Qualified Immunity|qualified immunity]].
@@ -65,7 +65,7 @@ Reversed (per curiam): Mullenix was entitled to [[Qualified Immunity|qualified i
 - No negative treatment. *Mullenix* is a leading statement that "clearly established" law must be defined with [[Particularity|particularity]] to the specific factual context, a principle reaffirmed in qualified-immunity cases such as [[Kisela v. Hughes]] and [[White v. Pauly]].
 
 ## Appears on
-- [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
+- [[Section 1983 Liability and Qualified Immunity]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Mullenix v. Luna*, 577 U.S. 7 (2015) (per curiam) — https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/ — interior pincite(s) 11, 12 retired pending official-reporter pagination (CL opinion in slip-opinion format; U.S. Reports pages per official citation).
+- *Mullenix v. Luna*, 577 U.S. 7 (2015) (per curiam) — https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/. Interior pincite(s) 11, 12 retired pending official-reporter pagination (CL opinion in slip-opinion format; U.S. Reports pages per official citation).

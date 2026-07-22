@@ -45,7 +45,7 @@ tags:
   - inevitable-discovery
   - circuit-split
   - warrantless-search
-holding: "For the inevitable discovery exception to the exclusionary rule to admit illegally seized evidence, the Eleventh Circuit requires not only a reasonable probability that the evidence would have been found by lawful means, but also that the lawful means were possessed by the police and were being actively pursued before the illegal conduct occurred; because officers obtained the search warrant only hours after the warrantless search, the shotgun was not admissible under inevitable discovery — though its erroneous admission was harmless in light of the overwhelming other evidence."
+holding: "For the inevitable discovery exception to the exclusionary rule to admit illegally seized evidence, the Eleventh Circuit requires not only a reasonable probability that the evidence would have been found by lawful means, but also that the lawful means were possessed by the police and were being actively pursued before the illegal conduct occurred; because officers obtained the search warrant only hours after the warrantless search, the shotgun was not admissible under inevitable discovery, though its erroneous admission was harmless in light of the overwhelming other evidence."
 aliases:
   - United States v. Satterfield
   - "United States v. Satterfield (11th Cir. 1984)"

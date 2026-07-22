@@ -31,7 +31,7 @@ homes:
 related: ["[[Rogers v. Richmond]]", "[[Beecher v. Alabama]]", "[[Lynumn v. Illinois]]", "[[Brown v. Mississippi]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "coercion", "habeas"]
-holding: "A confession that is the product of a drug having the effect of a 'truth serum' (scopolamine/hyoscine), administered to a suspect, is involuntary and inadmissible if it was not the product of a rational intellect and free will — regardless of whether the drug was administered by persons unaware of its properties and regardless of the confession's reliability."
+holding: "A confession that is the product of a drug having the effect of a 'truth serum' (scopolamine/hyoscine), administered to a suspect, is involuntary and inadmissible if it was not the product of a rational intellect and free will, regardless of whether the drug was administered by persons unaware of its properties and regardless of the confession's reliability."
 lake:
   record_id: Townsend v. Sain
   status: verified

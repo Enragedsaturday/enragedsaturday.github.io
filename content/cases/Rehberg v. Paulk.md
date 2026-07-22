@@ -43,7 +43,7 @@ tags:
   - absolute-immunity
   - grand-jury
   - complaining-witness
-holding: "A grand jury witness — including a law-enforcement officer who serves as a complaining or investigating witness — has absolute immunity from any § 1983 claim based on his grand jury testimony, and that immunity may not be circumvented by alleging a conspiracy to present false testimony or by using the testimony to support another § 1983 theory."
+holding: "A grand jury witness (including a law-enforcement officer who serves as a complaining or investigating witness) has absolute immunity from any § 1983 claim based on his grand jury testimony, and that immunity may not be circumvented by alleging a conspiracy to present false testimony or by using the testimony to support another § 1983 theory."
 aliases:
   - Rehberg v. Paulk
   - "Rehberg v. Paulk (2012)"
@@ -58,7 +58,7 @@ aliases:
 Charles Rehberg, an accountant, sent anonymous faxes criticizing the management and activities of a Georgia hospital. In response, the local district attorney's chief investigator, James Paulk, allegedly presented false testimony to a grand jury, which returned indictments against Rehberg; the charges were dismissed and re-obtained more than once and ultimately came to nothing. Rehberg sued Paulk under § 1983, alleging that Paulk fabricated the grand jury testimony. Paulk asserted absolute witness immunity, and the Eleventh Circuit agreed.
 
 ## Issue
-Whether a grand jury witness — including an officer who acts as the complaining or investigating witness — is absolutely immune from a § 1983 claim based on his grand jury testimony.
+Whether a grand jury witness (including an officer who acts as the complaining or investigating witness) is absolutely immune from a § 1983 claim based on his grand jury testimony.
 
 ## Rule
 Extending the trial-witness immunity of *[[Briscoe v. LaHue]]* to grand jury proceedings, the Court held: "This means that a grand jury witness has absolute immunity from any § 1983 claim based on the witness' testimony." — 566 U.S. at 369. ^pin-369
@@ -70,7 +70,7 @@ A grand jury witness performs the same function, and would face the same flood o
 The judgment was **affirmed**. Alito, J., delivered the opinion of a unanimous Court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Rehberg* extends *[[Briscoe v. LaHue]]*'s trial-witness immunity to the grand jury and forecloses pleading around it. Teach the boundary the Court preserved (drawing on the *[[Malley v. Briggs|Malley]]*/*Kalina* "complaining witness" line): the immunity protects a witness's *testimony*, not the distinct, non-testimonial act of a "complaining witness" who, for example, swears out a defective arrest-warrant affidavit — conduct that draws only [[Qualified Immunity|qualified immunity]]. Pair it with *[[Imbler v. Pachtman|Imbler]]* and *[[Buckley v. Fitzsimmons|Buckley]]* on the advocacy/investigation line.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until machine verification is complete. *Rehberg* extends *[[Briscoe v. LaHue]]*'s trial-witness immunity to the grand jury and forecloses pleading around it. Teach the boundary the Court preserved (drawing on the *[[Malley v. Briggs|Malley]]*/*Kalina* "complaining witness" line): the immunity protects a witness's *testimony*, not the distinct, non-testimonial act of a "complaining witness" who, for example, swears out a defective arrest-warrant affidavit, conduct that draws only [[Qualified Immunity|qualified immunity]]. Pair it with *[[Imbler v. Pachtman|Imbler]]* and *[[Buckley v. Fitzsimmons|Buckley]]* on the advocacy/investigation line.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Anchor*

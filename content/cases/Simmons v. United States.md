@@ -67,8 +67,8 @@ The judgment was affirmed as to Simmons (the photographic procedure was not impe
 - No negative treatment. The *Simmons* "very substantial likelihood of irreparable misidentification" standard, drawn from [[Stovall v. Denno]], carries into [[Neil v. Biggers]] and [[Manson v. Brathwaite]]; the suppression-hearing testimonial-immunity rule is the standing companion cited in [[Alderman v. United States]] and rests on the standing predicate of [[Jones v. United States]].
 
 ## Appears on
-- [[Eyewitness Identification]] — *Key — Progeny*
-- [[Standing to Challenge a Search]] — *Key — Progeny*
+- [[Eyewitness Identification]] — *Key: Progeny*
+- [[Standing to Challenge a Search]] — *Key: Progeny*
 
 ## Sources
-- *Simmons v. United States*, 390 U.S. 377 (1968) — https://www.courtlistener.com/opinion/107636/simmons-v-united-states/ — pinpoints: 384, 394.
+- *Simmons v. United States*, 390 U.S. 377 (1968) — https://www.courtlistener.com/opinion/107636/simmons-v-united-states/. Pinpoints: 384, 394.

@@ -31,7 +31,7 @@ homes:
 related: ["[[Mapp v. Ohio]]", "[[Weeks v. United States]]", "[[Elkins v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "incorporation", "fourteenth-amendment", "overruled", "historical"]
-holding: "The Fourth Amendment's core security against arbitrary police intrusion is enforceable against the States through the Fourteenth Amendment's Due Process Clause, but the Weeks exclusionary rule is not itself commanded of the States — a remedy holding later overruled by Mapp v. Ohio."
+holding: "The Fourth Amendment's core security against arbitrary police intrusion is enforceable against the States through the Fourteenth Amendment's Due Process Clause, but the Weeks exclusionary rule is not itself commanded of the States: a remedy holding later overruled by Mapp v. Ohio."
 lake:
   record_id: Wolf v. Colorado
   status: verified

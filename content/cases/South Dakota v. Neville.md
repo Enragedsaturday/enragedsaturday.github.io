@@ -42,7 +42,7 @@ tags:
   - implied-consent
   - due-process
   - dwi
-holding: "Admitting into evidence a drunk-driving suspect's refusal to submit to a blood-alcohol test does not violate the Fifth Amendment privilege against self-incrimination, because a refusal — offered as a choice by police after a lawful request — is not an act coerced by the officer; nor does admitting the refusal offend due process even though the officer did not warn the suspect that his refusal could be used against him at trial."
+holding: "Admitting into evidence a drunk-driving suspect's refusal to submit to a blood-alcohol test does not violate the Fifth Amendment privilege against self-incrimination, because a refusal (offered as a choice by police after a lawful request) is not an act coerced by the officer; nor does admitting the refusal offend due process even though the officer did not warn the suspect that his refusal could be used against him at trial."
 aliases:
   - South Dakota v. Neville
   - "South Dakota v. Neville (1983)"

@@ -67,7 +67,7 @@ Reversed; the confession obtained without the now-required warnings could not be
 - *Miranda* was **reaffirmed** as a constitutional rule that Congress may not supersede by statute in [[Dickerson v. United States]]. It applies to all custodial interrogation regardless of offense severity ([[Berkemer v. McCarty]]), and its invocation/waiver doctrine was developed in cases such as [[Edwards v. Arizona]] and [[Berghuis v. Thompkins]].
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Anchor*
+- [[Miranda and Custodial Interrogation]] — *Key: Anchor*
 
 ## Sources
-- *Miranda v. Arizona*, 384 U.S. 436 (1966) — https://www.courtlistener.com/opinion/107252/miranda-v-arizona/ — pinpoint: 444.
+- *Miranda v. Arizona*, 384 U.S. 436 (1966) — https://www.courtlistener.com/opinion/107252/miranda-v-arizona/. Pinpoint: 444.

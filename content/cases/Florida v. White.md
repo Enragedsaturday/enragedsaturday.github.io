@@ -57,17 +57,17 @@ No. Probable cause that the vehicle itself is forfeitable contraband supports a 
 Because the car was seized from a public area, no privacy was invaded: "Based on the relevant history and our prior precedent, we therefore conclude that the Fourth Amendment did not require a warrant to seize respondent's automobile in these circumstances." — *Id.* at 566. ^pin-566
 
 ## Application
-Although police lacked probable cause to believe the car *contained* contraband at the time of seizure, they had probable cause to believe the car *itself* was contraband under the forfeiture statute, drawn from White's earlier use of it to deliver narcotics. The seizure took place in a public place — the employer's parking lot — so, like the warrantless arrest in *[[United States v. Watson|Watson]]* and the seizure in *G. M. Leasing Corp.*, it involved no invasion of privacy and required no warrant.
+Although police lacked probable cause to believe the car *contained* contraband at the time of seizure, they had probable cause to believe the car *itself* was contraband under the forfeiture statute, drawn from White's earlier use of it to deliver narcotics. The seizure took place in a public place (the employer's parking lot), so, like the warrantless arrest in *[[United States v. Watson|Watson]]* and the seizure in *G. M. Leasing Corp.*, it involved no invasion of privacy and required no warrant.
 
 ## Conclusion
 Reversed. The warrantless seizure of a car from a public place, on probable cause that the car is forfeitable contraband, did not violate the Fourth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *[[Alabama v. White|White]]* extends the *[[Carroll v. United States|Carroll]]* line — drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]] — from searching for contraband to seizing the contraband vehicle itself. The [[Common Legal Terms#concurring-opinion|concurrence]] cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
+- No negative treatment. *[[Alabama v. White|White]]* extends the *[[Carroll v. United States|Carroll]]* line (drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]]) from searching for contraband to seizing the contraband vehicle itself. The [[Common Legal Terms#concurring-opinion|concurrence]] cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Florida v. White*, 526 U.S. 559 (1999) — https://www.courtlistener.com/opinion/118287/florida-v-white/ — pinpoints: 565, 566.
+- *Florida v. White*, 526 U.S. 559 (1999). https://www.courtlistener.com/opinion/118287/florida-v-white/ — pinpoints: 565, 566.

@@ -43,7 +43,7 @@ tags:
   - substantive-due-process
   - pretrial-detainee
   - section-1983
-holding: "Not every use of force by a custodial officer is a constitutional violation; whether the line is crossed depends on the need for force, the relationship between the need and the amount used, the extent of injury, and whether force was applied in good faith to maintain discipline or maliciously to cause harm — the pre-Graham due-process test for excessive force."
+holding: "Not every use of force by a custodial officer is a constitutional violation; whether the line is crossed depends on the need for force, the relationship between the need and the amount used, the extent of injury, and whether force was applied in good faith to maintain discipline or maliciously to cause harm: the pre-Graham due-process test for excessive force."
 ---
 
 # Johnson v. Glick
@@ -67,7 +67,7 @@ Not every push or shove, even one that later seems unnecessary in the calm of a 
 Dismissal was **reversed** as to the officer and **affirmed** as to the warden; the case was [[Reading and Citing Cases#on-remand|remanded]]. Friendly, J., wrote for the panel.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Johnson v. Glick*'s four-factor test was the dominant excessive-force standard for a generation, but *[[Graham v. Connor]]* (1989) held that force claims arising during an arrest, investigatory stop, or other seizure are governed by the Fourth Amendment's objective-reasonableness standard — not *Glick*'s substantive-due-process test — and criticized importing *Glick*'s "malicious and sadistic" element into that context. *Glick*'s approach continued to inform the analysis for pretrial detainees until the standard there was itself recalibrated by *[[Kingsley v. Hendrickson]]* (2015).
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until machine verification is complete. *Johnson v. Glick*'s four-factor test was the dominant excessive-force standard for a generation, but *[[Graham v. Connor]]* (1989) held that force claims arising during an arrest, investigatory stop, or other seizure are governed by the Fourth Amendment's objective-reasonableness standard (not *Glick*'s substantive-due-process test) and criticized importing *Glick*'s "malicious and sadistic" element into that context. *Glick*'s approach continued to inform the analysis for pretrial detainees until the standard there was itself recalibrated by *[[Kingsley v. Hendrickson]]* (2015).
 
 ## Appears on
 - [[Use of Force]] — *Key*

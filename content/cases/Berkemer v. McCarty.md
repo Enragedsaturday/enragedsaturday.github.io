@@ -31,7 +31,7 @@ homes:
 related: ["[[Miranda v. Arizona]]", "[[Howes v. Fields]]", "[[J.D.B. v. North Carolina]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "traffic-stop", "interrogation"]
-holding: "(1) Miranda applies to ALL custodial interrogation regardless of the offense's severity — misdemeanors included; (2) the temporary,…"
+holding: "(1) Miranda applies to ALL custodial interrogation regardless of the offense's severity, misdemeanors included; (2) the temporary,…"
 lake:
   record_id: Berkemer v. McCarty
   status: under_review
@@ -65,7 +65,7 @@ Miranda governs custodial interrogation regardless of offense severity, so the p
 - No negative treatment. *Berkemer* fixes two Miranda-custody rules: warnings are required for custodial interrogation regardless of offense severity, and an ordinary traffic stop is not custody. The custody inquiry was later refined by [[Howes v. Fields]] (imprisonment is not automatically custody) and [[J.D.B. v. North Carolina]] (a juvenile's age is relevant to the custody analysis).
 
 ## Appears on
-- [[Miranda and Custodial Interrogation]] — *Key — Anchor*
+- [[Miranda and Custodial Interrogation]] — *Key: Anchor*
 
 ## Sources
-- *Berkemer v. McCarty*, 468 U.S. 420 (1984) — https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/ — pinpoints: 434, 440.
+- *Berkemer v. McCarty*, 468 U.S. 420 (1984) — https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/. Pinpoints: 434, 440.

@@ -33,7 +33,7 @@ homes:
 related: ["[[New Jersey v. T.L.O.]]"]
 aliases: ["Safford Unified School District No. 1 v. Redding"]
 tags: ["case", "fourth-amendment", "special-needs", "school-search", "strip-search", "qualified-immunity"]
-holding: "Under the T.L.O. school-search standard, a strip search of a student must be justified by reasonable suspicion that matches its intrusiveness; strip-searching a 13-year-old for common pain relievers, absent reason to believe they were dangerous or hidden in her underwear, was unreasonable — but the officials had qualified immunity because the right was not clearly established."
+holding: "Under the T.L.O. school-search standard, a strip search of a student must be justified by reasonable suspicion that matches its intrusiveness; strip-searching a 13-year-old for common pain relievers, absent reason to believe they were dangerous or hidden in her underwear, was unreasonable, but the officials had qualified immunity because the right was not clearly established."
 lake:
   record_id: Safford Unified School District v. Redding
   status: verified
@@ -75,4 +75,4 @@ The strip search violated the Fourth Amendment, but the officials had [[Qualifie
 - [[Section 1983 Liability and Qualified Immunity]] — *Related ([[Qualified Immunity|qualified immunity]])*
 
 ## Sources
-- *Safford Unified School District No. 1 v. Redding*, 557 U.S. 364 (2009) — https://www.courtlistener.com/opinion/145852/safford-unified-school-district-1-v-redding/ — pinpoints: 368, 374–375, 376–377.
+- *Safford Unified School District No. 1 v. Redding*, 557 U.S. 364 (2009) — https://www.courtlistener.com/opinion/145852/safford-unified-school-district-1-v-redding/. Pinpoints: 368, 374–375, 376–377.

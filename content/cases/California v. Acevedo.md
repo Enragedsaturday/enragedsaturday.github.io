@@ -65,7 +65,7 @@ The warrantless search of the container was permissible; the judgment suppressin
 - No negative treatment of *Acevedo*. It **overruled** *[[Arkansas v. Sanders]]* and replaced the prior container/vehicle distinction with one rule, building on [[Carroll v. United States]] and [[United States v. Ross]].
 
 ## Appears on
-- [[Automobile Exception]] — *Key — Progeny / Refinement*
+- [[Automobile Exception]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *California v. Acevedo*, 500 U.S. 565 (1991) — https://www.courtlistener.com/opinion/112608/california-v-acevedo/ — pinpoint: 580.
+- *California v. Acevedo*, 500 U.S. 565 (1991) — https://www.courtlistener.com/opinion/112608/california-v-acevedo/. Pinpoint: 580.

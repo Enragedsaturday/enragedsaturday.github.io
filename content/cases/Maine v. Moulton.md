@@ -31,7 +31,7 @@ homes:
 related: ["[[Massiah v. United States]]", "[[Kuhlmann v. Wilson]]", "[[United States v. Henry]]", "[[Brewer v. Williams]]"]
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", "informant"]
-holding: "The Sixth Amendment is violated when the State knowingly exploits an opportunity to confront the accused without counsel — it makes no…"
+holding: "The Sixth Amendment is violated when the State knowingly exploits an opportunity to confront the accused without counsel. It makes no…"
 lake:
   record_id: Maine v. Moulton
   status: verified

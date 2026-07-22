@@ -42,7 +42,7 @@ tags:
   - prosecutorial-immunity
   - absolute-immunity
   - judicial-phase
-holding: "A state prosecutor is absolutely immune from a § 1983 damages suit for conduct intimately associated with the judicial phase of the criminal process — that is, in initiating a prosecution and in presenting the State's case — even where the claim is that the prosecutor knowingly used false testimony and suppressed exculpatory evidence."
+holding: "A state prosecutor is absolutely immune from a § 1983 damages suit for conduct intimately associated with the judicial phase of the criminal process (that is, in initiating a prosecution and in presenting the State's case) even where the claim is that the prosecutor knowingly used false testimony and suppressed exculpatory evidence."
 aliases:
   - Imbler v. Pachtman
   - "Imbler v. Pachtman (1976)"

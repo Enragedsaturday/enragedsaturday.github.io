@@ -59,7 +59,7 @@ The Leon [[The Good-Faith Exception|good-faith exception]] does not save such a 
 "Accordingly, we hold that the 'good faith' exception is inapplicable in these circumstances and affirm the district court's decision to suppress all of the evidence from the Kleinberg warrant." — *Id.* at 610. ^pin-610
 
 ## Application
-On these facts the warrant was an unconstitutional general warrant and good faith could not rescue it. The "relating to" language gave the agents no criteria to distinguish seizable from non-seizable records, and the record showed they used the warrant's breadth (not any affidavit specificity) to seize documents far beyond the suspected transaction — "[t]here is no portion of the Kleinberg warrant that adequately defines the items to be seized," so the affidavit could not cure it and severance was impossible. Good faith was unavailable because a reasonably well-trained officer "should know that a warrant must provide guidelines for determining what evidence may be seized," and a warrant this facially deficient could not be reasonably presumed valid — placing it within *[[United States v. Leon|Leon]]*'s own exception for warrants "so facially deficient . . . that the executing officers cannot reasonably presume it to be valid." The Court did not reach the separate probable-cause defect.
+On these facts the warrant was an unconstitutional general warrant and good faith could not rescue it. The "relating to" language gave the agents no criteria to distinguish seizable from non-seizable records, and the record showed they used the warrant's breadth (not any affidavit specificity) to seize documents far beyond the suspected transaction — "[t]here is no portion of the Kleinberg warrant that adequately defines the items to be seized," so the affidavit could not cure it and severance was impossible. Good faith was unavailable because a reasonably well-trained officer "should know that a warrant must provide guidelines for determining what evidence may be seized," and a warrant this facially deficient could not be reasonably presumed valid, placing it within *[[United States v. Leon|Leon]]*'s own exception for warrants "so facially deficient . . . that the executing officers cannot reasonably presume it to be valid." The Court did not reach the separate probable-cause defect.
 
 ## Conclusion
 The warrant was facially overbroad and the *[[United States v. Leon|Leon]]* [[The Good-Faith Exception|good-faith exception]] did not apply; the district court's suppression of all evidence seized under it was affirmed.
@@ -69,7 +69,7 @@ The warrant was facially overbroad and the *[[United States v. Leon|Leon]]* [[Th
 - No negative subsequent treatment identified. *Leary* applies the [[Particularity|particularity]] rule of [[Coolidge v. New Hampshire]] and marks the boundary of [[United States v. Leon]] / [[Massachusetts v. Sheppard]] good-faith: a facially overbroad general warrant cannot support objectively reasonable reliance.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny / Refinement*
+- [[The Exclusionary Rule]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *United States v. Leary*, 846 F.2d 592 (10th Cir. 1988) — https://www.courtlistener.com/opinion/505922/united-states-v-richard-j-leary-and-fl-kleinberg-co/ — pinpoints: 600, 609, 610.
+- *United States v. Leary*, 846 F.2d 592 (10th Cir. 1988) — https://www.courtlistener.com/opinion/505922/united-states-v-richard-j-leary-and-fl-kleinberg-co/ (pinpoints: 600, 609, 610).

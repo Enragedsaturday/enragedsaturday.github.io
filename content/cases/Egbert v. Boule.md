@@ -45,7 +45,7 @@ tags:
   - qualified-immunity
   - damages-remedy
   - supreme-court
-holding: "The two-step Bivens inquiry — whether a claim arises in a new context and, if so, whether special factors counsel hesitation — often reduces to the single question whether Congress is better positioned than the courts to create a damages remedy; applying that framework, the Court declined to extend Bivens to Boule's Fourth Amendment excessive-force claim against a Border Patrol agent or his First Amendment retaliation claim."
+holding: "The two-step Bivens inquiry (whether a claim arises in a new context and, if so, whether special factors counsel hesitation) often reduces to the single question whether Congress is better positioned than the courts to create a damages remedy; applying that framework, the Court declined to extend Bivens to Boule's Fourth Amendment excessive-force claim against a Border Patrol agent or his First Amendment retaliation claim."
 aliases:
   - Egbert v. Boule
   - "Egbert v. Boule (2022)"

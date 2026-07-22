@@ -50,7 +50,7 @@ Lynumn was arrested in her apartment on a charge of selling marijuana. Three pol
 Whether a confession obtained after police threaten that the suspect will lose state aid for, and custody of, her children unless she cooperates is voluntary under the Due Process Clause.
 
 ## Rule
-No — such a confession is coerced. "It is thus abundantly clear that the petitioner's oral confession was made only after the police had told her that state financial aid for her infant children would be cut off, and her children taken from her, if she did not 'cooperate.' . . . We think it clear that a confession made under such circumstances must be deemed not voluntary, but coerced. That is the teaching of our cases. We have said that the question in [each] case is whether the defendant's will was overborne at the time he confessed." — 372 U.S. at 534. ^pin-534
+No, such a confession is coerced. "It is thus abundantly clear that the petitioner's oral confession was made only after the police had told her that state financial aid for her infant children would be cut off, and her children taken from her, if she did not 'cooperate.' . . . We think it clear that a confession made under such circumstances must be deemed not voluntary, but coerced. That is the teaching of our cases. We have said that the question in [each] case is whether the defendant's will was overborne at the time he confessed." — 372 U.S. at 534. ^pin-534
 
 If the will was overborne, "the confession cannot be deemed 'the product of a rational intellect and a free will.'" — *Id.* (quoting *Blackburn v. Alabama*, 361 U.S. 199, 208 (1960)). ^pin-534a
 
@@ -65,7 +65,7 @@ The confession was coerced and involuntary; the judgment of conviction was rever
 - No negative treatment. *Lynumn* is a frequently cited totality-of-circumstances coercion case in the due-process line anchored by [[Brown v. Mississippi]] and [[Chambers v. Florida]], alongside the psychological-coercion analysis of [[Spano v. New York]] and the relentless-interrogation analysis of [[Ashcraft v. Tennessee]].
 
 ## Appears on
-- [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*
+- [[Due-Process Voluntariness of Confessions]] — *Key: Progeny / Refinement*
 
 ## Sources
-- *Lynumn v. Illinois*, 372 U.S. 528 (1963) — https://www.courtlistener.com/opinion/106558/lynumn-v-illinois/ — pinpoint: 534.
+- *Lynumn v. Illinois*, 372 U.S. 528 (1963) — https://www.courtlistener.com/opinion/106558/lynumn-v-illinois/. Pinpoint: 534.

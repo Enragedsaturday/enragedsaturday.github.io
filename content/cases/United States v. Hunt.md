@@ -46,7 +46,7 @@ tags:
   - cell-phone
   - reasonable-expectation-of-privacy
   - ninth-circuit
-holding: "The Ninth Circuit held that the abandonment doctrine applies to digital devices but that a court must analyze the intent to abandon the physical device separately from the intent to abandon its data; Hunt did not abandon his iPhone or its contents by dropping it after being shot five times and fleeing for medical help, so the district court erred in finding he lacked standing — but his Fourth Amendment claim nonetheless failed on the merits because agents obtained a warrant and searched the phone within a reasonable period; conviction affirmed."
+holding: "The Ninth Circuit held that the abandonment doctrine applies to digital devices but that a court must analyze the intent to abandon the physical device separately from the intent to abandon its data; Hunt did not abandon his iPhone or its contents by dropping it after being shot five times and fleeing for medical help, so the district court erred in finding he lacked standing, but his Fourth Amendment claim nonetheless failed on the merits because agents obtained a warrant and searched the phone within a reasonable period; conviction affirmed."
 ---
 
 # United States v. Hunt

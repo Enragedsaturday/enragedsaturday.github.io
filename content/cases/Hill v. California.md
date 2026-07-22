@@ -49,7 +49,7 @@ lake:
 Police had probable cause to arrest Hill for robbery and had his address and a verified physical description. At Hill's apartment they encountered Miller, who matched the description of Hill. Miller insisted he was Miller, not Hill, and produced identification, but his explanation for being in the locked apartment was unconvincing, and a pistol and a loaded ammunition clip lay in plain view. Believing Miller was Hill, the officers arrested him and searched the apartment incident to the arrest, seizing evidence later used to convict the actual Hill. Hill moved to suppress, arguing the arrest of the wrong man was invalid and the search therefore unlawful.
 
 ## Issue
-Whether an arrest is valid — and a search incident to it lawful — when police have probable cause to arrest one person but, reasonably and in good faith, arrest a different person whom they mistake for the suspect.
+Whether an arrest is valid (and a search incident to it lawful) when police have probable cause to arrest one person but, reasonably and in good faith, arrest a different person whom they mistake for the suspect.
 
 ## Rule
 Yes. The Court adopted the rule that "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest." — 401 U.S. at 802. ^pin-802
@@ -59,7 +59,7 @@ Good faith alone is not enough; the test is objective reasonableness: "sufficien
 A valid arrest of the mistaken person supports a search incident to it: "the police were entitled to do what the law would have allowed them to do if Miller had in fact been Hill, that is, to search incident to arrest and to seize evidence of the crime the police had probable cause to believe Hill had committed." — [*Id.* at 804–805](https://www.courtlistener.com/opinion/108305/hill-v-california/#:~:text=the%20police%20were%20entitled%20to). ^pin-804b
 
 ## Application
-The officers had unquestionable probable cause to arrest Hill, a verified description, and his address. When they found Miller — who fit that description, gave an unconvincing account of his presence, and had a pistol and ammunition in plain view — their belief that Miller was Hill was an understandable, objectively reasonable mistake, not mere subjective good faith. Because the arrest was therefore valid, the search incident to it (judged under pre-*[[Chimel v. California|Chimel]]* scope, which the Court declined to apply retroactively here) was also valid, and the seized evidence was admissible against Hill.
+The officers had unquestionable probable cause to arrest Hill, a verified description, and his address. When they found Miller (who fit that description, gave an unconvincing account of his presence, and had a pistol and ammunition in plain view), their belief that Miller was Hill was an understandable, objectively reasonable mistake, not mere subjective good faith. Because the arrest was therefore valid, the search incident to it (judged under pre-*[[Chimel v. California|Chimel]]* scope, which the Court declined to apply retroactively here) was also valid, and the seized evidence was admissible against Hill.
 
 ## Conclusion
 The reasonable, good-faith arrest of the wrong man was valid, as was the search incident to it; the judgment was affirmed. Fourth Amendment reasonableness tolerates an understandable mistake of identity where police have probable cause to arrest the intended suspect.
@@ -73,4 +73,4 @@ The reasonable, good-faith arrest of the wrong man was valid, as was the search 
 - [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources
-- *Hill v. California*, 401 U.S. 797 (1971) — https://www.courtlistener.com/opinion/108305/hill-v-california/ — pinpoints: 802, 804–805.
+- *Hill v. California*, 401 U.S. 797 (1971) — https://www.courtlistener.com/opinion/108305/hill-v-california/ (pinpoints: 802, 804–805).
