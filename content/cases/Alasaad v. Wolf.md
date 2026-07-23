@@ -24,10 +24,10 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4855246/alasaad-v-wolf/"
   cluster_id: 4855246
   opinion_id: 4659025
-  identity_checked: false
+  identity_checked: true
 lake:
   record_id: Alasaad v. Wolf
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Border Searches]]"

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "digital-searches", "cell-phone
 holding: "En banc 5th Circuit (resolving on good-faith grounds) discusses the digital general-warrant problem and flags, in concurrence, that the…"
 lake:
   record_id: United States v. Morton
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-09
 ---
 

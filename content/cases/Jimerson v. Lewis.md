@@ -24,10 +24,10 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9475670/jimerson-v-lewis/"
   cluster_id: 9475670
   opinion_id: 9941201
-  identity_checked: false
+  identity_checked: true
 lake:
   record_id: Jimerson v. Lewis
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Qualified Immunity]]"

@@ -24,10 +24,10 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2750102/carroll-v-carman/"
   cluster_id: 2750102
   opinion_id: 2750102
-  identity_checked: false
+  identity_checked: true
 lake:
   record_id: Carroll v. Carman
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Knock and Talk]]"

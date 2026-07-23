@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "digital-search", "computer-warrant", "partic
 holding: "Because relevant information may be stored anywhere on a digital device, a warrant ordinarily cannot prescribe in advance exactly how…"
 lake:
   record_id: State v. Volle
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-06
 ---
 

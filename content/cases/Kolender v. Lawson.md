@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "fourteenth-amendment", "stop-and-identify", 
 holding: "A stop-and-identify statute that requires a detained suspect to provide 'credible and reliable' identification is unconstitutionally vague, because it vests police with standardless discretion to decide what satisfies it."
 lake:
   record_id: Kolender v. Lawson
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-09
 ---
 

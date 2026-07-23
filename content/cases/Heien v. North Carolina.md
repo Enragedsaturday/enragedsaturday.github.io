@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/"
   cluster_id: 2760668
   opinion_id: 9805193
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Traffic Stops]]"
     role: "Key — Progeny / Refinement"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "mist
 holding: "A traffic stop is valid if based on an officer's objectively reasonable mistake of law (as well as a reasonable mistake of fact); a…"
 lake:
   record_id: Heien v. North Carolina
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-06
 ---
 

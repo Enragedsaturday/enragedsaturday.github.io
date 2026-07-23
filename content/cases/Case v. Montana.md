@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "ob
 holding: "Brigham City's objective-reasonableness standard for warrantless home entries to render emergency aid applies without further gloss (it is neither lowered to Terry reasonable suspicion nor raised to probable cause) and asks only whether an officer had an objectively reasonable basis for believing entry was needed to prevent or deal with serious harm."
 lake:
   record_id: Case v. Montana
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-06
 ---
 

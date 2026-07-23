@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "napue", "perjured-testimony", "prosecutorial-
 holding: "The knowing use of perjured testimony by the prosecution to obtain a conviction violates Fourteenth Amendment due process. A 'deliberate deception of court and jury' is as inconsistent with justice as obtaining a conviction by intimidation. (Leave to file the original habeas petition was denied for failure to exhaust state remedies.)"
 lake:
   record_id: Mooney v. Holohan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

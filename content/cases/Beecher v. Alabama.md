@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "volunt
 holding: "A confession obtained at gunpoint from a wounded suspect threatened with death, and a second statement signed five days later while drugged on morphine and in intense pain with no break in the stream of events, are the product of gross coercion and involuntary; no conviction tainted by such a confession can stand."
 lake:
   record_id: Beecher v. Alabama
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "prison-inmate", "irs"]
 holding: "Miranda warnings are required when a person already in custody (here, serving a prison sentence) is interrogated by officers, even though the questioning concerns an entirely separate matter and even though it is a routine tax investigation; the reason the person is in custody does not curtail the warnings."
 lake:
   record_id: "Mathis v. United States (1968)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

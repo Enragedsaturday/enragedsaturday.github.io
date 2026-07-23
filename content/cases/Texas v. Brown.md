@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110901/texas-v-brown/"
   cluster_id: 110901
   opinion_id: 9429131
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Key — Progeny / Refinement"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view"]
 holding: "'Immediately apparent' means probable cause, not certainty ('an unhappy choice of words'); shining a flashlight into a car interior is not a search."
 lake:
   record_id: Texas v. Brown
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

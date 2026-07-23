@@ -3,8 +3,8 @@
 LINT-14 - S2 case page-to-record gate (alias LINT-S2-pagerecord).
 
 Every non-draft `type: case` page must resolve to a lake record whose status is
-publish-eligible for S2: verified, under_review, or verified_off_cl. Records do
-not need pages.
+publish-eligible for S2: verified, under_review, slip_opinion, verified_off_cl,
+or verified_identity. Records do not need pages.
 """
 
 import glob
@@ -32,7 +32,13 @@ LINT = "LINT-14"
 # fieldI reader banner, which models exactly {status: verified_identity, field_i: unverified},
 # plus every content assertion carrying its own pin/quote discipline. The stronger `verified`
 # state is still EARNED per P4-18(i) wherever the cache text supplies the missing leg.
-ACCEPTED = {"verified", "under_review", "verified_off_cl", "verified_identity"}
+ACCEPTED = {
+    "verified",
+    "under_review",
+    "slip_opinion",
+    "verified_off_cl",
+    "verified_identity",
+}
 
 
 def load_records(cases_dir=None):
@@ -123,8 +129,8 @@ def check_page(path, records):
             1,
             c.HIGH,
             "case page record %s has status=%r; publish gate accepts only "
-            "verified, under_review, verified_off_cl, or verified_identity "
-            "[R12/A16/P4-18]"
+            "verified, under_review, slip_opinion, verified_off_cl, or "
+            "verified_identity [R12/A16/P4-18]"
             % (c.relpath(record_path), status),
         ))
     return out
@@ -153,6 +159,7 @@ def self_test():
         # RULING P4-18(ii): a page-backed record at status=verified_identity is
         # publish-eligible (the P4-14 fieldI reader banner carries reader safety).
         "lint-14-page-vident-pass": ("fixtures/lint-14-vident.json", {"record_id": "lint-14-page-vident-pass", "status": "verified_identity", "stub": False}),
+        "lint-14-page-slip-opinion-pass": ("fixtures/lint-14-slip-opinion.json", {"record_id": "lint-14-page-slip-opinion-pass", "status": "slip_opinion", "stub": False}),
     }
     ok = True
     with tempfile.TemporaryDirectory(prefix="lint14-load-records-self-test-") as tmp:

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "inspections", "perv
 holding: "Warrantless inspections of a pervasively regulated industry (mines) are reasonable where a comprehensive statutory scheme (defining the certainty, regularity, frequency, and scope of inspection) provides a constitutionally adequate substitute for a warrant."
 lake:
   record_id: Donovan v. Dewey
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

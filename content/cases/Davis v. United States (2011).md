@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "automobil
 holding: "The exclusionary rule does not apply to evidence obtained during a search conducted in objectively reasonable reliance on binding appellate precedent that is only later overruled, because there is no culpable police misconduct to deter."
 lake:
   record_id: "Davis v. United States (2011)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-09
 ---
 

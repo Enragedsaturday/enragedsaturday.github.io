@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "general-search"
 holding: "A search incident to arrest may not become a general exploratory search of the premises; a warrantless arrest used to justify ransacking an office for evidence is an unreasonable general search, judged on each case's own facts."
 lake:
   record_id: Go-Bart Importing Co. v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

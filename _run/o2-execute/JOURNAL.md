@@ -2020,3 +2020,16 @@ the standing separate run. THE WIKI IS LIVE, VERIFIED, AND RETIRED ONTO ITS MAIN
 - Also resolved user's "2 shells still running": orphaned until-loop waiters (bpe1drb8v FIN-INDEX,
   bc1bp2p0y FIN-MINI/FIN-INDEX/REREVIEW) polling an output path the workers never wrote; killed
   (exit 144) along with 2 zombie waiters from an earlier session.
+
+## 2026-07-23 — MAINT-1: verify-drain + slip_opinion status (thin orchestrator; codex gpt-5.6-sol high fleet)
+- Drain: 178 records earned the missing two-key leg across 2 loops (loop-1: 142 body-text; loop-2
+  after orchestrator rulings MAINT-1-R1 caption-leg/R2 structural-leg/R3 web-dual-leg: +36).
+  Codex audits AUDIT-A/A2: 46 spot-checks, 0 mismatches. 149 re-homed verified->verified_identity
+  (treatment composite unverified — schema gate correct; identity legs recorded); net +29 full
+  verified (420->449). Residue: 1 (illinois-v-fisher stub, canonical_name_match=false, per ruling).
+- slip_opinion: new first-class status (user directive) — schema, projector, LINT-6/14, DraftBanner
+  📄 informational banner + "Slip opinion" pill (codex packet B); 17 paged cite-less recents applied;
+  LINT-6 date-deferral extended to slip banner (MAINT-1 ruling); fixture flipped accordingly.
+- Anchondo as_of_content backfilled (decision-date convention). Roster: 0 highs. caseHelpers tests 15/15.
+- Owed next: treatment pass for the 139 verified_identity records (S7-style citator run) to finish
+  the verified climb; slip records re-enter the drain automatically when CL assigns cites.

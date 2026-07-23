@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel", "
 holding: "A suspect must invoke the right to counsel UNAMBIGUOUSLY; an equivocal or ambiguous reference (\"maybe I should talk to a lawyer\") does…"
 lake:
   record_id: Davis v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-09
 ---
 

@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "loc
 holding: "Acquiring a cell-phone user's Google Location History (geofence) data is a Fourth Amendment search. There is a reasonable expectation of privacy in the record of one's phone's location, even for a short period and even when the data is held by a third party; the Court did not decide whether geofence warrants satisfy probable cause and particularity, vacating and remanding."
 lake:
   record_id: Chatrie v. United States
-  status: verified_identity
+  status: slip_opinion
   projected_at: 2026-07-06
 ---
 

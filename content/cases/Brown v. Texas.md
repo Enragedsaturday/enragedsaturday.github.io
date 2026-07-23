@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "stop-a
 holding: "Police may not stop a person and demand identification without reasonable suspicion of criminal activity; the constitutionality of suspicionless seizures is judged by balancing public concern, advancement of the public interest, and the severity of the intrusion on liberty."
 lake:
   record_id: Brown v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

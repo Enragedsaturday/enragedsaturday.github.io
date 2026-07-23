@@ -34,7 +34,7 @@ tags: ["case", "due-process", "confessions", "voluntariness", "coercion"]
 holding: "A state conviction resting solely on confessions extorted by state officers through physical torture, and using those confessions as the basis for conviction and sentence, violates Fourteenth Amendment due process."
 lake:
   record_id: Brown v. Mississippi
-  status: under_review
+  status: verified
   projected_at: 2026-07-09
 ---
 

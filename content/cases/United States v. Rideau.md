@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/"
   cluster_id: 587275
   opinion_id: 587275
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Community Caretaking]]"
     role: "Key — Progeny"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "public-welfare", "in
 holding: "Police serve a public-welfare/community-caretaking function by removing apparently intoxicated people from the public streets, and an officer is warranted in stopping to check on the condition of an impaired person standing in the roadway; on these facts the en banc court held the stop and protective pat-down reasonable under the Fourth Amendment."
 lake:
   record_id: United States v. Rideau
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-09
 ---
 

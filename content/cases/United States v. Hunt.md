@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: false
 lake:
   record_id: United States v. Hunt
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-10
 homes:
   - page: "[[Abandonment]]"

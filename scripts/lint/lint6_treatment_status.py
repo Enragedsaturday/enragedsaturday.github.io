@@ -12,16 +12,18 @@ treatment.status + treatment.as_of; the S2 projector re-stamps them with the
       treatment.status key still present on a projected page = HIGH. Missing
       field_i (or out-of-enum value) = HIGH.
       DUAL DATES (R3): both treatment.as_of_content AND treatment.as_of_treatment
-      must be non-blank on a page that REACHES A READER as settled — i.e. a page
-      that is NOT banner-driven (see _banner_driven / S5 R15). A blank date is
-      HIGH there. A `null` / `~` / `none` / empty placeholder is TREATED AS BLANK
+      must be non-blank on a page that REACHES A READER without the unverified
+      warning (see _banner_kind / S5 R15). A blank date is HIGH there. A `null`
+      / `~` / `none` / empty placeholder is TREATED AS BLANK
       (the stdlib YAML-subset parser yields the literal string 'null' for
       `as_of_content: null`, which is non-blank as a raw scalar; c.is_null_token
       folds it back — the P5 LINT-6 null-token precision fix, mirroring lint1's
       opinion_id/opinion_url guard). On a BANNER-DRIVEN page (draft / lake.status
       ∈ {draft, under_review} / validity resolves to `unverified`) the dual-date
-      requirement is DEFERRED to S6 promotion — the ⚪ banner already discloses
-      that treatment/currency are pending — so a null/blank date is NOT flagged.
+      requirement is DEFERRED to S6 promotion. A `slip_opinion` carries its own
+      informational 📄 banner (never the ⚪ unverified warning) which likewise
+      discloses pendency, so slip pages defer the dual-date requirement too
+      (MAINT-1 ruling 2026-07-23).
 
   (b) LEGACY page (no `lake:` block, type: case): missing treatment.status or
       treatment.as_of = HIGH; a status NOT in the legacy enum
@@ -109,7 +111,7 @@ def _is_draft(fm):
 # P4-14: the 30 verified_identity promotions created the legitimate state
 # {lake.status: verified_identity, treatment.field_i_validity: unverified}. The
 # component banners those via leg (3) (resolveTreatment().fieldI === "unverified"),
-# but the lint's OLD _banner_driven lacked that leg — so leg (d) fired 21 false-
+# but the lint's OLD banner predicate lacked that leg — so leg (d) fired 21 false-
 # positive HIGHs demanding a SEPARATE banner signal the state cannot carry without
 # inventing states. Adding leg (3) mirrors the component: an unverified page is
 # ALWAYS bannered, so the (d) "unverified reaches a reader unbannered" HIGH is now
@@ -118,7 +120,8 @@ def _is_draft(fm):
 # "unverified" but does NOT resolve to the unverified composite (a malformed/out-of-
 # enum value) still fails visible. Primary defense-in-depth is the S2 R12 publish
 # gate (per RULING P4-14).
-LAKE_BANNER_STATUSES = {"draft", "under_review"}
+UNVERIFIED_BANNER_STATUSES = {"draft", "under_review"}
+SLIP_BANNER_STATUS = "slip_opinion"
 
 
 def _norm_field_i(value):
@@ -144,17 +147,23 @@ def _resolved_field_i(fm):
     return LEGACY_TO_FIELD_I.get(str(status).strip().lower(), "unverified")
 
 
-def _banner_driven(fm):
-    """True iff the page carries a banner-driving state per S5 R15, mirroring
-    caseHelpers.shouldDraftBanner: a `draft: true` flag, OR `lake.status` ∈
-    {draft, under_review}, OR a resolved Field-I composite of `unverified`."""
-    if _is_draft(fm):
-        return True
+def _banner_kind(fm):
+    """Return the reader-facing banner kind, mirroring DraftBanner.
+
+    `slip_opinion` wins over a resolved unverified Field-I value: it carries the
+    informational slip banner and must never inherit the ⚪ warning."""
     lake = fm.get("lake")
-    if isinstance(lake, dict) and \
-            str(lake.get("status", "")).strip().lower() in LAKE_BANNER_STATUSES:
-        return True
-    return _resolved_field_i(fm) == "unverified"
+    lake_status = str(lake.get("status", "")).strip().lower() \
+        if isinstance(lake, dict) else ""
+    if lake_status == SLIP_BANNER_STATUS:
+        return "slip_opinion"
+    if _is_draft(fm):
+        return "unverified"
+    if lake_status in UNVERIFIED_BANNER_STATUSES:
+        return "unverified"
+    if _resolved_field_i(fm) == "unverified":
+        return "unverified"
+    return None
 
 
 def _blank(v):
@@ -174,13 +183,14 @@ def _treatment(fm):
     return t if isinstance(t, dict) else {}
 
 
-def _check_new_schema(path, fm, start, out, banner_driven):
+def _check_new_schema(path, fm, start, out, dates_deferred):
     """(a) projected page. Returns the Field-I validity value (for the R2 gate).
 
     The dual-date (R3) sub-checks fire ONLY on a page that reaches a reader as
-    settled (`not banner_driven`): a banner-driven page (draft / under_review /
-    resolved-unverified) legitimately DEFERS its currency dates to S6 promotion
-    behind the ⚪ banner, so a null/blank date there is by-design, not a defect."""
+    settled (`not dates_deferred`): an unverified-warning page (draft /
+    under_review / resolved-unverified) legitimately defers its currency dates,
+    and so does a slip_opinion page — its 📄 banner discloses that the official
+    cite and treatment verification are both pending (MAINT-1 ruling 2026-07-23)."""
     t = _treatment(fm)
     field_i = t.get("field_i_validity")
 
@@ -200,7 +210,7 @@ def _check_new_schema(path, fm, start, out, banner_driven):
             "treatment.field_i_validity '%s' not in {good_law, history, caution, "
             "questioned, superseded, unverified} [R2]" % field_i))
 
-    if not banner_driven:
+    if not dates_deferred:
         if _blank_date(t.get("as_of_content")):
             out.append(c.make_violation(
                 LINT, path, start, c.HIGH,
@@ -319,11 +329,15 @@ def check_file(path):
     _check_forbidden_glyph(path, text, out)
 
     has_lake = isinstance(fm.get("lake"), dict) and bool(fm.get("lake"))
-    banner_driven = _banner_driven(fm)
+    banner_kind = _banner_kind(fm)
+    # MAINT-1 ruling 2026-07-23: the slip banner also discloses pendency (no
+    # official cite yet; treatment verification pending), so slip pages defer
+    # currency dates exactly like ⚪-bannered pages until the treatment pass.
+    dates_deferred = banner_kind in ("unverified", "slip_opinion")
 
     validity = None
     if has_lake:
-        validity = _check_new_schema(path, fm, start, out, banner_driven)  # (a)
+        validity = _check_new_schema(path, fm, start, out, dates_deferred)  # (a)
     elif fm.get("type") == "case":
         validity = _check_legacy(path, fm, start, out)          # (b)
 
@@ -331,13 +345,14 @@ def check_file(path):
     # unverified page carries the R15 banner-driving state," NOT the literal
     # `draft: true` key — a born-draft mint page (lake.status: under_review) IS
     # bannered by R15 and must pass here.
-    if validity and "unverified" in str(validity).lower() and not banner_driven:
+    if validity and "unverified" in str(validity).lower() and banner_kind is None:
         out.append(c.make_violation(
             LINT, path, start, c.HIGH,
             "treatment is 'unverified' but the page carries no R15 banner-driving "
-            "state (draft: true or lake.status ∈ {draft, under_review}) — "
+            "state (draft: true or lake.status ∈ {draft, under_review, "
+            "slip_opinion}) — "
             "unverified must never reach a reader unbannered [R2/S5 R15]"))
-    if not banner_driven:
+    if banner_kind != "unverified":
         _check_unverified_glyph_in_tables(path, body, start, out)
 
     # (e) Case Index blank-treatment
@@ -385,6 +400,12 @@ def self_test():
         if not passed:
             for v in viols:
                 sys.stderr.write("             [%s] %s\n" % (v["severity"], v["message"]))
+    slip_fixture = os.path.join(fixdir, "lint-6-slip-opinion-pass.md")
+    slip_fm, _body, _start = c.split_frontmatter(c.read_text(slip_fixture))
+    slip_banner_ok = _banner_kind(slip_fm) == "slip_opinion"
+    ok = ok and slip_banner_ok
+    sys.stderr.write("[self-test] %-40s expect=%-4s -> %s\n" % (
+        "slip-opinion-banner-kind", "slip", "OK" if slip_banner_ok else "MISMATCH"))
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 

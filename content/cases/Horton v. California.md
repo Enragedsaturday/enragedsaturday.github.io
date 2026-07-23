@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "seizure", "warrant"]
 holding: "Sets the modern plain-view SEIZURE test and DROPS the inadvertence requirement: a warrantless seizure of an item in plain view is lawful when the officer lawfully reaches the vantage point, the item's incriminating character is immediately apparent, and the officer has a lawful right of access to it. Inadvertence is not required."
 lake:
   record_id: Horton v. California
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-09
 ---
 

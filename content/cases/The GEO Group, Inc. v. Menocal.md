@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: false
 lake:
   record_id: "The GEO Group, Inc. v. Menocal"
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-10
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"

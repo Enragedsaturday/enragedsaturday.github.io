@@ -13,7 +13,7 @@ docket: ""
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
   field_i_validity: good_law
-  as_of_content: null
+  as_of_content: 1998-09-01
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: United States v. Anchondo
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile"]
 holding: "ACTUAL holding: cocaine found on the defendant's body was the product of a lawful SEARCH INCIDENT TO ARREST, not the automobile…"
 lake:
   record_id: United States v. Anchondo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

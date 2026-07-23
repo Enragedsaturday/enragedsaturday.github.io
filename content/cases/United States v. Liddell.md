@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 lake:
   record_id: United States v. Liddell
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"

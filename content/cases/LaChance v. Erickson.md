@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "due-process", "public-employee", "garrity", "
 holding: "Neither due process nor the civil-service statutes bar a federal agency from disciplining an employee for making false statements to investigators in response to an underlying misconduct charge; the right to be heard does not include a right to lie (an employee facing criminal exposure may stay silent, but may not lie)."
 lake:
   record_id: LaChance v. Erickson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: false
 lake:
   record_id: United States v. Trent
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-22
 homes:
   - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"

@@ -557,6 +557,12 @@ def self_test():
         "provenance": {"date_modified": "2026-07-06T00:00:00Z"},
     }
     projected = project_record(record)
+    slip_opinion_record = json.loads(json.dumps(record))
+    slip_opinion_record["status"] = "slip_opinion"
+    slip_opinion_projected = project_record(slip_opinion_record)
+    slip_opinion_ok = (
+        slip_opinion_projected.get("lake", {}).get("status") == "slip_opinion"
+    )
     md = "---\ntitle: Fixture v. Case\ntype: case\ncitation: old\nhomes: []\n---\n# Body\n"
     once = serializer.replace_frontmatter(md, projected)
     twice = serializer.replace_frontmatter(once, projected)
@@ -714,7 +720,9 @@ def self_test():
         and prec_scotus_flag == "Binding — SCOTUS"
     )
 
-    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok and slip_ok and prec_ok
+    ok = ok and slip_opinion_ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok and slip_ok and prec_ok
+    sys.stderr.write("[self-test] slip_opinion status passthrough -> %s\n"
+                     % ("OK" if slip_opinion_ok else "FAIL"))
     sys.stderr.write("[self-test] slip-only projection single-source (S2 A3) -> %s (slip=%r unmarked=%r)\n"
                      % ("OK" if slip_ok else "FAIL", slip_proj, unmarked_proj))
     sys.stderr.write("[self-test] P4-20(a) precedential_status weight derivation -> %s (coa/unpub=%r coa/pub=%r)\n"

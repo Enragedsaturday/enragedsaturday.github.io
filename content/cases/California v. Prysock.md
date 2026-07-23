@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110556/california-v-prysock/"
   cluster_id: 110556
   opinion_id: 9428478
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
     role: "Key — Progeny"
@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "warning-adequacy"]
 holding: "Miranda warnings need not be a verbatim recital of the language in Miranda; a warning that reasonably conveys the suspect's rights is adequate. No talismanic incantation is required."
 lake:
   record_id: California v. Prysock
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

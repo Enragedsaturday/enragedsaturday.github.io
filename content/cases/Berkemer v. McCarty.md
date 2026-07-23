@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "traffic-stop", "interro
 holding: "(1) Miranda applies to ALL custodial interrogation regardless of the offense's severity, misdemeanors included; (2) the temporary,…"
 lake:
   record_id: Berkemer v. McCarty
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

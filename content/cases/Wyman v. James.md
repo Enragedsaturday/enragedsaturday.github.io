@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 lake:
   record_id: Wyman v. James
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-09
 homes:
   - page: "[[Special Needs and Administrative Searches]]"

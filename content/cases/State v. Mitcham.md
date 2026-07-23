@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10293607/state-of-arizona-v-ian-mitcham/"
   cluster_id: 10293607
   opinion_id: 10760195
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Recent development (role-based)"
@@ -34,7 +34,7 @@ tags: ["case", "exclusionary-rule", "inevitable-discovery", "independent-source"
 holding: "Arizona Supreme Court held that, although warrantless DNA sequencing violated the Fourth Amendment, the DNA profile was admissible under the inevitable discovery exception because the State would have inevitably obtained it through an independent, untainted statutory DNA-collection process after Mitcham’s unrelated 2022 felony convictions."
 lake:
   record_id: State v. Mitcham
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

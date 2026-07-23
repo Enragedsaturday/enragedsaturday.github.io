@@ -57,6 +57,22 @@ export const FIELD_I_LABELS: Record<string, string> = {
   unverified: "Unverified",
 }
 
+export const LAKE_STATUS_LABELS: Record<string, string> = {
+  slip_opinion: "Slip opinion",
+}
+
+export function resolveLakeStatus(fm: Record<string, any> | undefined): string | undefined {
+  return normStatus(fm?.lake?.status)
+}
+
+function fieldILabel(fm: Record<string, any> | undefined, fieldI: FieldIKey): string {
+  const lakeStatus = resolveLakeStatus(fm)
+  if (fieldI === "unverified" && lakeStatus) {
+    return LAKE_STATUS_LABELS[lakeStatus] ?? FIELD_I_LABELS[fieldI]
+  }
+  return FIELD_I_LABELS[fieldI]
+}
+
 // css-safe key for status classes (treatment-good-law, treatment-caution, …)
 export function fieldICssKey(fieldI: string): string {
   return fieldI.replace(/_/g, "-")
@@ -114,7 +130,7 @@ export function resolveTreatment(fm: Record<string, any> | undefined): ResolvedT
     const overrides = Array.isArray(t.point_overrides) ? (t.point_overrides as PointOverride[]) : []
     return {
       fieldI: projected,
-      label: FIELD_I_LABELS[projected],
+      label: fieldILabel(fm, projected),
       varies: t.varies_by_point === true || overrides.length > 0,
       asOfContent: t.as_of_content ? String(t.as_of_content) : undefined,
       asOfTreatment: t.as_of_treatment ? String(t.as_of_treatment) : undefined,
@@ -128,7 +144,7 @@ export function resolveTreatment(fm: Record<string, any> | undefined): ResolvedT
   const mapped = LEGACY_TO_FIELD_I[legacy] ?? "unverified"
   return {
     fieldI: mapped,
-    label: FIELD_I_LABELS[mapped],
+    label: fieldILabel(fm, mapped),
     // A4: every `limited` case carries ≥1 point override post-projection; pre-projection
     // the varies warning rides on the mapped composite so the reader is never unwarned.
     varies: legacy === "limited",
@@ -325,9 +341,8 @@ export function isCasePage(fileData: QuartzPluginData): boolean {
 // never reaches a reader unbannered" holds even on previews.
 export function shouldDraftBanner(fm: Record<string, any> | undefined): boolean {
   if (!fm) return false
-  const lakeStatus = String(fm?.lake?.status ?? "")
-    .toLowerCase()
-    .trim()
+  const lakeStatus = resolveLakeStatus(fm)
+  if (lakeStatus === "slip_opinion") return false
   if (lakeStatus === "draft" || lakeStatus === "under_review") return true
   const rt = resolveTreatment(fm)
   return rt?.fieldI === "unverified"

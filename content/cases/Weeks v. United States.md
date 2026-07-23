@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "warrantless-search", "o
 holding: "Origin of the federal exclusionary rule: evidence obtained in violation of the Fourth Amendment is inadmissible against a defendant in…"
 lake:
   record_id: Weeks v. United States
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-06
 ---
 

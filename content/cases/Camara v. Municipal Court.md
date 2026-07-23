@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "inspection", "warra
 holding: "Administrative inspections of private property generally require a warrant, but it may be an \"area warrant\" issued on reasonable…"
 lake:
   record_id: Camara v. Municipal Court
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/84759/marbury-v-madison/"
   cluster_id: 84759
   opinion_id: 84759
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[The Federal Court System]]"
     role: "Key — Anchor"
@@ -34,7 +34,7 @@ tags: ["case", "constitutional-law", "judicial-review", "federal-courts", "separ
 holding: "Establishes judicial review: it is the province and duty of the judiciary to say what the law is, and a law repugnant to the…"
 lake:
   record_id: Marbury v. Madison
-  status: under_review
+  status: verified
   projected_at: 2026-07-09
 ---
 

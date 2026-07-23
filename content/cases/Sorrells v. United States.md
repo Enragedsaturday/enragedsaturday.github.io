@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "predisposition", "prohibition"]
 holding: "Entrapment is available when government officials originate the criminal design and implant in an otherwise innocent, non-predisposed person the disposition to commit the offense."
 lake:
   record_id: Sorrells v. United States
-  status: verified_identity
+  status: verified
   projected_at: 2026-07-06
 ---
 

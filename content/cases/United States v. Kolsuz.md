@@ -24,10 +24,10 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4499413/united-states-v-hamza-kolsuz/"
   cluster_id: 4499413
   opinion_id: 4276666
-  identity_checked: false
+  identity_checked: true
 lake:
   record_id: United States v. Kolsuz
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Border Searches]]"

@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "exculpatory-evidence", "impeachment", "ninth-
 holding: "Granted habeas relief: the prosecution suppressed BOTH material exculpatory evidence (expert evidence on the cause of the fire) AND…"
 lake:
   record_id: Benn v. Lambert
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

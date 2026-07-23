@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: false
 lake:
   record_id: Landor v. Louisiana Dept. of Corrections
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-09
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"

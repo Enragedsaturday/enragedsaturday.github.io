@@ -47,6 +47,16 @@ describe("resolveTreatment (S5 R14 — one vocabulary before/after the projector
     assert.equal(rt!.fieldI, "unverified")
   })
 
+  test("slip-opinion status relabels an otherwise unverified treatment pill", () => {
+    const rt = resolveTreatment({
+      lake: { status: "slip_opinion" },
+      treatment: { field_i_validity: "unverified" },
+    })
+    assert.ok(rt)
+    assert.equal(rt!.fieldI, "unverified")
+    assert.equal(rt!.label, "Slip opinion")
+  })
+
   test("no treatment block => null", () => {
     assert.equal(resolveTreatment({}), null)
     assert.equal(resolveTreatment(undefined), null)
@@ -88,6 +98,17 @@ describe("shouldDraftBanner (S5 R15 — defense-in-depth behind the publish gate
 
   test("Field-I unverified banners with no lake block at all", () => {
     assert.equal(shouldDraftBanner({ type: "case", treatment: { field_i_validity: "unverified" } }), true)
+  })
+
+  test("slip-opinion status suppresses the unverified draft banner", () => {
+    assert.equal(
+      shouldDraftBanner({
+        type: "case",
+        lake: { status: "slip_opinion" },
+        treatment: { field_i_validity: "unverified" },
+      }),
+      false,
+    )
   })
 
   test("empty / missing frontmatter does not banner", () => {

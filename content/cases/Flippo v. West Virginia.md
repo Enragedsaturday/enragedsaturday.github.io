@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "crime-scene", "warrant-requirement", "homici
 holding: "There is no general 'crime-scene exception' to the warrant requirement; a warrantless search of a secured homicide scene (including opening a closed briefcase) is invalid unless a recognized exception applies."
 lake:
   record_id: Flippo v. West Virginia
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

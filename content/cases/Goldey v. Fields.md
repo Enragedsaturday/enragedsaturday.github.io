@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: true
 lake:
   record_id: Goldey v. Fields
-  status: under_review
+  status: verified_identity
   projected_at: 2026-07-10
 homes:
   - page: "[[Suing Federal Officers]]"

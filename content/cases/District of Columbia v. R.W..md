@@ -27,7 +27,7 @@ courtlistener:
   identity_checked: false
 lake:
   record_id: District of Columbia v. R.W.
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-09
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"

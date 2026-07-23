@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", 
 holding: "A defendant does not make out a Sixth Amendment violation merely by showing an informant reported his statements; he must show the…"
 lake:
   record_id: Kuhlmann v. Wilson
-  status: under_review
+  status: verified
   projected_at: 2026-07-09
 ---
 

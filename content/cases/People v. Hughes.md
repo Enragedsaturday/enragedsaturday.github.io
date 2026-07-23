@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "digital-search", "cell-phone",
 holding: "Declines a per se rule that an officer may always review the ENTIRE contents of digital data seized under a warrant on the mere…"
 lake:
   record_id: People v. Hughes
-  status: under_review
+  status: slip_opinion
   projected_at: 2026-07-09
 ---
 

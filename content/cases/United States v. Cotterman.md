@@ -24,7 +24,7 @@ courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/854692/united-states-v-howard-cotterman/"
   cluster_id: 854692
   opinion_id: 854692
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Border Searches]]"
     role: "Illustrates a circuit split"
@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-search", "digital-privacy"]
 holding: "A forensic (comprehensive) examination of an electronic device seized at the border requires reasonable suspicion; it is the…"
 lake:
   record_id: United States v. Cotterman
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 
