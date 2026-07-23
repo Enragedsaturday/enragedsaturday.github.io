@@ -2008,3 +2008,15 @@ mobile leg = responsive-CSS + phone spot-check recommendation) -> S4 R8 RETIREME
 R12 handoff FILED to GH#2 (issuecomment-5055868436) -> FINAL-S9-REPORT finalized (both
 splice points closed). R13: 15/15 accounted (14 PASS + G8 executed). Flashcard rebuild =
 the standing separate run. THE WIKI IS LIVE, VERIFIED, AND RETIRED ONTO ITS MAINTENANCE LOOP.
+
+## 2026-07-23 — POST-SHIP HOTFIX: KaTeX math-swallow (Sokolow report)
+- User report: Sokolow rendered "2,100incashfortwoairlineticketsfromarollof20 bills" (spaceless, math font).
+- Root cause: Plugin.Latex({renderEngine:"katex"}) in quartz.config.ts — two unescaped $ in one
+  paragraph form an inline-math span. Corpus-wide sweep: 16 at-risk paragraphs across 8 pages
+  (Sokolow, Culley, Bajakajian, Timbs, Von Neumann, $8,850 in Currency, Civil Asset Forfeiture,
+  Case Index); all 8 live-verified as real katex swallows. Zero intentional math corpus-wide.
+- Fix: removed Plugin.Latex (class-wide; content untouched; wikilink aliases safe; katex CSS
+  payload dropped from every page). Rebuild: 0 katex spans; lints: 0 highs. Commit f2ed8c0f → main.
+- Also resolved user's "2 shells still running": orphaned until-loop waiters (bpe1drb8v FIN-INDEX,
+  bc1bp2p0y FIN-MINI/FIN-INDEX/REREVIEW) polling an output path the workers never wrote; killed
+  (exit 144) along with 2 zombie waiters from an earlier session.
