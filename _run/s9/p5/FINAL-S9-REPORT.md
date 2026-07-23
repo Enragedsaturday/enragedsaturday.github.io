@@ -382,3 +382,25 @@ queue** — 231 traced + a 117-row pin-upgrade queue (37 cases) + the Entick unm
 report asserts no legal proposition without a verified pincite and re-adjudicates no prior verdict; it is
 an evidence-linked record of what S9 did. Machine index of every cited artifact:
 `_run/s9/p5/FINAL-S9-REPORT-sources.json`.*
+
+
+---
+## PUBLISHED (P6, 2026-07-23)
+- **Deploy:** main d50a62a9 → b99b4ab6 (fast-forward) → pushed → Vercel production READY.
+  Live: https://cssi-search-and-seizure.vercel.app
+- **Verify-live:** 10-page curl sweep all 200 (one 308 trailing-slash redirect); internal dirs
+  (_run/_overhaul2/_review-needed/scripts) 404 ✓; corrected McNeely cluster id live; Mitcham
+  corrected holding live in the Case Index; hash-split page carries Lowers/Brillhart.
+  Browser dogfood: hard-load deep-link lands centered+tinted IN PRODUCTION (the FIX-A2 fix);
+  search live w/ highlights + the Smith (2024) retarget target; flashcards 1,176/26 intact;
+  Horton correctly un-bannered post-promotion. Fragment visual leg: a real user-gesture click
+  fired from the live page; observation blocked by extension domain permissions (CAPTCHA on
+  07-21, permission wall on 07-23) — mechanical trace 231/231 verbatim stands; recommend a
+  human click-through spot-check. Mobile leg: capture viewport fixed in tooling — responsive
+  CSS verified at S4; recommend a phone spot-check.
+- **S4 R8 retirement EXECUTED + re-verified:** com.cssi.quartz launchd agent booted out +
+  plist removed; :8787 connection-refused ✓; serve-public.py + redeploy.sh git-rm'd;
+  /cssi-ingest re-pointed to the content/-canonical git→Vercel flow (0 legacy refs);
+  vault frozen w/ _FROZEN-README.md marker.
+- **R12 handoff FILED:** https://github.com/Enragedsaturday/cssi/issues/2#issuecomment-5055868436
+- **Standing flag:** the separate flashcard-rebuild run remains owed (decks frozen, attested).

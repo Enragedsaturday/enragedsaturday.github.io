@@ -1995,3 +1995,16 @@ moment: roster ZERO highs / ledger exit 0 / build clean. Commits: 65533566, 8f24
 4455cd78 + this. NEXT: G8 PUBLISH PAUSE (user go-ahead) -> P6: push main -> Vercel ->
 verify live (incl. R14.8 re-poll + R9c visual fragments + dogfood sweep) -> S4 R8
 retirement -> GH#2 handoff filing -> final brief.
+
+**P6 PUBLISHED (2026-07-23) — S9 COMPLETE, OVERHAUL-2 EXECUTE RUN COMPLETE.** G8 go-ahead
+("Ship it!") -> R14.8 pre-publish re-poll (13 checks, ALL UNCHANGED; Noem CHECK adjudicated
+as Bost text-cites; Holcomb superseding text now fetchable -> handoff; builder-lane execution
+journaled, Claude MCP token expired at gate) -> ff-merge overhaul2/execute->main (d50a62a9->
+b99b4ab6) -> push -> Vercel production READY -> verify-live PASS (curl sweep 200s, internal
+dirs 404, corrected ids + Mitcham fix live; browser dogfood: hard-load pin landing
+centered+tinted in prod, search+decks live; fragment visual leg tool-blocked, documented;
+mobile leg = responsive-CSS + phone spot-check recommendation) -> S4 R8 RETIREMENT executed
++ re-verified (:8787 dead, agent gone, scripts rm'd, ingest re-pointed, vault frozen) ->
+R12 handoff FILED to GH#2 (issuecomment-5055868436) -> FINAL-S9-REPORT finalized (both
+splice points closed). R13: 15/15 accounted (14 PASS + G8 executed). Flashcard rebuild =
+the standing separate run. THE WIKI IS LIVE, VERIFIED, AND RETIRED ONTO ITS MAINTENANCE LOOP.
