@@ -59,7 +59,7 @@ updated: 2026-07-04
 
 ## Seizures
 
-- [[Seizure of the Person|When a Seizure Occurs]] — **when a person is seized**: physical force with intent to restrain (*[[Torres v. Madrid|Torres]]*) vs. submission to a show of authority (*Hodari D.*, *[[United States v. Mendenhall|Mendenhall]]*); the **hunch → consensual encounter → reasonable suspicion** ladder.
+- [[Seizure of the Person]] — **when a person is seized**: physical force with intent to restrain (*[[Torres v. Madrid|Torres]]*) vs. submission to a show of authority (*Hodari D.*, *[[United States v. Mendenhall|Mendenhall]]*); the **hunch → consensual encounter → reasonable suspicion** ladder.
 
 - [[Seizure of Property]] <!-- placed by S3. S6 verifies cases, S7 authors prose. -->
 

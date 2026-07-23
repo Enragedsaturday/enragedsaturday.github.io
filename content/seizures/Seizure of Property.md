@@ -9,7 +9,7 @@ amendment: "U.S. Const. amend. IV"
 jurisdiction: "Federal (U.S. Const. amend. IV); SCOTUS baseline"
 status: draft
 related:
-  - "[[When a Seizure Occurs]]"
+  - "[[Seizure of the Person]]"
   - "[[Two Definitions of Search]]"
   - "[[Terry Stops and Reasonable Suspicion]]"
   - "[[Private and Foreign Searches]]"

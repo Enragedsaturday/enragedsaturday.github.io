@@ -11,7 +11,7 @@ jurisdiction: "Federal (U.S. Const. amend. IV & V); SCOTUS baseline; obligation 
 status: draft
 related:
   - "[[Terry Stops and Reasonable Suspicion]]"
-  - "[[When a Seizure Occurs]]"
+  - "[[Seizure of the Person]]"
   - "[[Reasonable Suspicion]]"
   - "[[Probable Cause]]"
 ---

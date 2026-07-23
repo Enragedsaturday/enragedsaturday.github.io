@@ -1,10 +1,9 @@
 ---
 weight: 10
-title: "When a Seizure Occurs"
+title: "Seizure of the Person"
 aliases:
   - "When a Seizure Occurs"
   - "seizing people"
-  - "Seizure of the Person"
   - "seizure-of-the-person"
   - "4-what-is-a-seizure/Seizure-of-the-Person"
 topic: "Seizure of the person: when a Fourth Amendment seizure occurs"
@@ -22,7 +21,7 @@ related:
   - "[[The Exclusionary Rule]]"
 ---
 
-# When a Seizure Occurs
+# Seizure of the Person
 
 *Has this encounter become a Fourth Amendment seizure of the person, and if so, at what moment? This page fixes only when a seizure has occurred. Whether that seizure was reasonable (a hunch, reasonable suspicion, probable cause, or a recognized justification) is a separate question taken up on the pages that follow.*
 
