@@ -80,7 +80,8 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" }),
+      // Latex/KaTeX intentionally disabled: the corpus is legal prose with no math,
+      // and unescaped $-amount pairs (e.g. "$2,100 ... $20") get swallowed as inline math.
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
