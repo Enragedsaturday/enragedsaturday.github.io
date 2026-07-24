@@ -70,6 +70,7 @@ import lint26_goodlaw_target as l26  # noqa: E402
 import lint27_table_pipes as l27    # noqa: E402
 import lint28_fragments as l28      # noqa: E402
 import lint29_shingle_boundary as l29  # noqa: E402
+import lint31_wikilink_alias_emphasis as l31  # noqa: E402
 
 # LINT-30 (the R4 ledger reconciliation invariants) lives under scripts/s9/.
 sys.path.insert(0, os.path.join(os.path.dirname(c.HERE), "s9"))
@@ -108,6 +109,7 @@ LINTS = [
     ("LINT-28", "external text-fragment well-formedness (S8 R13d)", l28.run),
     ("LINT-29", "R9 transclusion/shingle boundary (S8 R9)", l29.run),
     ("LINT-30", "R4 ledger reconciliation invariants (S9 R4, bootstrap-aware)", l30.run),
+    ("LINT-31", "emphasis inside wikilink alias renders literal [[...]] (MAINT-2)", l31.run),
 ]
 
 SELF_TESTS = [
