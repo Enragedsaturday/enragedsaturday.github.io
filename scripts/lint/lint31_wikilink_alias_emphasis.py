@@ -10,9 +10,13 @@ regex ever runs, so the link is never built and the reader sees the literal
 "[[Target| Alias ]]" (60 live instances shipped this way). The house idiom is
 emphasis OUTSIDE the link: `*[[Target|Alias]]*` — always renders.
 
-Flags HIGH: any wikilink whose alias segment contains '*' or '_' emphasis
+Flags HIGH: (a) any wikilink whose alias segment contains '*' or '_' emphasis
 markers. Exemptions: inline code spans and fenced code blocks (documented
 meta-prose like `[[Florida v. White]]` disambiguation notes), HTML comments.
+(b) LAKE LEG: any '[[' in a lake record's treatment.scope_note or
+point_overrides — scope notes surface in plain-text hover titles
+(caseHelpers.treatmentHoverTitle) where link syntax renders literally
+(found live on Byars/Preston tooltips, 2026-07-24).
 
 Usage: python3 lint31_wikilink_alias_emphasis.py [glob ...]
 """
@@ -56,10 +60,43 @@ def check_file(path):
     return out
 
 
+LAKE_DIR = os.path.join(os.path.dirname(c.HERE), "..", "_overhaul2", "lake", "cases")
+
+
+def check_lake():
+    """(b) scope notes / point overrides must be link-syntax-free plain text."""
+    import json
+    out = []
+    lake = os.path.normpath(LAKE_DIR)
+    if not os.path.isdir(lake):
+        return out
+    for fn in sorted(os.listdir(lake)):
+        if not fn.endswith(".json"):
+            continue
+        path = os.path.join(lake, fn)
+        try:
+            rec = json.load(open(path, encoding="utf-8"))
+        except Exception:
+            continue
+        t = rec.get("treatment") or {}
+        surfaces = [("treatment.scope_note", t.get("scope_note") or "")]
+        for i, po in enumerate(t.get("point_overrides") or []):
+            surfaces.append((f"treatment.point_overrides[{i}]", json.dumps(po)))
+        for label, s in surfaces:
+            if "[[" in s:
+                out.append(c.make_violation(
+                    LINT, path, 1, c.HIGH,
+                    "%s contains wikilink syntax — scope notes render as "
+                    "PLAIN TEXT in hover titles (treatmentHoverTitle); use "
+                    "bare case names" % label))
+    return out
+
+
 def run(paths=None):
     out = []
     for path in c.iter_markdown_files(paths):
         out.extend(check_file(path))
+    out.extend(check_lake())
     return out
 
 

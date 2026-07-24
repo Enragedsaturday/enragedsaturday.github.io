@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Preston v. United States
   varies_by_point: false
-  scope_note: "The search-incident-to-arrest remoteness holding remains controlling. Preston is a SITA case; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) independently permits warrantless delayed vehicle searches on probable cause, distinguishing — not overruling — Preston, so it no longer implies every station-house car search is unreasonable."
+  scope_note: "The search-incident-to-arrest remoteness holding remains controlling. Preston is a SITA case; the later automobile-exception line (Chambers v. Maroney, Michigan v. Thomas) independently permits warrantless delayed vehicle searches on probable cause, distinguishing — not overruling — Preston, so it no longer implies every station-house car search is unreasonable."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106771/preston-v-united-states/"

@@ -18,7 +18,7 @@ treatment:
   composite_basis: migration-seed
   composite_basis_ref: Byars v. United States
   varies_by_point: false
-  scope_note: "Not overruled. Its core Fourth Amendment holdings — a conclusory affidavit cannot support a warrant, and an unconstitutional search is not validated by its fruits — survive. The federal-participation / silver-platter framework it operated within was superseded by Elkins v. United States (1960) and [[Mapp v. Ohio]] (1961), which extended exclusion to all illegally seized evidence regardless of which sovereign's officers searched."
+  scope_note: "Not overruled. Its core Fourth Amendment holdings — a conclusory affidavit cannot support a warrant, and an unconstitutional search is not validated by its fruits — survive. The federal-participation / silver-platter framework it operated within was superseded by Elkins v. United States (1960) and Mapp v. Ohio (1961), which extended exclusion to all illegally seized evidence regardless of which sovereign's officers searched."
   point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100980/byars-v-united-states/"
